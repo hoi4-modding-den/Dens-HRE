@@ -1,0 +1,13 @@
+defined_text = {
+    name = GetZZXLeaderPortrait
+    text = {
+        trigger = {
+            ZZX = {
+				has_country_leader = {
+					character = ZZX_king_von_debug
+				}
+			}
+        }
+        localization_key = GFX_portrait_ZZX_king_von_debug
+    }
+}

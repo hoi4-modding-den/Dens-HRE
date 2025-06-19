@@ -1,2 +1,14 @@
 capital = 8
+recruit_character = ZZX_king_von_debug
 set_country_flag = HRE_member_state
+set_country_flag = HRE_current_emperor
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1931.11.8"
+	election_frequency = 72
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 100
+}

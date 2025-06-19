@@ -1,0 +1,39 @@
+defined_text = {
+    name = GetEmperorPortrait
+    text = {
+        trigger = {
+            ZZX = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "HRE_ZZX_emperor_portait"
+    }
+	text = {
+        trigger = {
+            ZZY = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "HRE_ZZY_emperor_portait"
+    }
+}
+
+defined_text = {
+    name = GetEmperorName
+    text = {
+        trigger = {
+            ZZX = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = ZZX_emperor_name
+    }
+	text = {
+        trigger = {
+            ZZY = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [ZZY.GetLeader]
+    }
+}
