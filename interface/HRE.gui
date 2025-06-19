@@ -1,0 +1,53 @@
+guiTypes = {
+	containerWindowType = {
+		name = "HRE_button_window"
+		position = { x = 0 y = -115 }
+		size = { width = 110 height = 110 }
+		#clipping = no
+		
+		buttonType = {
+			name = "HRE_gui_open_button"
+			spriteType = "GFX_focus_GER_glory_to_the_imperial_army"
+			scale = 0.9
+			position = { x = -10 y = -5 }
+			pdx_tooltip = HRE_gui_open_button_tt
+		}
+		iconType = {
+			name = "HRE_button_shine"
+			spriteType = "GFX_HRE_button_shine"
+			scale = 0.9
+			position = { x = -10 y = -5 }
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "HRE_gui_main_window"
+		clipping = no
+		moveable = yes
+		position = { x = 1150 y = -400 }
+		show_position = { x = 1150 y = 37 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		size = { width = 1010 height = 700 }
+		
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_wide_header_bg"
+			position = { x= 5 y = 3 }
+			Orientation = "UPPER_LEFT"
+		}	
+		buttonType = {
+			name = "HRE_gui_close"
+			spriteType = "GFX_closebutton"
+			position = { x = 960 y = 5 }
+			scale = 1.2
+		}
+		
+	}
+	
+}
