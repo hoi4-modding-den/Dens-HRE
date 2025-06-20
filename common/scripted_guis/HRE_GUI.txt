@@ -39,6 +39,16 @@ scripted_gui = {
 			HRE_current_emperor_portrait = {
 				image = "[GetEmperorPortrait]"
 			}
+			HRE_member_flag = {
+				image = "[This.GetFlag]"
+			}
+		}
+		dynamic_lists = {
+			HRE_members_list_gridbox = {
+				array = global.HRE_members
+				entry_container = HRE_member_container
+				change_scope = yes
+			}
 		}
 	}
 }
