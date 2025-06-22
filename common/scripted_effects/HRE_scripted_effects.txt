@@ -1,0 +1,41 @@
+HRE_elect_the_new_emperor = {
+	add_to_variable = { HRE_gui_dirty_var = 0.01 }
+	every_country = {
+		limit = {
+			has_country_flag = HRE_current_emperor
+		}
+		clr_country_flag = HRE_current_emperor
+		remove_ideas = HRE_holy_roman_emperor
+	}
+	every_country = {
+		limit = {
+			has_country_flag = already_voted_in_this_cycle
+		}
+		clr_country_flag = already_voted_in_this_cycle
+	}
+	random_country = {
+		limit = {
+			has_country_flag = HRE_member_state
+			exists = yes
+			has_capitulated = no
+			NOT = {
+				any_other_country = {
+					has_country_flag = HRE_member_state
+					exists = yes
+					has_capitulated = no
+					check_variable = { voting_tally_var > PREV.voting_tally_var }
+				}
+			}
+		}
+		set_country_flag = HRE_current_emperor
+		every_country = {
+			limit = {
+				has_country_flag = HRE_current_emperor
+			}
+			add_ideas = HRE_holy_roman_emperor
+		}
+	}
+	every_country = {
+		clear_variable = voting_tally_var
+	}
+}

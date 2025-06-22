@@ -11,3 +11,25 @@ defined_text = {
         localization_key = GFX_portrait_ZZX_king_von_debug
     }
 }
+defined_text = {
+    name = GetZZYLeaderPortrait
+    text = {
+        trigger = {
+            ZZY = {
+				has_country_leader = {
+					character = ZZY_czar_tito
+				}
+			}
+        }
+        localization_key = GFX_portrait_ZZY_czar_tito
+    }
+}
+defined_text = {
+    name = GetHREButtonTooltip
+    text = {
+        trigger = {
+			has_country_flag = HRE_member_state
+        }
+        localization_key = HRE_open_button_tt
+    }
+}

@@ -29,10 +29,31 @@ scripted_gui = {
 		context_type = player_context
 		window_name = "HRE_gui_main_window"
 		visible = { has_country_flag = HRE_gui_visible_flag }
+		dirty = HRE_gui_dirty_var
 		
 		effects = {	
 			HRE_gui_close_click = {
 				clr_country_flag = HRE_gui_visible_flag
+			}
+			cast_vote_button_click = {
+				add_to_variable = { THIS.voting_tally_var = 1 }
+				FROM = {
+					add_to_variable = { HRE_gui_dirty_var = 0.01 }
+					set_country_flag = already_voted_in_this_cycle
+				}
+			}
+		}
+		triggers = {
+			HRE_voting_window_visible = {
+				has_country_flag = HRE_voting_window_active
+			}
+			cast_vote_button_visible = {
+				NOT = {
+					FROM = {
+						has_country_flag = already_voted_in_this_cycle
+					}
+					original_tag = ROOT
+				}
 			}
 		}
 		properties = {
@@ -40,7 +61,10 @@ scripted_gui = {
 				image = "[GetEmperorPortrait]"
 			}
 			HRE_member_flag = {
-				image = "[This.GetFlag]"
+				image = "[THIS.GetFlag]"
+			}
+			HRE_voting_member_flag = {
+				image = "[THIS.GetFlag]"
 			}
 		}
 		dynamic_lists = {
@@ -49,6 +73,20 @@ scripted_gui = {
 				entry_container = HRE_member_container
 				change_scope = yes
 			}
+			HRE_voting_list_gridbox = {
+				array = global.HRE_voting_array
+				entry_container = HRE_voting_container
+				change_scope = yes
+			}
+		}
+	}
+	XGE_custom_gui_open = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "HRE_emperor_trait_window"
+		
+		visible = {
+			has_country_flag = HRE_current_emperor
 		}
 	}
 }

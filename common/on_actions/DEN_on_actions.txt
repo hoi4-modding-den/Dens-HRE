@@ -5,9 +5,43 @@ on_actions = {
 				limit = {
 					capital_scope = { is_on_continent = europe }
 					NOT = { has_idea = anarchy_idea_max }
+					#exists = yes
 				}
 				add_to_array = { global.HRE_members = THIS.id }
+				add_to_array = { global.HRE_voting_array = THIS.id }
 			}	
+			set_variable = { global.HRE_election_timeout_length = 10 }
+			log = "global.HRE_election_timeout_length: [?global.HRE_election_timeout_length]"
+			#ZZY = {  #debugging purposes only
+			#	add_to_variable = { voting_tally_var = 1 }
+			#}
+		}
+	}
+	on_daily_ZZY = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = global.HRE_election_timeout_length
+				}
+				subtract_from_variable = { global.HRE_election_timeout_length = 1 }
+				log = "global.HRE_election_timeout_length: [?global.HRE_election_timeout_length]"
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					check_variable = {
+						var = global.HRE_election_timeout_length
+						value = 1
+						compare = less_than
+					}
+				}
+				HRE_elect_the_new_emperor = yes
+				set_variable = { global.HRE_election_timeout_length = 180 }
+			}
+			add_to_variable = { HRE_gui_dirty_var = 0.01 }
 		}
 	}
 }
