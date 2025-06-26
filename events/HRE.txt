@@ -1,0 +1,349 @@
+add_namespace = HRE
+add_namespace = HRE_agenda
+add_namespace = HRE_lobbying
+add_namespace = HRE_dictate
+
+news_event = {
+	id = HRE.1
+	title = HRE.1.t
+	desc = HRE.1.d
+	
+	picture = GFX_HRE_elections_news_image
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE.1.a
+    }
+}
+
+country_event = {
+	id = HRE_agenda.1
+	title = HRE_agenda.1.t
+	desc = HRE_agenda.1.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_agenda.1.a
+		add_timed_idea = {
+			idea = HRE_agenda_infra
+			days = global.HRE_agenda_voting_timeout_length
+		}
+    }
+}
+country_event = {
+	id = HRE_agenda.2
+	title = HRE_agenda.2.t
+	desc = HRE_agenda.2.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_agenda.2.a
+		add_timed_idea = {
+			idea = HRE_agenda_construction
+			days = global.HRE_agenda_voting_timeout_length
+		}
+    }
+}
+country_event = {
+	id = HRE_agenda.3
+	title = HRE_agenda.3.t
+	desc = HRE_agenda.3.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_agenda.3.a
+		add_timed_idea = {
+			idea = HRE_agenda_production
+			days = global.HRE_agenda_voting_timeout_length
+		}
+    }
+}
+country_event = {
+	id = HRE_agenda.4
+	title = HRE_agenda.4.t
+	desc = HRE_agenda.4.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_agenda.4.a
+		add_timed_idea = {
+			idea = HRE_agenda_research
+			days = global.HRE_agenda_voting_timeout_length
+		}
+    }
+}
+
+country_event = {
+	id = HRE_agenda.5
+	title = HRE_agenda.5.t
+	desc = HRE_agenda.5.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_agenda_infra
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = HRE_member_state
+				}
+			
+				add_timed_idea = {
+					idea = HRE_agenda_infra
+					days = global.HRE_agenda_voting_timeout_length
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = HRE_current_emperor
+					}
+					has_country_flag = HRE_member_state
+				}
+				country_event = HRE_agenda.6
+			}
+		}
+    }
+	option = {
+        name = HRE_agenda_construction
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = HRE_member_state
+				}
+			
+				add_timed_idea = {
+					idea = HRE_agenda_construction
+					days = global.HRE_agenda_voting_timeout_length
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = HRE_current_emperor
+					}
+					has_country_flag = HRE_member_state
+				}
+				country_event = HRE_agenda.6
+			}
+		}
+    }
+	option = {
+        name = HRE_agenda_production
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = HRE_member_state
+				}
+			
+				add_timed_idea = {
+					idea = HRE_agenda_production
+					days = global.HRE_agenda_voting_timeout_length
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = HRE_current_emperor
+					}
+					has_country_flag = HRE_member_state
+				}
+				country_event = HRE_agenda.6
+			}
+		}
+    }
+	option = {
+        name = HRE_agenda_research
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = HRE_member_state
+				}
+			
+				add_timed_idea = {
+					idea = HRE_agenda_research
+					days = global.HRE_agenda_voting_timeout_length
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						has_country_flag = HRE_current_emperor
+					}
+					has_country_flag = HRE_member_state
+				}
+				country_event = HRE_agenda.6
+			}
+		}
+    }
+}
+
+country_event = {
+	id = HRE_agenda.6
+	title = HRE_agenda.6.t
+	desc = HRE_agenda.6.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_agenda.6.a
+	}
+}
+
+country_event = {
+	id = HRE_lobbying.1
+	title = HRE_lobbying.1.t
+	desc = HRE_lobbying_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.1_tt
+
+	}
+}
+
+country_event = {
+	id = HRE_dictate.1
+	title = HRE_dictate.1.t
+	desc = HRE_dictate_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.1_tt
+
+	}
+}
+
+country_event = {
+	id = HRE_lobbying.2
+	title = HRE_lobbying.2.t
+	desc = HRE_lobbying_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.2_tt
+
+	}
+}
+
+country_event = {
+	id = HRE_dictate.2
+	title = HRE_dictate.2.t
+	desc = HRE_dictate_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.2_tt
+
+	}
+}
+
+country_event = {
+	id = HRE_lobbying.3
+	title = HRE_lobbying.3.t
+	desc = HRE_lobbying_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.3_tt
+
+	}
+}
+country_event = {
+	id = HRE_dictate.3
+	title = HRE_dictate.3.t
+	desc = HRE_dictate_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.3_tt
+
+	}
+}
+
+country_event = {
+	id = HRE_lobbying.4
+	title = HRE_lobbying.4.t
+	desc = HRE_lobbying_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.4_tt
+
+	}
+}
+country_event = {
+	id = HRE_dictate.4
+	title = HRE_dictate.4.t
+	desc = HRE_dictate_desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_lobbying_option_name
+		custom_effect_tooltip = HRE_lobbying.4_tt
+
+	}
+}

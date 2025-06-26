@@ -29,7 +29,7 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "HRE_gui_main_window"
-		clipping = no
+		clipping = yes
 		moveable = yes
 		position = { x = 1150 y = -400 }
 		show_position = { x = 1150 y = 37 }
@@ -47,6 +47,7 @@ guiTypes = {
 			spriteType = "GFX_wide_header_bg"
 			position = { x= 5 y = 3 }
 			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
 		}	
 		instantTextboxType = {
 			name = "HRE_window_title"
@@ -58,7 +59,66 @@ guiTypes = {
 			maxWidth = 800
 			maxHeight = 70
 			format = left
+			alwaystransparent = yes
 		}
+		buttonType = {
+			name = "HRE_open_imperial_elections_window"
+			quadTextureSprite = GFX_button_148x34
+			position = { x = 500 y = 5 }
+			buttonText = HRE_imperial_elections_button_loc
+			buttonFont = "hoi_16mbs"
+		}
+		iconType = {
+			name = "HRE_open_imperial_elections_window_active"
+			quadTextureSprite = GFX_HRE_menu_button_light
+			position = { x = 500 y = 5 }
+		}
+		instantTextboxType = {
+			name = "HRE_open_imperial_elections_window_active_text"
+			text =  HRE_imperial_elections_button_loc
+			font = "hoi_16mbs"
+			position = { x = 520 y = 15 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "HRE_open_agenda_window_active"
+			quadTextureSprite = GFX_HRE_menu_button_light
+			position = { x = 650 y = 5 }
+		}
+		instantTextboxType = {
+			name = "HRE_open_agenda_window_active_text"
+			text =  HRE_agenda_voting_button_loc
+			font = "hoi_16mbs"
+			position = { x = 681 y = 15 }
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "HRE_open_agenda_window"
+			quadTextureSprite = GFX_button_148x34
+			position = { x = 650 y = 5 }
+			buttonText = HRE_agenda_voting_button_loc
+			buttonFont = "hoi_16mbs"
+		}
+		iconType = {
+			name = "HRE_open_policy_window_active"
+			quadTextureSprite = GFX_HRE_menu_button_light
+			position = { x = 800 y = 5 }
+		}
+		instantTextboxType = {
+			name = "HRE_open_policy_window_active_text"
+			text =  HRE_policy_outline_button_loc
+			font = "hoi_16mbs"
+			position = { x = 829 y = 15 }
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "HRE_open_policy_window"
+			quadTextureSprite = GFX_button_148x34
+			position = { x = 800 y = 5 }
+			buttonText = HRE_policy_outline_button_loc
+			buttonFont = "hoi_16mbs"
+		}
+		
 		buttonType = {
 			name = "HRE_gui_close"
 			spriteType = "GFX_closebutton"
@@ -74,6 +134,7 @@ guiTypes = {
 			background = {
 				name = "HRE_voting_window_Border"
 				quadTextureSprite ="GFX_tiled_window_thin_border2"
+				alwaystransparent = yes
 			}
 			containerWindowType = {
 				name = "HRE_voting_info"
@@ -140,11 +201,11 @@ guiTypes = {
 			name = "HRE_overview"
 			position = { x=2 y=43 }
 			size = { width = 400 height = 655 }
-			#moveable = yes
 			
 			background = {
 				name = "HRE_overview_Border"
 				quadTextureSprite ="GFX_tiled_window_thin_border2"
+				alwaystransparent = yes
 			}
 			iconType = {
 				name = "HRE_flag"
@@ -238,6 +299,688 @@ guiTypes = {
 	}
 	
 	containerWindowType = {
+		name = "HRE_agenda_gui_main_window"
+		position = { x=402 y=43 }
+		size = { width = 600 height = 655 }
+		
+		background = {
+			name = "HRE_voting_window_Border"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+			#alwaystransparent = yes
+		}
+		
+		containerWindowType = {
+			name = "HRE_agenda_info"
+			position = { x = 2 y = 3 }
+			size = { width = 595 height = 75 }
+			Orientation = upper_left
+			
+			background = {
+				name = "HRE_agenda_window_info_Border"
+				quadTextureSprite ="GFX_tiled_window_small"
+			}
+			
+			instantTextboxType = {
+				name = "HRE_agenda_window_title"
+				position = { x = 5 y = 0 }
+				textureFile = ""
+				font = "hoi_36header"
+				borderSize = {x = 0 y = 0}
+				text = "Voting Status"
+				maxWidth = 156
+				maxHeight = 20
+				format = center
+			}
+			instantTextboxType = {
+				name = "HRE_agenda_window_next_elections"
+				position = { x = 200 y = 18 }
+				textureFile = ""
+				font = "hoi_16typewriter"
+				borderSize = {x = 0 y = 0}
+				text = HRE_agenda_next_elections_text
+				maxWidth = 260
+				maxHeight = 20
+				format = center
+			}
+		}
+		containerWindowType = {
+			name = "HRE_infra_agenda_window"
+			position = { x = 2 y = 93 }
+			size = { width = 595 height = 100 }
+			Orientation = upper_left
+			
+			#background = {
+			#	name = "HRE_agenda_window_info_Border"
+			#	quadTextureSprite ="GFX_tiled_window_small"
+			#}
+			buttonType = {
+				name = "HRE_infra_agenda_icon"
+				spriteType = GFX_goal_generic_construct_infrastructure
+				position = { x = 26 y = 0 }
+				pdx_tooltip = HRE_infra_body_loc
+			}
+			iconType = {
+				name ="HRE_vote_infra_gray"
+				quadTextureSprite ="GFX_voting_button_gray"
+				position = { x = 455 y = 35 }
+				pdx_tooltip = HRE_cant_vote_twice_loc
+			}
+			instantTextboxType = {
+				name = "HRE_infra_title"
+				text = "Invest in Infrastructure"
+				font = "hoi_24header"
+				position = { x = 155 y = 2 }
+				#alwaystransparent = yes
+				maxWidth = 300
+				maxHeight = 50
+			}
+			#instantTextboxType = {
+			#	name = "HRE_infra_body"
+			#	text = HRE_infra_body_loc
+			#	font = "hoi_16mbs"
+			#	position = { x = 158 y = 32 }
+			#	alwaystransparent = yes
+			#	maxWidth = 400
+			#	maxHeight = 300
+			#}
+			instantTextboxType = {
+				name = "HRE_infra_support_title"
+				text = "States in Support of This Agenda:"
+				font = "hoi_16mbs"
+				position = { x = 158 y = 28 }
+				maxWidth = 400
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "infra_gray_text"
+				text =  HRE_cast_vote_agenda_button_text
+				font = "hoi_16mbs"
+				position = { x = 470 y = 45 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name ="HRE_vote_infra_button"
+				quadTextureSprite ="GFX_button_123x34"
+				position = { x = 455 y = 35 }
+				buttonText =  HRE_cast_vote_agenda_button_text
+				buttonFont = "hoi_16mbs"
+			}
+			instantTextboxType = {
+				name = "infra_current_votes"
+				text =  HRE_infra_current_votes
+				font = "hoi_16mbs"
+				position = { x = 26 y = 80 }
+				alwaystransparent = yes
+			}
+			gridboxtype = {
+				name = "HRE_infra_gridbox"
+				position = { x = 158 y = 48 }
+				size = { width = 300 height = 100%% }
+				slotsize = { width = 30 height = 15 }
+				max_slots_horizontal = 20
+				#add_horizontal = no
+				format = "UPPER_LEFT"
+			}
+			
+		}
+		containerWindowType = {
+			name = "HRE_construction_agenda_window"
+			position = { x = 2 y = 233 }
+			size = { width = 595 height = 100 }
+			Orientation = upper_left
+			
+			#background = {
+			#	name = "HRE_agenda_window_info_Border"
+			#	quadTextureSprite ="GFX_tiled_window_small"
+			#}
+			buttonType = {
+				name = "HRE_construction_agenda_icon"
+				spriteType = GFX_goal_generic_construct_civ_factory
+				position = { x = 26 y = 0 }
+				pdx_tooltip = HRE_construction_body_loc
+			}
+			iconType = {
+				name ="HRE_vote_construction_gray"
+				quadTextureSprite ="GFX_voting_button_gray"
+				position = { x = 455 y = 35 }
+				pdx_tooltip = HRE_cant_vote_twice_loc
+			}
+			instantTextboxType = {
+				name = "HRE_construction_title"
+				text = "Build Up Our Industry"
+				font = "hoi_24header"
+				position = { x = 155 y = 2 }
+				#alwaystransparent = yes
+				maxWidth = 300
+				maxHeight = 50
+			}
+			#instantTextboxType = {
+			#	name = "HRE_construction_body"
+			#	text = HRE_construction_body_loc
+			#	font = "hoi_16mbs"
+			#	position = { x = 158 y = 32 }
+			#	alwaystransparent = yes
+			#	maxWidth = 400
+			#	maxHeight = 300
+			#}
+			instantTextboxType = {
+				name = "HRE_construction_support_title"
+				text = "States in Support of This Agenda:"
+				font = "hoi_16mbs"
+				position = { x = 158 y = 28 }
+				maxWidth = 400
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "construction_gray_text"
+				text =  HRE_cast_vote_agenda_button_text
+				font = "hoi_16mbs"
+				position = { x = 470 y = 45 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name ="HRE_vote_construction_button"
+				quadTextureSprite ="GFX_button_123x34"
+				position = { x = 455 y = 35 }
+				buttonText =  HRE_cast_vote_agenda_button_text
+				buttonFont = "hoi_16mbs"
+			}
+			instantTextboxType = {
+				name = "construction_current_votes"
+				text = HRE_construction_current_votes
+				font = "hoi_16mbs"
+				position = { x = 26 y = 80 }
+				alwaystransparent = yes
+			}
+			gridboxtype = {
+				name = "HRE_construction_gridbox"
+				position = { x = 158 y = 48 }
+				size = { width = 300 height = 100%% }
+				slotsize = { width = 30 height = 15 }
+				max_slots_horizontal = 20
+				#add_horizontal = no
+				format = "UPPER_LEFT"
+			}
+			
+		}
+		containerWindowType = {
+			name = "HRE_production_agenda_window"
+			position = { x = 2 y = 373 }
+			size = { width = 595 height = 100 }
+			Orientation = upper_left
+			
+			#background = {
+			#	name = "HRE_agenda_window_info_Border"
+			#	quadTextureSprite ="GFX_tiled_window_small"
+			#}
+			buttonType = {
+				name = "HRE_production_agenda_icon"
+				spriteType = GFX_goal_generic_consumer_goods
+				position = { x = 26 y = 0 }
+				pdx_tooltip = HRE_production_body_loc
+			}
+			iconType = {
+				name ="HRE_vote_production_gray"
+				quadTextureSprite ="GFX_voting_button_gray"
+				position = { x = 455 y = 35 }
+				pdx_tooltip = HRE_cant_vote_twice_loc
+			}
+			instantTextboxType = {
+				name = "HRE_production_title"
+				text = "Streamline Production"
+				font = "hoi_24header"
+				position = { x = 155 y = 2 }
+				#alwaystransparent = yes
+				maxWidth = 300
+				maxHeight = 50
+			}
+			#instantTextboxType = {
+			#	name = "HRE_production_body"
+			#	text = HRE_production_body_loc
+			#	font = "hoi_16mbs"
+			#	position = { x = 158 y = 32 }
+			#	alwaystransparent = yes
+			#	maxWidth = 400
+			#	maxHeight = 300
+			#}
+			instantTextboxType = {
+				name = "HRE_production_support_title"
+				text = "States in Support of This Agenda:"
+				font = "hoi_16mbs"
+				position = { x = 158 y = 28 }
+				maxWidth = 400
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "production_gray_text"
+				text =  HRE_cast_vote_agenda_button_text
+				font = "hoi_16mbs"
+				position = { x = 470 y = 45 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name ="HRE_vote_production_button"
+				quadTextureSprite ="GFX_button_123x34"
+				position = { x = 455 y = 35 }
+				buttonText = HRE_cast_vote_agenda_button_text
+				buttonFont = "hoi_16mbs"
+			}
+			instantTextboxType = {
+				name = "production_current_votes"
+				text = HRE_production_current_votes
+				font = "hoi_16mbs"
+				position = { x = 26 y = 80 }
+				alwaystransparent = yes
+			}
+			gridboxtype = {
+				name = "HRE_production_gridbox"
+				position = { x = 158 y = 48 }
+				size = { width = 300 height = 100%% }
+				slotsize = { width = 30 height = 15 }
+				max_slots_horizontal = 20
+				#add_horizontal = no
+				format = "UPPER_LEFT"
+			}
+			
+		}
+		containerWindowType = {
+			name = "HRE_research_agenda_window"
+			position = { x = 2 y = 513 }
+			size = { width = 595 height = 100 }
+			Orientation = upper_left
+			
+			#background = {
+			#	name = "HRE_agenda_window_info_Border"
+			#	quadTextureSprite ="GFX_tiled_window_small"
+			#}
+			buttonType = {
+				name = "HRE_research_agenda_icon"
+				spriteType = GFX_focus_research
+				position = { x = 26 y = 0 }
+				pdx_tooltip = HRE_research_body_loc
+			}
+			iconType = {
+				name ="HRE_vote_research_gray"
+				quadTextureSprite ="GFX_voting_button_gray"
+				position = { x = 455 y = 35 }
+				pdx_tooltip = HRE_cant_vote_twice_loc
+			}
+			instantTextboxType = {
+				name = "HRE_research_title"
+				text = "Fund Scientific Research"
+				font = "hoi_24header"
+				position = { x = 155 y = 2 }
+				#alwaystransparent = yes
+				maxWidth = 300
+				maxHeight = 50
+			}
+			#instantTextboxType = {
+			#	name = "HRE_research_body"
+			#	text = HRE_research_body_loc
+			#	font = "hoi_16mbs"
+			#	position = { x = 158 y = 32 }
+			#	alwaystransparent = yes
+			#	maxWidth = 400
+			#	maxHeight = 300
+			#}
+			instantTextboxType = {
+				name = "HRE_research_support_title"
+				text = "States in Support of This Agenda:"
+				font = "hoi_16mbs"
+				position = { x = 158 y = 28 }
+				maxWidth = 400
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "research_gray_text"
+				text =  HRE_cast_vote_agenda_button_text
+				font = "hoi_16mbs"
+				position = { x = 470 y = 45 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name ="HRE_vote_research_button"
+				quadTextureSprite ="GFX_button_123x34"
+				position = { x = 455 y = 35 }
+				buttonText =  HRE_cast_vote_agenda_button_text
+				buttonFont = "hoi_16mbs"
+			}
+			instantTextboxType = {
+				name = "research_current_votes"
+				text = HRE_research_current_votes
+				font = "hoi_16mbs"
+				position = { x = 26 y = 80 }
+				alwaystransparent = yes
+			}
+			gridboxtype = {
+				name = "HRE_research_gridbox"
+				position = { x = 158 y = 48 }
+				size = { width = 300 height = 100%% }
+				slotsize = { width = 30 height = 15 }
+				max_slots_horizontal = 20
+				#add_horizontal = no
+				format = "UPPER_LEFT"
+			}
+			
+		}
+	}
+	
+	containerWindowType = {
+		name = "HRE_policy_gui_main_window"
+		position = { x=402 y=43 }
+		size = { width = 600 height = 655 }
+		
+		background = {
+			name = "HRE_voting_window_Border"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+			#alwaystransparent = yes
+		}
+		
+		containerWindowType = {
+			name = "HRE_federalism_policy_window"
+			position = { x=10 y=35 }
+			size = { width = 580 height = 180 }
+			
+			background = {
+				name = "HRE_federalism_window_Border"
+				quadTextureSprite ="GFX_tiled_window_thin_border2"
+			}
+			instantTextboxType = {
+				name = "HRE_federalism_title"
+				text = "Federalism - Regionalism Axis"
+				font = "hoi_24header"
+				position = { x = 129 y = 20 }
+				#orientation = "CENTER"
+				#format = "center"
+				maxwidth = 400
+			}
+			iconType = {
+				name = "HRE_federalism_progress_bar"
+				spriteType = GFX_HRE_policy_progress_bar
+				position = { x = -180 y = -25 }
+				orientation = "CENTER"
+			}
+			iconType = {
+				name = "HRE_federalism_progress_bar_frame"
+				spriteType = GFX_HRE_policy_progress_bar_frame
+				position = { x = -184 y = -29 }
+				orientation = "CENTER"
+			}
+			iconType = {
+				name = "HRE_federalism_icon"
+				spriteType = GFX_idea_generic_morale_bonus
+				position = { x = 25 y = 10 }
+				pdx_tooltip = HRE_federalism_tt
+			}
+			iconType = {
+				name = "HRE_federalism_dictate_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 20 y = 90 }
+				pdx_tooltip = HRE_federalism_dictate_gray_tt
+			}
+			instantTextboxType = {
+				name = "federalism_dictate_button_gray_text"
+				text = HRE_dictate_loc
+				font = "hoi_16mbs"
+				position = { x = 35 y = 100 }
+				alwaystransparent = yes
+			}	
+			buttonType = {
+				name = "HRE_federalism_dictate_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 20 y = 90 }
+				buttonText = HRE_dictate_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.1_tt
+			}
+			iconType = {
+				name = "HRE_federalism_lobby_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 20 y = 130 }
+				pdx_tooltip = HRE_federalism_lobby_gray_tt
+			}
+			instantTextboxType = {
+				name = "federalism_lobby_button_gray_text"
+				text = HRE_lobby_loc
+				font = "hoi_16mbs"
+				position = { x = 43 y = 140 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name = "HRE_federalism_lobby_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 20 y = 130 }
+				buttonText = HRE_lobby_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.1_if_tt
+			}
+			iconType = {
+				name = "HRE_regionalism_icon"
+				spriteType = GFX_idea_HRE_regionalism
+				position = { x = 500 y = 12 }
+				scale = 0.95
+				pdx_tooltip = HRE_regionalism_tt
+			}
+			iconType = {
+				name = "HRE_regionalism_dictate_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 440 y = 90 }
+				pdx_tooltip = HRE_federalism_dictate_gray_tt
+			}
+			instantTextboxType = {
+				name = "regionalism_dictate_button_gray_text"
+				text = HRE_dictate_loc
+				font = "hoi_16mbs"
+				position = { x = 455 y = 100 }
+				alwaystransparent = yes
+			}	
+			buttonType = {
+				name = "HRE_regionalism_dictate_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 440 y = 90 }
+				buttonText = HRE_dictate_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.2_tt
+			}
+			iconType = {
+				name = "HRE_regionalism_lobby_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 440 y = 130 }
+				pdx_tooltip = HRE_federalism_lobby_gray_tt
+			}
+			instantTextboxType = {
+				name = "regionalism_lobby_button_gray_text"
+				text = HRE_lobby_loc
+				font = "hoi_16mbs"
+				position = { x = 463 y = 140 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name = "HRE_regionalism_lobby_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 440 y = 130 }
+				buttonText = HRE_lobby_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.2_if_tt
+			}
+			
+		}
+		containerWindowType = {
+			name = "HRE_welfare_policy_window"
+			position = { x=10 y=235 }
+			size = { width = 580 height = 180 }
+			
+			background = {
+				name = "HRE_welfare_window_Border"
+				quadTextureSprite ="GFX_tiled_window_thin_border2"
+			}
+			instantTextboxType = {
+				name = "HRE_welfare_title"
+				text = "Welfare - Militarization Axis"
+				font = "hoi_24header"
+				position = { x = 129 y = 20 }
+				#orientation = "CENTER"
+				#format = "center"
+				maxwidth = 400
+			}
+			iconType = {
+				name = "HRE_welfare_progress_bar"
+				spriteType = GFX_HRE_policy_progress_bar
+				position = { x = -180 y = -25 }
+				orientation = "CENTER"
+			}
+			iconType = {
+				name = "HRE_welfare_progress_bar_frame"
+				spriteType = GFX_HRE_policy_progress_bar_frame
+				position = { x = -184 y = -29 }
+				orientation = "CENTER"
+			}
+			iconType = {
+				name = "HRE_welfare_icon"
+				spriteType = GFX_idea_generic_constitutional_guarantees
+				position = { x = 25 y = 10 }
+				pdx_tooltip = HRE_welfare_tt
+			}
+			iconType = {
+				name = "HRE_welfare_dictate_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 20 y = 90 }
+				pdx_tooltip = HRE_welfare_dictate_gray_tt
+			}
+			instantTextboxType = {
+				name = "welfare_dictate_button_gray_text"
+				text = HRE_dictate_loc
+				font = "hoi_16mbs"
+				position = { x = 35 y = 100 }
+				alwaystransparent = yes
+			}	
+			buttonType = {
+				name = "HRE_welfare_dictate_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 20 y = 90 }
+				buttonText = HRE_dictate_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.3_tt
+			}
+			iconType = {
+				name = "HRE_welfare_lobby_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 20 y = 130 }
+				pdx_tooltip = HRE_welfare_lobby_gray_tt
+			}
+			instantTextboxType = {
+				name = "welfare_lobby_button_gray_text"
+				text = HRE_lobby_loc
+				font = "hoi_16mbs"
+				position = { x = 43 y = 140 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name = "HRE_welfare_lobby_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 20 y = 130 }
+				buttonText = HRE_lobby_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.3_if_tt
+			}
+			iconType = {
+				name = "HRE_militarization_icon"
+				spriteType = GFX_idea_generic_manpower_bonus
+				position = { x = 500 y = 12 }
+				scale = 0.95
+				pdx_tooltip = HRE_militarization_tt
+			}
+			iconType = {
+				name = "HRE_militarization_dictate_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 440 y = 90 }
+				pdx_tooltip = HRE_welfare_dictate_gray_tt
+			}
+			instantTextboxType = {
+				name = "militarization_dictate_button_gray_text"
+				text = HRE_dictate_loc
+				font = "hoi_16mbs"
+				position = { x = 455 y = 100 }
+				alwaystransparent = yes
+			}	
+			buttonType = {
+				name = "HRE_militarization_dictate_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 440 y = 90 }
+				buttonText = HRE_dictate_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.4_tt
+			}
+			iconType = {
+				name = "HRE_militarization_lobby_button_gray"
+				quadtextureSprite = GFX_voting_button_gray
+				position = { x = 440 y = 130 }
+				pdx_tooltip = HRE_welfare_lobby_gray_tt
+			}
+			instantTextboxType = {
+				name = "militarization_lobby_button_gray_text"
+				text = HRE_lobby_loc
+				font = "hoi_16mbs"
+				position = { x = 463 y = 140 }
+				alwaystransparent = yes
+			}
+			buttonType = {
+				name = "HRE_militarization_lobby_button"
+				quadtextureSprite = GFX_button_123x34
+				position = { x = 440 y = 130 }
+				buttonText = HRE_lobby_loc
+				buttonFont = "hoi_16mbs"
+				pdx_tooltip = HRE_lobbying.4_if_tt
+			}
+			
+		}
+		containerWindowType = {
+			name = "HRE_papacy_policy_window"
+			position = { x=10 y=435 }
+			size = { width = 580 height = 180 }
+			
+			background = {
+				name = "HRE_papacy_window_Border"
+				quadTextureSprite ="GFX_tiled_window_thin_border2"
+			}
+			instantTextboxType = {
+				name = "HRE_papacy_title"
+				text = "Imperator - Papacy Axis"
+				font = "hoi_24header"
+				position = { x = 155 y = 30 }
+				#orientation = "CENTER"
+				format = "center"
+				maxwidth = 400
+			}
+			iconType = {
+				name = "HRE_papacy_progress_bar"
+				spriteType = GFX_HRE_policy_progress_bar
+				position = { x = -180 y = -5 }
+				orientation = "CENTER"
+			}
+			iconType = {
+				name = "HRE_papacy_progress_bar_frame"
+				spriteType = GFX_HRE_policy_progress_bar_frame
+				position = { x = -184 y = -9 }
+				orientation = "CENTER"
+			}
+			iconType = {
+				name = "HRE_imperator_icon"
+				spriteType = GFX_idea_AUS_habsburg_monarchy_restored
+				position = { x = 25 y = 52 }
+				pdx_tooltip = HRE_imperator_influence
+			}
+			iconType = {
+				name = "HRE_papacy_icon"
+				spriteType = GFX_idea_ITA_papal_state_ns
+				position = { x = 500 y = 52 }
+				scale = 1.05
+				pdx_tooltip = HRE_papacy_influence
+			}
+		}
+	}
+	
+	containerWindowType = {
 		name = "HRE_member_container"
 		position = { x = 0 y = 0 }
 		size = { width = 259 height = 38 }
@@ -320,6 +1063,7 @@ guiTypes = {
 			name ="cast_vote_button_gray"
 			quadTextureSprite ="GFX_voting_button_gray"
 			position = { x = 4 y = 105 }
+			pdx_tooltip = HRE_gray_vote_button_tt
 		}
 		
 		instantTextboxType = {
@@ -341,5 +1085,27 @@ guiTypes = {
 		
 
 	}
+	
+	containerWindowType = {
+		name = "HRE_agenda_container"
+		position = { x = 0 y = 0 }
+		size = { width = 45 height = 30 }
+
+		iconType = {
+			name = "HRE_agenda_flag"
+			position = { x = 0 y = -5 }
+			spriteType = GFX_flag_smallest
+			pdx_tooltip = HRE_agenda_flag_tt
+		}
+
+		iconType = {
+			name = "agenda_flag_frame"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_diplo_countrylist_flag_frame"
+			alwaystransparent = yes
+			scale = 0.5
+		}
+	}
+	
 	
 }

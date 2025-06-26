@@ -17,11 +17,13 @@ scripted_gui = {
 						NOT = { has_country_flag = HRE_gui_visible_flag }
 					}
 					set_country_flag = HRE_gui_visible_flag
+					clr_country_flag = HRE_agenda_gui_visible
+					clr_country_flag = HRE_policy_gui_visible
 				}
 				else = {
 					clr_country_flag = HRE_gui_visible_flag
 				}
-				clr_country_flag = XGE_bloom_gui_visible
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
 			}
 		}
 	}
@@ -34,6 +36,22 @@ scripted_gui = {
 		effects = {	
 			HRE_gui_close_click = {
 				clr_country_flag = HRE_gui_visible_flag
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+			}
+			HRE_open_agenda_window_click = {
+				set_country_flag = HRE_agenda_gui_visible
+				clr_country_flag = HRE_policy_gui_visible
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+			}
+			HRE_open_policy_window_click = {
+				clr_country_flag = HRE_agenda_gui_visible
+				set_country_flag = HRE_policy_gui_visible
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+			}
+			HRE_open_imperial_elections_window_click = {
+				clr_country_flag = HRE_agenda_gui_visible
+				clr_country_flag = HRE_policy_gui_visible
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
 			}
 			cast_vote_button_click = {
 				add_to_variable = { THIS.voting_tally_var = 1 }
@@ -44,15 +62,31 @@ scripted_gui = {
 			}
 		}
 		triggers = {
-			HRE_voting_window_visible = {
-				has_country_flag = HRE_voting_window_active
-			}
 			cast_vote_button_visible = {
 				NOT = {
 					FROM = {
 						has_country_flag = already_voted_in_this_cycle
 					}
+					has_country_flag = HRE_current_emperor
 					original_tag = ROOT
+				}
+			}
+			HRE_open_agenda_window_visible = {
+				NOT = {
+					has_country_flag = HRE_agenda_gui_visible
+				}
+			}
+			HRE_open_policy_window_visible = {
+				NOT = {
+					has_country_flag = HRE_policy_gui_visible
+				}
+			}
+			HRE_open_imperial_elections_window_active_visible = {
+				NOT = {
+					OR = {
+						has_country_flag = HRE_agenda_gui_visible
+						has_country_flag = HRE_policy_gui_visible
+					}
 				}
 			}
 		}
@@ -80,7 +114,221 @@ scripted_gui = {
 			}
 		}
 	}
-	XGE_custom_gui_open = {
+	HRE_ageda_gui_main_window = {
+		context_type = player_context
+		window_name = "HRE_agenda_gui_main_window"
+		parent_window_name = HRE_gui_main_window
+		visible = { has_country_flag = HRE_agenda_gui_visible }
+		dirty = HRE_gui_dirty_var
+		
+		effects = {
+			HRE_vote_infra_button_click = {
+				set_country_flag = HRE_already_voted_agenda
+				add_to_variable = { global.HRE_infra_agenda_votes = 1 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_array = { global.HRE_voted_for_infra = THIS.id }
+			}
+			HRE_vote_construction_button_click = {
+				set_country_flag = HRE_already_voted_agenda
+				add_to_variable = { global.HRE_construction_agenda_votes = 1 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_array = { global.HRE_voted_for_construction = THIS.id }
+			}
+			HRE_vote_production_button_click = {
+				set_country_flag = HRE_already_voted_agenda
+				add_to_variable = { global.HRE_production_agenda_votes = 1 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_array = { global.HRE_voted_for_production = THIS.id }
+			}
+			HRE_vote_research_button_click = {
+				set_country_flag = HRE_already_voted_agenda
+				add_to_variable = { global.HRE_research_agenda_votes = 1 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_array = { global.HRE_voted_for_research = THIS.id }
+			}
+		}
+		triggers = {
+			HRE_vote_infra_button_visible = {
+				NOT = {
+					has_country_flag = HRE_already_voted_agenda
+				}
+			}
+			HRE_vote_construction_button_visible = {
+				NOT = {
+					has_country_flag = HRE_already_voted_agenda
+				}
+			}
+			HRE_vote_production_button_visible = {
+				NOT = {
+					has_country_flag = HRE_already_voted_agenda
+				}
+			}
+			HRE_vote_research_button_visible = {
+				NOT = {
+					has_country_flag = HRE_already_voted_agenda
+				}
+			}
+		}
+		dynamic_lists = {
+			HRE_infra_gridbox = {
+				array = global.HRE_voted_for_infra
+				entry_container = HRE_agenda_container
+				change_scope = yes
+			}
+			HRE_construction_gridbox = {
+				array = global.HRE_voted_for_construction
+				entry_container = HRE_agenda_container
+				change_scope = yes
+			}
+			HRE_production_gridbox = {
+				array = global.HRE_voted_for_production
+				entry_container = HRE_agenda_container
+				change_scope = yes
+			}
+			HRE_research_gridbox = {
+				array = global.HRE_voted_for_research
+				entry_container = HRE_agenda_container
+				change_scope = yes
+			}
+		}
+		properties = {
+			HRE_agenda_flag = {
+				image = "[THIS.GetFlag]"
+			}
+		}
+	}
+	HRE_policy_gui_main_window = {
+		context_type = player_context
+		window_name = "HRE_policy_gui_main_window"
+		parent_window_name = HRE_gui_main_window
+		visible = { has_country_flag = HRE_policy_gui_visible }
+		dirty = HRE_gui_dirty_var
+		effects = {
+			HRE_federalism_dictate_button_click = {
+				set_variable = { HRE_federalism_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_political_power = -100
+				HRE_federalism_dictate_effect = yes
+			}
+			HRE_federalism_lobby_button_click = {
+				set_variable = { HRE_federalism_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_variable = { global.HRE_federalism_lobbying_amount = 1 }
+				add_political_power = -20
+			}
+			HRE_regionalism_dictate_button_click = {
+				set_variable = { HRE_federalism_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_political_power = -100
+				HRE_regionalism_dictate_effect = yes
+			}
+			HRE_regionalism_lobby_button_click = {
+				set_variable = { HRE_federalism_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_variable = { global.HRE_regionalism_lobbying_amount = 1 }
+				add_political_power = -20
+			}
+			HRE_welfare_dictate_button_click = {
+				set_variable = { HRE_welfare_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_political_power = -100
+				HRE_welfare_dictate_effect = yes
+			}
+			HRE_welfare_lobby_button_click = {
+				set_variable = { HRE_welfare_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_variable = { global.HRE_welfare_lobbying_amount = 1 }
+				add_political_power = -20
+			}
+			HRE_militarization_dictate_button_click = {
+				set_variable = { HRE_welfare_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_political_power = -100
+				HRE_militarization_dictate_effect = yes
+			}
+			HRE_militarization_lobby_button_click = {
+				set_variable = { HRE_welfare_decision_timeout = 30 }
+				add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				add_to_variable = { global.HRE_militarization_lobbying_amount = 1 }
+				add_political_power = -20
+			}
+		}
+		triggers = {
+			HRE_federalism_dictate_button_visible = {
+				NOT = {
+					check_variable = { HRE_federalism_decision_timeout > 1 }
+					check_variable = { global.HRE_federalism_var < 1 }
+				}
+				has_political_power > 99
+				has_country_flag = HRE_current_emperor
+			}
+			HRE_federalism_lobby_button_visible = {
+				NOT = {
+					check_variable = { HRE_federalism_decision_timeout > 1 }
+					check_variable = { global.HRE_federalism_var < 1 }
+				}
+				has_political_power > 19
+			}
+			HRE_regionalism_dictate_button_visible = {
+				NOT = {
+					check_variable = { HRE_federalism_decision_timeout > 1 }
+					check_variable = { global.HRE_federalism_var > 9 }
+				}
+				has_political_power > 99
+				has_country_flag = HRE_current_emperor
+			}
+			HRE_regionalism_lobby_button_visible = {
+				NOT = {
+					check_variable = { HRE_federalism_decision_timeout > 1 }
+					check_variable = { global.HRE_federalism_var > 9 }
+				}
+				has_political_power > 19
+			}
+			HRE_welfare_dictate_button_visible = {
+				NOT = {
+					check_variable = { HRE_welfare_decision_timeout > 1 }
+					check_variable = { global.HRE_welfare_var < 1 }
+				}
+				has_political_power > 99
+				has_country_flag = HRE_current_emperor
+			}
+			HRE_welfare_lobby_button_visible = {
+				NOT = {
+					check_variable = { HRE_welfare_decision_timeout > 1 }
+					check_variable = { global.HRE_welfare_var < 1 }
+				}
+				has_political_power > 19
+			}
+			HRE_militarization_dictate_button_visible = {
+				NOT = {
+					check_variable = { HRE_welfare_decision_timeout > 1 }
+					check_variable = { global.HRE_welfare_var > 9 }
+				}
+				has_political_power > 99
+				has_country_flag = HRE_current_emperor
+			}
+			HRE_militarization_lobby_button_visible = {
+				NOT = {
+					check_variable = { HRE_welfare_decision_timeout > 1 }
+					check_variable = { global.HRE_welfare_var > 9 }
+				}
+				has_political_power > 19
+			}
+		}
+		
+		properties = {    
+            HRE_federalism_progress_bar = {
+                frame = global.HRE_federalism_var
+            }
+			HRE_welfare_progress_bar = {
+                frame = global.HRE_welfare_var
+            }
+			HRE_papacy_progress_bar = {
+                frame = global.HRE_papacy_var
+            }
+		}
+	}
+	HRE_emperor_trait_gui = {
 		context_type = player_context
 		parent_window_token = politics_tab
 		window_name = "HRE_emperor_trait_window"

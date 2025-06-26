@@ -5,16 +5,22 @@ on_actions = {
 				limit = {
 					capital_scope = { is_on_continent = europe }
 					NOT = { has_idea = anarchy_idea_max }
-					#exists = yes
+					exists = yes
 				}
 				add_to_array = { global.HRE_members = THIS.id }
 				add_to_array = { global.HRE_voting_array = THIS.id }
+				set_country_flag = HRE_member_state
+				add_dynamic_modifier = { modifier = HRE_member_state_spirit }
 			}	
 			set_variable = { global.HRE_election_timeout_length = 10 }
-			log = "global.HRE_election_timeout_length: [?global.HRE_election_timeout_length]"
+			set_variable = { global.HRE_agenda_voting_timeout_length = 20 }
+			#log = "global.HRE_election_timeout_length: [?global.HRE_election_timeout_length]"
 			#ZZY = {  #debugging purposes only
 			#	add_to_variable = { voting_tally_var = 1 }
 			#}
+			set_variable = { global.HRE_federalism_var = 5 }
+			set_variable = { global.HRE_welfare_var = 5 }
+			set_variable = { global.HRE_papacy_var = 7 }
 		}
 	}
 	on_daily_ZZY = {
@@ -24,12 +30,52 @@ on_actions = {
 					has_variable = global.HRE_election_timeout_length
 				}
 				subtract_from_variable = { global.HRE_election_timeout_length = 1 }
-				log = "global.HRE_election_timeout_length: [?global.HRE_election_timeout_length]"
+				#log = "global.HRE_election_timeout_length: [?global.HRE_election_timeout_length]"
 			}
+			if = {
+				limit = {
+					has_variable = global.HRE_agenda_voting_timeout_length
+				}
+				subtract_from_variable = { global.HRE_agenda_voting_timeout_length = 1 }
+			}
+			HRE_clamp_all_progress_bars = yes
+			
 		}
 	}
 	on_daily = {
 		effect = {
+			if = {
+				limit = {
+					has_variable = HRE_federalism_decision_timeout
+				}
+				subtract_from_variable = { HRE_federalism_decision_timeout = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = HRE_federalism_decision_timeout
+						value = 1
+						compare = less_than
+					}
+				}
+				clear_variable = HRE_federalism_decision_timeout
+			}
+			if = {
+				limit = {
+					has_variable = HRE_welfare_decision_timeout
+				}
+				subtract_from_variable = { HRE_welfare_decision_timeout = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = HRE_welfare_decision_timeout
+						value = 1
+						compare = less_than
+					}
+				}
+				clear_variable = HRE_welfare_decision_timeout
+			}
 			if = {
 				limit = {
 					check_variable = {
@@ -39,7 +85,41 @@ on_actions = {
 					}
 				}
 				HRE_elect_the_new_emperor = yes
-				set_variable = { global.HRE_election_timeout_length = 180 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = global.HRE_agenda_voting_timeout_length
+						value = 1
+						compare = less_than
+					}
+				}
+				HRE_set_new_agenda = yes
+				#set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
+			}
+			if = {
+				limit = {
+					check_variable = { global.HRE_federalism_lobbying_amount > 4 }
+				}
+				HRE_federalism_lobbying_success = yes
+			}
+			if = {
+				limit = {
+					check_variable = { global.HRE_regionalism_lobbying_amount > 4 }
+				}
+				HRE_regionalism_lobbying_success = yes
+			}
+			if = {
+				limit = {
+					check_variable = { global.HRE_welfare_lobbying_amount > 4 }
+				}
+				HRE_welfare_lobbying_success = yes
+			}
+			if = {
+				limit = {
+					check_variable = { global.HRE_militarization_lobbying_amount > 4 }
+				}
+				HRE_militarization_lobbying_success = yes
 			}
 			add_to_variable = { HRE_gui_dirty_var = 0.01 }
 		}

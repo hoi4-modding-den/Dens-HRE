@@ -53,9 +53,39 @@ spriteTypes = {
 		texturefile = "gfx/interface/button_123x34_gray.dds"
 	}
 	spriteType = {
+		name = "GFX_HRE_elections_news_image"
+		texturefile = "gfx/interface/HRE_news_image.dds"
+	}
+	spriteType = {
+		name = "GFX_HRE_menu_button"
+		texturefile = "gfx/interface/HRE_menu_button.dds"
+	}
+	spriteType = {
+		name = "GFX_HRE_menu_button_light"
+		texturefile = "gfx/interface/HRE_menu_button_light.dds"
+	}
+	spriteType = {
 		name = "GFX_ballot_box_icon"
 		texturefile = "gfx/interface/Vote.png"
 		legacy_lazy_load = no
+	}
+	progressBarType = {
+        name = "GFX_HRE_policy_progress_bar"
+        color = { 41.9 148.6 189.0 }
+        colortwo = { 69.8 38.4 27.5 }
+        textureFile1 = "gfx/interface/HRE_progress_bar_full.dds"
+        textureFile2 = "gfx/interface/HRE_progress_bar_empty.dds"
+        steps = 10                                    
+        size = { x = 360 y = 16 }                            
+        effectFile = "gfx/FX/progress.lua"                    
+    }
+	spriteType = {
+		name = "GFX_HRE_policy_progress_bar_frame"
+		texturefile = "gfx/interface/HRE_bop_bar_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_HRE_regionalism"
+		texturefile = "gfx/interface/GFX_idea_HRE_regionalism.png"
 	}
 	
 }

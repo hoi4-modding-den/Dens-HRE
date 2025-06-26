@@ -1,11 +1,36 @@
 ideas = {
-	hidden_ideas = {
-		HRE_holy_roman_emperor = {
+	country = {
+		HRE_agenda_infra = {
+			picture = generic_build_infrastructure
             modifier = {
-                political_power_factor = 0.15
-				stability_factor = 0.05
+				production_speed_infrastructure_factor = 0.15
+				production_speed_rail_way_factor = 0.15
+				industry_repair_factor = 0.15
 			}
 		}
-
+		HRE_agenda_construction = {
+			picture = generic_exploit_mines
+            modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+		HRE_agenda_production = {
+			picture = generic_goods_red_bonus
+            modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		HRE_agenda_research = {
+			picture = SOV_atomic_bomb_project
+            modifier = {
+				research_speed_factor = 0.1
+				military_industrial_organization_research_bonus = 0.1
+				military_industrial_organization_funds_gain = 0.1
+			}
+		}
 	}
 }

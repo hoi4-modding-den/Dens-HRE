@@ -1,5 +1,7 @@
 HRE_elect_the_new_emperor = {
-	add_to_variable = { HRE_gui_dirty_var = 0.01 }
+	
+	clear_array = global.current_HRE_emperor_array
+	
 	every_country = {
 		limit = {
 			has_country_flag = HRE_current_emperor
@@ -33,9 +35,237 @@ HRE_elect_the_new_emperor = {
 				has_country_flag = HRE_current_emperor
 			}
 			add_ideas = HRE_holy_roman_emperor
+			add_to_array = { global.current_HRE_emperor_array = THIS.id }
 		}
 	}
 	every_country = {
 		clear_variable = voting_tally_var
+	}
+	news_event = HRE.1
+	set_variable = { global.HRE_election_timeout_length = 180 }
+	add_to_variable = { HRE_gui_dirty_var = 0.01 }
+	
+}
+
+HRE_set_new_agenda = {
+	
+	every_country = {
+		limit = {
+			has_country_flag = HRE_already_voted_agenda
+		}
+		clr_country_flag = HRE_already_voted_agenda
+	}
+	
+	if = { 
+		limit = {
+			check_variable = { global.HRE_construction_agenda_votes < global.HRE_infra_agenda_votes }
+			check_variable = { global.HRE_production_agenda_votes < global.HRE_infra_agenda_votes }
+			check_variable = { global.HRE_research_agenda_votes < global.HRE_infra_agenda_votes }
+		}
+		every_country = {
+			limit = {
+				has_country_flag = HRE_member_state
+			}
+			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
+			country_event = HRE_agenda.1
+			set_global_flag = HRE_agenda_selected
+		}
+	}
+	if = { 
+		limit = {	
+			check_variable = { global.HRE_infra_agenda_votes < global.HRE_construction_agenda_votes }
+			check_variable = { global.HRE_production_agenda_votes < global.HRE_construction_agenda_votes }
+			check_variable = { global.HRE_research_agenda_votes < global.HRE_construction_agenda_votes }
+		}
+		every_country = {
+			limit = {
+				has_country_flag = HRE_member_state
+			}
+			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
+			country_event = HRE_agenda.2
+			set_global_flag = HRE_agenda_selected
+		}
+	}
+	if = { 
+		limit = {	
+			check_variable = { global.HRE_infra_agenda_votes < global.HRE_production_agenda_votes }
+			check_variable = { global.HRE_construction_agenda_votes < global.HRE_production_agenda_votes }
+			check_variable = { global.HRE_research_agenda_votes < global.HRE_production_agenda_votes }
+		}
+		every_country = {
+			limit = {
+				has_country_flag = HRE_member_state
+			}
+			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
+			country_event = HRE_agenda.3
+			set_global_flag = HRE_agenda_selected
+		}
+	}
+	if = { 
+		limit = {
+			check_variable = { global.HRE_infra_agenda_votes < global.HRE_research_agenda_votes }
+			check_variable = { global.HRE_construction_agenda_votes < global.HRE_research_agenda_votes }
+			check_variable = { global.HRE_production_agenda_votes < global.HRE_research_agenda_votes }
+		}
+		every_country = {
+			limit = {
+				has_country_flag = HRE_member_state
+			}
+			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
+			country_event = HRE_agenda.4
+			set_global_flag = HRE_agenda_selected
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = HRE_agenda_selected
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = HRE_current_emperor
+			}
+			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
+			country_event = HRE_agenda.5
+		}
+	}
+	
+	clr_global_flag = HRE_agenda_selected
+	clear_variable = global.HRE_infra_agenda_votes
+	clear_variable = global.HRE_construction_agenda_votes
+	clear_variable = global.HRE_production_agenda_votes
+	clear_variable = global.HRE_research_agenda_votes
+	clear_array = global.HRE_voted_for_infra
+	clear_array = global.HRE_voted_for_construction
+	clear_array = global.HRE_voted_for_production
+	clear_array = global.HRE_voted_for_research
+	
+	add_to_variable = { HRE_gui_dirty_var = 0.01 }
+	
+}
+
+HRE_federalism_lobbying_success = {
+	add_to_variable = { global.HRE_mod_pol_power_factor = -0.02 }
+	add_to_variable = { global.HRE_mod_stability_factor = 0.02 }
+	add_to_variable = { global.HRE_federalism_var = 1 }
+	clear_variable = global.HRE_federalism_lobbying_amount
+	every_country = {
+		limit = {
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_lobbying.1
+	}
+}
+
+HRE_regionalism_lobbying_success = {
+	add_to_variable = { global.HRE_mod_pol_power_factor = 0.02 }
+	add_to_variable = { global.HRE_mod_stability_factor = -0.02 }
+	add_to_variable = { global.HRE_federalism_var = -1 }
+	clear_variable = global.HRE_regionalism_lobbying_amount
+	every_country = {
+		limit = {
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_lobbying.2
+	}
+}
+
+HRE_federalism_dictate_effect = {
+	add_to_variable = { global.HRE_mod_pol_power_factor = -0.02 }
+	add_to_variable = { global.HRE_mod_stability_factor = 0.02 }
+	add_to_variable = { global.HRE_federalism_var = 1 }
+	every_country = {
+		limit = {
+			NOT = {
+				has_country_flag = HRE_current_emperor
+			}
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_dictate.1
+	}
+}
+
+HRE_regionalism_dictate_effect =  {
+	add_to_variable = { global.HRE_mod_pol_power_factor = 0.02 }
+	add_to_variable = { global.HRE_mod_stability_factor = -0.02 }
+	add_to_variable = { global.HRE_federalism_var = -1 }
+	every_country = {
+		limit = {
+			NOT = {
+				has_country_flag = HRE_current_emperor
+			}
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_dictate.2
+	}
+}
+
+HRE_welfare_lobbying_success = {
+	add_to_variable = { global.HRE_mod_war_support_factor = -0.02 }
+	add_to_variable = { global.HRE_mod_factory_output_factor = 0.02 }
+	add_to_variable = { global.HRE_welfare_var = 1 }
+	clear_variable = global.HRE_welfare_lobbying_amount
+	every_country = {
+		limit = {
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_lobbying.3
+	}
+}
+
+HRE_militarization_lobbying_success = {
+	add_to_variable = { global.HRE_mod_war_support_factor = 0.02 }
+	add_to_variable = { global.HRE_mod_factory_output_factor = -0.02 }
+	add_to_variable = { global.HRE_welfare_var = -1 }
+	clear_variable = global.HRE_militarization_lobbying_amount
+	every_country = {
+		limit = {
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_lobbying.4
+	}
+}
+
+HRE_welfare_dictate_effect = {
+	add_to_variable = { global.HRE_mod_war_support_factor = -0.02 }
+	add_to_variable = { global.HRE_mod_factory_output_factor = 0.02 }
+	add_to_variable = { global.HRE_welfare_var = 1 }
+	every_country = {
+		limit = {
+			NOT = {
+				has_country_flag = HRE_current_emperor
+			}
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_dictate.3
+	}
+}
+
+HRE_militarization_dictate_effect =  {
+	add_to_variable = { global.HRE_mod_war_support_factor = 0.02 }
+	add_to_variable = { global.HRE_mod_factory_output_factor = -0.02 }
+	add_to_variable = { global.HRE_welfare_var = -1 }
+	every_country = {
+		limit = {
+			NOT = {
+				has_country_flag = HRE_current_emperor
+			}
+			has_country_flag = HRE_member_state
+		}
+		country_event = HRE_dictate.4
+	}
+}
+
+HRE_clamp_all_progress_bars = {
+	clamp_variable = {
+		var = global.HRE_federalism_var
+		min = 0
+		max = 60
+	}
+	clamp_variable = {
+		var = global.HRE_welfare_var
+		min = 0
+		max = 60
 	}
 }

@@ -6,7 +6,7 @@ defined_text = {
 				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = "HRE_ZZX_emperor_portait"
+        localization_key = [GetZZXLeaderPortrait]
     }
 	text = {
         trigger = {
@@ -14,7 +14,7 @@ defined_text = {
 				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = "HRE_ZZY_emperor_portait"
+        localization_key = [GetZZYLeaderPortrait]
     }
 }
 
@@ -26,7 +26,7 @@ defined_text = {
 				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = ZZX_emperor_name
+        localization_key = "[ZZX.GetLeader] of [ZZX.GetName]"
     }
 	text = {
         trigger = {
@@ -34,6 +34,96 @@ defined_text = {
 				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = ZZY_emperor_name
+        localization_key = "[ZZY.GetLeader] of [ZZY.GetName]"
+    }
+}
+defined_text = {
+    name = GetCantVoteRoot
+    text = {
+        trigger = {
+            original_tag = ROOT
+        }
+        localization_key = HRE_cant_vote_root_loc
+    }
+}
+defined_text = {
+    name = GetCantVoteTwice
+    text = {
+        trigger = {
+            FROM = {
+				has_country_flag = already_voted_in_this_cycle
+			}
+        }
+        localization_key = HRE_cant_vote_twice_loc
+    }
+}
+defined_text = {
+    name = GetCantVoteCurrentEmperor
+    text = {
+        trigger = {
+            has_country_flag = HRE_current_emperor
+        }
+        localization_key = HRE_cant_vote_current_emperor_loc
+    }
+}
+defined_text = {
+    name = GetDictatePolPower
+    text = {
+        trigger = {
+            has_political_power > 99
+        }
+        localization_key = HRE_pol_power_100_y
+    }
+	text = {
+        trigger = {
+            has_political_power < 100
+        }
+        localization_key = HRE_pol_power_100_r
+    }
+}
+defined_text = {
+    name = GetLobbyPolPower
+    text = {
+        trigger = {
+			has_political_power > 19
+        }
+        localization_key = HRE_pol_power_20_y
+    }
+	text = {
+        trigger = {
+            has_political_power < 20
+        }
+        localization_key = HRE_pol_power_20_r
+    }
+}
+
+defined_text = {
+    name = GetNotEmperorError
+    text = {
+        trigger = {
+			NOT = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = HRE_emperor_error_tt
+    }
+}
+
+defined_text = {
+    name = GetHasFederalismTimeout
+    text = {
+        trigger = {
+			has_variable = HRE_federalism_decision_timeout
+        }
+        localization_key = HRE_federalism_timeout_tt
+    }
+}
+defined_text = {
+    name = GetHasWelfareTimeout
+    text = {
+        trigger = {
+			has_variable = HRE_welfare_decision_timeout
+        }
+        localization_key = HRE_welfare_timeout_tt
     }
 }
