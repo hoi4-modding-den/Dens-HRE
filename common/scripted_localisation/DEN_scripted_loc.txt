@@ -1,38 +1,33 @@
 defined_text = {
-    name = GetZZXLeaderPortrait
+    name = GetEmperorName
+	text = {
+        trigger = {
+            all_country = {
+				NOT = {
+					has_country_flag = HRE_current_emperor
+				}
+			}
+        }
+        localization_key = "Regency Council"
+    }
     text = {
         trigger = {
             ZZX = {
-				has_country_leader = {
-					character = ZZX_king_von_debug
-				}
+				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = GFX_portrait_ZZX_king_von_debug
+        localization_key = "[ZZX.GetLeader] of [ZZX.GetNonIdeologyName]"
     }
-}
-defined_text = {
-    name = GetZZYLeaderPortrait
-    text = {
+	text = {
         trigger = {
             ZZY = {
-				has_country_leader = {
-					character = ZZY_czar_tito
-				}
+				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = GFX_portrait_ZZY_czar_tito
+        localization_key = "[ZZY.GetLeader] of [ZZY.GetNonIdeologyName]"
     }
 }
-defined_text = {
-    name = GetHREButtonTooltip
-    text = {
-        trigger = {
-			has_country_flag = HRE_member_state
-        }
-        localization_key = HRE_open_button_tt
-    }
-}
+
 defined_text = {
     name = GetEmperorPortrait
     text = {
