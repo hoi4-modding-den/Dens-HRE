@@ -20,13 +20,23 @@ defined_text = {
 
 defined_text = {
     name = GetEmperorName
+	text = {
+        trigger = {
+            all_country = {
+				NOT = {
+					has_country_flag = HRE_current_emperor
+				}
+			}
+        }
+        localization_key = "Regency Council"
+    }
     text = {
         trigger = {
             ZZX = {
 				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = "[ZZX.GetLeader] of [ZZX.GetName]"
+        localization_key = "[ZZX.GetLeader] of [ZZX.GetNonIdeologyName]"
     }
 	text = {
         trigger = {
@@ -34,7 +44,7 @@ defined_text = {
 				has_country_flag = HRE_current_emperor
 			}
         }
-        localization_key = "[ZZY.GetLeader] of [ZZY.GetName]"
+        localization_key = "[ZZY.GetLeader] of [ZZY.GetNonIdeologyName]"
     }
 }
 defined_text = {
@@ -125,5 +135,80 @@ defined_text = {
 			has_variable = HRE_welfare_decision_timeout
         }
         localization_key = HRE_welfare_timeout_tt
+    }
+}
+defined_text = {
+    name = GetFederalismStance
+    text = {
+        trigger = {
+			check_variable = { global.HRE_imperial_stance_federalism > 2 }
+        }
+        localization_key = "Pro-Regionalist"
+    }
+	text = {
+        trigger = {
+			check_variable = { global.HRE_imperial_stance_federalism < 2 }
+        }
+        localization_key = "Pro-Federalist"
+    }
+	text = {
+        trigger = {
+			check_variable = {
+				var = global.HRE_imperial_stance_federalism
+				value = 2
+				compare = equals
+			}
+        }
+        localization_key = "Neutral"
+    }
+}
+defined_text = {
+    name = GetWelfareStance
+    text = {
+        trigger = {
+			check_variable = { global.HRE_imperial_stance_welfare > 2 }
+        }
+        localization_key = "Pro-Militarization"
+    }
+	text = {
+        trigger = {
+			check_variable = { global.HRE_imperial_stance_welfare < 2 }
+        }
+        localization_key = "Pro-Welfare"
+    }
+	text = {
+        trigger = {
+			check_variable = {
+				var = global.HRE_imperial_stance_welfare
+				value = 2
+				compare = equals
+			}
+        }
+        localization_key = "Neutral"
+    }
+}
+defined_text = {
+    name = GetPapacyStance
+    text = {
+        trigger = {
+			check_variable = { global.HRE_imperial_stance_papacy > 2 }
+        }
+        localization_key = "Pro-Temporal"
+    }
+	text = {
+        trigger = {
+			check_variable = { global.HRE_imperial_stance_papacy < 2 }
+        }
+        localization_key = "Pro-Papacy"
+    }
+	text = {
+        trigger = {
+			check_variable = {
+				var = global.HRE_imperial_stance_papacy
+				value = 2
+				compare = equals
+			}
+        }
+        localization_key = "Neutral"
     }
 }

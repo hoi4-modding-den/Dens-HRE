@@ -30,6 +30,9 @@ HRE_elect_the_new_emperor = {
 			}
 		}
 		set_country_flag = HRE_current_emperor
+		set_variable = { global.HRE_imperial_stance_federalism = THIS.HRE_national_stance_federalism }
+		set_variable = { global.HRE_imperial_stance_welfare = THIS.HRE_national_stance_welfare }
+		set_variable = { global.HRE_imperial_stance_papacy = THIS.HRE_national_stance_papacy }
 		every_country = {
 			limit = {
 				has_country_flag = HRE_current_emperor

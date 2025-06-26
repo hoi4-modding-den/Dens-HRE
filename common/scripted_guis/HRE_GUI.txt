@@ -26,6 +26,8 @@ scripted_gui = {
 				add_to_variable = { HRE_gui_dirty_var = 0.01 }
 			}
 		}
+		
+		
 	}
 	HRE_gui_main_window = {
 		context_type = player_context
@@ -196,6 +198,11 @@ scripted_gui = {
 				image = "[THIS.GetFlag]"
 			}
 		}
+		#ai_enabled = {
+		#	always = yes
+		#}
+		
+		
 	}
 	HRE_policy_gui_main_window = {
 		context_type = player_context
@@ -327,6 +334,9 @@ scripted_gui = {
                 frame = global.HRE_papacy_var
             }
 		}
+		
+		
+		
 	}
 	HRE_emperor_trait_gui = {
 		context_type = player_context
@@ -336,5 +346,6 @@ scripted_gui = {
 		visible = {
 			has_country_flag = HRE_current_emperor
 		}
+		
 	}
 }

@@ -214,6 +214,12 @@ guiTypes = {
 				
 			}
 			iconType = {
+				name = "HRE_current_emperor_portrait_fallback"
+				spriteType = "GFX_HRE_regenecy_council"
+				position = { x = 20 y = 170 }
+				pdx_tooltip = HRE_emperor_name_tt
+			}
+			iconType = {
 				name = "HRE_current_emperor_portrait"
 				#spriteType = "GFX_portrait_unknown"
 				position = { x = 20 y = 170 }
@@ -228,7 +234,7 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "HRE_current_emperor_name"
-				position = { x = 25 y = 385 }
+				position = { x = 22 y = 388 }
 				textureFile = ""
 				font = "hoi_16typewriter"
 				borderSize = {x = 0 y = 0}
@@ -236,6 +242,17 @@ guiTypes = {
 				maxWidth = 156
 				maxHeight = 70
 				format = center
+			}
+			instantTextboxType = {
+				name = "HRE_current_emperor_policy_stances"
+				position = { x = 14 y = 435 }
+				textureFile = ""
+				font = "hoi_16mbs"
+				borderSize = {x = 0 y = 0}
+				text = HRE_emperor_policy_stances
+				maxWidth = 180
+				maxHeight = 300
+				format = left
 			}
 			instantTextboxType = {
 				name = "HRE_name"
@@ -272,20 +289,20 @@ guiTypes = {
 			}
 			containerWindowType = {
 				name = "HRE_countries_list"
-				position = { x = 200 y = 170 }
+				position = { x = 187 y = 165 }
 				size = { width = 200 height = 480 }
 				Orientation = upper_left
 
 				verticalScrollbar = "right_vertical_slider"
 				
-				#background = {
-				#	name = "background"
-				#	quadTextureSprite = "GFX_tiled_plain_bg"
-				#}
+				background = {
+					name = "background"
+					quadTextureSprite = "GFX_tiled_window_thin_border2"
+				}
 				
 				gridboxtype = {
 					name = "HRE_members_list_gridbox"
-					position = { x = 0 y = 0 }
+					position = { x = 15 y = 15 }
 					size = { width = 100%% height = 100%% }
 					slotsize = { width = 156 height = 40 }
 					max_slots_horizontal = 1
@@ -308,6 +325,8 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_window_thin_border2"
 			#alwaystransparent = yes
 		}
+		
+		
 		
 		containerWindowType = {
 			name = "HRE_agenda_info"
@@ -342,6 +361,11 @@ guiTypes = {
 				maxHeight = 20
 				format = center
 			}
+		}
+		buttonType = {
+			name = "HRE_agenda_help_button"
+			spriteType = GFX_help_button
+			position = { x = 560 y = 15 }
 		}
 		containerWindowType = {
 			name = "HRE_infra_agenda_window"
@@ -670,6 +694,12 @@ guiTypes = {
 		position = { x=402 y=43 }
 		size = { width = 600 height = 655 }
 		
+		buttonType = {
+			name = "HRE_policy_help_button"
+			spriteType = GFX_help_button
+			position = { x = 560 y = 15 }
+		}
+		
 		background = {
 			name = "HRE_voting_window_Border"
 			quadTextureSprite ="GFX_tiled_window_thin_border2"
@@ -678,7 +708,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "HRE_federalism_policy_window"
-			position = { x=10 y=35 }
+			position = { x=10 y=40 }
 			size = { width = 580 height = 180 }
 			
 			background = {
@@ -807,7 +837,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "HRE_welfare_policy_window"
-			position = { x=10 y=235 }
+			position = { x=10 y=240 }
 			size = { width = 580 height = 180 }
 			
 			background = {
@@ -936,7 +966,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = "HRE_papacy_policy_window"
-			position = { x=10 y=435 }
+			position = { x=10 y=440 }
 			size = { width = 580 height = 180 }
 			
 			background = {
@@ -949,7 +979,7 @@ guiTypes = {
 				font = "hoi_24header"
 				position = { x = 155 y = 30 }
 				#orientation = "CENTER"
-				format = "center"
+				#format = "center"
 				maxwidth = 400
 			}
 			iconType = {
