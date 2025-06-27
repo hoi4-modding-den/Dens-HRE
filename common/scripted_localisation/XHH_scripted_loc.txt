@@ -1,0 +1,13 @@
+defined_text = {
+    name = GetXHHLeaderPortrait
+    text = {
+        trigger = {
+            XHH = {
+				has_country_leader = {
+					character = XHH_tom_first_name
+				}
+			}
+        }
+        localization_key = GFX_portrait_XHH_tom_first
+    }
+}

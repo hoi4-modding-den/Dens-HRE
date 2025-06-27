@@ -1,0 +1,23 @@
+characters = {
+	XHH_tom_first = {
+		name = XHH_tom_first_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XHH_tom_first
+			}
+		}
+		country_leader = {
+			traits = { XHH_fuerst_of_hamburg }
+			ideology = despotism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			traits = { XHH_fuerst_of_hamburg constitutional_monarch }
+			ideology = liberalism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+}
+	

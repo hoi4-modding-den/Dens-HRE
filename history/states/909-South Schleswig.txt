@@ -2,11 +2,15 @@ state = {
 	id = 909
 	name = "STATE_909"
 	manpower = 152520
+	resources = {
+		steel = 9
+	}
 	state_category = rural
 	
 	history = {
 
-		owner = ZZZ #owner = GER
+		owner = XHH #owner = GER
+		add_core_of = XHH
 		#add_core_of = GER
 		#add_core_of = SHL
 		#add_core_of = PRE
@@ -17,7 +21,7 @@ state = {
 
 		buildings = {
 			infrastructure = 3
-			arms_factory = 1
+			industrial_complex = 1
 		}
 		
 	}
