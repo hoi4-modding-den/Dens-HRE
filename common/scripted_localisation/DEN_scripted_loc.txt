@@ -26,6 +26,14 @@ defined_text = {
         }
         localization_key = "[ZZY.GetLeader] of [ZZY.GetNonIdeologyName]"
     }
+	text = {
+        trigger = {
+            XBR = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XBR.GetLeader] of [XBR.GetNonIdeologyName]"
+    }
 }
 
 defined_text = {
@@ -45,5 +53,13 @@ defined_text = {
 			}
         }
         localization_key = [GetZZYLeaderPortrait]
+    }
+	text = {
+        trigger = {
+            XBR = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXBRLeaderPortrait]
     }
 }
