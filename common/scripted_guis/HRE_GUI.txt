@@ -148,6 +148,18 @@ scripted_gui = {
 				add_to_variable = { HRE_gui_dirty_var = 0.01 }
 				add_to_array = { global.HRE_voted_for_research = THIS.id }
 			}
+			HRE_agenda_help_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = HRE_agenda_tutorial_visible
+						}
+					}
+					country_event = HRE_tutorial.1
+					set_country_flag = HRE_agenda_tutorial_visible
+					add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				}
+			}
 		}
 		triggers = {
 			HRE_vote_infra_button_visible = {
@@ -258,6 +270,18 @@ scripted_gui = {
 				add_to_variable = { HRE_gui_dirty_var = 0.01 }
 				add_to_variable = { global.HRE_militarization_lobbying_amount = 1 }
 				add_political_power = -20
+			}
+			HRE_policy_help_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = HRE_policy_tutorial_visible
+						}
+					}
+					country_event = HRE_tutorial.2
+					set_country_flag = HRE_policy_tutorial_visible
+					add_to_variable = { HRE_gui_dirty_var = 0.01 }
+				}
 			}
 		}
 		triggers = {

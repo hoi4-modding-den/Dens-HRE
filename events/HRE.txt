@@ -2,6 +2,7 @@ add_namespace = HRE
 add_namespace = HRE_agenda
 add_namespace = HRE_lobbying
 add_namespace = HRE_dictate
+add_namespace = HRE_tutorial
 
 news_event = {
 	id = HRE.1
@@ -346,4 +347,35 @@ country_event = {
 		custom_effect_tooltip = HRE_lobbying.4_tt
 
 	}
+}
+
+country_event = {
+	id = HRE_tutorial.1
+	title = HRE_tutorial.1.t
+	desc = HRE_tutorial.1.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_tutorial.1.a
+		clr_country_flag = HRE_agenda_tutorial_visible
+    }
+}
+country_event = {
+	id = HRE_tutorial.2
+	title = HRE_tutorial.2.t
+	desc = HRE_tutorial.2.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = HRE_tutorial.2.a
+		clr_country_flag = HRE_policy_tutorial_visible
+    }
 }
