@@ -1,0 +1,53 @@
+defined_text = {
+    name = GetXWBLeaderPortrait
+    text = {
+        trigger = {
+        	XWB = {
+			    has_country_leader = {
+				    character = XWB_ferdinand_porsche
+			    }
+		    }
+        }
+        localization_key = GFX_portrait_XWB_pauline_wurttemberg
+    }
+    text = {
+        trigger = {
+        	XWB = {
+			    has_country_leader = {
+				    character = XWB_pauline_wurttemberg
+			    }
+		    }
+        }
+        localization_key = GFX_portrait_XWB_pauline_wurttemberg
+    }
+    text = {
+        trigger = {
+        	XWB = {
+			    has_country_leader = {
+				    character = XWB_frederick_hohenzollern 
+			    }
+		    }
+        }
+        localization_key = GFX_portrait_XWB_frederick_hohenzollern
+    }
+    text = {
+        trigger = {
+        	XWB = {
+			    has_country_leader = {
+				    character = XWB_eugen_bolz
+			    }
+		    }
+        }
+        localization_key = GFX_portrait_XWB_eugen_bolz
+    }
+    text = {
+        trigger = {
+        	XWB = {
+			    has_country_leader = {
+				    character = XWB_josef_schlaffer
+			    }
+		    }
+        }
+        localization_key = GFX_portrait_XWB_josef_schlaffer
+    }
+}

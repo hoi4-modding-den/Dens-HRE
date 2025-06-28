@@ -1,0 +1,84 @@
+characters = {
+	XWB_ferdinand_porsche = {
+		name = XWB_ferdinand_porsche_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWB_ferdinand_porsche
+			}
+		}
+		country_leader = {
+			traits = {
+				fascist_corporatist
+			}
+			ideology = rexism
+			expire = "1951.1.1.1"
+			id = -1
+		}
+	}
+	XWB_albrecht_wurttemberg = {
+		name = XWB_albrecht_wurttemberg_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWB_albrecht_placeholder
+			}
+		}
+		country_leader = {
+			traits = { 
+				HRE_kingdom_wurttemberg
+				fascist_sympathies 
+				}
+			ideology = oligarchism
+			expire = "1965.1.1.1"
+			id = -1
+			
+		}
+	}
+	XWB_frederick_hohenzollern = {
+		name = XWB_frederick_hohenzollern_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWB_frederick_hohenzollern
+			}
+		}
+		country_leader = {
+			traits = {  
+				HRE_principality_hohenzollern
+				DEN_fascist_militarist 
+			}
+			ideology = falangism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	XWB_eugen_bolz = {
+		name = XWB_eugen_bolz_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWB_eugen_bolz
+			}
+		}
+		country_leader = {
+			traits = {
+				
+		  	}
+			ideology = conservatism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+	XWB_josef_schlaffer = {
+		name = XWB_josef_schlaffer_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWB_josef_schlaffer
+			}
+		}
+		country_leader = {
+			# traits = {  }
+			ideology = marxism
+			expire = "1964.1.1.1"
+			id = -1
+		}
+	}
+}
+	

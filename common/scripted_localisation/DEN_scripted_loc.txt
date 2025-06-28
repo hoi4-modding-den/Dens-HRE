@@ -82,6 +82,24 @@ defined_text = {
         }
         localization_key = "[XS1.GetLeader] of [XS1.GetNonIdeologyName]"
     }
+    text = {
+        trigger = {
+            XWB = {
+		has_country_flag = HRE_current_emperor
+                has_country_flag = XWB_king_yes
+			}
+        }
+        localization_key = XWB_albrecht_wurttemberg_name
+    }
+    text = {
+        trigger = {
+            XWB = {
+		has_country_flag = HRE_current_emperor
+                has_country_flag = XWB_prince_yes
+			}
+        }
+        localization_key = XWB_frederick_hohenzollern_name #both king and prince have their kingdom/principality already in their name (Wurttemberg/Hohenzollern)
+    }
 }
 
 defined_text = {
@@ -157,5 +175,13 @@ defined_text = {
 			}
         }
         localization_key = [GetXS1LeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XWB = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXWBLeaderPortrait]
     }
 }
