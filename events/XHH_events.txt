@@ -1,0 +1,74 @@
+add_namespace = XHH_internal_events
+
+country_event = {
+	id = XHH_internal_events.1
+	title = XHH_internal_events.1.t
+	desc = XHH_internal_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.1.a
+		effect_tooltip = {
+			1017 = {
+				remove_dynamic_modifier = {
+					modifier = XHH_bremen_autonomy
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.2
+	title = XHH_internal_events.2.t
+	desc = XHH_internal_events.2.desc
+	
+	picture = GFX_report_event_journalists_speech
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.2.a
+		add_popularity = {
+			ideology = communism
+			popularity = 0.02
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		swap_ideas = {
+			remove_idea = XHH_hanseatic_influence
+			add_idea = XHH_hanseatic_influence_worse
+		}
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.3
+	title = XHH_internal_events.3.t
+	desc = XHH_internal_events.3.desc
+	
+	picture = GFX_report_event_poland_rejects
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.3.a
+		add_political_power = 100
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+    }
+}
+

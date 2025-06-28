@@ -2,29 +2,40 @@
 
  XHH_GATHERING_STORM_DESC: "Not related to Burgers. The name of Hamburg actually comes from Hammerburg, the original name of the settlement in the same location."
 
+# COUNTRY NAMES
  XHH: "Hamburg"
  XHH_DEF: "Hamburg"
  XHH_ADJ: "Hamburgish"
- XHH_neutrality: "Hamburger Principality"
- XHH_neutrality_DEF: "the Kurfürstentum Hamburg und Umgebung"
- XHH_neutrality_ADJ: "Hamburger"
- XHH_democratic: "Hamburger Principality"
- XHH_democratic_DEF: "the Kurfürstentum Hamburg und Umgebung"
- XHH_democratic_ADJ: "Hamburger"
+ XHH_neutrality: "Principality of Hamburg"
+ XHH_neutrality_DEF: "the Kurfürstentum Hamburg"
+ XHH_neutrality_ADJ: "Hamburgish"
+ XHH_democratic: "Principality of Hamburg"
+ XHH_democratic_DEF: "the Kurfürstentum Hamburg"
+ XHH_democratic_ADJ: "Hamburgish"
  XHH_fascism: "Hamburger National State"
  XHH_fascism_DEF: "the Hamburger Nationalstaat"
- XHH_fascism_ADJ: "Hamburger"
+ XHH_fascism_ADJ: "Hamburgish"
  XHH_communism: "Hamburger Commune"
  XHH_communism_DEF: "the Hamburger Kommune"
- XHH_communism_ADJ: "Hamburger"
+ XHH_communism_ADJ: "Hamburgish"
+
+ XHH_republic_neutrality: "German Hanseatic Federation"
+ XHH_republic_neutrality: "the Bund der Deutschen Hanse"
+ XHH_republic_neutrality_ADJ: "Hamburgish"
+ XHH_republic_democratic: "Northern Confederation"
+ XHH_republic_democratic: "the Nördliche Konförderation"
+ XHH_republic_democratic_ADJ: "Northern"
 
 
+# LEADER NAMES
  XHH_tom_first_name: "Tom I."
 
 
+# TRAITS
  XHH_fuerst_of_hamburg: "Kurfürst der Domäne der Freien und Hansestadt Hamburg, Herzog von Schleswig-Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel"
 
 
+# PARTY NAMES
  XHH_democratic_party: "Hamburger Senat"
  XHH_democratic_party_long: "Senat der Freien und Hansestadt Hamburg und ihrer Abhängigkeiten"
  XHH_neutrality_party: "Haus Hamburg-Mecklenburg"
@@ -35,12 +46,43 @@
  XHH_communism_party_long: "Vereinigte Hafenarbeitergewerkschaften"
 
 
- XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
- XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by Fürst Tom's predecessor, has been a hindrance to us. We must revoke it to gain more control over our nation."
+# IDEAS
+ XHH_hanseatic_influence: "Influence of the Hanseatic League"
+ XHH_hanseatic_influence_desc: "The Hanseatic League, while having lost most of the influence which they held in the 15th century, still enjoys a monopoly on trade within [ROOT.GetNameDef] and exploits its connections within the senate to maintain its dominance."
 
-
+# DYNAMIC MODIFIERS
  XHH_bremen_autonomy: "Bremen Autonomy"
  XHH_bremen_autonomy_desc: "The Hanseatic City of Bremen has been granted significant autonomy in their industrial planning."
  XHH_hamburg_immigration_hotspot: "Immigration Hotspot"
 
+
+# DECISIONS
+ XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
+ XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by the predecessor of the line of Hamburg-Mecklenburg, has been a hindrance to us. We must revoke it to gain more control over our nation."
+
+
+# FOCUS TREE
+ XHH_conflict_with_the_hanse: "Negotiations with the Hanse"
+ XHH_conflict_with_the_hanse_desc: ""
+ XHH_boons_of_the_kiel_canal: "Boons of the Kiel Canal"
+ XHH_boons_of_the_kiel_canal_desc: ""
+ XHH_report_from_hannover: "Crackdown on Hannoverian Separatists"
+ XHH_report_from_hannover_desc: ""
+ XHH_open_hamburger_senat: "150th Session of the Hamburg Senate"
+ XHH_open_hamburger_senat_desc: ""
+
+
+# EVENTS
+ XHH_internal_events.1.t: "Aufhebung des Bremer Freistadtsgesetzes!"
+ XHH_internal_events.1.desc: "In the last few months, the administration has rolled back most of the protections granting the Hanseatic city of Bremen additional autonomy in regards to their economic planning. While the Bremer Senat is outraged over this blatant act of centralisation, the [ROOT.GetRulingParty] has commented on it as erasing special priviliges granted by the previous Kurfürst."
+ XHH_internal_events.1.a: "No more special cases!"
+ XHH_internal_events.2.t: "Meeting with Ältermann Bugge"
+ XHH_internal_events.2.desc: ""
+ XHH_internal_events.2.a: "That could have gone better."
+ XHH_internal_events.3.t: "Kurfürst Tom opens the 150th Session of the Hamburg Senate"
+ XHH_internal_events.3.desc: ""
+ XHH_internal_events.3.a: "To another successful year!"
+
+
+# STATE NAMES
  STATE_1017: "Bremen"

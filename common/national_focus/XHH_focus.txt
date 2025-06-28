@@ -1,0 +1,158 @@
+focus_tree = {
+	id = XHH_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XHH
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+
+	initial_show_position = {
+		x = 11
+		y = 0
+	}
+
+	focus = {
+		id = XHH_conflict_with_the_hanse
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 9
+		y = 0
+		#relative_position_id = 
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = XHH_internal_events.2
+		}
+	}
+
+	focus = {
+		id = XHH_boons_of_the_kiel_canal
+		icon = GFX_focus_generic_merchant_fleet
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 0
+		relative_position_id = XHH_conflict_with_the_hanse
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+			NOT = { controls_state = 58 }
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_report_from_hannover
+		icon = GFX_goal_generic_political_pressure
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 0
+		relative_position_id = XHH_boons_of_the_kiel_canal
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+			NOT = { controls_state = 59 }
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = -0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			HAN = {
+				remove_state_claim = 59
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_open_hamburger_senat
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = XHH_conflict_with_the_hanse }
+		prerequisite = { focus = XHH_boons_of_the_kiel_canal }
+		prerequisite = { focus = XHH_report_from_hannover }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_boons_of_the_kiel_canal
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = XHH_internal_events.3
+		}
+	}
+
+}
