@@ -1,5 +1,7 @@
 capital = 58
 
+oob = "XHH_1936"
+
 set_research_slots = 3
 set_convoys = 50
 set_stability = 0.75
@@ -20,6 +22,10 @@ set_technology = {
 	formation_flying = 1
 	fuel_silos = 1
 }
+
+set_variable = { HRE_national_stance_federalism = 3 } 
+set_variable = { HRE_national_stance_welfare = 1 } 
+set_variable = { HRE_national_stance_papacy = 3 } 
 
 recruit_character = XHH_tom_first
 
