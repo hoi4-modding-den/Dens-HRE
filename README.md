@@ -49,6 +49,8 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | Tag | Github Name        | Discord Name           |
   | --- | :----------------: | :--------------------: |
   | XAS | STupidLord         | stupidlord             |
+  | XS0 | STupidLord         | stupidlord             |
+  | XS1 | STupidLord         | stupidlord             |
   | XBG | sprinkleskid       | sprinkleskid           |
   | XBR | Kasastul           | kasastul               |
   | XCL | johndoodoomayan    | johndoodoomayan        |

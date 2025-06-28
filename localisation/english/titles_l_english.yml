@@ -4,7 +4,16 @@
 
   # See country_leader/titles.txt
 
-  HRE_emperor:0 "Emperor of the Holy Roman Empire"
-  HRE_archduchy_austria:0 "Archduke of Austria"
-  HRE_duchy_styria:0 "Duke of Styria"
-  HRE_duchy_cilli:0 "Duke of Cilli"
+  EMPEROR_MALE: "Emperor"
+  EMPEROR_FEMALE: "Empress"
+  ARCHDUKE_MALE: "Archduke"
+  ARCHDUKE_FEMALE: "Archduchess"
+  DUKE_MALE: "Duke"
+  DUKE_FEMALE: "Duchess"
+  COUNT_MALE: "Count"
+  COUNT_FEMALE: "Countess"
+
+  HRE_emperor: "[EMPEROR_GENDER] of the Holy Roman Empire"
+  HRE_archduchy_austria: "[ARCHDUKE_GENDER] of Austria"
+  HRE_duchy_styria: "[DUKE_GENDER] of Styria"
+  HRE_county_cilli: "[COUNT_GENDER] of Cilli"

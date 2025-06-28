@@ -1,8 +1,8 @@
 state = {
 	id = 976
 	name = "STATE_976"
-	manpower = 1500000
-	
+
+	manpower = 1602704 # 312480 from Slovenia, 1290224 from Austria | Was 1500000	
 	state_category = city
 	
 	resources = {
@@ -11,36 +11,27 @@ state = {
 	}
 
 	history = {
+		owner = XS0
+		add_core_of = XS0
 
-		owner = ZZZ #owner = AUS
-		#add_core_of = AUS
+		victory_points = {
+			9648 5 
+		}
+		victory_points = {
+			3673 3
+		}
+		victory_points = {
+			665 1
+		}
 
 		buildings = {
 			infrastructure = 3 
 			industrial_complex = 2
 		}
-
-		victory_points = {
-			9648 5 
-		}
-
-		victory_points = {
-			3673 3
-		}
-
-		victory_points = {
-			11612 2
-		}
-
-		1938.3.12 = {
-			owner = ZZZ #owner = GER
-			controller = GER
-			#add_core_of = GER
-		}
 	}
 
 	provinces = {
-		653 3673 3674 6687 9646 9648 9650 9679 11612 
+		653 665 668 3673 3674 6672 6673 6687 6690 9646 9648 9679 
 	}
 
 	local_supplies = 0.0 

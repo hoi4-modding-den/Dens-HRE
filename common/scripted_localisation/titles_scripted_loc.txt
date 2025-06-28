@@ -1,0 +1,48 @@
+defined_text = {
+	name = EMPEROR_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = EMPEROR_FEMALE
+	}
+	text = {
+		localization_key = EMPEROR_MALE
+	}
+}
+defined_text = {
+	name = ARCHDUKE_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = ARCHDUKE_FEMALE
+	}
+	text = {
+		localization_key = ARCHDUKE_MALE
+	}
+}
+defined_text = {
+	name = DUKE_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = DUKE_FEMALE
+	}
+	text = {
+		localization_key = DUKE_MALE
+	}
+}
+defined_text = {
+	name = COUNT_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = COUNT_FEMALE
+	}
+	text = {
+		localization_key = COUNT_MALE
+	}
+}

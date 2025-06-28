@@ -1,25 +1,22 @@
 state = {
 	id = 4
 	name = "STATE_4"
-	manpower = 2297983 # was 2595983
 
+	manpower = 3507779 # Was 2297983 # was 2595983
+	state_category = large_city
 	resources = {
 		oil = 2 
 	}
-	
-	state_category = large_city
-	
+
 	history = {
-
-		owner = ZZZ #owner = AUS
-		#add_core_of = AUS
+		owner = XAS
+		add_core_of = XAS
 
 		victory_points = {
-			11666 30 
+			11666 30 # Wien/Vienna
 		}
-
 		victory_points = {
-			732 10
+			732 10 # Linz
 		}
 
 		buildings = {
@@ -36,23 +33,10 @@ state = {
                 }
             }
 		}
-		
-		1938.3.12 = {
-			owner = ZZZ #owner = GER
-			controller = GER
-			#add_core_of = GER
-		}
-
-		1939.1.1 = {
-			buildings = {
-				anti_air_building = 5
-			}
-		}
-
 	}
 
 	provinces = {
-		704 732 3718 6552 6690 6723 6739 9527 11651 11666 
+		704 732 3718 6552 6723 6739 9527 11651 11666 
 	}
 
 	local_supplies = 0.0 

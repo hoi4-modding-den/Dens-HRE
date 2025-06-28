@@ -1,26 +1,29 @@
-state=
-{
-	id=102
-	name="STATE_102"
-	manpower = 811050 # was 1144300 before Ljubljana split
-	
+state = {
+	id = 102
+	name = "STATE_102"
+
+	manpower = 612078 # 468720 from Slovenia, 143358 from Austria | Was 811050 # was 1144300 before Ljubljana split	
 	state_category = large_town
-	
-	history =
-	{
-		owner = ZZZ #owner = YUG
+
+	history = {
+		owner = XS0
+		add_core_of = XS0
+
+		victory_points = {
+			11612 2
+		}
+
 		buildings = {
 			infrastructure = 3
 		}
-		victory_points = {
-			665 1
-		}
+
 		#add_core_of = YUG
 		#add_core_of = SLV
 	}
-	provinces={
-		596 665 3631 3654 6672 9596
+
+	provinces = {
+		3631 3654 9596 11612
 	}
 	
-	local_supplies=0.0 
+	local_supplies = 0.0
 }
