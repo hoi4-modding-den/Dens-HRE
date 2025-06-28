@@ -8,13 +8,10 @@ state = {
 	}
 
 	history = {
-		owner = ZZZ #owner = ALB
-        victory_points = {
-            9780 3 
-        }
+		owner = ZZZ #owner = ALB		
         buildings = {
             infrastructure = 2
-            industrial_complex = 1
+            industrial_complex = 0	
 		}
 		#add_core_of = ALB
 		#add_claim_by = ITA
@@ -23,11 +20,10 @@ state = {
 		    controller = ITA
 		    remove_claim_by = ITA
 		}
-
 	}
 
 	provinces = {
-		3896 9780 11762
+		3896 11762
 	}
 	manpower = 246933
 	state_category = rural
