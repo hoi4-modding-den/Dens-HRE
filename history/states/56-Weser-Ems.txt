@@ -7,10 +7,8 @@ state = {
 
 	history = {
 
-		owner = ZZZ #owner = GER
-		#add_core_of = GER
-		#add_core_of = HAN
-		#add_core_of = PRE
+		owner = XPO
+		add_core_of = XPO
 
 		victory_points = {
 			241 5 # Wilhelmshaven
@@ -33,16 +31,6 @@ state = {
 				naval_base = 8
 			}
 			air_base = 3
-		}
-		
-		1939.1.1 = {
-			buildings = {
-				industrial_complex = 4
-				dockyard = 3
-				241 = {
-					naval_facility = 1 # Wilhelmshaven Naval Dockyards
-				}
-			}
 		}
 	}
 
