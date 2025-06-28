@@ -29,6 +29,15 @@ defined_text = {
     }
 }
 defined_text = {
+    name = GetCantVoteRepublic
+    text = {
+        trigger = {
+            has_country_flag = HRE_is_republic
+        }
+        localization_key = HRE_cant_vote_republic_loc
+    }
+}
+defined_text = {
     name = GetDictatePolPower
     text = {
         trigger = {

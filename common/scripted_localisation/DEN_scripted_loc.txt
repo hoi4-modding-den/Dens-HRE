@@ -34,6 +34,14 @@ defined_text = {
         }
         localization_key = "[XBR.GetLeader] of [XBR.GetNonIdeologyName]"
     }
+	text = {
+        trigger = {
+            XSC = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XSC.GetLeader] of [XSC.GetNonIdeologyName]"
+    }
     text = {
         trigger = {
             XHH = {
@@ -101,7 +109,15 @@ defined_text = {
 			}
         }
         localization_key = [GetXEXLeaderPortrait]
-    }
+	}
+	text = {
+		trigger = {
+			XSC = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXSCLeaderPortrait]
+	}
     text = {
         trigger = {
             XHH = {
