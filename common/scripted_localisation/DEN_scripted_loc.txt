@@ -94,6 +94,14 @@ defined_text = {
         }
         localization_key = [GetXBRLeaderPortrait]
     }
+	text = {
+        trigger = {
+            XEX = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXEXLeaderPortrait]
+    }
     text = {
         trigger = {
             XHH = {
