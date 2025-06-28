@@ -13,6 +13,14 @@ leader_traits = {
 	}
 
 	## Kingdoms
+	
+	HRE_kingdom_padania = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	## Archduchies
 
@@ -35,7 +43,15 @@ leader_traits = {
 	}
 
 	## Principalities
+	
+	HRE_principality_milan = {
+		random = no
 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	## Marquessates
 
 	## Counties

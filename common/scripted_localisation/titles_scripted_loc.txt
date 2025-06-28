@@ -11,6 +11,18 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = KING_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = KING_FEMALE
+	}
+	text = {
+		localization_key = KING_MALE
+	}
+}
+defined_text = {
 	name = ARCHDUKE_GENDER
 	text = {
 		trigger = {
@@ -32,6 +44,18 @@ defined_text = {
 	}
 	text = {
 		localization_key = DUKE_MALE
+	}
+}
+defined_text = {
+	name = PRINCE_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = PRINCE_FEMALE
+	}
+	text = {
+		localization_key = PRINCE_MALE
 	}
 }
 defined_text = {

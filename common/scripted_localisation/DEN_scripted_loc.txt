@@ -50,6 +50,14 @@ defined_text = {
         }
         localization_key = "[XHH.GetLeader] of [XHH.GetNonIdeologyName]"
     }
+	text = {
+        trigger = {
+            XEX = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XEX.GetLeader] of [XEX.GetNonIdeologyName]"
+    }
     text = {
         trigger = {
             XAS = {
