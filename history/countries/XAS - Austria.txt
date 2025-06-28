@@ -1,5 +1,9 @@
 capital = 4
 
+set_variable = { HRE_national_stance_federalism = 1 }
+set_variable = { HRE_national_stance_welfare = 3 }
+set_variable = { HRE_national_stance_papacy = 2 }
+
 set_convoys = 20
 set_research_slots = 3
 set_stability = 0.75
@@ -13,6 +17,10 @@ set_autonomy = {
 	target = XS1
 	autonomy_state = autonomy_personal_union
 }
+
+create_faction = XAS_FACTION_NAME
+add_to_faction = XS0
+add_to_faction = XS1
 
 recruit_character = XAS_big_gretch
 

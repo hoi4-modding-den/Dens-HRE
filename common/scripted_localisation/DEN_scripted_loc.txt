@@ -42,6 +42,30 @@ defined_text = {
         }
         localization_key = "[XHH.GetLeader] of [XHH.GetNonIdeologyName]"
     }
+    text = {
+        trigger = {
+            XAS = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XAS.GetLeader] of [XAS.GetNonIdeologyName]"
+    }
+    text = {
+        trigger = {
+            XS0 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XS0.GetLeader] of [XS0.GetNonIdeologyName]"
+    }
+    text = {
+        trigger = {
+            XS1 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XS1.GetLeader] of [XS1.GetNonIdeologyName]"
+    }
 }
 
 defined_text = {
@@ -77,5 +101,29 @@ defined_text = {
 			}
         }
         localization_key = [GetXHHLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XAS = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXASLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XS0 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXS0LeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XS1 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXS1LeaderPortrait]
     }
 }

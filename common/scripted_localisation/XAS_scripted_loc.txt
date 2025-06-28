@@ -1,0 +1,39 @@
+defined_text = {
+    name = GetXASLeaderPortrait
+    text = {
+        trigger = {
+            XAS = {
+				has_country_leader = {
+					character = XAS_big_gretch
+				}
+			}
+        }
+        localization_key = GFX_portrait_XAS_big_gretch
+    }
+}
+defined_text = {
+    name = GetXS0LeaderPortrait
+    text = {
+        trigger = {
+            XS0 = {
+				has_country_leader = {
+					character = XS2_big_gretch
+				}
+			}
+        }
+        localization_key = GFX_portrait_XAS_big_gretch
+    }
+}
+defined_text = {
+    name = GetXS1LeaderPortrait
+    text = {
+        trigger = {
+            XS1 = {
+				has_country_leader = {
+					character = XS1_big_gretch
+				}
+			}
+        }
+        localization_key = GFX_portrait_XAS_big_gretch
+    }
+}
