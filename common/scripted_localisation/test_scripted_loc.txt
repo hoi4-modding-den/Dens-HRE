@@ -25,6 +25,19 @@ defined_text = {
     }
 }
 defined_text = {
+    name = GetXSCLeaderPortrait
+    text = {
+        trigger = {
+            XSC = {
+				has_country_leader = {
+					character = XSC_king_george_ii
+				}
+			}
+        }
+        localization_key = GFX_portrait_SAX_george_of_saxony
+    }
+}
+defined_text = {
     name = GetHREButtonTooltip
     text = {
         trigger = {
@@ -33,22 +46,6 @@ defined_text = {
         localization_key = HRE_open_button_tt
     }
 }
-defined_text = {
-    name = GetEmperorPortrait
-    text = {
-        trigger = {
-            ZZX = {
-				has_country_flag = HRE_current_emperor
-			}
-        }
-        localization_key = [GetZZXLeaderPortrait]
-    }
-	text = {
-        trigger = {
-            ZZY = {
-				has_country_flag = HRE_current_emperor
-			}
-        }
-        localization_key = [GetZZYLeaderPortrait]
-    }
-}
+
+
+
