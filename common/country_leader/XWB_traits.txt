@@ -1,0 +1,19 @@
+leader_traits = {
+	XWB_catholic_anti_fascist = {
+		random = no
+			fascism_drift = -0.01
+			stability_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	XWB_popular_front_marxist = {
+		random = no
+			fascism_drift = -0.03
+			max_training = -0.25
+			democratic_acceptance = 50
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
