@@ -1,0 +1,30 @@
+HRE_acquire_titles = {
+	HRE_acquire_new_title = {
+		icon = GFX_decision_generic_form_nation
+
+		priority = 500
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.1
+			}
+		}
+
+		cancel_trigger = {
+			# TODO: Add
+		}
+
+		cost = 100
+
+		days_remove = 30
+
+		complete_effect = {
+			# TODO: Add. See titles_scripted_effects.txt
+		}
+
+		remove_effect = {
+			# TODO: Add. See titles_scripted_effects.txt
+		}
+	}
+}

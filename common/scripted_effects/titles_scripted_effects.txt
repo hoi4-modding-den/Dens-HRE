@@ -1,0 +1,11 @@
+HRE_title_system = {
+	set_variable = { HRE_title_emperor = 1}
+	set_variable = { HRE_title_archduchy_austria = 1}
+	set_variable = { HRE_title_duchy_styria = 1}
+	set_variable = { HRE_title_duchy_cilli = 1}
+
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_emperor }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_archduchy_austria }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_styria }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_cilli }
+}
