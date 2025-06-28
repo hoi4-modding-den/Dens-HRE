@@ -1,0 +1,20 @@
+XHH_bremen_autonomy = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_ITA_established_mafia
+	
+	state_production_speed_buildings_factor = -0.05
+	state_resources_factor = -0.05
+	local_building_slots_factor = 0.15
+	
+}
+
+XHH_hamburg_immigration_hotspot = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_immigration_promoted
+	
+	local_manpower = 0.2
+	
+}
+
