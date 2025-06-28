@@ -84,6 +84,14 @@ defined_text = {
     }
     text = {
         trigger = {
+            XBH = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XBH.GetLeader] of [XBH.GetNonIdeologyName]"
+    }
+    text = {
+        trigger = {
             XWB = {
 		has_country_flag = HRE_current_emperor
                 has_country_flag = XWB_king_yes
