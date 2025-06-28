@@ -21,6 +21,9 @@ HRE_elect_the_new_emperor = {
 			exists = yes
 			has_capitulated = no
 			NOT = {
+				has_country_flag = HRE_current_emperor
+			}
+			NOT = {
 				any_other_country = {
 					has_country_flag = HRE_member_state
 					exists = yes

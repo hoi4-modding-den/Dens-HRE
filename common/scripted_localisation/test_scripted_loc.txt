@@ -25,19 +25,6 @@ defined_text = {
     }
 }
 defined_text = {
-    name = GetXSCLeaderPortrait
-    text = {
-        trigger = {
-            XSC = {
-				has_country_leader = {
-					character = XSC_king_george_ii
-				}
-			}
-        }
-        localization_key = GFX_portrait_SAX_george_of_saxony
-    }
-}
-defined_text = {
     name = GetHREButtonTooltip
     text = {
         trigger = {
