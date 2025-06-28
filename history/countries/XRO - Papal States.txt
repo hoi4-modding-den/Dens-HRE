@@ -1,0 +1,43 @@
+﻿capital = 2
+
+oob = "XRO_1936"
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	trade_interdiction = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+add_ideas = {
+	export_focus
+	volunteer_only
+	civilian_economy
+}
+
+set_convoys = 50
+
+recruit_character = XRO_pope_pius_xi
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 70
+	democratic = 10
+	communism = 10
+	fascism = 10
+}
