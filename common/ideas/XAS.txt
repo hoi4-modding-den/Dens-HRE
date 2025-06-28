@@ -1,0 +1,25 @@
+ideas = {
+	country = {
+		XAS_haus_habsburg = {
+			picture = XAS_haus_habsburg
+
+			modifier = {
+				stability_factor = 0.01
+			}
+		}
+		XAS_unchecked_merchant_guilds_fake = {
+			name = XAS_unchecked_merchant_guilds
+			picture = XAS_unchecked_merchant_guilds
+
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				consumer_goods_factor = 0.25
+				production_factory_efficiency_gain_factor = -0.2
+				production_factory_max_efficiency_factor = -0.15
+				line_change_production_efficiency_factor = -0.5
+				production_speed_buildings_factor = -0.15
+			}
+		}
+	}
+}

@@ -4,6 +4,14 @@ set_variable = { HRE_national_stance_federalism = 1 }
 set_variable = { HRE_national_stance_welfare = 3 }
 set_variable = { HRE_national_stance_papacy = 2 }
 
+set_variable = { unchecked_merchant_guilds_stab = -0.05 }
+set_variable = { unchecked_merchant_guilds_ws = -0.05 }
+set_variable = { unchecked_merchant_guilds_cg = 0.25 }
+set_variable = { unchecked_merchant_guilds_eg = -0.2 }
+set_variable = { unchecked_merchant_guilds_me = -0.15 }
+set_variable = { unchecked_merchant_guilds_er = -0.5 }
+set_variable = { unchecked_merchant_guilds_ps = -0.15 }
+
 set_convoys = 20
 set_research_slots = 3
 set_stability = 0.75
@@ -22,6 +30,20 @@ create_faction = XAS_FACTION_NAME
 add_to_faction = XS0
 add_to_faction = XS1
 
+add_ideas = {
+	free_trade
+	civilian_economy
+	volunteer_only
+
+	# Ideas
+	XAS_unchecked_merchant_guilds_fake
+	XAS_haus_habsburg
+}
+
+add_dynamic_modifier = {
+	modifier = XAS_unchecked_merchant_guilds
+}
+
 recruit_character = XAS_big_gretch
 
 set_technology = {
@@ -39,8 +61,8 @@ set_technology = {
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1931.11.8"
-	election_frequency = 72
-	elections_allowed = yes
+	election_frequency = 48
+	elections_allowed = no
 }
 set_popularities = {
 	neutrality = 100

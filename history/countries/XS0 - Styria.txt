@@ -8,6 +8,15 @@ set_research_slots = 2
 set_stability = 0.75
 set_war_support = 0.1
 
+add_ideas = {
+	free_trade
+	civilian_economy
+	volunteer_only
+
+	# Ideas
+	XAS_haus_habsburg
+}
+
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -25,8 +34,8 @@ recruit_character = XS0_big_gretch
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1931.11.8"
-	election_frequency = 72
-	elections_allowed = yes
+	election_frequency = 48
+	elections_allowed = no
 }
 set_popularities = {
 	neutrality = 100
