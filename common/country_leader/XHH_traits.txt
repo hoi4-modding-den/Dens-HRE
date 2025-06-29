@@ -14,4 +14,28 @@ leader_traits = {
 		}
 	}
 
+	XHH_absolute_monarch = {
+		random = no
+		sprite = 13
+		political_power_gain = 0.05
+		war_support_factor = 0.15
+		conscription = 0.001
+	}
+
+	XHH_hanse_kontor_trait = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_hamburger_hafen_trait = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 }

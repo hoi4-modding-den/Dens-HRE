@@ -34,6 +34,7 @@ country_event = {
 	
 	option = {
         name = XHH_internal_events.2.a
+		add_stability = -0.05
 		add_popularity = {
 			ideology = communism
 			popularity = 0.02
@@ -41,9 +42,23 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		swap_ideas = {
-			remove_idea = XHH_hanseatic_influence
-			add_idea = XHH_hanseatic_influence_worse
+		if = {
+			limit = {
+				has_idea = XHH_hanseatic_influence
+			}
+			swap_ideas = {
+				remove_idea = XHH_hanseatic_influence
+				add_idea = XHH_hanseatic_influence_worse
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = XHH_hanseatic_influence_better
+			}
+			swap_ideas = {
+				remove_idea = XHH_hanseatic_influence_better
+				add_idea = XHH_hanseatic_influence
+			}
 		}
     }
 }
@@ -53,7 +68,7 @@ country_event = {
 	title = XHH_internal_events.3.t
 	desc = XHH_internal_events.3.desc
 	
-	picture = GFX_report_event_poland_rejects
+	picture = GFX_report_event_ITA_democratic_parlament
 	
 	
 	is_triggered_only = yes
@@ -69,6 +84,85 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.05
 		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		if = {
+			limit = {
+				has_idea = XHH_senate_debuff
+			}
+			swap_ideas = {
+				remove_idea = XHH_senate_debuff
+				add_idea = XHH_senate_debuff_2
+			}
+		}
     }
 }
 
+country_event = {
+	id = XHH_internal_events.4
+	title = XHH_internal_events.4.t
+	desc = XHH_internal_events.4.desc
+	
+	picture = GFX_report_event_communists_in_riga
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.4.a
+		add_stability = -0.1
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_timed_idea = {
+			idea = XHH_strikes
+			days = 70
+		}
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.5
+	title = XHH_internal_events.5.t
+	desc = XHH_internal_events.5.desc
+	
+	picture = GFX_report_event_poland_rejects
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.5.a
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		if = {
+			limit = {
+				country_exists = XRO
+				XRO = { has_government = neutrality }
+				NOT = { has_war_with = XRO }
+			}
+			reverse_add_opinion_modifier = {
+				target = XRO
+				modifier = XHH_recognised_holy_see
+			}
+		}
+		set_variable = { HRE_national_stance_papacy = 1 }
+    }
+
+	option = {
+        name = XHH_internal_events.5.b
+		add_political_power = 50
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.02
+		}
+		set_variable = { HRE_national_stance_papacy = 3 }
+    }
+}

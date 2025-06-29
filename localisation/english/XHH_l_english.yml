@@ -19,12 +19,12 @@
  XHH_communism_DEF: "the Hamburger Kommune"
  XHH_communism_ADJ: "Hamburgish"
 
- XHH_republic_neutrality: "German Hanseatic Federation"
- XHH_republic_neutrality: "the Bund der Deutschen Hanse"
+ XHH_republic_neutrality: "Republic of Hamburg"
+ XHH_republic_neutrality_DEF: "the Republik Hamburg"
  XHH_republic_neutrality_ADJ: "Hamburgish"
- XHH_republic_democratic: "Northern Confederation"
- XHH_republic_democratic: "the Nördliche Konförderation"
- XHH_republic_democratic_ADJ: "Northern"
+ XHH_republic_democratic: "Republic of Hamburg"
+ XHH_republic_democratic_DEF: "the Republik Hamburg"
+ XHH_republic_democratic_ADJ: "Hamburgish"
 
 
 # LEADER NAMES
@@ -32,12 +32,15 @@
 
 
 # TRAITS
- XHH_fuerst_of_hamburg: "Kurfürst der Domäne der Freien und Hansestadt Hamburg, Herzog von Schleswig-Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel"
+ XHH_fuerst_of_hamburg: "Kurfürst der Domäne der Freien und Hansestadt Hamburg, Herzog von Schleswig, Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel"
+ XHH_absolute_monarch: "Absolute Monarch"
+ XHH_hanse_kontor_trait: "Trade & Banking Company"
+ XHH_hamburger_hafen_trait: "Port Authority"
 
 
 # PARTY NAMES
  XHH_democratic_party: "Hamburger Senat"
- XHH_democratic_party_long: "Senat der Freien und Hansestadt Hamburg und ihrer Abhängigkeiten"
+ XHH_democratic_party_long: "Senat der Freien und Hansestadt Hamburg und ihrer Ländereien"
  XHH_neutrality_party: "Haus Hamburg-Mecklenburg"
  XHH_neutrality_party_long: "Haus von Hamburg-Mecklenburg"
  XHH_fascism_party: "Nationale Union"
@@ -46,9 +49,44 @@
  XHH_communism_party_long: "Vereinigte Hafenarbeitergewerkschaften"
 
 
+# SCRIPTED TRIGGERS
+ XHH_has_hanse_active_tt: "Has national spirit §Y$XHH_hanseatic_influence$§!"
+ XHH_has_hanse_active_tt_NOT: "Does not have national spirit §Y$XHH_hanseatic_influence$§!"
+
+
+# FLAGS
+ XHH_senate_removed: "The Senate has been abolished"
+ XHH_senate_removed_tt: "The §YSenate of Hamburg§! will be §Rabolished§!."
+
+
 # IDEAS
  XHH_hanseatic_influence: "Influence of the Hanseatic League"
  XHH_hanseatic_influence_desc: "The Hanseatic League, while having lost most of the influence which they held in the 15th century, still enjoys a monopoly on trade within [ROOT.GetNameDef] and exploits its connections within the senate to maintain its dominance."
+ XHH_hanseatic_influence_cooperative: "Hanseatic Cooperation"
+ XHH_senate_debuff: "Senate Opposition"
+ XHH_senate_debuff_desc: "The senate has been facing opposition from the left and right for mostly representing the interests of the monarchy and the Hanse."
+ XHH_worker_unrest: "Dockworker Unrest"
+ XHH_worker_unrest_desc: "The Dockworkers of [ROOT.GetNameDef], especially in the cities of Hamburg and Bremen, are unhappy by the government's disregard for their livelyhood."
+ XHH_democratic_drift_bonus: "Support for the Senate"
+ XHH_democratic_drift_bonus_desc: "Support for the Hamburger Senat and democracy is on the rise."
+ XHH_monarchist_drift_bonus: "Support for the Crown"
+ XHH_monarchist_drift_bonus_desc: "Support for the Kurfürst and monarchist autocracy is on the rise."
+ XHH_welfare_state_idea: "Welfare State"
+ XHH_armed_volunteer_groups: "Schützenvereine"
+ XHH_armed_volunteer_groups_desc: "Citizens are organising themselves in so-called 'Schützenvereine' (marksmen's club) and exercising with rifles."
+ XHH_military_support: "Military Influence"
+ XHH_military_support_desc: "The military has significant influence on the government thanks to deals and negotiations between the upper echelons of both institutions."
+ XHH_land_reform: "Land Reform"
+ XHH_staffed_bureaucracy: "Staffed Bureaucracy"
+ XHH_strikes: "Strikes!"
+ XHH_strikes_desc: "Failure to subdue the Labour Unions has brought down havoc on [ROOT.GetNameDef]."
+ XHH_freedom_in_democracy: "Bastion of German Democracy"
+ XHH_german_tradition: "Home of German Tradition"
+ XHH_army_reinforcement: "Army Reinforcement"
+
+# CONCERNS
+ XHH_hanse_kontor: "Hansekontor Hamburg"
+ XHH_hamburger_hafen: "Hamburger Hafenautorität"
 
 # DYNAMIC MODIFIERS
  XHH_bremen_autonomy: "Bremen Autonomy"
@@ -56,9 +94,15 @@
  XHH_hamburg_immigration_hotspot: "Immigration Hotspot"
 
 
+# OPINION MODIFIERS
+ XHH_recognised_holy_see: "Recognised the Holy See!"
+
+
 # DECISIONS
+ XHH_introduce_kartelamt: "Form the Federal Cartel Office"
+ XHH_support_farmers: "Support the Farmers"
  XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
- XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by the predecessor of the line of Hamburg-Mecklenburg, has been a hindrance to us. We must revoke it to gain more control over our nation."
+ XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by the predecessor of the line of Hamburg-Mecklenburg to improve relations between the principality and the Hanseatic League, has been a hindrance to us. We must revoke it to gain more control over our nation."
 
 
 # FOCUS TREE
@@ -71,17 +115,122 @@
  XHH_open_hamburger_senat: "150th Session of the Hamburg Senate"
  XHH_open_hamburger_senat_desc: ""
 
+ XHH_strengthen_the_senate: "Strengthen the Senate"
+ XHH_strengthen_the_senate_desc: ""
+ XHH_increase_crown_authority: "Increase Crown Authority"
+ XHH_increase_crown_authority_desc: ""
+ 
+ XHH_curtail_hanse_influence: "Curtail Hanse Corruption"
+ XHH_curtail_hanse_influence_desc: ""
+ XHH_industrialise_rural_schleswig: "Industrialise Rural Schleswig"
+ XHH_industrialise_rural_schleswig_desc: ""
+ XHH_hannover_housing_development: "Hannover Housing Development"
+ XHH_hannover_housing_development_desc: ""
+ XHH_liberalise_the_banking_sector: "Liberalise the Banking Sector"
+ XHH_liberalise_the_banking_sector_desc: ""
+ XHH_urban_industrial_democracy: "Urban Industrial Democracy"
+ XHH_urban_industrial_democracy_desc: ""
+ XHH_utilise_hanse_connections: "Utilise Hanse Connections"
+ XHH_utilise_hanse_connections_desc: ""
+ XHH_grainbasket_of_the_north: "Support Schleswigian Farmers"
+ XHH_grainbasket_of_the_north_desc: ""
+ XHH_cooperate_with_hannoverian_industrialists: "Hannoverian Industrialist Support"
+ XHH_cooperate_with_hannoverian_industrialists_desc: ""
+ XHH_traditionalist_unity: "Traditionalist Unity"
+ XHH_traditionalist_unity_desc: ""
+
+ XHH_welfare_state: "Beginnings of a Welfare State"
+ XHH_welfare_state_desc: ""
+ XHH_industrial_revolution: "Improve Industrial Capabilities"
+ XHH_industrial_revolution_desc: ""
+ XHH_freiwillige_landeswehr: "Freiwillige Landeswehr"
+ XHH_freiwillige_landeswehr_desc: ""
+ XHH_land_reform: "Land Reform"
+ XHH_land_reform_desc: ""
+ XHH_prioritise_noble_estates: "Prioritise Imperial Estates"
+ XHH_prioritise_noble_estates_desc: ""
+ XHH_support_the_army: "Support from the Army"
+ XHH_support_the_army_desc: ""
+ XHH_state_owned_enterprise: "Acquire Vital Industries"
+ XHH_state_owned_enterprise_desc: ""
+ XHH_increase_army_budget: "Increase Military Budget"
+ XHH_increase_army_budget_desc: ""
+ XHH_hamburg_university: "University of Hamburg"
+ XHH_hamburg_university_desc: ""
+ XHH_job_opportunities: "Job Opportunities"
+ XHH_job_opportunities_desc: ""
+ XHH_promote_worker_unions: "Promote Union Membership"
+ XHH_promote_worker_unions_desc: ""
+ XHH_hannover_stahlwerke: "Hannover Stahlwerke"
+ XHH_hannover_stahlwerke_desc: ""
+ XHH_increase_bureaucratic_overview: "Increase Bureaucratic Oversight"
+ XHH_increase_bureaucratic_overview_desc: ""
+ XHH_military_industrial_complex: "Military Industry Lobbying"
+ XHH_military_industrial_complex_desc: ""
+ XHH_crackdown_on_unions: "Crackdown on Unions"
+ XHH_crackdown_on_unions_desc: ""
+ XHH_hamburgs_broad_coalition: "Broad Left Coalition"
+ XHH_hamburgs_broad_coalition_desc: ""
+ XHH_national_conservative_coalition: "National-Conservative Coalition"
+ XHH_national_conservative_coalition_desc: ""
+
+ XHH_expand_the_welfare_state: "Expand the Welfare State"
+ XHH_expand_the_welfare_state_desc: ""
+ XHH_scientific_investments: "Greater Scientific Freedoms"
+ XHH_scientific_investments_desc: ""
+ XHH_economic_independence: "Economic Independence"
+ XHH_economic_independence_desc: ""
+ XHH_religious_divide: "The Religious Divide"
+ XHH_religious_divide_desc: ""
+
+ XHH_power_to_the_senate: "Constitutional Referendum"
+ XHH_power_to_the_senate_desc: "The Kurfürst has no place but as a figurehead of the country! The people themselves must rule over Hamburg!"
+ XHH_abolish_the_senate: "Abolish the Senate"
+ XHH_abolish_the_senate_desc: "The senate is holding down the righteous rule of the Kurfürst, who obviously knows best who should rule! Their charade end here and now!"
+
+ XHH_modernise_the_landeswehr: "Modernise the Landeswehr"
+ XHH_modernise_the_landeswehr_desc: ""
+ XHH_doctrines_of_defence: "Doctrines of Defense"
+ XHH_doctrines_of_defence_desc: ""
+ XHH_doctrines_of_offence: "Doctrines of Offense"
+ XHH_doctrines_of_offence_desc: ""
+ XHH_equipment_modernisation: "Equipment Modernisation"
+ XHH_equipment_modernisation_desc: ""
+ XHH_artillery_factories: "Artillery Factories"
+ XHH_artillery_factories_desc: ""
+ XHH_reinforce_the_army: "Reinforce the Army"
+ XHH_reinforce_the_army_desc: ""
+ XHH_military_science_investments: "Military Science Investments"
+ XHH_military_science_investments_desc: ""
+ XHH_production_capabilities: "Strengthen Production Capabilities"
+ XHH_production_capabilities_desc: ""
+
+ XHH_invest_in_rostock_shipbuilding: "Expand Shipbuilding to Rostock"
+ XHH_invest_in_rostock_shipbuilding_desc: ""
+ XHH_nationalise_the_hamurger_hafen: "Nationalise the Hamburger Hafen"
+ XHH_nationalise_the_hamurger_hafen_desc: ""
+
+ XHH_expand_the_airforce: "Expand the Airforce"
+ XHH_expand_the_airforce_desc: ""
+
 
 # EVENTS
  XHH_internal_events.1.t: "Aufhebung des Bremer Freistadtsgesetzes!"
  XHH_internal_events.1.desc: "In the last few months, the administration has rolled back most of the protections granting the Hanseatic city of Bremen additional autonomy in regards to their economic planning. While the Bremer Senat is outraged over this blatant act of centralisation, the [ROOT.GetRulingParty] has commented on it as erasing special priviliges granted by the previous Kurfürst."
- XHH_internal_events.1.a: "No more special cases!"
+ XHH_internal_events.1.a: "No more exceptions!"
  XHH_internal_events.2.t: "Meeting with Ältermann Bugge"
- XHH_internal_events.2.desc: ""
+ XHH_internal_events.2.desc: "The Ältermann of the Kontor of Hamburg, Josef Bugge, had been representing Hanse interests in the Hamburger Senat for the last thirty years. However, new anti-corruption laws now stipulate that members of the Senate cannot also be members of corporate entities, to avoid any conflicts of interest.\n \nIn a bid to maintain good favour with the Hanse, the Senate has now decided to make exceptions with members of the Hanse, even if it will basically negate any impact the law would have made and only serves to further increase Hanse dominance over the economy."
  XHH_internal_events.2.a: "That could have gone better."
  XHH_internal_events.3.t: "Kurfürst Tom opens the 150th Session of the Hamburg Senate"
- XHH_internal_events.3.desc: ""
+ XHH_internal_events.3.desc: "The Senate of the Free and Hanseatic City of Hamburg has existed since the 12th century, representing the interests of the citizenry. With the expansion of Hamburg to mean the territories of Schleswig, Holstein, Hannover, Bremen and Mecklenburg, the senate has taken the form of a national parliament for the principality.\n \nDespite its earlier forms not being dependent on the nobility, with the declaration of the Principality of Hamburg, the Kurfürst of Hamburg and its Dependencies has gained significant influence, now basically dictating the senate's acts and enjoying an almost unlimited veto right."
  XHH_internal_events.3.a: "To another successful year!"
+ XHH_internal_events.4.t: "Strikes!"
+ XHH_internal_events.4.desc: "Despite our efforts to weaken the Labour Union institutions, workers have begun striking."
+ XHH_internal_events.4.a: "Damn."
+ XHH_internal_events.5.t: "The Catholic Minority"
+ XHH_internal_events.5.desc: "While the majority of our population is Protestant, there is a vocal Catholic majority that demands of us that we recognise the Holy See and [XRO.GetNameDef]."
+ XHH_internal_events.5.a: "We must recognise the Holy See."
+ XHH_internal_events.5.b: "Who cares about an old man in Rome?"
 
 
 # STATE NAMES

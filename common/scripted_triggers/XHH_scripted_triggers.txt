@@ -1,0 +1,10 @@
+XHH_has_hanse_active = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_has_hanse_active_tt
+        OR = {
+            has_idea = XHH_hanseatic_influence
+            has_idea = XHH_hanseatic_influence_worse
+            has_idea = XHH_hanseatic_influence_better
+        }
+    }
+}

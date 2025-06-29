@@ -1,0 +1,21 @@
+XHH_abolish_the_senate_effect = {
+    custom_effect_tooltip = XHH_senate_removed_tt
+	set_country_flag = XHH_senate_removed
+
+    hidden_effect = {
+        if = {
+            limit = {
+                has_idea = XHH_senate_debuff
+            }
+            remove_ideas = XHH_senate_debuff
+        }
+        if = {
+            limit = {
+                has_idea = XHH_senate_debuff_2
+            }
+            remove_ideas = XHH_senate_debuff_2
+        }
+
+        set_variable = { HRE_national_stance_welfare = 3 }
+    }
+}

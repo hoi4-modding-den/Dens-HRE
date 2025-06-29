@@ -1,0 +1,36 @@
+on_actions = {
+    on_ruling_party_change = {
+        effect = {
+            if = {
+                limit = {
+                    original_tag = SHL
+                }
+                if = {
+                    limit = {
+                        OR = {
+                            has_government = fascism
+                            AND = {
+                                has_government = neutrality
+                                has_country_flag = XHH_senate_removed
+                            }
+                        }
+                    }
+                    set_variable = { HRE_national_stance_welfare = 3 }
+                }
+                if = {
+                    limit = {
+                        OR = {
+                            has_government = communism
+                            has_government = democratic
+                            AND = {
+                                has_government = neutrality
+                                NOT = { has_country_flag = XHH_senate_removed }
+                            }
+                        }
+                    }
+                    set_variable = { HRE_national_stance_welfare = 1 }
+                }
+            }
+        }
+    }
+}
