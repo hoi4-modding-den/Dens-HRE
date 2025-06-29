@@ -1,0 +1,35 @@
+﻿
+units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Flotta Padaniese"			
+		naval_base = 6788 # Athens
+		task_force = {				
+			name = "Flotta Navale"				
+			location = 6788 # Athens
+			ship = { name = "VP Salvinus" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XEX } } }				
+			ship = { name = "VP Padanius" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XEX } } }				
+			# Destroyer Flotilla
+			ship = { name = "VL Genovese" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "VL Milanese" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "VL Torinese" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "VL Bolognese" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "VL Emiliese" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+			ship = { name = "VL Scudo" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+			ship = { name = "VL Difensore" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+			ship = { name = "VL Protettore" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+		}					
+		task_force = {					
+			name = "Flotta Di Sommergibili"				
+			location = 6788 # Athens
+			ship = { name = "SG Assasino" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "SG Invisibile" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "SG Immortale" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "SG Incolpibile" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }		 
+			ship = { name = "SG Invincibile" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }		
+			ship = { name = "SG Galla" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }		
+		}					
+	}
+} 
+
