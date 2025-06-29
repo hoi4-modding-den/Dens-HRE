@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 50 y = 2500 }
+	continuous_focus_position = { x = 2200 y = 1800 }
 
 	initial_show_position = {
 		x = 11
@@ -171,7 +171,13 @@ focus_tree = {
 		}
 
 		available = {
-			
+			OR = {
+				has_government = democratic
+				AND = {
+					has_government = neutrality
+					NOT = { has_country_flag = XHH_senate_removed }
+				}
+			}
 		}
 		
 		bypass = {
@@ -213,7 +219,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = neutrality
 		}
 		
 		bypass = {
@@ -268,12 +274,15 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = XHH_hanseatic_influence_worse
 				add_idea = XHH_hanseatic_influence
 			}
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_anti_corruption_politician_token
 		}
 	}
 
@@ -298,7 +307,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			909 = {
 				increase_state_category = yes
@@ -308,6 +317,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_captain_of_industry_token
 		}
 	}
 
@@ -332,7 +346,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_stability = 0.05
 
@@ -378,6 +392,11 @@ focus_tree = {
 				add_idea = XHH_hanseatic_influence_better
 			}
 
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XHH_reichsbank
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			unlock_decision_tooltip = XHH_introduce_kartelamt
 		}
 	}
@@ -399,7 +418,13 @@ focus_tree = {
 		}
 
 		available = {
-			
+			OR = {
+				has_government = democratic
+				AND = {
+					has_government = neutrality
+					NOT = { has_country_flag = XHH_senate_removed }
+				}
+			}
 		}
 
 		available_if_capitulated = no
@@ -442,6 +467,8 @@ focus_tree = {
 				remove_idea = XHH_hanseatic_influence
 				add_idea = XHH_hanseatic_influence_cooperative
 			}
+
+			# decision to remove hanse fully
 		}
 	}
 
@@ -504,7 +531,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XHH_cooperate_with_hannoverian_industrialists
@@ -523,6 +550,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_captain_of_industry_token
 		}
 	}
 
@@ -543,7 +575,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = neutrality
 		}
 
 		available_if_capitulated = no
@@ -555,8 +587,43 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_hamburg_meine_perle
+		icon = GFX_focus_SWE_urbanization
+		prerequisite = { focus = XHH_liberalise_the_banking_sector focus = XHH_utilise_hanse_connections }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 0
+		relative_position_id = XHH_urban_industrial_democracy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 58
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.05
+			58 = {
+				add_dynamic_modifier = { modifier = XHH_pearl_of_the_north }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_immigration_campaigns
+		}
+	}
+
+	focus = {
 		id = XHH_hamburg_university
 		icon = GFX_focus_research
+		prerequisite = { focus = XHH_hamburg_meine_perle }
 		prerequisite = { focus = XHH_urban_industrial_democracy focus = XHH_traditionalist_unity }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -602,13 +669,18 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_stability = 0.1
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = XHH_welfare_state_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_welfare_architect_token
 		}
 	}
 
@@ -633,7 +705,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XHH_industrial_revolution
@@ -644,8 +716,10 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			random_owned_controlled_state = {
+			every_owned_state = {
+				random_select_amount = 2
 				limit = {
+					is_controlled_by = ROOT
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -659,6 +733,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_liberal_finance_minister_token
 		}
 	}
 
@@ -684,7 +763,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_war_support = 0.05
 			army_experience = 50
@@ -718,6 +797,18 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = -0.05
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			
 			every_owned_state = {
 				random_select_amount = 3
 				limit = {
@@ -756,13 +847,18 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_political_power = -100
 			add_offsite_building = {
 				type = industrial_complex
 				level = 2
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_noble_businessman_token
 		}
 	}
 
@@ -825,14 +921,14 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
-						size > 0
+						size > 1
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -932,10 +1028,10 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			every_owned_state = {
-				random_select_amount = 2
+				random_select_amount = 3
 				limit = {
 					is_controlled_by = ROOT
 					free_building_slots = {
@@ -951,6 +1047,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_labour_minister_token
 		}
 	}
 
@@ -1030,8 +1131,17 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_hannover_stahlwerke
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			59 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1068,9 +1178,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_ideas = XHH_staffed_bureaucracy
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_efficient_administrator_token
 		}
 	}
 
@@ -1095,7 +1210,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
@@ -1112,6 +1227,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_war_industrialist_token
 		}
 	}
 
@@ -1330,9 +1450,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_research_slot = 1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_famous_professor_token
 		}
 	}
 
@@ -1361,10 +1486,12 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_political_power = 100
-			
+			swap_ideas = {
+				remove_idea = XHH_staffed_bureaucracy
+				add_idea = XHH_independent_economy
+			}
 		}
 	}
 
@@ -1479,6 +1606,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			set_country_leader_ideology = despotism
 			XHH_tom_first = {
 				add_trait = {
 					ideology = despotism
@@ -1489,12 +1617,194 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_democracy_in_the_empire
-		icon = GFX_goal_support_democracy
+		id = XHH_reign_in_nationalists
+		icon = GFX_focus_AUS_ban_dnsap
+		prerequisite = { focus = XHH_power_to_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_power_to_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = XHH_prioritise_consumer_needs
+		icon = GFX_focus_GER_wirtschaftswunder
 		prerequisite = { focus = XHH_power_to_the_senate }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 1
+		relative_position_id = XHH_power_to_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = XHH_reichsbank_financing
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = XHH_abolish_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_abolish_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XHH_reichsbank
+		}
+	}
+
+	focus = {
+		id = XHH_council_of_nobles
+		icon = GFX_focus_BRA_tribunal
+		prerequisite = { focus = XHH_abolish_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_abolish_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHH_noble_councilman_token
+		}
+	}
+
+	focus = {
+		id = XHH_naval_domination
+		icon = GFX_focus_GER_seeherrschaft
+		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_reichsbank_financing
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_democracy_in_the_empire
+		icon = GFX_focus_GER_defender_of_democracy
+		prerequisite = { focus = XHH_reign_in_nationalists }
+		prerequisite = { focus = XHH_prioritise_consumer_needs }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 3
 		relative_position_id = XHH_power_to_the_senate
 
 		cost = 6
@@ -1504,7 +1814,8 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = democratic
+			is_subject = no
 		}
 
 		bypass = {
@@ -1521,11 +1832,12 @@ focus_tree = {
 
 	focus = {
 		id = XHH_imperial_ascension
-		icon = GFX_focus_ger_revive_kaiserreich
-		prerequisite = { focus = XHH_abolish_the_senate }
+		icon = GFX_focus_POL_habsburg
+		prerequisite = { focus = XHH_reichsbank_financing }
+		prerequisite = { focus = XHH_council_of_nobles }
 		#mutually_exclusive = { focus =  }
-		x = 0
-		y = 1
+		x = 1
+		y = 3
 		relative_position_id = XHH_abolish_the_senate
 
 		cost = 6
@@ -1535,7 +1847,8 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = neutrality
+			is_subject = no
 		}
 
 		bypass = {
@@ -1553,11 +1866,11 @@ focus_tree = {
 	focus = {
 		id = XHH_mobilise_the_public
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = XHH_power_to_the_senate focus = XHH_abolish_the_senate }
+		prerequisite = { focus = XHH_democracy_in_the_empire focus = XHH_imperial_ascension }
 		#mutually_exclusive = { focus =  }
-		x = 3
+		x = 4
 		y = 1
-		relative_position_id = XHH_power_to_the_senate
+		relative_position_id = XHH_democracy_in_the_empire
 
 		cost = 5
 
@@ -1586,7 +1899,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
-		x = -1
+		x = -3
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
@@ -1643,11 +1956,42 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_placeholder_war
-		icon = GFX_focus_PLACEHOLDER
+		id = XHH_unite_the_empire
+		icon = GFX_focus_GER_the_four_year_plan
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
-		x = 1
+		x = 0
+		y = 1
+		relative_position_id = XHH_mobilise_the_public
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_unite_mecklenburg_vorpommern
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = XHH_mobilise_the_public }
+		#mutually_exclusive = { focus =  }
+		x = 3
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
@@ -1718,7 +2062,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_modernise_the_landeswehr
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_focus_GER_army
 		#prerequisite = { focus = XHH_open_hamburger_senat }
 		#mutually_exclusive = { focus =  }
 		x = 10
@@ -2236,7 +2580,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_expand_the_airforce
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_focus_GER_airforce
 		#prerequisite = { focus = XHH_open_hamburger_senat }
 		#mutually_exclusive = { focus =  }
 		x = 17
@@ -2295,7 +2639,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
@@ -2340,7 +2684,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XHH_bomber_development
@@ -2372,7 +2716,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			if = {
 				limit = {
@@ -2417,7 +2761,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XHH_bomber_development
@@ -2450,7 +2794,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XHH_bomber_development
@@ -2458,6 +2802,188 @@ focus_tree = {
 				uses = 1
 				category = mio_cat_all_naval_bomber_and_modules
 			}
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_resource_acquisition
+		icon = GFX_focus_ger_revive_kaiserreich
+		#prerequisite = { focus = XHH_open_hamburger_senat }
+		#mutually_exclusive = { focus =  }
+		x = 25
+		y = 8
+		#relative_position_id = XHH_open_hamburger_senat
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_imperial_resource_acquisition_tt
+				always = no
+			}
+		}
+		
+		bypass = {
+			hidden_trigger = {
+				OR = {
+					has_idea = HRE_agenda_infra
+					has_idea = HRE_agenda_construction
+					has_idea = HRE_agenda_production
+					has_idea = HRE_agenda_research
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = XHH_infrastructure_agenda
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = XHH_imperial_resource_acquisition }
+		#mutually_exclusive = { focus =  }
+		x = -5
+		y = 1
+		relative_position_id = XHH_imperial_resource_acquisition
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_idea = HRE_agenda_infra
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_construction_agenda
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = XHH_imperial_resource_acquisition }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_imperial_resource_acquisition
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_idea = HRE_agenda_construction
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_production_agenda
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = XHH_imperial_resource_acquisition }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_imperial_resource_acquisition
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_idea = HRE_agenda_production
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_science_agenda
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = XHH_imperial_resource_acquisition }
+		#mutually_exclusive = { focus =  }
+		x = 5
+		y = 1
+		relative_position_id = XHH_imperial_resource_acquisition
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_idea = HRE_agenda_research
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			
 		}
 	}
 

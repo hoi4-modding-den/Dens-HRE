@@ -9,6 +9,17 @@ XHH_bremen_autonomy = {
 	
 }
 
+XHH_pearl_of_the_north = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_XHH_hamburg
+	
+	state_production_speed_buildings_factor = 0.05
+	local_building_slots_factor = 0.1
+	local_factories = 0.25
+	
+}
+
 XHH_hamburg_immigration_hotspot = { 
 	enable = { always = yes }
 

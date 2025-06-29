@@ -332,6 +332,32 @@ ideas = {
 			}
 		}
 
+		XHH_independent_economy = {
+			
+			picture = GER_autarky
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.25
+				stability_factor = 0.1
+				compliance_growth = 0.05
+				local_resources_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.07
+				production_lack_of_resource_penalty_factor = -0.25
+				
+			}
+		}
+
 		XHH_strikes = {
 			
 			picture = ICE_general_strike
@@ -432,9 +458,9 @@ ideas = {
 			cost = 150
 			
 			modifier = {
-				consumer_goods_factor = -0.07
+				consumer_goods_factor = -0.05
 				production_speed_industrial_complex_factor = 0.1
-				min_export = 0.05
+				resource_trade_cost_bonus_per_factory = 1
 			}
 			
 			traits = { XHH_hanse_kontor_trait }
@@ -445,6 +471,34 @@ ideas = {
 					factor = 2
 					XHH_has_hanse_active = yes
 				}
+			}
+		}
+
+		XHH_reichsbank = {
+
+			picture = HABSBURG_economy
+			
+			allowed = {
+				original_tag = XHH
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = XHH_liberalise_the_banking_sector
+					has_completed_focus = XHH_reichsbank_financing
+				}
+			}
+
+			cost = 150
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+			
+			traits = { central_bank }
+			
+			ai_will_do = {
+				factor = 2
 			}
 		}
 
