@@ -6,9 +6,17 @@ set_variable = { HRE_national_stance_federalism = 1 }
 set_variable = { HRE_national_stance_welfare = 2 } 
 set_variable = { HRE_national_stance_papacy = 3 } 
 
+add_ideas = {
+	XVE_serenissima_legacy
+	XVE_imperial_autonomy_charter
+	XVE_heirs_of_the_sea
+	XVE_the_concordia_littorum
+	XVE_lionhearted_militia
+}
+
 set_politics = {
 	ruling_party = democratic
-	last_election = "1931.11.8"
+	last_election = "1931.02.9"
 	election_frequency = 72
 	elections_allowed = yes
 }
