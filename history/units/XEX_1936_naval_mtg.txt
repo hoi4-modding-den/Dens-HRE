@@ -1,0 +1,42 @@
+﻿
+units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Flotta Padaniese"			
+		naval_base = 6788 # Athens
+		task_force = {				
+			name = "Flotta Navale"				
+			location = 6788 # Athens
+			ship = { name = "VP Salvinus" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = XEX version_name =  "Salvinus" } } }				
+			ship = { name = "VP Padanius" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = XEX version_name =  "Imperium" } } }				
+			# Destroyer Flotilla
+			ship = { name = "VL Genovese" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Angelo Difensore" } } }		
+			ship = { name = "VL Milanese" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Angelo Difensore" } } }		
+			ship = { name = "VL Torinese" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Angelo Difensore" } } }		
+			ship = { name = "VL Bolognese" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Angelo Difensore" } } }		
+			ship = { name = "VL Emiliese" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+			ship = { name = "VL Scudo" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+			ship = { name = "VL Difensore" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+			ship = { name = "VL Protettore" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XEX version_name =  "Milanese" } } }
+		}					
+		task_force = {					
+			name = "Flotta Di Sommergibili"				
+			location = 6788 # Athens
+			ship = { name = "SG Assasino" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = XEX version_name =  "Assassino" } } }		
+			ship = { name = "SG Invisibile" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = XEX version_name =  "Assassino" } } }		
+			ship = { name = "SG Immortale" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XEX version_name =  "Cappuccino" } } }		
+			ship = { name = "SG Incolpibile" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XEX version_name =  "Cappuccino" } } }		 
+			ship = { name = "SG Invincibile" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XEX version_name =  "Cappuccino" } } }		
+			ship = { name = "SG Galla" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XEX version_name =  "Cappuccino" } } }		
+		}					
+	}
+} 
+
+
+
+
+
+
+
+

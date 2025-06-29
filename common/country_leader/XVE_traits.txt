@@ -1,0 +1,15 @@
+leader_traits = {
+
+	XVE_dux_diplomacy = {
+		random = no
+		
+		political_power_factor = 0.05
+		opinion_gain_monthly_factor = 0.10
+		# More proner to deal with IFF situation peacefully (better effects if go peaceful)
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

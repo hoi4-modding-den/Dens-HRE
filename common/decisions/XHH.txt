@@ -1,3 +1,78 @@
+economy_decisions = {
+
+	XHH_support_farmers  = {
+
+		priority = -1
+
+		icon = POL_organize_strike_two
+
+		ai_will_do = {
+			base = 25
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_grainbasket_of_the_north
+		}
+
+		visible = { 
+			NOT = { has_completed_focus = XHH_strengthen_the_senate }
+		}
+
+		cost = 75
+
+		days_remove = 200
+
+		modifier = {
+			monthly_population = 0.2
+			consumer_goods_factor = 0.05
+		}
+
+	}
+
+	XHH_introduce_kartelamt  = {
+
+		priority = -1
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 25
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_liberalise_the_banking_sector
+		}
+
+		visible = { 
+			NOT = { has_completed_focus = XHH_increase_crown_authority }
+			OR = {
+				has_idea = XHH_hanseatic_influence_better
+				NOT = { has_completed_focus = XHH_liberalise_the_banking_sector }
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 160
+
+		remove_effect = {
+			remove_ideas = XHH_hanseatic_influence_better
+		}
+
+	}
+
+}
+
 political_actions = {
 
 	XHH_dissolve_bremen_autonomy  = {
@@ -20,7 +95,7 @@ political_actions = {
 
 		available = {
 			# has_completed_focus = ?
-			NOT = { has_government = democratic }
+			XHH_has_hanse_active = no
 			1017 = { 
 				is_controlled_by = ROOT
 				has_dynamic_modifier = { modifier = XHH_bremen_autonomy scope = XHH }
@@ -30,7 +105,7 @@ political_actions = {
 		visible = { 
 			1017 = { 
 				is_controlled_by = ROOT
-				#has_dynamic_modifier = { modifier = XHH_bremen_autonomy scope = XHH }
+				has_dynamic_modifier = { modifier = XHH_bremen_autonomy scope = XHH }
 			}
 		}
 
@@ -56,6 +131,77 @@ political_actions = {
 					modifier = XHH_bremen_autonomy
 					scope = XHH
 				}
+			}
+		}
+
+	}
+
+}
+
+XHH_land_integration = {
+
+	XHH_integrate_lands  = {
+
+		priority = -1
+
+		icon = SWI_isolate_switzerland
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				all_core_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		target_trigger = {
+			is_in_array = {
+				array = XHH.XHH_integratable_countries
+				value = FROM.id
+			}
+		}
+
+		targets_dynamic = yes
+		target_non_existing = yes 
+
+		fire_only_once = yes
+
+		cancel_trigger = {
+			NOT = {
+				FROM = {
+					all_core_state = {
+						is_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		cost = 100
+
+		days_remove = 200
+
+		modifier = {
+			compliance_growth = 0.01
+		}
+
+		remove_effect = {
+			remove_from_array = {
+				array = XHH.XHH_integratable_countries
+				value = FROM
+			}
+			every_state = {
+				limit = {
+					is_core_of = FROM
+				}
+				add_core_of = ROOT
 			}
 		}
 

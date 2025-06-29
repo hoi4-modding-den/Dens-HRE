@@ -1,0 +1,17 @@
+XHH_has_hanse_active = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_has_hanse_active_tt
+        OR = {
+            has_idea = XHH_hanseatic_influence
+            has_idea = XHH_hanseatic_influence_worse
+            has_idea = XHH_hanseatic_influence_better
+        }
+    }
+}
+
+XHH_is_current_emperor = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_is_current_emperor_tt
+        XHH = { has_country_flag = HRE_current_emperor }
+    }
+}

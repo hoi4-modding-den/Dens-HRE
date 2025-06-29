@@ -7,7 +7,11 @@ characters = {
 			}
 		}
 		country_leader = {
-			# traits = { XVE_doge_diplomac }
+			traits = { 
+				HRE_doge_venice
+				XVE_dux_diplomacy
+			}
+			desc = XVE_giuseppe_volpi_leader_desc		
 			ideology = conservatism
 			expire = "1950.1.1.1"
 			id = -1

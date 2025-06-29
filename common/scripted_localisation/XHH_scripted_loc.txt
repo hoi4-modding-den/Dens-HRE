@@ -10,4 +10,14 @@ defined_text = {
         }
         localization_key = GFX_portrait_XHH_tom_first
     }
+    text = {
+        trigger = {
+            XHH = {
+				has_country_leader = {
+					character = XHH_hermann_ludemann
+				}
+			}
+        }
+        localization_key = GFX_portrait_SHL_hermann_ludemann
+    }
 }

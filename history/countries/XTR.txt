@@ -1,0 +1,18 @@
+capital = 69
+### recruit_character = XTR_hermann_gmeiner
+### recruit_character = XTR_ernst_rudiger_tarhemberg
+set_variable = { HRE_national_stance_federalism = 1 } 
+set_variable = { HRE_national_stance_welfare = 1 } 
+set_variable = { HRE_national_stance_papacy = 1 } 
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1931.11.8"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 83
+  fascism = 17
+}

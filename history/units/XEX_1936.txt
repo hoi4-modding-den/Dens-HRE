@@ -1,0 +1,131 @@
+﻿division_template = {
+	name = "Cavallieri Milanesi"
+
+	division_names_group = XEX_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Infanteria Piemontese"
+
+	division_names_group = XEX_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	
+	support = {
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+}
+
+units = {
+
+	division = {	
+		location = 6793
+		division_template = "Cavallieri Milanesi"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 9600 
+		division_template = "Cavallieri Milanesi"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 9752 
+		division_template = "Cavallieri Milanesi"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 11891
+		division_template = "Cavallieri Milanesi"
+		start_experience_factor = 0.3
+	}
+	
+	division = {	
+		location = 6780 
+		division_template = "Infanteria Piemontese"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 6780 
+		division_template = "Infanteria Piemontese"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 6788 
+		division_template = "Infanteria Piemontese"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 3780
+		division_template = "Infanteria Piemontese"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 773 
+		division_template = "Infanteria Piemontese"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 6606
+		division_template = "Infanteria Piemontese"
+		start_experience_factor = 0.3
+	}
+
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = XEX
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = XEX
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = XEX
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+	
+}
+
+#####################

@@ -1,0 +1,113 @@
+ideas={
+	country = {
+	
+		########################
+		### STARTING SPIRITS ###
+		########################
+
+		XVE_serenissima_legacy = {
+			#picture = italy_balance_venice
+			picture = GFX_idea_XVE_serenissima_legacy
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.20
+				stability_factor = 0.1
+				drift_defence_factor = 0.15	
+				democratic_drift = 0.03		
+			}
+		}
+
+		XVE_imperial_autonomy_charter = {
+			picture = GFX_idea_XVE_imperial_autonomy_charter
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {	
+			}
+		}
+		
+		XVE_heirs_of_the_sea = {
+			picture = BEL_maritime_phoenix
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {	
+			}
+		}
+		
+		XVE_the_concordia_littorum = {
+			picture = GFX_idea_XVE_the_concordia_littorum
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+			}
+		}
+		
+		XVE_lionhearted_militia = {
+			picture = GFX_idea_XVE_lionhearted_militia
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {	
+			}
+		}		
+
+		###############
+		### SPIRITS ###
+		###############
+	
+	
+#-------------------------------------------------------
+#					MANUFACTURERS
+#-------------------------------------------------------
+	
+	#naval_manufacturer={
+			#designer = yes 
+			#}
+			
+	#aircraft_manufacturer={
+			#designer = yes 
+			#}
+			
+	#materiel_manufacturer={
+			#designer = yes 
+			#}
+			
+	#industrial_concern={
+			#designer = yes 
+			#}
+	}
+}	

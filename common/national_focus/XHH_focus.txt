@@ -28,23 +28,23 @@ focus_tree = {
 		y = 0
 		#relative_position_id = 
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 5
 		}
 
 		available = {
-
+			
 		}
 		
 		bypass = {
-
+			XHH_has_hanse_active = no
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			country_event = XHH_internal_events.2
 		}
@@ -59,7 +59,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = XHH_conflict_with_the_hanse
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 5
@@ -75,7 +75,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_offsite_building = {
 				type = industrial_complex
@@ -93,7 +93,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = XHH_boons_of_the_kiel_canal
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 5
@@ -109,7 +109,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 80
 			add_stability = -0.05
@@ -133,7 +133,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_boons_of_the_kiel_canal
 
-		cost = 3
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -144,14 +144,2320 @@ focus_tree = {
 		}
 		
 		bypass = {
+			has_country_flag = XHH_senate_removed
+		}
 
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = XHH_internal_events.3
+		}
+	}
+
+	focus = {
+		id = XHH_strengthen_the_senate
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = XHH_open_hamburger_senat }
+		mutually_exclusive = { focus = XHH_increase_crown_authority }
+		x = -2
+		y = 1
+		relative_position_id = XHH_open_hamburger_senat
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = XHH_internal_events.3
+			add_political_power = 80
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = XHH_democratic_drift_bonus
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_increase_crown_authority
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = XHH_open_hamburger_senat }
+		mutually_exclusive = { focus = XHH_strengthen_the_senate }
+		x = 2
+		y = 1
+		relative_position_id = XHH_open_hamburger_senat
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_timed_idea = {
+				idea = XHH_monarchist_drift_bonus
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_curtail_hanse_influence
+		icon = GFX_focus_ARG_anti_corruption_policies
+		prerequisite = { focus = XHH_strengthen_the_senate focus = XHH_increase_crown_authority }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_increase_crown_authority
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_has_hanse_active_tt_NOT
+				NOT = { has_idea = XHH_hanseatic_influence_worse }
+				has_completed_focus = XHH_conflict_with_the_hanse
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHH_hanseatic_influence_worse
+				add_idea = XHH_hanseatic_influence
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_industrialise_rural_schleswig
+		icon = GFX_focus_generic_modernize_industry
+		prerequisite = { focus = XHH_strengthen_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_strengthen_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 909
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			909 = {
+				increase_state_category = yes
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_hannover_housing_development
+		icon = GFX_focus_generic_low_cost_housing
+		prerequisite = { focus = XHH_industrialise_rural_schleswig }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_industrialise_rural_schleswig
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 59
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			59 = {
+				add_extra_state_shared_building_slots = 3
+				add_manpower = 10000
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_liberalise_the_banking_sector
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = XHH_strengthen_the_senate }
+		prerequisite = { focus = XHH_curtail_hanse_influence }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_curtail_hanse_influence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_has_hanse_active_tt_NOT
+				NOT = { has_idea = XHH_hanseatic_influence }
+				has_completed_focus = XHH_curtail_hanse_influence
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHH_hanseatic_influence
+				add_idea = XHH_hanseatic_influence_better
+			}
+
+			unlock_decision_tooltip = XHH_introduce_kartelamt
+		}
+	}
+
+	focus = {
+		id = XHH_urban_industrial_democracy
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = XHH_hannover_housing_development }
+		prerequisite = { focus = XHH_liberalise_the_banking_sector }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_hannover_housing_development
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = XHH_freedom_in_democracy
+		}
+	}
+
+	focus = {
+		id = XHH_utilise_hanse_connections
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = XHH_increase_crown_authority }
+		prerequisite = { focus = XHH_curtail_hanse_influence }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_curtail_hanse_influence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_has_hanse_active_tt_NOT
+				NOT = { has_idea = XHH_hanseatic_influence }
+				has_completed_focus = XHH_curtail_hanse_influence
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHH_hanseatic_influence
+				add_idea = XHH_hanseatic_influence_cooperative
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_grainbasket_of_the_north
+		icon = GFX_focus_DEN_schleswigian_farmers
+		prerequisite = { focus = XHH_increase_crown_authority }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_increase_crown_authority
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 909
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			909 = {
+				increase_state_category = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_support_farmers
+		}
+	}
+
+	focus = {
+		id = XHH_cooperate_with_hannoverian_industrialists
+		icon = GFX_focus_generic_industrialists
+		prerequisite = { focus = XHH_grainbasket_of_the_north }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_grainbasket_of_the_north
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 59
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_cooperate_with_hannoverian_industrialists
+				bonus = 1
+				uses = 1
+				category = cat_production
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			59 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_traditionalist_unity
+		icon = GFX_focus_DEN_national_unity
+		prerequisite = { focus = XHH_utilise_hanse_connections }
+		prerequisite = { focus = XHH_cooperate_with_hannoverian_industrialists }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_cooperate_with_hannoverian_industrialists
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_ideas = XHH_german_tradition
+		}
+	}
+
+	focus = {
+		id = XHH_hamburg_university
+		icon = GFX_focus_research
+		prerequisite = { focus = XHH_urban_industrial_democracy focus = XHH_traditionalist_unity }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_urban_industrial_democracy
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = XHH_welfare_state
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = XHH_urban_industrial_democracy }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XHH_urban_industrial_democracy
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_welfare_state_idea
+		}
+	}
+
+	focus = {
+		id = XHH_industrial_revolution
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = XHH_urban_industrial_democracy }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_urban_industrial_democracy
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_industrial_revolution
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_freiwillige_landeswehr
+		icon = GFX_focus_SWE_lottakoren
+		prerequisite = { focus = XHH_welfare_state }
+		prerequisite = { focus = XHH_industrial_revolution }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_welfare_state
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_armed_volunteer_groups
+		}
+	}
+
+	focus = {
+		id = XHH_land_reform
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_industrial_revolution
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_owned_state = {
+				random_select_amount = 3
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = XHH_land_reform
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_prioritise_noble_estates
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = XHH_traditionalist_unity }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_traditionalist_unity
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = -100
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_support_the_army
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = XHH_traditionalist_unity }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_traditionalist_unity
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_political_power = 80
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_military_support
+		}
+	}
+
+	focus = {
+		id = XHH_state_owned_enterprise
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_prioritise_noble_estates
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_increase_army_budget
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = XHH_prioritise_noble_estates }
+		prerequisite = { focus = XHH_support_the_army }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_support_the_army
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_increase_army_budget
+				bonus = 1
+				uses = 1
+				category = cat_production
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_job_opportunities
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = XHH_welfare_state focus = XHH_support_the_army }
+		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_hamburg_university
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_owned_state = {
+				random_select_amount = 2
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_promote_worker_unions
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = XHH_industrial_revolution }
+		prerequisite = { focus = XHH_welfare_state }
+		prerequisite = { focus = XHH_job_opportunities }
+		#mutually_exclusive = { focus =  }
+		x = -4
+		y = 1
+		relative_position_id = XHH_job_opportunities
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_war_support = -0.02
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			remove_ideas = XHH_worker_unrest
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_hannover_stahlwerke
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = XHH_job_opportunities }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_job_opportunities
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 59
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			59 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_increase_bureaucratic_overview
+		icon = GFX_focus_generic_improve_the_administration
+		prerequisite = { focus = XHH_job_opportunities }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_job_opportunities
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = XHH_staffed_bureaucracy
+		}
+	}
+
+	focus = {
+		id = XHH_military_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XHH_job_opportunities }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_job_opportunities
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_crackdown_on_unions
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = XHH_job_opportunities }
+		prerequisite = { focus = XHH_prioritise_noble_estates }
+		prerequisite = { focus = XHH_support_the_army }
+		#mutually_exclusive = { focus =  }
+		x = 4
+		y = 1
+		relative_position_id = XHH_job_opportunities
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = -0.02
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			remove_ideas = XHH_worker_unrest
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			hidden_effect = {
+				country_event = {
+					id = XHH_internal_events.4
+					days = 14
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_hamburgs_broad_coalition
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = XHH_promote_worker_unions }
+		prerequisite = { focus = XHH_hannover_stahlwerke }
+		prerequisite = { focus = XHH_increase_bureaucratic_overview }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 2
+		relative_position_id = XHH_job_opportunities
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.02
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = XHH_senate_debuff
+				}
+				remove_ideas = XHH_senate_debuff
+			}
+			if = {
+				limit = {
+					has_idea = XHH_senate_debuff_2
+				}
+				remove_ideas = XHH_senate_debuff_2
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_national_conservative_coalition
+		icon = GFX_goal_generic_alliance
+		prerequisite = { focus = XHH_crackdown_on_unions }
+		prerequisite = { focus = XHH_military_industrial_complex }
+		prerequisite = { focus = XHH_increase_bureaucratic_overview }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 2
+		relative_position_id = XHH_job_opportunities
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = XHH_senate_debuff
+				}
+				remove_ideas = XHH_senate_debuff
+			}
+			if = {
+				limit = {
+					has_idea = XHH_senate_debuff_2
+				}
+				remove_ideas = XHH_senate_debuff_2
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_expand_the_welfare_state
+		icon = GFX_focus_generic_welfare
+		prerequisite = { focus = XHH_hamburgs_broad_coalition focus = XHH_national_conservative_coalition }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_hamburgs_broad_coalition
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_idea = XHH_welfare_state_idea
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHH_welfare_state_idea
+				add_idea = XHH_welfare_state_idea_2
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_scientific_investments
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = XHH_hamburgs_broad_coalition focus = XHH_national_conservative_coalition }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_hamburgs_broad_coalition
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			amount_research_slots > 3
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = XHH_economic_independence
+		icon = GFX_focus_GER_customs_union
+		prerequisite = { focus = XHH_hamburgs_broad_coalition focus = XHH_national_conservative_coalition }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_national_conservative_coalition
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			industrial_complex > 19
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			
+		}
+	}
+
+	focus = {
+		id = XHH_religious_divide
+		icon = GFX_focus_generic_vatican_agents
+		prerequisite = { focus = XHH_hamburgs_broad_coalition focus = XHH_national_conservative_coalition }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_national_conservative_coalition
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = XHH_internal_events.5
+		}
+	}
+
+	focus = {
+		id = XHH_power_to_the_senate
+		icon = GFX_focus_rom_handle_king
+		prerequisite = { focus = XHH_religious_divide focus = XHH_expand_the_welfare_state }
+		prerequisite = { focus = XHH_economic_independence focus = XHH_scientific_investments }
+		mutually_exclusive = { focus = XHH_abolish_the_senate }
+		x = 0
+		y = 2
+		relative_position_id = XHH_hamburgs_broad_coalition
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			democratic > 0.5
+			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
+				XHH_tom_first = {
+					add_trait = {
+						ideology = liberalism
+						trait = constitutional_monarch
+					}
+				}
+			}
+
+			hidden_effect = {
+				news_event = { id = XHH_news_events.1 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_abolish_the_senate
+		icon = GFX_focus_generic_monarchy_1
+		prerequisite = { focus = XHH_religious_divide focus = XHH_expand_the_welfare_state }
+		prerequisite = { focus = XHH_economic_independence focus = XHH_scientific_investments }
+		mutually_exclusive = { focus = XHH_power_to_the_senate }
+		x = 0
+		y = 2
+		relative_position_id = XHH_national_conservative_coalition
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			neutrality > 0.7
+			is_subject = no
+		}
+		
+		bypass = {
+			has_country_flag = XHH_senate_removed
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			XHH_abolish_the_senate_effect = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XHH_tom_first = {
+				add_trait = {
+					ideology = despotism
+					trait = XHH_absolute_monarch
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_democracy_in_the_empire
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = XHH_power_to_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_power_to_the_senate
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_ascension
+		icon = GFX_focus_ger_revive_kaiserreich
+		prerequisite = { focus = XHH_abolish_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_abolish_the_senate
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_mobilise_the_public
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = XHH_power_to_the_senate focus = XHH_abolish_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_power_to_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			has_war_support > 0.99
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = XHH_integrate_northwest_administration
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = XHH_mobilise_the_public }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_mobilise_the_public
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			XHH_is_current_emperor = yes
+			is_subject = no
+			XPO = {
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+			has_war_with = XPO
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = XPO
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			XPO = {
+				country_event = {
+					id = XHH_diplo_events.1
+					days = 3
+				}
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				annex_country = {
+					target = XPO
+					transfer_troops = no
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = XPO
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_placeholder_war
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XHH_mobilise_the_public }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_mobilise_the_public
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			XHH_is_current_emperor = yes
+			is_subject = no
+			62 = {
+				controller = {
+					NOT = {
+						is_ally_with = ROOT
+						
+					}
+				}
+			}
+		}
+		
+		bypass = {
+			OR = {
+				controls_state = 62
+				owns_state = 62
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = XFT
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_claim = 62
+			62 = {
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = take_claimed_state
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					62 = {
+						NOT = {
+							is_controlled_by = owner
+						}
+					}
+				}
+				62 = {
+					controller = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = take_claimed_state
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_modernise_the_landeswehr
+		icon = GFX_goal_generic_army_doctrines
+		#prerequisite = { focus = XHH_open_hamburger_senat }
+		#mutually_exclusive = { focus =  }
+		x = 10
+		y = -1
+		relative_position_id = XHH_open_hamburger_senat
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_completed_focus = XHH_open_hamburger_senat
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			army_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_modernise_the_landeswehr
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_doctrines_of_defence
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = XHH_modernise_the_landeswehr }
+		mutually_exclusive = { focus = XHH_doctrines_of_offence }
+		x = 2
+		y = 1
+		relative_position_id = XHH_modernise_the_landeswehr
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = XHH_doctrines_of_offence
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_grand_battle_plan
+				category = cat_mass_assault
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_doctrines_of_offence
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = XHH_modernise_the_landeswehr }
+		mutually_exclusive = { focus = XHH_doctrines_of_defence }
+		x = -2
+		y = 1
+		relative_position_id = XHH_modernise_the_landeswehr
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = XHH_doctrines_of_offence
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_mobile_warfare
+				category = cat_superior_firepower
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_equipment_modernisation
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = XHH_doctrines_of_offence focus = XHH_doctrines_of_defence }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_doctrines_of_offence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_equipment_modernisation
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# MIO HERE
+		}
+	}
+
+	focus = {
+		id = XHH_artillery_factories
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = XHH_doctrines_of_offence focus = XHH_doctrines_of_defence }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_doctrines_of_defence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_artillery_factories
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# MIO HERE
+		}
+	}
+
+	focus = {
+		id = XHH_reinforce_the_army
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		prerequisite = { focus = XHH_equipment_modernisation }
+		prerequisite = { focus = XHH_artillery_factories }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_equipment_modernisation
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { }
+		completion_reward = {
+			add_ideas = XHH_army_reinforcement
+		}
+	}
+
+	focus = {
+		id = XHH_military_science_investments
+		icon = GFX_focus_PER_construct_air_defenses
+		prerequisite = { focus = XHH_equipment_modernisation }
+		prerequisite = { focus = XHH_artillery_factories }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_artillery_factories
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_production_capabilities
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = XHH_equipment_modernisation }
+		prerequisite = { focus = XHH_artillery_factories }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_artillery_factories
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_equipment_bonus = {
+				name = XHH_production_capabilities
+				bonus = {
+					infantry_equipment = {
+						build_cost_ic = -0.15
+					}
+					support_equipment = {
+						build_cost_ic = -0.15
+					}
+					artillery = {
+						build_cost_ic = -0.1
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_invest_in_rostock_shipbuilding
+		icon = GFX_goal_generic_construct_naval_dockyard
+		#prerequisite = { focus = XHH_open_hamburger_senat }
+		#mutually_exclusive = { focus =  }
+		x = 16
+		y = -1
+		relative_position_id = XHH_open_hamburger_senat
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_completed_focus = XHH_open_hamburger_senat
+			controls_state = 61
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			navy_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			61 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_nationalise_the_hamurger_hafen
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 58
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			58 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XHH_hamburger_hafen
+		}
+	}
+
+	focus = {
+		id = XHH_baltic_sea_domination
+		icon = GFX_focus_generic_baltic_sea_fleet
+		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_baltic_sea_domination
+				bonus = 1
+				uses = 2
+				category = dd_tech
+			}
+
+			add_tech_bonus = {
+				name = XHH_baltic_sea_domination
+				bonus = 1
+				uses = 2
+				category = cl_tech
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_marine_corps
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = XHH_nationalise_the_hamurger_hafen focus = XHH_baltic_sea_domination }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_tech = marines }
+				}
+				set_technology = {
+					marines = 1
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = XHH_marine_corps
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_marines_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_confiscate_merchant_ships
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = -0.05
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_expand_the_airforce
+		icon = GFX_goal_generic_build_airforce
+		#prerequisite = { focus = XHH_open_hamburger_senat }
+		#mutually_exclusive = { focus =  }
+		x = 17
+		y = 3
+		relative_position_id = XHH_open_hamburger_senat
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_completed_focus = XHH_open_hamburger_senat
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = XHH_expand_the_airforce
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_production_facilities
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# MIO HERE
+		}
+	}
+
+	focus = {
+		id = XHH_fighter_designs
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_bomber_development
+				bonus = 0.75
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_bomber_development
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = XHH_bomber_development
+					bonus = 2
+					uses = 1
+					category = cat_air_bombs
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = XHH_bomber_development
+					bonus = 1
+					uses = 1
+					category = tactical_bomber
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_cas_development
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_bomber_development
+				bonus = 1
+				uses = 1
+				category = mio_cat_all_cas_and_modules
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_naval_bomber_development
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = XHH_cas_development }
+		prerequisite = { focus = XHH_bomber_development }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_bomber_development
+				bonus = 1
+				uses = 1
+				category = mio_cat_all_naval_bomber_and_modules
+			}
 		}
 	}
 

@@ -11,17 +11,23 @@ bookmarks = {
 			history = "XHH_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				XHH_senate_debuff
 				XHH_hanseatic_influence
+				XHH_worker_unrest
 			}
 			focuses = {
-				
+				XHH_power_to_the_senate
+				XHH_placeholder_war
+				XHH_abolish_the_senate
 			}
 		}
 		"XVE"={
 			history = "XVE_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
-				
+				XVE_serenissima_legacy
+				XVE_heirs_of_the_sea
+				XVE_the_concordia_littorum
 			}
 			focuses = {
 				
@@ -47,7 +53,15 @@ bookmarks = {
 			focuses = {
 				
 			}
-		}		
+		}
+		"XFT"={
+			history = "XFT_GATHERING_STORM_DESC"
+			ideology  neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
 
 		"---"={
 			history = "OTHER_GATHERING_STORM_DESC"
