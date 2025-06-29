@@ -55,7 +55,7 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | XBR | Kasastul           | kasastul               |
   | XSC | Kasastul           | kasastul               |
   | XCL | johndoodoomayan    | johndoodoomayan        |
-  | XEX | IWillExplode       | i_will_explode_        |
+  | XEX | IWillExplode       | i_will_explode_        | < GOAT
   | XFT | Tyaramisu          | tyaramisu              |
   | XHH | Orland2            | 0rland0                |
   | XPK | PolishPartizan     | polishpartizan         |
