@@ -208,4 +208,36 @@ defined_text = {
         }
         localization_key = [GetXNELeaderPortrait]
     }
+    text = {
+        trigger = {
+            XHO = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXHOLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XBT = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXBTLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XUT = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXUTLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XFS = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXFSLeaderPortrait]
+    }
 }
