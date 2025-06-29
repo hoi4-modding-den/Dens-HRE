@@ -7,13 +7,13 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { XHH_fuerst_of_hamburg }
+			traits = { HRE_duchy_schleswig HRE_duchy_holstein HRE_duchy_mecklenburg HRE_principality_hannover HRE_principality_bremen XHH_fuerst_of_hamburg }
 			ideology = despotism
 			expire = "1950.1.1.1"
 			id = -1
 		}
 		country_leader = {
-			traits = { XHH_fuerst_of_hamburg constitutional_monarch }
+			traits = { HRE_duchy_schleswig HRE_duchy_holstein HRE_duchy_mecklenburg HRE_principality_hannover HRE_principality_bremen XHH_fuerst_of_hamburg constitutional_monarch }
 			ideology = conservatism
 			expire = "1950.1.1.1"
 			id = -1
@@ -403,6 +403,9 @@ characters = {
 			available = {
 				has_completed_focus = XHH_welfare_state
 			}
+			visible = {
+				NOT = { has_completed_focus = XHH_increase_crown_authority }
+			}
 			traits = {
 				XHH_welfare_architect
 			}
@@ -430,6 +433,9 @@ characters = {
 			}
 			available = {
 				has_completed_focus = XHH_industrial_revolution
+			}
+			visible = {
+				NOT = { has_completed_focus = XHH_increase_crown_authority }
 			}
 			traits = {
 				XHH_liberal_finance_minister
@@ -459,6 +465,9 @@ characters = {
 			available = {
 				has_completed_focus = XHH_prioritise_noble_estates
 			}
+			visible = {
+				NOT = { has_completed_focus = XHH_strengthen_the_senate }
+			}
 			traits = {
 				XHH_noble_businessman
 			}
@@ -486,6 +495,9 @@ characters = {
 			}
 			available = {
 				has_completed_focus = XHH_council_of_nobles
+			}
+			visible = {
+				NOT = { has_completed_focus = XHH_power_to_the_senate }
 			}
 			traits = {
 				XHH_noble_councilman
@@ -575,7 +587,7 @@ characters = {
 				original_tag = XHH
 			}
 			available = {
-				NOT = { has_government = communism }
+				NOT = { has_completed_focus = XHH_reign_in_nationalists }
 				if = {
 					limit = {
 						NOT = { has_government = fascism }
@@ -609,7 +621,7 @@ characters = {
 				original_tag = XHH
 			}
 			available = {
-				NOT = { has_government = fascism }
+				NOT = { has_completed_focus = XHH_crackdown_on_unions }
 				if = {
 					limit = {
 						NOT = { has_government = communism }

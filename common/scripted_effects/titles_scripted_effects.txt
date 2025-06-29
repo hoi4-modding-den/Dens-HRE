@@ -7,6 +7,11 @@ HRE_title_system = {
 	set_variable = { HRE_title_county_cilli = 1}
 	set_variable = { HRE_title_kingdom_padania = 1}
 	set_variable = { HRE_title_principality_milan = 1}
+	set_variable = { HRE_title_principality_hannover = 1}
+	set_variable = { HRE_title_principality_bremen = 1}
+	set_variable = { HRE_title_duchy_schleswig = 1}
+	set_variable = { HRE_title_duchy_holstein = 1}
+	set_variable = { HRE_title_duchy_mecklenburg = 1}
 
 	add_to_array = { global.HRE_title_acquire_array = HRE_title_emperor }
 	add_to_array = { global.HRE_title_acquire_array = HRE_title_kingdom_wurttemberg }
@@ -16,4 +21,9 @@ HRE_title_system = {
 	add_to_array = { global.HRE_title_acquire_array = HRE_title_county_cilli }
 	add_to_array = { global.HRE_title_acquire_array = HRE_title_kingdom_padania }
 	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_milan }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_hannover }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_bremen }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_schleswig }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_holstein }
+	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_mecklenburg }
 }
