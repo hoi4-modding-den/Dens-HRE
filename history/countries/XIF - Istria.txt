@@ -1,0 +1,19 @@
+capital = 736
+
+#recruit_character = XIF_istrian_freedom_front_council
+
+set_variable = { HRE_national_stance_federalism = 3 } 
+set_variable = { HRE_national_stance_welfare = 3 } 
+set_variable = { HRE_national_stance_papacy = 1 } 
+
+set_politics = {
+	ruling_party = neutrality
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 58
+	democratic = 4
+	communism = 21
+	fascism = 17
+}

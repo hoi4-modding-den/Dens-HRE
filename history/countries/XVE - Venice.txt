@@ -16,7 +16,7 @@ add_ideas = {
 
 set_politics = {
 	ruling_party = democratic
-	last_election = "1931.02.9"
+	last_election = "1930.11.9"
 	election_frequency = 72
 	elections_allowed = yes
 }
@@ -26,4 +26,18 @@ set_popularities = {
 	democratic = 64
 	communism = 9
 	fascism = 4
+}
+
+736 = {
+	start_resistance = yes
+	set_compliance = 25
+	set_resistance = 20
+	set_garrison_strength = 1.0
+}
+
+852 = {
+	start_resistance = yes
+	set_compliance = 20
+	set_resistance = 30
+	set_garrison_strength = 1.0
 }
