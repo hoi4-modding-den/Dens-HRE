@@ -53,6 +53,7 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | XS1 | STupidLord         | stupidlord             |
   | XBG | sprinkleskid       | sprinkleskid           |
   | XBR | Kasastul           | kasastul               |
+  | XSC | Kasastul           | kasastul               |
   | XCL | johndoodoomayan    | johndoodoomayan        |
   | XEX | IWillExplode       | i_will_explode_        |
   | XFT | Tyaramisu          | tyaramisu              |
