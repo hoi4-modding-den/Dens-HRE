@@ -48,14 +48,14 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   
   | Tag | Github Name        | Discord Name           |
   | --- | :----------------: | :--------------------: |
-  | XAS | STupidLord         | stupidlord             |
-  | XS0 | STupidLord         | stupidlord             |
-  | XS1 | STupidLord         | stupidlord             |
+  | XAS | STupidLord         | stupidlord             | < Dumbest and worst person in this jam
+  | XS0 | STupidLord         | stupidlord             | < Dumbest and worst person in this jam
+  | XS1 | STupidLord         | stupidlord             | < Dumbest and worst person in this jam
   | XBG | sprinkleskid       | sprinkleskid           |
   | XBR | Kasastul           | kasastul               |
   | XSC | Kasastul           | kasastul               |
   | XCL | johndoodoomayan    | johndoodoomayan        |
-  | XEX | IWillExplode       | i_will_explode_        |
+  | XEX | IWillExplode       | i_will_explode_        | < Smartest and best person in this jam
   | XFT | Tyaramisu          | tyaramisu              |
   | XHH | Orland2            | 0rland0                |
   | XPK | PolishPartizan     | polishpartizan         |
