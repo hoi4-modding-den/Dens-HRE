@@ -1,0 +1,40 @@
+scripted_gui = {
+	
+	XVE_welcome_message = {   ##Controls the main window of the welcome message, remember to credit me in the loc if you're directly copying this stuff
+		context_type = player_context
+		#parent_window_token = politics_tab
+		window_name = "XVE_welcome_window"  ##Change the names of all windows, defined in interface/*.gui
+
+		visible = {
+			has_country_flag = XVE_welcome_message_flag  ##change the flag names
+		}
+		effects = {	
+			XVE_welcome_message_close_click = {  ##make sure the button names match 
+				clr_country_flag = XVE_welcome_message_flag
+				clr_country_flag = XVE_credits_visible_flag
+			}
+			XVE_welcome_message_continue_click = {
+				clr_country_flag = XVE_welcome_message_flag
+				clr_country_flag = XVE_credits_visible_flag
+			}
+			XVE_welcome_message_credits_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = XVE_credits_visible_flag }
+					}
+					set_country_flag = XVE_credits_visible_flag
+				}
+				else = {
+					clr_country_flag = XVE_credits_visible_flag
+				}
+			}
+		}
+	}
+	XVE_credits_main_window = {  ##Controls the credits sub-window
+		context_type = player_context
+		window_name = "XVE_credits_main_window"
+		visible = { has_country_flag = XVE_credits_visible_flag }
+		
+		
+	}
+}	

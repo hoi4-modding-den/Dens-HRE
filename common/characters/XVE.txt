@@ -17,5 +17,23 @@ characters = {
 			id = -1
 		}
 	}
+	XIF_istrian_freedom_front = {
+		name = XIF_istrian_freedom_front
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XIF_istrian_freedom_front
+			}
+		}
+		country_leader = {
+			traits = { 
+				XIF_radical_idealists
+				XIF_divisive_revolutionaries_moderate
+			}
+			desc = XIF_istrian_freedom_front_leader_desc		
+			ideology = centrism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}	
 }
 	

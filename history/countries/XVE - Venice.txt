@@ -28,16 +28,20 @@ set_popularities = {
 	fascism = 4
 }
 
+set_country_flag = dont_use_default_political_advisors
+set_country_flag = dont_use_default_military_advisors
+set_country_flag = XVE_welcome_message_flag
+
 736 = {
 	start_resistance = yes
-	set_compliance = 25
-	set_resistance = 20
+	set_compliance = 45
+	set_resistance = 10
 	set_garrison_strength = 1.0
 }
 
 852 = {
 	start_resistance = yes
-	set_compliance = 20
-	set_resistance = 30
+	set_compliance = 35
+	set_resistance = 15
 	set_garrison_strength = 1.0
 }

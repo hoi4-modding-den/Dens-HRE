@@ -12,4 +12,83 @@ leader_traits = {
 		}
 	}
 
+	XIF_radical_idealists = {
+		random = no
+		
+		recruitable_population_factor = 0.15
+		political_power_factor = -0.05
+		stability_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XIF_divisive_revolutionaries_none = {
+		random = no
+		
+		war_support_factor = -0.35
+		party_popularity_stability_factor = -0.50
+		army_core_defence_factor = -0.10
+		surrender_limit = -0.70
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XIF_divisive_revolutionaries_low = {
+		random = no
+		
+		war_support_factor = -0.20
+		party_popularity_stability_factor = -0.25
+		army_core_defence_factor = -0.10
+		surrender_limit = -0.50
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XIF_divisive_revolutionaries_moderate = {
+		random = no
+		
+		war_support_factor = -0.10
+		party_popularity_stability_factor = -0.15
+		army_core_defence_factor = -0.05
+		surrender_limit = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XIF_divisive_revolutionaries_high = {
+		random = no
+		
+		war_support_factor = 0.05
+		war_support_weekly = 0.01
+		party_popularity_stability_factor = 0.10
+		army_core_defence_factor = 0.10
+		surrender_limit = 0.30
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XIF_divisive_revolutionaries_overwhelming = {
+		random = no
+		
+		war_support_factor = 0.05
+		war_support_weekly = 0.02
+		party_popularity_stability_factor = 0.25
+		army_core_defence_factor = 0.20
+		surrender_limit = 0.70
+		weekly_manpower = 300
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
