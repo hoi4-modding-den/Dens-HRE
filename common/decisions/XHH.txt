@@ -75,6 +75,44 @@ economy_decisions = {
 
 political_actions = {
 
+	XHH_immigration_campaigns  = {
+
+		priority = -1
+
+		icon = SWI_swiss_democratic_tradition_campaign
+
+		ai_will_do = {
+			base = 20
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_hamburg_meine_perle
+			controls_state = 58
+		}
+
+		visible = { 
+			controls_state = 58
+			58 = { NOT = { has_dynamic_modifier = { modifier = XHH_hamburg_immigration_hotspot scope = XHH } } }
+		}
+
+		cost = 80
+
+		complete_effect = {
+			58 = {
+				add_dynamic_modifier = {
+					modifier = XHH_hamburg_immigration_hotspot
+					scope = XHH
+					days = 200
+				}
+			}
+		}
+
+	}
+
 	XHH_dissolve_bremen_autonomy  = {
 
 		priority = -1
@@ -94,8 +132,8 @@ political_actions = {
 		}
 
 		available = {
-			# has_completed_focus = ?
 			XHH_has_hanse_active = no
+			NOT = { has_idea = XHH_hanseatic_influence_cooperative }
 			1017 = { 
 				is_controlled_by = ROOT
 				has_dynamic_modifier = { modifier = XHH_bremen_autonomy scope = XHH }

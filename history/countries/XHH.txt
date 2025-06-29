@@ -33,18 +33,42 @@ set_variable = { HRE_national_stance_federalism = 3 }
 set_variable = { HRE_national_stance_welfare = 1 } 
 set_variable = { HRE_national_stance_papacy = 3 } 
 
+# Leaders
 recruit_character = XHH_tom_first
+# PMs
 recruit_character = XHH_hermann_ludemann
+recruit_character = XHH_spd_socialist
+recruit_character = XHH_fdp_liberal
+recruit_character = XHH_cdu_conservative
+# Advisors
+recruit_character = XHH_air_warfare_theorist
+recruit_character = XHH_anti_corruption_politician
+recruit_character = XHH_captain_of_industry
+recruit_character = XHH_war_industrialist
+recruit_character = XHH_famous_professor
+recruit_character = XHH_labour_minister
+recruit_character = XHH_welfare_architect
+recruit_character = XHH_liberal_finance_minister
+recruit_character = XHH_noble_businessman
+recruit_character = XHH_noble_councilman
+recruit_character = XHH_efficient_administrator
+recruit_character = XHH_liberal_guy
+recruit_character = XHH_not_ludwig_mises
+recruit_character=  XHH_nationalist_priest
+recruit_character = XHH_ewald_klar
+# Generals
+
+
 
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1935.6.12"
-	election_frequency = 72
+	election_frequency = 24
 	elections_allowed = yes
 }
 set_popularities = {
-	neutrality = 75
-	democratic = 20
-	fascism = 2
-	communism = 3
+	neutrality = 60
+	democratic = 22
+	fascism = 5
+	communism = 13
 }

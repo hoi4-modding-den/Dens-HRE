@@ -1,6 +1,16 @@
 on_actions = {
     on_startup = {
         effect = {
+            XHH = {
+                activate_advisor = XHH_fdp_liberal_pm
+                set_party_name = {
+                    ideology = democratic
+                    long_name = XHH_democratic_party_seitz
+                    name = XHH_democratic_party_seitz
+                }
+                set_country_leader_ideology = liberalism 
+            }
+
             clear_array = XHH.XHH_integratable_countries
         }
     }
@@ -38,4 +48,10 @@ on_actions = {
             }
         }
     }
+
+    on_new_term_election = {
+		random_events = {
+			100 = XHH_internal_events.6
+		}
+	}
 }

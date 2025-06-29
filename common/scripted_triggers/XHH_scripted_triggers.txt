@@ -15,3 +15,83 @@ XHH_is_current_emperor = {
         XHH = { has_country_flag = HRE_current_emperor }
     }
 }
+
+XHH_only_one_pm = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_only_one_pm_tt
+        if = {
+            limit = {
+                has_trait = resolute_social_democrat
+            }
+            NOT = {
+                ROOT = {
+                    any_character = {
+                        OR = {
+                            has_trait = XHH_socialist_prime_minister
+                            has_trait = XHH_liberal_prime_minister
+                            has_trait = XHH_conservative_prime_minister
+                        }
+                        is_political_advisor = yes
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_trait = XHH_socialist_prime_minister
+            }
+            NOT = {
+                ROOT = {
+                    any_character = {
+                        OR = {
+                            has_trait = resolute_social_democrat
+                            has_trait = XHH_liberal_prime_minister
+                            has_trait = XHH_conservative_prime_minister
+                        }
+                        is_political_advisor = yes
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_trait = XHH_liberal_prime_minister
+            }
+            NOT = {
+                ROOT = {
+                    any_character = {
+                        OR = {
+                            has_trait = resolute_social_democrat
+                            has_trait = XHH_socialist_prime_minister
+                            has_trait = XHH_conservative_prime_minister
+                        }
+                        is_political_advisor = yes
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_trait = XHH_conservative_prime_minister
+            }
+            NOT = {
+                ROOT = {
+                    any_character = {
+                        OR = {
+                            has_trait = resolute_social_democrat
+                            has_trait = XHH_liberal_prime_minister
+                            has_trait = XHH_socialist_prime_minister
+                        }
+                        is_political_advisor = yes
+                    }
+                }
+            }
+        }
+    }
+}
+XHH_completed_via_event = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_completed_via_event_tt
+        always = no
+    }
+}

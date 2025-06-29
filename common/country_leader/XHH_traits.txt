@@ -2,25 +2,180 @@
 
 leader_traits = {
 
+	# Leaders
+
 	XHH_fuerst_of_hamburg = {
 		random = no
 		
 		political_power_factor = 0.02
-		consumer_goods_factor = -0.1
+		consumer_goods_factor = 0.1
 		global_building_slots_factor = 0.05
+
+	}
+
+	XHH_absolute_monarch = {
+		random = no
+		political_power_gain = 0.05
+		war_support_factor = 0.15
+		conscription = 0.001
+
+	}
+
+	# Advisors
+
+	# SPRITES
+	# 1 = PLANE
+	# 2 = BOMB
+	# 3 = ANCOR
+	# 4 = SUBMARINE
+	# 5 = HELMET
+	# 6 = JERRY CAN
+	# 7 = SWORD
+	# 8 = TANK
+	# 9 = SHIELD
+	# 10 = FACTORY
+	# 11 = EMPTY
+	# 12 = STAR
+	# 13 = POLITICAL
+	# 14 = GEARS
+	# 15 = EYE
+	# 16 = ARTILLERY
+	# 17 = HORSE
+	# 18 = SALUTE
+
+	XHH_socialist_prime_minister = {
+		random = no
+		sprite = 13
+		
+		party_popularity_stability_factor = 0.1
+		industrial_capacity_factory = 0.05
+		production_factory_efficiency_gain_factor = 0.05
 
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	XHH_absolute_monarch = {
+	XHH_liberal_prime_minister = {
 		random = no
 		sprite = 13
-		political_power_gain = 0.05
-		war_support_factor = 0.15
-		conscription = 0.001
+		
+		production_speed_industrial_complex_factor = 0.15
+		consumer_goods_factor = 0.05
+		trade_opinion_factor = 0.2
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
+
+	XHH_conservative_prime_minister = {
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+		neutrality_drift = 0.01
+		conscription = 0.001
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_anti_corruption_politician = {
+		random = no
+		sprite = 13
+		
+		consumer_goods_factor = -0.15
+		political_power_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_welfare_architect = {
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+		production_factory_start_efficiency_factor = 0.07
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_liberal_finance_minister = {
+		random = no
+		sprite = 10
+		
+		economy_cost_factor = -0.4
+		production_speed_buildings_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_noble_businessman = {
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.15
+		production_factory_max_efficiency_factor = 0.04
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_labour_minister = {
+		random = no
+		sprite = 10
+		
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_efficient_administrator = {
+		random = no
+		sprite = 10
+		
+		production_factory_efficiency_gain_factor = 0.12
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_noble_councilman = {
+		random = no
+		sprite = 10
+		
+		political_power_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_famous_professor = {
+		random = no
+		sprite = 13
+		
+		research_speed_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Concerns
 
 	XHH_hanse_kontor_trait = {
 		random = no

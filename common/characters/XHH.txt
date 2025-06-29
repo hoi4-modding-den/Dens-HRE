@@ -14,7 +14,7 @@ characters = {
 		}
 		country_leader = {
 			traits = { XHH_fuerst_of_hamburg constitutional_monarch }
-			ideology = liberalism
+			ideology = conservatism
 			expire = "1950.1.1.1"
 			id = -1
 		}
@@ -27,14 +27,601 @@ characters = {
 		portraits = {
 			civilian = {
 				large = GFX_portrait_SHL_hermann_ludemann
+				small = GFX_portrait_XHH_hermann_ludemann_small
 			}
 		}
 
-		country_leader = {
-			ideology = socialism
-			traits = { resolute_social_democrat }
-			expire = "1960.1.1.1"
-			id = -1
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_hermann_ludemann_pm
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				XHH_only_one_pm = yes
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
+			traits = {
+				resolute_social_democrat
+			}
+
+			on_add = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = socialism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_ludemann name = XHH_democratic_party_ludemann } }
+			}
+
+			on_remove = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+			}
+
+			can_be_fired = no
+
+			cost = 0
+		}
+
+	}
+
+	XHH_spd_socialist = {
+
+		name = XHH_spd_socialist_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_spd_socialist_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_spd_socialist_pm
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				XHH_only_one_pm = yes
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
+			traits = {
+				XHH_socialist_prime_minister
+			}
+
+			on_add = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = socialism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_klinghoffer name = XHH_democratic_party_klinghoffer } }
+			}
+
+			on_remove = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+			}
+
+			can_be_fired = no
+
+			cost = 0
+		}
+
+	}
+
+	XHH_fdp_liberal = {
+
+		name = XHH_fdp_liberal_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_fdp_liberal_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_fdp_liberal_pm
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				XHH_only_one_pm = yes
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
+			traits = {
+				XHH_liberal_prime_minister
+			}
+
+			on_add = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = liberalism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_seitz name = XHH_democratic_party_seitz } }
+			}
+
+			on_remove = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+			}
+
+			can_be_fired = no
+
+			cost = 0
+		}
+
+	}
+
+	XHH_cdu_conservative = {
+
+		name = XHH_cdu_conservative_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_cdu_conservative_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_cdu_conservative_pm
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				XHH_only_one_pm = yes
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
+			traits = {
+				XHH_conservative_prime_minister
+			}
+
+			on_add = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = liberalism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_kluck name = XHH_democratic_party_kluck } }
+			}
+
+			on_remove = {
+				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+			}
+
+			can_be_fired = no
+
+			cost = 0
+		}
+
+	}
+
+	XHH_air_warfare_theorist = {
+
+		name = XHH_air_warfare_theorist_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_air_warfare_theorist_small
+			}
+		}
+
+		advisor = {
+			slot = theorist
+			idea_token = XHH_air_warfare_theorist_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				air_warfare_theorist
+			}
+
+			cost = 75
+		}
+
+	}
+
+	XHH_anti_corruption_politician = {
+
+		name = XHH_anti_corruption_politician_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_anti_corruption_politician_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_anti_corruption_politician_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_curtail_hanse_influence
+			}
+			traits = {
+				XHH_anti_corruption_politician
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_captain_of_industry = {
+
+		name = XHH_captain_of_industry_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_captain_of_industry_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_captain_of_industry_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				OR = {
+					has_completed_focus = XHH_cooperate_with_hannoverian_industrialists
+					has_completed_focus = XHH_industrialise_rural_schleswig
+				}
+			}
+			traits = {
+				captain_of_industry
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_war_industrialist = {
+
+		name = XHH_war_industrialist_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_war_industrialist_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_war_industrialist_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_military_industrial_complex
+			}
+			traits = {
+				war_industrialist
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_efficient_administrator = {
+
+		name = XHH_efficient_administrator_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_efficient_administrator_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_efficient_administrator_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_increase_bureaucratic_overview
+			}
+			traits = {
+				XHH_efficient_administrator
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_famous_professor = {
+
+		name = XHH_famous_professor_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_famous_professor_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_famous_professor_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_scientific_investments
+			}
+			traits = {
+				XHH_famous_professor
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_labour_minister = {
+
+		name = XHH_labour_minister_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_labour_minister_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_labour_minister_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_job_opportunities
+			}
+			traits = {
+				XHH_labour_minister
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_welfare_architect = {
+
+		name = XHH_welfare_architect_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_welfare_architect_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_welfare_architect_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_welfare_state
+			}
+			traits = {
+				XHH_welfare_architect
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_liberal_finance_minister = {
+
+		name = XHH_liberal_finance_minister_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_liberal_finance_minister_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_liberal_finance_minister_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_industrial_revolution
+			}
+			traits = {
+				XHH_liberal_finance_minister
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_noble_businessman = {
+
+		name = XHH_noble_businessman_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_noble_businessman_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_noble_businessman_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_prioritise_noble_estates
+			}
+			traits = {
+				XHH_noble_businessman
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_noble_councilman = {
+
+		name = XHH_noble_councilman_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_noble_councilman_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_noble_councilman_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_council_of_nobles
+			}
+			traits = {
+				XHH_noble_councilman
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_liberal_guy = {
+
+		name = XHH_liberal_guy_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_liberal_guy_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_liberal_guy_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				OR = {
+					has_government = democratic
+					AND = {
+						has_government = neutrality
+						NOT = { has_country_flag = XHH_senate_removed }
+					}
+				}
+			}
+			traits = {
+				HUN_popular_liberal
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_not_ludwig_mises = {
+
+		name = XHH_not_ludwig_mises_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_not_ludwig_mises_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_not_ludwig_mises_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_government = neutrality
+			}
+			traits = {
+				AUS_treasurer_of_the_monarchy
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_nationalist_priest = {
+
+		name = XHH_nationalist_priest_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_nationalist_priest_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_nationalist_priest_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				NOT = { has_government = communism }
+				if = {
+					limit = {
+						NOT = { has_government = fascism }
+					}
+					is_subject = no
+				}
+			}
+			traits = {
+				nationalist_lutheran_priest
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_ewald_klar = {
+
+		name = XHH_ewald_klar_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_ewald_klar_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XHH_ewald_klar_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				NOT = { has_government = fascism }
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
+					is_subject = no
+				}
+			}
+			traits = {
+				NOR_communist_agitator
+			}
+
+			cost = 100
 		}
 
 	}

@@ -29,11 +29,40 @@
 
 # LEADER NAMES
  XHH_tom_first_name: "Kurfürst Tom I."
+ XHH_spd_socialist_name: "Aaron Klinghoffer"
+ XHH_fdp_liberal_name: "Lars Seitz"
+ XHH_cdu_conservative_name: "Tillmann Kluck"
+ XHH_liberal_guy_name: "Peter Dörflinger"
+ XHH_not_ludwig_mises_name: "Ludwin Miser"
+ XHH_nationalist_priest_name: "Hugo Spörl"
+ XHH_ewald_klar_name: "Ewald Klar"
+ XHH_air_warfare_theorist_name: "Johan Kipping"
+ XHH_anti_corruption_politician_name: "Jan Oberdinger"
+ XHH_captain_of_industry_name: "Mark Wellmann"
+ XHH_efficient_administrator_name: "Levi Schwan"
+ XHH_famous_professor_name: "Siegfried Kallesen"
+ XHH_labour_minister_name: "Karl Marks"
+ XHH_liberal_finance_minister_name: "Jürgen zu Morgenow"
+ XHH_noble_businessman_name: "Friedrich von Amselbach"
+ XHH_noble_councilman_name: "Reinhard von Lieber"
+ XHH_war_industrialist_name: "Filip Holzbauer"
+ XHH_welfare_architect_name: "Josef Argenau"
 
 
 # TRAITS
  XHH_fuerst_of_hamburg: "Kurfürst der Domäne der Freien und Hansestadt Hamburg, Herzog von Schleswig, Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel"
  XHH_absolute_monarch: "Absolute Monarch"
+ XHH_socialist_prime_minister: "Idealistic Socialist"
+ XHH_liberal_prime_minister: "Market Liberal"
+ XHH_conservative_prime_minister: "Traditional Conservative"
+ XHH_anti_corruption_politician: "Honest Treasurer"
+ XHH_welfare_architect: "Welfare Architect"
+ XHH_liberal_finance_minister: "Liberal Finance Minister"
+ XHH_noble_businessman: "Imperial Estate Manager"
+ XHH_labour_minister: "Minister of Labour"
+ XHH_efficient_administrator: "Efficient Administrator"
+ XHH_noble_councilman: "Head of the Adelsrat"
+ XHH_famous_professor: "Renowned Professor"
  XHH_hanse_kontor_trait: "Trade & Banking Company"
  XHH_hamburger_hafen_trait: "Port Authority"
 
@@ -41,6 +70,10 @@
 # PARTY NAMES
  XHH_democratic_party: "Hamburger Senat"
  XHH_democratic_party_long: "Senat der Freien und Hansestadt Hamburg und ihrer Ländereien"
+ XHH_democratic_party_ludemann: "Senat Lüdemann"
+ XHH_democratic_party_klinghoffer: "Senat Klinghoffer"
+ XHH_democratic_party_seitz: "Senat Seitz"
+ XHH_democratic_party_kluck: "Senat Kluck"
  XHH_neutrality_party: "Haus Hamburg-Mecklenburg"
  XHH_neutrality_party_long: "Haus von Hamburg-Mecklenburg"
  XHH_fascism_party: "Nationale Union"
@@ -53,10 +86,12 @@
  XHH_has_hanse_active_tt: "Has national spirit §Y$XHH_hanseatic_influence$§!"
  XHH_has_hanse_active_tt_NOT: "Does not have national spirit §Y$XHH_hanseatic_influence$§!"
  XHH_is_current_emperor_tt: "§7[XHH.GetNameWithFlag]§! heads the §YHoly Roman Empire§!"
+ XHH_only_one_pm_tt: "Only one §YPrime Minister§! can be active at the same time"
+ XHH_completed_via_event_tt: "Completed via §YEvent§!"
 
 
 # FLAGS
- XHH_senate_removed: "The Senate has been abolished"
+ XHH_senate_removed: "The §YSenate of Hamburg§! has been abolished"
  XHH_senate_removed_tt: "The §YSenate of Hamburg§! will be §Rabolished§!."
 
 
@@ -64,7 +99,7 @@
  XHH_hanseatic_influence: "Influence of the Hanseatic League"
  XHH_hanseatic_influence_desc: "The Hanseatic League, while having lost most of the influence which they held in the 15th century, still enjoys a monopoly on trade within [ROOT.GetNameDef] and exploits its connections within the senate to maintain its dominance."
  XHH_hanseatic_influence_cooperative: "Hanseatic Cooperation"
- XHH_senate_debuff: "Senate Opposition"
+ XHH_senate_debuff: "Opposition in the Senate"
  XHH_senate_debuff_desc: "The senate has been facing opposition from the left and right for mostly representing the interests of the monarchy and the Hanse."
  XHH_worker_unrest: "Dockworker Unrest"
  XHH_worker_unrest_desc: "The Dockworkers of [ROOT.GetNameDef], especially in the cities of Hamburg and Bremen, are unhappy by the government's disregard for their livelyhood."
@@ -78,7 +113,8 @@
  XHH_military_support: "Military Influence"
  XHH_military_support_desc: "The military has significant influence on the government thanks to deals and negotiations between the upper echelons of both institutions."
  XHH_land_reform: "Land Reform"
- XHH_staffed_bureaucracy: "Staffed Bureaucracy"
+ XHH_staffed_bureaucracy: "Growing Bureaucracy"
+ XHH_independent_economy: "Independent Economy"
  XHH_strikes: "Strikes!"
  XHH_strikes_desc: "Failure to subdue the Labour Unions has brought down havoc on [ROOT.GetNameDef]."
  XHH_freedom_in_democracy: "Bastion of German Democracy"
@@ -87,11 +123,14 @@
 
 # CONCERNS
  XHH_hanse_kontor: "Hansekontor Hamburg"
+ XHH_reichsbank: "Reichsbank"
  XHH_hamburger_hafen: "Hamburger Hafenautorität"
 
 # DYNAMIC MODIFIERS
  XHH_bremen_autonomy: "Bremen Autonomy"
  XHH_bremen_autonomy_desc: "The Hanseatic City of Bremen has been granted significant autonomy in their industrial planning."
+ XHH_pearl_of_the_north: "Pearl of the North"
+ XHH_pearl_of_the_north_desc: "The Free and Hanseatic City of Hamburg has many names. Pearl of the North, Venice of Germany, the True North. But the one thing that is certainly true is that Hamburg is the most beautiful place in the world."
  XHH_hamburg_immigration_hotspot: "Immigration Hotspot"
 
 
@@ -103,6 +142,7 @@
  XHH_introduce_kartelamt: "Form the Federal Cartel Office"
  XHH_support_farmers: "Support the Farmers"
 
+ XHH_immigration_campaigns: "Green Grass Campaigns"
  XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
  XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by the predecessor of the line of Hamburg-Mecklenburg to improve relations between the principality and the Hanseatic League, has been a hindrance to us. We must revoke it to gain more control over our nation."
 
@@ -155,12 +195,14 @@
  XHH_land_reform_desc: ""
  XHH_prioritise_noble_estates: "Prioritise Imperial Estates"
  XHH_prioritise_noble_estates_desc: ""
- XHH_support_the_army: "Support from the Army"
+ XHH_support_the_army: "Courting the Army"
  XHH_support_the_army_desc: ""
  XHH_state_owned_enterprise: "Acquire Vital Industries"
  XHH_state_owned_enterprise_desc: ""
  XHH_increase_army_budget: "Increase Military Budget"
  XHH_increase_army_budget_desc: ""
+ XHH_hamburg_meine_perle: "The Pearl of the North"
+ XHH_hamburg_meine_perle_desc: ""
  XHH_hamburg_university: "University of Hamburg"
  XHH_hamburg_university_desc: ""
  XHH_job_opportunities: "Job Opportunities"
@@ -193,14 +235,32 @@
  XHH_power_to_the_senate_desc: "The Kurfürst has no place but as a figurehead of the country! The people themselves must rule over Hamburg!"
  XHH_abolish_the_senate: "Abolish the Senate"
  XHH_abolish_the_senate_desc: "The senate is holding down the righteous rule of the Kurfürst, who obviously knows best who should rule! Their charade end here and now!"
+ 
+ XHH_reign_in_nationalists: "Reign in the Nationalists"
+ XHH_reign_in_nationalists_desc: ""
+ XHH_prioritise_consumer_needs: "Prioritise Consumer Needs"
+ XHH_prioritise_consumer_needs_desc: ""
+ XHH_reichsbank_financing: "Reichsbank Financing"
+ XHH_reichsbank_financing_desc: ""
+ XHH_council_of_nobles: "Council of Nobles"
+ XHH_council_of_nobles_desc: ""
+
+ XHH_naval_domination: "Seevorherrschaft"
+ XHH_naval_domination_desc: ""
+
  XHH_democracy_in_the_empire: "Democracy in the Realm"
  XHH_democracy_in_the_empire_desc: ""
  XHH_imperial_ascension: "Imperial Ascension"
  XHH_imperial_ascension_desc: ""
+
  XHH_mobilise_the_public: "Mobilise the Public"
  XHH_mobilise_the_public_desc: ""
  XHH_integrate_northwest_administration: "Demands for Wilhelmshaven"
  XHH_integrate_northwest_administration_desc: ""
+ XHH_unite_the_empire: "Promote German Unity"
+ XHH_unite_the_empire_desc: ""
+ XHH_unite_mecklenburg_vorpommern: "Seize Vorpommern"
+ XHH_unite_mecklenburg_vorpommern_desc: ""
 
  XHH_modernise_the_landeswehr: "Modernise the Landeswehr"
  XHH_modernise_the_landeswehr_desc: ""
@@ -243,6 +303,18 @@
  XHH_naval_bomber_development: "Naval Air Support"
  XHH_naval_bomber_development_desc: ""
 
+ XHH_imperial_resource_acquisition: "Imperial Resource Acquisition"
+ XHH_imperial_resource_acquisition_desc: ""
+ XHH_imperial_resource_acquisition_tt: "Automatically bypasses once the first §YImperial Agenda§! is passed"
+ XHH_infrastructure_agenda: "Imperial Infrastructure Subsidies"
+ XHH_infrastructure_agenda_desc: ""
+ XHH_construction_agenda: "Imperial Industry Investments"
+ XHH_construction_agenda_desc: ""
+ XHH_production_agenda: "Imperial Production Guidelines"
+ XHH_production_agenda_desc: ""
+ XHH_science_agenda: "Imperial Research Initiatives"
+ XHH_science_agenda_desc: ""
+
 
 # EVENTS
  XHH_internal_events.1.t: "Aufhebung des Bremer Freistadtsgesetzes!"
@@ -261,6 +333,12 @@
  XHH_internal_events.5.desc: "While the majority of our population is Protestant, there is a vocal Catholic majority that demands of us that we recognise the Holy See and [XRO.GetNameDef]."
  XHH_internal_events.5.a: "We must recognise the Holy See."
  XHH_internal_events.5.b: "Who cares about an old man in Rome?"
+ XHH_internal_events.6.t: "[GetYear] Hamburger Elections!"
+ XHH_internal_events.6.desc: "It is once again election time in [ROOT.GetNameDef]!"
+ XHH_internal_events.6.a: "Victory for Lüdemann and the SPD!"
+ XHH_internal_events.6.b: "Klinghoffer's USPD wins!"
+ XHH_internal_events.6.c: "Seitz and the Liberals get the mandate!"
+ XHH_internal_events.6.d: "The people elect Kluck!"
 
  XHH_diplo_events.1.t: "Ultimatum from [FROM.GetNameDef]"
  XHH_diplo_events.1.desc: ""
