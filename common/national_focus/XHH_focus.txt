@@ -185,7 +185,7 @@ focus_tree = {
 			add_political_power = 80
 			add_popularity = {
 				ideology = democratic
-				popularity = 0.05
+				popularity = 0.1
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -286,7 +286,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_strengthen_the_senate
 
-		cost = 6
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -320,7 +320,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_industrialise_rural_schleswig
 
-		cost = 6
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -454,7 +454,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_increase_crown_authority
 
-		cost = 6
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -492,7 +492,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_grainbasket_of_the_north
 
-		cost = 6
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -698,8 +698,7 @@ focus_tree = {
 	focus = {
 		id = XHH_land_reform
 		icon = GFX_focus_generic_land_reclamation
-		prerequisite = { focus = XHH_welfare_state }
-		prerequisite = { focus = XHH_industrial_revolution }
+		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 1
@@ -802,8 +801,7 @@ focus_tree = {
 	focus = {
 		id = XHH_state_owned_enterprise
 		icon = GFX_focus_generic_industry_2
-		prerequisite = { focus = XHH_prioritise_noble_estates }
-		prerequisite = { focus = XHH_support_the_army }
+		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 1
@@ -959,7 +957,8 @@ focus_tree = {
 	focus = {
 		id = XHH_promote_worker_unions
 		icon = GFX_goal_generic_soviet_construction
-		prerequisite = { focus = XHH_welfare_state focus = XHH_industrial_revolution }
+		prerequisite = { focus = XHH_industrial_revolution }
+		prerequisite = { focus = XHH_welfare_state }
 		prerequisite = { focus = XHH_job_opportunities }
 		#mutually_exclusive = { focus =  }
 		x = -4
@@ -1120,7 +1119,8 @@ focus_tree = {
 		id = XHH_crackdown_on_unions
 		icon = GFX_goal_generic_war_with_comintern
 		prerequisite = { focus = XHH_job_opportunities }
-		prerequisite = { focus = XHH_prioritise_noble_estates focus = XHH_support_the_army }
+		prerequisite = { focus = XHH_prioritise_noble_estates }
+		prerequisite = { focus = XHH_support_the_army }
 		#mutually_exclusive = { focus =  }
 		x = 4
 		y = 1
@@ -1439,6 +1439,10 @@ focus_tree = {
 					}
 				}
 			}
+
+			hidden_effect = {
+				news_event = { id = XHH_news_events.1 hours = 6 }
+			}
 		}
 	}
 
@@ -1485,13 +1489,106 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_placeholder_war
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = XHH_power_to_the_senate focus = XHH_abolish_the_senate }
+		id = XHH_democracy_in_the_empire
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = XHH_power_to_the_senate }
 		#mutually_exclusive = { focus =  }
-		x = -3
+		x = 0
+		y = 1
+		relative_position_id = XHH_power_to_the_senate
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_ascension
+		icon = GFX_focus_ger_revive_kaiserreich
+		prerequisite = { focus = XHH_abolish_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 0
 		y = 1
 		relative_position_id = XHH_abolish_the_senate
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_mobilise_the_public
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = XHH_power_to_the_senate focus = XHH_abolish_the_senate }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_power_to_the_senate
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			has_war_support > 0.99
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = XHH_integrate_northwest_administration
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = XHH_mobilise_the_public }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_mobilise_the_public
 
 		cost = 10
 
@@ -1500,6 +1597,68 @@ focus_tree = {
 		}
 
 		available = {
+			XHH_is_current_emperor = yes
+			is_subject = no
+			XPO = {
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+			has_war_with = XPO
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = XPO
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			XPO = {
+				country_event = {
+					id = XHH_diplo_events.1
+					days = 3
+				}
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				annex_country = {
+					target = XPO
+					transfer_troops = no
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = XPO
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_placeholder_war
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XHH_mobilise_the_public }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_mobilise_the_public
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			XHH_is_current_emperor = yes
 			is_subject = no
 			62 = {
 				controller = {
@@ -1512,10 +1671,15 @@ focus_tree = {
 		}
 		
 		bypass = {
-			
+			OR = {
+				controls_state = 62
+				owns_state = 62
+			}
 		}
 
 		available_if_capitulated = no
+
+		will_lead_to_war_with = XFT
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -1930,13 +2094,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			58 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1949,12 +2113,134 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_baltic_sea_domination
+		icon = GFX_focus_generic_baltic_sea_fleet
+		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_baltic_sea_domination
+				bonus = 1
+				uses = 2
+				category = dd_tech
+			}
+
+			add_tech_bonus = {
+				name = XHH_baltic_sea_domination
+				bonus = 1
+				uses = 2
+				category = cl_tech
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_marine_corps
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = XHH_nationalise_the_hamurger_hafen focus = XHH_baltic_sea_domination }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_tech = marines }
+				}
+				set_technology = {
+					marines = 1
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = XHH_marine_corps
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_marines_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_confiscate_merchant_ships
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = -0.05
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+		}
+	}
+
+	focus = {
 		id = XHH_expand_the_airforce
 		icon = GFX_goal_generic_build_airforce
 		#prerequisite = { focus = XHH_open_hamburger_senat }
 		#mutually_exclusive = { focus =  }
-		x = 19
-		y = -1
+		x = 17
+		y = 3
 		relative_position_id = XHH_open_hamburger_senat
 
 		cost = 2.9
@@ -1984,6 +2270,193 @@ focus_tree = {
 				cost_reduction = 0.5
 				uses = 2
 				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_production_facilities
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# MIO HERE
+		}
+	}
+
+	focus = {
+		id = XHH_fighter_designs
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_bomber_development
+				bonus = 0.75
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_bomber_development
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = XHH_bomber_development
+					bonus = 2
+					uses = 1
+					category = cat_air_bombs
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = XHH_bomber_development
+					bonus = 1
+					uses = 1
+					category = tactical_bomber
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_cas_development
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = XHH_expand_the_airforce }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_bomber_development
+				bonus = 1
+				uses = 1
+				category = mio_cat_all_cas_and_modules
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_naval_bomber_development
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = XHH_cas_development }
+		prerequisite = { focus = XHH_bomber_development }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = XHH_expand_the_airforce
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_bomber_development
+				bonus = 1
+				uses = 1
+				category = mio_cat_all_naval_bomber_and_modules
 			}
 		}
 	}

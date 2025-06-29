@@ -8,3 +8,10 @@ XHH_has_hanse_active = {
         }
     }
 }
+
+XHH_is_current_emperor = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_is_current_emperor_tt
+        XHH = { has_country_flag = HRE_current_emperor }
+    }
+}

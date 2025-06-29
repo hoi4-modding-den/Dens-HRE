@@ -28,7 +28,7 @@
 
 
 # LEADER NAMES
- XHH_tom_first_name: "Tom I."
+ XHH_tom_first_name: "Kurfürst Tom I."
 
 
 # TRAITS
@@ -52,6 +52,7 @@
 # SCRIPTED TRIGGERS
  XHH_has_hanse_active_tt: "Has national spirit §Y$XHH_hanseatic_influence$§!"
  XHH_has_hanse_active_tt_NOT: "Does not have national spirit §Y$XHH_hanseatic_influence$§!"
+ XHH_is_current_emperor_tt: "§7[XHH.GetNameWithFlag]§! heads the §YHoly Roman Empire§!"
 
 
 # FLAGS
@@ -101,8 +102,13 @@
 # DECISIONS
  XHH_introduce_kartelamt: "Form the Federal Cartel Office"
  XHH_support_farmers: "Support the Farmers"
+
  XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
  XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by the predecessor of the line of Hamburg-Mecklenburg to improve relations between the principality and the Hanseatic League, has been a hindrance to us. We must revoke it to gain more control over our nation."
+
+ XHH_land_integration: "Land Integration"
+ XHH_integrate_lands: "Integrate [FROM.GetFlag][FROM.GetAdjective] Territories"
+ XHH_integrate_lands_desc: "Territories of [FROM.GetNameDef] have to be integrated into the bureaucracy of our nation. This process includes replacing their law codes, ensuring loyalty of the officers and bureaucrats and of course gaining popular support from the people."
 
 
 # FOCUS TREE
@@ -187,6 +193,14 @@
  XHH_power_to_the_senate_desc: "The Kurfürst has no place but as a figurehead of the country! The people themselves must rule over Hamburg!"
  XHH_abolish_the_senate: "Abolish the Senate"
  XHH_abolish_the_senate_desc: "The senate is holding down the righteous rule of the Kurfürst, who obviously knows best who should rule! Their charade end here and now!"
+ XHH_democracy_in_the_empire: "Democracy in the Realm"
+ XHH_democracy_in_the_empire_desc: ""
+ XHH_imperial_ascension: "Imperial Ascension"
+ XHH_imperial_ascension_desc: ""
+ XHH_mobilise_the_public: "Mobilise the Public"
+ XHH_mobilise_the_public_desc: ""
+ XHH_integrate_northwest_administration: "Demands for Wilhelmshaven"
+ XHH_integrate_northwest_administration_desc: ""
 
  XHH_modernise_the_landeswehr: "Modernise the Landeswehr"
  XHH_modernise_the_landeswehr_desc: ""
@@ -209,9 +223,25 @@
  XHH_invest_in_rostock_shipbuilding_desc: ""
  XHH_nationalise_the_hamurger_hafen: "Nationalise the Hamburger Hafen"
  XHH_nationalise_the_hamurger_hafen_desc: ""
+ XHH_baltic_sea_domination: "Baltic Sea Domination"
+ XHH_baltic_sea_domination_desc: ""
+ XHH_marine_corps: "Hamburg Marine School"
+ XHH_marine_corps_desc: ""
+ XHH_confiscate_merchant_ships: "Confiscate Merchant Ships"
+ XHH_confiscate_merchant_ships_desc: ""
 
  XHH_expand_the_airforce: "Expand the Airforce"
  XHH_expand_the_airforce_desc: ""
+ XHH_production_facilities: "Aircraft Industrial Facilities"
+ XHH_production_facilities_desc: ""
+ XHH_fighter_designs: "Fighter Designs"
+ XHH_fighter_designs_desc: ""
+ XHH_bomber_development: "Bomber Development"
+ XHH_bomber_development_desc: ""
+ XHH_cas_development: "Close Air Support Tactics"
+ XHH_cas_development_desc: ""
+ XHH_naval_bomber_development: "Naval Air Support"
+ XHH_naval_bomber_development_desc: ""
 
 
 # EVENTS
@@ -231,6 +261,23 @@
  XHH_internal_events.5.desc: "While the majority of our population is Protestant, there is a vocal Catholic majority that demands of us that we recognise the Holy See and [XRO.GetNameDef]."
  XHH_internal_events.5.a: "We must recognise the Holy See."
  XHH_internal_events.5.b: "Who cares about an old man in Rome?"
+
+ XHH_diplo_events.1.t: "Ultimatum from [FROM.GetNameDef]"
+ XHH_diplo_events.1.desc: ""
+ XHH_diplo_events.1.a: "We must agree."
+ XHH_diplo_events.1.b: "Never!"
+ XHH_diplo_events.2.t: "[FROM.GetNameDefCap] submits!"
+ XHH_diplo_events.2.desc: ""
+ XHH_diplo_events.2.a: "Very good."
+ XHH_diplo_events.3.t: "[FROM.GetNameDefCap] refuses!"
+ XHH_diplo_events.3.desc: ""
+ XHH_diplo_events.3.a: "Our authority is absolute! To War!"
+
+ XHH_news_events.1.t: "Hamburg restricts Princely Powers!"
+ XHH_news_events.1.desc: "In a constitutional referendum, the senate of Hamburg has voted to revoke the veto powers of the Kurfürst of Hamburg. This, in addition with other acts reducing the Kurfürst's influence in politics, have essentially made [FROM.GetLeader] into a figurehead.\n \nWhile the Kurfürst will still be up for election within the Empire, he will most likely only be a representative of the senate and the people of Hamburg."
+ XHH_news_events.1.a: "What a shame that it has come to this."
+ XHH_news_events.1.b: "A step into the future."
+ XHH_news_events.1.c: "Democracy will never work."
 
 
 # STATE NAMES

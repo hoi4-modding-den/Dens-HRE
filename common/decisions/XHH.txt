@@ -53,7 +53,10 @@ economy_decisions = {
 
 		visible = { 
 			NOT = { has_completed_focus = XHH_increase_crown_authority }
-			has_idea = XHH_hanseatic_influence_better
+			OR = {
+				has_idea = XHH_hanseatic_influence_better
+				NOT = { has_completed_focus = XHH_liberalise_the_banking_sector }
+			}
 		}
 
 		fire_only_once = yes
@@ -128,6 +131,77 @@ political_actions = {
 					modifier = XHH_bremen_autonomy
 					scope = XHH
 				}
+			}
+		}
+
+	}
+
+}
+
+XHH_land_integration = {
+
+	XHH_integrate_lands  = {
+
+		priority = -1
+
+		icon = SWI_isolate_switzerland
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				all_core_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		target_trigger = {
+			is_in_array = {
+				array = XHH.XHH_integratable_countries
+				value = FROM.id
+			}
+		}
+
+		targets_dynamic = yes
+		target_non_existing = yes 
+
+		fire_only_once = yes
+
+		cancel_trigger = {
+			NOT = {
+				FROM = {
+					all_core_state = {
+						is_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		cost = 100
+
+		days_remove = 200
+
+		modifier = {
+			compliance_growth = 0.01
+		}
+
+		remove_effect = {
+			remove_from_array = {
+				array = XHH.XHH_integratable_countries
+				value = FROM
+			}
+			every_state = {
+				limit = {
+					is_core_of = FROM
+				}
+				add_core_of = ROOT
 			}
 		}
 

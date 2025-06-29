@@ -1,4 +1,6 @@
 add_namespace = XHH_internal_events
+add_namespace = XHH_diplo_events
+add_namespace = XHH_news_events
 
 country_event = {
 	id = XHH_internal_events.1
@@ -164,5 +166,153 @@ country_event = {
 			popularity = -0.02
 		}
 		set_variable = { HRE_national_stance_papacy = 3 }
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.1
+	title = XHH_diplo_events.1.t
+	desc = XHH_diplo_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.1.a
+		FROM = { country_event = { id = XHH_diplo_events.2 days = 2 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = no
+				}
+			}
+		}
+    }
+
+	option = {
+        name = XHH_diplo_events.1.b
+		trigger = {
+			OR = {
+				NOT = { is_subject_of = FROM }
+				is_ai = no
+			}
+		}
+		FROM = { country_event = { id = XHH_diplo_events.3 days = 2 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.2
+	title = XHH_diplo_events.2.t
+	desc = XHH_diplo_events.2.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.2.a
+		annex_country = {
+			target = FROM
+			transfer_troops = no
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			add_core_of = ROOT
+		}
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.3
+	title = XHH_diplo_events.3.t
+	desc = XHH_diplo_events.3.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.3.a
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			add_claim_by = ROOT
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_to_array = { XHH.XHH_integratable_countries = FROM }
+		activate_targeted_decision = {
+			target = FROM
+			decision = XHH_integrate_lands
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.1
+	title = XHH_news_events.1.t
+	desc = XHH_news_events.1.desc
+	
+	picture = GFX_news_event_generic_parliament
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.1.a
+		trigger = {
+			has_government = neutrality
+		}
+    }
+
+	option = {
+        name = XHH_news_events.1.a
+		trigger = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.1.a
+		trigger = {
+			has_government = fascism
+		}
     }
 }

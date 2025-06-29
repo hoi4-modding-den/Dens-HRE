@@ -1,4 +1,9 @@
 on_actions = {
+    on_startup = {
+        effect = {
+            clear_array = XHH.XHH_integratable_countries
+        }
+    }
     on_ruling_party_change = {
         effect = {
             if = {
