@@ -22,6 +22,28 @@ on_actions = {
                 }
                 if = {
                     limit = {
+                        NOT = {
+                            has_country_leader = { character = XHH_tom_first ruling_only = yes }
+                        }
+                    }
+                    set_country_flag = HRE_is_republic
+                    set_cosmetic_tag = XHH_republic
+                }
+                if = {
+                    limit = {
+                        has_country_flag = HRE_is_republic
+                        has_country_leader = { character = XHH_tom_first ruling_only = yes }
+                    }
+                    clr_country_flag = HRE_is_republic
+                    if = {
+                        limit = {
+                            has_cosmetic_tag = XHH_republic
+                        }
+                        drop_cosmetic_tag = yes
+                    }
+                }
+                if = {
+                    limit = {
                         OR = {
                             has_government = fascism
                             AND = {

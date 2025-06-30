@@ -48,11 +48,15 @@ add_ideas = {
 
 	# Ideas
 	XAS_unchecked_merchant_guilds_fake
+	XAS_royal_army_fake
 	XAS_haus_habsburg
 }
 
 add_dynamic_modifier = {
 	modifier = XAS_unchecked_merchant_guilds
+}
+add_dynamic_modifier = {
+	modifier = XAS_royal_army
 }
 
 recruit_character = XAS_big_gretch
@@ -76,5 +80,7 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 100
+	neutrality = 76
+	democratic = 13.5
+	fascism = 10.5
 }

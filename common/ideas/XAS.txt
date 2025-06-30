@@ -21,5 +21,29 @@ ideas = {
 				production_speed_buildings_factor = -0.15
 			}
 		}
+		XAS_royal_army_fake = {
+			name = XAS_royal_army
+			picture = GFX_idea_XAS_royal_army
+
+			modifier = {
+				army_attack_factor = -0.2
+				army_defence_factor = -0.05
+				army_speed_factor = -0.02
+				army_org_factor = -0.05
+				breakthrough_factor = -0.15
+				dig_in_speed_factor =  -0.5
+				max_planning_factor = -0.5	
+				experience_gain_army = 0.01
+			}
+		}
+
+		XS1_slavic_freedom_fighters = {
+			picture = XS1_slavic_freedom_fighters
+
+			modifier = {
+				democratic_drift = 0.01
+				stability_weekly = -0.001
+			}
+		}
 	}
 }

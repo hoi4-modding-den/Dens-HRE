@@ -141,7 +141,7 @@ country_event = {
 	option = {
         name = XHH_internal_events.5.a
 		add_popularity = {
-			ideology = neutrality
+			ideology = fascism
 			popularity = 0.05
 		}
 		if = {
@@ -155,7 +155,17 @@ country_event = {
 				modifier = XHH_recognised_holy_see
 			}
 		}
-		set_variable = { HRE_national_stance_papacy = 1 }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = XHH_fascists_are_angry_tt
+
+		hidden_effect = {
+			news_event = {
+				id = XHH_news_events.2
+				hours = 9
+			}
+		}
     }
 
 	option = {
@@ -165,7 +175,6 @@ country_event = {
 			ideology = neutrality
 			popularity = -0.02
 		}
-		set_variable = { HRE_national_stance_papacy = 3 }
     }
 }
 
@@ -299,6 +308,13 @@ country_event = {
 			}
 			add_core_of = ROOT
 		}
+
+		hidden_effect = {
+			news_event = {
+				id = XHH_news_events.3
+				hours = 3
+			}
+		}
     }
 }
 
@@ -335,6 +351,14 @@ country_event = {
 			target = FROM
 			decision = XHH_integrate_lands
 		}
+		custom_effect_tooltip = XHH_integrate_lands_tt
+
+		hidden_effect = {
+			news_event = {
+				id = XHH_news_events.3
+				hours = 3
+			}
+		}
     }
 }
 
@@ -369,6 +393,107 @@ news_event = {
         name = XHH_news_events.1.c
 		trigger = {
 			has_government = fascism
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.2
+	title = XHH_news_events.2.t
+	desc = XHH_news_events.2.desc
+	
+	picture = GFX_news_event_ITA_papal_coronation
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.2.a
+		trigger = {
+			check_variable = { HRE_national_stance_papacy = 1 }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.2.b
+		trigger = {
+			NOT = { check_variable = { HRE_national_stance_papacy = 1 } }
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.3
+	title = XHH_news_events.3.t
+	desc = XHH_news_events.3.desc
+	
+	picture = GFX_news_event_006
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.3.a
+		trigger = {
+			OR = {
+				AND = {
+					original_tag = XPO
+					is_subject_of = FROM
+				}
+				AND = {
+					NOT = { original_tag = XPO }
+					check_variable = { HRE_national_stance_federalism = 1 }
+				}
+				original_tag = FROM
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.3.b
+		trigger = {
+			OR = {
+				AND = {
+					original_tag = XPO
+					is_subject_of = FROM
+				}
+				AND = {
+					NOT = { original_tag = XPO }
+					NOT = { check_variable = { HRE_national_stance_federalism = 1 } }
+				}
+			}
+			NOT = { original_tag = FROM }
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.4
+	title = XHH_news_events.4.t
+	desc = XHH_news_events.4.desc
+	
+	picture = GFX_news_event_the_mediterranean_alliance
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.4.a
+		trigger = {
+			OR = {
+				is_ally_with = FROM
+				has_government = FROM
+				original_tag = FROM
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.4.b
+		trigger = {
+			NOT = { is_ally_with = FROM }
+			NOT = { has_government = FROM }
+			NOT = { original_tag = FROM }
 		}
     }
 }

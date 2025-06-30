@@ -160,6 +160,42 @@ ideas = {
 			}
 		}
 
+		XHH_baltic_sea_control_dispute = {
+			
+			picture = great_depression
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				controls_province = 6389
+				controls_province = 11305
+				controls_province = 321
+				controls_province = 6282
+				controls_province = 11372
+				controls_province = 362
+			}
+
+			on_remove = {
+				# TODO: Event
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_navy_factor = -0.08
+				war_support_factor = -0.1
+				faction_trade_opinion_factor = -0.15
+				transport_capacity = 0.2
+				custom_modifier_tooltip = XHH_baltic_sea_control_dispute_tt
+			}
+		}
+
 		XHH_democratic_drift_bonus = {
 			
 			picture = generic_democratic_drift_bonus
@@ -440,6 +476,76 @@ ideas = {
 			modifier = {
 				land_reinforce_rate = 0.03
 				army_org_regain = 0.05
+			}
+		}
+
+		XHH_baltic_sea_dominion_spirit = {
+			
+			picture = generic_coastal_navy
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_navy = 0.03
+				convoy_escort_efficiency = 0.05
+				naval_accidents_chance = -0.1
+				naval_morale_factor = 0.07
+			}
+		}
+
+		XHH_seevorherrschaft = {
+			
+			picture = generic_coastal_navy
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				convoy_raiding_efficiency_factor = 0.05
+				naval_detection = 0.08
+				naval_damage_factor = 0.1
+				naval_defense_factor = 0.1
+			}
+		}
+
+		XHH_super_navy = {
+			
+			picture = generic_coastal_navy
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_navy = 0.03
+				convoy_escort_efficiency = 0.05
+				naval_accidents_chance = -0.1
+				naval_morale_factor = 0.07
+				convoy_raiding_efficiency_factor = 0.05
+				naval_detection = 0.08
+				naval_damage_factor = 0.1
+				naval_defense_factor = 0.1
 			}
 		}
 
