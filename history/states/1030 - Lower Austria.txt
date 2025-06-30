@@ -1,0 +1,34 @@
+state = {
+	id = 1030
+	name = STATE_1030
+
+	manpower = 966183
+	state_category = town
+	resources = {
+		tungsten = 1
+	}
+
+	history = {
+		owner = XAS
+		add_core_of = XAS
+
+		victory_points = {
+			732 10 # Linz
+		}
+		victory_points = {
+			6552 2 # Krems an der Donau
+		}
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		732 6552 6723 6739 9527
+	}
+
+	local_supplies = 0.0 
+}
