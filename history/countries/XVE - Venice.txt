@@ -2,6 +2,14 @@ capital = 160
 
 recruit_character = XVE_giuseppe_volpi
 
+oob = "XVE_1936"
+#if = {
+#	limit = { has_dlc = "Man the Guns" }
+#		set_naval_oob = "XVE_1936_naval_mtg"
+#	else = {
+#		set_naval_oob = "XVE_1936_naval_legacy"
+#	}
+#}
 set_variable = { HRE_national_stance_federalism = 1 } 
 set_variable = { HRE_national_stance_welfare = 2 } 
 set_variable = { HRE_national_stance_papacy = 3 } 
