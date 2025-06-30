@@ -437,6 +437,31 @@ ideas = {
 			}
 		}
 
+		XHH_freedom_in_democracy_2 = {
+			
+			name = XHH_freedom_in_democracy
+			picture = GER_the_shield_of_democracy
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.05
+				defensive_war_stability_factor = 0.2
+				democratic_drift = 0.05
+				land_reinforce_rate = 0.05
+				conscription_factor = 0.12
+			}
+		}
+
 		XHH_german_tradition = {
 			
 			picture = ger_revive_the_kaiserreich

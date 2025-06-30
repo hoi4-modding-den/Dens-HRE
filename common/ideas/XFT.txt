@@ -1,0 +1,25 @@
+ideas = {
+	country = {
+	
+		XFT_baltic_arms_rivalry = {
+		
+			picture = baltic_naval_arms_race_XFT
+			
+			allowed = {
+				original_tag = XFT
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.1
+				war_support_factor = 0.08
+				naval_retreat_chance = -0.1
+				naval_equipment_upgrade_xp_cost = -0.1
+			}
+		
+		}
+		
+	}
+}

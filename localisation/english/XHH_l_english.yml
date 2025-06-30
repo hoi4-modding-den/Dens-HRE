@@ -26,9 +26,43 @@
  XHH_republic_democratic_DEF: "the Republik Hamburg"
  XHH_republic_democratic_ADJ: "Hamburgish"
 
+ XH1: "Hanover"
+ XH1_DEF: "Hannover"
+ XH1_ADJ: "Hanoverian"
+ XH1_neutrality: "Duchy of Westphalia"
+ XH1_neutrality_DEF: "the Herzogtum Hannover"
+ XH1_neutrality_ADJ: "Hanoverian"
+ XH1_democratic: "Republic of Hanover"
+ XH1_democratic_DEF: "the Republik Hannover"
+ XH1_democratic_ADJ: "Hanoverian"
+ XH1_fascism: "Hanoverian State"
+ XH1_fascism_DEF: "Hannover Staat"
+ XH1_fascism_ADJ: "Hanoverian"
+ XH1_communism: "Hanoverian Soviet Republic"
+ XH1_communism_DEF: "the Sowjetrepublik Hannover"
+ XH1_communism_ADJ: "Hanoverian"
+
+ XH2: "Mecklenburg"
+ XH2_DEF: "Mecklenburg"
+ XH2_ADJ: "Mecklenburger"
+ XH2_neutrality: "Duchy of Mecklenburg"
+ XH2_neutrality_DEF: "the Herzogtum Mecklenburg"
+ XH2_neutrality_ADJ: "Mecklenburger"
+ XH2_democratic: "Republic of Mecklenburg"
+ XH2_democratic_DEF: "the Republik Mecklenburg"
+ XH2_democratic_ADJ: "Mecklenburger"
+ XH2_fascism: "Imperial State Mecklenburg-Vorpommern"
+ XH2_fascism_DEF: "Reichsland Mecklenburg-Vorpommern"
+ XH2_fascism_ADJ: "Mecklenburg-Vorpommern"
+ XH2_communism: "Mecklenburger Soviet Republic"
+ XH2_communism_DEF: "the Sowjetrepublik Mecklenburg"
+ XH2_communism_ADJ: "Mecklenburger"
+
 
 # LEADER NAMES
  XHH_tom_first_name: "Kurfürst Tom I."
+ XH1_ernest_august_name: "Herzog Ernest August"
+ XH2_christian_louis_name: "Herzog Christian Louis"
  XHH_spd_socialist_name: "Aaron Klinghoffer"
  XHH_fdp_liberal_name: "Lars Seitz"
  XHH_cdu_conservative_name: "Tillmann Kluck"
@@ -101,6 +135,8 @@
  XHH_integrate_lands_tt: " \n§1Can§! §Ycore§! §1the states of the aforementioned country. This will take§! §Y200 Days§!§1 and cost§! §Y100 Political Power§!§1.§!"
 
  XHH_mecklenburg_aegis: "Imperial Aegis"
+
+ RULE_ALLOW_RELEASE_NATIONS_NOT_XHH_TOOLTIP: "§Y[ROOT.GetNameWithFlag]§! §Ris not allowed to release§! §Y[XH1.GetNameWithFlag]§! §Ror§! §Y[XH2.GetNameWithFlag]§!§Rat any point in time.§!"
 
 
 # IDEAS
@@ -185,7 +221,7 @@
  XHH_conflict_with_the_hanse_desc: ""
  XHH_boons_of_the_kiel_canal: "Boons of the Kiel Canal"
  XHH_boons_of_the_kiel_canal_desc: ""
- XHH_report_from_hannover: "Crackdown on Hannoverian Separatists"
+ XHH_report_from_hannover: "Crackdown on Hanoverian Separatists"
  XHH_report_from_hannover_desc: ""
  XHH_open_hamburger_senat: "150th Session of the Hamburg Senate"
  XHH_open_hamburger_senat_desc: ""
@@ -209,7 +245,7 @@
  XHH_utilise_hanse_connections_desc: ""
  XHH_grainbasket_of_the_north: "Support Schleswigian Farmers"
  XHH_grainbasket_of_the_north_desc: ""
- XHH_cooperate_with_hannoverian_industrialists: "Hannoverian Industrialist Support"
+ XHH_cooperate_with_hannoverian_industrialists: "Hanoverian Industrialist Support"
  XHH_cooperate_with_hannoverian_industrialists_desc: ""
  XHH_traditionalist_unity: "Traditionalist Unity"
  XHH_traditionalist_unity_desc: ""
@@ -281,8 +317,13 @@
 
  XHH_democracy_in_the_empire: "Democracy in the Realm"
  XHH_democracy_in_the_empire_desc: ""
+ XHH_the_venice_of_the_north: "The Venice of the North"
+ XHH_the_venice_of_the_north_desc: ""
+
  XHH_imperial_ascension: "Imperial Ascension"
  XHH_imperial_ascension_desc: ""
+ XHH_the_empire_of_the_seas: "The Empire of the Seas"
+ XHH_the_empire_of_the_seas_desc: ""
 
  XHH_mobilise_the_public: "Mobilise the Public"
  XHH_mobilise_the_public_desc: ""
