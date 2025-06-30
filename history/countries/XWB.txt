@@ -139,13 +139,14 @@ add_ideas = {
 
 	#Actual Ideas#
 	XWB_king_idea 
+	XWB_democracy_idea
 }
 
 set_politics = {
 	ruling_party = fascism
 	last_election = "1935.6.12"
-	election_frequency = 72
-	elections_allowed = no
+	election_frequency = 60
+	elections_allowed = yes
 }
 set_popularities = {
 	neutrality = 30
