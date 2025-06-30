@@ -3,6 +3,11 @@ capital = 65
 #set_country_flag = HRE_current_emperor
 recruit_character = XSC_king_george_ii
 
+set_autonomy = {
+    target = XSR
+    autonomous_state = autonomy_puppet
+}
+
 
 set_politics = {
 	ruling_party = neutrality
