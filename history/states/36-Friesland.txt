@@ -3,14 +3,8 @@ state={
 	name="STATE_36"
 
 	history={
-		owner = XNE
-		add_core_of = XNE
-		victory_points = {
-			6241 5 
-		}
-		victory_points = {
-			9363 1 
-		}
+		owner = XFS
+		add_core_of = XFS
 		victory_points = {
 			9335 3 
 		}
@@ -19,10 +13,10 @@ state={
 		}
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 2
+			industrial_complex = 1
+			arms_factory = 1
 			6336 = {
 				naval_base = 3
-
 			}
 
 		}
@@ -30,11 +24,11 @@ state={
 	}
 
 	provinces={
-		6241 6286 6336 8622 9309 9335 9363 9403 11318 
+		6336 8622 9335 11318 
 	}
-	manpower=2364000
+	manpower=322000
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=town
 
-	local_supplies=14.0 
+	local_supplies=9.0 
 }
