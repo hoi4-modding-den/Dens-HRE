@@ -1,4 +1,81 @@
-division_template={
+division_template = {
+	name = "Infanterie Divisie"
+	division_names_group = HOL_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+division_template = {
+	name = "Militie Divisie"
+	division_names_group = HOL_GAR_01
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
 }
 units = {
+    division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 6241
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+    division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 9363
+		division_template = "Militie Divisie"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+    division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 9309
+		division_template = "Militie Divisie"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+    division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 9403
+		division_template = "Militie Divisie"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+}
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "HOL"
+		}
+		requested_factories = 1
+		progress = 0.58
+		efficiency = 70
+	}
 }
