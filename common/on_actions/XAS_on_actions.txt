@@ -2,7 +2,10 @@ on_actions = {
 	on_startup = {
 		effect = {
 			XAS = {
-				remove_ideas = XAS_unchecked_merchant_guilds_fake
+				remove_ideas = {
+					XAS_unchecked_merchant_guilds_fake
+					XAS_royal_army_fake
+				}
 			}
 		}
 	}
