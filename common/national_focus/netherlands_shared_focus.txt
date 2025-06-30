@@ -1,0 +1,41 @@
+joint_focus = {
+    id = XNE_joint_first_union
+    icon = GFX_focus_CHL_invite_french_aristocracy
+
+    x = 10
+    y = 0
+
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XBT
+            tag = XUT
+            tag = XFS
+        }
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_dutch_tag = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        add_political_power = 80
+    }
+
+    completion_reward_joint_member = {
+    }
+
+}

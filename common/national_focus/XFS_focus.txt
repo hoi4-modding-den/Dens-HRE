@@ -1,0 +1,29 @@
+focus_tree = {
+	id = XFS_focus
+
+	country = {
+		factor = 0
+		modifier = { add = 10 tag = XFS }
+	}
+
+    shared_focus = XNE_joint_first_union
+
+    reset_on_civilwar = no
+
+    focus = {
+		id = XFS_royal_arms_purchases
+		available = {
+			neutrality > 0.35
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+	}
+}
