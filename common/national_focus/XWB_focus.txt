@@ -1,0 +1,32 @@
+focus_tree = {
+	id = XWB_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XWB
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 1000 y = 0 }
+
+	focus = {
+		id = XWB_porsche_regime
+		icon = GFX_focus_GER_kdf_wagen
+		x = 0
+		y = 0
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+}
