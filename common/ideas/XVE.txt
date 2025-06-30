@@ -36,7 +36,11 @@ ideas={
 			}
 			removal_cost = -1
 
-			modifier = {	
+			modifier = {
+				consumer_goods_factor = 0.02
+				trade_laws_cost_factor = 0.15
+				political_advisor_cost_factor = -0.05
+				custom_modifier_tooltip = XVE_imperial_autonomy_charter_tt
 			}
 		}
 		
@@ -52,7 +56,18 @@ ideas={
 			removal_cost = -1
 
 			modifier = {	
+				industrial_capacity_dockyard = 0.10
+				experience_gain_navy = 0.03
+				naval_damage_factor = 0.08
+				naval_defense_factor = 0.08
+				production_factory_efficiency_gain_factor = -0.05
 			}
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}			
 		}
 		
 		XVE_the_concordia_littorum = {
@@ -67,6 +82,9 @@ ideas={
 			removal_cost = -1
 
 			modifier = {
+				consumer_goods_factor = -0.15
+				research_speed_factor = 0.03
+				min_export = 0.10
 			}
 		}
 		
@@ -81,7 +99,13 @@ ideas={
 			}
 			removal_cost = -1
 
-			modifier = {	
+			modifier = {
+				army_core_defence_factor = 0.05
+				recruitable_population_factor = 0.02
+				army_morale_factor = -0.10
+				command_power_gain = -0.20
+				supply_consumption_factor = 0.05
+				army_org_factor = -0.10
 			}
 		}		
 
