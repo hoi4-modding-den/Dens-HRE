@@ -1,0 +1,223 @@
+focus_tree = {
+	id = XTR_focus
+
+	country = {
+		factor = 0
+		modifier = { add = 10 tag = XTR }
+	}
+
+
+
+    reset_on_civilwar = no
+
+focus = {
+  id = XTR_industrial_effort
+  icon = GFX_goal_generic_construct_civilian
+  x = 6
+  y = 0
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_construction_push_1
+  icon = GFX_goal_generic_construct_civilian
+  prerequisite = { focus = XTR_industrial_effort }
+  x = 1
+  y = 1
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_construction_push_2
+  icon = GFX_goal_generic_construct_civilian
+  prerequisite = { focus = XTR_construction_push_1 }
+  x = 1
+  y = 2
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_construction_push_3
+  icon = GFX_goal_generic_construct_civilian
+  prerequisite = { focus = XTR_construction_push_2 }
+  x = 1
+  y = 3
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_expand_infrastructure
+  icon = GFX_focus_generic_road_investment
+  prerequisite = { focus = XTR_construction_push_2 }
+  x = 3
+  y = 3
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_rural_modernization
+  icon = GFX_focus_generic_road_investment
+  prerequisite = { focus = XTR_expand_infrastructure }
+  prerequisite = { focus = XTR_advanced_engineering_training}
+  x = 3
+  y = 4
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_infrastructure_2
+  icon = GFX_focus_generic_road_investment
+  prerequisite = { focus = XTR_rural_modernization }
+  x = 3
+  y = 5
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_armament_effort_1
+  icon = GFX_goal_generic_construct_military
+  prerequisite = { focus = XTR_construction_push_3 }
+  x = 1
+  y = 4
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_armament_effort_2
+  icon = GFX_goal_generic_construct_military
+  prerequisite = { focus = XTR_armament_effort_1 }
+  x = 1
+  y = 5
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_armament_effort_3
+  icon = GFX_goal_generic_construct_military
+  prerequisite = { focus = XTR_armament_effort_2 }
+  x = 1
+  y = 6
+  cost = 10
+  completion_reward = {
+  }
+}
+
+
+
+focus = {
+  id = XTR_extra_research_slot_1
+  icon = GFX_focus_NORDIC_dem_research
+  prerequisite = { focus = XTR_construction_push_1 }
+  x = 7
+  y = 2
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_advanced_engineering_training
+  icon = GFX_SOV_military_engineering_university_ccp_2d_sov_compatibility
+  prerequisite = { focus = XTR_extra_research_slot_1 }
+  x = 6
+  y = 3
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_extra_research_slot_2
+  icon = GFX_focus_NORDIC_dem_research
+  prerequisite = { focus = XTR_extra_research_slot_1 }
+  x = 8
+  y = 3
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_hydropower_development
+  icon = GFX_focus_BEL_dam_the_consequences
+  prerequisite = { focus = XTR_extra_research_slot_2 }
+  x = 9
+  y = 4
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_mountain_mining_expansion
+  icon = GFX_focus_generic_mining_industry
+  prerequisite = { focus = XTR_hydropower_development }
+  x = 9
+  y = 5
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_forge_the_mountain_steel
+  icon = GFX_focus_generic_steel
+  prerequisite = { focus = XTR_mountain_mining_expansion }
+  x = 9
+  y = 6
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_tourism_and_wellness
+  icon = GFX_focus_generic_population_growth
+  prerequisite = { focus = XTR_industrial_effort }
+  x = 11
+  y = 1
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_forestry_and_timber_export
+  icon = GFX_focus_CHL_expand_the_forestry
+  prerequisite = { focus = XTR_tourism_and_wellness }
+  x = 11
+  y = 3
+  cost = 10
+  completion_reward = {
+  }
+}
+
+focus = {
+  id = XTR_textile_and_artisan_growth
+  icon = GFX_focus_CHL_enlarge_the_textile_industries
+  prerequisite = { focus = XTR_forestry_and_timber_export }
+  x = 11
+  y = 5
+  cost = 10
+  completion_reward = {
+  }
+}
+}

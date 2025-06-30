@@ -1,0 +1,103 @@
+ideas = {
+  country = {
+
+    ########################
+    ### STARTING SPIRITS ###
+    ########################
+
+    XTR_mountain_stronghold = {
+      picture = generic_fortify_the_borders
+      allowed = {
+        original_tag = XTR
+      }
+      removal_cost = -1
+      modifier = {
+        supply_consumption_factor= -0.6
+        attack_bonus_against_cores= 0.34
+        defence = 0.17
+
+      }
+    }
+
+    XTR_alpine_resilience = {
+      picture = YUG_federal_defense_council
+        original_tag = XTR
+      
+      removal_cost = -1
+      modifier = {
+        experience_gain_mountaineers_training_factor = 2
+        experience_gain_mountaineers_combat_factor = 2
+        attrition = -0.10
+      }
+    }
+  
+    
+
+
+    XTR_tourism_alpine_culture = {
+      picture = NOR_printing_money
+      allowed = {
+        original_tag = XTR
+      }
+      removal_cost = -1
+      modifier = {
+        factory_output = 0.05
+        political_power_gain = 0.10
+        trade_opinion_factor = 0.05
+      }
+    }
+
+    
+
+    XTR_winter_warriors = {
+      picture = generic_women_in_the_army
+      allowed = {
+        original_tag = XTR
+      }
+      removal_cost = -1
+      modifier = {
+        attrition = -0.10
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
