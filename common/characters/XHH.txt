@@ -20,6 +20,44 @@ characters = {
 		}
 	}
 
+	XH1_ernest_august = {
+
+		name = XH1_ernest_august_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_HAN_ernest_august
+			}
+		}
+
+		country_leader = {
+			ideology = despotism
+			traits = { HRE_principality_hannover }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
+	XH2_christian_louis = {
+
+		name = XH2_christian_louis_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_MEK_christian_louis
+			}
+		}
+
+		country_leader = {
+			ideology = despotism
+			traits = { HRE_duchy_mecklenburg }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
 	XHH_hermann_ludemann = {
 
 		name = SHL_hermann_ludemann

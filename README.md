@@ -59,6 +59,8 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | XEX | IWillExplode       | i_will_explode_        | < GOAT
   | XFT | Tyaramisu          | tyaramisu              |
   | XHH | Orland2            | 0rland0                |
+  | XH1 | Orland2            | 0rland0                |
+  | XH2 | Orland2            | 0rland0                |
   | XPK | PolishPartizan     | polishpartizan         |
   | XPO | Potanicc           | potanictheseventh      |
   | XRO | Meepazor           | meepazor               |

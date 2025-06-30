@@ -109,7 +109,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_political_power = 80
 			add_stability = -0.05
@@ -119,10 +119,18 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-
-			HAN = {
-				remove_state_claim = 59
+			
+			add_manpower = 1200
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = XH1
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_state_core = 59
+			hidden_effect = { 59 = { cancel_resistance = yes } }
 		}
 	}
 
@@ -1897,8 +1905,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.02
+			}
+			add_stability = 0.05
 			if = {
 				limit = {
 					has_government = democratic
@@ -1910,7 +1923,7 @@ focus_tree = {
 			}
 			else = {
 				create_intelligence_agency = {
-					name = "Bundessicherheitsdienst"
+					name = "Staatssicherheitsdienst"
 					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
 				}
 			}
@@ -1928,7 +1941,7 @@ focus_tree = {
 			}
 			else = {
 				create_intelligence_agency = {
-					name = "Bundessicherheitsdienst"
+					name = "Staatssicherheitsdienst"
 					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
 				}
 			}
@@ -1964,6 +1977,77 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHH_freedom_in_democracy
+				add_idea = XHH_freedom_in_democracy_2
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_the_venice_of_the_north
+		icon = GFX_focus_NORDIC_dem_form_alliance
+		prerequisite = { focus = XHH_democracy_in_the_empire }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XHH_democracy_in_the_empire
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 58
+					58 = { infrastructure < 5 }
+				}
+				58 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 			
 		}
 	}
@@ -1998,6 +2082,69 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			
+		}
+	}
+
+	focus = {
+		id = XHH_the_empire_of_the_seas
+		icon = GFX_focus_NORDIC_mon_selector_navy
+		prerequisite = { focus = XHH_imperial_ascension }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_imperial_ascension
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 		}
 	}
 
@@ -2201,7 +2348,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_to_array = { XHH.XHH_integratable_countries = XFT }
 			activate_targeted_decision = {
@@ -2221,7 +2368,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_settle_the_score
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 5
@@ -2238,7 +2385,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = -50
 			add_stability = 0.05
@@ -2259,11 +2406,20 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 7
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
-			
+			is_subject = no
+			XPK = {
+				exists = yes
+				has_capitulated = no
+				NOT = { is_ally_with = ROOT }
+			}
 		}
 
 		bypass = {
@@ -2272,9 +2428,33 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		will_lead_to_war_with = XPK
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			
+			add_doctrine_cost_reduction = {
+				name = XHH_prussian_military_school
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					is_core_of = XPK
+					is_coastal = yes
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			create_wargoal = {
+				target = XPK
+				type = annex_everything
+			}
 		}
 	}
 
