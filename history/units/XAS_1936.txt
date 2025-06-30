@@ -1,0 +1,224 @@
+division_template = {
+	name = "Infanterie-Division"
+	division_names_group = XAS_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Kavallerie-Division"
+	division_names_group = XAS_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Infanterie-Division (mot.)"
+	division_names_group = XAS_MOT_01
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		mot_artillery_brigade = { x = 1 y = 0 }
+	}
+	support = {
+		mot_recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Sicherungs-Division"
+	division_names_group = XAS_GAR_01
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+
+# Units
+units = {
+	# Inf
+	division = {
+		location = 704
+		division_template = "Infanterie-Division"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.5
+	}
+	division = {
+		location = 6552
+		division_template = "Infanterie-Division"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.5
+	}
+	division = {
+		location = 11666
+		division_template = "Infanterie-Division"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.5
+	}
+	division = {
+		location = 3718
+		division_template = "Infanterie-Division"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		start_equipment_factor = 0.6
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.5
+	}
+
+	# Cav
+	division = {
+		location = 9627
+		division_template = "Kavallerie-Division"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		start_equipment_factor = 0.8
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.9
+	}
+	division = {
+		location = 732
+		division_template = "Kavallerie-Division"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		start_equipment_factor = 0.8
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.75
+	}
+
+	# Mot
+	division = {
+		location = 11666
+		division_template = "Infanterie-Division (mot.)"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		start_equipment_factor = 0.5
+		start_manpower_factor = 0.9
+		start_experience_factor = 0.75
+	}
+
+	# Gar
+	division = {
+		location = 11666
+		division_template = "Sicherungs-Division"
+		division_name = {
+			is_name_ordered = no
+		}
+		name = "1st. Wiener Heimwehr"
+		start_equipment_factor = 0.8
+		start_manpower_factor = 0.5
+		start_experience_factor = 0.2
+	}
+	division = {
+		location = 6739
+		division_template = "Sicherungs-Division"
+		division_name = {
+			is_name_ordered = no
+		}
+		name = "2nd. Wiener Heimwehr"
+		start_equipment_factor = 0.8
+		start_manpower_factor = 0.5
+		start_experience_factor = 0.2
+	}
+	division = {
+		location = 9648
+		division_template = "Sicherungs-Division"
+		division_name = {
+			is_name_ordered = no
+		}
+		name = "1st. Grazer Heimwehr"
+		start_equipment_factor = 0.8
+		start_manpower_factor = 0.5
+		start_experience_factor = 0.2
+	}
+	division = {
+		location = 596
+		division_template = "Sicherungs-Division"
+		division_name = {
+			is_name_ordered = no
+		}
+		name = "1st. Cilli Heimwehr"
+		start_equipment_factor = 0.8
+		start_manpower_factor = 0.5
+		start_experience_factor = 0.2
+	}
+}
+
+
+# Facs
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "XAS"
+		}
+		requested_factories = 2
+		progress = 0.24
+		efficiency = 89
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "XAS"
+		}
+		requested_factories = 1
+		progress = 0.65
+		efficiency = 45
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "XAS"
+		}
+		requested_factories = 1
+		progress = 0.90
+		efficiency = 94
+	}
+	add_equipment_production = {
+		equipment = {
+			type = motorized_equipment_1
+			creator = "XAS"
+		}
+		requested_factories = 1
+		progress = 0.55
+		efficiency = 10
+	}
+}
