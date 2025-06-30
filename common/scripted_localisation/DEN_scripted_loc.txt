@@ -116,6 +116,14 @@ defined_text = {
         }
         localization_key = "[XNE.GetLeader] of [XNE.GetNonIdeologyName]"
     }
+    text = {
+        trigger = {
+            XPK = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[ZZX.GetLeader] of [ZZX.GetNonIdeologyName]"
+    }
 }
 
 defined_text = {
@@ -239,5 +247,13 @@ defined_text = {
 			}
         }
         localization_key = [GetXFSLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XPK = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetZZXLeaderPortrait]
     }
 }
