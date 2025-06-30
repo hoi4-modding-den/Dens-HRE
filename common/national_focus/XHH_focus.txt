@@ -472,7 +472,7 @@ focus_tree = {
 				add_idea = XHH_hanseatic_influence_cooperative
 			}
 
-			# decision to remove hanse fully
+			unlock_decision_tooltip = XHH_end_hanse_cooperation
 		}
 	}
 
@@ -2820,7 +2820,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
 			if = {
 				limit = {
@@ -2848,7 +2848,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_invest_in_rostock_shipbuilding
 
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 5
@@ -2862,10 +2862,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = -0.05
+			add_stability = -0.02
 			add_equipment_to_stockpile = {
 				type = convoy
-				amount = 50
+				amount = 150
 			}
 		}
 	}
@@ -3320,7 +3320,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XHH_reichsbahn
 		}
 	}
 
@@ -3528,7 +3529,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = XHH_military_academies

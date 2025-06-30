@@ -63,10 +63,48 @@ economy_decisions = {
 
 		cost = 100
 
-		days_remove = 160
+		days_remove = 120
 
 		remove_effect = {
 			remove_ideas = XHH_hanseatic_influence_better
+		}
+
+	}
+
+	XHH_end_hanse_cooperation  = {
+
+		priority = -1
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 25
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_utilise_hanse_connections
+		}
+
+		visible = { 
+			NOT = { has_completed_focus = XHH_strengthen_the_senate }
+			OR = {
+				has_idea = XHH_hanseatic_influence_cooperative
+				NOT = { has_completed_focus = XHH_utilise_hanse_connections }
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 160
+
+		remove_effect = {
+			remove_ideas = XHH_hanseatic_influence_cooperative
 		}
 
 	}

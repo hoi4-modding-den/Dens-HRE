@@ -140,6 +140,13 @@ country_event = {
 	
 	option = {
         name = XHH_internal_events.5.a
+		ai_chance = { 
+			factor = 0
+			modifier = {
+				factor = 10
+				has_global_flag = XHH_fascist_path
+			}
+		}
 		add_popularity = {
 			ideology = fascism
 			popularity = 0.05
@@ -170,6 +177,13 @@ country_event = {
 
 	option = {
         name = XHH_internal_events.5.b
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				has_global_flag = XHH_fascist_path
+			}
+		}
 		add_political_power = 50
 		add_popularity = {
 			ideology = neutrality
@@ -195,6 +209,16 @@ country_event = {
 	
 	option = {
         name = XHH_internal_events.6.a
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 2
+				OR = {
+					has_completed_focus = XHH_strengthen_the_senate
+					has_government = democratic
+				}
+			}
+		}
 		hidden_effect = {
 			deactivate_advisor = XHH_spd_socialist_pm
 			deactivate_advisor = XHH_fdp_liberal_pm
@@ -205,6 +229,16 @@ country_event = {
 
 	option = {
         name = XHH_internal_events.6.b
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 1.5
+				OR = {
+					has_completed_focus = XHH_strengthen_the_senate
+					has_government = democratic
+				}
+			}
+		}
 		hidden_effect = {
 			deactivate_advisor = XHH_hermann_ludemann_pm
 			deactivate_advisor = XHH_fdp_liberal_pm
@@ -215,6 +249,16 @@ country_event = {
 
 	option = {
         name = XHH_internal_events.6.c
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 1.5
+				OR = {
+					has_completed_focus = XHH_strengthen_the_senate
+					has_government = democratic
+				}
+			}
+		}
 		hidden_effect = {
 			deactivate_advisor = XHH_hermann_ludemann_pm
 			deactivate_advisor = XHH_spd_socialist_pm
@@ -225,6 +269,21 @@ country_event = {
 
 	option = {
         name = XHH_internal_events.6.d
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_completed_focus = XHH_strengthen_the_senate
+					has_government = democratic
+				}
+			}
+
+			modifier = {
+				factor = 2
+				has_completed_focus = XHH_increase_crown_authority
+			}
+		}
 		hidden_effect = {
 			deactivate_advisor = XHH_hermann_ludemann_pm
 			deactivate_advisor = XHH_spd_socialist_pm

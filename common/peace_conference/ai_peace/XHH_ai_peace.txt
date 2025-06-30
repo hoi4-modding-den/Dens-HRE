@@ -1,0 +1,20 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_ai_desires = {
+
+    XHH_annex_claimed_states = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM.FROM = {
+                is_claimed_by = ROOT
+            }
+            ROOT = {
+                original_tag = XHH
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 75
+    }
+
+}

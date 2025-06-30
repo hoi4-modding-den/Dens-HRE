@@ -1,0 +1,139 @@
+XHH_democratic = {
+	name = "Senatorial Democracy"
+	desc = "Limit Powers of the Monarchy"
+
+	allowed = {
+		original_tag = XHH
+	}
+	enable = {
+		has_completed_focus = XHH_strengthen_the_senate
+	}
+	abort = {
+		OR = {
+			has_government = communism
+			has_government = neutrality
+			has_country_flag = XHH_senate_removed
+			has_completed_focus = XHH_democracy_in_the_empire
+		}
+	}
+
+	ai_national_focuses = {
+		XHH_curtail_hanse_influence
+		XHH_liberalise_the_banking_sector
+		XHH_industrialise_rural_schleswig
+		XHH_hannover_housing_development
+		XHH_hamburg_meine_perle
+		XHH_urban_industrial_democracy
+		XHH_hamburg_university
+		XHH_industrial_revolution
+		XHH_welfare_state
+		XHH_job_opportunities
+		XHH_promote_worker_unions
+		XHH_increase_bureaucratic_overview
+		XHH_hannover_stahlwerke
+		XHH_hamburgs_broad_coalition
+		XHH_state_owned_enterprise
+		XHH_expand_the_welfare_state
+		XHH_military_industrial_complex
+		XHH_scientific_investments
+		XHH_economic_independence
+		XHH_power_to_the_senate
+		XHH_reign_in_nationalists
+		XHH_prioritise_consumer_needs
+		XHH_democracy_in_the_empire
+	}
+
+	research = {
+		
+	}
+
+	traits = {
+		NOR_communist_agitator = 0
+		nationalist_lutheran_priest = 0
+		HUN_popular_liberal = 10
+		AUS_treasurer_of_the_monarchy = 0
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+XHH_neutrality = {
+	name = "Absolute Monarchy"
+	desc = "Increase Powers of the Monarchy"
+
+	allowed = {
+		original_tag = XHH
+	}
+	enable = {
+		has_completed_focus = XHH_increase_crown_authority
+	}
+	abort = {
+		OR = {
+			has_government = communism
+			has_government = democratic
+			has_completed_focus = XHH_imperial_ascension
+		}
+	}
+
+	ai_national_focuses = {
+		XHH_curtail_hanse_influence
+		XHH_utilise_hanse_connections
+		XHH_grainbasket_of_the_north
+		XHH_cooperate_with_hannoverian_industrialists
+		XHH_hamburg_meine_perle
+		XHH_traditionalist_unity
+		XHH_hamburg_university
+		XHH_prioritise_noble_estates
+		XHH_support_the_army
+		XHH_job_opportunities
+		XHH_crackdown_on_unions
+		XHH_increase_bureaucratic_overview
+		XHH_military_industrial_complex
+		XHH_national_conservative_coalition
+		XHH_state_owned_enterprise
+		XHH_religious_divide
+		XHH_hannover_stahlwerke
+		XHH_scientific_investments
+		XHH_economic_independence
+		XHH_abolish_the_senate
+		XHH_reichsbank_financing
+		XHH_council_of_nobles
+		XHH_imperial_ascension
+	}
+
+	research = {
+		
+	}
+
+	traits = {
+		NOR_communist_agitator = 0
+		nationalist_lutheran_priest = 0
+		HUN_popular_liberal = 0
+		AUS_treasurer_of_the_monarchy = 10
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}

@@ -552,33 +552,6 @@ ideas = {
 	}
 
 	industrial_concern = {
-		
-		XHH_hanse_kontor = {
-
-			picture = GER_german_trade
-			
-			allowed = {
-				original_tag = XHH
-			}
-
-			cost = 150
-			
-			modifier = {
-				consumer_goods_factor = -0.05
-				production_speed_industrial_complex_factor = 0.1
-				resource_trade_cost_bonus_per_factory = 1
-			}
-			
-			traits = { XHH_hanse_kontor_trait }
-			
-			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 2
-					XHH_has_hanse_active = yes
-				}
-			}
-		}
 
 		XHH_reichsbank = {
 
@@ -602,6 +575,38 @@ ideas = {
 			}
 			
 			traits = { central_bank }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}
+
+		XHH_reichsbahn = {
+
+			picture = GER_deutsche_reichsbahn
+			
+			allowed = {
+				original_tag = XHH
+			}
+
+			available = {
+				has_completed_focus = XHH_imperial_railways
+			}
+
+			cost = 150
+			
+			research_bonus = {
+				train_tech = 0.15
+			}
+
+			equipment_bonus = {
+				train_equipment_2 = {
+					build_cost_ic = -0.15 
+					instant = yes
+				}
+			}
+			
+			traits = { railway_company }
 			
 			ai_will_do = {
 				factor = 2
@@ -634,6 +639,33 @@ ideas = {
 			
 			ai_will_do = {
 				factor = 1
+			}
+		}
+
+		XHH_hanse_kontor = {
+
+			picture = GER_german_trade
+			
+			allowed = {
+				original_tag = XHH
+			}
+
+			cost = 150
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.1
+				resource_trade_cost_bonus_per_factory = 1
+			}
+			
+			traits = { XHH_hanse_kontor_trait }
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 2
+					XHH_has_hanse_active = yes
+				}
 			}
 		}
 
