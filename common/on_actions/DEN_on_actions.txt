@@ -197,7 +197,7 @@ on_actions = {
 						add_to_array = { global.HRE_voted_for_research = THIS.id }
 						add_to_variable = { HRE_gui_dirty_var = 0.01 }
 					}
-					60 = {
+					150 = {
 						add_to_variable = { HRE_gui_dirty_var = 0.01 }
 					}
 				}
@@ -237,13 +237,14 @@ on_actions = {
 					has_country_flag = HRE_member_state
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_federalism_decision_timeout
+						check_variable = { HRE_federalism_decision_timeout > 1 }
+						check_variable = { global.HRE_federalism_var > 8 }
 					}
 					check_variable = { HRE_national_stance_federalism < 2 }
 					has_political_power > 20
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -20
 						add_to_variable = { global.HRE_federalism_lobbying_amount = 1 }
 						add_to_variable = { HRE_federalism_decision_timeout = 30 }
@@ -259,13 +260,14 @@ on_actions = {
 					has_country_flag = HRE_member_state
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_federalism_decision_timeout
+						check_variable = { HRE_federalism_decision_timeout > 1 }
+						check_variable = { global.HRE_federalism_var < 2 }
 					}
 					check_variable = { HRE_national_stance_federalism > 2 }
 					has_political_power > 20
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -20
 						add_to_variable = { global.HRE_regionalism_lobbying_amount = 1 }
 						add_to_variable = { HRE_federalism_decision_timeout = 30 }
@@ -281,13 +283,14 @@ on_actions = {
 					has_country_flag = HRE_current_emperor
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_federalism_decision_timeout
+						check_variable = { HRE_federalism_decision_timeout > 1 }
+						check_variable = { global.HRE_federalism_var < 2 }
 					}
 					check_variable = { HRE_national_stance_federalism > 2 }
 					has_political_power > 100
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -100
 						HRE_regionalism_dictate_effect = yes
 						add_to_variable = { HRE_welfare_decision_timeout = 30 }
@@ -302,13 +305,14 @@ on_actions = {
 					has_country_flag = HRE_current_emperor
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_federalism_decision_timeout
+						check_variable = { HRE_federalism_decision_timeout > 1 }
+						check_variable = { global.HRE_federalism_var > 8 }
 					}
 					check_variable = { HRE_national_stance_federalism < 2 }
 					has_political_power > 100
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -100
 						HRE_federalism_dictate_effect = yes
 						add_to_variable = { HRE_welfare_decision_timeout = 30 }
@@ -323,13 +327,14 @@ on_actions = {
 					has_country_flag = HRE_member_state
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_welfare_decision_timeout
+						check_variable = { HRE_welfare_decision_timeout > 1 }
+						check_variable = { global.HRE_welfare_var > 8 }
 					}
 					check_variable = { HRE_national_stance_welfare < 2 }
 					has_political_power > 20
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -20
 						add_to_variable = { global.HRE_welfare_lobbying_amount = 1 }
 						add_to_variable = { HRE_welfare_decision_timeout = 30 }
@@ -345,13 +350,14 @@ on_actions = {
 					has_country_flag = HRE_member_state
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_welfare_decision_timeout
+						check_variable = { HRE_welfare_decision_timeout > 1 }
+						check_variable = { global.HRE_welfare_var < 2 }
 					}
 					check_variable = { HRE_national_stance_welfare > 2 }
 					has_political_power > 20
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -20
 						add_to_variable = { global.HRE_militarization_lobbying_amount = 1 }
 						add_to_variable = { HRE_welfare_decision_timeout = 30 }
@@ -367,13 +373,14 @@ on_actions = {
 					has_country_flag = HRE_current_emperor
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_welfare_decision_timeout
+						check_variable = { HRE_welfare_decision_timeout > 1 }
+						check_variable = { global.HRE_welfare_var < 2 }
 					}
 					check_variable = { HRE_national_stance_welfare > 2 }
 					has_political_power > 100
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -100
 						HRE_militarization_dictate_effect = yes
 						add_to_variable = { HRE_welfare_decision_timeout = 30 }
@@ -388,13 +395,13 @@ on_actions = {
 					has_country_flag = HRE_current_emperor
 					is_ai = yes
 					NOT = {
-						has_variable = HRE_welfare_decision_timeout
+						check_variable = { HRE_welfare_decision_timeout > 1 }
+						check_variable = { global.HRE_welfare_var > 8 }
 					}
-					check_variable = { HRE_national_stance_welfare < 2 }
 					has_political_power > 100
 				}
 				random_list = {
-					10 = {
+					2 = {
 						add_political_power = -100
 						HRE_welfare_dictate_effect = yes
 						add_to_variable = { HRE_welfare_decision_timeout = 30 }
