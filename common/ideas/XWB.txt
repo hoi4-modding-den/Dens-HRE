@@ -9,5 +9,17 @@ ideas = {
 				political_power_factor = 0.1
 			}
 		}
+		XWB_democracy_idea = {
+			name = XWB_democracy_idea_name
+			picture = generic_democratic_opposition
+
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.05
+				democratic_drift = 0.02
+			}
+		}
 	}
+
+	
 }

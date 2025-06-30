@@ -3,8 +3,10 @@
  XWB_fascism:0 "Kingdom of Wurttemberg"
  XWB_fascism_DEF:0 "das Königreich Württemberg"
  XWB_fascism_ADJ:0 "Swabian"
- XWB_fascism_party: "F. Porsche GmbH"
- XWB_fascism_party_long: "Doktor-Ingenieur honoris causa Ferdinand Porsche Gesellschaft mit beschränkter Haftung"
+ XWB_fascism_party: "Nationalist Front"
+ #XWB_fascism_party: "F. Porsche GmbH"
+ XWB_fascism_party_long: "Württembergische Nationalistische Front"
+ #XWB_fascism_party_long: "Doktor-Ingenieur honoris causa Ferdinand Porsche Gesellschaft mit beschränkter Haftung" #might be used later
  XWB_democratic:0 "Free People's State of Wurttemberg"
  XWB_democratic_DEF:0 "der Freie Volksstaat Württemberg"
  XWB_democratic_ADJ:0 "Swabian"
@@ -25,6 +27,20 @@
  XWB_ADJ:0 "Swabian"
  XWB_subject:0 "$OVERLORDADJ$ $XWB$"
  
+ #Cosmetic Tags#
+ XWB_state:0 "State of Wurttemberg"
+ XWB_state_DEF:0 "der Ständestaat Württemberger"
+ XWB_state_ADJ:0 "Swabian"
+ XWB_state_big:0 "Corporate State"
+ XWB_state_big_DEF:0 "der Ständestaat"
+ XWB_state_big_ADJ:0 "German"
+ XWB_prussian:0 "Principality of Hohenzollern"
+ XWB_prussian_DEF:0 "der Fürstentum Hohenzollern"
+ XWB_prussian_ADJ:0 "Hohenzollern"
+ XWB_prussian_big:0 "Kingdom of Prussia"
+ XWB_prussian_big_DEF:0 "der Königreich Preußen"
+ XWB_prussian_big_ADJ:0 "Prussian"
+ 
  #Character Names#
  XWB_ferdinand_porsche_name:0 "Ferdinand Porsche"
  XWB_albrecht_wurttemberg_name:0 "Albrecht von Württemberg"
@@ -37,4 +53,13 @@
  XWB_catholic_anti_fascist:0 "Catholic Anti-Fascist" 
  XWB_popular_front_marxist:0 "Popular Front Proponent"
  XWB_king_idea_name:0 "King Albrecht von Württemberg"
- XWB_king_idea_desc:0 "King Albrecht Maria Alexander Philipp Joseph of Württemberg is the current monarch of the Kingdom of Württemberg. He succeeded to the throne on October 2nd, 1921, when King Wilhelm II of Württemberg died without a son, ending the Urach line of the House of Württemberg and leaving Württemberg in the hands of the 200-years-removed Ducal line of the family. Having fought as the Oberbefehlshaber of the Army in the Great Rhine War, Albrecht of Württemberg has governed much the same as his predecessor, generally leaving the governing of the kingdom up to the Prime Ministers in his advanced age, even as the electoral process has given way to far-right corporate interests. While he is not happy about the current administration, there is not much that can be done given his age. The Porsche administration may find itself on the backfoot if the king ever takes a more active stance in politics, but for now the status quo remains."
+ XWB_king_idea_desc:0 "King Albrecht Maria Alexander Philipp Joseph of Württemberg is the current monarch of the Kingdom of Württemberg. He succeeded to the throne on October 2nd, 1921, when King Wilhelm II of Württemberg died without a son, ending the Urach line of the House of Württemberg and leaving Württemberg in the hands of the 200-years-removed Ducal line of the family. Having fought as the Oberbefehlshaber of the Army in the War of the River Rhine, Albrecht of Württemberg has governed much the same as his predecessor, generally leaving the governing of the kingdom up to the Prime Ministers in his advanced age, even as the electoral process has given way to far-right corporate interests. While he is not happy about the current administration, there is not much that can be done given his age. The Porsche administration may find itself on the backfoot if the king ever takes a more active stance in politics, but for now the status quo remains."
+ XWB_democracy_idea_name:0 "Vestigial Democracy"
+ XWB_democracy_idea_desc:0 "Uniquely for a German state, Württemberg has had a bicameral government since 1819, with the Chamber of Nobles and the Chamber of Deputies serving as the basis of a constitutional monarchy. However, the failures of the Kingdom in the War of the River Rhine has left Württemberg humiliated. Following the Great Depression, the far-right ‘‘Württembergische Nationalistische Front’’ has found itself with a narrow ruling coalition, having required the election of political outsider Ferdinand Porsche as a compromise Prime Minister to assuage the monarchists concerns of a full power grab. While the Nationalist Front has little respect for the nation’s democratic traditions, the current situation is as stable as a house of cards, and could collapse in a moments notice."
+ 
+ #Focuses#
+ XWB_porsche_regime:0 "The Porsche Regime"
+ XWB_porsche_regime_desc:0 ""
+ 
+ #Misc.#
+ XWB_GATHERING_STORM_DESC:0 "Humiliated in the stalemate of the War of the River Rhine, which saw Württemberg devastated for little gain, the far-right Nationalist Front has seen fit to take power (to an extent). Having secured a narrow coalition with the monarchist Fatherland Party in the 1935 elections, the Nationalists seek to turn Württemberg into a beacon of corporatist ideals. Ferdinand Porsche, elected as a compromise candidate, has found himself the disputed Prime Minister of Württemberg, himself eager to turn Württemberg into a shining example of automotive -industrial might. Will the Corporatist-Monarchist alliance hold, or will the Kingdom fall to its democratic traditions?"
