@@ -10,14 +10,89 @@ defined_text = {
         }
         localization_key = GFX_portrait_XHH_tom_first
     }
+}
+
+defined_text = {
+    name = XHH_baltic_sea_control_dispute_tt_1
     text = {
         trigger = {
-            XHH = {
-				has_country_leader = {
-					character = XHH_hermann_ludemann
-				}
+            ROOT = {
+				controls_province = 6389
 			}
         }
-        localization_key = GFX_portrait_SHL_hermann_ludemann
+        localization_key = XHH_controls_yes_tt
+    }
+    text = {
+        localization_key = XHH_controls_no_tt
+    }
+}
+defined_text = {
+    name = XHH_baltic_sea_control_dispute_tt_2
+    text = {
+        trigger = {
+            ROOT = {
+				controls_province = 11305
+			}
+        }
+        localization_key = XHH_controls_yes_tt
+    }
+    text = {
+        localization_key = XHH_controls_no_tt
+    }
+}
+defined_text = {
+    name = XHH_baltic_sea_control_dispute_tt_3
+    text = {
+        trigger = {
+            ROOT = {
+				controls_province = 321
+			}
+        }
+        localization_key = XHH_controls_yes_tt
+    }
+    text = {
+        localization_key = XHH_controls_no_tt
+    }
+}
+defined_text = {
+    name = XHH_baltic_sea_control_dispute_tt_4
+    text = {
+        trigger = {
+            ROOT = {
+				controls_province = 6282
+			}
+        }
+        localization_key = XHH_controls_yes_tt
+    }
+    text = {
+        localization_key = XHH_controls_no_tt
+    }
+}
+defined_text = {
+    name = XHH_baltic_sea_control_dispute_tt_5
+    text = {
+        trigger = {
+            ROOT = {
+				controls_province = 11372
+			}
+        }
+        localization_key = XHH_controls_yes_tt
+    }
+    text = {
+        localization_key = XHH_controls_no_tt
+    }
+}
+defined_text = {
+    name = XHH_baltic_sea_control_dispute_tt_6
+    text = {
+        trigger = {
+            ROOT = {
+				controls_province = 362
+			}
+        }
+        localization_key = XHH_controls_yes_tt
+    }
+    text = {
+        localization_key = XHH_controls_no_tt
     }
 }
