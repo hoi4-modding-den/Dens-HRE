@@ -289,7 +289,7 @@ scripted_gui = {
 			HRE_federalism_dictate_button_visible = {
 				NOT = {
 					check_variable = { HRE_federalism_decision_timeout > 1 }
-					check_variable = { global.HRE_federalism_var < 1 }
+					check_variable = { global.HRE_federalism_var > 8 }
 				}
 				has_political_power > 99
 				has_country_flag = HRE_current_emperor
@@ -297,14 +297,14 @@ scripted_gui = {
 			HRE_federalism_lobby_button_visible = {
 				NOT = {
 					check_variable = { HRE_federalism_decision_timeout > 1 }
-					check_variable = { global.HRE_federalism_var < 1 }
+					check_variable = { global.HRE_federalism_var > 8 }
 				}
 				has_political_power > 19
 			}
 			HRE_regionalism_dictate_button_visible = {
 				NOT = {
 					check_variable = { HRE_federalism_decision_timeout > 1 }
-					check_variable = { global.HRE_federalism_var > 9 }
+					check_variable = { global.HRE_federalism_var < 2 }
 				}
 				has_political_power > 99
 				has_country_flag = HRE_current_emperor
@@ -312,14 +312,14 @@ scripted_gui = {
 			HRE_regionalism_lobby_button_visible = {
 				NOT = {
 					check_variable = { HRE_federalism_decision_timeout > 1 }
-					check_variable = { global.HRE_federalism_var > 9 }
+					check_variable = { global.HRE_federalism_var < 2 }
 				}
 				has_political_power > 19
 			}
 			HRE_welfare_dictate_button_visible = {
 				NOT = {
 					check_variable = { HRE_welfare_decision_timeout > 1 }
-					check_variable = { global.HRE_welfare_var < 1 }
+					check_variable = { global.HRE_welfare_var > 8 }
 				}
 				has_political_power > 99
 				has_country_flag = HRE_current_emperor
@@ -327,14 +327,14 @@ scripted_gui = {
 			HRE_welfare_lobby_button_visible = {
 				NOT = {
 					check_variable = { HRE_welfare_decision_timeout > 1 }
-					check_variable = { global.HRE_welfare_var < 1 }
+					check_variable = { global.HRE_welfare_var > 8 }
 				}
 				has_political_power > 19
 			}
 			HRE_militarization_dictate_button_visible = {
 				NOT = {
 					check_variable = { HRE_welfare_decision_timeout > 1 }
-					check_variable = { global.HRE_welfare_var > 9 }
+					check_variable = { global.HRE_welfare_var < 2 }
 				}
 				has_political_power > 99
 				has_country_flag = HRE_current_emperor
@@ -342,7 +342,7 @@ scripted_gui = {
 			HRE_militarization_lobby_button_visible = {
 				NOT = {
 					check_variable = { HRE_welfare_decision_timeout > 1 }
-					check_variable = { global.HRE_welfare_var > 9 }
+					check_variable = { global.HRE_welfare_var < 2 }
 				}
 				has_political_power > 19
 			}
