@@ -1,0 +1,17 @@
+﻿units = {
+    fleet = {
+		name = "Koninklijke Marine"			
+		naval_base = 6336
+		task_force = {				
+			name = "Koninklijke Vloot"			
+			location = 6336	
+            ship = { name = "HrMs Fryslân" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XFS version_name = "Van Ghent Class" } } }	
+		}				
+		task_force = {				
+			name = "Koninklijke Onderzeeboot Smaldeel"			
+			location = 6336
+			ship = { ordered_name = 21 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = XFS version_name = "O9 Class" } } }
+			ship = { ordered_name = 24 definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = XFS version_name = "O9 Class" } } }
+		}				
+	}
+}

@@ -1,0 +1,24 @@
+﻿units = {
+    fleet = {
+		name = "Koninklijke Marine"			
+		naval_base = 6598
+		task_force = {				
+			name = "Koninklijke Vloot"			
+			location = 6598	
+            ship = { name = "HrMs Antwerpen" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XBT } } }
+            ship = { name = "HrMs Overmaas" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XBT } } }
+            ship = { name = "HrMs 's Hertogenbosch" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XBT } } }
+            ship = { name = "HrMs Evertsen" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XBT } } }	
+			ship = { name = "HrMs Piet Hein" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XBT } } }	
+			ship = { name = "HrMs Witte de With" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XBT } } }
+            ship = { name = "HrMs Van Nes" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XBT } } }	
+		}				
+		task_force = {				
+			name = "Koninklijke Onderzeeboot Smaldeel"			
+			location = 6598
+			ship = { name = "HrMs O-6" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XBT } } }
+			ship = { name = "HrMs O-7" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XBT } } }
+			ship = { name = "HrMs O-8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XBT } } }
+		}				
+	}
+}

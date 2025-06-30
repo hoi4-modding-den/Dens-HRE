@@ -1,0 +1,29 @@
+units = {
+    fleet = {
+		name = "Koninklijke Marine"			
+		naval_base = 3314
+		task_force = {				
+			name = "Koninklijke Vloot"			
+			location = 3314
+			ship = { name = "HrMs Jacob van Heemskerck" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XHO } }	}
+			ship = { name = "HrMs Hertog Hendrik" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XHO } } }
+            ship = { name = "HrMs Sumatra" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XHO } } }
+            ship = { name = "HrMs De Ruyter" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XHO } } }
+            ship = { name = "HrMs Van Ghent" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XHO } } }
+			ship = { name = "HrMs Van Galen" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XHO } } }	
+			ship = { name = "HrMs Kortenaer" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XHO } } }
+            ship = { name = "HrMs Banckert" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XHO } } }	
+			ship = { name = "HrMs Van Nes" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XHO } } }	
+		}				
+		task_force = {				
+			name = "Koninklijke Onderzeeboot Smaldeel"			
+			location = 3314
+			ship = { name = "HrMs O-8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XHO } } }
+			ship = { name = "HrMs O-9" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XHO } } }
+			ship = { name = "HrMs O-10" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XHO } } }
+			ship = { name = "HrMs O-11" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XHO } } }
+			ship = { name = "HrMs O-12" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XHO } } }
+			ship = { name = "HrMs O-13" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XHO } } }
+		}				
+	}
+}
