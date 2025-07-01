@@ -578,6 +578,12 @@ characters = {
 				original_tag = XHH
 			}
 			available = {
+				hidden_trigger = {
+					OR = {
+						is_ai = no
+						has_completed_focus = XHH_strengthen_the_senate
+					}
+				}
 				OR = {
 					has_government = democratic
 					AND = {
@@ -587,7 +593,7 @@ characters = {
 				}
 			}
 			traits = {
-				HUN_popular_liberal
+				XHH_popular_liberal
 			}
 
 			cost = 100
@@ -612,10 +618,16 @@ characters = {
 				original_tag = XHH
 			}
 			available = {
+				hidden_trigger = {
+					OR = {
+						is_ai = no
+						has_completed_focus = XHH_increase_crown_authority
+					}
+				}
 				has_government = neutrality
 			}
 			traits = {
-				AUS_treasurer_of_the_monarchy
+				XHH_treasurer_of_the_monarchy
 			}
 
 			cost = 100
@@ -640,6 +652,12 @@ characters = {
 				original_tag = XHH
 			}
 			available = {
+				hidden_trigger = {
+					OR = {
+						is_ai = no
+						has_government = fascism
+					}
+				}
 				NOT = { has_completed_focus = XHH_reign_in_nationalists }
 				if = {
 					limit = {
@@ -674,6 +692,12 @@ characters = {
 				original_tag = XHH
 			}
 			available = {
+				hidden_trigger = {
+					OR = {
+						is_ai = no
+						has_government = communism
+					}
+				}
 				NOT = { has_completed_focus = XHH_crackdown_on_unions }
 				if = {
 					limit = {
