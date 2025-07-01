@@ -11,15 +11,16 @@
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
 		infantry = { x = 2 y = 0 }
-		artillery_brigade = { x = 2 y = 1 }
-		artillery_brigade = { x = 2 y = 2 }		
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }		
 	}
 	support = { 
         engineer = { x = 0 y = 0 }
         artillery = { x = 0 y = 1 }
 	}
 
-	priority = 1
+	priority = 2
+	template_counter = 37
 }
 
 division_template = {
@@ -36,7 +37,9 @@ division_template = {
 		militia = { x = 1 y = 2 }
 	}
 	
-	priority = -1
+	priority = 0
+	division_cap = 8
+	template_counter = 68
 }
 
 division_template = {
@@ -59,7 +62,7 @@ division_template = {
         recon = { x = 0 y = 1 }
 	}
 
-	priority = 1
+	priority = 2
 }
 
 division_template = {
@@ -87,6 +90,47 @@ units = {
 		division_template = "Sentinae d'Oro"
 		start_experience_factor = 0.3
 	}
+	division = {	
+		location = 6626
+		division_template = "Sentinae d'Oro"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 6631
+		division_template = "Avantgarda dei Montanari"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+	}	
+	division = {	
+		location = 628
+		division_template = "Regimento de la Guardia Republica"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}			
+	division = {	
+		location = 603
+		division_template = "Regimento de la Guardia Republica"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {	
+		location = 11564
+		division_template = "Milissia Venessiana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+	}
+	division = {	
+		location = 11595
+		division_template = "Milissia Venessiana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+	}
+	division = {	
+		location = 11584
+		division_template = "Milissia Venessiana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+	}			
 }
 
 
@@ -98,7 +142,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_1
+			type = infantry_equipment_0
 			creator = XVE
 		}
 		requested_factories = 2
@@ -114,7 +158,6 @@ instant_effect = {
 		progress = 0.3
 		efficiency = 50
 	}
-
 	add_equipment_production = {
 		equipment = {
 			type = artillery_equipment_1
@@ -123,8 +166,7 @@ instant_effect = {
 		requested_factories = 1
 		progress = 0.3
 		efficiency = 50
-	}
-	
+	}		
 }
 
 #####################

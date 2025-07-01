@@ -1,0 +1,66 @@
+﻿units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Armata Veneziana"			
+		naval_base = 11584 # Venice
+		task_force = {				
+			name = "Armata Maggiore" # Main Fleet (Heavy)		
+			location = 11584 # Venice
+			ship = { name = "SV Leon di San Marco" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Redentore" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Vittoria" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Venexia" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV San Giovanni" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Fede" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Speranza" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Gloria" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XVE } } }			
+			ship = { name = "SV San Luca" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Ercole" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Concordia" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Aquila" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Freccia" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Audace" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Carità" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Saetta" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Nibbio" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Stella" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Alato" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV San Rocco" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Stella Marina" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Vittoriosa" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Ardente" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Onore" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Speronara" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Bellator" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }		
+		}					
+		task_force = {					
+			name = "Armata Mercantile"	# Trade Fleet (Medium)		
+			location = 6626 # Triest
+			ship = { name = "SV San Pietro" definition = heavy_cruiser equipment = { heavy_cruiser_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Sagittario" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XVE } } }			
+			ship = { name = "SV San Paolo" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = XVE } } }			
+			ship = { name = "SV Leone" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Santo Stefano" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Coraggio" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Drago" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Regina" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = XVE } } }
+			ship = { name = "SV Valente" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Tempestosa" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Giustizia" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }		
+			ship = { name = "SV Fenice" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = XVE } } }														
+		}	
+		task_force = {					
+			name = "Squadra Sommersa" # Submarine Fleet
+			location = 6626 # Triest
+			ship = { name = "SV Sirena" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }
+			ship = { name = "SV Tenebra" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }
+			ship = { name = "SV Fantasma" definition = submarine equipment = { submarine_1 = { amount = 1 owner = XEX } } }			
+			ship = { name = "SV Ombra" definition = submarine equipment = { submarine_2 = { amount = 1 owner = XEX } } }	
+			ship = { name = "SV Murena" definition = submarine equipment = { submarine_2 = { amount = 1 owner = XEX } } } 
+			ship = { name = "SV Abisso" definition = submarine equipment = { submarine_2 = { amount = 1 owner = XEX } } }	
+			ship = { name = "SV Silente" definition = submarine equipment = { submarine_2 = { amount = 1 owner = XEX } } }
+			ship = { name = "SV Vipera" definition = submarine equipment = { submarine_2 = { amount = 1 owner = XEX } } }
+		}								
+	}
+}

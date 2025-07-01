@@ -1,0 +1,96 @@
+﻿units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Armata Veneziana"			
+		naval_base = 11584 # Venice
+		task_force = {				
+			name = "Armata Maggiore" # Main Fleet (Heavy)		
+			location = 11584 # Venice
+			ship = { name = "SV Leon di San Marco" pride_of_the_fleet = yes definition = carrier equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = XVE version_name =  "Posidonia Serenissima" } } }
+			ship = { name = "SV Redentore" definition = battle_cruiser equipment = { ship_hull_heavy_2 = { amount = 1 owner = XVE version_name =  "Classe Cetaceo" } } }
+			ship = { name = "SV Vittoria" definition = battle_cruiser equipment = { ship_hull_heavy_2 = { amount = 1 owner = XVE version_name =  "Classe Cetaceo" } } }
+			ship = { name = "SV San Giovanni" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XVE version_name =  "Classe Rajo Manta" } } }
+			ship = { name = "SV Speranza" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XVE version_name =  "Classe Rajo Manta" } } }
+			ship = { name = "SV Gloria" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = XVE version_name =  "Classe Zostera" } } }			
+			ship = { name = "SV San Luca" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XVE version_name =  "Sciame de Pirane" } } }
+			ship = { name = "SV Ercole" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XVE version_name =  "Sciame de Pirane" } } }
+			ship = { name = "SV Concordia" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = XVE version_name =  "Leggeri de Prima Serie" } } }
+			ship = { name = "SV Aquila" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = XVE version_name =  "Leggeri de Prima Serie" } } }
+			ship = { name = "SV Audace" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Carità" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Saetta" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Nibbio" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Stella" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV San Rocco" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Stella Marina" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Vittoriosa" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Ardente" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Onore" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XVE version_name =  "In. Leggeri" } } }
+			ship = { name = "SV Bellator" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XVE version_name =  "In. Leggeri" } } }
+		}					
+		task_force = {					
+			name = "Armata Mercantile"	# Trade Fleet (Medium)		
+			location = 6626 # Triest
+			ship = { name = "SV San Pietro" definition = heavy_cruiser equipment = { ship_hull_heavy_1 = { amount = 1 owner = XVE version_name =  "Classe Zostera" } } }
+			ship = { name = "SV Sagittario" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XVE version_name =  "Classe Rajo Manta" } } }		
+			ship = { name = "SV San Paolo" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XVE version_name =  "Classe Rajo Manta" } } }			
+			ship = { name = "SV Leone" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = XVE version_name =  "Leggeri de Prima Serie" } } }
+			ship = { name = "SV Santo Stefano" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = XVE version_name =  "Leggeri de Prima Serie" } } }
+			ship = { name = "SV Coraggio" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Drago" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Regina" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = XVE version_name =  "In. Avanzati" } } }
+			ship = { name = "SV Valente" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XVE version_name =  "In. Leggeri" } } }
+			ship = { name = "SV Tempestosa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XVE version_name =  "In. Leggeri" } } }
+			ship = { name = "SV Giustizia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XVE version_name =  "In. Leggeri" } } }
+			ship = { name = "SV Fenice" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XVE version_name =  "In. Leggeri" } } }														
+		}	
+		task_force = {					
+			name = "Squadra Sommersa" # Submarine Fleet
+			location = 6626 # Triest
+			ship = { name = "SV Sirena" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = XVE version_name =  "Costieri" } } }		
+			ship = { name = "SV Fantasma" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = XVE version_name =  "Costieri" } } }					
+			ship = { name = "SV Ombra" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XVE version_name =  "Fondomarino" } } }		
+			ship = { name = "SV Murena" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XVE version_name =  "Fondomarino" } } }		 
+			ship = { name = "SV Abisso" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XVE version_name =  "Fondomarino" } } }		
+			ship = { name = "SV Silente" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XVE version_name =  "Fondomarino" } } }	
+			ship = { name = "SV Vipera" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XVE version_name =  "Fondomarino" } } }				
+		}								
+	}
+}
+
+instant_effect = {
+	### Ongoing Ship Production Jan 1 1936 ###
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "XVE" 
+			version_name = "Classe Rajo Manta"
+		}
+		name = "SV Luminosa"		
+		requested_factories = 1
+		progress = 0.35
+		amount = 1
+		#industrial_manufacturer = mio:
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "XVE" 
+			version_name = "In. Avanzati"
+		}
+		name = "SV Zelante"
+		requested_factories = 1
+		progress = 0.70
+		amount = 1
+		#industrial_manufacturer = mio:
+	}
+}
+
+
+
+
+
+
+
+
