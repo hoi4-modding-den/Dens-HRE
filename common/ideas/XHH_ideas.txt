@@ -154,8 +154,52 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				industrial_capacity_dockyard = -0.09
+				production_speed_dockyard_factor = -0.15
+				communism_drift = 0.03
+			}
+		}
+
+		XHH_worker_unrest_2 = {
+			
+			name = XHH_worker_unrest
+			picture = FRA_factory_strikes
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
 				industrial_capacity_dockyard = -0.06
 				production_speed_dockyard_factor = -0.1
+				communism_drift = 0.02
+			}
+		}
+
+		XHH_worker_unrest_3 = {
+			
+			name = XHH_worker_unrest
+			picture = FRA_factory_strikes
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = -0.03
+				production_speed_dockyard_factor = -0.05
 				communism_drift = 0.01
 			}
 		}

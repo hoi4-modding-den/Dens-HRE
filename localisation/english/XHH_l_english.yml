@@ -187,6 +187,7 @@
  XHH_pearl_of_the_north_desc: "The Free and Hanseatic City of Hamburg has many names. Pearl of the North, Venice of Germany, the True North. But the one thing that is certainly true is that Hamburg is the most beautiful place in the world."
  XHH_hamburg_immigration_hotspot: "Immigration Hotspot"
  XHH_colonial_wealth: "Colonial Possessions"
+ XHH_colonial_wealth_desc: "The Holy Roman Empire holds no direct colonies. However, [ROOT.GetNameDef] still holds large amounts of land and influence in Africa through so-called Handelskompanien. Directed by the leaders in [ROOT.capital.GetCapitalVictoryPointName], the companies exploit the resources of Africa and send them back to Germany.\n \n§WAllows for the §!§Rexploitation§!§W of §!§Ycorporate colonial territories§!§W in Africa.§!"
 
 
 # MIOs
@@ -218,6 +219,7 @@
  XHH_integrate_lands_desc: "Territories of [FROM.GetNameDef] have to be integrated into the bureaucracy of our nation. This process includes replacing their law codes, ensuring loyalty of the officers and bureaucrats and of course gaining popular support from the people."
 
  XHH_chartered_colonial_companies: "Chartered Company Territorial Exploitation"
+ XHH_chartered_colonial_companies_desc: "$XHH_colonial_wealth_desc$\n "
  XHH_katanga_diamond_company: "Katanga-Diamanten GmbH"
  XHH_congo_rubber_company: "Costermansstad Kautschuk GmbH"
  XHH_congo_rubber_company_2: "Kongo-Kautschuk Kompanie"
@@ -376,10 +378,12 @@
  XHH_production_capabilities: "Strengthen Production Capabilities"
  XHH_production_capabilities_desc: ""
 
- XHH_invest_in_rostock_shipbuilding: "Expand Shipbuilding to Rostock"
+ XHH_invest_in_rostock_shipbuilding: "Expand Shipbuilding in Rostock"
  XHH_invest_in_rostock_shipbuilding_desc: ""
  XHH_nationalise_the_hamurger_hafen: "Nationalise the Hamburger Hafen"
  XHH_nationalise_the_hamurger_hafen_desc: ""
+ XHH_bremen_shipbuilding: "Modernise Bremerhaven"
+ XHH_bremen_shipbuilding_desc: ""
  XHH_baltic_sea_domination: "Baltic Sea Domination"
  XHH_baltic_sea_domination_desc: ""
  XHH_marine_corps: "Hamburg Marine School"
@@ -391,6 +395,8 @@
  XHH_expand_the_airforce_desc: ""
  XHH_production_facilities: "Aircraft Industrial Facilities"
  XHH_production_facilities_desc: ""
+ XHH_aluminum_works: "Bad Oldesloe Aluminum Works"
+ XHH_aluminum_works_desc: ""
  XHH_fighter_designs: "Fighter Designs"
  XHH_fighter_designs_desc: ""
  XHH_bomber_development: "Bomber Development"

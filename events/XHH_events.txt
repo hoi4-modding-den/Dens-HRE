@@ -412,7 +412,7 @@ country_event = {
         name = XHH_diplo_events.3.a
 		create_wargoal = {
 			target = FROM
-			type = take_claimed_states
+			type = take_claimed_state
 		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt

@@ -53,3 +53,32 @@ XHH_HRE_modifier_set_to_last = {
         add_dynamic_modifier = { modifier = HRE_member_state_spirit }
     }
 }
+
+XHH_reduce_worker_unrest_effect = {
+    if = {
+        limit = {
+            has_idea = XHH_worker_unrest
+        }
+        swap_ideas = {
+            remove_idea = XHH_worker_unrest
+            add_idea = XHH_worker_unrest_2
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = XHH_worker_unrest_2
+        }
+        swap_ideas = {
+            remove_idea = XHH_worker_unrest_2
+            add_idea = XHH_worker_unrest_3
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = XHH_worker_unrest_3
+        }
+        remove_ideas = XHH_worker_unrest_3
+        
+        custom_effect_tooltip = generic_skip_one_line_tt
+    }
+}
