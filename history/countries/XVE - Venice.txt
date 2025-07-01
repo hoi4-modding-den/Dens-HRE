@@ -10,6 +10,10 @@ set_war_support = 0.25
 set_stability = 0.55
 set_research_slots = 3
 
+set_power_balance = {  
+	id = XVE_power_balance
+} 
+
 set_technology = {
 	infantry_weapons = 1
 	tech_support = 1
@@ -36,6 +40,7 @@ if = {
 		basic_heavy_cruiser = 1
 		early_battleship = 1
 		early_battlecruiser = 1
+		early_carrier = 1
 		transport = 1
 	}
 }
