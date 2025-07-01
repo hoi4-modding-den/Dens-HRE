@@ -1,15 +1,16 @@
-capital = 1031
+capital = 1034
 
 
 set_country_flag = HRE_is_republic
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1931.11.8"
 	election_frequency = 72
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 100
+	neutrality = 65
+	democratic = 35
 }
