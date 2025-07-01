@@ -295,7 +295,7 @@ XHH_chartered_colonial_companies = {
 		icon = hol_attract_foreign_investors
 
 		ai_will_do = {
-			base = 20
+			base = 25
 			modifier = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 3
@@ -346,6 +346,10 @@ XHH_chartered_colonial_companies = {
 			modifier = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				rubber < 0
 			}
 		}
 
@@ -398,6 +402,10 @@ XHH_chartered_colonial_companies = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
 			}
+			modifier = {
+				factor = 2
+				rubber < 0
+			}
 		}
 
 		allowed = {  
@@ -448,6 +456,10 @@ XHH_chartered_colonial_companies = {
 			modifier = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				rubber < 0
 			}
 		}
 
@@ -500,6 +512,10 @@ XHH_chartered_colonial_companies = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
 			}
+			modifier = {
+				factor = 2
+				tungsten < 0
+			}
 		}
 
 		allowed = {  
@@ -550,6 +566,10 @@ XHH_chartered_colonial_companies = {
 			modifier = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				tungsten < 0
 			}
 		}
 
@@ -602,6 +622,10 @@ XHH_chartered_colonial_companies = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
 			}
+			modifier = {
+				factor = 2
+				steel < 0
+			}
 		}
 
 		allowed = {  
@@ -652,6 +676,13 @@ XHH_chartered_colonial_companies = {
 			modifier = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 3
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					steel < 0
+					chromium < 0
+				}
 			}
 		}
 
@@ -708,6 +739,10 @@ XHH_chartered_colonial_companies = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
 			}
+			modifier = {
+				factor = 2
+				chromium < 0
+			}
 		}
 
 		allowed = {  
@@ -759,6 +794,10 @@ XHH_chartered_colonial_companies = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 2
 			}
+			modifier = {
+				factor = 2
+				chromium < 0
+			}
 		}
 
 		allowed = {  
@@ -809,6 +848,14 @@ XHH_chartered_colonial_companies = {
 			modifier = {
 				factor = 0
 				num_of_civilian_factories_available_for_projects < 3
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					chromium < 0
+					steel < 0
+					tungsten < 0
+				}
 			}
 		}
 

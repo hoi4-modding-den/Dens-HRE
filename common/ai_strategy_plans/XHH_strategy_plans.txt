@@ -11,7 +11,7 @@ XHH_democratic = {
 	abort = {
 		OR = {
 			has_government = communism
-			has_government = neutrality
+			has_government = fascism
 			has_country_flag = XHH_senate_removed
 			has_completed_focus = XHH_democracy_in_the_empire
 		}
@@ -49,7 +49,7 @@ XHH_democratic = {
 
 	traits = {
 		NOR_communist_agitator = 0
-		nationalist_lutheran_priest = 0
+		XHH_protestant_nationalist = 0
 		HUN_popular_liberal = 10
 		AUS_treasurer_of_the_monarchy = 0
 	}
@@ -81,6 +81,7 @@ XHH_neutrality = {
 	abort = {
 		OR = {
 			has_government = communism
+			has_government = fascism
 			has_government = democratic
 			has_completed_focus = XHH_imperial_ascension
 		}

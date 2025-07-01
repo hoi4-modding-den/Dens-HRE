@@ -31,7 +31,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 
 		available = {
@@ -62,7 +62,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 
 		available = {
@@ -96,7 +96,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 
 		available = {
@@ -148,7 +148,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 
 		available = {
@@ -1604,6 +1604,12 @@ focus_tree = {
 			}
 
 			hidden_effect = {
+				XHH_tom_first = {
+					set_portraits = {
+						civilian = { large = GFX_portrait_XHH_tom_first_civilian }
+					}
+				}
+				
 				news_event = { id = XHH_news_events.1 hours = 6 }
 			}
 		}
@@ -1825,7 +1831,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 5
+			factor = 8
 		}
 
 		available = {
@@ -2372,7 +2378,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 
 		available = {
@@ -2397,12 +2403,27 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			add_to_array = { XHH.XHH_integratable_countries = XFT }
-			activate_targeted_decision = {
-				target = XFT
-				decision = XHH_integrate_lands
+			if = {
+				limit = {
+					NOT = { has_completed_focus = XHH_settle_the_score }
+				}
+				every_state = {
+					limit = {
+						is_coastal = yes
+						is_core_of = XFT
+					}
+					add_core_of = ROOT
+				}
 			}
-			custom_effect_tooltip = XHH_integrate_lands_tt
+			else = {
+				every_state = {
+					limit = {
+						is_claimed_by = ROOT
+						is_core_of = XFT
+					}
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -2436,7 +2457,10 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -50
 			add_stability = 0.05
-			85 = { set_demilitarized_zone = yes }
+			85 = {
+				set_demilitarized_zone = yes
+				add_core_of = ROOT
+			}
 		}
 	}
 
@@ -2589,6 +2613,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {
@@ -2905,6 +2933,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {
@@ -3187,6 +3219,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {
@@ -3494,7 +3530,11 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 5
+			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {
@@ -3544,7 +3584,11 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 5
+			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {
@@ -3585,7 +3629,11 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 5
+			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {
@@ -3617,7 +3665,11 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 5
+			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
+			}
 		}
 
 		available = {

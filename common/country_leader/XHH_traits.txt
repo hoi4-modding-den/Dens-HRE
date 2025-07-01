@@ -175,6 +175,22 @@ leader_traits = {
 		}
 	}
 
+	XHH_protestant_nationalist = {
+		random = no
+		sprite = 13
+		
+		fascism_drift = 0.05
+		weekly_manpower = 500
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 2
+				has_government = fascism
+			}
+		}
+	}
+
 	# Concerns
 
 	XHH_hanse_kontor_trait = {
