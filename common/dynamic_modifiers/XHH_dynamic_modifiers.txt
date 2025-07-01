@@ -29,3 +29,17 @@ XHH_hamburg_immigration_hotspot = {
 	
 }
 
+XHH_colonial_wealth = { 
+	enable = { always = yes }
+
+	icon = GFX_idea_por_colonial_assimilation
+	
+	political_power_cost = 0.1
+	consumer_goods_factor = XHH_colmod_consumer_goods
+	country_resource_steel = XHH_colmod_steel
+	country_resource_tungsten = XHH_colmod_tungsten
+	country_resource_chromium = XHH_colmod_chromium
+	country_resource_rubber = XHH_colmod_rubber
+	
+	
+}

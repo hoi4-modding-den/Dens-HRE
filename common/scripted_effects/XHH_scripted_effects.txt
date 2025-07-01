@@ -46,3 +46,10 @@ XHH_abolish_the_senate_effect = {
         set_variable = { HRE_national_stance_welfare = 3 }
     }
 }
+
+XHH_HRE_modifier_set_to_last = {
+    hidden_effect = {
+        remove_dynamic_modifier = { modifier = HRE_member_state_spirit }
+        add_dynamic_modifier = { modifier = HRE_member_state_spirit }
+    }
+}

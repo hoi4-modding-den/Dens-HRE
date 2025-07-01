@@ -7,7 +7,10 @@ peace_ai_desires = {
         peace_action_type = take_states
         enable = {
             FROM.FROM.FROM = {
-                is_claimed_by = ROOT
+                OR = {
+                    is_claimed_by = ROOT
+                    is_core_of = ROOT
+                }
             }
             ROOT = {
                 original_tag = XHH

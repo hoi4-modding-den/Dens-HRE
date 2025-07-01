@@ -1515,7 +1515,7 @@ focus_tree = {
 	focus = {
 		id = XHH_religious_divide
 		icon = GFX_focus_generic_vatican_agents
-		prerequisite = { focus = XHH_hamburgs_broad_coalition focus = XHH_national_conservative_coalition }
+		prerequisite = { focus = XHH_national_conservative_coalition }
 		#mutually_exclusive = { focus =  }
 		x = 1
 		y = 1
@@ -1816,6 +1816,45 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_german_kolonialbund
+		icon = GFX_focus_POL_colonial_league
+		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_prioritise_consumer_needs
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_dynamic_modifier = {
+				modifier = XHH_colonial_wealth
+			}
+
+			XHH_HRE_modifier_set_to_last = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_category_tooltip = XHH_chartered_colonial_companies
+		}
+	}
+
+	focus = {
 		id = XHH_naval_domination
 		icon = GFX_focus_GER_seeherrschaft
 		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
@@ -1824,7 +1863,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_reichsbank_financing
 
-		cost = 5
+		cost = 6
 
 		ai_will_do = {
 			factor = 5
@@ -2180,8 +2219,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_integrate_northwest_administration
-		icon = GFX_goal_generic_territory_or_war
+		id = XHH_unite_the_empire
+		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
 		x = -3
@@ -2191,63 +2230,73 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 7
-			modifier = {
-				factor = 0
-				has_war = yes
-			}
+			factor = 5
 		}
 
 		available = {
-			XHH_is_current_emperor = yes
 			is_subject = no
-			XPO = {
-				exists = yes
-				has_capitulated = no
-				NOT = { has_war_with = ROOT }
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
 			}
 		}
 
 		bypass = {
-			has_war_with = XPO
+			
 		}
 
 		available_if_capitulated = no
 
-		will_lead_to_war_with = XPO
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
+		search_filters = {  }
 		completion_reward = {
-			XPO = {
-				country_event = {
-					id = XHH_diplo_events.1
-					days = 3
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = {
+					is_faction_leader = yes
 				}
+				set_faction_name = XHH_mecklenburg_aegis
+			}
+			else = {
+				create_faction = XHH_mecklenburg_aegis
 			}
 
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				annex_country = {
-					target = XPO
-					transfer_troops = no
-				}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
-				custom_effect_tooltip = generic_skip_one_line_tt
-
-				every_state = {
-					limit = {
-						is_core_of = XPO
-					}
-					add_core_of = ROOT
-				}
+			news_event = {
+				id = XHH_news_events.4
+				hours = 6
 			}
+		}
+	}
 
-			hidden_effect = {
-				add_named_threat = {
-					threat = 2
-					name = XHH_integrate_northwest_administration
-				}
-			}
+	focus = {
+		id = XHH_compact_of_northern_self_determination
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = XHH_unite_the_empire }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_unite_the_empire
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
 		}
 	}
 
@@ -2459,8 +2508,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_unite_the_empire
-		icon = GFX_focus_GER_the_four_year_plan
+		id = XHH_integrate_northwest_administration
+		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
 		x = 3
@@ -2470,43 +2519,62 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 7
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
-			XHH_is_current_emperor = yes
 			is_subject = no
-			OR = {
-				is_in_faction = no
-				is_faction_leader = yes
+			XPO = {
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				owns_state = 56
 			}
 		}
 
 		bypass = {
-			
+			OR = {
+				has_war_with = XPO
+				XPO = { NOT = { owns_state = 56 } }
+			}
 		}
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		will_lead_to_war_with = XPO
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			set_rule = { can_create_factions = yes }
-			if = {
-				limit = {
-					is_faction_leader = yes
+			XPO = {
+				country_event = {
+					id = XHH_diplo_events.1
+					days = 3
 				}
-				set_faction_name = XHH_mecklenburg_aegis
-			}
-			else = {
-				create_faction = XHH_mecklenburg_aegis
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			news_event = {
-				id = XHH_news_events.4
-				hours = 6
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				56 = {
+					transfer_state_to = ROOT
+					add_core_of = ROOT
+					remove_core_of = XPO
+				}
 			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 2
+					name = XHH_integrate_northwest_administration
+				}
+			}
+		}
+
+		bypass_effect = {
+			add_state_core = 56
 		}
 	}
 
@@ -2907,11 +2975,57 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_bremen_shipbuilding
+		icon = GFX_focus_GER_navy
+		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_invest_in_rostock_shipbuilding
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = XHH_baltic_sea_domination
 		icon = GFX_focus_generic_baltic_sea_fleet
 		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
 		#mutually_exclusive = { focus =  }
-		x = 1
+		x = 3
 		y = 1
 		relative_position_id = XHH_invest_in_rostock_shipbuilding
 
@@ -2978,7 +3092,8 @@ focus_tree = {
 	focus = {
 		id = XHH_marine_corps
 		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = XHH_nationalise_the_hamurger_hafen focus = XHH_baltic_sea_domination }
+		prerequisite = { focus = XHH_nationalise_the_hamurger_hafen focus = XHH_bremen_shipbuilding }
+		prerequisite = { focus = XHH_baltic_sea_domination }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 2
@@ -3024,7 +3139,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = XHH_invest_in_rostock_shipbuilding }
 		#mutually_exclusive = { focus =  }
-		x = 3
+		x = 5
 		y = 1
 		relative_position_id = XHH_invest_in_rostock_shipbuilding
 

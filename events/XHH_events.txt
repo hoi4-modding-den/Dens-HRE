@@ -294,6 +294,30 @@ country_event = {
 }
 
 country_event = {
+	id = XHH_internal_events.7
+	title = XHH_internal_events.7.t
+	desc = XHH_internal_events.7.desc
+	
+	picture = GFX_report_event_latvian_soldiers
+	
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XHH_internal_events.7.a
+		effect_tooltip = {
+			remove_ideas = XHH_baltic_sea_control_dispute
+		}
+		hidden_effect = {
+			news_event = {
+				id = XHH_news_events.5
+				hours = 6
+			}
+		}
+    }
+}
+
+country_event = {
 	id = XHH_diplo_events.1
 	title = XHH_diplo_events.1.t
 	desc = XHH_diplo_events.1.desc
@@ -310,11 +334,10 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		effect_tooltip = {
-			FROM = {
-				annex_country = {
-					target = ROOT
-					transfer_troops = no
-				}
+			56 = {
+				transfer_state_to = FROM
+				add_core_of = FROM
+				remove_core_of = ROOT
 			}
 		}
     }
@@ -332,6 +355,12 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		effect_tooltip = {
+			56 = {
+				add_core_of = FROM 
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			FROM = {
 				create_wargoal = {
 					target = ROOT
@@ -354,24 +383,16 @@ country_event = {
 	
 	option = {
         name = XHH_diplo_events.2.a
-		annex_country = {
-			target = FROM
-			transfer_troops = no
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		every_state = {
-			limit = {
-				is_core_of = FROM
-			}
+		56 = {
+			transfer_state_to = ROOT
 			add_core_of = ROOT
+			remove_core_of = FROM
 		}
 
 		hidden_effect = {
 			news_event = {
 				id = XHH_news_events.3
-				hours = 3
+				hours = 6
 			}
 		}
     }
@@ -391,32 +412,13 @@ country_event = {
         name = XHH_diplo_events.3.a
 		create_wargoal = {
 			target = FROM
-			type = annex_everything
+			type = take_claimed_states
 		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		every_state = {
-			limit = {
-				is_core_of = FROM
-			}
-			add_claim_by = ROOT
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		add_to_array = { XHH.XHH_integratable_countries = FROM }
-		activate_targeted_decision = {
-			target = FROM
-			decision = XHH_integrate_lands
-		}
-		custom_effect_tooltip = XHH_integrate_lands_tt
-
-		hidden_effect = {
-			news_event = {
-				id = XHH_news_events.3
-				hours = 3
-			}
+		56 = {
+			add_core_of = ROOT
 		}
     }
 }
@@ -495,33 +497,26 @@ news_event = {
         name = XHH_news_events.3.a
 		trigger = {
 			OR = {
-				AND = {
-					original_tag = XPO
-					is_subject_of = FROM
-				}
-				AND = {
-					NOT = { original_tag = XPO }
-					check_variable = { HRE_national_stance_federalism = 1 }
-				}
+				is_ally_with = FROM
 				original_tag = FROM
 			}
+			NOT = { original_tag = XPO }
 		}
     }
 
 	option = {
         name = XHH_news_events.3.b
 		trigger = {
-			OR = {
-				AND = {
-					original_tag = XPO
-					is_subject_of = FROM
-				}
-				AND = {
-					NOT = { original_tag = XPO }
-					NOT = { check_variable = { HRE_national_stance_federalism = 1 } }
-				}
-			}
+			NOT = { is_ally_with = FROM }
 			NOT = { original_tag = FROM }
+			NOT = { original_tag = XPO }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.3.c
+		trigger = {
+			original_tag = XPO
 		}
     }
 }
@@ -553,6 +548,43 @@ news_event = {
 			NOT = { is_ally_with = FROM }
 			NOT = { has_government = FROM }
 			NOT = { original_tag = FROM }
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.5
+	title = XHH_news_events.5.t
+	desc = XHH_news_events.5.desc
+	
+	picture = GFX_news_event_the_mediterranean_alliance
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.5.a
+		trigger = {
+			OR = {
+				is_ally_with = FROM
+				original_tag = FROM
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.5.b
+		trigger = {
+			NOT = { is_ally_with = FROM }
+			NOT = { original_tag = FROM }
+			NOT = { has_war_with = FROM }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.5.c
+		trigger = {
+			has_war_with = FROM
 		}
     }
 }
