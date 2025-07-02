@@ -166,7 +166,7 @@ XHH_panzerfabrik_lueneburg = {
 	}
 
 	available = {
-		
+		FROM = { owns_state = 59 }
 	}
 
 }
@@ -1203,10 +1203,8 @@ XHH_rheinmetall_organization = {
 	}
 
 	available = {
-		51 = {
-			owner = {
-				NOT = { has_war_with = FROM }
-			}
+		FROM = {
+			owns_state = 58
 		}
 	}
 

@@ -11,7 +11,7 @@ XHH_democratic = {
 	abort = {
 		OR = {
 			has_government = communism
-			has_government = neutrality
+			has_government = fascism
 			has_country_flag = XHH_senate_removed
 			has_completed_focus = XHH_democracy_in_the_empire
 		}
@@ -47,13 +47,6 @@ XHH_democratic = {
 		
 	}
 
-	traits = {
-		NOR_communist_agitator = 0
-		nationalist_lutheran_priest = 0
-		HUN_popular_liberal = 10
-		AUS_treasurer_of_the_monarchy = 0
-	}
-
 	# Keep small, as it is used as a factor for some things (such as research needs)
 	# Recommended around 1.0. Useful for relation between plans
 	weight = {
@@ -81,6 +74,7 @@ XHH_neutrality = {
 	abort = {
 		OR = {
 			has_government = communism
+			has_government = fascism
 			has_government = democratic
 			has_completed_focus = XHH_imperial_ascension
 		}
@@ -114,13 +108,6 @@ XHH_neutrality = {
 
 	research = {
 		
-	}
-
-	traits = {
-		NOR_communist_agitator = 0
-		nationalist_lutheran_priest = 0
-		HUN_popular_liberal = 0
-		AUS_treasurer_of_the_monarchy = 10
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)

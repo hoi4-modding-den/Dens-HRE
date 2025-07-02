@@ -110,7 +110,7 @@ ideas = {
 
 			modifier = {
 				political_power_cost = 0.2
-				political_advisor_cost_factor = 0.5
+				political_advisor_cost_factor = 1
 			}
 		}
 
@@ -154,8 +154,52 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				industrial_capacity_dockyard = -0.09
+				production_speed_dockyard_factor = -0.15
+				communism_drift = 0.01
+			}
+		}
+
+		XHH_worker_unrest_2 = {
+			
+			name = XHH_worker_unrest
+			picture = FRA_factory_strikes
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
 				industrial_capacity_dockyard = -0.06
 				production_speed_dockyard_factor = -0.1
+				communism_drift = 0.01
+			}
+		}
+
+		XHH_worker_unrest_3 = {
+			
+			name = XHH_worker_unrest
+			picture = FRA_factory_strikes
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = -0.03
+				production_speed_dockyard_factor = -0.05
 				communism_drift = 0.01
 			}
 		}
@@ -182,7 +226,7 @@ ideas = {
 			}
 
 			on_remove = {
-				# TODO: Event
+				country_event = XHH_internal_events.7
 			}
 
 			removal_cost = -1
@@ -192,7 +236,6 @@ ideas = {
 				war_support_factor = -0.1
 				faction_trade_opinion_factor = -0.15
 				transport_capacity = 0.2
-				custom_modifier_tooltip = XHH_baltic_sea_control_dispute_tt
 			}
 		}
 

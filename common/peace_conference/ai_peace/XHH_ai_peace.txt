@@ -7,12 +7,46 @@ peace_ai_desires = {
         peace_action_type = take_states
         enable = {
             FROM.FROM.FROM = {
-                is_claimed_by = ROOT
+                OR = {
+                    is_claimed_by = ROOT
+                    is_core_of = ROOT
+                }
             }
             ROOT = {
                 original_tag = XHH
             }
 			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 75
+    }
+
+    XHH_balkanise_hamburg = {
+        peace_action_type = liberate
+        enable = {
+            FROM = {
+                OR = {
+                    original_tag = XH1
+                    original_tag = XH2
+                }
+            }
+            ROOT = {
+                NOT = { has_government = neutrality }
+            }
+        }
+        ai_desire = 75
+    }
+    XHH_puppet_balkanise_hamburg = {
+        peace_action_type = puppet
+        enable = {
+            FROM = {
+                OR = {
+                    original_tag = XH1
+                    original_tag = XH2
+                }
+            }
+            ROOT = {
+                has_government = neutrality
+            }
         }
         ai_desire = 75
     }

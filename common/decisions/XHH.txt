@@ -75,7 +75,7 @@ economy_decisions = {
 
 		priority = -1
 
-		icon = eng_trade_unions_support
+		icon = generic_arrest
 
 		ai_will_do = {
 			base = 25
@@ -113,7 +113,7 @@ economy_decisions = {
 
 political_actions = {
 
-	XHH_immigration_campaigns  = {
+	XHH_immigration_campaigns = {
 
 		priority = -1
 
@@ -151,7 +151,7 @@ political_actions = {
 
 	}
 
-	XHH_dissolve_bremen_autonomy  = {
+	XHH_dissolve_bremen_autonomy = {
 
 		priority = -1
 
@@ -283,5 +283,626 @@ XHH_land_integration = {
 		}
 
 	}
+
+}
+
+XHH_chartered_colonial_companies = {
+
+	XHH_katanga_diamond_company = {
+
+		priority = 1
+
+		icon = hol_attract_foreign_investors
+
+		ai_will_do = {
+			base = 25
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 3
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 100
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_consumer_goods = -0.04
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_congo_rubber_company = {
+
+		priority = 1
+
+		icon = rubber
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				rubber < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_rubber = 10
+				tooltip = country_resource_rubber_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_congo_rubber_company_2 = {
+
+		priority = 1
+
+		icon = rubber
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				rubber < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_rubber = 10
+				tooltip = country_resource_rubber_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_ethiopian_rubber_company = {
+
+		priority = 1
+
+		icon = rubber
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				rubber < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_rubber = 10
+				tooltip = country_resource_rubber_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_zambia_barotseland_tungsten_company = {
+
+		priority = 1
+
+		icon = tungsten
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				tungsten < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_tungsten = 14
+				tooltip = country_resource_tungsten_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_rwanda_tungsten_company = {
+
+		priority = 1
+
+		icon = tungsten
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				tungsten < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_tungsten = 8
+				tooltip = country_resource_tungsten_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_sierra_leone_steel_company = {
+
+		priority = 1
+
+		icon = steel
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				steel < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_steel = 10
+				tooltip = country_resource_steel_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_saf_chromium_mines = {
+
+		priority = 1
+
+		icon = generic_construction
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 3
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					steel < 0
+					chromium < 0
+				}
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 100
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_chromium = 6
+				tooltip = country_resource_chromium_tt
+			}
+			add_to_variable = {
+				XHH_colmod_steel = 12
+				tooltip = country_resource_steel_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_saf_chromium_mines_2 = {
+
+		priority = 1
+
+		icon = chromium
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				chromium < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_chromium = 9
+				tooltip = country_resource_chromium_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_botswana_chromium_mines = {
+
+		priority = 1
+
+		icon = chromium
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 2
+			}
+			modifier = {
+				factor = 2
+				chromium < 0
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_chromium = 9
+				tooltip = country_resource_chromium_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.02
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
+	XHH_ghana_mines_company = {
+
+		priority = 1
+
+		icon = generic_construction
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0
+				num_of_civilian_factories_available_for_projects < 3
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					chromium < 0
+					steel < 0
+					tungsten < 0
+				}
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		visible = { 
+			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
+		}
+
+		cost = 100
+
+		fire_only_once = yes
+
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_modify_colonial_wealth_tt
+			add_to_variable = {
+				XHH_colmod_chromium = 6
+				tooltip = country_resource_chromium_tt
+			}
+			add_to_variable = {
+				XHH_colmod_steel = 8
+				tooltip = country_resource_steel_tt
+			}
+			add_to_variable = {
+				XHH_colmod_tungsten = 8
+				tooltip = country_resource_tungsten_tt
+			}
+			add_to_variable = {
+				XHH_colmod_consumer_goods = 0.06
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+	}
+
 
 }
