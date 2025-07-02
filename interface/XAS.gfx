@@ -1,17 +1,51 @@
 spriteTypes = {
 	# Portraits #
-	spriteType = {
-		name = "GFX_portrait_XAS_big_gretch"
-		texturefile = "gfx/leaders/XAS/portrait_XAS_big_gretch.png"
-	}
+		# XAS
+		spriteType = {
+			name = "GFX_portrait_XAS_big_gretch"
+			texturefile = "gfx/leaders/XAS/portrait_XAS_big_gretch.png"
+		}
+		spriteType = {
+			name = "GFX_portrait_XAS_joseph_schumpeter"
+			texturefile = "gfx/leaders/XAS/portrait_XAS_joseph_schumpeter.png"
+		}
+		spriteType = {
+			name = "GFX_portrait_XAS_friedrich_hayek"
+			texturefile = "gfx/leaders/XAS/portrait_XAS_friedrich_hayek.png"
+		}
+		# XS0
+		spriteType = {
+			name = "GFX_portrait_XS0_reinhard_machold"
+			texturefile = "gfx/leaders/XAS/portrait_XS0_reinhard_machold.png"
+		}
+
+	# Advisors
+		# XAS
+		spriteType = {
+			name = "GFX_idea_XAS_adolf_hitler"
+			textureFile = "gfx/interface/ideas/XAS/portrait_XAS_small_adolf_hitler.png"
+		}
+		spriteType = {
+			name = "GFX_idea_XAS_joseph_schumpeter"
+			textureFile = "gfx/interface/ideas/XAS/portrait_XAS_small_joseph_schumpeter.png"
+		}
+		spriteType = {
+			name = "GFX_idea_XAS_friedrich_hayek"
+			textureFile = "gfx/interface/ideas/XAS/portrait_XAS_small_friedrich_hayek.png"
+		}
+		spriteType = {
+			name = "GFX_idea_XAS_reinhard_machold"
+			textureFile = "gfx/interface/ideas/XAS/portrait_XAS_small_reinhard_machold.png"
+		}
 
 	# Ideas #
-	spriteType = {
-		name = "GFX_idea_XAS_unchecked_merchant_guilds"
-		texturefile = "gfx/interface/ideas/XAS/GFX_idea_XAS_unchecked_merchant_guilds.png"
-	}
-	spriteType = {
-		name = "GFX_idea_XAS_haus_habsburg"
-		texturefile = "gfx/interface/ideas/XAS/GFX_idea_XAS_haus_habsburg.png"
-	}
+		# XAS
+		spriteType = {
+			name = "GFX_idea_XAS_unchecked_merchant_guilds"
+			texturefile = "gfx/interface/ideas/XAS/GFX_idea_XAS_unchecked_merchant_guilds.png"
+		}
+		spriteType = {
+			name = "GFX_idea_XAS_haus_habsburg"
+			texturefile = "gfx/interface/ideas/XAS/GFX_idea_XAS_haus_habsburg.png"
+		}
 }

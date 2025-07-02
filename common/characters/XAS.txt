@@ -1,4 +1,5 @@
 characters = {
+	# XAS - Austria
 	XAS_big_gretch = {
 		name = XAS_big_gretch
 		gender = female
@@ -13,6 +14,121 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 	}
+	XAS_adolf_hitler = {
+		name = XAS_adolf_hitler
+		portraits = {
+			civilian = {
+				small = GFX_idea_XAS_adolf_hitler
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XAS_adolf_hitler_idea
+			traits = { XAS_hitlers_vision }
+			can_be_fired = no
+			available = {
+				custom_override_tooltip = {
+					tooltip = XAS_cant_be_hired_tt
+					always = no
+				}
+			}
+			visible = {
+				NOT = {
+					date > 1965.4.30
+				}
+			}
+		}
+	}
+	XAS_joseph_schumpeter = {
+		name = XAS_joseph_schumpeter
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XAS_joseph_schumpeter
+				small = GFX_idea_XAS_joseph_schumpeter
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XAS_joseph_schumpeter_idea
+			traits = { XAS_schumpeters_vision }
+			can_be_fired = no
+			available = {
+				custom_override_tooltip = {
+					tooltip = XAS_cant_be_hired_tt
+					always = no
+				}
+			}
+			visible = {
+				NOT = {
+					date > 1950.1.8
+				}
+			}
+		}
+	}
+	XAS_friedrich_hayek = {
+		name = XAS_friedrich_hayek
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XAS_friedrich_hayek
+				small = GFX_idea_XAS_friedrich_hayek
+			}
+		}
+		country_leader = { # TODO: Should Hayek also be able to be leader if he can be advisor too?
+			ideology = conservatism
+			expire = "1992.3.23"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XAS_friedrich_hayek_idea
+			traits = { XAS_hayeks_vision }
+			can_be_fired = no
+			available = {
+				custom_override_tooltip = {
+					tooltip = XAS_cant_be_hired_tt
+					always = no
+				}
+			}
+			visible = {
+				NOT = {
+					date > 1992.3.23
+				}
+			}
+		}
+	}
+	XAS_reinhard_machold = {
+		name = XS0_reinhard_machold
+		portraits = {
+			civilian = {
+				small = GFX_idea_XAS_reinhard_machold
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XS0_reinhard_machold_idea
+			traits = { democratic_reformer }
+			available = {
+				hidden_trigger = {
+					XS0 = {
+						exists = no
+					}
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			visible = {
+				XS0 = {
+					exists = no
+				}
+				NOT = {
+					date > 1961.2.6
+				}
+			}
+		}
+	}
+
+	# XS0 - Styria
 	XS0_big_gretch = {
 		name = XAS_big_gretch
 		gender = female
@@ -27,6 +143,21 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 	}
+	XS0_reinhard_machold = {
+		name = XS0_reinhard_machold
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XS0_reinhard_machold
+			}
+		}
+		country_leader = {
+			traits = { }
+			ideology = liberalism
+			expire = "1961.2.6.1"
+		}
+	}
+
+	# XSO - Cilli
 	XS1_big_gretch = {
 		name = XAS_big_gretch
 		gender = female

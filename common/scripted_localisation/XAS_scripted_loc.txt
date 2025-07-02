@@ -10,6 +10,16 @@ defined_text = {
         }
         localization_key = GFX_portrait_XAS_big_gretch
     }
+    text = {
+        trigger = {
+            XAS = {
+				has_country_leader = {
+					character = XAS_friedrich_hayek
+				}
+			}
+        }
+        localization_key = GFX_portrait_XAS_friedrich_hayek
+    }
 }
 defined_text = {
     name = GetXS0LeaderPortrait
@@ -17,11 +27,21 @@ defined_text = {
         trigger = {
             XS0 = {
 				has_country_leader = {
-					character = XS2_big_gretch
+					character = XS0_big_gretch
 				}
 			}
         }
         localization_key = GFX_portrait_XAS_big_gretch
+    }
+    text = {
+        trigger = {
+            XS0 = {
+				has_country_leader = {
+					character = XS0_reinhard_machold
+				}
+			}
+        }
+        localization_key = GFX_portrait_XS0_reinhard_machold
     }
 }
 defined_text = {

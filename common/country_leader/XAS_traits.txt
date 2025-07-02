@@ -1,0 +1,29 @@
+leader_traits = {
+	XAS_hitlers_vision = {
+		random = no
+
+		sprite = 19
+
+		stability_factor = -0.1
+		consumer_goods_expected_value = 0.1
+		production_speed_arms_factory_factor = 0.2
+	}
+	XAS_schumpeters_vision = {
+		random = no
+
+		sprite = 20
+
+		political_power_cost = 0.05
+		consumer_goods_expected_value = 0.05
+		stability_weekly = 0.01
+	}
+	XAS_hayeks_vision = {
+		random = no
+
+		sprite = 21
+
+		stability_factor = -0.05
+		consumer_goods_expected_value = 0.05
+		production_speed_industrial_complex_factor = 0.1
+	}
+}
