@@ -17,12 +17,8 @@ focus = {
   y = 0
   cost = 10
   completion_reward = {
-    add_building_construction = {
-    type = industrial_complex
-    level = 2
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 3
+    
+
   }
 }
 
@@ -34,12 +30,8 @@ focus = {
   y = 1
   cost = 11
     completion_reward = {
-    add_building_construction = {
-    type = industrial_complex
-    level = 2
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 3
+   
+
   }
 }
 
@@ -51,12 +43,7 @@ focus = {
   y = 2
   cost = 12
     completion_reward = {
-    add_building_construction = {
-    type = industrial_complex
-    level = 3
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 3
+   
   }
 }
 
@@ -68,12 +55,8 @@ focus = {
   y = 3
   cost = 13
    completion_reward = {
-    add_building_construction = {
-    type = industrial_complex
-    level = 3
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 4
+   
+
   }
 }
 
@@ -119,12 +102,8 @@ focus = {
   y = 4
   cost = 10
   completion_reward = {
-    add_building_construction = {
-    type = arms_factory
-    level = 2
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 2
+   
+
   }
 }
 
@@ -136,12 +115,8 @@ focus = {
   y = 5
   cost = 10
  completion_reward = {
-    add_building_construction = {
-    type = arms_factory
-    level = 2
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 2
+   
+
   }
 }
 
@@ -153,12 +128,7 @@ focus = {
   y = 6
   cost = 10
  completion_reward = {
-    add_building_construction = {
-    type = arms_factory
-    level = 2
-    instant_build = yes
-}
-  add_extra_state_shared_building_slots = 2
+
   }
 }
 
@@ -268,274 +238,5 @@ focus = {
   }
 }
 
-focus = {
-		id = army_effort
-		icon = GFX_goal_generic_allies_build_infantry
-		x = 35
-		y = 0
-		cost = 10
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
 
-		completion_reward = {
-			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = equipment_effort
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = army_effort }
-		x = -1
-		y = 1
-		relative_position_id = army_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.1
-			}
-
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-
-		}
-	}
-
-	focus = {
-		id = motorization_effort
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = army_effort }
-		bypass = { has_tech = motorised_infantry }
-		x = 1
-		y = 1
-		relative_position_id = army_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 1.0
-				technology = motorised_infantry
-			}
-		}
-	}
-
-	focus = {
-		id = doctrine_effort
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = army_effort }
-		x = 0
-		y = 2
-		relative_position_id = army_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = equipment_effort_2
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = equipment_effort }
-		x = 0
-		y = 2
-		relative_position_id = equipment_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.1
-			}
-
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-
-		}
-	}
-
-	focus = {
-		id = mechanization_effort
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = motorization_effort }
-		x = 0
-		y = 2
-		relative_position_id = motorization_effort
-		cost = 10
-		
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
-			}
-			IF = {
-				limit = {
-					has_tech = motorised_infantry
-				}
-				add_equipment_to_stockpile = { 
-					type = motorized_equipment
-					amount = 1
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = doctrine_effort_2
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = doctrine_effort }
-		x = 0
-		y = 2
-		relative_position_id = doctrine_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 25
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = equipment_effort_3
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = equipment_effort_2 }
-		x = 0
-		y = 2
-		relative_position_id = equipment_effort_2
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.1
-			}
-
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-
-		}
-	}
-
-	focus = {
-		id = armor_effort
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = mechanization_effort }
-		x = 0
-		y = 2
-		relative_position_id = mechanization_effort
-		cost = 10
-
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 2
-				category = armor
-			}
-		}
-	}
-
-	focus = {
-		id = special_forces
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = equipment_effort_3 }
-		prerequisite = { focus = doctrine_effort_2 }
-		prerequisite = { focus = armor_effort }
-		x = 1
-		y = 1
-		relative_position_id = equipment_effort_3
-		cost = 10
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-		
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = special_forces
-			add_tech_bonus = {
-				name = special_forces_bonus
-				bonus = 1.0
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = marines
-				technology = marines2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
-			}
-		}
-	}
 }

@@ -1,0 +1,21 @@
+
+### recruit_character = XLI_josef_hoop
+set_variable = { HRE_national_stance_federalism = 1 } 
+set_variable = { HRE_national_stance_welfare = 1 } 
+set_variable = { HRE_national_stance_papacy = 1 } 
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1931.11.8"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 100
+}
+
+add_ideas = {
+	XTR_mountain_stronghold
+	XTR_alpine_resilience
+}

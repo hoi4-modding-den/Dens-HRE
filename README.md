@@ -68,6 +68,7 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | XIF | furiousky          | furiousky              |  
   | XWB | Carrera075         | carrera075             |
   | XTR | cyanparty          | CYANCLAW               |
+  | XLI | cyanparty          | CYANCLAW               |
   | XNE | acer-xq            | Acer                   |
   | XHO | acer-xq            | Acer                   |
   | XBT | acer-xq            | Acer                   |
