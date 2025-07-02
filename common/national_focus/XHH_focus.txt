@@ -2456,10 +2456,18 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = -50
-			add_stability = 0.05
 			85 = {
 				set_demilitarized_zone = yes
-				add_core_of = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XHH_chaos_in_danzig_tt
+			hidden_effect = {
+				country_event = {
+					id = XHH_internal_events.8
+					days = 12
+				}
 			}
 		}
 	}
@@ -2486,6 +2494,10 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			85 = {
+				is_controlled_by = ROOT
+				is_demilitarized_zone = no 
+			}
 			XPK = {
 				exists = yes
 				has_capitulated = no
@@ -2678,6 +2690,11 @@ focus_tree = {
 				category = cat_grand_battle_plan
 				category = cat_mass_assault
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = XHH_defensive_chief_of_army_token
 		}
 	}
 
@@ -2715,6 +2732,11 @@ focus_tree = {
 				category = cat_mobile_warfare
 				category = cat_superior_firepower
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = available_chief_of_army
+			show_ideas_tooltip = XHH_offensive_chief_of_army_token
 		}
 	}
 
@@ -2942,6 +2964,7 @@ focus_tree = {
 		available = {
 			has_completed_focus = XHH_open_hamburger_senat
 			controls_state = 61
+			controls_province = 321
 		}
 		
 		bypass = {
@@ -2968,6 +2991,100 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			XHH_reduce_worker_unrest_effect = yes
+
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				custom_effect_tooltip = XHH_invest_in_rostock_shipbuilding_tt
+				hidden_effect = {
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_light_2
+							creator = "XHH"
+							version_name = "Zerstörer 1934A"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+						industrial_manufacturer = mio:XHH_blohm_und_voss_organization
+					}
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_light_2
+							creator = "XHH"
+							version_name = "Zerstörer 1934A"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+						industrial_manufacturer = mio:XHH_blohm_und_voss_organization
+					}
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_light_2
+							creator = "XHH"
+							version_name = "Zerstörer 1934A"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+						industrial_manufacturer = mio:XHH_blohm_und_voss_organization
+					}
+					add_equipment_production = {
+						equipment = {
+							type = ship_hull_cruiser_2
+							creator = "XHH"
+							version_name = "Rostock"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+						industrial_manufacturer = mio:XHH_germaniawerft_organization
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = XHH_invest_in_rostock_shipbuilding_no_mtg_tt
+				hidden_effect = {
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_2
+							creator = "XHH"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_2
+							creator = "XHH"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_2
+							creator = "XHH"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = light_cruiser_2
+							creator = "XHH"
+						}
+						requested_factories = 1
+						progress = 1
+						amount = 1
+					}
+				}
+			}
 		}
 	}
 
