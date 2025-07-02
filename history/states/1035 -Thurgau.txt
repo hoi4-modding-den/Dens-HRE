@@ -5,6 +5,7 @@ state = {
 
 	history = {
 		owner = XTR
+		set_demilitarized_zone = yes
         buildings = {
             infrastructure = 2
 			industrial_complex = 1
@@ -15,6 +16,11 @@ state = {
 	provinces = {
 		11623
 	}
+
+	1936.1.1.1 = { 
+				set_demilitarized_zone = yes
+		}
+
 	manpower = 96405
 	state_category = rural
 }
