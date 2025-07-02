@@ -243,6 +243,21 @@ leader_traits = {
 		}
 	}
 
+	XHH_baltic_sea_combat_chief = {
+		sprite = 3
+		navy_capital_ship_attack_factor = 0.15
+		navy_capital_ship_defence_factor = 0.15
+		navy_screen_attack_factor = 0.15
+		navy_screen_defence_factor = 0.15
+		experience_gain_navy = 0.4
+
+		command_cap_increase = 30
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	# Concerns
 
 	XHH_hanse_kontor_trait = {

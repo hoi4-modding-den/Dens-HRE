@@ -238,34 +238,6 @@ characters = {
 
 	}
 
-	XHH_air_warfare_theorist = {
-
-		name = XHH_air_warfare_theorist_name
-
-		portraits = {
-			civilian = {
-				small = GFX_portrait_XHH_air_warfare_theorist_small
-			}
-		}
-
-		advisor = {
-			slot = theorist
-			idea_token = XHH_air_warfare_theorist_token
-			allowed = {
-				original_tag = XHH
-			}
-			available = {
-				
-			}
-			traits = {
-				air_warfare_theorist
-			}
-
-			cost = 75
-		}
-
-	}
-
 	XHH_anti_corruption_politician = {
 
 		name = XHH_anti_corruption_politician_name
@@ -708,6 +680,314 @@ characters = {
 			}
 			traits = {
 				NOR_communist_agitator
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_army_theorist = {
+
+		name = XHH_army_theorist_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_army_theorist_small
+			}
+		}
+
+		advisor = {
+			slot = theorist
+			idea_token = XHH_army_theorist_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				military_theorist
+			}
+
+			cost = 75
+		}
+
+	}
+
+	XHH_navy_theorist = {
+
+		name = XHH_navy_theorist_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_navy_theorist_small
+			}
+		}
+
+		advisor = {
+			slot = theorist
+			idea_token = XHH_navy_theorist_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				naval_theorist
+			}
+
+			cost = 75
+		}
+
+	}
+
+	XHH_air_warfare_theorist = {
+
+		name = XHH_air_warfare_theorist_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_air_warfare_theorist_small
+			}
+		}
+
+		advisor = {
+			slot = theorist
+			idea_token = XHH_air_warfare_theorist_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				air_warfare_theorist
+			}
+
+			cost = 75
+		}
+
+	}
+
+	XHH_offensive_chief_of_army = {
+
+		name = XHH_offensive_chief_of_army_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_offensive_chief_of_army_small
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = XHH_offensive_chief_of_army_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_doctrines_of_offence
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_defensive_chief_of_army = {
+
+		name = XHH_defensive_chief_of_army_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_defensive_chief_of_army_small
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = XHH_defensive_chief_of_army_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				has_completed_focus = XHH_doctrines_of_defence
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_org_chief_of_army = {
+
+		name = XHH_org_chief_of_army_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_org_chief_of_army_small
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = XHH_org_chief_of_army_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_training_chief_of_army = {
+
+		name = XHH_training_chief_of_army_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_training_chief_of_army_small
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = XHH_training_chief_of_army_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_chief_drill_1
+			}
+
+			cost = 50
+		}
+
+	}
+
+	XHH_baltic_sea_chief_of_navy = {
+
+		name = XHH_baltic_sea_chief_of_navy_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_baltic_sea_chief_of_navy_small
+			}
+		}
+
+		advisor = {
+			slot = navy_chief
+			idea_token = XHH_baltic_sea_chief_of_navy_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				XHH_baltic_sea_combat_chief
+			}
+
+			cost = 200
+		}
+
+	}
+
+	XHH_submarine_chief_of_navy = {
+
+		name = XHH_submarine_chief_of_navy_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_submarine_chief_of_navy_small
+			}
+		}
+
+		advisor = {
+			slot = navy_chief
+			idea_token = XHH_submarine_chief_of_navy_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				navy_chief_commerce_raiding_2
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_safety_chief_of_airforce = {
+
+		name = XHH_safety_chief_of_airforce_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_safety_chief_of_airforce_small
+			}
+		}
+
+		advisor = {
+			slot = air_chief
+			idea_token = XHH_safety_chief_of_airforce_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				air_chief_safety_2
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_cas_chief_of_airforce = {
+
+		name = XHH_cas_chief_of_airforce_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_cas_chief_of_airforce_small
+			}
+		}
+
+		advisor = {
+			slot = air_chief
+			idea_token = XHH_cas_chief_of_airforce_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				air_chief_ground_support_2
 			}
 
 			cost = 100

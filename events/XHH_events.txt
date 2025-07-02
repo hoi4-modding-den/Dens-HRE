@@ -318,6 +318,35 @@ country_event = {
 }
 
 country_event = {
+	id = XHH_internal_events.8
+	title = XHH_internal_events.8.t
+	desc = XHH_internal_events.8.desc
+	
+	picture = GFX_report_event_danzig_joins_nazis
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.8.a
+		add_stability = 0.1
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+		}
+		85 = {
+			set_demilitarized_zone = no
+			if = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+				}
+				add_core_of = ROOT
+			}
+		}
+    }
+}
+
+country_event = {
 	id = XHH_diplo_events.1
 	title = XHH_diplo_events.1.t
 	desc = XHH_diplo_events.1.desc

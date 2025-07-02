@@ -132,7 +132,6 @@ recruit_character = XHH_spd_socialist
 recruit_character = XHH_fdp_liberal
 recruit_character = XHH_cdu_conservative
 # Advisors
-recruit_character = XHH_air_warfare_theorist
 recruit_character = XHH_anti_corruption_politician
 recruit_character = XHH_captain_of_industry
 recruit_character = XHH_war_industrialist
@@ -147,6 +146,18 @@ recruit_character = XHH_liberal_guy
 recruit_character = XHH_not_ludwig_mises
 recruit_character=  XHH_nationalist_priest
 recruit_character = XHH_ewald_klar
+# Military Advisors
+recruit_character = XHH_army_theorist
+recruit_character = XHH_navy_theorist
+recruit_character = XHH_air_warfare_theorist
+recruit_character = XHH_offensive_chief_of_army
+recruit_character = XHH_defensive_chief_of_army
+recruit_character = XHH_org_chief_of_army
+recruit_character = XHH_training_chief_of_army
+recruit_character = XHH_baltic_sea_chief_of_navy
+recruit_character = XHH_submarine_chief_of_navy
+recruit_character = XHH_safety_chief_of_airforce
+recruit_character = XHH_cas_chief_of_airforce
 # Generals
 
 
@@ -296,7 +307,7 @@ if = {
 		}
 	}
 	create_equipment_variant = {
-		name = "Hamburg"
+		name = "Germania"
 		type = ship_hull_pre_dreadnought
 		name_group = XHH_PZ_HISTORICAL
 		parent_version = 0
