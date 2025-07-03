@@ -893,39 +893,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_privatise_dockyards
-		icon = GFX_focus_generic_navy_battleship2
-		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
-		#mutually_exclusive = { focus =  }
-		x = -2
-		y = 1
-		relative_position_id = XHH_prioritise_noble_estates
-
-		cost = 2.9
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available = {
-			any_owned_state = {
-				is_controlled_by = ROOT
-				dockyard > 0
-			}
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			unlock_decision_tooltip = {
-				decision = XHH_dockyard_privatisation_drive
-				show_effect_tooltip = yes
-			}
-		}
-	}
-
-	focus = {
 		id = XHH_prioritise_noble_estates
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		prerequisite = { focus = XHH_traditionalist_unity }
@@ -990,6 +957,39 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = XHH_military_support
+		}
+	}
+
+	focus = {
+		id = XHH_privatise_dockyards
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = XHH_industrial_revolution focus = XHH_prioritise_noble_estates }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_prioritise_noble_estates
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			any_owned_state = {
+				is_controlled_by = ROOT
+				dockyard > 0
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_tooltip = {
+				decision = XHH_dockyard_privatisation_drive
+				show_effect_tooltip = yes
+			}
 		}
 	}
 
@@ -2576,6 +2576,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = XHH_controls_all_XFT_claimed_states_tt
+				has_completed_focus = XHH_settle_the_score
 				XFT = {
 					all_core_state = {
 						OR = {
