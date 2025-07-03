@@ -57,7 +57,7 @@ XEX_INF_01 =
 
 XEX_CAV_01 = 
 {
-	name = "Cavallieri Milanesi"
+	name = "Cavallieri Emiliani"
 
 	for_countries = { XEX }
 
@@ -68,13 +68,37 @@ XEX_CAV_01 =
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { XHH_INF_01 }
 
-	fallback_name = "%d. Cavallieri Milanese"
+	fallback_name = "%d. Cavallieri Emiliani"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%d. Cavallieri Milanese" }
+		1 = { "%d. Cavallieri Emiliani" }
+
+	}
+}
+
+XE0_CAV_01 = 
+{
+	name = "Milizia Milanese"
+
+	for_countries = { XE0 }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { XHH_INF_01 }
+
+	fallback_name = "%d. Milizia Milanese"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Milizia Milanese" }
 
 	}
 }

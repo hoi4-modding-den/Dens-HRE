@@ -1,0 +1,35 @@
+state = {
+	id = 1040
+	name = "STATE_1040"
+	manpower = 532246
+	
+	state_category = town
+
+	history = {
+
+		owner = XHH #owner = GER
+		add_core_of = XHH
+		add_core_of = XH1
+		#add_core_of = GER
+		#add_core_of = HAN
+		#add_core_of = PRE
+
+		victory_points = {
+			6298 2 # Lüneburg
+		}
+		
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			6325 = { # Buxtehude
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		6218 6263 6298 6325 9238 9264
+	}
+
+	local_supplies = 0.0
+}

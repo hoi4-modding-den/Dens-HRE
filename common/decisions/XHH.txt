@@ -169,6 +169,46 @@ economy_decisions = {
 
 political_actions = {
 
+	XHH_restore_meckpomm = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XH2
+		}
+
+		available = {
+			controls_state = 62
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					62 = { is_claimed_by = ROOT }
+				}
+				remove_state_claim = 62
+			}
+			add_state_core = 62
+			if = {
+				limit = {
+					NOT = { owns_state = 62 }
+				}
+				set_state_owner = 62
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = XH2_mecklenburg_vorpommern
+		}
+
+	}
+
 	XHH_immigration_campaigns = {
 
 		priority = -1

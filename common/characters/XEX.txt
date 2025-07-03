@@ -12,6 +12,26 @@ characters = {
 			expire = "1950.1.1.1"
 			id = -1
 		}
+		country_leader = {
+			traits = { HRE_kingdom_padania HRE_principality_milan }
+			ideology = fascism_ideology
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+	XE0_king_salvinus_divinus = {
+		name = XEX_king_salvinus_divinus
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XEX_king
+			}
+		}
+		country_leader = {
+			traits = { HRE_kingdom_padania HRE_principality_milan }
+			ideology = despotism
+			expire = "1950.1.1.1"
+			id = -1
+		}
 	}
 }
 	

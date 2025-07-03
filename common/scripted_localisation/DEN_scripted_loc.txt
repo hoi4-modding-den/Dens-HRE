@@ -50,6 +50,22 @@ defined_text = {
         }
         localization_key = "[XHH.GetLeader] of [XHH.GetNonIdeologyName]"
     }
+    text = {
+        trigger = {
+            XH1 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XH1.GetLeader] of [XH1.GetNonIdeologyName]"
+    }
+    text = {
+        trigger = {
+            XH2 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XH2.GetLeader] of [XH2.GetNonIdeologyName]"
+    }
 	text = {
         trigger = {
             XEX = {
@@ -57,6 +73,14 @@ defined_text = {
 			}
         }
         localization_key = "[XEX.GetLeader] of [XEX.GetNonIdeologyName]"
+    }
+	text = {
+        trigger = {
+            XE0 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XE0.GetLeader] of [XE0.GetNonIdeologyName]"
     }
     text = {
         trigger = {
@@ -161,6 +185,14 @@ defined_text = {
         localization_key = [GetXEXLeaderPortrait]
 	}
 	text = {
+        trigger = {
+            XE0 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXE0LeaderPortrait]
+	}
+	text = {
 		trigger = {
 			XSC = {
 				has_country_flag = HRE_current_emperor
@@ -175,6 +207,22 @@ defined_text = {
 			}
         }
         localization_key = [GetXHHLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XH1 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXH1LeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XH2 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXH2LeaderPortrait]
     }
     text = {
         trigger = {
