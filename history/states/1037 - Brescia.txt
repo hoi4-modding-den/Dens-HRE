@@ -1,0 +1,27 @@
+
+state = {
+	id = 1037
+	name = "STATE_1037"
+	manpower = 2266900
+	state_category = city
+
+	history = {
+		owner = XVE
+		victory_points = { #Brescia
+			773 10
+		}
+		buildings = {
+			infrastructure = 4 #was: 8
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		add_core_of = XVE
+		
+	}
+
+	provinces = {
+		773 11568 969 11587
+	}
+
+	local_supplies = 0.0 
+}
