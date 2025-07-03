@@ -26,7 +26,7 @@ characters = {
 			visible = {
 				has_country_leader = { character = XHH_tom_first ruling_only = yes }
 			}
-			traits = { politically_connected }
+			traits = { politically_connected cavalry_officer }
 			skill=3
 			attack_skill=3
 			defense_skill=2
@@ -777,6 +777,7 @@ characters = {
 
 		portraits = {
 			army = {
+				large = GFX_portrait_XHH_offensive_chief_of_army
 				small = GFX_portrait_XHH_offensive_chief_of_army_small
 			}
 		}
@@ -797,6 +798,15 @@ characters = {
 			cost = 100
 		}
 
+		field_marshal = {
+			traits = { brilliant_strategist media_personality }
+			skill=5
+			attack_skill=5
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+		}
+
 	}
 
 	XHH_defensive_chief_of_army = {
@@ -805,6 +815,7 @@ characters = {
 
 		portraits = {
 			army = {
+				large = GFX_portrait_XHH_defensive_chief_of_army
 				small = GFX_portrait_XHH_defensive_chief_of_army_small
 			}
 		}
@@ -823,6 +834,15 @@ characters = {
 			}
 
 			cost = 100
+		}
+
+		corps_commander = {
+			traits = { old_guard infantry_officer }
+			skill=5
+			attack_skill=3
+			defense_skill=5
+			planning_skill=4
+			logistics_skill=2
 		}
 
 	}
@@ -889,6 +909,7 @@ characters = {
 
 		portraits = {
 			army = {
+				large = GFX_portrait_XHH_baltic_sea_chief_of_navy
 				small = GFX_portrait_XHH_baltic_sea_chief_of_navy_small
 			}
 		}
@@ -909,6 +930,15 @@ characters = {
 			cost = 200
 		}
 
+		navy_leader = {
+			traits = { navy_career_officer battleship_adherent fleet_protector }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 5
+		}
+
 	}
 
 	XHH_submarine_chief_of_navy = {
@@ -917,6 +947,7 @@ characters = {
 
 		portraits = {
 			army = {
+				large = GFX_portrait_XHH_submarine_chief_of_navy
 				small = GFX_portrait_XHH_submarine_chief_of_navy_small
 			}
 		}
@@ -935,6 +966,15 @@ characters = {
 			}
 
 			cost = 100
+		}
+
+		navy_leader = {
+			traits = { navy_career_officer seawolf }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 5
 		}
 
 	}
@@ -973,6 +1013,7 @@ characters = {
 
 		portraits = {
 			army = {
+				large = GFX_portrait_XHH_cas_chief_of_airforce
 				small = GFX_portrait_XHH_cas_chief_of_airforce_small
 			}
 		}
@@ -988,6 +1029,299 @@ characters = {
 			}
 			traits = {
 				air_chief_ground_support_2
+			}
+
+			cost = 100
+		}
+
+		corps_commander = {
+			traits = { politically_connected commando trait_reckless }
+			skill=4
+			attack_skill=4
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+		}
+
+	}
+
+	XHH_logistics_high_command = {
+
+		name = XHH_logistics_high_command_name
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XHH_logistics_high_command
+				small = GFX_portrait_XHH_logistics_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_logistics_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_logistics_2
+			}
+
+			cost = 100
+		}
+
+		corps_commander = {
+			traits = { career_officer organizer }
+			skill=4
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=4
+		}
+
+	}
+
+	XHH_regrouping_high_command = {
+
+		name = XHH_regrouping_high_command_name
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XHH_regrouping_high_command
+				small = GFX_portrait_XHH_regrouping_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_regrouping_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_regrouping_2
+			}
+
+			cost = 100
+		}
+
+		corps_commander = {
+			traits = { infantry_officer skilled_staffer trait_cautious }
+			skill=5
+			attack_skill=2
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=3
+		}
+
+	}
+
+	XHH_amphibious_high_command = {
+
+		name = XHH_amphibious_high_command_name
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XHH_amphibious_high_command
+				small = GFX_portrait_XHH_amphibious_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_amphibious_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				navy_amphibious_assault_2
+			}
+
+			cost = 100
+		}
+
+		corps_commander = {
+			traits = { naval_invader engineer_officer }
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+		}
+
+	}
+
+	XHH_commando_high_command = {
+
+		name = XHH_commando_high_command_name
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XHH_commando_high_command
+				small = GFX_portrait_XHH_commando_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_commando_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_commando_3
+			}
+
+			cost = 200
+		}
+
+		corps_commander = {
+			traits = { commando harsh_leader }
+			skill=5
+			attack_skill=6
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=2
+		}
+
+	}
+
+	XHH_artillery_high_command = {
+
+		name = XHH_artillery_high_command_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_artillery_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_artillery_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_artillery_2
+			}
+
+			cost = 100
+		}
+
+	}
+
+	XHH_infantry_high_command = {
+
+		name = XHH_infantry_high_command_name
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XHH_infantry_high_command
+				small = GFX_portrait_XHH_infantry_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_infantry_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				army_infantry_1
+			}
+
+			cost = 50
+		}
+
+		corps_commander = {
+			traits = { infantry_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=3
+		}
+
+	}
+
+	XHH_air_superiority_high_command = {
+
+		name = XHH_air_superiority_high_command_name
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XHH_air_superiority_high_command
+				small = GFX_portrait_XHH_air_superiority_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_air_superiority_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				air_air_superiority_3
+			}
+
+			cost = 200
+		}
+
+		corps_commander = {
+			traits = { commando paratrooper }
+			skill=5
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+		}
+
+	}
+
+	XHH_capital_ship_high_command = {
+
+		name = XHH_capital_ship_high_command_name
+
+		portraits = {
+			army = {
+				small = GFX_portrait_XHH_capital_ship_high_command_small
+			}
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = XHH_capital_ship_high_command_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				
+			}
+			traits = {
+				navy_capital_ship_2
 			}
 
 			cost = 100

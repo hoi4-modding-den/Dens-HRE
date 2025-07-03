@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 2200 y = 1800 }
+	continuous_focus_position = { x = 2150 y = 1550 }
 
 	initial_show_position = {
 		x = 11
@@ -179,7 +179,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 12
+			factor = 14
 		}
 
 		available = {
@@ -227,7 +227,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 10
+			factor = 7
 		}
 
 		available = {
@@ -245,7 +245,7 @@ focus_tree = {
 			add_political_power = 80
 			add_popularity = {
 				ideology = neutrality
-				popularity = 0.05
+				popularity = 0.1
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -423,7 +423,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_hannover_housing_development
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
@@ -580,7 +580,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_cooperate_with_hannoverian_industrialists
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
@@ -766,7 +766,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 5
+			factor = 7
 		}
 
 		available = {
@@ -1028,7 +1028,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_hamburg_university
 
-		cost = 6
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
@@ -1547,7 +1547,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_hamburgs_broad_coalition
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
@@ -1625,14 +1625,14 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_national_conservative_coalition
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			factor = 5
 		}
 
 		available = {
-			neutrality > 0.7
+			neutrality > 0.6
 			is_subject = no
 		}
 		
@@ -1685,6 +1685,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
+			add_political_power = 80
 			add_popularity = {
 				ideology = fascism
 				popularity = -0.1
@@ -1811,6 +1812,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_political_power = 80
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1831,7 +1836,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 8
+			factor = 15
 		}
 
 		available = {
@@ -1870,7 +1875,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -1935,7 +1940,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 5
+			factor = 100
 		}
 
 		available = {
@@ -1955,12 +1960,15 @@ focus_tree = {
 				popularity = 0.02
 			}
 			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			if = {
 				limit = {
 					has_government = democratic
 				}
 				create_intelligence_agency = {
-					name = "Bundesverfassungsschutz"
+					name = "Reichsverfassungsschutz"
 					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
 				}
 			}
@@ -1978,7 +1986,7 @@ focus_tree = {
 					has_government = democratic
 				}
 				create_intelligence_agency = {
-					name = "Bundesverfassungsschutz"
+					name = "Reichsverfassungsschutz"
 					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
 				}
 			}
@@ -2020,6 +2028,11 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_political_power = 120
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			swap_ideas = {
 				remove_idea = XHH_freedom_in_democracy
 				add_idea = XHH_freedom_in_democracy_2
@@ -2036,10 +2049,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_democracy_in_the_empire
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -2054,6 +2067,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_political_power = 100
 			add_offsite_building = {
 				type = industrial_complex
 				level = 2
@@ -2124,7 +2138,15 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_political_power = 120
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = XHH_german_tradition
+				add_idea = XHH_german_tradition_2
+			}
 		}
 	}
 
@@ -2137,14 +2159,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_imperial_ascension
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
-			has_government = democratic
+			has_government = neutrality
 		}
 
 		bypass = {
@@ -2155,6 +2177,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
@@ -2175,14 +2201,14 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = arms_factory
-						size > 0
+						size > 1
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2203,7 +2229,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -2253,6 +2279,10 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			set_rule = { can_create_factions = yes }
 			if = {
 				limit = {
@@ -2324,6 +2354,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_completed_focus = XHH_baltic_sea_domination
 			is_subject = no
 			XFT = {
 				exists = yes
@@ -2439,7 +2470,7 @@ focus_tree = {
 		cost = 2
 
 		ai_will_do = {
-			factor = 5
+			factor = 20
 		}
 
 		available = {
@@ -2466,7 +2497,7 @@ focus_tree = {
 			hidden_effect = {
 				country_event = {
 					id = XHH_internal_events.8
-					days = 12
+					days = 20
 				}
 			}
 		}
@@ -2553,7 +2584,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 7
+			factor = 10
 			modifier = {
 				factor = 0
 				has_war = yes
@@ -2624,7 +2655,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 2
+			factor = 7
 			modifier = {
 				factor = 0
 				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
@@ -2665,10 +2696,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_modernise_the_landeswehr
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
-			factor = 5
+			factor = 0
 		}
 
 		available = {
@@ -2707,10 +2738,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_modernise_the_landeswehr
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
-			factor = 5
+			factor = 7
 		}
 
 		available = {
@@ -2871,7 +2902,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -2954,7 +2985,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 2
+			factor = 5
 			modifier = {
 				factor = 0
 				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
@@ -3140,7 +3171,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_invest_in_rostock_shipbuilding
 
-		cost = 6
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -3190,7 +3221,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 
 		available = {
@@ -3250,8 +3281,7 @@ focus_tree = {
 	focus = {
 		id = XHH_marine_corps
 		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = XHH_nationalise_the_hamurger_hafen focus = XHH_bremen_shipbuilding }
-		prerequisite = { focus = XHH_baltic_sea_domination }
+		prerequisite = { focus = XHH_nationalise_the_hamurger_hafen focus = XHH_bremen_shipbuilding focus = XHH_baltic_sea_domination }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 2
@@ -3335,7 +3365,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 2
+			factor = 5
 			modifier = {
 				factor = 0
 				NOT = { has_completed_focus = XHH_curtail_hanse_influence }
@@ -3379,7 +3409,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 7
 		}
 
 		available = {
@@ -3432,7 +3462,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 15
 		}
 
 		available = {

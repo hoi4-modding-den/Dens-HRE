@@ -17,7 +17,22 @@ peace_ai_desires = {
             }
 			ROOT.FROM = { tag = ROOT }
         }
-        ai_desire = 75
+        ai_desire = 1000
+    }
+
+    XHH_puppet_the_rest = {
+        peace_action_type = puppet
+        enable = {
+            FROM.FROM.FROM = {
+                NOT = { is_claimed_by = ROOT }
+                NOT = { is_core_of = ROOT }
+            }
+            ROOT = {
+                original_tag = XHH
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 1000
     }
 
     XHH_balkanise_hamburg = {
@@ -48,7 +63,7 @@ peace_ai_desires = {
                 has_government = neutrality
             }
         }
-        ai_desire = 75
+        ai_desire = 500
     }
 
 }
