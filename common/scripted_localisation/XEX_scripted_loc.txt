@@ -11,3 +11,16 @@ defined_text = {
         localization_key = GFX_portrait_XEX_king
     }
 }
+defined_text = {
+    name = GetXE0LeaderPortrait
+    text = {
+        trigger = {
+            XE0 = {
+				has_country_leader = {
+					character = XE0_king_salvinus_divinus
+				}
+			}
+        }
+        localization_key = GFX_portrait_XEX_king
+    }
+}

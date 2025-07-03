@@ -1,0 +1,48 @@
+﻿division_template = {
+	name = "Milizie Milanesi"
+
+	division_names_group = XE0_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		
+	}
+}
+
+units = {
+
+	division = {	
+		location = 3780
+		division_template = "Milizie Milanesi"
+		start_experience_factor = 0
+	}
+
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = XE0
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+	
+}
+
+#####################

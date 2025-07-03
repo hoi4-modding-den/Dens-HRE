@@ -58,6 +58,14 @@ defined_text = {
         }
         localization_key = "[XEX.GetLeader] of [XEX.GetNonIdeologyName]"
     }
+	text = {
+        trigger = {
+            XE0 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = "[XE0.GetLeader] of [XE0.GetNonIdeologyName]"
+    }
     text = {
         trigger = {
             XAS = {
@@ -159,6 +167,14 @@ defined_text = {
 			}
         }
         localization_key = [GetXEXLeaderPortrait]
+	}
+	text = {
+        trigger = {
+            XE0 = {
+				has_country_flag = HRE_current_emperor
+			}
+        }
+        localization_key = [GetXE0LeaderPortrait]
 	}
 	text = {
 		trigger = {
