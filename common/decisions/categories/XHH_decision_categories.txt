@@ -1,5 +1,5 @@
 XHH_land_integration = {
-	icon = GFX_decision_category_generic_propaganda
+	icon = generic_propaganda
 
 	allowed = {
 		original_tag = XHH
@@ -17,3 +17,32 @@ XHH_chartered_colonial_companies = {
 
 	priority = 99
 }
+
+XHH_hamburger_investments = {
+	icon = generic_economy
+
+	allowed = {
+		original_tag = XHH
+	}
+
+	visible = {
+		has_completed_focus = XHH_the_venice_of_the_north
+	}
+
+	priority = 2
+}
+
+XHH_imperial_diplomacy = {
+	icon = generic_foreign_policy
+
+	allowed = {
+		original_tag = XHH
+	}
+
+	visible = {
+		has_country_flag = HRE_member_state
+	}
+
+	priority = 1
+}
+

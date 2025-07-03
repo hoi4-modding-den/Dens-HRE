@@ -1683,7 +1683,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 80
 			add_popularity = {
@@ -1825,6 +1825,53 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_hre_diplomatic_ties
+		icon = GFX_focus_GER_glory_to_the_imperial_army
+		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_prioritise_consumer_needs
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					NOT = { has_war_with = ROOT }
+					has_country_flag = HRE_member_state
+				}
+				ROOT = {
+					reverse_add_opinion_modifier = {
+						target = PREV
+						modifier = XHH_imperial_diplomacy_bonus
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_category_tooltip = XHH_imperial_diplomacy
+		}
+	}
+
+	focus = {
 		id = XHH_german_kolonialbund
 		icon = GFX_focus_POL_colonial_league
 		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
@@ -1841,6 +1888,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			NOT = { has_government = communism }
 		}
 
 		bypass = {
@@ -1849,7 +1897,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_dynamic_modifier = {
 				modifier = XHH_colonial_wealth
@@ -2026,7 +2074,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_political_power = 120
 			add_war_support = 0.05
@@ -2065,13 +2113,9 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_political_power = 100
-			add_offsite_building = {
-				type = industrial_complex
-				level = 2
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2079,14 +2123,14 @@ focus_tree = {
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
-						size > 0
+						size > 1
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2105,7 +2149,36 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			
+
+			unlock_decision_category_tooltip = XHH_hamburger_investments
+		}
+	}
+
+	focus = {
+		id = XHH_future_of_science
+		icon = GFX_focus_generic_university_3
+		prerequisite = { focus = XHH_the_venice_of_the_north }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_the_venice_of_the_north
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			NOT = { has_government = neutrality }
+			amount_research_slots > 5
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
 		}
 	}
 
@@ -2136,7 +2209,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_political_power = 120
 			add_war_support = 0.05
@@ -2175,7 +2248,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_political_power = 100
 
@@ -2253,11 +2326,11 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -2309,7 +2382,7 @@ focus_tree = {
 		prerequisite = { focus = XHH_unite_the_empire }
 		#mutually_exclusive = { focus =  }
 		x = -1
-		y = 1
+		y = 2
 		relative_position_id = XHH_unite_the_empire
 
 		cost = 10
@@ -2577,7 +2650,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
@@ -2588,6 +2661,10 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				XPO = { has_war = yes }
 			}
 		}
 
@@ -2606,6 +2683,7 @@ focus_tree = {
 				has_war_with = XPO
 				XPO = { NOT = { owns_state = 56 } }
 			}
+			controls_state = 56
 		}
 
 		available_if_capitulated = no
@@ -2637,9 +2715,63 @@ focus_tree = {
 				}
 			}
 		}
+	}
 
-		bypass_effect = {
-			add_state_core = 56
+	focus = {
+		id = XHH_develop_wilhelmshaven
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = XHH_integrate_northwest_administration }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = XHH_integrate_northwest_administration
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			owns_state = 56
+			controls_state = 56
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = { 56 = { is_core_of = ROOT } }
+				add_state_core = 56
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			56 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			mio:XHH_kriegsmarinewerft_wilhelmshaven_organization = {
+				add_mio_size = 1
+				add_mio_funds_gain_factor = 0.1
+			}
 		}
 	}
 
@@ -2809,7 +2941,7 @@ focus_tree = {
 
 			mio:XHH_hamburger_waffenfabrik = {
 				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.1
+				add_mio_research_bonus = 0.15
 			}
 		}
 	}
@@ -2852,7 +2984,7 @@ focus_tree = {
 
 			mio:XHH_rheinmetall_organization = {
 				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.1
+				add_mio_research_bonus = 0.15
 			}
 		}
 	}
@@ -3187,7 +3319,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			1017 = {
 				add_extra_state_shared_building_slots = 2
@@ -3203,8 +3335,8 @@ focus_tree = {
 			XHH_reduce_worker_unrest_effect = yes
 
 			mio:XHH_deschimag_organization = {
-				add_mio_size = 1
 				add_mio_funds_gain_factor = 0.1
+				add_mio_research_bonus = 0.15
 			}
 		}
 	}

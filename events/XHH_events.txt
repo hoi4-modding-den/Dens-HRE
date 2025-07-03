@@ -447,7 +447,214 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		56 = {
-			add_core_of = ROOT
+			add_claim_by = ROOT
+		}
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.4
+	title = XHH_diplo_events.4.t
+	desc = XHH_diplo_events.4.desc
+	
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.4.a
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1
+		}
+		effect_tooltip = {
+			FROM = {
+				mio:XHH_porsche_organization = {
+					add_mio_size = 3
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.5
+	title = XHH_diplo_events.5.t
+	desc = XHH_diplo_events.5.desc
+	
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.5.a
+		ai_chance = {
+			factor = 10
+		}
+		FROM = {
+			country_event = {
+				id = XHH_diplo_events.6
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			effect_tooltip = {
+				add_offsite_building = {
+					type = dockyard
+					level = 2
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		random_owned_controlled_state = {
+			limit = {
+				is_coastal = yes
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_opinion_modifier = {
+			modifier = ENG_imperial_trade
+			target = ROOT
+		}
+    }
+
+	option = {
+        name = XHH_diplo_events.5.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			country_event = {
+				id = XHH_diplo_events.7
+				days = 2
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_political_power = -100
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.6
+	title = XHH_diplo_events.6.t
+	desc = XHH_diplo_events.6.desc
+	
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.6.a
+		add_offsite_building = {
+			type = dockyard
+			level = 2
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			effect_tooltip = {
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_opinion_modifier = {
+					modifier = ENG_imperial_trade
+					target = ROOT
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.7
+	title = XHH_diplo_events.7.t
+	desc = XHH_diplo_events.7.desc
+	
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.7.a
+		add_political_power = -50
+    }
+}
+
+country_event = {
+	id = XHH_diplo_events.8
+	title = XHH_diplo_events.8.t
+	desc = XHH_diplo_events.8.desc
+	
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.8.a
+		random_owned_controlled_state = {
+			limit = {
+				infrastructure < 5
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_opinion_modifier = {
+			modifier = ENG_imperial_trade
+			target = FROM
+		}
+		FROM = {
+			add_opinion_modifier = {
+				modifier = ENG_imperial_trade
+				target = ROOT
+			}
 		}
     }
 }

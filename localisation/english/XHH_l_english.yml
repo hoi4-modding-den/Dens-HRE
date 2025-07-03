@@ -225,7 +225,8 @@
 
 # OPINION MODIFIERS
  XHH_recognised_holy_see: "Recognised the Holy See"
- XHH_challenged_baltic_dominion: "Challenged our Dominion over the Baltic Sea"
+ XHH_challenged_baltic_dominion: "Escalating the Naval Arms Race"
+ XHH_imperial_diplomacy_bonus: "Imperial Diplomacy Focus"
 
 
 # DECISIONS
@@ -254,6 +255,14 @@
  XHH_saf_chromium_mines_2: "Südafrika Chrom AG"
  XHH_botswana_chromium_mines: "Betschuanaland Chrom AG"
  XHH_ghana_mines_company: "Ghana Stahl- & Bergbaugesellschaft"
+
+ XHH_hamburger_investments: "Trade & Bridge-Building"
+ XHH_negotiate_new_porsche_contracts: "Negotiate new Porsche Contracts"
+ XHH_venetian_ports: "[FROM.GetAdjectiveCap] Docks Lease"
+ XHH_dutch_trade_opportunities: "Dutch Trade Opportunities"
+
+ XHH_imperial_diplomacy: "Imperial Diplomatic Corps"
+ XHH_improve_relations_with_hre_member: "Improve [FROM.GetAdjective] Partnership"
 
 
 # FOCUS TREE
@@ -350,6 +359,8 @@
  XHH_council_of_nobles: "Council of Nobles"
  XHH_council_of_nobles_desc: ""
 
+ XHH_hre_diplomatic_ties: "Maintain Hamburg's Inter-Imperial Ties"
+ XHH_hre_diplomatic_ties_desc: ""
  XHH_german_kolonialbund: "Charter for the Kolonialgesellschaft"
  XHH_german_kolonialbund_desc: ""
  XHH_naval_domination: "Seevorherrschaft"
@@ -359,12 +370,14 @@
 
  XHH_democracy_in_the_empire: "Democracy in the Realm"
  XHH_democracy_in_the_empire_desc: ""
- XHH_the_venice_of_the_north: "The Venice of the North"
+ XHH_the_venice_of_the_north: "Venedig des Nordens"
  XHH_the_venice_of_the_north_desc: ""
+ XHH_future_of_science: "Form the Nationalen Technikrat"
+ XHH_future_of_science_desc: ""
 
  XHH_imperial_ascension: "Imperial Ascension"
  XHH_imperial_ascension_desc: ""
- XHH_the_empire_of_the_seas: "The Empire of the Seas"
+ XHH_the_empire_of_the_seas: "Imperium der Meere"
  XHH_the_empire_of_the_seas_desc: ""
 
  XHH_mobilise_the_public: "Mobilise the Public"
@@ -384,6 +397,8 @@
  XHH_prussian_military_school_desc: ""
  XHH_integrate_northwest_administration: "Demands for Wilhelmshaven"
  XHH_integrate_northwest_administration_desc: ""
+ XHH_develop_wilhelmshaven: "Develop Wilhelmshaven"
+ XHH_develop_wilhelmshaven_desc: ""
 
  XHH_modernise_the_landeswehr: "Modernise the Landeswehr"
  XHH_modernise_the_landeswehr_desc: ""
@@ -408,7 +423,7 @@
  XHH_invest_in_rostock_shipbuilding_no_mtg_tt: "Construction of §gfour§! §YDestroyers§! and §gone§! §YLight Cruiser§! will be §Gcompleted§!."
  XHH_nationalise_the_hamurger_hafen: "Nationalise the Hamburger Hafen"
  XHH_nationalise_the_hamurger_hafen_desc: ""
- XHH_bremen_shipbuilding: "Modernise Bremerhaven"
+ XHH_bremen_shipbuilding: "Invest in Bremerhaven's Facilities"
  XHH_bremen_shipbuilding_desc: ""
  XHH_baltic_sea_domination: "Modernise the Ostseeflotte"
  XHH_baltic_sea_domination_desc: ""
@@ -497,6 +512,22 @@
  XHH_diplo_events.3.t: "[FROM.GetNameDefCap] refuses!"
  XHH_diplo_events.3.desc: "The foolish government of [FROM.GetNameDef] has decided to stand up against us and defy the imperial decree."
  XHH_diplo_events.3.a: "Our authority is absolute! To War!"
+ XHH_diplo_events.4.t: "[FROM.capital.GetCapitalVictoryPointName] negotiates new Contracts"
+ XHH_diplo_events.4.desc: "Representatives from [FROM.GetNameDef] visited us to renegotiate Porsche contracts with their government. After some long discussions, we settled on a deal."
+ XHH_diplo_events.4.a: "Business is business."
+ XHH_diplo_events.5.t: "[FROM.capital.GetCapitalVictoryPointName] seeks Dockyard Lease"
+ XHH_diplo_events.5.desc: "Representatives from [FROM.GetNameDef] have approached us with the proposal of having us lease some dockyard facilities to their navy in exchange for industrial investments."
+ XHH_diplo_events.5.a: "We have a deal."
+ XHH_diplo_events.5.b: "Their business isn't profitable."
+ XHH_diplo_events.6.t: "[FROM.capital.GetCapitalVictoryPointName] accepts Dock-Lease proposal."
+ XHH_diplo_events.6.desc: "[FROM.GetNameDefCap] has accepted our deal and agreed to lease their dockyard facilities to us for the proposed price."
+ XHH_diplo_events.6.a: "The beginning of a wonderful partnership."
+ XHH_diplo_events.7.t: "[FROM.capital.GetCapitalVictoryPointName] rejects Dock-Lease proposal."
+ XHH_diplo_events.7.desc: "[FROM.GetNameDefCap] has accepted our deal and refused to lease their dockyard facilities to us, even after we increased our price, stating that we are a security risk."
+ XHH_diplo_events.7.a: "What a shame."
+ XHH_diplo_events.8.t: "[FROM.capital.GetCapitalVictoryPointName] expands Imperial Trade Routes"
+ XHH_diplo_events.8.desc: "[FROM.GetNameDefCap] has recently invested into our region as means to expand their trade influence in the Netherlands."
+ XHH_diplo_events.8.a: "Trade begets Trade."
 
  XHH_news_events.1.t: "Hamburg restricts Princely Powers"
  XHH_news_events.1.desc: "In a constitutional referendum, the senate of Hamburg has voted to revoke the veto powers of the Kurfürst of Hamburg. This, in addition with other acts reducing the Kurfürst's influence in politics, have essentially made [FROM.GetLeader] into a figurehead.\n \nWhile the Kurfürst will still be up for election within the Empire, he will most likely only be a representative of the senate and the people of Hamburg."
