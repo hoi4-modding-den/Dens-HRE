@@ -659,6 +659,40 @@ country_event = {
     }
 }
 
+country_event = {
+	id = XHH_diplo_events.9
+	title = XHH_diplo_events.9.t
+	desc = XHH_diplo_events.9.desc
+	
+	picture = GFX_report_event_generic_naval_treaty
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.9.a
+		effect_tooltip = {
+			FROM = {
+				add_political_power = 50
+
+				add_offsite_building = {
+					type = dockyard
+					level = 1
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_political_power = 50
+
+		add_opinion_modifier = {
+			target = FROM
+			modifier = XHH_port_access
+		}
+    }
+}
+
 news_event = {
 	id = XHH_news_events.1
 	title = XHH_news_events.1.t

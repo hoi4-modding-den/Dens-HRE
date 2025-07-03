@@ -48,19 +48,31 @@ peace_ai_desires = {
                 NOT = { has_government = neutrality }
             }
         }
-        ai_desire = 75
+        ai_desire = 100
     }
     XHH_puppet_balkanise_hamburg = {
         peace_action_type = puppet
         enable = {
-            FROM = {
-                OR = {
-                    original_tag = XH1
-                    original_tag = XH2
+            OR = {
+                AND = {
+                    FROM = {
+                        OR = {
+                            original_tag = XH1
+                            original_tag = XH2
+                        }
+                    }
+                    ROOT = {
+                        has_government = neutrality
+                    }
                 }
-            }
-            ROOT = {
-                has_government = neutrality
+                AND = {
+                    FROM = {
+                        original_tag = XH1
+                    }
+                    ROOT = {
+                        has_government = fascism
+                    }
+                }
             }
         }
         ai_desire = 500

@@ -111,6 +111,60 @@ economy_decisions = {
 
 	}
 
+	XHH_dockyard_privatisation_drive = {
+
+		priority = -1
+
+		icon = SWE_set_navy_budget
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0
+				dockyard < 6
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_privatise_dockyards
+			any_owned_state = {
+				is_controlled_by = ROOT
+				dockyard > 0
+			}
+		}
+
+		visible = { 
+			
+		}
+
+		cost = 50
+
+		days_remove = 120
+
+		complete_effect = {
+			custom_effect_tooltip = XHH_dockyard_privatisation_drive_tt
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+				}
+				remove_building = {
+					type = dockyard
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+
 }
 
 political_actions = {

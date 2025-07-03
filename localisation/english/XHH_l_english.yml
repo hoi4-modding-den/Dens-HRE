@@ -138,6 +138,12 @@
  XHH_communism_party: "Hafen-Gewerkschaften"
  XHH_communism_party_long: "Vereinigte Hafenarbeitergewerkschaften"
 
+ XH1_neutrality_party: "Haus Hannover"
+ XH1_fascism_party: "NP-FH"
+ XH1_fascism_party_long: "Nationalpartei Freies Hannover"
+
+ XH2_neutrality_party: "Haus Mecklenburg"
+
 
 # SCRIPTED TRIGGERS
  XHH_has_hanse_active_tt: "Has national spirit §Y$XHH_hanseatic_influence$§!"
@@ -227,12 +233,15 @@
  XHH_recognised_holy_see: "Recognised the Holy See"
  XHH_challenged_baltic_dominion: "Escalating the Naval Arms Race"
  XHH_imperial_diplomacy_bonus: "Imperial Diplomacy Focus"
+ XHH_port_access: "Port Acquisition"
 
 
 # DECISIONS
  XHH_support_farmers: "Support the Farmers"
  XHH_introduce_kartelamt: "Form the Federal Cartel Office"
  XHH_end_hanse_cooperation: "Arrest the Ältermann for Corruption"
+ XHH_dockyard_privatisation_drive: "Dockyard Privatisation Drive"
+ XHH_dockyard_privatisation_drive_tt: "Replaces §G1§! §YNaval Dockyard§! with §G1§! §YCivilian Factory§! in a random state."
 
  XHH_immigration_campaigns: "Green Grass Campaigns"
  XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
@@ -307,6 +316,10 @@
  XHH_freiwillige_landeswehr_desc: ""
  XHH_land_reform: "Land Reform"
  XHH_land_reform_desc: ""
+ XHH_purchase_lowlands_port_access: "Expand Hanse-owned Dutch Ports"
+ XHH_purchase_lowlands_port_access_desc: ""
+ XHH_privatise_dockyards: "Privatise Dockyards"
+ XHH_privatise_dockyards_desc: ""
  XHH_prioritise_noble_estates: "Prioritise Imperial Estates"
  XHH_prioritise_noble_estates_desc: ""
  XHH_support_the_army: "Courting the Army"
@@ -528,6 +541,9 @@
  XHH_diplo_events.8.t: "[FROM.capital.GetCapitalVictoryPointName] expands Imperial Trade Routes"
  XHH_diplo_events.8.desc: "[FROM.GetNameDefCap] has recently invested into our region as means to expand their trade influence in the Netherlands."
  XHH_diplo_events.8.a: "Trade begets Trade."
+ XHH_diplo_events.9.t: "[FROM.capital.GetCapitalVictoryPointName] expands Hanse-owned Ports in Holland"
+ XHH_diplo_events.9.desc: "Diplomats from [FROM.GetNameDef] have approached us, asking us to sell ports in the cities of Rotterdam and Den Haag to them."
+ XHH_diplo_events.9.a: "We can agree upon this."
 
  XHH_news_events.1.t: "Hamburg restricts Princely Powers"
  XHH_news_events.1.desc: "In a constitutional referendum, the senate of Hamburg has voted to revoke the veto powers of the Kurfürst of Hamburg. This, in addition with other acts reducing the Kurfürst's influence in politics, have essentially made [FROM.GetLeader] into a figurehead.\n \nWhile the Kurfürst will still be up for election within the Empire, he will most likely only be a representative of the senate and the people of Hamburg."
