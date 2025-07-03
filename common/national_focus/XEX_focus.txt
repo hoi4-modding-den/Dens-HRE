@@ -41,7 +41,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_Strenght }
-		x = -6
+		x = -10
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -63,7 +63,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_growth }
-		x = -3
+		x = -15
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -327,7 +327,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_embrace_strenght }
-		x = 10
+		x = 7
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -348,8 +348,8 @@ focus_tree = {
 		id = XEX_invite_tyrol
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_request_brescia }
-		mutually_exclusive = { focus = XEX_invite_venetia }
-		x = 14
+		#mutually_exclusive = {  }
+		x = 11
 		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -371,7 +371,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_political_peace }
 		mutually_exclusive = { focus = XEX_request_brescia focus = XEX_invade_venetia }
-		x = 12
+		x = 9
 		y = 3
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -393,7 +393,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_political_peace focus = XEX_embrace_strenght }
 		mutually_exclusive = { focus = XEX_invade_venetia focus = XEX_invite_venetia  }
-		x = 14
+		x = 11
 		y = 3
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -415,7 +415,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_request_brescia focus = XEX_invite_venetia }
 		#mutually_exclusive = { focus = }
-		x = 12
+		x = 9
 		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -437,7 +437,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_invade_tyrol }
 		#mutually_exclusive = { focus = }
-		x = 12
+		x = 9
 		y = 5
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -459,7 +459,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_political_peace }
 		#mutually_exclusive = { focus =  }
-		x = 9
+		x = 6
 		y = 3
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -482,7 +482,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_invite_mersailles }
 		#mutually_exclusive = { focus =  }
-		x = 8
+		x = 5
 		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -504,7 +504,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_invite_mersailles focus = XEX_invite_venetia }
 		#mutually_exclusive = { focus =  }
-		x = 10
+		x = 7
 		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -526,7 +526,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_political_peace }
-		x = 18
+		x = 15
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -548,7 +548,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_embrace_strenght  }
 		mutually_exclusive = { focus = XEX_request_brescia focus = XEX_invite_venetia }
-		x = 16
+		x = 13
 		y = 3
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -570,7 +570,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_political_peace }
 		#mutually_exclusive = { focus =  }
-		x = 19
+		x = 16
 		y = 3
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -592,7 +592,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_invade_mersailles }
 		#mutually_exclusive = { focus =  }
-		x = 18
+		x = 15
 		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -614,7 +614,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_invade_venetia }
 		#mutually_exclusive = { focus =  }
-		x = 16
+		x = 13
 		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -637,7 +637,7 @@ focus_tree = {
 		prerequisite = { focus = XEX_request_tyrol_submission }
 		prerequisite = { focus = XEX_invade_the_pope }
 		#mutually_exclusive = { focus =  }
-		x = 17
+		x = 12
 		y = 5
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -659,7 +659,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_destroy_austria }
 		#mutually_exclusive = { focus =  }
-		x = 17
+		x = 12
 		y = 6
 		relative_position_id = XEX_adress_the_kingdom
 		
