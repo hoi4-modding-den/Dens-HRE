@@ -6,3 +6,30 @@ XNE_is_dutch_tag = {
         tag = XFS
     }
 }
+
+XNE_is_first_union_member = {
+    custom_trigger_tooltip = {
+        tooltip = XNE_is_first_union_member_tt
+        OR = {
+            has_country_flag = XNE_first_union_agreed
+            has_country_flag = XNE_second_union_agreed
+        }
+    }
+}
+
+XNE_is_first_union_leader = {
+    custom_trigger_tooltip = {
+        tooltip = XNE_is_first_union_leader_tt
+        CAPITAL_SCOPE = {
+            check_variable = { this = var:XNE.union_capital }
+        }
+    }
+}
+
+XNE_first_union_failed = {
+    custom_trigger_tooltip = {
+        tooltip = XNE_first_union_failed_tt
+        # check_variable = { var:XNE.union_capital = -1 }
+        NOT = { always = yes }
+    }
+}

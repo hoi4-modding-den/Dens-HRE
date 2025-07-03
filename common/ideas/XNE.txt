@@ -1,0 +1,55 @@
+ideas = {
+	country = {
+		xne_dummy_1 = {
+            allowed = { always = yes }
+        }
+
+        xne_dummy_2 = {
+            allowed = { always = yes }
+
+            modifier = {
+                war_support_factor = 0.1
+                conscription_factor = 0.1
+            }
+        }
+
+        XNE_dairy_and_hide_exports = {
+            allowed = { tag = XFS }
+            picture = DEN_sahnefront
+            modifier = {
+                consumer_goods_factor = -0.08
+                production_speed_infrastructure_factor = 0.15
+            }
+        }
+
+        XNE_zuiderzee_1 = {
+            allowed = { always = yes }
+            picture = generic_train_tracks
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_speed_buildings_factor = 0.02
+            }
+        }
+
+        XNE_zuiderzee_2 = {
+            allowed = { always = yes }
+            picture = generic_train_tracks
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_speed_buildings_factor = 0.06
+                global_building_slots_factor = 0.1
+            }
+        }
+
+        XNE_zuiderzee_3 = {
+            allowed = { always = yes }
+            picture = generic_train_tracks
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_speed_buildings_factor = 0.1
+                global_building_slots_factor = 0.2
+                coastal_bunker_effectiveness_factor = 0.1
+            }
+        }
+	}
+}

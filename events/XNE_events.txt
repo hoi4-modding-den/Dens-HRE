@@ -1,0 +1,207 @@
+add_namespace = XNE_joint
+
+country_event = {
+	id = XNE_joint.1
+	title = XNE_joint.1.t
+	desc = XNE_joint.1.desc
+	
+	picture = GFX_report_event_generic_conference
+	timeout_days = 4
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XNE_joint.1.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				tag = XHO
+				factor = 0
+			}
+		}
+		set_country_flag = XNE_first_union_agreed
+		custom_effect_tooltip = XNE_joint.1.a.tt1
+		if = {
+			limit = {
+				NOT = { tag = XHO }
+			}
+		}
+		else = {
+			custom_effect_tooltip = XNE_joint.1.a.tt2
+			add_stability = -0.1
+			add_political_power = -100
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+		}
+    }
+
+    option = {
+        name = XNE_joint.1.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				tag = XHO
+				factor = 10
+			}
+		}
+		custom_effect_tooltip = XNE_joint.1.b.tt
+		if = {
+			limit = {
+				NOT = { tag = XHO }
+			}
+			add_political_power = -10
+		}
+		else = {
+			add_political_power = 25
+		}
+    }
+}
+
+country_event = {
+	id = XNE_joint.2
+	title = XNE_joint.2.t
+	desc = XNE_joint.2.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XNE_joint.2.a
+		trigger = {
+			any_other_country = {
+				has_country_flag = XNE_first_union_agreed
+			}
+		}
+
+		every_country = {
+			limit = {
+				has_country_flag = XNE_first_union_agreed
+			}
+			every_other_country = {
+				limit = {
+					has_country_flag = XNE_first_union_agreed
+				}
+				give_guarantee = PREV
+			}
+		}
+		set_variable = { XNE.union_capital = var:capital }
+	}
+
+	option = {
+        name = XNE_joint.2.b
+		trigger = {
+			all_other_country = {
+				NOT = { has_country_flag = XNE_first_union_agreed }
+			}
+		}
+		add_stability = -0.05
+		clr_country_flag = XNE_first_union_agreed
+		set_variable = { XNE.union_capital = -1 }
+	}
+}
+
+country_event = {
+	id = XNE_joint.3
+	title = XNE_joint.3.t
+	desc = XNE_joint.3.desc
+	
+	picture = GFX_report_event_generic_conference
+	timeout_days = 4
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XNE_joint.3.a
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = XNE_second_union_agreed
+		custom_effect_tooltip = XNE_joint.3.a.tt
+    }
+
+    option = {
+        name = XNE_joint.3.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = XNE_joint.1.b.tt
+		add_political_power = -20
+    }
+}
+
+country_event = {
+	id = XNE_joint.4
+	title = XNE_joint.4.t
+	desc = XNE_joint.4.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XNE_joint.4.a
+		trigger = {
+			any_other_country = {
+				has_country_flag = XNE_second_union_agreed
+			}
+		}
+		meta_effect = {
+			text = {
+				create_faction = "[X]"
+			}
+			X = "[GetUnionName]"
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = XNE_joint_idea
+					}
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = XNE_joint_idea
+			}
+		}
+
+		every_other_country = {
+			limit = {
+				has_country_flag = XNE_second_union_agreed
+				NOT = { is_in_faction = yes }
+			}
+			PREV = { add_to_faction = PREV }
+				if = {
+					limit = {
+						NOT = {
+							has_dynamic_modifier = {
+								modifier = XNE_joint_idea
+							}
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = XNE_joint_idea
+					}
+				}
+		}
+		custom_effect_tooltip = XNE_joint_second_union_complete_tt
+		set_variable = { XNE.union_capital = var:capital }
+		add_to_variable = { XNE.joint_pp = 0.1 }
+	}
+
+	option = {
+        name = XNE_joint.4.b
+		trigger = {
+			all_other_country = {
+				NOT = { has_country_flag = XNE_second_union_agreed }
+			}
+		}
+		add_stability = -0.1
+		add_political_power = -50
+		clr_country_flag = XNE_second_union_agreed
+		set_variable = { XNE.union_capital = -1 }
+	}
+}

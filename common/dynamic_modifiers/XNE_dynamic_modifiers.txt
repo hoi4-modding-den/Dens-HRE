@@ -1,0 +1,25 @@
+XNE_joint_idea = { 
+	enable = { always = yes }
+
+	icon = GFX_idea_BEL_legacy_of_the_belgian_airforce
+	
+	political_power_gain = XNE.joint_pp
+	war_support_factor = XNE.joint_ws
+    consumer_goods_factor = XNE.joint_consumer_goods
+    attrition = XNE.joint_attrition
+    supply_combat_penalties_on_core_factor = XNE.joint_core_supply
+    army_attack_against_major_factor = XNE.joint_major_attack
+    army_defence_against_major_factor = XNE.joint_major_defence
+    max_dig_in = XNE.joint_entrenchment
+    special_forces_cap = XNE.joint_special_forces_cap
+    marines_special_forces_contribution_factor = XNE.joint_marines_cap
+    production_factory_max_efficiency_factor = XNE.joint_efficiency_cap
+    production_factory_start_efficiency_factor = XNE.joint_efficiency_base
+    conscription_factor = XNE.joint_conscription_factor
+    max_command_power = XNE.joint_cp
+    army_leader_start_logistics_level = XNE.joint_army_leader_start_logistics_level
+    army_leader_start_attack_level = XNE.joint_army_leader_start_attack_level
+    army_infantry_attack_factor = XNE.joint_infantry_attack
+    global_building_slots = XNE.joint_building_slots
+	
+}

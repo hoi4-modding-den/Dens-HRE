@@ -1,10 +1,10 @@
 joint_focus = {
     id = XNE_joint_first_union
     icon = GFX_focus_CHL_invite_french_aristocracy
+    text_icon = netherlands_shared_style
 
-    x = 10
+    x = 16
     y = 0
-
     cost = 10
     available_if_capitulated = no
 
@@ -32,7 +32,1247 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
-        add_political_power = 80
+        add_political_power = 50
+        every_country = {
+            limit = {
+                XNE_is_dutch_tag = yes
+                NOT = { tag = ROOT }
+            }
+            country_event = {
+                id = XNE_joint.1
+                days = 1
+            }
+
+        }
+        set_country_flag = XNE_first_union_agreed
+        hidden_effect = {
+            country_event = {
+                id = XNE_joint.2
+                days = 7
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_ratify_the_union
+    icon = GFX_focus_BEL_king_of_the_belgians
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_first_union }
+    relative_position_id = XNE_joint_first_union
+    x = 0
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_idea_dummy_add
+        hidden_effect = {
+            add_dynamic_modifier = {
+                modifier = XNE_joint_idea
+            }
+        }
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_economic_agreements
+    icon = GFX_goal_generic_construct_civ_factory
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_ratify_the_union }
+    relative_position_id = XNE_joint_ratify_the_union
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_economic_agreements_complete_tt
+        custom_effect_tooltip = generic_skip_one_line_tt
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = industrial_complex
+                    size > 0
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                type = industrial_complex
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+
+    completion_reward_joint_originator = {
+        add_to_variable = { XNE.joint_consumer_goods = -0.06 }
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_friesland_agriculture
+    icon = GFX_focus_CHL_focus_on_cattle_and_wool
+    text_icon = xfs_shared_style
+
+    prerequisite = { focus = XNE_joint_economic_agreements }
+    relative_position_id = XNE_joint_economic_agreements
+    x = -2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        tag = XFS
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_friesland_agriculture_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        add_manpower = 15000
+        add_ideas = { XNE_dairy_and_hide_exports }
+        add_to_variable = { XNE.joint_core_supply = -0.1 }
+        add_to_variable = { XNE.joint_attrition = -0.04 }
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+
+
+joint_focus = {
+    id = XNE_joint_construction_effort
+    icon = GFX_focus_generic_the_giant_wakes
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_economic_agreements }
+    relative_position_id = XNE_joint_economic_agreements
+    x = 4
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        add_tech_bonus = {
+            bonus = 1.0
+            uses = 1
+            category = construction_tech
+        }
+    }
+
+    completion_reward_joint_originator = {
+        if = {
+            limit = {
+                NOT = { has_tech = construction1 }
+            }
+            set_technology = { construction1 = 1 }
+        }
+        else_if = {
+            limit = {
+                NOT = { has_tech = construction2 }
+            }
+            set_technology = { construction2 = 1 }
+        }
+        else = {
+            add_tech_bonus = {
+                bonus = 0.5
+                ahead_reduction = 1
+                uses = 1
+                category = industry
+            }
+        }
+
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_zuiderzee_works
+    icon = GFX_focus_hol_the_zuiderzee_works
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_construction_effort }
+    relative_position_id = XNE_joint_construction_effort
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_dutch_tag = yes
+        custom_trigger_tooltip = {
+            tooltip = XNE_joint_zuiderzee_works_available_tt
+            OR = {
+                controls_province = 8622
+                controls_province = 6366
+                controls_province = 9335
+                controls_province = 6286
+                controls_province = 6241
+                controls_province = 391
+                controls_province = 3314
+            }
+        }
+    }
+
+    bypass = {
+    }
+
+    joint_trigger = {
+        XNE_is_dutch_tag = yes
+    }
+
+    completion_reward = {
+        add_ideas = { XNE_zuiderzee_1 }
+    }
+
+    completion_reward_joint_originator = {
+        every_state = {
+            limit = {
+                OR = {
+                    state = 7
+                    state = 36
+                    state = 1032
+                }
+            }
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_nordoostpolder
+    icon = GFX_focus_generic_offshore_oil_rig
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_zuiderzee_works }
+    relative_position_id = XNE_joint_zuiderzee_works
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_dutch_tag = yes
+        num_of_factories > 12
+    }
+
+    bypass = {
+    }
+
+    joint_trigger = {
+        XNE_is_dutch_tag = yes
+    }
+
+    completion_reward = {
+        swap_ideas = {
+            remove_idea = XNE_zuiderzee_1
+            add_idea = XNE_zuiderzee_2
+        }
+    }
+
+    completion_reward_joint_originator = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = industrial_complex
+                    size > 1
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = industrial_complex
+                    size > 0
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                type = industrial_complex
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_eastern_polder
+    icon = GFX_focus_generic_offshore_oil_rig
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_nordoostpolder }
+    prerequisite = { focus = XNE_joint_industry_developments }
+    relative_position_id = XNE_joint_nordoostpolder
+    x = 0
+    y = 2
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_dutch_tag = yes
+        num_of_factories > 23
+        1032 = {
+            infrastructure > 4
+        }
+    }
+
+    bypass = {
+    }
+
+    joint_trigger = {
+        XNE_is_dutch_tag = yes
+    }
+
+    completion_reward = {
+        swap_ideas = {
+            remove_idea = XNE_zuiderzee_2
+            add_idea = XNE_zuiderzee_3
+        }
+    }
+
+    completion_reward_joint_originator = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = industrial_complex
+                    size > 2
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 3
+            add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes
+            }
+            add_building_construction = {
+                type = arms_factory
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = industrial_complex
+                    size > 1
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+                type = industrial_complex
+                level = 2
+                instant_build = yes
+            }
+        }
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_training
+    icon = GFX_focus_generic_urban_training
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_economic_agreements }
+    relative_position_id = XNE_joint_economic_agreements
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_training_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        army_experience = 45
+        add_to_variable = { XNE.joint_cp = 20 }
+    }
+
+    completion_reward_joint_member = {
+        army_experience = 20
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_holland_marines
+    icon = GFX_focus_CHL_armada_de_chile
+    text_icon = xho_shared_style
+
+    prerequisite = { focus = XNE_joint_training }
+    relative_position_id = XNE_joint_training
+    x = 2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        tag = XHO
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_holland_marines_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        navy_experience = 40
+        army_experience = 10
+        hidden_effect = {
+            division_template = {
+                name = "Mariniersdivisie"
+                division_names_group = HOL_MAR_01
+                priority = 2
+                template_counter = 3
+                regiments = {
+                    marine = { x = 0 y = 0 }
+                    marine = { x = 0 y = 1 }
+                    marine = { x = 0 y = 2 }
+                    marine = { x = 0 y = 3 }
+                    marine = { x = 1 y = 0 }
+                    marine = { x = 1 y = 1 }
+                    marine = { x = 1 y = 2 }
+                    marine = { x = 1 y = 3 }
+                    marine = { x = 2 y = 0 }
+                    marine = { x = 2 y = 1 }
+                    marine = { x = 2 y = 2 }
+                    marine = { x = 2 y = 3 }
+                }
+                support = {
+                    artillery = { x = 0 y = 0 }
+                    engineer = { x = 0 y = 0 }
+                }
+            }
+        }
+        CAPITAL_SCOPE = {
+            create_unit = {
+				division = "name = \"12e Mariniersdivisie\" division_template = \"Mariniersdivisie\" start_experience_factor = 0.4" 
+				owner = PREV
+			}
+        }
+        add_to_variable = { XNE.joint_special_forces_cap = 0.06 }
+        add_to_variable = { XNE.joint_marines_cap = -0.2 }
+    }
+
+    completion_reward_joint_member = {
+        navy_experience = 15
+        army_experience = 5
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_raise_militia
+    icon = GFX_focus_generic_limited_social_mobilization
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_training }
+    relative_position_id = XNE_joint_training
+    x = -2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        add_manpower = 9000
+        hidden_effect = {
+            division_template = {
+                name = "Militie Divisie"
+                division_names_group = HOL_GAR_01
+                priority = 0
+                regiments = {
+                    militia = { x = 0 y = 0 }
+                    militia = { x = 0 y = 1 }
+                    militia = { x = 1 y = 0 }
+                    militia = { x = 1 y = 1 }
+                }
+            }
+        }
+        CAPITAL_SCOPE = {
+            create_unit = {
+				division = "name = \"Militia\" division_template = \"Militie Divisie\" start_experience_factor = 0.0 start_equipment_factor = 0.7"
+				owner = PREV
+                count = 3
+			}
+        }
+    }
+
+    completion_reward_joint_member = {
+        add_manpower = 4500
+        hidden_effect = {
+            division_template = {
+                name = "Militie Divisie"
+                division_names_group = HOL_GAR_01
+                priority = 0
+                regiments = {
+                    militia = { x = 0 y = 0 }
+                    militia = { x = 0 y = 1 }
+                    militia = { x = 1 y = 0 }
+                    militia = { x = 1 y = 1 }
+                }
+            }
+        }
+        CAPITAL_SCOPE = {
+            create_unit = {
+				division = "name = \"Militia\" division_template = \"Militie Divisie\" start_experience_factor = 0.0 start_equipment_factor = 0.7"
+				owner = PREV
+                count = 1
+			}
+        }
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_pan_netherland_defence
+    icon = GFX_focus_BEL_national_redoubt_at_antwerp
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_training }
+    relative_position_id = XNE_joint_training
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+        threat > 0.25
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_pan_netherland_defence_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        add_war_support = 0.1
+        add_to_variable = { XNE.joint_major_attack = 0.1 }
+        add_to_variable = { XNE.joint_major_defence = 0.1 }
+        add_to_variable = { XNE.joint_entrenchment = 2 }
+    }
+
+    completion_reward_joint_member = {
+        add_war_support = 0.05
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_second_union
+    icon = GFX_focus_CHL_invite_french_aristocracy
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_pan_netherland_defence }
+    relative_position_id = XNE_joint_pan_netherland_defence
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_dutch_tag = yes
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_dutch_tag = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        every_country = {
+            limit = {
+                XNE_is_dutch_tag = yes
+                NOT = { tag = ROOT }
+            }
+            country_event = {
+                id = XNE_joint.3
+                days = 1
+            }
+
+        }
+        set_country_flag = XNE_second_union_agreed
+        hidden_effect = {
+            country_event = {
+                id = XNE_joint.4
+                days = 7
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_industry_developments
+    icon = GFX_focus_generic_industry_3
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_second_union }
+    relative_position_id = XNE_joint_second_union
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_industry_developments_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        add_offsite_building = { 
+            type = arms_factory
+            level = 2
+        }
+        add_to_variable = { XNE.joint_efficiency_cap = 0.05 }
+        add_to_variable = { XNE.joint_efficiency_base = 0.05 }
+    }
+
+    completion_reward_joint_member = {
+        add_offsite_building = { 
+            type = arms_factory
+            level = 1
+        }
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_fund_military_industry
+    icon = GFX_goal_generic_construct_mil_factory
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_second_union }
+    relative_position_id = XNE_joint_second_union
+    x = -4
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        has_war_support > 0.49
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = arms_factory
+                    size > 1
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+                type = arms_factory
+                level = 2
+                instant_build = yes
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = arms_factory
+                    size > 0
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                type = arms_factory
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_land_clearing_projects
+    icon = GFX_focus_DEN_heavy_regulations
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_fund_military_industry }
+    relative_position_id = XNE_joint_fund_military_industry
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        has_army_manpower = {
+            size > 100000
+        }
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_land_clearing_projects_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        CAPITAL_SCOPE = {
+            XNE_upgrade_state_category = yes
+        }
+        add_to_variable = { XNE.joint_building_slots = 1 }
+        add_to_variable = { XNE.joint_efficiency_base = 0.05 }
+        add_to_variable = { XNE.joint_consumer_goods = 0.06 }
+    }
+
+    completion_reward_joint_member = {
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_zandkreekdam
+    icon = GFX_focus_BEL_dam_the_consequences
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_land_clearing_projects }
+    relative_position_id = XNE_joint_land_clearing_projects
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        35 = {
+            OWNER = {
+                XNE_is_first_union_member = yes
+            }
+        }
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        add_offsite_building = {
+            type = industrial_complex
+            level = 2
+        }
+        35 = {
+            add_building_construction = {
+                type = dam
+                level = 1
+                instant_build = yes
+                province = 9431
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = infrastructure
+                    size > 0
+                }
+            }
+            add_building_construction = {
+                type = infrastructure
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_antwerpen_military_academy
+    icon = GFX_focus_SOV_restore_cossack_units
+    text_icon = xbt_shared_style
+
+    prerequisite = { focus = XNE_joint_second_union }
+    relative_position_id = XNE_joint_second_union
+    x = 2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        tag = XBT
+        977 = { is_owned_by = XBT }
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_antwerpen_military_academy_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        every_unit_leader = {
+            add_attack = 1
+            add_logistics = 1
+            add_defense = 1
+            add_planning = 1
+        }
+        add_to_variable = { XNE.joint_army_leader_start_logistics_level = 1 }
+        add_to_variable = { XNE.joint_army_leader_start_attack_level = 1 }
+        add_to_variable = { XNE.joint_infantry_attack = 0.05 }
+    }
+
+    completion_reward_joint_member = {
+        every_unit_leader = {
+            add_attack = 1
+            add_logistics = 1
+        }
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_naval_facilities
+    icon = GFX_focus_generic_navy_battleship2
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_industry_developments }
+    relative_position_id = XNE_joint_industry_developments
+    x = -2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        any_owned_state = {
+            is_coastal = yes
+        }
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        random_owned_controlled_state = {
+            limit = {
+                free_building_slots = {
+                    building = dockyard
+                    size > 0
+                    include_locked = yes
+                }
+            }
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = {
+                type = dockyard
+                level = 1
+                instant_build = yes
+            }
+        }
+    }
+
+    completion_reward_joint_originator = {
+        navy_experience = 35
+        every_core_state = {
+            limit = {
+                is_coastal = yes
+            }
+            add_building_construction = {
+                type = coastal_bunker
+                level = 2
+                instant_build = yes
+                province = {
+                    all_provinces = yes
+                    limit_to_naval_base = yes
+                }
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+        navy_experience = 15
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_appoint_supreme_commander
+    icon = GFX_focus_generic_military_mission
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_industry_developments }
+    relative_position_id = XNE_joint_industry_developments
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_appoint_supreme_commander_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        add_political_power = 50
+        army_experience = 20
+        navy_experience = 20
+        air_experience = 20
+        add_to_variable = { XNE.joint_conscription_factor = 0.1 }
+        add_to_variable = { XNE.joint_ws = 0.05 }
+    }
+
+    completion_reward_joint_member = {
+        army_experience = 10
+        navy_experience = 10
+        air_experience = 10
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_propose_integration
+    icon = GFX_focus_por_concordat
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_appoint_supreme_commander }
+    relative_position_id = XNE_joint_appoint_supreme_commander
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_dutch_state
+    icon = GFX_focus_BEL_dietsland
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_propose_integration }
+    relative_position_id = XNE_joint_propose_integration
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
     }
 
     completion_reward_joint_member = {

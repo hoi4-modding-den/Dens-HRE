@@ -1,0 +1,25 @@
+on_actions = {
+	on_startup = {
+        effect = {
+            XNE = {
+                set_variable = { joint_pp = 0.05 }
+                set_variable = { joint_ws = 0 }
+                set_variable = { joint_consumer_goods = 0 }
+                set_variable = { joint_attrition = 0 }
+                set_variable = { joint_core_supply = 0 }
+                set_variable = { joint_major_attack = 0 }
+                set_variable = { joint_major_defence = 0 }
+                set_variable = { joint_entrenchment = 0 }
+                set_variable = { joint_special_forces_cap = 0 }
+                set_variable = { joint_marines_cap = 0 }
+                set_variable = { joint_efficiency_cap = 0 }
+                set_variable = { joint_efficiency_base = 0 }
+                set_variable = { joint_conscription_factor = 0 }
+                set_variable = { joint_cp = 0 }
+                set_variable = { joint_army_leader_start_logistics_level = 0 }
+                set_variable = { joint_navy_leader_start_coordination_level = 0 }
+                set_variable = { joint_building_slots = 0 }
+            }
+        }
+    }
+}

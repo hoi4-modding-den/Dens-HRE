@@ -57,3 +57,27 @@ defined_text = {
         localization_key = GFX_portrait_SAX_george_of_saxony
     }
 }
+
+defined_text = {
+    name = GetUnionName
+    text = {
+        trigger = {
+            any_country = {
+                has_completed_focus = XNE_joint_second_union
+            }
+        }
+        localization_key = XNE_joint_second_union_name
+    }
+    text = {
+        trigger = {
+            any_country = {
+                has_completed_focus = XNE_joint_first_union
+            }
+        }
+        localization_key = XNE_joint_first_union_name
+
+    }
+    text = {
+        localization_key = XNE_joint_first_union
+    }
+}
