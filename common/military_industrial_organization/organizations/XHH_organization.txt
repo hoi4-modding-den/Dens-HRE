@@ -162,11 +162,15 @@ XHH_panzerfabrik_lueneburg = {
 	icon = GFX_idea_ger_mefo_bills
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
-		FROM = { owns_state = 59 }
+		FROM = { owns_state = 1040 }
 	}
 
 }
@@ -198,7 +202,11 @@ XHH_deschimag_organization = {
 	}
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -292,7 +300,11 @@ XHH_germaniawerft_organization = {
 	}
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -401,7 +413,11 @@ XHH_blohm_und_voss_organization = {
 	}
 	
 	allowed = {	
-		original_tag = XHH 
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -525,7 +541,11 @@ XHH_hdw_organization = {
 	name = GER_hdw_organization 
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -679,7 +699,11 @@ XHH_deutsche_werke_organization = {
 	}
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -765,7 +789,11 @@ XHH_kriegsmarinewerft_wilhelmshaven_organization = {
 	name = GER_kriegsmarinewerft_wilhelmshaven_organization
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -855,7 +883,11 @@ XHH_focke_wulf_organization = {
 	name = GER_focke_wulf_organization
 	
 	allowed = {	
-		original_tag = XHH 
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -987,7 +1019,11 @@ XHH_heinkel_organization = {
 	name = GER_heinkel_organization
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -1114,7 +1150,11 @@ XHH_arado_flugzeugwerke_organization = {
 	name = GER_arado_flugzeugwerke_organization
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -1199,7 +1239,11 @@ XHH_rheinmetall_organization = {
 	icon = GFX_idea_rheinmetall
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {
@@ -1337,7 +1381,11 @@ XHH_hamburger_waffenfabrik = {
 	}
 	
 	allowed = {	 
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 	
 	available = {
@@ -1444,7 +1492,11 @@ XHH_opel_organization = {
 	icon = GFX_idea_opel
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
 	}
 
 	available = {

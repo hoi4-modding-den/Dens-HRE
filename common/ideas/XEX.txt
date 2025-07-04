@@ -1,0 +1,32 @@
+ideas = {
+	country = {
+		XEX_organized_crime = {
+			picture = XEX_Chicago_Von
+
+			modifier = {
+				stability_factor = -0.1
+				stability_weekly = -0.001
+				production_speed_buildings_factor = -0.15 
+				civilian_factory_use = 1
+				consumer_goods_factor = 0.15
+			}
+		}
+		XEX_Army_Of_Strenght = {
+			picture = XEX_ArmyStrong
+
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_attack_speed_factor = 0.05
+			}
+		}
+		XEX_Cucked_Navy = {
+			picture = XEX_undermined_navy
+
+			modifier = {
+				repair_speed_factor = -0.33
+				industrial_capacity_dockyard = -0.15
+			}
+		}
+	}
+}

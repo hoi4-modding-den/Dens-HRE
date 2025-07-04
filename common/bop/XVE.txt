@@ -1,8 +1,8 @@
 XVE_power_balance = {
-	initial_value = 0.20
+	initial_value = 0
 	left_side = XVE_council_of_ten_side
 	right_side = XVE_doge_full_college_side
-	decision_category = XVE_balance_of_power_category
+	decision_category = XVE_power_balance_decisions
 
 	### Balanced Powers
 	range = {
@@ -21,8 +21,8 @@ XVE_power_balance = {
 
 	### Council of Ten (Oligarchy)
 	side = {
-		id = ITA_grand_council_side	
-		icon = GFX_bop_ITA_grand_council_side
+		id = XVE_council_of_ten_side	
+		icon = GFX_bop_SWI_centralization_council_side
 
 		range = {
 			id = XVE_council_of_ten_low_control_range
@@ -56,23 +56,8 @@ XVE_power_balance = {
 
 		range = {
 			id = XVE_council_of_ten_high_control_range
-			min = -0.9
-			max = -0.6
-			modifier = {
-
-			}
-			on_activate = {
-
-			}
-			on_deactivate = {
-				
-			}
-		}
-
-		range = {
-			id = XVE_council_of_ten_total_control_range
 			min = -1
-			max = -0.9
+			max = -0.6
 			modifier = {
 
 			}
@@ -88,7 +73,7 @@ XVE_power_balance = {
 	### Doge & Pien Collegio (Republican/Government)
 	side = {
 		id = XVE_doge_full_college_side	
-		icon = GFX_bop_ITA_mussolini_side
+		icon = GFX_bop_ITA_democratic_side
 
 		range = {
 			id = XVE_doge_full_college_side_low_control_range
@@ -123,30 +108,15 @@ XVE_power_balance = {
 		range = {
 			id = XVE_doge_full_college_side_high_control_range
 			min = 0.6
-			max = 0.9
-			modifier = {
-
-			}
-			on_activate = {
-				
-			}
-			on_deactivate = {
-				
-			}
-		}
-
-		range = {
-			id = XVE_doge_full_college_side_total_control_range
-			min = 0.9
 			max = 1
 			modifier = {
 
 			}
 			on_activate = {
-
+				
 			}
 			on_deactivate = {
-
+				
 			}
 		}
 	}

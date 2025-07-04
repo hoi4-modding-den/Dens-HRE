@@ -54,7 +54,20 @@ if = {
 		mtg_transport = 1
 	}
 }
+set_autonomy = {
+	target = XE0
+	autonomy_state = autonomy_personal_union
+}
+add_ideas = {
+	free_trade
+	civilian_economy
+	volunteer_only
 
+	# Ideas
+	XEX_organized_crime
+	XEX_Army_Of_Strenght
+	XEX_Cucked_Navy
+}
 set_variable = { HRE_national_stance_federalism = 3 } 
 set_variable = { HRE_national_stance_welfare = 3 } 
 set_variable = { HRE_national_stance_papacy = 3 } 
@@ -67,7 +80,10 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 100
+	neutrality = 50
+	fascism = 25
+	democratic = 13
+	communism = 12
 }
 
 if = {

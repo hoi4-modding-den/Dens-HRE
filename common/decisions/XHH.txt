@@ -111,9 +111,103 @@ economy_decisions = {
 
 	}
 
+	XHH_dockyard_privatisation_drive = {
+
+		priority = -1
+
+		icon = SWE_set_navy_budget
+
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0
+				dockyard < 6
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_privatise_dockyards
+			any_owned_state = {
+				is_controlled_by = ROOT
+				dockyard > 0
+			}
+		}
+
+		visible = { 
+			
+		}
+
+		cost = 50
+
+		days_remove = 120
+
+		complete_effect = {
+			custom_effect_tooltip = XHH_dockyard_privatisation_drive_tt
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+				}
+				remove_building = {
+					type = dockyard
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+
 }
 
 political_actions = {
+
+	XHH_restore_meckpomm = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XH2
+		}
+
+		available = {
+			controls_state = 62
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					62 = { is_claimed_by = ROOT }
+				}
+				remove_state_claim = 62
+			}
+			add_state_core = 62
+			if = {
+				limit = {
+					NOT = { owns_state = 62 }
+				}
+				set_state_owner = 62
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = XH2_mecklenburg_vorpommern
+		}
+
+	}
 
 	XHH_immigration_campaigns = {
 
@@ -910,5 +1004,365 @@ XHH_chartered_colonial_companies = {
 
 	}
 
+
+}
+
+XHH_hamburger_investments = {
+
+	XHH_negotiate_new_porsche_contracts = {
+
+		priority = 1
+
+		icon = ger_mefo_bills
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				has_government = democratic
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+			}
+		}
+
+		visible = { 
+			NOT = { has_government = communism }
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				original_tag = XWB
+				has_government = fascism
+				has_civil_war = no
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 75
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		modifier = {
+			political_power_cost = 0.1
+			consumer_goods_factor = 0.2
+		}
+
+		remove_effect = {
+			FROM = { country_event = XHH_diplo_events.4 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
+				FROM = {
+					add_offsite_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			mio:XHH_porsche_organization = {
+				add_mio_size = 3
+			}
+		}
+
+	}
+
+	XHH_venetian_ports = {
+
+		priority = 1
+
+		icon = SWE_set_navy_budget
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 19
+				}
+			}
+		}
+
+		visible = { 
+			NOT = { has_government = communism }
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				original_tag = XVE
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+				has_civil_war = no
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 75
+
+		fire_only_once = yes
+
+		days_remove = 10
+
+		modifier = {
+			political_power_cost = 0.1
+			consumer_goods_factor = 0.2
+		}
+
+		remove_effect = {
+			FROM = {
+				country_event = XHH_diplo_events.5
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			effect_tooltip = {
+				add_offsite_building = {
+					type = dockyard
+					level = 2
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+				
+				FROM = {
+					random_owned_controlled_state = {
+						limit = {
+							is_coastal = yes
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					add_opinion_modifier = {
+						modifier = ENG_imperial_trade
+						target = ROOT
+					}
+				}
+			}
+		}
+
+	}
+
+	XHH_dutch_trade_opportunities = {
+
+		priority = 1
+
+		icon = ger_mefo_bills
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 69
+				}
+			}
+		}
+
+		visible = { 
+			NOT = { has_government = communism }
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				XNE_is_dutch_tag = yes
+				XNE_is_first_union_leader = yes
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+				has_civil_war = no
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 75
+
+		fire_only_once = yes
+
+		days_remove = 40
+
+		modifier = {
+			political_power_cost = 0.1
+			consumer_goods_factor = 0.2
+		}
+
+		remove_effect = {
+			FROM = {
+				country_event = XHH_diplo_events.8
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				FROM = {
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure < 5
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_opinion_modifier = {
+					modifier = ENG_imperial_trade
+					target = FROM
+				}
+				FROM = {
+					add_opinion_modifier = {
+						modifier = ENG_imperial_trade
+						target = ROOT
+					}
+				}
+			}
+		}
+	}
+
+}
+
+XHH_imperial_diplomacy = {
+
+	XHH_improve_relations_with_hre_member = {
+
+		priority = 0
+
+		icon = hol_exchange_intelligence_data
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				has_country_flag = HRE_member_state
+				is_subject = no
+				has_civil_war = no
+				OR = {
+					is_major = yes
+					has_country_flag = HRE_current_emperor
+					is_neighbor_of = ROOT
+				}
+				has_opinion = {
+					target = ROOT
+					value < 50
+				}
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 10
+
+		fire_only_once = yes
+
+		days_remove = 25
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			reverse_add_opinion_modifier = {
+				target = FROM
+				modifier = XHH_imperial_diplomacy_bonus
+			}
+		}
+	}
 
 }

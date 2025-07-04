@@ -12,6 +12,7 @@ set_research_slots = 3
 
 set_power_balance = {  
 	id = XVE_power_balance
+	set_value = 0.20
 } 
 
 set_technology = {
@@ -104,7 +105,7 @@ set_country_flag = XVE_welcome_message_flag
 736 = {
 	start_resistance = yes
 	force_enable_resistance = XVE
-	add_resistance_target = 15
+	add_resistance_target = 30
 	set_compliance = 45
 	set_resistance = 10
 	set_garrison_strength = 1.0
@@ -113,7 +114,7 @@ set_country_flag = XVE_welcome_message_flag
 852 = {
 	start_resistance = yes
 	force_enable_resistance = XVE
-	add_resistance_target = 20	
+	add_resistance_target = 35
 	set_compliance = 35
 	set_resistance = 15
 	set_garrison_strength = 1.0
@@ -251,10 +252,10 @@ if = {
 			fixed_ship_engine_slot = cruiser_ship_engine_1
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			fixed_ship_secondaries_slot = empty
-			front_1_custom_slot = empty
+			front_1_custom_slot = ship_light_battery_2
 			mid_1_custom_slot = ship_anti_air_1
 			mid_2_custom_slot = ship_secondaries_2
-			rear_1_custom_slot = ship_heavy_battery_2
+			rear_1_custom_slot = empty
 		}
 	}		
 	# Battlecruisers #

@@ -1,0 +1,702 @@
+focus_tree = {
+	id = XEX_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XEX
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 0 y = 0 }
+
+	focus = {
+		id = XEX_adress_the_kingdom
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 15
+		y = 0
+		#relative_position_id = 
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_economical_growth
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		mutually_exclusive = { focus = XEX_economical_Strenght }
+		x = -10
+		y = 2
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_economical_Strenght
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		mutually_exclusive = { focus = XEX_economical_growth }
+		x = -16
+		y = 2
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_dummy_stupid_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_economical_Strenght focus = XEX_economical_growth }
+		#mutually_exclusive = {  }
+		x = 3
+		y = 1
+		relative_position_id = XEX_economical_Strenght
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	shared_focus = XEX_milan_project
+	focus = {
+		id = XEX_internal_affairs
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_turin_visit
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_internal_affairs }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_unite_milan
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_turin_visit }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_crush_milan_crime
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_unite_milan }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_kings_investements
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_turin_visit }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_connect_the_kingdom
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_kings_investements }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_kingspropaganda
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_connect_the_kingdom }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 5
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_rename_corsica
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_kingspropaganda }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 6
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_great_unifier
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_kingspropaganda }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 6
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_meet_with_venetia
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_kings_investements }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_visit_germany
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_meet_with_venetia }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 5
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_political_peace
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		mutually_exclusive = { focus = XEX_embrace_strenght }
+		x = 7
+		y = 2
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invite_tyrol
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_request_brescia }
+		#mutually_exclusive = {  }
+		x = 11
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invite_venetia
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_political_peace }
+		mutually_exclusive = { focus = XEX_request_brescia focus = XEX_invade_venetia }
+		x = 9
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_request_brescia
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_political_peace focus = XEX_embrace_strenght }
+		mutually_exclusive = { focus = XEX_invade_venetia focus = XEX_invite_venetia  }
+		x = 11
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invade_tyrol
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_request_brescia focus = XEX_invite_venetia }
+		#mutually_exclusive = { focus = }
+		x = 9
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invade_Austria
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invade_tyrol }
+		#mutually_exclusive = { focus = }
+		x = 9
+		y = 5
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invite_mersailles
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_political_peace }
+		#mutually_exclusive = { focus =  }
+		x = 6
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = XEX_tuscany_for_membership
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invite_mersailles }
+		#mutually_exclusive = { focus =  }
+		x = 5
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_italian_research_union
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invite_mersailles focus = XEX_invite_venetia }
+		#mutually_exclusive = { focus =  }
+		x = 7
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_embrace_strenght
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		mutually_exclusive = { focus = XEX_political_peace }
+		x = 15
+		y = 2
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invade_venetia
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_embrace_strenght  }
+		mutually_exclusive = { focus = XEX_request_brescia focus = XEX_invite_venetia }
+		x = 13
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invade_mersailles
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_political_peace }
+		#mutually_exclusive = { focus =  }
+		x = 16
+		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invade_the_pope
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invade_mersailles }
+		#mutually_exclusive = { focus =  }
+		x = 15
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_request_tyrol_submission
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invade_venetia }
+		#mutually_exclusive = { focus =  }
+		x = 13
+		y = 4
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_destroy_austria
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_request_tyrol_submission }
+		prerequisite = { focus = XEX_invade_the_pope }
+		#mutually_exclusive = { focus =  }
+		x = 12
+		y = 5
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_announce_greater_padania
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_destroy_austria }
+		#mutually_exclusive = { focus =  }
+		x = 12
+		y = 6
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+}

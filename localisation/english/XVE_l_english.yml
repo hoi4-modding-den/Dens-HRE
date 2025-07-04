@@ -9,20 +9,21 @@ XIF_DEF:0 "the Istrian Freedom Front
 XIF_ADJ:0 "Istrian"
 
 ### INTRO ###
-XVE_intro_loc:0 "\n\n§HCurrent Content:§! \n\n §G-Carefully balance republican and oligarchic forces, possibly favoring one side to shape Venice’s future government.\n -Establish a progressive royal dynasty promoting social reforms.\n -Inaugurate the House of Patrizio-Wittelsbach and dominate the region.\n -Embrace a pan-Latin identity and bolster Mediterranean national pride."
+XVE_intro_loc:0 "As one of the more recent states to join the modern and reformed Holy Roman Empire, the §HRepublic of Venice§! has gained both prestige and recognition from its fellow neighbors. Even though a strong movement emerged in the 19th century to inaugurate a new Venetian royal house, La Serenissima has maintained its §2republican aspect and kept its ever-growing democratic status§!. This has effectively resulted in Venice having a §Hunique autonomous status within the Holy Roman Empire§!, at the cost of a more isolationist trade policy within the HRE's borders.\n\nTo combat the lack of domestic trade, the Republic of Venice sought to expand its merchant routes to other nations of the Adriatic in a symbolic treaty signed in 1919, using the mighty §CArmata Maggiore§!, also known as one of the most modern and well-equipped naval fleets in Europe.\n\nToday, the Republic of Venice remains at a standstill as §Hreactionaries§! seem to be gaining popularity both in §Hdomestic and foreign territories§!; it is up to the Doge of Venice to ensure the survival and extend the longevity of La Serenissima.\n\n§HCurrent Content:§!\n\n §G-Carefully balance §7republican§! and §goligarchic§! forces, possibly favoring one side to shape Venice’s future government.\n -Establish a §tprogressive royal dynasty§! promoting social reforms.\n -Inaugurate the §YHouse of Patrizio-Wittelsbach§! and dominate the region.\n -Embrace a §8pan-Latin identity§! and bolster §HMediterranean national pride§!."
 XVE_credits:0 "Venetian Content: §Hfuriousky/Sky§!\nIntro GUI: §CKasastul§!\nRest of the mod: §HThe HOI4 Modding Den§!"
 
 ### NATIONAL SPIRITS ###
 XVE_serenissima_legacy:0 "Serenissima Legacy"
-XVE_serenissima_legacy_desc:0 "WIP"
+XVE_serenissima_legacy_desc:0 "The Republic of Venice carries the spirit of La Serenissima into the modern age, defending civic liberty and republican institutions even within the shifting tides of empire. Centuries of consensus politics have built a stable society where councils, rather than monarchs, hold sway. Public order is kept through deeply-rooted legal traditions and the vigilant Council of Ten. Yet these republican structures can sometimes frustrate bold reforms, although, only few dare challenge the legitimacy of such a long-lived government."
 XVE_imperial_autonomy_charter:0 "Imperial Autonomy Charter"
-XVE_imperial_autonomy_charter_desc:0 "WIP"
+XVE_imperial_autonomy_charter_desc:0 "Through a carefully negotiated charter with the Holy Roman Emperor, Venice has preserved its unique republican status within the Imperial framework. This charter guarantees domestic self-rule, including the right to elect its own officials and control internal laws. In return, Venice recognizes imperial supremacy in theory and pays certain tributes. The arrangement preserves Venetian pride and identity, even while binding it to imperial affairs. However, its commercial ties outside the Empire have suffered from tariffs and regulations imposed by the charter. A delicate balance remains between imperial loyalty and sovereign ambition."
 XVE_heirs_of_the_sea:0 "Heirs of the Sea"
-XVE_heirs_of_the_sea_desc:0 "WIP"
+XVE_heirs_of_the_sea_desc:0 "The Arsenal still beats as the industrial heart of Venetian seafaring might. For centuries, Venice has ruled the Adriatic and projected power far beyond its lagoon, forging a naval tradition second to none. Generations of master shipwrights and daring captains have passed their skills down to a modern navy ready for any threat. This focus on maritime supremacy, however, has left some landward industries underdeveloped."
 XVE_the_concordia_littorum:0 "The Concordia Littorum"
-XVE_the_concordia_littorum_desc:0 "WIP"
+XVE_the_concordia_littorum_desc:0 "In 1919, Venice renewed its ancient mission as a maritime broker by signing the Concordia Littorum with the Adriatic’s coastal states. This agreement opened customs-free trade corridors, secured shipping lanes, and guaranteed mutual access to markets. It revitalized Venetian merchants after decades of imperial restrictions and secured valuable resources from across the region. Yet managing such an intricate trade web remains vulnerable to blockade or political sabotage. Nevertheless, the Concordia has reawakened memories of the city’s golden mercantile age."
 XVE_lionhearted_militia:0 "Lionhearted Militia"
-XVE_lionhearted_militia_desc:0 "WIP"
+XVE_lionhearted_militia_desc:0 "The Republic maintains a proud military tradition rooted in local militias inspired by Swiss models. These citizen-soldiers stand ready to defend every parish and island with courage. However, their training and equipment standards lag behind professional forces on the continent. Commanders have begun discussing reforms to modernize and unify the structure of these units. For now, they remain the beating heart of Venetian defense, loyal to the city and the Lion of Saint Mark above all else."
+
 
 ### TOOLTIPS ###
 XVE_imperial_autonomy_charter_tt:0 "\nThis national spirit will remain in effect till the          [XVE.GetFlag] [XVE.GetName] §Yleaves the HRE§! or §Yreforms the charter§!."
@@ -30,6 +31,7 @@ XVE_imperial_autonomy_charter_tt:0 "\nThis national spirit will remain in effect
 ### TRAITS ###
 XVE_dux_diplomacy:0 "Dux Diplomacy"
 XIF_radical_idealists:0 "Radical Idealists"
+XVE_serenissima_statesman:0 "Serenissima Statesman"
 XIF_divisive_revolutionaries_none:0 "Divisive Revolutionaries: §WNo Support§!"
 XIF_divisive_revolutionaries_low:0 "Divisive Revolutionaries: §WLow Support§!"
 XIF_divisive_revolutionaries_moderate:0 "Divisive Revolutionaries: §WModerate Support§!"
@@ -41,21 +43,22 @@ XVE_power_balance:0 "The [XVE.GetAdjective]	Gamble"
 XVE_balance_range:0 "Balanced Powers"
 XVE_doge_full_college_side:0 "Doge & Pien Collegio"
 XVE_council_of_ten_side:0 "Council of Ten"
-XVE_council_of_ten_low_control_range:0 ""
-XVE_council_of_ten_medium_control_range:0 ""
-XVE_council_of_ten_high_control_range:0 ""
-XVE_council_of_ten_total_control_range:0 "COUNCIL TEST"
-XVE_doge_full_college_side_low_control_range:0 ""
-XVE_doge_full_college_side_medium_control_range:0 ""
-XVE_doge_full_college_side_high_control_range:0 ""
-XVE_doge_full_college_side_total_control_range:0 "DOGE TEST"
+XVE_council_of_ten_low_control_range:0 "Council Influence"
+XVE_council_of_ten_medium_control_range:0 "Patrician Dominance"
+XVE_council_of_ten_high_control_range:0 "Oligarchic Supremacy"
+XVE_doge_full_college_side_low_control_range:0 "Ducal Collegio Oversight"
+XVE_doge_full_college_side_medium_control_range:0 "Republican Stewardship"
+XVE_doge_full_college_side_high_control_range:0 "Doge Ascendant"
+XVE_pass_anti_corruption_ordinances:0 "Pass Anti-Corruption Ordinances"
+XVE_invest_in_merchant_corporations:0 "Invest in Merchant Corporations"
+XVE_offer_tax_exemptions_to_oil_barons:0 "Offer Tax Exemptions to Oil Barons"
 
 
 ### CHARACTERS ###
 XVE_giuseppe_volpi:0 "Giuseppe Volpi"
-XVE_giuseppe_volpi_leader_desc:0 "WIP"
+XVE_giuseppe_volpi_leader_desc:0 "Elected Doge of Venice in 1917, Giuseppe Volpi swiftly proved himself a masterful negotiator and reformer. By forging critical alliances with the entrenched nobility and oligarchic families, he rebuilt confidence in Venice’s institutions and pushed sweeping programs to modernize the city’s infrastructure. His keen grasp of both domestic challenges and foreign diplomacy allowed him to secure vital trade deals and strategic partnerships. Volpi’s policies gave the Serenissima new economic vitality, stabilizing the republic after years of stagnation. His enduring popularity among merchants and the urban elite has kept him in power for nearly two decades. Doge Volpi stands as a symbol of Venetian renewal in a changing world."
 XIF_istrian_freedom_front:0 "Istrian Freedom Front"
-XIF_istrian_freedom_front_leader_desc:0 "WIP"
+XIF_istrian_freedom_front_leader_desc:0 "The Istrian Freedom Front emerged in the wake of Doge Pompolino Amalteo’s harsh and exploitative rule, which stripped Istrian communities of their lands and resources while ignoring their traditionalist customs. Formed as a semi-organized resistance, the Front has fought for Istrian independence or at least autonomy, refusing to accept Venetian dominance without concessions. Over the years, their support among the local population has waxed and waned, often tied to the severity of their more radical actions. While some see them as liberators, others view them as dangerous extremists. Nevertheless, the Istrian Freedom Front remains a potent voice for regional self-determination."
 
 ### PARTIES ###
 XVE_democratic_party: "Partito Libertà Civica" # Civic Freedom Party

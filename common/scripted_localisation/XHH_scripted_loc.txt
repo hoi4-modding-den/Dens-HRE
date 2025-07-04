@@ -4,11 +4,37 @@ defined_text = {
         trigger = {
             XHH = {
 				has_country_leader = {
-					character = XHH_tom_first_name
+					character = XHH_tom_first
 				}
 			}
         }
         localization_key = GFX_portrait_XHH_tom_first
+    }
+}
+defined_text = {
+    name = GetXH1LeaderPortrait
+    text = {
+        trigger = {
+            XH1 = {
+				has_country_leader = {
+					character = XH1_ernest_august
+				}
+			}
+        }
+        localization_key = GFX_portrait_HAN_ernest_august
+    }
+}
+defined_text = {
+    name = GetXH2LeaderPortrait
+    text = {
+        trigger = {
+            XH2 = {
+				has_country_leader = {
+					character = XH2_christian_louis
+				}
+			}
+        }
+        localization_key = GFX_portrait_MEK_christian_louis
     }
 }
 

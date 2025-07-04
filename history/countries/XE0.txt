@@ -1,0 +1,38 @@
+capital = 159
+
+recruit_character = XE0_king_salvinus_divinus
+oob = "XE0_1936"
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	trade_interdiction = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+add_ideas = {
+	free_trade
+	civilian_economy
+	volunteer_only
+	
+}
+set_variable = { HRE_national_stance_federalism = 2 } 
+set_variable = { HRE_national_stance_welfare = 2 } 
+set_variable = { HRE_national_stance_papacy = 2 } 
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1931.11.8"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}

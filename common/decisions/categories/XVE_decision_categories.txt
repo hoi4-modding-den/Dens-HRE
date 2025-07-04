@@ -1,9 +1,11 @@
-XVE_power_balance = {
+XVE_power_balance_decisions = {
 	icon = GFX_decision_category_generic_propaganda
+	priority = 10	
 
 	allowed = {
-		original_tag = XVE
+		tag = XVE
 	}
 
-	priority = 100
+	visible = {
+	}
 }

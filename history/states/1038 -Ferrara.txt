@@ -1,0 +1,31 @@
+
+state = {
+	id = 1038
+	name = "STATE_1038"
+	manpower = 339600
+	
+	state_category = town
+	
+	resources = {
+		aluminium=3
+	}
+
+	history = {
+		owner = XVE
+		victory_points = { #Ferrara
+			6793 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 2
+		}
+		add_core_of = XVE
+	}
+
+	provinces = {
+		6793 
+	}
+
+	local_supplies = 0.0 
+}
