@@ -1,3 +1,123 @@
-XVE_power_balance = {
-	
+XVE_power_balance_decisions = {
+	XVE_pass_anti_corruption_ordinances = {
+		priority = 20
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_country_leader = {
+				character = XVE_giuseppe_volpi
+				ruling_only = yes
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 30
+		cost = 25
+		fire_only_once = yes
+
+		remove_effect = {
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = 0.05
+			}
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}
+
+	XVE_invest_in_merchant_corporations = {
+		priority = 19
+		icon = GFX_decision_gre_paying_ifc_debt
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_country_leader = {
+				character = XVE_giuseppe_volpi
+				ruling_only = yes
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 45		
+		cost = 50
+		fire_only_once = yes
+
+		remove_effect = {
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = -0.1
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+
+		ai_will_do = {
+			base = 3
+		}
+	}
+
+	XVE_offer_tax_exemptions_to_oil_barons = {
+		priority = 18
+		icon = GFX_decision_oil
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_country_leader = {
+				character = XVE_giuseppe_volpi
+				ruling_only = yes
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 70
+		cost = 90
+		fire_only_once = yes
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			# government support -3% temporarily
+		}		
+
+		remove_effect = {
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = -0.15
+			}
+			1037 = {
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+		}
+
+		ai_will_do = {
+			base = 3
+		}
+	}		
 }
