@@ -256,8 +256,346 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_idea_XHH_baltic_sea_dominion_spirit"
+		textureFile = "gfx/interface/ideas/XHH/idea_XHH_baltic_sea_dominion_spirit.png"
+	}
+
+	spriteType = {
 		name = "GFX_modifiers_XHH_hamburg"
 		textureFile = "gfx/interface/state_modifiers/XHH/modifiers_XHH_hamburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_befriend_papacy"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_befriend_papacy.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_befriend_papacy_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_befriend_papacy.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_befriend_papacy.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_befriend_papacy.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_catholic_donations"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_catholic_donations.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_catholic_donations_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_catholic_donations.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_catholic_donations.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_catholic_donations.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_hamburg_meine_perle"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_hamburg_meine_perle.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_hamburg_meine_perle_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_hamburg_meine_perle.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_hamburg_meine_perle.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_hamburg_meine_perle.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_hre_diplomatic_ties"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_hre_diplomatic_ties.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_hre_diplomatic_ties_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_hre_diplomatic_ties.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_hre_diplomatic_ties.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_hre_diplomatic_ties.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_imperial_ambitions"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_imperial_ambitions.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_imperial_ambitions_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_imperial_ambitions.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_imperial_ambitions.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_imperial_ambitions.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_imperial_railways"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_imperial_railways.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_imperial_railways_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_imperial_railways.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_imperial_railways.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_imperial_railways.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_industrial_revolution"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_industrial_revolution.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_industrial_revolution_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_industrial_revolution.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_industrial_revolution.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_industrial_revolution.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_naval_domination"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_naval_domination.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_naval_domination_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_naval_domination.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_naval_domination.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_naval_domination.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_scientific_investments"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_scientific_investments.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_scientific_investments_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_scientific_investments.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_scientific_investments.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_scientific_investments.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
 	}
 
 }

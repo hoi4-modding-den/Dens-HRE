@@ -611,7 +611,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_hamburg_meine_perle
-		icon = GFX_focus_SWE_urbanization
+		icon = GFX_focus_XHH_hamburg_meine_perle
 		prerequisite = { focus = XHH_liberalise_the_banking_sector focus = XHH_utilise_hanse_connections }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -709,7 +709,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_industrial_revolution
-		icon = GFX_focus_generic_modernize_industry
+		icon = GFX_focus_XHH_industrial_revolution
 		prerequisite = { focus = XHH_urban_industrial_democracy }
 		#mutually_exclusive = { focus =  }
 		x = -2
@@ -1544,7 +1544,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_scientific_investments
-		icon = GFX_goal_tfv_generic_tech_sharing
+		icon = GFX_focus_XHH_scientific_investments
 		prerequisite = { focus = XHH_hamburgs_broad_coalition focus = XHH_national_conservative_coalition }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -1966,7 +1966,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_hre_diplomatic_ties
-		icon = GFX_focus_GER_glory_to_the_imperial_army
+		icon = GFX_focus_XHH_hre_diplomatic_ties
 		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -2052,7 +2052,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_naval_domination
-		icon = GFX_focus_GER_seeherrschaft
+		icon = GFX_focus_XHH_naval_domination
 		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
 		#mutually_exclusive = { focus =  }
 		x = -2
@@ -2483,6 +2483,71 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+	}
+
+	focus = {
+		id = XHH_reconcile_with_the_papacy
+		icon = GFX_focus_XHH_befriend_papacy
+		prerequisite = { focus = XHH_the_empire_of_the_seas }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_the_empire_of_the_seas
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XHH_catholic_donations
+		icon = GFX_focus_XHH_catholic_donations
+		prerequisite = { focus = XHH_reconcile_with_the_papacy }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_reconcile_with_the_papacy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_timed_idea = {
+				idea = XHH_catholic_donations_idea
+				days = 100
+			}
 		}
 	}
 
@@ -4296,7 +4361,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_imperial_railways
-		icon = GFX_focus_generic_railroad
+		icon = GFX_focus_XHH_imperial_railways
 		prerequisite = { focus = XHH_infrastructure_agenda }
 		#mutually_exclusive = { focus =  }
 		x = -1

@@ -572,7 +572,7 @@ ideas = {
 
 		XHH_baltic_sea_dominion_spirit = {
 			
-			picture = generic_coastal_navy
+			picture = XHH_baltic_sea_dominion_spirit
 
 			allowed = {
 				original_tag = XHH
@@ -659,6 +659,27 @@ ideas = {
 				command_power_gain_mult = 0.1
 				training_time_factor = -0.25
 				weekly_manpower = 1000
+			}
+		}
+
+		XHH_catholic_donations_idea = {
+			
+			picture = SPR_appropriate_church_riches
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				political_power_factor = 0.05
+				industrial_factory_donations = 2
 			}
 		}
 
