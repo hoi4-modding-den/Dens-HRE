@@ -687,7 +687,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = fascism }
 		}
 
 		available_if_capitulated = no
@@ -866,6 +866,12 @@ focus_tree = {
 
 		available = {
 			NOT = { has_war_with = XHO }
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
 		}
 
 		available_if_capitulated = no
@@ -919,7 +925,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = neutrality
 		}
 
 		available_if_capitulated = no
@@ -987,6 +993,7 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = { has_government = communism }
 			any_owned_state = {
 				is_controlled_by = ROOT
 				dockyard > 0
@@ -1183,7 +1190,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = fascism }
 		}
 
 		available_if_capitulated = no
@@ -1363,7 +1370,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = communism }
 		}
 
 		available_if_capitulated = no
@@ -1428,7 +1435,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = fascism }
 		}
 
 		available_if_capitulated = no
@@ -1479,7 +1486,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = communism }
 		}
 
 		available_if_capitulated = no
@@ -1528,6 +1535,7 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = { has_government = fascism }
 			has_idea = XHH_welfare_state_idea
 		}
 
@@ -1653,12 +1661,13 @@ focus_tree = {
 		}
 
 		available = {
+			has_government = neutrality
 			democratic > 0.5
 			is_subject = no
 		}
 		
 		bypass = {
-			
+			has_government = democratic
 		}
 
 		available_if_capitulated = no
@@ -1814,7 +1823,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = fascism }
 		}
 
 		bypass = {
@@ -1854,7 +1863,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = democratic
 		}
 
 		bypass = {
@@ -1901,7 +1910,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = neutrality
 		}
 
 		bypass = {
@@ -1940,7 +1949,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = neutrality
 		}
 
 		bypass = {
@@ -2502,7 +2511,12 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
 		}
 
 		bypass = {
@@ -2533,7 +2547,12 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
 		}
 
 		bypass = {
@@ -2548,6 +2567,38 @@ focus_tree = {
 				idea = XHH_catholic_donations_idea
 				days = 100
 			}
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_ambitions
+		icon = GFX_focus_XHH_imperial_ambitions
+		prerequisite = { focus = XHH_the_empire_of_the_seas }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 3
+		relative_position_id = XHH_the_empire_of_the_seas
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
 		}
 	}
 
@@ -2571,14 +2622,16 @@ focus_tree = {
 		}
 
 		bypass = {
-			has_war_support > 0.99
+			
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_war_support = 0.15
+
+			upgrade_economy_law = yes
 		}
 	}
 
@@ -3042,11 +3095,11 @@ focus_tree = {
 		icon = GFX_focus_ger_reichskommisariats
 		prerequisite = { focus = XHH_religious_divide }
 		mutually_exclusive = { focus = XHH_abolish_the_senate focus = XHH_power_to_the_senate }
-		x = 12
+		x = 14
 		y = 0
 		relative_position_id = XHH_abolish_the_senate
 
-		cost = 8
+		cost = 0
 
 		ai_will_do = {
 			factor = 5
@@ -3104,7 +3157,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = fascism
 		}
 		
 		bypass = {
@@ -3143,7 +3196,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = fascism
 		}
 		
 		bypass = {
@@ -3162,7 +3215,377 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			remove_ideas = XHH_german_tradition
+			swap_ideas = {
+				remove_idea = XHH_german_tradition
+				add_idea = XHH_national_consciousness
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_gauleiter_system
+		icon = GFX_focus_LAT_suspend_constitution_of_latvia
+		prerequisite = { focus = XHH_hamburgs_hegemony }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_hamburgs_hegemony
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_nationalise_the_unions
+		icon = GFX_focus_ITA_generic_fascist_workers
+		prerequisite = { focus = XHH_gauleiter_system }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_gauleiter_system
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_indoctrinate_the_army
+		icon = GFX_focus_GER_appease_the_wehrmacht
+		prerequisite = { focus = XHH_reject_tradition }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_reject_tradition
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+		}
+	}
+
+	focus = {
+		id = XHH_mobilise_society
+		icon = GFX_focus_generic_full_social_mobilization
+		prerequisite = { focus = XHH_indoctrinate_the_army }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_indoctrinate_the_army
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			OR = {
+				has_idea = war_economy
+				has_idea = tot_economic_mobilisation
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_war_support < 0.5
+				}
+				set_war_support = 0.5
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			add_ideas = war_economy
+		}
+	}
+
+	focus = {
+		id = XHH_protect_our_sovereignty
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = XHH_gauleiter_system }
+		prerequisite = { focus = XHH_indoctrinate_the_army }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 3
+		relative_position_id = XHH_national_revolution
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XHH_national_league
+			}
+			else = {
+				create_faction = XHH_national_league
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_arms_industry_contracts
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XHH_protect_our_sovereignty }
+		prerequisite = { focus = XHH_nationalise_the_unions }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XHH_protect_our_sovereignty
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			mio:XHH_porsche_organization = {
+				add_mio_size = 1
+				add_mio_funds_gain_factor = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_porsche_panzerfabrik_bremen
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = XHH_arms_industry_contracts }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_arms_industry_contracts
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			controls_state = 1017
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_porsche_panzerfabrik_bremen
+				bonus = 2
+				uses = 1
+				category = cat_heavy_armor
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			1017 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			mio:XHH_porsche_organization = {
+				add_mio_size = 1
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_integrate_the_militias
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = XHH_protect_our_sovereignty }
+		prerequisite = { focus = XHH_mobilise_society }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_protect_our_sovereignty
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_manpower = 10000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = ROOT
+			}
 		}
 	}
 
