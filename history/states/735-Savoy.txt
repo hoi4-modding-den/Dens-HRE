@@ -4,12 +4,13 @@ state = {
 
 	state_category = town
 
-	manpower = 907500
+	manpower = 710500
 
 	history = {
 
-		owner = XCL #owner = FRA
-		add_core_of = XCL
+		owner = XSV #owner = FRA
+		add_core_of = XSV
+		add_claim_by = XCL
 		#add_core_of = FRA
 		#add_claim_by = SPM
 
@@ -17,16 +18,8 @@ state = {
 			778 1 # Annecy
 		}
 
-		victory_points = {
-			9909 5 # Nice
-		}
-
 		buildings = {
 			infrastructure = 2
-
-			9909 = {
-				naval_base = 2
-			}	
 
 			# Tignes Dam
 			#9745 = { dam = 1 }
@@ -36,7 +29,7 @@ state = {
 	}
 
 	provinces = {
-		764 778 3764 3959 6609 6975 9603 9736 9745 9909 11573 
+		764 778 3764 6609 6975 9603 9736 9745 11573 
 	}
 	
 	buildings_max_level_factor = 1.000
