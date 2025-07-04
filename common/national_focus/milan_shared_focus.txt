@@ -1,7 +1,7 @@
 joint_focus = {
     id = XEX_milan_project
     icon = GFX_focus_eng_concessions_to_the_trade_unions
-    text_icon = netherlands_shared_style
+    text_icon = XEX_shared_style
 
     x = 2
     y = 3
@@ -60,11 +60,55 @@ joint_focus = {
 joint_focus = {
     id = XEX_sum
     icon = GFX_focus_eng_concessions_to_the_trade_unions
-    text_icon = netherlands_leader_shared_style
+    text_icon = XEX_XE0_shared_style
 
     prerequisite = { focus = XEX_milan_project }
     relative_position_id = XEX_milan_project
-    x = 0
+    x = 1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_sum2
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XE0_shared_style
+
+    prerequisite = { focus = XEX_milan_project }
+    relative_position_id = XEX_milan_project
+    x = -1
     y = 1
     cost = 5
     available_if_capitulated = no
