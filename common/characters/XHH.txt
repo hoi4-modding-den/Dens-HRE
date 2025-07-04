@@ -79,6 +79,25 @@ characters = {
 
 	}
 
+	XHH_carl_vincent_krogmann = {
+
+		name = XHH_carl_vincent_krogmann_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XHH_carl_vincent_krogmann
+			}
+		}
+
+		country_leader = {
+			ideology = nazism
+			traits = { XHH_nazi_industrialist }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
 	XHH_hermann_ludemann = {
 
 		name = SHL_hermann_ludemann
@@ -100,8 +119,11 @@ characters = {
 				XHH_only_one_pm = yes
 				NOT = { has_country_flag = XHH_senate_removed }
 			}
+			visible = {
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
 			traits = {
-				resolute_social_democrat
+				XHH_socdem_prime_minister
 			}
 
 			on_add = {
@@ -139,6 +161,9 @@ characters = {
 			}
 			available = {
 				XHH_only_one_pm = yes
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
+			visible = {
 				NOT = { has_country_flag = XHH_senate_removed }
 			}
 			traits = {
@@ -182,6 +207,9 @@ characters = {
 				XHH_only_one_pm = yes
 				NOT = { has_country_flag = XHH_senate_removed }
 			}
+			visible = {
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
 			traits = {
 				XHH_liberal_prime_minister
 			}
@@ -221,6 +249,9 @@ characters = {
 			}
 			available = {
 				XHH_only_one_pm = yes
+				NOT = { has_country_flag = XHH_senate_removed }
+			}
+			visible = {
 				NOT = { has_country_flag = XHH_senate_removed }
 			}
 			traits = {
@@ -529,6 +560,7 @@ characters = {
 			}
 			visible = {
 				NOT = { has_completed_focus = XHH_power_to_the_senate }
+				NOT = { has_completed_focus = XHH_national_revolution }
 			}
 			traits = {
 				XHH_noble_councilman
@@ -644,6 +676,9 @@ characters = {
 					is_subject = no
 				}
 			}
+			visible = {
+				NOT = { has_completed_focus = XHH_reign_in_nationalists }
+			}
 			traits = {
 				XHH_protestant_nationalist
 			}
@@ -683,6 +718,9 @@ characters = {
 					}
 					is_subject = no
 				}
+			}
+			visible = {
+				NOT = { has_completed_focus = XHH_crackdown_on_unions }
 			}
 			traits = {
 				NOR_communist_agitator

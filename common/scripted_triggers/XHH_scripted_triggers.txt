@@ -21,7 +21,7 @@ XHH_only_one_pm = {
         tooltip = XHH_only_one_pm_tt
         if = {
             limit = {
-                has_trait = resolute_social_democrat
+                has_trait = XHH_socdem_prime_minister
             }
             NOT = {
                 ROOT = {
@@ -44,7 +44,7 @@ XHH_only_one_pm = {
                 ROOT = {
                     any_character = {
                         OR = {
-                            has_trait = resolute_social_democrat
+                            has_trait = XHH_socdem_prime_minister
                             has_trait = XHH_liberal_prime_minister
                             has_trait = XHH_conservative_prime_minister
                         }
@@ -61,7 +61,7 @@ XHH_only_one_pm = {
                 ROOT = {
                     any_character = {
                         OR = {
-                            has_trait = resolute_social_democrat
+                            has_trait = XHH_socdem_prime_minister
                             has_trait = XHH_socialist_prime_minister
                             has_trait = XHH_conservative_prime_minister
                         }
@@ -78,7 +78,7 @@ XHH_only_one_pm = {
                 ROOT = {
                     any_character = {
                         OR = {
-                            has_trait = resolute_social_democrat
+                            has_trait = XHH_socdem_prime_minister
                             has_trait = XHH_liberal_prime_minister
                             has_trait = XHH_socialist_prime_minister
                         }

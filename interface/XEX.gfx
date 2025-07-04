@@ -20,4 +20,180 @@ spriteTypes = {
 		name = "GFX_idea_XEX_undermined_navy"
 		texturefile = "gfx/interface/ideas/XEX/XEX_undermined_navy.png"
 	}
+	
+	
+	spriteType = {
+        name = "GFX_focus_unavailable_joint_XEX"
+        textureFile = "gfx/interface/ideas/XEX/focus_unavailable_xex_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_focus_can_start_joint_XEX"
+        textureFile = "gfx/interface/ideas/XEX/focus_can_start_xex_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_focus_current_joint_XEX"  
+        texturefile = "gfx/interface/ideas/XEX/focus_can_start_xex_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.lua"	
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_ongoing_mask2.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_ongoing_texture.dds"
+            animationrotation = -90.0
+            animationlooping = yes
+            animationtime = 20.0
+            animationdelay = 0.2
+            animationblendmode = "add"
+            animationtype = "rotating"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_ongoing_mask4.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_ongoing_texture.dds"
+            animationrotation = 90.0
+            animationlooping = yes
+            animationtime = 15.0
+            animationdelay = 0.2
+            animationblendmode = "add"
+            animationtype = "rotating_ccw"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = {
+        name = "GFX_focus_completed_joint_XEX"
+        texturefile = "gfx/interface/ideas/XEX/focus_completed_xex_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.lua"	
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_completed_mask.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_completed_texture.dds"
+            animationrotation = 0.0
+            animationlooping = yes
+            animationtime = 26.0
+            animationdelay = 0.0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+    
+        legacy_lazy_load = no
+    }
+	
+	
+	spriteType = {
+        name = "GFX_focus_unavailable_joint_XE0"
+        textureFile = "gfx/interface/ideas/XEX/focus_unavailable_xe0_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_focus_can_start_joint_XE0"
+        textureFile = "gfx/interface/ideas/XEX/focus_can_start_xe0_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_focus_current_joint_XE0"  
+        texturefile = "gfx/interface/ideas/XEX/focus_can_start_xe0_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.lua"	
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_ongoing_mask2.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_ongoing_texture.dds"
+            animationrotation = -90.0
+            animationlooping = yes
+            animationtime = 20.0
+            animationdelay = 0.2
+            animationblendmode = "add"
+            animationtype = "rotating"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_ongoing_mask4.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_ongoing_texture.dds"
+            animationrotation = 90.0
+            animationlooping = yes
+            animationtime = 15.0
+            animationdelay = 0.2
+            animationblendmode = "add"
+            animationtype = "rotating_ccw"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = {
+        name = "GFX_focus_completed_joint_XE0"
+        texturefile = "gfx/interface/ideas/XEX/focus_completed_xe0_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.lua"	
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_completed_mask.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_completed_texture.dds"
+            animationrotation = 0.0
+            animationlooping = yes
+            animationtime = 26.0
+            animationdelay = 0.0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+    
+        legacy_lazy_load = no
+    }
+	
+	spriteType = {
+        name = "GFX_focus_unavailable_joint_XEX_XE0"
+        textureFile = "gfx/interface/ideas/XEX/focus_unavailable_xe0_xex_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_focus_can_start_joint_XEX_XE0"
+        textureFile = "gfx/interface/ideas/XEX/focus_can_start_xe0_xex_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_focus_current_joint_XEX_XE0"  
+        texturefile = "gfx/interface/ideas/XEX/focus_can_start_xe0_xex_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.lua"	
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_ongoing_mask2.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_ongoing_texture.dds"
+            animationrotation = -90.0
+            animationlooping = yes
+            animationtime = 20.0
+            animationdelay = 0.2
+            animationblendmode = "add"
+            animationtype = "rotating"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_ongoing_mask4.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_ongoing_texture.dds"
+            animationrotation = 90.0
+            animationlooping = yes
+            animationtime = 15.0
+            animationdelay = 0.2
+            animationblendmode = "add"
+            animationtype = "rotating_ccw"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = {
+        name = "GFX_focus_completed_joint_XEX_XE0"
+        texturefile = "gfx/interface/ideas/XEX/focus_completed_xe0_xex_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.lua"	
+        animation = {
+            animationmaskfile = "gfx/interface/focusview/titlebar/focus_completed_mask.dds"
+            animationtexturefile = "gfx/interface/focusview/titlebar/focus_completed_texture.dds"
+            animationrotation = 0.0
+            animationlooping = yes
+            animationtime = 26.0
+            animationdelay = 0.0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 } 
+        }
+    
+        legacy_lazy_load = no
+    }
 }

@@ -148,8 +148,8 @@ country_event = {
 			}
 		}
 		add_popularity = {
-			ideology = fascism
-			popularity = 0.05
+			ideology = neutrality
+			popularity = 0.1
 		}
 		if = {
 			limit = {
@@ -162,10 +162,12 @@ country_event = {
 				modifier = XHH_recognised_holy_see
 			}
 		}
+		set_variable = { HRE_national_stance_papacy = 1 }
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		custom_effect_tooltip = XHH_fascists_are_angry_tt
+		set_country_flag = XHH_fascist_coup_imminent
 
 		hidden_effect = {
 			news_event = {
@@ -187,7 +189,7 @@ country_event = {
 		add_political_power = 50
 		add_popularity = {
 			ideology = neutrality
-			popularity = -0.02
+			popularity = -0.05
 		}
     }
 }
@@ -342,6 +344,119 @@ country_event = {
 				}
 				add_core_of = ROOT
 			}
+		}
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.9
+	title = XHH_internal_events.9.t
+	desc = XHH_internal_events.9.desc
+	
+	picture = GFX_report_event_fascist_gathering
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.9.a
+		add_stability = -0.1
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.25
+		}
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.10
+	title = XHH_internal_events.10.t
+	desc = XHH_internal_events.10.desc
+	
+	picture = GFX_report_event_nazis_in_danzig
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.10.a
+		ai_chance = { 
+			factor = 0
+			modifier = {
+				factor = 10
+				has_global_flag = XHH_fascist_path
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		uncomplete_national_focus = {
+			focus = XHH_abolish_the_senate
+			uncomplete_children = yes
+		}
+		complete_national_focus = XHH_national_revolution
+		
+
+		hidden_effect = {
+			set_country_flag = XHH_fascist_coup_happened
+			mark_focus_tree_layout_dirty = yes
+		}
+    }
+
+	option = {
+        name = XHH_internal_events.10.b
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				has_global_flag = XHH_fascist_path
+			}
+		}
+		add_stability = -0.1
+		add_war_support = -0.1
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.25
+		}
+		add_manpower = -50000
+		clr_country_flag = XHH_fascist_coup_imminent
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.11
+	title = XHH_internal_events.11.t
+	desc = XHH_internal_events.11.desc
+	
+	picture = GFX_report_event_AUS_political_rally
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.11.a
+		custom_effect_tooltip = SOV_characters_will_be_purged_tt
+		character_list_tooltip = {
+			limit = {
+				OR = {
+					is_character = XHH_anti_corruption_politician
+					is_character = XHH_labour_minister
+					is_character = XHH_noble_businessman
+					is_character = XHH_liberal_guy
+					is_character = XHH_not_ludwig_mises
+				}
+			}
+		}
+		hidden_effect = {
+			retire_character = XHH_anti_corruption_politician
+			retire_character = XHH_labour_minister
+			retire_character = XHH_noble_businessman
+			retire_character = XHH_liberal_guy
+			retire_character = XHH_not_ludwig_mises
 		}
     }
 }
