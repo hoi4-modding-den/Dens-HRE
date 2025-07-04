@@ -20,18 +20,17 @@ joint_focus = {
     }
 
     available = {
-        OR = {
-            tag = XEX
-			tag = XE0
-        }
+        tag = XEX
 		if = {
 			limit = {
 				tag = XEX
 			}
-			OR = {
-				has_completed_focus = XEX_economical_Strenght
-				has_completed_focus = XEX_economical_growth
-			}	
+			hidden_trigger = {
+				OR = {
+					has_completed_focus = XEX_economical_Strenght
+					has_completed_focus = XEX_economical_growth
+				}	
+			}
 		}
     }
 
@@ -58,7 +57,7 @@ joint_focus = {
 
 }
 joint_focus = {
-    id = XEX_sum
+    id = XEX_develop_boths_economies
     icon = GFX_focus_eng_concessions_to_the_trade_unions
     text_icon = XEX_XE0_shared_style
 
@@ -102,13 +101,189 @@ joint_focus = {
     }
 }
 joint_focus = {
-    id = XEX_sum2
+    id = XEX_fund_milanese_arms
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XEX_XE0_shared_style
+
+    prerequisite = { focus = XEX_develop_boths_economies }
+    relative_position_id = XEX_develop_boths_economies
+    x = 1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_fund_the_milanese_force
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XEX_XE0_shared_style
+
+    prerequisite = { focus = XEX_develop_boths_economies }
+    relative_position_id = XEX_develop_boths_economies
+    x = -1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_boost_militia_strenght
     icon = GFX_focus_eng_concessions_to_the_trade_unions
     text_icon = XE0_shared_style
 
     prerequisite = { focus = XEX_milan_project }
     relative_position_id = XEX_milan_project
     x = -1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_develop_the_milan_institute_of_research
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XE0_shared_style
+
+    prerequisite = { focus = XEX_boost_militia_strenght }
+    relative_position_id = XEX_boost_militia_strenght
+    x = -1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_exchange_research
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XEX_shared_style
+
+    prerequisite = { focus = XEX_develop_the_milan_institute_of_research }
+    relative_position_id = XEX_develop_the_milan_institute_of_research
+    x = 0
     y = 1
     cost = 5
     available_if_capitulated = no
