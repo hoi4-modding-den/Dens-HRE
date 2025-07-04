@@ -22,4 +22,38 @@ on_actions = {
             }
         }
     }
+
+    on_state_control_changed = {
+        effect = {
+            if = {
+                limit = {
+                    FROM.FROM = { state = 1033 } #south holland
+                }
+                if = {
+                    limit = {
+                        ROOT = { owns_state = 1033 }
+                    }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_rotterdam_1 } } FROM = { remove_ideas = XNE_port_of_rotterdam_1 } ROOT = { add_ideas = { XNE_port_of_rotterdam_1 } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_rotterdam_2 } } FROM = { remove_ideas = XNE_port_of_rotterdam_2 } ROOT = { add_ideas = { XNE_port_of_rotterdam_2 } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_rotterdam_3 } } FROM = { remove_ideas = XNE_port_of_rotterdam_3 } ROOT = { add_ideas = { XNE_port_of_rotterdam_3 } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_rotterdam_4 } } FROM = { remove_ideas = XNE_port_of_rotterdam_4 } ROOT = { add_ideas = { XNE_port_of_rotterdam_4 } } }
+                }
+            }
+            if = {
+                limit = {
+                    FROM.FROM = { state = 977 } #antwerpen
+                }
+                if = {
+                    limit = {
+                        ROOT = { owns_state = 977 }
+                    }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_antwerpen_1 } } FROM = { remove_ideas = XNE_port_of_antwerpen_1 } ROOT = { add_ideas = { XNE_port_of_antwerpen_1 } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_antwerpen_2a } } FROM = { remove_ideas = XNE_port_of_antwerpen_2a } ROOT = { add_ideas = { XNE_port_of_antwerpen_2a } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_antwerpen_2b } } FROM = { remove_ideas = XNE_port_of_antwerpen_2b } ROOT = { add_ideas = { XNE_port_of_antwerpen_2b } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_antwerpen_3a } } FROM = { remove_ideas = XNE_port_of_antwerpen_3a } ROOT = { add_ideas = { XNE_port_of_antwerpen_3a } } }
+                    if = { limit = { FROM = { has_idea = XNE_port_of_antwerpen_3b } } FROM = { remove_ideas = XNE_port_of_antwerpen_3b } ROOT = { add_ideas = { XNE_port_of_antwerpen_3b } } }
+                }
+            }
+        }
+    }
 }

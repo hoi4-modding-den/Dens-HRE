@@ -64,6 +64,41 @@ ideas = {
             }
         }
 
+        XNE_port_of_rotterdam_2 = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.1
+                research_speed_factor = 0.04
+                industrial_capacity_dockyard = -0.1
+                enemy_justify_war_goal_time = 0.25 
+            }
+        }
+
+        XNE_port_of_rotterdam_3 = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.1
+                research_speed_factor = 0.08
+                industrial_capacity_dockyard = -0.1
+                enemy_justify_war_goal_time = 0.25
+                weekly_manpower = 100
+            }
+        }
+
+        XNE_port_of_rotterdam_4 = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.08
+                research_speed_factor = 0.08
+                industrial_capacity_dockyard = 0.05
+                enemy_justify_war_goal_time = 0.25
+                weekly_manpower = 100
+            }
+        }
+
         XNE_port_of_antwerpen_1 = {
             allowed = { always = yes }
             picture = generic_the_london_naval_treaty
@@ -73,6 +108,49 @@ ideas = {
                 industrial_capacity_dockyard = -0.05
             }
         }
+
+        XNE_port_of_antwerpen_2a = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.09
+                enemy_justify_war_goal_time = 0.15
+                industrial_capacity_dockyard = -0.05
+            }
+        }
+
+        XNE_port_of_antwerpen_2b = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.03
+                enemy_justify_war_goal_time = 0.1
+                industrial_capacity_dockyard = 0.025
+            }
+        }
+
+        XNE_port_of_antwerpen_3a = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.09
+                enemy_justify_war_goal_time = 0.15
+                industrial_capacity_dockyard = -0.05
+                production_speed_buildings_factor = 0.05
+            }
+        }
+
+        XNE_port_of_antwerpen_3b = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.03
+                enemy_justify_war_goal_time = 0.1
+                industrial_capacity_dockyard = 0.10
+                industrial_capacity_factory = 0.025
+            }
+        }
+
 
         XFS_no_nobility = {
             allowed = { tag = XFS }

@@ -3,7 +3,7 @@ joint_focus = {
     icon = GFX_focus_CHL_invite_french_aristocracy
     text_icon = netherlands_shared_style
 
-    x = 16
+    x = 22
     y = 0
     cost = 10
     available_if_capitulated = no
@@ -1448,4 +1448,388 @@ joint_focus = {
     completion_reward_joint_member = {
     }
 
+}
+
+
+
+shared_focus = {
+    id = XHO_port_rotterdam
+    icon = GFX_focus_generic_refit_civilian_ships
+
+    x = 14
+    y = 0
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        owns_state = 1033
+        1033 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        1033 = {
+            if = {
+                limit = {
+                    free_building_slots = {
+                        building = dockyard
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = dockyard
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            else = {
+                ROOT = { navy_experience = 50 }
+            }
+
+            if = {
+                limit = {
+                    free_building_slots = {
+                        building = naval_base
+                        size > 0
+                        province = 9498
+                    }
+                }
+                add_building_construction = {
+                    type = naval_base
+                    level = 1
+                    instant_build = yes
+                    province = 9498
+                }
+            }
+            else = {
+                ROOT = { add_political_power = 40 }
+            }
+        }
+    }
+}
+
+shared_focus = {
+    id = XHO_european_trade
+    icon = GFX_goal_generic_positive_trade_relations
+
+    prerequisite = { focus = XHO_port_rotterdam }
+    relative_position_id = XHO_port_rotterdam
+
+    x = 0
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        has_equipment = {
+            convoy > 99
+        }
+        owns_state = 1033
+        1033 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        add_political_power = 35
+        custom_effect_tooltip = generic_skip_one_line_tt
+        swap_ideas = {
+            remove_idea = XNE_port_of_rotterdam_1
+            add_idea = XNE_port_of_rotterdam_2
+        }
+    }
+}
+
+shared_focus = {
+    id = XHO_encourage_immigration
+    icon = GFX_focus_GER_strengthen_the_proletarian_international
+
+    prerequisite = { focus = XHO_european_trade }
+    relative_position_id = XHO_european_trade
+
+    x = 0
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        has_stability > 0.69
+        owns_state = 1033
+        1033 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        add_manpower = 10000
+        custom_effect_tooltip = generic_skip_one_line_tt
+        swap_ideas = {
+            remove_idea = XNE_port_of_rotterdam_2
+            add_idea = XNE_port_of_rotterdam_3
+        }
+    }
+}
+
+shared_focus = {
+    id = XHO_expand_military_presence
+    icon = GFX_focus_generic_africa_naval
+
+    prerequisite = { focus = XHO_encourage_immigration }
+    relative_position_id = XHO_encourage_immigration
+
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        has_war_support > 0.49
+        owns_state = 1033
+        1033 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        navy_experience = 20
+        custom_effect_tooltip = generic_skip_one_line_tt
+        swap_ideas = {
+            remove_idea = XNE_port_of_rotterdam_3
+            add_idea = XNE_port_of_rotterdam_4
+        }
+        add_tech_bonus = {
+            bonus = 1
+            uses = 2
+            category = mio_cat_tech_all_capital_ship_and_modules
+            category = mio_cat_tech_all_screen_ship_and_modules
+        }
+    }
+}
+
+
+shared_focus = {
+    id = XBT_port_antwerpen
+    icon = GFX_focus_generic_refit_civilian_ships
+
+    x = 14
+    y = 5
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        owns_state = 977
+        977 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        977 = {
+            if = {
+                limit = {
+                    free_building_slots = {
+                        building = dockyard
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = dockyard
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            else = {
+               ROOT = { navy_experience = 50 }
+            }
+            if = {
+                limit = {
+                    free_building_slots = {
+                        building = naval_base
+                        size > 0
+                        province = 6598
+                    }
+                }
+                add_building_construction = {
+                    type = naval_base
+                    level = 1
+                    instant_build = yes
+                    province = 6598
+                }
+            }
+            else = {
+                ROOT = { add_political_power = 40 }
+            }
+        }
+    }
+}
+
+shared_focus = {
+    id = XBT_raise_tariffs
+    icon = GFX_focus_RAJ_institutional_money_laundering
+
+    prerequisite = { focus = XBT_port_antwerpen }
+    relative_position_id = XBT_port_antwerpen
+    mutually_exclusive = { focus = XBT_fund_shipbuilding }
+
+    x = -1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        owns_state = 977
+        977 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        swap_ideas = {
+            remove_idea = XNE_port_of_antwerpen_1
+            add_idea = XNE_port_of_antwerpen_2a
+        }
+    }
+}
+
+shared_focus = {
+    id = XBT_fund_shipbuilding
+    icon = GFX_goal_generic_construct_naval_dockyard
+
+    prerequisite = { focus = XBT_port_antwerpen }
+    relative_position_id = XBT_port_antwerpen
+    mutually_exclusive = { focus = XBT_raise_tariffs }
+
+    x = 1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        owns_state = 977
+        977 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        swap_ideas = {
+            remove_idea = XNE_port_of_antwerpen_1
+            add_idea = XNE_port_of_antwerpen_2b
+        }
+    }
+}
+
+shared_focus = {
+    id = XBT_foreign_construction_experts
+    icon = GFX_focus_generic_road_investment
+
+    prerequisite = { focus = XBT_raise_tariffs }
+    relative_position_id = XBT_raise_tariffs
+    mutually_exclusive = { focus = XBT_more_output }
+
+    x = 0
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        owns_state = 977
+        977 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        swap_ideas = {
+            remove_idea = XNE_port_of_antwerpen_2a
+            add_idea = XNE_port_of_antwerpen_3a
+        }
+    }
+}
+
+shared_focus = {
+    id = XBT_more_output
+    icon = GFX_focus_generic_naval_invasion
+
+    prerequisite = { focus = XBT_fund_shipbuilding }
+    relative_position_id = XBT_fund_shipbuilding
+    mutually_exclusive = { focus = XBT_foreign_construction_experts }
+
+    x = 0
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        owns_state = 977
+        977 = { is_core_of = ROOT }
+    }
+
+    bypass = {
+
+    }
+
+    completion_reward = {
+        swap_ideas = {
+            remove_idea = XNE_port_of_antwerpen_2b
+            add_idea = XNE_port_of_antwerpen_3b
+        }
+    }
 }
