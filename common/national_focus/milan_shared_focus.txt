@@ -4,7 +4,7 @@ joint_focus = {
     text_icon = XEX_shared_style
 
     x = 2
-    y = 3
+    y = 15
 	offset = {
         x = 15
         y = -3
@@ -63,7 +63,7 @@ joint_focus = {
 
     prerequisite = { focus = XEX_milan_project }
     relative_position_id = XEX_milan_project
-    x = 1
+    x = -1
     y = 1
     cost = 5
     available_if_capitulated = no
@@ -103,11 +103,11 @@ joint_focus = {
 joint_focus = {
     id = XEX_fund_milanese_arms
     icon = GFX_focus_eng_concessions_to_the_trade_unions
-    text_icon = XEX_XE0_shared_style
+    text_icon = XEX_shared_style
 
-    prerequisite = { focus = XEX_develop_boths_economies }
-    relative_position_id = XEX_develop_boths_economies
-    x = 1
+    prerequisite = { focus = XEX_boost_militia_strenght }
+    relative_position_id = XEX_boost_militia_strenght
+    x = 2
     y = 1
     cost = 5
     available_if_capitulated = no
@@ -119,7 +119,6 @@ joint_focus = {
     available = {
         OR = {
             tag = XEX
-			tag = XE0
         }
     }
 
@@ -130,7 +129,6 @@ joint_focus = {
     joint_trigger = {
         OR = {
             tag = XEX
-			tag = XE0
         }
     }
 
@@ -147,10 +145,10 @@ joint_focus = {
 joint_focus = {
     id = XEX_fund_the_milanese_force
     icon = GFX_focus_eng_concessions_to_the_trade_unions
-    text_icon = XEX_XE0_shared_style
+    text_icon = XE0_shared_style
 
-    prerequisite = { focus = XEX_develop_boths_economies }
-    relative_position_id = XEX_develop_boths_economies
+    prerequisite = { focus = XEX_boost_militia_strenght }
+    relative_position_id = XEX_boost_militia_strenght
     x = -1
     y = 1
     cost = 5
@@ -162,7 +160,6 @@ joint_focus = {
 
     available = {
         OR = {
-            tag = XEX
 			tag = XE0
         }
     }
@@ -189,13 +186,13 @@ joint_focus = {
     }
 }
 joint_focus = {
-    id = XEX_boost_militia_strenght
+    id = XEX_seize_milan_industries
     icon = GFX_focus_eng_concessions_to_the_trade_unions
-    text_icon = XE0_shared_style
+    text_icon = XEX_shared_style
 
-    prerequisite = { focus = XEX_milan_project }
-    relative_position_id = XEX_milan_project
-    x = -1
+    prerequisite = { focus = XEX_fund_the_milanese_force }
+    relative_position_id = XEX_fund_the_milanese_force
+    x = 0
     y = 1
     cost = 5
     available_if_capitulated = no
@@ -207,6 +204,49 @@ joint_focus = {
     available = {
         OR = {
             tag = XEX
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+
+joint_focus = {
+    id = XEX_boost_militia_strenght
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XE0_shared_style
+
+    prerequisite = { focus = XEX_milan_project }
+    relative_position_id = XEX_milan_project
+    x = 1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
 			tag = XE0
         }
     }
@@ -237,8 +277,8 @@ joint_focus = {
     icon = GFX_focus_eng_concessions_to_the_trade_unions
     text_icon = XE0_shared_style
 
-    prerequisite = { focus = XEX_boost_militia_strenght }
-    relative_position_id = XEX_boost_militia_strenght
+    prerequisite = { focus = XEX_develop_boths_economies }
+    relative_position_id = XEX_develop_boths_economies
     x = -1
     y = 1
     cost = 5
@@ -250,7 +290,6 @@ joint_focus = {
 
     available = {
         OR = {
-            tag = XEX
 			tag = XE0
         }
     }
@@ -295,7 +334,178 @@ joint_focus = {
     available = {
         OR = {
             tag = XEX
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
 			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = FRA_integrate_milans_civilian_sector
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XEX_shared_style
+
+    prerequisite = { focus = XEX_seize_milan_industries focus = XEX_exchange_research }
+    relative_position_id = XEX_seize_milan_industries
+    x = -1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_homeland_defence
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XE0_shared_style
+
+    prerequisite = { focus = XEX_fund_milanese_arms }
+    relative_position_id = XEX_fund_milanese_arms
+    x = 1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_boost_collaboration_with_milan
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XE0_shared_style
+
+    prerequisite = { focus = XEX_fund_milanese_arms }
+    relative_position_id = XEX_fund_milanese_arms
+    x = -1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+			tag = XE0
+        }
+    }
+
+    bypass = {
+        
+    }
+
+    joint_trigger = {
+        OR = {
+            tag = XEX
+			tag = XE0
+        }
+    }
+
+    completion_reward = {
+        
+    }
+
+    completion_reward_joint_originator = {
+    }
+
+    completion_reward_joint_member = {
+    }
+}
+joint_focus = {
+    id = XEX_integrate_milans_military
+    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    text_icon = XEX_shared_style
+
+    prerequisite = { focus = XEX_boost_collaboration_with_milan focus = XEX_homeland_defence }
+    relative_position_id = XEX_boost_collaboration_with_milan
+    x = 1
+    y = 1
+    cost = 5
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        OR = {
+            tag = XEX
         }
     }
 
