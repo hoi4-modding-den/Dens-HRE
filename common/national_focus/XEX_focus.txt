@@ -63,7 +63,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_growth }
-		x = -15
+		x = -16
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -80,6 +80,29 @@ focus_tree = {
 			
 		}
 	}
+	focus = {
+		id = XEX_dummy_stupid_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_economical_Strenght focus = XEX_economical_growth }
+		#mutually_exclusive = {  }
+		x = 3
+		y = 1
+		relative_position_id = XEX_economical_Strenght
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	shared_focus = XEX_milan_project
 	focus = {
 		id = XEX_internal_affairs
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
