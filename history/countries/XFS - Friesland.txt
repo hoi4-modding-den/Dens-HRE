@@ -57,21 +57,23 @@ if = {
 
 
 add_ideas = {
-	
+	XFS_no_nobility
 }
+
+recruit_character = XFS_landdag
 
 set_variable = { HRE_national_stance_federalism = 3 } 
 set_variable = { HRE_national_stance_welfare = 1 } 
 set_variable = { HRE_national_stance_papacy = 2 } 
 
 set_politics = {
-	ruling_party = neutrality
-	last_election = "1933.1.1"
+	ruling_party = democratic
+	last_election = "1934.1.1"
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 73
-	democratic = 17
+	neutrality = 9
+	democratic = 81
 	fascism = 3
 	communism = 7
 }

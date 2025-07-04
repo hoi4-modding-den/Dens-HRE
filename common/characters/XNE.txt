@@ -11,4 +11,69 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 	}
+
+	XBT_leopold_iii = {
+		name = XBT_leopold_iii
+		portraits = {
+			civilian = {
+				large = GFX_portrait_BEL_king_leopold_iii
+			}
+		}
+		country_leader = {
+			ideology = centrism
+			expire = "1951.1.1.1"
+		}
+	}
+	
+	XFS_landdag = {
+		name = XFS_landdag
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SWI_federal_assembly
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "1990.1.1.1"
+		}
+	}
+
+	XUT_johannes_jansen = {
+		name = XUT_johannes_jansen
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XUT_johannes_jansen
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1937.1.1.1"
+		}
+	}
+
+	XUT_johannes_de_jong = {
+		name = XUT_johannes_de_jong
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XUT_johannes_de_jong
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1.1"
+		}
+	}
+
+	XHO_wilhelmina = {
+		name = XHO_wilhelmina
+		portraits = {
+			civilian = {
+				large = GFX_portrait_hol_wilhelmina
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1.1"
+		}
+	}
 }

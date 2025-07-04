@@ -51,5 +51,38 @@ ideas = {
                 coastal_bunker_effectiveness_factor = 0.1
             }
         }
+
+        XNE_port_of_rotterdam_1 = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.04
+                research_speed_factor = 0.04
+                industrial_capacity_dockyard = -0.1
+                enemy_justify_war_goal_time = 0.15
+                
+            }
+        }
+
+        XNE_port_of_antwerpen_1 = {
+            allowed = { always = yes }
+            picture = generic_the_london_naval_treaty
+            modifier = {
+                consumer_goods_factor = -0.03
+                enemy_justify_war_goal_time = 0.1
+                industrial_capacity_dockyard = -0.05
+            }
+        }
+
+        XFS_no_nobility = {
+            allowed = { tag = XFS }
+            picture = generic_king_handled
+            modifier = {
+                political_power_factor = -0.1
+                neutrality_drift = -0.01
+                neutrality_acceptance = -10
+                stability_factor = 0.05
+            }
+        }
 	}
 }
