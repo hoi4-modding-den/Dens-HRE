@@ -41,7 +41,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_Strenght }
-		x = -6
+		x = -8
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -59,7 +59,227 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = XEX_economical_Strenght
+		id = XEX_develop_the_capital
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_economical_growth }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_economical_growth
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_focus_on_industrial_production
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_develop_the_capital }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XEX_develop_the_capital
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_electronic_research
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_focus_on_industrial_production }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_focus_on_industrial_production
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_develop_ports
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_focus_on_industrial_production }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_focus_on_industrial_production
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_improve_infrastructure
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_economical_growth }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_economical_growth
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_develop_the_turin_istitute_of_research
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_infrastructure }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_improve_infrastructure
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_improve_energy_use
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_develop_the_turin_istitute_of_research }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XEX_develop_the_turin_istitute_of_research
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_use_the_padanian_plains
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_energy_use }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_improve_energy_use
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_damn_milans_lakes
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_energy_use focus = XEX_electronic_research }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_improve_energy_use
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_create_the_geneva_plant
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_develop_ports focus = XEX_electronic_research }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_develop_ports
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_economical_strength
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_growth }
@@ -83,11 +303,11 @@ focus_tree = {
 	focus = {
 		id = XEX_dummy_stupid_focus
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		prerequisite = { focus = XEX_economical_Strenght focus = XEX_economical_growth }
+		prerequisite = { focus = XEX_economical_strength focus = XEX_economical_growth }
 		#mutually_exclusive = {  }
 		x = 3
 		y = 1
-		relative_position_id = XEX_economical_Strenght
+		relative_position_id = XEX_economical_strength
 		
 		cost = 2
 		ai_will_do = {
