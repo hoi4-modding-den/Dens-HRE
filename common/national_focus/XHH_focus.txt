@@ -1225,7 +1225,7 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 59
+			controls_state = 1040
 		}
 
 		available_if_capitulated = no
@@ -1241,7 +1241,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			59 = {
+			1040 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1929,7 +1929,6 @@ focus_tree = {
 
 		available = {
 			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
-			is_subject = no
 		}
 
 		bypass = {
@@ -2131,6 +2130,63 @@ focus_tree = {
 					name = "Staatssicherheitsdienst"
 					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
 				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_army_support
+		icon = GFX_focus_ger_return_of_the_kaiser
+		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_reichsbank_financing
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			army_experience = 50
+			air_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = XHH_imperial_army_training
+				days = 365
 			}
 		}
 	}

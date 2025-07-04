@@ -43,6 +43,19 @@ leader_traits = {
 	# 17 = HORSE
 	# 18 = SALUTE
 
+	XHH_socdem_prime_minister = {
+		random = no
+		sprite = 13
+		
+		production_speed_buildings_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		democratic_drift = 0.1
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 	XHH_socialist_prime_minister = {
 		random = no
 		sprite = 13

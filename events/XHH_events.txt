@@ -148,8 +148,8 @@ country_event = {
 			}
 		}
 		add_popularity = {
-			ideology = fascism
-			popularity = 0.05
+			ideology = neutrality
+			popularity = 0.1
 		}
 		if = {
 			limit = {
@@ -187,7 +187,7 @@ country_event = {
 		add_political_power = 50
 		add_popularity = {
 			ideology = neutrality
-			popularity = -0.02
+			popularity = -0.05
 		}
     }
 }
