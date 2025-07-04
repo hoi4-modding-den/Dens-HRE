@@ -31,9 +31,14 @@
  XFS_neutrality:0 "Lordship of Friesland"
  XFS_neutrality_DEF:0 "the Lordship of Friesland"
  XFS_ADJ:0 "Frisian"
+
+ ### COSMETIC ###
+ XNE_provisional:0 "Provisional Dutch State"
+ XNE_provisional_neutrality:0 "Provisional Dutch State"
+ XNE_provisional_neutrality_DEF:0 "the Provisional Dutch State"
  
  ### CHARACTERS ###
- XNE_test:0 "Test"
+ XNE_provisional_gov:0 "Provisional Government"
 
  ### MAP ###
  XFS_STATE_36:0 "Fryslân"
@@ -80,7 +85,9 @@
  XNE_joint_appoint_supreme_commander:0 "Appoint a Supreme Commander"
  XNE_joint_appoint_supreme_commander_complete_tt:0 "$XNE_joint_idea_modify_intro$\n Recruitable Population Factor: §G+10%§!\n War Support: §G+5.00%§!"
  XNE_joint_propose_integration:0 "Propose Closer Cooperation"
- XNE_joint_dutch_state:0 "The Batavian Republic"
+ XNE_joint_dutch_state:0 "Foundations for a Dutch State"
+ XNE_joint_future:0 "Lookinng to the Future"
+ XNE_focus:0 "Netherlands Focus"
 
  ### EVENT ###
  XNE_joint.1.t:0 "First Union of [FROM.Capital.GetCapitalVictoryPointName]"
@@ -99,7 +106,14 @@
  XNE_joint.3.a:0 "We agree with the sentiment"
  XNE_joint.3.a.tt:0 "We will join a faction led by [FROM.GetNameDef]"
  XNE_joint.3.b:0 "This is too much"
-
+ XNE_joint.5.t:0 "Proposal from [FROM.GetNameDef]"
+ XNE_joint.5.d:0 ""
+ XNE_joint.5.a:0 "We accept"
+ XNE_joint.5.b:0 "No thanks"
+ XNE_joint.6.t:0 "[FROM.GetNameDef] accepts our proposal"
+ XNE_joint.6.a:0 "Excellent"
+ XNE_joint.7.t:0 "[FROM.GetNameDef] rejects our proposal"
+ XNE_joint.7.a:0 "Unfortunate"
 
 
 ### IDEA ###
@@ -113,6 +127,11 @@
  XNE_zuiderzee_2:0 "Zuiderzee Works"
  XNE_zuiderzee_3:0 "Zuiderzee Works"
 
+ ### DECISION ###
+ XNE_propose_integration_category:0 "Proposals for Dutch integration"
+ XNE_propose_integration:0 "Propose Integration to [FROM.GetNameDef]"
+
  ### TRIGGER ###
  XNE_is_first_union_member_tt:0 "Is a member of $XNE_joint_idea$"
  XNE_is_first_union_leader_tt:0 "Is the leader of $XNE_joint_idea$"
+

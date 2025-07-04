@@ -1234,6 +1234,7 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+        unlock_decision_category_tooltip = XNE_propose_integration_category
     }
 
     completion_reward_joint_member = {
@@ -1259,6 +1260,64 @@ joint_focus = {
 
     available = {
         XNE_is_first_union_leader = yes
+        OR = {
+            if = {
+                limit = {
+                    NOT = { tag = XHO }
+                }
+                XHO = {
+                    is_subject_of = ROOT
+                    compare_autonomy_state < autonomy_puppet
+                }
+            }
+            else = {
+                hidden_trigger = {
+                    always = no
+                }
+            }
+            if = {
+                limit = {
+                    NOT = { tag = XBT }
+                }
+                XBT = {
+                    is_subject_of = ROOT
+                    compare_autonomy_state < autonomy_puppet
+                }
+            }
+            else = {
+                hidden_trigger = {
+                    always = no
+                }
+            }
+            if = {
+                limit = {
+                    NOT = { tag = XUT }
+                }
+                XUT = {
+                    is_subject_of = ROOT
+                    compare_autonomy_state < autonomy_puppet
+                }
+            }
+            else = {
+                hidden_trigger = {
+                    always = no
+                }
+            }
+            if = {
+                limit = {
+                    NOT = { tag = XFS }
+                }
+                XFS = {
+                    is_subject_of = ROOT
+                    compare_autonomy_state < autonomy_puppet
+                }
+            }
+            else = {
+                hidden_trigger = {
+                    always = no
+                }
+            }
+        }
     }
 
     bypass = {
@@ -1273,6 +1332,117 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+        every_state = {
+            limit = {
+                OWNER = {
+                    OR = {
+                        tag = XHO
+                        tag = XBT
+                        tag = XUT
+                        tag = XFS
+                    }
+                    is_subject_of = ROOT
+                    compare_autonomy_state < autonomy_puppet
+                    PREV = {
+                        is_core_of = PREV
+                    }
+                }
+            }
+            add_core_of = ROOT
+        }
+        custom_effect_tooltip = generic_skip_one_line_tt
+        every_country = {
+            limit = {
+                OR = {
+                    tag = XHO
+                    tag = XBT
+                    tag = XUT
+                    tag = XFS
+                }
+                is_subject_of = ROOT
+                compare_autonomy_state < autonomy_puppet
+            }
+            hidden_effect = {
+                every_unit_leader = {
+                    set_nationality = ROOT
+                }
+            }
+            ROOT = {
+                annex_country = {
+                    target = PREV
+                    transfer_troops = yes
+                }
+            }
+        }
+    }
+
+    completion_reward_joint_member = {
+    }
+
+}
+
+joint_focus = {
+    id = XNE_joint_future
+    icon = GFX_focus_generic_improve_the_administration
+    text_icon = netherlands_leader_shared_style
+
+    prerequisite = { focus = XNE_joint_dutch_state }
+    relative_position_id = XNE_joint_dutch_state
+    x = 0
+    y = 1
+    cost = 1
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_leader = yes
+        all_core_state = {
+            is_owned_and_controlled_by = ROOT
+        }
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        effect_tooltip = {
+            load_focus_tree = {
+                tree = XNE_focus
+                keep_completed = yes
+            }
+        }
+        hidden_effect = {
+            every_unit_leader = {
+                set_nationality = XNE
+            }
+            every_core_state = {
+                add_core_of = XNE
+                remove_core_of = ROOT
+            }
+            XNE = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = yes
+                }
+            }
+            add_dynamic_modifier = {
+                modifier = XNE_joint_idea
+            }
+        }
+        XNE = {
+            change_tag_from = ROOT
+        }
     }
 
     completion_reward_joint_member = {

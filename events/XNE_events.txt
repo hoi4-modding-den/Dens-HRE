@@ -205,3 +205,93 @@ country_event = {
 		set_variable = { XNE.union_capital = -1 }
 	}
 }
+
+country_event = {
+	id = XNE_joint.5
+	title = XNE_joint.5.t
+	desc = XNE_joint.5.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XNE_joint.5.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				factor = 3
+			}
+		}
+		FROM = {
+			country_event = {
+				id = XNE_joint.6
+				days = 1
+				random_hours = 48
+			}
+		}
+	}
+	
+	option = {
+        name = XNE_joint.5.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+				factor = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -40
+				}
+				factor = 3
+			}
+		}
+		FROM = {
+			country_event = {
+				id = XNE_joint.7
+				days = 1
+				random_hours = 48
+			}
+		}
+	}
+}
+
+country_event = {
+	id = XNE_joint.6
+	title = XNE_joint.6.t
+	desc = XNE_joint.6.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XNE_joint.6.a
+		puppet = {
+			target = FROM
+		}
+	}
+}
+
+country_event = {
+	id = XNE_joint.7
+	title = XNE_joint.7.t
+	desc = XNE_joint.7.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XNE_joint.7.a
+	}
+}

@@ -86,19 +86,21 @@ add_ideas = {
 
 set_variable = { HRE_national_stance_federalism = 3 } 
 set_variable = { HRE_national_stance_welfare = 1 } 
-set_variable = { HRE_national_stance_papacy = 2 } 
+set_variable = { HRE_national_stance_papacy = 2 }
 
-recruit_character = XNE_test
+set_cosmetic_tag = XNE_provisional
+
+recruit_character = XNE_provisional_gov
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1935.6.12"
 	election_frequency = 72
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 30
-	democratic = 56
+	neutrality = 45
+	democratic = 41
 	fascism = 5
 	communism = 9
 }

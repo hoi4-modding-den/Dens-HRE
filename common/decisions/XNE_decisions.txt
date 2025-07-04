@@ -1,0 +1,50 @@
+XNE_propose_integration_category = {
+
+	XNE_propose_integration  = {
+
+		priority = -1
+
+		icon = POL_organize_strike_two
+
+		ai_will_do = {
+			base = 1
+		}
+
+		target_root_trigger = {
+			#has_completed_focus = XNE_joint_propose_integration
+            #XNE_is_first_union_leader = yes
+            tag = XHO
+		}
+        
+        target_trigger = {
+            FROM = {
+                OR = {
+                    tag = XHO
+                    tag = XUT
+                    tag = XBT
+                    tag = XFS
+                }
+                NOT = { is_subject = yes }
+                #is_in_faction_with = ROOT
+            }
+        }
+
+		visible = { 
+			NOT = { has_completed_focus = XHH_strengthen_the_senate }
+		}
+
+		cost = 75
+
+        days_re_enable = 14
+
+        complete_effect = {
+            FROM = {
+                country_event = {
+                    id = XNE_joint.5
+                    days = 1
+                    random_hours = 48
+                }
+            }
+        }
+	}
+}
