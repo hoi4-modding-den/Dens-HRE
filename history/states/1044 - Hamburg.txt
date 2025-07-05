@@ -1,0 +1,35 @@
+state = {
+	id = 1044
+	name = "STATE_1044"
+	manpower = 2075521
+	
+	state_category = metropolis
+
+	history = {
+
+		owner = XHH #owner = GER
+		add_core_of = XHH
+		#add_core_of = GER
+		#add_core_of = SHL
+
+		victory_points = {
+			9347 30 # Hamburg
+		}
+		
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			dockyard = 2
+			air_base = 5
+			9347 = {
+				naval_base = 8
+			}
+		}
+	}
+
+	provinces = {
+		9347
+	}
+
+	local_supplies = 0.0
+}

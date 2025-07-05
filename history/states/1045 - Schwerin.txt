@@ -1,0 +1,33 @@
+state = {
+	id = 1045
+	name = "STATE_1045"
+	manpower = 183562
+	resources = {
+		aluminium = 3
+	}
+	
+	state_category = large_town
+
+	history = {
+
+		owner = XHH #owner = GER
+		add_core_of = XHH
+		add_core_of = XH2
+		#add_core_of = GER
+		#add_core_of = MEK
+
+		victory_points = {
+			9294 3 # Schwerin
+		}
+		
+		buildings = {
+			infrastructure = 3
+		}
+	}
+
+	provinces = {
+		9238 9264 9294
+	}
+
+	local_supplies = 0.0
+}

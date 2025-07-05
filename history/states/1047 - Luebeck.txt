@@ -1,0 +1,34 @@
+state = {
+	id = 1047
+	name = "STATE_1047"
+	manpower = 52893
+	
+	state_category = city
+
+	history = {
+
+		owner = XHH #owner = GER
+		add_core_of = XHH
+		#add_core_of = GER
+		#add_core_of = SHL
+
+		victory_points = {
+			13399 5 # Lübeck
+		}
+		
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+			13399 = {
+				naval_base = 3
+			}
+		}
+	}
+
+	provinces = {
+		13399 13401
+	}
+
+	local_supplies = 0.0
+}

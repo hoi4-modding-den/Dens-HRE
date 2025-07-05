@@ -1,7 +1,7 @@
 state = {
 	id = 58
 	name = "STATE_58"
-	manpower = 3095630 
+	manpower = 1045330 
 	state_category = large_city
 	
 	history = {
@@ -10,33 +10,25 @@ state = {
 		add_core_of = XHH
 		#add_core_of = GER
 		#add_core_of = SHL
-		#add_core_of = PRE
 
 		victory_points = {
 			6389 10 # Kiel
 		}
-		
-		victory_points = {
-			9347 30 # Hamburg
-		}
 
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 3
+			industrial_complex = 1
 			arms_factory = 1
-			dockyard = 2
-			air_base = 5
-			9347 = {
-				naval_base = 8
-			}
+			dockyard = 1
+			air_base = 3
 			6389 = {
-				naval_base = 8	
+				naval_base = 6
 			}
 		}
 	}
 
 	provinces = {
-		3368 6257 6389 9320 9347 11331 
+		6257 6389 9320 11331 13400
  	}
 
 	local_supplies = 0.0 

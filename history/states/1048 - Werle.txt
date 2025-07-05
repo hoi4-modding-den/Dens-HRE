@@ -1,0 +1,31 @@
+state = {
+	id = 1048
+	name = "STATE_1048"
+	manpower = 93528
+	
+	state_category = town
+
+	history = {
+
+		owner = XHH #owner = GER
+		add_core_of = XHH
+		add_core_of = XH2
+		#add_core_of = GER
+		#add_core_of = MEK
+		
+		buildings = {
+			infrastructure = 2
+		}
+
+		victory_points = {
+			3258 1 # Neustrelitz 
+		}
+		
+	}
+
+	provinces = {
+		268 3258
+	}
+
+	local_supplies = 0.0
+}

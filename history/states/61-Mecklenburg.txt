@@ -1,10 +1,10 @@
 state = {
 	id = 61
 	name = "STATE_61"
-	manpower = 836353
+	manpower = 236353
 
 
-	state_category = town
+	state_category = large_town
 
 	history = {
 
@@ -15,15 +15,7 @@ state = {
 		#add_core_of = MEK
 
 		victory_points = {
-			321 5 # Rostocj
-		}
-
-		victory_points = {
-			11305 3 # Lübeck
-		}
-
-		victory_points = {
-			11276 2 # Schwerin
+			321 10 # Rostock
 		}
 
 		buildings = {
@@ -39,7 +31,7 @@ state = {
 	}
 
 	provinces={
-		268 293 321 9294 11276 11305 
+		293 321 11276 11305 
 	}
 
 	local_supplies=3.0 
