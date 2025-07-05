@@ -129,17 +129,17 @@ focus_tree = {
 
 	focus = {
 		id = XHO_research_slot
-		available = {
-		}
 		icon = GFX_focus_ARG_universidad_de_buenos_aires
 		prerequisite = { focus = XHO_steel_mills }
     	relative_position_id = XHO_steel_mills
 		x = 0
 		y = 1
 		cost = 10
+		available = {
+		}
 
 		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -185,6 +185,277 @@ focus_tree = {
 						category = dispersed_industry_category
 					}
 				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = XHO_artillerie
+		icon = GFX_focus_SWE_let_fly_all_guns
+
+		x = 6
+		y = 0
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			unlock_military_industrial_organization_tooltip = XNE_artillerie_inrichtingen_organization
+			mio:XNE_artillerie_inrichtingen_organization = {
+				add_mio_size = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_convert_civillian_industry
+		icon = GFX_focus_SOV_merge_plants
+
+		prerequisite = { focus = XHO_artillerie }
+    	relative_position_id = XHO_artillerie
+		mutually_exclusive = { focus = XHO_build_military_industry }
+		x = -1
+		y = 1
+		cost = 10
+
+		available = {
+			NOT = { has_idea = civilian_economy }
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = { XHO_convert_industry }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 0
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_flexible_production
+		icon = GFX_focus_SOV_organize_wreckers
+
+		prerequisite = { focus = XHO_convert_civillian_industry }
+    	relative_position_id = XHO_convert_civillian_industry
+		x = -1
+		y = 1
+		cost = 5
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHO_convert_industry
+				add_idea = XHO_convert_industry_2
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_minister_of_production
+		icon = GFX_focus_SWI_promote_guisan
+
+		prerequisite = { focus = XHO_convert_civillian_industry focus = XHO_build_military_industry }
+    	relative_position_id = XHO_convert_civillian_industry
+		x = 1
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XHO_build_military_industry
+		icon = GFX_focus_generic_military_industry
+
+		prerequisite = { focus = XHO_artillerie }
+    	relative_position_id = XHO_artillerie
+		mutually_exclusive = { focus = XHO_convert_civillian_industry }
+		x = 2
+		y = 1
+		cost = 10
+
+		available = {
+			num_of_civilian_factories > 7
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_timed_idea = { 
+				idea = XHO_build_mil_industry_1
+				days = 180
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = will_be_upgraded_to
+			show_ideas_tooltip = XHO_build_mil_industry_2
+			custom_effect_tooltip = when_expired
+		}
+	}
+
+	focus = {
+		id = XHO_mil_factory
+		icon = GFX_goal_generic_construct_mil_factory
+
+		prerequisite = { focus = XHO_build_military_industry }
+    	relative_position_id = XHO_build_military_industry
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_infantry_specialisation
+		icon = GFX_focus_RAJ_mountain_guns
+
+		prerequisite = { focus = XHO_mil_factory }
+    	relative_position_id = XHO_mil_factory
+		mutually_exclusive = { focus = XHO_armor_specialisation }
+		x = -2
+		y = 2
+		cost = 10
+
+		available = {
+			has_idea = XHO_build_mil_industry_1
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHO_build_mil_industry_2
+				add_idea = XHO_build_mil_industry_2i
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_armor_specialisation
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+
+		prerequisite = { focus = XHO_mil_factory }
+    	relative_position_id = XHO_mil_factory
+		mutually_exclusive = { focus = XHO_infantry_specialisation }
+		mutually_exclusive = { focus = XHO_air_specialisation }
+		x = 0
+		y = 2
+		cost = 10
+
+		available = {
+			has_idea = XHO_build_mil_industry_1
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHO_build_mil_industry_2
+				add_idea = XHO_build_mil_industry_2t
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_air_specialisation
+		icon = GFX_focus_PER_luftwaffe_planes
+
+		prerequisite = { focus = XHO_mil_factory }
+    	relative_position_id = XHO_mil_factory
+		mutually_exclusive = { focus = XHO_armor_specialisation }
+		x = 2
+		y = 2
+		cost = 10
+
+		available = {
+			has_idea = XHO_build_mil_industry_1
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHO_build_mil_industry_2
+				add_idea = XHO_build_mil_industry_2a
+			}
+		}
+	}
+	
+
+	focus = {
+		id = XHO_acquire_modern_weapons
+		icon = GFX_focus_ICE_the_armed_forces_of_iceland
+
+		prerequisite = { focus = XHO_artillerie }
+    	relative_position_id = XHO_artillerie
+		x = 8
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
 			}
 		}
 	}

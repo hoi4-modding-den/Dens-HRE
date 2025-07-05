@@ -3,7 +3,7 @@ joint_focus = {
     icon = GFX_focus_CHL_invite_french_aristocracy
     text_icon = netherlands_shared_style
 
-    x = 22
+    x = 26
     y = 0
     cost = 10
     available_if_capitulated = no
@@ -413,7 +413,7 @@ joint_focus = {
     prerequisite = { focus = XNE_joint_industry_developments }
     relative_position_id = XNE_joint_nordoostpolder
     x = 0
-    y = 2
+    y = 3
     cost = 10
     available_if_capitulated = no
 
@@ -703,7 +703,6 @@ joint_focus = {
 
     available = {
         XNE_is_first_union_leader = yes
-        threat > 0.25
     }
 
     bypass = {
@@ -731,13 +730,14 @@ joint_focus = {
 }
 
 joint_focus = {
-    id = XNE_joint_second_union
-    icon = GFX_focus_CHL_invite_french_aristocracy
+    id = XNE_joint_invite_henschel
+    icon = GFX_focus_generic_tankette
     text_icon = netherlands_shared_style
 
     prerequisite = { focus = XNE_joint_pan_netherland_defence }
     relative_position_id = XNE_joint_pan_netherland_defence
-    x = 0
+    mutually_exclusive = { focus = XNE_joint_invite_porsche }
+    x = -4
     y = 1
     cost = 10
     available_if_capitulated = no
@@ -747,7 +747,99 @@ joint_focus = {
     }
 
     available = {
+        XNE_is_first_union_member = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        unlock_military_industrial_organization_tooltip = XNE_henschel_organization
+        mio:XNE_henschel_organization = {
+            add_mio_size = 1
+        }
+    }
+
+    completion_reward_joint_originator = {
+        add_political_power = 15
+        army_experience = 20
+    }
+
+    completion_reward_joint_member = {
+        army_experience = 5
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_invite_porsche
+    icon = GFX_focus_generic_heavy_tank
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_pan_netherland_defence }
+    relative_position_id = XNE_joint_pan_netherland_defence
+    mutually_exclusive = { focus = XNE_joint_invite_henschel }
+    x = -2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    completion_reward = {
+        unlock_military_industrial_organization_tooltip = XHH_porsche_organization
+        mio:XHH_porsche_organization = {
+            add_mio_size = 1
+        }
+    }
+
+    completion_reward_joint_originator = {
+        add_political_power = 15
+        army_experience = 20
+    }
+
+    completion_reward_joint_member = {
+        army_experience = 5
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_second_union
+    icon = GFX_focus_CHL_invite_french_aristocracy
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_pan_netherland_defence }
+    relative_position_id = XNE_joint_pan_netherland_defence
+    x = 0
+    y = 2
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
         XNE_is_dutch_tag = yes
+        threat > 0.19
     }
 
     bypass = {
@@ -1210,7 +1302,7 @@ joint_focus = {
     prerequisite = { focus = XNE_joint_appoint_supreme_commander }
     relative_position_id = XNE_joint_appoint_supreme_commander
     x = 0
-    y = 1
+    y = 2
     cost = 10
     available_if_capitulated = no
 
@@ -1450,13 +1542,13 @@ joint_focus = {
 
 }
 
-
+### PORT OF ROTTERDAM ### 
 
 shared_focus = {
     id = XHO_port_rotterdam
     icon = GFX_focus_generic_refit_civilian_ships
 
-    x = 14
+    x = 18
     y = 0
     cost = 10
     available_if_capitulated = no
@@ -1633,6 +1725,7 @@ shared_focus = {
     }
 }
 
+### PORT OF ANTWERPEN ###
 
 shared_focus = {
     id = XBT_port_antwerpen

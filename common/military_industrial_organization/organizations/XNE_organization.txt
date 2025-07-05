@@ -1,0 +1,214 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+XNE_henschel_organization = {
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_henschel
+	
+	allowed = {	
+		OR = {
+			XNE_is_dutch_tag = yes
+			tag = XNE
+		}
+	}
+	
+	visible = {
+		
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		hidden_trigger = {
+			55 = {
+				owner = {
+					set_temp_variable = { henschel_owner = THIS }
+				}
+			}
+		}
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = var:henschel_owner } }
+			}
+			FROM = { NOT = { has_war_with = var:henschel_owner } }
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_light_tank_specialization
+
+		position = { x=-1 y=1 }
+		relative_position_id = GER_mio_trait_technical_superiority
+		any_parent = { GER_mio_trait_technical_superiority }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_medium_tank_specialization
+
+		position = { x=0 y=1 }
+		relative_position_id = GER_mio_trait_technical_superiority
+		any_parent = { GER_mio_trait_technical_superiority }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_heavy_tank_specialization
+
+		position = { x=1 y=1 }
+		relative_position_id = GER_mio_trait_technical_superiority
+		any_parent = { GER_mio_trait_technical_superiority }
+	}
+
+	add_trait = {
+		token = GER_mio_trait_technical_superiority
+		name = GER_mio_trait_technical_superiority
+		icon = GFX_generic_mio_department_icon_tank_general_quality
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_adaptable_chassis
+
+		any_parent = { generic_mio_trait_adaptable_chassis }
+
+		visible = {
+		}
+
+		equipment_bonus = {
+			defense = 0.05
+			soft_attack = 0.05
+			armor_value = 0.05
+		}
+
+		production_bonus = {
+			production_cost_factor = 0.03
+		}
+	}
+}
+
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+XNE_nsm_amsterdam_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_nsm_amsterdam
+	allowed = { 
+		OR = {
+		    tag = XHO
+            tag = XNE
+        }
+	}
+}
+
+XNE_wilton_fijenoord_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_wilton_fijenoord
+	allowed = { 
+		OR = {
+		    tag = XHO
+            tag = XNE
+        }
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+XNE_fokker_organization = {
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_fokker
+	allowed = { 
+        OR = {
+            tag = XHO
+            tag = XNE
+        }
+	}
+	available = {
+		
+	}
+}
+
+XNE_koolhoven_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_koolhoven
+	allowed = {
+        OR = {
+		    tag = XHO
+		    tag = XNE
+        }
+	}
+}
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+XNE_daf_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_HOL_daf
+	allowed = { 
+        OR = {
+            tag = XNE
+		    tag = XBT
+        }
+	}
+	available = {
+	}
+}
+
+XNE_artillerie_inrichtingen_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_artillerie_inrichtingen
+	allowed = { 
+        OR = {
+		    tag = XNE
+		    tag = XHO
+        }
+	}
+	available = {
+		owner = { 
+            OR = {
+                has_completed_focus = XHO_artillerie
+                tag = XNE
+                tag = XHO
+            }
+        }
+	}
+}
+
+XNE_hih_siderius_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_hih_siderius
+	allowed = { 
+		OR = {
+		    tag = XNE
+		    tag = XHO
+        }
+	}
+}

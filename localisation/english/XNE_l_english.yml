@@ -63,6 +63,16 @@
  XHO_research_slot:0 "The Nation's Best and Brightest"
  XHO_research_slot_tt1:0 "If Fokker have been invited to Schiphol Airport, we will also gain:"
  XHO_research_slot_tt2:0 "If $XNE_joint_construction_effort$ has been completed, we will also gain:"
+ XHO_artillerie:0 "Expand the Artillerieinrichtingen"
+ XHO_convert_civillian_industry:0 "Make Use of Civilian Industry"
+ XHO_flexible_production:0 "Flexible Production Lines"
+ XHO_minister_of_production:0 "Hire a Minister for Production"
+ XHO_build_military_industry:0 "Construct New Industry"
+ XHO_mil_factory:0 "Dordrecht Arms Factory"
+ XHO_infantry_specialisation:0 "Infantry Specialisation"
+ XHO_armor_specialisation:0 "Armour Specialisation"
+ XHO_air_specialisation:0 "Aircraft Specialisation"
+ XHO_acquire_modern_weapons:0 "Acquire Modern Weapons"
  
  XHO_port_rotterdam:0 "The Port of Rotterdam"
  XHO_european_trade:0 "The Centre of European Trade"
@@ -94,6 +104,8 @@
  XNE_joint_eastern_polder:0 "Construct the Eastern Flevoland Polder"
  XNE_joint_pan_netherland_defence:0 "Pan-Netherlands Defensive Plan"
  XNE_joint_pan_netherland_defence_complete_tt:0 "$XNE_joint_idea_modify_intro$\n Max Entrenchment: §G+2.0§!\n Attack against major countries: §G+10.0%§!\n Defense against major countries: §G+10.0%§!"
+ XNE_joint_invite_porsche:0 "Invite Porsche"
+ XNE_joint_invite_henschel:0 "Invite Henschel"
  XNE_joint_second_union:0 "The Second Union of [ROOT.Capital.GetCapitalVictoryPointName]"
  XNE_joint_second_union_complete_tt:0 "$XNE_joint_idea_modify_intro$\n Daily Political Power Gain: §G+0.10§!"
  XNE_joint_industry_developments:0 "Modern Production Techniques"
@@ -158,6 +170,13 @@
  XNE_port_of_antwerpen_2b:0 "Port of Antwerpen"
  XNE_port_of_antwerpen_3a:0 "Port of Antwerpen"
  XNE_port_of_antwerpen_3b:0 "Port of Antwerpen"
+ XHO_convert_industry:0 "Repurpose Civillian Industry"
+ XHO_convert_industry_2:0 "Repurpose Civillian Industry"
+ XHO_build_mil_industry_1:0 "Military Industry Investments"
+ XHO_build_mil_industry_2:0 "Nascent Military Complex"
+ XHO_build_mil_industry_2i:0 "Nascent Military Complex"
+ XHO_build_mil_industry_2a:0 "Nascent Military Complex"
+ XHO_build_mil_industry_2t:0 "Nascent Military Complex"
  XFS_no_nobility:0 "Lack of Nobility"
 
  ### DECISION ###
@@ -170,6 +189,15 @@
  XHO_build_new_terminal:0 "Comission a new terminal building"
  XHO_extend_runway_4:0 "Extend runway 04/22"
  XHO_fokker_factory:0 "Invite Fokker"
+
+ ### MIO ###
+ XNE_fokker_organization: "$fokker$"
+ XNE_koolhoven_organization: "$koolhoven$"
+ XNE_nsm_amsterdam_organization: "$nsm_amsterdam$"
+ XNE_wilton_fijenoord_organization: "$wilton_fijenoord$"
+ XNE_daf_organization: "$HOL_daf$"
+ XNE_artillerie_inrichtingen_organization: "$artillerie_inrichtingen$"
+ XNE_hih_siderius_organization: "$hih_siderius$"
 
  ### TRIGGER ###
  XNE_is_first_union_member_tt:0 "Is a member of $XNE_joint_idea$"

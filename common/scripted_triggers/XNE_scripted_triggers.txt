@@ -1,9 +1,19 @@
 XNE_is_dutch_tag = {
     OR = {
-        tag = XHO
-        tag = XBT
-        tag = XUT
-        tag = XFS
+        original_tag = XHO
+        original_tag = XBT
+        original_tag = XUT
+        original_tag = XFS
+    }
+}
+
+XNE_is_dutch_tag_or_XNE = {
+    OR = {
+        original_tag = XHO
+        original_tag = XBT
+        original_tag = XUT
+        original_tag = XFS
+        original_tag = XNE
     }
 }
 

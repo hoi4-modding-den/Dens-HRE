@@ -20,7 +20,11 @@ XHH_porsche_organization = {
 	icon = GFX_idea_porsche
 	
 	allowed = {	
-		original_tag = XHH
+		OR = {
+			original_tag = XHH
+			original_tag = XNE
+			XNE_is_dutch_tag_or_XNE = yes
+		}
 	}
 
 	available = {
@@ -28,6 +32,13 @@ XHH_porsche_organization = {
 		OR = {
 			FROM = { NOT = { has_war_with = XWB } }
 			XWB = { NOT = { has_government = fascism } }
+		}
+		if = {
+			limit = {
+				FROM = {
+					XNE_is_dutch_tag_or_XNE = yes
+				}
+			}
 		}
 	}
 
