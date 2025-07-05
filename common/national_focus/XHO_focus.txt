@@ -12,19 +12,180 @@ focus_tree = {
     reset_on_civilwar = no
 
     focus = {
-		id = XHO_royal_arms_purchases
+		id = XHO_develop_the_randstad
 		available = {
-			neutrality > 0.35
+			has_full_control_of_state = 7
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_POL_warsaw_main_station
 		x = 0
 		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			7 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_civillian_development
+		available = {
+		}
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = XHO_develop_the_randstad }
+    	relative_position_id = XHO_develop_the_randstad
+		x = 0
+		y = 1
 		cost = 10
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 1 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_steel_mills
+		available = {
+		}
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = XHO_civillian_development }
+    	relative_position_id = XHO_civillian_development
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 11
+				state = 7
+			}
+			build_railway = {
+				level = 2
+				build_only_on_allied = yes
+				path = { 391 68 3314 }
+				start_province = 391
+				target_province = 3314
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = excavation_tech
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_schiphol_airport
+		available = {
+		}
+		icon = GFX_focus_HUN_establish_the_mavag_aircraft_factory
+		prerequisite = { focus = XHO_civillian_development }
+    	relative_position_id = XHO_civillian_development
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 15
+			unlock_decision_category_tooltip = XHO_schiphol_airport_category
+		}
+	}
+
+	focus = {
+		id = XHO_research_slot
+		available = {
+		}
+		icon = GFX_focus_ARG_universidad_de_buenos_aires
+		prerequisite = { focus = XHO_steel_mills }
+    	relative_position_id = XHO_steel_mills
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XHO_research_slot_tt1
+			effect_tooltip = {
+				add_tech_bonus = {
+					bonus = 1.5
+					uses = 2
+					category = air_equipment
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XHO_research_slot_tt2
+			effect_tooltip = {
+				add_tech_bonus = {
+					bonus = 2
+					uses = 1
+					category = concentrated_industry_category
+					category = dispersed_industry_category
+				}
+			}
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = FokkerInvited
+					}
+					add_tech_bonus = {
+						bonus = 1.5
+						uses = 2
+						category = air_equipment
+					}
+				}
+
+				if = {
+					limit = {
+						has_completed_focus = XNE_joint_construction_effort
+					}
+					add_tech_bonus = {
+						bonus = 2
+						uses = 1
+						category = concentrated_industry_category
+						category = dispersed_industry_category
+					}
+				}
+			}
 		}
 	}
 }

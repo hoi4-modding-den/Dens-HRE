@@ -4,15 +4,15 @@ XNE_propose_integration_category = {
 
 		priority = -1
 
-		icon = POL_organize_strike_two
+		icon = eng_trade_unions_demand
 
 		ai_will_do = {
 			base = 1
 		}
 
 		target_root_trigger = {
-			#has_completed_focus = XNE_joint_propose_integration
-            #XNE_is_first_union_leader = yes
+			has_completed_focus = XNE_joint_propose_integration
+            XNE_is_first_union_leader = yes
             tag = XHO
 		}
         
@@ -25,12 +25,12 @@ XNE_propose_integration_category = {
                     tag = XFS
                 }
                 NOT = { is_subject = yes }
-                #is_in_faction_with = ROOT
-            }
+                XNE_is_first_union_member = yes
+            }   
         }
 
 		visible = { 
-			NOT = { has_completed_focus = XHH_strengthen_the_senate }
+			has_completed_focus = XNE_joint_propose_integration
 		}
 
 		cost = 75
@@ -45,6 +45,261 @@ XNE_propose_integration_category = {
                     random_hours = 48
                 }
             }
+        }
+	}
+}
+
+XHO_schiphol_airport_category = {
+    XHO_build_runway_3  = {
+
+		priority = -1
+
+		icon = generic_construction
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+        }
+
+		visible = {
+		}
+
+        highlight_states = {
+            highlight_provinces = { 68 }
+            highlight_color_while_active = 3
+            highlight_color_before_active = 2
+        }
+
+		cost = 20
+        days_remove = 60
+        
+        modifier = {
+            consumer_goods_factor = 0.1
+            political_power_gain = -0.05
+        }
+
+        remove_effect = {
+            7 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                }
+            }
+            set_country_flag = Runway3Built
+        }
+	}
+
+    XHO_build_runway_4  = {
+
+		priority = -2
+
+		icon = generic_construction
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+
+        }
+
+		visible = {
+		}
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = "A third runway has been constructed"
+                has_country_flag = Runway3Built
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 68 }
+            highlight_color_while_active = 3
+            highlight_color_before_active = 2
+        }
+
+		cost = 20
+        days_remove = 60
+        
+        modifier = {
+            consumer_goods_factor = 0.1
+            political_power_gain = -0.05
+        }
+
+        remove_effect = {
+            7 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                }
+            }
+            clr_country_flag = Runway3Built
+            set_country_flag = Runway4Built
+        }
+	}
+
+    XHO_build_new_terminal  = {
+
+		priority = -3
+
+		icon = SOV_place_hq
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+
+        }
+
+		visible = {
+		}
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = "A fourth runway has been constructed"
+                has_country_flag = Runway4Built
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 68 }
+            highlight_color_while_active = 3
+            highlight_color_before_active = 2
+        }
+
+		cost = 60
+        days_remove = 120
+        
+        modifier = {
+            consumer_goods_factor = 0.15
+        }
+
+        remove_effect = {
+            7 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                }
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                }
+            }
+            add_political_power = 100
+            clr_country_flag = Runway4Built
+        }
+	}
+
+    XHO_extend_runway_4  = {
+
+		priority = -4
+
+		icon = generic_construction
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+
+        }
+
+		visible = {
+		}
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = "A fourth runway has been constructed"
+                has_country_flag = Runway4Built
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 68 }
+            highlight_color_while_active = 3
+            highlight_color_before_active = 2
+        }
+
+		cost = 20
+        days_remove = 45
+        
+        modifier = {
+            consumer_goods_factor = 0.05
+            political_power_gain = -0.05
+        }
+
+        remove_effect = {
+            7 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                }
+            }
+            add_stability = 0.025
+            set_country_flag = Runway4Extended
+        }
+	}
+
+    XHO_fokker_factory  = {
+
+		priority = -4
+
+		icon = SWE_set_air_budget
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+
+        }
+
+		visible = {
+		}
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = "The fourth runway has been extended"
+                has_country_flag = Runway4Extended
+            }
+        }
+
+        highlight_states = {
+            highlight_provinces = { 68 }
+            highlight_color_while_active = 3
+            highlight_color_before_active = 2
+        }
+
+		cost = 25
+        days_remove = 90
+        
+        modifier = {
+            consumer_goods_factor = 0.15
+        }
+
+        remove_effect = {
+            7 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                }
+            }
+            clr_country_flag = Runway4Extended
+            set_country_flag = FokkerInvited
         }
 	}
 }
