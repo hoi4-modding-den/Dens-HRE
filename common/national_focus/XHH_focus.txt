@@ -105,6 +105,7 @@ focus_tree = {
 		
 		bypass = {
 			NOT = { controls_state = 59 }
+			NOT = { controls_state = 1046 }
 		}
 
 		available_if_capitulated = no
@@ -131,6 +132,8 @@ focus_tree = {
 
 			add_state_core = 59
 			hidden_effect = { 59 = { cancel_resistance = yes } }
+			add_state_core = 1046
+			hidden_effect = { 1046 = { cancel_resistance = yes } }
 		}
 	}
 
@@ -625,7 +628,7 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 58
+			controls_state = 1044
 		}
 
 		available_if_capitulated = no
@@ -633,7 +636,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_stability = 0.05
-			58 = {
+			1044 = {
 				add_dynamic_modifier = { modifier = XHH_pearl_of_the_north }
 			}
 
@@ -2341,10 +2344,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					controls_state = 58
-					58 = { infrastructure < 5 }
+					controls_state = 1044
+					1044 = { infrastructure < 5 }
 				}
-				58 = {
+				1044 = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -3733,7 +3736,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			owns_state = 1044
 		}
 		
 		bypass = {
@@ -3776,7 +3779,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			owns_state = 1044
 		}
 		
 		bypass = {
@@ -4081,7 +4084,7 @@ focus_tree = {
 		}
 
 		available = {
-			controls_state = 58
+			controls_state = 1044
 		}
 		
 		bypass = {
@@ -4092,7 +4095,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			58 = {
+			1044 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -4359,7 +4362,8 @@ focus_tree = {
 		}
 
 		available = {
-			
+			owns_state = 1017
+			owns_state = 61
 		}
 
 		available_if_capitulated = no

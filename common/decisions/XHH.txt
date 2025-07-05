@@ -225,18 +225,18 @@ political_actions = {
 
 		available = {
 			has_completed_focus = XHH_hamburg_meine_perle
-			controls_state = 58
+			controls_state = 1044
 		}
 
 		visible = { 
-			controls_state = 58
-			58 = { NOT = { has_dynamic_modifier = { modifier = XHH_hamburg_immigration_hotspot scope = XHH } } }
+			controls_state = 1044
+			1044 = { NOT = { has_dynamic_modifier = { modifier = XHH_hamburg_immigration_hotspot scope = XHH } } }
 		}
 
 		cost = 80
 
 		complete_effect = {
-			58 = {
+			1044 = {
 				add_dynamic_modifier = {
 					modifier = XHH_hamburg_immigration_hotspot
 					scope = XHH
