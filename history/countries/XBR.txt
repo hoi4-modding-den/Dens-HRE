@@ -1,9 +1,42 @@
 capital = 64
 
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_military_police = 1
+	tech_recon = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+}
+
+oob = "XBR_1936"
+
 set_country_flag = HRE_is_republic
 
 recruit_character = XBR_ernst_schlange
 recruit_character = XBR_martin_bormann
+
+add_opinion_modifier = {
+    target = XSC
+    modifier = large_decrease
+}
+add_opinion_modifier = {
+    target = XSW
+    modifier = large_decrease
+}
+add_opinion_modifier = {
+    target = XSR
+    modifier = large_decrease
+}
+
+XSC = {
+	add_opinion_modifier = {
+		target = XBR
+		modifier = large_decrease
+	}
+}
+
 
 
 

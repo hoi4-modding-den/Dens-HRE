@@ -3,6 +3,10 @@ capital = 1031
 recruit_character = XSR_jan_skala
 set_country_flag = HRE_is_republic
 
+add_opinion_modifier = {
+	target = XBR
+	modifier = large_decrease
+}
 
 set_politics = {
 	ruling_party = democratic
