@@ -25,19 +25,18 @@ XVE_IFF_conflict_decisions = {
 	#	NOT = { has_country_flag = end_of_IFF } # removes at end of Istrian Resistance/Integration Completed
 	#}
 
-	visible = {
-	}
+	visible_when_empty = yes
 }
 
 XVE_governmental_support_decisions = {
 	icon = GFX_decision_category_generic_propaganda
-	picture = GFX_report_event_DEN_resistance
 	priority = 13	
 
 	allowed = {
 		tag = XVE
 	}
 
-	visible = {
-	}
+	scripted_gui = XVE_governmental_support_decision_ui
+
+	visible_when_empty = yes
 }

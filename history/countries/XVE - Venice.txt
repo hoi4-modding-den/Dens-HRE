@@ -14,8 +14,15 @@ set_power_balance = {
 	id = XVE_power_balance
 	set_value = 0.20
 } 
-set_variable = { 
-	which = istria_integration_var value = 45 
+
+set_variable = {
+	var = istria_integration_var
+	value = 45
+}
+
+set_variable = {
+	var = XVE_gov_support_bar
+	value = 61
 }
 
 set_technology = {
@@ -108,7 +115,7 @@ set_country_flag = XVE_welcome_message_flag
 736 = {
 	start_resistance = yes
 	force_enable_resistance = XVE
-	add_resistance_target = 30
+	add_resistance_target = 40
 	set_compliance = 45
 	set_resistance = 10
 	set_garrison_strength = 1.0
@@ -117,7 +124,7 @@ set_country_flag = XVE_welcome_message_flag
 852 = {
 	start_resistance = yes
 	force_enable_resistance = XVE
-	add_resistance_target = 35
+	add_resistance_target = 50
 	set_compliance = 35
 	set_resistance = 15
 	set_garrison_strength = 1.0

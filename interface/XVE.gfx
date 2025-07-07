@@ -72,4 +72,18 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-}	
+}
+
+### GOVERNMENTAL SUPPORT ###
+spriteTypes = {
+  progressbartype = {
+    name = "GFX_XVE_gov_support_progress_bar"
+    color = { 0.0 0.0 0.0 }
+    colortwo = { 0.0 0.0 0.0 }
+    textureFile1 = "gfx/interface/autonomy/subject_progress_bar_long.dds"
+    textureFile2 = "gfx/interface/XVE/XVE_progress_bar_long_background.dds"
+    size = { x = 420 y = 32 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  }
+}

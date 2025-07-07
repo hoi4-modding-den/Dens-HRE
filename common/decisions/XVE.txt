@@ -122,41 +122,5 @@ XVE_power_balance_decisions = {
 	}		
 }
 
-XVE_IFF_conflict_decisions = {
-}
-
-XVE_governmental_support_decisions = {
-	XVE_offer_tax_exemptions_to_oil_barons = {
-		priority = 18
-		icon = GFX_decision_oil
-
-		allowed = {
-			original_tag = XVE
-		}
-
-		visible = {
-			has_country_leader = {
-				character = XVE_giuseppe_volpi
-				ruling_only = yes
-			}
-		}	
-		
-		available = {
-		}
-
-		days_remove = 70
-		cost = 90
-		fire_only_once = yes	
-
-		remove_effect = {
-			add_popularity = {
-				ideology = democratic
-				popularity = -0.05
-			}
-		}
-
-		ai_will_do = {
-			base = 3
-		}
-	}		
+XVE_IFF_conflict_decisions = {	
 }

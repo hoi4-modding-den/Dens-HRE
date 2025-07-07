@@ -54,9 +54,13 @@ XVE_invest_in_merchant_corporations:0 "Invest in Merchant Corporations"
 XVE_offer_tax_exemptions_to_oil_barons:0 "Offer Tax Exemptions to Oil Barons"
 
 ### DECISIONS ###
-XVE_IFF_conflict_decisions:0 "TEST"
-XVE_IFF_conflict_decisions_desc:0 "erm so we at [?istria_integration_var|%0]"
-XVE_integration_level_text:0 "test 2.0"
+XVE_IFF_conflict_decisions:0 "Istrian Independentist Movement"
+XVE_IFF_conflict_decisions_desc:0 ""
+XVE_integration_level_text:0 "Integration Level:\n      §Y[?istria_integration_var]%§!"
+XVE_resistance_level_text:0 "Istrian Resistance:\n      §R[?XVE.core_resistance@XIF|1]%§!"
+XVE_istrian_independence_mov_info_text:0 "§gEver since the Communal Act of 1911, which oppressed the Istrian communities by stripping away their land and rights for the benefit of the Venetian state, the§! §tIstrian Freedom Front (IFF)§! §ghas fought fiercely for§! §Yindependence and autonomy§! §gin order to distance itself from Venesia. However, under the new rule of Doge Volpi, a kind of§! §Ystatus quo§! §gwas established as tensions eased, with the ultimate objective of reunifying the two regions once again.§!"
+XVE_governmental_support_decisions:0 "Maggior Consiglio"
+XVE_gov_support_percentage:0 "[?XVE_gov_support_bar|0]%"
 
 ### CHARACTERS ###
 XVE_giuseppe_volpi:0 "Giuseppe Volpi"
