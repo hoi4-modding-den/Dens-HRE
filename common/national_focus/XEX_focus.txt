@@ -1153,7 +1153,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			always = no
+		
 		}
 		available_if_capitulated = no
 
@@ -1175,7 +1175,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			always = no
+		
 		}
 		available_if_capitulated = no
 
@@ -1197,7 +1197,208 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			always = no
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_create_air_industries
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_create_a_air_branch }
+		#mutually_exclusive = {  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_create_a_air_branch
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_develop_airports
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_create_a_air_branch }
+		#mutually_exclusive = {  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_create_a_air_branch
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_improve_areal_range
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_develop_airports focus = XEX_create_air_industries }
+		#mutually_exclusive = {  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_create_air_industries
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_small_aircraft_push
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_areal_range }
+		mutually_exclusive = { focus = XEX_medium_aircraft_push }
+		x = -2
+		y = 1
+		relative_position_id = XEX_improve_areal_range
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_medium_aircraft_push
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_areal_range }
+		mutually_exclusive = { focus = XEX_small_aircraft_push }
+		x = 0
+		y = 1
+		relative_position_id = XEX_improve_areal_range
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_bologna_air_craft_research
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_areal_range }
+		relative_position_id = XEX_improve_areal_range
+		
+		#mutually_exclusive = { focus = XEX_small_aircraft_push }
+		
+		x = 2
+		y = 1
+		
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_expand_genoa_dockyards
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_calm_navy_tensions }
+		#mutually_exclusive = {  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_calm_navy_tensions
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_research_better_submarines
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_expand_genoa_dockyards }
+		#mutually_exclusive = {  }
+		x = -1
+		y = 2
+		relative_position_id = XEX_expand_genoa_dockyards
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_research_better_destroyers
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_expand_genoa_dockyards }
+		#mutually_exclusive = {  }
+		x = 1
+		y = 2
+		relative_position_id = XEX_expand_genoa_dockyards
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
 		}
 		available_if_capitulated = no
 
