@@ -1,7 +1,21 @@
 capital = 65
 
-#set_country_flag = HRE_current_emperor
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_trucks = 1
+	gw_artillery = 1
+}
+
+oob = "XSC_1936"
+
+
 recruit_character = XSC_king_george_ii
+
+recruit_character = XSC_gerd_von_rundstedt
+recruit_character = XSC_georghans_reinhardt
+recruit_character = XSC_maximilian_von_weichs
 
 set_autonomy = {
     target = XSR

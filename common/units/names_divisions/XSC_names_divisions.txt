@@ -31,10 +31,10 @@
 #           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
 #                                      the current game version.
 
-XBR_INF_01 = {
+XSC_INF_01 = {
 	name = "Infanterie-Division"
 
-	for_countries = { XBR }
+	for_countries = { XSC }
 
 	can_use = { always = yes }
 
@@ -49,26 +49,25 @@ XBR_INF_01 = {
 	}
 }
 
-XBR_INF_02 = {
-	name = "Schwarzhemden"
+XSC_CAV_01 = {
+	name = "Cavalry Divisions"
 
-	for_countries = { XBR }
+	for_countries = { XSC }
 
-	can_use = { NOT = { has_country_flag = XBR_schwarzhemden_purged} }
+	can_use = { always = yes }
 
-	division_types = { "infantry" }
+	division_types = { "cavalry"  }
 
-	fallback_name = "%d. SH Division"
+	fallback_name = "%d. Kavallerie-Division"
 
-	# Names with numbers (only one number per entry). 
-	# It's okay to have gaps in numbering.
+	# Names with numbers (only one number per entry)
 	ordered = {
-		1 = { "%d. SH Division 'Schlange'" }
-		2 = { "%d. SH Division 'Oder'" }
-		3 = { "%d. SH Division 'Arbeitnehmer'" }
-		4 = { "%d. SH Division 'Brandenburger'" }
-		5 = { "%d. SH Division 'Fasces'" }
-		6 = { "%d. SH Division 'Adler'" }
-	}
-}
+		1 = { "%d. Kavallerie-Division" }
+		3 = { "%d. Kavallerie-Division" }
+		4 = { "%d. Kavallerie-Division" }
+		
+		# deleted Kosaken-Kavallerie-Divisions as they depend on a German occupation of Ukraine that may not occur
 
+	}
+	
+}

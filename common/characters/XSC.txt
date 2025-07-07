@@ -12,5 +12,75 @@ characters = {
 			id = -1
 		}
 	}
+	XSC_gerd_von_rundstedt = {
+		name = GER_gerd_von_rundstedt
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_gerd_von_rundstedt
+				small = GFX_idea_gerd_von_rundstedt
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = gerd_von_rundstedt
+			ledger = army
+			allowed = {
+				original_tag = GER
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.500
+			}
+		}
+		
+		corps_commander = { 
+			traits = { trait_cautious brilliant_strategist old_guard }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XSC_maximilian_von_weichs = {
+		name = GER_maximilian_von_weichs
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_maximilian_von_weichs
+				small = GFX_portrait_GER_maximilian_von_weichs_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = 11
+		}
+	}
+	XSC_georghans_reinhardt = {
+		name = GER_georghans_reinhardt
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_georghans_reinhardt
+				small = GFX_portrait_GER_georghans_reinhardt_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer defensive_doctrine }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 14
+		}
+	}
 }
 	

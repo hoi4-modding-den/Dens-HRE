@@ -25,5 +25,107 @@ characters = {
 			id = -1
 		}
 	}
+	XBR_erich_von_manstein = {
+		name = GER_erich_von_manstein
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_erich_von_manstein
+				small = GFX_idea_manstein
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = theorist
+			idea_token = manstein
+			ledger = army
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				mobile_warfare_expert
+			}
+		}
+		
+		corps_commander = {
+			traits = { brilliant_strategist armor_officer trickster trait_engineer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XBR_fedor_von_bock = {
+		name = GER_fedor_von_bock
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_fedor_von_bock
+				small = GFX_portrait_GER_fedor_von_bock_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer harsh_leader brilliant_strategist }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XBR_hasso_von_manteuffel = {
+		name = GER_hasso_von_manteuffel
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_hasso_von_manteuffel
+				small = GFX_portrait_GER_hasso_von_manteuffel_small
+			}
+		}
+		corps_commander = {
+			traits = { career_officer trait_cautious armor_officer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XBR_henning_von_tresckow = {
+		name = XBR_henning_von_tresckow
+		portraits = {
+			army = {
+				large = GFX_Portrait_Germany_Generic_land_2
+				small = GFX_Portrait_Germany_Generic_land_2_small
+			}
+		}
+		corps_commander = {
+			traits = { career_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XBR_wilhelm_behrens = {
+		name = XBR_wilhelm_behrens
+		portraits = {
+			army = {
+				large = GFX_Portrait_Germany_Generic_land_3
+				small = GFX_Portrait_Germany_Generic_land_3_small
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
 }
 	
