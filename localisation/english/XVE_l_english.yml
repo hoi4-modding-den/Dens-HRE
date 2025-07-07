@@ -27,9 +27,12 @@ XVE_lionhearted_militia_desc:0 "The Republic maintains a proud military traditio
 
 ### TOOLTIPS ###
 XVE_imperial_autonomy_charter_tt:0 "\nThis national spirit will remain in effect till the          [XVE.GetFlag] [XVE.GetName] §Yleaves the HRE§! or §Yreforms the charter§!."
+add_2_to_istria_integration_var_tt:0 "£GFX_national_unity_texticon  Integration Level: §Y2%§!"
+add_5_to_istria_integration_var_tt:0 "£GFX_national_unity_texticon  Integration Level: §Y5%§!"
 
 ### CUSTOM MODIFIERS ###
 XVE_gov_support:0 "£GFX_change_government  Government Approval"
+XVE_istria_integration:0 "£GFX_national_unity_texticon  Integration Level"
 
 ### TRAITS ###
 XVE_dux_diplomacy:0 "Dux Diplomacy"
@@ -59,8 +62,14 @@ XVE_offer_tax_exemptions_to_oil_barons:0 "Offer Tax Exemptions to Oil Barons"
 ### DECISIONS ###
 XVE_IFF_conflict_decisions:0 "Istrian Independentist Movement"
 XVE_IFF_conflict_decisions_desc:0 ""
-XVE_integration_level_text:0 "Integration Level:\n      §Y[?istria_integration_var]%§!"
-XVE_resistance_level_text:0 "Istrian Resistance:\n      §R[?XVE.core_resistance@XIF|1]%§!"
+XVE_food_and_goods_subsidies:0 "Food and Goods Subsidies"
+XVE_food_and_goods_subsidies_desc:0 "Subsidized food and essential supplies should be directed to the Istrian countryside, particularly to villages and urban districts previously overlooked by development plans and administrations. The distribution efforts focus on stabilizing regions marked by economic neglect and social unrest, aiming to restore confidence in the central administration and introduce the foundations of a 'welfare state' previously lacking in Istria."
+XVE_fund_the_a34_project:0 "Fund the A34 Project"
+XVE_fund_the_a34_project_desc:0 "Delays and poor oversight have stalled construction of the A34 route, a vital link between Istria and the Venetian heartland. Renewed investment seeks to accelerate progress, strengthen regional integration, and lay the foundation for long-term economic growth across the northeastern corridor."
+XVE_integration_level_text:0 "Integration Level:"
+XVE_integration_level_text2:0 "§Y[?istria_integration_var]%§!"
+XVE_resistance_level_text:0 "Istrian Resistance:"
+XVE_resistance_level_text2:0 "§R[?XVE.core_resistance@XIF|1]%§!"
 XVE_istrian_independence_mov_info_text:0 "§gEver since the Communal Act of 1911, which oppressed the Istrian communities by stripping away their land and rights for the benefit of the Venetian state, the§! §tIstrian Freedom Front (IFF)§! §ghas fought fiercely for§! §Yindependence and autonomy§! §gin order to distance itself from Venesia. However, under the new rule of Doge Volpi, a kind of§! §Ystatus quo§! §gwas established as tensions eased, with the ultimate objective of reunifying the two regions once again.§!"
 XVE_governmental_support_decisions:0 "Great Council of Venice"
 XVE_gov_support_header:0 "Maggior Consiglio"

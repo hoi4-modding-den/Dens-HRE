@@ -160,6 +160,16 @@ guiTypes = {
 			maxWidth = 500
 		}
 		instantTextBoxType = {
+			name ="XVE_integration_level_text2"
+			position = { x = -140 y = 130 }
+			#font = "hoi_22typewriter"
+			font = "hoi_24header"
+			text = "XVE_integration_level_text2"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}		
+		instantTextBoxType = {
 			name ="XVE_resistance_level_text"
 			position = { x = 15 y = 40 }
 			font = "hoi_24header"
@@ -167,7 +177,16 @@ guiTypes = {
 			format = left
 			maxHeight = 42
 			maxWidth = 500
-		}		
+		}
+		instantTextBoxType = {
+			name ="XVE_resistance_level_text2"
+			position = { x = -140 y = 70 }
+			font = "hoi_24header"
+			text = "XVE_resistance_level_text2"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}					
 		instantTextBoxType = {
 			name ="XVE_istrian_independence_mov_info_text"
 			position = { x = 243 y = -130 }
@@ -204,7 +223,7 @@ guiTypes = {
 		#TEXT
 		instantTextBoxType = {
 			name ="XVE_gov_support_percentage"
-			position = { x = 0 y = 190 }
+			position = { x = 1 y = 191 }
 			font = "hoi_24header"
 			text = "XVE_gov_support_percentage"
 			format = center
