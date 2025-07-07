@@ -76,6 +76,33 @@ def find_state_by_id(target_state_id, states_directory):
     print(f"Error: State {target_state_id} not found in any state files")
     return None
 
+# Find multiple states based on their IDs
+def find_states_by_ids(target_state_ids, states_directory):
+    """Find multiple state files by IDs and return dictionary of state_id -> province list"""
+    if not os.path.exists(states_directory):
+        print(f"Error: States directory not found: {states_directory}")
+        return {}
+    
+    found_states = {}
+    remaining_ids = set(target_state_ids)
+    
+    # Search through all state files
+    for filename in os.listdir(states_directory):
+        if filename.endswith('.txt') and remaining_ids:
+            file_path = os.path.join(states_directory, filename)
+            state_id, provinces = parse_state_file(file_path)
+            
+            if state_id in remaining_ids:
+                found_states[state_id] = provinces
+                remaining_ids.remove(state_id)
+                print(f"Found state {state_id} in file: {filename} ({len(provinces)} provinces)")
+    
+    # Report any missing states
+    if remaining_ids:
+        print(f"Warning: Could not find states: {sorted(remaining_ids)}")
+    
+    return found_states
+
 # Load province data from definition.csv - See unitstacks.py
 def load_province_data(csv_path):
     """Load province data from definition.csv"""
@@ -167,9 +194,9 @@ def find_nearest_sea_province(land_center, sea_centers):
 
     return nearest_sea
 
-# Load the existing buildings from buildings.txt for the given state
-def load_existing_buildings(buildings_path, state_id):
-    """Load existing buildings for the specified state"""
+# Load the existing buildings from buildings.txt for the given states
+def load_existing_buildings(buildings_path, state_ids):
+    """Load existing buildings for the specified states"""
     existing_buildings = []
     
     try:
@@ -180,7 +207,7 @@ def load_existing_buildings(buildings_path, state_id):
                 if line and not line.startswith('//'):
                     try:
                         parts = line.split(';')
-                        if len(parts) >= 7 and int(parts[0]) == state_id:
+                        if len(parts) >= 7 and int(parts[0]) in state_ids:
                             existing_buildings.append(line)
                     except (ValueError, IndexError):
                         continue
@@ -256,29 +283,86 @@ def write_buildings_output(existing_buildings, new_entries, output_path, include
         for entry in all_entries:
             f.write(entry + '\n')
 
+def parse_state_ids(input_string):
+    """Parse state IDs from user input - supports single ID, comma-separated, or ranges"""
+    state_ids = []
+    
+    # Split by commas and process each part
+    for part in input_string.split(','):
+        part = part.strip()
+        
+        # Check if it's a range (e.g., "1-5")
+        if '-' in part:
+            try:
+                start, end = part.split('-')
+                start, end = int(start.strip()), int(end.strip())
+                state_ids.extend(range(start, end + 1))
+            except ValueError:
+                print(f"Warning: Invalid range format '{part}', skipping")
+        else:
+            # Single number
+            try:
+                state_ids.append(int(part))
+            except ValueError:
+                print(f"Warning: Invalid state ID '{part}', skipping")
+    
+    return sorted(list(set(state_ids)))  # Remove duplicates and sort
+
 def main():
-    # User input for state ID
-    state_id = int(input("Enter the State ID: "))
+    # User input for state IDs
+    print("Enter State ID(s). You can use:")
+    print("- Single ID: 123")
+    print("- Multiple IDs: 123,124,125")
+    print("- Ranges: 123-127")
+    print("- Mixed: 123,125-127,130")
     
-    # Find and parse the state file
-    print(f"\nSearching for state {state_id} in {states_path}...")
-    province_ids = find_state_by_id(state_id, states_path)
+    state_input = input("Enter the State ID(s): ").strip()
     
-    # If the state has no provinces, exit
-    if province_ids is None:
-        print("Exiting...")
+    if not state_input:
+        print("No state IDs provided. Exiting...")
         return
     
-    # Otherwise, output the number of provinces in the state for user verification
-    print(f"Found {len(province_ids)} provinces in state {state_id}")
-    print(f"Province IDs: {province_ids[:10]}{'...' if len(province_ids) > 10 else ''}")
+    # Parse state IDs
+    state_ids = parse_state_ids(state_input)
+    
+    if not state_ids:
+        print("No valid state IDs found. Exiting...")
+        return
+    
+    print(f"\nProcessing {len(state_ids)} state(s): {state_ids}")
+    
+    # Find and parse the state files
+    print(f"\nSearching for states in {states_path}...")
+    states_data = find_states_by_ids(state_ids, states_path)
+    
+    # If no states found, exit
+    if not states_data:
+        print("No valid states found. Exiting...")
+        return
+    
+    # Calculate total provinces across all states
+    total_provinces = sum(len(provinces) for provinces in states_data.values())
+    print(f"\nFound {len(states_data)} states with {total_provinces} total provinces")
+    
+    # Check if any states have coastal provinces
+    print("\nLoading province data...")
+    prov_id_to_rgb, prov_id_to_coastal, sea_provinces = load_province_data(csv_path)
+    
+    # Check coastal status for all states
+    states_with_coastal = []
+    for state_id, province_ids in states_data.items():
+        has_coastal = any(prov_id_to_coastal.get(pid, False) for pid in province_ids)
+        if has_coastal:
+            states_with_coastal.append(state_id)
+    
+    print(f"States with coastal provinces: {states_with_coastal}")
+    has_any_coastal = len(states_with_coastal) > 0
     
     # Output the available building types
     print("\nAvailable building types:")
     print("- arms_factory")
     print("- industrial_complex")
     print("- air_base")
-    print("- naval_base")
     print("- naval_base_spawn")
     print("- dockyard")
     print("- bunker")
@@ -287,33 +371,70 @@ def main():
     print("- synthetic_refinery")
     print("- nuclear_reactor_spawn")
     print("- floating_harbor")
+    print("- radar_station")
+    print("- fuel_silo")
+    print("- special_project_facility_spawn")
+    print("- stronghold_network")
+    print("\nSpecial options:")
+    print("- all (generates all valid buildings for these states)")
+    print("- province (generates only province-specific buildings: bunker, coastal_bunker)")
     
     # Comma separated list of building types to generate based on user input
-    print("\nEnter building types to generate (comma-separated):")
-    building_input = input("Building types: ").strip()
+    print("\nEnter building types to generate (comma-separated) or use 'all'/'province':")
+    building_input = input("Building types: ").strip().lower()
     
     # Parse and clean building types
     if not building_input:
         print("No building types specified. Exiting...")
         return
     
-    building_types = [x.strip() for x in building_input.split(',') if x.strip()]
-    
-    if not building_types:
-        print("No valid building types specified. Exiting...")
-        return
+    # Handle special options
+    if building_input == "all":
+        # Base buildings that every state gets
+        building_types = [
+            'arms_factory', 'industrial_complex', 'air_base', 'bunker', 
+            'anti_air_building', 'synthetic_refinery', 'nuclear_reactor_spawn',
+            'radar_station', 'fuel_silo', 'special_project_facility_spawn', 'stronghold_network'
+        ]
+        
+        # Add coastal buildings if any state has coastal provinces
+        if has_any_coastal:
+            building_types.extend(['naval_base_spawn', 'dockyard', 
+                                 'coastal_bunker', 'floating_harbor'])
+        
+        print(f"Selected 'all' - generating {len(building_types)} building types")
+        
+    elif building_input == "province":
+        # Only province-specific buildings
+        building_types = ['bunker']
+        
+        # Add coastal bunker if any state has coastal provinces
+        if has_any_coastal:
+            building_types.append('coastal_bunker')
+        
+        print(f"Selected 'province' - generating {len(building_types)} province-specific building types")
+        
+    else:
+        # Manual selection
+        building_types = [x.strip() for x in building_input.split(',') if x.strip()]
+        
+        if not building_types:
+            print("No valid building types specified. Exiting...")
+            return
     
     print(f"Selected building types: {building_types}")
 
     # Prompt user for whether to include existing buildings
     include_existing = input("Include existing buildings in output? (y/n): ").strip().lower() == 'y'
     
-    # Set the output path for the buildings file - Feel free to modify
-    output_path = f"buildings_state_{state_id}.txt"
+    # Set the output path for the buildings file
+    if len(state_ids) == 1:
+        output_path = f"buildings_state_{state_ids[0]}.txt"
+    else:
+        min_state = min(state_ids)
+        max_state = max(state_ids)
+        output_path = f"buildings_states_{min_state}-{max_state}.txt"
     
-    # Fetch the province data
-    print("\nLoading province data...")
-    prov_id_to_rgb, prov_id_to_coastal, sea_provinces = load_province_data(csv_path)
     print(f"Loaded {len(prov_id_to_rgb)} land provinces and {len(sea_provinces)} sea provinces")
     
     # Calculate the centers of provinces - both land and sea.
@@ -326,29 +447,42 @@ def main():
     print("Loading heightmap...")
     heightmap = Image.open(heightmap_path).convert("L")
     
-    # Fetch the existing buildings for the given state
+    # Fetch the existing buildings for the given states
     print("Loading existing buildings...")
-    existing_buildings = load_existing_buildings(buildings_path, state_id)
-    print(f"Found {len(existing_buildings)} existing buildings for state {state_id}")
+    existing_buildings = load_existing_buildings(buildings_path, state_ids)
+    print(f"Found {len(existing_buildings)} existing buildings for selected states")
     
-    # Generate the buildings the user requested
+    # Generate the buildings for all states
     print("Generating building entries...")
-    new_entries = generate_building_entries(
-        state_id, province_ids, land_centers, sea_centers, 
-        prov_id_to_coastal, heightmap, building_types
-    )
-    print(f"Generated {len(new_entries)} new building entries")
+    all_new_entries = []
     
-    # Show coastal province info
-    coastal_provinces = [pid for pid in province_ids if prov_id_to_coastal.get(pid, False)]
-    print(f"Coastal provinces in this state: {coastal_provinces}")
+    for state_id, province_ids in states_data.items():
+        print(f"Processing state {state_id} ({len(province_ids)} provinces)...")
+        
+        # Generate entries for this state
+        state_entries = generate_building_entries(
+            state_id, province_ids, land_centers, sea_centers, 
+            prov_id_to_coastal, heightmap, building_types
+        )
+        
+        all_new_entries.extend(state_entries)
+        
+        # Show coastal province info for this state
+        coastal_provinces = [pid for pid in province_ids if prov_id_to_coastal.get(pid, False)]
+        if coastal_provinces:
+            print(f"  Coastal provinces: {coastal_provinces}")
+        
+        print(f"  Generated {len(state_entries)} building entries")
+    
+    print(f"Generated {len(all_new_entries)} total building entries")
     
     # Write the output to the specified file
     print(f"Writing output to {output_path}...")
-    write_buildings_output(existing_buildings, new_entries, output_path, include_existing)
+    write_buildings_output(existing_buildings, all_new_entries, output_path, include_existing)
     
     # Final output
-    print(f"\nGenerated {len(new_entries)} building entries for state {state_id}")
+    print(f"\nGenerated {len(all_new_entries)} building entries for {len(states_data)} states")
+    print(f"States processed: {sorted(states_data.keys())}")
     print(f"Output written to {output_path}")
 
 if __name__ == "__main__":
