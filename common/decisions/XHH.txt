@@ -310,16 +310,16 @@ political_actions = {
 
 }
 
-XHH_land_integration = {
+foreign_politics = {
 
-	XHH_integrate_lands  = {
+	XHH_demand_wilhelmshaven = {
 
-		priority = -1
+		priority = 1
 
-		icon = SWI_isolate_switzerland
+		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 100
+			base = 15
 		}
 
 		allowed = {  
@@ -328,56 +328,215 @@ XHH_land_integration = {
 
 		available = {
 			FROM = {
-				all_core_state = {
-					is_controlled_by = ROOT
-				}
+				NOT = { has_war_with = ROOT }
+				controls_state = 56
 			}
 		}
 
+		visible = {
+			NOT = { controls_state = 56 }
+			has_completed_focus = XHH_reobtain_northern_port_cities
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
 		target_trigger = {
-			is_in_array = {
-				array = XHH.XHH_integratable_countries
-				value = FROM.id
+			FROM = {
+				controls_state = 56
 			}
 		}
 
 		targets_dynamic = yes
-		target_non_existing = yes 
+
+		cost = 50
 
 		fire_only_once = yes
 
-		cancel_trigger = {
-			NOT = {
-				FROM = {
-					all_core_state = {
-						is_controlled_by = ROOT
-					}
-				}
-			}
-		}
-
-		cost = 100
-
-		days_remove = 200
+		days_remove = 20
 
 		modifier = {
-			compliance_growth = 0.01
+			political_power_cost = 0.05
 		}
+
+		war_with_target_on_remove = yes
 
 		remove_effect = {
-			remove_from_array = {
-				array = XHH.XHH_integratable_countries
-				value = FROM
-			}
-			every_state = {
-				limit = {
-					is_core_of = FROM
+			FROM = {
+				country_event = {
+					id = XHH_diplo_events.1
+					days = 3
 				}
-				add_core_of = ROOT
-				hidden_effect = { cancel_resistance = yes }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				56 = {
+					transfer_state_to = ROOT
+					add_core_of = ROOT
+				}
+			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 2
+					name = XHH_demand_wilhelmshaven
+				}
+			}
+		}
+	}
+
+	XHH_demand_cuxhaven = {
+
+		priority = 1
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				controls_state = 1053
 			}
 		}
 
+		visible = {
+			NOT = { controls_state = 1053 }
+			has_completed_focus = XHH_reobtain_northern_port_cities
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				controls_state = 1053
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 20
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		war_with_target_on_remove = yes
+
+		remove_effect = {
+			1053 = { save_event_target_as = demanded_prov_target set_state_flag = give_core_to_state_flag }
+			FROM = {
+				country_event = {
+					id = generic.23
+					days = 3
+				}
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				1053 = {
+					transfer_state_to = ROOT
+					add_core_of = ROOT
+				}
+			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 1
+					name = XHH_demand_cuxhaven
+				}
+			}
+		}
+	}
+
+	XHH_demand_nordenham = {
+
+		priority = 1
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				controls_state = 1052
+			}
+		}
+
+		visible = {
+			NOT = { controls_state = 1052 }
+			has_completed_focus = XHH_reobtain_northern_port_cities
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				controls_state = 1052
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 20
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		war_with_target_on_remove = yes
+
+		remove_effect = {
+			1052 = { save_event_target_as = demanded_prov_target set_state_flag = give_core_to_state_flag }
+			FROM = {
+				country_event = {
+					id = generic.23
+					days = 3
+				}
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				1052 = {
+					transfer_state_to = ROOT
+					add_core_of = ROOT
+				}
+			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 1
+					name = XHH_demand_nordenham
+				}
+			}
+		}
 	}
 
 }
@@ -411,7 +570,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 100
+		ai_hint_pp_cost = 100
+        custom_cost_trigger = {
+			has_political_power > 99
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -100
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -462,7 +640,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -517,7 +714,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -572,7 +788,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -627,7 +862,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -682,7 +936,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -737,7 +1010,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -797,7 +1089,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 100
+		ai_hint_pp_cost = 100
+        custom_cost_trigger = {
+			has_political_power > 99
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -100
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -856,7 +1167,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -911,7 +1241,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 80
+		ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_political_power > 79
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies_2
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -80
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -972,7 +1321,26 @@ XHH_chartered_colonial_companies = {
 			has_dynamic_modifier = { modifier = XHH_colonial_wealth }
 		}
 
-		cost = 100
+		ai_hint_pp_cost = 100
+        custom_cost_trigger = {
+			has_political_power > 99
+			OR = {
+				check_variable = {
+					XHH_money > 2
+				}
+				check_variable = {
+					XHH_influence > 2
+				}
+			}
+		}
+		custom_cost_text = decision_cost_colonies
+
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -100
+				XHH_colonial_expansion_cost = yes
+			}
+		}
 
 		fire_only_once = yes
 
@@ -1319,7 +1687,7 @@ XHH_imperial_diplomacy = {
 
 		priority = 0
 
-		icon = hol_exchange_intelligence_data
+		icon = eng_ally_imperialist_coup
 
 		ai_will_do = {
 			base = 15
@@ -1331,7 +1699,12 @@ XHH_imperial_diplomacy = {
 
 		available = {
 			FROM = {
+				has_civil_war = no
 				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value < 80
+				}
 			}
 		}
 
@@ -1346,7 +1719,6 @@ XHH_imperial_diplomacy = {
 		target_trigger = {
 			FROM = {
 				has_country_flag = HRE_member_state
-				is_subject = no
 				has_civil_war = no
 				OR = {
 					is_major = yes
@@ -1355,7 +1727,7 @@ XHH_imperial_diplomacy = {
 				}
 				has_opinion = {
 					target = ROOT
-					value < 50
+					value < 80
 				}
 			}
 		}

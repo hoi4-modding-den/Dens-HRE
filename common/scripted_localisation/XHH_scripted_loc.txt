@@ -39,6 +39,26 @@ defined_text = {
 }
 
 defined_text = {
+    name = XHH_get_col_cost_icon
+    text = {
+        trigger = {
+            ROOT = {
+				has_country_flag = XHH_money_system_unlocked
+			}
+        }
+        localization_key = XHH_get_col_cost_money
+    }
+    text = {
+        trigger = {
+            ROOT = {
+				has_country_flag = XHH_influence_system_unlocked
+			}
+        }
+        localization_key = XHH_get_col_cost_influence
+    }
+}
+
+defined_text = {
     name = XHH_baltic_sea_control_dispute_tt_1
     text = {
         trigger = {

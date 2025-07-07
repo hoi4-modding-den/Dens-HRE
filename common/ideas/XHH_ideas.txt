@@ -862,7 +862,7 @@ ideas = {
 			traits = { XHH_hamburger_hafen_trait }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 2
 			}
 		}
 
@@ -885,7 +885,7 @@ ideas = {
 			traits = { XHH_hanse_kontor_trait }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 2
 				modifier = {
 					factor = 2
 					XHH_has_hanse_active = yes
@@ -923,7 +923,7 @@ ideas = {
 			traits = { industrial_concern }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 2
 			}
 		}
 
@@ -947,6 +947,10 @@ ideas = {
 			}
 			
 			traits = { electronics_concern }
+
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 }

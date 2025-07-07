@@ -10,14 +10,16 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { HRE_duchy_schleswig HRE_duchy_holstein HRE_duchy_mecklenburg HRE_principality_hannover HRE_principality_bremen XHH_fuerst_of_hamburg }
+			traits = { HRE_duchy_schleswig HRE_duchy_holstein HRE_duchy_mecklenburg HRE_principality_hannover XHH_fuerst_of_hamburg }
 			ideology = despotism
+			desc = XHH_tom_first_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}
 		country_leader = {
-			traits = { HRE_duchy_schleswig HRE_duchy_holstein HRE_duchy_mecklenburg HRE_principality_hannover HRE_principality_bremen XHH_fuerst_of_hamburg constitutional_monarch }
+			traits = { HRE_duchy_schleswig HRE_duchy_holstein HRE_duchy_mecklenburg HRE_principality_hannover XHH_fuerst_of_hamburg constitutional_monarch }
 			ideology = conservatism
+			desc = XHH_tom_first_dem_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}
@@ -127,12 +129,12 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = socialism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = socialism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_ludemann name = XHH_democratic_party_ludemann } }
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
 			}
 
@@ -171,12 +173,12 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = socialism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = socialism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_klinghoffer name = XHH_democratic_party_klinghoffer } }
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
 			}
 
@@ -215,12 +217,12 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = liberalism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = liberalism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_seitz name = XHH_democratic_party_seitz } }
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
 			}
 
@@ -259,12 +261,12 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = liberalism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = liberalism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_kluck name = XHH_democratic_party_kluck } }
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { has_country_leader = { character = XHH_tom_first ruling_only = yes } } } ROOT = { set_country_leader_ideology = conservatism } }
+				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
 				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
 			}
 

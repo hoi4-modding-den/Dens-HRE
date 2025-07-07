@@ -55,3 +55,24 @@ XHH_reduce_worker_unrest_effect = {
         custom_effect_tooltip = generic_skip_one_line_tt
     }
 }
+
+XHH_colonial_expansion_cost = {
+    if = {
+        limit = {
+            has_country_flag = XHH_money_system_unlocked
+        }
+        add_to_variable = {
+            XHH_money = -3
+            tooltip = XHH_money_effect_tt
+        }
+    }
+    if = {
+        limit = {
+            has_country_flag = XHH_influence_system_unlocked
+        }
+        add_to_variable = {
+            XHH_influence = -3
+            tooltip = XHH_influence_effect_tt
+        }
+    }
+}
