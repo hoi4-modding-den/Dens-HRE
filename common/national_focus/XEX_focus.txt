@@ -1345,7 +1345,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_calm_navy_tensions }
 		#mutually_exclusive = {  }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = XEX_calm_navy_tensions
 		
@@ -1367,7 +1367,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
-		x = -1
+		x = -3
 		y = 2
 		relative_position_id = XEX_expand_genoa_dockyards
 		
@@ -1389,9 +1389,141 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
-		x = 1
+		x = 3
 		y = 2
 		relative_position_id = XEX_expand_genoa_dockyards
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_research_battle_ships
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_expand_genoa_dockyards }
+		#mutually_exclusive = {  }
+		x = 2
+		y = 1
+		relative_position_id = XEX_expand_genoa_dockyards
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_research_better_carriers
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_expand_genoa_dockyards }
+		#mutually_exclusive = {  }
+		x = -2
+		y = 1
+		relative_position_id = XEX_expand_genoa_dockyards
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invest_into_generic_navy_research
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_expand_genoa_dockyards }
+		#mutually_exclusive = {  }
+		x = 0
+		y = 1
+		relative_position_id = XEX_expand_genoa_dockyards
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_torpedo_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invest_into_generic_navy_research }
+		mutually_exclusive = { focus = XEX_offensive_navy_focus }
+		x = 1
+		y = 2
+		relative_position_id = XEX_invest_into_generic_navy_research
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_offensive_navy_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_invest_into_generic_navy_research }
+		mutually_exclusive = { focus = XEX_torpedo_focus }
+		x = -1
+		y = 2
+		relative_position_id = XEX_invest_into_generic_navy_research
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_diddy_bluds
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_improve_army_efficency }
+		#mutually_exclusive = {  }
+		x = 2
+		y = 1
+		relative_position_id = XEX_improve_army_efficency
 		
 		cost = 2
 		ai_will_do = {
