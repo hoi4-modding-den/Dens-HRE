@@ -41,7 +41,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_strength }
-		x = -8
+		x = -7
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
 		
@@ -283,9 +283,229 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_growth }
-		x = -16
+		x = -25
 		y = 2
 		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_military_plants_in_turin
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_economical_strength }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_economical_strength
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_dockyard_investements
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_economical_strength }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_economical_strength
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_industrial_expansion
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_dockyard_investements  focus = XEX_military_plants_in_turin}
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_dockyard_investements
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_cooperation_with_big_industries
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_industrial_expansion}
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XEX_industrial_expansion
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_Padanian_Mobilization
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_industrial_expansion}
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XEX_industrial_expansion
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_protect_our_industry
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_Padanian_Mobilization}
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_Padanian_Mobilization
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_allow_female_work
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_Padanian_Mobilization}
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_Padanian_Mobilization
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_streamline_production
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_industrial_expansion}
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XEX_industrial_expansion
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_develop_military_research_stations
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_streamline_production focus = XEX_cooperation_with_big_industries}
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_streamline_production
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_land_facility
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_develop_military_research_stations}
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XEX_develop_military_research_stations
 		
 		cost = 2
 		ai_will_do = {
@@ -305,7 +525,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_economical_strength focus = XEX_economical_growth }
 		#mutually_exclusive = {  }
-		x = 3
+		x = 8
 		y = 1
 		relative_position_id = XEX_economical_strength
 		
@@ -314,7 +534,7 @@ focus_tree = {
 			factor = 20
 		}
 		available = {
-			
+			always = no
 		}
 		available_if_capitulated = no
 
@@ -912,6 +1132,72 @@ focus_tree = {
 		}
 		available = {
 			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_improve_army_efficency
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		#mutually_exclusive = {  }
+		x = 4
+		y = 8
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			always = no
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_calm_navy_tensions
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_adress_the_kingdom }
+		#mutually_exclusive = {  }
+		x = -4
+		y = 8
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			always = no
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_create_a_air_branch
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_calm_navy_tensions focus = XEX_improve_army_efficency }
+		#mutually_exclusive = {  }
+		x = 4
+		y = 1
+		relative_position_id = XEX_calm_navy_tensions
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			always = no
 		}
 		available_if_capitulated = no
 
