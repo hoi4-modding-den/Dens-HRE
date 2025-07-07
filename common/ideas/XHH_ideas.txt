@@ -662,6 +662,52 @@ ideas = {
 			}
 		}
 
+		XHH_defense_fund = {
+			
+			picture = SOV_third_five_year_plan_military
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			on_remove = {
+				add_ideas = XHH_stockpiled_resources
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_arms_factory_factor = 0.25
+				fuel_gain_factor = -0.1
+			}
+		}
+
+		XHH_stockpiled_resources = {
+			
+			picture = generic_stockpile_preparation
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_fuel_consumption_factor = -0.2
+				air_fuel_consumption_factor = -0.2
+				navy_fuel_consumption_factor = -0.2
+			}
+		}
+
 		XHH_imperial_army_training = {
 			
 			picture = generic_manpower_bonus
@@ -702,6 +748,28 @@ ideas = {
 				consumer_goods_factor = -0.15
 				political_power_factor = 0.05
 				industrial_factory_donations = 2
+			}
+		}
+
+		XHH_iron_cross_order_idea = {
+			
+			picture = GER_fan_prussian_militarism
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.1
+				army_org_factor = 0.05
+				army_attack_factor = 0.02
+				army_defence_factor = 0.02
 			}
 		}
 

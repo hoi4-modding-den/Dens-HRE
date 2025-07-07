@@ -95,3 +95,62 @@ XHH_completed_via_event = {
         always = no
     }
 }
+
+XHH_north_german_states_OR = {
+    OR = {
+        state = 5
+        state = 56
+        state = 57
+        state = 58
+        state = 59
+        state = 61
+        state = 62
+        state = 63
+        state = 64
+        state = 68
+        state = 85
+        state = 763
+        state = 807
+        state = 909
+        state = 1017
+        state = 1031
+        state = 1034
+        state = 1040
+        state = 1043
+        state = 1044
+        state = 1045
+        state = 1046
+        state = 1047
+        state = 1048
+    }
+}
+
+XHH_controls_north_german_states = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_controls_north_german_states_tt
+        controls_state = 5
+        controls_state = 56
+        controls_state = 57
+        controls_state = 58
+        controls_state = 59
+        controls_state = 61
+        controls_state = 62
+        controls_state = 63
+        controls_state = 64
+        controls_state = 68
+        controls_state = 85
+        controls_state = 763
+        controls_state = 807
+        controls_state = 909
+        controls_state = 1017
+        controls_state = 1031
+        controls_state = 1034
+        controls_state = 1040
+        controls_state = 1043
+        controls_state = 1044
+        controls_state = 1045
+        controls_state = 1046
+        controls_state = 1047
+        controls_state = 1048
+    }
+}

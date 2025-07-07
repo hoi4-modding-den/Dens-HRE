@@ -26,7 +26,7 @@ XHH_hamburger_investments = {
 	}
 
 	visible = {
-		has_completed_focus = XHH_the_venice_of_the_north
+		has_completed_focus = XHH_hre_diplomatic_ties
 	}
 
 	priority = 2
@@ -45,5 +45,19 @@ XHH_imperial_diplomacy = {
 	}
 
 	priority = 1
+}
+
+XHH_form_north_germany_cat = {
+	icon = generic_formable_nations
+
+	allowed = {
+		original_tag = XHH
+	}
+
+	visible = {
+		has_country_flag = XHH_unlocked_nord_de_formable
+	}
+
+	priority = 99
 }
 

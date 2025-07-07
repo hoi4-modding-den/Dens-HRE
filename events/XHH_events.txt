@@ -942,7 +942,7 @@ news_event = {
 	title = XHH_news_events.5.t
 	desc = XHH_news_events.5.desc
 	
-	picture = GFX_news_event_the_mediterranean_alliance
+	picture = GFX_news_event_german_soldiers
 	
 	major = yes
 	is_triggered_only = yes
@@ -970,6 +970,68 @@ news_event = {
         name = XHH_news_events.5.c
 		trigger = {
 			has_war_with = FROM
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.6
+	title = XHH_news_events.6.t
+	desc = XHH_news_events.6.desc
+	
+	picture = GFX_news_event_german_rally
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.6.a
+		trigger = {
+			OR = {
+				is_ally_with = FROM
+				original_tag = FROM
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.6.b
+		trigger = {
+			NOT = { is_ally_with = FROM }
+			NOT = { original_tag = FROM }
+			NOT = { has_war_with = FROM }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.6.c
+		trigger = {
+			has_war_with = FROM
+		}
+    }
+}
+
+news_event = {
+	id = XHH_news_events.7
+	title = XHH_news_events.7.t
+	desc = XHH_news_events.7.desc
+	
+	picture = GFX_news_event_ger_civil_war
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.7.a
+		trigger = {
+			original_tag = FROM
+		}
+    }
+
+	option = {
+        name = XHH_news_events.7.b
+		trigger = {
+			NOT = { original_tag = FROM }
 		}
     }
 }

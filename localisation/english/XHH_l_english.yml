@@ -13,7 +13,7 @@
  XHH_democratic_DEF: "the Kurfürstentum Hamburg"
  XHH_democratic_ADJ: "Hamburgish"
  XHH_fascism: "North German National State"
- XHH_fascism_DEF: "the Nordeutscher Nationalstaat"
+ XHH_fascism_DEF: "the Norddeutscher Nationalstaat"
  XHH_fascism_ADJ: "North German"
  XHH_communism: "Hamburger Commune"
  XHH_communism_DEF: "the Hamburger Kommune"
@@ -25,6 +25,22 @@
  XHH_republic_democratic: "Republic of Hamburg"
  XHH_republic_democratic_DEF: "the Republik Hamburg"
  XHH_republic_democratic_ADJ: "Hamburgish"
+
+ XHH_north_germany: "North Germany"
+ XHH_north_germany_DEF: "Norddeutschland"
+ XHH_north_germany_ADJ: "North German"
+ XHH_north_germany_neutrality: "North German Confederation"
+ XHH_north_germany_neutrality_DEF: "the Norddeutscher Bund"
+ XHH_north_germany_neutrality_ADJ: "North German"
+ XHH_north_germany_democratic: "North German People's Confederation"
+ XHH_north_germany_democratic_DEF: "the Norddeutscher Volksbund"
+ XHH_north_germany_democratic_ADJ: "North German"
+ XHH_north_germany_fascism: "United North German Reich"
+ XHH_north_germany_fascism_DEF: "the Vereinigtes Norddeutsches Reich"
+ XHH_north_germany_fascism_ADJ: "North German"
+ XHH_north_germany_communism: "North German People's Republic"
+ XHH_north_germany_communism_DEF: "Norddeutsche Volksrepublik"
+ XHH_north_germany_communism_ADJ: "North German"
 
  XH1: "Hanover"
  XH1_DEF: "Hannover"
@@ -180,11 +196,20 @@
  XHH_controls_all_XFT_claimed_states_tt: "Controls all §gclaimed cores states§! of §Y[XFT.GetNameWithFlag]§!"
  XHH_integrate_lands_tt: " \n§1Can§! §Ycore§! §1the states of the aforementioned country. This will take§! §Y200 Days§!§1 and cost§! §Y100 Political Power§!§1.§!"
  XHH_modify_colonial_wealth_tt: "Modify §Y$XHH_colonial_wealth$§! by:"
+ XHH_controls_north_german_states_tt: "Controls all §gNorth German States§!"
+ XHH_requires_unique_path_cost_tt: "Has §Gunlocked§! the §OUnique Path Mechanic§!"
+
+ XHH_money_effect_tt: "£GFX_market_subsidy_small_texticon Financial Leverage: $RIGHT|+=0$"
+ XHH_money_trigger_tt: "At least §Y$RIGHT|0$§! £GFX_market_subsidy_small_texticon Financial Leverage"
+ XHH_influence_effect_tt: "£GFX_legitimacy Imperial Influence: $RIGHT|+=0$"
+ XHH_influence_trigger_tt: "At least §Y$RIGHT|0$§! £GFX_legitimacy Imperial Influence"
 
  XHH_mecklenburg_aegis: "Northern Aegis"
  XHH_national_league: "Deutsch-Nationaler Bund"
 
  RULE_ALLOW_RELEASE_NATIONS_NOT_XHH_TOOLTIP: "§Y[ROOT.GetNameWithFlag]§! §Ris not allowed to release§! §Y[XH1.GetNameWithFlag]§! §Ror§! §Y[XH2.GetNameWithFlag]§! §Rat this point in time.§!"
+
+ on_idea_remove_tt: " \n§YWhen National Spirit is removed:§!"
 
 
 # IDEAS
@@ -221,8 +246,11 @@
  XHH_baltic_sea_dominion_spirit: "Revitalising the Baltic Fleet"
  XHH_seevorherrschaft: "Restore Seevorherrschaft"
  XHH_super_navy: "Hamburg Rules The Waves"
+ XHH_defense_fund: "Defense Preparations"
+ XHH_stockpiled_resources: "Fuel Stockpile"
  XHH_imperial_army_training: "Joint Imperial Army Exercises"
  XHH_catholic_donations_idea: "Catholic Donations"
+ XHH_iron_cross_order_idea: "Prussian-Inspired Militarism"
 
 # CONCERNS
  XHH_hanse_kontor: "Hansekontor Hamburg"
@@ -241,7 +269,7 @@
 
 
 # MIOs
- XHH_porsche_organization: "Porsche Hamburg-Division"
+ XHH_porsche_organization: "Porsche AG"
  XHH_panzerfabrik_lueneburg: "Panzerfabrik Lüneburg"
  XHH_deschimag_organization: "Bremer Schiffs- und Maschinenbau AG"
  XHH_deutsche_werke_organization: "Kaiserliche Werft Kiel"
@@ -294,6 +322,9 @@
 
  XHH_imperial_diplomacy: "Imperial Diplomatic Corps"
  XHH_improve_relations_with_hre_member: "Improve [FROM.GetAdjective] Partnership"
+
+ XHH_form_north_germany_cat: "Norddeutsche Einheit"
+ XHH_form_north_germany: "Form a North German State"
 
 
 # FOCUS TREE
@@ -394,6 +425,8 @@
  XHH_council_of_nobles: "Council of Nobles"
  XHH_council_of_nobles_desc: ""
 
+ XHH_military_defense_fund: "Military Defense Preparations"
+ XHH_military_defense_fund_desc: ""
  XHH_hre_diplomatic_ties: "Maintain Hamburg's Inter-Imperial Ties"
  XHH_hre_diplomatic_ties_desc: ""
  XHH_german_kolonialbund: "Charter for the Kolonialgesellschaft"
@@ -409,13 +442,31 @@
  XHH_democracy_in_the_empire_desc: ""
  XHH_the_venice_of_the_north: "Venedig des Nordens"
  XHH_the_venice_of_the_north_desc: ""
+ XHH_the_venice_of_the_north_tt: "§GUnlocks§! the §OImperial Trade§! System."
+ XHH_economic_developments: "Economic Development Council"
+ XHH_economic_developments_desc: ""
+ XHH_state_funded_healthcare: "Nationalise Healthcare Services"
+ XHH_state_funded_healthcare_desc: ""
  XHH_future_of_science: "Form the Nationalen Technikrat"
  XHH_future_of_science_desc: ""
+ XHH_negotiate_reduced_interventionism: "Negotiate Imperial Free Trade"
+ XHH_negotiate_reduced_interventionism_desc: ""
+ XHH_expand_atlantic_trade: "Transatlantikhandel"
+ XHH_expand_atlantic_trade_desc: ""
+ XHH_venice_hamburg_route: "Venedig-Hamburger Handelsbund"
+ XHH_venice_hamburg_route_desc: ""
+ XHH_record_profits: "Invest our Profits"
+ XHH_record_profits_desc: ""
+ XHH_dam_construction_in_mecklenburg: "Mecklenburg Dam Construction"
+ XHH_dam_construction_in_mecklenburg_desc: ""
+ XHH_cheaper_power: "Siemens Energy Contracts"
+ XHH_cheaper_power_desc: ""
 
  XHH_imperial_ascension: "Imperial Ascension"
  XHH_imperial_ascension_desc: ""
  XHH_the_empire_of_the_seas: "Imperium der Meere"
  XHH_the_empire_of_the_seas_desc: ""
+ XHH_the_empire_of_the_seas_tt: "§GUnlocks§! the §OImperial Influence§! System."
  XHH_reconcile_with_the_papacy: "Reconcile with the Papacy"
  XHH_reconcile_with_the_papacy_desc: ""
  XHH_catholic_donations: "Catholic Donations"
@@ -455,9 +506,9 @@
  XHH_nationalise_the_unions_desc: ""
  XHH_indoctrinate_the_army: "Ensure Army Loyalty"
  XHH_indoctrinate_the_army_desc: ""
- XHH_mobilise_society: "War Waits For No One"
+ XHH_mobilise_society: "Mobilise the Economy"
  XHH_mobilise_society_desc: ""
- XHH_protect_our_sovereignty: "Protect our Sovereignty"
+ XHH_protect_our_sovereignty: "Protect our National Interests"
  XHH_protect_our_sovereignty_desc: ""
  XHH_arms_industry_contracts: "Arms Industry Contracts"
  XHH_arms_industry_contracts_desc: ""
@@ -465,6 +516,14 @@
  XHH_porsche_panzerfabrik_bremen_desc: ""
  XHH_integrate_the_militias: "Integrate the Miliz"
  XHH_integrate_the_militias_desc: ""
+ XHH_iron_cross_order: "Order of the Iron Cross"
+ XHH_iron_cross_order_desc: ""
+ XHH_self_sustaining_war_machine: "Self-Sustaining War Machine"
+ XHH_self_sustaining_war_machine_desc: ""
+ XHH_military_control: "Total Military Control"
+ XHH_military_control_desc: ""
+ XHH_strike_prussia: "Befreiung von Pommern und Preußen"
+ XHH_strike_prussia_desc: ""
 
  XHH_modernise_the_landeswehr: "Modernise the Landeswehr"
  XHH_modernise_the_landeswehr_desc: ""
@@ -631,6 +690,15 @@
  XHH_news_events.5.a: "The coast is ours!"
  XHH_news_events.5.b: "The Hamburger Navy seems unbeatable."
  XHH_news_events.5.c: "They will fall in the end!"
+ XHH_news_events.6.t: "Hamburg unites North Germany"
+ XHH_news_events.6.desc: "In a grand ceremony, [FROM.GetLeader] has announced the unification of North Germany under [FROM.GetNameDef].\n \nTheir stated goals are to protect the North German people and ensure their existence within the Holy Roman Empire is not threatened, and that their mission has not yet come to an end."
+ XHH_news_events.6.a: "Einigkeit für alle Deutschen!"
+ XHH_news_events.6.b: "How will this affect us?"
+ XHH_news_events.6.c: "It will not avail them."
+ XHH_news_events.7.t: "German National Revolution in Hamburg"
+ XHH_news_events.7.desc: "Following the Kurfürst's attempt to institute a royal dictatorship, the Nationale Union, a nationalist group in Hamburg, has overthrown the Princely regime and established a nationalist republic.\n \nThe new government has already received pushbacks from various groups, including the [XH1.GetAdjective] [XH1.GetFascistParty], the Hamburgish Labour Union Movement and the SPD."
+ XHH_news_events.7.a: "The Nation is safe in our hands!"
+ XHH_news_events.7.b: "What is happening in Hamburg?"
 
 
 # STATE NAMES

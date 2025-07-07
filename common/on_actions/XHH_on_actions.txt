@@ -40,7 +40,12 @@ on_actions = {
                         }
                     }
                     set_country_flag = HRE_is_republic
-                    set_cosmetic_tag = XHH_republic
+                    if = {
+                        limit = {
+                            NOT = { has_cosmetic_tag = XHH_north_germany }
+                        }
+                        set_cosmetic_tag = XHH_republic
+                    }
                 }
                 if = {
                     limit = {

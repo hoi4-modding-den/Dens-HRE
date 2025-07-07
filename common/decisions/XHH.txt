@@ -1030,9 +1030,14 @@ XHH_hamburger_investments = {
 		available = {
 			FROM = {
 				NOT = { has_war_with = ROOT }
-				has_opinion = {
-					target = ROOT
-					value > 49
+				if = {
+					limit = {
+						ROOT = { is_ai = no }
+					}
+					has_opinion = {
+						target = ROOT
+						value > 49
+					}
 				}
 			}
 		}
@@ -1107,9 +1112,14 @@ XHH_hamburger_investments = {
 		available = {
 			FROM = {
 				NOT = { has_war_with = ROOT }
-				has_opinion = {
-					target = ROOT
-					value > 19
+				if = {
+					limit = {
+						ROOT = { is_ai = no }
+					}
+					has_opinion = {
+						target = ROOT
+						value > 19
+					}
 				}
 			}
 		}
@@ -1212,9 +1222,14 @@ XHH_hamburger_investments = {
 		available = {
 			FROM = {
 				NOT = { has_war_with = ROOT }
-				has_opinion = {
-					target = ROOT
-					value > 69
+				if = {
+					limit = {
+						ROOT = { is_ai = no }
+					}
+					has_opinion = {
+						target = ROOT
+						value > 49
+					}
 				}
 			}
 		}
@@ -1366,3 +1381,56 @@ XHH_imperial_diplomacy = {
 	}
 
 }
+
+XHH_form_north_germany_cat = {
+
+	XHH_form_north_germany = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				XHH_north_german_states_OR = yes
+			}
+		}
+
+		on_map_mode = decision_view_only 
+
+		available = {
+			XHH_controls_north_german_states = yes
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = {
+					XHH_north_german_states_OR = yes
+				}
+				add_core_of = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = XHH_north_germany
+
+			hidden_effect = {
+				news_event = {
+					id = XHH_news_events.6
+					hours = 3
+				}
+			}
+		}
+
+	}
+
+}
+
