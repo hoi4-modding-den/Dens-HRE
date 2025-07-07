@@ -1,30 +1,51 @@
 HRE_acquire_titles = {
 	HRE_acquire_new_title = {
 		icon = GFX_decision_generic_form_nation
-
-		priority = 500
-
-		ai_will_do = {
-			base = 20
-			modifier = {
-				factor = 0.1
+		
+		state_target = yes
+		target_array = global.HRE_title_states
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				NOT = {
+					is_in_array = {
+						array = HRE_title_countries
+						value = ROOT.id
+					}
+				}
 			}
 		}
-
-		cancel_trigger = {
-			# TODO: Add
+		
+		priority = 500
+		ai_will_do = {
+			base = 20
 		}
 
 		cost = 100
 
-		days_remove = 30
-
-		complete_effect = {
-			# TODO: Add. See titles_scripted_effects.txt
-		}
+		days_remove = 1
 
 		remove_effect = {
-			# TODO: Add. See titles_scripted_effects.txt
+			custom_effect_tooltip = HRE_acquire_new_title_tt
+			add_stability = 0.05
+			add_war_support = 0.05
+			FROM = {
+				add_to_array = { HRE_title_countries = ROOT.id }
+				
+				for_each_loop = {
+					array = HRE_title_acquire_here
+					value = v
+					
+					ROOT = {
+						meta_effect = {
+							text = {
+								add_country_leader_trait = [TRAIT]
+							}
+							TRAIT = "[?v.GetTokenKey]"
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,62 @@
+guiTypes = {
+	containerWindowType = {
+		name = "XRO_bible_study_window"
+		position = { x = 0 y = 43% }
+		size = { width = 100% height = 57% }
+	
+		background = {
+			name = "XRO_bible_study_bg"
+			quadTextureSprite = "GFX_tiled_window2_1b_border"
+			alwaystransparent = no
+		}
+		
+		buttonType = {
+			name = "XRO_main_bible_button"
+			quadTextureSprite = "GFX_focus_generic_pope"
+			pdx_tooltip = XRO_main_bible_button_tt
+			position = { x = 30 y = 25 }
+			orientation = "UPPER_LEFT"
+			alwaystransparent = no
+			scale = 1.2
+		}
+		
+		instantTextboxType = {
+			name = "XRO_passage_title"
+			font = "vic_36"
+			text = "[?XRO_curr_passage.GetTokenLocalizedKey]"
+			maxWidth = 535
+			position = { x = 170 y = 60 }
+			orientation = "UPPER_LEFT"
+			alwaystransparent = no
+		}
+		
+		instantTextboxType = {
+			name = "XRO_passage_description"
+			font = "vic_36"
+			text = "[XRO_curr_passage_description]"
+			maxWidth = 480
+			position = { x = 30 y = 150 }
+			orientation = "UPPER_LEFT"
+			alwaystransparent = no
+		}
+		
+		buttonType = {
+			name = "XRO_enact_reform_button"
+			quadTextureSprite = "GFX_focus_generic_catholic_dominion"
+			pdx_tooltip = XRO_curr_passage_function_tt
+			position = { x = 30 y = -130 }
+			orientation = "LOWER_LEFT"
+			alwaystransparent = no
+			scale = 1.2
+		}
+		
+		buttonType = {
+			name = "XRO_anti_church_button"
+			quadTextureSprite = "GFX_focus_ARG_state_atheism"
+			pdx_tooltip = XRO_anti_church_button_tt
+			position = { x = -140 y = -110 }
+			orientation = "LOWER_RIGHT"
+			alwaystransparent = no
+		}
+	}
+}

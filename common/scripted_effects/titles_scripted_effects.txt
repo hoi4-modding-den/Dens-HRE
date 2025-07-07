@@ -1,29 +1,47 @@
 HRE_title_system = {
-	set_variable = { HRE_title_emperor = 1}
-	set_variable = { HRE_title_kingdom_wurttemberg = 1}
-	set_variable = { HRE_title_archduchy_austria = 1}
-	set_variable = { HRE_title_duchy_styria = 1}
-	set_variable = { HRE_title_principality_hohenzollern = 1}
-	set_variable = { HRE_title_county_cilli = 1}
-	set_variable = { HRE_title_kingdom_padania = 1}
-	set_variable = { HRE_title_principality_milan = 1}
-	set_variable = { HRE_title_principality_hannover = 1}
-	set_variable = { HRE_title_principality_bremen = 1}
-	set_variable = { HRE_title_duchy_schleswig = 1}
-	set_variable = { HRE_title_duchy_holstein = 1}
-	set_variable = { HRE_title_duchy_mecklenburg = 1}
-
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_emperor }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_kingdom_wurttemberg }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_archduchy_austria }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_styria }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_hohenzollern }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_county_cilli }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_kingdom_padania }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_milan }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_hannover }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_principality_bremen }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_schleswig }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_holstein }
-	add_to_array = { global.HRE_title_acquire_array = HRE_title_duchy_mecklenburg }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_emperor }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_kingdom_padania }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_kingdom_wurttemberg }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_archduchy_austria }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_duchy_styria }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_duchy_schleswig }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_duchy_holstein }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_duchy_mecklenburg }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_doge_venice }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_milan }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_hohenzollern }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_hannover }
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_county_cilli }
+	
+	###########
+	#NO TOUCHY#
+	###########
+	for_each_loop = {
+		array = global.HRE_title_acquire_array
+		value = v
+		
+		every_country = {
+			limit = {
+				any_character = {
+					is_country_leader = yes
+					meta_trigger = {
+						text = {
+							has_trait = [TRAIT]
+						}
+						TRAIT = "[?v.GetTokenKey]"
+					}
+				}
+			}
+			capital_scope = {
+				add_to_array = { HRE_title_acquire_here = v }
+				add_to_array = { global.HRE_title_states = THIS.id }
+			}
+		}
+	}
+	
+	every_country = {
+		capital_scope = {
+			add_to_array = { HRE_title_countries = PREV.id }
+		}
+	}
 }

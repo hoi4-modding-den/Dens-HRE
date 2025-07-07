@@ -1,0 +1,14 @@
+defined_text = {
+	name = XRO_curr_passage_description
+	text = { 
+		trigger = { check_variable = { XRO_curr_passage > 0 } }
+		localization_key = "[?XRO_curr_passage.GetTokenKey]_description"
+	}
+}
+defined_text = {
+	name = XRO_curr_passage_function
+	text = { 
+		trigger = { check_variable = { XRO_curr_passage > 0 } }
+		localization_key = "[?XRO_curr_passage.GetTokenKey]_function"
+	}
+}

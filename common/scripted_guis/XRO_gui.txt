@@ -1,0 +1,101 @@
+scripted_gui = {
+	XRO_bible_study = {
+        window_name = XRO_bible_study_window
+        context_type = player_context
+        parent_window_token = politics_tab
+         
+        visible = {
+            tag = XRO
+        }
+        
+        effects = {
+            XRO_main_bible_button_click = {
+				set_variable_to_random = {
+					var = XRO_passage_num
+					min = 1
+					max = 101
+					integer = yes
+				}
+				meta_effect = {
+					text = {
+						set_variable = { XRO_curr_passage = token:XRO_passage_decision_[PASSAGE] }
+					}
+					PASSAGE = "[?XRO_passage_num]"
+				}
+				set_country_flag = XRO_active_passage
+				add_political_power = -75
+			}
+			XRO_enact_reform_button_click = {
+				meta_effect = {
+					text = {
+						activate_decision = [PASSAGE_DECISION]
+					}
+					PASSAGE_DECISION = "[?XRO_curr_passage.GetTokenKey]"
+				}
+				clr_country_flag = XRO_active_passage
+			}
+			XRO_anti_church_button_click = {
+				set_variable = { XRO_active_passage = 0 }
+				set_variable = { XRO_curr_passage = 0 }
+				clr_country_flag = XRO_active_passage
+				add_political_power = 25
+			}
+        }
+        
+        triggers = {
+			XRO_main_bible_button_click_enabled = {
+				has_political_power > 74
+				NOT = { has_country_flag = XRO_active_passage }
+			}
+			XRO_enact_reform_button_click_enabled = {
+				has_country_flag = XRO_active_passage
+			}
+			XRO_anti_church_button_click_enabled = {
+				has_country_flag = XRO_active_passage
+			}
+        }
+        
+        properties = {
+        }
+        
+        # ai_enabled = {
+           
+        # }
+        
+        # ai_test_parent = <string>
+        
+        # ai_test_interval = <int>
+        # ai_test_variance = <float>
+        # ai_test_scopes = <type>
+        
+        # ai_check = {
+            # <triggers>
+        # }
+        
+        # ai_check_scope = {
+            # <triggers>
+        # }
+        
+        # ai_max_weight_taken_per_test = <int>
+        
+        # ai_weights = {
+            # <element>_<modifiers>_click = {
+                # ai_will_do = {
+                    # base = <int>
+                    # factor = <float>
+                    # add = <float>
+                    
+                    # modifier = {
+                        # factor = <float>
+                        # add = <float>
+                        
+                        # <triggers>
+                    # }
+                # }
+                # ignore_lower_weights = {
+                    # factor = <float>
+                # }
+            # }
+        # }
+    }
+}
