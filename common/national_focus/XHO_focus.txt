@@ -9,6 +9,8 @@ focus_tree = {
     shared_focus = XNE_joint_first_union
 	shared_focus = XHO_port_rotterdam
 
+	continuous_focus_position = { x = 100 y = 2000 }
+
     reset_on_civilwar = no
 
     focus = {
@@ -190,11 +192,59 @@ focus_tree = {
 	}
 
 
+
+	focus = {
+		id = XHO_reaffirm_religious_freedoms
+		available = {
+		}
+		mutually_exclusive = { focus = XHO_crack_down_on_calvinism }
+		icon = GFX_focus_RAJ_seek_allies_with_the_muslim_league
+
+		x = 8
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 90
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_crack_down_on_calvinism
+		available = {
+		}
+		mutually_exclusive = { focus = XHO_reaffirm_religious_freedoms }
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+
+		x = 12
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 25
+			add_stability = -0.05
+		}
+	}
+
+
+
 	focus = {
 		id = XHO_artillerie
 		icon = GFX_focus_SWE_let_fly_all_guns
 
-		x = 6
+		x = 20
 		y = 0
 		cost = 10
 
@@ -365,11 +415,12 @@ focus_tree = {
 
 	focus = {
 		id = XHO_infantry_specialisation
-		icon = GFX_focus_RAJ_mountain_guns
+		icon = GFX_focus_ETH_freedom_at_gunpoint
 
 		prerequisite = { focus = XHO_mil_factory }
     	relative_position_id = XHO_mil_factory
-		mutually_exclusive = { focus = XHO_armor_specialisation }
+		mutually_exclusive = { focus = XHO_cavalry_specialisation }
+		mutually_exclusive = { focus = XHO_artillery_specialisation }
 		x = -2
 		y = 2
 		cost = 10
@@ -388,13 +439,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHO_armor_specialisation
-		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+		id = XHO_cavalry_specialisation
+		icon = GFX_focus_generic_horse_studs
 
 		prerequisite = { focus = XHO_mil_factory }
     	relative_position_id = XHO_mil_factory
 		mutually_exclusive = { focus = XHO_infantry_specialisation }
-		mutually_exclusive = { focus = XHO_air_specialisation }
+		mutually_exclusive = { focus = XHO_artillery_specialisation }
 		x = 0
 		y = 2
 		cost = 10
@@ -407,18 +458,19 @@ focus_tree = {
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = XHO_build_mil_industry_2
-				add_idea = XHO_build_mil_industry_2t
+				add_idea = XHO_build_mil_industry_2c
 			}
 		}
 	}
 
 	focus = {
-		id = XHO_air_specialisation
-		icon = GFX_focus_PER_luftwaffe_planes
+		id = XHO_artillery_specialisation
+		icon = GFX_focus_RAJ_mountain_guns
 
 		prerequisite = { focus = XHO_mil_factory }
     	relative_position_id = XHO_mil_factory
-		mutually_exclusive = { focus = XHO_armor_specialisation }
+		mutually_exclusive = { focus = XHO_infantry_specialisation }
+		mutually_exclusive = { focus = XHO_cavalry_specialisation }
 		x = 2
 		y = 2
 		cost = 10

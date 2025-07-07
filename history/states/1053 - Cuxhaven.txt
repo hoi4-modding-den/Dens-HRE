@@ -1,0 +1,29 @@
+state={
+	id=1053
+	name="STATE_1053"
+
+	history={
+		owner = XFS
+		add_claim_by = XFS
+		add_core_of = XHH
+		buildings = {
+			infrastructure = 2
+			13487 = { # Cuxhaven
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			13487 2
+		}
+
+	}
+
+	provinces={
+		13487
+	}
+	manpower=26800
+	buildings_max_level_factor=1.000
+	state_category=rural
+
+	local_supplies=14.0 
+}
