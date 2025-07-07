@@ -1,0 +1,415 @@
+debug_decisions = {
+	XAS_dem_debug = {
+		available = {
+			is_ai = no
+			is_debug = yes
+			tag = XAS
+			NOT = {
+				has_government = democratic
+			}
+		}
+
+		complete_effect = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+			set_popularities = {
+				democratic = 100
+			}
+		}
+	}
+}
+XAS_guilds_regulation_schumpeter = {
+	### ### # # # # ## ## ### ### ### ### ###
+	#   #   # # # # # # # # # #    #  #   # #
+	 #  #   ### # # # # # ### ###  #  ### ## 
+	  # #   # # # # # # # #   #    #  #   # #
+	### ### # # ### # # # #   ###  #  ### # #
+	XAS_consunmer_policies = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 25
+
+		priority = 1
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 1
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_stab
+				value = 0.025
+				tooltip = stability_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_clamp_down_on_union_busting = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 25
+
+		priority = 3
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 1
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_stab
+				value = 0.025
+				tooltip = stability_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_sever_guild_propaganda = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 50
+
+		priority = 5
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 2
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_ws
+				value = 0.05
+				tooltip = war_support_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_enforce_minimum_wage = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 25
+
+		priority = 2
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 1
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_eg
+				value = 0.05
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_me
+				value = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_lower_working_hours = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 25
+
+		priority = 4
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 1
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_eg
+				value = 0.05
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_me
+				value = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_saftey_regulations = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 25
+
+		priority = 8
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 1
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_er
+				value = 0.2
+				tooltip = line_change_production_efficiency_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_anti_nepotist_polices = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 50
+
+		priority = 6
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 2
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_er
+				value = 0.2
+				tooltip = line_change_production_efficiency_factor_tt
+			}
+			add_to_variable = {
+				var = production_speed_buildings_factor
+				value = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+	XAS_zoning_laws = {
+		fire_only_once = yes
+
+		days_remove = 30
+
+		cost = 25
+
+		priority = 7
+
+		remove_effect = {
+			add_to_variable = {
+				var = XAS_joseph_schumpeter_confiscate_base_chance
+				value = 1
+				tooltip = XAS_joseph_schumpeter_confiscate_base_chance_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = production_speed_buildings_factor
+				value = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				var = unchecked_merchant_guilds_cg
+				value = 0.025
+				tooltip = consumer_goods_factor_tt
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_guilds_regulation_schumpeter_count = 1
+				}
+			}
+		}
+	}
+}
+XAS_guilds_regulation_hayek = {
+	
+
+	# # ### # # ### # #
+	# # # # # # #   # #
+	### ###  #  ### ##
+	# # # #  #  #   # #
+	# # # #  #  ### # #
+	XAS_antitrust_laws = {
+		visible = {
+			check_variable = {
+				var = unchecked_merchant_guilds_stab
+				compare = less_than
+				value = 0
+			}
+			check_variable = {
+				var = XAS_antitrust_laws_count
+				compare = less_than
+				value = 3
+			}
+		}
+
+		cost = 50
+
+		priority = 1
+
+		days_re_enable = 90
+		days_remove = 30
+		complete_effect = {
+			add_popularity = {
+				ideology = ROOT
+				popularity = -0.05
+			}
+			custom_override_tooltip = {
+				tooltip = XAS_antitrust_laws_tt
+				if = {
+					limit = {
+						has_government = neutrality
+					}
+					add_timed_idea = {
+						idea = XAS_antitrust_laws_neu_drift
+						days = 30
+					}
+				}
+				else_if = {
+					limit = {
+						has_government = democratic
+					}
+					add_timed_idea = {
+						idea = XAS_antitrust_laws_dem_drift
+						days = 30
+					}
+				}
+				else_if = {
+					limit = {
+						has_government = fascism
+					}
+					add_timed_idea = {
+						idea = XAS_antitrust_laws_fas_drift
+						days = 30
+					}
+				}
+				else = {
+					add_timed_idea = {
+						idea = XAS_antitrust_laws_com_drift
+						days = 30
+					}
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = XAS_guilds_regulation_hayek_tt
+			add_to_variable = {
+				var = unchecked_merchant_guilds_stab
+				value = 0.01
+				tooltip = stability_factor_tt
+			}
+			if = {
+				limit = {
+					check_variable = { 
+						var = XAS_antitrust_laws_count
+						value = 2
+					}
+				}
+				add_to_variable = {
+					var = unchecked_merchant_guilds_cg
+					value = 0.05
+					tooltip = consumer_goods_factor_tt
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					XAS_antitrust_laws_count = 1
+				}
+			}
+		}
+	}
+}

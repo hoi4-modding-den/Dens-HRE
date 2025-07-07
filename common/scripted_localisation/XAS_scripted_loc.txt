@@ -57,3 +57,114 @@ defined_text = {
         localization_key = GFX_portrait_XAS_big_gretch
     }
 }
+defined_text = {
+    name = GetSchumpeterFactories
+    text = {
+        trigger = {
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+            check_variable = { ROOT.XAS_factories_to_confiscate_2 < 1 }
+            check_variable = { ROOT.XAS_factories_to_confiscate_3 < 1 }
+        }
+        localization_key = Schumpeter1Civ
+    }
+    text = {
+        trigger = {
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+            check_variable = { ROOT.XAS_factories_to_confiscate_2 < 1 }
+            check_variable = { ROOT.XAS_factories_to_confiscate_3 < 1 }
+        }
+        localization_key = Schumpeter1Mil
+    }
+    text = {
+        trigger = {
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 1 compare = equals }
+            check_variable = { ROOT.XAS_factories_to_confiscate_3 < 1 }
+        }
+        localization_key = Schumpeter2Civs
+    }
+    text = {
+        trigger = {
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 2 compare = equals }
+            check_variable = { ROOT.XAS_factories_to_confiscate_3 < 1 }
+        }
+        localization_key = Schumpeter2Mils
+    }
+    text = {
+        trigger = {
+            OR = {
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 2 compare = equals }
+                }
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 1 compare = equals }
+                }
+            }
+            check_variable = { ROOT.XAS_factories_to_confiscate_3 < 1 }
+        }
+        localization_key = Schumpeter1Civ1Mil
+    }
+    text = {
+        trigger = {
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 1 compare = equals }
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 1 compare = equals }
+        }
+        localization_key = Schumpeter3Civs
+    }
+    text = {
+        trigger = {
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 2 compare = equals }
+            check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 2 compare = equals }
+        }
+        localization_key = Schumpeter3Mils
+    }
+    text = {
+        trigger = {
+            OR = {
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 1 compare = equals }
+                }
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 1 compare = equals }
+                }
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 2 compare = equals }
+                }
+            }
+        }
+        localization_key = Schumpeter2Civs1Mil
+    }
+    text = {
+        trigger = {
+            OR = {
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 1 compare = equals }
+                }
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 2 compare = equals }
+                }
+                AND = {
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_1 value = 1 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_2 value = 2 compare = equals }
+                    check_variable = { var = ROOT.XAS_factories_to_confiscate_3 value = 2 compare = equals }
+                }
+            }
+        }
+        localization_key = Schumpeter1Civ2Mils
+    }
+}

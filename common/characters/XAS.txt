@@ -27,9 +27,14 @@ characters = {
 			traits = { XAS_hitlers_vision }
 			can_be_fired = no
 			available = {
-				custom_override_tooltip = {
-					tooltip = XAS_cant_be_hired_tt
-					always = no
+				if = {
+					limit = {
+						NOT = { has_completed_focus = XAS_hitlers_vision }
+					}
+					custom_override_tooltip = {
+						tooltip = XAS_cant_be_hired_tt
+						always = no
+					}
 				}
 			}
 			visible = {
@@ -53,9 +58,14 @@ characters = {
 			traits = { XAS_schumpeters_vision }
 			can_be_fired = no
 			available = {
-				custom_override_tooltip = {
-					tooltip = XAS_cant_be_hired_tt
-					always = no
+				if = {
+					limit = {
+						NOT = { has_completed_focus = XAS_schumpeters_vision }
+					}
+					custom_override_tooltip = {
+						tooltip = XAS_cant_be_hired_tt
+						always = no
+					}
 				}
 			}
 			visible = {
@@ -81,11 +91,16 @@ characters = {
 			slot = political_advisor
 			idea_token = XAS_friedrich_hayek_idea
 			traits = { XAS_hayeks_vision }
-			can_be_fired = no
+			can_be_fired = no 
 			available = {
-				custom_override_tooltip = {
-					tooltip = XAS_cant_be_hired_tt
-					always = no
+				if = {
+					limit = {
+						NOT = { has_completed_focus = XAS_hayeks_vision }
+					}
+					custom_override_tooltip = {
+						tooltip = XAS_cant_be_hired_tt
+						always = no
+					}
 				}
 			}
 			visible = {

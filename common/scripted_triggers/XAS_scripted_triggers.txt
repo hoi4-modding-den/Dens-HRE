@@ -1,0 +1,10 @@
+XAS_guilds_regulation_schumpeter_scrippted_t = {
+	ROOT = {
+		custom_override_tooltip = {
+			tooltip = XAS_guilds_regulation_schumpeter_scrippted_t_tt
+			check_variable = {
+				XAS_guilds_regulation_schumpeter_count > 7
+			}
+		}
+	}
+}

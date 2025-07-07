@@ -1,0 +1,745 @@
+@economic_minister_time_tier_1 = 14
+@economic_minister_time_tier_2 = 18
+@economic_minister_time_tier_3 = 18
+@economic_minister_time_tier_4 = 30
+
+focus_tree = {
+	id = XAS_focus
+	country = {
+		base = 0
+		modifier = {
+			add = 20
+			tag = XAS
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	#  _____                                _       ___  ____       _     _            
+	# |  ___|                              (_)      |  \/  (_)     (_)   | |           
+	# | |__  ___ ___  _ __   ___  _ __ ___  _  ___  | .  . |_ _ __  _ ___| |_ ___ _ __ 
+	# |  __|/ __/ _ \| '_ \ / _ \| '_ ` _ \| |/ __| | |\/| | | '_ \| / __| __/ _ \ '__|
+	# | |__| (_| (_) | | | | (_) | | | | | | | (__  | |  | | | | | | \__ \ ||  __/ |   
+	# \____/\___\___/|_| |_|\___/|_| |_| |_|_|\___| \_|  |_/_|_| |_|_|___/\__\___|_|   
+
+	focus = { # GFX_goal_unknown
+		id = XAS_our_economic_minister # Our Economic Minister
+		icon = GFX_goal_generic_austrian_economy
+		cost = 5
+		x = 5
+		y = 0
+
+		completion_reward = {
+			add_ideas = XAS_realized_issues
+		}
+	}
+
+	# Schumpeter
+	focus = {
+		id = XAS_schumpeters_vision # Schumpeter's Vision
+		icon = GFX_goal_XAS_schumpeters_vision
+		cost = 2.2
+		prerequisite = { focus = XAS_our_economic_minister }
+		relative_position_id = XAS_our_economic_minister
+		mutually_exclusive = { focus = XAS_hayeks_vision focus = XAS_hitlers_vision }
+		x = -2
+		y = 1
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = XAS_ascension_of_character_tt
+				CHARACTER = XAS_joseph_schumpeter
+			}
+			show_ideas_tooltip = XAS_joseph_schumpeter_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = GER_ascension_of_character_focus_tt
+				CHARACTER = XAS_joseph_schumpeter
+			}
+			hidden_effect = {
+				activate_advisor = XAS_joseph_schumpeter_idea
+				country_event = { id = XAS_economic_minister.100 days = XAS_economic_minister_pick_focus_days random_days = XAS_economic_minister_pick_focus_random_days }
+			}
+		}
+	}
+	focus = {
+		id = XAS_agressive_regulation # Agressive Regulation
+		icon = GFX_focus_generic_social_democracy
+		cost = @economic_minister_time_tier_1
+		prerequisite = { focus = XAS_schumpeters_vision }
+		relative_position_id = XAS_schumpeters_vision
+		x = -1
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_agressive_regulation_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_1 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FLAG_DAYS = [?XAS_agressive_regulation_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FOCUS = XAS_schumpeters_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = {
+			unlock_decision_category_tooltip = XAS_guilds_regulation_hayek
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_override_tooltip = {	
+				tooltip = XAS_agressive_regulation_confiscation_tt
+				country_event = { id = XAS_economic_minister.110 hours = 12 random_hours = 12 }
+			}
+		}
+	}
+	focus = {
+		id = XAS_grant_program # Grant Program
+		icon = GFX_focus_generic_treaty
+		cost = @economic_minister_time_tier_2
+		prerequisite = { focus = XAS_agressive_regulation }
+		relative_position_id = XAS_agressive_regulation
+		x = 0
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_grant_program_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_2 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FLAG_DAYS = [?XAS_grant_program_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FOCUS = XAS_schumpeters_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = { }
+	}
+	focus = {
+		id = XAS_end_the_merchant_guilds # End the Merchant Guilds
+		icon = GFX_focus_generic_court
+		cost = @economic_minister_time_tier_3
+		prerequisite = { focus = XAS_grant_program }
+		relative_position_id = XAS_grant_program
+		x = 1
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_end_the_merchant_guilds_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_3 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FLAG_DAYS = [?XAS_end_the_merchant_guilds_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FOCUS = XAS_schumpeters_vision
+					}
+					always = no
+				}
+			}
+			XAS_guilds_regulation_schumpeter_scrippted_t = yes
+		}
+
+		completion_reward = {
+			remove_dynamic_modifier = {
+				modifier = XAS_unchecked_merchant_guilds
+			}
+		}
+	}
+	focus = {
+		id = XAS_welfare_state # Welfare State
+		icon = GFX_goal_XAS_welfare_state
+		cost = @economic_minister_time_tier_4
+		prerequisite = { focus = XAS_end_the_merchant_guilds }
+		relative_position_id = XAS_end_the_merchant_guilds
+		x = 0
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_welfare_state_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_4 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FLAG_DAYS = [?XAS_welfare_state_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_joseph_schumpeter
+						FOCUS = XAS_schumpeters_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XAS_realized_issues
+				add_idea = XAS_welfare_state_idea
+			}
+		}
+	}
+
+	# Hayek
+	focus = {
+		id = XAS_hayeks_vision # Hayek's Vision
+		icon = GFX_goal_XAS_hayeks_vision
+		cost = 2.2
+		prerequisite = { focus = XAS_our_economic_minister }
+		relative_position_id = XAS_our_economic_minister
+		mutually_exclusive = { focus = XAS_schumpeters_vision focus = XAS_hitlers_vision }
+		x = 0
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = XAS_ascension_of_character_tt
+				CHARACTER = XAS_friedrich_hayek
+			}
+			show_ideas_tooltip = XAS_friedrich_hayek_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = GER_ascension_of_character_focus_tt
+				CHARACTER = XAS_friedrich_hayek
+			}
+			hidden_effect = {
+				activate_advisor = XAS_friedrich_hayek_idea
+				country_event = { id = XAS_economic_minister.200 days = XAS_economic_minister_pick_focus_days random_days = XAS_economic_minister_pick_focus_random_days }
+			}
+		}
+	}
+		#left
+		focus = {
+			id = XAS_essential_regulation # Essential Regulation
+			icon = GFX_goal_generic_neutrality_focus
+			cost = @economic_minister_time_tier_1
+			prerequisite = { focus = XAS_hayeks_vision }
+			relative_position_id = XAS_hayeks_vision
+			mutually_exclusive = { focus = XAS_complete_deregulation }
+			x = -1
+			y = 1
+
+			available = {
+				if = {
+					limit = {
+						has_country_flag = XAS_essential_regulation_in_progress_flag
+					}
+					set_temp_variable = { temp_focus_days = @economic_minister_time_tier_1 }
+					multiply_temp_variable = { temp_focus_days = 7 }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_inner_circle_focus_in_progress_tt
+							CHARACTER = XAS_friedrich_hayek
+							FLAG_DAYS = [?XAS_essential_regulation_in_progress_flag:days]
+						}
+						always = no 
+					}
+				}
+				else = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+							CHARACTER = XAS_friedrich_hayek
+							FOCUS = XAS_hayeks_vision
+						}
+						always = no
+					}
+				}
+			}
+
+			completion_reward = {
+				unlock_decision_category_tooltip = XAS_guilds_regulation_hayek
+			}
+		}
+		focus = {
+			id = XAS_social_services # Social Services
+			icon = GFX_goal_generic_consumer_goods
+			cost = @economic_minister_time_tier_2
+			prerequisite = { focus = XAS_essential_regulation }
+			relative_position_id = XAS_essential_regulation
+			x = 0
+			y = 1
+
+			available = {
+				if = {
+					limit = {
+						has_country_flag = XAS_social_services_in_progress_flag
+					}
+					set_temp_variable = { temp_focus_days = @economic_minister_time_tier_2 }
+					multiply_temp_variable = { temp_focus_days = 7 }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_inner_circle_focus_in_progress_tt
+							CHARACTER = XAS_friedrich_hayek
+							FLAG_DAYS = [?XAS_social_services_in_progress_flag:days]
+						}
+						always = no 
+					}
+				}
+				else = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+							CHARACTER = XAS_friedrich_hayek
+							FOCUS = XAS_hayeks_vision
+						}
+						always = no
+					}
+				}
+			}
+
+			completion_reward = { }
+		}
+		#right
+		focus = {
+			id = XAS_complete_deregulation # Complete Deregulation
+			icon = GFX_goal_generic_tear_paper
+			cost = @economic_minister_time_tier_1
+			prerequisite = { focus = XAS_hayeks_vision }
+			relative_position_id = XAS_hayeks_vision
+			mutually_exclusive = { focus = XAS_essential_regulation }
+			x = 1
+			y = 1
+
+			available = {
+				if = {
+					limit = {
+						has_country_flag = XAS_complete_deregulation_in_progress_flag
+					}
+					set_temp_variable = { temp_focus_days = @economic_minister_time_tier_1 }
+					multiply_temp_variable = { temp_focus_days = 7 }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_inner_circle_focus_in_progress_tt
+							CHARACTER = XAS_friedrich_hayek
+							FLAG_DAYS = [?XAS_complete_deregulation_in_progress_flag:days]
+						}
+						always = no 
+					}
+				}
+				else = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+							CHARACTER = XAS_friedrich_hayek
+							FOCUS = XAS_hayeks_vision
+						}
+						always = no
+					}
+				}
+			}
+
+			completion_reward = { }
+		}
+		focus = {
+			id = XAS_backdoor_deals # Backdoor Deals
+			icon = GFX_goal_generic_industry_handshake
+			cost = @economic_minister_time_tier_2
+			prerequisite = { focus = XAS_complete_deregulation }
+			relative_position_id = XAS_complete_deregulation
+			x = 0
+			y = 1
+
+			available = {
+				if = {
+					limit = {
+						has_country_flag = XAS_backdoor_deals_in_progress_flag
+					}
+					set_temp_variable = { temp_focus_days = @economic_minister_time_tier_2 }
+					multiply_temp_variable = { temp_focus_days = 7 }
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_inner_circle_focus_in_progress_tt
+							CHARACTER = XAS_friedrich_hayek
+							FLAG_DAYS = [?XAS_backdoor_deals_in_progress_flag:days]
+						}
+						always = no 
+					}
+				}
+				else = {
+					custom_override_tooltip = {
+						tooltip = {
+							localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+							CHARACTER = XAS_friedrich_hayek
+							FOCUS = XAS_hayeks_vision
+						}
+						always = no
+					}
+				}
+			}
+
+			completion_reward = { }
+		}
+	focus = {
+		id = XAS_compromise_with_merchant_guilds # Compromise with Merchant Guilds
+		icon = GFX_goal_generic_improve_relations
+		cost = @economic_minister_time_tier_3
+		prerequisite = { focus = XAS_social_services focus = XAS_backdoor_deals }
+		relative_position_id = XAS_social_services
+		x = 1
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_compromise_with_merchant_guilds_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_3 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_friedrich_hayek
+						FLAG_DAYS = [?XAS_compromise_with_merchant_guilds_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_friedrich_hayek
+						FOCUS = XAS_hayeks_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = { }
+	}
+	focus = {
+		id = XAS_state_with_an_army # State with an Army
+		icon = GFX_goal_XAS_state_with_an_army
+		cost = @economic_minister_time_tier_4
+		prerequisite = { focus = XAS_compromise_with_merchant_guilds }
+		relative_position_id = XAS_compromise_with_merchant_guilds
+		x = 0
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_state_with_an_army_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_4 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_friedrich_hayek
+						FLAG_DAYS = [?XAS_state_with_an_army_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_friedrich_hayek
+						FOCUS = XAS_hayeks_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XAS_realized_issues
+				add_idea = XAS_state_with_an_army_idea
+			}
+		}
+	}
+
+	# Hitler
+	focus = {
+		id = XAS_hitlers_vision # Hitler's Vision
+		icon = GFX_goal_XAS_hitlers_vision
+		cost = 2.2
+		prerequisite = { focus = XAS_our_economic_minister }
+		relative_position_id = XAS_our_economic_minister
+		mutually_exclusive = { focus = XAS_schumpeters_vision focus = XAS_hayeks_vision }
+		x = 2
+		y = 1
+
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = XAS_ascension_of_character_tt
+				CHARACTER = XAS_adolf_hitler
+			}
+			show_ideas_tooltip = XAS_adolf_hitler_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = GER_ascension_of_character_focus_tt
+				CHARACTER = XAS_adolf_hitler
+			}
+			hidden_effect = {
+				activate_advisor = XAS_adolf_hitler_idea
+				country_event = { id = XAS_economic_minister.300 days = XAS_economic_minister_pick_focus_days random_days = XAS_economic_minister_pick_focus_random_days }
+			}
+		}
+	}
+	focus = {
+		id = XAS_cut_red_tape # Cut Red Tape
+		icon = GFX_goal_XAS_cut_red_tape
+		cost = @economic_minister_time_tier_1
+		prerequisite = { focus = XAS_hitlers_vision }
+		relative_position_id = XAS_hitlers_vision
+		x = 1
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_cut_red_tape_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_1 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_adolf_hitler
+						FLAG_DAYS = [?XAS_cut_red_tape_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_adolf_hitler
+						FOCUS = XAS_hitlers_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = { }
+	}
+	focus = {
+		id = XAS_assume_control # Assume Control
+		icon = GFX_focus_generic_reorient_production
+		cost = @economic_minister_time_tier_2
+		prerequisite = { focus = XAS_cut_red_tape }
+		relative_position_id = XAS_cut_red_tape
+		x = 0
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_assume_control_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_2 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_adolf_hitler
+						FLAG_DAYS = [?XAS_assume_control_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_adolf_hitler
+						FOCUS = XAS_hitlers_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = { }
+	}
+	focus = {
+		id = XAS_empower_the_merchant_guilds # Empower the Merchant Guilds
+		icon = GFX_goal_generic_demand_territory
+		cost = @economic_minister_time_tier_3
+		prerequisite = { focus = XAS_assume_control }
+		relative_position_id = XAS_assume_control
+		x = -1
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XXAS_empower_the_merchant_guilds_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_3 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_adolf_hitler
+						FLAG_DAYS = [?XAS_empower_the_merchant_guilds_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_adolf_hitler
+						FOCUS = XAS_hitlers_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = { }
+	}
+	focus = {
+		id = XAS_army_with_a_state # Army with a State
+		icon = GFX_goal_XAS_army_with_a_state
+		cost = @economic_minister_time_tier_4
+		prerequisite = { focus = XAS_empower_the_merchant_guilds }
+		relative_position_id = XAS_empower_the_merchant_guilds
+		x = 0
+		y = 1
+
+		available = {
+			if = {
+				limit = {
+					has_country_flag = XAS_army_with_a_state_in_progress_flag
+				}
+				set_temp_variable = { temp_focus_days = @economic_minister_time_tier_4 }
+				multiply_temp_variable = { temp_focus_days = 7 }
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_inner_circle_focus_in_progress_tt
+						CHARACTER = XAS_adolf_hitler
+						FLAG_DAYS = [?XAS_army_with_a_state_in_progress_flag:days]
+					}
+					always = no 
+				}
+			}
+			else = {
+				custom_override_tooltip = {
+					tooltip = {
+						localization_key = GER_focus_can_only_be_completed_by_advisor_tt
+						CHARACTER = XAS_adolf_hitler
+						FOCUS = XAS_hitlers_vision
+					}
+					always = no
+				}
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XAS_realized_issues
+				add_idea = XAS_army_with_a_state_idea
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = {
+				localization_key = XAS_swap_traits_tt
+				CHARACTER = XAS_adolf_hitler
+				OLD_TRAIT = XAS_hitlers_vision_trait
+				NEW_TRAIT = XAS_hitlers_vision_ex_trait
+			}
+			custom_effect_tooltip = XAS_hitler_upgrade_tt
+			hidden_effect = {
+				XAS_adolf_hitler = {
+					remove_trait = {
+						trait = XAS_hitlers_vision
+						slot = political_advisor
+					}
+					add_trait = {
+						trait = XAS_hitlers_vision_ex
+						slot = political_advisor
+					}
+				}
+			}
+		}
+	}
+}

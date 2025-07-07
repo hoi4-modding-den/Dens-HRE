@@ -1,0 +1,37 @@
+XAS_guilds_regulation_hayek = {
+	allowed = {
+		original_tag = XAS
+	}
+	
+	visible = {
+		has_dynamic_modifier = {
+			modifier = XAS_unchecked_merchant_guilds
+		}
+		OR = {
+			has_completed_focus = XAS_essential_regulation
+		}
+	}
+
+	priority = 22
+}
+XAS_guilds_regulation_schumpeter = {
+	allowed = {
+		original_tag = XAS
+	}
+
+	visible = {
+		has_completed_focus = XAS_agressive_regulation
+	}
+
+	visible_when_empty = yes
+
+	priority = {
+		base = 0
+		modifier = {
+			add = 22
+			has_dynamic_modifier = {
+				modifier = XAS_unchecked_merchant_guilds
+			}
+		}
+	}
+}

@@ -21,6 +21,14 @@ set_variable = { royal_army_disf = -0.5 }
 set_variable = { royal_army_mp = -0.5 }
 set_variable = { royal_army_eg = 0.01 }
 
+set_variable = { XAS_economic_minister_pick_focus_days = 30 }
+set_variable = { XAS_economic_minister_pick_focus_random_days = 7 }
+
+set_variable = { XAS_joseph_schumpeter_confiscate_tries = 0 }
+set_variable = { XAS_joseph_schumpeter_confiscate_base_chance = 5 }
+set_variable = { XAS_schumpeters_total_confiscated_civs = 0 }
+set_variable = { XAS_schumpeters_total_confiscated_mils = 0 }
+
 set_convoys = 20
 set_research_slots = 3
 set_stability = 0.75
@@ -42,7 +50,7 @@ add_to_faction = XS0
 add_to_faction = XS1
 
 add_ideas = {
-	free_trade
+	export_focus
 	civilian_economy
 	volunteer_only
 

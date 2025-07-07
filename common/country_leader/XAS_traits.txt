@@ -1,5 +1,6 @@
 leader_traits = {
 	XAS_hitlers_vision = {
+		name = XAS_hitlers_vision_trait
 		random = no
 
 		sprite = 19
@@ -8,7 +9,16 @@ leader_traits = {
 		consumer_goods_expected_value = 0.1
 		production_speed_arms_factory_factor = 0.2
 	}
+	XAS_hitlers_vision_ex = {
+		name = XAS_hitlers_vision_ex_trait
+		random = no
+
+		sprite = 19
+
+		production_speed_arms_factory_factor = 0.2
+	}
 	XAS_schumpeters_vision = {
+		name = XAS_schumpeters_vision_trait
 		random = no
 
 		sprite = 20
@@ -18,6 +28,7 @@ leader_traits = {
 		stability_weekly = 0.01
 	}
 	XAS_hayeks_vision = {
+		name = XAS_hayeks_vision_trait
 		random = no
 
 		sprite = 21
