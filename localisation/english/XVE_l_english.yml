@@ -28,6 +28,9 @@ XVE_lionhearted_militia_desc:0 "The Republic maintains a proud military traditio
 ### TOOLTIPS ###
 XVE_imperial_autonomy_charter_tt:0 "\nThis national spirit will remain in effect till the          [XVE.GetFlag] [XVE.GetName] §Yleaves the HRE§! or §Yreforms the charter§!."
 
+### CUSTOM MODIFIERS ###
+XVE_gov_support:0 "£GFX_change_government  Government Approval"
+
 ### TRAITS ###
 XVE_dux_diplomacy:0 "Dux Diplomacy"
 XIF_radical_idealists:0 "Radical Idealists"
@@ -59,8 +62,15 @@ XVE_IFF_conflict_decisions_desc:0 ""
 XVE_integration_level_text:0 "Integration Level:\n      §Y[?istria_integration_var]%§!"
 XVE_resistance_level_text:0 "Istrian Resistance:\n      §R[?XVE.core_resistance@XIF|1]%§!"
 XVE_istrian_independence_mov_info_text:0 "§gEver since the Communal Act of 1911, which oppressed the Istrian communities by stripping away their land and rights for the benefit of the Venetian state, the§! §tIstrian Freedom Front (IFF)§! §ghas fought fiercely for§! §Yindependence and autonomy§! §gin order to distance itself from Venesia. However, under the new rule of Doge Volpi, a kind of§! §Ystatus quo§! §gwas established as tensions eased, with the ultimate objective of reunifying the two regions once again.§!"
-XVE_governmental_support_decisions:0 "Maggior Consiglio"
+XVE_governmental_support_decisions:0 "Great Council of Venice"
+XVE_gov_support_header:0 "Maggior Consiglio"
+XVE_gov_support_text:0 "§gThe Maggior Consiglio (Great Council), is the chief political assembly, responsible for electing many other political offices and senior councils that run Venice, passing laws, and exercising judicial oversight.As they also elect the Doge, their §Ysupport for the government§! must remain §Yabove 50%§! to prevent negative consequences, including the possibility of resignation.§!"
 XVE_gov_support_percentage:0 "[?XVE_gov_support_bar|0]%"
+XVE_gov_support_header2:0 "Government Approval"
+XVE_gov_support_bottom:0 "Council Status: [XVE_GovernmentSupportStatus]"
+XVE_government_support_status_low:0 "§ROpposed§!"
+XVE_government_support_status_mixed:0 "§ODivided§!"
+XVE_government_support_status_high:0 "§GAligned§!"
 
 ### CHARACTERS ###
 XVE_giuseppe_volpi:0 "Giuseppe Volpi"

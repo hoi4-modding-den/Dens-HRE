@@ -76,8 +76,8 @@ spriteTypes = {
 
 ### GOVERNMENTAL SUPPORT ###
 spriteTypes = {
-  progressbartype = {
-    name = "GFX_XVE_gov_support_progress_bar"
+   progressbartype = {
+	name = "GFX_XVE_gov_support_progress_bar"
     color = { 0.0 0.0 0.0 }
     colortwo = { 0.0 0.0 0.0 }
     textureFile1 = "gfx/interface/autonomy/subject_progress_bar_long.dds"
@@ -86,4 +86,8 @@ spriteTypes = {
     effectFile = "gfx/FX/progress.lua"
     steps = 100
   }
+	spriteType = {
+		name = "GFX_XVE_gov_support_back_image"
+		texturefile = "gfx/interface/XVE/XVE_gov_support_back_image.dds"
+	}  
 }

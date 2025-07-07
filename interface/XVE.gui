@@ -185,24 +185,67 @@ guiTypes = {
 	containerWindowType = {
 		name = "XVE_governmental_support_decision_ui_window"
 		position = { x = 0 y = 0 }
-		size = { width = 100% height= 250 }
+		size = { width = 100% height= 330 }
 		
 		# PROGRESS BAR
 		iconType = {
 		name = "XVE_gov_support_progress_bar"
 		spriteType = "GFX_XVE_gov_support_progress_bar"
-		position = { x = 35 y = 160 }
+		position = { x = 35 y = 240 }
 		}
+
+		# IMAGE
+		iconType = {
+		name = "XVE_gov_support_back_image"
+		spriteType = "GFX_XVE_gov_support_back_image"
+		position = { x = 200 y = 185 }
+		}		
 
 		#TEXT
 		instantTextBoxType = {
 			name ="XVE_gov_support_percentage"
-			position = { x = 230 y = 120 }
+			position = { x = 0 y = 190 }
 			font = "hoi_24header"
 			text = "XVE_gov_support_percentage"
-			format = left
+			format = center
 			maxHeight = 42
 			maxWidth = 500
-		}			
+		}
+		instantTextBoxType = {
+			name ="XVE_gov_support_text"
+			position = { x = 15 y = 40 }
+			font = "cg_16b"
+			text = "XVE_gov_support_text"
+			format = center
+			maxHeight = 42
+			maxWidth = 460
+		}
+		instantTextBoxType = {
+			name ="XVE_gov_support_header"
+			position = { x = 0 y = 0 }
+			font = "hoi_30header"
+			text = "XVE_gov_support_header"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}
+		instantTextBoxType = {
+			name ="XVE_gov_support_header2"
+			position = { x = 0 y = 150 }
+			font = "hoi_24header"
+			text = "XVE_gov_support_header2"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}
+		instantTextBoxType = {
+			name ="XVE_gov_support_bottom"
+			position = { x = 0 y = 290 }
+			font = "hoi_24header"
+			text = "XVE_gov_support_bottom"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}											
 	}
 }

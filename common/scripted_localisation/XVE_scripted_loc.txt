@@ -1,0 +1,31 @@
+# Government Support Status
+defined_text = {
+	name = XVE_GovernmentSupportStatus
+	text = {
+		trigger = {
+			original_tag = XVE
+            check_variable = {
+                XVE_gov_support_bar < 50
+            }
+		}
+		localization_key = XVE_government_support_status_low 
+	}
+	text = {
+		trigger = {
+			original_tag = XVE
+            check_variable = {
+                XVE_gov_support_bar = 50
+            }
+		}
+		localization_key = XVE_government_support_status_mixed
+	}
+	text = {
+		trigger = {
+			original_tag = XVE
+            check_variable = {
+                XVE_gov_support_bar > 50
+            }
+		}
+		localization_key = XVE_government_support_status_high 
+	}
+}
