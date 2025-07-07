@@ -20,9 +20,16 @@ set_variable = {
 	value = 45
 }
 
-set_variable = {
+#set_variable = {
+#	var = XVE_gov_support_bar
+#	value = 61
+#}
+set_variable = { 
+	XVE_gov_support_bar = modifier@XVE_gov_support_increase 
+}
+add_to_variable = {
 	var = XVE_gov_support_bar
-	value = 61
+	value = 56
 }
 
 set_technology = {
