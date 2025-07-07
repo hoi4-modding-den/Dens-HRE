@@ -59,6 +59,18 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = MARQUESS_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = MARQUESS_FEMALE
+	}
+	text = {
+		localization_key = MARQUESS_MALE
+	}
+}
+defined_text = {
 	name = COUNT_GENDER
 	text = {
 		trigger = {
@@ -68,5 +80,41 @@ defined_text = {
 	}
 	text = {
 		localization_key = COUNT_MALE
+	}
+}
+defined_text = {
+	name = VISCOUNT_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = VISCOUNT_FEMALE
+	}
+	text = {
+		localization_key = VISCOUNT_MALE
+	}
+}
+defined_text = {
+	name = BARON_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = BARON_FEMALE
+	}
+	text = {
+		localization_key = BARON_MALE
+	}
+}
+defined_text = {
+	name = ABBOT_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = ABBOT_FEMALE
+	}
+	text = {
+		localization_key = ABBOT_MALE
 	}
 }
