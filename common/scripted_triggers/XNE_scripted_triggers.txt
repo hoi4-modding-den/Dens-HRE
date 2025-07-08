@@ -17,6 +17,20 @@ XNE_is_dutch_tag_or_XNE = {
     }
 }
 
+XNE_is_dutch_state = {
+    OR = {
+        state = 7
+        state = 35
+        state = 36
+        state = 977
+        state = 1050
+        state = 1032
+        state = 1033
+        state = 1049
+        state = 1051
+    }
+}
+
 XNE_is_first_union_member = {
     custom_trigger_tooltip = {
         tooltip = XNE_is_first_union_member_tt

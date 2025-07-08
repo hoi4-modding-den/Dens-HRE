@@ -21,3 +21,17 @@ XHO_schiphol_airport_category = {
 
 	priority = 90
 }
+
+XHO_calvinism_category = {
+	icon = NOR_fascist_deploy_prep
+	allowed = {
+		tag = XHO
+	}
+
+	visible = {
+		#has_completed_focus = XHO_neo_calvinism
+		NOT = { has_government = fascism }
+	}
+
+	priority = 110
+}

@@ -81,3 +81,16 @@ defined_text = {
         localization_key = XNE_joint_first_union
     }
 }
+
+defined_text = {
+    name = GetXHOSubjugateNorthName
+    text = {
+        trigger = {
+            has_completed_focus = XNE_joint_zuiderzee_works
+        }
+        localization_key = XHO_subjugate_the_north_1
+    }
+    text = {
+        localization_key = XHO_subjugate_the_north_2
+    }
+}

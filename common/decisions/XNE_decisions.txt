@@ -308,3 +308,174 @@ XHO_schiphol_airport_category = {
         }
 	}
 }
+
+XHO_calvinism_category = {
+    XHO_calvinist_uprising = {
+
+		priority = -1
+
+		icon = mission_icon
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+        }
+
+		activation = {
+
+		}
+
+        available = {
+            has_government = fascism
+        }
+
+        fire_only_once = yes
+
+        is_good = yes
+        days_mission_timeout = 365
+
+        timeout_effect = {
+            custom_effect_tooltip = XHO_calvinist_uprising_tt
+            hidden_effect = {
+                set_temp_variable = { size = party_popularity@fascism }
+                add_to_temp_variable = { size = 0.15 }
+                multiply_temp_variable = { size = 1.2 }
+                clamp_temp_variable = { var = size max = 0.95 }
+                start_civil_war = {
+                    ideology = ROOT
+                    ruling_party = fascism
+                    size = var:size
+                    keep_all_characters = yes
+                }
+            }
+        }
+	}
+
+    XHO_calvinist_infiltration = {
+        priority = -2
+
+		icon = SWI_expand_covert_operations
+        state_target = yes
+        on_map_mode = map_and_decisions_view
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+        }
+
+        target_root_trigger = {
+            #has_completed_focus = XHO_neo_calvinism
+        }
+
+        target_trigger = {
+            FROM = {
+                is_core_of = XHO
+                is_owned_and_controlled_by = XHO
+            }
+        }
+
+        cost = 20
+        days_remove = 7
+        fire_only_once = yes
+
+        remove_effect = {
+            add_to_variable = { calvinism_states_infiltrated = 1 }
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.02
+            }
+            add_days_remove  = {
+                decision = XHO_calvinist_uprising
+                days = -30
+            }
+        }
+    }
+
+    XHO_calvinist_propaganda  = {
+		priority = -3
+
+		icon = eng_propaganda_campaigns
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+
+        }
+
+		visible = {
+		}
+
+        available = {
+        }
+
+		cost = 10
+        days_remove = 7
+        days_re_enable = 30
+        
+        modifier = {
+            political_power_gain = -0.3
+        }
+
+        remove_effect = {
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.09
+            }
+            add_days_remove  = {
+                decision = XHO_calvinist_uprising
+                days = 30
+            }
+        }
+	}
+
+    XHO_calvinist_prepare  = {
+		priority = -4
+
+		icon = generic_reorganize_irregulars
+
+		ai_will_do = {
+			base = 1
+		}
+
+        allowed = {
+            tag = XHO
+
+        }
+
+		visible = {
+		}
+
+        available = {
+        }
+
+        custom_cost_trigger = {
+            has_army_experience > 19
+            command_power > 9
+        }
+        custom_cost_text = XHO_calvinist_prepare_cost
+
+		cost = 0
+        days_remove = 14
+        days_re_enable = 60
+        
+        modifier = {
+            industrial_capacity_factory = -0.05
+        }
+
+        remove_effect = {
+            add_days_remove  = {
+                decision = XHO_calvinist_uprising
+                days = -90
+            }
+        }
+	}
+}

@@ -238,6 +238,471 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = XHO_power_to_the_clergy
+		available = {
+		}
+		prerequisite = { focus = XHO_reaffirm_religious_freedoms }
+    	relative_position_id = XHO_reaffirm_religious_freedoms
+
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+
+		x = -2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 30
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = { XHO_power_to_the_clergy }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = XHO_liberal_objection
+				days = 70
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_neo_calvinism
+		available = {
+			fascism > 0.2
+		}
+		prerequisite = { focus = XHO_power_to_the_clergy }
+    	relative_position_id = XHO_power_to_the_clergy
+
+		icon = GFX_focus_IRQ_strengthen_the_iraqi_dinar
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_category_tooltip = XHO_calvinism_category
+		}
+	}
+
+	focus = {
+		id = XHO_consolidate_power
+		available = {
+			has_government = fascism
+		}
+		prerequisite = { focus = XHO_neo_calvinism }
+    	relative_position_id = XHO_neo_calvinism
+
+		icon = GFX_focus_generic_court
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = XHO_calvinist_problem
+				add_idea = XHO_calvinists_bolstered_1
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_subjugate_the_north
+		available = {
+			has_army_manpower = { size > 55000 }
+		}
+		prerequisite = { focus = XHO_consolidate_power }
+    	relative_position_id = XHO_consolidate_power
+		dynamic = yes
+
+		icon = GFX_focus_ETH_northern_thrust
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = XHO_calvinists_bolstered_1
+				add_idea = XHO_calvinists_bolstered_2
+			}
+
+			36 = {
+				OWNER = {
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_spread_calvanism
+		available = {
+			36 = {
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_ally_with = ROOT
+					}
+				}
+			}
+		}
+		prerequisite = { focus = XHO_subjugate_the_north }
+    	relative_position_id = XHO_subjugate_the_north
+
+		icon = GFX_focus_SWE_counter_revolution
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = XHO_calvinists_bolstered_2
+				add_idea = XHO_calvinists_bolstered_3
+			}
+
+			every_country = {
+				limit = {
+					any_owned_state = {
+						XNE_is_dutch_state = yes
+					}
+					NOT = { is_ally_with = ROOT }
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_serparation_church_state
+		available = {
+			OR = {
+				democratic > 0.4
+				fascism > 0.2
+			}
+		}
+		prerequisite = { focus = XHO_power_to_the_clergy focus = XHO_liberal_movement }
+		prerequisite = { focus = XHO_reaffirm_religious_freedoms }
+    	relative_position_id = XHO_power_to_the_clergy
+
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+
+		x = 2
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = XHO_increase_conscription
+		available = {
+		}
+		prerequisite = { focus = XHO_serparation_church_state }
+    	relative_position_id = XHO_serparation_church_state
+
+		icon = GFX_focus_HUN_expand_the_army
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			increase_conscription_law = yes
+		}
+	}
+
+	focus = {
+		id = XHO_liberal_movement
+		available = {
+		}
+		prerequisite = { focus = XHO_reaffirm_religious_freedoms focus = XHO_crack_down_on_calvinism }
+    	relative_position_id = XHO_reaffirm_religious_freedoms
+
+		icon = GFX_focus_ARG_defense_and_democracy
+
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 65
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_calvanist_concessions
+		available = {
+			democratic > 0.4
+		}
+		prerequisite = { focus = XHO_liberal_movement }
+    	relative_position_id = XHO_liberal_movement
+
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_political_power = -100
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.075
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = XHO_calvinist_problem
+				add_idea = XHO_calvinists_placated
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_constitutional_monarchy
+		available = {
+			democratic > 0.55
+		}
+		prerequisite = { focus = XHO_calvanist_concessions }
+    	relative_position_id = XHO_calvanist_concessions
+
+		icon = GFX_focus_generic_election
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = { XHO_wilhelmina }
+		}
+	}
+
+	focus = {
+		id = XHO_capitalist_model
+		available = {
+			has_government = democratic
+		}
+		prerequisite = { focus = XHO_constitutional_monarchy }
+    	relative_position_id = XHO_constitutional_monarchy
+
+		icon = GFX_focus_RAJ_special_economic_zones
+
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { XHO_capitalism }
+		}
+	}
+
+	focus = {
+		id = XHO_intervention
+		available = {
+		}
+		prerequisite = { focus = XHO_capitalist_model focus = XHO_commander_armed_forces }
+    	relative_position_id = XHO_capitalist_model
+
+		icon = GFX_focus_FIN_mustapaidat
+
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			add_ideas = { XHO_interventionism }
+		}
+	}
+
+	focus = {
+		id = XHO_defend_against_threats
+		available = {
+			has_stability > 0.65
+		}
+		prerequisite = { focus = XHO_liberal_movement focus = XHO_counterespionage }
+		prerequisite = { focus = XHO_crack_down_on_calvinism }
+    	relative_position_id = XHO_liberal_movement
+
+		icon = GFX_focus_generic_home_defense
+
+		x = 2
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.075
+		}
+	}
+
+	focus = {
+		id = XHO_mobilise_economy
+		available = {
+		}
+		prerequisite = { focus = XHO_defend_against_threats }
+    	relative_position_id = XHO_defend_against_threats
+
+		icon = GFX_focus_AFG_a_modern_economy
+
+		x = 0
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			upgrade_economy_law = yes
+		}
+	}
+
+	focus = {
+		id = XHO_counterespionage
+		available = {
+		}
+		prerequisite = { focus = XHO_crack_down_on_calvinism }
+    	relative_position_id = XHO_crack_down_on_calvinism
+
+		icon = GFX_focus_generic_secret_service_agency
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { XHO_counterespionage }
+		}
+	}
+
+	focus = {
+		id = XHO_power_to_the_monarch
+		available = {
+			neutrality > 0.69
+		}
+		prerequisite = { focus = XHO_counterespionage }
+    	relative_position_id = XHO_counterespionage
+
+		icon = GFX_focus_generic_monarchy_1
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { XHO_power_to_the_monarch_1 }
+		}
+	}
+
+	focus = {
+		id = XHO_root_out_dissenters
+		available = {
+		}
+		prerequisite = { focus = XHO_power_to_the_monarch }
+    	relative_position_id = XHO_power_to_the_monarch
+
+		icon = GFX_focus_BEL_government_resigns
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 75
+			remove_ideas = XHO_calvinist_problem
+		}
+	}
+
+	focus = {
+		id = XHO_commander_armed_forces
+		available = {
+		}
+		prerequisite = { focus = XHO_root_out_dissenters }
+    	relative_position_id = XHO_root_out_dissenters
+
+		icon = GFX_focus_IRQ_royal_iraqi_army
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_command_power = 40
+			swap_ideas = {
+				remove_idea = XHO_power_to_the_monarch_1
+				add_idea = XHO_power_to_the_monarch_2
+			}
+		}
+	}
+
 
 
 	focus = {
