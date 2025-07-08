@@ -9,7 +9,6 @@ HRE_title_system = {
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_duchy_mecklenburg }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_landgravate_hesse }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_doge_venice }
-	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_milan }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_hohenzollern }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_hannover }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_county_cilli }
@@ -18,7 +17,7 @@ HRE_title_system = {
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_county_falkenstein }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_county_erbach }
 	add_to_array = { global.HRE_title_acquire_array = token:HRE_county_solmns }
-	add_to_array = { global.HRE_title_acquire_array = HRE_vicounty_frankfurt}
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_vicounty_frankfurt }
 	
 	###########
 	#NO TOUCHY#
@@ -51,4 +50,19 @@ HRE_title_system = {
 			add_to_array = { HRE_title_countries = PREV.id }
 		}
 	}
+}
+
+#this is used for hardcoding states
+#if you don't want your title to be associated with the capital of the nation, then use this instead of the above
+
+HRE_title_system_funky_state = {
+	
+	#COPY START
+	159 = { #state number
+		add_to_array = { HRE_title_acquire_here = token:HRE_principality_milan } #change trait here
+		add_to_array = { global.HRE_title_states = THIS.id }
+		owner = { PREV = { add_to_array = { HRE_title_countries = PREV.id } } }
+	}
+	add_to_array = { global.HRE_title_acquire_array = token:HRE_principality_milan } #change trait here too
+	#COPY END
 }
