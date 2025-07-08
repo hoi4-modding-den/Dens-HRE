@@ -1,6 +1,6 @@
 joint_focus = {
     id = XEX_milan_project
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_goal_generic_national_unity
     text_icon = XEX_shared_style
 
     x = 0
@@ -58,7 +58,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_boost_militia_strenght
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_SOV_rehabilitated_military_ccp_2d_sov_compatibility
     text_icon = XE0_shared_style
 
     prerequisite = { focus = XEX_milan_project }
@@ -101,7 +101,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_develop_boths_economies
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_AFG_a_modern_economy
     text_icon = XEX_XE0_shared_style
 
     prerequisite = { focus = XEX_milan_project }
@@ -145,7 +145,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_fund_milanese_arms
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_generic_military_industry
     text_icon = XEX_shared_style
 
     prerequisite = { focus = XEX_boost_militia_strenght }
@@ -187,7 +187,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_fund_the_milanese_force
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_RAJ_a_private_military
     text_icon = XE0_shared_style
 
     prerequisite = { focus = XEX_boost_militia_strenght }
@@ -230,7 +230,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_seize_milan_industries
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_generic_modernize_industry
     text_icon = XEX_shared_style
 
     prerequisite = { focus = XEX_fund_the_milanese_force }
@@ -275,7 +275,7 @@ joint_focus = {
 
 joint_focus = {
     id = XEX_develop_the_milan_institute_of_research
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_NORDIC_com_research
     text_icon = XE0_shared_style
 
     prerequisite = { focus = XEX_develop_boths_economies }
@@ -318,7 +318,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_exchange_research
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_NORDIC_dem_research
     text_icon = XEX_shared_style
 
     prerequisite = { focus = XEX_develop_the_milan_institute_of_research }
@@ -361,7 +361,7 @@ joint_focus = {
 }
 joint_focus = {
     id = FRA_integrate_milans_civilian_sector
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_goal_generic_intelligence_exchange
     text_icon = XEX_shared_style
 
     prerequisite = { focus = XEX_seize_milan_industries focus = XEX_exchange_research }
@@ -404,7 +404,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_homeland_defence
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_goal_generic_defence
     text_icon = XE0_shared_style
 
     prerequisite = { focus = XEX_fund_milanese_arms }
@@ -447,7 +447,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_boost_collaboration_with_milan
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_goal_generic_positive_trade_relations
     text_icon = XE0_shared_style
 
     prerequisite = { focus = XEX_fund_milanese_arms }
@@ -490,7 +490,7 @@ joint_focus = {
 }
 joint_focus = {
     id = XEX_integrate_milans_military
-    icon = GFX_focus_eng_concessions_to_the_trade_unions
+    icon = GFX_focus_ITA_northern_industry
     text_icon = XEX_shared_style
 
     prerequisite = { focus = XEX_boost_collaboration_with_milan focus = XEX_homeland_defence }

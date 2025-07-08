@@ -16,7 +16,7 @@ focus_tree = {
 
 	focus = {
 		id = XEX_adress_the_kingdom
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_monarchy_1
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
 		x = 15
@@ -38,7 +38,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_economical_growth
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_develop_the_urals_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_strength }
 		x = -7
@@ -60,7 +60,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_develop_the_capital
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_fourth_five_year_plan_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_economical_growth }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -82,7 +82,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_focus_on_industrial_production
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_pc_of_mechanical_engineering_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_develop_the_capital }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -104,7 +104,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_electronic_research
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_continuous_non_factory_construct
 		prerequisite = { focus = XEX_focus_on_industrial_production }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -126,7 +126,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_develop_ports
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = { focus = XEX_focus_on_industrial_production }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -148,7 +148,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_improve_infrastructure
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = XEX_economical_growth }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -170,7 +170,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_develop_the_turin_istitute_of_research
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_improve_infrastructure }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -192,7 +192,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_improve_energy_use
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_national_specialists_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_develop_the_turin_istitute_of_research }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -214,7 +214,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_use_the_padanian_plains
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_agricultural_subsidies
 		prerequisite = { focus = XEX_improve_energy_use }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -236,7 +236,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_damn_milans_lakes
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_BEL_dam_the_consequences
 		prerequisite = { focus = XEX_improve_energy_use focus = XEX_electronic_research }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -258,7 +258,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_create_the_geneva_plant
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_navy_research_bonus
 		prerequisite = { focus = XEX_develop_ports focus = XEX_electronic_research }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -280,7 +280,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_economical_strength
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_expand_the_aircraft_industry_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_economical_growth }
 		x = -25
@@ -302,7 +302,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_military_plants_in_turin
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = XEX_economical_strength }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -324,7 +324,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_dockyard_investements
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = XEX_economical_strength }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -346,7 +346,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_industrial_expansion
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = XEX_dockyard_investements  focus = XEX_military_plants_in_turin}
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -368,7 +368,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_cooperation_with_big_industries
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_industrial_expansion}
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -390,7 +390,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_Padanian_Mobilization
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_lessons_of_war_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_industrial_expansion}
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -412,7 +412,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_protect_our_industry
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_trade
 		prerequisite = { focus = XEX_Padanian_Mobilization}
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -434,7 +434,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_allow_female_work
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_women_in_military
 		prerequisite = { focus = XEX_Padanian_Mobilization}
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -456,7 +456,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_streamline_production
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_mass_production
 		prerequisite = { focus = XEX_industrial_expansion}
 		#mutually_exclusive = { focus =  }
 		x = -2
@@ -478,7 +478,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_develop_military_research_stations
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_military_industry
 		prerequisite = { focus = XEX_streamline_production focus = XEX_cooperation_with_big_industries}
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -500,7 +500,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_land_facility
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_restore_the_glory_of_the_motherland_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_develop_military_research_stations}
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -545,7 +545,7 @@ focus_tree = {
 	shared_focus = XEX_milan_project
 	focus = {
 		id = XEX_internal_affairs
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_GER_total_control_over_domestic_affairs
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -567,7 +567,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_turin_visit
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_NOR_our_royal_claims
 		prerequisite = { focus = XEX_internal_affairs }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -589,7 +589,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_unite_milan
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_annex_country_2
 		prerequisite = { focus = XEX_turin_visit }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -611,7 +611,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_crush_milan_crime
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_cohesion_first_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_unite_milan }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -633,7 +633,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_kings_investements
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_capital_of_the_tsars_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_turin_visit }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -655,7 +655,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_connect_the_kingdom
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_railroad
 		prerequisite = { focus = XEX_kings_investements }
 		#mutually_exclusive = { focus =  }
 		x = -2
@@ -677,7 +677,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_kingspropaganda
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_connect_the_kingdom }
 		#mutually_exclusive = { focus =  }
 		x = -2
@@ -699,7 +699,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_rename_corsica
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_POL_complete_april_constitution
 		prerequisite = { focus = XEX_kingspropaganda }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -721,7 +721,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_great_unifier
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_SWI_establish_pro_helvetia
 		prerequisite = { focus = XEX_kingspropaganda }
 		#mutually_exclusive = { focus =  }
 		x = -3
@@ -743,7 +743,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_meet_with_venetia
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_POL_support_global_falangism
 		prerequisite = { focus = XEX_kings_investements }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -765,7 +765,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_visit_germany
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_GER_german_hegemony_in_the_middle_east_demcoratic
 		prerequisite = { focus = XEX_meet_with_venetia }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -787,7 +787,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_political_peace
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_CHL_a_french_alliance
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_embrace_strenght }
 		x = 7
@@ -809,7 +809,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invite_tyrol
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_RAJ_to_shake_the_world
 		prerequisite = { focus = XEX_request_brescia }
 		#mutually_exclusive = {  }
 		x = 11
@@ -831,7 +831,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invite_venetia
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_invite_venetia
 		prerequisite = { focus = XEX_political_peace }
 		mutually_exclusive = { focus = XEX_request_brescia focus = XEX_invade_venetia }
 		x = 9
@@ -853,7 +853,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_request_brescia
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_BRA_reach_out_to_military_dem
 		prerequisite = { focus = XEX_political_peace focus = XEX_embrace_strenght }
 		mutually_exclusive = { focus = XEX_invade_venetia focus = XEX_invite_venetia  }
 		x = 11
@@ -875,7 +875,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invade_tyrol
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_AUS_bring_generals_out_of_retirement
 		prerequisite = { focus = XEX_request_brescia focus = XEX_invite_venetia }
 		#mutually_exclusive = { focus = }
 		x = 9
@@ -897,7 +897,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invade_Austria
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_attack_austria
 		prerequisite = { focus = XEX_invade_tyrol }
 		#mutually_exclusive = { focus = }
 		x = 9
@@ -919,7 +919,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invite_mersailles
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_RAJ_to_shake_the_world
 		prerequisite = { focus = XEX_political_peace }
 		#mutually_exclusive = { focus =  }
 		x = 6
@@ -942,7 +942,7 @@ focus_tree = {
 	
 	focus = {
 		id = XEX_tuscany_for_membership
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = XEX_invite_mersailles }
 		#mutually_exclusive = { focus =  }
 		x = 5
@@ -964,7 +964,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_italian_research_union
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = XEX_invite_mersailles focus = XEX_invite_venetia }
 		#mutually_exclusive = { focus =  }
 		x = 7
@@ -986,7 +986,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_embrace_strenght
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_ITA_northern_industry
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		mutually_exclusive = { focus = XEX_political_peace }
 		x = 15
@@ -1008,7 +1008,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invade_venetia
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_the_glory_of_the_red_army_alt_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_embrace_strenght  }
 		mutually_exclusive = { focus = XEX_request_brescia focus = XEX_invite_venetia }
 		x = 13
@@ -1030,7 +1030,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invade_mersailles
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_annex_country
 		prerequisite = { focus = XEX_political_peace }
 		#mutually_exclusive = { focus =  }
 		x = 16
@@ -1052,7 +1052,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invade_the_pope
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_pope
 		prerequisite = { focus = XEX_invade_mersailles }
 		#mutually_exclusive = { focus =  }
 		x = 15
@@ -1074,7 +1074,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_request_tyrol_submission
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_AUS_bring_generals_out_of_retirement
 		prerequisite = { focus = XEX_invade_venetia }
 		#mutually_exclusive = { focus =  }
 		x = 13
@@ -1096,9 +1096,9 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_destroy_austria
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		prerequisite = { focus = XEX_request_tyrol_submission }
-		prerequisite = { focus = XEX_invade_the_pope }
+		icon = GFX_focus_generic_attack_austria
+		prerequisite = { focus = XEX_invade_the_pope focus = XEX_request_tyrol_submission }
+	
 		#mutually_exclusive = { focus =  }
 		x = 12
 		y = 5
@@ -1119,7 +1119,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_announce_greater_padania
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_capital_of_the_tsars_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_destroy_austria }
 		#mutually_exclusive = { focus =  }
 		x = 12
@@ -1517,13 +1517,211 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = XEX_diddy_bluds
+		id = XEX_select_a_military_doctrine
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		prerequisite = { focus = XEX_improve_army_efficency }
-		#mutually_exclusive = {  }
+		#mutually_exclusive = { focus =  }
 		x = 2
 		y = 1
 		relative_position_id = XEX_improve_army_efficency
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_firepower_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_select_a_military_doctrine }
+		mutually_exclusive = { focus = XEX_motorized_effort }
+		x = 2
+		y = 1
+		relative_position_id = XEX_select_a_military_doctrine
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_artillery_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_firepower_focus }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_firepower_focus
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_special_forces_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_firepower_focus }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_firepower_focus
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_special_forces_better_training
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_special_forces_focus }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_special_forces_focus
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_motorized_effort
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_select_a_military_doctrine }
+		mutually_exclusive = { focus = XEX_firepower_focus }
+		x = -2
+		y = 1
+		relative_position_id = XEX_select_a_military_doctrine
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_develop_tanks
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_motorized_effort }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XEX_motorized_effort
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_mechanized_effort
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_motorized_effort }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_motorized_effort
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_speed_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_mechanized_effort focus = XEX_artillery_focus }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_mechanized_effort
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+		
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_breakthrough_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = XEX_develop_tanks }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XEX_develop_tanks
 		
 		cost = 2
 		ai_will_do = {

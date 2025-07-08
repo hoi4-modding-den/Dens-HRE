@@ -22,6 +22,61 @@ spriteTypes = {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	spriteType = {
+			name = "GFX_goal_generic_invite_venetia"
+			texturefile = "gfx/interface/ideas/XEX/goal_XEX_invade_Venetia.png"
+		}
+	SpriteType = {
+			name = "GFX_goal_generic_invite_venetia_shine"
+			texturefile = "gfx/interface/ideas/XEX/goal_XEX_invade_Venetia.png"
+					effectFile = "gfx/FX/buttonstate.lua"
+			animation = {
+				animationmaskfile = "gfx/interface/ideas/XEX/goal_XEX_invade_Venetia.png"
+				animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+				animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+				animationlooping = no			# yes or no ;)
+				animationtime = 0.75				# in seconds
+				animationdelay = 0			# in seconds
+				animationblendmode = "add"       #add, multiply, overlay
+				animationtype = "scrolling"      #scrolling, rotating, pulsing
+				animationrotationoffset = { x = 0.0 y = 0.0 }
+				animationtexturescale = { x = 1.0 y = 1.0 } 
+			}
+
+			animation = {
+				animationmaskfile = "gfx/interface/ideas/XEX/goal_XEX_invade_Venetia.png"
+				animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+				animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+				animationlooping = no			# yes or no ;)
+				animationtime = 0.75				# in seconds
+				animationdelay = 0			# in seconds
+				animationblendmode = "add"       #add, multiply, overlay
+				animationtype = "scrolling"      #scrolling, rotating, pulsing
+				animationrotationoffset = { x = 0.0 y = 0.0 }
+				animationtexturescale = { x = 1.0 y = 1.0 } 
+			}
+			legacy_lazy_load = no
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	spriteType = {
         name = "GFX_focus_unavailable_joint_XEX"
         textureFile = "gfx/interface/ideas/XEX/focus_unavailable_xex_bg.dds"
