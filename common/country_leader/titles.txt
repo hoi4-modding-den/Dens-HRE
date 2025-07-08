@@ -73,15 +73,13 @@ leader_traits = {
 		}
 	}
 
-	## Doge
-
-	HRE_doge_venice = {
+	HRE_landgravate_hesse = {
 		random = no
 
 		ai_will_do = {
 			factor = 1
 		}
-	}	
+	}
 
 	## Principalities
 	
@@ -120,7 +118,106 @@ leader_traits = {
 		}
 	}
 
+	HRE_county_ziegenhain = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HRE_county_nassau = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HRE_county_solmns = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HRE_county_falkenstein = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HRE_county_erbach = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	## Vicounties
 
+	HRE_vicounty_frankfurt = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	## Barony
+
+	## Special
+	### Doge
+	HRE_doge_venice = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	### Archbishop
+	HRE_archbishop_mainz = {
+		# Note - Not acquirable by title system
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	### Bishop
+
+	HRE_bishop_fulda = {
+		# Note - not acquirable by title system
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	### Abbot
+
+	HRE_abbot_hersfeld = {
+		# Note - Not acquirable by title system
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	HRE_abbot_corvey = {
+		# Note - Not acquirable by title system
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

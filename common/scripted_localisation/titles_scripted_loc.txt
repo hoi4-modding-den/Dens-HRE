@@ -118,3 +118,16 @@ defined_text = {
 		localization_key = ABBOT_MALE
 	}
 }
+
+defined_text = {
+	name = ARCHBISHOP_GENDER
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = ARCHBISHOP_FEMALE
+	}
+	text = {
+		localization_key = ARCHBISHOP_MALE
+	}
+}
