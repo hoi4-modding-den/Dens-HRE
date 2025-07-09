@@ -14,14 +14,415 @@ focus_tree = {
 	}
 
 
+	# ___  ___                           _     _     _   
+	# |  \/  |                          | |   (_)   | |  
+	# | .  . | ___  _ __   __ _ _ __ ___| |__  _ ___| |_ 
+	# | |\/| |/ _ \| '_ \ / _` | '__/ __| '_ \| / __| __|
+	# | |  | | (_) | | | | (_| | | | (__| | | | \__ \ |_ 
+	# \_|  |_/\___/|_| |_|\__,_|_|  \___|_| |_|_|___/\__|
 
+	focus = {
+		id = XAS_monarchist_tree # Haus Habsburg
+		icon = x
+		cost = 5
+		mutually_exclusive = { focus = XAS_democratic_tree }
+		x = 18
+		y = 0
 
+		completion_reward = { }
+	}
 
+	focus = {
+		id = XAS_unite_the_realm
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_monarchist_tree }
+		relative_position_id = XAS_monarchist_tree
+		mutually_exclusive = { focus = XAS_continued_autonomy }
+		x = 1
+		y = 1
+		
+		completion_reward = { }
+	}
+	
+	focus = {
+		id = XAS_reinforce_austrian_hegamony
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_unite_the_realm }
+		relative_position_id = XAS_unite_the_realm
+		x = 0
+		y = 1
+		
+		completion_reward = { }
+	}
+	
+	focus = {
+		id = XAS_enforce_policy_of_integration
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_reinforce_austrian_hegamony }
+		relative_position_id = XAS_reinforce_austrian_hegamony
+		x = 0
+		y = 1
 
+		completion_reward = { }
+	}
 
+	focus = {
+		id = XAS_sort_the_deck
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_monarchist_tree }
+		relative_position_id = XAS_monarchist_tree
+		x = -2
+		y = 1
 
+		completion_reward = { }
+	}
 
+	focus = {
+		id = XAS_balance_the_budget
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_sort_the_deck }
+		relative_position_id = XAS_sort_the_deck
+		x = 1
+		y = 1
 
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_centralize_the_police
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_balance_the_budget }
+		relative_position_id = XAS_balance_the_budget
+		x = 0
+		y = 1
+
+		bypass = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				has_intelligence_agency = yes
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = {
+					name = "Evidenzbureau"
+					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
+				}
+			}
+			else = {
+				# TODO: Add a "Centeralized Policy" idea here or something for non-dlc
+			}
+		}
+	}
+
+	focus = {
+		id = XAS_conquer_the_county_of_friesach
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_centralize_the_police }
+		prerequisite = { focus = XAS_enforce_policy_of_integration }
+		relative_position_id = XAS_centralize_the_police
+		x = 1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_linz_programm
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_centralize_the_police }
+		relative_position_id = XAS_centralize_the_police
+		x = -1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_merchant_marine
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_sort_the_deck }
+		relative_position_id = XAS_sort_the_deck
+		x = -1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_increase_physical_requirements
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_sort_the_deck }
+		relative_position_id = XAS_sort_the_deck
+		x = -3
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_standardize_ration_distribution
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_increase_physical_requirements }
+		relative_position_id = XAS_increase_physical_requirements
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_push_pull_logisitcs # Push-Pull Logisitcs
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_standardize_ration_distribution }
+		relative_position_id = XAS_standardize_ration_distribution
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_theresian_military_academy
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_standardize_ration_distribution }
+		relative_position_id = XAS_standardize_ration_distribution
+		x = -2
+		y = 1
+
+		completion_reward = { }
+	}
+
+	# ______                                    _   _      
+	# |  _  \                                  | | (_)     
+	# | | | |___ _ __ ___   ___   ___ _ __ __ _| |_ _  ___ 
+	# | | | / _ \ '_ ` _ \ / _ \ / __| '__/ _` | __| |/ __|
+	# | |/ /  __/ | | | | | (_) | (__| | | (_| | |_| | (__ 
+	# |___/ \___|_| |_| |_|\___/ \___|_|  \__,_|\__|_|\___|
+
+	focus = {
+		id = XAS_democratic_tree # Für die Demokratie, Für das Volk
+		icon = x
+		cost = 5
+		mutually_exclusive = { focus = XAS_monarchist_tree }
+		relative_position_id = XAS_monarchist_tree
+		x = 7
+		y = 0
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_continued_autonomy
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_democratic_tree focus = XAS_monarchist_tree }
+		relative_position_id = XAS_democratic_tree
+		mutually_exclusive = { focus = XAS_unite_the_realm }
+		x = -1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_an_austrian_commonwealth
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_continued_autonomy }
+		relative_position_id = XAS_continued_autonomy
+		x = 1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_the_friesach_proposal
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_an_austrian_commonwealth }
+		relative_position_id = XAS_an_austrian_commonwealth
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_develop_friesach
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_the_friesach_proposal }
+		prerequisite = { focus = XAS_develop_cilli }
+		relative_position_id = XAS_the_friesach_proposal
+		x = -1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_develop_styria
+		icon = x
+		cost = 5
+		prerequisite = {  focus = XAS_continued_autonomy focus = XAS_unite_the_realm }
+		relative_position_id = XAS_continued_autonomy
+		x = -2
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_develop_cilli
+		icon = x
+		cost = 5
+		prerequisite = {  focus = XAS_develop_styria }
+		relative_position_id = XAS_develop_styria
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_the_groz_offer
+		icon = x
+		cost = 5
+		prerequisite = {  focus = XAS_develop_cilli }
+		relative_position_id = XAS_develop_cilli
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_wien_convention
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_democratic_tree }
+		relative_position_id = XAS_democratic_tree
+		x = 1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_invite_scholars
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_democratic_tree }
+		relative_position_id = XAS_democratic_tree
+		x = 3
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_dismember_the_royal_army
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_wien_convention }
+		prerequisite = { focus = XAS_invite_scholars }
+		relative_position_id = XAS_invite_scholars
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_secure_styria # Secure Support in Styria
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_dismember_the_royal_army }
+		relative_position_id = XAS_dismember_the_royal_army
+		x = -1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_graz_guard
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_secure_styria }
+		relative_position_id = XAS_secure_styria
+		x = -1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_wien_guard
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_dismember_the_royal_army }
+		relative_position_id = XAS_dismember_the_royal_army
+		x = 0
+		y = 2
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_secure_cilli # Secure Support in Cilli
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_dismember_the_royal_army }
+		relative_position_id = XAS_dismember_the_royal_army
+		x = 1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_cilli_guard
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_secure_cilli }
+		relative_position_id = XAS_secure_cilli
+		x = 1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	focus = {
+		id = XAS_reconstruction
+		icon = x
+		cost = 5
+		prerequisite = { focus = XAS_graz_guard focus = XAS_wien_guard focus = XAS_cilli_guard }
+		relative_position_id = XAS_wien_guard
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
 
 
 
@@ -38,6 +439,13 @@ focus_tree = {
 		cost = 5
 		x = 5
 		y = 0
+
+		available = {
+			OR = {
+				has_completed_focus = XAS_monarchist_tree
+				has_completed_focus = XAS_reconstruction
+			}
+		}
 
 		completion_reward = {
 			add_ideas = XAS_realized_issues
