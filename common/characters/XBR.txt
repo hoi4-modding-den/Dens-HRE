@@ -119,11 +119,121 @@ characters = {
 			}
 		}
 		corps_commander = {
+			visible = { has_country_flag = XBR_bormann_promote_the_loyalists }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 3
 			planning_skill = 2
 			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XBR_paul_hausser = {
+		name = GER_paul_hausser
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_paul_hausser
+				small = GFX_portrait_GER_paul_hausser_small
+			}
+		}
+		corps_commander = {
+			visible = { has_country_flag = XBR_bormann_promote_the_loyalists }
+			traits = { militias_officer armor_officer politically_connected }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XBR_walter_model = {
+		name = GER_walter_model
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_walter_model
+				small = GFX_portrait_GER_walter_model_small
+			}
+		}
+		corps_commander = { 
+			traits = { harsh_leader politically_connected inflexible_strategist }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XBR_hermann_hoth = {
+		name = GER_hermann_hoth
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_hermann_hoth
+				small = GFX_portrait_GER_hermann_hoth_small
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless armor_officer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	XBR_karl_ernst = {
+		name = "Karl Ernst"
+		portraits = {
+			army = {
+				large = "GFX/leaders/XBR/karl_ernst.png"
+				small = "GFX/leaders/XBR/karl_ernst_idea.png"
+			}
+		}
+		corps_commander = {
+			traits = { XBR_sh_commander trait_reckless }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+	XBR_elhard_von_morozowicz = {
+		name = "Elhard von Morozowicz"
+		portraits = {
+			army = {
+				large = "GFX/leaders/XBR/Elhard_von_Morozowicz.png"
+				small = "GFX/leaders/XBR/Elhard_von_Morozowicz_idea.png"
+			}
+		}
+		corps_commander = {
+			traits = { XBR_sh_commander cavalry_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	XBR_walter_stennes = {
+		name = "Walter Stennes"
+		portraits = {
+			army = {
+				large = "GFX/leaders/XBR/walter_stennes.png"
+				small = "GFX/leaders/XBR/walter_stennes_idea.png"
+			}
+		}
+		corps_commander = {
+			traits = { XBR_sh_commander media_personality }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
 			legacy_id = -1
 		}
 	}

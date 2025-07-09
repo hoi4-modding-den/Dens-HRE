@@ -1,0 +1,21 @@
+leader_traits = {
+
+	XBR_sh_commander = {
+
+		type = { land }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = XBR }
+		}
+		
+		gain_xp = {
+			always = no # not gainable
+		}
+		
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+}
