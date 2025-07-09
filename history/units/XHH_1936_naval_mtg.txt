@@ -4,10 +4,10 @@ units= {
 	
 	fleet = {
 		name = "Kriegsmarine"			
-		naval_base = 9347  # Hamburg
+		naval_base = 13496  # Hamburg
 		task_force = {				
 			name = "Hochseeflotte"
-			location = 9347  # Hamburg
+			location = 13496  # Hamburg
 			ship = { name = "Hannover" definition = heavy_cruiser start_experience_factor = 0.3 equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = XHH version_name = "Germania" } } }	
 			ship = { name = "Deutschland" definition = heavy_cruiser start_experience_factor = 0.3 equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = XHH version_name = "Germania" } } }
 			ship = { name = "Einheit" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = XHH version_name = "Rostock" } } } 		

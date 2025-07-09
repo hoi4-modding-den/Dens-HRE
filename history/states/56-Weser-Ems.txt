@@ -1,7 +1,7 @@
 state = {
 	id = 56
 	name = "STATE_56"
-	manpower = 2058467
+	manpower = 1238467
 	
 	state_category = city
 
@@ -11,31 +11,27 @@ state = {
 		add_core_of = XPO
 
 		victory_points = {
-			241 5 # Wilhelmshaven
+			13495 5 # Wilhelmshaven
 		}
 
 		victory_points = {
-			11360 1 # Emden
-		}
-
-		victory_points = {
-			11388 5 # Münster
+			405 1 # Bielefeld
 		}
 
 		buildings = {
 			infrastructure = 3
-			industrial_complex = 2
+			industrial_complex = 1
 			dockyard = 2
 			fuel_silo = 1
-			241 = {
+			13495 = {
 				naval_base = 8
 			}
-			air_base = 3
+			air_base = 1
 		}
 	}
 
 	provinces = {
-		241 247 309 336 3234 9281 11233 11264 11360 11388 
+		241 247 309 405 3234 13489 13495
 	}
 
 	local_supplies = 14.0 

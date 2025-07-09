@@ -105,7 +105,6 @@ focus_tree = {
 		
 		bypass = {
 			NOT = { controls_state = 59 }
-			NOT = { controls_state = 1046 }
 		}
 
 		available_if_capitulated = no
@@ -132,8 +131,6 @@ focus_tree = {
 
 			add_state_core = 59
 			hidden_effect = { 59 = { cancel_resistance = yes } }
-			add_state_core = 1046
-			hidden_effect = { 1046 = { cancel_resistance = yes } }
 		}
 	}
 
