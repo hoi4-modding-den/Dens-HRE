@@ -100,6 +100,22 @@
  XH2_mecklenburg_vorpommern_communism_DEF: "the Sowjetrepublik Mecklenburg-Vorpommern"
  XH2_mecklenburg_vorpommern_communism_ADJ: "Mecklenburg-Vorpommern"
 
+ XVD: "Verden"
+ XVD_DEF: "Verden"
+ XVD_ADJ: "Verden"
+ XVD_neutrality: "Prince-Bishopric of Verden"
+ XVD_neutrality_DEF: "the Hochstift Verden"
+ XVD_neutrality_ADJ: "Verden"
+ XVD_democratic: "City of Verden"
+ XVD_democratic_DEF: "the Stadtratsregierung Verden"
+ XVD_democratic_ADJ: "Verden"
+ XVD_fascism: "Nationalist Regime of Verden"
+ XVD_fascism_DEF: "the Nationalisten-Regierung über Verden"
+ XVD_fascism_ADJ: "Verden"
+ XVD_communism: "Verden Commune"
+ XVD_communism_DEF: "the Verden-Kommune"
+ XVD_communism_ADJ: "Verden"
+
  XFT_XHH_neutrality_subject: "Free State of Köslin"
  XFT_XHH_neutrality_subject_DEF: "the Freistaat Köslin"
  XFT_XHH_neutrality_subject_ADJ: "Köslin"
@@ -115,6 +131,9 @@
  XH1_ernest_august_name: "Ernest August"
  XH1_victoria_louise_name: "Victoria Louise"
  XH2_christian_louis_name: "Christian Louis"
+ XVD_bishop_jakob_name: "Jacob Reue"
+ XVD_city_council_name: "Verdener Stadtrat"
+ XVD_worker_council_name: "Verdener Gewerkschaftskanzel"
  XHH_carl_vincent_krogmann_name: "Karl V. Krogmann"
  XHH_spd_socialist_name: "Aaron Klinghoffer"
  XHH_fdp_liberal_name: "Lars Seitz"
@@ -157,6 +176,7 @@
 # TRAITS
  XHH_fuerst_of_hamburg: "Prince-Elector of Hamburg" # Kurfürst der Domäne der Freien Reichs- und Hansestadt Hamburg, Herzog von Schleswig, Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel
  XHH_the_prussian_duchess: "The Military Princess"
+ XVD_friendly_bishop: "Friendly Protestant"
  XHH_absolute_monarch: "Absolute Monarch"
  XHH_nazi_industrialist: "Nationalist Industrialist"
  XHH_socdem_prime_minister: "Resolute Social Democrat"
@@ -200,6 +220,15 @@
  XH1_fascism_party_long: "Nationalpartei Freies Hannover"
 
  XH2_neutrality_party: "Haus Mecklenburg"
+
+ XVD_democratic_party: "Verden City Council"
+ XVD_democratic_party_long: "Stadtrat Verden"
+ XVD_neutrality_party: "Evangelical Church"
+ XVD_neutrality_party_long: "Evangelische Kirche von Verden"
+ XVD_fascism_party: "German Nationalists"
+ XVD_fascism_party_long: "Deutsche Nationalisten"
+ XVD_communism_party: "Verden Worker Federation"
+ XVD_communism_party_long: "Verdener Arbeiterbund"
 
 
 # SCRIPTED TRIGGERS
@@ -274,6 +303,15 @@
  XHH_imperial_army_training: "Joint Imperial Army Exercises"
  XHH_catholic_donations_idea: "Catholic Donations"
  XHH_iron_cross_order_idea: "Prussian-Inspired Militarism"
+ XVD_city_guard: "Stadtwache Reliance"
+ XVD_city_guard_desc: "Our country does not have its own military force, instead utilising the Stadtwache (City Guard), the local police force of Verden, as a defensive force in emergency situations."
+ XVD_city_guard_tt: "§RUnits cannot be trained, disbanded or have their templates modified§!"
+ XVD_agrarian_economy: "Agrarian-Focused Economy"
+ XVD_agrarian_economy_desc: "While some industrialisation has taken place in Verden, mostly through Imperial investments, the majority of the country's economy is reliant on the agrarian sector."
+ XVD_ecclesiastical_government: "Ecclesiastical Government"
+
+# LAWS
+ XVD_free_market: "Open Markets"
 
 # CONCERNS
  XHH_hanse_kontor: "Hansekontor Hamburg"
@@ -300,6 +338,10 @@
  XHH_hamburger_waffenfabrik: "Hamburger Gewehrschmiede"
  XHH_opel_organization: "Opel-Fabrik Hamburg"
 
+
+# TECH SHARING
+ XVD_monastery_tech_sharing_group_name: "Evangelical Knowledge Exchange Program"
+ XVD_monastery_tech_sharing_group_desc: "To preserve old knowledge and gain new knowledge, [XVD.GetNameDef] cooperates with [XHH.GetNameDef] in different fields of science, such as industrial and electronic development."
 
 # OPINION MODIFIERS
  XHH_recognised_holy_see: "Recognised the Holy See"
@@ -652,6 +694,17 @@
  XHH_synthetic_production_desc: ""
  XHH_military_academies: "Imperial Military Academies"
  XHH_military_academies_desc: ""
+
+ XVD_ecclesiastical_government_focus: "The Prince-Bishopric Government"
+ XVD_ecclesiastical_government_focus_desc: ""
+ XVD_infrastructure_effort: "Improve the Roads"
+ XVD_infrastructure_effort_desc: ""
+ XVD_city_council_cooperation: "City Council Cooperation"
+ XVD_city_council_cooperation_desc: ""
+ XVD_improve_education: "Monastic Education"
+ XVD_improve_education_desc: ""
+ XVD_give_to_the_poor: "Care for the Poor"
+ XVD_give_to_the_poor_desc: ""
 
 
 # EVENTS

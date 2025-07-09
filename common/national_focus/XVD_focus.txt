@@ -1,0 +1,188 @@
+focus_tree = {
+	id = XvD_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XVD
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2100 y = 600 }
+
+	initial_show_position = {
+		x = 9
+		y = 0
+	}
+
+	focus = {
+		id = XVD_ecclesiastical_government_focus
+		icon = GFX_focus_generic_treaty
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 7
+		y = 0
+		#relative_position_id = 
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = XVD_ecclesiastical_government
+		}
+	}
+
+	focus = {
+		id = XVD_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = XVD_ecclesiastical_government_focus }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XVD_ecclesiastical_government_focus
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_city_council_cooperation
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = XVD_ecclesiastical_government_focus }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XVD_ecclesiastical_government_focus
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_improve_education
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = XVD_city_council_cooperation }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XVD_city_council_cooperation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XVD_ecclesiastical_government
+				add_idea = XVD_ecclesiastical_government_2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_war_with = XHH }
+					XHH = { OR = { has_government = democratic has_government = neutrality } }
+				}
+				ROOT = { add_to_tech_sharing_group = XVD_monastery_tech_sharing_group }
+				XHH = { add_to_tech_sharing_group = XVD_monastery_tech_sharing_group }
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_give_to_the_poor
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = XVD_city_council_cooperation }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XVD_city_council_cooperation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+}

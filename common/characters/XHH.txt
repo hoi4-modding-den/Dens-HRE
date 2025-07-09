@@ -113,6 +113,63 @@ characters = {
 
 	}
 
+	XVD_bishop_jakob = {
+
+		name = XVD_bishop_jakob_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XVD_bishop_jakob
+			}
+		}
+
+		country_leader = {
+			ideology = moderatism
+			traits = { XVD_friendly_bishop }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
+	XVD_city_council = {
+
+		name = XVD_city_council_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XVD_city_council
+			}
+		}
+
+		country_leader = {
+			ideology = conservatism
+			traits = {  }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
+	XVD_worker_council = {
+
+		name = XVD_worker_council_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XVD_worker_council
+			}
+		}
+
+		country_leader = {
+			ideology = anarchist_communism
+			traits = {  }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
 	XHH_carl_vincent_krogmann = {
 
 		name = XHH_carl_vincent_krogmann_name

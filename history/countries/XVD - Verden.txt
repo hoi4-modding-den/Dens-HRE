@@ -1,0 +1,52 @@
+capital = 1046
+
+oob = "XVD_1936"
+
+set_research_slots = 2
+set_stability = 0.7
+set_war_support = 0
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1
+	tech_trucks = 1
+	gw_artillery = 1
+}
+
+XHH = { give_guarantee = XVD }
+give_military_access = XHH
+
+country_lock_all_division_template = yes
+
+set_variable = { HRE_national_stance_federalism = 2 }
+set_variable = { HRE_national_stance_welfare = 1 }
+set_variable = { HRE_national_stance_papacy = 3 }
+
+set_country_flag = HRE_is_republic
+
+add_ideas = {
+	XVD_free_market
+	XVD_city_guard
+	XVD_agrarian_economy
+	#XVD_ecclesiastical_government
+}
+
+# Leaders
+recruit_character = XVD_bishop_jakob
+recruit_character = XVD_city_council
+recruit_character = XVD_worker_council
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.6.12"
+	election_frequency = 24
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 70
+	democratic = 28
+	fascism = 0
+	communism = 2
+}

@@ -913,6 +913,36 @@ ideas = {
 			cancel_if_invalid = no
 		}
 
+		XVD_free_market = {
+
+			visible = {
+				original_tag = XVD
+			}
+
+			cost = 150
+			picture = free_trade
+
+			modifier = {
+				min_export = 0.9
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.05
+				civilian_intel_to_others = 50
+				army_intel_to_others = 50
+				navy_intel_to_others = 50
+				airforce_intel_to_others = 50
+				#cic_construction_boost_factor = 0.15
+				weekly_manpower = 200
+			}
+
+			allowed_to_remove = {
+				has_war_support > 0.1
+			}
+
+			cancel_if_invalid = no
+		}
+
 		free_trade = {
 
 			available = {

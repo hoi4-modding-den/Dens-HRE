@@ -1,0 +1,41 @@
+﻿division_template = {
+	name = "Stadtwache"
+	template_counter = 70
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+	}
+}
+
+units = {
+
+	division = {	
+		name = "Verder Stadtwache"
+		location = 3271 # Verden
+		division_template = "Stadtwache"
+		start_experience_factor = 0.3
+	}
+
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = XVD
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+		#industrial_manufacturer = mio:
+	}
+	
+}
+
+#####################

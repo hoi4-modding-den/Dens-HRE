@@ -777,6 +777,106 @@ ideas = {
 			}
 		}
 
+		XVD_city_guard = {
+			
+			picture = citizen_militia_1
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			on_remove = {
+				country_lock_all_division_template = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.1
+				conscription_factor = 0.2
+				army_core_defence_factor = 0.1
+				ai_desired_divisions_factor = -0.8
+				ai_focus_defense_factor = 0.5
+				custom_modifier_tooltip = XVD_city_guard_tt
+			}
+		}
+
+		XVD_agrarian_economy = {
+			
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.5
+				monthly_population = 0.1
+				global_building_slots_factor = -0.25
+			}
+		}
+
+		XVD_ecclesiastical_government = {
+			
+			picture = XVD_ecclesiastical_government
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			cancel = {
+				NOT = { has_government = neutrality }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+				research_speed_factor = 0.1
+				political_advisor_cost_factor = 0.2
+			}
+		}
+
+		XVD_ecclesiastical_government_2 = {
+			
+			name = XVD_ecclesiastical_government
+			picture = XVD_ecclesiastical_government
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			cancel = {
+				NOT = { has_government = neutrality }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+				research_speed_factor = 0.2
+				political_advisor_cost_factor = 0.2
+			}
+		}
+
 	}
 
 	industrial_concern = {

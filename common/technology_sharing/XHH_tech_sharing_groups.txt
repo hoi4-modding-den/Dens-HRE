@@ -1,0 +1,18 @@
+technology_sharing_group = {
+
+	id = XVD_monastery_tech_sharing_group
+	name = XVD_monastery_tech_sharing_group_name
+	desc = XVD_monastery_tech_sharing_group_desc
+	picture = GFX_technology_sharing_default
+	research_sharing_per_country_bonus = 0.2
+
+	categories = { industry electronics }
+
+	available = {
+		OR = {
+			has_government = democratic
+			has_government = neutrality
+		}
+		NOT = { has_war_with = XVD }
+	}
+}
