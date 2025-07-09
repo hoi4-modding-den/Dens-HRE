@@ -33,5 +33,61 @@ characters = {
 			id = -1
 		}
 	}
+	XEX_mussolini = {
+		name = XEX_mussolini
+		portraits = {
+			civilian = {
+				small = gfx/interface/ideas/XEX/XEX_mussolini_advisor.png
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XEX_mussolini_idea
+			traits = { XEX_mussolini_war_industrialist }
+			can_be_fired = no
+			available = {
+				if = {
+					limit = {
+						NOT = { has_completed_focus = XEX_economical_strength }
+					}
+					custom_override_tooltip = {
+						tooltip = XAS_cant_be_hired_tt
+						always = no
+					}
+				}
+			}
+			visible = {
+				
+			}
+		}
+	}
+	XEX_dinograndi = {
+		name = XEX_dinograndi
+		portraits = {
+			civilian = {
+				small = gfx/interface/ideas/XEX/XEX_dinograndi_advisor.png
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XEX_dinograndi_idea
+			traits = { XEX_dino_grandi_economic_growth }
+			can_be_fired = no
+			available = {
+				if = {
+					limit = {
+						NOT = { has_completed_focus = XEX_economical_growth }
+					}
+					custom_override_tooltip = {
+						tooltip = XAS_cant_be_hired_tt
+						always = no
+					}
+				}
+			}
+			visible = {
+				
+			}
+		}
+	}
 }
 	
