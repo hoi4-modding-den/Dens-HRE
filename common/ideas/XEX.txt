@@ -1,5 +1,44 @@
 ideas = {
 	country = {
+		XEX_using_our_farmland = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				monthly_population = 0.25
+				consumer_goods_factor = -0.10
+				conscription_factor = 0.1
+			}
+		}
+		XEX_better_energy_usage = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				production_speed_buildings_factor = 0.10 
+				industrial_capacity_factory = 0.10 
+			}
+		}
+		XEX_reopened_genovas_port = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				industrial_factory_donations = 2
+				trade_opinion_factor = 0.10
+			}
+		}
+		XEX_recent_electronic_breakthorugh = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				research_speed_factor = 0.08 
+			}
+		}
+		XEX_piano_focaccia = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				production_speed_buildings_factor = 0.25 
+			}
+		}
 		XEX_organized_crime = {
 			picture = XEX_Chicago_Von
 
@@ -9,6 +48,26 @@ ideas = {
 				production_speed_buildings_factor = -0.15 
 				civilian_factory_use = 1
 				consumer_goods_factor = 0.15
+			}
+		}
+		XEX_organized_crime_2 = {
+			picture = XEX_Chicago_Von
+
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.075 
+				consumer_goods_factor = 0.075
+			}
+		}
+		XEX_organized_crime_3 = {
+			picture = XEX_Chicago_Von
+
+			modifier = {
+				stability_factor = -0.2
+				stability_weekly = -0.002
+				production_speed_buildings_factor = -0.30 
+				civilian_factory_use = 2
+				consumer_goods_factor = 0.30
 			}
 		}
 		XEX_Army_Of_Strenght = {
