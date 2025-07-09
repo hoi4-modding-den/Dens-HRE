@@ -1,0 +1,30 @@
+add_namespace = XWB_natural_event
+add_namespace = XWB_focus_event
+add_namespace = XWB_news_event
+add_namespace = XWB_diplo_event
+
+#Natural Events# (they just show up on their own)
+
+#Focus Events# (events from focuses)
+country_event = { #intro event
+    id = XWB_focus_event.1
+    title = XWB.FE_1.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.FE_1.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_1.a
+		ai_chance = {
+			base = 100
+		}
+		
+	hidden_effect = {
+			
+		}
+    }
+}
+
+#News Events# (the big news pop-ups)
+
+#Diplomatic Events# (events from interactions with other countries)

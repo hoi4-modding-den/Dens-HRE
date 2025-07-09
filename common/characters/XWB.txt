@@ -25,31 +25,32 @@ characters = {
 		country_leader = {
 			traits = { 
 				HRE_kingdom_wurttemberg
-				fascist_sympathies 
 				}
 			ideology = oligarchism
-			expire = "1965.1.1.1"
+			expire = "1939.1.1.1"
 			id = -1
 			
 		}
 	}
-	XWB_frederick_hohenzollern = {
-		name = XWB_frederick_hohenzollern_name
+	XWB_philipp_wurttemberg = {
+		name = XWB_philipp_wurttemberg_name
 		portraits = {
 			civilian = {
-				large = GFX_portrait_XWB_frederick_hohenzollern
+				large = GFX_portrait_XWB_philipp_placeholder
 			}
 		}
 		country_leader = {
-			traits = {  
-				HRE_principality_hohenzollern
-				DEN_fascist_militarist 
-			}
-			ideology = falangism
-			expire = "1965.1.1.1"
+			traits = { 
+				HRE_kingdom_wurttemberg
+				staunch_monarchist 
+				}
+			ideology = oligarchism
+			expire = "1975.1.1.1"
 			id = -1
+			
 		}
 	}
+
 	XWB_eugen_bolz = {
 		name = XWB_eugen_bolz_name
 		portraits = {

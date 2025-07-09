@@ -1,10 +1,10 @@
-capital = 50
+capital = 1024
 
-oob = "XWB_1936"
+oob = "XHZ_1936"
 
 set_research_slots = 3
-set_stability = 0.45
-set_war_support = 0.30
+set_stability = 0.60
+set_war_support = 0.50
 
 set_technology = {
 	infantry_weapons = 1
@@ -126,11 +126,7 @@ set_variable = { HRE_national_stance_federalism = 1 }
 set_variable = { HRE_national_stance_welfare = 3 } 
 set_variable = { HRE_national_stance_papacy = 3 } 
 
-recruit_character = XWB_ferdinand_porsche #fascist leader
-recruit_character = XWB_albrecht_wurttemberg #default monarchist
-recruit_character = XWB_frederick_hohenzollern #fascist monarchist
-recruit_character = XWB_eugen_bolz #democratic leader
-recruit_character = XWB_josef_schlaffer #communist leader
+recruit_character = XHZ_frederick_hohenzollern #fascist monarchist
 
 add_ideas = {
 	free_trade
@@ -138,19 +134,17 @@ add_ideas = {
 	extensive_conscription
 
 	#Actual Ideas#
-	XWB_king_idea 
-	XWB_democracy_idea
 }
 
 set_politics = {
 	ruling_party = fascism
 	last_election = "1935.6.12"
 	election_frequency = 60
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
 	neutrality = 30
-	democratic = 20
-	fascism = 40
-	communism = 10
+	democratic = 8
+	fascism = 62
+	communism = 0
 }

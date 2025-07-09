@@ -8,27 +8,17 @@ defined_text = {
 			    }
 		    }
         }
-        localization_key = GFX_portrait_XWB_pauline_wurttemberg
+        localization_key = GFX_portrait_XWB_albrecht_wurttemberg
     }
     text = {
         trigger = {
         	XWB = {
 			    has_country_leader = {
-				    character = XWB_pauline_wurttemberg
+				    character = XWB_albrecht_wurttemberg
 			    }
 		    }
         }
-        localization_key = GFX_portrait_XWB_pauline_wurttemberg
-    }
-    text = {
-        trigger = {
-        	XWB = {
-			    has_country_leader = {
-				    character = XWB_frederick_hohenzollern 
-			    }
-		    }
-        }
-        localization_key = GFX_portrait_XWB_frederick_hohenzollern
+        localization_key = GFX_portrait_XWB_albrecht_wurttemberg
     }
     text = {
         trigger = {
@@ -50,4 +40,20 @@ defined_text = {
         }
         localization_key = GFX_portrait_XWB_josef_schlaffer
     }
+}
+
+defined_text = { #Focus name
+	name = XWB_north_germany_focus_name
+	text = {
+		trigger = {
+			original_tag = XWB
+			has_country_leader = {
+				character = XWB_frederick_hohenzollern
+			}
+		}
+		localization_key = XWB_north_germany_focus_name_prussian
+	}
+	text = {
+		localization_key = XWB_north_germany_focus_name_normal
+	}
 }

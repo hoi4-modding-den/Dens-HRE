@@ -1,0 +1,13 @@
+defined_text = {
+    name = GetXHZLeaderPortrait
+    text = {
+        trigger = {
+        	XHZ = {
+			    has_country_leader = {
+				    character = XHZ_frederick_hohenzollern 
+			    }
+		    }
+        }
+        localization_key = GFX_portrait_XHZ_frederick_hohenzollern
+    }
+}

@@ -1,4 +1,9 @@
 focus_tree = {
+    
+###Carrera was here###
+# @carrera075
+# https://en.wikipedia.org/wiki/Porsche_Carrera_GT
+
 	id = XWB_focus_tree
 	
 	country = {
@@ -12,7 +17,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 1000 y = 0 }
+	continuous_focus_position = { x = 2000 y = 0 }
 
 	focus = {
 		id = XWB_porsche_regime
@@ -29,4 +34,947 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = XWB_bribe_military
+		icon = GFX_focus_mex_privatisation
+		x = -2
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_porsche_regime }
+		mutually_exclusive = { focus = XWB_bribe_military }
+		mutually_exclusive = { focus = XWB_we_do_a_bit_of_purging }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_we_do_a_bit_of_purging
+		icon = GFX_focus_IRQ_attempted_assasination_of_sidqi
+		x = 0
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_porsche_regime }
+		mutually_exclusive = { focus = XWB_bribe_military }
+		mutually_exclusive = { focus = XWB_we_do_a_bit_of_purging }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+		focus = {
+		id = XWB_false_flag_time
+		icon = GFX_focus_hol_war_on_pacifism
+		x = 2
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_porsche_regime }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_reichstag_fire
+		icon = GFX_focus_BRA_utilize_security_law
+		x = 0
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_false_flag_time }
+		prerequisite = { focus =  XWB_we_do_a_bit_of_purging focus = XWB_bribe_military }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_albrecht_abdication
+		icon = GFX_focus_NOR_send_the_king_back_to_denmark
+		x = -2
+		y = 3
+		cost = 10
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_reichstag_fire }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_bribe_monarchists
+		icon = GFX_focus_GER_monarchy_compromise
+		x = 0
+		y = 3
+		cost = 10
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_reichstag_fire }
+		mutually_exclusive = { focus = XWB_bribe_monarchists }
+		mutually_exclusive = { focus = XWB_purge_monarchists }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+		focus = {
+		id = XWB_purge_monarchists
+		icon = GFX_focus_rom_handle_king
+		x = 2
+		y = 3
+		cost = 10
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_reichstag_fire }
+		mutually_exclusive = { focus = XWB_bribe_monarchists }
+		mutually_exclusive = { focus = XWB_purge_monarchists }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_corporatist_regime
+		icon = GFX_focus_ICE_state_corporatism
+		x = 0
+		y = 4
+		cost = 10
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_albrecht_abdication }
+		prerequisite = { focus =  XWB_purge_monarchists focus = XWB_bribe_monarchists }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_police_state
+		icon = GFX_focus_generic_secret_service_agency
+		x = -3
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_corporatist_regime }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_total_war
+		icon = GFX_focus_generic_total_war
+		x = -1
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_corporatist_regime }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_volkswagen
+		icon = GFX_focus_GER_wirtschaftswunder
+		x = 1
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_corporatist_regime }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_autarky
+		icon = GFX_focus_GER_autarky_ambitions
+		x = 3
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_corporatist_regime }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_research_slot
+		icon = GFX_focus_research
+		x = 5
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_corporatist_regime focus = XWB_monarchist_regime }
+
+		available = {
+
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = XWB_domination_of_corporatism
+		icon = GFX_focus_GER_autarky_achieved
+		x = 0
+		y = 6
+		cost = 10
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_autarky }
+		prerequisite = { focus =  XWB_volkswagen }
+		prerequisite = { focus =  XWB_total_war }
+		prerequisite = { focus =  XWB_police_state }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+#Monarchist Tree#
+	focus = {
+		id = XWB_prince_of_war
+		icon = GFX_focus_RAJ_kingmaker
+		x = 8
+		y = 0
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		available = {
+			NOT = {
+				XWB = {
+					has_country_leader = { 
+						character =  XWB_ferdinand_porsche
+					}
+				}
+			}
+			XWB = {
+				has_government = fascism
+			}
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_guiding_hand
+		icon = GFX_focus_BEL_national_redoubt_at_antwerp
+		x = 10
+		y = 0
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		available = {
+			NOT = {
+				XWB = {
+					has_government = fascism
+				}
+			}
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_cooperate_with_nationalists
+		icon = GFX_goal_support_fascism
+		x = 7
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_prince_of_war }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_democracy_has_failed
+		icon = GFX_focus_usa_voter_registration_act
+		x = 9
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_prince_of_war focus = XWB_guiding_hand }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_destroy_fascists
+		icon = GFX_focus_AUS_ban_dnsap
+		x = 11
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_guiding_hand }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_co-opt_blitzkrieg
+		icon = GFX_focus_generic_tank_assault
+		x = 6
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_cooperate_with_nationalists }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_absolute_monarchy
+		icon = GFX_focus_generic_monarchy_1
+		x = 8
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_democracy_has_failed }
+		mutually_exclusive = { focus = XWB_absolute_monarchy }
+		mutually_exclusive = { focus = XWB_restrain_parliament }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_restrain_parliament
+		icon = GFX_focus_GER_total_control_over_domestic_affairs
+		x = 10
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_democracy_has_failed }
+		mutually_exclusive = { focus = XWB_absolute_monarchy }
+		mutually_exclusive = { focus = XWB_restrain_parliament }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_religion_focus
+		icon = GFX_focus_generic_catholic_dominion
+		x = 12
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XWB_destroy_fascists }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_monarchist_regime
+		icon = GFX_focus_ger_return_of_the_kaiser
+		x = 9
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_co-opt_blitzkrieg focus =  XWB_religion_focus }
+		prerequisite = { focus = XWB_absolute_monarchy focus =  XWB_restrain_parliament }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_streamline_industry
+		icon = GFX_focus_generic_modernize_industry
+		x = 6
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_monarchist_regime }
+		mutually_exclusive = { focus = XWB_streamline_industry }
+		mutually_exclusive = { focus = XWB_patronize_craftworks }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_patronize_craftworks
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
+		x = 8
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_monarchist_regime }
+		mutually_exclusive = { focus = XWB_streamline_industry }
+		mutually_exclusive = { focus = XWB_patronize_craftworks }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_re-develop_iron_mines
+		icon = GFX_focus_generic_steel
+		x = 10
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_monarchist_regime }
+		mutually_exclusive = { focus = XWB_re-develop_iron_mines }
+		mutually_exclusive = { focus = XWB_agriculture_focus }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_agriculture_focus
+		icon = GFX_focus_generic_agricultural_subsidies
+		x = 12
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_monarchist_regime }
+		mutually_exclusive = { focus = XWB_re-develop_iron_mines }
+		mutually_exclusive = { focus = XWB_agriculture_focus }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_war_focus
+		icon = GFX_focus_generic_steel
+		x = 8
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_streamline_industry focus = XWB_patronize_craftworks }
+		prerequisite = { focus = XWB_re-develop_iron_mines focus = XWB_agriculture_focus }
+		mutually_exclusive = { focus = XWB_war_focus }
+		mutually_exclusive = { focus = XWB_economy_focus }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_economy_focus
+		icon = GFX_focus_generic_agricultural_subsidies
+		x = 10
+		y = 5
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_streamline_industry focus = XWB_patronize_craftworks }
+		prerequisite = { focus = XWB_re-develop_iron_mines focus = XWB_agriculture_focus }
+		mutually_exclusive = { focus = XWB_war_focus }
+		mutually_exclusive = { focus = XWB_economy_focus }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_monarchist_dominance
+		icon = GFX_focus_AUS_bring_back_the_habsburg_rule
+		x = 9
+		y = 6
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_war_focus focus = XWB_economy_focus }
+
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+	#Foreign Policy Tree#
+	focus = {
+		id = XWB_foreign_policy_focus
+		icon = GFX_focus_GER_tend_to_the_future
+		x = 5
+		y = 6
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		available = {
+			OR = {
+				has_completed_focus = XWB_corporatist_regime
+				has_completed_focus = XWB_monarchist_regime
+			}
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_demand_voralberg
+		icon = GFX_goal_demand_sudetenland
+		x = 3
+		y = 7
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_foreign_policy_focus }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_destroy_burgundy
+		icon = GFX_focus_attack_france
+		x = 5
+		y = 7
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_foreign_policy_focus }
+		available = {
+
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					ZZZ = {
+						owns_state = 978
+					}
+				}
+				custom_effect_tooltip = XWB_destroy_burgundy_indev_tooltip
+				transfer_state = 978
+				transfer_state = 28
+				transfer_state = 42
+			}
+			else = {
+				978 = {
+						owner = {
+							XWB = {
+								create_wargoal = {
+									type = annex_everything
+									target = PREV
+									expire = 0
+								}
+								28 = { add_claim_by = XWB }
+								42 = { add_claim_by = XWB }
+							}
+						}
+					}
+			}
+		}
+	}
+	focus = {
+		id = XWB_demand_bavarian_swabia
+		icon = GFX_focus_attack_germany
+		x = 7
+		y = 7
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_foreign_policy_focus }
+		available = {
+
+		}
+		completion_reward = {
+			custom_effect_tooltip = XWB_demand_bavarian_swabia_indev_tooltip
+		}
+	}
+	focus = {
+		id = XWB_south_german_focus
+		icon = GFX_focus_AUS_an_improved_german_state
+		x = 3
+		y = 8
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_destroy_burgundy }
+			prerequisite = { focus = XWB_demand_voralberg focus = XWB_demand_bavarian_swabia }
+		mutually_exclusive = { focus = XWB_south_german_focus }
+		mutually_exclusive = { focus = XWB_north_german_focus }
+		mutually_exclusive = { focus = XWB_greater_wurttemberg }
+		available = {
+			NOT = {
+					has_country_leader = { 
+						character =  XHZ_frederick_hohenzollern
+					}
+			}
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_north_german_focus
+		icon = GFX_focus_GER_restore_eastern_imperial_possessions
+		x = 5
+		y = 8
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_destroy_burgundy }
+			prerequisite = { focus = XWB_demand_voralberg focus = XWB_demand_bavarian_swabia }
+		mutually_exclusive = { focus = XWB_south_german_focus }
+		mutually_exclusive = { focus = XWB_north_german_focus }
+		mutually_exclusive = { focus = XWB_greater_wurttemberg }
+		available = {
+			NOT = {
+					has_country_leader = { 
+						character =  XWB_albrecht_wurttemberg
+					}
+					has_country_leader = {
+						character = XWB_philipp_wurttemberg
+					}
+			}
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_greater_wurttemberg
+		icon = GFX_focus_GER_realpolitik
+		x = 7
+		y = 8
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_destroy_burgundy }
+			prerequisite = { focus = XWB_demand_voralberg focus = XWB_demand_bavarian_swabia }
+		mutually_exclusive = { focus = XWB_south_german_focus }
+		mutually_exclusive = { focus = XWB_north_german_focus }
+		mutually_exclusive = { focus = XWB_greater_wurttemberg }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_demand_sudetenland
+		icon = GFX_focus_generic_attack_czechoslovakia
+		x = -2
+		y = 9
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_south_german_focus }
+		available = {
+			has_country_leader = { 
+				character =  XWB_ferdinand_porsche
+			} 
+			69 = {
+				owner = {
+					is_neighbor_of = XWB
+				}
+			}
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_destroy_austria
+		icon = GFX_focus_generic_attack_austria
+		x = 0
+		y = 9
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_south_german_focus }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_destroy_switzerland
+		icon = GFX_focus_attack_switzerland
+		x = 2
+		y = 9
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_south_german_focus }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_bavarian_anschluss
+		icon = GFX_focus_GER_anschluss
+		x = 4
+		y = 9
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_south_german_focus focus = XWB_north_german_focus }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_puppet_switzerland
+		icon = GFX_focus_SWI_closer_ties_with_germany
+		x = 6
+		y = 9
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_greater_wurttemberg }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_puppet_hesse
+		icon = GFX_focus_GER_remilitarize_the_rhineland
+		x = 8
+		y = 9
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_greater_wurttemberg }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_puppet_italy
+		icon = GFX_focus_ITA_the_social_republic_prevails
+		x = 0
+		y = 10
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_destroy_austria focus = XWB_destroy_switzerland }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_destroy_venice
+		icon = GFX_focus_attack_italy
+		x = 2
+		y = 10
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_destroy_austria focus = XWB_destroy_switzerland }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_invade_the_rhine
+		icon = GFX_focus_GER_around_maginot
+		x = 5
+		y = 10
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_north_german_focus }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_declare_south_germany
+		icon = GFX_focus_GER_european_confederation
+		x = 1
+		y = 11
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_puppet_italy focus = XWB_destroy_venice }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_invade_oldenburg
+		icon = GFX_focus_generic_north_atlantic_fleet
+		x = 3
+		y = 11
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_invade_the_rhine }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_puppet_hanover
+		icon = GFX_focus_generic_subjugation
+		x = 5
+		y = 11
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_invade_the_rhine }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_destroy_saxony
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 7
+		y = 11
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_invade_the_rhine }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_march_on_berlin
+		icon = GFX_focus_XHH_attack_prussia
+		x = 5
+		y = 12
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_puppet_hanover focus = XWB_destroy_saxony }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_march_east
+		icon = GFX_focus_POL_reassert_silesian_claims
+		x = 7
+		y = 12
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XWB_puppet_hanover focus = XWB_destroy_saxony }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_polish_corridor
+		icon = GFX_focus_GER_danzig_or_war
+		x = 9
+		y = 12
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = {  focus = XWB_destroy_saxony }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XWB_declare_germany
+		icon = GFX_focus_GER_hegemony_over_europe
+		x = 5
+		y = 13
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = {  focus = XWB_march_on_berlin }
+		available = {
+			
+		}
+		completion_reward = {
+
+		}
+	}
 }

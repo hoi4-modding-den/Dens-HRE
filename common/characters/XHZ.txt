@@ -1,0 +1,19 @@
+characters = {
+	XHZ_frederick_hohenzollern = {
+		name = XWB_frederick_hohenzollern_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XHZ_frederick_hohenzollern
+			}
+		}
+		country_leader = {
+			traits = {  
+				HRE_principality_hohenzollern
+				DEN_fascist_militarist 
+			}
+			ideology = falangism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+}
