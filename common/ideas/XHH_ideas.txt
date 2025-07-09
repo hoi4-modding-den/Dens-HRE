@@ -559,7 +559,11 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_government = neutrality
+				has_government = fascism
+			}
+
+			cancel = {
+				NOT = { has_government = fascism }
 			}
 
 			removal_cost = -1

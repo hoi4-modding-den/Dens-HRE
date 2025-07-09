@@ -3757,9 +3757,21 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
+			add_state_core = 56
+			add_state_core = 1053
+			add_state_core = 1052
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			unlock_decision_tooltip = XHH_demand_wilhelmshaven
 			unlock_decision_tooltip = XHH_demand_cuxhaven
 			unlock_decision_tooltip = XHH_demand_nordenham
+		}
+
+		bypass_effect = {
+			add_state_core = 56
+			add_state_core = 1053
+			add_state_core = 1052
 		}
 	}
 
@@ -3990,6 +4002,8 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
+
+			# leads to Hanover and Mecklenburg rebelling, Hanover will become a puppet shortly after
 		}
 	}
 

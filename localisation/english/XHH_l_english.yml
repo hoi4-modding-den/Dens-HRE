@@ -42,6 +42,19 @@
  XHH_north_germany_communism_DEF: "Norddeutsche Volksrepublik"
  XHH_north_germany_communism_ADJ: "North German"
 
+ XHH_schleswig_holstein: "Schleswig-Holstein"
+ XHH_schleswig_holstein_DEF: "Schleswig-Holstein"
+ XHH_schleswig_holstein_ADJ: "Schleswig-Holsteiner"
+ XHH_schleswig_holstein_neutrality: "Duchy of Schleswig-Holstein"
+ XHH_schleswig_holstein_neutrality_DEF: "the Herzogtum Schleswig-Holstein"
+ XHH_schleswig_holstein_neutrality_ADJ: "Schleswig-Holsteiner"
+ XHH_schleswig_holstein_fascism: "Schleswig-Holstein National State"
+ XHH_schleswig_holstein_fascism_DEF: "the Nationalstaat Schleswig-Holstein"
+ XHH_schleswig_holstein_fascism_ADJ: "Schleswig-Holsteiner"
+ XHH_schleswig_holstein_communism: "People's Republic of Schleswig-Holstein"
+ XHH_schleswig_holstein_communism_DEF: "the Volksrepublik Schleswig-Holstein"
+ XHH_schleswig_holstein_communism_ADJ: "Schleswig-Holsteiner"
+
  XH1: "Hanover"
  XH1_DEF: "Hannover"
  XH1_ADJ: "Hanoverian"
@@ -96,11 +109,12 @@
 
 
 # LEADER NAMES
- XHH_tom_first_name: "Kurfürst Tom I."
+ XHH_tom_first_name: "Tom Ernst Wilhelm"
  XHH_tom_first_desc: "§YFull Name and Title:§! §LHis Majesty, Tom Ernst Wilhelm vom Hause Hamburg-Mecklenburg, Kurfürst von Hamburg und ihrer Territorien§!\n§YBorn:§! §LMay 3rd, 1895, in Wandsbek, Hamburg, in the Holy Roman Empire§!\n§YBackground:§! §LCoronated Tom the First of Hamburg, he is the fifth monarch of the Principality since its establishment over two-hundred years ago. The first ten years of his reign have been filled with battles between the authorities and the Hanoverian separatists, increasing crackdowns on the influence of the Hanseatic League and squabbling between the members of the senate over what could be done. With all of these problems sorted out - though he is a firm believer of the path the monarchy has taken until now - it would seem that unless swayed by outside forces, his reign will continue to be largely uninteresting.§!"
  XHH_tom_first_dem_desc: "$XHH_tom_first_desc$\n \n§LHis authority as monarch has been greatly diminished and now he acts only as a figurehead for the democratic government of Hamburg.§!"
- XH1_ernest_august_name: "Herzog Ernest August"
- XH2_christian_louis_name: "Herzog Christian Louis"
+ XH1_ernest_august_name: "Ernest August"
+ XH1_victoria_louise_name: "Victoria Louise"
+ XH2_christian_louis_name: "Christian Louis"
  XHH_carl_vincent_krogmann_name: "Karl V. Krogmann"
  XHH_spd_socialist_name: "Aaron Klinghoffer"
  XHH_fdp_liberal_name: "Lars Seitz"
@@ -142,6 +156,7 @@
 
 # TRAITS
  XHH_fuerst_of_hamburg: "Prince-Elector of Hamburg" # Kurfürst der Domäne der Freien Reichs- und Hansestadt Hamburg, Herzog von Schleswig, Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel
+ XHH_the_prussian_duchess: "The Military Princess"
  XHH_absolute_monarch: "Absolute Monarch"
  XHH_nazi_industrialist: "Nationalist Industrialist"
  XHH_socdem_prime_minister: "Resolute Social Democrat"
@@ -180,6 +195,7 @@
  XHH_communism_party_long: "Vereinigte Hafenarbeitergewerkschaften"
 
  XH1_neutrality_party: "Haus Hannover"
+ XH1_neutrality_party_victoria: "Haus Hannover-Schleswig-Holstein"
  XH1_fascism_party: "NP-FH"
  XH1_fascism_party_long: "Nationalpartei Freies Hannover"
 
@@ -307,6 +323,11 @@
  XHH_demand_wilhelmshaven: "Demand Wilhelmshaven"
  XHH_demand_cuxhaven: "Demand Return of Cuxhaven"
  XHH_demand_nordenham: "Demand [1052.GetName]"
+ XH1_integrate_bremen: "Integrate Bremen"
+ XH1_integrate_schwerin: "Annex the Grafschaft Schwerin"
+ XH1_integrate_dithmarschen: "End Dithmarschen Peasant Autonomy"
+ XH1_establish_duchy_of_schleswig_holstein: "Restore the Duchy of Schleswig-Holstein"
+ XH1_establish_duchy_of_mecklenburg: "Restore the Duchy of Mecklenburg"
 
  XHH_chartered_colonial_companies: "Chartered Company Territorial Exploitation"
  XHH_chartered_colonial_companies_desc: "$XHH_colonial_wealth_desc$\n "
@@ -735,6 +756,16 @@
  XHH_news_events.7.desc: "Following the Kurfürst's attempt to institute a royal dictatorship, the Nationale Union, a nationalist group in Hamburg, has overthrown the Princely regime and established a nationalist republic.\n \nThe new government has already received pushbacks from various groups, including the [XH1.GetAdjective] [XH1.GetFascistParty], the Hamburgish Labour Union Movement and the SPD."
  XHH_news_events.7.a: "The Nation is safe in our hands!"
  XHH_news_events.7.b: "What is happening in Hamburg?"
+
+ XH1_internal_events.1.t: "Ernest August shot in Braunschweig!"
+ XH1_internal_events.1.desc: "Following his intentions to work with the leaders of the Hamburg Nationalist Movement, the Hanoverian separatist underground has made moves to eliminate him for collaborating with the enemy.\n \nToday in the early morning, as the Prince was driven through the city of Braunschweig on his way to Hamburg, a man in the crowd forming along the path took out a pistol and shot Ernest August."
+ XH1_internal_events.1.a: "The Fürst is dead, long live the Fürstin!"
+
+ XH1_news_events.1.t: "Prince of Hanover shot!"
+ XH1_news_events.1.desc: "Following his intentions to work with the leaders of the Hamburg Nationalist Movement, the Hanoverian separatist underground has made moves to eliminate Prince Ernest August for collaborating with the enemy.\n \nIn the early morning, as the Prince was driven through the city of Braunschweig on his way to Hamburg, a man in the crowd forming along the path took out a pistol and shot him.\n \nSince Ernest August had no living heirs, his wife Fürstin Victoria Louise has taken over as monarch of Hanover."
+ XH1_news_events.1.a: "Victoria mourns her husband."
+ XH1_news_events.1.b: "Hanover seems very unstable right now."
+ XH1_news_events.1.c: "He deserved it."
 
 
 # STATE NAMES

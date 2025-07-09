@@ -187,6 +187,8 @@ political_actions = {
 			controls_state = 62
 		}
 
+		fire_only_once = yes
+
 		complete_effect = {
 			if = {
 				limit = {
@@ -350,6 +352,14 @@ foreign_politics = {
 
 		targets_dynamic = yes
 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 56
+			}
+		}
+
+		on_map_mode = decision_view_only
+
 		cost = 50
 
 		fire_only_once = yes
@@ -374,7 +384,6 @@ foreign_politics = {
 			effect_tooltip = {
 				56 = {
 					transfer_state_to = ROOT
-					add_core_of = ROOT
 				}
 			}
 
@@ -425,6 +434,14 @@ foreign_politics = {
 
 		targets_dynamic = yes
 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1053
+			}
+		}
+
+		on_map_mode = decision_view_only
+
 		cost = 50
 
 		fire_only_once = yes
@@ -438,7 +455,7 @@ foreign_politics = {
 		war_with_target_on_remove = yes
 
 		remove_effect = {
-			1053 = { save_event_target_as = demanded_prov_target set_state_flag = give_core_to_state_flag }
+			1053 = { save_event_target_as = demanded_prov_target }
 			FROM = {
 				country_event = {
 					id = generic.23
@@ -450,7 +467,6 @@ foreign_politics = {
 			effect_tooltip = {
 				1053 = {
 					transfer_state_to = ROOT
-					add_core_of = ROOT
 				}
 			}
 
@@ -501,6 +517,14 @@ foreign_politics = {
 
 		targets_dynamic = yes
 
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1052
+			}
+		}
+
+		on_map_mode = decision_view_only
+
 		cost = 50
 
 		fire_only_once = yes
@@ -514,7 +538,7 @@ foreign_politics = {
 		war_with_target_on_remove = yes
 
 		remove_effect = {
-			1052 = { save_event_target_as = demanded_prov_target set_state_flag = give_core_to_state_flag }
+			1052 = { save_event_target_as = demanded_prov_target }
 			FROM = {
 				country_event = {
 					id = generic.23
@@ -526,7 +550,6 @@ foreign_politics = {
 			effect_tooltip = {
 				1052 = {
 					transfer_state_to = ROOT
-					add_core_of = ROOT
 				}
 			}
 
@@ -537,6 +560,266 @@ foreign_politics = {
 				}
 			}
 		}
+	}
+
+	XH1_integrate_bremen = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1017
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		allowed = {  
+			original_tag = XH1
+		}
+
+		available = {
+			controls_state = 1017
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = {
+					1017 = { is_claimed_by = ROOT }
+				}
+				remove_state_claim = 1017
+			}
+			add_state_core = 1017
+			if = {
+				limit = {
+					NOT = { owns_state = 1017 }
+				}
+				set_state_owner = 1017
+			}
+		}
+
+	}
+
+	XH1_integrate_schwerin = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1045
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		allowed = {  
+			original_tag = XH1
+		}
+
+		available = {
+			controls_state = 1045
+		}
+
+		visible = {
+			# has_completed_focus
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = {
+					1017 = { is_claimed_by = ROOT }
+				}
+				remove_state_claim = 1045
+			}
+			add_state_core = 1045
+			if = {
+				limit = {
+					NOT = { owns_state = 1045 }
+				}
+				set_state_owner = 1045
+			}
+		}
+
+	}
+
+	XH1_integrate_dithmarschen = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1043
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		allowed = {  
+			original_tag = XH1
+		}
+
+		available = {
+			controls_state = 1043
+		}
+
+		visible = {
+			# has_completed_focus
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		complete_effect = {
+			if = {
+				limit = {
+					1017 = { is_claimed_by = ROOT }
+				}
+				remove_state_claim = 1043
+			}
+			add_state_core = 1043
+			if = {
+				limit = {
+					NOT = { owns_state = 1043 }
+				}
+				set_state_owner = 1043
+			}
+		}
+
+	}
+
+	XH1_establish_duchy_of_schleswig_holstein = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 909
+				state = 58
+				state = 1044
+				state = 1047
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		allowed = {  
+			original_tag = XH1
+		}
+
+		available = {
+			NOT = { country_exists = XHH }
+			controls_state = 909
+			controls_state = 58
+			controls_state = 1044
+			controls_state = 1047
+		}
+
+		visible = {
+			# has_completed_focus
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				XHH = { remove_state_core = 1017 remove_state_core = 1043 }
+			}
+			release_puppet_on_controlled = XHH
+			hidden_effect = {
+				XHH = { add_State_core = 1017 add_State_core = 1043 }
+			}
+			XHH = { 
+				set_cosmetic_tag = XHH_schleswig_holstein
+				hidden_effect = {
+					uncomplete_national_focus = {
+						focus = XHH_national_revolution
+						uncomplete_children = yes
+					}
+					complete_national_focus = XHH_abolish_the_senate
+				}
+			}
+		}
+
+	}
+
+	XH1_establish_duchy_of_mecklenburg = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 61
+				state = 1048
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		allowed = {  
+			original_tag = XH1
+		}
+
+		available = {
+			NOT = { country_exists = XH2 }
+			controls_state = 61
+			controls_state = 1048
+		}
+
+		visible = {
+			# has_completed_focus
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			hidden_effect = {
+				XH2 = { remove_state_core = 1045 }
+			}
+			release_puppet_on_controlled = XH2
+			hidden_effect = {
+				XH2 = { add_state_core = 1045 }
+			}
+		}
+
 	}
 
 }

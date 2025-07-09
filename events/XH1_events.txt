@@ -1,0 +1,80 @@
+add_namespace = XH1_internal_events
+add_namespace = XH1_news_events
+
+country_event = {
+	id = XH1_internal_events.1
+	title = XH1_internal_events.1.t
+	desc = XH1_internal_events.1.desc
+	
+	picture = GFX_report_event_generic_riot
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XH1_internal_events.1.a
+
+		retire_character = XH1_ernest_august
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		hidden_effect = {
+			add_ruling_to_neu = yes
+		}
+
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+			name = XH1_neutrality_party_victoria
+			long_name = XH1_neutrality_party_victoria
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		promote_character = XH1_victoria_louise
+		
+		#load_focus_tree = XH1_victoria_focus_tree
+
+		hidden_effect = {
+			news_event = {
+				id = XH1_news_events.1
+				hours = 3
+			}
+		}
+    }
+}
+
+news_event = {
+	id = XH1_news_events.1
+	title = XH1_news_events.1.t
+	desc = XH1_news_events.1.desc
+	
+	picture = GFX_news_event_generic_funeral
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XH1_news_events.1.a
+		trigger = {
+			original_tag = XH1
+			NOT = { has_war_with = XH1 }
+		}
+    }
+
+	option = {
+        name = XH1_news_events.1.b
+		trigger = {
+			NOT = { original_tag = XH1 }
+			NOT = { has_war_with = XH1 }
+		}
+    }
+
+	option = {
+        name = XH1_news_events.1.c
+		trigger = {
+			NOT = { original_tag = XH1 }
+			has_war_with = XH1
+		}
+    }
+}
