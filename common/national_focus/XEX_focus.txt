@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 9000 y = 0 }
+	continuous_focus_position = { x = 3800 y = 1000 }
 
 	focus = {
 		id = XEX_adress_the_kingdom
@@ -807,28 +807,7 @@ focus_tree = {
 			
 		}
 	}
-	focus = {
-		id = XEX_invite_tyrol
-		icon = GFX_focus_RAJ_to_shake_the_world
-		prerequisite = { focus = XEX_request_brescia }
-		#mutually_exclusive = {  }
-		x = 11
-		y = 4
-		relative_position_id = XEX_adress_the_kingdom
-		
-		cost = 2
-		ai_will_do = {
-			factor = 20
-		}
-		available = {
-			
-		}
-		available_if_capitulated = no
-
-		completion_reward = {
-			
-		}
-	}
+	
 	focus = {
 		id = XEX_invite_venetia
 		icon = GFX_goal_generic_invite_venetia
@@ -858,6 +837,28 @@ focus_tree = {
 		mutually_exclusive = { focus = XEX_invade_venetia focus = XEX_invite_venetia  }
 		x = 11
 		y = 3
+		relative_position_id = XEX_adress_the_kingdom
+		
+		cost = 2
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			
+		}
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XEX_invite_tyrol
+		icon = GFX_focus_RAJ_to_shake_the_world
+		prerequisite = { focus = XEX_request_brescia }
+		#mutually_exclusive = {  }
+		x = 11
+		y = 4
 		relative_position_id = XEX_adress_the_kingdom
 		
 		cost = 2
@@ -1141,7 +1142,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_improve_army_efficency
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_chi_army_reform
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		#mutually_exclusive = {  }
 		x = 4
@@ -1163,7 +1164,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_calm_navy_tensions
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = XEX_adress_the_kingdom }
 		#mutually_exclusive = {  }
 		x = -4
@@ -1185,7 +1186,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_create_a_air_branch
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_SMB_purchase_aircraft
 		prerequisite = { focus = XEX_calm_navy_tensions focus = XEX_improve_army_efficency }
 		#mutually_exclusive = {  }
 		x = 4
@@ -1207,7 +1208,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_create_air_industries
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_increase_aircraft_production_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_create_a_air_branch }
 		#mutually_exclusive = {  }
 		x = -1
@@ -1229,7 +1230,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_develop_airports
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_air_defense
 		prerequisite = { focus = XEX_create_a_air_branch }
 		#mutually_exclusive = {  }
 		x = 1
@@ -1251,7 +1252,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_improve_areal_range
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_cas_aircraft
 		prerequisite = { focus = XEX_develop_airports focus = XEX_create_air_industries }
 		#mutually_exclusive = {  }
 		x = 1
@@ -1273,7 +1274,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_small_aircraft_push
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = XEX_improve_areal_range }
 		mutually_exclusive = { focus = XEX_medium_aircraft_push }
 		x = -2
@@ -1295,7 +1296,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_medium_aircraft_push
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_long_range_aircraft
 		prerequisite = { focus = XEX_improve_areal_range }
 		mutually_exclusive = { focus = XEX_small_aircraft_push }
 		x = 0
@@ -1317,7 +1318,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_bologna_air_craft_research
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_air_research_boost
 		prerequisite = { focus = XEX_improve_areal_range }
 		relative_position_id = XEX_improve_areal_range
 		
@@ -1342,7 +1343,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_expand_genoa_dockyards
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = { focus = XEX_calm_navy_tensions }
 		#mutually_exclusive = {  }
 		x = -2
@@ -1364,7 +1365,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_research_better_submarines
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
 		x = -3
@@ -1386,7 +1387,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_research_better_destroyers
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
 		x = 3
@@ -1408,7 +1409,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_research_battle_ships
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_navy_battleship2
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
 		x = 2
@@ -1430,7 +1431,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_research_better_carriers
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_air_carrier
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
 		x = -2
@@ -1452,7 +1453,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_invest_into_generic_navy_research
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = XEX_expand_genoa_dockyards }
 		#mutually_exclusive = {  }
 		x = 0
@@ -1474,7 +1475,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_torpedo_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_torpedo_production
 		prerequisite = { focus = XEX_invest_into_generic_navy_research }
 		mutually_exclusive = { focus = XEX_offensive_navy_focus }
 		x = 1
@@ -1496,7 +1497,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_offensive_navy_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = XEX_invest_into_generic_navy_research }
 		mutually_exclusive = { focus = XEX_torpedo_focus }
 		x = -1
@@ -1518,7 +1519,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_select_a_military_doctrine
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = XEX_improve_army_efficency }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -1540,7 +1541,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_firepower_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_soviet_artillery_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_select_a_military_doctrine }
 		mutually_exclusive = { focus = XEX_motorized_effort }
 		x = 2
@@ -1562,7 +1563,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_artillery_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = XEX_firepower_focus }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -1584,7 +1585,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_special_forces_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_eng_special_air_service
 		prerequisite = { focus = XEX_firepower_focus }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -1606,7 +1607,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_special_forces_better_training
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_continuous_reduce_training_time
 		prerequisite = { focus = XEX_special_forces_focus }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -1628,7 +1629,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_motorized_effort
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = XEX_select_a_military_doctrine }
 		mutually_exclusive = { focus = XEX_firepower_focus }
 		x = -2
@@ -1650,7 +1651,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_develop_tanks
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_development_of_tankograd_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_motorized_effort }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -1672,7 +1673,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_mechanized_effort
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_generic_purchase_mechanized_equipment
 		prerequisite = { focus = XEX_motorized_effort }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -1694,7 +1695,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_speed_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_GER_kriegslokomotive
 		prerequisite = { focus = XEX_mechanized_effort focus = XEX_artillery_focus }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -1716,7 +1717,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XEX_breakthrough_focus
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_SOV_the_last_break_southward_ccp_2d_sov_compatibility
 		prerequisite = { focus = XEX_develop_tanks }
 		#mutually_exclusive = { focus =  }
 		x = 1
