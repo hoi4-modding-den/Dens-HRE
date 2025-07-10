@@ -48,32 +48,21 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   
   | Tag | Github Name        | Discord Name           |
   | --- | :----------------: | :--------------------: |
-  | XAS | STupidLord         | stupidlord             |
-  | XS0 | STupidLord         | stupidlord             |
-  | XS1 | STupidLord         | stupidlord             |
+  | <details> <summary>Austria</summary> <ul><li>XAS<li>XS0<li>XS1</ul></details> | STupidLord         | stupidlord             |
+  | XBH | BurgerKingHotline | burgerkinghotline |
   | XBG | sprinkleskid       | sprinkleskid           |
-  | XBR | Kasastul           | kasastul               |
-  | XSC | Kasastul           | kasastul               |
-  | XSR | Kasastul           | kasastul               |
-  | XCL | johndoodoomayan    | johndoodoomayan        |
-  | XEX | IWillExplode       | i_will_explode_        | < GOAT
-  | XE0 | IWillExplode       | i_will_explode_        | < GOAT
+  | <details><summary>Brandenburg</summary><ul><li>XBR<li>XSC<li>XSR<li>XSW</ul></details> | Kasastul           | kasastul               |
+  | <details><summary>Marseilles</summary><ul><li>XCL<li>XSV<li>XNZ | johndoodoomayan    | johndoodoomayan        |
+  | <details><summary>Padania</summary><ul><li>XEX<li>XE0</ul></details> | IWillExplode       | i_will_explode_        | < GOAT
   | XFT | Tyaramisu          | tyaramisu              |
-  | XHH | Orland2            | 0rland0                |
-  | XH1 | Orland2            | 0rland0                |
-  | XH2 | Orland2            | 0rland0                |
+  | <details><summary>Hamburg</summary><ul><li>XHH<li>XH1<li>XH2<li>XVD</ul></details> | Orland2            | 0rland0                |
   | XPK | PolishPartizan     | polishpartizan         |
-  | XPO | Potanicc           | potanictheseventh      |
   | XRO | Meepazor           | meepazor               |
-  | XVE | furiousky          | furiousky              |
-  | XIF | furiousky          | furiousky              |  
-  | XWB | Carrera075         | carrera075             |
-  | XTR | cyanparty          | CYANCLAW               |
-  | XLI | cyanparty          | CYANCLAW               |
-  | XNE | acer-xq            | Acer                   |
-  | XHO | acer-xq            | Acer                   |
-  | XBT | acer-xq            | Acer                   |
-  | XUT | acer-xq            | Acer                   |
-  | XFS | acer-xq            | Acer                   |
+  | <details><summary>Venice</summary><ul><li>XVE<li>XIF</ul></details> | furiousky          | furiousky              |
+  | <details><summary>Wurttemberg</summary><ul><li>XWB<li>XHZ</ul></details> | Carrera075         | carrera075             |
+  | <details><summary>Tyrol</summary><ul><li>XTR<li>XLI</ul></details> | cyanparty          | cyanparty               |
+  | <details><summary>Netherlands</summary><ul><li>XNE<li>XHO<li>XBT<li>XUT<li>XFS</ul></summary> | acer-xq            | ace.r                  |
+  | <details> <summary> Hesse</summary> <ul><li>XLH<li>XLn<li>XHm<li>XIy</ul> \* n is 0-9, <br>m is 0,3-9, <br>y is 0-3  | greenbueller| greenbueller |
+  
 
 </details>
