@@ -826,6 +826,94 @@ ideas = {
 			}
 		}
 
+		XVD_agrarian_economy_2 = {
+			
+			name = XVD_agrarian_economy
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.4
+				monthly_population = 0.08
+				global_building_slots_factor = -0.2
+			}
+		}
+
+		XVD_agrarian_economy_3 = {
+			
+			name = XVD_agrarian_economy
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.3
+				monthly_population = 0.06
+				global_building_slots_factor = -0.15
+			}
+		}
+
+		XVD_agrarian_economy_4 = {
+			
+			name = XVD_agrarian_economy
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.2
+				monthly_population = 0.04
+				global_building_slots_factor = -0.1
+			}
+		}
+
+		XVD_agrarian_economy_5 = {
+			
+			name = XVD_agrarian_economy
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				monthly_population = 0.02
+				global_building_slots_factor = -0.05
+			}
+		}
+
 		XVD_ecclesiastical_government = {
 			
 			picture = XVD_ecclesiastical_government
@@ -873,7 +961,7 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.05
 				research_speed_factor = 0.2
-				political_advisor_cost_factor = 0.2
+				political_advisor_cost_factor = 0.4
 			}
 		}
 
