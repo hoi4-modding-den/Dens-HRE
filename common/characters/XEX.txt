@@ -7,7 +7,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { HRE_kingdom_padania HRE_principality_milan }
+			traits = { HRE_kingdom_padania }
 			ideology = despotism
 			expire = "1950.1.1.1"
 			id = -1
@@ -15,6 +15,20 @@ characters = {
 		country_leader = {
 			traits = { HRE_kingdom_padania }
 			ideology = fascism_ideology
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+	XEX_church_of_god = {
+		name = XEX_church_of_god
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XEX_church
+			}
+		}
+		country_leader = {
+			traits = { }
+			ideology = anarchist_communism
 			expire = "1950.1.1.1"
 			id = -1
 		}
@@ -73,7 +87,7 @@ characters = {
 			idea_token = XEX_dinograndi_idea
 			traits = { XEX_dino_grandi_economic_growth }
 			can_be_fired = no
-			available = {
+			available = { 
 				if = {
 					limit = {
 						NOT = { has_completed_focus = XEX_economical_growth }

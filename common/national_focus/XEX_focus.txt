@@ -195,6 +195,7 @@ focus_tree = {
 					province = 6788
 				}
 				add_extra_state_shared_building_slots = 1
+				
 			}
 			add_ideas = XEX_reopened_genovas_port
 		}
@@ -221,12 +222,21 @@ focus_tree = {
 			every_state = {
 				limit = {
 					infrastructure < 3
+					is_owned_by = ROOT
 				}
 				add_dynamic_modifier = {
 					modifier = XEX_boosting_infrastructure
 					scope = XEX
 					days = 365
 				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
 			}
 		}
 	}
@@ -272,6 +282,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = XEX_better_energy_usage
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
 		}
 	}
 	focus = {
@@ -294,6 +312,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = XEX_using_our_farmland
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	focus = {
@@ -337,7 +363,16 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_building_construction = {
+				type = naval_facility
+				level = 1 
+				instant_build = yes
+				province = 6788
+			}
+			add_timed_idea = {
+				idea = XEX_create_the_geneva_plant_cost
+				days = 435
+			}
 		}
 	}
 	focus = {
@@ -359,7 +394,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			activate_advisor = XEX_mussolini_idea
 		}
 	}
 	focus = {
@@ -381,7 +416,14 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			158 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
 		}
 	}
 	focus = {
@@ -403,7 +445,19 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			1028 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
 		}
 	}
 	focus = {
@@ -425,7 +479,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			custom_effect_tooltip = XEX_industrial_expansion_tt
 		}
 	}
 	focus = {
@@ -447,7 +501,22 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	focus = {
@@ -469,7 +538,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_ideas = XEX_Padanian_Mobilization
 		}
 	}
 	focus = {
@@ -491,7 +560,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_ideas = XEX_protect_our_industries
 		}
 	}
 	focus = {
@@ -513,7 +582,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_ideas = XEX_female_work
 		}
 	}
 	focus = {
@@ -535,7 +604,15 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_ideas = XEX_fords_inspiration
 		}
 	}
 	focus = {
@@ -557,7 +634,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_research_slot = 1
 		}
 	}
 	focus = {
@@ -579,7 +656,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_ideas = XEX_triangolo
 		}
 	}
 	focus = {
@@ -866,7 +943,10 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = XEX_political_peace_faction_name
 		}
 	}
 	
@@ -889,7 +969,14 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			XVE = {
+				country_event = {
+					id = XEX_foreign_policy.1
+					days = 1
+					random_hours = 12
+					random_days = 5
+				}
+			}
 		}
 	}
 	focus = {
@@ -911,7 +998,18 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			set_variable = {
+				var = XEX_asked_state
+				value = 1037
+			}
+			XVE = {
+				country_event = {
+					id = XEX_foreign_policy.2
+					days = 1
+					random_hours = 12
+					random_days = 5
+				}
+			}
 		}
 	}
 	focus = {
@@ -933,7 +1031,14 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			XTR = {
+				country_event = {
+					id = XEX_foreign_policy.1
+					days = 1
+					random_hours = 12
+					random_days = 5
+				}
+			}
 		}
 	}
 	focus = {
@@ -955,7 +1060,10 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XTR
+			}
 		}
 	}
 	focus = {
@@ -977,7 +1085,18 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XAS
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XS0
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XS1
+			}
 		}
 	}
 	focus = {
@@ -999,7 +1118,14 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			XCL = {
+				country_event = {
+					id = XEX_foreign_policy.1
+					days = 1
+					random_hours = 12
+					random_days = 5
+				}
+			}
 		}
 	}
 	
@@ -1022,7 +1148,18 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			set_variable = {
+				var = XEX_asked_state
+				value = 162
+			}
+			XRO = {
+				country_event = {
+					id = XEX_foreign_policy.2
+					days = 1
+					random_hours = 12
+					random_days = 5
+				}
+			}
 		}
 	}
 	focus = {
@@ -1044,7 +1181,19 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			every_country = {
+				limit = {
+					capital_scope = {
+						or = {
+							region = 21
+							region = 20
+							region = 23
+						}
+					}
+					is_in_faction_with = XEX
+				}
+				add_ideas = XEX_italian_research
+			}
 		}
 	}
 	focus = {
@@ -1088,13 +1237,16 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XVE
+			}
 		}
 	}
 	focus = {
 		id = XEX_invade_mersailles
 		icon = GFX_focus_generic_annex_country
-		prerequisite = { focus = XEX_political_peace }
+		prerequisite = { focus = XEX_embrace_strenght }
 		#mutually_exclusive = { focus =  }
 		x = 16
 		y = 3
@@ -1110,7 +1262,18 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XSV
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XNZ
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XCL
+			}
 		}
 	}
 	focus = {
@@ -1132,7 +1295,10 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XRO
+			}
 		}
 	}
 	focus = {
@@ -1154,7 +1320,14 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			XTR = {
+				country_event = {
+					id = XEX_foreign_policy.3
+					days = 1
+					random_hours = 12
+					random_days = 5
+				}
+			}
 		}
 	}
 	focus = {
@@ -1177,7 +1350,18 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XAS
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XS0
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = XS1
+			}
 		}
 	}
 	focus = {
@@ -1199,7 +1383,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			custom_effect_tooltip = XEX_announce_greater_padania_tt
 		}
 	}
 	focus = {

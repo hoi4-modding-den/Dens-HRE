@@ -1,5 +1,81 @@
 ideas = {
+	economy = {
+		XEX_Padanian_Mobilization = {
+			picture = ARG_argentine_beef
+			available = {
+				tag = XEX
+			}
+
+			cost = 9999
+			removal_cost = 9999
+
+			modifier = {
+				consumer_goods_expected_value = 0.25
+				production_speed_arms_factory_factor = 0.25
+				production_speed_industrial_complex_factor = -0.25
+				industrial_capacity_factory = 0.10 
+				monthly_population = 0.25
+				
+			}
+
+			cancel_if_invalid = no
+			
+		}
+	}
 	country = {
+		XEX_italian_research = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		XEX_triangolo = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				
+				max_planning_factor = 0.15
+				planning_speed = 0.15
+				experience_gain_army = 0.02
+				experience_gain_army_factor = 0.35
+			}
+		}
+		XEX_protect_our_industries = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				conscription_factor = 0.05
+				army_core_defence_factor = 0.05
+				dig_in_speed_factor = 0.1
+			}
+		}
+		XEX_fords_inspiration = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				stability_factor = -0.1
+				conscription_factor = -0.1
+				industrial_capacity_factory = 0.10
+			}
+		}
+		XEX_female_work = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				stability_factor = -0.1
+				monthly_population = -0.15
+				conscription_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		XEX_create_the_geneva_plant_cost = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				consumer_goods_factor = 0.20
+			}
+		}
 		XEX_using_our_farmland = {
 			picture = ARG_argentine_beef
 

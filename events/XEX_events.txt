@@ -1,0 +1,192 @@
+add_namespace = XEX_foreign_policy
+add_namespace = XEX_collapse
+country_event = { #Invite Someone To Faction
+	id = XEX_foreign_policy.1
+	title = XEX_foreign_policy.1.t
+	desc = XEX_foreign_policy.1.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	after = {
+
+	}
+
+	option = {
+		name = XEX_foreign_policy.1.a
+		XEX = { 
+			add_to_faction = ROOT 
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 200
+			}
+		}
+		ROOT = {
+			add_ai_strategy = {
+				type = alliance
+				id = XEX
+				value = 200
+			}
+		}
+
+		ai_chance = {
+			base = 10
+		}
+	}
+	
+	option = {
+		name = XEX_foreign_policy.1.b
+		XEX = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+			
+		}
+		
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = { #Resquest State From Someone
+	id = XEX_foreign_policy.2
+	title = XEX_foreign_policy.2.t
+	desc = XEX_foreign_policy.2.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	after = {
+
+	}
+
+	option = {
+		name = XEX_foreign_policy.2.a
+		XEX = { 
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 200
+			}
+		}
+		ROOT = {
+			add_ai_strategy = {
+				type = alliance
+				id = XEX
+				value = 200
+			}
+		}
+		XEX = {
+			var:XEX_asked_state = {
+				transfer_state_to = XEX 
+			}
+			if = {
+				limit = {
+					has_completed_focus = XEX_embrace_strenght
+				}
+				puppet = ROOT
+			}
+			else = {
+				add_to_faction = ROOT
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	
+	option = {
+		name = XEX_foreign_policy.2.b
+		XEX = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+			
+		}
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = { #Request Puppetization
+	id = XEX_foreign_policy.3
+	title = XEX_foreign_policy.3.t
+	desc = XEX_foreign_policy.3.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	after = {
+
+	}
+
+	option = {
+		name = XEX_foreign_policy.3.a
+		XEX = {
+			puppet = ROOT
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	
+	option = {
+		name = XEX_foreign_policy.3.b
+		XEX = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ROOT
+			}
+			
+		}
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = XEX_collapse.1
+	title = XEX_collapse.1.t
+	desc = XEX_collapse.1.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+
+	after = {
+
+	}
+	immediate = {
+		every_country = {
+			or = {
+				is_in_faction_with = ROOT
+				is_puppet_of = ROOT
+			}
+			end_puppet = FROM
+			leave_faction = yes
+		}
+		start_civil_war = {
+			ruling_party = ROOT
+			
+			ideology = communism
+			
+			size = 0.5
+			capital = 736
+			states = {
+				1038 159 1037 846 1039 160 850 39 736 852 102 853 1018 1027
+			}
+			keep_political_leader = no
+			set_country_flag = HRE_is_republic
+		}
+	}
+	
+	
+	option = {
+		name = XEX_collapse.1.a
+	}
+	
+	
+}

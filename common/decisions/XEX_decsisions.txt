@@ -1,0 +1,315 @@
+XEX_build_the_dams = {
+	XEX_build_the_dam_in_state = {
+		fire_only_once = yes
+		state_target = yes 
+		
+		targets = { 1029 158 159 39 } 
+		days_remove = 1
+		icon = GFX_focus_BEL_dam_the_consequences
+		on_map_mode = map_only
+		cost = 115
+		available = { 	
+			FROM = {
+				dam_mountain < 1
+				is_owned_by = ROOT
+			}
+			tag = XEX
+		} 
+		visible = {
+			FROM = {
+				dam_mountain < 1
+			}
+			tag = XEX
+		} 
+		
+		priority = 1
+
+		remove_effect = {
+			FROM = {
+				if = {
+					limit = {
+						STATE = 1029
+					}
+					add_building_construction = {
+						type = dam_mountain
+						level = 1
+						instant_build = yes
+						province = 6666
+					}
+				}
+				if = {
+					limit = {
+						STATE = 158
+					}
+					add_building_construction = {
+						type = dam_mountain
+						level = 1
+						instant_build = yes
+						province = 6645
+					}
+				}
+				if = {
+					limit = {
+						STATE = 159
+					}
+					add_building_construction = {
+						type = dam_mountain
+						level = 1
+						instant_build = yes
+						province = 9854
+					}
+				}
+				if = {
+					limit = {
+						STATE = 39
+					}
+					add_building_construction = {
+						type = dam_mountain
+						level = 1
+						instant_build = yes
+						province = 11598
+					}
+				}
+			}
+		}
+	}
+}
+
+XEX_mussolini_plan = {
+	XEX_plan_1 = {
+		fire_only_once = yes
+		state_target = yes 
+		
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				state_population > 500000
+			}
+		}
+		days_remove = 15
+		icon = GFX_decision_generic_construction
+		on_map_mode = decision_view_only 
+		cost = 15
+		available = { 	
+			FROM = {
+				is_owned_by = ROOT
+			}
+			tag = XEX
+		} 
+		visible = {
+			tag = XEX
+		} 
+		
+		priority = 1
+
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = plan_1_completed
+			}
+		}
+	}
+	XEX_plan_2 = {
+		fire_only_once = yes
+		state_target = yes 
+		
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				state_population > 500000
+			}
+		}
+		days_remove = 30
+		icon = GFX_decision_generic_merge_plant_materiel
+		on_map_mode = decision_view_only 
+		cost = 30
+		available = { 	
+			FROM = {
+				has_state_flag = plan_1_completed
+			}
+			tag = XEX
+		} 
+		visible = {
+			FROM = {
+				has_state_flag = plan_1_completed
+			}
+			tag = XEX
+		} 
+		
+		priority = 1
+
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				set_state_flag = plan_2_completed
+			}
+		}
+	}
+	XEX_plan_3 = {
+		fire_only_once = yes
+		state_target = yes 
+		
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				state_population > 500000
+			}
+		}
+		days_remove = 45
+		icon = GFX_decision_generic_merge_plant_tank
+		on_map_mode = decision_view_only 
+		cost = 45
+		available = { 	
+			FROM = {
+				has_state_flag = plan_2_completed
+			}
+			tag = XEX
+		} 
+		visible = {
+			FROM = {
+				has_state_flag = plan_2_completed
+			}
+			tag = XEX
+		} 
+		
+		priority = 1
+
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				set_state_flag = plan_3_completed
+			}
+		}
+	}
+}
+
+XEX_form_greater_padania = {
+	XEX_form_greater_padania_dec = {
+	
+		visible = {
+			tag = XEX
+		}
+        available = {
+            tag = XEX
+			has_completed_focus = XEX_announce_greater_padania
+			controls_state = 21 
+			controls_state = 851 
+			controls_state = 1041 
+			controls_state = 32 
+			controls_state = 735 
+			controls_state = 1029 
+			controls_state = 158 
+			controls_state = 1042 
+			controls_state = 1028 
+			controls_state = 162 
+			controls_state = 161 
+			controls_state = 846 
+			controls_state = 159 
+			controls_state = 1037 
+			controls_state = 1039 
+			controls_state = 160 
+			controls_state = 39
+			controls_state = 850
+			controls_state = 1027
+			controls_state = 736
+			controls_state = 852
+			controls_state = 853
+			controls_state = 102
+			controls_state = 1018
+			controls_state = 1038
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { 
+				state = 21 
+				state = 851 
+				state = 1041 
+				state = 32 
+				state = 735 
+				state = 1029 
+				state = 158 
+				state = 1042 
+				state = 1028 
+				state = 162 
+				state = 161 
+				state = 846 
+				state = 159 
+				state = 1037 
+				state = 1039 
+				state = 160 
+				state = 39
+				state = 850
+				state = 1027
+				state = 736
+				state = 852
+				state = 853
+				state = 102
+				state = 1018
+				state = 1038
+			}
+		}
+        fire_only_once = yes
+		
+		
+        complete_effect = {
+            every_state = {
+				limit = {
+					or = {
+						state = 21 
+						state = 851 
+						state = 1041 
+						state = 32 
+						state = 735 
+						state = 1029 
+						state = 158 
+						state = 1042 
+						state = 1028 
+						state = 162 
+						state = 161 
+						state = 846 
+						state = 159 
+						state = 1037 
+						state = 1039 
+						state = 160 
+						state = 39
+						state = 850
+						state = 1027
+						state = 736
+						state = 852
+						state = 853
+						state = 102
+						state = 1018
+						state = 1038
+					}
+				}
+				add_core_of = XEX
+			}
+			if = {
+				limit = {
+					has_completed_focus = XEX_announce_greater_padania
+				}
+				custom_effect_tooltip = XEX_form_greater_padania_dec_tt
+			}
+			hidden_effect = {
+				country_event = {
+					id = XEX_collapse.1
+					days = 120
+				}
+			}
+        }
+    }
+}

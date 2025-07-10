@@ -1,37 +1,39 @@
-XAS_guilds_regulation_hayek = {
+XEX_build_the_dams = {
 	allowed = {
-		original_tag = XAS
+		original_tag = XEX
 	}
-	
+	 
 	visible = {
-		has_dynamic_modifier = {
-			modifier = XAS_unchecked_merchant_guilds
-		}
 		OR = {
-			has_completed_focus = XAS_essential_regulation
+			has_completed_focus = XEX_damn_milans_lakes
+			debug = yes
 		}
 	}
 
 	priority = 22
 }
-XAS_guilds_regulation_schumpeter = {
+XEX_form_greater_padania = {
 	allowed = {
-		original_tag = XAS
+		original_tag = XEX
 	}
-
+	 
 	visible = {
-		has_completed_focus = XAS_agressive_regulation
+		original_tag = XEX
 	}
 
-	visible_when_empty = yes
-
-	priority = {
-		base = 0
-		modifier = {
-			add = 22
-			has_dynamic_modifier = {
-				modifier = XAS_unchecked_merchant_guilds
-			}
+	priority = 100
+}
+XEX_mussolini_plan = {
+	allowed = {
+		original_tag = XEX
+	}
+	 
+	visible = {
+		OR = {
+			has_completed_focus = XEX_industrial_expansion
+			debug = yes
 		}
 	}
+
+	priority = 23
 }

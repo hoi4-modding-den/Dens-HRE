@@ -1,27 +1,49 @@
 ﻿l_english:
  
+
+ 
  
  XEX_communism_party:0 "ASC"
- XEX_communism_party_long:0 "Anti Salvinus Coalition"
+ XEX_communism_party_long:0 "Anti Salvini Coalition"
  XEX_neutrality_party:0 "Turin Governament"
  XEX_democratic_party:0 "ASC"
- XEX_democratic_party_long:0 "Anti Salvinus Coalition"
+ XEX_democratic_party_long:0 "Anti Salvini Coalition"
  XEX_fascism_party:0 "Turin Governament"
   
  XE0_neutrality_party:0 "Milan Governament" 
+ XEX_political_peace_faction_name:0 "Lega Padana"
  
  XEX:0 "Kingdom Of Padania"
  XEX_DEF:0 "the Padanian Kingdom"
  XEX_ADJ:0 "Padanian"
+ XEX_communism:0 "Jesus's Land"
+ XEX_communism_DEF:0 "the Church"
+ XEX_communism_ADJ:0 "Church"
  XE0:0 "Principality Of Milan"
  XE0_DEF:0 "the Principality Of Milan"
  XE0_ADJ:0 "Milanese"
+ XEX_church_of_god:0 "Jesus's Lands On Earth"
+ #decisions
+ XEX_build_the_dam_in_state:0 "Build A Dam In [FROM.GetName]"
+ XEX_mussolini_plan:0 "Pizza Plan"
+ XEX_plan_1:0 "Begin The First Step In [FROM.GetName]"
+ XEX_plan_2:0 "Start The Second Step In [FROM.GetName]"
+ XEX_plan_3:0 "Finish Up The Plan In [FROM.GetName]"
+ XEX_form_greater_padania:0 "National Unification"
+ XEX_form_greater_padania_desc:0 "After a long struggle, we've been able to unite all of padania, we've gone from a small and insignificant kingdom, to one of the most important in history, but only god knows what awaits us, and for how we've treated the pope, it might not be as good as we hope. \nBut we shouldn't care about that, a toast for us, and for our struggles"
+ XEX_form_greater_padania_dec:0 "A War Finally Over"
+ XEX_form_greater_padania_dec_tt:0 "§RSomething else awaits you now, i suggest you keep playing§!"
+ 
  
  
  # TOOLTIPS
  XEX_the_kingdom:0 "Kingdom Of Padania"
  XEX_adress_the_kingdom_tt:0 "Adds the idea Kingdom Of Padania"
- XEX_damn_milans_lakes:0 "We will gain some decisions to create damn in states which contain big lakes"
+ XEX_damn_milans_lakes_tt:0 "We will gain some decisions to create damn in states which contain big lakes"
+ XEX_industrial_expansion_tt:0 "Just like a pizza, we will start by making the dough, then we will add the toppings, to then finish by baking it in the oven."
+ XEX_announce_greater_padania_tt:0 "We Will Be Able To Form Greater Padania"
+ 
+ 
  
  # CHARACTERS N TRAITS
  XEX_king_salvinus_divinus:0 "Matteo Salvini"
@@ -38,7 +60,7 @@
  XEX_VICTORY_POINTS_611:0 "Salvinus"
  
  # IDEAS
- 
+ XEX_create_the_geneva_plant_cost:0 "Cost Of The Genova Facility"
  XEX_organized_crime:0 "Crime Filled Slums"
  XEX_organized_crime_2:0 "Crime Filled Slums"
  XEX_organized_crime_3:0 "Crime Filled Slums"
@@ -50,7 +72,10 @@
  XEX_boosting_infrastructure:0 "Improve Infrastructure"
  XEX_using_our_farmland:0 "Using The Po's Farmland"
  XEX_better_energy_usage:0 "Dino's Energy Plan"
- 
+ XEX_female_work:0 "Allow Female Work"
+ XEX_protect_our_industries:0 "Raise Worker Militias"
+ XEX_triangolo:0 "Il Triangolo"
+ XEX_fords_inspiration:0 "Fordian Slavery"
  # FOCUS TREE
  
  XEX_adress_the_kingdom:0 "Adress The Kingdom"
@@ -68,7 +93,7 @@
  XEX_economical_strength:0 "Mussolini's Plan"
  XEX_military_plants_in_turin:0 "Boost Fiat"
  XEX_dockyard_investements:0 "Boost Genova's Arms"
- XEX_industrial_expansion:0 "Inizia Il Piano"
+ XEX_industrial_expansion:0 "The ''Pizza Plan'' "
  XEX_cooperation_with_big_industries:0 "Enstablish Corporatism"
  XEX_Padanian_Mobilization:0 "Mobilitazione Padaniana"
  XEX_protect_our_industry:0 "Defend Homeland Industry"
