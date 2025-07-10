@@ -28,3 +28,406 @@ country_event = { #intro event
 #News Events# (the big news pop-ups)
 
 #Diplomatic Events# (events from interactions with other countries)
+country_event = { #demand Voralberg
+    id = XWB_diplo_event.1
+    title = XWB.DE_1.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_1.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_1.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				XWB = {
+					is_ai = no
+				}
+				factor = 100
+			}
+			modifier = {
+				XWB = {
+					is_major = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				XWB = {
+					num_divisions < 1
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 2
+				}
+				factor = 3
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.2 days = 1 }
+			transfer_state = 848
+			transfer_state = 1035
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_1.b
+		ai_chance = {
+			base = 70
+				modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 1
+				}
+				factor = 0.75
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.3 days = 1 }
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #given Voralberg
+    id = XWB_diplo_event.2
+    title = XWB.DE_2.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_2.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_2.a
+		ai_chance = {
+			base = 100
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #told to fuck off
+    id = XWB_diplo_event.3
+    title = XWB.DE_3.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_3.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_3.a
+		ai_chance = {
+			base = 100
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+			expire = 0
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_3.b
+		ai_chance = {
+			base = 0
+		}
+		#add_stability = -0.05
+		add_political_power = -50
+	hidden_effect = {
+			
+		}
+    }
+}
+
+country_event = { #demand east swabia
+    id = XWB_diplo_event.4
+    title = XWB.DE_4.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_4.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_4.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				XWB = {
+					is_ai = no
+				}
+				factor = 100
+			}
+			modifier = {
+				XWB = {
+					is_major = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				XWB = {
+					num_divisions < 1
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 2
+				}
+				factor = 3
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.5 days = 0.5 }
+			transfer_state = 1085
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_4.b
+		ai_chance = {
+			base = 70
+				modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 1
+				}
+				factor = 0.75
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.6 days = 0.5 }
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #given Voralberg
+    id = XWB_diplo_event.5
+    title = XWB.DE_5.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_5.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_5.a
+		ai_chance = {
+			base = 100
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #told to fuck off
+    id = XWB_diplo_event.6
+    title = XWB.DE_6.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_6.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_6.a
+		ai_chance = {
+			base = 100
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+			expire = 0
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_6.b
+		ai_chance = {
+			base = 0
+		}
+		#add_stability = -0.05
+		add_political_power = -50
+	hidden_effect = {
+			
+		}
+    }
+}
+
+country_event = { #formation of the Ständesfront
+    id = XWB_diplo_event.7
+    title = XWB.DE_7.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_7.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_7.a
+		ai_chance = {
+			base = 70
+		}
+		trigger = {
+			XBR = {
+				exists = yes
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+		}
+		XBR = {
+			country_event = { id = XWB_diplo_event.8 days = 0.5 }
+		}
+		hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_7.b
+		ai_chance = {
+			base = 50
+		}
+		trigger = {
+			XEX = {
+				exists = yes
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+		}
+		XEX = {
+			country_event = { id = XWB_diplo_event.8 days = 0.5 }
+		}
+		hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_7.c
+		ai_chance = {
+			base = 100
+		}
+		every_country = {
+			limit = {
+				has_government = fascism
+				NOT = {
+					tag = XWB
+				}
+			}
+			country_event = { id = XWB_diplo_event.8 days = 0.5 }
+		}
+		if = {
+			limit = { XEX = { exists = yes 				
+				OR = {
+						has_government = fascism
+						has_government = neutrality
+					} 
+			} }
+			XEX = { country_event = { id = XWB_diplo_event.8 days = 0.5 } }
+		}
+		if = {
+			limit = { XBR = { exists = yes 				
+				OR = {
+						has_government = fascism
+						has_government = neutrality
+					} 
+			} }
+			XBR = { country_event = { id = XWB_diplo_event.8 days = 0.5 } }
+		}
+		hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_7.e
+		ai_chance = {
+			base = 50
+		}
+		trigger = {
+			XEX = {
+				is_faction_leader = yes
+			}
+		}
+		hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #invite to faction
+    id = XWB_diplo_event.8
+    title = XWB.DE_8.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_8.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_8.a #yes
+		ai_chance = {
+			base = 100
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.10 days = 0.5 }
+			add_to_faction = PREV
+		}
+		
+		hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_8.b #no
+		ai_chance = {
+			base = 100
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.9 days = 0.5 }
+		}
+		hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #declined to join
+    id = XWB_diplo_event.9
+    title = XWB.DE_9.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_9.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_9.a
+		ai_chance = {
+			base = 100
+		}
+		#add_stability = -0.05
+		add_political_power = -10
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #agreed to join
+    id = XWB_diplo_event.10
+    title = XWB.DE_10.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_10.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_10.a
+		ai_chance = {
+			base = 100
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
