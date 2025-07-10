@@ -344,6 +344,8 @@ XHO_calvinism_category = {
                 add_to_temp_variable = { size = 0.15 }
                 multiply_temp_variable = { size = 1.2 }
                 clamp_temp_variable = { var = size max = 0.95 }
+                add_to_temp_variable = { size = -1 }
+                log = "[?size]"
                 start_civil_war = {
                     ideology = ROOT
                     ruling_party = fascism
@@ -390,8 +392,8 @@ XHO_calvinism_category = {
                 ideology = fascism
                 popularity = 0.02
             }
-            add_days_remove  = {
-                decision = XHO_calvinist_uprising
+            add_days_mission_timeout  = {
+                mission = XHO_calvinist_uprising
                 days = -30
             }
         }
@@ -430,8 +432,8 @@ XHO_calvinism_category = {
                 ideology = fascism
                 popularity = 0.09
             }
-            add_days_remove  = {
-                decision = XHO_calvinist_uprising
+            add_days_mission_timeout  = {
+                mission = XHO_calvinist_uprising
                 days = 30
             }
         }
@@ -458,8 +460,8 @@ XHO_calvinism_category = {
         }
 
         custom_cost_trigger = {
-            has_army_experience > 19
-            command_power > 9
+            has_army_experience > 9
+            command_power > 19
         }
         custom_cost_text = XHO_calvinist_prepare_cost
 
@@ -472,8 +474,8 @@ XHO_calvinism_category = {
         }
 
         remove_effect = {
-            add_days_remove  = {
-                decision = XHO_calvinist_uprising
+            add_days_mission_timeout  = {
+                mission = XHO_calvinist_uprising
                 days = -90
             }
         }

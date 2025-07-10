@@ -20,6 +20,7 @@ ideas = {
 
         XNE_zuiderzee_1 = {
             picture = generic_train_tracks
+            allowed_civil_war = { always = yes }
             modifier = {
                 consumer_goods_factor = -0.05
                 production_speed_buildings_factor = 0.02
@@ -28,6 +29,7 @@ ideas = {
 
         XNE_zuiderzee_2 = {
             picture = generic_train_tracks
+            allowed_civil_war = { always = yes }
             modifier = {
                 consumer_goods_factor = -0.05
                 production_speed_buildings_factor = 0.06
@@ -37,6 +39,7 @@ ideas = {
 
         XNE_zuiderzee_3 = {
             picture = generic_train_tracks
+            allowed_civil_war = { always = yes }
             modifier = {
                 consumer_goods_factor = -0.05
                 production_speed_buildings_factor = 0.1
@@ -47,97 +50,116 @@ ideas = {
 
         XNE_port_of_rotterdam_1 = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 1033 }
             modifier = {
                 consumer_goods_factor = -0.04
                 research_speed_factor = 0.04
                 industrial_capacity_dockyard = -0.1
                 enemy_justify_war_goal_time = 0.15
+                trade_laws_cost_factor  = 1
                 
             }
         }
 
         XNE_port_of_rotterdam_2 = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 1033 }
             modifier = {
                 consumer_goods_factor = -0.1
                 research_speed_factor = 0.04
                 industrial_capacity_dockyard = -0.1
                 enemy_justify_war_goal_time = 0.25 
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_rotterdam_3 = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 1033 }
             modifier = {
                 consumer_goods_factor = -0.1
                 research_speed_factor = 0.08
                 industrial_capacity_dockyard = -0.1
                 enemy_justify_war_goal_time = 0.25
                 weekly_manpower = 100
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_rotterdam_4 = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 1033 }
             modifier = {
                 consumer_goods_factor = -0.08
                 research_speed_factor = 0.08
                 industrial_capacity_dockyard = 0.05
                 enemy_justify_war_goal_time = 0.25
                 weekly_manpower = 100
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_antwerpen_1 = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 977 }
             modifier = {
                 consumer_goods_factor = -0.03
                 enemy_justify_war_goal_time = 0.1
                 industrial_capacity_dockyard = -0.05
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_antwerpen_2a = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 977 }
             modifier = {
                 consumer_goods_factor = -0.09
                 enemy_justify_war_goal_time = 0.15
                 industrial_capacity_dockyard = -0.05
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_antwerpen_2b = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 977 }
             modifier = {
                 consumer_goods_factor = -0.03
                 enemy_justify_war_goal_time = 0.1
                 industrial_capacity_dockyard = 0.025
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_antwerpen_3a = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 977 }
             modifier = {
                 consumer_goods_factor = -0.09
                 enemy_justify_war_goal_time = 0.15
                 industrial_capacity_dockyard = -0.05
                 production_speed_buildings_factor = 0.05
+                trade_laws_cost_factor  = 1
             }
         }
 
         XNE_port_of_antwerpen_3b = {
             picture = generic_the_london_naval_treaty
+            allowed_civil_war = { controls_state = 977 }
             modifier = {
                 consumer_goods_factor = -0.03
                 enemy_justify_war_goal_time = 0.1
                 industrial_capacity_dockyard = 0.10
                 industrial_capacity_factory = 0.025
+                trade_laws_cost_factor  = 1
             }
         }
 
 
         XHO_calvinist_problem = {
             picture = POL_the_peasants_strike
+            allowed_civil_war = { always = no }
             modifier = {
                 political_power_factor = -0.1
                 stability_factor = -0.08
@@ -203,6 +225,9 @@ ideas = {
 
         XHO_capitalism = {
             picture = HABSBURG_economy
+            allowed_civil_war = {
+                has_government = democratic
+            }
             modifier = {
                 consumer_goods_factor = -0.1
                 global_building_slots_factor = 0.1
@@ -262,6 +287,7 @@ ideas = {
 
         XHO_convert_industry = {
             picture = SOV_third_five_year_plan_military
+            allowed_civil_war = { always = yes }
             modifier = {
                 consumer_goods_factor = 0.15
                 industrial_capacity_factory = 0.05
@@ -272,6 +298,7 @@ ideas = {
 
         XHO_convert_industry_2 = {
             picture = SOV_third_five_year_plan_military
+            allowed_civil_war = { always = yes }
             modifier = {
                 consumer_goods_factor = 0.1
                 industrial_capacity_factory = 0.05
@@ -283,6 +310,7 @@ ideas = {
 
         XHO_build_mil_industry_1 = {
             picture = ARG_construction_guilds
+            allowed_civil_war = { always = yes }
             modifier = {
                 consumer_goods_factor = 0.25
                 production_speed_arms_factory_factor = 0.1
@@ -294,6 +322,7 @@ ideas = {
 
         XHO_build_mil_industry_2 = {
             picture = ARG_economic_reactivation
+            allowed_civil_war = { always = yes }
             modifier = {
                 production_speed_arms_factory_factor = 0.05
                 industrial_capacity_factory = 0.075
@@ -304,6 +333,7 @@ ideas = {
 
         XHO_build_mil_industry_2i = {
             picture = ARG_economic_reactivation
+            allowed_civil_war = { always = yes }
             modifier = {
                 production_speed_arms_factory_factor = 0.05
                 industrial_capacity_factory = 0.05
@@ -321,6 +351,7 @@ ideas = {
 
         XHO_build_mil_industry_2c = {
             picture = ARG_economic_reactivation
+            allowed_civil_war = { always = yes }
             modifier = {
                 production_speed_arms_factory_factor = 0.05
                 industrial_capacity_factory = 0.05
@@ -338,6 +369,7 @@ ideas = {
 
         XHO_build_mil_industry_2a = {
             picture = ARG_economic_reactivation
+            allowed_civil_war = { always = yes }
             modifier = {
                 production_speed_arms_factory_factor = 0.05
                 industrial_capacity_factory = 0.05
