@@ -1,0 +1,86 @@
+division_template = {
+	name = "Heimwehr"
+	division_names_group = XLH_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Ritter des Reiches"
+	division_names_group = XLH_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Die Garde des Grafen"
+	division_names_group = XLH_ROY_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+}
+
+# Units
+units = {
+	# Inf
+	division = {
+		location = 13465
+		division_template = "Heimwehr"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		start_equipment_factor = 0.48
+		start_manpower_factor = 0.64
+		start_experience_factor = 0.64
+	}
+
+	division = {
+		location = 13442
+		division_template = "Heimwehr"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		start_equipment_factor = 0.48
+		start_manpower_factor = 0.45
+		start_experience_factor = 0.64
+	}
+
+	# Cav
+	division = {
+		location = 13436
+		division_template = "Ritter des Reiches"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		start_equipment_factor = 0.66
+		start_manpower_factor = 0.7
+		start_experience_factor = 0.7
+	}
+}
+
+
+# Facs
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "XLH"
+		}
+		requested_factories = 1
+		progress = 0.56
+		efficiency = 100
+	}
+}

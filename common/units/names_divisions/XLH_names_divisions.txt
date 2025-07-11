@@ -1,0 +1,110 @@
+XLH_INF_01 = {
+	name = "Heimwehr"
+
+	for_countries = { XLH }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { XS1_INF_01 }
+
+	fallback_name = "%d. Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%d. Division" }
+		2 = { "%d. Division" }
+		3 = { "%d. Division" }
+		4 = { "%d. Division" }
+		5 = { "%d. Division" }
+		6 = { "%d. Division" }
+		7 = { "%d. Division" }
+		8 = { "%d. Division" }
+		9 = { "%d. Division" }
+		10 = { "%d. Division" }
+		11 = { "%d. Division" }
+		12 = { "%d. Division" }
+		13 = { "%d. Division" }
+		14 = { "%d. Division" }
+		15 = { "%d. Division" }
+		16 = { "%d. Division" }
+		17 = { "%d. Division" }
+		18 = { "%d. Division" }
+		19 = { "%d. Division" }
+		20 = { "%d. Division" }
+	}
+}
+
+XLH_ROY_01 = {
+	name = "Die Garde des Grafen"
+
+	for_countries = { XLH }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Bewachen"
+
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%d. Bewachen" }
+		2 = { "%d. Bewachen" }
+		3 = { "%d. Bewachen" }
+		4 = { "%d. Bewachen" }
+		5 = { "%d. Bewachen" }
+		6 = { "%d. Bewachen" }
+		7 = { "%d. Bewachen" }
+	}
+}
+
+XLH_CAV_01 = {
+	name = "Ritter des Reiches"
+
+	for_countries = { XLH }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	fallback_name = "%d. Ritter"
+
+	# Names with numbers (only one number per entry). 
+	ordered = {
+		1 = { "%d. Ritter" }
+		2 = { "%d. Ritter" }
+		3 = { "%d. Ritter" }
+		4 = { "%d. Ritter" }
+		5 = { "%d. Ritter" }
+		6 = { "%d. Ritter" }
+		7 = { "%d. Ritter" }
+		8 = { "%d. Ritter" }
+		9 = { "%d. Ritter" }
+		10 = { "%d. Ritter" }
+	}
+}
+
+HESSE_INF_01 = {
+	name = "Infanterie-Division"
+
+	for_countries = { XL0 XL1 XL2 XL3 XL4 XL5 XL6 XL7 XL8 XL9 XH0 XH3 XH4 XH5 XH6 XH7 XH8 XH9 XI0 XI1 XI2 XI3 }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%d. Division" }
+		2 = { "%d. Division" }
+		3 = { "%d. Division" }
+		4 = { "%d. Division" }
+		5 = { "%d. Division" }
+	}
+}
