@@ -76,3 +76,46 @@ XHH_colonial_expansion_cost = {
         }
     }
 }
+
+XVD_improve_agrarian_economy = {
+    if = {
+        limit = {
+            has_idea = XVD_agrarian_economy
+        }
+        swap_ideas = {
+            remove_idea = XVD_agrarian_economy
+            add_idea = XVD_agrarian_economy_2
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = XVD_agrarian_economy_2
+        }
+        swap_ideas = {
+            remove_idea = XVD_agrarian_economy_2
+            add_idea = XVD_agrarian_economy_3
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = XVD_agrarian_economy_3
+        }
+        swap_ideas = {
+            remove_idea = XVD_agrarian_economy_3
+            add_idea = XVD_agrarian_economy_4
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = XVD_agrarian_economy_4
+        }
+        swap_ideas = {
+            remove_idea = XVD_agrarian_economy_4
+            add_idea = XVD_agrarian_economy_5
+        }
+    }
+    else = {
+        remove_ideas = XVD_agrarian_economy_5
+    }
+}
+

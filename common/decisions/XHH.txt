@@ -11,15 +11,43 @@ economy_decisions = {
 		}
 
 		allowed = {  
-			original_tag = XHH
+			OR = {
+				original_tag = XHH
+				original_tag = XVD
+			}
 		}
 
 		available = {
-			has_completed_focus = XHH_grainbasket_of_the_north
+			if = {
+				limit = {
+					original_tag = XHH
+				}
+				has_completed_focus = XHH_grainbasket_of_the_north
+			}
+			if = {
+				limit = {
+					original_tag = XVD
+				}
+				has_completed_focus = XVD_agricultural_focus
+			}
 		}
 
 		visible = { 
-			NOT = { has_completed_focus = XHH_strengthen_the_senate }
+			if = {
+				limit = {
+					original_tag = XHH
+				}
+				NOT = { has_completed_focus = XHH_strengthen_the_senate }
+			}
+			if = {
+				limit = {
+					original_tag = XVD
+				}
+				OR = {
+					has_completed_focus = XVD_agricultural_focus
+					has_government = neutrality
+				}
+			}
 		}
 
 		cost = 75

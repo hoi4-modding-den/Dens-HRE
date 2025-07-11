@@ -2436,6 +2436,18 @@ focus_tree = {
 				remove_idea = XHH_freedom_in_democracy
 				add_idea = XHH_freedom_in_democracy_2
 			}
+
+			if = {
+				limit = {
+					XVD = {
+						exists = yes
+						has_capitulated = no
+						is_subject = no
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				XVD = { country_event = { id = XHH_diplo_events.10 days = 2 } }
+			}
 		}
 	}
 
@@ -3089,6 +3101,18 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = XHH_german_tradition
 				add_idea = XHH_german_tradition_2
+			}
+
+			if = {
+				limit = {
+					XVD = {
+						exists = yes
+						has_capitulated = no
+						is_subject = no
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				XVD = { country_event = { id = XHH_diplo_events.10 days = 2 } }
 			}
 		}
 	}

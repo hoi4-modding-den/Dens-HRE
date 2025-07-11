@@ -38,6 +38,10 @@ focus_tree = {
 			has_government = neutrality
 		}
 
+		bypass = {
+			NOT = { has_government = neutrality }
+		}
+
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -51,7 +55,155 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = XVD_ecclesiastical_government_focus }
 		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XVD_ecclesiastical_government_focus
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 1046
+		}
+
+		bypass = {
+			1046 = { infrastructure > 4 }
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1046 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_give_job_opportunities
+		icon = GFX_focus_generic_public_works
+		prerequisite = { focus = XVD_infrastructure_effort }
+		#mutually_exclusive = { focus =  }
 		x = -2
+		y = 1
+		relative_position_id = XVD_infrastructure_effort
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1046 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_build_public_housing
+		icon = GFX_focus_generic_low_cost_housing
+		prerequisite = { focus = XVD_infrastructure_effort }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = XVD_infrastructure_effort
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			1046 = {
+				add_extra_state_shared_building_slots = 2
+				add_manpower = 10000
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_imperial_estate_investment
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = XVD_infrastructure_effort }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XVD_infrastructure_effort
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_workers_union_cooperation
+		icon = GFX_focus_generic_workers
+		prerequisite = { focus = XVD_ecclesiastical_government_focus }
+		#mutually_exclusive = { focus =  }
+		x = -1
 		y = 1
 		relative_position_id = XVD_ecclesiastical_government_focus
 
@@ -59,25 +211,31 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_government = fascism
+			}
 		}
 
 		available = {
-			has_government = neutrality
+			
+		}
+
+		bypass = {
+			has_government = communism
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 5
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.1
 			}
 		}
 	}
@@ -87,7 +245,7 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = XVD_ecclesiastical_government_focus }
 		#mutually_exclusive = { focus =  }
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = XVD_ecclesiastical_government_focus
 
@@ -95,10 +253,18 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_government = fascism
+			}
 		}
 
 		available = {
-			has_government = neutrality
+			
+		}
+
+		bypass = {
+			has_government = democratic
 		}
 
 		available_if_capitulated = no
@@ -110,63 +276,133 @@ focus_tree = {
 				popularity = 0.1
 			}
 			add_popularity = {
-				ideology = neutrality
+				ideology = ROOT
 				popularity = 0.1
 			}
 		}
 	}
 
 	focus = {
-		id = XVD_improve_education
-		icon = GFX_goal_tfv_generic_tech_sharing
-		prerequisite = { focus = XVD_city_council_cooperation }
+		id = XVD_verden_altstadt
+		icon = GFX_focus_DEN_civilian_preparations
+		prerequisite = { focus = XVD_workers_union_cooperation focus = XVD_city_council_cooperation }
 		#mutually_exclusive = { focus =  }
-		x = -1
-		y = 1
-		relative_position_id = XVD_city_council_cooperation
+		x = 0
+		y = 2
+		relative_position_id = XVD_ecclesiastical_government_focus
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
 		}
 
 		available = {
-			has_government = neutrality
+			controls_state = 1046
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = XVD_ecclesiastical_government
-				add_idea = XVD_ecclesiastical_government_2
+			1046 = { 
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_stadtwache_funding
+		icon = GFX_focus_generic_urban_training
+		prerequisite = { focus = XVD_verden_altstadt }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XVD_verden_altstadt
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_manpower = 5000
+			add_war_support = 0.01
 			if = {
 				limit = {
-					NOT = { has_war_with = XHH }
-					XHH = { OR = { has_government = democratic has_government = neutrality } }
+					has_idea = XVD_city_guard
 				}
-				ROOT = { add_to_tech_sharing_group = XVD_monastery_tech_sharing_group }
-				XHH = { add_to_tech_sharing_group = XVD_monastery_tech_sharing_group }
+				set_division_force_allow_recruiting = {
+					division_template = "Stadtwache"
+				}
 			}
 		}
 	}
 
 	focus = {
-		id = XVD_give_to_the_poor
-		icon = GFX_focus_generic_concessions
-		prerequisite = { focus = XVD_city_council_cooperation }
+		id = XVD_build_up_the_city_wall
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = XVD_verden_altstadt }
 		#mutually_exclusive = { focus =  }
 		x = 2
 		y = 1
-		relative_position_id = XVD_city_council_cooperation
+		relative_position_id = XVD_verden_altstadt
 
-		cost = 5
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			1046 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_victory_point > 0
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_evangelical_reforms
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = XVD_ecclesiastical_government_focus }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XVD_ecclesiastical_government_focus
+
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -181,7 +417,243 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
-			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = XVD_improve_education
+		icon = GFX_focus_XHH_scientific_investments
+		prerequisite = { focus = XVD_evangelical_reforms }
+		#mutually_exclusive = { focus =  }
+		x = -0
+		y = 1
+		relative_position_id = XVD_evangelical_reforms
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+			OR = {
+				has_idea = XVD_ecclesiastical_government
+				AND = {
+					XHH = { OR = { has_government = democratic has_government = neutrality } }
+					NOT = { has_war_with = XHH }
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_completed_focus = XVD_ecclesiastical_government_focus }
+						has_idea = XVD_ecclesiastical_government
+					}
+				}
+				swap_ideas = {
+					remove_idea = XVD_ecclesiastical_government
+					add_idea = XVD_ecclesiastical_government_2
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { has_war_with = XHH }
+					XHH = { OR = { has_government = democratic has_government = neutrality } }
+				}
+				ROOT = { add_to_tech_sharing_group = XVD_monastery_tech_sharing_group }
+				XHH = { add_to_tech_sharing_group = XVD_monastery_tech_sharing_group }
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_agricultural_focus
+		icon = GFX_focus_generic_agricultural_subsidies
+		prerequisite = { focus = XVD_evangelical_reforms }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = XVD_evangelical_reforms
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_tooltip = XHH_support_farmers
+		}
+	}
+
+	focus = {
+		id = XVD_give_to_the_poor
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = XVD_evangelical_reforms }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XVD_evangelical_reforms
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.15
+			1046 = {
+				add_manpower = 5000
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_defensive_war
+		icon = GFX_goal_generic_defence
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 15
+		y = 0
+		#relative_position_id = 
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_defensive_war = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = XVD_open_weapon_reserves
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = XVD_defensive_war }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XVD_defensive_war
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_defensive_war = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 800
+				producer = XVD
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_weapon_forge
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XVD_defensive_war }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XVD_defensive_war
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_defensive_war = yes
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1046 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_allow_conscription
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = XVD_open_weapon_reserves }
+		prerequisite = { focus = XVD_weapon_forge }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XVD_defensive_war
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_defensive_war = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			remove_ideas = XVD_city_guard
 		}
 	}
 

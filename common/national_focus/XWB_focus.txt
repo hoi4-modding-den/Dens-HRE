@@ -425,7 +425,7 @@ focus_tree = {
 		icon = GFX_focus_ger_return_of_the_kaiser
 		x = 9
 		y = 3
-		cost = 5
+		cost = 10
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XWB_co-opt_blitzkrieg focus =  XWB_religion_focus }
 		prerequisite = { focus = XWB_absolute_monarchy focus =  XWB_restrain_parliament }
@@ -537,7 +537,7 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			#
 		}
 	}
 	focus = {
@@ -574,7 +574,29 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-
+			add_named_threat = {
+				threat = 10
+				name = XWB_threat_expansionism
+			}
+		}
+	}
+		focus = {
+		id = XWB_form_the_corporatist_front
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 1
+		y = 7
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+			prerequisite = { focus = XWB_foreign_policy_focus }
+		available = {
+			has_country_leader = { 
+				character =  XWB_ferdinand_porsche
+			} 
+		}
+		completion_reward = {
+			custom_effect_tooltip = XWB_form_the_corporatist_front_tooltip
+			create_faction = XWB_corporatist_front
+			country_event = XWB_diplo_event.7
 		}
 	}
 	focus = {
@@ -589,7 +611,11 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			848 = {
+				owner = {
+					country_event = { id = XWB_diplo_event.1 days = 1 }
+				}
+			}
 		}
 	}
 	focus = {
@@ -644,7 +670,24 @@ focus_tree = {
 
 		}
 		completion_reward = {
-			custom_effect_tooltip = XWB_demand_bavarian_swabia_indev_tooltip
+			if = {
+				limit = {
+					ZZZ = {
+						owns_state = 1085
+					}
+				}
+				custom_effect_tooltip = XWB_demand_bavarian_swabia_indev_tooltip
+				transfer_state = 1085
+			}
+			else = {
+				1085 = {
+						owner = {
+							country_event = { id = XWB_diplo_event.4 days = 1 }
+						}
+					}
+			}
+			
+
 		}
 	}
 	focus = {
@@ -821,7 +864,9 @@ focus_tree = {
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 			prerequisite = { focus = XWB_destroy_austria focus = XWB_destroy_switzerland }
 		available = {
-			
+			NOT = {
+				is_in_faction_with = XEX
+			}
 		}
 		completion_reward = {
 
@@ -926,7 +971,9 @@ focus_tree = {
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XWB_puppet_hanover focus = XWB_destroy_saxony }
 		available = {
-			
+			NOT = {
+				is_in_faction_with = XBR
+			}
 		}
 		completion_reward = {
 
@@ -969,7 +1016,7 @@ focus_tree = {
 		y = 13
 		cost = 5
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
-		prerequisite = {  focus = XWB_march_on_berlin }
+		prerequisite = {  focus = XWB_march_on_berlin focus = XWB_march_east }
 		available = {
 			
 		}

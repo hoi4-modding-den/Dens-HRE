@@ -116,6 +116,10 @@
  XVD_communism_DEF: "the Verden-Kommune"
  XVD_communism_ADJ: "Verden"
 
+ XVD_autonomy_XVD_free_city: "Free City of Verden"
+ XVD_autonomy_XVD_free_city_DEF: "the Freistadt Verden"
+ XVD_autonomy_XVD_free_city_ADJ: "Verden"
+
  XFT_XHH_neutrality_subject: "Free State of Köslin"
  XFT_XHH_neutrality_subject_DEF: "the Freistaat Köslin"
  XFT_XHH_neutrality_subject_ADJ: "Köslin"
@@ -244,6 +248,10 @@
  XHH_senate_removed_tt: "The §YSenate of Hamburg§! will be §Rabolished§!."
 
 
+# AUTONOMIES
+ autonomy_XVD_free_city: "Free City"
+
+
  # OTHER LOC STUFF
  XHH_fascists_are_angry_tt: "§RThe Protestant Nationalists will not be happy with this decision!§!"
  XHH_fascist_coup_happened: "The §YNational Union§! has overthrown the Hamburger Government"
@@ -351,7 +359,7 @@
 
 
 # DECISIONS
- XHH_support_farmers: "Support the Farmers"
+ XHH_support_farmers: "Agricultural Aid"
  XHH_introduce_kartelamt: "Form the Federal Cartel Office"
  XHH_end_hanse_cooperation: "Arrest the Ältermann for Corruption"
  XHH_dockyard_privatisation_drive: "Dockyard Privatisation Drive"
@@ -695,16 +703,44 @@
  XHH_military_academies: "Imperial Military Academies"
  XHH_military_academies_desc: ""
 
+
  XVD_ecclesiastical_government_focus: "The Prince-Bishopric Government"
  XVD_ecclesiastical_government_focus_desc: ""
  XVD_infrastructure_effort: "Improve the Roads"
  XVD_infrastructure_effort_desc: ""
+ XVD_give_job_opportunities: "Employment Projects"
+ XVD_give_job_opportunities_desc: ""
+ XVD_build_public_housing: "Gemeindebau Projects"
+ XVD_build_public_housing_desc: ""
+ XVD_imperial_estate_investment: "Accept Imperial Investments"
+ XVD_imperial_estate_investment_desc: ""
+ XVD_workers_union_cooperation: "Labour Union Cooperation"
+ XVD_workers_union_cooperation_desc: ""
  XVD_city_council_cooperation: "City Council Cooperation"
  XVD_city_council_cooperation_desc: ""
+ XVD_verden_altstadt: "Develop the Altstadt"
+ XVD_verden_altstadt_desc: ""
+ XVD_stadtwache_funding: "Increase Stadtwache Budget"
+ XVD_stadtwache_funding_desc: ""
+ XVD_build_up_the_city_wall: "Rebuild the City Wall"
+ XVD_build_up_the_city_wall_desc: ""
+ XVD_evangelical_reforms: "Evangelical Reformism"
+ XVD_evangelical_reforms_desc: ""
  XVD_improve_education: "Monastic Education"
  XVD_improve_education_desc: ""
+ XVD_agricultural_focus: "Help for the Farmers"
+ XVD_agricultural_focus_desc: ""
  XVD_give_to_the_poor: "Care for the Poor"
  XVD_give_to_the_poor_desc: ""
+
+ XVD_defensive_war: "Defense of Verden"
+ XVD_defensive_war_desc: ""
+ XVD_open_weapon_reserves: "Open Weapon Reserves"
+ XVD_open_weapon_reserves_desc: ""
+ XVD_weapon_forge: "Expand the Weapon Forge"
+ XVD_weapon_forge_desc: ""
+ XVD_allow_conscription: "Modernise the Stadtwache"
+ XVD_allow_conscription_desc: ""
 
 
 # EVENTS
@@ -776,6 +812,16 @@
  XHH_diplo_events.9.t: "[FROM.capital.GetCapitalVictoryPointName] seeks to expand Hanse-owned Ports"
  XHH_diplo_events.9.desc: "Diplomats from [FROM.GetNameDef] have approached us, asking us to sell ports in some of our coastal cities to them."
  XHH_diplo_events.9.a: "We can agree upon this."
+ XHH_diplo_events.10.t: "Hamburg seeks Cooperation"
+ XHH_diplo_events.10.desc: "[FROM.GetNameDefCap] has send diplomats to negotiate with [ROOT.GetLeader] over our status in relation with the Hamburg government. While we are independent from them, our railway network is heavily integrated with them and we rely on their aid in military affairs.\n \nHamburg's diplomats now propose our integration into [FROM.GetNameDef] as a Free City. We would nominally keep our independence, but have to fully give up our military affairs to them."
+ XHH_diplo_events.10.a: "The Stadradt accepts Hamburg's proposition"
+ XHH_diplo_events.10.b: "Rally the People! We shall stay free!"
+ XHH_diplo_events.11.t: "The Verdener Stadtrat accepts"
+ XHH_diplo_events.11.desc: "The city council of Verden has accepted our proposition to become a Free City of Hamburg."
+ XHH_diplo_events.11.a: "To peaceful cooperation."
+ XHH_diplo_events.12.t: "Resistance in Verden!"
+ XHH_diplo_events.12.desc: "Our diplomats which were sent to Verden to talk them into becoming a Free City of Hamburg have failed their task, which means only war remains as an option."
+ XHH_diplo_events.12.a: "They wanted this!"
 
  XHH_news_events.1.t: "Hamburg restricts Princely Powers"
  XHH_news_events.1.desc: "In a constitutional referendum, the senate of Hamburg has voted to revoke the veto powers of the Kurfürst of Hamburg. This, in addition with other acts reducing the Kurfürst's influence in politics, have essentially made [FROM.GetLeader] into a figurehead.\n \nWhile the Kurfürst will still be up for election within the Empire, he will most likely only be a representative of the senate and the people of Hamburg."
