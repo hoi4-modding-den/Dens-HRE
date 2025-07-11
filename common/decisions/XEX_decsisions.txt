@@ -199,41 +199,46 @@ XEX_mussolini_plan = {
 
 XEX_form_greater_padania = {
 	XEX_form_greater_padania_dec = {
-	
+		
 		visible = {
 			tag = XEX
 		}
         available = {
             tag = XEX
 			has_completed_focus = XEX_announce_greater_padania
-			controls_state = 21 
-			controls_state = 851 
-			controls_state = 1041 
-			controls_state = 32 
-			controls_state = 735 
-			controls_state = 1029 
-			controls_state = 158 
-			controls_state = 1042 
-			controls_state = 1028 
-			controls_state = 162 
-			controls_state = 161 
-			controls_state = 846 
-			controls_state = 159 
-			controls_state = 1037 
-			controls_state = 1039 
-			controls_state = 160 
-			controls_state = 39
-			controls_state = 850
-			controls_state = 1027
-			controls_state = 736
-			controls_state = 852
-			controls_state = 853
-			controls_state = 102
-			controls_state = 1018
-			controls_state = 1038
+			custom_trigger_tooltip = {
+				tooltip = JAM_controlls_every_highlighted_state		
+				controls_state = 21 
+				controls_state = 851 
+				controls_state = 1041 
+				controls_state = 32 
+				controls_state = 735 
+				controls_state = 1029 
+				controls_state = 158 
+				controls_state = 1042 
+				controls_state = 1028 
+				controls_state = 162 
+				controls_state = 161 
+				controls_state = 846 
+				controls_state = 159 
+				controls_state = 1037 
+				controls_state = 1039 
+				controls_state = 160 
+				controls_state = 39
+				controls_state = 850
+				controls_state = 1027
+				controls_state = 736
+				controls_state = 852
+				controls_state = 853
+				controls_state = 102
+				controls_state = 1018
+				controls_state = 1038
+			}
 		}
 		
 		highlight_states = {
+			highlight_color_while_active = 3
+			highlight_color_before_active = 2
 			highlight_state_targets = { 
 				state = 21 
 				state = 851 
@@ -263,41 +268,11 @@ XEX_form_greater_padania = {
 			}
 		}
         fire_only_once = yes
-		
+		icon = GFX_decision_CHL_carabineros
 		
         complete_effect = {
-            every_state = {
-				limit = {
-					or = {
-						state = 21 
-						state = 851 
-						state = 1041 
-						state = 32 
-						state = 735 
-						state = 1029 
-						state = 158 
-						state = 1042 
-						state = 1028 
-						state = 162 
-						state = 161 
-						state = 846 
-						state = 159 
-						state = 1037 
-						state = 1039 
-						state = 160 
-						state = 39
-						state = 850
-						state = 1027
-						state = 736
-						state = 852
-						state = 853
-						state = 102
-						state = 1018
-						state = 1038
-					}
-				}
-				add_core_of = XEX
-			}
+			custom_effect_tooltip = JAM_cores_every_highlighted_state
+            
 			if = {
 				limit = {
 					has_completed_focus = XEX_announce_greater_padania
@@ -305,6 +280,38 @@ XEX_form_greater_padania = {
 				custom_effect_tooltip = XEX_form_greater_padania_dec_tt
 			}
 			hidden_effect = {
+				every_state = {
+					limit = {
+						or = {
+							state = 21 
+							state = 851 
+							state = 1041 
+							state = 32 
+							state = 735 
+							state = 1029 
+							state = 158 
+							state = 1042 
+							state = 1028 
+							state = 162 
+							state = 161 
+							state = 846 
+							state = 159 
+							state = 1037 
+							state = 1039 
+							state = 160 
+							state = 39
+							state = 850
+							state = 1027
+							state = 736
+							state = 852
+							state = 853
+							state = 102
+							state = 1018
+							state = 1038
+						}
+					}
+					add_core_of = XEX
+				}
 				country_event = {
 					id = XEX_collapse.1
 					days = 120

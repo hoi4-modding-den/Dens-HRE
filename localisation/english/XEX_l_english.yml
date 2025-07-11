@@ -34,6 +34,24 @@
  XEX_form_greater_padania_dec:0 "A War Finally Over"
  XEX_form_greater_padania_dec_tt:0 "§RSomething else awaits you now, i suggest you keep playing§!"
  
+ # EVENTS
+ XEX_foreign_policy.1.t:0 "Padanian Invitation To Thier Faction"
+ XEX_foreign_policy.1.d:0 "Today the kingdom of padania has met with our rappresentatives to discuss a potential entrance into thier faction."
+ XEX_foreign_policy.1.a:0 "What a great idea, let's join the faction"
+ XEX_foreign_policy.1.b:0 "Puppet, Alliance, same thing, our answer is NO"
+ XEX_foreign_policy.2.t:0 "The Padanians Request Land"
+ XEX_foreign_policy.2.d:0 "Today the kingdom of padania has met with our rappresentatives to discuss a potential exchange of territory, such a trade seems like an obvious scam, but we worry they will use force to enforce it"
+ XEX_foreign_policy.2.a:0 "Fine, they can have it" 
+ XEX_foreign_policy.2.b:0 "If they want it so bad, let em come"
+ XEX_foreign_policy.3.t:0 "The Padanians Request Our Submission"
+ XEX_foreign_policy.3.d:0 "Today the kingdom of padania has met with our rappresentatives to enforce our submission, making it clear the other option is force, how should we answer them?"
+ XEX_foreign_policy.3.a:0 "Rather live as a poor man than die as a slave" 
+ XEX_foreign_policy.3.b:0 "We will not be dictated by some north italian inferior tribe"
+ 
+ XEX_collapse.1.t:0 "The Church Of God Takes Over"
+ XEX_collapse.1.d:0 "God loves all of his children, but as every good father needs to do, he also must educate them, with our recent aggression of sacred lands owned by the pope, god has been pissed and he is now trying to end our kingdom and Salvini's life"
+ XEX_collapse.1.a:0 "§RWe don't need God§!"
+ 
  
  
  # TOOLTIPS
@@ -42,8 +60,8 @@
  XEX_damn_milans_lakes_tt:0 "We will gain some decisions to create damn in states which contain big lakes"
  XEX_industrial_expansion_tt:0 "Just like a pizza, we will start by making the dough, then we will add the toppings, to then finish by baking it in the oven."
  XEX_announce_greater_padania_tt:0 "We Will Be Able To Form Greater Padania"
- 
- 
+ JAM_cores_every_highlighted_state:0 "[ROOT.GetName] Cores All Highlighted States"
+ JAM_controlls_every_highlighted_state:0 "[ROOT.GetName] Controlls All Highlighted States"
  
  # CHARACTERS N TRAITS
  XEX_king_salvinus_divinus:0 "Matteo Salvini"
@@ -76,6 +94,7 @@
  XEX_protect_our_industries:0 "Raise Worker Militias"
  XEX_triangolo:0 "Il Triangolo"
  XEX_fords_inspiration:0 "Fordian Slavery"
+ XEX_italian_research:0 "Ricerca Italiana"
  # FOCUS TREE
  
  XEX_adress_the_kingdom:0 "Adress The Kingdom"
@@ -182,17 +201,17 @@
  XEX_use_the_padanian_plains_desc:0 "The po valley is a very rich region, not just for trade, but the opportunity it gives us for farming are immense, while the eastern part of it is controlled by La Serenissima, we control most of it, it should be a priority to use all this farmland to it's best abilities."
  XEX_damn_milans_lakes_desc:0 "In the alps, there are major lakes, which we could use to build dams in, while those lakes were never important enough, with the recent integration of the Principality of Milan and it's northern big lakes, we could use them to create dams to create energy."
  XEX_create_the_geneva_plant_desc:0 "A facility in Genova could be extremely beneficial, despite it not being strictly economic related, it will allow us to protect our import and exports, and especially with the recent reconstruction of the Genova port, it's very important we keep our navy up to date, especially as La Serenissima is always ruling the seas."
- XEX_economical_strength_desc:0 "Mussolini's Plan"
- XEX_military_plants_in_turin_desc:0 "Boost Fiat"
- XEX_dockyard_investements_desc:0 "Boost Genova's Arms"
- XEX_industrial_expansion_desc:0 "Inizia Il Piano"
- XEX_cooperation_with_big_industries_desc:0 "Enstablish Corporatism"
- XEX_Padanian_Mobilization_desc:0 "Mobilitazione Padaniana"
- XEX_protect_our_industry_desc:0 "Defend Homeland Industry"
- XEX_allow_female_work_desc:0 "Allow Female Work"
- XEX_streamline_production_desc:0 "Impara Da Ford"
- XEX_develop_military_research_stations_desc:0 "Fund Military Research"
- XEX_land_facility_desc:0 "Finanzia Il Triangolo"
+ XEX_economical_strength_desc:0 "Mussolini's plan focuses on the creation of the enstablishment of a corporatist economy, but he also seeks to enstablish and boost the military sector of the nation, through cooperation with military industries, but also through the pizza plan."
+ XEX_military_plants_in_turin_desc:0 "Fiat has been one of our main producer of mostly everything, as they've been one of the major industries operating in our territory, trying to boost them up wouldn't be a bad idea, it would also be a good idea trying to make them focus on a more war prioritizing economy."
+ XEX_dockyard_investements_desc:0 "While liguria is mainly a port region, it's military opportunities are nothing to laugh at, boosting them would help not only our country's economy, but also the regional one, since after the collapse of the previous state, it's economy has been stagnant at best, if not in freefall during hard times."
+ XEX_industrial_expansion_desc:0 "The ''Pizza Plan'' has called by a lot of economics as an idea to boost up every region's economy in padania, it starts with the creation of the dough, which consists in the creation of infrastructure to allow each state to use it's industries to it's fullest, then the local economy is funded by the governament, until a military industry can be enstablished in the region."
+ XEX_cooperation_with_big_industries_desc:0 "Corporatism is an ideology which belives in class cooperation and in control of the corporations by the governament, mussolini belives that this is the first step needed to boost our economy to the one of bigger and more important nations in the world."
+ XEX_Padanian_Mobilization_desc:0 "We need to mobilize our nation to be ready for war, but we must mobilize in our own way, the way of blood and steel, no other nation can understand our economy better than us, and as such, we should be the first ones to decide how to run it during periods of war."
+ XEX_protect_our_industry_desc:0 "Raising worker militias might seem like a dangerous move at the start, but once they realize that each one of thier neighbour belives in the systematic enslavement of the workers, they will realize that our vision is the best, and how without us, they will fall into slavery."
+ XEX_allow_female_work_desc:0 "Allowing the female gender to work will be an unpopular move for sure, especially for the more conservative of our population, but our kingdom needs all the help it can get in the industries and in the war effort, that's why women will be able to work and have a spot, even if minor, in the army."
+ XEX_streamline_production_desc:0 "Ford's idea of how to improve production in the factories is of great intrest to mussolini, maybe we should take inspiration from him and permit his type of organization to be of law in our industries, this would allow us to produce a more things faster."
+ XEX_develop_military_research_stations_desc:0 "Funding research is always of need during these times, we need our economy to be at it's strongest, but what's strength when we don't have tools to use such strenght, we need to get up to date, as soon as possible."
+ XEX_land_facility_desc:0 "''Il Triangolo'' or better knows around the globe as ''The Triangle'' has been a plan the padanian governament has been wanting to complete for a long time, now, with our war led economy, it's very important we finish this project, so our army will be able to collaborate better."
  
  XEX_milan_project_desc:0 "§CProg§!§Yetto:§! §CMil§!§Yano§!"
  XEX_boost_militia_strenght_desc:0 "Boost The Knights"

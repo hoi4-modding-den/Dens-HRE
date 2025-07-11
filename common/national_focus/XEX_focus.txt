@@ -1181,18 +1181,30 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			every_country = {
+			IF = {
 				limit = {
-					capital_scope = {
-						or = {
-							region = 21
-							region = 20
-							region = 23
-						}
+					XEX = {
+						has_completed_focus = XEX_political_peace
 					}
-					is_in_faction_with = XEX
 				}
-				add_ideas = XEX_italian_research
+				every_country = {
+					limit = {
+						capital_scope = {
+							or = {
+								region = 21
+								region = 20
+								region = 23
+							}
+						}
+						is_in_faction_with = XEX
+					}
+					add_ideas = XEX_italian_research
+				}
+			}
+			else = {
+				XEX = {
+					add_ideas = XEX_italian_research
+				}
 			}
 		}
 	}
@@ -1215,7 +1227,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			
+			add_war_support = 0.1
 		}
 	}
 	focus = {

@@ -4,7 +4,7 @@ country_event = { #Invite Someone To Faction
 	id = XEX_foreign_policy.1
 	title = XEX_foreign_policy.1.t
 	desc = XEX_foreign_policy.1.d
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 
 	after = {
@@ -54,7 +54,7 @@ country_event = { #Resquest State From Someone
 	id = XEX_foreign_policy.2
 	title = XEX_foreign_policy.2.t
 	desc = XEX_foreign_policy.2.d
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 	is_triggered_only = yes
 
 	after = {
@@ -116,7 +116,7 @@ country_event = { #Request Puppetization
 	id = XEX_foreign_policy.3
 	title = XEX_foreign_policy.3.t
 	desc = XEX_foreign_policy.3.d
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_generic_soldiers_surrendering
 	is_triggered_only = yes
 
 	after = {
@@ -153,7 +153,7 @@ country_event = {
 	id = XEX_collapse.1
 	title = XEX_collapse.1.t
 	desc = XEX_collapse.1.d
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_COG_force_publique_marching_to_war
 	is_triggered_only = yes
 
 	after = {
