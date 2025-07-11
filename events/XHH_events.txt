@@ -462,6 +462,101 @@ country_event = {
 }
 
 country_event = {
+	id = XHH_internal_events.12
+	title = XHH_internal_events.12.t
+	desc = XHH_internal_events.12.desc
+	
+	picture = GFX_report_event_generic_communist_congress
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.12.a
+		trigger = {
+			XHH_spd_socialist = { is_hired_as_advisor = no }
+		}
+		promote_character = XHH_hermann_ludemann
+		set_party_name = { ideology = democratic long_name = XHH_democratic_party_SPD_long name = XHH_democratic_party_SPD }
+		
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		set_country_flag = HRE_is_republic
+		set_cosmetic_tag = XHH_republic
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		
+
+		hidden_effect = {
+			news_event = {
+				id = XHH_news_events.8
+				hours = 3
+			}
+		}
+    }
+
+	option = {
+        name = XHH_internal_events.12.b
+		trigger = {
+			XHH_spd_socialist = { is_hired_as_advisor = yes }
+		}
+		promote_character = XHH_hermann_ludemann
+		set_party_name = { ideology = democratic long_name = XHH_democratic_party_SPD_long name = XHH_democratic_party_SPD }
+		
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		set_country_flag = HRE_is_republic
+		set_cosmetic_tag = XHH_republic
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+
+
+		hidden_effect = {
+			news_event = {
+				id = XHH_news_events.8
+				hours = 3
+			}
+		}
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.13
+	title = XHH_internal_events.13.t
+	desc = XHH_internal_events.13.desc
+	
+	picture = GFX_report_event_SWI_parliament_members
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.13.a
+		
+		
+    }
+}
+
+country_event = {
+	id = XHH_internal_events.14
+	title = XHH_internal_events.14.t
+	desc = XHH_internal_events.14.desc
+	
+	picture = GFX_report_event_romania_parliament
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_internal_events.14.a
+		
+		
+    }
+}
+
+country_event = { # demand Wilhelmshaven
 	id = XHH_diplo_events.1
 	title = XHH_diplo_events.1.t
 	desc = XHH_diplo_events.1.desc
@@ -508,7 +603,7 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { # demand Wilhelmshaven // Accept
 	id = XHH_diplo_events.2
 	title = XHH_diplo_events.2.t
 	desc = XHH_diplo_events.2.desc
@@ -534,7 +629,7 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = {  # demand Wilhelmshaven // Refuse
 	id = XHH_diplo_events.3
 	title = XHH_diplo_events.3.t
 	desc = XHH_diplo_events.3.desc
@@ -722,7 +817,7 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { # Trade Route Expansion
 	id = XHH_diplo_events.8
 	title = XHH_diplo_events.8.t
 	desc = XHH_diplo_events.8.desc
@@ -794,12 +889,12 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { # Puppet XVD
 	id = XHH_diplo_events.10
 	title = XHH_diplo_events.10.t
 	desc = XHH_diplo_events.10.desc
 	
-	picture = GFX_report_event_generic_naval_treaty
+	picture = GFX_report_event_hungary_gains_transylvania
 	
 	
 	is_triggered_only = yes
@@ -846,12 +941,12 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { # Puppet XVD // Accepts
 	id = XHH_diplo_events.11
 	title = XHH_diplo_events.11.t
 	desc = XHH_diplo_events.11.desc
 	
-	picture = GFX_report_event_generic_naval_treaty
+	picture = GFX_report_event_generic_peaceful_annexation
 	
 	
 	is_triggered_only = yes
@@ -868,18 +963,128 @@ country_event = {
 
 }
 
-country_event = {
+country_event = { # Puppet XVD // Refuses
 	id = XHH_diplo_events.12
 	title = XHH_diplo_events.12.t
 	desc = XHH_diplo_events.12.desc
 	
-	picture = GFX_report_event_generic_naval_treaty
+	picture = GFX_report_event_hungary_gains_transylvania
 	
 	
 	is_triggered_only = yes
 	
 	option = {
         name = XHH_diplo_events.12.a
+		add_state_claim = 1046
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+    }
+
+}
+
+country_event = { # Annex XVD
+	id = XHH_diplo_events.13
+	title = XHH_diplo_events.13.t
+	desc = XHH_diplo_events.13.desc
+	
+	picture = GFX_report_event_hungary_gains_transylvania
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.13.a
+		ai_chance = {
+			factor = 10
+		}
+		FROM = { country_event = { id = XHH_diplo_events.14 days = 3 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+				add_state_core = 1046
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+    }
+
+	option = {
+        name = XHH_diplo_events.13.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = { country_event = { id = XHH_diplo_events.15 days = 3 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_stability = -0.1
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+    }
+}
+
+country_event = { # Annex XVD // Accepts
+	id = XHH_diplo_events.14
+	title = XHH_diplo_events.14.t
+	desc = XHH_diplo_events.14.desc
+	
+	picture = GFX_report_event_generic_peaceful_annexation
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.14.a
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = { has_idea = XVD_city_guard }
+				}
+				FROM = {
+					delete_units = {
+						division_template = "Stadtwache"
+						disband = yes
+					}
+				}
+			}
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+		add_state_core = 1046
+    }
+
+}
+
+country_event = { # Annex XVD // Refuses
+	id = XHH_diplo_events.15
+	title = XHH_diplo_events.15.t
+	desc = XHH_diplo_events.15.desc
+	
+	picture = GFX_report_event_hungary_gains_transylvania
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_diplo_events.15.a
 		add_state_claim = 1046
 		create_wargoal = {
 			target = FROM
@@ -1116,3 +1321,38 @@ news_event = {
 		}
     }
 }
+
+news_event = {
+	id = XHH_news_events.8
+	title = XHH_news_events.8.t
+	desc = XHH_news_events.8.desc
+	
+	picture = GFX_news_event_XHH_luedemann
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.8.a
+		trigger = {
+			original_tag = FROM
+		}
+    }
+
+	option = {
+        name = XHH_news_events.8.b
+		trigger = {
+			NOT = { original_tag = FROM }
+			NOT = { has_country_flag = HRE_is_republic }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.8.c
+		trigger = {
+			NOT = { original_tag = FROM }
+			has_country_flag = HRE_is_republic
+		}
+    }
+}
+

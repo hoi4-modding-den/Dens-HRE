@@ -200,6 +200,13 @@ characters = {
 			}
 		}
 
+		country_leader = {
+			traits = {  }
+			ideology = socialism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+
 		advisor = {
 			slot = political_advisor
 			idea_token = XHH_hermann_ludemann_pm
@@ -218,13 +225,23 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = socialism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_ludemann name = XHH_democratic_party_ludemann } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = socialism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_ludemann name = XHH_democratic_party_ludemann }
+					} 
+				}
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = conservatism 
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party }
+					} 
+				}
 			}
 
 			can_be_fired = no
@@ -262,13 +279,23 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = socialism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_klinghoffer name = XHH_democratic_party_klinghoffer } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = socialism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_klinghoffer name = XHH_democratic_party_klinghoffer }
+					} 
+				}
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = conservatism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party }
+					} 
+				}
 			}
 
 			can_be_fired = no
@@ -306,13 +333,23 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = liberalism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_seitz name = XHH_democratic_party_seitz } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = liberalism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_seitz name = XHH_democratic_party_seitz }
+					} 
+				}
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = conservatism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party }
+					} 
+				}
 			}
 
 			can_be_fired = no
@@ -350,13 +387,23 @@ characters = {
 			}
 
 			on_add = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = liberalism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_kluck name = XHH_democratic_party_kluck } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = conservatism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_kluck name = XHH_democratic_party_kluck }
+					} 
+				}
 			}
 
 			on_remove = {
-				if = { limit = { ROOT = { XHH_has_monarch = yes } } ROOT = { set_country_leader_ideology = conservatism } }
-				ROOT = { set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party } }
+				if = { 
+					limit = { ROOT = { XHH_has_monarch = yes } } 
+					ROOT = { 
+						set_country_leader_ideology = conservatism
+						set_party_name = { ideology = democratic long_name = XHH_democratic_party_long name = XHH_democratic_party }
+					} 
+				}
 			}
 
 			can_be_fired = no

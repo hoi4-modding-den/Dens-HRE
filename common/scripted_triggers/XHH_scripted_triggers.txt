@@ -113,8 +113,6 @@ XHH_north_german_states_OR = {
         state = 807
         state = 909
         state = 1017
-        state = 1031
-        state = 1034
         state = 1040
         state = 1043
         state = 1044
@@ -122,6 +120,9 @@ XHH_north_german_states_OR = {
         state = 1046
         state = 1047
         state = 1048
+        state = 1052
+        state = 1053
+        state = 1084
     }
 }
 
@@ -143,8 +144,6 @@ XHH_controls_north_german_states = {
         controls_state = 807
         controls_state = 909
         controls_state = 1017
-        controls_state = 1031
-        controls_state = 1034
         controls_state = 1040
         controls_state = 1043
         controls_state = 1044
@@ -158,3 +157,35 @@ XHH_controls_north_german_states = {
 XHH_has_monarch = {
     has_country_leader = { character = XHH_tom_first ruling_only = yes }
 }
+
+XHH_hessen_target = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_hessen_target_tt
+        OR = {
+            original_tag = XLH
+            original_tag = XL0
+            original_tag = XL1
+            original_tag = XL2
+            original_tag = XL3
+            original_tag = XL4
+            original_tag = XL5
+            original_tag = XL6
+            original_tag = XL7
+            original_tag = XL8
+            original_tag = XL9
+            original_tag = XH0
+            original_tag = XH3
+            original_tag = XH4
+            original_tag = XH5
+            original_tag = XH6
+            original_tag = XH7
+            original_tag = XH8
+            original_tag = XH9
+            original_tag = XI0
+            original_tag = XI1
+            original_tag = XI2
+            original_tag = XI3
+        }
+    }
+}
+

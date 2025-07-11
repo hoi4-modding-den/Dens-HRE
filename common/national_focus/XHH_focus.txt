@@ -2310,7 +2310,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_imperial_army_support
-		icon = GFX_focus_ger_return_of_the_kaiser
+		icon = GFX_focus_GER_all_for_the_front
 		prerequisite = { focus = XHH_reign_in_nationalists focus = XHH_prioritise_consumer_needs focus = XHH_reichsbank_financing focus = XHH_council_of_nobles }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -2522,6 +2522,14 @@ focus_tree = {
 				XHH_money = 2
 				tooltip = XHH_money_effect_tt
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_dynamic_modifier = {
+				modifier = XHH_venice_modifier
+			}
+
+			XHH_HRE_modifier_set_to_last = yes
 		}
 	}
 
@@ -2728,9 +2736,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			#unlock_decision_category_tooltip = 
 		}
 	}
 
@@ -2832,7 +2837,7 @@ focus_tree = {
 		icon = GFX_focus_generic_workers
 		prerequisite = { focus = XHH_record_profits }
 		mutually_exclusive = { focus = XHH_invest_in_middle_class focus = XHH_invest_in_farmers }
-		x = -3
+		x = -2
 		y = 1
 		relative_position_id = XHH_record_profits
 
@@ -2849,6 +2854,7 @@ focus_tree = {
 				value = 5
 				compare = greater_than_or_equals
 			}
+			has_government = democratic
 			OR = {
 				XHH_hermann_ludemann = { is_hired_as_advisor = yes }
 				XHH_spd_socialist = { is_hired_as_advisor = yes }
@@ -2863,6 +2869,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			country_event = XHH_internal_events.12
+			# EVENT: Theory of a Modern Sozialstaat
+			# become a Republic
+			# SPD: improve Welfare State Spirit
+			# USPD: unlock decisions to invade nearby Fascist Dictatorships
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2878,7 +2889,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = XHH_record_profits }
 		mutually_exclusive = { focus = XHH_invest_in_workers focus = XHH_invest_in_farmers }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = XHH_record_profits
 
@@ -2895,6 +2906,7 @@ focus_tree = {
 				value = 5
 				compare = greater_than_or_equals
 			}
+			has_government = democratic
 			XHH_fdp_liberal = { is_hired_as_advisor = yes }
 		}
 
@@ -2906,7 +2918,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			country_event = XHH_internal_events.13
+			# EVENT: Market Consolidation
+			# add idea 'Trade Federation'
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2919,10 +2933,10 @@ focus_tree = {
 
 	focus = {
 		id = XHH_invest_in_farmers
-		icon = GFX_focus_generic_agricultural_subsidies
+		icon = GFX_focus_ger_return_of_the_kaiser
 		prerequisite = { focus = XHH_record_profits }
 		mutually_exclusive = { focus = XHH_invest_in_workers focus = XHH_invest_in_middle_class }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = XHH_record_profits
 
@@ -2939,6 +2953,7 @@ focus_tree = {
 				value = 5
 				compare = greater_than_or_equals
 			}
+			has_government = democratic
 			XHH_cdu_conservative = { is_hired_as_advisor = yes }
 		}
 
@@ -2950,7 +2965,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			country_event = XHH_internal_events.14
+			# EVENT: On the Importance of Monarchy
+			# Leader gets 'Hero of the People' trait
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3191,6 +3208,14 @@ focus_tree = {
 				XHH_influence = 2
 				tooltip = XHH_influence_effect_tt
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_dynamic_modifier = {
+				modifier = XHH_sea_empire_modifier
+			}
+
+			XHH_HRE_modifier_set_to_last = yes
 		}
 	}
 
@@ -3779,7 +3804,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_core = 56
-			add_state_core = 1053
 			add_state_core = 1052
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -3904,6 +3928,11 @@ focus_tree = {
 				news_event = {
 					id = XHH_news_events.7
 					hours = 3
+				}
+				
+				add_named_threat = {
+					threat = 5
+					name = XHH_national_revolution
 				}
 			}
 		}
@@ -4212,6 +4241,15 @@ focus_tree = {
 			else = {
 				create_faction = XHH_national_league
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_state_claim = 1052
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_demand_cuxhaven
+			unlock_decision_tooltip = XHH_demand_nordenham
 		}
 	}
 
@@ -4468,6 +4506,7 @@ focus_tree = {
 						has_capitulated = no
 						NOT = { is_ally_with = ROOT }
 					}
+					NOT = { has_wargoal_against = XFT }
 				}
 				create_wargoal = {
 					target = XFT
@@ -4484,14 +4523,15 @@ focus_tree = {
 						has_capitulated = no
 						NOT = { is_ally_with = ROOT }
 					}
+					NOT = { has_wargoal_against = XPK }
 				}
 				create_wargoal = {
 					target = XPK
 					type = annex_everything
 				}
-			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
 			
 			unlock_decision_tooltip = XHH_form_north_germany
 			set_country_flag = XHH_unlocked_nord_de_formable
@@ -4503,6 +4543,502 @@ focus_tree = {
 						XHH_north_german_states_OR = yes
 					}
 					add_claim_by = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_strike_northwest_league
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = XHH_strike_prussia }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XHH_strike_prussia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			XPO = {
+				exists = yes
+				has_capitulated = no
+				NOT = { is_ally_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			has_war_with = XPO
+		}
+
+		will_lead_to_war_with = XPO
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				target = XPO
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_demand_annexation_of_verden
+		icon = GFX_focus_generic_annex_country
+		prerequisite = { focus = XHH_strike_prussia }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_strike_prussia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			XVD = {
+				exists = yes
+				has_capitulated = no
+				NOT = { is_ally_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			has_war_with = XVD
+		}
+
+		will_lead_to_war_with = XVD
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			XVD = { country_event = { id = XHH_diplo_events.13 days = 3 } }
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				annex_country = {
+					target = XVD
+					transfer_troops = no
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_end_brandenburg
+		icon = GFX_focus_GER_fuhrerprinzip_bormann
+		prerequisite = { focus = XHH_strike_prussia }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_strike_prussia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			XBR = {
+				exists = yes
+				has_capitulated = no
+				NOT = { is_ally_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			has_war_with = XBR
+		}
+
+		will_lead_to_war_with = XBR
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				target = XBR
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_seize_gotenhafen
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = XHH_strike_prussia }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_strike_prussia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			807 = { 
+				owner = {
+					NOT = { has_war_with = ROOT }
+					has_capitulated = no
+				} 
+			}
+			OR = {
+				controls_state = 63
+				controls_state = 5
+			}
+		}
+		
+		bypass = {
+			controls_state = 807
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					807 = { owner = { tag = ZZZ} }
+				}
+				807 = { transfer_state_to = ROOT }
+			}
+			else = {
+				# event
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_north_germany_united
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XHH_strike_northwest_league }
+		prerequisite = { focus = XHH_demand_annexation_of_verden }
+		prerequisite = { focus = XHH_end_brandenburg }
+		prerequisite = { focus = XHH_seize_gotenhafen }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XHH_strike_prussia
+
+		cost = 1.5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_north_de_united_tt
+				has_cosmetic_tag = XHH_north_germany
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MILITARY_CHARACTER }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
+			add_war_support = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XPO = {
+				every_unit_leader = {
+					limit = {
+						is_advisor = no
+						can_be_country_leader = no
+					}
+					set_nationality = ROOT
+				}
+			}
+			XPK = {
+				every_unit_leader = {
+					limit = {
+						is_advisor = no
+						can_be_country_leader = no
+					}
+					set_nationality = ROOT
+				}
+			}
+			XBR = {
+				every_unit_leader = {
+					limit = {
+						is_advisor = no
+						can_be_country_leader = no
+					}
+					set_nationality = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_fix_hessen
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XHH_north_germany_united }
+		#mutually_exclusive = { focus =  }
+		x = -4
+		y = 1
+		relative_position_id = XHH_north_germany_united
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			any_country = {
+				XHH_hessen_target = yes
+				exists = yes
+				has_capitulated = no
+				NOT = { is_ally_with = ROOT }
+			}
+		}
+		
+		bypass = {
+			all_country = {
+				OR = {
+					XHH_hessen_target = no
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		will_lead_to_war_with = XLH
+        will_lead_to_war_with = XL0
+        will_lead_to_war_with = XL1
+        will_lead_to_war_with = XL2
+        will_lead_to_war_with = XL3
+        will_lead_to_war_with = XL4
+        will_lead_to_war_with = XL5
+        will_lead_to_war_with = XL6
+        will_lead_to_war_with = XL7
+        will_lead_to_war_with = XL8
+        will_lead_to_war_with = XL9
+        will_lead_to_war_with = XH0
+        will_lead_to_war_with = XH3
+        will_lead_to_war_with = XH4
+        will_lead_to_war_with = XH5
+        will_lead_to_war_with = XH6
+        will_lead_to_war_with = XH7
+        will_lead_to_war_with = XH8
+        will_lead_to_war_with = XH9
+        will_lead_to_war_with = XI0
+        will_lead_to_war_with = XI1
+        will_lead_to_war_with = XI2
+        will_lead_to_war_with = XI3
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					XHH_hessen_target = yes
+					exists = yes
+					has_capitulated = no
+					NOT = { is_ally_with = ROOT }
+				}
+				ROOT = {
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+					hidden_effect = {
+						add_named_threat = {
+							threat = -15
+							name = XHH_justified_invasion
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			every_possible_country = {
+				limit = {
+					XHH_hessen_target = yes
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
+		}
+
+		bypass_effect = {
+			every_possible_country = {
+				limit = {
+					XHH_hessen_target = yes
+				}
+				every_core_state = {
+					add_claim_by = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_war_for_thueringen
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XHH_north_germany_united }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_north_germany_united
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			60 = { 
+				owner = {
+					NOT = { has_war_with = ROOT }
+					has_capitulated = no
+				} 
+			}
+			controls_state = 59
+		}
+		
+		bypass = {
+			controls_state = 60
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					60 = { owner = { tag = ZZZ} }
+				}
+				60 = { transfer_state_to = ROOT }
+			}
+			else = {
+				# event
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_kein_anhalt_vor_sachsen
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XHH_north_germany_united }
+		#mutually_exclusive = { focus =  }
+		x = 4
+		y = 1
+		relative_position_id = XHH_north_germany_united
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			OR = {
+				XSC = {
+					exists = yes
+					has_capitulated = no
+					NOT = { is_ally_with = ROOT }
+				}
+				XSW = {
+					exists = yes
+					has_capitulated = no
+					NOT = { is_ally_with = ROOT }
+				}
+				XSR = {
+					exists = yes
+					has_capitulated = no
+					NOT = { is_ally_with = ROOT }
+				}
+			}
+		}
+		
+		bypass = {
+			has_war_with = XSC
+			has_war_with = XSW
+			has_war_with = XSR
+		}
+
+		will_lead_to_war_with = XSC
+		will_lead_to_war_with = XSW
+		will_lead_to_war_with = XSR
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					XSC = {
+						exists = yes
+						has_capitulated = no
+						NOT = { is_ally_with = ROOT }
+					}
+					NOT = { has_wargoal_against = XSC }
+				}
+				create_wargoal = {
+					target = XSC
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					XSW = {
+						exists = yes
+						has_capitulated = no
+						NOT = { is_ally_with = ROOT }
+					}
+					NOT = { has_wargoal_against = XSW }
+				}
+				create_wargoal = {
+					target = XSW
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					XSR = {
+						exists = yes
+						has_capitulated = no
+						NOT = { is_ally_with = ROOT }
+					}
+					NOT = { has_wargoal_against = XSR }
+				}
+				create_wargoal = {
+					target = XSR
+					type = annex_everything
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 ﻿l_english:
 
- XHH_GATHERING_STORM_DESC: "Not related to Burgers. The name of Hamburg actually comes from Hammerburg, the original name of the settlement in the same location."
+ XHH_GATHERING_STORM_DESC: "The Principality is plagued by corruption left over from the previous monarch who sought to appease the Hanseatic League, separatists sentiments stirring in Hanover, a populace split between support for the Senate and the Prince-Elector and unrest among the exploited dockworkers."
 
 # COUNTRY NAMES
  XHH: "Hamburg"
@@ -35,7 +35,7 @@
  XHH_north_germany_democratic: "North German People's Confederation"
  XHH_north_germany_democratic_DEF: "the Norddeutscher Volksbund"
  XHH_north_germany_democratic_ADJ: "North German"
- XHH_north_germany_fascism: "United North German Reich"
+ XHH_north_germany_fascism: "United North German Realm"
  XHH_north_germany_fascism_DEF: "the Vereinigtes Norddeutsches Reich"
  XHH_north_germany_fascism_ADJ: "North German"
  XHH_north_germany_communism: "North German People's Republic"
@@ -174,7 +174,7 @@
  XHH_artillery_high_command_name: "Benedikt Börngen"
  XHH_infantry_high_command_name: "Justus Fürstenfeld"
  XHH_air_superiority_high_command_name: "Christian Bäcker"
- XHH_capital_ship_high_command_name: ""
+ XHH_capital_ship_high_command_name: "Julius Martens"
 
 
 # TRAITS
@@ -211,6 +211,8 @@
  XHH_democratic_party_klinghoffer: "Senat Klinghoffer"
  XHH_democratic_party_seitz: "Senat Seitz"
  XHH_democratic_party_kluck: "Senat Kluck"
+ XHH_democratic_party_SPD: "SPD"
+ XHH_democratic_party_SPD_long: "Sozialdemokratische Partei Deutschlands"
  XHH_neutrality_party: "Haus Hamburg-Mecklenburg"
  XHH_neutrality_party_long: "Haus von Hamburg-Mecklenburg"
  XHH_fascism_party: "Nationale Union"
@@ -241,6 +243,9 @@
  XHH_is_current_emperor_tt: "§7[XHH.GetNameWithFlag]§! heads the §YHoly Roman Empire§!"
  XHH_only_one_pm_tt: "Only one §YPrime Minister§! can be active at the same time"
  XHH_completed_via_event_tt: "Completed via §YEvent§!"
+ XHH_controls_north_german_states_tt: "Controls all §gNorth German States§!"
+ XHH_hessen_target_tt: "Is a §YHessian§! Nation"
+ XHH_hessen_target_tt_NOT: "Is not a §YHessian§! Nation"
 
 
 # FLAGS
@@ -256,8 +261,9 @@
  XHH_fascists_are_angry_tt: "§RThe Protestant Nationalists will not be happy with this decision!§!"
  XHH_fascist_coup_happened: "The §YNational Union§! has overthrown the Hamburger Government"
  XHH_modify_colonial_wealth_tt: "Modify §Y$XHH_colonial_wealth$§! by:"
- XHH_controls_north_german_states_tt: "Controls all §gNorth German States§!"
  XHH_requires_unique_path_cost_tt: "Has §Gunlocked§! the §OUnique Path Mechanic§!"
+ XHH_north_de_united_tt: "Has formed §Y$XHH_north_germany$§!"
+ XHH_justified_invasion: "Justified Invasion"
 
  XHH_money_effect_tt: "£GFX_market_subsidy_small_texticon Financial Leverage: $RIGHT|+=0$"
  XHH_money_trigger_tt: "At least §Y$RIGHT|0$§! £GFX_market_subsidy_small_texticon Financial Leverage"
@@ -335,6 +341,8 @@
  XHH_hamburg_immigration_hotspot: "Immigration Hotspot"
  XHH_colonial_wealth: "Colonial Possessions"
  XHH_colonial_wealth_desc: "The Holy Roman Empire holds no direct colonies. However, [ROOT.GetNameDef] still holds large amounts of land and influence in Africa through so-called Handelskompanien. Directed by the leaders in [ROOT.capital.GetCapitalVictoryPointName], the companies exploit the resources of Africa and send them back to Germany.\n \n§WAllows for the §!§Rexploitation§!§W of §!§Ycorporate colonial territories§!§W in Africa.§!"
+ XHH_venice_modifier: "Venedig des Nordens"
+ XHH_sea_empire_modifier: "Imperium der Meere"
 
 
 # MIOs
@@ -413,10 +421,10 @@
  XHH_improve_relations_with_hre_member: "Improve [FROM.GetAdjective] Partnership"
 
  XHH_money_cat: "The Venice of the North"
- XHH_money_cat_desc: "Trade has always been the strength of Hamburg. We are not called the §YVenice of the North§! for nothing. The §gHanseatic League§!'s trade network was built around cities like §gHamburg§! and §gKiel§!, perfect for redistributing goods and embracing §Ycommerce§!.\n \n§OTrade Leverage§! allows us to purchase §Yvaluable goods§! and §Yservices§! usually not for sale.\n \nCurrent £GFX_market_subsidy_small_texticon  Financial Leverage: [?XHH_money|.0+]\n "
+ XHH_money_cat_desc: "Trade has always been the strength of Hamburg. We are not called the §YVenice of the North§! for nothing. The §gHanseatic League§!'s trade network was built around cities like §gHamburg§! and §gKiel§!, perfect for redistributing goods and embracing §Ycommerce§!.\n \n§OTrade Leverage§! allows us to purchase §Yvaluable goods§! and §Yservices§! usually not for sale.\n \nOur national spirit §Y$XHH_venice_modifier$§! gives boni based on our £GFX_market_subsidy_small_texticon §OTrade Leverage§!.\n \nCurrent £GFX_market_subsidy_small_texticon  Financial Leverage: [?XHH_money|.0+]\n "
 
  XHH_influence_cat: "Influence in the Empire"
- XHH_influence_cat_desc: "Our influence within the §YHoly Roman Empire§! has always been something the Monarchs of Hamburg have neglected. Now it is our time to increase our standing and gain the favour of the other Imperial members.\n \n§OImperial Influence§! will allow us to §Ycall in favours§! and §Yimprove our realm§!.\n \nCurrent £GFX_legitimacy  Imperial Influence: [?XHH_influence|.0+]\n "
+ XHH_influence_cat_desc: "Our influence within the §YHoly Roman Empire§! has always been something the Monarchs of Hamburg have neglected. Now it is our time to increase our standing and gain the favour of the other Imperial members.\n \n§OImperial Influence§! will allow us to §Ycall in favours§! and §Yimprove our realm§!.\n \nOur national spirit §Y$XHH_sea_empire_modifier$§! gives boni based on our £GFX_legitimacy §OImperial Influence§!.\n \nCurrent £GFX_legitimacy  Imperial Influence: [?XHH_influence|.0+]\n "
 
  XHH_form_north_germany_cat: "Norddeutsche Einheit"
  XHH_form_north_germany: "Form a North German State"
@@ -507,9 +515,9 @@
  XHH_religious_divide_desc: ""
 
  XHH_power_to_the_senate: "Constitutional Referendum"
- XHH_power_to_the_senate_desc: "The Kurfürst has no place but as a figurehead of the country! The people themselves must rule over Hamburg!"
+ XHH_power_to_the_senate_desc: "The Kurfürst has no place but as a figurehead of the country! The people themselves must rule over Hamburg and the senate knows exactly how to restrict the monarch's powers."
  XHH_abolish_the_senate: "Abolish the Senate"
- XHH_abolish_the_senate_desc: "The senate is holding down the righteous rule of the Kurfürst, who obviously knows best who should rule! Their charade end here and now!"
+ XHH_abolish_the_senate_desc: "The senate is holding down the righteous rule of the Kurfürst, who obviously knows best for the nation! This charade of democracy end here and now!"
  
  XHH_reign_in_nationalists: "Reign in the Nationalists"
  XHH_reign_in_nationalists_desc: ""
@@ -554,11 +562,11 @@
  XHH_venice_hamburg_route_desc: ""
  XHH_record_profits: "Invest our Profits"
  XHH_record_profits_desc: ""
- XHH_invest_in_workers: "The Worker's Spoils"
+ XHH_invest_in_workers: "End the Old Order"
  XHH_invest_in_workers_desc: ""
- XHH_invest_in_middle_class: "Bolster the Middle Class"
+ XHH_invest_in_middle_class: "The Free Nation" 
  XHH_invest_in_middle_class_desc: ""
- XHH_invest_in_farmers: "Subsidise the Farmers"
+ XHH_invest_in_farmers: "Figurehead of the People"
  XHH_invest_in_farmers_desc: ""
  XHH_dam_construction_in_mecklenburg: "Mecklenburg Dam Construction"
  XHH_dam_construction_in_mecklenburg_desc: ""
@@ -598,7 +606,7 @@
  XHH_develop_wilhelmshaven_desc: ""
 
  XHH_national_revolution: "The National Revolution"
- XHH_national_revolution_desc: ""
+ XHH_national_revolution_desc: "Lang lebe das Deutsche Volk! Aber noch ist unser Werk nicht vollbracht. Nach dem unsere Macht gesichert ist, müssen wir beginnen, das gesamte Norddeutsche Volk unter unserer Nation zu vereinigen."
  XHH_hamburgs_hegemony: "Restrict Political Opponents"
  XHH_hamburgs_hegemony_desc: ""
  XHH_reject_tradition: "Awaken National Consciousness"
@@ -627,6 +635,22 @@
  XHH_military_control_desc: ""
  XHH_strike_prussia: "Befreiung von Pommern und Preußen"
  XHH_strike_prussia_desc: ""
+ XHH_strike_northwest_league: "Restore Oldenburg and Westfalen"
+ XHH_strike_northwest_league_desc: ""
+ XHH_demand_annexation_of_verden: "Anschluss von Verden"
+ XHH_demand_annexation_of_verden_desc: ""
+ XHH_end_brandenburg: "Crush the Brandenburger Traitors"
+ XHH_end_brandenburg_desc: ""
+ XHH_seize_gotenhafen: "Seize Gotenhafen"
+ XHH_seize_gotenhafen_desc: ""
+ XHH_north_germany_united: "Die Norddeutsche Einigung"
+ XHH_north_germany_united_desc: ""
+ XHH_fix_hessen: "Mend the Hessian Flickenteppich"
+ XHH_fix_hessen_desc: ""
+ XHH_war_for_thueringen: "Free Thüringen"
+ XHH_war_for_thueringen_desc: ""
+ XHH_kein_anhalt_vor_sachsen: "Kein Anhalt vor Sachsen"
+ XHH_kein_anhalt_vor_sachsen_desc: ""
 
  XHH_modernise_the_landeswehr: "Modernise the Landeswehr"
  XHH_modernise_the_landeswehr_desc: ""
@@ -782,17 +806,27 @@
  XHH_internal_events.11.t: "Dealing with the Opposition"
  XHH_internal_events.11.desc: "The Democrats and Monarchists in the administration have been opposing our moves to seize more power and enact our reforms, therefore they must go."
  XHH_internal_events.11.a: "No one can stand in the way of greatness!"
+ XHH_internal_events.12.t: "Theory of a Modern Sozialstaat"
+ XHH_internal_events.12.desc: ""
+ XHH_internal_events.12.a: "Welfare shall strengthen the Working Class!"
+ XHH_internal_events.12.b: "Revolution is the struggle against tyrants!"
+ XHH_internal_events.13.t: "Market Consolidation"
+ XHH_internal_events.13.desc: ""
+ XHH_internal_events.13.a: "Every nation lives by exchanging."
+ XHH_internal_events.14.t: "On the Importance of Monarchy"
+ XHH_internal_events.14.desc: ""
+ XHH_internal_events.14.a: "Lang lebe der Kurfürst!"
 
- XHH_diplo_events.1.t: "[FROM.capital.GetCapitalVictoryPointName] demands Control over Wilhelmshaven and Oldenburg"
+ XHH_diplo_events.1.t: "[FROM.capital.GetCapitalVictoryPointName] demands control over Wilhelmshaven and Oldenburg"
  XHH_diplo_events.1.desc: "Kurfürst Tom I. of Hamburg-Mecklenburg is demanding the annexation and integration of Wilhelmshaven and Oldenburg into [FROM.GetNameDef]."
  XHH_diplo_events.1.a: "We must agree."
  XHH_diplo_events.1.b: "Never!"
  XHH_diplo_events.2.t: "[FROM.GetNameDefCap] submits!"
  XHH_diplo_events.2.desc: "[FROM.GetNameDefCap] has yielded, providing no resistance and allowing for a peaceful transition of power in Oldenburg."
  XHH_diplo_events.2.a: "Very good."
- XHH_diplo_events.3.t: "[FROM.GetNameDefCap] refuses!"
- XHH_diplo_events.3.desc: "The foolish government of [FROM.GetNameDef] has decided to stand up against us and defy the imperial decree."
- XHH_diplo_events.3.a: "Our authority is absolute! To War!"
+ XHH_diplo_events.3.t: "[FROM.GetNameDefCap] politely refuses"
+ XHH_diplo_events.3.desc: "The foolish government of [FROM.GetNameDef] has decided to refuse oure demands of control over the Duchy of Oldenburg and Wilhelmshaven."
+ XHH_diplo_events.3.a: "We politely declare war."
  XHH_diplo_events.4.t: "[FROM.capital.GetCapitalVictoryPointName] negotiates new Contracts"
  XHH_diplo_events.4.desc: "Representatives from [FROM.GetNameDef] visited us to renegotiate Porsche contracts with their government. After some long discussions, we settled on a deal."
  XHH_diplo_events.4.a: "Business is business."
@@ -822,6 +856,16 @@
  XHH_diplo_events.12.t: "Resistance in Verden!"
  XHH_diplo_events.12.desc: "Our diplomats which were sent to Verden to talk them into becoming a Free City of Hamburg have failed their task, which means only war remains as an option."
  XHH_diplo_events.12.a: "They wanted this!"
+ XHH_diplo_events.13.t: "Hamburg demands our Annexation"
+ XHH_diplo_events.13.desc: "The new Nationalist Government in Hamburg has demanded we be fully integrated into their new nation as part of the plans to unite all North German People. Support for their cause is high among the citizenry, so the city council has to make a difficult decision."
+ XHH_diplo_events.13.a: "$XHH_diplo_events.10.a$"
+ XHH_diplo_events.13.b: "$XHH_diplo_events.10.b$"
+ XHH_diplo_events.14.t: "$XHH_diplo_events.11.t$"
+ XHH_diplo_events.14.desc: "$XHH_diplo_events.11.desc$"
+ XHH_diplo_events.14.a: "$XHH_diplo_events.11.a$"
+ XHH_diplo_events.15.t: "$XHH_diplo_events.12.t$"
+ XHH_diplo_events.15.desc: "$XHH_diplo_events.12.desc$"
+ XHH_diplo_events.15.a: "$XHH_diplo_events.12.a$"
 
  XHH_news_events.1.t: "Hamburg restricts Princely Powers"
  XHH_news_events.1.desc: "In a constitutional referendum, the senate of Hamburg has voted to revoke the veto powers of the Kurfürst of Hamburg. This, in addition with other acts reducing the Kurfürst's influence in politics, have essentially made [FROM.GetLeader] into a figurehead.\n \nWhile the Kurfürst will still be up for election within the Empire, he will most likely only be a representative of the senate and the people of Hamburg."
@@ -855,6 +899,11 @@
  XHH_news_events.7.desc: "Following the Kurfürst's attempt to institute a royal dictatorship, the Nationale Union, a nationalist group in Hamburg, has overthrown the Princely regime and established a nationalist republic.\n \nThe new government has already received pushbacks from various groups, including the [XH1.GetAdjective] [XH1.GetFascistParty], the Hamburgian Labour Union Movement and the SPD."
  XHH_news_events.7.a: "The Nation is safe in our hands!"
  XHH_news_events.7.b: "What is happening in Hamburg?"
+ XHH_news_events.8.t: "Lüdemann proclaims a Hamburgian Republic!"
+ XHH_news_events.8.desc: "In recent years, the Social-Democratic Party of Germany has won significant popularity among the people of Hamburg. With another electorial victory under their belt, the Hamburgian SPD's chancellor Hermann Lüdemann, in cooperation with his party and the independent Socialist candidate Aaron Klinghofffer has now proclaimed the Republic of Hamburg, officially ending the ceremonial role the monarchy has played since its restriction of powers.\n \nThis radical shift of power structure comes as a surprise to most outsiders to Hamburgian politics but has been expected by most Senate members for quite some time."
+ XHH_news_events.8.a: "The Future awaits!"
+ XHH_news_events.8.b: "Their Republican experiment will fail!"
+ XHH_news_events.8.c: "Hamburg enters a new age."
 
  XH1_internal_events.1.t: "Ernest August shot in Braunschweig!"
  XH1_internal_events.1.desc: "Following his intentions to work with the leaders of the Hamburg Nationalist Movement, the Hanoverian separatist underground has made moves to eliminate him for collaborating with the enemy.\n \nToday in the early morning, as the Prince was driven through the city of Braunschweig on his way to Hamburg, a man in the crowd forming along the path took out a pistol and shot Ernest August."
@@ -878,6 +927,8 @@
  STATE_1048: "Werle"
  STATE_1084: "Ostfriesland"
 
+ XHH_STATE_807: "Gotenhafen"
+
  VICTORY_POINTS_3271: "Verden"
  VICTORY_POINTS_3368: "Brunsbüttel"
  VICTORY_POINTS_9294: "Schwerin"
@@ -892,3 +943,5 @@
  VICTORY_POINTS_13497: "Eimsbüttel / Hamburg Nord"
  VICTORY_POINTS_13498: "Wandsbek"
  VICTORY_POINTS_13501: "Wismar"
+
+ XHH_VICTORY_POINTS_9263: "Gotenhafen"

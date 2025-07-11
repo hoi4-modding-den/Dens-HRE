@@ -447,7 +447,10 @@ foreign_politics = {
 
 		visible = {
 			NOT = { controls_state = 1053 }
-			has_completed_focus = XHH_reobtain_northern_port_cities
+			OR = {
+				has_completed_focus = XHH_reobtain_northern_port_cities
+				has_completed_focus = XHH_protect_our_sovereignty
+			}
 		}
 
 		cancel_trigger = {
@@ -530,7 +533,10 @@ foreign_politics = {
 
 		visible = {
 			NOT = { controls_state = 1052 }
-			has_completed_focus = XHH_reobtain_northern_port_cities
+			OR = {
+				has_completed_focus = XHH_reobtain_northern_port_cities
+				has_completed_focus = XHH_protect_our_sovereignty
+			}
 		}
 
 		cancel_trigger = {
