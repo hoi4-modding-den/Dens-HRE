@@ -27,7 +27,7 @@ joint_focus = {
 			}
 			hidden_trigger = {
 				OR = {
-					has_completed_focus = XEX_economical_Strenght
+					has_completed_focus = XEX_economical_strength
 					has_completed_focus = XEX_economical_growth
 				}	
 			}
@@ -49,10 +49,11 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
-        
+        add_political_power = 35 
     }
 
     completion_reward_joint_member = {
+		add_political_power = 35 
     }
 
 }
@@ -94,9 +95,17 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		159 = {
+			create_unit = {
+				division = "name = \"Milizie Milanesi\" division_template = \"Milizie Milanesi\" start_experience_factor = 0.5"
+				count = 3
+				owner = XE0
+			}
+		}
     }
 
     completion_reward_joint_member = {
+		
     }
 }
 joint_focus = {
@@ -128,7 +137,7 @@ joint_focus = {
 
     joint_trigger = {
         OR = {
-            tag = XEX
+            tag = XEX 
 			tag = XE0
         }
     }
@@ -138,9 +147,17 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		add_timed_idea = {
+			idea = XEX_XE0_trade
+			days = 200
+		}
     }
 
     completion_reward_joint_member = {
+		add_timed_idea = {
+			idea = XEX_XE0_trade
+			days = 200
+		}
     }
 }
 joint_focus = {
@@ -172,6 +189,7 @@ joint_focus = {
     joint_trigger = {
         OR = {
             tag = XEX
+			tag = XE0
         }
     }
 
@@ -180,9 +198,21 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		add_timed_idea = {
+			idea = XEX_XE0_funding_arms
+			days = 200
+		}
     }
 
-    completion_reward_joint_member = {
+    completion_reward_joint_member = { 
+		159 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
     }
 }
 joint_focus = {
@@ -223,9 +253,17 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		add_timed_idea = {
+			idea = XEX_XE0_training
+			days = 200
+		}
     }
 
     completion_reward_joint_member = {
+		add_timed_idea = {
+			idea = XEX_XE0_training
+			days = 200
+		}
     }
 }
 joint_focus = {
@@ -266,9 +304,17 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		add_timed_idea = {
+			idea = XEX_XE0_integrate_banks
+			days = 200
+		}
     }
 
     completion_reward_joint_member = {
+		add_timed_idea = {
+			idea = XEX_XE0_integrated_banks
+			days = 200
+		}
     }
 }
 
@@ -311,9 +357,11 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		add_research_slot = 1
     }
 
     completion_reward_joint_member = {
+		add_research_slot = 1
     }
 }
 joint_focus = {
@@ -354,13 +402,15 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		inherit_technology = XE0
     }
 
     completion_reward_joint_member = {
+		inherit_technology = XEX
     }
 }
 joint_focus = {
-    id = FRA_integrate_milans_civilian_sector
+    id = XEX_integrate_milans_civilian_sector
     icon = GFX_goal_generic_intelligence_exchange
     text_icon = XEX_shared_style
 
@@ -397,6 +447,7 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		custom_effect_tooltip = XEX_integrate_milans_civilian_sector_tt
     }
 
     completion_reward_joint_member = {
@@ -440,9 +491,17 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		159 = {
+			create_unit = {
+				division = "name = \"Milizie Milanesi\" division_template = \"Milizie Milanesi\" start_experience_factor = 0.5"
+				count = 3
+				owner = XE0
+			}
+		}
     }
 
     completion_reward_joint_member = {
+		custom_effect_tooltip = XEX_homeland_defence_tt
     }
 }
 joint_focus = {
@@ -483,9 +542,19 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = infantry_weapons
+		}
     }
 
     completion_reward_joint_member = {
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = infantry_weapons
+		}
     }
 }
 joint_focus = {
@@ -526,6 +595,7 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
+		custom_effect_tooltip = XEX_integrate_milans_military_tt
     }
 
     completion_reward_joint_member = {

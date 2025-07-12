@@ -26,6 +26,154 @@ ideas = {
 		}
 	}
 	country = {
+		XEX_integrating_milans_civilian_sector = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				consumer_goods_factor = 0.35
+				political_power_factor = -0.10
+			}
+		}
+		XEX_integrating_milans_military = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				consumer_goods_factor = 0.35
+				political_power_factor = -0.10
+			}
+		}
+		XEX_mainland_defence = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				army_core_defence_factor = 0.1
+			}
+		}
+		XEX_XE0_training = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				training_time_factor = -0.25
+				industrial_capacity_factory = 0.05
+			}
+		}
+		XEX_XE0_integrated_banks = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				consumer_goods_factor = 0.10
+				political_power_factor = -0.15
+				political_power_gain = -0.05
+			}
+		}
+		XEX_XE0_integrate_banks = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				consumer_goods_factor = -0.10
+				political_power_factor = 0.15
+				political_power_gain = 0.05
+			}
+		}
+		XEX_XE0_funding_arms = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				consumer_goods_factor = 0.10
+			}
+		}
+		XEX_XE0_trade = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				industrial_capacity_factory = 0.05 
+				consumer_goods_factor = -0.10
+			}
+		}
+		XEX_better_trains = {
+			picture = ARG_argentine_beef
+			
+			equipment_bonus = {
+				train_equipment_1 = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
+			}
+			
+			modifier = {
+				supply_node_range = 0.15
+			}
+		} 
+		XEX_speedpower_2 = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				army_attack_speed_factor = 0.15
+				breakthrough_factor = 0.10
+			}
+		}
+		XEX_speedpower = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				army_attack_speed_factor = 0.10
+			}
+		}
+		XEX_firepower_2 = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.05
+				training_time_factor = -0.25
+			}
+		}
+		XEX_firepower = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+		XEX_torpedos = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				naval_torpedo_cooldown_factor = -0.25
+				navy_submarine_attack_factor = 0.1
+			}
+		}
+		XEX_naval_damage = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				navy_capital_ship_attack_factor = 0.15
+				navy_screen_attack_factor = 0.15
+			}
+		}
+		XEX_bologna_air_station = {
+			picture = ARG_argentine_beef
+
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+		XEX_calming_the_navy = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				industrial_capacity_factory = -0.10
+				consumer_goods_factor = 0.15
+			}
+		}
+		XEX_improve_range = {
+			picture = ARG_argentine_beef
+
+			modifier = {
+				air_range_factor = 0.10
+				air_fuel_consumption_factor = -0.1
+			}
+		}
 		XEX_italian_research = {
 			picture = ARG_argentine_beef
 

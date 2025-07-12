@@ -1,5 +1,62 @@
 add_namespace = XEX_foreign_policy
 add_namespace = XEX_collapse
+add_namespace = XEX_military
+
+
+country_event = { #Invite Someone To Faction
+	id = XEX_military.1
+	title = XEX_military.1.t
+	desc = XEX_military.1.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+
+	after = {
+
+	}
+
+	option = {
+		name = XEX_military.1.a
+		set_country_flag = XEX_mob_war
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 1
+			category = cat_mobile_warfare
+		}
+			
+		ai_chance = {
+			base = 10
+		}
+	}
+	
+	option = {
+		name = XEX_military.1.b
+		set_country_flag = XEX_sup_fir
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 1
+			category = cat_superior_firepower
+		}
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+	
+	option = {
+		name = XEX_military.1.c
+		set_country_flag = XEX_gran_bat
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 1
+			category = cat_grand_battle_plan
+		}
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
 country_event = { #Invite Someone To Faction
 	id = XEX_foreign_policy.1
 	title = XEX_foreign_policy.1.t

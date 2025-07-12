@@ -15,6 +15,9 @@ XEX_build_the_dams = {
 			}
 			tag = XEX
 		} 
+		ai_will_do = {
+			factor = 90000
+		}
 		visible = {
 			FROM = {
 				dam_mountain < 1
@@ -96,10 +99,15 @@ XEX_mussolini_plan = {
 			}
 			tag = XEX
 		} 
+		ai_will_do = {
+			factor = 90000
+		}
 		visible = {
 			tag = XEX
 		} 
-		
+		ai_will_do = {
+			factor = 90000
+		}
 		priority = 1
 
 		remove_effect = {
@@ -140,7 +148,7 @@ XEX_mussolini_plan = {
 			tag = XEX
 		} 
 		
-		priority = 1
+		priority = 2
 
 		remove_effect = {
 			FROM = {
@@ -174,6 +182,9 @@ XEX_mussolini_plan = {
 			}
 			tag = XEX
 		} 
+		ai_will_do = {
+			factor = 90000
+		}
 		visible = {
 			FROM = {
 				has_state_flag = plan_2_completed
@@ -181,7 +192,7 @@ XEX_mussolini_plan = {
 			tag = XEX
 		} 
 		
-		priority = 1
+		priority = 3
 
 		remove_effect = {
 			FROM = {
@@ -199,7 +210,9 @@ XEX_mussolini_plan = {
 
 XEX_form_greater_padania = {
 	XEX_form_greater_padania_dec = {
-		
+		ai_will_do = {
+			factor = 90000
+		}
 		visible = {
 			tag = XEX
 		}

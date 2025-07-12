@@ -23,6 +23,11 @@
  XE0_DEF:0 "the Principality Of Milan"
  XE0_ADJ:0 "Milanese"
  XEX_church_of_god:0 "Jesus's Lands On Earth"
+ 
+ XEX_mob_war:0 "Has Chosen Mobile War"
+ XEX_sup_fir:0 "Has Chosen Superior Firepower"
+ XEX_gran_bat:0 "Has Chosen Grand Battleplan"
+ 
  #decisions
  XEX_build_the_dam_in_state:0 "Build A Dam In [FROM.GetName]"
  XEX_mussolini_plan:0 "Pizza Plan"
@@ -52,6 +57,11 @@
  XEX_collapse.1.d:0 "God loves all of his children, but as every good father needs to do, he also must educate them, with our recent aggression of sacred lands owned by the pope, god has been pissed and he is now trying to end our kingdom and Salvini's life"
  XEX_collapse.1.a:0 "§RWe don't need God§!"
  
+ XEX_military.1.t:0 "Deciding The Doctrine"
+ XEX_military.1.d:0 "With time passing, our doctrines will fall behind the ones of our neighbours, if we plan on ever reaching the stars and being able to over power our neighbours, we need to choose NOW what path to take."
+ XEX_military.1.a:0 "Mobile Warfare, Speed Is Key"
+ XEX_military.1.b:0 "Superior FirePower, Strenght Is Key"
+ XEX_military.1.c:0 "Grand BattlePlan, Organization Is Key"
  
  
  # TOOLTIPS
@@ -62,7 +72,9 @@
  XEX_announce_greater_padania_tt:0 "We Will Be Able To Form Greater Padania"
  JAM_cores_every_highlighted_state:0 "[ROOT.GetName] Cores All Highlighted States"
  JAM_controlls_every_highlighted_state:0 "[ROOT.GetName] Controlls All Highlighted States"
- 
+ XEX_integrate_milans_civilian_sector_tt:0 "We will not struggle to integrate milan's civilian sector once they are annexed"
+ XEX_homeland_defence_tt:0 "We will benefit from the alredy prepared milanese defences in case of war"
+ XEX_integrate_milans_military_tt:0 "We will not struggle to integrate the milanese army once they are annexed"
  # CHARACTERS N TRAITS
  XEX_king_salvinus_divinus:0 "Matteo Salvini"
  XEX_mussolini_war_industrialist:0 "War Industrialist"
@@ -95,6 +107,23 @@
  XEX_triangolo:0 "Il Triangolo"
  XEX_fords_inspiration:0 "Fordian Slavery"
  XEX_italian_research:0 "Ricerca Italiana"
+ XEX_bologna_air_station:0 "Bologna's Air Research Station"
+ XEX_naval_damage:0 "Warm Water Navy"
+ XEX_torpedos:0 "Submarine Focus"
+ XEX_improve_range:0 "Improved Plane's Fuel Usage"
+ XEX_calming_the_navy:0 "Calming The Navy"
+ XEX_firepower:0 "Padanian Roots"
+ XEX_firepower_2:0 "Padanian Roots"
+ XEX_speedpower:0 "Speed Focus"
+ XEX_speedpower_2:0 "Speed Focus"
+ XEX_better_trains:0 "Più Veloci Del Pò"
+ XEX_XE0_training:0 "Padanian-Milanese Training"
+ XEX_XE0_integrated_banks:0 "Integrated Milanese Banks"
+ XEX_XE0_integrate_banks:0 "Integrated Milanese Banks"
+ XEX_XE0_funding_arms:0 "Funding Arm Industries"
+ XEX_XE0_trade:0 "Boosting Padanian-Milanese Trade"
+ 
+ 
  # FOCUS TREE
  
  XEX_adress_the_kingdom:0 "Adress The Kingdom"
@@ -129,7 +158,7 @@
  XEX_seize_milan_industries:0 "Use Milanese Industries"
  XEX_develop_the_milan_institute_of_research:0 "Fund The Milan University"
  XEX_exchange_research:0 "Exchange Research"
- FRA_integrate_milans_civilian_sector:0 "Integrate The Civilian Sector"
+ XEX_integrate_milans_civilian_sector:0 "Integrate The Civilian Sector"
  XEX_homeland_defence:0 "Homeland Defence"
  XEX_boost_collaboration_with_milan:0 "Boost Milanese Military Cooperation"
  XEX_integrate_milans_military:0 "Integrate The Military"
@@ -221,7 +250,7 @@
  XEX_seize_milan_industries_desc:0 "Use Milanese Industries"
  XEX_develop_the_milan_institute_of_research_desc:0 "Fund The Milan University"
  XEX_exchange_research_desc:0 "Exchange Research"
- FRA_integrate_milans_civilian_sector_desc:0 "Integrate The Civilian Sector"
+ XEX_integrate_milans_civilian_sector_desc:0 "Integrate The Civilian Sector"
  XEX_homeland_defence_desc:0 "Homeland Defence"
  XEX_boost_collaboration_with_milan_desc:0 "Boost Milanese Military Cooperation"
  XEX_integrate_milans_military_desc:0 "Integrate The Military"
