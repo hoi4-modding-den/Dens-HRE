@@ -1,0 +1,166 @@
+
+
+focus_tree = {
+	id = XBR_focus
+	
+	country = {
+		base = 0
+		modifier = {
+			add = 20
+			tag = XBR
+		}
+	}
+	
+	focus = {
+		id = XBR_the_fasces_and_the_eagle
+		icon = GFX_focus_generic_fascist_propaganda
+		cost = 5
+		x = 12
+		y = 0
+
+		completion_reward = { 
+			custom_effect_tooltip = XBR_the_fasces_and_the_eagle_tt
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = XBR_reinforce_the_querfront
+		icon = GFX_focus_ITA_generic_fascist_workers
+		cost = 5
+		prerequisite = { focus = XBR_the_fasces_and_the_eagle }
+		relative_position_id = XBR_the_fasces_and_the_eagle
+		mutually_exclusive = { focus = XBR_whispers_in_the_shadows }
+		x = -5
+		y = 1
+		
+		completion_reward = {
+			custom_effect_tooltip = XBR_reinforce_the_querfront_tt
+			add_stability = 0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = XBR_strongarm_the_national_vanguard
+		icon = GFX_focus_generic_fascist_troops
+		cost = 5
+		prerequisite = { focus = XBR_reinforce_the_querfront }
+		relative_position_id = XBR_reinforce_the_querfront
+		x = -3
+		y = 1
+		
+		completion_reward = {
+			custom_effect_tooltip = XBR_strongarm_the_national_vaguard_tt
+			army_experience = 10
+			swap_ideas = {
+				remove_idea = XBR_the_schwarzhemden
+				add_idea = XBR_the_schwarzhemden_2
+			}
+		}
+	}
+	focus = {
+		id = XBR_abolish_the_party_lines
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5
+		prerequisite = { focus = XBR_reinforce_the_querfront }
+		relative_position_id = XBR_reinforce_the_querfront
+		x = -1
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_abolish_the_party_lines_tt
+			country_event = XBR.1
+		}
+	}
+	focus = {
+		id = XBR_united_against_decadence
+		icon = GFX_focus_ITA_corpo_volontari_della_liberta
+		cost = 5
+		prerequisite = { focus = XBR_abolish_the_party_lines }
+		prerequisite = { focus = XBR_strongarm_the_national_vanguard }
+		relative_position_id = XBR_abolish_the_party_lines
+		x = -1
+		y = 2
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_united_against_decadence_tt
+			add_war_support = 0.05
+			custom_effect_tooltip = XBR_unlocks_extensive_conscription
+		}
+	}
+	focus = {
+		id = XBR_volksgemeinschaft
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 5
+		prerequisite = { focus = XBR_reinforce_the_querfront }
+		relative_position_id = XBR_reinforce_the_querfront
+		x = 2
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_volksgemeinschaft_tt
+			add_dynamic_modifier = { modifier = XBR_volksgemeinschaft_spirit }
+			custom_effect_tooltip = XBR_volksgemeinschaft_decisions_unlocked
+		}
+	}
+	focus = {
+		id = XBR_promote_class_collaboration
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		prerequisite = { focus = XBR_volksgemeinschaft }
+		relative_position_id = XBR_volksgemeinschaft
+		x = 0
+		y = 2
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_promote_class_collaboration_tt
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+	focus = { #Schuhmann will be unlocked via this focus
+		id = XBR_form_the_deutsche_arbeitsfront
+		icon = GFX_focus_GER_form_organization_todt
+		cost = 5
+		prerequisite = { 
+			focus = XBR_volksgemeinschaft 
+			focus = XBR_abolish_the_party_lines
+		}
+		relative_position_id = XBR_volksgemeinschaft
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			custom_effect_tooltip = XBR_form_the_daf_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XBR_walter_schuhmann_token
+		}
+	}
+	focus = {
+		id = XBR_an_united_volk_against_the_parasites
+		icon = GFX_focus_generic_total_war
+		cost = 5
+		prerequisite = { focus = XBR_promote_class_collaboration }
+		prerequisite = { focus = XBR_united_against_decadence }
+		relative_position_id = XBR_promote_class_collaboration
+		x = -2
+		y = 1
+		
+		completion_reward = { }
+	}
+	focus = {
+		id = XBR_whispers_in_the_shadows
+		icon = x
+		cost = 5
+		prerequisite = { focus = XBR_the_fasces_and_the_eagle }
+		relative_position_id = XBR_the_fasces_and_the_eagle
+		mutually_exclusive = { focus = XBR_reinforce_the_querfront }
+		x = 5
+		y = 1
+		
+		completion_reward = { }
+	}
+}

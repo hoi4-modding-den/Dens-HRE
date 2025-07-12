@@ -237,5 +237,83 @@ characters = {
 			legacy_id = -1
 		}
 	}
+	XBR_reinhold_muchow = {
+
+		name = "Reinhold Muchow"
+
+		portraits = {
+			civilian = {
+				small = "GFX/leaders/XBR/reinhold_muchow_idea.png"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_reinhold_muchow_token
+			allowed = {
+				original_tag = XBR
+			}
+			visible = {
+				has_country_flag = XBR_muchow_advisor_unlocked
+			}
+			traits = {
+				XBR_labour_organizer
+			}
+
+			cost = 100
+		}
+
+	}
+	XBR_walter_schuhmann = {
+
+		name = "Walter Schuhmann"
+
+		portraits = {
+			civilian = {
+				small = "GFX/leaders/XBR/walter_schuhmann_idea.png"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_walter_schuhmann_token
+			allowed = {
+				original_tag = XBR
+			}
+			visible = {
+				has_completed_focus = XBR_form_the_deutsche_arbeitsfront
+			}
+			traits = {
+				XBR_corporatist_trade_unionist
+			}
+
+			cost = 100
+		}
+
+	}
+	XBR_ferdinand_von_bredow = {
+
+		name = "Ferdinand von Bredow"
+
+		portraits = {
+			civilian = {
+				small = "GFX/leaders/XBR/ferdinand_von_bredow_idea.png"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_ferdinand_von_bredow_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				head_of_intelligence
+			}
+
+			cost = 150
+		}
+
+	}
 }
 	

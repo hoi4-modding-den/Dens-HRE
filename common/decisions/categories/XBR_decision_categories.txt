@@ -1,0 +1,17 @@
+XBR_volksgemeinschaft_category = {
+
+	icon = GFX_decision_category_generic_industry
+	picture = GFX_XBR_vg_picture
+	
+	allowed = {
+		original_tag = XBR
+	}
+	
+	visible = {
+		has_completed_focus = XBR_volksgemeinschaft
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 10
+}

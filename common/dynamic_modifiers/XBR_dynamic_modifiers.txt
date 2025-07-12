@@ -1,0 +1,20 @@
+XBR_volksgemeinschaft_spirit = { 
+	enable = { always = yes }
+
+	icon = GFX_idea_generic_fascist_workers
+	
+	monthly_population = XBR_vg_monthly_population_variable
+	production_factory_max_efficiency_factor = XBR_vg_prod_cap_variable
+	production_factory_efficiency_gain_factor = XBR_vg_prod_growth_variable
+	production_speed_buildings_factor = XBR_vg_construction_speed_variable
+	consumer_goods_factor = XBR_vg_consumer_goods_variable
+	neutrality_drift = XBR_vg_neutrality_drift_variable
+	min_export = XBR_vg_resources_to_market_variable
+	local_resources_factor = XBR_vg_local_resources_variable
+	
+}
+
+
+
+
+

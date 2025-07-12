@@ -1,0 +1,27 @@
+ideas = {
+	country = {
+		XBR_the_schwarzhemden = {
+			picture = XBR_the_schwarzhemden_icon
+
+			modifier = {
+				conscription_factor = 0.05
+				mobilization_speed = 0.1
+				army_attack_factor = 0.05
+				army_org_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+		XBR_the_schwarzhemden_2 = {
+			picture = XBR_the_schwarzhemden_icon
+
+			modifier = {
+				conscription_factor = 0.1
+				training_time_factor = -0.1
+				mobilization_speed = 0.1
+				army_attack_factor = 0.05
+				army_org_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+	}
+}

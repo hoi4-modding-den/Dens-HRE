@@ -1,0 +1,19 @@
+add_namespace = XBR
+
+country_event = {
+	id = XBR.1
+	title = XBR.1.t
+	desc = XBR.1.d
+	
+	picture = GFX_report_event_AUS_political_rally
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XBR.1.a
+		add_political_power = 25
+		custom_effect_tooltip = XBR_unlocks_muchow_tt
+		set_country_flag = XBR_muchow_advisor_unlocked
+    }
+}

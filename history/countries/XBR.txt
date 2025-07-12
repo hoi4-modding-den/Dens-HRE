@@ -10,6 +10,16 @@ set_technology = {
 	gw_artillery = 1
 }
 
+add_ideas = {
+	XBR_the_schwarzhemden
+}
+
+set_variable = { XBR_vg_prod_cap_variable = 0.10 }
+set_variable = { XBR_vg_prod_growth_variable = 0.10 }
+set_variable = { XBR_vg_construction_speed_variable = 0.05 }
+set_variable = { XBR_vg_consumer_goods_variable = 0.1 }
+set_variable = { XBR_vg_resources_to_market_variable = -0.1 }
+
 oob = "XBR_1936"
 
 set_country_flag = HRE_is_republic
@@ -28,6 +38,10 @@ recruit_character = XBR_paul_hausser
 recruit_character = XBR_karl_ernst
 recruit_character = XBR_elhard_von_morozowicz
 recruit_character = XBR_walter_stennes
+
+recruit_character = XBR_reinhold_muchow
+recruit_character = XBR_ferdinand_von_bredow
+recruit_character = XBR_walter_schuhmann
 
 add_opinion_modifier = {
     target = XSC
