@@ -3,17 +3,19 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = { add = 10 tag = XTR }
+    
 	}
 
 
 
     reset_on_civilwar = no
+    continuous_focus_position = { x = 100 y = 1300 }
 
 focus = {
   id = XTR_industrial_effort
   icon = GFX_goal_generic_construct_civilian
   x = 6
-  y = 0
+  y = -1
   cost = 10
   completion_reward = {
     
@@ -208,6 +210,7 @@ focus = {
   id = XTR_tourism_and_wellness
   icon = GFX_focus_generic_population_growth
   prerequisite = { focus = XTR_industrial_effort }
+  prerequisite = { focus = XTR_seek_democracy }
   x = 11
   y = 1
   cost = 10
@@ -241,7 +244,7 @@ focus = {
     id = XTR_political_crossroads
     icon = GFX_goal_generic_political_pressure
     x = 15
-    y = 0
+    y = -1
     cost = 10
     completion_reward = { }
   }
@@ -251,7 +254,7 @@ focus = {
     icon = GFX_goal_generic_democracy
     prerequisite = { focus = XTR_political_crossroads }
     x = 14
-    y = 1
+    y = 0
     cost = 10
     mutually_exclusive = { focus = XTR_embrace_order }
     completion_reward = { }
@@ -262,7 +265,7 @@ focus = {
     icon = GFX_goal_generic_fascist
     prerequisite = { focus = XTR_political_crossroads }
     x = 16
-    y = 1
+    y = 0
     cost = 10
     mutually_exclusive = { focus = XTR_seek_democracy }
     completion_reward = { }
