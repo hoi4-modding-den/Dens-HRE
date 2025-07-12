@@ -1,6 +1,5 @@
 focus_tree = {
 	id = XTR_focus
-
 	country = {
 		factor = 0
 		modifier = { add = 10 tag = XTR }
@@ -238,5 +237,87 @@ focus = {
   }
 }
 
+ focus = {
+    id = XTR_political_crossroads
+    icon = GFX_goal_generic_political_pressure
+    x = 15
+    y = 0
+    cost = 10
+    completion_reward = { }
+  }
 
+  focus = {
+    id = XTR_seek_democracy
+    icon = GFX_goal_generic_democracy
+    prerequisite = { focus = XTR_political_crossroads }
+    x = 14
+    y = 1
+    cost = 10
+    mutually_exclusive = { focus = XTR_embrace_order }
+    completion_reward = { }
+  }
+
+  focus = {
+    id = XTR_embrace_order
+    icon = GFX_goal_generic_fascist
+    prerequisite = { focus = XTR_political_crossroads }
+    x = 16
+    y = 1
+    cost = 10
+    mutually_exclusive = { focus = XTR_seek_democracy }
+    completion_reward = { }
+  }
+
+  # Democratic path
+  focus = {
+    id = XTR_establish_free_state
+    icon = GFX_goal_generic_constitution
+    prerequisite = { focus = XTR_seek_democracy }
+    x = 13
+    y = 2
+    cost = 10
+    completion_reward = { }
+  }
+
+  focus = {
+    id = XTR_civic_reform
+    icon = GFX_goal_generic_democracy
+    prerequisite = { focus = XTR_establish_free_state }
+    x = 13
+    y = 3
+    cost = 10
+    completion_reward = { }
+  }
+
+    focus = {
+    id = XTR_unity_idendity
+    icon = GFX_goal_generic_democracy
+    prerequisite = { focus = XTR_civic_reform }
+    x = 13
+    y = 4
+    cost = 10
+    completion_reward = { }
+  }
+
+  # Fascist path
+  focus = {
+    id = XTR_proclaim_sacred_order
+    icon = GFX_goal_generic_fascist
+    prerequisite = { focus = XTR_embrace_order }
+    x = 17
+    y = 2
+    cost = 10
+    completion_reward = { }
+  }
+
+  focus = {
+    id = XTR_mobilize_the_faithful
+    icon = GFX_goal_generic_propaganda
+    prerequisite = { focus = XTR_proclaim_sacred_order }
+    x = 17
+    y = 3
+    cost = 10
+    completion_reward = { }
+  }
 }
+
