@@ -1,0 +1,530 @@
+characters = {
+	XHO_wilhelmina = {
+		name = XHO_wilhelmina
+		portraits = {
+			civilian = {
+				large = GFX_portrait_hol_wilhelmina
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1.1"
+		}
+	}
+
+	XHO_hendrik_seyffardt = {
+		name = XHO_hendrik_seyffardt
+		country_leader = {
+			ideology = falangism
+			expire = "1965.1.1.1"
+		}
+	}
+
+	XHO_philippus_buurman = {
+		name = XHO_philippus_buurman
+		advisor = {
+			slot = political_advisor
+			idea_token = reluctant_interventionist
+			allowed = {
+				original_tag = XHO
+			}
+			available = {
+			}
+			traits = {
+				reluctant_interventionist
+			}
+
+			cost = 75
+		}
+	}
+
+	XHO_adriaan_pannekoek = {
+		name = XHO_adriaan_pannekoek
+		advisor = {
+			slot = political_advisor
+			idea_token = captain_of_industry
+			allowed = {
+				original_tag = XHO
+			}
+			available = {
+			}
+			traits = {
+				captain_of_industry
+			}
+
+			cost = 150
+		}
+	}
+	
+	XHO_hendrik_van_hall = {
+		name = XHO_hendrik_van_hall
+		advisor = {
+			slot = political_advisor
+			idea_token = traditionalist_theorist
+			allowed = {
+				original_tag = XHO
+			}
+			available = {
+				has_completed_focus = XHO_crack_down_on_calvinism
+			}
+			traits = {
+				traditionalist_theorist
+			}
+
+			cost = 150
+		}
+	}
+
+	XHO_ferdinand_furstner = {
+		name = XHO_ferdinand_furstner
+		advisor = {
+			slot = political_advisor
+			idea_token = XHO_economic_minister
+			allowed = {
+				original_tag = XHO
+			}
+			available = {
+				has_completed_focus = XHO_minister_of_production
+			}
+			traits = {
+				XHO_economic_minister
+			}
+
+			cost = 150
+		}
+	}
+
+	XHO_matthijs_de_groot = {
+		name = XHO_matthijs_de_groot
+		advisor = {
+			slot = political_advisor
+			idea_token = political_reformer_2_no_lar
+			allowed = {
+				original_tag = XHO
+			}
+			available = {
+				has_completed_focus = XHO_constitutional_monarchy
+			}
+			traits = {
+				political_reformer_2_no_lar
+			}
+
+			cost = 150
+		}
+	}
+
+	XHO_jan_den_ouden = {
+		name = XHO_jan_den_ouden
+		portraits = { 
+			civilian = { small = GFX_idea_generic_fortification_engineer }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = fortification_engineer
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				fortification_engineer
+			}
+
+			cost = 150
+		}
+	}
+
+	XHO_military_theorist = {
+		name = XHO_military_theorist
+		portraits = { 
+			army = { small = GFX_idea_generic_military_theorist }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = military_theorist
+			ledger = army
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				military_theorist
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_naval_theorist = {
+		name = XHO_naval_theorist
+		portraits = { 
+			army = { small = GFX_idea_generic_naval_theorist }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = naval_theorist
+			ledger = navy
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				naval_theorist
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_air_theorist = {
+		name = XHO_air_theorist
+		portraits = { 
+			army = { small = GFX_idea_generic_air_warfare_theorist }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = air_warfare_theorist
+			ledger = air
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				air_warfare_theorist
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_army_offence = {
+		name = XHO_army_offence
+		portraits = { 
+			army = { small = GFX_idea_generic_army_chief_off }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = army_chief_offensive_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_army_org = {
+		name = XHO_army_org
+		portraits = { 
+			army = { small = GFX_idea_FRA_generic_3 }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = army_chief_organizational_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_army_planning = {
+		name = XHO_army_planning
+		portraits = { 
+			army = { small = GFX_idea_generic_political_advisor_europe_3 }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = army_chief_planning_1
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				army_chief_planning_1
+			}
+
+			cost = 50
+		}
+	}
+
+	XHO_army_entrenchment = {
+		name = XHO_army_entrenchment
+		portraits = { 
+			army = { small = GFX_idea_generic_army_europe_5 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_entrenchment_3
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				army_entrenchment_3
+			}
+
+			cost = 200
+		}
+	}
+
+	XHO_army_infantry = {
+		name = XHO_army_infantry
+		portraits = { 
+			army = { small = GFX_idea_europe_generic_land_19 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_infantry_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				army_infantry_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_army_commando = {
+		name = XHO_army_commando
+		portraits = { 
+			army = { small = GFX_idea_ENG_generic_land_6 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_commando_3
+			allowed = {
+				original_tag = XHO
+			}
+			available = {
+				has_completed_focus = XHO_coastal_attacks
+			}
+			traits = {
+				army_commando_3
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_army_concealment = {
+		name = XHO_army_concealment
+		portraits = { 
+			army = { small = GFX_portrait_SOV_generic_marine_infantry }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_concealment_1
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				army_concealment_1
+			}
+
+			cost = 50
+		}
+	}
+
+	XHO_navy_decisive_battle = {
+		name = XHO_navy_decisive_battle
+		portraits = { 
+			army = { small = GFX_portrait_Finland_Generic_Navy_1_small }
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = navy_chief_decisive_battle_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				navy_chief_decisive_battle_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_navy_old_guard = {
+		name = XHO_decisive_battle
+		portraits = { 
+			army = { small = GFX_idea_USA_generic_navy_2 }
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = navy_chief_old_guard
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				navy_chief_old_guard
+			}
+
+			cost = 50
+		}
+	}
+
+	XHO_navy_anti_submarine = {
+		name = XHO_navy_anti_submarine
+		portraits = { 
+			army = { small = GFX_idea_GER_generic_navy_3 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = navy_anti_submarine_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				navy_anti_submarine_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_navy_amphibious_assault = {
+		name = XHO_navy_amphibious_assault
+		portraits = { 
+			army = { small = GFX_idea_generic_army_south_america_4 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = navy_amphibious_assault_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				navy_amphibious_assault_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_navy_capital_ship = {
+		name = XHO_navy_amphibious_assault
+		portraits = { 
+			army = { small = GFX_idea_FRA_generic_navy_1 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = navy_capital_ship_1
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				navy_capital_ship_1
+			}
+
+			cost = 50
+		}
+	}
+
+	XHO_navy_screen = {
+		name = XHO_navy_screen
+		portraits = { 
+			army = { small = GFX_idea_ENG_generic_navy_2 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = navy
+			idea_token = navy_screen_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				navy_screen_2
+			}
+
+			cost = 50
+		}
+	}
+
+	XHO_air_reform = {
+		name = XHO_air_reform
+		portraits = { 
+			army = { small = GFX_idea_generic_army_europe_6 }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = air_chief_reform_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				air_chief_reform_2
+			}
+
+			cost = 100
+		}
+	}
+
+	XHO_air_ground_support = {
+		name = XHO_air_ground_support
+		portraits = { 
+			army = { small = GFX_idea_generic_army_europe_1 }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = air_chief_ground_support_1
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				air_chief_ground_support_1
+			}
+
+			cost = 50
+		}
+	}
+	
+	XHO_air_interception = {
+		name = XHO_air_interception
+		portraits = { 
+			army = { small = GFX_idea_SOV_generic_land_8 }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = air_bomber_interception_2
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				air_bomber_interception_2
+			}
+
+			cost = 100
+		}
+	}
+	
+	XHO_air_tac_bombing = {
+		name = XHO_air_tac_bombing
+		portraits = { 
+			army = { small = GFX_idea_ENG_generic_land_9 }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = air_tactical_bombing_1
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				air_tactical_bombing_1
+			}
+
+			cost = 50
+		}
+	}
+
+	
+}

@@ -38,6 +38,9 @@ XNE_henschel_organization = {
 			}
 			FROM = { NOT = { has_war_with = var:henschel_owner } }
 		}
+		FROM = {
+			has_completed_focus = XNE_joint_invite_henschel
+		}
 	}
 
 	override_trait = {
@@ -121,6 +124,16 @@ XNE_wilton_fijenoord_organization = {
             tag = XNE
         }
 	}
+	available = {
+		owner = {
+			if = {
+				limit = {
+					tag = XHO
+				}
+				has_completed_focus = XHO_naval_legacy
+			}
+        }
+	}
 }
 
 ###########################
@@ -192,12 +205,13 @@ XNE_artillerie_inrichtingen_organization = {
         }
 	}
 	available = {
-		owner = { 
-            OR = {
-                has_completed_focus = XHO_artillerie
-                tag = XNE
-                tag = XHO
-            }
+		owner = {
+			if = {
+				limit = {
+					tag = XHO
+				}
+				has_completed_focus = XHO_artillerie
+			}
         }
 	}
 }

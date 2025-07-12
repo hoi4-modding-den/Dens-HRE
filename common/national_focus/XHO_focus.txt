@@ -82,7 +82,7 @@ focus_tree = {
 		icon = GFX_focus_generic_steel
 		prerequisite = { focus = XHO_civillian_development }
     	relative_position_id = XHO_civillian_development
-		x = 0
+		x = 2
 		y = 1
 		cost = 10
 
@@ -113,11 +113,12 @@ focus_tree = {
 	focus = {
 		id = XHO_schiphol_airport
 		available = {
+			controls_state = 7
 		}
 		icon = GFX_focus_HUN_establish_the_mavag_aircraft_factory
 		prerequisite = { focus = XHO_civillian_development }
     	relative_position_id = XHO_civillian_development
-		x = 2
+		x = 0
 		y = 1
 		cost = 10
 
@@ -130,10 +131,41 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHO_develop_zeeland
+		available = {
+			controls_state = 1049
+		}
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = XHO_schiphol_airport }
+    	relative_position_id = XHO_schiphol_airport
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1049 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = XHO_research_slot
 		icon = GFX_focus_ARG_universidad_de_buenos_aires
-		prerequisite = { focus = XHO_steel_mills }
-    	relative_position_id = XHO_steel_mills
+		prerequisite = { focus = XHO_develop_zeeland }
+    	relative_position_id = XHO_develop_zeeland
 		x = 0
 		y = 1
 		cost = 10
@@ -149,7 +181,7 @@ focus_tree = {
 			effect_tooltip = {
 				add_tech_bonus = {
 					bonus = 1.5
-					uses = 2
+					uses = 1
 					category = air_equipment
 				}
 			}
@@ -161,6 +193,15 @@ focus_tree = {
 					uses = 1
 					category = concentrated_industry_category
 					category = dispersed_industry_category
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XHO_research_slot_tt3
+			effect_tooltip = {
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 2
+					category = support_tech
 				}
 			}
 
@@ -187,10 +228,189 @@ focus_tree = {
 						category = dispersed_industry_category
 					}
 				}
+
+				if = {
+					limit = {
+						has_completed_focus = XHO_logistical_focus
+					}
+					add_tech_bonus = {
+						bonus = 0.75
+						uses = 2
+						category = support_tech
+					}
+				}
 			}
 		}
 	}
 
+	focus = {
+		id = XHO_naval_legacy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+
+		x = 4
+		y = 0
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_experience = 40
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_military_industrial_organization_tooltip = XNE_wilton_fijenoord_organization
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_merchant_marine
+		icon = GFX_focus_PER_establish_the_navy
+
+		prerequisite = { focus = XHO_naval_legacy }
+		prerequisite = { focus = XHO_civillian_development }
+    	relative_position_id = XHO_naval_legacy
+		x = 0
+		y = 2
+		cost = 10
+
+		available = {
+		}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 20
+				producer = ROOT
+			}
+			add_ideas = { XHO_merchant_marine_1 }
+		}
+	}
+
+	focus = {
+		id = XHO_commision_battleship
+		icon = GFX_goal_generic_navy_battleship
+
+		prerequisite = { focus = XHO_merchant_marine }
+		prerequisite = { focus = XHO_steel_mills }
+    	relative_position_id = XHO_merchant_marine
+		x = -1
+		y = 1
+		cost = 10
+
+		available = {
+			has_navy_size = {
+				size > 17
+			}
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_equipment_production = {
+				equipment = {
+					type = battleship_1
+					creator = SOV
+					version_name = "Marat Class"
+				}
+				requested_factories = 1
+				progress = 0.9
+				amount = 1
+			}
+
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = bb_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_naval_academy
+		icon = GFX_focus_generic_naval_discipline
+
+		prerequisite = { focus = XHO_merchant_marine }
+    	relative_position_id = XHO_merchant_marine
+		x = 1
+		y = 1
+		cost = 5
+
+		available = {
+			controls_state = 1033
+		}
+		
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 30
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_modern_escorts
+		icon = GFX_goal_generic_navy_cruiser
+
+		prerequisite = { focus = XHO_commision_battleship }
+		prerequisite = { focus = XHO_naval_academy }
+    	relative_position_id = XHO_commision_battleship
+		x = 1
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XHO_merchant_marine_1
+				add_idea = XHO_merchant_marine_2
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				ahead_reduction = 1
+				category = mio_cat_tech_all_screen_ship_and_modules
+			}
+		}
+	}
 
 
 	focus = {
@@ -200,7 +420,7 @@ focus_tree = {
 		mutually_exclusive = { focus = XHO_crack_down_on_calvinism }
 		icon = GFX_focus_RAJ_seek_allies_with_the_muslim_league
 
-		x = 8
+		x = 10
 		y = 0
 		cost = 5
 
@@ -226,7 +446,7 @@ focus_tree = {
 		mutually_exclusive = { focus = XHO_reaffirm_religious_freedoms }
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 
-		x = 12
+		x = 14
 		y = 0
 		cost = 5
 
@@ -235,6 +455,9 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			add_stability = -0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = traditionalist_theorist
 		}
 	}
 
@@ -269,6 +492,7 @@ focus_tree = {
 		id = XHO_neo_calvinism
 		available = {
 			fascism > 0.2
+			has_idea = XHO_calvinist_problem
 		}
 		prerequisite = { focus = XHO_power_to_the_clergy }
     	relative_position_id = XHO_power_to_the_clergy
@@ -282,6 +506,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			activate_mission = XHO_calvinist_uprising
 			unlock_decision_category_tooltip = XHO_calvinism_category
 		}
 	}
@@ -401,6 +626,18 @@ focus_tree = {
 					}
 				}
 			}
+
+			every_state = {
+				limit = {
+					OWNER = {
+						XNE_is_dutch_tag = yes
+						PREV = {
+							is_core_of = PREV
+						}
+					}
+				}
+				add_core_of = ROOT
+			}
 		}
 	}
 
@@ -477,6 +714,7 @@ focus_tree = {
 		id = XHO_calvanist_concessions
 		available = {
 			democratic > 0.4
+			has_idea = XHO_calvinist_problem
 		}
 		prerequisite = { focus = XHO_liberal_movement }
     	relative_position_id = XHO_liberal_movement
@@ -532,6 +770,9 @@ focus_tree = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = { XHO_wilhelmina }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = political_reformer_2_no_lar
 		}
 	}
 
@@ -576,6 +817,9 @@ focus_tree = {
 				can_send_volunteers = yes
 			}
 			add_ideas = { XHO_interventionism }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = reluctant_interventionist
 		}
 	}
 
@@ -663,6 +907,7 @@ focus_tree = {
 	focus = {
 		id = XHO_root_out_dissenters
 		available = {
+			has_idea = XHO_calvinist_problem
 		}
 		prerequisite = { focus = XHO_power_to_the_monarch }
     	relative_position_id = XHO_power_to_the_monarch
@@ -696,9 +941,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_command_power = 40
-			swap_ideas = {
-				remove_idea = XHO_power_to_the_monarch_1
-				add_idea = XHO_power_to_the_monarch_2
+			var:this.country_leader = {
+				add_trait = {
+					ideology = oligarchism
+					trait = XHO_supreme_commander 
+				}
 			}
 		}
 	}
@@ -709,7 +956,7 @@ focus_tree = {
 		id = XHO_artillerie
 		icon = GFX_focus_SWE_let_fly_all_guns
 
-		x = 20
+		x = 22
 		y = 0
 		cost = 10
 
@@ -800,6 +1047,25 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHO_salvaging
+		icon = GFX_focus_generic_public_works
+
+		prerequisite = { focus = XHO_flexible_production }
+    	relative_position_id = XHO_flexible_production
+		x = 0
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = { XHO_salvaging }
+		}
+	}
+
+	focus = {
 		id = XHO_minister_of_production
 		icon = GFX_focus_SWI_promote_guisan
 
@@ -814,6 +1080,8 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XHO_economic_minister
 		}
 	}
 
@@ -976,4 +1244,124 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = XHO_coastal_defences
+		icon = GFX_focus_generic_coastal_fort
+
+		prerequisite = { focus = XHO_acquire_modern_weapons }
+    	relative_position_id = XHO_acquire_modern_weapons
+		x = -1
+		y = 1
+		cost = 5
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.025
+			custom_effect_tooltip = generic_skip_one_line_tt
+			1033 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = {
+						id = 9498
+						id = 3211
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_logistical_focus
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+
+		prerequisite = { focus = XHO_acquire_modern_weapons }
+    	relative_position_id = XHO_acquire_modern_weapons
+		x = 1
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = { has_tech = tech_logistics_company4 }
+			}
+			else_if = {
+				limit = { has_tech = tech_logistics_company3 }
+				set_technology = { tech_logistics_company4 = 1 }
+			}
+			else_if = {
+				limit = { has_tech = tech_logistics_company2 }
+				set_technology = { tech_logistics_company3 = 1 }
+			}
+			else_if = {
+				limit = { has_tech = tech_logistics_company }
+				set_technology = { tech_logistics_company2 = 1 }
+			}
+			else = {
+				set_technology = { tech_logistics_company = 1 }
+			}
+
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+				producer = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_artillery_developments
+		icon = GFX_goal_generic_army_artillery
+
+		prerequisite = { focus = XHO_logistical_focus }
+    	relative_position_id = XHO_logistical_focus
+		x = 0
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = XHO_coastal_attacks
+		icon = GFX_focus_SWE_coastal_support
+
+		prerequisite = { focus = XHO_artillery_developments }
+		prerequisite = { focus = XHO_coastal_defences }
+    	relative_position_id = XHO_artillery_developments
+		x = -2
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = army_commando_3
+			add_command_power = 45
+		}
+	}
+
 }

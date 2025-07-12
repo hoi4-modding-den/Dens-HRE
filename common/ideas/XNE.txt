@@ -157,6 +157,34 @@ ideas = {
         }
 
 
+        XHO_merchant_marine_1 = {
+            picture = BRA_arsenal_de_marinha
+            allowed_civil_war = { always = yes }
+            modifier = {
+            }
+            equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+        }
+
+        XHO_merchant_marine_2 = {
+            picture = BRA_arsenal_de_marinha
+            allowed_civil_war = { always = yes }
+            modifier = {
+                convoy_escort_efficiency = 0.1
+                critical_receive_chance = -0.05
+            }
+            equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+        }
+
         XHO_calvinist_problem = {
             picture = POL_the_peasants_strike
             allowed_civil_war = { always = no }
@@ -262,26 +290,15 @@ ideas = {
 
         XHO_power_to_the_monarch_1 = {
             picture = hol_wilhelmina
-            modifier = {
-                stability_factor = 0.15
-                subjects_autonomy_gain = -0.1
-                annex_cost_factor = -0.2
-                puppet_cost_factor = -0.2
-                generate_wargoal_tension = -0.25
+            cancel = {
+                NOT = { has_government = neutrality }
             }
-        }
-
-        XHO_power_to_the_monarch_2 = {
-            picture = hol_wilhelmina
             modifier = {
                 stability_factor = 0.15
                 subjects_autonomy_gain = -0.1
                 annex_cost_factor = -0.2
                 puppet_cost_factor = -0.2
                 generate_wargoal_tension = -0.25
-                conscription_factor = 0.1
-                land_reinforce_rate = 0.02
-                experience_gain_army_factor = 0.15
             }
         }
 
@@ -305,6 +322,17 @@ ideas = {
                 production_speed_arms_factory_factor = 0.1
                 production_speed_industrial_complex_factor = -0.05
                 line_change_production_efficiency_factor = 0.2
+            }
+        }
+
+        XHO_salvaging = {
+            picture = SOV_organize_wreckers
+            allowed_civil_war = { always = yes }
+            modifier = {
+                equipment_conversion_speed = 0.1
+                equipment_capture = 0.05
+                conversion_cost_civ_to_mil_factor = -0.15
+                conversion_cost_mil_to_civ_factor = -0.15
             }
         }
 

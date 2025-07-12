@@ -321,15 +321,14 @@ XHO_calvinism_category = {
 		}
 
         allowed = {
-            tag = XHO
+            always = no
         }
 
-		activation = {
-
-		}
-
         available = {
-            has_government = fascism
+            OR = {
+                has_government = fascism
+                NOT = { has_idea = XHO_calvinist_problem }
+            }
         }
 
         fire_only_once = yes
@@ -372,7 +371,6 @@ XHO_calvinism_category = {
         }
 
         target_root_trigger = {
-            #has_completed_focus = XHO_neo_calvinism
         }
 
         target_trigger = {
