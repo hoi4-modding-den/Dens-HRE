@@ -12,6 +12,15 @@ country_event = {
 	
 	option = {
         name = XNE_joint.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = XHO_calvinists_bolstered_1
+					has_idea = XHO_calvinists_bolstered_2
+					has_idea = XHO_calvinists_bolstered_3
+				}
+			}
+		}
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -23,16 +32,53 @@ country_event = {
 		custom_effect_tooltip = XNE_joint.1.a.tt1
 		if = {
 			limit = {
-				NOT = { tag = XHO }
+				has_idea = XHO_calvinist_problem
 			}
-		}
-		else = {
 			custom_effect_tooltip = XNE_joint.1.a.tt2
 			add_stability = -0.1
 			add_political_power = -100
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.1
+			start_civil_war = {
+				ideology = fascism
+				size = 0.4
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_completed_focus = XHO_power_to_the_monarch
+					}
+					complete_national_focus = XHO_root_out_dissenters
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = XHO_reaffirm_religious_freedoms
+					}
+					if = {
+						limit = {
+							NOT = { has_completed_focus = XHO_liberal_movement }
+						}
+						unlock_national_focus = XHO_liberal_movement
+					}
+					complete_national_focus = XHO_calvanist_concessions
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = XHO_crack_down_on_calvinism
+					}
+					if = {
+						limit = {
+							NOT = { has_completed_focus = XHO_counterespionage }
+						}
+						unlock_national_focus = XHO_counterespionage
+					}
+					complete_national_focus = XHO_power_to_the_monarch
+					complete_national_focus = XHO_root_out_dissenters
+				}
+				else = {
+					unlock_national_focus = XHO_crack_down_on_calvinism
+					unlock_national_focus = XHO_counterespionage
+					complete_national_focus = XHO_power_to_the_monarch
+					complete_national_focus = XHO_root_out_dissenters
+				}
 			}
 		}
     }
