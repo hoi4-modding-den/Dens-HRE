@@ -95,6 +95,19 @@ ideas = {
 				fuel_cost = 100
 			}
 		}
+		XAS_evidenzbureau_idea = {
+			modifier = {
+				decryption = 2
+				encryption = 2
+			}
+		}
+		XAS_balanced_budget_idea = {
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.1
+				political_power_cost = 0.1
+			}
+		}
 
 		# XS1 - Cilli
 		XS1_slavic_freedom_fighters = {

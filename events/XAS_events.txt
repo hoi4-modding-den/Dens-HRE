@@ -1,3 +1,83 @@
+add_namespace = XAS_monarch
+
+country_event = {
+	id = XAS_monarch.1
+	title = XAS_monarch.1.title
+	desc = XAS_monarch.1.desc
+	is_triggered_only = yes
+	picture = GFX_report_event_british_artillery
+
+	option = {
+		name = XAS_monarch.1.a
+		FROM = {
+			annex_country = {
+				target = ROOT
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				add = 10
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 99
+				}
+				add = 30
+			}
+			modifier = {
+				fighting_army_strength_ratio = {
+					tag = FROM
+					ratio > 0.75
+				}
+				factor = 10
+			}
+		}
+	}
+
+	option = {
+		name = XAS_monarch.1.b
+		declare_war_on = {
+			target = FROM
+			type = independence_wargoal
+		}
+		trigger = {
+			check_variable = {
+				var = XAS_integration_level
+				value = 65
+				compare = less_than
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				check_variable = {
+					var = XAS_integration_level
+					value = 80
+					compare = less_than
+				}
+				add = 10
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 #######################################################################################
 #######################################################################################
 ##                                                                                   ##
@@ -15,15 +95,15 @@
 add_namespace = XAS_economic_minister # 0-99 reserved for generic/all characters | 100-199 resserved for Schumpeter | 200-299 reserved for Hayek | 300-399 reserved for Hitler
 
 # CONSTANT FOR INNER CIRCLE TIMES (These needs to be x7 compared to the Focus cost in the focus file) - NEEDS TO MATCH THE SAME CONSTANTS USED IN THE FOCUS FILE x7
-@economic_minister_time_tier_1 = 98
-@economic_minister_time_tier_2 = 126
-@economic_minister_time_tier_3 = 126
-@economic_minister_time_tier_4 = 210
+@economic_minister_time_tier_1 = 50 # 98
+@economic_minister_time_tier_2 = 70 # 126
+@economic_minister_time_tier_3 = 70 # 126
+@economic_minister_time_tier_4 = 98 # 210
 # FLAG CONSTANTS (It is 1 day more so the tooltip and days shown in the focus about Focus Progress match exactly the moment when the focus is completed)
-@economic_minister_time_tier_1_flag = 99
-@economic_minister_time_tier_2_flag = 127
-@economic_minister_time_tier_3_flag = 127
-@economic_minister_time_tier_4_flag = 211
+@economic_minister_time_tier_1_flag = 51 # 99
+@economic_minister_time_tier_2_flag = 71 # 127
+@economic_minister_time_tier_3_flag = 71 # 127
+@economic_minister_time_tier_4_flag = 99 # 211
 
 ### ### # # # # ## ## ### ### ### ### ###
 #   #   # # # # # # # # # #    #  #   # #

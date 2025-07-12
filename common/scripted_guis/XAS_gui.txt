@@ -1,0 +1,14 @@
+scripted_gui = {
+	XAS_integration_decision_ui_window = {
+		window_name = "XAS_integration_decision_ui_window_container"
+		context_type = decision_category
+		properties = {
+			XAS_XS0_integration_bar = {
+				frame = XS0.XAS_integration_level
+			}
+			XAS_XS1_integration_bar = {
+				frame = XS1.XAS_integration_level
+			}
+		}
+	}
+}

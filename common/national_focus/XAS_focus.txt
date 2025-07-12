@@ -1,7 +1,7 @@
-@economic_minister_time_tier_1 = 14
-@economic_minister_time_tier_2 = 18
-@economic_minister_time_tier_3 = 18
-@economic_minister_time_tier_4 = 30
+@economic_minister_time_tier_1 = 7.14 # 14
+@economic_minister_time_tier_2 = 10 # 18
+@economic_minister_time_tier_3 = 10 # 18
+@economic_minister_time_tier_4 = 14 # 30
 
 focus_tree = {
 	id = XAS_focus
@@ -24,25 +24,30 @@ focus_tree = {
 	focus = {
 		id = XAS_monarchist_tree # Haus Habsburg
 		icon = x
-		cost = 5
+		cost = 0.1 # 5
 		mutually_exclusive = { focus = XAS_democratic_tree }
 		x = 18
 		y = 0
 
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 50
+		}
 	}
 
 	focus = {
 		id = XAS_unite_the_realm
 		icon = x
-		cost = 5
+		cost = 0.1 # 5
 		prerequisite = { focus = XAS_monarchist_tree }
 		relative_position_id = XAS_monarchist_tree
 		mutually_exclusive = { focus = XAS_continued_autonomy }
 		x = 1
 		y = 1
 		
-		completion_reward = { }
+		completion_reward = {
+			# Unlocks decision category + scripted GUI to integrate XS0+XS1
+			unlock_decision_category_tooltip = XAS_integrate_XS0_XS1
+		}
 	}
 	
 	focus = {
@@ -51,22 +56,39 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = XAS_unite_the_realm }
 		relative_position_id = XAS_unite_the_realm
-		x = 0
+		x = 1
 		y = 1
 		
-		completion_reward = { }
+		completion_reward = {
+			# Unlocks agressive integration polices - Optional
+		}
 	}
 	
 	focus = {
 		id = XAS_enforce_policy_of_integration
 		icon = x
-		cost = 5
-		prerequisite = { focus = XAS_reinforce_austrian_hegamony }
-		relative_position_id = XAS_reinforce_austrian_hegamony
+		cost = 10
+		prerequisite = { focus = XAS_unite_the_realm }
+		relative_position_id = XAS_unite_the_realm
 		x = 0
-		y = 1
+		y = 2
 
-		completion_reward = { }
+		completion_reward = {
+			XS0 = {
+				country_event = {
+					id = XAS_monarch.1
+					days = 1
+					random_hours = 12
+				}
+			}
+			XS1 = {
+				country_event = {
+					id = XAS_monarch.1
+					days = 1
+					random_hours = 12
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -78,7 +100,10 @@ focus_tree = {
 		x = -2
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 100
+			# Secret gambling?
+		}
 	}
 
 	focus = {
@@ -90,7 +115,12 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = XAS_balanced_budget_idea
+				years = 1
+			}
+		}
 	}
 
 	focus = {
@@ -120,9 +150,11 @@ focus_tree = {
 					name = "Evidenzbureau"
 					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau
 				}
+				gain_random_agency_upgrade = yes
+				gain_random_agency_upgrade = yes
 			}
 			else = {
-				# TODO: Add a "Centeralized Policy" idea here or something for non-dlc
+				add_ideas = XAS_evidenzbureau_idea
 			}
 		}
 	}
@@ -136,6 +168,10 @@ focus_tree = {
 		relative_position_id = XAS_centralize_the_police
 		x = 1
 		y = 1
+
+		bypass = {
+			owns_state = 1019
+		}
 
 		completion_reward = { }
 	}
@@ -161,13 +197,30 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		completion_reward = { }
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 50
+			}
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.65
+				category = naval_equipment
+			}
+			# Perhaps a flavor event
+		}
 	}
 
 	focus = {
 		id = XAS_increase_physical_requirements
 		icon = x
-		cost = 5
+		cost = 1.4
 		prerequisite = { focus = XAS_sort_the_deck }
 		relative_position_id = XAS_sort_the_deck
 		x = -3
@@ -178,7 +231,7 @@ focus_tree = {
 	focus = {
 		id = XAS_standardize_ration_distribution
 		icon = x
-		cost = 5
+		cost = 1.4
 		prerequisite = { focus = XAS_increase_physical_requirements }
 		relative_position_id = XAS_increase_physical_requirements
 		x = 1
@@ -189,7 +242,7 @@ focus_tree = {
 	focus = {
 		id = XAS_push_pull_logisitcs # Push-Pull Logisitcs
 		icon = x
-		cost = 5
+		cost = 1.4
 		prerequisite = { focus = XAS_standardize_ration_distribution }
 		relative_position_id = XAS_standardize_ration_distribution
 		x = 0
@@ -201,7 +254,7 @@ focus_tree = {
 	focus = {
 		id = XAS_theresian_military_academy
 		icon = x
-		cost = 5
+		cost = 1.4
 		prerequisite = { focus = XAS_standardize_ration_distribution }
 		relative_position_id = XAS_standardize_ration_distribution
 		x = -2
@@ -288,6 +341,10 @@ focus_tree = {
 		x = -2
 		y = 1
 
+		available = {
+			
+		}
+
 		completion_reward = { }
 	}
 
@@ -297,18 +354,6 @@ focus_tree = {
 		cost = 5
 		prerequisite = {  focus = XAS_develop_styria }
 		relative_position_id = XAS_develop_styria
-		x = 0
-		y = 1
-
-		completion_reward = { }
-	}
-
-	focus = {
-		id = XAS_the_groz_offer
-		icon = x
-		cost = 5
-		prerequisite = {  focus = XAS_develop_cilli }
-		relative_position_id = XAS_develop_cilli
 		x = 0
 		y = 1
 
@@ -525,7 +570,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			unlock_decision_category_tooltip = XAS_guilds_regulation_hayek
+			unlock_decision_category_tooltip = XAS_guilds_regulation_schumpeter
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_override_tooltip = {	
 				tooltip = XAS_agressive_regulation_confiscation_tt
@@ -1045,7 +1090,9 @@ focus_tree = {
 			}
 		}
 
-		completion_reward = { }
+		completion_reward = {
+			unlock_decision_category_tooltip = XAS_nationalize_arms_industries
+		}
 	}
 	focus = {
 		id = XAS_empower_the_merchant_guilds # Empower the Merchant Guilds

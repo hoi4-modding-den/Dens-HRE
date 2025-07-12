@@ -1,0 +1,47 @@
+guiTypes = {
+	containerWindowType = {
+		name = "XAS_integration_decision_ui_window_container"
+		position = { x = 0 y = 0 }
+		size = { width = 100%% height = 136 }
+
+		instantTextBoxType = {
+			name = "XAS_XS0_integration"
+			position = { x = 0 y = 10 }
+			maxWidth = 500
+			font = "hoi_18mbs"
+			text = "XAS_XS0_integration_level_tt"
+			format = center
+		}
+		
+		iconType = {
+			name = "XAS_XS0_integration_bar"
+			spriteType = "GFX_XAS_progress_bar"
+			position = { x = 70 y = 50 }
+		}
+		iconType = {
+			name = "XAS_XS0_integration_bar_bg"
+			spriteType = "GFX_XAS_progress_bar_bg"
+			position = { x = 68 y = 108 }
+		}
+		
+		instantTextBoxType = {
+			name = "XAS_XS1_integration"
+			position = { x = 0 y = 70 }
+			maxWidth = 500
+			font = "hoi_18mbs"
+			text = "XAS_XS1_integration_level_tt"
+			format = center
+		}
+
+		iconType = {
+			name = "XAS_XS1_integration_bar"
+			spriteType = "GFX_XAS_progress_bar"
+			position = { x = 70 y = 110 }
+		}
+		iconType = {
+			name = "XAS_XS1_integration_bar_bg"
+			spriteType = "GFX_XAS_progress_bar_bg"
+			position = { x = 68 y = 108 }
+		}
+	}
+}

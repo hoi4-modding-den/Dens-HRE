@@ -7,9 +7,7 @@ XAS_guilds_regulation_hayek = {
 		has_dynamic_modifier = {
 			modifier = XAS_unchecked_merchant_guilds
 		}
-		OR = {
-			has_completed_focus = XAS_essential_regulation
-		}
+		has_completed_focus = XAS_essential_regulation
 	}
 
 	priority = 22
@@ -34,4 +32,66 @@ XAS_guilds_regulation_schumpeter = {
 			}
 		}
 	}
+}
+XAS_nationalize_arms_industries = {
+	allowed = {
+		original_tag = XAS
+	}
+
+	visible = {
+		has_completed_focus = XAS_assume_control
+	}
+
+	priority = 22
+}
+
+# Integration
+XAS_integrate_XS0_XS1 = {
+	allowed = {
+		original_tag = XAS
+	}
+
+	visible = {
+		has_completed_focus = XAS_unite_the_realm
+		OR = {
+			XS0 = {
+				exists = yes
+				is_subject_of = XAS
+			}
+			XS1 = {
+				exists = yes
+				is_subject_of = XAS
+			}
+		}
+	}
+
+	visible_when_empty = yes
+
+	scripted_gui = XAS_integration_decision_ui_window
+
+	priority = 30
+}
+XS0_avoid_integration = {
+	allowed = {
+		original_tag = XS0
+	}
+
+	visible = {
+		XAS = { has_completed_focus = XAS_unite_the_realm }
+		is_subject_of = XAS
+	}
+	
+	priority = 30
+}
+XS1_avoid_integration = {
+	allowed = {
+		original_tag = XS1
+	}
+	
+	visible = {
+		XAS = { has_completed_focus = XAS_unite_the_realm }
+		is_subject_of = XAS
+	}
+
+	priority = 30
 }

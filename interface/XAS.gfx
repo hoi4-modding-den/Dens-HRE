@@ -424,4 +424,19 @@ spriteTypes = {
 			}
 			legacy_lazy_load = no
 		}
+
+	progressBarType = {
+        name = "GFX_XAS_progress_bar"
+        color = { 41.9 148.6 189.0 }
+        colortwo = { 69.8 38.4 27.5 }
+        textureFile1 = "gfx/interface/XAS/XAS_progress_bar_full.png"
+        textureFile2 = "gfx/interface/XAS/XAS_progress_bar_empty.png"
+        steps = 100
+        size = { x = 360 y = 16 }
+        effectFile = "gfx/FX/progress.lua"
+    }
+	spriteType = {
+		name = "GFX_XAS_progress_bar_bg"
+		texturefile = "gfx/interface/XAS_progress_bar_bg.png"
+	}
 }
