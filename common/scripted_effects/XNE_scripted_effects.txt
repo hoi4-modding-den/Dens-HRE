@@ -24,3 +24,39 @@ increase_conscription_law = {
 		add_ideas = scraping_the_barrel
 	}
 }
+
+change_tag_to_XNE = {
+	effect_tooltip = {
+		load_focus_tree = {
+			tree = XNE_focus
+			keep_completed = yes
+		}
+	}
+	hidden_effect = {
+		every_unit_leader = {
+			set_nationality = XNE
+		}
+		every_core_state = {
+			add_core_of = XNE
+			remove_core_of = ROOT
+		}
+		if = { limit = { has_idea = XNE_zuiderzee_1 } XNE = { add_ideas = { XNE_zuiderzee_1 } } }
+		if = { limit = { has_idea = XNE_zuiderzee_2 } XNE = { add_ideas = { XNE_zuiderzee_2 } } }
+		if = { limit = { has_idea = XNE_zuiderzee_3 } XNE = { add_ideas = { XNE_zuiderzee_3 } } }
+		if = { limit = { has_completed_focus = XNE_joint_friesland_agriculture } XNE = { add_idea = XFS_dairy_and_hide_exports } }
+		XNE = {
+			inherit_technology = ROOT
+			add_dynamic_modifier = {
+				modifier = XNE_joint_idea
+			}
+			set_research_slots = 4
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+	}
+	XNE = {
+		change_tag_from = ROOT
+	}
+}

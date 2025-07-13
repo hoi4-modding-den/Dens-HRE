@@ -10,14 +10,6 @@ ideas = {
             }
         }
 
-        XNE_dairy_and_hide_exports = {
-            picture = DEN_sahnefront
-            modifier = {
-                consumer_goods_factor = -0.08
-                production_speed_infrastructure_factor = 0.15
-            }
-        }
-
         XNE_zuiderzee_1 = {
             picture = generic_train_tracks
             allowed_civil_war = { always = yes }
@@ -426,6 +418,14 @@ ideas = {
                 neutrality_drift = -0.01
                 neutrality_acceptance = -10
                 stability_factor = 0.05
+            }
+        }
+
+        XFS_dairy_and_hide_exports = {
+            picture = DEN_sahnefront
+            modifier = {
+                consumer_goods_factor = -0.08
+                production_speed_infrastructure_factor = 0.15
             }
         }
 	}

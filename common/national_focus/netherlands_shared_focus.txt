@@ -204,7 +204,7 @@ joint_focus = {
 
     completion_reward_joint_originator = {
         add_manpower = 15000
-        add_ideas = { XNE_dairy_and_hide_exports }
+        add_ideas = { XFS_dairy_and_hide_exports }
         add_to_variable = { XNE.joint_core_supply = -0.1 }
         add_to_variable = { XNE.joint_attrition = -0.04 }
     }
@@ -1629,33 +1629,7 @@ joint_focus = {
     }
 
     completion_reward_joint_originator = {
-        effect_tooltip = {
-            load_focus_tree = {
-                tree = XNE_focus
-                keep_completed = yes
-            }
-        }
-        hidden_effect = {
-            every_unit_leader = {
-                set_nationality = XNE
-            }
-            every_core_state = {
-                add_core_of = XNE
-                remove_core_of = ROOT
-            }
-            XNE = {
-                annex_country = {
-                    target = ROOT
-                    transfer_troops = yes
-                }
-            }
-            add_dynamic_modifier = {
-                modifier = XNE_joint_idea
-            }
-        }
-        XNE = {
-            change_tag_from = ROOT
-        }
+        change_tag_to_XNE = yes
     }
 
     completion_reward_joint_member = {

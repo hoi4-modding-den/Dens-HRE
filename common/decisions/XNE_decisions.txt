@@ -49,6 +49,534 @@ XNE_propose_integration_category = {
 	}
 }
 
+form_united_netherlands_category = {
+    XNE_netherlands = {
+        icon = generic_political_address
+
+		allowed = {
+			XNE_is_dutch_tag = yes
+		}
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = "Cores and controls all highlighted states"
+                7 = { is_core_of = ROOT is_controlled_by = ROOT }
+                35 = { is_core_of = ROOT is_controlled_by = ROOT }
+                36 = { is_core_of = ROOT is_controlled_by = ROOT }
+                977 = { is_core_of = ROOT is_controlled_by = ROOT }
+                1032 = { is_core_of = ROOT is_controlled_by = ROOT }
+                1033 = { is_core_of = ROOT is_controlled_by = ROOT }
+                1049 = { is_core_of = ROOT is_controlled_by = ROOT }
+                1050 = { is_core_of = ROOT is_controlled_by = ROOT }
+                1051 = { is_core_of = ROOT is_controlled_by = ROOT }
+            }
+		}
+		visible = {
+			XNE_is_dutch_tag = yes
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 7
+                state = 35
+                state = 36
+                state = 977
+                state = 1032
+                state = 1033
+                state = 1049
+                state = 1050
+                state = 1051
+            }
+        }
+
+		complete_effect = {
+			change_tag_to_XNE = yes
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+    }
+
+    XNE_united_netherlands = {
+        icon = generic_political_address
+
+		allowed = {
+            OR = {
+                original_tag = XNE
+                original_tag = XLE
+            }
+		}
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = "Controls all highlighted states"
+                6 = { is_controlled_by = ROOT }
+                7 = { is_controlled_by = ROOT }
+                8 = { is_controlled_by = ROOT }
+                34 = { is_controlled_by = ROOT }
+                35 = { is_controlled_by = ROOT }
+                36 = { is_controlled_by = ROOT }
+                977 = { is_controlled_by = ROOT }
+                980 = { is_controlled_by = ROOT }
+                1032 = { is_controlled_by = ROOT }
+                1033 = { is_controlled_by = ROOT }
+                1049 = { is_controlled_by = ROOT }
+                1050 = { is_controlled_by = ROOT }
+                1051 = { is_controlled_by = ROOT }
+            }
+		}
+		visible = {
+            NOT = { has_country_flag = formed_UNL }
+            OR = {
+                original_tag = XNE
+                original_tag = XLE
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 6
+                state = 7
+                state = 8
+                state = 34
+                state = 35
+                state = 36
+                state = 977
+                state = 980
+                state = 1032
+                state = 1033
+                state = 1049
+                state = 1050
+                state = 1051
+            }
+        }
+
+		complete_effect = {
+            set_cosmetic_tag = UNL_UNIFIED
+            set_country_flag = formed_UNL
+            hidden_effect = {
+                6 = { add_core_of = ROOT }
+                7 = { add_core_of = ROOT }
+                8 = { add_core_of = ROOT }
+                34 = { add_core_of = ROOT }
+                35 = { add_core_of = ROOT }
+                36 = { add_core_of = ROOT }
+                977 = { add_core_of = ROOT }
+                980 = { add_core_of = ROOT }
+                1032 = { add_core_of = ROOT }
+                1033 = { add_core_of = ROOT }
+                1049 = { add_core_of = ROOT }
+                1050 = { add_core_of = ROOT }
+                1051 = { add_core_of = ROOT }
+            }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+    }
+
+    XNE_greater_friesland = {
+        icon = generic_political_address
+
+		allowed = {
+			XNE_can_form_netherlands = yes
+		}
+		available = {
+			controls_state = 56
+			controls_state = 1017
+			controls_state = 1052
+			controls_state = 1053
+			controls_state = 1084
+		}
+		visible = {
+			36 = { is_core_of = ROOT }
+            1050 = { is_core_of = ROOT }
+            OR = {
+                NOT = { 56 = { is_core_of = ROOT } }
+                NOT = { 1017 = { is_core_of = ROOT } }
+                NOT = { 1052 = { is_core_of = ROOT } }
+                NOT = { 1053 = { is_core_of = ROOT } }
+                NOT = { 1084 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 56
+                state = 1017
+                state = 1052
+                state = 1053
+                state = 1084
+            }
+        }
+
+		complete_effect = {
+			56 = { add_core_of = ROOT }
+			1017 = { add_core_of = ROOT }
+			1052 = { add_core_of = ROOT }
+			1053 = { add_core_of = ROOT }
+			1084 = { add_core_of = ROOT }
+
+            if = {
+                limit = {
+                    tag = XFS
+                }
+                set_cosmetic_tag = XFS_greater
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = { tag = XFS }
+                    }
+                    56 = { add_core_of = XFS }
+                    1017 = { add_core_of = XFS }
+                    1052 = { add_core_of = XFS }
+                    1053 = { add_core_of = XFS }
+                    1084 = { add_core_of = XFS }
+                }
+            }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+    }
+
+    XNE_core_holland = {
+		icon = generic_form_nation
+
+		allowed = {
+			XNE_can_form_netherlands = yes
+		}
+		available = {
+			controls_state = 7
+			controls_state = 1033
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 7 = { is_core_of = ROOT } }
+                NOT = { 1033 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 7
+                state = 1033
+            }
+        }
+
+		complete_effect = {
+			7 = { add_core_of = ROOT }
+			1033 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_zeeland = {
+		icon = generic_form_nation
+
+		allowed = {
+			XNE_can_form_netherlands = yes
+		}
+		available = {
+			controls_state = 1049
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 1049 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 1049
+            }
+        }
+
+		complete_effect = {
+			1049 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_friesland = {
+		icon = generic_form_nation
+
+		allowed = {
+			XNE_can_form_netherlands = yes
+		}
+		available = {
+			controls_state = 36
+			controls_state = 1050
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 36 = { is_core_of = ROOT } }
+                NOT = { 1050 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 36
+                state = 1050
+            }
+        }
+
+		complete_effect = {
+			36 = { add_core_of = ROOT }
+			1050 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_utrecht = {
+		icon = generic_form_nation
+
+		allowed = {
+			XNE_can_form_netherlands = yes
+		}
+		available = {
+			controls_state = 1032
+			controls_state = 1051
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 1032 = { is_core_of = ROOT } }
+                NOT = { 1051 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 1032
+                state = 1051
+            }
+        }
+
+		complete_effect = {
+			1032 = { add_core_of = ROOT }
+			1051 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_brabant = {
+		icon = generic_form_nation
+
+		allowed = {
+			XNE_can_form_netherlands = yes
+		}
+		available = {
+			controls_state = 35
+			controls_state = 977
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 35 = { is_core_of = ROOT } }
+                NOT = { 977 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 35
+                state = 977
+            }
+        }
+
+		complete_effect = {
+			35 = { add_core_of = ROOT }
+			977 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_flanders = {
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+                original_tag = XNE
+                original_tag = XBT
+                original_tag = XLE
+            }
+		}
+		available = {
+			controls_state = 6
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 6 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 6
+            }
+        }
+
+		complete_effect = {
+			6 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_wallonia = {
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+                original_tag = XNE
+                original_tag = XLE
+            }
+		}
+		available = {
+			controls_state = 34
+			controls_state = 980
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 34 = { is_core_of = ROOT } }
+                NOT = { 980 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 34
+                state = 980
+            }
+        }
+
+		complete_effect = {
+			34 = { add_core_of = ROOT }
+			980 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_luxembourg = {
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+                original_tag = XNE
+                original_tag = XLE
+            }
+		}
+		available = {
+			controls_state = 8
+		}
+		visible = {
+			XNE_can_form_netherlands = yes
+            OR = {
+                NOT = { 8 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 8
+            }
+        }
+
+		complete_effect = {
+			8 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+    XNE_core_nord = {
+		icon = generic_form_nation
+
+		allowed = {
+            OR = {
+                original_tag = XLE
+                original_tag = XNE
+            }
+		}
+		available = {
+			controls_state = 29
+		}
+		visible = {
+			has_country_flag = formed_UNL
+            OR = {
+                NOT = { 29 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 29
+            }
+        }
+
+		complete_effect = {
+			29 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+    
+    XNE_core_rhineland = {
+		icon = generic_form_nation
+
+		allowed = {
+            OR = {
+                original_tag = XNE
+                original_tag = XLE
+            }
+		}
+		available = {
+			controls_state = 51
+		}
+		visible = {
+			has_country_flag = formed_UNL
+            OR = {
+                NOT = { 51 = { is_core_of = ROOT } }
+            }
+		}
+        highlight_states = {
+            highlight_state_targets = {
+                state = 51
+            }
+        }
+
+		complete_effect = {
+			51 = { add_core_of = ROOT }
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+    
+}
+
 XHO_schiphol_airport_category = {
     XHO_build_runway_3  = {
 

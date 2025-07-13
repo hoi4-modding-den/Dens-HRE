@@ -34,6 +34,18 @@
  XFS_neutrality_DEF:0 "the Lordship of Friesland"
  XFS_ADJ:0 "Frisian"
 
+ XFS_greater:0 "Greater Friesland"
+ XFS_greater_DEF:0 "Greater Friesland"
+
+ UNL_UNIFIED_neutrality:0 "United Provinces"
+ UNL_UNIFIED_fascism:0 "Leo Belgicus"
+ UNL_UNIFIED_democratic:0 "United Kingdom of the Netherlands"
+ UNL_UNIFIED_communism:0 "Benelux Socialist State"
+ UNL_UNIFIED_neutrality_DEF:0 "the United Provinces"
+ UNL_UNIFIED_fascism_DEF:0 "Leo Belgicus"
+ UNL_UNIFIED_democratic_DEF:0 "the United Kingdom of the Netherlands"
+ UNL_UNIFIED_communism_DEF:0 "the Benelux Socialist State"
+
  ### COSMETIC ###
  XNE_provisional:0 "Provisional Dutch State"
  XNE_provisional_neutrality:0 "Provisional Dutch State"
@@ -201,7 +213,6 @@
  XNE_joint_idea:0 "[GetUnionName]"
  XNE_joint_idea_dummy_add:0 "Add §Y$XNE_joint_idea$§! which grants:\n Daily Political Power Gain: §G+0.05§!"
  XNE_joint_idea_modify_intro:0 "Modify §Y$XNE_joint_idea$§! by"
- XNE_dairy_and_hide_exports:0 "[XFS.GetAdjective] Dairy and Hide Exports"
  XNE_zuiderzee_1:0 "Zuiderzee Works"
  XNE_zuiderzee_2:0 "Zuiderzee Works"
  XNE_zuiderzee_3:0 "Zuiderzee Works"
@@ -241,6 +252,7 @@
  XHO_power_to_the_monarch_2:0 "Power to the Monarch"
 
  XFS_no_nobility:0 "Lack of Nobility"
+ XFS_dairy_and_hide_exports:0 "[XFS.GetAdjective] Dairy and Hide Exports"
 
  ### TRAIT ###
  XNE_supreme_commander:0 "Supreme Commander"
@@ -264,6 +276,21 @@
  XHO_calvinist_prepare:0 "Procure Armaments"
  XHO_calvinist_prepare_cost:0 "£command_power §Y20§!  £army_experience §Y10§!"
  XHO_calvinist_prepare_cost_blocked:0 "£command_power §R20§!  £army_experience §R10§!"
+
+ XNE_netherlands:0 "Unite the Seventeen Provinces"
+ XNE_united_netherlands:0 "Proclaim the United Netherlands"
+ XNE_greater_friesland:0 "Reincorporate Greater Friesland"
+ XNE_core_holland:0 "Core Holland"
+ XNE_core_zeeland:0 "Core Zeeland"
+ XNE_core_friesland:0 "Core Friesland"
+ XNE_core_utrecht:0 "Core Utrecht"
+ XNE_core_brabant:0 "Core Brabant"
+ XNE_core_flanders:0 "Core Flanders"
+ XNE_core_luxembourg:0 "Core Luxembourg"
+ XNE_core_wallonia:0 "Core Wallonia"
+ XNE_core_nord:0 "Core Nord-Pas-de-Calais"
+ XNE_core_rhineland:0 "Core the Rhineland"
+
 
  ### MIO ###
  XNE_fokker_organization: "$fokker$"
