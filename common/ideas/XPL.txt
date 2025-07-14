@@ -1,0 +1,54 @@
+ideas = {
+	country = {
+		
+		XPL_kolonie_regime = {
+
+			picture = GER_german_trade
+
+			allowed = {
+				original_tag = XPL
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			modifier = {
+				recruitable_population_factor = -0.1
+			}
+		}
+		XPL_huge_economic_hardships = {
+
+			picture = GER_german_trade
+
+			allowed = {
+				original_tag = XPL
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+			XPL_resistance_underground_economy = {
+
+			picture = GER_german_trade
+
+			allowed = {
+				original_tag = XPL
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			modifier = {
+civilian_factory_use = 3
+			}
+		}
+}
+}
