@@ -1,0 +1,51 @@
+HRE_options_cat = {
+
+	HRE_disable_event_spam  = {
+
+		priority = 1000
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = no
+		}
+
+		visible = {
+			has_country_flag = HRE_member_state
+			NOT = { has_country_flag = HRE_no_event_spam }
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = HRE_disable_event_spam_tt
+			set_country_flag = HRE_no_event_spam
+		}
+
+	}
+
+	HRE_enable_event_spam  = {
+
+		priority = 1000
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			is_ai = no
+		}
+
+		visible = {
+			has_country_flag = HRE_member_state
+			has_country_flag = HRE_no_event_spam
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = HRE_enable_event_spam_tt
+			clr_country_flag = HRE_no_event_spam
+		}
+
+	}
+
+}

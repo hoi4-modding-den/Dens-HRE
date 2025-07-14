@@ -73,7 +73,7 @@ HRE_set_new_agenda = {
 				has_country_flag = HRE_member_state
 			}
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
-			country_event = HRE_agenda.1
+			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.1 }
 			set_global_flag = HRE_agenda_selected
 		}
 	}
@@ -88,7 +88,7 @@ HRE_set_new_agenda = {
 				has_country_flag = HRE_member_state
 			}
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
-			country_event = HRE_agenda.2
+			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.2 }
 			set_global_flag = HRE_agenda_selected
 		}
 	}
@@ -103,7 +103,7 @@ HRE_set_new_agenda = {
 				has_country_flag = HRE_member_state
 			}
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
-			country_event = HRE_agenda.3
+			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.3 }
 			set_global_flag = HRE_agenda_selected
 		}
 	}
@@ -118,7 +118,7 @@ HRE_set_new_agenda = {
 				has_country_flag = HRE_member_state
 			}
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
-			country_event = HRE_agenda.4
+			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.4 }
 			set_global_flag = HRE_agenda_selected
 		}
 	}
@@ -160,7 +160,7 @@ HRE_federalism_lobbying_success = {
 		limit = {
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_lobbying.1
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_lobbying.1 }
 	}
 }
 
@@ -173,7 +173,7 @@ HRE_regionalism_lobbying_success = {
 		limit = {
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_lobbying.2
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_lobbying.2 }
 	}
 }
 
@@ -188,7 +188,7 @@ HRE_federalism_dictate_effect = {
 			}
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_dictate.1
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_dictate.1 }
 	}
 }
 
@@ -203,7 +203,7 @@ HRE_regionalism_dictate_effect =  {
 			}
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_dictate.2
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_dictate.2 }
 	}
 }
 
@@ -216,7 +216,7 @@ HRE_welfare_lobbying_success = {
 		limit = {
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_lobbying.3
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_lobbying.3 }
 	}
 }
 
@@ -229,7 +229,7 @@ HRE_militarization_lobbying_success = {
 		limit = {
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_lobbying.4
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_lobbying.4 }
 	}
 }
 
@@ -244,7 +244,7 @@ HRE_welfare_dictate_effect = {
 			}
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_dictate.3
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_dictate.3 }
 	}
 }
 
@@ -259,7 +259,7 @@ HRE_militarization_dictate_effect =  {
 			}
 			has_country_flag = HRE_member_state
 		}
-		country_event = HRE_dictate.4
+		if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_dictate.4 }
 	}
 }
 
