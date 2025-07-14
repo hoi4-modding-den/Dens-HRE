@@ -38,9 +38,25 @@
  XHH_north_germany_fascism: "United North German Realm"
  XHH_north_germany_fascism_DEF: "the Vereinigtes Norddeutsches Reich"
  XHH_north_germany_fascism_ADJ: "North German"
- XHH_north_germany_communism: "North German People's Republic"
- XHH_north_germany_communism_DEF: "Norddeutsche Volksrepublik"
+ XHH_north_germany_communism: "North German Socialist Republic"
+ XHH_north_germany_communism_DEF: "the Norddeutsche Sozialistische Republik"
  XHH_north_germany_communism_ADJ: "North German"
+
+ XHH_trade_federation: "North Germany"
+ XHH_trade_federation_DEF: "Norddeutschland"
+ XHH_trade_federation_ADJ: "North German"
+ XHH_trade_federation_neutrality: "North German Trade Federation"
+ XHH_trade_federation_neutrality_DEF: "the Norddeutscher Handelsbund"
+ XHH_trade_federation_neutrality_ADJ: "North German"
+ XHH_trade_federation_democratic: "North German Trade Federation"
+ XHH_trade_federation_democratic_DEF: "the Norddeutscher Handelsbund"
+ XHH_trade_federation_democratic_ADJ: "North German"
+ XHH_trade_federation_fascism: "People's Mandate of North Germany"
+ XHH_trade_federation_fascism_DEF: "the Volksmandat Norddeutschland"
+ XHH_trade_federation_fascism_ADJ: "North German"
+ XHH_trade_federation_communism: "North German Socialist Republic"
+ XHH_trade_federation_communism_DEF: "the Norddeutsche Sozialistische Republik"
+ XHH_trade_federation_communism_ADJ: "North German"
 
  XHH_schleswig_holstein: "Schleswig-Holstein"
  XHH_schleswig_holstein_DEF: "Schleswig-Holstein"
@@ -123,15 +139,35 @@
  XFT_XHH_neutrality_subject: "Free State of Köslin"
  XFT_XHH_neutrality_subject_DEF: "the Freistaat Köslin"
  XFT_XHH_neutrality_subject_ADJ: "Köslin"
- XFT_XHH_democratic_subject: "Republic of Köslin"
- XFT_XHH_democratic_subject_DEF: "the Köslin-Republik"
+ XFT_XHH_democratic_subject: "Free State of Köslin"
+ XFT_XHH_democratic_subject_DEF: "the Freistaat Köslin"
  XFT_XHH_democratic_subject_ADJ: "Köslin"
+
+ XHH_prussian_puppet: "Pommerania and Prussia"
+ XHH_prussian_puppet_DEF: "Pommern und Preußen"
+ XHH_prussian_puppet_ADJ: "Prusso-Pommeranian"
+ XHH_prussian_puppet_neutrality: "United Prussian Duchy"
+ XHH_prussian_puppet_neutrality_DEF: "the Vereinigtes Preußisches Herzogtum"
+ XHH_prussian_puppet_neutrality_ADJ: "Prussian"
+ XHH_prussian_puppet_democratic: "Free States of Pommerania and Prussia"
+ XHH_prussian_puppet_democratic_DEF: "the Freistaaten Pommern und Preußen"
+ XHH_prussian_puppet_democratic_ADJ: "Prusso-Pommeranian"
+ XHH_prussian_puppet_fascism: "Greater Prussian State"
+ XHH_prussian_puppet_fascism_DEF: "the Großpreußischer Staat"
+ XHH_prussian_puppet_fascism_ADJ: "Prussian"
+ XHH_prussian_puppet_communism: "Socialist Union of Pommerania and Prussia"
+ XHH_prussian_puppet_communism_DEF: "the Pommern-Preußische Sozialistische Union"
+ XHH_prussian_puppet_communism_ADJ: "Prusso-Pommeranian"
+ XHH_prussian_puppet_autonomy_XHH_protectorate: "Protectorate of Pomerania and Prussia"
+ XHH_prussian_puppet_autonomy_XHH_protectorate_DEF: "the Protektorat Pommern und Preußen"
+ XHH_prussian_puppet_autonomy_XHH_protectorate_ADJ: "Prusso-Pommeranian"
 
 
 # LEADER NAMES
  XHH_tom_first_name: "Tom Ernst Wilhelm"
- XHH_tom_first_desc: "§YFull Name and Title:§! §LHis Majesty, Tom Ernst Wilhelm vom Hause Hamburg-Mecklenburg, Kurfürst von Hamburg und ihrer Territorien§!\n§YBorn:§! §LMay 3rd, 1895, in Wandsbek, Hamburg, in the Holy Roman Empire§!\n§YBackground:§! §LCoronated Tom the First of Hamburg, he is the fifth monarch of the Principality since its establishment over two-hundred years ago. The first ten years of his reign have been filled with battles between the authorities and the Hanoverian separatists, increasing crackdowns on the influence of the Hanseatic League and squabbling between the members of the senate over what could be done. With all of these problems sorted out - though he is a firm believer of the path the monarchy has taken until now - it would seem that unless swayed by outside forces, his reign will continue to be largely uninteresting.§!"
- XHH_tom_first_dem_desc: "$XHH_tom_first_desc$\n \n§LHis authority as monarch has been greatly diminished and now he acts only as a figurehead for the democratic government of Hamburg.§!"
+ XHH_tom_first_desc_main_segment: "§YFull Name and Title:§! §LHis Majesty, Tom Ernst Wilhelm vom Hause Hamburg-Mecklenburg, Kurfürst von Hamburg und ihrer Territorien§!\n§YBorn:§! §LMay 3rd, 1895, in Wandsbek, Hamburg§!\n§YBackground:§! §LCoronated Tom the First of Hamburg, he is the fifth monarch of the Principality since its establishment over two-hundred years ago. The first ten years of his reign have been filled with battles between the authorities and the Hanoverian separatists, increasing crackdowns on the influence of the Hanseatic League and squabbling between the members of the senate over what could be done. With all of these problems sorted out - though he is a firm believer of the path the monarchy has taken until now - it would seem that unless swayed by outside forces, his reign will continue to be largely uninteresting.§!"
+ XHH_tom_first_desc: "$XHH_tom_first_desc_main_segment$ $XHH_is_fictional_character_tt$"
+ XHH_tom_first_dem_desc: "$XHH_tom_first_desc_main_segment$\n \n§LHis authority as monarch has been greatly diminished and now he acts only as a figurehead for the democratic government of Hamburg.§! $XHH_is_fictional_character_tt$"
  XH1_ernest_august_name: "Ernest August"
  XH1_victoria_louise_name: "Victoria Louise"
  XH2_christian_louis_name: "Christian Louis"
@@ -139,6 +175,8 @@
  XVD_city_council_name: "Verdener Stadtrat"
  XVD_worker_council_name: "Verdener Gewerkschaftskanzel"
  XHH_carl_vincent_krogmann_name: "Karl V. Krogmann"
+ XHH_protectorate_leader_name: "Heinrich zu Dohna-Schlobitten"
+ XHH_carl_vincent_krogmann_desc: "§YFull Name:§! §LKarl Vincent Krogmann§!\n§YBorn:§! §LMarch 3rd, 1889, in Hamburg§!\n§YBackground:§! §LKarl Vincent Krogmann is a Hamburgian banker, industrialist and politician for the Nationale Union zur Förderung Deutscher Einheit. He was born into one of Hamburg's old Huguenot families and married Emerentia Krogmann, who was noted for her antisemitic views. Krogmann is one of the founding members of the Freundeskreis der Wirschaft, an influencial group of far right industrialists established in 1932 by Wilhelm Keppler. Following the nationalist coup that overthrew the monarchy, Krogmann took power in Hamburg, forming a pan-German nationalist coalition with him at the helm of the nation.§! $XHH_is_historical_character_tt$"
  XHH_spd_socialist_name: "Aaron Klinghoffer"
  XHH_fdp_liberal_name: "Lars Seitz"
  XHH_cdu_conservative_name: "Tillmann Kluck"
@@ -176,13 +214,18 @@
  XHH_air_superiority_high_command_name: "Christian Bäcker"
  XHH_capital_ship_high_command_name: "Julius Martens"
 
+ XHH_is_historical_character_tt: "\n \n§CThis is a historical character.§!"
+ XHH_is_fictional_character_tt: "\n \n§YThis is a fictional character.§!"
+
 
 # TRAITS
  XHH_fuerst_of_hamburg: "Prince-Elector of Hamburg" # Kurfürst der Domäne der Freien Reichs- und Hansestadt Hamburg, Herzog von Schleswig, Holstein, Hannover und Mecklenburg, Stadthalter der Hansestädte Bremen, Lübeck und Kiel
  XHH_the_prussian_duchess: "The Military Princess"
  XVD_friendly_bishop: "Friendly Protestant"
  XHH_absolute_monarch: "Absolute Monarch"
+ XHH_father_of_the_hamburg_republic: "Father of the Hamburgian Republic"
  XHH_nazi_industrialist: "Nationalist Industrialist"
+ XHH_prussian_knight: "Knight of Justice of the Chivalric Order of Saint John"
  XHH_socdem_prime_minister: "Resolute Social Democrat"
  XHH_socialist_prime_minister: "Idealistic Socialist"
  XHH_liberal_prime_minister: "Market Liberal"
@@ -255,6 +298,7 @@
 
 # AUTONOMIES
  autonomy_XVD_free_city: "Free City"
+ autonomy_XHH_protectorate: "Protectorate"
 
 
  # OTHER LOC STUFF
@@ -269,6 +313,8 @@
  XHH_money_trigger_tt: "At least §Y$RIGHT|0$§! £GFX_market_subsidy_small_texticon Financial Leverage"
  XHH_influence_effect_tt: "£GFX_legitimacy Imperial Influence: $RIGHT|+=0$"
  XHH_influence_trigger_tt: "At least §Y$RIGHT|0$§! £GFX_legitimacy Imperial Influence"
+ XHH_money_gain_effect_tt: "Quarterly £GFX_market_subsidy_small_texticon Financial Leverage Gain: $RIGHT|+=0$"
+ XHH_influence_gain_effect_tt: "Quarterly £GFX_legitimacy Imperial Influence Gain: $RIGHT|+=0$"
 
  XHH_mecklenburg_aegis: "Northern Aegis"
  XHH_national_league: "Deutsch-Nationaler Bund"
@@ -314,6 +360,9 @@
  XHH_super_navy: "Hamburg Rules The Waves"
  XHH_defense_fund: "Defense Preparations"
  XHH_stockpiled_resources: "Fuel Stockpile"
+ XHH_polish_citizenship_weaker: "Polish Immigration"
+ XHH_polish_citizenship: "Polish Citizenship"
+ XHH_prussian_militarism: "Prussian Military Education"
  XHH_imperial_army_training: "Joint Imperial Army Exercises"
  XHH_catholic_donations_idea: "Catholic Donations"
  XHH_iron_cross_order_idea: "Prussian-Inspired Militarism"
@@ -323,6 +372,7 @@
  XVD_agrarian_economy: "Agrarian-Focused Economy"
  XVD_agrarian_economy_desc: "While some industrialisation has taken place in Verden, mostly through Imperial investments, the majority of the country's economy is reliant on the agrarian sector."
  XVD_ecclesiastical_government: "Ecclesiastical Government"
+ XVD_free_city_idea: "Freistadt Administration"
 
 # LAWS
  XVD_free_market: "Open Markets"
@@ -342,7 +392,9 @@
  XHH_colonial_wealth: "Colonial Possessions"
  XHH_colonial_wealth_desc: "The Holy Roman Empire holds no direct colonies. However, [ROOT.GetNameDef] still holds large amounts of land and influence in Africa through so-called Handelskompanien. Directed by the leaders in [ROOT.capital.GetCapitalVictoryPointName], the companies exploit the resources of Africa and send them back to Germany.\n \n§WAllows for the §!§Rexploitation§!§W of §!§Ycorporate colonial territories§!§W in Africa.§!"
  XHH_venice_modifier: "Venedig des Nordens"
+ XHH_venice_modifier_desc: "Hamburg was once the hub of all maritime trade in Northern Germany and with our recent efforts, we shall regain that place!"
  XHH_sea_empire_modifier: "Imperium der Meere"
+ XHH_sea_empire_modifier_desc: "In the past, the German Navy controlled the North Sea and the Baltic Sea. Hamburg shall once again rule the Waves!"
 
 
 # MIOs
@@ -358,12 +410,17 @@
 # TECH SHARING
  XVD_monastery_tech_sharing_group_name: "Evangelical Knowledge Exchange Program"
  XVD_monastery_tech_sharing_group_desc: "To preserve old knowledge and gain new knowledge, [XVD.GetNameDef] cooperates with [XHH.GetNameDef] in different fields of science, such as industrial and electronic development."
+ XHH_imperial_tech_sharing_group_name: "Imperial Scientific Association"
+ XHH_imperial_tech_sharing_group_desc: "The WGdHRR (Wissenschaftliche Gesellschaft des Heiligen Römischen Reiches) is an association of researchers from across the HRE, promoting joint research programmes and scientific exchanges. They are funded by [XHH.GetNameDef], which grants them significant influence over members of the association."
 
 # OPINION MODIFIERS
  XHH_recognised_holy_see: "Recognised the Holy See"
+ XHH_papal_relations_mended: "Papal Relations Mended"
  XHH_challenged_baltic_dominion: "Escalating the Naval Arms Race"
  XHH_imperial_diplomacy_bonus: "Imperial Diplomacy Focus"
  XHH_port_access: "Port Acquisition"
+ XVD_reformation_opinion: "Enemy of the Reformation"
+ XVD_reformation_opinion_reverse: "Enemy of Catholicism"
 
 
 # DECISIONS
@@ -373,14 +430,18 @@
  XHH_dockyard_privatisation_drive: "Dockyard Privatisation Drive"
  XHH_dockyard_privatisation_drive_tt: "Replaces §G1§! §YNaval Dockyard§! with §G1§! §YCivilian Factory§! in a random state."
 
- XHH_restore_meckpomm: "Reunite Mecklenburg and Vorpommern"
+ XHH_join_imperial_joint_research_group: "Join the $XHH_imperial_tech_sharing_group_name$"
+ XHH_join_imperial_joint_research_group_tt: "§RWe will be removed from the $XHH_imperial_tech_sharing_group_name$, should we end up at war with [XHH.GetNameWithFlag]§!"
  XHH_immigration_campaigns: "Green Grass Campaigns"
  XHH_dissolve_bremen_autonomy: "Revoke Bremen's Special Status"
  XHH_dissolve_bremen_autonomy_desc: "Bremen's special status as an autonomous Hanseatic city, issued by the predecessor of the line of Hamburg-Mecklenburg to improve relations between the principality and the Hanseatic League, has been a hindrance to us. We must revoke it to gain more control over our nation."
 
+ XHH_restore_meckpomm: "Reunite Mecklenburg and Vorpommern"
  XHH_demand_wilhelmshaven: "Demand Oldenburg and Wilhelmshaven"
  XHH_demand_cuxhaven: "Restore the Dependency of Cuxhaven"
  XHH_demand_nordenham: "Demand [1052.GetName] Port"
+ XHH_form_prussian_protectorate: "Form a Protectorate of the Eastern Regions"
+ XHH_form_prussian_protectorate_tt: "Releases @XPK §Y$XHH_prussian_puppet$§! in the highlighted states."
  XH1_integrate_bremen: "Integrate Bremen"
  XH1_integrate_schwerin: "Annex the Grafschaft Schwerin"
  XH1_integrate_dithmarschen: "End Dithmarschen Peasant Autonomy"
@@ -421,10 +482,14 @@
  XHH_improve_relations_with_hre_member: "Improve [FROM.GetAdjective] Partnership"
 
  XHH_money_cat: "The Venice of the North"
- XHH_money_cat_desc: "Trade has always been the strength of Hamburg. We are not called the §YVenice of the North§! for nothing. The §gHanseatic League§!'s trade network was built around cities like §gHamburg§! and §gKiel§!, perfect for redistributing goods and embracing §Ycommerce§!.\n \n§OTrade Leverage§! allows us to purchase §Yvaluable goods§! and §Yservices§! usually not for sale.\n \nOur national spirit §Y$XHH_venice_modifier$§! gives boni based on our £GFX_market_subsidy_small_texticon §OTrade Leverage§!.\n \nCurrent £GFX_market_subsidy_small_texticon  Financial Leverage: [?XHH_money|.0+]\n "
+ XHH_money_cat_desc: "Trade has always been the strength of Hamburg. We are not called the §YVenice of the North§! for nothing. The §gHanseatic League§!'s trade network was built around cities like §gHamburg§! and §gKiel§!, perfect for redistributing goods and embracing §Ycommerce§!.\n \n§OTrade Leverage§! allows us to purchase §Yvaluable goods§! and §Yservices§! usually not for sale. Additionally, the effects of our National Spirit $XHH_venice_modifier$ scale with §OFinancial Leverage§!.\n \nCurrent £GFX_market_subsidy_small_texticon  Financial Leverage: [?XHH_money|.0+]\n "
+ XHH_quarterly_money_gain: "Quarterly Financial Growth"
+ XHH_quarterly_money_gain_desc: "Every 91 Days (1/4 of a year), we will gain Financial Leverage. Quarterly gain can be increased via foci."
 
  XHH_influence_cat: "Influence in the Empire"
- XHH_influence_cat_desc: "Our influence within the §YHoly Roman Empire§! has always been something the Monarchs of Hamburg have neglected. Now it is our time to increase our standing and gain the favour of the other Imperial members.\n \n§OImperial Influence§! will allow us to §Ycall in favours§! and §Yimprove our realm§!.\n \nOur national spirit §Y$XHH_sea_empire_modifier$§! gives boni based on our £GFX_legitimacy §OImperial Influence§!.\n \nCurrent £GFX_legitimacy  Imperial Influence: [?XHH_influence|.0+]\n "
+ XHH_influence_cat_desc: "Our influence within the §YHoly Roman Empire§! has always been something the Monarchs of Hamburg have neglected. Now it is our time to increase our standing and gain the favour of the other Imperial members.\n \n§OImperial Influence§! will allow us to §Ycall in favours§!. Additionally, the effects of our National Spirit $XHH_sea_empire_modifier$ scale with §OImperial Influence§!.\n \nCurrent £GFX_legitimacy  Imperial Influence: [?XHH_influence|.0+]\n "
+ XHH_influence_growth: "Growing Influence within the Empire"
+ XHH_influence_growth_desc: "Every 91 Days (1/4 of a year), our influence within the Empire will grow. Influence Growth can be increased via foci."
 
  XHH_form_north_germany_cat: "Norddeutsche Einheit"
  XHH_form_north_germany: "Form a North German State"
@@ -507,7 +572,7 @@
 
  XHH_expand_the_welfare_state: "Expand the Welfare State"
  XHH_expand_the_welfare_state_desc: ""
- XHH_scientific_investments: "Greater Scientific Freedoms"
+ XHH_scientific_investments: "Greater Academic Freedoms"
  XHH_scientific_investments_desc: ""
  XHH_economic_independence: "Economic Independence"
  XHH_economic_independence_desc: ""
@@ -598,6 +663,10 @@
  XHH_chaos_in_danzig: "Chaos in Danzig"
  XHH_chaos_in_danzig_desc: ""
  XHH_chaos_in_danzig_tt: "§Y[85.GetName]§! will be §Yremilitarised§! once order has been restored."
+ XHH_war_with_prussia: "Preemptive Strike against Prussia"
+ XHH_war_with_prussia_desc: ""
+ XHH_protect_polish_minorities: "Citizenship for Polish Minorities"
+ XHH_protect_polish_minorities_desc: ""
  XHH_prussian_military_school: "Prussian School of War"
  XHH_prussian_military_school_desc: ""
  XHH_reobtain_northern_port_cities: "Regain Northwestern Ports"
@@ -606,7 +675,7 @@
  XHH_develop_wilhelmshaven_desc: ""
 
  XHH_national_revolution: "The National Revolution"
- XHH_national_revolution_desc: "Lang lebe das Deutsche Volk! Aber noch ist unser Werk nicht vollbracht. Nach dem unsere Macht gesichert ist, müssen wir beginnen, das gesamte Norddeutsche Volk unter unserer Nation zu vereinigen."
+ XHH_national_revolution_desc: "Lang lebe das Deutsche Volk! Aber noch ist unser Werk nicht vollbracht. Nachdem unsere Macht gesichert ist, müssen wir beginnen, das gesamte Norddeutsche Volk unter unserer Nation zu vereinigen."
  XHH_hamburgs_hegemony: "Restrict Political Opponents"
  XHH_hamburgs_hegemony_desc: ""
  XHH_reject_tradition: "Awaken National Consciousness"
@@ -728,7 +797,7 @@
  XHH_military_academies_desc: ""
 
 
- XVD_ecclesiastical_government_focus: "The Prince-Bishopric Government"
+ XVD_ecclesiastical_government_focus: "The Prince-Bishopric of Verden"
  XVD_ecclesiastical_government_focus_desc: ""
  XVD_infrastructure_effort: "Improve the Roads"
  XVD_infrastructure_effort_desc: ""
@@ -756,6 +825,14 @@
  XVD_agricultural_focus_desc: ""
  XVD_give_to_the_poor: "Care for the Poor"
  XVD_give_to_the_poor_desc: ""
+ XVD_free_city: "The Free City of Verden"
+ XVD_free_city_desc: ""
+ XVD_administratorial_oversight: "Industrial Support"
+ XVD_administratorial_oversight_desc: ""
+ XVD_connect_infrastructure: "Connect Infrastructure"
+ XVD_connect_infrastructure_desc: ""
+ XVD_modernise_the_academies: "Modernise Academy Curriculum"
+ XVD_modernise_the_academies_desc: ""
 
  XVD_defensive_war: "Defense of Verden"
  XVD_defensive_war_desc: ""
@@ -928,6 +1005,7 @@
  STATE_1084: "Ostfriesland"
 
  XHH_STATE_807: "Gotenhafen"
+ XPK_STATE_807: "Gotenhafen"
 
  VICTORY_POINTS_3271: "Verden"
  VICTORY_POINTS_3368: "Brunsbüttel"
@@ -945,3 +1023,4 @@
  VICTORY_POINTS_13501: "Wismar"
 
  XHH_VICTORY_POINTS_9263: "Gotenhafen"
+ XPK_VICTORY_POINTS_9263: "Gotenhafen"

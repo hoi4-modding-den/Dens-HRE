@@ -44,7 +44,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_ideas = XVD_ecclesiastical_government
 		}
@@ -75,8 +75,17 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_tech_bonus = {
+				name = XVD_infrastructure_effort
+				bonus = 2
+				uses = 1
+				category = construction_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			1046 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -189,7 +198,7 @@ focus_tree = {
 		completion_reward = {
 			add_offsite_building = {
 				type = industrial_complex
-				level = 1
+				level = 2
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -377,8 +386,17 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_tech_bonus = {
+				name = XVD_build_up_the_city_wall
+				bonus = 2
+				uses = 1
+				category = construction_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			1046 = {
 				add_building_construction = {
 					type = bunker
@@ -437,19 +455,16 @@ focus_tree = {
 
 		available = {
 			has_government = neutrality
-			OR = {
-				has_idea = XVD_ecclesiastical_government
-				AND = {
-					XHH = { OR = { has_government = democratic has_government = neutrality } }
-					NOT = { has_war_with = XHH }
-				}
-			}
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_research_slot = 1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			if = {
 				limit = {
 					OR = {
@@ -495,7 +510,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			unlock_decision_tooltip = XHH_support_farmers
 		}
@@ -523,7 +538,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_stability = 0.15
 			1046 = {
@@ -531,6 +546,156 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = XVD_free_city
+		icon = GFX_focus_generic_league_of_nations
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 14
+		y = 4
+		#relative_position_id = 
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			has_autonomy_state = autonomy_XVD_free_city
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XVD_free_city_idea
+		}
+	}
+
+	focus = {
+		id = XVD_administratorial_oversight
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = XVD_free_city }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XVD_free_city
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_autonomy_state = autonomy_XVD_free_city
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XVD_administratorial_oversight
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_connect_infrastructure
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = XVD_free_city }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XVD_free_city
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_autonomy_state = autonomy_XVD_free_city
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure < 5
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XVD_improve_agrarian_economy = yes
+		}
+	}
+
+	focus = {
+		id = XVD_modernise_the_academies
+		icon = GFX_focus_research
+		prerequisite = { focus = XVD_free_city }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XVD_free_city
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_autonomy_state = autonomy_XVD_free_city
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
 
 	focus = {
 		id = XVD_defensive_war
@@ -642,7 +807,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 0
 		}
 
 		available = {

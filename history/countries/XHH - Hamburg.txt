@@ -22,6 +22,7 @@ set_technology = {
 	#trade_interdiction = 1
 	formation_flying = 1
 	fuel_silos = 1
+	basic_train = 1
 }
 
 if = {
@@ -127,6 +128,8 @@ set_variable = { XHH_colmod_consumer_goods = -0.15 }
 # Leaders
 recruit_character = XHH_tom_first
 recruit_character = XHH_carl_vincent_krogmann
+# Puppet Leaders
+recruit_character = XHH_protectorate_leader
 # PMs
 recruit_character = XHH_hermann_ludemann
 recruit_character = XHH_spd_socialist

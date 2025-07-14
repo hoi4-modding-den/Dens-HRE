@@ -16,3 +16,17 @@ technology_sharing_group = {
 		NOT = { has_war_with = XVD }
 	}
 }
+
+technology_sharing_group = {
+
+	id = XHH_imperial_tech_sharing_group
+	name = XHH_imperial_tech_sharing_group_name
+	desc = XHH_imperial_tech_sharing_group_desc
+	picture = GFX_idea_GER_holy_roman_empire_of_the_german_nation
+	research_sharing_per_country_bonus = 0.01
+
+	available = {
+		has_country_flag = HRE_member_state
+		NOT = { has_war_with = XHH }
+	}
+}

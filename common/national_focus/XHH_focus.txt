@@ -2522,6 +2522,10 @@ focus_tree = {
 				XHH_money = 2
 				tooltip = XHH_money_effect_tt
 			}
+			hidden_effect = {
+				set_variable = { XHH_money_gain = 1 }
+				activate_mission = XHH_quarterly_money_gain
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2563,8 +2567,47 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_economic_developments
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2591,6 +2634,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
 			check_variable = {
 				tooltip = XHH_money_trigger_tt
 				var = XHH_money
@@ -2607,7 +2651,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			
+			every_country = {
+				limit = {
+					OR = {
+						tag = ROOT
+						AND = {
+							is_major = yes
+							has_country_flag = HRE_member_state
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+				add_to_tech_sharing_group = XHH_imperial_tech_sharing_group
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2640,6 +2696,7 @@ focus_tree = {
 				value = 5
 				compare = greater_than_or_equals
 			}
+			has_idea = XHH_welfare_state_idea_2
 		}
 
 		bypass = {
@@ -2650,7 +2707,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_political_power = 100
 			add_tech_bonus = {
 				name = XHH_state_funded_healthcare
 				bonus = 2
@@ -2659,6 +2715,11 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = XHH_welfare_state_idea_2
+				add_idea = XHH_welfare_state_idea_3
+			}
 
 			add_to_variable = {
 				XHH_money = -5
@@ -2736,6 +2797,12 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_to_variable = {
+				XHH_money = 5
+				tooltip = XHH_money_effect_tt
+			}
 		}
 	}
 
@@ -2748,14 +2815,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_negotiate_reduced_interventionism
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
 		}
 
 		available = {
-			
+			has_political_power > 99
 		}
 
 		bypass = {
@@ -2764,9 +2831,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			add_political_power = -100
+			add_to_variable = {
+				XHH_money_gain = 2
+				tooltip = XHH_money_gain_effect_tt
+			}
 		}
 	}
 
@@ -2779,7 +2850,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_negotiate_reduced_interventionism
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 7
@@ -2795,9 +2866,17 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			
+			custom_effect_tooltip = if_they_accept_tt
+
+			effect_tooltip = {
+				add_to_variable = {
+					XHH_money_gain = 2
+					tooltip = XHH_money_gain_effect_tt
+				}
+			}
 		}
 	}
 
@@ -2813,11 +2892,16 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			factor = 7
+			factor = 10
 		}
 
 		available = {
-			
+			check_variable = {
+				tooltip = XHH_money_trigger_tt
+				var = XHH_money
+				value = 15
+				compare = greater_than_or_equals
+			}
 		}
 
 		bypass = {
@@ -2826,9 +2910,19 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			add_to_variable = {
+				XHH_money_gain = -1
+				tooltip = XHH_money_gain_effect_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_to_variable = {
+				XHH_money = -15
+				tooltip = XHH_money_effect_tt
+			}
 		}
 	}
 
@@ -2841,19 +2935,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_record_profits
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
-			factor = 7
+			factor = 20
 		}
 
 		available = {
-			check_variable = {
-				tooltip = XHH_money_trigger_tt
-				var = XHH_money
-				value = 5
-				compare = greater_than_or_equals
-			}
 			has_government = democratic
 			OR = {
 				XHH_hermann_ludemann = { is_hired_as_advisor = yes }
@@ -2867,20 +2955,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XHH_internal_events.12
 			# EVENT: Theory of a Modern Sozialstaat
 			# become a Republic
 			# SPD: improve Welfare State Spirit
 			# USPD: unlock decisions to invade nearby Fascist Dictatorships
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_to_variable = {
-				XHH_money = -5
-				tooltip = XHH_money_effect_tt
-			}	
 		}
 	}
 
@@ -2893,19 +2974,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_record_profits
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
-			factor = 7
+			factor = 20
 		}
 
 		available = {
-			check_variable = {
-				tooltip = XHH_money_trigger_tt
-				var = XHH_money
-				value = 5
-				compare = greater_than_or_equals
-			}
 			has_government = democratic
 			XHH_fdp_liberal = { is_hired_as_advisor = yes }
 		}
@@ -2916,18 +2991,11 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XHH_internal_events.13
 			# EVENT: Market Consolidation
 			# add idea 'Trade Federation'
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_to_variable = {
-				XHH_money = -5
-				tooltip = XHH_money_effect_tt
-			}
 		}
 	}
 
@@ -2940,20 +3008,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_record_profits
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
-			factor = 7
+			factor = 20
 		}
 
 		available = {
-			check_variable = {
-				tooltip = XHH_money_trigger_tt
-				var = XHH_money
-				value = 5
-				compare = greater_than_or_equals
-			}
 			has_government = democratic
+			has_country_leader = { character = XHH_tom_first ruling_only = yes }
 			XHH_cdu_conservative = { is_hired_as_advisor = yes }
 		}
 
@@ -2963,18 +3026,11 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XHH_internal_events.14
 			# EVENT: On the Importance of Monarchy
 			# Leader gets 'Hero of the People' trait
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_to_variable = {
-				XHH_money = -5
-				tooltip = XHH_money_effect_tt
-			}
 		}
 	}
 
@@ -3208,6 +3264,10 @@ focus_tree = {
 				XHH_influence = 2
 				tooltip = XHH_influence_effect_tt
 			}
+			hidden_effect = {
+				set_variable = { XHH_influence_gain = 1 }
+				activate_mission = XHH_influence_growth
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3256,6 +3316,13 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			reverse_add_opinion_modifier = {
+				modifier = XHH_papal_relations_mended
+				target = XRO
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_to_variable = {
 				XHH_influence = 2
 				tooltip = XHH_influence_effect_tt
@@ -3279,6 +3346,12 @@ focus_tree = {
 		}
 
 		available = {
+			check_variable = {
+				tooltip = XHH_influence_trigger_tt
+				var = XHH_influence
+				value = 5
+				compare = greater_than_or_equals
+			}
 			NOT = {
 				OR = {
 					has_government = fascism
@@ -3303,7 +3376,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_to_variable = {
-				XHH_influence = 2
+				XHH_influence = -5
 				tooltip = XHH_influence_effect_tt
 			}
 		}
@@ -3337,12 +3410,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
-			custom_effect_tooltip = generic_skip_one_line_tt
-
+			add_political_power = -100
 			add_to_variable = {
-				XHH_influence = 8
-				tooltip = XHH_influence_effect_tt
+				XHH_influence_gain = 2
+				tooltip = XHH_influence_gain_effect_tt
 			}
 		}
 	}
@@ -3565,8 +3636,6 @@ focus_tree = {
 			XFT = {
 				exists = yes
 				has_capitulated = no
-				controls_state = 85
-				controls_state = 62
 				NOT = { is_ally_with = ROOT }
 			}
 		}
@@ -3574,10 +3643,14 @@ focus_tree = {
 		bypass = {
 			OR = {
 				has_war_with = XFT
-				AND = {
-					controls_state = 85
-					controls_state = 62
+				XFT = {
+					OR = {
+						exists = no
+						has_capitulated = yes
+						is_subject_of = ROOT
+					}
 				}
+				NOT = { has_idea = XHH_baltic_sea_control_dispute }
 			}
 		}
 
@@ -3587,8 +3660,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			add_state_claim = 85
 			add_state_claim = 62
+			add_state_claim = 63
+			add_state_claim = 68
+			add_state_claim = 85
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3603,6 +3678,12 @@ focus_tree = {
 					name = XHH_settle_the_score
 				}
 			}
+		}
+		bypass_effect = {
+			add_state_claim = 62
+			add_state_claim = 63
+			add_state_claim = 68
+			add_state_claim = 85
 		}
 	}
 
@@ -3665,7 +3746,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = -50
 			85 = {
 				set_demilitarized_zone = yes
 			}
@@ -3679,12 +3759,32 @@ focus_tree = {
 					days = 20
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { controls_state = 807 }
+					NOT = { ZZZ = { controls_state = 807 } }
+				}
+				807 = {
+					owner = {
+						# event
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					ZZZ = { controls_state = 807 }
+				}
+				transfer_state = 807
+			}
 		}
 	}
 
 	focus = {
-		id = XHH_prussian_military_school
-		icon = GFX_focus_GER_prussian_legacy
+		id = XHH_war_with_prussia
+		icon = GFX_focus_XHH_attack_prussia
 		prerequisite = { focus = XHH_integrate_pommern }
 		prerequisite = { focus = XHH_chaos_in_danzig }
 		#mutually_exclusive = { focus =  }
@@ -3716,14 +3816,114 @@ focus_tree = {
 		}
 
 		bypass = {
-			
+			OR = {
+				has_war_with = XPK
+				XPK = {
+					OR = {
+						exists = no
+						has_capitulated = yes
+						is_subject_of = ROOT
+					}
+				}
+			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = XPK
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_claim = 5
+			add_state_claim = 763
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			create_wargoal = {
+				target = XPK
+				type = annex_everything
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_form_prussian_protectorate
+		}
+
+		bypass_effect = {
+			add_state_claim = 5
+			add_state_claim = 763
+		}
+	}
+
+	focus = {
+		id = XHH_protect_polish_minorities
+		icon = GFX_focus_generic_polish_deal
+		prerequisite = { focus = XHH_war_with_prussia }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XHH_war_with_prussia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			XPK = {
+				is_subject_of = ROOT
+				has_autonomy_state = autonomy_XHH_protectorate
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = XHH_polish_citizenship_weaker
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XPK = {
+				add_ideas = XHH_polish_citizenship
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_prussian_military_school
+		icon = GFX_focus_GER_prussian_legacy
+		prerequisite = { focus = XHH_war_with_prussia }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_war_with_prussia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			XPK = {
+				is_subject_of = ROOT
+				has_autonomy_state = autonomy_XHH_protectorate
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = XHH_prussian_military_school
@@ -3734,19 +3934,12 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			every_state = {
-				limit = {
-					is_core_of = XPK
-					is_coastal = yes
-				}
-				add_claim_by = ROOT
-			}
+			add_ideas = XHH_prussian_militarism
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			create_wargoal = {
-				target = XPK
-				type = annex_everything
+			XPK = {
+				add_ideas = XHH_prussian_militarism
 			}
 		}
 	}
@@ -4795,7 +4988,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_fix_hessen
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_strike_at_democracy2
 		prerequisite = { focus = XHH_north_germany_united }
 		#mutually_exclusive = { focus =  }
 		x = -4
@@ -4903,7 +5096,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_war_for_thueringen
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_strike_at_democracy1
 		prerequisite = { focus = XHH_north_germany_united }
 		#mutually_exclusive = { focus =  }
 		x = 2

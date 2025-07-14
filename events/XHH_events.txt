@@ -319,7 +319,7 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { # Order restored in Danzig
 	id = XHH_internal_events.8
 	title = XHH_internal_events.8.t
 	desc = XHH_internal_events.8.desc
@@ -345,6 +345,7 @@ country_event = {
 				add_core_of = ROOT
 			}
 		}
+		hidden_effect = { 85 = { cancel_resistance = yes } }
     }
 }
 
@@ -534,8 +535,7 @@ country_event = {
 	
 	option = {
         name = XHH_internal_events.13.a
-		
-		
+		set_cosmetic_tag = XHH_trade_federation
     }
 }
 

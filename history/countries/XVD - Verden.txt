@@ -18,6 +18,15 @@ set_technology = {
 XHH = { give_guarantee = XVD }
 give_military_access = XHH
 
+add_opinion_modifier = {
+	modifier = XVD_reformation_opinion
+	target = XRO
+}
+reverse_add_opinion_modifier = {
+	modifier = XVD_reformation_opinion_reverse
+	target = XRO
+}
+
 country_lock_all_division_template = yes
 
 set_variable = { HRE_national_stance_federalism = 2 }

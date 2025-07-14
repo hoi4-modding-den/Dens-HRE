@@ -114,7 +114,10 @@ XVD_improve_agrarian_economy = {
             add_idea = XVD_agrarian_economy_5
         }
     }
-    else = {
+    else_if = {
+        limit = {
+            has_idea = XVD_agrarian_economy_5
+        }
         remove_ideas = XVD_agrarian_economy_5
     }
 }

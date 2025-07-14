@@ -328,6 +328,34 @@ ideas = {
 			}
 		}
 
+		XHH_welfare_state_idea_3 = {
+			
+			name = XHH_welfare_state_idea
+			picture = ARG_social_welfare_fund_ns
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_factor = 0.2
+				production_factory_max_efficiency_factor = 0.12
+				production_factory_efficiency_gain_factor = 0.12
+				army_morale = 2
+				experience_loss_factor = -0.15
+			}
+		}
+
 		XHH_armed_volunteer_groups = {
 			
 			picture = ast_volunteer_defence_corps
@@ -712,6 +740,69 @@ ideas = {
 			}
 		}
 
+		XHH_polish_citizenship_weaker = {
+			
+			picture = POL_april_constitution
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = 0.1
+				production_speed_buildings_factor = 0.05
+				stability_factor = -0.05
+			}
+		}
+
+		XHH_polish_citizenship = {
+			
+			picture = POL_april_constitution
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = 0.2
+				production_speed_buildings_factor = 0.1
+				stability_factor = -0.05
+			}
+		}
+
+		XHH_prussian_militarism = {
+			
+			picture = GER_fan_prussian_militarism
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				land_doctrine_cost_factor = -0.1
+				war_support_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+
 		XHH_imperial_army_training = {
 			
 			picture = generic_manpower_bonus
@@ -962,6 +1053,31 @@ ideas = {
 				political_power_factor = 0.05
 				research_speed_factor = 0.2
 				political_advisor_cost_factor = 0.4
+			}
+		}
+
+		XVD_free_city_idea = {
+			
+			picture = generic_central_management
+
+			allowed = {
+				original_tag = XVD
+			}
+
+			allowed_civil_war = {
+				has_autonomy_state = autonomy_XVD_free_city
+			}
+
+			available = {
+				has_autonomy_state = autonomy_XVD_free_city
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				production_lack_of_resource_penalty_factor = -0.25
+				industrial_capacity_factory = 0.1
 			}
 		}
 

@@ -182,7 +182,34 @@ characters = {
 
 		country_leader = {
 			ideology = nazism
+			desc = XHH_carl_vincent_krogmann_desc
 			traits = { XHH_nazi_industrialist }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+	}
+
+	XHH_protectorate_leader = {
+
+		name = XHH_protectorate_leader_name
+
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XHH_protectorate_leader
+			}
+		}
+
+		country_leader = {
+			ideology = conservatism
+			traits = { XHH_prussian_knight }
+			expire = "1960.1.1.1"
+			id = -1
+		}
+
+		country_leader = {
+			ideology = oligarchism
+			traits = { XHH_prussian_knight }
 			expire = "1960.1.1.1"
 			id = -1
 		}
@@ -201,7 +228,7 @@ characters = {
 		}
 
 		country_leader = {
-			traits = {  }
+			traits = { XHH_father_of_the_hamburg_republic }
 			ideology = socialism
 			expire = "1950.1.1.1"
 			id = -1
