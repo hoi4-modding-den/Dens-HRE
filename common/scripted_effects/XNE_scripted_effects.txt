@@ -43,7 +43,7 @@ change_tag_to_XNE = {
 		if = { limit = { has_idea = XNE_zuiderzee_1 } XNE = { add_ideas = { XNE_zuiderzee_1 } } }
 		if = { limit = { has_idea = XNE_zuiderzee_2 } XNE = { add_ideas = { XNE_zuiderzee_2 } } }
 		if = { limit = { has_idea = XNE_zuiderzee_3 } XNE = { add_ideas = { XNE_zuiderzee_3 } } }
-		if = { limit = { has_completed_focus = XNE_joint_friesland_agriculture } XNE = { add_idea = XFS_dairy_and_hide_exports } }
+		if = { limit = { has_completed_focus = XNE_joint_friesland_agriculture } XNE = { add_ideas = XFS_dairy_and_hide_exports } }
 		XNE = {
 			inherit_technology = ROOT
 			add_dynamic_modifier = {

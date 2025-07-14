@@ -53,7 +53,7 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | XBG | sprinkleskid       | sprinkleskid           |
   | <details><summary>Brandenburg</summary><ul><li>XBR<li>XSC<li>XSR<li>XSW</ul></details> | Kasastul           | kasastul               |
   | <details><summary>Marseilles</summary><ul><li>XCL<li>XSV<li>XNZ | johndoodoomayan    | johndoodoomayan        |
-  | <details><summary>Padania</summary><ul><li>XEX<li>XE0</ul></details> | IWillExplode       | i_will_explode_        | < GOAT
+  | <details><summary>Padania</summary><ul><li>XEX<li>XE0</ul></details> | IWillExplode       | i_will_explode_        | < BAD
   | XFT | Tyaramisu          | tyaramisu              |
   | <details><summary>Hamburg</summary><ul><li>XHH<li>XH1<li>XH2<li>XVD</ul></details> | Orland2            | 0rland0                |
   | XPK | PolishPartizan     | polishpartizan         |

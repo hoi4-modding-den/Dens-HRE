@@ -218,9 +218,11 @@ country_event = {
 	}
 	immediate = {
 		every_country = {
-			or = {
-				is_in_faction_with = ROOT
-				is_puppet_of = ROOT
+			limit = {
+				OR = {
+					is_in_faction_with = ROOT
+					is_puppet_of = ROOT
+				}
 			}
 			end_puppet = FROM
 			leave_faction = yes
