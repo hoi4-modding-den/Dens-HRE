@@ -17,3 +17,19 @@ country_event = {
 		set_country_flag = XBR_muchow_advisor_unlocked
     }
 }
+
+country_event = {
+	id = XBR.2
+	title = XBR.2.t
+	desc = XBR.2.d
+	
+	picture = GFX_report_event_fascist_gathering
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XBR.2.a
+		add_war_support = 0.05
+    }
+}

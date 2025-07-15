@@ -1,0 +1,78 @@
+XBR_purge_category = {
+
+	XBR_ravage_the_luftwaffe = {
+		available = {
+			original_tag = XBR
+		}
+		visible = {
+			has_character = XBR_eckhard_christian
+		}
+		icon = GFX_decision_generic_break_treaty
+		cost = XBR_purge_decision_cost
+		days_remove = 30
+		remove_effect = { 
+			hidden_effect = {
+				retire_character = XBR_eckhard_christian
+				add_to_variable = { XBR_purge_count = 1 }
+			}
+			custom_effect_tooltip = XBR_kill_eckhard_tt
+		}
+	}
+	
+	XBR_strike_at_the_ministry_of_finance = {
+		available = {
+			original_tag = XBR
+		}
+		visible = {
+			has_character = XBR_lutz_graf_schwerin_von_krosigk
+		}
+		icon = GFX_decision_generic_break_treaty
+		cost = XBR_purge_decision_cost
+		days_remove = 30
+		remove_effect = { 
+			hidden_effect = {
+				retire_character = XBR_lutz_graf_schwerin_von_krosigk
+				add_to_variable = { XBR_purge_count = 1 }
+			}
+			custom_effect_tooltip = XBR_kill_lutz_tt
+		}
+	}
+	
+	XBR_point_fingers_at_the_state_apparatus = {
+		available = {
+			original_tag = XBR
+		}
+		visible = {
+			has_character = XBR_baldur_von_schirach
+		}
+		icon = GFX_decision_generic_break_treaty
+		cost = XBR_purge_decision_cost
+		days_remove = 30
+		remove_effect = { 
+			hidden_effect = {
+				retire_character = XBR_baldur_von_schirach
+				add_to_variable = { XBR_purge_count = 1 }
+			}
+			custom_effect_tooltip = XBR_kill_baldur_tt
+		}
+	}
+	
+	XBR_question_the_elders_of_the_party = {
+		available = {
+			original_tag = XBR
+		}
+		visible = {
+			has_character = XBR_wilhelm_ohnesorge
+		}
+		icon = GFX_decision_generic_break_treaty
+		cost = XBR_purge_decision_cost
+		days_remove = 30
+		remove_effect = { 
+			hidden_effect = {
+				retire_character = XBR_wilhelm_ohnesorge
+				add_to_variable = { XBR_purge_count = 1 }
+			}
+			custom_effect_tooltip = XBR_kill_ohnesorge_tt
+		}
+	}
+}

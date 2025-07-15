@@ -315,5 +315,121 @@ characters = {
 		}
 
 	}
+	XBR_helmuth_wilberg = {
+		name = GER_helmuth_wilberg
+		portraits = {
+			army = {
+				small = GFX_portrait_GER_helmuth_wilberg_small
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = GER_helmuth_wilberg_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				air_chief_ground_support_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0.250
+			}
+		}
+	}
+	XBR_eckhard_christian = {
+		name = "Eckhard Christian"
+		portraits = {
+			army = {
+				small = GFX_idea_ernst_udet 
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = XBR_eckhard_christian_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0.250
+			}
+		}
+	}
+	XBR_baldur_von_schirach = {
+
+		name = "Baldur von Schirach"
+
+		portraits = {
+			civilian = {
+				small = GFX_GER_siegfried_kasche_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_baldur_von_schirach_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				prince_of_terror
+			}
+
+			cost = 150
+		}
+
+	}
+	XBR_wilhelm_ohnesorge = {
+
+		name = "Wilhelm Ohnesorge"
+
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_political_advisor_europe_5
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_wilhelm_ohnesorge_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				silent_workhorse
+			}
+
+			cost = 150
+		}
+
+	}
+	XBR_lutz_graf_schwerin_von_krosigk = {
+
+		name = "Lutz Graf Schwerin von Krosigk"
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_DEN_knud_kristensen_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_lutz_graf_schwerin_von_krosigk_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				financial_expert
+			}
+
+			cost = 150
+		}
+
+	}
 }
 	

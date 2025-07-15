@@ -15,3 +15,20 @@ XBR_volksgemeinschaft_category = {
 	
 	priority = 10
 }
+
+XBR_purge_category = {
+
+	icon = GFX_decision_category_generic_fascism
+	picture = GFX_decision_cat_picture_fatherland_front
+	
+	allowed = {
+		original_tag = XBR
+	}
+	
+	visible = {
+		has_completed_focus = XBR_purge_the_bureaucrats
+	}
+	
+	
+	priority = 9
+}

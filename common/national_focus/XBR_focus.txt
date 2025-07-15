@@ -11,10 +11,12 @@ focus_tree = {
 		}
 	}
 	
+	continuous_focus_position = { x = 3800 y = 1000 }
+	
 	focus = {
 		id = XBR_the_fasces_and_the_eagle
 		icon = GFX_focus_generic_fascist_propaganda
-		cost = 5
+		cost = 2
 		x = 12
 		y = 0
 
@@ -149,11 +151,286 @@ focus_tree = {
 		x = -2
 		y = 1
 		
-		completion_reward = { }
+		completion_reward = { 
+			custom_effect_tooltip = XBR_an_united_volk_against_the_parasites_tt
+			country_event = XBR.2
+		}
+	}
+	focus = {
+		id = XBR_purge_the_bureaucrats
+		icon = GFX_focus_RAJ_a_private_military
+		cost = 5
+		prerequisite = { focus = XBR_an_united_volk_against_the_parasites }
+		relative_position_id = XBR_an_united_volk_against_the_parasites
+		x = -2
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_purge_the_bureaucrats_tt
+			custom_effect_tooltip = XBR_enable_purge_decisions
+			set_variable = { XBR_purge_decision_cost = 50 }
+		}
+	}
+	focus = {
+		id = XBR_round_all_of_them_up
+		icon = GFX_focus_GER_strafbataillon
+		cost = 5
+		prerequisite = { focus = XBR_purge_the_bureaucrats }
+		relative_position_id = XBR_purge_the_bureaucrats
+		x = 1
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_round_all_of_them_up_tt
+			custom_effect_tooltip = XBR_reduce_purge_cost
+			set_variable = { XBR_purge_decision_cost = 35 }
+		}
+	}
+	focus = {
+		id = XBR_crush_the_traitors
+		icon = GFX_focus_generic_subjugation
+		cost = 5
+		prerequisite = { focus = XBR_an_united_volk_against_the_parasites }
+		relative_position_id = XBR_an_united_volk_against_the_parasites
+		x = 2
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_crush_the_traitors_tt
+			add_manpower = -5000
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = XBR_increase_sh_presence
+		icon = GFX_focus_GER_hegemony_of_the_ss
+		cost = 5
+		prerequisite = { focus = XBR_crush_the_traitors }
+		relative_position_id = XBR_crush_the_traitors
+		x = -1
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_increase_sh_presence_tt
+			if = {
+				limit = {
+					has_character = XBR_karl_ernst
+				}
+				XBR_karl_ernst = {
+					gain_xp = 250
+				}
+			}
+			if = {
+				limit = {
+					has_character = XBR_elhard_von_morozowicz
+				}
+				XBR_elhard_von_morozowicz = {
+					gain_xp = 250
+				}
+			}
+			if = {
+				limit = {
+					has_character = XBR_walter_stennes
+				}
+				XBR_walter_stennes = {
+					gain_xp = 250
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			64 = {
+				create_unit = {
+					division = "division_template =\"Schwarzhemden\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					owner = ROOT
+					count = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = XBR_strangle_the_kingpin
+		icon = GFX_focus_XBR_kill_bormann
+		cost = 2
+		prerequisite = { focus = XBR_increase_sh_presence }
+		prerequisite = { focus = XBR_round_all_of_them_up }
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = XBR_purge_count
+					value = 3
+					compare = greater_than_or_equals
+				}
+				tooltip = XBR_purge_count_higher_than_2_tt
+			}
+		}
+		relative_position_id = XBR_increase_sh_presence
+		x = -1
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_strangle_the_kingpin_tt
+			kill_ideology_leader = fascism
+			hidden_effect = {
+				add_country_leader_role = {
+					character = XBR_ernst_schlange
+					promote_leader = yes
+					country_leader = {
+						ideology = fascism_ideology
+						expire = "1965.1.1.1"
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = XBR_snpob_after_purge_long
+					name = XBR_snpob_after_purge
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = XBR_snpob_after_purge_long
+					name = XBR_snpob_after_purge
+				}
+			}
+		}
+	}
+	focus = {
+		id = XBR_total_dominance_of_the_state
+		icon = GFX_focus_GER_total_control_over_domestic_affairs
+		cost = 5
+		prerequisite = { focus = XBR_strangle_the_kingpin }
+		relative_position_id = XBR_strangle_the_kingpin
+		x = 0
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_total_dominance_of_the_state_tt
+			add_stability = 0.1
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = XBR_approach_ferdinand_porsche
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 5
+		prerequisite = { focus = XBR_total_dominance_of_the_state }
+		available = {
+			XWB = {
+				has_country_leader = {
+					character = XWB_ferdinand_porsche
+					ruling_only = yes
+				}
+			}
+		}
+
+		relative_position_id = XBR_total_dominance_of_the_state
+		x = -6
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_approach_ferdinand_porsche_tt
+		}
+	}
+	focus = {
+		id = XBR_shared_panzer_designs
+		icon = GFX_focus_generic_heavy_tank
+		cost = 5
+		prerequisite = { focus = XBR_approach_ferdinand_porsche }
+		relative_position_id = XBR_approach_ferdinand_porsche
+		x = -1
+		y = 2
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_shared_panzer_designs_tt
+		}
+	}
+	focus = {
+		id = XBR_kdf_wagen
+		icon = GFX_focus_GER_kdf_wagen
+		cost = 5
+		prerequisite = { focus = XBR_approach_ferdinand_porsche }
+		
+
+		relative_position_id = XBR_approach_ferdinand_porsche
+		x = 1
+		y = 2
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_kdf_wagen_tt
+		}
+	}
+	focus = {
+		id = XBR_prepare_for_the_southward_strike
+		icon = GFX_goal_demand_sudetenland
+		cost = 5
+		prerequisite = { focus = XBR_total_dominance_of_the_state }
+
+		relative_position_id = XBR_total_dominance_of_the_state
+		x = 0
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip = XBR_prepare_for_the_southward_strike_tt
+		}
+	}
+	focus = {
+		id = XBR_contact_our_ideological_allies_in_saxony
+		icon = GFX_focus_POL_beck_ribbentrop
+		cost = 5
+		prerequisite = { focus = XBR_prepare_for_the_southward_strike }
+
+		relative_position_id = XBR_prepare_for_the_southward_strike
+		x = -2
+		y = 1
+		
+		completion_reward = { 
+			custom_effect_tooltip =  XBR_contact_our_ideological_allies_in_saxony_tt
+		}
+	}
+	focus = {
+		id = XBR_agitate_the_masses_in_spreewald_and_sorbia
+		icon = GFX_focus_POL_riot_of_37
+		cost = 5
+		prerequisite = { focus = XBR_prepare_for_the_southward_strike }
+
+		relative_position_id = XBR_prepare_for_the_southward_strike
+		x = 0
+		y = 1
+		
+		completion_reward = { 
+			#custom_effect_tooltip = XBR_contact_our_ideological_allies_in_saxony_tt
+		}
+	}
+	focus = {
+		id = XBR_gain_the_support_of_our_own_people
+		icon = GFX_focus_generic_spread_fascism
+		cost = 5
+		prerequisite = { focus = XBR_prepare_for_the_southward_strike }
+
+		relative_position_id = XBR_prepare_for_the_southward_strike
+		x = 2
+		y = 1
+		
+		completion_reward = { 
+			#custom_effect_tooltip = XBR_contact_our_ideological_allies_in_saxony_tt
+		}
+	}
+	focus = {
+		id = XBR_strike_at_saxony
+		icon = GFX_focus_XBR_attack_saxony
+		cost = 5
+		prerequisite = { focus = XBR_gain_the_support_of_our_own_people }
+		prerequisite = { focus = XBR_agitate_the_masses_in_spreewald_and_sorbia }
+		prerequisite = { focus = XBR_contact_our_ideological_allies_in_saxony }
+
+		relative_position_id = XBR_agitate_the_masses_in_spreewald_and_sorbia
+		x = 0
+		y = 1
+		
+		completion_reward = { 
+			#custom_effect_tooltip =  XBR_contact_our_ideological_allies_in_saxony_tt
+		}
 	}
 	focus = {
 		id = XBR_whispers_in_the_shadows
-		icon = x
+		icon = GFX_focus_GER_party_chancellor_bormann
 		cost = 5
 		prerequisite = { focus = XBR_the_fasces_and_the_eagle }
 		relative_position_id = XBR_the_fasces_and_the_eagle
