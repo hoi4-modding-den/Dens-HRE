@@ -126,6 +126,7 @@ characters = {
 		country_leader = {
 			ideology = moderatism
 			traits = { XVD_friendly_bishop }
+			desc = XVD_bishop_jakob_desc
 			expire = "1960.1.1.1"
 			id = -1
 		}
@@ -229,6 +230,7 @@ characters = {
 
 		country_leader = {
 			traits = { XHH_father_of_the_hamburg_republic }
+			desc = XHH_hermann_ludemann_desc
 			ideology = socialism
 			expire = "1950.1.1.1"
 			id = -1
@@ -1140,7 +1142,7 @@ characters = {
 		}
 
 		navy_leader = {
-			traits = { navy_career_officer battleship_adherent fleet_protector }
+			traits = { navy_career_officer battleship_adherent fleet_protector XHH_has_a_cat }
 			skill = 5
 			attack_skill = 5
 			defense_skill = 3

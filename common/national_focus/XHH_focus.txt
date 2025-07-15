@@ -1283,7 +1283,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = steel
-					amount = 12
+					amount = 24
 				}
 			}
 		}
@@ -1819,6 +1819,10 @@ focus_tree = {
 					}
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XHH_abolish_the_senate_tt
 		}
 	}
 
@@ -2456,7 +2460,7 @@ focus_tree = {
 		icon = GFX_focus_NORDIC_dem_form_alliance
 		prerequisite = { focus = XHH_democracy_in_the_empire }
 		#mutually_exclusive = { focus =  }
-		x = -3
+		x = -4
 		y = 1
 		relative_position_id = XHH_democracy_in_the_empire
 
@@ -2667,6 +2671,11 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			custom_effect_tooltip = XHH_every_imperial_nation_tt
+			unlock_decision_tooltip = XHH_join_imperial_joint_research_group
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_to_variable = {
 				XHH_money = -8
 				tooltip = XHH_money_effect_tt
@@ -2796,6 +2805,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			custom_effect_tooltip = XHH_negotiate_reduced_interventionism_tt
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2857,7 +2867,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_war_with = XVE }
 		}
 
 		bypass = {
@@ -3195,7 +3205,7 @@ focus_tree = {
 		icon = GFX_focus_NORDIC_mon_selector_navy
 		prerequisite = { focus = XHH_imperial_ascension }
 		#mutually_exclusive = { focus =  }
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = XHH_imperial_ascension
 
@@ -3370,7 +3380,7 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = {
 				idea = XHH_catholic_donations_idea
-				days = 100
+				days = 500
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -3399,7 +3409,7 @@ focus_tree = {
 
 		available = {
 			has_government = neutrality
-			is_subject = no
+			has_political_power > 99
 		}
 
 		bypass = {
@@ -3424,13 +3434,13 @@ focus_tree = {
 		prerequisite = { focus = XHH_democracy_in_the_empire focus = XHH_imperial_ascension }
 		#mutually_exclusive = { focus =  }
 		x = 4
-		y = 1
+		y = 2
 		relative_position_id = XHH_democracy_in_the_empire
 
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 15
 		}
 
 		available = {
@@ -3446,6 +3456,15 @@ focus_tree = {
 				custom_trigger_tooltip = {
 					tooltip = XHH_requires_unique_path_cost_tt
 					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					is_ai = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = XHH_requires_unique_path_cost_tt
+					is_ai = yes
 				}
 			}
 			else = {
@@ -3483,6 +3502,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_flag = XHH_money_system_unlocked
+					is_ai = no
 				}
 				add_to_variable = {
 					XHH_money = -10
@@ -3492,6 +3512,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_flag = XHH_influence_system_unlocked
+					is_ai = no
 				}
 				add_to_variable = {
 					XHH_influence = -10
@@ -3506,7 +3527,7 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
@@ -3561,7 +3582,7 @@ focus_tree = {
 		icon = GFX_focus_generic_self_management
 		prerequisite = { focus = XHH_unite_the_empire }
 		#mutually_exclusive = { focus =  }
-		x = -1
+		x = 0
 		y = 2
 		relative_position_id = XHH_unite_the_empire
 
@@ -3573,29 +3594,13 @@ focus_tree = {
 
 		available = {
 			is_faction_leader = yes
+			controls_state = 56
 			XFT = {
-				OR = {
-					is_ally_with = ROOT
-					AND = {
-						all_core_state = { is_controlled_by = ROOT }
-						OR = {
-							exists = no
-							has_capitulated = yes
-						}
-					}
-				}
+				exists = no
 			}
 			XPK = {
-				OR = {
-					is_ally_with = ROOT
-					AND = {
-						all_core_state = { is_controlled_by = ROOT }
-						OR = {
-							exists = no
-							has_capitulated = yes
-						}
-					}
-				}
+				is_subject_of = ROOT
+				has_autonomy_state = autonomy_XHH_protectorate
 			}
 		}
 
@@ -3767,11 +3772,7 @@ focus_tree = {
 					NOT = { controls_state = 807 }
 					NOT = { ZZZ = { controls_state = 807 } }
 				}
-				807 = {
-					owner = {
-						# event
-					}
-				}
+				unlock_decision_tooltip = XHH_demand_gotenhafen
 			}
 			else_if = {
 				limit = {
@@ -3789,7 +3790,7 @@ focus_tree = {
 		prerequisite = { focus = XHH_chaos_in_danzig }
 		#mutually_exclusive = { focus =  }
 		x = 0
-		y = 2
+		y = 3
 		relative_position_id = XHH_settle_the_score
 
 		cost = 5
@@ -3949,7 +3950,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = XHH_mobilise_the_public }
 		#mutually_exclusive = { focus =  }
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
@@ -4018,7 +4019,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = { focus = XHH_reobtain_northern_port_cities }
 		#mutually_exclusive = { focus =  }
-		x = 1
+		x = 0
 		y = 2
 		relative_position_id = XHH_reobtain_northern_port_cities
 
@@ -4076,7 +4077,7 @@ focus_tree = {
 		icon = GFX_focus_ger_reichskommisariats
 		prerequisite = { focus = XHH_religious_divide }
 		mutually_exclusive = { focus = XHH_abolish_the_senate focus = XHH_power_to_the_senate }
-		x = 14
+		x = 15
 		y = 0
 		relative_position_id = XHH_abolish_the_senate
 
@@ -4384,7 +4385,7 @@ focus_tree = {
 				limit = {
 					has_war_support < 0.5
 				}
-				set_war_support = 0.5
+				add_war_support = 0.1
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			add_ideas = war_economy
@@ -4410,6 +4411,7 @@ focus_tree = {
 		available = {
 			has_government = fascism
 			is_subject = no
+			has_civil_war = no
 			OR = {
 				is_in_faction = no
 				is_faction_leader = yes
@@ -4554,6 +4556,83 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_integrate_the_militias
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = XHH_protect_our_sovereignty }
+		prerequisite = { focus = XHH_mobilise_society }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_protect_our_sovereignty
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_manpower = 10000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_confiscate_private_arms
+		icon = GFX_focus_AUS_raid_military_storages
+		prerequisite = { focus = XHH_integrate_the_militias }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_integrate_the_militias
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 800
+				producer = ROOT
+			}
+		}
+	}
+
+	focus = {
 		id = XHH_iron_cross_order
 		icon = GFX_focus_ger_oppose_hitler
 		prerequisite = { focus = XHH_protect_our_sovereignty }
@@ -4581,6 +4660,21 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_ideas = XHH_iron_cross_order_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_form_north_germany
+			set_country_flag = XHH_unlocked_nord_de_formable
+
+			hidden_effect = {
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						XHH_north_german_states_OR = yes
+					}
+					add_claim_by = ROOT
+				}
+			}
 		}
 	}
 
@@ -4661,11 +4755,18 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			has_government = fascism
 			is_subject = no
+			has_army_manpower = {
+				size > 100000
+			}
 			OR = {
 				XFT = {
 					exists = yes
@@ -4722,22 +4823,9 @@ focus_tree = {
 					target = XPK
 					type = annex_everything
 				}
-
-				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			
-			unlock_decision_tooltip = XHH_form_north_germany
-			set_country_flag = XHH_unlocked_nord_de_formable
-
-			hidden_effect = {
-				every_state = {
-					limit = {
-						NOT = { is_core_of = ROOT }
-						XHH_north_german_states_OR = yes
-					}
-					add_claim_by = ROOT
-				}
-			}
+			
 		}
 	}
 
@@ -4754,6 +4842,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -4804,12 +4896,15 @@ focus_tree = {
 			XVD = {
 				exists = yes
 				has_capitulated = no
-				NOT = { is_ally_with = ROOT }
+				NOT = { is_subject_of = ROOT }
 			}
 		}
 		
 		bypass = {
-			has_war_with = XVD
+			OR = {
+				has_war_with = XVD
+				XVD = { is_subject_of = ROOT }
+			}
 		}
 
 		will_lead_to_war_with = XVD
@@ -4824,6 +4919,13 @@ focus_tree = {
 				annex_country = {
 					target = XVD
 					transfer_troops = no
+				}
+			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 2
+					name = XHH_demand_annexation_of_verden
 				}
 			}
 		}
@@ -4842,6 +4944,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -4884,6 +4990,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -4897,6 +5007,7 @@ focus_tree = {
 			}
 			OR = {
 				controls_state = 63
+				controls_state = 85
 				controls_state = 5
 			}
 		}
@@ -4909,21 +5020,17 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			if = {
-				limit = {
-					807 = { owner = { tag = ZZZ} }
-				}
-				807 = { transfer_state_to = ROOT }
-			}
-			else = {
-				# event
-			}
+			add_state_claim = 807
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_demand_gotenhafen
 		}
 	}
 
 	focus = {
 		id = XHH_north_germany_united
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_XHH_form_fascist_north_germany
 		prerequisite = { focus = XHH_strike_northwest_league }
 		prerequisite = { focus = XHH_demand_annexation_of_verden }
 		prerequisite = { focus = XHH_end_brandenburg }
@@ -4999,11 +5106,18 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			has_government = fascism
 			is_subject = no
+			has_army_manpower = {
+				size > 200000
+			}
 			any_country = {
 				XHH_hessen_target = yes
 				exists = yes
@@ -5063,32 +5177,34 @@ focus_tree = {
 					}
 					hidden_effect = {
 						add_named_threat = {
-							threat = -15
+							threat = -8
 							name = XHH_justified_invasion
 						}
 					}
 				}
-
-				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
-			every_possible_country = {
-				limit = {
-					XHH_hessen_target = yes
-				}
-				every_core_state = {
-					add_claim_by = ROOT
+			hidden_effect = {
+				every_possible_country = {
+					limit = {
+						XHH_hessen_target = yes
+					}
+					every_core_state = {
+						add_claim_by = ROOT
+					}
 				}
 			}
 		}
 
 		bypass_effect = {
-			every_possible_country = {
-				limit = {
-					XHH_hessen_target = yes
-				}
-				every_core_state = {
-					add_claim_by = ROOT
+			hidden_effect = {
+				every_possible_country = {
+					limit = {
+						XHH_hessen_target = yes
+					}
+					every_core_state = {
+						add_claim_by = ROOT
+					}
 				}
 			}
 		}
@@ -5099,7 +5215,7 @@ focus_tree = {
 		icon = GFX_focus_generic_strike_at_democracy1
 		prerequisite = { focus = XHH_north_germany_united }
 		#mutually_exclusive = { focus =  }
-		x = 2
+		x = -2
 		y = 1
 		relative_position_id = XHH_north_germany_united
 
@@ -5107,16 +5223,17 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			has_government = fascism
 			is_subject = no
-			60 = { 
-				owner = {
-					NOT = { has_war_with = ROOT }
-					has_capitulated = no
-				} 
+			has_army_manpower = {
+				size > 200000
 			}
 			controls_state = 59
 		}
@@ -5129,24 +5246,20 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			if = {
-				limit = {
-					60 = { owner = { tag = ZZZ} }
-				}
-				60 = { transfer_state_to = ROOT }
-			}
-			else = {
-				# event
-			}
+			add_state_claim = 60
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_demand_thuringia
 		}
 	}
 
 	focus = {
 		id = XHH_kein_anhalt_vor_sachsen
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_XHH_attack_saxony
 		prerequisite = { focus = XHH_north_germany_united }
 		#mutually_exclusive = { focus =  }
-		x = 4
+		x = 2
 		y = 1
 		relative_position_id = XHH_north_germany_united
 
@@ -5154,11 +5267,18 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			has_government = fascism
 			is_subject = no
+			has_army_manpower = {
+				size > 200000
+			}
 			OR = {
 				XSC = {
 					exists = yes
@@ -5238,23 +5358,203 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_integrate_the_militias
-		icon = GFX_goal_generic_military_sphere
-		prerequisite = { focus = XHH_protect_our_sovereignty }
-		prerequisite = { focus = XHH_mobilise_society }
+		id = XHH_integrate_silesian_colonies
+		icon = GFX_focus_POL_reassert_silesian_claims
+		prerequisite = { focus = XHH_north_germany_united }
 		#mutually_exclusive = { focus =  }
-		x = 3
+		x = 4
 		y = 1
-		relative_position_id = XHH_protect_our_sovereignty
+		relative_position_id = XHH_north_germany_united
 
 		cost = 5
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			has_government = fascism
+			is_subject = no
+			has_army_manpower = {
+				size > 200000
+			}
+			OR = {
+				XSI = {
+					exists = yes
+					has_capitulated = no
+					NOT = { is_ally_with = ROOT }
+				}
+				XPL = {
+					exists = yes
+					has_capitulated = no
+					NOT = { is_ally_with = ROOT }
+				}
+			}
+		}
+		
+		bypass = {
+			has_war_with = XSI
+			has_war_with = XPL
+		}
+
+		will_lead_to_war_with = XSI
+		will_lead_to_war_with = XPL
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					XSI = {
+						exists = yes
+						has_capitulated = no
+						NOT = { is_ally_with = ROOT }
+					}
+					NOT = { has_wargoal_against = XSI }
+				}
+				create_wargoal = {
+					target = XSI
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					XPL = {
+						exists = yes
+						has_capitulated = no
+						NOT = { is_ally_with = ROOT }
+					}
+					NOT = { has_wargoal_against = XPL }
+				}
+				create_wargoal = {
+					target = XPL
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_the_grand_crusade
+		icon = GFX_focus_generic_total_war
+		prerequisite = { focus = XHH_fix_hessen }
+		prerequisite = { focus = XHH_war_for_thueringen }
+		prerequisite = { focus = XHH_kein_anhalt_vor_sachsen }
+		prerequisite = { focus = XHH_integrate_silesian_colonies }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 3
+		relative_position_id = XHH_north_germany_united
+
+		cost = 14.4
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			has_army_manpower = {
+				size > 500000
+			}
+		}
+		
+		bypass = {
+			XHH_controls_german_states = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			every_country = {
+				limit = {
+					any_owned_state = {
+						XHH_german_states_OR = yes
+					}
+					NOT = { original_tag = ZZZ }
+					NOT = { is_ally_with = ROOT }
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = take_claimed_state
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_owned_by = ZZZ
+						XHH_german_states_OR = yes
+						NOT = {
+							any_neighbor_state = {
+								is_controlled_by = ROOT
+							}
+						}
+					}
+					set_state_flag = XHH_seize_state_from_ZZZ
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = ZZZ
+					XHH_german_states_OR = yes
+					any_neighbor_state = {
+						is_controlled_by = ROOT
+					}
+				}
+				transfer_state_to = ROOT
+			}
+
+			custom_effect_tooltip = XHH_the_grand_crusade_tt
+
+			hidden_effect = {
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						XHH_german_states_OR = yes
+					}
+					add_claim_by = ROOT
+				}
+
+				# news_event
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_germany_united
+		icon = GFX_focus_GER_the_four_year_plan
+		prerequisite = { focus = XHH_the_grand_crusade }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_the_grand_crusade
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+			is_subject = no
+			XHH_controls_german_states = yes
 		}
 		
 		bypass = {
@@ -5263,13 +5563,44 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			add_manpower = 10000
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 1000
-				producer = ROOT
+			add_political_power = 120
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = XHH_germany
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+					XHH_german_states_OR = yes
+				}
+				add_core_of = ROOT
+				hidden_effect = { cancel_resistance = yes }
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			add_state_claim = 39
+			add_state_claim = 853
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_country_leader_trait = XHH_leader_of_germany
+
+			hidden_effect = {
+				# news_event
+
+				add_named_threat = {
+					threat = 10
+					name = XHH_germany_united
+				}
 			}
 		}
 	}

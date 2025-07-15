@@ -1,6 +1,29 @@
 add_namespace = XHH_internal_events
 add_namespace = XHH_diplo_events
 add_namespace = XHH_news_events
+add_namespace = XHH_state_seized_event
+
+country_event = {
+	id = XHH_state_seized_event.1
+	title = XHH_state_seized_event.1.t
+	desc = XHH_state_seized_event.1.desc
+	
+	trigger = {
+		ROOT = {
+			original_tag = ZZZ
+		}
+		FROM.FROM.controller = {
+			original_tag = XHH
+		}
+	}
+	is_triggered_only = yes
+	#hidden = yes
+	
+	option = {
+        name = XHH_state_seized_event.1.a
+		PREV = { transfer_state_to = FROM.FROM.controller }
+    }
+}
 
 country_event = {
 	id = XHH_internal_events.1
@@ -207,7 +230,7 @@ country_event = {
 	}
     
     is_triggered_only = yes
-    fire_only_once = yes
+    fire_only_once = no
 	
 	option = {
         name = XHH_internal_events.6.a
@@ -536,6 +559,14 @@ country_event = {
 	option = {
         name = XHH_internal_events.13.a
 		set_cosmetic_tag = XHH_trade_federation
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = XHH_trade_federation_idea
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = free_trade
     }
 }
 

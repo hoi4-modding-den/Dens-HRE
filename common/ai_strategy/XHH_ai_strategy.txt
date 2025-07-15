@@ -18,6 +18,22 @@ XHH_prioritise_naval_focused_army = {
 	}
 }
 
+XHH_ignore_anarchy = {
+	allowed = { original_tag = XHH }
+
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		mission_target = ZZZ
+		value = -1000
+	}
+}
+
 XHH_dont_bother_guaranteeing = {
 	allowed = { original_tag = XHH }
 

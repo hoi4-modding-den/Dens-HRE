@@ -172,12 +172,12 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_portrait_XHH_baltic_sea_chief_of_navy"
-		texturefile = "gfx/leaders/leader_unknown.dds"
+		texturefile = "gfx/leaders/XHH/portrait_XHH_baltic_sea_chief_of_navy.dds"
 	}
 
 	spriteType = {
 		name = "GFX_portrait_XHH_baltic_sea_chief_of_navy_small"
-		texturefile = "gfx/interface/ideas/portrait_PLACEHOLDER_small.dds"
+		texturefile = "gfx/interface/ideas/XHH/portrait_XHH_baltic_sea_chief_of_navy_small.png"
 	}
 
 	spriteType = {
@@ -281,6 +281,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_idea_XHH_ndl"
+		textureFile = "gfx/interface/ideas/XHH/idea_XHH_ndl.png"
+	}
+
+	spriteType = {
 		name = "GFX_idea_XVD_ecclesiastical_government"
 		textureFile = "gfx/interface/ideas/XHH/idea_XVD_ecclesiastical_government.png"
 	}
@@ -298,6 +303,12 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_modifiers_XHH_hamburg"
 		textureFile = "gfx/interface/state_modifiers/XHH/modifiers_XHH_hamburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_trait_XHH_has_a_cat"
+		texturefile = "gfx/interface/traits/trait_XHH_has_a_cat.dds"
+		legacy_lazy_load = no
 	}
 
 	spriteType = {
@@ -324,6 +335,43 @@ spriteTypes = {
 
 		animation = {
 			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_attack_prussia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_attack_saxony"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_attack_saxony.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_attack_saxony_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_attack_saxony.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_attack_saxony.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_attack_saxony.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -398,6 +446,43 @@ spriteTypes = {
 
 		animation = {
 			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_catholic_donations.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XHH_form_fascist_north_germany"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_form_fascist_north_germany.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XHH_form_fascist_north_germany_shine"
+		texturefile = "gfx/interface/goals/XHH/focus_XHH_form_fascist_north_germany.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_form_fascist_north_germany.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/XHH/focus_XHH_form_fascist_north_germany.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

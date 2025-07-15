@@ -1,0 +1,16 @@
+leader_traits = {
+
+	XHH_has_a_cat = { 
+		type = navy
+		trait_type = personality_trait
+	
+		modifier = {
+			naval_enemy_retreat_chance = 0.01
+		}
+		
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+}

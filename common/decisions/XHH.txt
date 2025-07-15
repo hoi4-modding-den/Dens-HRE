@@ -661,6 +661,215 @@ foreign_politics = {
 		}
 	}
 
+	XHH_demand_gotenhafen = {
+
+		priority = 1
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				controls_state = 807
+			}
+			NOT = { has_country_flag = XHH_currently_demanding_state }
+		}
+
+		visible = {
+			NOT = { controls_state = 807 }
+			OR = {
+				has_completed_focus = XHH_chaos_in_danzig
+				has_completed_focus = XHH_war_for_thueringen
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				controls_state = 807
+			}
+		}
+
+		targets_dynamic = yes
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 807
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 20
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			set_country_flag = XHH_currently_demanding_state
+		}
+
+		cancel_effect = {
+			clr_country_flag = XHH_currently_demanding_state
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					807 = {
+						is_owned_by = ZZZ
+					}
+				}
+				transfer_state = 807
+			}
+			else = {
+				807 = { save_event_target_as = demanded_prov_target }
+				FROM = {
+					country_event = {
+						id = generic.23
+						days = 3
+					}
+				}
+
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					807 = {
+						transfer_state_to = ROOT
+					}
+				}
+			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 1
+					name = XHH_demand_thuringia
+				}
+			}
+			clr_country_flag = XHH_currently_demanding_state
+		}
+	}
+
+	XHH_demand_thuringia = {
+
+		priority = 1
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				controls_state = 60
+			}
+			NOT = { has_country_flag = XHH_currently_demanding_state }
+		}
+
+		visible = {
+			NOT = { controls_state = 60 }
+			has_completed_focus = XHH_war_for_thueringen
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				controls_state = 60
+			}
+		}
+
+		targets_dynamic = yes
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 60
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 20
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		war_with_target_on_remove = yes
+
+		complete_effect = {
+			set_country_flag = XHH_currently_demanding_state
+		}
+
+		cancel_effect = {
+			clr_country_flag = XHH_currently_demanding_state
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					60 = {
+						is_owned_by = ZZZ
+					}
+				}
+				transfer_state = 60
+			}
+			else = {
+				60 = { save_event_target_as = demanded_prov_target }
+				FROM = {
+					country_event = {
+						id = generic.23
+						days = 3
+					}
+				}
+
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					60 = {
+						transfer_state_to = ROOT
+					}
+				}
+			}
+
+			hidden_effect = {
+				add_named_threat = {
+					threat = 1
+					name = XHH_demand_thuringia
+				}
+			}
+			clr_country_flag = XHH_currently_demanding_state
+		}
+	}
+
 	XHH_form_prussian_protectorate = {
 
 		priority = 100
@@ -720,6 +929,14 @@ foreign_politics = {
 					add_state_core = 5
 					transfer_state = 763
 					add_state_core = 763
+
+					load_focus_tree = {
+						tree = generic_focus
+						keep_completed = no
+						}
+
+					set_country_flag = HRE_member_state
+					add_dynamic_modifier = { modifier = HRE_member_state_spirit }
 
 					set_country_flag = XHH_protectorate_puppet
 
@@ -2232,6 +2449,10 @@ XHH_money_cat = {
 
 	XHH_quarterly_money_gain = {
 
+		priority = 10
+
+		icon = gre_paying_ifc_debt
+
 		activation = {
 			has_country_flag = XHH_money_system_unlocked
 		}
@@ -2241,8 +2462,6 @@ XHH_money_cat = {
 				always = no
 			}
 		}
-
-		icon = gre_paying_ifc_debt
 
 		days_mission_timeout = 91
 
@@ -2255,6 +2474,274 @@ XHH_money_cat = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			activate_mission = XHH_quarterly_money_gain
+		}
+	}
+
+	XHH_trade_negotiations_with_HRE_member = {
+
+		priority = 3
+
+		icon = SWI_isolate_switzerland
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				has_civil_war = no
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = XHH_negotiate_reduced_interventionism
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 9
+				}
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				has_country_flag = HRE_member_state
+				has_civil_war = no
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = XHH_trade_route_established
+					}
+					is_neighbor_of = ROOT
+				}
+				OR = {
+					XHH_hessen_target = no
+					original_tag = XL4
+					original_tag = XLH
+					original_tag = XI3
+				}
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 50
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+		remove_effect = {
+			reverse_add_opinion_modifier = {
+				target = FROM
+				modifier = XHH_trade_route_modifier
+			}
+			FROM = { set_country_flag = XHH_trade_route_established }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_to_variable = {
+				XHH_money = 2
+				tooltip = XHH_money_effect_tt
+			}
+		}
+	}
+
+	XHH_establish_branch_office_in_HRE_member = {
+
+		priority = 2
+
+		icon = generic_fundraising
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				has_civil_war = no
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+				has_country_flag = XHH_trade_route_established
+			}
+		}
+
+		visible = {
+			has_completed_focus = XHH_negotiate_reduced_interventionism
+			FROM = { 
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 9
+				}
+				has_country_flag = XHH_trade_route_established
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				has_country_flag = HRE_member_state
+				has_civil_war = no
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = XHH_branch_office_established
+					}
+					is_neighbor_of = ROOT
+				}
+				OR = {
+					XHH_hessen_target = no
+					original_tag = XL4
+					original_tag = XLH
+					original_tag = XI3
+				}
+			}
+		}
+
+		on_map_mode = map_only
+
+		targets_dynamic = yes
+
+		cost = 80
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+		remove_effect = {
+			reverse_add_opinion_modifier = {
+				target = FROM
+				modifier = XHH_trade_route_modifier
+			}
+			FROM = { set_country_flag = XHH_branch_office_established }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_to_variable = {
+				XHH_money = 2
+				tooltip = XHH_money_effect_tt
+			}
+		}
+	}
+
+	XHH_expand_trade_routes_in_HRE_member = {
+
+		priority = 1
+
+		icon = eng_ally_imperialist_coup
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				has_civil_war = no
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}
+				has_country_flag = XHH_branch_office_established
+			}
+		}
+
+		visible = {
+			has_completed_focus = XHH_negotiate_reduced_interventionism
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 9
+				}
+				has_country_flag = XHH_branch_office_established 
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				has_country_flag = HRE_member_state
+				has_civil_war = no
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = XHH_imperial_trade_route_expanded
+					}
+					is_neighbor_of = ROOT
+				}
+				OR = {
+					XHH_hessen_target = no
+					original_tag = XL4
+					original_tag = XLH
+					original_tag = XI3
+				}
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 100
+
+		fire_only_once = yes
+
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.25
+			consumer_goods_factor = 0.1
+		}
+
+		remove_effect = {
+			reverse_add_opinion_modifier = {
+				target = FROM
+				modifier = XHH_trade_route_modifier
+			}
+			FROM = { set_country_flag = XHH_imperial_trade_route_expanded }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_to_variable = {
+				XHH_money = 3
+				tooltip = XHH_money_effect_tt
+			}
 		}
 	}
 

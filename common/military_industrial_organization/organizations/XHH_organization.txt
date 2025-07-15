@@ -197,6 +197,224 @@ XHH_panzerfabrik_lueneburg = {
  
 #####################
 
+
+XHH_norddeutscher_lloyd = {
+	icon = GFX_idea_XHH_ndl
+	
+	allowed = {	
+		OR = {
+			original_tag = XHH
+			original_tag = XH1
+			original_tag = XH2
+		}
+	}
+
+	available = {
+		FROM = { owns_state = 1017 }
+	}
+
+	equipment_type = {
+		convoy_1
+	}
+
+	initial_trait = {
+		name = XHH_ndl_initial_trait
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.15
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_improved_fuel_use
+		name = XHH_mio_trait_improved_fuel_use
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x = 1 y = 1 }
+		#relative_position_id = 
+
+		#all_parents = {  }
+		
+		equipment_bonus = {
+			fuel_consumption = -0.1
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_better_production_efficiency
+		name = XHH_mio_trait_better_production_efficiency
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x = 1 y = 2 }
+		#relative_position_id = 
+
+		#all_parents = {  }
+
+		available = {
+			if = {
+				limit = {
+					OWNER = { original_tag = XHH }
+				}
+				1017 = { has_dynamic_modifier = { modifier = XHH_bremen_autonomy scope = XHH } }
+			}
+		}
+		
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	trait = {  
+		token = GER_mio_trait_shipyard_conglomerate
+		name = GER_mio_trait_shipyard_conglomerate
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		#relative_position_id = generic_mio_trait_fleet_escorts 
+
+		position = { x= 1 y = 3 } 
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_state_funding
+		name = XHH_mio_trait_state_funding
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x = 5 y = 0 }
+		#relative_position_id = 
+
+		#all_parents = {  }
+		
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.15
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_cheaper_convoys_1
+		name = XHH_mio_trait_cheaper_convoys_1
+		icon = GFX_military_industrial_organization_convoy_1
+
+		position = { x = 3 y = 1 }
+		#relative_position_id = 
+
+		all_parents = { XHH_mio_trait_state_funding }
+		
+		production_bonus = {
+			production_cost_factor = -0.1
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_cheaper_convoys_2
+		name = XHH_mio_trait_cheaper_convoys_2
+		icon = GFX_military_industrial_organization_convoy_1
+
+		position = { x = 0 y = 2 }
+		relative_position_id = XHH_mio_trait_cheaper_convoys_1
+
+		all_parents = { XHH_mio_trait_cheaper_convoys_1 }
+
+		mutually_exclusive = { XHH_mio_trait_better_production_facilities_2 }
+		
+		production_bonus = {
+			production_resource_need_factor = -0.25
+			production_cost_factor = -0.1
+		}
+
+		equipment_bonus = {
+			reliability = -0.15
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_better_production_facilities_1
+		name = XHH_mio_trait_better_production_facilities_1
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x = 7 y = 1 }
+		#relative_position_id = XHH_mio_trait_cheaper_convoys_1
+
+		all_parents = { XHH_mio_trait_state_funding }
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_better_production_facilities_2
+		name = XHH_mio_trait_better_production_facilities_2
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x = 0 y = 2 }
+		relative_position_id = XHH_mio_trait_better_production_facilities_1
+
+		all_parents = { XHH_mio_trait_better_production_facilities_1 }
+
+		mutually_exclusive = { XHH_mio_trait_cheaper_convoys_2 }
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_less_steel_use
+		name = XHH_mio_trait_less_steel_use
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x = 1 y = 1 }
+		relative_position_id = XHH_mio_trait_cheaper_convoys_1
+
+		any_parent = { XHH_mio_trait_cheaper_convoys_1 XHH_mio_trait_better_production_facilities_1 }
+		
+		production_bonus = {
+			production_resource_need_factor = -0.5
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_improved_reliability
+		name = XHH_mio_trait_improved_reliability
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x = -1 y = 1 }
+		relative_position_id = XHH_mio_trait_better_production_facilities_1
+
+		any_parent = { XHH_mio_trait_cheaper_convoys_1 XHH_mio_trait_better_production_facilities_1 }
+		
+		equipment_bonus = {
+			reliability = 0.1
+			armor_value = 0.1
+		}
+	}
+
+	trait = {
+		token = XHH_mio_trait_improved_reliability_2
+		name = XHH_mio_trait_improved_reliability_2
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x = 2 y = 1 }
+		relative_position_id = XHH_mio_trait_cheaper_convoys_2
+
+		any_parent = { XHH_mio_trait_cheaper_convoys_2 XHH_mio_trait_better_production_facilities_2 }
+		
+		equipment_bonus = {
+			reliability = 0.1
+		}
+	}
+
+}
+
 XHH_deschimag_organization = {
 	include = generic_escort_ship_organization
 	icon = GFX_idea_GER_deschimag
