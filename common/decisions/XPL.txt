@@ -1,0 +1,66 @@
+XPL_industrialisation_decisions = {
+	XPL_building_factories_in_Katowice = {
+		priority = 20
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = XPL
+		}
+
+		visible = {
+		original_tag = XPL
+		}	
+		
+		available = {
+		}
+
+		days_remove = 66
+		cost = 25
+		fire_only_once = yes
+
+		remove_effect = {
+		762 = { add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+		}
+		}
+
+		ai_will_do = {
+			base = 12
+		}
+	}
+	XPL_building_factories_in_Oppeln = {
+		priority = 20
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = XPL
+		}
+
+		visible = {
+		original_tag = XPL
+		}	
+		
+		available = {
+		}
+
+		days_remove = 66
+		cost = 25
+		fire_only_once = yes
+
+		remove_effect = {
+		762 = { add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+		}
+		}
+
+		ai_will_do = {
+			base = 12
+		}
+	}
+}

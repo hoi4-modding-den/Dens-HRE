@@ -648,4 +648,20 @@ defined_text = {
         }
         localization_key = [GetXI2LeaderPortrait]
     }
+    text = {
+        trigger = {
+            XPL = {
+                has_country_flag = HRE_current_emperor
+            }
+        }
+        localization_key = [GetXPLLeaderPortrait]
+    }
+    text = {
+        trigger = {
+            XSI = {
+                has_country_flag = HRE_current_emperor
+            }
+        }
+        localization_key = [GetXSILeaderPortrait]
+    }
 }

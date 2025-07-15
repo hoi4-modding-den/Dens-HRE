@@ -1,0 +1,62 @@
+focus_tree = {
+
+	id = XWB_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XPL
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 0 }
+
+	focus = {
+		id = XPL_cult_of_the_capital
+		icon = GFX_focus_GER_kdf_wagen
+		x = 15
+		y = 0
+		cost = 5
+		available = {
+
+		}
+		completion_reward = {
+add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+
+	focus = {
+		id = XPL_ask_for_help
+		icon = GFX_focus_GER_kdf_wagen
+		x = 15
+		y = 1
+		cost = 5
+		prerequisite = { focus = XPL_cult_of_the_capital}
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = XPL_purge_terrorists
+		icon = GFX_focus_GER_kdf_wagen
+		x = 15
+		y = 2
+		cost = 5
+		prerequisite = { focus = XPL_ask_for_help }
+		available = {
+
+		}
+		completion_reward = {
+		        country_event = {
+    id = XPL_events.3
+}
+		}
+	}
+}

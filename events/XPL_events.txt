@@ -1,0 +1,59 @@
+add_namespace = XPL_events
+news_event = {
+	id = XPL_events.1
+	title = XPL_events.1.t
+	desc = XPL_events.1.d
+	
+	picture = GFX_XPL_events_elections_news_image
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.1.a
+		trigger = { NOT = { original_tag = XPL } }
+    }
+	option = {
+        name = XPL_events.1.b
+		trigger = { IF = { original_tag = XPL } }
+    }
+}
+
+country_event = {
+	id = XPL_events.2
+	title = XPL_events.2.t
+	desc = XPL_events.2.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.2.a
+        news_event = {
+    id = XPL_events.1
+    days = 1
+}
+add_ideas = XPL_massive_famine
+mark_focus_tree_layout_dirty = yes
+    }
+}
+
+country_event = {
+	id = XPL_events.3
+	title = XPL_events.3.t
+	desc = XPL_events.3.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.3.a
+kill_ideology_leader = communism
+kill_ideology_leader = fascism
+kill_ideology_leader = democratic
+    }
+}

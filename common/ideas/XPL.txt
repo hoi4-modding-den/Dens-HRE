@@ -15,6 +15,7 @@ ideas = {
 
 			modifier = {
 				recruitable_population_factor = -0.1
+				political_power_gain = 0.3
 			}
 		}
 		XPL_huge_economic_hardships = {
@@ -48,6 +49,24 @@ ideas = {
 
 			modifier = {
 civilian_factory_use = 3
+			}
+		}
+		XPL_massive_famine = {
+
+			picture = RAJ_state_of_famine_country
+
+			allowed = {
+				original_tag = XPL
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			modifier = {
+				consumer_goods_expected_value = 0.9
+				consumer_goods_factor = 0.6
+				monthly_population = -1.0
 			}
 		}
 }
