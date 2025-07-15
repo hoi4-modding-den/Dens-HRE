@@ -4,12 +4,18 @@ XPL_industrialisation_decisions = {
 		icon = GFX_decision_eng_trade_unions_support
 
 		allowed = {
+			AND = {
 			original_tag = XPL
+			has_country_flag = XPL_industrialisation_decisions
+			}
 		}
 
 		visible = {
-		original_tag = XPL
-		}	
+		AND = {
+			original_tag = XPL
+			has_country_flag = XPL_industrialisation_decisions
+			}		
+			}	
 		
 		available = {
 		}
@@ -40,8 +46,11 @@ XPL_industrialisation_decisions = {
 		}
 
 		visible = {
-		original_tag = XPL
-		}	
+		AND = {
+			original_tag = XPL
+			has_country_flag = XPL_industrialisation_decisions
+			}		
+			}
 		
 		available = {
 		}

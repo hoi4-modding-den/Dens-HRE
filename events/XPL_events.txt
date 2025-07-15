@@ -35,6 +35,7 @@ country_event = {
     id = XPL_events.1
     days = 1
 }
+set_country_flag = XPL_massive_famines_flag
 add_ideas = XPL_massive_famine
 mark_focus_tree_layout_dirty = yes
     }
@@ -55,5 +56,6 @@ country_event = {
 kill_ideology_leader = communism
 kill_ideology_leader = fascism
 kill_ideology_leader = democratic
+add_political_power = -50
     }
 }

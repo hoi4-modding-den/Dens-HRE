@@ -20,7 +20,7 @@ focus_tree = {
 		icon = GFX_focus_GER_kdf_wagen
 		x = 15
 		y = 0
-		cost = 5
+		cost = 3
 		available = {
 
 		}
@@ -40,7 +40,8 @@ add_offsite_building = { type = industrial_complex level = 1 }
 
 		}
 		completion_reward = {
-
+			unlock_decision_category_tooltip = XPL_industrialisation_decisions
+			set_country_flag = XPL_industrialisation_decisions
 		}
 	}
 	focus = {
@@ -48,7 +49,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 		icon = GFX_focus_GER_kdf_wagen
 		x = 15
 		y = 2
-		cost = 5
+		cost = 2
 		prerequisite = { focus = XPL_ask_for_help }
 		available = {
 
@@ -59,4 +60,109 @@ add_offsite_building = { type = industrial_complex level = 1 }
 }
 		}
 	}
-}
+	focus = {
+		id = XPL_promise_of_prosperity
+		icon = GFX_focus_GER_kdf_wagen
+		x = 15
+		y = 3
+		cost = 2
+		prerequisite = { focus = XPL_purge_terrorists }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+	}
+	focus = {
+		id = XPL_solving_famines
+		icon = GFX_focus_GER_kdf_wagen
+		x = 11
+		y = 3
+		cost = 2
+		prerequisite = { focus = XPL_purge_terrorists }
+		available = {
+		has_country_flag = XPL_massive_famines_flag
+		}
+		allow_branch = {
+		has_country_flag = XPL_massive_famines_flag
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+	}
+	focus = {
+		id = XPL_fast_recovery
+		icon = GFX_focus_GER_kdf_wagen
+		x = 12
+		y = 4
+		cost = 2
+		prerequisite = { focus = XPL_solving_famines }
+		mutually_exclusive = { focus = XPL_company_plan }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+	}
+	focus = {
+		id = XPL_company_plan
+		icon = GFX_focus_GER_kdf_wagen
+		x = 10
+		y = 4
+		cost = 2
+		prerequisite = { focus = XPL_solving_famines }
+		mutually_exclusive = { focus = XPL_fast_recovery }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+	}
+	focus = {
+		id = XPL_improve_living_conditions
+		icon = GFX_focus_GER_kdf_wagen
+		x = 14
+		y = 5
+		cost = 2
+		prerequisite = { focus = XPL_fast_recovery }
+		mutually_exclusive = { focus = XPL_swear_allegance_to_capital }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+	}
+		focus = {
+		id = XPL_swear_allegance_to_capital
+		icon = GFX_focus_GER_kdf_wagen
+		x = 11
+		y = 5
+		cost = 2
+		prerequisite = { focus = XPL_solving_famines }
+		mutually_exclusive = { focus = XPL_improve_living_conditions }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+		}
+			focus = {
+		id = XPL_remove_rationing
+		icon = GFX_focus_GER_kdf_wagen
+		x = 13
+		y = 6
+		cost = 2
+		prerequisite = { focus = XPL_fast_recovery }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+		}
+	}
+	}
