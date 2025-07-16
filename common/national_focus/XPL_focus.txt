@@ -13,7 +13,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 2000 y = 0 }
+	continuous_focus_position = { x = 2100 y = 0 }
 
 	focus = {
 		id = XPL_cult_of_the_capital
@@ -118,7 +118,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 
 		}
 		completion_reward = {
-		add_stability = 0.05
+		add_stability = -0.05
 		}
 	}
 	focus = {
@@ -163,6 +163,94 @@ add_offsite_building = { type = industrial_complex level = 1 }
 		}
 		completion_reward = {
 		add_stability = 0.05
+		}
+	}
+	}
+
+##############################
+
+##############################
+
+focus_tree = {
+
+	id = XPL_coup_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 11
+			tag = XPL
+			has_country_flag = XPL_coup_detat
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 0 }
+
+	focus = {
+		id = XPL_the_great_liberation_awaits
+		icon = GFX_focus_GER_kdf_wagen
+		x = 15
+		y = 0
+		cost = 3
+		available = {
+
+		}
+		completion_reward = {
+add_stability = 0.10
+add_war_support = 0.15
+remove_ideas = 	XPL_kolonie_regime
+leave_faction = yes
+
+		}
+	}
+	focus = {
+		id = XPL_coordinating_the_movement
+		icon = GFX_focus_GER_kdf_wagen
+		x = 15
+		y = 1
+		prerequisite = { focus = XPL_the_great_liberation_awaits }
+		cost = 3
+		available = {
+
+		}
+		completion_reward = {
+remove_ideas = XPL_resistance_underground_economy
+		}
+	}
+	focus = {
+		id = XPL_erase_the_mistakes_from_the_past
+		icon = GFX_focus_GER_kdf_wagen
+		x = 17
+		y = 1
+		prerequisite = { focus = XPL_the_great_liberation_awaits }
+		cost = 3
+		available = {
+
+		}
+		completion_reward = {
+		        country_event = {
+    id = XPL_events.5
+}
+		}
+	}
+	focus = {
+		id = XPL_Glorious_nation_no_step_back
+		icon = GFX_goal_XPL_revenchist
+		x = 16
+		y = 2
+		prerequisite = {  focus = XPL_coordinating_the_movement }
+		prerequisite = { focus = XPL_erase_the_mistakes_from_the_past }
+		cost = 3
+		available = {
+
+		}
+		completion_reward = {
+		        country_event = {
+    id = XPL_events.6
+}
 		}
 	}
 	}

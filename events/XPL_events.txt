@@ -38,6 +38,7 @@ country_event = {
 set_country_flag = XPL_massive_famines_flag
 add_ideas = XPL_massive_famine
 mark_focus_tree_layout_dirty = yes
+complete_national_focus = XPL_solving_famines
     }
 }
 
@@ -57,5 +58,91 @@ kill_ideology_leader = communism
 kill_ideology_leader = fascism
 kill_ideology_leader = democratic
 add_political_power = -50
+    }
+}
+
+country_event = {
+	id = XPL_events.4
+	title = XPL_events.4.t
+	desc = XPL_events.4.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.4.a
+kill_ideology_leader = neutrality
+add_political_power = -50
+    }
+	option = {
+        name = XPL_events.4.b
+kill_ideology_leader = neutrality
+set_politics = {
+    ruling_party = neutrality
+    elections_allowed = yes
+    last_election = "1933.1.17"
+    election_frequency = 48
+    long_name = XPL_neutral_council_party_long
+    name = XPL_neutral_council_party
+}
+set_country_flag = XPL_coup_detat
+load_focus_tree = XPL_coup_focus_tree
+drop_cosmetic_tag = yes
+    }
+}
+
+country_event = {
+	id = XPL_events.5
+	title = XPL_events.5.t
+	desc = XPL_events.5.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.5.a
+remove_ideas = XPL_huge_economic_hardships
+add_political_power = 50
+    }
+}
+
+country_event = {
+	id = XPL_events.6
+	title = XPL_events.6.t
+	desc = XPL_events.6.d
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.6.a
+add_political_power = 50
+    }
+
+}
+
+news_event = {
+	id = XPL_events.7
+	title = XPL_events.7.t
+	desc = XPL_events.7.d
+	
+	picture = GFX_XPL_events_elections_news_image
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XPL_events.7.a
+		trigger = { NOT = { original_tag = XPL } }
+    }
+	option = {
+        name = XPL_events.7.b
+		trigger = { IF = { original_tag = XPL } }
     }
 }
