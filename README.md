@@ -63,6 +63,8 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | <details><summary>Tyrol</summary><ul><li>XTR<li>XLI</ul></details> | cyanparty          | cyanparty               |
   | <details><summary>Netherlands</summary><ul><li>XNE<li>XHO<li>XBT<li>XUT<li>XFS</ul></summary> | acer-xq            | ace.r                  |
   | <details> <summary> Hesse</summary> <ul><li>XLH<li>XLn<li>XHm<li>XIy</ul> \* n is 0-9, <br>m is 0,3-9, <br>y is 0-3  | greenbueller| greenbueller |
+  | XLE | playerandplayer | oscaremn |
+  | <details><summary>Silesia</summary><ul><li>XPL<li>XSI</ul></summary> | maitrejx | rafael6102 |
   
 
 </details>
