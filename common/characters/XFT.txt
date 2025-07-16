@@ -1,17 +1,18 @@
 characters = {
-	XFT_test = {
-		name = XFT_test
+	XFT_Andrzej_Schiski = {
+		name = XFT_Andrzej_Schiski
 		portraits = {
 			civilian = {
 				large = GFX_portrait_XFT_test
 			}
 		}
 		country_leader = {
-			ideology = despotism
-			expire = "1943.1.1.1"
+			ideology = liberalism
+			expire = "1960.1.1.1"
 			id = -1
 		}
 	}
+	
 	XFT_Erik_von_Kustrin = {
 		name = XFT_Erik_von_Kustrin
 		portraits = {
@@ -28,4 +29,5 @@ characters = {
 			id = -1
 		}
 	}
+	
 }

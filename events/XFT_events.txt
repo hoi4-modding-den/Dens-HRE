@@ -1,0 +1,43 @@
+#Events of Handlemagny#
+add_namespace = XFT
+
+#Death of Erik
+news_event = {
+	id = XFT.1
+	title = XFT.1.t
+	desc = XFT.1.d
+	picture = GFX_news_event_the_megali_idea_fails
+	
+	major = yes
+	fire_only_once = yes
+	
+	trigger = { tag = XFT
+	has_government = democratic
+	date > 1938.4.1
+	has_country_leader = { ruling_only = yes character = XFT_Erik_von_Kustrin }
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	option = {
+		name = XFT.1.a
+		trigger = {
+			NOT = { tag = XHH }
+			NOT = { tag = XFT }
+		}
+	}
+	option = {
+		name = XFT.1.b
+		trigger = {
+			tag = XHH
+		}
+	}
+	option = {
+		name = XFT.1.c
+		promote_character = XFT_Andrzej_Schiski
+		trigger = {
+			tag = XFT
+		}
+	}
+}
