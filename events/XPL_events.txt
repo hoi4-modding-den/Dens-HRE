@@ -75,6 +75,9 @@ country_event = {
         name = XPL_events.4.a
 kill_ideology_leader = neutrality
 add_political_power = -50
+ai_chance = {
+    base = 0
+}
     }
 	option = {
         name = XPL_events.4.b
@@ -90,6 +93,9 @@ set_politics = {
 set_country_flag = XPL_coup_detat
 load_focus_tree = XPL_coup_focus_tree
 drop_cosmetic_tag = yes
+ai_chance = {
+    base = 80
+}
     }
 }
 

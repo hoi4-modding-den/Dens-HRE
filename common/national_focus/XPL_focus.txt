@@ -31,7 +31,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 
 	focus = {
 		id = XPL_ask_for_help
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_RAJ_trickle_down_economics
 		x = 15
 		y = 1
 		cost = 5
@@ -46,7 +46,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 	focus = {
 		id = XPL_purge_terrorists
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_RAJ_a_private_military
 		x = 15
 		y = 2
 		cost = 2
@@ -62,7 +62,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 	focus = {
 		id = XPL_promise_of_prosperity
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_RAJ_tryst_with_destiny_hand
 		x = 15
 		y = 3
 		cost = 2
@@ -76,7 +76,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 	focus = {
 		id = XPL_solving_famines
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_generic_reinforcing_the_supply_network
 		x = 11
 		y = 3
 		cost = 2
@@ -93,7 +93,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 	focus = {
 		id = XPL_fast_recovery
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_generic_welfare
 		x = 12
 		y = 4
 		cost = 2
@@ -108,7 +108,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 	focus = {
 		id = XPL_company_plan
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_POL_habsburg
 		x = 10
 		y = 4
 		cost = 2
@@ -123,7 +123,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 	focus = {
 		id = XPL_improve_living_conditions
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_generic_field_hostpital
 		x = 14
 		y = 5
 		cost = 2
@@ -138,7 +138,7 @@ add_offsite_building = { type = industrial_complex level = 1 }
 	}
 		focus = {
 		id = XPL_swear_allegance_to_capital
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_generic_bad_medical
 		x = 11
 		y = 5
 		cost = 2
@@ -165,11 +165,29 @@ add_offsite_building = { type = industrial_complex level = 1 }
 		add_stability = 0.05
 		}
 	}
+			focus = {
+		id = XPL_famine_fixed
+		icon = GFX_focus_generic_farmland
+		x = 11
+		y = 7
+		cost = 2
+		prerequisite = { focus = XPL_remove_rationing focus = XPL_company_plan }
+		available = {
+
+		}
+		completion_reward = {
+		add_stability = 0.05
+				        country_event = {
+    id = XPL_events.4
+}
+remove_ideas = XPL_massive_famine
+		}
+	}
 	}
 
-##############################
-
-##############################
+############################################################################################################################################################
+#      :3         :3                     																												   #
+############################################################################################################################################################
 
 focus_tree = {
 
@@ -187,12 +205,12 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 2000 y = 0 }
+	continuous_focus_position = { x = 2500 y = 0 }
 
 	focus = {
 		id = XPL_the_great_liberation_awaits
-		icon = GFX_focus_GER_kdf_wagen
-		x = 15
+		icon = GFX_focus_POL_polish_revanchism
+		x = 16
 		y = 0
 		cost = 3
 		available = {
@@ -208,7 +226,7 @@ leave_faction = yes
 	}
 	focus = {
 		id = XPL_coordinating_the_movement
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_POL_beck_ribbentrop
 		x = 15
 		y = 1
 		prerequisite = { focus = XPL_the_great_liberation_awaits }
@@ -222,7 +240,7 @@ remove_ideas = XPL_resistance_underground_economy
 	}
 	focus = {
 		id = XPL_erase_the_mistakes_from_the_past
-		icon = GFX_focus_GER_kdf_wagen
+		icon = GFX_focus_POL_riot_of_37
 		x = 17
 		y = 1
 		prerequisite = { focus = XPL_the_great_liberation_awaits }
@@ -251,6 +269,81 @@ remove_ideas = XPL_resistance_underground_economy
 		        country_event = {
     id = XPL_events.6
 }
+	unlock_decision_category_tooltip = XPL_poznan_decisions
+	set_country_flag = XPL_poznan_decisions
+		}
+	}
+	focus = {
+		id = XPL_seizing_stolen_materials
+		icon = GFX_goal_POL_revenchist
+		x = 16
+		y = 3
+		prerequisite = {  focus = XPL_Glorious_nation_no_step_back }
+		cost = 3
+		available = {
+
+		}
+		completion_reward = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 254
+    producer = XPL
+}
+
+		}
+	}
+	focus = {
+		id = XPL_create_the_university_of_silesia
+		icon = GFX_goal_POL_revenchist
+		x = 14
+		y = 4
+		prerequisite = {  focus = XPL_seizing_stolen_materials }
+		cost = 5
+		available = {
+
+		}
+		completion_reward = {
+add_research_slot = 1
+		}
+	}
+	focus = {
+		id = XPL_open_the_Opole_protection_industries
+		icon = GFX_goal_POL_revenchist
+		x = 16
+		y = 4
+		prerequisite = {  focus = XPL_seizing_stolen_materials }
+		cost = 5
+		available = {
+
+		}
+		completion_reward = {
+add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+		}
+	}
+	focus = {
+		id = XPL_liberate_poznan
+		icon = GFX_goal_POL_revenchist
+		x = 20
+		y = 3
+		prerequisite = {  focus = XPL_Glorious_nation_no_step_back }
+		cost = 5
+		available = {
+		check_variable = {
+    var = XPL_poznan_support
+    value = 50
+    compare = greater_than_or_equals
+}
+		}
+		completion_reward = {
+declare_war_on = {
+    target = XSI
+    type = annex_everything
+}
+86 = { set_state_controller_to = XPL }
 		}
 	}
 	}

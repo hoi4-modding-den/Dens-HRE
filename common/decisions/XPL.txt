@@ -73,3 +73,43 @@ XPL_industrialisation_decisions = {
 		}
 	}
 }
+
+XPL_poznan_decisions = {
+	XPL_informing_poznanians = {
+		priority = 20
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			AND = {
+			original_tag = XPL
+			has_country_flag = XPL_industrialisation_decisions
+			}
+		}
+
+		visible = {
+		AND = {
+			original_tag = XPL
+			has_country_flag = XPL_poznan_decisions
+			}		
+			}	
+		
+		available = {
+		}
+
+		days_remove = 5
+		cost = 25
+		fire_only_once = no
+
+		remove_effect = {
+			add_to_variable = {
+    var = XPL_poznan_support
+    value = 10
+    tooltip = add_100_to_var_tt
+}
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+	}
+}
