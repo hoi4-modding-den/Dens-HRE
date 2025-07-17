@@ -790,6 +790,7 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.05
 			army_experience = 50
+			set_rule = { can_send_volunteers = yes }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1084,7 +1085,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_increase_army_budget
-		icon = GFX_focus_generic_military_industry
+		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = XHH_prioritise_noble_estates }
 		prerequisite = { focus = XHH_support_the_army }
 		#mutually_exclusive = { focus =  }
@@ -2436,9 +2437,20 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			swap_ideas = {
-				remove_idea = XHH_freedom_in_democracy
-				add_idea = XHH_freedom_in_democracy_2
+			if = {
+				limit = {
+					has_idea = XHH_german_tradition
+				}
+				swap_ideas = {
+					remove_idea = XHH_german_tradition
+					add_idea = XHH_freedom_in_democracy
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = XHH_freedom_in_democracy
+					add_idea = XHH_freedom_in_democracy_2
+				}
 			}
 
 			if = {
@@ -2546,7 +2558,7 @@ focus_tree = {
 		icon = GFX_focus_POL_complete_april_constitution
 		prerequisite = { focus = XHH_the_venice_of_the_north }
 		#mutually_exclusive = { focus =  }
-		x = -5
+		x = -4
 		y = 1
 		relative_position_id = XHH_the_venice_of_the_north
 
@@ -2638,13 +2650,13 @@ focus_tree = {
 		}
 
 		available = {
-			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
 			check_variable = {
 				tooltip = XHH_money_trigger_tt
 				var = XHH_money
 				value = 8
 				compare = greater_than_or_equals
 			}
+			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
 		}
 
 		bypass = {
@@ -2753,14 +2765,13 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = { has_government = neutrality }
-			amount_research_slots < 8
 			check_variable = {
 				tooltip = XHH_money_trigger_tt
 				var = XHH_money
 				value = 12
 				compare = greater_than_or_equals
 			}
+			amount_research_slots < 8
 		}
 
 		available_if_capitulated = no
@@ -2878,6 +2889,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			XVE = {
+				country_event = { id = XHH_diplo_events.23 days = 3 }
+			}
 			
 			custom_effect_tooltip = if_they_accept_tt
 
@@ -2885,6 +2899,12 @@ focus_tree = {
 				add_to_variable = {
 					XHH_money_gain = 2
 					tooltip = XHH_money_gain_effect_tt
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				XVE = {
+					add_ideas = XHH_venice_trade_deal
 				}
 			}
 		}
@@ -2909,7 +2929,7 @@ focus_tree = {
 			check_variable = {
 				tooltip = XHH_money_trigger_tt
 				var = XHH_money
-				value = 15
+				value = 10
 				compare = greater_than_or_equals
 			}
 		}
@@ -2922,15 +2942,16 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = 80
 			add_to_variable = {
-				XHH_money_gain = -1
+				XHH_money_gain = 1
 				tooltip = XHH_money_gain_effect_tt
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_to_variable = {
-				XHH_money = -15
+				XHH_money = -10
 				tooltip = XHH_money_effect_tt
 			}
 		}
@@ -2972,6 +2993,8 @@ focus_tree = {
 			# become a Republic
 			# SPD: improve Welfare State Spirit
 			# USPD: unlock decisions to invade nearby Fascist Dictatorships
+
+			custom_effect_tooltip = XHH_WIP_TT
 		}
 	}
 
@@ -3004,8 +3027,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XHH_internal_events.13
-			# EVENT: Market Consolidation
-			# add idea 'Trade Federation'
 		}
 	}
 
@@ -3025,7 +3046,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_government = democratic
 			has_country_leader = { character = XHH_tom_first ruling_only = yes }
 			XHH_cdu_conservative = { is_hired_as_advisor = yes }
 		}
@@ -3039,8 +3059,52 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XHH_internal_events.14
-			# EVENT: On the Importance of Monarchy
-			# Leader gets 'Hero of the People' trait
+		}
+	}
+
+	focus = {
+		id = XHH_found_the_german_confederation
+		icon = GFX_focus_GER_european_confederation
+		prerequisite = { focus = XHH_invest_in_workers focus = XHH_invest_in_middle_class focus = XHH_invest_in_farmers }
+		prerequisite = { focus = XHH_military_reformation }
+		#mutually_exclusive = { focus =  }
+		x = 5
+		y = 3
+		relative_position_id = XHH_invest_in_workers
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = democratic
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XHH_german_confederation
+			}
+			else = {
+				create_faction = XHH_german_confederation
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_category_tooltip = XHH_german_confederation_cat
+			unlock_decision_tooltip = XHH_unite_hessen
 		}
 	}
 
@@ -3149,7 +3213,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_imperial_ascension
-		icon = GFX_focus_POL_habsburg
+		icon = GFX_focus_ger_revive_kaiserreich
 		prerequisite = { focus = XHH_reichsbank_financing }
 		prerequisite = { focus = XHH_council_of_nobles }
 		#mutually_exclusive = { focus =  }
@@ -3181,9 +3245,20 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			swap_ideas = {
-				remove_idea = XHH_german_tradition
-				add_idea = XHH_german_tradition_2
+			if = {
+				limit = {
+					has_idea = XHH_freedom_in_democracy
+				}
+				swap_ideas = {
+					remove_idea = XHH_freedom_in_democracy
+					add_idea = XHH_german_tradition
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = XHH_german_tradition
+					add_idea = XHH_german_tradition_2
+				}
 			}
 
 			if = {
@@ -3393,12 +3468,198 @@ focus_tree = {
 	}
 
 	focus = {
-		id = XHH_imperial_ambitions
-		icon = GFX_focus_XHH_imperial_ambitions
+		id = XHH_imperial_economic_Support
+		icon = GFX_focus_RAJ_special_economic_zones
 		prerequisite = { focus = XHH_the_empire_of_the_seas }
 		#mutually_exclusive = { focus =  }
-		x = 1
-		y = 3
+		x = 4
+		y = 1
+		relative_position_id = XHH_the_empire_of_the_seas
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			check_variable = {
+				tooltip = XHH_influence_trigger_tt
+				var = XHH_influence
+				value = 8
+				compare = greater_than_or_equals
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_imperial_economic_Support
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_to_variable = {
+				XHH_influence = -8
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_scientific_cooperation
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = XHH_imperial_economic_Support }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_imperial_economic_Support
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			check_variable = {
+				tooltip = XHH_influence_trigger_tt
+				var = XHH_influence
+				value = 8
+				compare = greater_than_or_equals
+			}
+			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = ROOT
+						AND = {
+							is_major = yes
+							has_country_flag = HRE_member_state
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+				add_to_tech_sharing_group = XHH_imperial_tech_sharing_group
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XHH_every_imperial_nation_tt
+			unlock_decision_tooltip = XHH_join_imperial_joint_research_group
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_to_variable = {
+				XHH_influence = -8
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_scientific_investment
+		icon = GFX_focus_generic_university_2
+		prerequisite = { focus = XHH_imperial_scientific_cooperation }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_imperial_scientific_cooperation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			check_variable = {
+				tooltip = XHH_influence_trigger_tt
+				var = XHH_influence
+				value = 12
+				compare = greater_than_or_equals
+			}
+			amount_research_slots < 8
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_to_variable = {
+				XHH_influence = -12
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_increase_imperial_influence
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = XHH_the_empire_of_the_seas }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
 		relative_position_id = XHH_the_empire_of_the_seas
 
 		cost = 5
@@ -3409,7 +3670,6 @@ focus_tree = {
 
 		available = {
 			has_government = neutrality
-			has_political_power > 99
 		}
 
 		bypass = {
@@ -3418,13 +3678,269 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = -100
+			custom_effect_tooltip = XHH_increase_imperial_influence_tt
+			unlock_decision_tooltip = XHH_get_civs
+			unlock_decision_tooltip = XHH_get_mils
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_to_variable = {
-				XHH_influence_gain = 2
+				XHH_influence = 5
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_guard_corps
+		icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = XHH_the_empire_of_the_seas }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = XHH_the_empire_of_the_seas
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = -5000
+			set_rule = { can_send_volunteers = yes }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_to_variable = {
+				XHH_influence = 2
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_gerrymandering
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = XHH_increase_imperial_influence focus = XHH_imperial_guard_corps }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_increase_imperial_influence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+			num_of_controlled_states > 3
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XHH_gerrymandering_tt
+			add_to_variable = {
+				XHH_influence = num_controlled_states
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_integrate_hre_volunteer_corps
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = XHH_imperial_guard_corps }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_imperial_guard_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			check_variable = {
+				tooltip = XHH_influence_trigger_tt
+				var = XHH_influence
+				value = 5
+				compare = greater_than_or_equals
+			}
+			has_government = neutrality
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			unlock_decision_tooltip = XHH_get_manpower
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_to_variable = {
+				XHH_influence = -5
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_in_service_of_the_empire
+		icon = GFX_focus_GER_glory_to_the_imperial_army
+		prerequisite = { focus = XHH_gerrymandering focus = XHH_integrate_hre_volunteer_corps }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_integrate_hre_volunteer_corps
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_to_variable = {
+				XHH_influence_gain = 1
 				tooltip = XHH_influence_gain_effect_tt
 			}
+
+			custom_effect_tooltip = XHH_WIP_TT
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_ambitions
+		icon = GFX_focus_XHH_imperial_ambitions
+		prerequisite = { focus = XHH_gerrymandering }
+		prerequisite = { focus = XHH_in_service_of_the_empire }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 4
+		relative_position_id = XHH_the_empire_of_the_seas
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			check_variable = {
+				tooltip = XHH_influence_trigger_tt
+				var = XHH_influence
+				value = 15
+				compare = greater_than_or_equals
+			}
+			has_government = neutrality
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_to_variable = {
+				XHH_influence = -15
+				tooltip = XHH_influence_effect_tt
+			}
+
+			custom_effect_tooltip = XHH_WIP_TT
+		}
+	}
+
+	focus = {
+		id = XHH_imperial_german_alliance
+		icon = GFX_focus_GER_mitteleuropa
+		prerequisite = { focus = XHH_imperial_ambitions }
+		prerequisite = { focus = XHH_military_reformation }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 3
+		relative_position_id = XHH_imperial_ambitions
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = neutrality
+			is_subject = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XHH_german_imperial_league
+			}
+			else = {
+				create_faction = XHH_german_imperial_league
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_category_tooltip = XHH_german_confederation_cat
+			unlock_decision_tooltip = XHH_unite_hessen
 		}
 	}
 
@@ -3434,7 +3950,7 @@ focus_tree = {
 		prerequisite = { focus = XHH_democracy_in_the_empire focus = XHH_imperial_ascension }
 		#mutually_exclusive = { focus =  }
 		x = 4
-		y = 2
+		y = 1
 		relative_position_id = XHH_democracy_in_the_empire
 
 		cost = 5
@@ -3539,14 +4055,11 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			OR = {
-				is_in_faction = no
-				is_faction_leader = yes
-			}
+			is_in_faction = no
 		}
 
 		bypass = {
-			
+			is_faction_leader = yes
 		}
 
 		available_if_capitulated = no
@@ -3602,6 +4115,7 @@ focus_tree = {
 				is_subject_of = ROOT
 				has_autonomy_state = autonomy_XHH_protectorate
 			}
+			XHH_is_current_emperor = no
 		}
 
 		bypass = {
@@ -3612,17 +4126,32 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			random_country = {
+				limit = {
+					XHH_is_current_emperor = yes
+				}
+				# country_event
+				# Hamburg demands more autonomy
+			}	
+			custom_effect_tooltip = if_they_accept_tt
 			
+			effect_tooltip = {
+				add_political_power = 50
+				# add_ideas = 
+			}
+
+			custom_effect_tooltip = XHH_WIP_TT
 		}
 	}
 
 	focus = {
 		id = XHH_settle_the_score
 		icon = GFX_goal_generic_occupy_states_coastal
-		prerequisite = { focus = XHH_mobilise_the_public }
+		prerequisite = { focus = XHH_unite_the_empire }
+		prerequisite = { focus = XHH_reobtain_northern_port_cities }
 		#mutually_exclusive = { focus =  }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = XHH_mobilise_the_public
 
 		cost = 10
@@ -3790,7 +4319,7 @@ focus_tree = {
 		prerequisite = { focus = XHH_chaos_in_danzig }
 		#mutually_exclusive = { focus =  }
 		x = 0
-		y = 3
+		y = 2
 		relative_position_id = XHH_settle_the_score
 
 		cost = 5
@@ -3872,9 +4401,12 @@ focus_tree = {
 		}
 
 		available = {
-			XPK = {
-				is_subject_of = ROOT
-				has_autonomy_state = autonomy_XHH_protectorate
+			OR = {
+				XPK = {
+					is_subject_of = ROOT
+					has_autonomy_state = autonomy_XHH_protectorate
+				}
+				807 = { is_core_of = ROOT }
 			}
 		}
 
@@ -3888,10 +4420,160 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = XHH_polish_citizenship_weaker
 
+			if = {
+				limit = {
+					XPK = {
+						is_subject_of = ROOT
+						has_autonomy_state = autonomy_XHH_protectorate
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				XPK = {
+					add_ideas = XHH_polish_citizenship
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_military_reformation
+		icon = GFX_focus_ger_oppose_hitler
+		prerequisite = { focus = XHH_war_with_prussia }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_war_with_prussia
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			OR = {
+				has_completed_focus = XHH_doctrines_of_offence
+				has_completed_focus = XHH_doctrines_of_defence
+			}
+			has_war = no
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 50
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			XPK = {
-				add_ideas = XHH_polish_citizenship
+			add_ideas = XHH_modernised_army
+		}
+	}
+
+	focus = {
+		id = XHH_secure_thuringia
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = XHH_military_reformation }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_military_reformation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 7
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			controls_state = 59
+		}
+		
+		bypass = {
+			controls_state = 60
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_claim = 60
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_demand_thuringia
+		}
+	}
+
+	focus = {
+		id = XHH_end_the_brandenburg_dictatorship
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = XHH_military_reformation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_military_reformation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 7
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			XBR = {
+				exists = yes
+				has_capitulated = no
+				NOT = { is_ally_with = ROOT }
+				NOT = { has_government = democratic }
+			}
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = XBR
+				XBR = {
+					OR = {
+						exists = no
+						has_capitulated = yes
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		bypass_effect = {
+			add_state_claim = 64
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = XBR
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_claim = 64
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			create_wargoal = {
+				target = XBR
+				type = annex_everything
 			}
 		}
 	}
@@ -3912,9 +4594,12 @@ focus_tree = {
 		}
 
 		available = {
-			XPK = {
-				is_subject_of = ROOT
-				has_autonomy_state = autonomy_XHH_protectorate
+			OR = {
+				XPK = {
+					is_subject_of = ROOT
+					has_autonomy_state = autonomy_XHH_protectorate
+				}
+				763 = { is_core_of = ROOT }
 			}
 		}
 
@@ -3937,10 +4622,18 @@ focus_tree = {
 
 			add_ideas = XHH_prussian_militarism
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					XPK = {
+						is_subject_of = ROOT
+						has_autonomy_state = autonomy_XHH_protectorate
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			XPK = {
-				add_ideas = XHH_prussian_militarism
+				XPK = {
+					add_ideas = XHH_prussian_militarism
+				}
 			}
 		}
 	}
@@ -4068,6 +4761,310 @@ focus_tree = {
 			mio:XHH_kriegsmarinewerft_wilhelmshaven_organization = {
 				add_mio_size = 1
 				add_mio_funds_gain_factor = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_sail_the_high_seas
+		icon = GFX_focus_GER_graf_zeppelin
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_found_the_german_confederation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 50
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					navy_experience = 25
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_sail_the_high_seas
+				bonus = 1
+				uses = 3
+				category = naval_equipment
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					add_tech_bonus = {
+						name = XHH_sail_the_high_seas
+						bonus = 0.5
+						uses = 3
+						category = naval_equipment
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_german_airforce
+		icon = GFX_focus_IRQ_fligerfuhrer_irak
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XHH_found_the_german_confederation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			air_experience = 50
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					air_experience = 25
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_german_airforce
+				bonus = 1
+				uses = 3
+				category = air_equipment
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					add_tech_bonus = {
+						name = XHH_german_airforce
+						bonus = 0.5
+						uses = 3
+						category = air_equipment
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_the_two_german_realms
+		icon = GFX_focus_GER_brothers_in_arms
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = 5
+		y = 2
+		relative_position_id = XHH_found_the_german_confederation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				add_ideas = XHH_the_german_realms_fake
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XHH_the_german_realms_fake_tt
+
+			hidden_effect = {
+				add_ideas = XHH_the_german_realms
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_compromise_with_local_monarchs
+		icon = GFX_focus_GER_monarchy_compromise
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XHH_imperial_german_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_possible_country = {
+				limit = {
+					NOT = {
+						OR = {
+							original_tag = XH1
+							original_tag = XH2
+						}
+					}
+					NOT = { has_country_flag = HRE_is_republic }
+					OR = {
+						AND = {
+							exists = no
+							any_core_state = {
+								is_owned_by = ROOT
+							}
+						}
+						is_subject_of = ROOT
+					}
+				}
+				every_core_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_dynamic_modifier = {
+						scope = ROOT
+						modifier = XHH_regional_monarchy
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_board_of_weapons_development
+		icon = GFX_focus_GER_wunderwaffe
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_imperial_german_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.25
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 0.25
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_special_projects_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					add_ideas = XHH_special_projects_idea
+				}
 			}
 		}
 	}
@@ -4248,6 +5245,8 @@ focus_tree = {
 			}
 
 			# leads to Hanover and Mecklenburg rebelling, Hanover will become a puppet shortly after
+			
+			# custom_effect_tooltip = XHH_WIP_TT Maybe? Probably wont have any time left
 		}
 	}
 
@@ -4933,7 +5932,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_end_brandenburg
-		icon = GFX_focus_GER_fuhrerprinzip_bormann
+		icon = GFX_goal_demand_sudetenland
 		prerequisite = { focus = XHH_strike_prussia }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -5177,7 +6176,7 @@ focus_tree = {
 					}
 					hidden_effect = {
 						add_named_threat = {
-							threat = -8
+							threat = -7
 							name = XHH_justified_invasion
 						}
 					}
@@ -5531,7 +6530,7 @@ focus_tree = {
 					add_claim_by = ROOT
 				}
 
-				# news_event
+				news_event = { id = XHH_news_events.10 hours = 3 }
 			}
 		}
 	}
@@ -5595,7 +6594,7 @@ focus_tree = {
 			add_country_leader_trait = XHH_leader_of_germany
 
 			hidden_effect = {
-				# news_event
+				news_event = { id = XHH_news_events.11 hours = 3 }
 
 				add_named_threat = {
 					threat = 10
@@ -6355,6 +7354,10 @@ focus_tree = {
 				uses = 2
 				category = cat_marines_doctrine
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_marine_corps_idea
 		}
 	}
 
@@ -6663,7 +7666,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_imperial_resource_acquisition
-		icon = GFX_focus_ger_revive_kaiserreich
+		icon = GFX_focus_POL_habsburg
 		#prerequisite = { focus = XHH_open_hamburger_senat }
 		#mutually_exclusive = { focus =  }
 		x = 25

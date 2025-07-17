@@ -1,3 +1,25 @@
+XHH_german_confederation_cat = {
+	icon = generic_democracy
+
+	picture = GFX_decision_cat_picture_unite_germany
+
+	allowed = {
+		original_tag = XHH
+	}
+
+	visible = {
+		OR = {
+			has_completed_focus = XHH_found_the_german_confederation
+			has_completed_focus = XHH_imperial_german_alliance
+		}
+		is_faction_leader = yes
+	}
+
+	visible_when_empty = yes
+
+	priority = 99
+}
+
 XHH_chartered_colonial_companies = {
 	icon = GER_seize_gold_reserves
 
@@ -40,7 +62,7 @@ XHH_imperial_diplomacy = {
 }
 
 XHH_money_cat = {
-	icon = generic_economy
+	icon = generic_trade
 
 	allowed = {
 		original_tag = XHH

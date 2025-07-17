@@ -336,7 +336,7 @@ country_event = {
 		hidden_effect = {
 			news_event = {
 				id = XHH_news_events.5
-				hours = 6
+				days = 2
 			}
 		}
     }
@@ -581,9 +581,8 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-        name = XHH_internal_events.14.a
-		
-		
+        name = XHH_internal_events.14.a		
+		add_country_leader_trait = XHH_prince_of_the_people
     }
 }
 
@@ -1125,6 +1124,391 @@ country_event = { # Annex XVD // Refuses
 
 }
 
+country_event = { # XHH demanded we be annexed by XLH
+	id = XHH_diplo_events.16
+	title = XHH_diplo_events.16.t
+	desc = XHH_diplo_events.16.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.16.a
+		trigger = {
+			NOT = { 
+				has_opinion = {
+					target = FROM
+					value = 150
+				}
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_in_faction = no
+				factor = 2
+			}
+			modifier = {
+				is_in_faction_with = FROM
+				factor = 5
+			}
+			modifier = {
+				is_in_faction = yes
+				NOT = { is_in_faction_with = FROM }
+				factor = 0.5
+			}
+		}
+		FROM = { country_event = { id = XHH_diplo_events.17 days = 3 random_days = 2 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = { 
+			XLH = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+
+	option = {
+		name = XHH_diplo_events.16.b
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { is_subject_of = FROM }
+					NOT = { is_subject_of = XLH }
+				}
+				is_ai = no
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				is_in_faction = yes
+				NOT = { is_in_faction_with = FROM }
+				factor = 2
+			}
+		}
+		FROM = { country_event = { id = XHH_diplo_events.18 days = 3 random_days = 2 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = { 
+			FROM = { 
+				create_wargoal = {
+					type = annex_everything
+					target = ROOT
+				}
+			}
+			XLH = { 
+				create_wargoal = {
+					type = annex_everything
+					target = ROOT
+				}
+			}
+		}
+	}
+
+}
+
+country_event = { # XHH demanded we be annexed by XLH // accepted
+	id = XHH_diplo_events.17
+	title = XHH_diplo_events.17.t
+	desc = XHH_diplo_events.17.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.17.a
+		ai_chance = {
+			factor = 1
+		}
+		every_other_country = {
+			limit = {
+				is_subject_of = FROM
+			}
+			XLH = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+		}
+		XLH = {
+			annex_country = {
+				target = FROM
+				transfer_troops = yes
+			}
+		}
+	}
+
+}
+
+country_event = { # XHH demanded we be annexed by XLH // refused
+	id = XHH_diplo_events.18
+	title = XHH_diplo_events.18.t
+	desc = XHH_diplo_events.18.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.18.a
+		ai_chance = {
+			factor = 1
+		}
+		if = {
+			limit = {
+				FROM = { 
+					OR = { 
+						is_subject_of = ROOT 
+						is_subject_of = XLH 
+					} 
+				}
+			}
+			set_autonomy = {
+				target = FROM
+				autonomous_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		if = {
+			limit = {
+				FROM = { is_in_faction_with = ROOT }
+			}
+			remove_from_faction = FROM
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+		XLH = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+	}
+
+}
+
+country_event = { # XHH forms German Confederation
+	id = XHH_diplo_events.19
+	title = XHH_diplo_events.19.t
+	desc = XHH_diplo_events.19.desc
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.19.a
+		ai_chance = {
+			factor = 8
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+		}
+		FROM = { country_event = { id = XHH_diplo_events.20 days = 3 random_days = 3 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = no
+				}
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+
+	option = {
+		name = XHH_diplo_events.19.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 2
+				has_government = neutrality
+			}
+		}
+		trigger = {
+			NOT = { is_subject_of = FROM }
+		}
+		FROM = { country_event = { id = XHH_diplo_events.21 days = 3 random_days = 3 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		effect_tooltip = {
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_puppet
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+		}
+		set_country_flag = XHH_refused_german_confederation_annexation
+	}
+
+	option = {
+		name = XHH_diplo_events.19.c
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+		FROM = { country_event = { id = XHH_diplo_events.22 days = 3 random_days = 3 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_stability = -0.1
+		set_country_flag = XHH_refused_german_confederation
+	}
+
+}
+
+country_event = { # XHH forms German Confederation // full accept
+	id = XHH_diplo_events.20
+	title = XHH_diplo_events.20.t
+	desc = XHH_diplo_events.20.desc
+	picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.20.a
+		add_political_power = 10
+		custom_effect_tooltip = XHH_diplo_events.20.a.tt
+	}
+
+}
+
+country_event = { # XHH forms German Confederation // puppet accept
+	id = XHH_diplo_events.21
+	title = XHH_diplo_events.21.t
+	desc = XHH_diplo_events.21.desc
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.21.a
+		add_political_power = 5
+		custom_effect_tooltip = XHH_diplo_events.21.a.tt
+	}
+
+}
+
+country_event = { # XHH forms German Confederation // reject
+	id = XHH_diplo_events.22
+	title = XHH_diplo_events.22.t
+	desc = XHH_diplo_events.22.desc
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.22.a
+		add_political_power = -20
+		custom_effect_tooltip = XHH_diplo_events.22.a.tt
+	}
+
+}
+
+
+country_event = { # XHH seeks trade deal with Venice
+	id = XHH_diplo_events.23
+	title = XHH_diplo_events.23.t
+	desc = XHH_diplo_events.23.desc
+	picture = GFX_report_event_ITA_democratic_parlament
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.23.a
+		FROM = { country_event = { id = XHH_diplo_events.24 days = 3 random_days = 2 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = {
+				add_to_variable = {
+					XHH_money_gain = 2
+					tooltip = XHH_money_gain_effect_tt
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = XHH_venice_trade_deal
+	}
+
+	option = {
+		name = XHH_diplo_events.23.b
+		trigger = {
+			is_ai = no
+		}
+		FROM = { country_event = { id = XHH_diplo_events.25 days = 3 random_days = 2 } }
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_political_power = 50
+	}
+
+}
+
+country_event = { # XHH seeks trade deal with Venice // accept
+	id = XHH_diplo_events.24
+	title = XHH_diplo_events.24.t
+	desc = XHH_diplo_events.24.desc
+	picture = GFX_report_event_ITA_democratic_parlament
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.24.a
+		add_to_variable = {
+			XHH_money_gain = 2
+			tooltip = XHH_money_gain_effect_tt
+		}
+	}
+
+}
+
+country_event = { # XHH seeks trade deal with Venice // refuse
+	id = XHH_diplo_events.25
+	title = XHH_diplo_events.25.t
+	desc = XHH_diplo_events.25.desc
+	picture = GFX_report_event_ITA_democratic_parlament
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.25.a
+		add_political_power = -50
+		add_to_variable = {
+			XHH_money_gain = 1
+			tooltip = XHH_money_gain_effect_tt
+		}
+	}
+
+}
+
 news_event = {
 	id = XHH_news_events.1
 	title = XHH_news_events.1.t
@@ -1259,7 +1643,7 @@ news_event = {
 	title = XHH_news_events.5.t
 	desc = XHH_news_events.5.desc
 	
-	picture = GFX_news_event_german_soldiers
+	picture = GFX_news_event_ast_navy
 	
 	major = yes
 	is_triggered_only = yes
@@ -1387,3 +1771,110 @@ news_event = {
     }
 }
 
+news_event = { # Federalisation of the German Confederation
+	id = XHH_news_events.9
+	title = XHH_news_events.9.t
+	desc = XHH_news_events.9.desc
+	
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.9.a
+		trigger = {
+			original_tag = FROM
+		}
+    }
+
+	option = {
+        name = XHH_news_events.9.b
+		trigger = {
+			NOT = { original_tag = FROM }
+			NOT = { has_war_with = FROM }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.9.c
+		trigger = {
+			NOT = { original_tag = FROM }
+			has_war_with = FROM
+		}
+    }
+}
+
+news_event = { # The Grand Crusade
+	id = XHH_news_events.10
+	title = XHH_news_events.10.t
+	desc = XHH_news_events.10.desc
+	
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.10.a
+		trigger = {
+			OR = {
+				original_tag = FROM
+				is_ally_with = FROM
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.10.b
+		trigger = {
+			NOT = { OR = { original_tag = FROM is_ally_with = FROM } }
+			NOT = { has_war_with = FROM }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.10.c
+		trigger = {
+			NOT = { OR = { original_tag = FROM is_ally_with = FROM } }
+			has_war_with = FROM
+		}
+    }
+}
+
+news_event = { # Nationalist Germany Unification
+	id = XHH_news_events.11
+	title = XHH_news_events.11.t
+	desc = XHH_news_events.11.desc
+	
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.11.a
+		trigger = {
+			OR = {
+				original_tag = FROM
+				is_ally_with = FROM
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.11.b
+		trigger = {
+			NOT = { OR = { original_tag = FROM is_ally_with = FROM } }
+			NOT = { has_war_with = FROM }
+		}
+    }
+
+	option = {
+        name = XHH_news_events.11.c
+		trigger = {
+			NOT = { OR = { original_tag = FROM is_ally_with = FROM } }
+			has_war_with = FROM
+		}
+    }
+}

@@ -624,6 +624,27 @@ ideas = {
 			}
 		}
 
+		XHH_marine_corps_idea = {
+			
+			picture = generic_naval_invasion
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				marines_special_forces_contribution_factor = -0.25
+				extra_marine_supply_grace = 100
+				naval_invasion_penalty = -0.1
+			}
+		}
+
 		XHH_baltic_sea_dominion_spirit = {
 			
 			picture = XHH_baltic_sea_dominion_spirit
@@ -740,6 +761,30 @@ ideas = {
 			}
 		}
 
+		XHH_venice_trade_deal = {
+			
+			picture = GER_german_trade
+
+			allowed = {
+				original_tag = XVE
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			available = {
+				NOT = { has_war_with = XHH }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				resource_trade_cost_bonus_per_factory = 2
+			}
+		}
+
 		XHH_trade_federation_idea = {
 			
 			picture = GER_german_trade
@@ -827,6 +872,100 @@ ideas = {
 				land_doctrine_cost_factor = -0.1
 				war_support_factor = 0.05
 				political_power_factor = -0.05
+			}
+		}
+
+		XHH_modernised_army = {
+			
+			picture = GER_army
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army = 0.03
+				army_org_factor = 0.05
+				army_attack_factor = 0.08
+				army_defence_factor = 0.08
+			}
+		}
+
+		XHH_the_german_realms_fake = {
+			
+			name = XHH_the_german_realms
+			picture = ger_revive_the_kaiserreich
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+			}
+
+			removal_cost = -1
+
+			traits = {
+				
+			}
+		}
+
+		XHH_the_german_realms = {
+			
+			picture = ger_revive_the_kaiserreich
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+			}
+
+			removal_cost = -1
+
+			traits = {
+				XHH_prussian_realm_trait
+				# GFX_idea_GER_fan_prussian_militarism
+				XHH_central_german_realm_trait
+				# GFX_idea_GER_german_military
+				XHH_austrian_realm_trait
+				# GFX_idea_AUS_empire_restored
+				XHH_swiss_realm_trait
+				# GFX_idea_SWI_spirit_of_helvetia_defensive_peace
+			}
+		}
+
+		XHH_special_projects_idea = {
+			
+			picture = generic_research_bonus
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				has_dynamic_modifier = { modifier = HRE_member_state_spirit }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				special_project_speed_factor = 0.15
+				research_sharing_per_country_bonus = 0.02
 			}
 		}
 
