@@ -346,4 +346,18 @@ declare_war_on = {
 86 = { set_state_controller_to = XPL }
 		}
 	}
+	focus = {
+		id = XPL_first_elections
+		icon = GFX_goal_POL_revenchist
+		x = 20
+		y = 4
+		prerequisite = {  focus = XPL_liberate_poznan }
+		cost = 5
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
 	}
