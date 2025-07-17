@@ -122,3 +122,91 @@ XVD_improve_agrarian_economy = {
     }
 }
 
+# This is my first time doing actual math with variables. This is fucking horrible.
+
+XHH_recalculate_modifier_effects_money = {
+    # gets difference between current money and last time money was recalculated
+    set_temp_variable = { XHH_money_diff = XHH_money }
+    subtract_from_temp_variable = { XHH_money_diff = XHH_last_money_state }
+    divide_temp_variable = { XHH_money_diff = 100 }
+
+    # multiplies difference (for modifiers where MORE)
+    set_temp_variable = { XHH_money_diff_two = XHH_money_diff }
+    multiply_temp_variable = { XHH_money_diff_two = 2 }
+
+    # turns the difference negative (for modifiers where negative)
+    set_temp_variable = { XHH_money_diff_negative = XHH_money_diff }
+    subtract_from_temp_variable = { XHH_money_diff_negative = XHH_money_diff_two }
+
+    # multiplies negative difference (for modifiers where negative and where MORE)
+    set_temp_variable = { XHH_money_diff_negative_two = XHH_money_diff_negative }
+    multiply_temp_variable = { XHH_money_diff_negative_two = 2 }
+
+    # sets the current money as last time, for next recalculation
+    set_variable = { XHH_last_money_state = XHH_money }
+
+    custom_effect_tooltip = XHH_modify_venice_modifier_tt
+
+    add_to_variable = { XHH_vm_manpower = 10 tooltip = weekly_manpower_tt }
+    add_to_variable = { XHH_vm_nav_def = XHH_money_diff tooltip = naval_defense_factor_tt }
+    add_to_variable = { XHH_vm_conv_esc = XHH_money_diff tooltip = convoy_escort_efficiency_tt }
+    add_to_variable = { XHH_vm_cgf = XHH_money_diff_negative_two tooltip = consumer_goods_factor_tt }
+    add_to_variable = { XHH_vm_stab = XHH_money_diff tooltip = stability_factor_tt }
+    add_to_variable = { XHH_vm_ppf = XHH_money_diff_negative tooltip = political_power_factor_tt }
+
+    custom_effect_tooltip = XHH_modifiers_have_limits_tt
+    clamp_variable = { var = XHH_vm_manpower max = 10000 }
+    clamp_variable = { var = XHH_vm_nav_def max = 0.2 }
+    clamp_variable = { var = XHH_vm_nav_def min = -0.2 }
+    clamp_variable = { var = XHH_vm_conv_esc max = 0.2 }
+    clamp_variable = { var = XHH_vm_conv_esc min = -0.2 }
+    clamp_variable = { var = XHH_vm_cgf max = 0.5 }
+    clamp_variable = { var = XHH_vm_cgf min = -0.5 }
+    clamp_variable = { var = XHH_vm_stab max = 0.5 }
+    clamp_variable = { var = XHH_vm_stab min = -0.5 }
+    clamp_variable = { var = XHH_vm_ppf max = 0.25 }
+    clamp_variable = { var = XHH_vm_ppf min = -0.25 }
+}
+
+XHH_recalculate_modifier_effects_influence = {
+    # gets difference between current influence and last time influence was recalculated
+    set_temp_variable = { XHH_influence_diff = XHH_influence }
+    subtract_from_temp_variable = { XHH_influence_diff = XHH_last_influence_state }
+    divide_temp_variable = { XHH_influence_diff = 100 }
+
+    # multiplies difference (for modifiers where MORE)
+    set_temp_variable = { XHH_influence_diff_two = XHH_influence_diff }
+    multiply_temp_variable = { XHH_influence_diff_two = 2 }
+
+    # turns the difference negative (for modifiers where negative)
+    set_temp_variable = { XHH_influence_diff_negative = XHH_influence_diff }
+    subtract_from_temp_variable = { XHH_influence_diff_negative = XHH_influence_diff_two }
+
+    # multiplies negative difference (for modifiers where negative and where MORE)
+    set_temp_variable = { XHH_influence_diff_negative_two = XHH_influence_diff_negative }
+    multiply_temp_variable = { XHH_influence_diff_negative_two = 2 }
+
+    # sets the current influence as last time, for next recalculation
+    set_variable = { XHH_last_influence_state = XHH_influence }
+
+    custom_effect_tooltip = XHH_modify_sea_empire_tt
+    add_to_variable = { XHH_em_manpower = 10 tooltip = weekly_manpower_tt }
+    add_to_variable = { XHH_em_nav_att = XHH_influence_diff tooltip = naval_damage_factor_tt }
+    add_to_variable = { XHH_em_nav_det = XHH_influence_diff tooltip = naval_detection_tt }
+    add_to_variable = { XHH_em_nav_euxc = XHH_influence_diff_negative_two tooltip = naval_equipment_upgrade_xp_cost_tt }
+    add_to_variable = { XHH_em_ws = XHH_influence_diff tooltip = war_support_factor_tt }
+    add_to_variable = { XHH_em_ppf = XHH_influence_diff_negative tooltip = political_power_factor_tt }
+
+    custom_effect_tooltip = XHH_modifiers_have_limits_tt
+    clamp_variable = { var = XHH_em_manpower max = 10000 }
+    clamp_variable = { var = XHH_em_nav_att max = 0.2 }
+    clamp_variable = { var = XHH_em_nav_att min = -0.2 }
+    clamp_variable = { var = XHH_em_nav_det max = 0.2 }
+    clamp_variable = { var = XHH_em_nav_det min = -0.2 }
+    clamp_variable = { var = XHH_em_nav_euxc max = 1 }
+    clamp_variable = { var = XHH_em_nav_euxc min = -1 }
+    clamp_variable = { var = XHH_em_ws max = 0.5 }
+    clamp_variable = { var = XHH_em_ws min = -0.5 }
+    clamp_variable = { var = XHH_em_ppf max = 0.25 }
+    clamp_variable = { var = XHH_em_ppf min = -0.25 }
+}

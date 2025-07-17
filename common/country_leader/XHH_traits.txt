@@ -39,6 +39,14 @@ leader_traits = {
 
 	}
 
+	XHH_prince_of_the_people = {
+		random = no
+		party_popularity_stability_factor = 0.2
+		surrender_limit = 0.25
+		conscription = 0.01
+
+	}
+
 	XHH_father_of_the_hamburg_republic = {
 		random = no
 		party_popularity_stability_factor = 0.2
@@ -333,6 +341,50 @@ leader_traits = {
 
 	XHH_hamburger_hafen_trait = {
 		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_prussian_realm_trait = {
+		random = no
+		army_morale_factor = 0.03
+		army_org_regain = 0.02
+		experience_gain_army_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_central_german_realm_trait = {
+		random = no
+		industrial_capacity_dockyard = 0.1
+		industrial_capacity_factory = 0.1
+		production_speed_buildings_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_austrian_realm_trait = {
+		random = no
+		political_power_factor = 0.1
+		consumer_goods_factor = -0.1
+		research_speed_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XHH_swiss_realm_trait = {
+		random = no
+		army_core_defence_factor = 0.1
+		defensive_war_stability_factor = 0.15
+		mountaineers_special_forces_contribution_factor = -0.25
 
 		ai_will_do = {
 			factor = 1

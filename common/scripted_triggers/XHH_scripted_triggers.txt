@@ -12,7 +12,7 @@ XHH_has_hanse_active = {
 XHH_is_current_emperor = {
     custom_trigger_tooltip = {
         tooltip = XHH_is_current_emperor_tt
-        XHH = { has_country_flag = HRE_current_emperor }
+        THIS = { has_country_flag = HRE_current_emperor }
     }
 }
 
@@ -220,3 +220,28 @@ XHH_hessen_target = {
     }
 }
 
+XHH_german_nations = {
+    custom_trigger_tooltip = {
+        tooltip = XHH_german_nations_tt
+        OR = {
+            original_tag = XHH
+            original_tag = XH1
+            original_tag = XH2
+            original_tag = XVD
+            original_tag = XPK
+            original_tag = XPO
+            original_tag = XFT
+            original_tag = XBR
+            original_tag = XWB
+            original_tag = XSW
+            original_tag = XSC
+            original_tag = XSR
+            original_tag = XTR
+            original_tag = XLI
+            original_tag = XLE
+            original_tag = XSI
+            original_tag = XPL
+            XHH_hessen_target = yes
+        }
+    }
+}

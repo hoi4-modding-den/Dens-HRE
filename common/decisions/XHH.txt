@@ -689,6 +689,7 @@ foreign_politics = {
 				has_completed_focus = XHH_chaos_in_danzig
 				has_completed_focus = XHH_war_for_thueringen
 			}
+			FROM = { NOT = { is_subject_of = ROOT } }
 		}
 
 		cancel_trigger = {
@@ -868,6 +869,59 @@ foreign_politics = {
 			}
 			clr_country_flag = XHH_currently_demanding_state
 		}
+	}
+
+	XHH_unite_hessen = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			is_subject = no
+			XLH = {
+				is_ally_with = ROOT
+			}
+		}
+
+		visible = {
+			OR = {
+				has_completed_focus = XHH_found_the_german_confederation
+				has_completed_focus = XHH_imperial_german_alliance
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			every_country = {
+				limit = {
+					XHH_hessen_target = yes
+					NOT = { original_tag = XLH }
+				}
+				country_event = { id = XHH_diplo_events.16 days = 10 random_days = 10 }
+			}
+
+			hidden_effect = {
+				every_possible_country = {
+					limit = {
+						XHH_hessen_target = yes
+					}
+					every_core_state = {
+						add_core_of = XLH
+					}
+				}
+			}
+		}
+
 	}
 
 	XHH_form_prussian_protectorate = {
@@ -1228,6 +1282,265 @@ foreign_politics = {
 			}
 		}
 
+	}
+
+}
+
+XHH_german_confederation_cat = {
+
+	XHH_unite_the_confederation = {
+
+		priority = 100
+
+		icon = generic_form_nation
+
+		ai_will_do = {
+			base = 50
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				num_faction_members > 9
+				any_allied_country = {
+					XHH_german_nations = yes
+				}
+			}
+			else = {
+				num_faction_members > 4
+				any_allied_country = {
+					XHH_german_nations = yes
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_cosmetic_tag = XHH_germany }
+		}
+
+		cost = 120
+
+		days_remove = 70
+
+		fire_only_once = no
+
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					XHH_german_nations = yes
+					OR = {
+						is_subject = no
+						is_ai = no
+					}
+				}
+				country_event = { id = XHH_diplo_events.19 days = 20 random_days = 10 }
+			}
+		}
+
+		cancel_trigger = {
+			all_other_country = {
+				OR = {
+					NOT = { is_in_faction_with = ROOT }
+					XHH_german_nations = no
+					has_country_flag = XHH_refused_german_confederation
+					has_country_flag = XHH_refused_german_confederation_annexation
+				}
+			}
+		}
+
+		cancel_effect = {
+			add_political_power = -120
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = XHH_unite_the_confederation_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					XHH_german_nations = yes
+					NOT = {
+						OR = {
+							has_country_flag = XHH_refused_german_confederation
+							has_country_flag = XHH_refused_german_confederation_annexation
+						}
+					}
+				}
+				every_subject_country = {
+					ROOT = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					XHH_german_nations = yes
+					has_country_flag = XHH_refused_german_confederation_annexation
+				}
+				every_subject_country = {
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_puppet
+							end_wars = no
+							end_civil_wars = no
+						}
+					}
+				}
+				ROOT = {
+					set_autonomy = {
+						target = PREV
+						autonomous_state = autonomy_puppet
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			hidden_effect = {
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						XHH_german_states_OR = yes
+					}
+					add_core_of = ROOT
+				}
+			}
+
+			set_cosmetic_tag = XHH_germany
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_faction_name = XHH_german_confederation_improved
+
+			hidden_effect = {
+				news_event = {
+					id = XHH_news_events.9
+					hours = 8
+				}
+			}
+		}
+
+	}
+
+	XHH_invite_nation_into_confederation = {
+
+		priority = 1
+
+		icon = hol_exchange_intelligence_data
+
+		ai_will_do = {
+			base = 15
+			modifier = {
+				factor = 5
+				FROM = {
+					OR = {
+						original_tag = XLH
+						original_tag = XSC
+					}
+				}
+			}
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				has_civil_war = no
+				NOT = { has_war_with = ROOT }
+				is_subject = no
+				is_in_faction = no
+				custom_trigger_tooltip = {
+					tooltip = XHH_invite_nation_into_confederation_tt
+					always = yes
+				}
+			}
+		}
+
+		visible = {
+
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				XHH_german_nations = yes
+				OR = {
+					XHH_hessen_target = no
+					original_tag = XLH
+				}
+				OR = {
+					NOT = { original_tag = XBR }
+					has_government = democratic
+				}
+				OR = {
+					NOT = { original_tag = XSI }
+					has_government = democratic
+				}
+				OR = {
+					NOT = { original_tag = XPL }
+					has_government = democratic
+				}
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+				has_civil_war = no
+				is_subject = no
+				NOt = { is_in_faction_with = ROOT }
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 75
+
+		days_remove = 25
+
+		days_re_enable = 25
+
+		modifier = {
+			political_power_cost = 0.25
+		}
+
+		remove_effect = {
+			FROM = {
+				country_event = {
+					id = generic.5
+					days = 2
+					random_days = 12
+				}
+			}
+		}
 	}
 
 }
@@ -2466,6 +2779,10 @@ XHH_money_cat = {
 		days_mission_timeout = 91
 
 		timeout_effect = {
+			XHH_recalculate_modifier_effects_money = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_to_variable = {
 				XHH_money = XHH_money_gain
 				tooltip = XHH_money_effect_tt
@@ -2745,11 +3062,146 @@ XHH_money_cat = {
 		}
 	}
 
+	XHH_buy_civs  = {
+
+		priority = 0
+
+		icon = ger_mefo_bills
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			
+		}
+
+		visible = { 
+			
+		}
+
+		ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			check_variable = {
+				XHH_money > 1
+			}
+		}
+		custom_cost_text = decision_cost_2_money
+
+		days_remove = 200
+
+		days_re_enable = 70
+
+		complete_effect = {
+			add_to_variable = { XHH_money = -2 }
+		}
+
+		modifier = {
+			industrial_factory_donations = 5
+		}
+
+	}
+
+	XHH_buy_mils  = {
+
+		priority = 0
+
+		icon = ger_military_buildup
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			
+		}
+
+		visible = { 
+			
+		}
+
+		ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			check_variable = {
+				XHH_money > 1
+			}
+		}
+		custom_cost_text = decision_cost_2_money
+
+		days_remove = 200
+
+		days_re_enable = 70
+
+		complete_effect = {
+			add_to_variable = { XHH_money = -2 }
+		}
+
+		modifier = {
+			military_factory_donations = 3
+		}
+
+	}
+
+	XHH_research_investments = {
+
+		priority = 0
+
+		icon = generic_research
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			
+		}
+
+		visible = { 
+			
+		}
+
+		cost = 75
+
+		ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			check_variable = {
+				XHH_money > 1
+			}
+		}
+		custom_cost_text = decision_cost_2_money
+
+		days_remove = 200
+
+		days_re_enable = 70
+
+		complete_effect = {
+			add_to_variable = { XHH_money = -2 }
+		}
+		modifier = {
+			research_speed_factor = 0.2
+		}
+
+	}
+
 }
 
 XHH_influence_cat = {
 
 	XHH_influence_growth = {
+
+		priority = 10
 
 		activation = {
 			has_country_flag = XHH_influence_system_unlocked
@@ -2766,6 +3218,10 @@ XHH_influence_cat = {
 		days_mission_timeout = 91
 
 		timeout_effect = {
+			XHH_recalculate_modifier_effects_influence = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_to_variable = {
 				XHH_influence = XHH_influence_gain
 				tooltip = XHH_influence_effect_tt
@@ -2775,6 +3231,202 @@ XHH_influence_cat = {
 
 			activate_mission = XHH_influence_growth
 		}
+	}
+
+	XHH_hold_celebration_for_the_emperor = {
+
+		priority = 3
+
+		icon = generic_monarchy
+
+		ai_will_do = {
+			base = 15
+		}
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_increase_imperial_influence
+			FROM = {
+				XHH_is_current_emperor = yes
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 0
+				}
+			}
+		}
+
+		visible = {
+			FROM = {
+				XHH_is_current_emperor = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				has_country_flag = HRE_member_state
+				NOT = { original_tag = ROOT }
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 80
+
+		days_remove = 20
+
+		days_re_enable = 180
+
+		modifier = {
+			consumer_goods_factor = 0.15
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				XHH_influence = 5
+				tooltip = XHH_influence_effect_tt
+			}
+		}
+	}
+
+	XHH_get_civs = {
+
+		priority = 0
+
+		icon = ger_mefo_bills
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_increase_imperial_influence
+		}
+
+		visible = { 
+			
+		}
+
+		ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			check_variable = {
+				XHH_influence > 1
+			}
+		}
+		custom_cost_text = decision_cost_2_influence
+
+		days_remove = 200
+
+		days_re_enable = 70
+
+		complete_effect = {
+			add_to_variable = { XHH_influence = -2 }
+		}
+
+		modifier = {
+			industrial_factory_donations = 5
+		}
+
+	}
+
+	XHH_get_mils = {
+
+		priority = 0
+
+		icon = ger_military_buildup
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_increase_imperial_influence
+		}
+
+		visible = { 
+			
+		}
+
+		ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			check_variable = {
+				XHH_influence > 1
+			}
+		}
+		custom_cost_text = decision_cost_2_influence
+
+		days_remove = 200
+
+		days_re_enable = 70
+
+		complete_effect = {
+			add_to_variable = { XHH_influence = -2 }
+		}
+
+		modifier = {
+			military_factory_donations = 3
+		}
+
+	}
+
+	XHH_get_manpower = {
+
+		priority = 0
+
+		icon = generic_military
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			has_completed_focus = XHH_integrate_hre_volunteer_corps
+		}
+
+		visible = { 
+			
+		}
+
+		ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			check_variable = {
+				XHH_influence > 1
+			}
+		}
+		custom_cost_text = decision_cost_2_influence
+
+		days_remove = 200
+
+		days_re_enable = 70
+
+		complete_effect = {
+			add_to_variable = { XHH_influence = -2 }
+		}
+
+		modifier = {
+			weekly_manpower = 1000
+		}
+
 	}
 
 }

@@ -29,8 +29,19 @@ XHH_hamburg_immigration_hotspot = {
 	
 }
 
-XHH_colonial_wealth = { 
+XHH_regional_monarchy = { 
 	enable = { always = yes }
+
+	icon = GFX_modifiers_NOR_monarchism
+	
+	recruitable_population = -0.05
+	local_building_slots = 0.15
+	local_factories = 0.15
+	
+}
+
+XHH_colonial_wealth = { 
+	enable = { NOT = { has_government = communism } }
 
 	icon = GFX_idea_por_colonial_assimilation
 	
@@ -49,8 +60,12 @@ XHH_venice_modifier = {
 
 	icon = GFX_idea_NORDIC_nordic_council
 	
-	
-	
+	weekly_manpower = XHH_vm_manpower
+	naval_defense_factor = XHH_vm_nav_def
+	convoy_escort_efficiency = XHH_vm_conv_esc
+	consumer_goods_factor = XHH_vm_cgf
+	stability_factor = XHH_vm_stab
+	political_power_factor = XHH_vm_ppf
 	
 }
 
@@ -59,7 +74,11 @@ XHH_sea_empire_modifier = {
 
 	icon = GFX_idea_NORDIC_navy_monarchist
 	
-	
-	
-	
+	weekly_manpower = XHH_em_manpower
+	naval_damage_factor = XHH_em_nav_att
+	naval_detection = XHH_em_nav_det
+	naval_equipment_upgrade_xp_cost = XHH_em_nav_euxc
+	war_support_factor = XHH_em_ws
+	political_power_factor = XHH_em_ppf
+
 }
