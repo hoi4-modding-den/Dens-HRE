@@ -325,6 +325,26 @@ add_building_construction = {
 		}
 	}
 	focus = {
+		id = XPL_securing_polska_dominance
+		icon = GFX_goal_POL_revenchist
+		x = 18
+		y = 4
+		prerequisite = {  focus = XPL_seizing_stolen_materials }
+		cost = 5
+		available = {
+
+		}
+		completion_reward = {
+		762 = {
+			create_unit = {
+				division = "name = \"People's Polish Militia\" division_template = \"Infanterie-Division\" start_experience_factor = 0.5"
+				count = 3
+				owner = XPL
+			}
+		}
+		}
+	}
+	focus = {
 		id = XPL_liberate_poznan
 		icon = GFX_goal_POL_revenchist
 		x = 20
@@ -357,7 +377,7 @@ declare_war_on = {
 
 		}
 		completion_reward = {
-
+		
 		}
 	}
 	}
