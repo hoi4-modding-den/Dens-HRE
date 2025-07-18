@@ -227,34 +227,8 @@ XHH_hessen_target = {
 XHH_german_nations = {
     custom_trigger_tooltip = {
         tooltip = XHH_german_nations_tt
-        OR = {
-            original_tag = XHH
-            original_tag = XH1
-            original_tag = XH2
-            original_tag = XVD
-            original_tag = XPK
-            original_tag = XPO
-            original_tag = XFT
-            original_tag = XBR
-            original_tag = XWB
-            original_tag = XSW
-            original_tag = XSC
-            original_tag = XSR
-            original_tag = XTR
-            original_tag = XLI
-            original_tag = XLE
-            original_tag = XSI
-            original_tag = XPL
-            original_tag = XCS
-            original_tag = XSA
-            original_tag = XFC
-            original_tag = XLS
-            original_tag = XMU
-            original_tag = XDS
-            original_tag = XMB
-            original_tag = XNU
-            original_tag = XWR
-            XHH_hessen_target = yes
+        capital_scope = {
+            XHH_german_states_OR = yes
         }
     }
 }
