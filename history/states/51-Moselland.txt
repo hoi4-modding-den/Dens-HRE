@@ -9,8 +9,8 @@ state = {
 	state_category = megalopolis #was metropolis, 2 slots diff
 	
 	history = {
-
-		owner = ZZZ #owner = GER
+		owner = XNR #owner = GER
+		add_core_of = XNR
 		#add_core_of = GER
 		#add_core_of = RHI
 		#add_core_of = PRE
@@ -36,23 +36,6 @@ state = {
 			arms_factory = 3
 			industrial_complex = 4 #WAS 2
 			air_base = 3
-		}
-
-		1939.1.1 = {
-			buildings = {
-				air_base = 6
-				radar_station = 1
-				#Westwall Forts
-				3444 = {
-					bunker = 2
-				}
-				9522 = {
-					bunker = 2
-				}
-				3547 = {
-					bunker = 2
-				}
-			}
 		}
 	}
 
