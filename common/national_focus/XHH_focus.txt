@@ -1331,6 +1331,56 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XHH_demand_port_lease_end
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = XHH_increase_bureaucratic_overview }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_increase_bureaucratic_overview
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			1052 = {
+				owner = {
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			1053 = {
+				owner = {
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+		
+		bypass = {
+			controls_state = 1052
+			controls_state = 1053
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			add_state_core = 1052
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XHH_demand_cuxhaven
+			unlock_decision_tooltip = XHH_demand_nordenham
+		}
+
+		bypass_effect = {
+			add_state_core = 1052
+		}
+	}
+
+	focus = {
 		id = XHH_military_industrial_complex
 		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = XHH_job_opportunities }
@@ -1875,7 +1925,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_prioritise_consumer_needs
-		icon = GFX_focus_GER_wirtschaftswunder
+		icon = GFX_goal_generic_consumer_goods
 		prerequisite = { focus = XHH_power_to_the_senate }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -4746,22 +4796,10 @@ focus_tree = {
 					NOT = { has_war_with = ROOT }
 				}
 			}
-			1052 = {
-				owner = {
-					NOT = { has_war_with = ROOT }
-				}
-			}
-			1053 = {
-				owner = {
-					NOT = { has_war_with = ROOT }
-				}
-			}
 		}
 
 		bypass = {
 			controls_state = 56
-			controls_state = 1052
-			controls_state = 1053
 		}
 
 		available_if_capitulated = no
@@ -4769,19 +4807,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_state_core = 56
-			add_state_core = 1052
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			unlock_decision_tooltip = XHH_demand_wilhelmshaven
-			unlock_decision_tooltip = XHH_demand_cuxhaven
-			unlock_decision_tooltip = XHH_demand_nordenham
+			
 		}
 
 		bypass_effect = {
 			add_state_core = 56
-			add_state_core = 1053
-			add_state_core = 1052
 		}
 	}
 
@@ -5273,7 +5307,7 @@ focus_tree = {
 
 	focus = {
 		id = XHH_german_industrial_might
-		icon = GFX_focus_GER_vereinigte_stahlwerke
+		icon = GFX_focus_GER_wirtschaftswunder
 		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -5722,15 +5756,6 @@ focus_tree = {
 			else = {
 				create_faction = XHH_national_league
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_state_claim = 1052
-			
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			unlock_decision_tooltip = XHH_demand_cuxhaven
-			unlock_decision_tooltip = XHH_demand_nordenham
 		}
 	}
 

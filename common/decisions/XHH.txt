@@ -493,10 +493,7 @@ foreign_politics = {
 
 		visible = {
 			NOT = { controls_state = 1053 }
-			OR = {
-				has_completed_focus = XHH_reobtain_northern_port_cities
-				has_completed_focus = XHH_protect_our_sovereignty
-			}
+			has_completed_focus = XHH_demand_port_lease_end
 		}
 
 		cancel_trigger = {
@@ -589,10 +586,7 @@ foreign_politics = {
 
 		visible = {
 			NOT = { controls_state = 1052 }
-			OR = {
-				has_completed_focus = XHH_reobtain_northern_port_cities
-				has_completed_focus = XHH_protect_our_sovereignty
-			}
+			has_completed_focus = XHH_demand_port_lease_end
 		}
 
 		cancel_trigger = {
@@ -1474,7 +1468,7 @@ XHH_german_confederation_cat = {
 				limit = {
 					is_ai = yes
 				}
-				num_faction_members > 11
+				num_faction_members > 14
 				any_allied_country = {
 					XHH_german_nations = yes
 				}
