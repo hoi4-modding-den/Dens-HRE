@@ -380,4 +380,36 @@ declare_war_on = {
 		
 		}
 	}
+	focus = {
+		id = XPL_free_gdynia
+		icon = GFX_goal_POL_revenchist
+		x = 20
+		y = 5
+		prerequisite = {  focus = XPL_first_elections }
+		cost = 10
+		available = {
+
+		}
+		completion_reward = {
+		transfer_state = 807
+		transfer_state = 74
+		}
+	}
+	focus = {
+		id = XPL_free_kaliningrad
+		icon = GFX_goal_POL_revenchist
+		x = 22
+		y = 6
+		prerequisite = {  focus = XPL_free_gdynia }
+		cost = 10
+		available = {
+
+		}
+		completion_reward = {
+declare_war_on = {
+    target = XPK
+    type = annex_everything
+}
+		}
+	}
 	}
