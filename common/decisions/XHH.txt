@@ -384,7 +384,7 @@ foreign_politics = {
 		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 15
+			base = 100
 		}
 
 		allowed = {  
@@ -424,7 +424,7 @@ foreign_politics = {
 
 		on_map_mode = decision_view_only
 
-		cost = 50
+		cost = 25
 
 		fire_only_once = yes
 
@@ -476,7 +476,7 @@ foreign_politics = {
 		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 15
+			base = 100
 		}
 
 		allowed = {  
@@ -519,7 +519,7 @@ foreign_politics = {
 
 		on_map_mode = decision_view_only
 
-		cost = 50
+		cost = 25
 
 		fire_only_once = yes
 
@@ -572,7 +572,7 @@ foreign_politics = {
 		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 15
+			base = 100
 		}
 
 		allowed = {  
@@ -615,7 +615,7 @@ foreign_politics = {
 
 		on_map_mode = decision_view_only
 
-		cost = 50
+		cost = 25
 
 		fire_only_once = yes
 
@@ -668,7 +668,7 @@ foreign_politics = {
 		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 15
+			base = 100
 		}
 
 		allowed = {  
@@ -712,7 +712,7 @@ foreign_politics = {
 
 		on_map_mode = decision_view_only
 
-		cost = 50
+		cost = 25
 
 		fire_only_once = yes
 
@@ -775,7 +775,7 @@ foreign_politics = {
 		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 15
+			base = 100
 		}
 
 		allowed = {  
@@ -818,7 +818,7 @@ foreign_politics = {
 
 		on_map_mode = decision_view_only
 
-		cost = 50
+		cost = 25
 
 		fire_only_once = yes
 
@@ -871,6 +871,170 @@ foreign_politics = {
 				}
 			}
 			clr_country_flag = XHH_currently_demanding_state
+		}
+	}
+
+	XHH_retake_handelsmagny_territory = {
+
+		priority = 1
+
+		icon = generic_prepare_civil_war
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				OR = {
+					controls_state = 62
+					controls_state = 68
+					controls_state = 63
+					controls_state = 85
+				}
+			}
+		}
+
+		visible = {
+			NOT = { controls_state = 62 }
+			NOT = { controls_state = 68 }
+			NOT = { controls_state = 63 }
+			NOT = { controls_state = 85 }
+			OR = {
+				has_completed_focus = XHH_settle_the_score
+				has_completed_focus = XHH_strike_prussia
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				NOT = { original_tag = XFT }
+				OR = {
+					controls_state = 62
+					controls_state = 68
+					controls_state = 63
+					controls_state = 85
+				}
+			}
+		}
+
+		targets_dynamic = yes
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 62
+				state = 68
+				state = 63
+				state = 85
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 20
+
+		modifier = {
+			political_power_cost = 0.15
+		}
+
+		war_with_target_on_remove = yes
+
+		remove_effect = {
+			create_wargoal = {
+				target = FROM
+				type = take_claimed_state
+			}
+		}
+	}
+
+	XHH_retake_prussia = {
+
+		priority = 1
+
+		icon = generic_prepare_civil_war
+
+		ai_will_do = {
+			base = 100
+		}
+
+		allowed = {  
+			original_tag = XHH
+		}
+
+		available = {
+			FROM = {
+				NOT = { has_war_with = ROOT }
+				OR = {
+					controls_state = 5
+					controls_state = 763
+				}
+			}
+		}
+
+		visible = {
+			NOT = { controls_state = 5 }
+			NOT = { controls_state = 763 }
+			OR = {
+				has_completed_focus = XHH_war_with_prussia
+				has_completed_focus = XHH_strike_prussia
+			}
+		}
+
+		cancel_trigger = {
+			has_war_with = FROM
+		}
+
+		target_trigger = {
+			FROM = {
+				NOT = { original_tag = XPK }
+				OR = {
+					controls_state = 5
+					controls_state = 763
+				}
+			}
+		}
+
+		targets_dynamic = yes
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 5
+				state = 763
+			}
+		}
+
+		on_map_mode = decision_view_only
+
+		cost = 25
+
+		fire_only_once = yes
+
+		days_remove = 20
+
+		modifier = {
+			political_power_cost = 0.15
+		}
+
+		war_with_target_on_remove = yes
+
+		remove_effect = {
+			create_wargoal = {
+				target = FROM
+				type = take_claimed_state
+			}
 		}
 	}
 
@@ -2909,7 +3073,6 @@ XHH_money_cat = {
 					target = ROOT
 					value > 49
 				}
-				has_country_flag = XHH_trade_route_established
 			}
 		}
 

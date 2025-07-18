@@ -153,6 +153,19 @@ leader_traits = {
 		}
 	}
 
+	XHH_poet_of_hamburg = {
+		random = no
+		sprite = 13
+		
+		political_power_gain = 0.25
+		fascism_acceptance = -60
+		custom_modifier_tooltip = XHH_poet_of_hamburg_tt
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
 	XHH_anti_corruption_politician = {
 		random = no
 		sprite = 13

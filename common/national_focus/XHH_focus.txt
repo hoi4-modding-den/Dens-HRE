@@ -374,6 +374,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
+			add_political_power = 80
 			add_stability = 0.05
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -1316,6 +1317,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
+			add_political_power = 80
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = XHH_staffed_bureaucracy
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2498,7 +2503,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 200
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3315,7 +3320,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 200
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3770,6 +3775,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			add_political_power = 100
 			add_stability = 0.1
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4203,7 +4209,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_mobilise_the_public
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -4297,7 +4303,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_settle_the_score
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 15
@@ -4328,7 +4334,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_settle_the_score
 
-		cost = 2
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -4626,7 +4632,9 @@ focus_tree = {
 		}
 
 		bypass_effect = {
+			add_state_claim = 1087
 			add_state_claim = 64
+			add_state_claim = 1086
 		}
 
 		available_if_capitulated = no
@@ -4635,7 +4643,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
+			add_state_claim = 1087
 			add_state_claim = 64
+			add_state_claim = 1086
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -4715,7 +4725,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_mobilise_the_public
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -4829,6 +4839,92 @@ focus_tree = {
 			mio:XHH_kriegsmarinewerft_wilhelmshaven_organization = {
 				add_mio_size = 1
 				add_mio_funds_gain_factor = 0.1
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_join_the_army_commands
+		icon = GFX_focus_GER_appease_the_wehrmacht
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XHH_found_the_german_confederation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_CHARACTER }
+		completion_reward = {
+			army_experience = 50
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					army_experience = 25
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XHH_join_the_army_commands
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						is_in_faction_with = ROOT
+					}
+				}
+				every_allied_country = {
+					add_tech_bonus = {
+						name = XHH_join_the_army_commands
+						bonus = 0.5
+						uses = 1
+						category = infantry_weapons
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_possible_country = {
+				limit = {
+					XHH_german_nations = yes
+					exists = no
+				}
+				custom_effect_tooltip = XHH_transfer_army_leaders_tt
+				every_unit_leader = {
+					limit = {
+						is_advisor = no
+						can_be_country_leader = no
+					}
+					set_nationality = ROOT
+				}
 			}
 		}
 	}
@@ -5082,7 +5178,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = XHH_compromise_with_local_monarchs_tt
 			every_possible_country = {
@@ -5145,7 +5241,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_breakthrough_progress = {
 				specialization = specialization_land
@@ -5170,6 +5266,91 @@ focus_tree = {
 				}
 				every_allied_country = {
 					add_ideas = XHH_special_projects_idea
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XHH_german_industrial_might
+		icon = GFX_focus_GER_vereinigte_stahlwerke
+		prerequisite = { focus = XHH_found_the_german_confederation focus = XHH_imperial_german_alliance }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XHH_imperial_german_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XHH_de_united_tt
+				has_cosmetic_tag = XHH_germany
+			}
+			is_faction_leader = yes
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XHH_german_industrial_might
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_country = {
+				limit = {
+					is_ally_with = ROOT
+					XHH_german_nations = yes
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+						}
+					}
+					capital_scope = {
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+						}
+					}
 				}
 			}
 		}
@@ -6169,6 +6350,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			XPO = {
+				custom_effect_tooltip = XHH_transfer_army_leaders_tt
 				every_unit_leader = {
 					limit = {
 						is_advisor = no
@@ -6178,6 +6360,7 @@ focus_tree = {
 				}
 			}
 			XPK = {
+				custom_effect_tooltip = XHH_transfer_army_leaders_tt
 				every_unit_leader = {
 					limit = {
 						is_advisor = no
@@ -6187,6 +6370,7 @@ focus_tree = {
 				}
 			}
 			XBR = {
+				custom_effect_tooltip = XHH_transfer_army_leaders_tt
 				every_unit_leader = {
 					limit = {
 						is_advisor = no

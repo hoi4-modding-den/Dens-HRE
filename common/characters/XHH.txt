@@ -238,6 +238,7 @@ characters = {
 
 		advisor = {
 			slot = political_advisor
+			desc = XHH_hermann_ludemann_desc
 			idea_token = XHH_hermann_ludemann_pm
 			allowed = {
 				original_tag = XHH
@@ -438,6 +439,35 @@ characters = {
 			can_be_fired = no
 
 			cost = 0
+		}
+
+	}
+
+	XHH_wolfgang_borchert = {
+
+		name = XHH_wolfgang_borchert_name
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_XHH_wolfgang_borchert_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = XHH_wolfgang_borchert_desc
+			idea_token = XHH_wolfgang_borchert_token
+			allowed = {
+				original_tag = XHH
+			}
+			available = {
+				NOT = { has_government = fascism }
+			}
+			traits = {
+				XHH_poet_of_hamburg
+			}
+
+			cost = 100
 		}
 
 	}
