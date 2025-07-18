@@ -64,7 +64,6 @@ XNE_is_first_union_leader = {
 XNE_first_union_failed = {
     custom_trigger_tooltip = {
         tooltip = XNE_first_union_failed_tt
-        # check_variable = { var:XNE.union_capital = -1 }
-        NOT = { always = yes }
+        check_variable = { var:XNE.union_capital = -1 }
     }
 }

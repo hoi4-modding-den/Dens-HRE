@@ -2,9 +2,7 @@ characters = {
 	XHO_wilhelmina = {
 		name = XHO_wilhelmina
 		portraits = {
-			civilian = {
-				large = GFX_portrait_hol_wilhelmina
-			}
+			civilian = { large = GFX_portrait_hol_wilhelmina }
 		}
 		country_leader = {
 			ideology = oligarchism
@@ -14,6 +12,9 @@ characters = {
 
 	XHO_hendrik_seyffardt = {
 		name = XHO_hendrik_seyffardt
+		portraits = { 
+			civilian = { large = GFX_portrait_europe_generic_land_19 }
+		}
 		country_leader = {
 			ideology = falangism
 			expire = "1965.1.1.1"
@@ -22,16 +23,19 @@ characters = {
 
 	XHO_philippus_buurman = {
 		name = XHO_philippus_buurman
+		portraits = { 
+			army = { small = GFX_idea_curtis_lemay }
+		}
 		advisor = {
 			slot = political_advisor
-			idea_token = reluctant_interventionist
+			idea_token = XHO_reluctant_interventionist
 			allowed = {
 				original_tag = XHO
 			}
 			available = {
 			}
 			traits = {
-				reluctant_interventionist
+				XHO_reluctant_interventionist
 			}
 
 			cost = 75
@@ -40,6 +44,9 @@ characters = {
 
 	XHO_adriaan_pannekoek = {
 		name = XHO_adriaan_pannekoek
+		portraits = { 
+			army = { small = GFX_idea_ENG_generic_3 }
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = captain_of_industry
@@ -58,6 +65,9 @@ characters = {
 	
 	XHO_hendrik_van_hall = {
 		name = XHO_hendrik_van_hall
+		portraits = { 
+			army = { small = GFX_idea_europe_generic_1 }
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = traditionalist_theorist
@@ -77,6 +87,9 @@ characters = {
 
 	XHO_ferdinand_furstner = {
 		name = XHO_ferdinand_furstner
+		portraits = { 
+			army = { small = GFX_idea_europe_generic_5 }
+		}
 		advisor = {
 			slot = political_advisor
 			idea_token = XHO_economic_minister
@@ -96,9 +109,12 @@ characters = {
 
 	XHO_matthijs_de_groot = {
 		name = XHO_matthijs_de_groot
+		portraits = { 
+			army = { small = GFX_idea_europe_generic_6 }
+		}
 		advisor = {
 			slot = political_advisor
-			idea_token = political_reformer_2_no_lar
+			idea_token = XHO_political_reformer
 			allowed = {
 				original_tag = XHO
 			}
@@ -106,7 +122,7 @@ characters = {
 				has_completed_focus = XHO_constitutional_monarchy
 			}
 			traits = {
-				political_reformer_2_no_lar
+				XHO_political_reformer
 			}
 
 			cost = 150
@@ -116,7 +132,7 @@ characters = {
 	XHO_jan_den_ouden = {
 		name = XHO_jan_den_ouden
 		portraits = { 
-			civilian = { small = GFX_idea_generic_fortification_engineer }
+			army = { small = GFX_idea_generic_fortification_engineer }
 		}
 		advisor = {
 			slot = political_advisor
@@ -126,6 +142,25 @@ characters = {
 			}
 			traits = {
 				fortification_engineer
+			}
+
+			cost = 150
+		}
+	}
+
+	XHO_smooth_talking_charmer = {
+		name = XHO_smooth_talking_charmer
+		portraits = { 
+			army = { small = GFX_idea_generic_fascist_europe }
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = smooth_talking_charmer
+			allowed = {
+				original_tag = XHO
+			}
+			traits = {
+				smooth_talking_charmer
 			}
 
 			cost = 150
@@ -352,7 +387,7 @@ characters = {
 	}
 
 	XHO_navy_old_guard = {
-		name = XHO_decisive_battle
+		name = XHO_navy_old_guard
 		portraits = { 
 			army = { small = GFX_idea_USA_generic_navy_2 }
 		}
@@ -411,7 +446,7 @@ characters = {
 	}
 
 	XHO_navy_capital_ship = {
-		name = XHO_navy_amphibious_assault
+		name = XHO_navy_capital_ship
 		portraits = { 
 			army = { small = GFX_idea_FRA_generic_navy_1 }
 		}

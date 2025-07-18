@@ -1,4 +1,5 @@
 add_namespace = XNE_joint
+add_namespace = XFS
 
 country_event = {
 	id = XNE_joint.1
@@ -339,5 +340,182 @@ country_event = {
 
 	option = {
         name = XNE_joint.7.a
+	}
+}
+
+country_event = {
+	id = XFS.1
+	title = XFS.1.t
+	desc = XFS.1.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.1.a
+		add_political_power = -15
+		1053 = {
+			remove_claim_by = ROOT
+			add_core_of = ROOT
+		}
+	}
+
+	option = {
+        name = XFS.1.b
+		ai_chance = {
+			factor = 5
+		}
+		XHH = {
+			country_event = {
+				id = XFS.2
+				days = 2
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = XFS.if_they_accept
+		effect_tooltip = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	option = {
+        name = XFS.1.c
+		XPO = {
+			country_event = {
+				id = XFS.2
+				days = 2
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = XFS.if_they_accept
+		effect_tooltip = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = XFS.2
+	title = XFS.2.t
+	desc = XFS.2.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.2.a
+		ai_chance = {
+			factor = 14
+		}
+		add_political_power = -15
+		1053 = {
+			transfer_state_to = ROOT
+		}
+		FROM = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	option = {
+        name = XFS.2.b
+	}
+}
+
+country_event = {
+	id = XFS.3
+	title = XFS.3.t
+	desc = XFS.3.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.3.a
+		1052 = {
+			remove_claim_by = ROOT
+			add_core_of = ROOT
+		}
+	}
+
+	option = {
+        name = XFS.3.b
+		ai_chance = {
+			factor = 5
+		}
+		XPO = {
+			country_event = {
+				id = XFS.4
+				days = 2
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = XFS.if_they_accept
+		effect_tooltip = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	option = {
+        name = XFS.3.c
+		XHH = {
+			country_event = {
+				id = XFS.4
+				days = 2
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = XFS.if_they_accept
+		effect_tooltip = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = XFS.4
+	title = XFS.4.t
+	desc = XFS.4.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.4.a
+		ai_chance = {
+			factor = 14
+		}
+		add_political_power = -15
+		1052 = {
+			transfer_state_to = ROOT
+		}
+		FROM = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+
+	option = {
+        name = XFS.4.b
 	}
 }

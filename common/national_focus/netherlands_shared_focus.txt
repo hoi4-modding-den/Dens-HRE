@@ -204,7 +204,16 @@ joint_focus = {
 
     completion_reward_joint_originator = {
         add_manpower = 15000
-        add_ideas = { XFS_dairy_and_hide_exports }
+        if = {
+            limit = { has_idea = XFS_dairy_and_hide_exports }
+            swap_ideas = {
+                remove_idea = XFS_dairy_and_hide_exports
+                add_idea = XFS_dairy_and_hide_exports_2
+            }
+        }
+        else = {
+            add_ideas = { XFS_dairy_and_hide_exports }
+        }
         add_to_variable = { XNE.joint_core_supply = -0.1 }
         add_to_variable = { XNE.joint_attrition = -0.04 }
     }
@@ -547,9 +556,9 @@ joint_focus = {
 }
 
 joint_focus = {
-    id = XNE_joint_holland_marines
-    icon = GFX_focus_CHL_armada_de_chile
-    text_icon = xho_shared_style
+    id = XNE_joint_utrecht_metal_refining
+    icon = GFX_focus_generic_steel
+    text_icon = xut_shared_style
 
     prerequisite = { focus = XNE_joint_training }
     relative_position_id = XNE_joint_training
@@ -564,65 +573,100 @@ joint_focus = {
 
     available = {
         XNE_is_first_union_member = yes
-        tag = XHO
+        tag = XUT
     }
 
     bypass = {
-        XNE_first_union_failed = yes
+
     }
 
     joint_trigger = {
         XNE_is_first_union_member = yes
     }
 
-    search_filters = { FOCUS_FILTER_ARMY_XP }
-    search_filters = { FOCUS_FILTER_NAVY_XP }
+    search_filters = { FOCUS_FILTER_INDUSTRY }
     completion_reward = {
-        custom_effect_tooltip = XNE_joint_holland_marines_complete_tt
     }
 
     completion_reward_joint_originator = {
-        navy_experience = 40
-        army_experience = 10
-        hidden_effect = {
-            division_template = {
-                name = "Mariniersdivisie"
-                division_names_group = HOL_MAR_01
-                priority = 2
-                template_counter = 3
-                regiments = {
-                    marine = { x = 0 y = 0 }
-                    marine = { x = 0 y = 1 }
-                    marine = { x = 0 y = 2 }
-                    marine = { x = 0 y = 3 }
-                    marine = { x = 1 y = 0 }
-                    marine = { x = 1 y = 1 }
-                    marine = { x = 1 y = 2 }
-                    marine = { x = 1 y = 3 }
-                    marine = { x = 2 y = 0 }
-                    marine = { x = 2 y = 1 }
-                    marine = { x = 2 y = 2 }
-                    marine = { x = 2 y = 3 }
-                }
-                support = {
-                    artillery = { x = 0 y = 0 }
-                    engineer = { x = 0 y = 0 }
-                }
-            }
+        add_offsite_building = { 
+            type = industrial_complex
+            level = 1
         }
         CAPITAL_SCOPE = {
-            create_unit = {
-				division = "name = \"12e Mariniersdivisie\" division_template = \"Mariniersdivisie\" start_experience_factor = 0.4" 
-				owner = PREV
-			}
+            add_resource = {
+                type = aluminium
+                amount = 4
+            }
+            add_resource = {
+                type = tungsten
+                amount = 2
+            }
+            add_resource = {
+                type = steel
+                amount = 3
+            }
         }
-        add_to_variable = { XNE.joint_special_forces_cap = 0.06 }
-        add_to_variable = { XNE.joint_marines_cap = -0.2 }
     }
 
     completion_reward_joint_member = {
-        navy_experience = 15
-        army_experience = 5
+        CAPITAL_SCOPE = {
+            add_resource = {
+                type = aluminium
+                amount = 1
+            }
+            add_resource = {
+                type = tungsten
+                amount = 1
+            }
+            add_resource = {
+                type = steel
+                amount = 1
+            }
+        }
+    }
+}
+
+joint_focus = {
+    id = XNE_joint_stability
+    icon = GFX_focus_por_concordat
+    text_icon = netherlands_shared_style
+
+    prerequisite = { focus = XNE_joint_utrecht_metal_refining }
+    relative_position_id = XNE_joint_utrecht_metal_refining
+    x = 0
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+    }
+
+    bypass = {
+
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+    completion_reward = {
+    }
+
+    completion_reward_joint_originator = {
+        add_political_power = 120
+        add_stability = 0.15
+    }
+
+    completion_reward_joint_member = {
+        add_political_power = 75
+        add_stability = 0.06
     }
 }
 
@@ -819,6 +863,7 @@ joint_focus = {
 
     available = {
         XNE_is_first_union_member = yes
+        has_tech = gwtank_chassis
     }
 
     bypass = {
@@ -963,79 +1008,6 @@ joint_focus = {
         add_offsite_building = { 
             type = arms_factory
             level = 1
-        }
-    }
-
-}
-
-joint_focus = {
-    id = XNE_joint_untrecht_metal_refining
-    icon = GFX_focus_generic_steel
-    text_icon = xut_shared_style
-
-    prerequisite = { focus = XNE_joint_industry_developments }
-    relative_position_id = XNE_joint_industry_developments
-    x = 2
-    y = 1
-    cost = 10
-    available_if_capitulated = no
-
-    ai_will_do = {
-        factor = 1
-    }
-
-    available = {
-        XNE_is_first_union_member = yes
-        tag = XUT
-    }
-
-    bypass = {
-
-    }
-
-    joint_trigger = {
-        XNE_is_first_union_member = yes
-    }
-
-    search_filters = { FOCUS_FILTER_INDUSTRY }
-    completion_reward = {
-    }
-
-    completion_reward_joint_originator = {
-        add_offsite_building = { 
-            type = industrial_complex
-            level = 1
-        }
-        CAPITAL_SCOPE = {
-            add_resource = {
-                type = aluminium
-                amount = 4
-            }
-            add_resource = {
-                type = tungsten
-                amount = 2
-            }
-            add_resource = {
-                type = steel
-                amount = 3
-            }
-        }
-    }
-
-    completion_reward_joint_member = {
-        CAPITAL_SCOPE = {
-            add_resource = {
-                type = aluminium
-                amount = 1
-            }
-            add_resource = {
-                type = tungsten
-                amount = 1
-            }
-            add_resource = {
-                type = steel
-                amount = 1
-            }
         }
     }
 
@@ -1412,6 +1384,86 @@ joint_focus = {
 }
 
 joint_focus = {
+    id = XNE_joint_holland_marines
+    icon = GFX_focus_CHL_armada_de_chile
+    text_icon = xho_shared_style
+
+    prerequisite = { focus = XNE_joint_industry_developments }
+    relative_position_id = XNE_joint_industry_developments
+    x = 2
+    y = 1
+    cost = 10
+    available_if_capitulated = no
+
+    ai_will_do = {
+        factor = 1
+    }
+
+    available = {
+        XNE_is_first_union_member = yes
+        tag = XHO
+    }
+
+    bypass = {
+        XNE_first_union_failed = yes
+    }
+
+    joint_trigger = {
+        XNE_is_first_union_member = yes
+    }
+
+    search_filters = { FOCUS_FILTER_ARMY_XP }
+    search_filters = { FOCUS_FILTER_NAVY_XP }
+    completion_reward = {
+        custom_effect_tooltip = XNE_joint_holland_marines_complete_tt
+    }
+
+    completion_reward_joint_originator = {
+        navy_experience = 40
+        army_experience = 10
+        hidden_effect = {
+            division_template = {
+                name = "Mariniersdivisie"
+                division_names_group = HOL_MAR_01
+                priority = 2
+                template_counter = 3
+                regiments = {
+                    marine = { x = 0 y = 0 }
+                    marine = { x = 0 y = 1 }
+                    marine = { x = 0 y = 2 }
+                    marine = { x = 0 y = 3 }
+                    marine = { x = 1 y = 0 }
+                    marine = { x = 1 y = 1 }
+                    marine = { x = 1 y = 2 }
+                    marine = { x = 1 y = 3 }
+                    marine = { x = 2 y = 0 }
+                    marine = { x = 2 y = 1 }
+                    marine = { x = 2 y = 2 }
+                    marine = { x = 2 y = 3 }
+                }
+                support = {
+                    artillery = { x = 0 y = 0 }
+                    engineer = { x = 0 y = 0 }
+                }
+            }
+        }
+        CAPITAL_SCOPE = {
+            create_unit = {
+				division = "name = \"12e Mariniersdivisie\" division_template = \"Mariniersdivisie\" start_experience_factor = 0.4" 
+				owner = PREV
+			}
+        }
+        add_to_variable = { XNE.joint_special_forces_cap = 0.06 }
+        add_to_variable = { XNE.joint_marines_cap = -0.2 }
+    }
+
+    completion_reward_joint_member = {
+        navy_experience = 15
+        army_experience = 5
+    }
+}
+
+joint_focus = {
     id = XNE_joint_propose_integration
     icon = GFX_focus_por_concordat
     text_icon = netherlands_leader_shared_style
@@ -1586,50 +1638,6 @@ joint_focus = {
                 }
             }
         }
-    }
-
-    completion_reward_joint_member = {
-    }
-
-}
-
-joint_focus = {
-    id = XNE_joint_future
-    icon = GFX_focus_generic_improve_the_administration
-    text_icon = netherlands_leader_shared_style
-
-    prerequisite = { focus = XNE_joint_dutch_state }
-    relative_position_id = XNE_joint_dutch_state
-    x = 0
-    y = 1
-    cost = 1
-    available_if_capitulated = no
-
-    ai_will_do = {
-        factor = 1
-    }
-
-    available = {
-        XNE_is_first_union_leader = yes
-        all_core_state = {
-            is_owned_and_controlled_by = ROOT
-        }
-    }
-
-    bypass = {
-
-    }
-
-    joint_trigger = {
-        XNE_is_first_union_member = yes
-    }
-
-    search_filters = { FOCUS_FILTER_POLITICAL }
-    completion_reward = {
-    }
-
-    completion_reward_joint_originator = {
-        change_tag_to_XNE = yes
     }
 
     completion_reward_joint_member = {

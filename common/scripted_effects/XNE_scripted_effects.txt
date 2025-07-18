@@ -38,7 +38,10 @@ change_tag_to_XNE = {
 		}
 		every_core_state = {
 			add_core_of = XNE
-			remove_core_of = ROOT
+			remove_core_of = XHO
+			remove_core_of = XBT
+			remove_core_of = XUT
+			remove_core_of = XFS
 		}
 		if = { limit = { has_idea = XNE_zuiderzee_1 } XNE = { add_ideas = { XNE_zuiderzee_1 } } }
 		if = { limit = { has_idea = XNE_zuiderzee_2 } XNE = { add_ideas = { XNE_zuiderzee_2 } } }

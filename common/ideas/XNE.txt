@@ -421,11 +421,66 @@ ideas = {
             }
         }
 
+        XFS_no_nobility_2 = {
+            picture = generic_king_handled
+            modifier = {
+                neutrality_drift = -0.02
+                neutrality_acceptance = -20
+                democratic_drift = 0.02
+                stability_factor = 0.1
+            }
+        }
+
+        XFS_agricultural_society = {
+            picture = LIT_invested_in_farms
+            modifier = {
+                production_speed_buildings_factor = -0.2
+                industrial_capacity_factory = -0.3
+                industrial_capacity_dockyard = -0.3
+            }
+        }
+
+        XFS_agricultural_society_2 = {
+            picture = LIT_invested_in_farms
+            modifier = {
+                production_speed_buildings_factor = -0.1
+                industrial_capacity_factory = -0.15
+                industrial_capacity_dockyard = -0.15
+            }
+        }
+
+        XFS_agricultural_society_3 = {
+            picture = LIT_invested_in_farms
+            modifier = {
+                consumer_goods_factor = -0.1
+                industrial_capacity_factory = -0.05
+                industrial_capacity_dockyard = -0.05
+            }
+        }
+
         XFS_dairy_and_hide_exports = {
             picture = DEN_sahnefront
             modifier = {
-                consumer_goods_factor = -0.08
+                consumer_goods_factor = -0.1
                 production_speed_infrastructure_factor = 0.15
+            }
+        }
+
+        XFS_dairy_and_hide_exports_2 = {
+            picture = DEN_sahnefront
+            modifier = {
+                consumer_goods_factor = -0.16
+                production_speed_infrastructure_factor = 0.30
+                supply_consumption_factor = -0.1
+            }
+        }
+
+        XFS_irredentism = {
+            picture = ARG_subdue_dissension
+            modifier = {
+                weekly_manpower = 350
+                training_time_army_factor = -0.4
+                industrial_capacity_factory = 0.05
             }
         }
 	}

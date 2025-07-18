@@ -19,4 +19,26 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
+	XHO_political_reformer = {
+		random = no
+		sprite = 10
+
+
+		political_advisor_cost_factor = -0.25
+		air_advisor_cost_factor = -0.25
+		army_advisor_cost_factor = -0.25
+		navy_advisor_cost_factor = -0.25
+		research_speed_factor = 0.025 
+	}
+
+	XHO_reluctant_interventionist = {
+		random = no
+		sprite = 10
+
+		stability_factor = 0.05
+		war_support_factor = 0.05
+		lend_lease_tension = -0.2
+		request_lease_tension = -0.2
+	}
 }

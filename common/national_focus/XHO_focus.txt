@@ -773,7 +773,7 @@ focus_tree = {
 			add_ideas = { XHO_wilhelmina }
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = political_reformer_2_no_lar
+			show_ideas_tooltip = XHO_political_reformer
 		}
 	}
 
@@ -812,7 +812,7 @@ focus_tree = {
 		cost = 10
 
 		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			set_rule = {
 				can_send_volunteers = yes
@@ -820,7 +820,7 @@ focus_tree = {
 			add_ideas = { XHO_interventionism }
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = reluctant_interventionist
+			show_ideas_tooltip = XHO_reluctant_interventionist
 		}
 	}
 
