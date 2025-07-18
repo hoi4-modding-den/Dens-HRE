@@ -291,6 +291,33 @@ characters = {
 		}
 
 	}
+	XBR_ulrich_von_hassell = {
+
+		name = "Ulrich von Hassell"
+
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_political_advisor_europe_2
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_ulrich_von_hassell_token
+			allowed = {
+				original_tag = XBR
+			}
+			visible = {
+				has_completed_focus = XBR_expand_the_ministry_of_foreign_affairs
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+
+			cost = 100
+		}
+
+	}
 	XBR_ferdinand_von_bredow = {
 
 		name = "Ferdinand von Bredow"
@@ -425,6 +452,54 @@ characters = {
 			}
 			traits = {
 				financial_expert
+			}
+
+			cost = 150
+		}
+
+	}
+	XBR_richard_schapke = {
+
+		name = "Richard Schapke"
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_ARG_antonio_soto_military_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_richard_schapke_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				editor
+			}
+
+			cost = 150
+		}
+
+	}
+	XBR_friedrich_borinski = {
+
+		name = "Friedrich Borinski"
+
+		portraits = {
+			civilian = {
+				small = GFX_portrait_NOR_schristopher_hornsrud_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = XBR_friedrich_borinski_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				economist_and_publicist
 			}
 
 			cost = 150

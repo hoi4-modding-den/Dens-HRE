@@ -1,0 +1,28 @@
+XBR_kdf_wagen_mio = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_volkswagen
+	
+	allowed = {	
+		original_tag = XBR
+	}
+	
+	available = {
+		owner = { has_completed_focus = XBR_kdf_wagen }
+	}
+
+}
+
+XBR_porsche_mio = {
+	include = generic_tank_organization
+	icon = GFX_idea_porsche
+	
+	allowed = {	
+		original_tag = XBR
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = XBR_porsche_accepted_tank_treaty_tt
+			XBR = { has_country_flag = XBR_porsche_accepted_tank_treaty }
+		}
+	}
+}

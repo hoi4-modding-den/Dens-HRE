@@ -1,4 +1,91 @@
 add_namespace = XBR
+add_namespace = XBR_diplo
+
+country_event = {
+	id = XBR_diplo.1
+	title = XBR_diplo.1.t
+	desc = XBR_diplo.1.d
+	
+	picture = GFX_report_event_SOV_litvinov_beck
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XBR_diplo.1.a
+		ai_chance = { 
+			factor = 1
+		}
+		XBR = {
+			add_opinion_modifier = {
+				target = XWB
+				modifier = huge_increase
+			}
+			set_country_flag = XBR_porsche_accepted
+		}
+		add_opinion_modifier = {
+			target = XBR
+			modifier = huge_increase
+		}
+    }
+	option = {
+        name = XBR_diplo.1.b
+		ai_chance = { 
+			factor = 0
+		}
+    }
+}
+
+country_event = {
+	id = XBR_diplo.2
+	title = XBR_diplo.2.t
+	desc = XBR_diplo.2.d
+	
+	picture = GFX_report_event_generic_panzer_attack
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XBR_diplo.2.a
+		ai_chance = { 
+			factor = 1
+		}
+		XWB = { 
+			add_tech_bonus = {
+				name = med_armor_bonus
+				ahead_reduction = 1
+				category = cat_medium_armor
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+		XBR = { 
+			add_tech_bonus = {
+				name = med_armor_bonus
+				ahead_reduction = 1
+				category = cat_medium_armor
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+			set_country_flag = XBR_porsche_mio_unlocked
+		}
+    }
+	option = {
+        name = XBR_diplo.2.b
+		ai_chance = { 
+			factor = 0
+		}
+    }
+}
 
 country_event = {
 	id = XBR.1

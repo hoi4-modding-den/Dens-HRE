@@ -23,5 +23,71 @@ ideas = {
 				stability_factor = -0.05
 			}
 		}
+		XBR_volunteer_idea = {
+
+			picture = generic_morale_bonus
+
+
+			removal_cost = -1
+
+			modifier = {
+				send_volunteer_size = 2
+				send_volunteers_tension = -1
+				send_volunteer_divisions_required = -0.75
+			}
+		}
+		XBR_army_preparations = {
+
+			picture = GFX_idea_FRA_national_mobilization_focus
+
+
+			removal_cost = -1
+
+			modifier = {
+				mobilization_speed = 0.3
+				training_time_factor = -0.3
+				experience_gain_army = 0.10
+			}
+		}
+		XBR_fascist_upheaval = {
+
+			picture = GFX_idea_generic_fascism_drift_bonus
+
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+				fascism_drift = 0.1
+				political_power_factor = -0.1
+			}
+		}
+		XBR_internal_divisions = {
+
+			picture = GFX_idea_DEN_occupation_laws
+
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.005
+				war_support_weekly = -0.005
+				war_stability_factor = -0.15
+			}
+		}
+		XBR_champions_of_the_german_people_idea = {
+
+			picture = GER_german_military
+
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.15
+				political_power_factor = 0.15
+				justify_war_goal_time = -0.75
+			}
+		}
 	}
 }

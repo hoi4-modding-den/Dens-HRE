@@ -1,7 +1,7 @@
 state = {
 	id = 64
 	name = "STATE_64"
-	manpower = 7265029
+	manpower = 6565029
 	buildings_max_level_factor = 1
 
 	state_category = megalopolis
@@ -16,13 +16,7 @@ state = {
 			6521 50 # Berlin
 		}
 
-		victory_points = {
-			3522 5 # Magdeburg
-		}
 
-		victory_points = {
-			13388 1 # Frankfurt-Oder
-		}
 
 		buildings = {
 			infrastructure = 4
@@ -40,19 +34,11 @@ state = {
             }
 		}
 
-		1939.1.1 = {
-			buildings = {
-				air_base = 10
-				anti_air_building = 5
-				arms_factory = 10
-				industrial_complex = 7
-			}
-		}
 
 	}
 
 	provinces = {
-		375 3367 3499 3522 6487 6521 9456 9496 9560 11219 11359 11444 11505 13388
+		375 3367 3499 6521 11219 11444
 	}
 
 	local_supplies = 0.0 
