@@ -74,6 +74,10 @@ HRE_set_new_agenda = {
 			}
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
 			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.1 }
+			add_timed_idea = {
+				idea = HRE_agenda_infra
+				days = 60
+			}
 			set_global_flag = HRE_agenda_selected
 		}
 	}
@@ -90,6 +94,10 @@ HRE_set_new_agenda = {
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
 			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.2 }
 			set_global_flag = HRE_agenda_selected
+			add_timed_idea = {
+				idea = HRE_agenda_construction
+				days = 60
+			}
 		}
 	}
 	if = { 
@@ -105,6 +113,10 @@ HRE_set_new_agenda = {
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
 			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.3 }
 			set_global_flag = HRE_agenda_selected
+			add_timed_idea = {
+				idea = HRE_agenda_production
+				days = 60
+			}
 		}
 	}
 	if = { 
@@ -120,6 +132,10 @@ HRE_set_new_agenda = {
 			set_variable = { global.HRE_agenda_voting_timeout_length = 60 }
 			if = { limit = { NOT = { has_country_flag = HRE_no_event_spam } } country_event = HRE_agenda.4 }
 			set_global_flag = HRE_agenda_selected
+			add_timed_idea = {
+				idea = HRE_agenda_research
+				days = 60
+			}
 		}
 	}
 	if = {

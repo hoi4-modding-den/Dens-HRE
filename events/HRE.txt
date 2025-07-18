@@ -31,9 +31,11 @@ country_event = {
 	
 	option = {
         name = HRE_agenda.1.a
-		add_timed_idea = {
-			idea = HRE_agenda_infra
-			days = global.HRE_agenda_voting_timeout_length
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = HRE_agenda_infra
+				days = global.HRE_agenda_voting_timeout_length
+			}
 		}
     }
 }
@@ -49,9 +51,11 @@ country_event = {
 	
 	option = {
         name = HRE_agenda.2.a
-		add_timed_idea = {
-			idea = HRE_agenda_construction
-			days = global.HRE_agenda_voting_timeout_length
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = HRE_agenda_construction
+				days = global.HRE_agenda_voting_timeout_length
+			}
 		}
     }
 }
@@ -67,9 +71,11 @@ country_event = {
 	
 	option = {
         name = HRE_agenda.3.a
-		add_timed_idea = {
-			idea = HRE_agenda_production
-			days = global.HRE_agenda_voting_timeout_length
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = HRE_agenda_production
+				days = global.HRE_agenda_voting_timeout_length
+			}
 		}
     }
 }
@@ -85,9 +91,11 @@ country_event = {
 	
 	option = {
         name = HRE_agenda.4.a
-		add_timed_idea = {
-			idea = HRE_agenda_research
-			days = global.HRE_agenda_voting_timeout_length
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = HRE_agenda_research
+				days = global.HRE_agenda_voting_timeout_length
+			}
 		}
     }
 }
