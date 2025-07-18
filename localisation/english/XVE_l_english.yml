@@ -24,15 +24,26 @@ XVE_the_concordia_littorum_desc:0 "In 1919, Venice renewed its ancient mission a
 XVE_lionhearted_militia:0 "Lionhearted Militia"
 XVE_lionhearted_militia_desc:0 "The Republic maintains a proud military tradition rooted in local militias inspired by Swiss models. These citizen-soldiers stand ready to defend every parish and island with courage. However, their training and equipment standards lag behind professional forces on the continent. Commanders have begun discussing reforms to modernize and unify the structure of these units. For now, they remain the beating heart of Venetian defense, loyal to the city and the Lion of Saint Mark above all else."
 
-
 ### TOOLTIPS ###
 XVE_imperial_autonomy_charter_tt:0 "\nThis national spirit will remain in effect till the          [XVE.GetFlag] [XVE.GetName] §Yleaves the HRE§! or §Yreforms the charter§!."
 add_2_to_istria_integration_var_tt:0 "£GFX_national_unity_texticon  Integration Level: §Y2%§!"
 add_5_to_istria_integration_var_tt:0 "£GFX_national_unity_texticon  Integration Level: §Y5%§!"
+XVE_party_faction_generic:0 "The following §Ypolitical groups§! must be part of the §Ycoalition§!:"
+XVE_starting_coalition:0 "The current §Ygovernmental coalition§! will be composed of: \n- £GFX_generic_war_escalation_text_icon  §GRepublicans§!\n- £GFX_liberal_conservatives_texticon  §CLiberal Conservatives§!\n- £GFX_tank_niche_8  §gCorporatists§!"
 
 ### CUSTOM MODIFIERS ###
 XVE_gov_support:0 "£GFX_change_government  Government Approval"
 XVE_istria_integration:0 "£GFX_national_unity_texticon  Integration Level"
+
+### CUSTOM FLAGS ###
+XVE_party_republicans:0 "£GFX_generic_war_escalation_text_icon  §GRepublicans§!"
+XVE_party_liberal_conservatives:0 "£GFX_liberal_conservatives_texticon  §CLiberal Conservatives§!"
+XVE_party_corporatists:0 "£GFX_tank_niche_8  §gCorporatists§!"
+
+### EVENTS ###
+XVE_domestic_events.1.t:0 "Gathering at the Doge’s Palace"
+XVE_domestic_events.1.desc:0 "WIP"
+XVE_domestic_events.1.a:0 "To cooperation and prosperity!"
 
 ### TRAITS ###
 XVE_dux_diplomacy:0 "Dux Diplomacy"
@@ -96,3 +107,7 @@ XVE_fascism_party: "LPV" # Venetian Patriotic League
 XVE_fascism_party_long: "Lega Patriottico Veneziano"
 XVE_communism_party: "Fronte Popolare del Leone" # People’s Front of the Lion — the Lion being the symbol of Venice/Doge
 XVE_communism_party_long: "Fronte Popolare del Leone"
+
+### NATIONAL FOCUSES ###
+XVE_convene_the_alleanza_ducale:0 "Convene the Alleanza Ducale"
+XVE_convene_the_alleanza_ducale_desc:0 "WIP"

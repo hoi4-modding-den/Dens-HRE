@@ -19,6 +19,13 @@ set_technology = {
 
 recruit_character = XL2_Abbot_Spiegel
 
+XRO = {
+	set_autonomy = {
+		target = XL2
+		autonomous_state = autonomy_XLH_papal_oversight
+	}
+}
+
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1931.11.8"

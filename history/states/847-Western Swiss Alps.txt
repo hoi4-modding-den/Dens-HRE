@@ -3,19 +3,20 @@ state={
 	id=847
 	name="STATE_847"
 	manpower = 178429
-	state_category = pastoral
-	resources={
-	}
+	state_category = town
+
 	history={
-		owner = ZZZ #owner = SWI
+		owner = XCS #owner = SWI
+		add_core_of = XCS
 		buildings = {
-			infrastructure = 1 
-			industrial_complex = 1
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
 		}
+		victory_points = { 663 10 }
 		#add_core_of = SWI
 	}
 	provinces={
-		636 9587 3612 9618  
+		636 663 9587 3612 9618  
 	}
-	local_supplies=0.0 
 }
