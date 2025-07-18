@@ -356,6 +356,64 @@ ideas = {
 			}
 		}
 
+		XHH_welfare_state_idea_4 = {
+			
+			name = XHH_welfare_state_idea
+			picture = ARG_social_welfare_fund_ns
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_factor = 0.2
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+
+		XHH_welfare_state_idea_5 = {
+			
+			name = XHH_welfare_state_idea
+			picture = ARG_social_welfare_fund_ns
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_factor = 0.25
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				army_morale = 2
+				experience_loss_factor = -0.15
+			}
+		}
+
 		XHH_armed_volunteer_groups = {
 			
 			picture = ast_volunteer_defence_corps
@@ -715,6 +773,27 @@ ideas = {
 			}
 		}
 
+		XHH_imperial_autonomy = {
+			
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				min_export = -0.2
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.15
+			}
+		}
+
 		XHH_defense_fund = {
 			
 			picture = SOV_third_five_year_plan_military
@@ -1011,6 +1090,50 @@ ideas = {
 			}
 		}
 
+		XHH_imperial_honour = {
+			
+			picture = AUS_habsburg_monarchy_restored
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.15
+				army_morale_factor = 0.02
+			}
+		}
+
+		XHH_imperial_honour_2 = {
+			
+			name = XHH_imperial_honour
+			picture = AUS_habsburg_monarchy_restored
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.15
+				war_support_factor = 0.15
+				army_morale_factor = 0.03
+				army_org_factor = 0.03
+			}
+		}
+
 		XHH_iron_cross_order_idea = {
 			
 			picture = GER_fan_prussian_militarism
@@ -1243,6 +1366,23 @@ ideas = {
 				production_speed_buildings_factor = 0.2
 				production_lack_of_resource_penalty_factor = -0.25
 				industrial_capacity_factory = 0.1
+			}
+		}
+
+	}
+
+	hidden_ideas = {
+
+		XFT_surrenders_quicker_pls = {
+		
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				surrender_limit = -0.1
 			}
 		}
 

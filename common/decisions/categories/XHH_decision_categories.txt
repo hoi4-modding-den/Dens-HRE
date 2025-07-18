@@ -20,6 +20,20 @@ XHH_german_confederation_cat = {
 	priority = 99
 }
 
+XHH_liberation_wars_cat = {
+	icon = SOV_permanent_revolution
+
+	allowed = {
+		original_tag = XHH
+	}
+
+	visible = {
+		has_country_flag = XHH_liberation_wars_unlocked
+	}
+
+	priority = 99
+}
+
 XHH_chartered_colonial_companies = {
 	icon = GER_seize_gold_reserves
 

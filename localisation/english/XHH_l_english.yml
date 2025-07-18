@@ -312,6 +312,7 @@
 # SCRIPTED TRIGGERS
  XHH_has_hanse_active_tt: "Has national spirit §Y$XHH_hanseatic_influence$§!"
  XHH_has_hanse_active_tt_NOT: "Does not have national spirit §Y$XHH_hanseatic_influence$§!"
+ XHH_at_peace_with_current_emperor_tt: "At peace with the current §YHoly Roman Emperor§!"
  XHH_is_current_emperor_tt: "§g[THIS.GetLeader]§! is the current §YHoly Roman Emperor§!"
  XHH_is_current_emperor_tt_NOT: "§g[THIS.GetLeader]§! is not the current §YHoly Roman Emperor§!"
  XHH_only_one_pm_tt: "Only one §YPrime Minister§! can be active at the same time"
@@ -328,9 +329,7 @@
  XHH_senate_removed: "The §YSenate of Hamburg§! has been abolished"
  XHH_senate_removed_tt: "The §YSenate of Hamburg§! will be §Rabolished§!."
  XHH_currently_demanding_state: "currently demanding a state"
- XHH_trade_route_established: "§YTrade Route§! with §Y[FROM.GetName]§! established"
  XHH_branch_office_established: "§Y[FROM.GetAdjectiveCap] Branch Office§! established"
- XHH_imperial_trade_route_expanded: "§Y[FROM.GetAdjectiveCap] Imperial Trade Routes§! expanded"
  XHH_refused_german_confederation: "fully rejected §YFederalisation§!"
  XHH_refused_german_confederation_annexation: "demanded Autonomy from §YFederalisation§!"
 
@@ -362,7 +361,7 @@
 
  XHH_mecklenburg_aegis: "Northern Aegis"
  XHH_german_confederation: "German Confederation"
- XHH_german_confederation_improved: "Hamburger Pakt"
+ XHH_german_confederation_improved: "Deutsche Allianz"
  XHH_german_imperial_league: "German Imperial League"
  XHH_national_league: "Deutsch-Nationaler Bund"
 
@@ -407,6 +406,7 @@
  XHH_baltic_sea_dominion_spirit: "Revitalising the Baltic Fleet"
  XHH_seevorherrschaft: "Restore Seevorherrschaft"
  XHH_super_navy: "Hamburg Rules The Waves"
+ XHH_imperial_autonomy: "Imperial Autonomy"
  XHH_defense_fund: "Defense Preparations"
  XHH_stockpiled_resources: "Fuel Stockpile"
  XHH_venice_trade_deal: "Hamburg-Venedig Handelsbund"
@@ -420,6 +420,7 @@
  XHH_special_projects_idea: "Joint Board of Scientific Developments"
  XHH_imperial_army_training: "Joint Imperial Army Exercises"
  XHH_catholic_donations_idea: "Catholic Donations"
+ XHH_imperial_honour: "Imperial Honour"
  XHH_iron_cross_order_idea: "Prussian-Inspired Militarism"
  XVD_city_guard: "Stadtwache Reliance"
  XVD_city_guard_desc: "Our country does not have its own military force, instead utilising the Stadtwache (City Guard), the local police force of Verden, as a defensive force in emergency situations."
@@ -491,6 +492,7 @@
  XVD_reformation_opinion: "Enemy of the Reformation"
  XVD_reformation_opinion_reverse: "Enemy of Catholicism"
  XHH_trade_route_modifier: "Imperial Trade Routes"
+ XHH_refused_autonomy_opinion: "Refused to grant Autonomy"
 
 
 # DECISIONS
@@ -527,6 +529,9 @@
  XHH_unite_the_confederation_tt: "Every §YGerman member§! of §g[ROOT.GetFactionName]§! will be asked to §Yaccept annexation§! or alternatively §Ybecome your puppet§!. Should §Rno one§! accept annexation, Federalisation will §Rfail§!."
  XHH_invite_nation_into_confederation: "Invite [FROM.GetName] to the Confederation"
  XHH_invite_nation_into_confederation_tt: "Does not §Rideologically oppose§! the §YIdeals of a German Confederation§! (i.e. a §RNationalist government§!)"
+
+ XHH_liberation_wars_cat: "Wars of Liberation"
+ XHH_war_against_tyranny: "End the Tyranny in [FROM.GetName]"
 
  XHH_chartered_colonial_companies: "Chartered Company Territorial Exploitation"
  XHH_chartered_colonial_companies_desc: "$XHH_colonial_wealth_desc$\n "
@@ -573,12 +578,11 @@
  XHH_money_cat_desc: "Trade has always been the strength of Hamburg. We are not called the §YVenice of the North§! for nothing. The §gHanseatic League§!'s trade network was built around cities like §gHamburg§! and §gKiel§!, perfect for redistributing goods and embracing §Ycommerce§!.\n \nThe effects of our National Spirit §Y$XHH_venice_modifier$§! scale with §OFinancial Leverage§!. It is updated every §Yfinancial quarter§!.\n \nCurrent £GFX_market_subsidy_small_texticon  Financial Leverage: [?XHH_money|.0+]\n "
  XHH_quarterly_money_gain: "Quarterly Financial Growth"
  XHH_quarterly_money_gain_desc: "Every 91 Days (1/4 of a year), we will gain Financial Leverage. Quarterly gain can be increased via foci."
- XHH_trade_negotiations_with_HRE_member: "Trade Negotiations with [FROM.GetName]"
  XHH_establish_branch_office_in_HRE_member: "Establish [FROM.GetAdjective] Branch Office"
- XHH_expand_trade_routes_in_HRE_member: "Expand Imperial Trade Routes in [FROM.GetName]"
  XHH_buy_civs: "Acquire Imperial Corporation Shares"
  XHH_buy_mils: "Lease Imperial Forges"
  XHH_research_investments: "Fund Imperial Science Efforts"
+ XHH_mining_investments: "Support the Mining Guilds"
 
  XHH_influence_cat: "Influence in the Empire"
  XHH_influence_cat_desc: "Our influence within the §YHoly Roman Empire§! has always been something the Monarchs of Hamburg have neglected. Now it is our time to increase our standing and gain the favour of the other Imperial members.\n \nThe effects of our National Spirit §Y$XHH_sea_empire_modifier$§! scale with §OImperial Influence§!. It is updated every time §Your influence grows§!.\n \nCurrent £GFX_legitimacy  Imperial Influence: [?XHH_influence|.0+]\n "
@@ -720,7 +724,7 @@
  XHH_future_of_science_desc: ""
  XHH_negotiate_reduced_interventionism: "Negotiate Free Trade Agreements"
  XHH_negotiate_reduced_interventionism_desc: ""
- XHH_negotiate_reduced_interventionism_tt: "Unlocks Decision: §YTrade Negotiations with 'Country'§!\nUnlocks Decision: §YEstablish 'Country' Branch Office§!\nUnlocks Decision: §YExpand Imperial Trade Routes in 'Country'§!"
+ XHH_negotiate_reduced_interventionism_tt: "nUnlocks Decision: §YEstablish 'Country' Branch Office§!"
  XHH_expand_atlantic_trade: "Transatlantikhandel"
  XHH_expand_atlantic_trade_desc: ""
  XHH_venice_hamburg_route: "Hamburg-Venedig Handelsbund"
@@ -810,6 +814,7 @@
  XHH_the_two_german_realms_desc: ""
  XHH_compromise_with_local_monarchs: "Compromise with Regional Monarchs"
  XHH_compromise_with_local_monarchs_desc: ""
+ XHH_compromise_with_local_monarchs_tt: "All §gcore states§! governed through §Yregional monarchies§! will be granted §Gautonomy§!."
  XHH_board_of_weapons_development: "Joint Board of Scientific Developments"
  XHH_board_of_weapons_development_desc: ""
 
@@ -1149,8 +1154,9 @@
  XHH_news_events.3.c: "This is stupid!"
  XHH_news_events.4.t: "Formation of the $XHH_mecklenburg_aegis$"
  XHH_news_events.4.desc: "In an effort to promote unity among the northern nations of the Holy Roman Empire, [FROM.GetNameDef] has proclaimed the formation of the $XHH_mecklenburg_aegis$, a pact whose members seek to protect each other from outside intervention.\n \nKurfürst Tom I. of Hamburg-Mecklenburg, in a speech in the Hamburger Rathaus, has called for more unity among the people of the German nations and to 'protect themselves from devastation', such as an invasion from outside of the Empire."
- XHH_news_events.4.a: "A noble goal."
- XHH_news_events.4.b: "Pah."
+ XHH_news_events.4.a: "We shall unite all people within our Nation!"
+ XHH_news_events.4.b: "A noble goal."
+ XHH_news_events.4.c: "Pah."
  XHH_news_events.5.t: "[FROM.GetAdjectiveCap] Domination of the Baltic Sea"
  XHH_news_events.5.desc: "[FROM.GetNameDefCap] has all but defeated [XFT.GetNameDef] in the war and now controls the three important cities of Danzig, Stettin and Köslin, cutting off [XFT.GetNameDef] from the Baltic sea and restoring [FROM.GetAdjective] hegemony in the Baltics.\n \nWhile riots have broken out after Danzig was declared a hanseatic city once more, which upset the Polish ethnicities in the city, the [XHH.GetAdjective] civilian administration of the region promises to reach out to them and restore law and order in Pommerania and Danzig."
  XHH_news_events.5.a: "The coast is ours!"

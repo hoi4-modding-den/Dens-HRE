@@ -217,7 +217,7 @@ country_event = {
     }
 }
 
-country_event = {
+country_event = { # Election Event
 	id = XHH_internal_events.6
 	title = XHH_internal_events.6.t
 	desc = XHH_internal_events.6.desc
@@ -510,7 +510,21 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		
+		if = {
+			limit = {
+				has_idea = XHH_welfare_state_idea_3
+			}
+			swap_ideas = {
+				remove_idea = XHH_welfare_state_idea_3
+				add_idea = XHH_welfare_state_idea_5
+			}
+		}
+		else = {
+			swap_ideas = {
+				remove_idea = XHH_welfare_state_idea_2
+				add_idea = XHH_welfare_state_idea_4
+			}
+		}
 
 		hidden_effect = {
 			news_event = {
@@ -535,7 +549,8 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-
+		set_country_flag = XHH_liberation_wars_unlocked
+		unlock_decision_category_tooltip = XHH_liberation_wars_cat
 
 		hidden_effect = {
 			news_event = {
@@ -1284,14 +1299,19 @@ country_event = { # XHH demanded we be annexed by XLH // refused
 			}
 			remove_from_faction = FROM
 		}
-		create_wargoal = {
-			type = annex_everything
-			target = FROM
-		}
-		XLH = {
+		if = {
+			limit = {
+				FROM = { NOT = { is_subject_of = XRO } } # dont attack the Pope
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = FROM
+			}
+			XLH = {
+				create_wargoal = {
+					type = annex_everything
+					target = FROM
+				}
 			}
 		}
 	}
@@ -1622,7 +1642,6 @@ news_event = {
 		trigger = {
 			OR = {
 				is_ally_with = FROM
-				has_government = FROM
 				original_tag = FROM
 			}
 		}
@@ -1632,8 +1651,17 @@ news_event = {
         name = XHH_news_events.4.b
 		trigger = {
 			NOT = { is_ally_with = FROM }
-			NOT = { has_government = FROM }
 			NOT = { original_tag = FROM }
+			is_in_faction = no
+		}
+    }
+
+	option = {
+        name = XHH_news_events.4.c
+		trigger = {
+			NOT = { is_ally_with = FROM }
+			NOT = { original_tag = FROM }
+			is_in_faction = yes
 		}
     }
 }
