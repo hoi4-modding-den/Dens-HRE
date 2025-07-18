@@ -1,0 +1,18 @@
+add_namespace = XVE_domestic_events
+add_namespace = XVE_diplo_events
+add_namespace = XVE_news_events
+
+country_event = {
+	id = XVE_domestic_events.1
+	title = XVE_domestic_events.1.t
+	desc = XVE_domestic_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_internal_events.1.a
+		custom_effect_tooltip = XVE_starting_coalition
+    }
+}

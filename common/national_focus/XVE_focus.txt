@@ -1,0 +1,58 @@
+focus_tree = {
+	id = XVE_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XVE
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = -400 y = 500 }
+
+	initial_show_position = {
+		x = 9
+		y = 0
+	}
+
+	focus = {
+		id = XVE_convene_the_alleanza_ducale
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 7
+		y = 0
+		#relative_position_id = 
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_party_faction_generic
+				hidden_trigger = {
+					has_country_flag = XVE_party_republicans
+					has_country_flag = XVE_party_liberal_conservatives
+					has_country_flag = XVE_party_corporatists
+				}
+			}			
+			has_country_flag = XVE_party_republicans
+			has_country_flag = XVE_party_liberal_conservatives
+			has_country_flag = XVE_party_corporatists
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = XVE_domestic_events.1
+		}
+	}
+}

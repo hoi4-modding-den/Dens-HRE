@@ -10,7 +10,7 @@ spriteTypes = {
 		texturefile = "gfx/leaders/XVE/XIF_istrian_freedom_front.png"
 	}	
 
-### IDEAS ###
+### IDEAS/TEXICONS ###
 	spriteType = {
 		name = "GFX_idea_XVE_serenissima_legacy"
 		texturefile = "gfx/interface/ideas/XVE/XVE_serenissima_legacy.png"
@@ -27,6 +27,16 @@ spriteTypes = {
 		name = "GFX_idea_XVE_the_concordia_littorum"
 		texturefile = "gfx/interface/ideas/XVE/XVE_the_concordia_littorum.png"
 	}
+	spriteType = {
+		name = "GFX_liberal_conservatives_texticon"
+		texturefile = "gfx/texticons/liberal_conservative_party.png"
+		legacy_lazy_load = no
+	}	
+	spriteType = {
+		name = "GFX_socialist_texticon"
+		texturefile = "gfx/texticons/socialist_party.png"
+		legacy_lazy_load = no
+	}		
 
 ### INTRO ###
 	frameAnimatedSpriteType = {
