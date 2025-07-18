@@ -19,6 +19,13 @@ set_technology = {
 
 recruit_character = XH7_Michael_Buchberger
 
+XH8 = {
+	set_autonomy = {
+		target = XH7
+		autonomous_state = autonomy_XLH_personal_union
+	}
+}
+
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1931.11.8"
