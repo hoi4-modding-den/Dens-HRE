@@ -1,0 +1,58 @@
+every_possible_country = {
+	limit = {
+		has_country_flag = filler_nation
+	}
+	generate_character = {
+		token_base = neutrality_leader # token will be TAG_token_base
+		country_leader = {
+			ideology = despotism
+			expire = "1950.1.1.1"
+			traits = {  }
+		}
+		portraits = {
+			civillian = {
+				large = GFX_portrait_gen_pol_4
+			}
+		}
+	}
+	generate_character = {
+		token_base = democratic_leader # token will be TAG_token_base
+		country_leader = {
+			ideology = conservatism
+			expire = "1950.1.1.1"
+			traits = {  }
+		}
+		portraits = {
+			civillian = {
+				large = GFX_portrait_gen_pol_13
+			}
+		}
+	}
+	generate_character = {
+		token_base = fascism_leader # token will be TAG_token_base
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1950.1.1.1"
+			traits = {  }
+		}
+		portraits = {
+			civillian = {
+				large = GFX_portrait_gen_pol_16
+			}
+		}
+	}
+	generate_character = {
+		token_base = communism_leader # token will be TAG_token_base
+		country_leader = {
+			ideology = marxism
+			expire = "1950.1.1.1"
+			traits = {  }
+		}
+		portraits = {
+			civillian = {
+				large = GFX_portrait_gen_pol_16
+			}
+		}
+	}
+}
+
