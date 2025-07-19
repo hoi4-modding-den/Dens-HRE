@@ -1,0 +1,34 @@
+add_namespace = XTR_events
+country_event = {
+id = XTR_events.1
+is_triggered_only = yes
+title = "Tyrol Demands Our Submission!"
+desc = "A delegation from the Tyrolean Military Command has arrived in [ROOT.GetName], bearing a grim ultimatum. Claiming historical and strategic necessity, they demand our unconditional integration into their state structure. The message is clear."
+picture = GFX_report_event_valeria
+
+ mean_time_to_happen = {
+	days = 1
+	}	
+option = { 
+	name = "Fuck off."
+	ai_chance = {
+		factor = 50
+		}
+	XTR = {
+            declare_war_on = {
+                target = ROOT
+                type = annex_everything
+            }
+        }
+}
+option = { # She is destined for glory.
+	name = "Damn alright.."
+	ai_chance = {
+		factor = 100
+		}
+	XTR = {Puppet = ROOT}
+   
+        
+    
+}
+}	

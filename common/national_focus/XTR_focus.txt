@@ -18,7 +18,7 @@ focus = {
   y = -1
   cost = 10
   completion_reward = {
-    
+    add_political_power = 200
 
   }
 }
@@ -31,7 +31,21 @@ focus = {
   y = 1
   cost = 11
     completion_reward = {
-   
+   every_owned_state = {
+    limit = {
+        free_building_slots = {
+            building = industrial_complex
+            size > 0
+            include_locked = yes
+        }
+    }
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}
 
   }
 }
@@ -44,7 +58,21 @@ focus = {
   y = 2
   cost = 12
     completion_reward = {
-   
+   every_owned_state = {
+    limit = {
+        free_building_slots = {
+            building = industrial_complex
+            size > 0
+            include_locked = yes
+        }
+    }
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}
   }
 }
 
@@ -56,7 +84,21 @@ focus = {
   y = 3
   cost = 13
    completion_reward = {
-   
+   every_owned_state = {
+    limit = {
+        free_building_slots = {
+            building = industrial_complex
+            size > 0
+            include_locked = yes
+        }
+    }
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}
 
   }
 }
@@ -69,6 +111,14 @@ focus = {
   y = 3
   cost = 10
   completion_reward = {
+    every_owned_state = {
+    add_building_construction = {
+        type = infrastructure
+        level = 1          # Adds +1 infra level
+        instant_build = yes
+    }
+}
+
   }
 }
 
@@ -81,6 +131,21 @@ focus = {
   y = 4
   cost = 10
   completion_reward = {
+    every_owned_state = {
+    add_building_construction = {
+        type = infrastructure
+        level = 1          # Adds +1 infra level
+        instant_build = yes
+    }
+}
+every_owned_state = {
+    add_building_construction = {
+        type = infrastructure
+        level = 1          # Adds +1 infra level
+        instant_build = yes
+    }
+}
+
   }
 }
 
@@ -92,6 +157,14 @@ focus = {
   y = 5
   cost = 10
   completion_reward = {
+    every_owned_state = {
+    add_building_construction = {
+        type = infrastructure
+        level = 1          # Adds +1 infra level
+        instant_build = yes
+    }
+}
+
   }
 }
 
@@ -103,7 +176,22 @@ focus = {
   y = 4
   cost = 10
   completion_reward = {
-   
+   every_owned_state = {
+  limit = {
+    free_building_slots = {
+      building = arms_factory
+      size > 0
+      include_locked = yes
+    }
+  }
+  add_extra_state_shared_building_slots = 1
+  add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+  }
+}
+
 
   }
 }
@@ -116,7 +204,22 @@ focus = {
   y = 5
   cost = 10
  completion_reward = {
-   
+   every_owned_state = {
+  limit = {
+    free_building_slots = {
+      building = arms_factory
+      size > 0
+      include_locked = yes
+    }
+  }
+  add_extra_state_shared_building_slots = 1
+  add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+  }
+}
+
 
   }
 }
@@ -129,6 +232,21 @@ focus = {
   y = 6
   cost = 10
  completion_reward = {
+every_owned_state = {
+  limit = {
+    free_building_slots = {
+      building = arms_factory
+      size > 0
+      include_locked = yes
+    }
+  }
+  add_extra_state_shared_building_slots = 1
+  add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+  }
+}
 
   }
 }
@@ -246,12 +364,14 @@ focus = {
     x = 15
     y = -1
     cost = 10
-    completion_reward = { }
+    completion_reward = { 
+      add_political_power = 150
+    }
   }
 
   focus = {
     id = XTR_seek_democracy
-    icon = GFX_goal_generic_democracy
+    icon = GFX_focus_generic_democratic_europe
     prerequisite = { focus = XTR_political_crossroads }
     x = 14
     y = 0
@@ -262,19 +382,26 @@ focus = {
 
   focus = {
     id = XTR_embrace_order
-    icon = GFX_goal_generic_fascist
+    icon = GFX_focus_generic_spread_fascism
     prerequisite = { focus = XTR_political_crossroads }
     x = 16
     y = 0
     cost = 10
     mutually_exclusive = { focus = XTR_seek_democracy }
-    completion_reward = { }
+    completion_reward = { 
+      1035 = {
+    set_demilitarized_zone = no
+}
+1036 = {
+    set_demilitarized_zone = no
+}
+    }
   }
 
   # Democratic path
   focus = {
     id = XTR_establish_free_state
-    icon = GFX_goal_generic_constitution
+    icon = GFX_goal_support_democracy
     prerequisite = { focus = XTR_seek_democracy }
     x = 13
     y = 2
@@ -284,7 +411,7 @@ focus = {
 
   focus = {
     id = XTR_civic_reform
-    icon = GFX_goal_generic_democracy
+    icon = GFX_SOV_reformalize_the_role_of_the_patriarchate_ccp_2d_sov_compatibility
     prerequisite = { focus = XTR_establish_free_state }
     x = 13
     y = 3
@@ -294,33 +421,94 @@ focus = {
 
     focus = {
     id = XTR_unity_idendity
-    icon = GFX_goal_generic_democracy
+    icon = GFX_focus_generic_befriend_austria
     prerequisite = { focus = XTR_civic_reform }
     x = 13
     y = 4
     cost = 10
-    completion_reward = { }
+    completion_reward = { 
+      XAS = {country_event = generic.2}
+    }
   }
 
   # Fascist path
   focus = {
     id = XTR_proclaim_sacred_order
-    icon = GFX_goal_generic_fascist
+    icon = GFX_goal_support_fascism
     prerequisite = { focus = XTR_embrace_order }
     x = 17
     y = 2
     cost = 10
-    completion_reward = { }
+    completion_reward = {
+      set_politics = {
+    ruling_party = fascism
+    elections_allowed = no
+}
+
+     }
   }
 
   focus = {
     id = XTR_mobilize_the_faithful
-    icon = GFX_goal_generic_propaganda
+    icon = GFX_focus_ITA_generic_fascist_workers
     prerequisite = { focus = XTR_proclaim_sacred_order }
     x = 17
     y = 3
     cost = 10
-    completion_reward = { }
+    completion_reward = {
+      add_manpower = 100000
+     }
+  }
+   focus = {
+    id = XTR_eat_XLS
+    icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+    prerequisite = { focus = XTR_mobilize_the_faithful }
+    x = 17
+    y = 4
+    cost = 10
+    completion_reward = {
+    XLS = {  country_event = {
+    id = XTR_events.1
+    days = 10
+    random_hours = 12
+    random_days = 10
+}
+    }
+     }
+  }
+     focus = {
+    id = XTR_eat_XVE
+    icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+    prerequisite = { focus = XTR_eat_XLS }
+    x = 17
+    y = 5
+    cost = 10
+    completion_reward = {
+    XVE = {  country_event = {
+    id = XTR_events.1
+    days = 10
+    random_hours = 12
+    random_days = 10
+    }
+}
+      
+     }
+  }
+       focus = {
+    id = XTR_eat_HRE
+    icon = GFX_SOV_fascist_youth_union_ccp_2d_sov_compatibility
+    prerequisite = { focus = XTR_eat_XVE }
+    x = 17
+    y = 6
+    cost = 10
+    completion_reward = {
+   create_wargoal = {
+    type = puppet_wargoal_focus
+    target = XS0
+    # add_ideas = XTR_justification_idea
+}
+      
+     }
   }
 }
 
