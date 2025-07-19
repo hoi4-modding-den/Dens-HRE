@@ -1,8 +1,9 @@
 capital = 1088
 
+recruit_character = XWR_city_council
 
 set_variable = { HRE_national_stance_federalism = 2 }
-set_variable = { HRE_national_stance_welfare = 2 }
+set_variable = { HRE_national_stance_welfare = 3 }
 set_variable = { HRE_national_stance_papacy = 2 }
 
 set_country_flag = HRE_is_republic
@@ -20,12 +21,12 @@ set_technology = {
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	last_election = "1931.11.8"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	neutrality = 100
+	democratic = 100
 }
