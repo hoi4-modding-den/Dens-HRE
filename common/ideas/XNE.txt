@@ -483,5 +483,27 @@ ideas = {
                 industrial_capacity_factory = 0.05
             }
         }
+
+        XFS_rubber_stockpiling = {
+            picture = FRA_motorized_focus
+            modifier = {
+                country_resource_rubber = 9
+            }
+            equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+        }
+
+        XFS_military = {
+            picture = BEL_rexist_legion
+            modifier = {
+                modifier_army_sub_unit_militia_attack_factor = 0.1
+                modifier_army_sub_unit_militia_defence_factor = 0.15
+                conscription_factor = 0.12
+            }
+        }
 	}
 }

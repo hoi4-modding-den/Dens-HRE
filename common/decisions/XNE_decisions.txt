@@ -1007,3 +1007,61 @@ XHO_calvinism_category = {
         }
 	}
 }
+
+XFS_purchase_artillery_category = {
+    XFS_purchase_artillery = {
+		priority = -1
+
+		icon = ger_military_buildup
+
+		ai_will_do = {
+			base = 1
+		}
+        
+        allowed = {
+            tag = XFS
+        }
+
+		target_root_trigger = {
+			has_completed_focus = XFS_acquire_artillery
+		}
+        
+        target_trigger = {
+            FROM = {
+                has_country_flag = XFS_artillery_agreement
+            }
+        }
+
+		cost = 50
+        days_remove = 70
+        days_re_enable = 14
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = artillery_equipment
+                amount = 50
+                producer = FROM
+            }
+            custom_effect_tooltip = XFS_purchase_artillery_tt
+            hidden_effect = {
+                FROM = {
+                    add_offsite_building = {
+                        type = arms_factory
+                        level = 1
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    add_offsite_building = {
+                        type = arms_factory
+                        level = -1
+                    }
+                }
+            }
+        }
+	}
+}
