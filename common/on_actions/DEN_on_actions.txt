@@ -4,13 +4,11 @@ on_actions = {
 			XRO = { set_country_flag = HRE_is_republic }
 			every_country = {
 				limit = {
-					capital_scope = { is_on_continent = europe }
-					NOT = { has_idea = anarchy_idea_max }
+					has_country_flag = HRE_member_state
 					exists = yes
 				}
 				add_to_array = { global.HRE_members = THIS.id }
 				add_to_array = { global.HRE_voting_array = THIS.id }
-				set_country_flag = HRE_member_state
 				add_dynamic_modifier = { modifier = HRE_member_state_spirit }
 			}
 			every_country = {
