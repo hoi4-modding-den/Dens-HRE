@@ -396,7 +396,7 @@ def main():
         building_types = [
             'arms_factory', 'industrial_complex', 'air_base', 'bunker', 
             'anti_air_building', 'synthetic_refinery', 'nuclear_reactor_spawn',
-            'radar_station', 'fuel_silo', 'special_project_facility_spawn', 'stronghold_network'.
+            'radar_station', 'fuel_silo', 'special_project_facility_spawn', 'stronghold_network',
             'rocket_site_spawn', 'supply_node'
         ]
         

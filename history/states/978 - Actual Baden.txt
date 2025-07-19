@@ -1,7 +1,7 @@
 state = {
 	id = 978
 	name = "STATE_978" # Baden
-	manpower = 2056854
+	manpower = 1446198
 
 	resources = {
 		aluminium = 6 # was: 10.000
@@ -11,7 +11,8 @@ state = {
 
 	history = {
 
-		owner = ZZZ #owner = GER
+		owner = XBD #owner = GER
+		add_core_of = XBD
 		add_claim_by = XWB
 		#add_core_of = GER
 		#add_core_of = WUR
@@ -20,46 +21,16 @@ state = {
 			3530 10 #Karlsruhe
 		}
 
-		victory_points = {
-			11640 1 #Müllheim
-		}
-
-		victory_points = {
-			6712 1 #Freiburg
-		}
-
 		buildings = {
 			infrastructure = 3
 			arms_factory = 2
 			air_base = 1
 		}
-		
-		1939.1.1 = {
-			buildings = {
-				arms_factory = 3
-				# From "The Four Year Plan"
-				industrial_complex = 2
-				#Westwall Forts
-				3530 = {
-					bunker = 2
-				}
-				6542 = {
-					bunker = 2
-				}
-				6712 = {
-					bunker = 2
-				}
-				11640 = {
-					bunker = 2
-				}
-			}
-		}
 	}
 
 	provinces = {
-		3530 3679 3692 6542 6581 6568 6712 11640 13382
+		3530 6542 6581 6568
 	}
 	
-	buildings_max_level_factor = 1.000
 	local_supplies = 0.0 
 }

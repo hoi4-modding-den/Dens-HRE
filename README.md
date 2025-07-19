@@ -67,8 +67,9 @@ HRE somehow existed until 1936. It must be at least semi-realistic (No robot mec
   | <details><summary>Silesia</summary><ul><li>XPL<li>XSI</ul></summary> | maitrejx | rafael6102 |
   | <details><summary>Switzerland</summary><ul><li>XCS<li>XFC<li>XSA</ul></summary> | Filler | Filler |
   | <details><summary>Bavaria</summary><ul><li>XMB<li>XMU<li>XLS<li>XDS<li>XNU</ul></summary> | Filler | Filler |
-  | <details><summary>Rhine</summary><ul><li>XNR</ul></summary> | Filler | Filler |
-  | <details><summary>Thuringia</summary><ul><li>XWR</ul></summary> | Filler | Filler |
+  | <details><summary>Rhine/Alsace</summary><ul><li>XNR<li>XFE<li>XLO<li>XBA<li>XVM<li>XLG</ul></summary> | Filler | Filler |
+  | <details><summary>Thuringia</summary><ul><li>XWR<li>XTU<li>XRE</ul></summary> | Filler | Filler |
+  | <details><summary>Baden</summary><ul><li>XBD<li>XBE<li>XFU</ul></summary> | Filler | Filler |
   
 
 </details>
