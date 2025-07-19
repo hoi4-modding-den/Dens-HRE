@@ -35,3 +35,16 @@ XHO_calvinism_category = {
 
 	priority = 110
 }
+
+XFS_purchase_artillery_category = {
+	icon = generic_trade
+	allowed = {
+		tag = XFS
+	}
+
+	visible = {
+		has_completed_focus = XFS_acquire_artillery
+	}
+
+	priority = 100
+}

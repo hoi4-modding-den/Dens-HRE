@@ -208,6 +208,30 @@
  XNE_joint_future:0 "Lookinng to the Future"
  XNE_focus:0 "Netherlands Focus"
 
+ XFS_reconvene_landei:0 "Reconvene the Landei"
+ XFS_fate_of_cuxhaven:0 "Fate of Cuxhaven"
+ XFS_fate_of_nordenham:0 "Fate of Nordenham"
+ XFS_fortify_ports:0 "Fortify the Ports"
+ XFS_frisian_irredentism:0 "Frisian Irredentism"
+ XFS_stockpile_rubber:0 "Stockpile Rubber"
+ XFS_defensive_focus:0 "Defensive Focus"
+ XFS_military_readiness:0 "Military Readiness"
+ XFS_heavy_industry:0 "Heavy Industry"
+ XFS_farming_culture:0 "Farming Culture"
+ XFS_urbanization:0 "Urbanization"
+ XFS_heavy_industry_again:0 "Further Industry Developments"
+ XFS_farming_culture_again:0 "Increase Exports"
+ XFS_urbanization_again:0 "Further Urbanization"
+ XFS_weapon_purchases:0 "Weapon Purchases"
+ XFS_study_foreign_equipment:0 "Study Foreign Equipment"
+ XFS_acquire_artillery:0 "Acquire Artillery"
+ XFS_raise_militia:0 "Raise Militia"
+ XFS_trucks:0 "Truck Developments"
+ XFS_antiair:0 "Antiair Focus"
+ XFS_repairyards:0 "Repair Yards"
+ XFS_destroyer_focus:0 "Destroyer Research"
+ XFS_naval_aircraft:0 "Naval Aircraft"
+
  ### EVENT ###
  XNE_joint.1.t:0 "First Union of [FROM.Capital.GetCapitalVictoryPointName]"
  XNE_joint.1.d:0 "[FROM.GetNameDefCap] has invited us to a defensive military alliance. Should we accept?"
@@ -253,8 +277,14 @@
  XFS.5.t:0 "[FROM.GetName] wishes to purchase artillery"
  XFS.5.d:0 ""
  XFS.5.a:0 "This sounds beneficial for both parties"
- XFS.5.tt:0 "[FROM.GetNonIdeologyName] will be able to purchase our artillery. We will gain an offmap military factory for the duration of the purchase."
+ XFS.5.tt:0 "[FROM.GetNameDefCap] will be able to purchase our artillery. We will gain an offmap military factory for the duration of the purchase."
  XFS.5.b:0 "We'd rather not provide them arms"
+ XFS.6.t:0 "[FROM.GetNameDefCap] agrees to sell us artillery"
+ XFS.6.d:0 ""
+ XFS.6.a:0 "Great"
+ XFS.7.t:0 "[FROM.GetNameDefCap] refuses to sell us artillery"
+ XFS.7.d:0 ""
+ XFS.7.a:0 "Unfortunate"
 
 ### IDEA ###
  XNE_joint_first_union_name:0 "The First Union of [?XNE.union_capital.GetName]"
@@ -305,6 +335,7 @@
  XFS_agricultural_society:0 "Agricultural Society"
  XFS_agricultural_society_2:0 "Agricultural Society"
  XFS_agricultural_society_3:0 "Agricultural Society"
+ XFS_military:0 "Military Readiness"
 
  ### TRAIT ###
  XNE_supreme_commander:0 "Supreme Commander"
@@ -330,6 +361,10 @@
  XHO_calvinist_prepare:0 "Procure Armaments"
  XHO_calvinist_prepare_cost:0 "£command_power §Y20§!  £army_experience §Y10§!"
  XHO_calvinist_prepare_cost_blocked:0 "£command_power §R20§!  £army_experience §R10§!"
+
+ XFS_purchase_artillery_category:0 "Artillery Purchases"
+ XFS_purchase_artillery:0 "Purchase Artillery from [FROM.GetNameDef]"
+ XFS_purchase_artillery_tt:0 "§Y[FROM.GetNameDefCap]§! will receive §G1§! offmap §YMilitary Factory§! for the duration."
 
  XNE_netherlands:0 "Unite the Seventeen Provinces"
  XNE_united_netherlands:0 "Proclaim the United Netherlands"
