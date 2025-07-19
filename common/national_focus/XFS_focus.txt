@@ -131,7 +131,7 @@ focus_tree = {
 		available = {
 			controls_state = 1052
 			controls_state = 1053
-			fascism > 0.3
+			fascism > 0.15
 		}
 		icon = GFX_focus_generic_hill_training
 		prerequisite = { focus = XFS_fortify_ports }
@@ -228,6 +228,286 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = XFS_agricultural_society
 				add_idea = XFS_agricultural_society_2
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_heavy_industry_again
+		available = {
+			num_of_civilian_factories > 5
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XFS_heavy_industry }
+		prerequisite = { focus = XFS_urbanization }
+    	relative_position_id = XFS_heavy_industry
+		x = 0
+		y = 2
+		cost = 10
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 36 1050 }
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_farming_culture_again
+		available = {
+			any_owned_state = {
+				infrastructure > 4
+			}
+		}
+		icon = GFX_focus_DEN_schleswigian_farmers
+		prerequisite = { focus = XFS_farming_culture }
+		prerequisite = { focus = XFS_urbanization }
+    	relative_position_id = XFS_farming_culture
+		x = 0
+		y = 2
+		cost = 10
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XFS_agricultural_society_2
+				add_idea = XFS_agricultural_society_3
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_urbanization_again
+		available = {
+		}
+		icon = GFX_focus_SWE_urbanization
+		prerequisite = { focus = XFS_heavy_industry_again focus = XFS_farming_culture_again }
+    	relative_position_id = XFS_heavy_industry_again
+		x = 1
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					controls_state = 1050
+				}
+				1050 = { add_manpower = 32500 }
+			}
+			if = {
+				limit = {
+					controls_state = 36
+				}
+				36 = { add_manpower = 18600 }
+			}
+			if = {
+				limit = {
+					controls_state = 1053
+				}
+				1053 = { add_manpower = 1300 }
+			}
+			if = {
+				limit = {
+					controls_state = 1084
+				}
+				1084 = { add_manpower = 74200 }
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					controls_state = 36
+				}
+				36 = { XNE_upgrade_state_category = yes }
+				add_victory_points = {
+					province = 6336
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					controls_state = 1050
+				}
+				1050 = { XNE_upgrade_state_category = yes }
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_weapon_purchases
+		available = {
+		}
+		icon = GFX_goal_generic_small_arms
+		x = 14
+		y = 0
+		cost = 10
+
+		completion_reward = {
+			add_equipment_subsidy = {
+				cic = 1200
+				equipment_type = infantry_equipment
+				seller_trigger = XNE_yes
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_study_foreign_equipment
+		available = {
+		}
+		icon = GFX_focus_FIN_weapon_caches
+		prerequisite = { focus = XFS_weapon_purchases }
+    	relative_position_id = XFS_weapon_purchases
+		x = -1
+		y = 1
+		cost = 5
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_acquire_artillery
+		available = {
+		}
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = XFS_weapon_purchases }
+    	relative_position_id = XFS_weapon_purchases
+		x = 1
+		y = 1
+		cost = 5
+
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					XNE_is_dutch_tag = yes
+					has_tech = gw_artillery
+				}
+				country_event = {
+					id = XFS.5
+					days = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_raise_militia
+		available = {
+		}
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = XFS_acquire_artillery }
+    	relative_position_id = XFS_acquire_artillery
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			hidden_effect = {
+				division_template = {
+					name = "Militie Divisie"
+					division_names_group = HOL_GAR_01
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+			}
+			CAPITAL_SCOPE = {
+				create_unit = {
+					division = "name = \"Militia\" division_template = \"Militie Divisie\" start_experience_factor = 0.0 start_equipment_factor = 0.7"
+					owner = PREV
+					count = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_repairyards
+		available = {
+		}
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 18
+		y = 0
+		cost = 10
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 36 1050 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			if = {
+				limit = {
+					controls_state = 1053
+				}
+				1053 = {
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 13487
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 1052
+				}
+				1052 = {
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 13486
+						instant_build = yes
+					}
+				}
 			}
 		}
 	}

@@ -519,3 +519,76 @@ country_event = {
         name = XFS.4.b
 	}
 }
+
+country_event = {
+	id = XFS.5
+	title = XFS.5.t
+	desc = XFS.5.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.5.a
+		set_country_flag = XFS_artillery_agreement
+		custom_effect_tooltip = XFS.5.tt
+
+		hidden_effect = {
+			XFS = {
+				country_event = {
+					id = XFS.6
+					days = 3
+				}
+			}
+		}
+	}
+
+	option = {
+        name = XFS.5.b
+		hidden_effect = {
+			XFS = {
+				country_event = {
+					id = XFS.7
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = XFS.6
+	title = XFS.6.t
+	desc = XFS.6.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.6.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_increase
+		}
+	}
+}
+
+country_event = {
+	id = XFS.7
+	title = XFS.7.t
+	desc = XFS.7.d
+
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+
+	option = {
+        name = XFS.7.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = small_decrease
+		}
+	}
+}
