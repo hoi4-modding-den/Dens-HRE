@@ -11,14 +11,128 @@ focus_tree = {
 
     reset_on_civilwar = no
 
+	focus = {
+		id = XBT_leopold
+		available = {
+		}
+		mutually_exclusive = { focus = XBT_council_of_brabant }
+		icon = GFX_focus_BEL_charles_count_of_flanders
+		x = 2
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_trait = {
+				character = XBT_leopold_iii
+				slot = country_leader
+				trait = dictator
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = -0.15
+		}
+	}
+
+	focus = {
+		id = XBT_war_prep
+		available = {
+		}
+		icon = GFX_focus_BEL_charles_count_of_flanders
+		prerequisite = { focus = XBT_leopold }
+    	relative_position_id = XBT_leopold
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_council_of_brabant
+		available = {
+		}
+		mutually_exclusive = { focus = XBT_leopold }
+		icon = GFX_focus_BEL_charles_count_of_flanders
+		x = 4
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+		}
+	}
+
+	focus = {
+		id = XBT_welfare_state
+		available = {
+		}
+		icon = GFX_focus_BEL_charles_count_of_flanders
+		prerequisite = { focus = XBT_council_of_brabant }
+    	relative_position_id = XBT_council_of_brabant
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_antwerp_industry
+		available = {
+		}
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
+		x = 14
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_more_industry
+		available = {
+			neutrality > 0.5
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XBT_antwerp_industry }
+    	relative_position_id = XBT_antwerp_industry
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+
+		}
+	}
+
     focus = {
 		id = XBT_royal_arms_purchases
 		available = {
-			neutrality > 0.35
+			neutrality > 0.5
 		}
 		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XBT_more_industry }
+    	relative_position_id = XBT_more_industry
 		x = 0
-		y = 0
+		y = 1
 		cost = 10
 
 		available_if_capitulated = yes
@@ -27,4 +141,217 @@ focus_tree = {
 			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
+
+
+
+
+
+	focus = {
+		id = XBT_banking_sector
+		available = {
+		}
+		icon = GFX_focus_CHL_devalue_the_peso_export
+		prerequisite = { focus = XBT_antwerp_industry }
+    	relative_position_id = XBT_antwerp_industry
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_railways
+		available = {
+		}
+		icon = GFX_focus_CHL_devalue_the_peso_export
+		prerequisite = { focus = XBT_banking_sector }
+    	relative_position_id = XBT_banking_sector
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_artillery_focus
+		available = {
+		}
+		icon = GFX_focus_CHL_devalue_the_peso_export
+		x = 18
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_electronics
+		available = {
+		}
+		icon = GFX_focus_CHL_devalue_the_peso_export
+		prerequisite = { focus = XBT_artillery_focus }
+    	relative_position_id = XBT_artillery_focus
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_price_controls
+		available = {
+		}
+		icon = GFX_focus_CHL_devalue_the_peso_export
+		prerequisite = { focus = XBT_electronics }
+    	relative_position_id = XBT_electronics
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+
+	focus = {
+		id = XBT_eastern_farming
+		available = {
+		}
+		icon = GFX_focus_CHL_devalue_the_peso_export
+		prerequisite = { focus = XBT_railways }
+		prerequisite = { focus = XBT_price_controls }
+    	relative_position_id = XBT_railways
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+
+
+
+
+	focus = {
+		id = XBT_royal_academy
+		available = {
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 8
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_urban_training
+		available = {
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XBT_royal_academy }
+    	relative_position_id = XBT_royal_academy
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			set_technology = {
+				urban_training_tech = 1
+			}
+		}
+	}
+
+	focus = {
+		id = XBT_river_defences
+		available = {
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XBT_urban_training }
+    	relative_position_id = XBT_urban_training
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_trucks
+		available = {
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 10
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_tank_infancy
+		available = {
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XBT_urban_training }
+		prerequisite = { focus = XBT_trucks }
+    	relative_position_id = XBT_urban_training
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = XBT_military_industry
+		available = {
+		}
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XBT_tank_infancy focus = XBT_river_defences }
+    	relative_position_id = XBT_river_defences
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+		}
+	}
+
 }

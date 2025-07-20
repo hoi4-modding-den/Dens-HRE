@@ -97,18 +97,37 @@ bookmarks = {
 			history = "XHO_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				XNE_port_of_rotterdam_1
+				XHO_calvinist_problem
 			}
 			focuses = {
+				XHO_reaffirm_religious_freedoms
+				XHO_crack_down_on_calvinism
+				XHO_schiphol_airport
 			}
 		}
 		"XBT"={
 			history = "XBT_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				XNE_port_of_antwerpen_1
 			}
 			focuses = {
 			}
-		}		
+		}
+		"XFS"={
+			history = "XFS_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				XFS_no_nobility
+				XFS_agricultural_society
+			}
+			focuses = {
+				XFS_reconvene_landei
+				XFS_fate_of_cuxhaven
+				XFS_farming_culture
+			}
+		}	
 		"XTR"={
 			history = "XTR_GATHERING_STORM_DESC"
 			ideology = democratic
