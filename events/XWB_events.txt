@@ -26,6 +26,33 @@ country_event = { #intro event
 }
 
 #News Events# (the big news pop-ups)
+news_event = { #Reformation of Burgundy
+	id = XWB_news_event.1
+	title = XWB_NE.1.t
+	desc = XWB_NE.1.d
+	picture = GFX_news_event_generic_parliament
+
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XWB_NE.1.a
+	}
+}
+news_event = { #Formation of the Corporate Alliance
+	id = XWB_news_event.2
+	title = XWB_NE.2.t
+	desc = XWB_NE.2.d
+	picture = GFX_news_event_generic_parliament
+
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XWB_NE.2.a
+	}
+	option = { #members
+		name = XWB_NE.2.b
+	}
+}
 
 #Diplomatic Events# (events from interactions with other countries)
 country_event = { #demand Voralberg
@@ -69,6 +96,8 @@ country_event = { #demand Voralberg
 			country_event = { id = XWB_diplo_event.2 days = 1 }
 			transfer_state = 848
 			transfer_state = 1035
+			add_state_claim = 848
+			add_state_claim = 1035
 		}
 	hidden_effect = {
 			
@@ -128,7 +157,7 @@ country_event = { #told to fuck off
 			target = FROM
 			expire = 0
 		}
-	hidden_effect = {
+		hidden_effect = {
 			
 		}
     }
@@ -152,6 +181,47 @@ country_event = { #demand east swabia
     desc = XWB.DE_4.d
 
     is_triggered_only = yes
+	option = {
+        name = XWB.DE_4.c
+		trigger = {
+			num_of_controlled_states < 2
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				XWB = {
+					is_ai = no
+				}
+				factor = 250
+			}
+			modifier = {
+				XWB = {
+					is_major = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				XWB = {
+					num_divisions < 1
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 2
+				}
+				factor = 3
+			}
+		}
+		custom_effect_tooltip = XWB_end_game
+		XWB = {
+			country_event = { id = XWB_diplo_event.11 days = 0.5 }
+		}
+	hidden_effect = {
+			
+		}
+    }
 	option = {
         name = XWB.DE_4.a
 		ai_chance = {
@@ -182,9 +252,17 @@ country_event = { #demand east swabia
 				factor = 3
 			}
 		}
+		if = {
+			limit = { ROOT = { num_of_controlled_states < 2 } }
+			custom_effect_tooltip = XWB_end_game
+		}
 		XWB = {
 			country_event = { id = XWB_diplo_event.5 days = 0.5 }
-			transfer_state = 1085
+		}
+		effect_tooltip = {
+			XWB = {
+				transfer_state = 1085
+			}
 		}
 	hidden_effect = {
 			
@@ -202,15 +280,23 @@ country_event = { #demand east swabia
 				factor = 0.75
 			}
 		}
+		effect_tooltip = {
+			XWB = {
+				declare_war_on = {
+					target = ROOT
+					type = take_state
+					generator = { 1085 }
+				}
+			}
+		}
+	hidden_effect = {
 		XWB = {
 			country_event = { id = XWB_diplo_event.6 days = 0.5 }
 		}
-	hidden_effect = {
-			
 		}
     }
 }
-country_event = { #given Voralberg
+country_event = { #given east swabia
     id = XWB_diplo_event.5
     title = XWB.DE_5.t
     # picture = GFX_report_event_DEN_celebration
@@ -219,9 +305,8 @@ country_event = { #given Voralberg
     is_triggered_only = yes
 	option = {
         name = XWB.DE_5.a
-		ai_chance = {
-			base = 100
-		}
+		transfer_state = 1085
+		add_state_claim = 1085
 	hidden_effect = {
 			
 		}
@@ -286,7 +371,7 @@ country_event = { #formation of the Ständesfront
 			country_event = { id = XWB_diplo_event.8 days = 0.5 }
 		}
 		hidden_effect = {
-			
+			news_event = { id = XWB_news_event.2 days = 1 }
 		}
     }
 	option = {
@@ -307,7 +392,7 @@ country_event = { #formation of the Ständesfront
 			country_event = { id = XWB_diplo_event.8 days = 0.5 }
 		}
 		hidden_effect = {
-			
+			news_event = { id = XWB_news_event.2 days = 1 }
 		}
     }
 	option = {
@@ -343,7 +428,7 @@ country_event = { #formation of the Ständesfront
 			XBR = { country_event = { id = XWB_diplo_event.8 days = 0.5 } }
 		}
 		hidden_effect = {
-			
+			news_event = { id = XWB_news_event.2 days = 1 }
 		}
     }
 	option = {
@@ -355,6 +440,9 @@ country_event = { #formation of the Ständesfront
 			XEX = {
 				is_faction_leader = yes
 			}
+		}
+		XEX = {
+			country_event = { id = XWB_diplo_event.12 days = 0.5 }
 		}
 		hidden_effect = {
 			
@@ -428,6 +516,643 @@ country_event = { #agreed to join
 		}
 	hidden_effect = {
 			
+		}
+    }
+}
+
+country_event = { #request for autonomy or something
+    id = XWB_diplo_event.11
+    title = XWB.DE_11.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_11.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_11.a
+		ai_chance = {
+			base = 100
+		}
+		annex_country = {
+			target = FROM
+		}
+		
+		1085 = {
+			add_core_of = XWB
+			add_dynamic_modifier = { modifier = XWB_state_autonomy }
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_11.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -10
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+			expire = 0
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+
+country_event = { #request to join the Lega Padana
+    id = XWB_diplo_event.12
+    title = XWB.DE_12.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_12.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_12.a
+		ai_chance = {
+			base = 100
+		}
+		add_to_faction = FROM
+		FROM = {
+			country_event = { id = XWB_diplo_event.13 days = 0.5 }
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_12.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -10
+		FROM = {
+			add_opinion_modifier = {
+				target = XEX
+				modifier = faction_traitor
+			}
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #joined faction
+    id = XWB_diplo_event.13
+    title = XWB.DE_13.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_13.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_13.a
+		ai_chance = {
+			base = 100
+		}
+
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #not allowed in faction
+    id = XWB_diplo_event.14
+    title = XWB.DE_14.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_14.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_14.a
+		ai_chance = {
+			base = 100
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+
+country_event = { #demand sudetenland
+    id = XWB_diplo_event.15
+    title = XWB.DE_15.t
+    picture = GFX_report_event_german_troops
+    desc = XWB.DE_15.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_15.a
+		ai_chance = {
+			base = 20
+		}
+		effect_tooltip = {
+			XWB = {
+				transfer_state = 69
+				add_state_core = 69
+				transfer_state = 972
+				add_state_core = 972
+				if = {
+					limit = { XBH = {
+						owns_state = 74
+					} }
+					transfer_state = 74
+					add_state_core = 74
+				}
+			}
+		}
+		
+	hidden_effect = {
+			XWB = {
+				country_event = { id = XWB_diplo_event.16 days = 1 }
+			}
+		}
+    }
+	option = {
+        name = XWB.DE_15.b
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = XWB
+					ratio > 0.7
+				}
+			}
+			modifier = {
+				factor = 10
+				any_other_country = {
+					is_major = yes
+					is_in_faction_with = XBH
+				}
+			}
+		}
+		
+		effect_tooltip = {
+			XWB = {
+				declare_war_on = {
+					target = XBH
+					type = take_state
+					generator = { 69 }
+				}
+			}
+		}
+	hidden_effect = {
+			XWB = {
+				country_event = { id = XWB_diplo_event.17 days = 1 }
+			}
+		}
+    }
+}
+country_event = { #ceded Sudetenland
+    id = XWB_diplo_event.16
+    title = XWB.DE_16.t
+    picture = GFX_report_event_german_polish_border
+    desc = XWB.DE_16.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_16.a
+		transfer_state = 69
+		add_state_core = 69
+		transfer_state = 972
+		add_state_core = 972
+		if = {
+			limit = { XBH = {
+				owns_state = 74 #idk why I'm setting this up, XWB wouldn't even be able to reach state 74 (sudeten silesia)
+			} }
+			transfer_state = 74
+			add_state_core = 74
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #refused to hand over Sudetenland
+    id = XWB_diplo_event.17
+    title = XWB.DE_17.t
+    picture = GFX_report_event_polish_tanks_02
+    desc = XWB.DE_17.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_17.a
+		if = {
+			limit = {
+				XBH = {
+					is_subject = yes
+					OVERLORD = {
+						has_non_aggression_pact_with = XWB
+					}
+				}
+			}
+			XBH = {
+				OVERLORD = {
+					diplomatic_relation = {
+						country = XWB
+						relation = non_aggression_pact
+						active = no
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				XBH = {
+					has_non_aggression_pact_with = XWB
+				}
+			}
+			XBH = {
+				diplomatic_relation = {
+					country = XWB
+					relation = non_aggression_pact
+					active = no
+				}
+			}
+			every_other_country = {
+				limit = {
+					has_non_aggression_pact_with = XWB
+				}
+				add_opinion_modifier = {
+					target = XWB
+   					modifier = protest_action_strong
+				}
+			}
+		}
+		create_wargoal = {
+			type = take_state
+			generator = { 69 972 }
+			target = XBH
+		}
+		add_state_core = 69
+		add_state_core = 972
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #demand annexation of Bavarian states
+    id = XWB_diplo_event.18
+    title = XWB.DE_18.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_18.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_18.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				XWB = {
+					is_ai = no
+				}
+				factor = 100
+			}
+			modifier = {
+				XWB = {
+					is_major = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				XWB = {
+					num_divisions < 1
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 2
+				}
+				factor = 3
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+		XWB = {
+			country_event = { id = XWB_diplo_event.19 days = 1 }
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_18.b
+		ai_chance = {
+			base = 70
+				modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 1
+				}
+				factor = 0.75
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.20 days = 1 }
+			if = {
+				limit = { tag = XNU }
+				add_state_claim = 54
+			}
+			if = {
+				limit = { tag = XMU }
+				add_state_claim = 52
+			}
+			if = {
+				limit = { tag = XDS }
+				add_state_claim = 53
+			}
+			
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #annexed
+    id = XWB_diplo_event.19
+    title = XWB.DE_19.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_19.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_19.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 50
+		army_experience = 10
+		annex_country = {
+			target = FROM
+		}
+		if = { 
+			limit = { tag = XNU }
+			add_state_core = 54
+		}
+		if = {
+			limit = { tag = XMU }
+			add_state_core = 52
+		}
+		if = {
+			limit = { tag = XDS }
+			add_state_core = 53
+		}
+		#not sure if adding cores should be a focus or not
+    }
+}
+country_event = { #told to fuck off
+    id = XWB_diplo_event.20
+    title = XWB.DE_20.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_20.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_20.a
+		ai_chance = {
+			base = 100
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+			expire = 0
+		}
+    }
+}
+
+country_event = { #puppet event start Italy
+    id = XWB_diplo_event.21
+    title = XWB.DE_21.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_21.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_21.c
+		XWB = {
+			country_event = { id = XWB_diplo_event.22 days = 7 }
+			set_country_flag = XWB_pretzels
+		}
+    }
+}
+country_event = { #lol have some pretzels idiot
+    id = XWB_diplo_event.22
+    title = XWB.DE_22.t
+    picture = GFX_report_event_generic_truck
+    desc = XWB.DE_22.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_22.a
+		XEX = {
+			country_event = { id = XWB_diplo_event.23 days = 1 }
+		}
+    }
+	option = {
+        name = XWB.DE_22.b
+		declare_war_on = {
+			target = XEX
+		}
+		XEX = {
+			country_event = { id = XWB_diplo_event.24 }
+		}
+    }
+}
+
+country_event = { #puppet event - weak
+    id = XWB_diplo_event.23
+    title = XWB.DE_23.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_23.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_21.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				XWB = {
+					is_major = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				XWB = {
+					num_divisions < 1
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 2
+				}
+				factor = 3
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.25 days = 1}
+		}
+		effect_tooltip = {
+			XWB = {
+				puppet = {
+					target = XEX
+				}
+			}
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.DE_21.b
+		ai_chance = {
+			base = 90
+				modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 1
+				}
+				factor = 0.75
+			}
+		}
+		effect_tooltip = {
+			XWB = {
+				declare_war_on = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	hidden_effect = {
+		XWB = {
+			country_event = { id = XWB_diplo_event.27 days = 0.5 }
+		}
+		}
+    }
+}
+country_event = { #war notification
+    id = XWB_diplo_event.24
+    title = XWB.DE_24.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_24.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_24.a
+    }
+}
+country_event = { #subjugation accepted
+    id = XWB_diplo_event.25
+    title = XWB.DE_25.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_25.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_25.a
+		puppet = {
+			target = FROM
+		}
+		puppet = {
+			target = XE0
+		}
+    }
+}
+country_event = { #puppet event - strong
+    id = XWB_diplo_event.26
+    title = XWB.DE_26.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.DE_26.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_26.a
+		ai_chance = {
+			base = 90
+				modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 1
+				}
+				factor = 0.75
+			}
+		}
+		effect_tooltip = {
+			XWB = {
+				declare_war_on = {
+					target = ROOT
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	hidden_effect = {
+		XWB = {
+			country_event = { id = XWB_diplo_event.27 days = 4 }
+		}
+		}
+    }
+	option = {
+        name = XWB.DE_26.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				XWB = {
+					is_major = yes
+				}
+				factor = 2
+			}
+			modifier = {
+				XWB = {
+					num_divisions < 1
+				}
+				factor = 0
+			}
+			modifier = {
+				strength_ratio = {
+					tag = XWB
+					ratio < 2
+				}
+				factor = 3
+			}
+		}
+		XWB = {
+			country_event = { id = XWB_diplo_event.25 days = 1}
+		}
+		effect_tooltip = {
+			XWB = {
+				puppet = {
+					target = XEX
+				}
+			}
+		}
+	hidden_effect = {
+			
+		}
+    }
+	
+}
+country_event = { #subjugation refused
+    id = XWB_diplo_event.27
+    title = XWB.DE_27.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = {
+		text = XWB.DE_27.d
+		trigger = { any_country = { has_country_flag = XWB_pretzels } }
+	}
+	desc = {
+		text = XWB.DE_27.d2
+		trigger = { NOT = { any_country = { has_country_flag = XWB_pretzels } } }
+	}
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.DE_27.a
+		declare_war_on = {
+			target = FROM
+			type = puppet_wargoal_focus
 		}
     }
 }

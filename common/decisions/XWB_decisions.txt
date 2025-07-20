@@ -1,0 +1,125 @@
+form_burgundy_category = {
+
+	form_burgundy = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = XFE
+				original_tag = XLO
+				original_tag = XVM
+				original_tag = XBA
+				original_tag = XBD
+				original_tag = XBE
+				original_tag = XFU
+			}
+		}
+	highlight_states = {
+		highlight_state_targets = {
+			state = 17
+			state = 28
+			state = 42
+			state = 978
+			state = 1090
+			state = 1091
+			state = 1092
+			state = 1093
+		}
+		highlight_color_while_active = 1
+		highlight_color_before_active = 3
+	}
+
+		available = {
+			is_subject = no
+			# Baden
+			custom_trigger_tooltip = {
+				tooltip = form_country_baden_required_states_tt
+				controls_state = 978
+				controls_state = 1092
+				controls_state = 1093
+			}
+			# Lorraine
+			custom_trigger_tooltip = {
+				tooltip = form_country_german_required_states_tt
+				controls_state = 28
+				controls_state = 42
+				controls_state = 1091
+			}
+			# Burgundy
+			custom_trigger_tooltip = {
+				tooltip = form_country_french_required_states_tt
+				controls_state = 17
+				controls_state = 1090
+			}
+		}
+
+		visible = {
+			OR = {
+				original_tag = XFE
+				original_tag = XLO
+				original_tag = XVM
+				original_tag = XBA
+				original_tag = XBD
+				original_tag = XBE
+				original_tag = XFU
+			}
+			NOT = { has_global_flag = form_burgundy_flag }
+		}
+
+		complete_effect = {
+			remove_ideas = XWB_burgundy_remnant
+			set_cosmetic_tag = XWB_burgundy
+			# Baden
+			custom_effect_tooltip = form_country_baden_coring_states_tt
+			hidden_effect = {
+				978 = { add_core_of = ROOT }
+				1092 = { add_core_of = ROOT }
+				1093 = { add_core_of = ROOT }
+			}	
+			# Lorraine
+			custom_effect_tooltip = form_country_german_coring_states_tt
+			hidden_effect = {
+				28 = { add_core_of = ROOT }
+				42 = { add_core_of = ROOT }
+				1091 = { add_core_of = ROOT }
+			}
+			# Burgundy
+			custom_effect_tooltip = form_country_french_coring_states_tt
+			hidden_effect = {
+				17 = { add_core_of = ROOT }
+				1090 = { add_core_of = ROOT }
+			}
+			
+			#historical claims
+			custom_effect_tooltip = form_country_burgundy_claimed_states_tt
+			hidden_effect = {
+				3 = { add_claim_by = ROOT }
+				6 = { add_claim_by = ROOT }
+				7 = { add_claim_by = ROOT }
+				8 = { add_claim_by = ROOT }
+				21 = { add_claim_by = ROOT }
+				32 = { add_claim_by = ROOT }
+				34 = { add_claim_by = ROOT }
+				35 = { add_claim_by = ROOT }
+				735 = { add_claim_by = ROOT }
+				845 = { add_claim_by = ROOT }
+				847 = { add_claim_by = ROOT }
+				851 = { add_claim_by = ROOT }
+				977 = { add_claim_by = ROOT }
+				980 = { add_claim_by = ROOT }
+				1029 = { add_claim_by = ROOT }
+				1033 = { add_claim_by = ROOT }
+				1049 = { add_claim_by = ROOT }
+			}
+			hidden_effect = {
+				news_event = { id = XWB_news_event.1 hours = 6 }
+				set_global_flag = form_burgundy_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}

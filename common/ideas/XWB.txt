@@ -3,23 +3,55 @@ ideas = {
 		XWB_king_idea = {
 			name = XWB_king_idea_name
 			picture = george_v
-
 			modifier = {
 				stability_factor = -0.05
 				political_power_factor = 0.1
 			}
 		}
+
 		XWB_democracy_idea = {
 			name = XWB_democracy_idea_name
 			picture = generic_democratic_opposition
-
 			modifier = {
 				political_power_factor = -0.25
 				stability_factor = -0.05
 				democratic_drift = 0.02
 			}
 		}
-	}
+		XWB_burgundy_remnant = {
+			picture = BEL_scars_of_ww1
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.05
+				enemy_justify_war_goal_time = -0.25
+			}
+		}
+		XWB_expansionism_idea_south = {
+			picture = GER_the_shield_of_democracy
+			modifier = {
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.25
+				war_support_factor = 0.1
+				subjects_autonomy_gain = -0.5
+			}
+		}
+		XWB_expansionism_idea_north = {
+			picture = GER_fan_prussian_militarism
+			modifier = {
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.25
+				annex_cost_factor = -0.1
+				compliance_gain = 0.1
+			}
+		}
+		XWB_greater_wurttemberg_idea = {
+			picture = FRA_la_deluge
+			modifier = {
+				political_power_factor = 0.25
+				stability_factor = 0.1
+				weekly_manpower = 250
+			}
+		}
 
-	
+	}
 }
