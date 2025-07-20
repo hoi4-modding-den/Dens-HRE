@@ -76,3 +76,99 @@ XBR_purge_category = {
 		}
 	}
 }
+
+XBR_volksgemeinschaft_category = {
+	XBR_stimulate_the_economy = {
+		available = {
+			original_tag = XBR
+		}
+		fire_only_once = yes
+		icon = GFX_decision_generic_construction
+		cost = 100
+		complete_effect = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_to_variable = { XBR_vg_construction_speed_variable = 0.05 }
+			add_to_variable = { XBR_vg_prod_growth_variable = 0.05 }
+			custom_effect_tooltip = XBR_stimulate_the_economy_tt
+		}
+	}
+	XBR_create_job_opportunites = {
+		available = {
+			original_tag = XBR
+		}
+		fire_only_once = yes
+		icon = GFX_decision_eng_trade_unions_support
+		cost = 100
+		complete_effect = {
+			random_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_to_variable = { XBR_vg_construction_speed_variable = 0.05 }
+			add_to_variable = { XBR_vg_consumer_goods_variable = 0.05 }
+			custom_effect_tooltip = XBR_create_job_opportunities_tt
+		}
+	}
+	XBR_embrace_autarkic_ideals = {
+		available = {
+			original_tag = XBR
+		}
+		fire_only_once = yes
+		icon = GFX_decision_generic_nationalism
+		cost = 100
+		complete_effect = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = synth_resources
+			}
+			add_to_variable = { XBR_vg_resources_to_market_variable = -0.15 }
+			add_to_variable = { XBR_vg_consumer_goods_variable = -0.05 }
+			custom_effect_tooltip = XBR_embrace_autarkic_ideals_tt
+		}
+	}
+	XBR_social_welfare_for_germans = {
+		available = {
+			original_tag = XBR
+		}
+		fire_only_once = yes
+		icon = GFX_decision_ger_mefo_bills
+		cost = 100
+		complete_effect = {
+			add_stability = 0.05
+			add_to_variable = { monthly_population = 0.15 }
+			add_to_variable = { XBR_vg_consumer_goods_variable = 0.05 }
+			custom_effect_tooltip = XBR_social_welfare_for_germans_tt
+		}
+	}
+	XBR_blood_and_soil_rhetoric = {
+		available = {
+			original_tag = XBR
+		}
+		fire_only_once = yes
+		icon = GFX_decision_generic_civil_support
+		cost = 100
+		complete_effect = {
+			add_war_support = 0.05
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = excavation_tech
+			}
+			add_to_variable = { XBR_vg_local_resources_variable = 0.10 }
+			add_to_variable = { XBR_vg_consumer_goods_variable = -0.05 }
+			custom_effect_tooltip = XBR_blood_and_soil_rhetoric_tt
+		}
+	}
+}
