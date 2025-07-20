@@ -25,6 +25,32 @@ characters = {
 			id = -1
 		}
 	}
+	XSI_regency_council = {
+		name = "Regency Council"
+		portraits = {
+			civilian = {
+				large = gfx/filler/Portrait_POL_Sejmik_Regency.png
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+	XGD_eitel_friedrich = {
+		name = "Prince Eitel Friedrich"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_PRE_eitel_friedrich
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
 	XWR_city_council = {
 		name = "City Council"
 		portraits = {
