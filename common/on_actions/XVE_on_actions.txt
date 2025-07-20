@@ -1,0 +1,28 @@
+on_actions = {
+    on_monthly_XVE = {
+        effect = {
+            if = {
+                limit = {
+                    check_variable = { XVE_gov_support_bar < 45 }
+                    NOT = {
+                        has_country_flag = XVE_low_gov_support_event
+                    }
+                }
+                country_event = XVE_domestic_events.2
+                set_country_flag = XVE_low_gov_support_event
+            }
+        }
+    }
+    #on_monthly_XVE = { TODO once advisors are added
+        #effect = {
+            #if = {
+                #limit = {
+                    #check_variable = { XVE_gov_support_bar < 38 }
+                    #has_country_flag = XVE_low_gov_support_event
+                #}
+                #country_event = XVE_domestic_events.3
+                #if = { limit = { has_idea = advisor1 } deactivate_advisor = advisor1 }
+           #}
+        #}
+    #}    
+}
