@@ -1,0 +1,28 @@
+﻿units = {
+
+	######## NAVAL OOB ########
+	fleet = {
+		name = "Polska Flota Niszczycieli"
+		naval_base = 362 
+		task_force = {				
+			name = "U-Boot-Experimentabteilung"
+			location = 362 # Danzig
+			ship = { name = "Stettin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XFT version_name = "Wicher Class" } } }	
+			ship = { name = "Erik" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XFT version_name = "Wicher Class" } } }	
+		}		
+		task_force = {
+			name = "Bootsperfektion"
+			location = 362 # Danzig
+			ship = { name = "Peace" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XFT version_name = "Wilk Class" } } }					
+			ship = { name = "Gastfreundschaft" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XFT version_name = "Wilk Class" } } }					
+			ship = { name = "Żbik" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = XFT version_name = "Wilk Class" } } }			
+		}
+		task_force = {
+			name = "Handelsschutz Marine"
+			location = 11372
+			ship = { name = "Hostility" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XFT version_name =  "Aetos Class" } } }		
+			ship = { name = "Pacifism" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XFT version_name =  "Aetos Class" } } }		
+			ship = { name = "Protector" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = XFT version_name =  "Aetos Class" } } }		
+		}
+	}
+}
