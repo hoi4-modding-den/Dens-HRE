@@ -1,0 +1,93 @@
+filler_tag = {
+	load_oob = "filler_1936"
+
+	set_country_flag = filler_nation
+
+	if = {
+		limit = {
+			is_HRE_jam = yes
+		}
+
+		set_variable = { HRE_national_stance_federalism = 2 }
+		set_variable = { HRE_national_stance_welfare = 2 }
+		set_variable = { HRE_national_stance_papacy = 2 }
+	}
+
+	set_research_slots = 2
+
+	set_stability = 0.5
+	set_war_support = 0.5
+
+	set_technology = {
+		infantry_weapons = 1
+		motorised_infantry = 1
+		gw_artillery = 1
+		interwar_antiair = 1
+	}
+}
+
+filler_tag_republic = {
+	if = {
+		limit = {
+			is_HRE_jam = yes
+		}
+
+		set_country_flag = HRE_is_republic
+	}
+
+	set_country_flag = HRE_is_republic
+
+	filler_tag = yes
+
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1931.11.8"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic  = 100
+	}
+}
+
+filler_tag_monarchy = {
+	filler_tag = yes
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2236.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		neutrality = 100
+	}
+}
+
+filler_tag_fascist = {
+	filler_tag = yes
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "2236.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		fascism = 100
+	}
+}
+
+filler_tag_communist = {
+	filler_tag = yes
+
+	set_politics = {
+		ruling_party = communism
+		last_election = "2236.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		communism = 100
+	}
+}

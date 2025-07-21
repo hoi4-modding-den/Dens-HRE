@@ -23,6 +23,10 @@ focus_tree = {
 		y = 0
 		cost = 5
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
@@ -425,6 +429,10 @@ focus_tree = {
 		y = 0
 		cost = 5
 
+		ai_will_do = {
+			factor = 6
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -450,6 +458,10 @@ focus_tree = {
 		x = 14
 		y = 0
 		cost = 5
+
+		ai_will_do = {
+			factor = 6
+		}
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -709,6 +721,8 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.05
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = { XHO_liberalism }
 		}
 	}
 

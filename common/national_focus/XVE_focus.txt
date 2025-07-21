@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = -400 y = 500 }
+	continuous_focus_position = { x = -500 y = 1000 }
 
 	initial_show_position = {
 		x = 9
@@ -55,4 +55,549 @@ focus_tree = {
 			country_event = XVE_domestic_events.1
 		}
 	}
+	focus = {
+		id = XVE_prolong_law_personal_liberties
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_convene_the_alleanza_ducale
+		}
+		relative_position_id = XVE_convene_the_alleanza_ducale
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_address_constitutional_petition
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_prolong_law_personal_liberties
+		}
+		relative_position_id = XVE_prolong_law_personal_liberties
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_bridging_the_divide
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_address_constitutional_petition
+		}
+		relative_position_id = XVE_address_constitutional_petition
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_the_green_deal
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_bridging_the_divide
+		}
+		mutually_exclusive = {
+			focus = XVE_technocratic_oversight
+		}
+		relative_position_id = XVE_bridging_the_divide
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_technocratic_oversight
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_bridging_the_divide
+		}
+		mutually_exclusive = {
+			focus = XVE_the_green_deal
+		}
+		relative_position_id = XVE_bridging_the_divide
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_secure_republican_values
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_address_constitutional_petition
+		}
+		mutually_exclusive = {
+			focus = XVE_alternative_partnerships
+		}
+		relative_position_id = XVE_address_constitutional_petition
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_alternative_partnerships
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_address_constitutional_petition
+		}
+		mutually_exclusive = {
+			focus = XVE_secure_republican_values
+		}
+		relative_position_id = XVE_address_constitutional_petition
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_the_generation_of_tomorrow
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_secure_republican_values
+		}
+		relative_position_id = XVE_secure_republican_values
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_the_magnate_speech
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_alternative_partnerships
+		}
+		relative_position_id = XVE_alternative_partnerships
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_monarchist_publications
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_alternative_partnerships
+		}
+		relative_position_id = XVE_alternative_partnerships
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_legalize_royalist_symbols
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_monarchist_publications
+		}
+		relative_position_id = XVE_monarchist_publications
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_the_ceremony_of_san_marco
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_monarchist_publications
+			focus = XVE_the_magnate_speech
+			focus = XVE_the_generation_of_tomorrow
+		}
+		relative_position_id = XVE_the_generation_of_tomorrow
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}									
+	focus = {
+		id = XVE_policy_on_the_IFF
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_convene_the_alleanza_ducale
+		}
+		relative_position_id = XVE_convene_the_alleanza_ducale
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_volpinomics
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_policy_on_the_IFF
+		}
+		relative_position_id = XVE_policy_on_the_IFF
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_inaugurate_venesia_bresia_line
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_volpinomics
+		}
+		relative_position_id = XVE_volpinomics
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_renewal_treaties
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_volpinomics
+		}
+		relative_position_id = XVE_volpinomics
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}	
+	focus = {
+		id = XVE_fund_the_tsm
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_volpinomics
+		}
+		relative_position_id = XVE_volpinomics
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_butoniga_dam_initiative
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_policy_on_the_IFF
+		}
+		relative_position_id = XVE_policy_on_the_IFF
+		x = 4
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_the_armeria_program
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_butoniga_dam_initiative
+		}
+		relative_position_id = XVE_butoniga_dam_initiative
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_joint_istrian_council
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_butoniga_dam_initiative
+		}
+		mutually_exclusive = {
+			focus = XVE_travel_controls
+		}
+		relative_position_id = XVE_butoniga_dam_initiative
+		x = -1
+		y = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}
+	focus = {
+		id = XVE_travel_controls
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		cost = 4
+		prerequisite = {
+			focus = XVE_butoniga_dam_initiative
+		}
+		mutually_exclusive = {
+			focus = XVE_joint_istrian_council
+		}
+		relative_position_id = XVE_butoniga_dam_initiative
+		x = 1
+		y = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			#country_event = XVE_domestic_events.4
+		}
+	}						
 }

@@ -182,7 +182,7 @@ ideas = {
             allowed_civil_war = { always = yes }
             modifier = {
                 political_power_factor = -0.1
-                stability_factor = -0.08
+                stability_factor = -0.15
                 war_support_factor = -0.08
                 conscription = -0.002
             }
@@ -192,7 +192,7 @@ ideas = {
             picture = DEN_occupation_laws
             modifier = {
                 political_power_factor = 0.05
-                stability_factor = -0.025
+                stability_factor = -0.04
                 war_support_factor = -0.025
             }
         }
@@ -240,6 +240,14 @@ ideas = {
                 stability_weekly = -0.005
                 fascism_drift = -0.03
                 political_power_factor = -0.05
+            }
+        }
+
+        XHO_liberalism = {
+            picture = generic_democratic_drift_bonus
+            modifier = {
+                stability_factor = 0.05
+                democratic_drift = 0.06
             }
         }
 
@@ -409,7 +417,92 @@ ideas = {
             }
         }
 
+        XBT_rampant_inflation = {
+            picture = chi_hyper_inflation5
+            modifier = {
+                consumer_goods_factor = 0.15
+                political_power_factor = -0.27
+                stability_weekly = -0.0025
+                local_resources_factor = -0.25
+            }
+        }
 
+        XBT_rampant_inflation_2 = {
+            picture = chi_hyper_inflation3
+            modifier = {
+                consumer_goods_factor = 0.11
+                political_power_factor = -0.18
+                stability_weekly = -0.0001
+                local_resources_factor = -0.2
+            }
+        }
+
+        XBT_rampant_inflation_3 = {
+            picture = chi_hyper_inflation1
+            modifier = {
+                consumer_goods_factor = 0.07
+                political_power_factor = -0.09
+                local_resources_factor = -0.05
+            }
+        }
+
+        XBT_reformed_economy = {
+            picture = generic_economic_increase
+            modifier = {
+                consumer_goods_factor = 0.03
+                production_speed_industrial_complex_factor = 0.05
+                production_speed_arms_factory_factor = 0.05
+                production_factory_efficiency_gain_factor = 0.1
+            }
+        }
+
+        XBT_farming_efforts = {
+            picture = LIT_invested_in_farms
+            modifier = {
+                consumer_goods_factor = -0.1
+                production_speed_arms_factory_factor = -0.05
+            }
+        }
+
+        XBT_academy = {
+            picture = generic_manpower_bonus
+            modifier = {
+                political_power_gain = -0.05
+                army_leader_start_attack_level = 1
+                military_leader_cost_factor = -0.5
+                army_org_factor = 0.05
+            }
+        }
+
+        XBT_academy_2 = {
+            picture = generic_manpower_bonus
+            modifier = {
+                political_power_gain = -0.1
+                army_leader_start_attack_level = 1
+                military_leader_cost_factor = -0.5
+                army_org_factor = 0.1
+                land_night_attack = 0.1
+                max_planning = 0.05
+            }
+        }
+
+        XBT_grants = {
+            picture = generic_research_bonus
+            modifier = {
+                research_speed_factor = 0.09
+                political_power_gain = -0.08
+            }
+        }
+
+        XBT_army_bolstered = {
+            picture = FRA_army_of_aggression_focus
+            modifier = {
+                army_morale_factor = 0.05
+                army_attack_factor = 0.05
+                offensive_war_stability_factor = 0.1
+                generate_wargoal_tension = -0.1
+            }
+        }
 
         XFS_no_nobility = {
             picture = generic_king_handled
@@ -481,6 +574,28 @@ ideas = {
                 weekly_manpower = 350
                 training_time_army_factor = -0.4
                 industrial_capacity_factory = 0.05
+            }
+        }
+
+        XFS_rubber_stockpiling = {
+            picture = FRA_motorized_focus
+            modifier = {
+                country_resource_rubber = 9
+            }
+            equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = 0.1
+					instant = yes
+				}
+			}
+        }
+
+        XFS_military = {
+            picture = BEL_rexist_legion
+            modifier = {
+                modifier_army_sub_unit_militia_attack_factor = 0.1
+                modifier_army_sub_unit_militia_defence_factor = 0.15
+                conscription_factor = 0.12
             }
         }
 	}

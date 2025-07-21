@@ -14,6 +14,31 @@ characters = {
 			expire = "1951.1.1.1"
 			id = -1
 		}
+		scientist = {
+			traits = { scientist_trait_armored_specialist scientist_trait_gifted_engineer }
+			skills = {
+				specialization_land = 3
+			}
+
+			visible = {
+				owner = {
+					if = { #AAT
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						mio:XWB_porsche_organization = {
+							is_mio_trait_completed = GER_mio_trait_involve_porsche_in_special_projects
+						}
+					}
+					else = { #NO-AAT
+						OR = {
+							has_idea = porsche
+							has_idea = GER_porsche_improved
+						}
+					}
+				}
+			}
+		}
 	}
 	XWB_albrecht_wurttemberg = {
 		name = XWB_albrecht_wurttemberg_name
@@ -79,6 +104,164 @@ characters = {
 			ideology = marxism
 			expire = "1964.1.1.1"
 			id = -1
+		}
+	}
+	XWB_vincenz_muller = {
+		name = GER_vincenz_muller
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_vincenz_muller
+				small = GFX_portrait_GER_vincenz_muller_small
+			}
+		}
+		field_marshal = { 
+			traits = { infantry_officer trait_reckless politically_connected }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	XWB_oswald_lutz = {
+		name = GER_oswald_lutz
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_oswald_lutz
+				small = GFX_portrait_GER_oswald_lutz_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_leader combined_arms_expert }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	XWB_erwin_rommel = {
+		name = GER_erwin_rommel
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_erwin_rommel
+				small = GFX_idea_erwin_rommel
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = erwin_rommel
+			ledger = army
+			allowed = {
+				original_tag = XWB
+			}
+			traits = {
+				army_armored_3
+			}
+			cost = 200
+			ai_will_do = {
+				base = 8
+			}
+		}
+		
+		corps_commander = {
+			traits = { trait_reckless media_personality armor_officer war_hero trickster }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 4
+		}
+	}
+	XWB_hugo_sperrle = {
+		name = GER_hugo_sperrle
+		portraits = {
+			army = {
+				small = GFX_idea_hugo_sperrle
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = hugo_sperrle
+			ledger = air
+			allowed = {
+				original_tag = XWB
+			}
+			traits = {
+				air_close_air_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				base = 1.000
+			}
+		}
+	}
+	XWB_konstantin_von_neurath = {
+		name = GER_konstantin_von_neurath
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_konstantin_von_neurath
+				small = GFX_portrait_GER_konstantin_von_neurath_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = konstantin_von_neurath
+			allowed = {
+				original_tag = XWB
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			cost = 50
+			traits = {
+				GER_reich_minister_foreign_affairs_neurath
+			}
+		}
+	}
+	XWB_fritz_todt = {
+		name = GER_fritz_todt
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_fritz_todt
+				small = GFX_portrait_GER_fritz_todt_small
+			}
+			
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = todt
+			allowed = {
+				original_tag = XWB
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = {
+				GER_reich_engineer
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	XWB_el_monarquico_generico = {
+		name = XWB_el_monarquico_generico
+		advisor = {
+			slot = political_advisor
+			allowed = {
+				original_tag = XWB
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			traits = {
+				staunch_monarchist 
+			}
+			ai_will_do = {
+				factor = 0
+			}
 		}
 	}
 }

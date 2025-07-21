@@ -57,3 +57,35 @@ defined_text = { #Focus name
 		localization_key = XWB_north_germany_focus_name_normal
 	}
 }
+defined_text = { #bavaria event name
+	name = XWB_demand_bavarian_swabia_event_name
+	text = {
+		trigger = {
+			1085 = {
+				owner = {
+					num_of_controlled_states < 2
+				}
+			}
+		}
+		localization_key = XWB_demand_bavarian_swabia_event_name_annexation
+	}
+	text = {
+		localization_key = XWB_demand_bavarian_swabia_event_name_normal
+	}
+}
+defined_text = { #bavaria event description
+	name = XWB_demand_bavarian_swabia_event_description
+	text = {
+		trigger = {
+			1085 = {
+				owner = {
+					num_of_controlled_states < 2
+				}
+			}
+		}
+		localization_key = XWB_demand_bavarian_swabia_event_description_annexation
+	}
+	text = {
+		localization_key = XWB_demand_bavarian_swabia_event_description_normal
+	}
+}

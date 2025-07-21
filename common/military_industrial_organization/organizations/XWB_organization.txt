@@ -1,0 +1,321 @@
+XWB_porsche_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_porsche
+	
+	allowed = {	
+		OR = {
+			original_tag = XWB
+		}
+	}
+
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		XWB = {
+			has_government = fascism
+		}
+	}
+
+	visible = {
+
+	}
+
+	tree_header_text = {
+		text = mio_header_engine_and_drive_system
+		x = 0.5
+	}
+
+	tree_header_text = {
+		text = mio_header_chassis
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_guns_and_turret
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_trait_wide_tracks
+		
+		position = { x=0 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_one_piece_hull_side_coverings
+		
+		position = { x=3 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_improved_crew_ergonomics
+
+		position = { x=0 y=2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_fully_cast_turret
+
+		position = { x=4 y=0 }
+	}
+
+	add_trait = {
+		token = GER_mio_trait_multi_role_tanks
+		name = GER_mio_trait_multi_role_tanks
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_aa
+		special_trait_background = yes
+
+		position = { x=2 y=0 }
+		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
+
+		available = {
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			air_attack = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_anti_tank_specialization
+		name = GER_mio_trait_anti_tank_specialization
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_at
+		special_trait_background = yes
+
+		all_parents = {
+            generic_mio_trait_one_piece_hull_side_coverings
+            GER_mio_trait_multi_role_tanks
+        }
+
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_one_piece_hull_side_coverings
+
+		available = {
+		}
+
+		equipment_bonus = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_unorthodox_transmission_design
+		name = GER_mio_trait_unorthodox_transmission_design
+		icon = GFX_generic_mio_department_icon_tank_heavy_tank_engine
+		special_trait_background = yes
+
+		all_parents = {
+            generic_mio_trait_simplified_transmission_system
+        }
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_simplified_transmission_system
+
+		available = {
+			
+		}
+
+		limit_to_equipment_type = { 
+			armor
+		}
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			reliability = -0.02
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}
+XWB_mauser_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_mauser
+
+	override_trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+
+		position = { x=0 y=2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_advanced_barrel_forging
+
+		position = { x=1 y=2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_reinforced_stocks
+
+		position = { x=3 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_medium_machineguns
+
+		position = { x=0 y=2 }
+	}
+	
+	allowed = {	 
+		OR = {
+			original_tag = XWB 
+		}
+	}
+	
+	visible = {
+
+	}
+	
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = XWB } }
+			}
+			FROM = { NOT = { has_war_with = XWB } }
+		}
+
+		IF = {
+			limit = {
+				FROM = { NOT  = { original_tag = XWB } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_invited_mio_tt
+				FROM = {
+					has_country_flag = has_invited_GER_mauser_organization_flag
+				}
+			}
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_experienced_manufacturer
+		name = GER_mio_trait_experienced_manufacturer
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x=-1 y=0 }  
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		visible = {
+			FROM = { original_tag = GER }
+		}
+
+		equipment_bonus = {
+			reliability = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_export_models
+		name = GER_mio_trait_export_models
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=-1 y=1 }  
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		visible = {
+			FROM = { original_tag = GER }
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_cost_factor = -0.03
+		}
+		
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_karabiner
+		name = GER_mio_trait_karabiner
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		visible = {
+			FROM = { original_tag = GER }
+		}
+
+		all_parents = {	generic_mio_trait_reinforced_stocks }
+
+		equipment_bonus = {
+			soft_attack = 0.03
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.03
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+
+	add_trait = {
+		token = GER_mio_trait_sturmgewehr
+		name = GER_mio_trait_sturmgewehr
+		icon = GFX_generic_mio_department_icon_infantry_offense
+		special_trait_background = yes
+
+		position = { x=2 y=2 }
+		relative_position_id = generic_mio_trait_bolt_action
+
+		any_parent = { generic_mio_trait_semi_auto generic_mio_trait_bolt_action }
+
+		visible = {
+			FROM = { original_tag = GER }
+		}
+
+		available = {
+			FROM = {
+				has_tech = advanced_infantry_weapons
+			}
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.07
+			breakthrough = 0.03
+		}
+
+		production_bonus = {
+			production_cost_factor = 0.05
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}
+}
+XWB_kdf_wagen_mio = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_volkswagen
+	
+	allowed = {	
+		original_tag = XWB
+	}
+	
+	available = {
+		owner = { has_completed_focus = XWB_volkswagen }
+	}
+
+}

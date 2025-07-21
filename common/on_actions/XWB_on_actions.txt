@@ -1,8 +1,11 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			XAS = {
+			XWB = {
 				set_country_flag = XWB_king_yes
+				set_power_balance = {
+					id = XWB_fascist_balance
+				}
 			}
 		}
 	}

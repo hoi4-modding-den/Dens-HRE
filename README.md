@@ -27,6 +27,7 @@ See the note regarding setting up the HRE system for your nation(s).<br><br>
 			<li>Setting the variable <code>HRE_national_stance_papacy</code> to 1 within your nation's scope makes your country pro-papacy, whilst 3 makes you pro-imperial.</li>
 		</ol>
 	</li>
+  <li>Please add the following line within your countries history file: <code>set_country_flag = HRE_member_state</code></li>
 </ol>
 </details><br>
 

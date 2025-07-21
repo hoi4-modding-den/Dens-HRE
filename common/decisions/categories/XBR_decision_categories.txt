@@ -27,6 +27,9 @@ XBR_purge_category = {
 	
 	visible = {
 		has_completed_focus = XBR_purge_the_bureaucrats
+		NOT = {
+			has_completed_focus = XBR_strangle_the_kingpin
+		}
 	}
 	
 	

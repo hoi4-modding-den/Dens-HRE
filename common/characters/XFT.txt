@@ -30,4 +30,31 @@ characters = {
 		}
 	}
 	
+	XFT_defensive_army = {
+
+		name = XFT_mr_army
+
+		portraits = {
+			army = {
+				large = GFX_portrait_XFT_mr_army
+				small = GFX_portrait_XHH_mr_army_small
+			}
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = XFT_mr_army_defense
+			allowed = {
+				original_tag = XFT
+			}
+			available = {
+			
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+
+			cost = 90
+		}
+	
 }

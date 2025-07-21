@@ -1,0 +1,593 @@
+is_HRE_jam = {
+	has_country_flag = HRE_member_state
+}
+
+# Hesse Formable
+is_hesse_state = {
+	OR = {
+		state = 55
+		state = 1054
+		state = 1055
+		state = 1056
+		state = 1057
+		state = 1058
+		state = 1059
+		state = 1060
+		state = 1061
+		state = 1062
+		state = 1063
+		state = 1064
+		state = 1065
+		state = 1066
+		state = 1067
+		state = 1068
+		state = 1069
+		state = 1070
+		state = 1071
+		state = 1072
+		state = 1073
+		state = 1074
+		state = 1075
+		state = 1076
+		state = 1077
+		state = 1078
+		state = 1079
+		state = 1080
+		state = 1081
+		state = 1082
+		state = 1083
+	}
+}
+
+controls_hesse = {
+	AND = {
+		is_hesse_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Bavaria Formable
+is_bavaria_state = {
+	OR = {
+		state = 54
+		state = 1085
+		state = 53
+		state = 52
+	}
+}
+
+controls_bavaria = {
+	AND = {
+		is_bavaria_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Switzerland Formable
+is_switzerland_state = {
+	OR = {
+		state = 847
+		state = 151
+		state = 3
+		state = 845
+	}
+}
+
+controls_switzerland = {
+	AND = {
+		is_switzerland_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Thuringia Formable
+is_thuringia_state = {
+	OR = {
+		state = 60
+		state = 1088
+		state = 1089
+	}
+}
+
+controls_thuringia = {
+	AND = {
+		is_thuringia_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Baden Formable
+is_baden_state = {
+	OR = {
+		state = 978
+		state = 1092
+		state = 1093
+	}
+}
+
+controls_baden = {
+	AND = {
+		is_baden_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# North Italy
+is_north_italian_state = {
+	OR = {
+		state = 852
+		state = 736
+		state = 160
+		state = 1038
+		state = 850
+		state = 1039
+		state = 159
+		state = 1037
+		state = 846
+		state = 1029
+		state = 1042
+		state = 156
+		state = 1028
+		state = 161
+	}
+}
+
+controls_north_italy = {
+	AND = {
+		is_north_italian_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# South Germany
+is_south_germany_state = {
+	OR = {
+		is_hesse_state = yes
+		is_bavaria_state = yes
+		is_baden_state = yes
+		# Wurttemberg
+		state = 50
+		state = 1024
+		state = 1026
+		# Rhein
+		state = 42
+		state = 28
+		state = 1091
+	}
+}
+
+controls_south_germany = {
+	AND = {
+		is_south_germany_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# North Germany
+is_north_germany_state = {
+	OR = {
+		is_thuringia_state = yes
+		state = 51
+		state = 57
+		state = 56
+		state = 1084
+		state = 1052
+		state = 1053
+		state = 1046
+		state = 1017
+		state = 59
+		state = 65
+		state = 1040
+		state = 1044
+		state = 1043
+		state = 909
+		state = 58
+		state = 1047
+		state = 1045
+		state = 61
+		state = 1048
+		state = 1087
+		state = 64
+		state = 1086
+		state = 1034
+		state = 1031
+		state = 62
+		state = 68
+		state = 63
+		state = 66
+		state = 86
+		state = 67
+		state = 74
+		state = 72
+		state = 762
+		state = 807
+		state = 5
+		state = 763
+	}
+}
+
+controls_north_germany = {
+	AND = {
+		is_north_germany_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Germany
+is_german_state = {
+	OR = {
+		is_south_germany_state = yes
+		is_north_germany_state = yes
+	}
+}
+
+controls_germany = {
+	AND = {
+		is_german_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Hamburg
+is_hamburg_state = {
+	OR = {
+		state = 1017
+		state = 1046
+		state = 59
+		state = 1040
+		state = 1045
+		state = 1044
+		state = 1043
+		state = 909
+		state = 58
+		state = 1047
+		state = 1045
+		state = 62
+		state = 1048
+	}
+}
+
+controls_hamburg = {
+	AND = {
+		is_hamburg_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# League of Northwestern States
+is_league_state = {
+	OR = {
+		state = 57
+		state = 1084
+		state = 56
+	}
+}
+
+controls_league = {
+	AND = {
+		is_league_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Friesland
+is_friesland_state = {
+	OR = {
+		state = 1052
+		state = 1053
+	}
+}
+
+controls_friesland = {
+	AND = {
+		is_friesland_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Brandenburg
+is_brandenburg_state = {
+	OR = {
+		state = 1087
+		state = 64
+		state = 1086
+		state = 1034
+		state = 1031
+	}
+}
+
+controls_brandenburg = {
+	AND = {
+		is_brandenburg_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Saxony
+is_saxony_state = {
+	OR = {
+		state = 65
+	}
+}
+
+controls_saxony = {
+	AND = {
+		is_saxony_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Pomerania
+is_pomeranian_state = {
+	OR = {
+		state = 62
+		state = 63
+		state = 68
+	}
+}
+
+controls_pomerania = {
+	AND = {
+		is_pomeranian_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Silesia
+is_silesia_state = {
+	OR = {
+		state = 86
+		state = 66
+		state = 67
+		state = 762
+		state = 74
+		state = 72
+	}
+}
+
+controls_silesia = {
+	AND = {
+		is_silesia_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Gdynia
+is_gdynia_state = {
+	OR = {
+		state = 807
+		state = 85
+	}
+}
+
+controls_gdynia = {
+	AND = {
+		is_gdynia_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# East Prussia
+is_east_prussian_state = {
+	OR = {
+		state = 5
+		state = 763
+	}
+}
+
+controls_east_prussia = {
+	AND = {
+		is_east_prussian_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Wurttemberg
+is_wurttemberg_state = {
+	OR = {
+		state = 50
+		state = 1024
+		state = 1026
+	}
+}
+
+controls_wurttemberg = {
+	AND = {
+		is_wurttemberg_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Rhein
+is_rhein_state = {
+	OR = {
+		state = 42
+		state = 28
+		state = 1091
+	}
+}
+
+controls_rhein = {
+	AND = {
+		is_rhein_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Netherlands
+is_netherlands_state = {
+	OR = {
+		state = 1050
+		state = 36
+		state = 7
+		state = 1032
+		state = 1051
+		state = 1033
+		state = 1049
+		state = 35
+		state = 977
+	}
+}
+
+controls_netherlands = {
+	AND = {
+		is_netherlands_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Papal States
+is_papal_state = {
+	OR = {
+		state = 162
+		state = 2
+	}
+}
+
+controls_papal_states = {
+	AND = {
+		is_papal_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Marsailles
+is_marsailles_state = {
+	OR = {
+		state = 735
+		state = 1041
+		state = 851
+		state = 21
+		state = 32
+	}
+}
+
+controls_marsailles = {
+	AND = {
+		is_marsailles_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Franconian Territories
+is_franconian_state = {
+	OR = {
+		state = 1090
+		state = 17
+	}
+}
+
+controls_franconian = {
+	AND = {
+		is_franconian_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Austrian Empire
+is_austrian_state = {
+	OR = {
+		state = 1030
+		state = 4
+		state = 976
+		state = 1019
+		state = 102
+		state = 1018
+		state = 853
+		state = 1027
+	}
+}
+
+controls_austria = {
+	AND = {
+		is_austrian_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Bohemia
+is_bohemian_state = {
+	OR = {
+		state = 69
+		state = 9
+		state = 972
+		state = 75
+	}
+}
+
+controls_bohemia = {
+	AND = {
+		is_bohemian_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Tyrol
+is_tyrol_state = {
+	OR = {
+		state = 153
+		state = 848
+		state = 1035
+		state = 1025
+	}
+}
+
+controls_tyrol = {
+	AND = {
+		is_tyrol_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Luxembourg
+is_luxembourg_state = {
+	OR = {
+		state = 8
+	}
+}
+
+controls_luxembourg = {
+	AND = {
+		is_luxembourg_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Corsica
+is_corsica_state = {
+	OR = {
+		state = 1
+	}
+}
+
+controls_corsica = {
+	AND = {
+		is_corsica_state = yes
+		is_owned_by = ROOT
+	}
+}
+
+# Holy Roman Empire
+is_holy_roman_empire_state = {
+	OR = {
+		is_german_state = yes
+		is_north_italian_state = yes
+		is_netherlands_state = yes
+		is_papal_state = yes
+		is_marsailles_state = yes
+		is_franconian_state = yes
+		is_austrian_state = yes
+		is_bohemian_state = yes
+		is_tyrol_state = yes
+		is_luxembourg_state = yes
+		is_corsica_state = yes
+		is_rhein_state = yes
+	}
+}
+
+controls_holy_roman_empire = {
+	AND = {
+		is_holy_roman_empire_state = yes
+		is_owned_by = ROOT
+	}
+}

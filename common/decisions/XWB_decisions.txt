@@ -1,0 +1,494 @@
+form_burgundy_category = {
+
+	form_burgundy = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			OR = {
+				original_tag = XFE
+				original_tag = XLO
+				original_tag = XVM
+				original_tag = XBA
+				original_tag = XBD
+				original_tag = XBE
+				original_tag = XFU
+			}
+		}
+	highlight_states = {
+		highlight_state_targets = {
+			state = 17
+			state = 28
+			state = 42
+			state = 978
+			state = 1090
+			state = 1091
+			state = 1092
+			state = 1093
+		}
+		highlight_color_while_active = 1
+		highlight_color_before_active = 3
+	}
+
+		available = {
+			is_subject = no
+			# Baden
+			custom_trigger_tooltip = {
+				tooltip = form_country_baden_required_states_tt
+				controls_state = 978
+				controls_state = 1092
+				controls_state = 1093
+			}
+			# Lorraine
+			custom_trigger_tooltip = {
+				tooltip = form_country_german_required_states_tt
+				controls_state = 28
+				controls_state = 42
+				controls_state = 1091
+			}
+			# Burgundy
+			custom_trigger_tooltip = {
+				tooltip = form_country_french_required_states_tt
+				controls_state = 17
+				controls_state = 1090
+			}
+		}
+
+		visible = {
+			OR = {
+				original_tag = XFE
+				original_tag = XLO
+				original_tag = XVM
+				original_tag = XBA
+				original_tag = XBD
+				original_tag = XBE
+				original_tag = XFU
+			}
+			NOT = { has_global_flag = form_burgundy_flag }
+		}
+
+		complete_effect = {
+			remove_ideas = XWB_burgundy_remnant
+			set_cosmetic_tag = XWB_burgundy
+			# Baden
+			custom_effect_tooltip = form_country_baden_coring_states_tt
+			hidden_effect = {
+				978 = { add_core_of = ROOT }
+				1092 = { add_core_of = ROOT }
+				1093 = { add_core_of = ROOT }
+			}	
+			# Lorraine
+			custom_effect_tooltip = form_country_german_coring_states_tt
+			hidden_effect = {
+				28 = { add_core_of = ROOT }
+				42 = { add_core_of = ROOT }
+				1091 = { add_core_of = ROOT }
+			}
+			# Burgundy
+			custom_effect_tooltip = form_country_french_coring_states_tt
+			hidden_effect = {
+				17 = { add_core_of = ROOT }
+				1090 = { add_core_of = ROOT }
+			}
+			
+			#historical claims
+			custom_effect_tooltip = form_country_burgundy_claimed_states_tt
+			hidden_effect = {
+				3 = { add_claim_by = ROOT }
+				6 = { add_claim_by = ROOT }
+				7 = { add_claim_by = ROOT }
+				8 = { add_claim_by = ROOT }
+				21 = { add_claim_by = ROOT }
+				32 = { add_claim_by = ROOT }
+				34 = { add_claim_by = ROOT }
+				35 = { add_claim_by = ROOT }
+				735 = { add_claim_by = ROOT }
+				845 = { add_claim_by = ROOT }
+				847 = { add_claim_by = ROOT }
+				851 = { add_claim_by = ROOT }
+				977 = { add_claim_by = ROOT }
+				980 = { add_claim_by = ROOT }
+				1029 = { add_claim_by = ROOT }
+				1033 = { add_claim_by = ROOT }
+				1049 = { add_claim_by = ROOT }
+			}
+			hidden_effect = {
+				news_event = { id = XWB_news_event.1 hours = 6 }
+				set_global_flag = form_burgundy_flag
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
+XWB_bop_category = {
+	XWB_fascist_boost = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		days_remove = 175
+		allowed = {
+			original_tag = XWB
+		}
+		cost = 50
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			add_stability = -0.025
+		}
+	}
+	XWB_neutrality_boost = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		cost = 50
+		allowed = {
+			original_tag = XWB
+		}
+		days_remove = 175
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			
+			add_stability = -0.025
+		}
+	}
+}
+XWB_bop_category_alt = {
+	XWB_fascist_boost_alt = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		days_remove = 175
+		allowed = {
+			original_tag = XWB
+		}
+		cost = 50
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			add_stability = -0.025
+		}
+	}
+	XWB_neutrality_boost_alt = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		cost = 50
+		allowed = {
+			original_tag = XWB
+		}
+		days_remove = 175
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			
+			add_stability = -0.025
+		}
+	}
+}
+XWB_puppet_decisions_category = { #yes these decisions are incredibly jank, I made them in like 30 minutes. such is life.
+	XWB_puppet_switzerland_decision = {
+		available = {
+			if = {
+				limit = {
+					XWB = {
+						OR = {
+							owns_state = 3
+							owns_state = 151
+							owns_state = 845
+							owns_state = 846
+							owns_state = 847
+							owns_state = 1025
+							owns_state = 1035
+						}
+						has_completed_focus = XWB_puppet_switzerland
+					}
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = XWB_puppet_switzerland
+			XSA = {
+					NOT = {
+						XWB = {
+						owns_state = 3
+						owns_state = 151
+						owns_state = 845
+						owns_state = 846
+						owns_state = 847
+						owns_state = 1025
+						owns_state = 1035
+						}
+						
+					}
+				
+			}
+		}
+		
+		allowed = {
+			original_tag = XWB
+		}
+		complete_effect = {
+			if = {
+				limit = { 
+					any_state = {
+						is_owned_by = XWB
+						is_core_of = XSA
+						
+					} 
+				}
+				release_puppet = XSA
+				3 = {
+					add_core_of = XSA
+				}
+				846 = {
+					add_core_of = XSA
+				}
+				847 = {
+					add_core_of = XSA
+				}
+				1025 = {
+					add_core_of = XSA
+				}
+				1035 = {
+					add_core_of = XSA
+				}
+			}
+		}
+	}
+	XWB_puppet_hesse_decision = {
+		available = {
+			if = {
+				limit = {
+					XWB = {
+						OR = {
+							owns_state = 55
+							owns_state = 1054
+							owns_state = 1055
+							owns_state = 1056
+							owns_state = 1057
+							owns_state = 1058
+							owns_state = 1059
+							owns_state = 1060
+							owns_state = 1061
+							owns_state = 1062
+							owns_state = 1063
+							owns_state = 1064
+							owns_state = 1065
+							owns_state = 1066
+							owns_state = 1067
+							owns_state = 1068
+							owns_state = 1069
+							owns_state = 1070
+							owns_state = 1071
+							owns_state = 1072
+							owns_state = 1073
+							owns_state = 1074
+							owns_state = 1075
+							owns_state = 1076
+							owns_state = 1077
+							owns_state = 1078
+							owns_state = 1079
+							owns_state = 1080
+							owns_state = 1081
+							owns_state = 1082
+							owns_state = 1083
+						}
+						has_completed_focus = XWB_puppet_hesse
+					}
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = XWB_puppet_hesse
+			XLH = {
+					NOT = {
+						XWB = {
+							owns_state = 55
+							owns_state = 1054
+							owns_state = 1055
+							owns_state = 1056
+							owns_state = 1057
+							owns_state = 1058
+							owns_state = 1059
+							owns_state = 1060
+							owns_state = 1061
+							owns_state = 1062
+							owns_state = 1063
+							owns_state = 1064
+							owns_state = 1065
+							owns_state = 1066
+							owns_state = 1067
+							owns_state = 1068
+							owns_state = 1069
+							owns_state = 1070
+							owns_state = 1071
+							owns_state = 1072
+							owns_state = 1073
+							owns_state = 1074
+							owns_state = 1075
+							owns_state = 1076
+							owns_state = 1077
+							owns_state = 1078
+							owns_state = 1079
+							owns_state = 1080
+							owns_state = 1081
+							owns_state = 1082
+							owns_state = 1083
+						}
+						
+					}
+				
+			}
+		}
+		
+		allowed = {
+			original_tag = XWB
+		}
+		complete_effect = {
+			if = {
+				limit = { 
+					any_state = {
+						is_owned_by = XWB
+						is_core_of = XLH
+						
+					} 
+				}
+				release_puppet = XLH
+				XLH = {
+					add_state_core = 55
+							add_state_core = 1054
+							add_state_core = 1055
+							add_state_core = 1056
+							add_state_core = 1057
+							add_state_core = 1058
+							add_state_core = 1059
+							add_state_core = 1060
+							add_state_core = 1061
+							add_state_core = 1062
+							add_state_core = 1063
+							add_state_core = 1064
+							add_state_core = 1065
+							add_state_core = 1066
+							add_state_core = 1067
+							add_state_core = 1068
+							add_state_core = 1069
+							add_state_core = 1070
+							add_state_core = 1071
+							add_state_core = 1072
+							add_state_core = 1073
+							add_state_core = 1074
+							add_state_core = 1075
+							add_state_core = 1076
+							add_state_core = 1077
+							add_state_core = 1078
+							add_state_core = 1079
+							add_state_core = 1080
+							add_state_core = 1081
+							add_state_core = 1082
+							add_state_core = 1083
+				}
+			}
+		}
+	}
+}

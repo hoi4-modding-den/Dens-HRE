@@ -1,0 +1,32 @@
+capital = 807
+
+set_country_flag = HRE_member_state
+recruit_character = XGD_eitel_friedrich
+
+set_variable = { HRE_national_stance_federalism = 2 }
+set_variable = { HRE_national_stance_welfare = 2 }
+set_variable = { HRE_national_stance_papacy = 2 }
+
+
+set_research_slots = 2
+
+set_stability = 0.5
+set_war_support = 0.5
+
+set_technology = {
+	infantry_weapons = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1931.11.8"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}

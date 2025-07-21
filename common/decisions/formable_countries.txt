@@ -1,0 +1,1199 @@
+gen_form_country = {
+	form_hesse = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_hesse_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 55
+				state = 1054
+				state = 1055
+				state = 1056
+				state = 1057
+				state = 1058
+				state = 1059
+				state = 1060
+				state = 1061
+				state = 1062
+				state = 1063
+				state = 1064
+				state = 1065
+				state = 1066
+				state = 1067
+				state = 1068
+				state = 1069
+				state = 1070
+				state = 1071
+				state = 1072
+				state = 1073
+				state = 1074
+				state = 1075
+				state = 1076
+				state = 1077
+				state = 1078
+				state = 1079
+				state = 1080
+				state = 1081
+				state = 1082
+				state = 1083
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			# Hesse
+			custom_trigger_tooltip = {
+				tooltip = form_country_hesse_required_states_tt
+				controls_hesse = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_hesse_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_hesse_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_Hesse
+			# Hesse
+			custom_effect_tooltip = form_country_hesse_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_hesse_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_hesse_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	form_bavaria = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_bavaria_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 52
+				state = 53
+				state = 54
+				state = 1085
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			# Hesse
+			custom_trigger_tooltip = {
+				tooltip = form_country_bavaria_required_states_tt
+				controls_bavaria = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_bavaria_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_bavaria_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_Bavaria
+			# Bavaria
+			custom_effect_tooltip = form_country_bavaria_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_bavaria_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+
+				# Part of Bavaria, but not required for forming it
+				1036 = {
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_bavaria_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	form_switzerland = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_switzerland_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 847
+				state = 151
+				state = 3
+				state = 845
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			# Switzerland
+			custom_trigger_tooltip = {
+				tooltip = form_country_switzerland_required_states_tt
+				controls_switzerland = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_switzerland_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_switzerland_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_Switzerland
+			# Switzerland
+			custom_effect_tooltip = form_country_switzerland_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_switzerland_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+
+				# Part of Switzerland, but not required for forming it
+				1035 = {
+					add_core_of = ROOT
+				}
+				1025 = {
+					add_core_of = ROOT
+				}
+				846 = {
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_switzerland_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	# Thuringia Formable
+	form_thuringia = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_thuringia_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 60
+				state = 1088
+				state = 1089
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			# Thuringia
+			custom_trigger_tooltip = {
+				tooltip = form_country_thuringia_required_states_tt
+				controls_thuringia = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_thuringia_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_thuringia_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_Thuringia
+			custom_effect_tooltip = form_country_thuringia_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_thuringia_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_thuringia_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	# Baden Formable
+	form_baden = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_baden_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 978
+				state = 1092
+				state = 1093
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = form_country_baden_required_states_tt
+				controls_baden = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_baden_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_baden_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_Baden
+			custom_effect_tooltip = form_country_baden_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_baden_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_baden_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	# North Italy Formable
+	form_north_italy = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_north_italian_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 852
+				state = 736
+				state = 160
+				state = 1038
+				state = 850
+				state = 1039
+				state = 159
+				state = 1037
+				state = 846
+				state = 1029
+				state = 1042
+				state = 156
+				state = 1028
+				state = 161
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = form_country_north_italy_required_states_tt
+				controls_north_italy = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_north_italian_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_north_italy_flag }
+			NOT = { has_country_flag = void_north_italy}
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_NorthItaly
+			custom_effect_tooltip = form_country_north_italy_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_north_italian_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+
+				735 = {
+					add_core_of = ROOT
+				}
+
+				851 = {
+					add_core_of = ROOT
+				}
+
+				1041 = {
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_north_italy_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	form_south_germany = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_south_germany_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 50
+				state = 1024
+				state = 1026
+				state = 42
+				state = 28
+				state = 1091
+				state = 55
+				state = 1054
+				state = 1055
+				state = 1056
+				state = 1057
+				state = 1058
+				state = 1059
+				state = 1060
+				state = 1061
+				state = 1062
+				state = 1063
+				state = 1064
+				state = 1065
+				state = 1066
+				state = 1067
+				state = 1068
+				state = 1069
+				state = 1070
+				state = 1071
+				state = 1072
+				state = 1073
+				state = 1074
+				state = 1075
+				state = 1076
+				state = 1077
+				state = 1078
+				state = 1079
+				state = 1080
+				state = 1081
+				state = 1082
+				state = 1083
+				state = 54
+				state = 1085
+				state = 53
+				state = 52
+				state = 978
+				state = 1092
+				state = 1093
+			}
+			highlight_color_while_active = 1
+			highlight_color_before_active = 3
+		}
+
+		available = {
+			is_subject = no
+			# Hesse
+			custom_trigger_tooltip = {
+				tooltip = form_country_hesse_required_states_tt
+				controls_hesse = yes
+			}
+			# Bavaria
+			custom_trigger_tooltip = {
+				tooltip = form_country_bavaria_required_states_tt
+				controls_bavaria = yes
+			}
+
+			# Baden
+			custom_trigger_tooltip = {
+				tooltip = form_country_baden_required_states_tt
+				controls_baden = yes
+			}
+
+			# Wurttemberg
+			custom_trigger_tooltip = {
+				tooltip = form_country_wurttemberg_required_states_tt
+				controls_wurttemberg = yes
+			}
+
+			# Rhein
+			custom_trigger_tooltip = {
+				tooltip = form_country_rhein_required_states_tt
+				controls_rhein = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_south_germany_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_south_germany_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_SouthGermany
+			custom_effect_tooltip = form_country_south_germany_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_south_germany_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_south_germany_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	form_north_germany = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_north_germany_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 51
+				state = 57
+				state = 56
+				state = 1084
+				state = 1052
+				state = 1053
+				state = 1046
+				state = 1017
+				state = 59
+				state = 65
+				state = 1040
+				state = 1044
+				state = 1043
+				state = 909
+				state = 58
+				state = 1047
+				state = 1045
+				state = 61
+				state = 1048
+				state = 1087
+				state = 64
+				state = 1086
+				state = 1034
+				state = 1031
+				state = 62
+				state = 68
+				state = 63
+				state = 66
+				state = 86
+				state = 67
+				state = 74
+				state = 72
+				state = 762
+				state = 807
+				state = 5
+				state = 763
+				state = 60
+				state = 1088
+				state = 1089
+			}
+		}
+
+		available = {
+			is_subject = no
+			# Thuringia
+			custom_trigger_tooltip = {
+				tooltip = form_country_thuringia_required_states_tt
+				controls_thuringia = yes
+			}
+			# Nord-Rhein
+			custom_trigger_tooltip = {
+				tooltip = form_country_nord_rhein_required_states_tt
+				controls_state = 52
+			}
+
+			# League of Northwestern States
+			custom_trigger_tooltip = {
+				tooltip = form_country_league_required_states_tt
+				controls_league = yes
+			}
+
+			# Friesland
+			custom_trigger_tooltip = {
+				tooltip = form_country_friesland_required_states_tt
+				controls_friesland = yes
+			}
+
+			# Hamburg
+			custom_trigger_tooltip = {
+				tooltip = form_country_hamburg_required_states_tt
+				controls_hamburg = yes
+			}
+
+			# Brandenburg
+			custom_trigger_tooltip = {
+				tooltip = form_country_brandenburg_required_states_tt
+				controls_brandenburg = yes
+			}
+
+			# Saxony
+			custom_trigger_tooltip = {
+				tooltip = form_country_saxony_required_states_tt
+				controls_saxony = yes
+			}
+
+			# Pomerania
+			custom_trigger_tooltip = {
+				tooltip = form_country_pomerania_required_states_tt
+				controls_pomerania = yes
+			}
+
+			# Silesia
+			custom_trigger_tooltip = {
+				tooltip = form_country_silesia_required_states_tt
+				controls_silesia = yes
+			}
+
+			# Gdynia
+			custom_trigger_tooltip = {
+				tooltip = form_country_gdynia_required_states_tt
+				controls_gdynia = yes
+			}
+
+			# East Prussia
+			custom_trigger_tooltip = {
+				tooltip = form_country_east_prussia_required_states_tt
+				controls_east_prussia = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_north_germany_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_north_germany_flag }
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_NorthGermany
+			custom_effect_tooltip = form_country_north_germany_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_north_germany_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_north_germany_flag
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	form_germany = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_north_germany_state = yes
+					is_south_germany_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 51
+				state = 57
+				state = 56
+				state = 1084
+				state = 1052
+				state = 1053
+				state = 1046
+				state = 1017
+				state = 59
+				state = 65
+				state = 1040
+				state = 1044
+				state = 1043
+				state = 909
+				state = 58
+				state = 1047
+				state = 1045
+				state = 61
+				state = 1048
+				state = 1087
+				state = 64
+				state = 1086
+				state = 1034
+				state = 1031
+				state = 62
+				state = 68
+				state = 63
+				state = 66
+				state = 86
+				state = 67
+				state = 74
+				state = 72
+				state = 762
+				state = 807
+				state = 5
+				state = 763
+				state = 60
+				state = 1088
+				state = 1089
+				state = 50
+				state = 1024
+				state = 1026
+				state = 42
+				state = 28
+				state = 1091
+				state = 55
+				state = 1054
+				state = 1055
+				state = 1056
+				state = 1057
+				state = 1058
+				state = 1059
+				state = 1060
+				state = 1061
+				state = 1062
+				state = 1063
+				state = 1064
+				state = 1065
+				state = 1066
+				state = 1067
+				state = 1068
+				state = 1069
+				state = 1070
+				state = 1071
+				state = 1072
+				state = 1073
+				state = 1074
+				state = 1075
+				state = 1076
+				state = 1077
+				state = 1078
+				state = 1079
+				state = 1080
+				state = 1081
+				state = 1082
+				state = 1083
+				state = 54
+				state = 1085
+				state = 53
+				state = 52
+				state = 978
+				state = 1092
+				state = 1093
+			}
+		}
+
+		available = {
+			is_subject = no
+			# Thuringia
+			custom_trigger_tooltip = {
+				tooltip = form_country_thuringia_required_states_tt
+				controls_thuringia = yes
+			}
+			# Nord-Rhein
+			custom_trigger_tooltip = {
+				tooltip = form_country_nord_rhein_required_states_tt
+				controls_state = 52
+			}
+
+			# League of Northwestern States
+			custom_trigger_tooltip = {
+				tooltip = form_country_league_required_states_tt
+				controls_league = yes
+			}
+
+			# Friesland
+			custom_trigger_tooltip = {
+				tooltip = form_country_friesland_required_states_tt
+				controls_friesland = yes
+			}
+
+			# Hamburg
+			custom_trigger_tooltip = {
+				tooltip = form_country_hamburg_required_states_tt
+				controls_hamburg = yes
+			}
+
+			# Brandenburg
+			custom_trigger_tooltip = {
+				tooltip = form_country_brandenburg_required_states_tt
+				controls_brandenburg = yes
+			}
+
+			# Saxony
+			custom_trigger_tooltip = {
+				tooltip = form_country_saxony_required_states_tt
+				controls_saxony = yes
+			}
+
+			# Pomerania
+			custom_trigger_tooltip = {
+				tooltip = form_country_pomerania_required_states_tt
+				controls_pomerania = yes
+			}
+
+			# Silesia
+			custom_trigger_tooltip = {
+				tooltip = form_country_silesia_required_states_tt
+				controls_silesia = yes
+			}
+
+			# Gdynia
+			custom_trigger_tooltip = {
+				tooltip = form_country_gdynia_required_states_tt
+				controls_gdynia = yes
+			}
+
+			# East Prussia
+			custom_trigger_tooltip = {
+				tooltip = form_country_east_prussia_required_states_tt
+				controls_east_prussia = yes
+			}
+			# Hesse
+			custom_trigger_tooltip = {
+				tooltip = form_country_hesse_required_states_tt
+				controls_hesse = yes
+			}
+			# Bavaria
+			custom_trigger_tooltip = {
+				tooltip = form_country_bavaria_required_states_tt
+				controls_bavaria = yes
+			}
+
+			# Baden
+			custom_trigger_tooltip = {
+				tooltip = form_country_baden_required_states_tt
+				controls_baden = yes
+			}
+
+			# Wurttemberg
+			custom_trigger_tooltip = {
+				tooltip = form_country_wurttemberg_required_states_tt
+				controls_wurttemberg = yes
+			}
+
+			# Rhein
+			custom_trigger_tooltip = {
+				tooltip = form_country_rhein_required_states_tt
+				controls_rhein = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_german_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_germany_flag }
+			OR = {
+				has_global_flag = form_south_germany_flag
+				has_global_flag = form_north_germany_flag
+			}
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_Germany
+			custom_effect_tooltip = form_country_germany_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_german_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_germany_flag
+		}
+
+		ai_will_do = {
+			factor = 400
+		}
+	}
+
+	unite_hre = {
+		icon = generic_form_nation
+
+		allowed = {
+			any_owned_state = {
+				OR = {
+					is_holy_roman_empire_state = yes
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 51
+				state = 57
+				state = 56
+				state = 1084
+				state = 1052
+				state = 1053
+				state = 1046
+				state = 1017
+				state = 59
+				state = 65
+				state = 1040
+				state = 1044
+				state = 1043
+				state = 909
+				state = 58
+				state = 1047
+				state = 1045
+				state = 61
+				state = 1048
+				state = 1087
+				state = 64
+				state = 1086
+				state = 1034
+				state = 1031
+				state = 62
+				state = 68
+				state = 63
+				state = 66
+				state = 86
+				state = 67
+				state = 74
+				state = 72
+				state = 762
+				state = 807
+				state = 5
+				state = 763
+				state = 60
+				state = 1088
+				state = 1089
+				state = 50
+				state = 1024
+				state = 1026
+				state = 42
+				state = 28
+				state = 1091
+				state = 55
+				state = 1054
+				state = 1055
+				state = 1056
+				state = 1057
+				state = 1058
+				state = 1059
+				state = 1060
+				state = 1061
+				state = 1062
+				state = 1063
+				state = 1064
+				state = 1065
+				state = 1066
+				state = 1067
+				state = 1068
+				state = 1069
+				state = 1070
+				state = 1071
+				state = 1072
+				state = 1073
+				state = 1074
+				state = 1075
+				state = 1076
+				state = 1077
+				state = 1078
+				state = 1079
+				state = 1080
+				state = 1081
+				state = 1082
+				state = 1083
+				state = 54
+				state = 1085
+				state = 53
+				state = 52
+				state = 978
+				state = 1092
+				state = 1093
+				state = 852
+				state = 736
+				state = 160
+				state = 1038
+				state = 850
+				state = 1039
+				state = 159
+				state = 1037
+				state = 846
+				state = 1029
+				state = 1042
+				state = 156
+				state = 1028
+				state = 161
+				state = 42
+				state = 1050
+				state = 36
+				state = 7
+				state = 1032
+				state = 1051
+				state = 1033
+				state = 1049
+				state = 35
+				state = 977
+				state = 162
+				state = 2
+				state = 735
+				state = 1041
+				state = 851
+				state = 21
+				state = 32
+				state = 1090
+				state = 17
+				state = 1030
+				state = 4
+				state = 976
+				state = 1019
+				state = 102
+				state = 1018
+				state = 853
+				state = 1027
+				state = 69
+				state = 9
+				state = 972
+				state = 75
+				state = 153
+				state = 848
+				state = 1035
+				state = 1025
+				state = 8
+				state = 1
+			}
+		}
+
+		available = {
+			is_subject = no
+			# Germany
+			custom_trigger_tooltip = {
+				tooltip = form_country_germany_required_states_tt
+				controls_germany = yes
+			}
+			# North Italy
+			custom_trigger_tooltip = {
+				tooltip = form_country_north_italy_required_states_tt
+				controls_north_italy = yes
+			}
+			# Lowlands
+			custom_trigger_tooltip = {
+				tooltip = form_country_lowlands_required_states_tt
+				controls_netherlands =  yes
+				controls_luxembourg = yes
+			}
+			# Papacy
+			custom_trigger_tooltip = {
+				tooltip = form_country_papacy_required_states_tt
+				controls_papal_states = yes
+			}
+			# Marsailles
+			custom_trigger_tooltip = {
+				tooltip = form_country_marseilles_required_states_tt
+				controls_marsailles = yes
+			}
+			# Franconia
+			custom_trigger_tooltip = {
+				tooltip = form_country_franconia_required_states_tt
+				controls_franconian = yes
+			}
+			# Austria
+			custom_trigger_tooltip = {
+				tooltip = form_country_austria_required_states_tt
+				controls_austria = yes
+			}
+			# Bohemia
+			custom_trigger_tooltip = {
+				tooltip = form_country_bohemia_required_states_tt
+				controls_bohemia = yes
+			}
+			# Tyrol
+			custom_trigger_tooltip = {
+				tooltip = form_country_tyrol_required_states_tt
+				controls_tyrol = yes
+			}
+			# Corsica
+			custom_trigger_tooltip = {
+				tooltip = form_country_corsica_required_states_tt
+				controls_corsica = yes
+			}
+			# Rhein
+			custom_trigger_tooltip = {
+				tooltip = form_country_rhein_required_states_tt
+				controls_rhein = yes
+			}
+		}
+
+		visible = {
+			OR = {
+				any_owned_state = {
+					OR = {
+						is_holy_roman_empire_state = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = form_hre_flag }
+			OR = {
+				has_global_flag = form_germany_flag
+				has_global_flag = form_north_italy_flag
+			}
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = gen_HRE
+			custom_effect_tooltip = form_country_hre_coring_states_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_holy_roman_empire_state = yes
+					}
+
+					add_core_of = ROOT
+				}
+			}
+			set_global_flag = form_hre_flag
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+}

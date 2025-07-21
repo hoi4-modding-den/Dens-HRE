@@ -3,23 +3,144 @@ ideas = {
 		XWB_king_idea = {
 			name = XWB_king_idea_name
 			picture = george_v
-
 			modifier = {
 				stability_factor = -0.05
 				political_power_factor = 0.1
 			}
 		}
+		XWB_king_idea_fascist = {
+			picture = king_edward
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.1
+				fascism_drift = 0.025
+			}
+		}
+
 		XWB_democracy_idea = {
 			name = XWB_democracy_idea_name
 			picture = generic_democratic_opposition
-
 			modifier = {
 				political_power_factor = -0.25
 				stability_factor = -0.05
 				democratic_drift = 0.02
 			}
 		}
-	}
+		XWB_burgundy_remnant = {
+			picture = BEL_scars_of_ww1
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.05
+				enemy_justify_war_goal_time = -0.25
+			}
+		}
+		XWB_expansionism_idea_south = {
+			picture = GER_the_shield_of_democracy
+			modifier = {
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.25
+				war_support_factor = 0.1
+				subjects_autonomy_gain = -0.5
+			}
+		}
+		XWB_expansionism_idea_north = {
+			picture = GER_fan_prussian_militarism
+			modifier = {
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.25
+				annex_cost_factor = -0.1
+				compliance_gain = 0.1
+			}
+		}
+		XWB_greater_wurttemberg_idea = {
+			picture = FRA_la_deluge
+			modifier = {
+				political_power_factor = 0.25
+				stability_factor = 0.1
+				weekly_manpower = 250
+			}
+		}
+		XWB_bribed_military = {
+			picture = PER_fund_state_intelligence_idea
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		XWB_purged_military = {
+			picture = generic_purge
+			modifier = {
+				army_org_factor = -0.3
+				experience_gain_factor = -0.25
+			}
+		}
+		XWB_total_war = {
+			picture = totaler_krieg_economy
+			modifier = {
+				surrender_limit = 0.1
+				war_support_weekly = 0.002
+				experience_gain_air = 0.1
+				experience_gain_navy = 0.1
+				experience_gain_army = 0.1
+			}
+		}
+		XWB_volkswagen_idea = {
+			picture = generic_armor
+			modifier = {
+				army_speed_factor = 0.1
+				consumer_goods_factor = -0.1
+			}
+		}
+		XWB_security_state = {
+			picture = generic_armor
+			modifier = {
+				agency_upgrade_time = -0.5
+				army_intel_to_others = -0.1
+				operation_infiltrate_cost = -0.25
+				operative_slot = 1
+			}
+		}
+		XWB_autarky_idea = {
+			picture = generic_armor
+			modifier = {
+				monthly_population = 0.5
+				industrial_capacity_factory = 0.1
+				min_export = 0.0
+			}
+		}
+		XWB_domination_corporatism_idea = {
+			picture = generic_armor
+			modifier = {
+				research_speed_factor = 0.075
+				stability_weekly_factor = 0.001
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+		XWB_research_slot_idea = {
+picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.05
+				political_power_gain = -0.05
+			}
 
-	
+		}
+		XWB_purged_monarchists = {
+			picture = generic_purge
+			modifier = {
+				stability_weekly_factor = -0.005
+				weekly_manpower = -100
+				neutrality_drift = -0.05
+				army_intel_to_others = 0.25
+			}
+		}
+		XWB_total_control = {
+			picture = generic_purge
+			modifier = {
+				political_power_factor = 0.25
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				fascism_drift = 0.05
+			}
+		}
+	}
 }

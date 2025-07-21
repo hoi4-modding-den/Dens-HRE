@@ -1,6 +1,15 @@
 capital = 63
 
+set_country_flag = HRE_member_state
 set_oob = "XFT_1936"
+
+IF = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "XFT_1936_naval_mtg"
+	ELSE = {
+		set_naval_oob = "XFT_1936_naval_legacy"
+	}
+}
 
 set_research_slots = 3
 # Starting tech
@@ -208,6 +217,39 @@ set_convoys = 300
 	}
 }
 
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Wilk Class"				
+		type = ship_hull_submarine_2
+		name_group = POL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Wicher Class"				
+		type = ship_hull_light_1
+		name_group = POL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+}
+
 #ideas
 add_ideas = {
 	free_trade
@@ -219,6 +261,8 @@ add_ideas = {
 # Leaders
 recruit_character = XFT_Erik_von_Kustrin
 recruit_character = XFT_Andrzej_Schiski
+
+recruit_character = XFT_defensive_army
 
 set_politics = {
 	ruling_party = democratic

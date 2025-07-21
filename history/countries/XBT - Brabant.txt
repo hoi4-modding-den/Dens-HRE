@@ -1,5 +1,7 @@
 capital = 977
 
+set_country_flag = HRE_member_state
+
 oob = "XBT_1936"
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -9,10 +11,10 @@ if = {
 	}
 }
 
-set_research_slots = 2
+set_research_slots = 3
 set_convoys = 10
 set_stability = 0.5
-set_war_support = 0.1
+set_war_support = 0.3
 
 set_technology = {
 	infantry_weapons = 1
@@ -81,6 +83,7 @@ if = {
 add_ideas = {
 	XNE_port_of_antwerpen_1
 	free_trade
+	XBT_rampant_inflation
 }
 
 set_variable = { HRE_national_stance_federalism = 3 } 

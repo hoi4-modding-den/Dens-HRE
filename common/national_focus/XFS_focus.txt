@@ -19,6 +19,10 @@ focus_tree = {
 		y = 0
 		cost = 10
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -153,6 +157,66 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XFS_stockpile_rubber
+		available = {
+			threat > 0.09
+		}
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = XFS_reconvene_landei }
+    	relative_position_id = XFS_reconvene_landei
+		x = 1
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_ideas = { XFS_rubber_stockpiling }
+		}
+	}
+
+	focus = {
+		id = XFS_defensive_focus
+		available = {
+			threat > 0.15
+		}
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = XFS_stockpile_rubber }
+    	relative_position_id = XFS_stockpile_rubber
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_military_readiness
+		available = {
+			has_war_support > 0.19
+		}
+		icon = GFX_focus_AFG_adopt_nufus
+		prerequisite = { focus = XFS_defensive_focus }
+    	relative_position_id = XFS_defensive_focus
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			set_technology = {
+				militia_tech = 1
+			}
+			add_ideas = { XFS_military }
+		}
+	}
+
+	focus = {
 		id = XFS_heavy_industry
 		available = {
 		}
@@ -160,9 +224,13 @@ focus_tree = {
 		prerequisite = { focus = XFS_reconvene_landei }
 		mutually_exclusive = { focus = XFS_farming_culture }
     	relative_position_id = XFS_reconvene_landei
-		x = 3
+		x = 4
 		y = 1
 		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -192,9 +260,13 @@ focus_tree = {
 		prerequisite = { focus = XFS_reconvene_landei }
 		mutually_exclusive = { focus = XFS_heavy_industry }
     	relative_position_id = XFS_reconvene_landei
-		x = 5
+		x = 6
 		y = 1
 		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
 
 		completion_reward = {
 			if = {
@@ -213,7 +285,7 @@ focus_tree = {
 	focus = {
 		id = XFS_urbanization
 		available = {
-			num_of_civilian_factories > 5
+			num_of_civilian_factories > 4
 		}
 		icon = GFX_focus_generic_printing_press
 		prerequisite = { focus = XFS_heavy_industry focus = XFS_farming_culture }
@@ -446,12 +518,63 @@ focus_tree = {
 					}
 				}
 			}
+			add_war_support = 0.04
 			CAPITAL_SCOPE = {
 				create_unit = {
 					division = "name = \"Militia\" division_template = \"Militie Divisie\" start_experience_factor = 0.0 start_equipment_factor = 0.7"
 					owner = PREV
 					count = 2
 				}
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_trucks
+		available = {
+		}
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = XFS_study_foreign_equipment focus = XFS_raise_militia }
+    	relative_position_id = XFS_study_foreign_equipment
+		x = 0
+		y = 2
+		cost = 5
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_antiair
+		available = {
+		}
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = XFS_raise_militia }
+    	relative_position_id = XFS_raise_militia
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1.5
+				uses = 1
+				category = cat_anti_air
 			}
 		}
 	}
@@ -507,6 +630,59 @@ focus_tree = {
 						province = 13486
 						instant_build = yes
 					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_destroyer_focus
+		available = {
+		}
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = XFS_repairyards }
+    	relative_position_id = XFS_repairyards
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = XFS_naval_aircraft
+		available = {
+		}
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = XFS_destroyer_focus }
+    	relative_position_id = XFS_destroyer_focus
+		x = 0
+		y = 1
+		cost = 10
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = medium_air
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = strategic_destruction_tree
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = air_torpedoe_1 }
+				}
+				set_technology = {
+					air_torpedoe_1 = 1
 				}
 			}
 		}

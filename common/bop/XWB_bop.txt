@@ -1,0 +1,224 @@
+XWB_fascist_balance = {
+    initial_value = 0.0
+    left_side = XWB_fascist_side
+    right_side = XWB_neutrality_side
+    decision_category = XWB_bop_category
+    range = { 
+        id = XWB_uneasy_cooperation
+        min = -0.24
+        max = 0.24
+        modifier = {
+		political_power_gain = -0.1
+		
+        }
+    }
+
+    range = {
+        id = XWB_fascist_low
+        min = -0.49
+        max = -0.24
+        modifier = {
+            fascism_drift = 0.01
+            stability_factor = 0.05
+        }
+    }
+    range = {
+        id = XWB_neutrality_low
+        min = 0.24
+        max = 0.49
+        modifier = {
+            neutrality_drift = 0.01
+            stability_factor = -0.05
+        }
+    }
+
+
+
+    range = {
+        id = XWB_fascist_medium
+        min = -0.74
+        max = -0.49
+        modifier = {
+            fascism_drift = 0.03
+            stability_factor = 0.1
+        }
+    }
+    range = {
+        id = XWB_neutrality_medium
+        min = 0.49
+        max = 0.74
+        modifier = {
+            neutrality_drift = 0.03
+            stability_factor = -0.1
+        }
+    }
+
+    range = {
+        id = XWB_fascist_high
+            min = -0.95
+            max = -0.74
+            modifier = {
+            	stability_factor = 0.15
+                conscription_factor  = 0.05
+            	fascism_drift = 0.05
+            }
+    }
+    range = {
+        id = XWB_neutrality_high
+            min = 0.74
+            max = 0.95
+            modifier = {
+                stability_factor = -0.15
+            	neutrality_drift = 0.03
+            }
+    }
+
+    side = {
+        id = XWB_fascist_side
+        icon = GFX_idea_generic_fascism_drift_2
+        range = {
+            id = XWB_fascism_total
+            min = -1
+            max = -0.95
+            modifier = {
+                stability_factor = 0.15
+                war_support_factor = 0.1
+                conscription_factor  = 0.10
+                fascism_drift = 0.1
+                
+            }
+	    on_activate = {
+		#country_event = XWB_natural_event.1
+            }
+        }
+    }
+
+    side = {
+        id = XWB_neutrality_side
+        icon = GFX_idea_por_monarchist_uprising
+        range = {
+            id = XWB_neutrality_total
+            min = 0.95
+            max = 1
+            modifier = {
+                stability_factor = -0.25
+                neutrality_drift = 0.1
+            }
+	    on_activate = {
+		#country_event = XWB_natural_event.2
+            }
+        }
+    }
+}
+XWB_fascist_balance_failing = {
+    initial_value = 0.0
+    left_side = XWB_fascist_side
+    right_side = XWB_neutrality_side
+    decision_category = XWB_bop_category_alt
+    range = { 
+        id = XWB_uneasy_cooperation
+        min = -0.24
+        max = 0.24
+        modifier = {
+		political_power_gain = -0.1
+		
+        }
+    }
+
+    range = {
+        id = XWB_fascist_low
+        min = -0.49
+        max = -0.24
+        modifier = {
+            fascism_drift = 0.01
+            stability_factor = 0.05
+        }
+    }
+    range = {
+        id = XWB_neutrality_low
+        min = 0.24
+        max = 0.49
+        modifier = {
+            neutrality_drift = 0.01
+            stability_factor = -0.05
+        }
+    }
+
+
+
+    range = {
+        id = XWB_fascist_medium
+        min = -0.74
+        max = -0.49
+        modifier = {
+            fascism_drift = 0.03
+            stability_factor = 0.1
+        }
+    }
+    range = {
+        id = XWB_neutrality_medium
+        min = 0.49
+        max = 0.74
+        modifier = {
+            neutrality_drift = 0.03
+            stability_factor = -0.1
+        }
+    }
+
+    range = {
+        id = XWB_fascist_high
+            min = -0.95
+            max = -0.74
+            modifier = {
+            	stability_factor = 0.15
+                conscription_factor  = 0.05
+            	fascism_drift = 0.05
+            }
+    }
+    range = {
+        id = XWB_neutrality_high
+            min = 0.74
+            max = 0.95
+            modifier = {
+                stability_factor = -0.15
+            	neutrality_drift = 0.03
+            }
+    }
+
+    side = {
+        id = XWB_fascist_side
+        icon = GFX_idea_generic_fascism_drift_2
+        range = {
+            id = XWB_fascism_total
+            min = -1
+            max = -0.95
+            modifier = {
+                stability_factor = 0.15
+                war_support_factor = 0.1
+                conscription_factor  = 0.10
+                fascism_drift = 0.1
+                
+            }
+	    on_activate = {
+		#country_event = XWB_natural_event.1
+            }
+        }
+    }
+
+    side = {
+        id = XWB_neutrality_side
+        icon = GFX_idea_por_monarchist_uprising
+        range = {
+            id = XWB_neutrality_total
+            min = 0.95
+            max = 1
+            modifier = {
+                stability_factor = -0.25
+                neutrality_drift = 0.1
+            }
+	    on_activate = {
+		#country_event = XWB_natural_event.2
+            }
+        }
+    }
+}
