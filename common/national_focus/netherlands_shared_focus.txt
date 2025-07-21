@@ -8,6 +8,27 @@ joint_focus = {
     cost = 10
     available_if_capitulated = no
 
+    offset = {
+        x = -16
+        trigger = {
+            tag = XFS
+        }
+    }
+
+    offset = {
+        x = -10
+        trigger = {
+            tag = XBT
+        }
+    }
+
+    offset = {
+        x = -12
+        trigger = {
+            tag = XUT
+        }
+    }
+
     ai_will_do = {
         factor = 1
     }
@@ -23,6 +44,14 @@ joint_focus = {
             hidden_trigger = {
                 NOT = { has_idea = XHO_calvinists_bolstered_2 }
                 NOT = { has_idea = XHO_calvinists_bolstered_3 }
+            }
+        }
+        if = {
+            limit = {
+                tag = XBT
+            }
+            NOT = {
+                has_completed_focus = XBT_war_prep
             }
         }
     }
@@ -910,7 +939,7 @@ joint_focus = {
 
     available = {
         XNE_is_dutch_tag = yes
-        threat > 0.19
+        num_of_factories > 18
         if = {
             limit = {
                 tag = XHO
@@ -920,6 +949,14 @@ joint_focus = {
             hidden_trigger = {
                 NOT = { has_idea = XHO_calvinists_bolstered_2 }
                 NOT = { has_idea = XHO_calvinists_bolstered_3 }
+            }
+        }
+        if = {
+            limit = {
+                tag = XBT
+            }
+            NOT = {
+                has_completed_focus = XBT_war_prep
             }
         }
     }
@@ -1651,10 +1688,17 @@ shared_focus = {
     id = XHO_port_rotterdam
     icon = GFX_focus_generic_refit_civilian_ships
 
-    x = 34
+    x = 26
     y = 0
     cost = 10
     available_if_capitulated = no
+
+    offset = {
+        x = 8
+        trigger = {
+            tag = XHO
+        }
+    }
 
     ai_will_do = {
         factor = 1
@@ -1839,10 +1883,18 @@ shared_focus = {
     id = XBT_port_antwerpen
     icon = GFX_focus_generic_refit_civilian_ships
 
-    x = 14
+    x = 26
     y = 5
     cost = 10
     available_if_capitulated = no
+
+    offset = {
+        y = -5
+        x = -2
+        trigger = {
+            tag = XBT
+        }
+    }
 
     ai_will_do = {
         factor = 1
@@ -2002,6 +2054,8 @@ shared_focus = {
             add_idea = XNE_port_of_antwerpen_3a
         }
 
+        add_manpower = 3500
+        custom_effect_tooltip = generic_skip_one_line_tt
         random_owned_controlled_state = {
             limit = {
                 free_building_slots = {

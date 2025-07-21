@@ -13,7 +13,6 @@ XNE_propose_integration_category = {
 		target_root_trigger = {
 			has_completed_focus = XNE_joint_propose_integration
             XNE_is_first_union_leader = yes
-            tag = XHO
 		}
         
         target_trigger = {
@@ -26,6 +25,7 @@ XNE_propose_integration_category = {
                 }
                 NOT = { is_subject = yes }
                 XNE_is_first_union_member = yes
+                NOT = { has_war_with = ROOT }
             }   
         }
 
@@ -73,6 +73,7 @@ form_united_netherlands_category = {
 		visible = {
 			XNE_is_dutch_tag = yes
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 7
@@ -130,6 +131,7 @@ form_united_netherlands_category = {
                 original_tag = XLE
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 6
@@ -197,6 +199,7 @@ form_united_netherlands_category = {
                 NOT = { 1084 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 56
@@ -256,6 +259,7 @@ form_united_netherlands_category = {
                 NOT = { 1033 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 7
@@ -288,6 +292,7 @@ form_united_netherlands_category = {
                 NOT = { 1049 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 1049
@@ -320,6 +325,7 @@ form_united_netherlands_category = {
                 NOT = { 1050 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 36
@@ -354,6 +360,7 @@ form_united_netherlands_category = {
                 NOT = { 1051 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 1032
@@ -388,6 +395,7 @@ form_united_netherlands_category = {
                 NOT = { 977 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 35
@@ -424,6 +432,7 @@ form_united_netherlands_category = {
                 NOT = { 6 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 6
@@ -459,6 +468,7 @@ form_united_netherlands_category = {
                 NOT = { 980 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 34
@@ -494,6 +504,7 @@ form_united_netherlands_category = {
                 NOT = { 8 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 8
@@ -527,6 +538,7 @@ form_united_netherlands_category = {
                 NOT = { 29 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 29
@@ -560,6 +572,7 @@ form_united_netherlands_category = {
                 NOT = { 51 = { is_core_of = ROOT } }
             }
 		}
+        on_map_mode = decision_view_only
         highlight_states = {
             highlight_state_targets = {
                 state = 51
@@ -585,7 +598,7 @@ XHO_schiphol_airport_category = {
 		icon = generic_construction
 
 		ai_will_do = {
-			base = 1
+			base = 10
 		}
 
         allowed = {
@@ -629,7 +642,7 @@ XHO_schiphol_airport_category = {
 		icon = generic_construction
 
 		ai_will_do = {
-			base = 1
+			base = 10
 		}
 
         allowed = {
@@ -682,7 +695,7 @@ XHO_schiphol_airport_category = {
 		icon = SOV_place_hq
 
 		ai_will_do = {
-			base = 1
+			base = 10
 		}
 
         allowed = {
@@ -738,7 +751,7 @@ XHO_schiphol_airport_category = {
 		icon = generic_construction
 
 		ai_will_do = {
-			base = 1
+			base = 10
 		}
 
         allowed = {
@@ -791,7 +804,7 @@ XHO_schiphol_airport_category = {
 		icon = SWE_set_air_budget
 
 		ai_will_do = {
-			base = 1
+			base = 10
 		}
 
         allowed = {
@@ -931,7 +944,7 @@ XHO_calvinism_category = {
 		icon = eng_propaganda_campaigns
 
 		ai_will_do = {
-			base = 1
+			base = 100
 		}
 
         allowed = {
@@ -971,7 +984,7 @@ XHO_calvinism_category = {
 		icon = generic_reorganize_irregulars
 
 		ai_will_do = {
-			base = 1
+			base = 10
 		}
 
         allowed = {

@@ -19,6 +19,10 @@ focus_tree = {
 		y = 0
 		cost = 10
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -224,6 +228,10 @@ focus_tree = {
 		y = 1
 		cost = 10
 
+		ai_will_do = {
+			factor = 6
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 36 1050 }
@@ -255,6 +263,10 @@ focus_tree = {
 		x = 6
 		y = 1
 		cost = 10
+
+		ai_will_do = {
+			factor = 6
+		}
 
 		completion_reward = {
 			if = {

@@ -16,7 +16,7 @@ focus_tree = {
 		available = {
 		}
 		mutually_exclusive = { focus = XBT_council_of_brabant }
-		icon = GFX_focus_BEL_charles_count_of_flanders
+		icon = GFX_focus_BEL_royal_commander_in_chief
 		x = 2
 		y = 0
 		cost = 10
@@ -43,11 +43,87 @@ focus_tree = {
     	relative_position_id = XBT_leopold
 		x = 0
 		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_war_support = 0.1
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = XBT_strike_east
+		available = {
+		}
+		bypass = {
+			XUT = { 
+				OR = {
+					NOT = { exists = yes }
+					is_ally_with = ROOT
+				}
+			}
+		}
+		icon = GFX_focus_hol_war_on_pacifism
+		prerequisite = { focus = XBT_war_prep }
+    	relative_position_id = XBT_war_prep
+		x = -1
+		y = 1
 		cost = 10
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			create_wargoal = {
+				target = XUT
+				type = annex_everything
+			}
+			add_ideas = { XBT_army_bolstered }
+		}
+	}
+
+	focus = {
+		id = XBT_control_trade
+		available = {
+			has_idea = free_trade
+		}
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = XBT_strike_east }
+    	relative_position_id = XBT_strike_east
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			create_wargoal = {
+				target = XHO
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = XFS
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = XBT_research
+		available = {
+		}
+		prerequisite = { focus = XBT_welfare_state focus = XBT_war_prep }
+    	relative_position_id = XBT_war_prep
+		icon = GFX_focus_research
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_research_slot = 1
 		}
 	}
 
@@ -56,7 +132,7 @@ focus_tree = {
 		available = {
 		}
 		mutually_exclusive = { focus = XBT_leopold }
-		icon = GFX_focus_BEL_charles_count_of_flanders
+		icon = GFX_focus_generic_freedom_council
 		x = 4
 		y = 0
 		cost = 10
@@ -76,9 +152,50 @@ focus_tree = {
 		id = XBT_welfare_state
 		available = {
 		}
-		icon = GFX_focus_BEL_charles_count_of_flanders
+		icon = GFX_focus_generic_welfare
 		prerequisite = { focus = XBT_council_of_brabant }
     	relative_position_id = XBT_council_of_brabant
+		x = 0
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.06
+			}
+		}
+	}
+
+	focus = {
+		id = XBT_research_grants
+		available = {
+		}
+		icon = GFX_focus_research2
+		prerequisite = { focus = XBT_welfare_state }
+    	relative_position_id = XBT_welfare_state
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = { XBT_grants }
+		}
+	}
+
+	focus = {
+		id = XBT_industrial_investments
+		available = {
+		}
+		icon = GFX_focus_generic_industrialists
+		prerequisite = { focus = XBT_research_grants }
+    	relative_position_id = XBT_research_grants
 		x = 0
 		y = 1
 		cost = 10
@@ -86,21 +203,69 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = XBT_antwerp_industry
 		available = {
+			controls_state = 977
 		}
 		icon = GFX_focus_CHL_enlarge_the_textile_industries
 		x = 14
 		y = 0
 		cost = 10
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			977 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -108,7 +273,7 @@ focus_tree = {
 		id = XBT_more_industry
 		available = {
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = XBT_antwerp_industry }
     	relative_position_id = XBT_antwerp_industry
 		x = 0
@@ -118,7 +283,26 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -127,7 +311,7 @@ focus_tree = {
 		available = {
 			neutrality > 0.5
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_generic_purchase_mechanized_equipment
 		prerequisite = { focus = XBT_more_industry }
     	relative_position_id = XBT_more_industry
 		x = 0
@@ -156,9 +340,29 @@ focus_tree = {
 		y = 1
 		cost = 10
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_political_power = 100
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { has_idea = XBT_rampant_inflation }
+				swap_ideas = {
+					remove_idea = XBT_rampant_inflation
+					add_idea = XBT_rampant_inflation_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = XBT_rampant_inflation_2 }
+				swap_ideas = {
+					remove_idea = XBT_rampant_inflation_2
+					add_idea = XBT_rampant_inflation_3
+				}
+			}
 		}
 	}
 
@@ -166,7 +370,7 @@ focus_tree = {
 		id = XBT_railways
 		available = {
 		}
-		icon = GFX_focus_CHL_devalue_the_peso_export
+		icon = GFX_focus_generic_railroad
 		prerequisite = { focus = XBT_banking_sector }
     	relative_position_id = XBT_banking_sector
 		x = 0
@@ -176,6 +380,19 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			build_railway = {
+				level = 2
+				build_only_on_allied = yes
+				fallback = yes
+				start_province = 6598
+				target_province = 11562
+				path = { 6598 13068 9574 11562 }
+			}
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 10
+				producer = ROOT
+			}
 		}
 	}
 
@@ -183,7 +400,7 @@ focus_tree = {
 		id = XBT_artillery_focus
 		available = {
 		}
-		icon = GFX_focus_CHL_devalue_the_peso_export
+		icon = GFX_goal_generic_army_artillery2
 		x = 18
 		y = 0
 		cost = 10
@@ -191,6 +408,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = artillery
+			}
 		}
 	}
 
@@ -198,7 +420,7 @@ focus_tree = {
 		id = XBT_electronics
 		available = {
 		}
-		icon = GFX_focus_CHL_devalue_the_peso_export
+		icon = GFX_focus_generic_electrification
 		prerequisite = { focus = XBT_artillery_focus }
     	relative_position_id = XBT_artillery_focus
 		x = 0
@@ -208,6 +430,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = electronics
+			}
 		}
 	}
 
@@ -215,16 +442,34 @@ focus_tree = {
 		id = XBT_price_controls
 		available = {
 		}
-		icon = GFX_focus_CHL_devalue_the_peso_export
+		icon = GFX_focus_generic_price_controls
 		prerequisite = { focus = XBT_electronics }
     	relative_position_id = XBT_electronics
 		x = 0
 		y = 1
 		cost = 10
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			if = {
+				limit = { has_idea = XBT_rampant_inflation }
+				swap_ideas = {
+					remove_idea = XBT_rampant_inflation
+					add_idea = XBT_rampant_inflation_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = XBT_rampant_inflation_2 }
+				swap_ideas = {
+					remove_idea = XBT_rampant_inflation_2
+					add_idea = XBT_rampant_inflation_3
+				}
+			}
 		}
 	}
 
@@ -233,7 +478,7 @@ focus_tree = {
 		id = XBT_eastern_farming
 		available = {
 		}
-		icon = GFX_focus_CHL_devalue_the_peso_export
+		icon = GFX_focus_generic_farmland
 		prerequisite = { focus = XBT_railways }
 		prerequisite = { focus = XBT_price_controls }
     	relative_position_id = XBT_railways
@@ -244,6 +489,29 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_ideas = { XBT_farming_efforts }
+		}
+	}
+
+	focus = {
+		id = XBT_booming_economy
+		available = {
+			num_of_factories > 14
+		}
+		icon = GFX_focus_generic_economic_recovery
+		prerequisite = { focus = XBT_eastern_farming }
+    	relative_position_id = XBT_eastern_farming
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBT_rampant_inflation_3
+				add_idea = XBT_reformed_economy
+			}
 		}
 	}
 
@@ -255,14 +523,19 @@ focus_tree = {
 		id = XBT_royal_academy
 		available = {
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_BUL_the_third_bulgarian_empire
 		x = 8
 		y = 0
 		cost = 10
 
+		ai_will_do = {
+			factor = 6
+		}
+
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_ideas = { XBT_academy }
 		}
 	}
 
@@ -270,12 +543,12 @@ focus_tree = {
 		id = XBT_urban_training
 		available = {
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_generic_urban_training
 		prerequisite = { focus = XBT_royal_academy }
     	relative_position_id = XBT_royal_academy
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -290,7 +563,7 @@ focus_tree = {
 		id = XBT_river_defences
 		available = {
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_goal_generic_fortify_city
 		prerequisite = { focus = XBT_urban_training }
     	relative_position_id = XBT_urban_training
 		x = 0
@@ -300,6 +573,21 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_war_support = 0.05
+			35 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						id = 3262
+						id = 13391
+						id = 6496
+						id = 11562
+					}
+				}
+			}
 		}
 	}
 
@@ -307,14 +595,19 @@ focus_tree = {
 		id = XBT_trucks
 		available = {
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_generic_truck
 		x = 10
 		y = 0
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+			}
 		}
 	}
 
@@ -322,7 +615,7 @@ focus_tree = {
 		id = XBT_tank_infancy
 		available = {
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_SWE_lynx_armored_car
 		prerequisite = { focus = XBT_urban_training }
 		prerequisite = { focus = XBT_trucks }
     	relative_position_id = XBT_urban_training
@@ -333,12 +626,28 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 1
+				category = cat_light_armor
+			}
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 1
+				category = cat_medium_armor
+			}
+			random_army_leader = {
+				add_unit_leader_trait = panzer_leader
+			}
 		}
 	}
 
 	focus = {
 		id = XBT_military_industry
 		available = {
+			has_army_manpower = {
+				size > 50000
+			}
 		}
 		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = XBT_tank_infancy focus = XBT_river_defences }
@@ -350,6 +659,44 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 977 }
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XBT_further_academy
+		available = {
+			has_war_support > 0.25
+		}
+		icon = GFX_focus_AUS_strengthen_legitimistische_corps
+		prerequisite = { focus = XBT_military_industry }
+    	relative_position_id = XBT_military_industry
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBT_academy
+				add_idea = XBT_academy_2
+			}
 		}
 	}
 

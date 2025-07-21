@@ -243,6 +243,14 @@ ideas = {
             }
         }
 
+        XHO_liberalism = {
+            picture = generic_democratic_drift_bonus
+            modifier = {
+                stability_factor = 0.05
+                democratic_drift = 0.06
+            }
+        }
+
         XHO_capitalism = {
             picture = HABSBURG_economy
             allowed_civil_war = {
@@ -448,7 +456,53 @@ ideas = {
             }
         }
 
+        XBT_farming_efforts = {
+            picture = LIT_invested_in_farms
+            modifier = {
+                consumer_goods_factor = -0.1
+                production_speed_arms_factory_factor = -0.05
+            }
+        }
 
+        XBT_academy = {
+            picture = generic_manpower_bonus
+            modifier = {
+                political_power_gain = -0.05
+                army_leader_start_attack_level = 1
+                military_leader_cost_factor = -0.5
+                army_org_factor = 0.05
+            }
+        }
+
+        XBT_academy_2 = {
+            picture = generic_manpower_bonus
+            modifier = {
+                political_power_gain = -0.1
+                army_leader_start_attack_level = 1
+                military_leader_cost_factor = -0.5
+                army_org_factor = 0.1
+                land_night_attack = 0.1
+                max_planning = 0.05
+            }
+        }
+
+        XBT_grants = {
+            picture = generic_research_bonus
+            modifier = {
+                research_speed_factor = 0.09
+                political_power_gain = -0.08
+            }
+        }
+
+        XBT_army_bolstered = {
+            picture = FRA_army_of_aggression_focus
+            modifier = {
+                army_morale_factor = 0.05
+                army_attack_factor = 0.05
+                offensive_war_stability_factor = 0.1
+                generate_wargoal_tension = -0.1
+            }
+        }
 
         XFS_no_nobility = {
             picture = generic_king_handled
