@@ -12,6 +12,29 @@ on_actions = {
                 set_country_flag = XVE_low_gov_support_event
             }
         }
+        effect = {
+            if = {
+                limit = {
+                    has_completed_focus = XVE_travel_controls
+                    NOT = {
+                        has_country_flag = XVE_travel_controls_reaction
+                    }                    
+                }
+                country_event = {
+                    id = XVE_domestic_events.6
+                    days = 80
+                }
+                country_event = {
+                    id = XVE_domestic_events.7
+                    days = 14
+                }
+                country_event = {
+                    id = XVE_domestic_events.8
+                    days = 40
+                }                           
+                set_country_flag = XVE_travel_controls_reaction
+            }
+        }        
     }
     #on_monthly_XVE = { TODO once advisors are added
         #effect = {

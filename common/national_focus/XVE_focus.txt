@@ -28,7 +28,7 @@ focus_tree = {
 		y = 0
 		#relative_position_id = 
 
-		cost = 4
+		cost = 2
 
 		ai_will_do = {
 			factor = 20
@@ -57,7 +57,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XVE_prolong_law_personal_liberties
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_ARG_defense_and_democracy
 		cost = 4
 		prerequisite = {
 			focus = XVE_convene_the_alleanza_ducale
@@ -71,19 +71,51 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}			
+			}				
+			custom_trigger_tooltip = {
+				tooltip = XVE_party_faction_generic
+				hidden_trigger = {
+					has_country_flag = XVE_party_republicans
+					has_country_flag = XVE_party_liberal_conservatives
+					has_country_flag = XVE_party_corporatists
+				}
+			}			
+			has_country_flag = XVE_party_republicans
+			has_country_flag = XVE_party_liberal_conservatives
+			has_country_flag = XVE_party_corporatists
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			unlock_decision_tooltip = XVE_prolong_law_on_personal_freedoms
+			add_stability = 0.04
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_istrian_situation_slight_improve
+			hidden_effect = {
+				736 = {
+					add_resistance = -4
+					add_compliance = 2
+				}
+				852 = {
+					add_resistance = -5
+					add_compliance = 3
+				}				
+			}
 		}
 	}
 	focus = {
 		id = XVE_address_constitutional_petition
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_generic_treaty
+		cost = 2
 		prerequisite = {
 			focus = XVE_prolong_law_personal_liberties
 		}
@@ -96,19 +128,34 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_party_faction_generic
+				hidden_trigger = {
+					has_country_flag = XVE_party_republicans
+					has_country_flag = XVE_party_liberal_conservatives
+					has_country_flag = XVE_party_corporatists
+				}
+			}			
+			has_country_flag = XVE_party_republicans
+			has_country_flag = XVE_party_liberal_conservatives
+			has_country_flag = XVE_party_corporatists
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.9
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
 		id = XVE_bridging_the_divide
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		cost = 6
 		prerequisite = {
 			focus = XVE_address_constitutional_petition
 		}
@@ -127,12 +174,16 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			unlock_decision_tooltip = XVE_expand_the_worker_aid_program  
+			unlock_decision_tooltip = XVE_facilitate_technocratic_policymaking 
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_bridging_the_divide_tt
 		}
 	}
 	focus = {
 		id = XVE_the_green_deal
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_generic_whispers
 		cost = 4
 		prerequisite = {
 			focus = XVE_bridging_the_divide
@@ -149,18 +200,33 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = XVE_approach_agrarians_flag
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			custom_effect_tooltip = XVE_party_agrarians_join_coalition
+			set_country_flag = XVE_party_agrarians
+			add_to_variable = {
+				XVE_gov_support_bar = 3
+			}
+			custom_effect_tooltip = add_3_to_gov_support_var_tt			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = 0.05
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			country_event = XVE_domestic_events.11
 		}
 	}
 	focus = {
 		id = XVE_technocratic_oversight
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_AFG_promote_the_counter_elite
 		cost = 4
 		prerequisite = {
 			focus = XVE_bridging_the_divide
@@ -177,19 +243,34 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = XVE_approach_technocrats_flag
+			NOT = {
+				has_completed_focus = XVE_secure_republican_values
+			}				
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			custom_effect_tooltip = XVE_party_technocrats_join_coalition
+			set_country_flag = XVE_party_technocrats
+			add_to_variable = {
+				XVE_gov_support_bar = 5
+			}
+			custom_effect_tooltip = add_5_to_gov_support_var_tt					
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = -0.05
+			}			
 		}
 	}
 	focus = {
 		id = XVE_secure_republican_values
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_SWE_refuge_from_war
+		cost = 6
 		prerequisite = {
 			focus = XVE_address_constitutional_petition
 		}
@@ -205,19 +286,36 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}			
+			}
+			NOT = {
+				has_completed_focus = XVE_technocratic_oversight
+			}			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = 0.10
+			}
+			add_stability = 0.05		
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_pissed_off_corporatists
 		}
 	}
 	focus = {
 		id = XVE_alternative_partnerships
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_BRA_ethical_internationalism
+		cost = 6
 		prerequisite = {
 			focus = XVE_address_constitutional_petition
 		}
@@ -244,7 +342,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XVE_the_generation_of_tomorrow
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_goal_generic_national_unity
 		cost = 4
 		prerequisite = {
 			focus = XVE_secure_republican_values
@@ -264,12 +362,25 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.12
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_istrian_situation_slight_improve
+			hidden_effect = {
+				736 = {
+					add_resistance = -4
+					add_compliance = 2
+				}
+				852 = {
+					add_resistance = -5
+					add_compliance = 3
+				}				
+			}
 		}
 	}
 	focus = {
 		id = XVE_the_magnate_speech
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_CHL_departemento_de_las_tropas_nacistas_de_asalto
 		cost = 4
 		prerequisite = {
 			focus = XVE_alternative_partnerships
@@ -283,6 +394,9 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = {
+				has_country_flag = XVE_nationalist_coalition_impossible_flag
+			}
 		}
 
 		available_if_capitulated = no
@@ -294,8 +408,8 @@ focus_tree = {
 	}
 	focus = {
 		id = XVE_monarchist_publications
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_goal_generic_propaganda
+		cost = 2
 		prerequisite = {
 			focus = XVE_alternative_partnerships
 		}
@@ -319,8 +433,8 @@ focus_tree = {
 	}
 	focus = {
 		id = XVE_legalize_royalist_symbols
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_DEN_expand_haerens_tekniske_korps
+		cost = 2
 		prerequisite = {
 			focus = XVE_monarchist_publications
 		}
@@ -344,7 +458,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XVE_the_ceremony_of_san_marco
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_PER_embrace_opulence
 		cost = 4
 		prerequisite = {
 			focus = XVE_monarchist_publications
@@ -366,12 +480,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.13
 		}
 	}									
 	focus = {
 		id = XVE_policy_on_the_IFF
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_AUS_lawmaking_leniency
 		cost = 4
 		prerequisite = {
 			focus = XVE_convene_the_alleanza_ducale
@@ -391,13 +505,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.4
+			add_political_power = 15
 		}
 	}
 	focus = {
 		id = XVE_volpinomics
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_generic_economic_recovery
+		cost = 6
 		prerequisite = {
 			focus = XVE_policy_on_the_IFF
 		}
@@ -410,18 +525,29 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_leader = { 
+				character = XVE_giuseppe_volpi 
+				ruling_only = yes 
+			}			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_timed_idea = {
+				idea = XVE_volpinomics_idea
+				days = 365
+			}
 		}
 	}
 	focus = {
 		id = XVE_inaugurate_venesia_bresia_line
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_generic_railroad
 		cost = 4
 		prerequisite = {
 			focus = XVE_volpinomics
@@ -441,12 +567,28 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			1037 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = XVE_rejuvenated_industries
+				}							
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			build_railway = {
+				path = { 11584 3604 603 11568 773 }
+				level = 3
+			}
 		}
 	}
 	focus = {
 		id = XVE_renewal_treaties
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_generic_adriatic_sea_focus
 		cost = 4
 		prerequisite = {
 			focus = XVE_volpinomics
@@ -466,12 +608,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			hidden_effect = {
+				swap_ideas = {
+					remove_idea = XVE_the_concordia_littorum
+					add_idea = XVE_the_concordia_littorum_improved
+				}				
+			}
+			custom_effect_tooltip = XVE_renewal_treaties_tt
+			add_political_power = -30
 		}
 	}	
 	focus = {
 		id = XVE_fund_the_tsm
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_generic_steel
 		cost = 4
 		prerequisite = {
 			focus = XVE_volpinomics
@@ -491,13 +640,28 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			850 = {
+				add_resource = {
+					type = steel
+					amount = 9
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XVE_tsm
+			#show_ideas_tooltip = XHH_hamburger_hafen
 		}
 	}
 	focus = {
 		id = XVE_butoniga_dam_initiative
-		icon = GFX_focus_ETH_re-convene_the_parliament
-		cost = 4
+		icon = GFX_focus_BEL_dam_the_consequences
+		cost = 6
 		prerequisite = {
 			focus = XVE_policy_on_the_IFF
 		}
@@ -515,13 +679,36 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		select_effect = {
+			add_ideas = XVE_butoniga_dam_funding
+		}
+
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			736 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 599
+					}
+				}
+			}
+			custom_effect_tooltip = {
+				localization_key = building_state_modifier|dam
+				INDENT = "    "
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_butoniga_dam_funding_tt
+			hidden_effect = {
+				remove_ideas = XVE_butoniga_dam_funding
+			}
 		}
 	}
 	focus = {
 		id = XVE_the_armeria_program
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_generic_military_industry
 		cost = 4
 		prerequisite = {
 			focus = XVE_butoniga_dam_initiative
@@ -541,12 +728,29 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			736 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_resistance = 6			
+			}
+			add_to_variable = {
+				istria_integration_var = -3
+			}
+			custom_effect_tooltip = remove_3_to_istria_integration_var_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = -0.03
+			}				
 		}
 	}
 	focus = {
 		id = XVE_joint_istrian_council
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_BRA_rio_protocol
 		cost = 4
 		prerequisite = {
 			focus = XVE_butoniga_dam_initiative
@@ -563,18 +767,32 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_party_faction_generic
+				hidden_trigger = {
+					has_country_flag = XVE_party_republicans
+					has_country_flag = XVE_party_liberal_conservatives
+				}
+			}			
+			has_country_flag = XVE_party_republicans
+			has_country_flag = XVE_party_liberal_conservatives
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.5
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = 0.05
+			}			
 		}
 	}
 	focus = {
 		id = XVE_travel_controls
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_generic_road_investment
 		cost = 4
 		prerequisite = {
 			focus = XVE_butoniga_dam_initiative
@@ -597,7 +815,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			736 = {
+				add_resistance = 5
+			}
+			852 = {
+				add_resistance = 6
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = XVE_travel_checkpoint_controls			
 		}
 	}						
 }

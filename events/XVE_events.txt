@@ -38,7 +38,7 @@ country_event = { # Complete Gov Change = TODO
 	title = XVE_domestic_events.3.t
 	desc = XVE_domestic_events.3.desc
 	
-	picture = GFX_report_event_ITA_democratic_parlament
+	picture = GFX_report_event_AUS_political_rally
 	
 	is_triggered_only = yes
 	
@@ -48,5 +48,263 @@ country_event = { # Complete Gov Change = TODO
             XVE_gov_support_bar = 8
         }
 		custom_effect_tooltip = XVE_gov_reset
+    }
+}
+
+country_event = { # Policy on IFF
+	id = XVE_domestic_events.4
+	title = XVE_domestic_events.4.t
+	desc = XVE_domestic_events.4.desc
+	
+	picture = GFX_report_event_ITA_partisans
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.4.a
+		736 = {
+			add_resistance = 5
+		}
+		852 = {
+			add_resistance = 8
+		}
+		add_to_variable = {
+			XVE_gov_support_bar = 1
+		}
+		custom_effect_tooltip = add_1_to_gov_support_var_tt
+		custom_effect_tooltip = XVE_harder_IFF_negotiation
+		set_country_flag = XVE_harder_IFF_negotiation_flag
+    }
+	option = {
+        name = XVE_domestic_events.4.b
+		add_to_variable = {
+			istria_integration_var = 3
+		}
+		custom_effect_tooltip = add_3_to_istria_integration_var_tt
+		add_political_power = 50
+    }	
+}
+
+country_event = { # Joint Istrian Council
+	id = XVE_domestic_events.5
+	title = XVE_domestic_events.5.t
+	desc = XVE_domestic_events.5.desc
+	
+	picture = GFX_report_event_SWE_defense_act
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.5.a
+		add_to_variable = {
+			istria_integration_var = 4
+		}	
+		custom_effect_tooltip = add_4_to_istria_integration_var_tt
+		736 = {
+			add_compliance = 4
+		}
+		852 = {
+			add_compliance = 7
+		}
+		
+    }
+	option = {
+        name = XVE_domestic_events.5.b
+		add_to_variable = {
+			istria_integration_var = 10
+		}
+		add_to_variable = {
+			XVE_gov_support_bar = -3
+		}
+		736 = {
+			add_compliance = 6
+		}
+		852 = {
+			add_compliance = 9
+		}		
+		custom_effect_tooltip = add_10_to_istria_integration_var_tt
+
+		custom_effect_tooltip = XVE_nationalist_coalition_impossible
+		set_country_flag = XVE_nationalist_coalition_impossible_flag
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = remove_3_to_gov_support_var_tt
+		add_stability = -0.12
+    }	
+}
+
+country_event = { # Aftermath of Travel Controls
+	id = XVE_domestic_events.6
+	title = XVE_domestic_events.6.t
+	desc = XVE_domestic_events.6.desc
+	
+	picture = GFX_report_event_bulgarian_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.6.a
+		hidden_effect = {
+			XIF = {
+				add_trait = {
+					character = XIF_istrian_freedom_front
+					trait = XIF_divisive_revolutionaries_high
+				}
+				remove_trait = {
+					character = XIF_istrian_freedom_front
+					trait = XIF_divisive_revolutionaries_moderate
+				}		
+			}			
+		}
+		custom_effect_tooltip = XVE_IFF_support_increasing
+		add_stability = -0.04
+    }
+}
+
+country_event = { # Istrian Partisans Walk Out
+	id = XVE_domestic_events.7
+	title = XVE_domestic_events.7.t
+	desc = XVE_domestic_events.7.desc
+	
+	picture = GFX_report_event_bul_muraviev_protest
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.7.a
+		add_to_variable = {
+			XVE_gov_support_bar = -2
+		}
+		custom_effect_tooltip = remove_2_to_gov_support_var_tt
+		custom_effect_tooltip = XVE_istrian_partisans_coalition_impossible
+		set_country_flag = XVE_istrian_partisans_coalition_impossible_flag
+    }
+}
+
+country_event = { # Nationalist Declare Confidence and Supply
+	id = XVE_domestic_events.8
+	title = XVE_domestic_events.8.t
+	desc = XVE_domestic_events.8.desc
+	
+	picture = GFX_report_event_SWE_saltsjobaden
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.8.a
+		add_to_variable = {
+			XVE_gov_support_bar = 5
+		}
+		custom_effect_tooltip = add_5_to_gov_support_var_tt
+		custom_effect_tooltip = XVE_nationalist_confidence_supply
+    }
+}
+
+country_event = { # Examine the People's Constitutional Petition
+	id = XVE_domestic_events.9
+	title = XVE_domestic_events.9.t
+	desc = XVE_domestic_events.9.desc
+	
+	picture = GFX_report_event_vienna_award_hungary
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.9.a
+		add_political_power = -10
+    }
+}
+
+country_event = { # Anti-Corruption Measures Bears Fruit
+	id = XVE_domestic_events.10
+	title = XVE_domestic_events.10.t
+	desc = XVE_domestic_events.10.desc
+	
+	picture = GFX_report_event_sanation_left_victory
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.10.a
+		add_to_variable = {
+			XVE_gov_support_bar = 1
+		}
+		custom_effect_tooltip = add_1_to_gov_support_var_tt
+    }
+}
+
+country_event = { # The Green Deal (Socialists Turn to the Greens)
+	id = XVE_domestic_events.11
+	title = XVE_domestic_events.11.t
+	desc = XVE_domestic_events.11.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.11.a
+		add_to_variable = {
+			XVE_gov_support_bar = 1
+		}
+		custom_effect_tooltip = add_1_to_gov_support_var_tt
+    }
+}
+
+country_event = { # Generation of Tomorrow
+	id = XVE_domestic_events.12
+	title = XVE_domestic_events.12.t
+	desc = XVE_domestic_events.12.desc
+	
+	picture = GFX_report_event_SOV_young_builders_of_communism
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.12.a
+		add_stability = 0.03
+		add_power_balance_value = {
+			id = XVE_power_balance
+			value = 0.05
+		}		
+    }
+}
+
+country_event = { # Preparing the Ceremony of San Marco
+	id = XVE_domestic_events.13
+	title = XVE_domestic_events.13.t
+	desc = XVE_domestic_events.13.desc
+	
+	picture = GFX_report_event_DEN_celebration
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.13.a
+		custom_effect_tooltip = XVE_ceremony_high_security_tt
+		set_country_flag = XVE_ceremony_high_security
+		add_political_power = -100
+    }
+	option = {
+        name = XVE_domestic_events.13.b
+		custom_effect_tooltip = XVE_ceremony_low_security_tt
+		set_country_flag = XVE_ceremony_low_security
+    }	
+}
+
+country_event = { # The Magnate Speech v1
+	id = XVE_domestic_events.14
+	title = XVE_domestic_events.14.t
+	desc = XVE_domestic_events.14.desc
+	
+	picture = GFX_report_event_BEL_paul_van_zeeland
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.14.a
+		#custom_effect_tooltip = 
+		#set_country_flag = 
     }
 }

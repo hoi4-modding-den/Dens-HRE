@@ -113,7 +113,102 @@ ideas={
 		### SPIRITS ###
 		###############
 	
-	
+		XVE_volpinomics_idea = {
+			picture = generic_economic_increase
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = -0.04
+				production_speed_buildings_factor = 0.08
+			}
+		}
+
+		XVE_the_concordia_littorum_improved = { 
+			picture = GFX_idea_XVE_the_concordia_littorum
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.16
+				research_speed_factor = 0.04
+				min_export = 0.12
+				local_resources_factor = 0.03
+			}
+		}	
+
+		XVE_butoniga_dam_funding = {
+			picture = PER_fund_state_intelligence_idea
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.08
+				political_power_factor = -0.05
+			}
+		}	
+
+		XVE_travel_checkpoint_controls = { 
+			picture = SWE_varnplikt
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				required_garrison_factor = -0.15
+				local_factory_sabotage = -0.2
+				stability_factor = 0.03
+				supply_consumption_factor = 0.05
+			}
+		}		
+		
+		XVE_expanded_workers_aid_program = { 
+			picture = COG_the_invisible_roof
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.02
+				conscription_factor = 0.08
+				production_factory_efficiency_gain_factor = -0.04
+				production_factory_max_efficiency_factor = 0.15
+				stability_factor = 0.1
+			}
+		}			
+
+
+		
+
 #-------------------------------------------------------
 #					MANUFACTURERS
 #-------------------------------------------------------
@@ -130,8 +225,36 @@ ideas={
 			#designer = yes 
 			#}
 			
-	#industrial_concern={
-			#designer = yes 
-			#}
+		industrial_concern={ 
+		}
+		XVE_tsm = {
+
+			picture = danieli
+			
+			allowed = {
+				original_tag = XVE
+			}
+
+			available = {
+				has_completed_focus = XVE_fund_the_tsm
+			}
+
+			cost = 150
+			
+			research_bonus = {
+				industry = 0.05
+			}
+
+			modifier = {
+				local_resources_factor = 0.03
+				country_resource_steel = 13	
+			}
+			
+			traits = { XVE_tsm_trait }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}		
 	}
 }	

@@ -27,7 +27,7 @@ XVE_power_balance_decisions = {
 				value = 0.05
 			}
 			add_stability = 0.02
-			# will lead to event 45 days later "Anti-Corruption Measures Bears Fruit" (= successful) = +1% gov support
+			set_country_flag = XVE_anti_corruption_measures_successful
 		}
 
 		ai_will_do = {
@@ -120,7 +120,130 @@ XVE_power_balance_decisions = {
 		ai_will_do = {
 			base = 3
 		}
-	}		
+	}
+	XVE_expand_the_worker_aid_program = {
+		priority = 17
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_completed_focus = XVE_bridging_the_divide
+			NOT = {
+				has_country_flag = XVE_approach_technocrats_flag
+			}
+		}	
+		
+		available = {
+			has_completed_focus = XVE_bridging_the_divide
+			NOT = {
+				has_country_flag = XVE_approach_technocrats_flag
+			}			
+		}
+
+		days_remove = 50
+		cost = 30
+		fire_only_once = yes
+
+		remove_effect = {
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = 0.10
+			}
+			custom_effect_tooltip = XVE_approach_agrarians
+			set_country_flag = XVE_approach_agrarians_flag			
+			add_ideas = XVE_expanded_workers_aid_program
+		}
+
+		ai_will_do = {
+			base = 20
+		}
+	}	
+	XVE_facilitate_technocratic_policymaking = {
+		priority = 16
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_completed_focus = XVE_bridging_the_divide
+			NOT = {
+				has_country_flag = XVE_approach_agrarians_flag
+			}			
+		}	
+		
+		available = {
+			has_completed_focus = XVE_bridging_the_divide
+			NOT = {
+				has_country_flag = XVE_approach_agrarians_flag
+			}				
+		}
+
+		days_remove = 70
+		cost = 40
+		fire_only_once = yes
+
+		remove_effect = {
+			add_power_balance_value = {
+				id = XVE_power_balance
+				value = -0.15
+			}
+			custom_effect_tooltip = XVE_approach_technocrats
+			set_country_flag = XVE_approach_technocrats_flag
+		}
+
+		ai_will_do = {
+			base = 15
+		}
+	}			
+}
+
+XVE_governmental_support_decisions = {
+	XVE_prolong_law_on_personal_freedoms = {
+		priority = 1
+		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+		}	
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}				
+			}
+		}
+
+		days_remove = 30
+		cost = 25
+		fire_only_once = yes	
+
+		remove_effect = {
+			add_to_variable = {
+				var = XVE_gov_support_bar
+				value = 1
+				tooltip = add_1_to_gov_support_var_tt
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.03
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}	
 }
 
 XVE_IFF_conflict_decisions = {
