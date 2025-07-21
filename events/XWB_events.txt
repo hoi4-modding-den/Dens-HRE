@@ -18,8 +18,335 @@ country_event = { #intro event
 		ai_chance = {
 			base = 100
 		}
-		
+		add_power_balance_value = {
+			id = XWB_fascist_balance
+			value = -0.1
+			tooltip_side = XWB_fascist_side
+		}
 	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #preparations for reichstag-fire
+    id = XWB_focus_event.2
+    title = XWB.FE_2.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.FE_2.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_2.a
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = XWB_communist_scapegoat
+		custom_effect_tooltip = XWB_scapegoat_1
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.FE_2.b
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = XWB_nazi_scapegoat
+		custom_effect_tooltip = XWB_scapegoat_2
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #reichstag explosion - communist scapegoat
+    id = XWB_focus_event.3
+    title = XWB.FE_3.t
+    picture = GFX_report_event_german_reichstag_bombed
+    desc = XWB.FE_3.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_3.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.05
+		50 = {
+			damage_building = {
+				type = industrial_complex
+				damage = 0.5
+			}
+		}
+		country_event = { id = XWB_focus_event.5 hours = 12 }
+		hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #reichstag explosion - nazi scapegoat
+    id = XWB_focus_event.4
+    title = XWB.FE_4.t
+    picture = GFX_report_event_german_reichstag_bombed
+    desc = XWB.FE_4.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_4.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.05
+		50 = {
+			damage_building = {
+				type = industrial_complex
+				damage = 0.5
+			}
+		}
+		country_event = { id = XWB_focus_event.6 hours = 12 }
+		hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #emergency session - communist scapegoat
+    id = XWB_focus_event.5
+    title = XWB.FE_5.t
+    picture = GFX_report_event_german_reichstag_bombed
+    desc = XWB.FE_5.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_5.a
+		ai_chance = {
+			base = 100
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		remove_ideas = XWB_democracy_idea
+		add_power_balance_value = {
+			id = XWB_fascist_balance
+			value = -0.20
+			tooltip_side = XWB_fascist_side
+		}
+		hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #emergency session - nazi scapegoat
+    id = XWB_focus_event.6
+    title = XWB.FE_6.t
+    picture = GFX_report_event_german_reichstag_bombed
+    desc = XWB.FE_6.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_6.a
+		ai_chance = {
+			base = 100
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.1
+		}
+
+		set_power_balance = {
+			id = XWB_fascist_balance_failing
+			left_side = XWB_fascist_side
+			right_side = XWB_neutrality_side
+			set_value = 0.25
+		}
+		hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #new king?
+    id = XWB_focus_event.7
+    title = XWB.FE_7.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XWB.FE_7.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_7.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 100
+		if = {
+			limit = { has_power_balance = {
+				id = XWB_fascist_balance_failing
+			} }
+			add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.10
+				tooltip_side = XWB_fascist_side
+			}
+		}
+		else = {
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.10
+				tooltip_side = XWB_fascist_side
+			}
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.FE_7.b
+		ai_chance = {
+			base = 100
+		}
+		swap_ideas = {
+			remove_idea = XWB_king_idea
+			add_idea = XWB_king_idea_fascist
+		}
+		#XHZ_frederick_hohenzollern = {
+		#	set_nationality = XWB
+		#	character = XHZ_frederick_hohenzollern
+		#}
+		XHZ = {
+			set_nationality = {
+				target_country = XWB
+				character = XHZ_frederick_hohenzollern
+			}
+		}
+		annex_country = {
+			target = XHZ
+		}
+		add_state_core = 1024
+		
+		if = {
+			limit = { has_power_balance = {
+				id = XWB_fascist_balance_failing
+			} }
+			add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.20
+				tooltip_side = XWB_fascist_side
+			}
+		}
+		else = {
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.20
+				tooltip_side = XWB_fascist_side
+			}
+		}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = XWB.FE_7.c
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -50
+		remove_ideas = XWB_king_idea
+		set_cosmetic_tag = XWB_state
+		if = {
+			limit =  { NOT = {
+				has_country_flag = XWB_purged_monarchists_flag
+			} }
+			add_stability = -0.10 #already purged if you have the flag
+		}
+		if = {
+			limit = { has_power_balance = {
+				id = XWB_fascist_balance_failing
+			} }
+			add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = 0.20
+				tooltip_side = XWB_neutrality_side
+			}
+		}
+		else = {
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = 0.20
+				tooltip_side = XWB_neutrality_side
+			}
+		}
+		set_country_flag = HRE_is_republic
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #get couped idiot
+    id = XWB_focus_event.8
+    title = XWB.FE_8.t
+    picture = GFX_report_event_ast_army
+    desc = XWB.FE_8.d
+
+    is_triggered_only = yes
+	option = {
+        name = XWB.FE_8.a
+		ai_chance = {
+			base = 0
+		}
+		custom_effect_tooltip = XWB_unfinished
+		if = {
+			limit = { has_power_balance = {
+				id = XWB_fascist_balance_failing
+			} }
+			remove_power_balance = {
+				id = XWB_fascist_balance_failing
+			}
+		}
+		else = {
+			remove_power_balance = {
+				id = XWB_fascist_balance
+			}
+		}
+		if = {
+			limit = { has_idea = XWB_king_idea_fascist }
+			promote_character = XHZ_frederick_hohenzollern
+			set_party_name = {
+				ideology = fascism
+				long_name = XWB_neutrality_party_long
+				name = XWB_neutrality_party
+			}
+		}
+		else = {
+			set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+			
+		}
+		set_party_name = { 
+				ideology = neutrality
+				long_name = XWB_neutrality_party_monarchist_long
+				name = XWB_neutrality_party_monarchist
+			}
+		}
+		
+		
+		hidden_effect = {
+			set_country_flag = XWB_monarchist_leadership
+		}
+    }
+	option = {
+        name = XWB.FE_8.b
+		ai_chance = {
+			base = 100
+		}
+		start_civil_war = {  
+    ideology = neutrality
+    size = 0.6
+    capital = 1026
+    states = {
+        1024 1026
+    }
+	keep_political_leader = no
+}
+		hidden_effect = {
 			
 		}
     }

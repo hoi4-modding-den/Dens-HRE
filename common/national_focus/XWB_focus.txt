@@ -30,7 +30,8 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_political_power = 50
+			country_event = XWB_focus_event.1
 		}
 	}
 
@@ -48,7 +49,16 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_war_support = 0.05
+			add_timed_idea = {
+				idea = XWB_bribed_military
+				days = 180
+			}
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.1
+				tooltip_side = XWB_fascist_side
+			}
 		}
 	}
 	focus = {
@@ -65,7 +75,16 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_stability = -0.05
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.2
+				tooltip_side = XWB_fascist_side
+			}
+			add_timed_idea = {
+				idea = XWB_purged_military
+				days = 210
+			}
 		}
 	}
 		focus = {
@@ -81,7 +100,11 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			country_event = XWB_focus_event.2
 		}
 	}
 	focus = {
@@ -98,7 +121,14 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			if = {
+				limit = { has_country_flag = XWB_communist_scapegoat }
+				country_event = XWB_focus_event.3
+			}
+			else_if = {
+				limit = {has_country_flag = XWB_nazi_scapegoat  }
+				country_event = XWB_focus_event.4
+			}
 		}
 	}
 	focus = {
@@ -114,7 +144,7 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			country_event = XWB_focus_event.7
 		}
 	}
 	focus = {
@@ -130,8 +160,29 @@ focus_tree = {
 		available = {
 
 		}
-		completion_reward = {
-
+		completion_reward = { 
+			add_political_power = -50
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+if = {
+			limit = { has_power_balance = {
+				id = XWB_fascist_balance_failing
+			} }
+			add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+			}
+		}
+		else = {
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+			}
+		}
 		}
 	}
 		focus = {
@@ -148,7 +199,32 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = XWB_purged_monarchists
+				days = 175
+			}
+			set_country_flag = XWB_purged_monarchists_flag
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+			}
+if = {
+			limit = { has_power_balance = {
+				id = XWB_fascist_balance_failing
+			} }
+			add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = 0.20 #wow, if it isn't the consequences of my actions!
+				tooltip_side = XWB_neutrality_side
+			}
+		}
+		else = {
+			add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.20
+				tooltip_side = XWB_fascist_side
+			}
+		}
 		}
 	}
 	focus = {
@@ -160,12 +236,51 @@ focus_tree = {
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XWB_albrecht_abdication }
 		prerequisite = { focus =  XWB_purge_monarchists focus = XWB_bribe_monarchists }
-
+		cancel = {
+			XHZ_frederick_hohenzollern = {
+				is_country_leader = yes
+			}
+		}
+		select_effect = {
+			if = {
+				limit = { 
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascist_high
+						}
+				}
+				country_event = { id = XWB_focus_event.8 days = 7 }
+			}
+			if = {
+				limit = { 
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance_failing
+							range > XWB_fascist_high
+						}
+				}
+				country_event = { id = XWB_focus_event.8 days = 7 } 
+			}
+		}
 		available = {
 
 		}
 		completion_reward = {
-
+			custom_effect_tooltip = XWB_warning
+			add_political_power = 50
+			add_ideas = XWB_total_control
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
 		}
 	}
 	focus = {
@@ -181,7 +296,11 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			create_intelligence_agency = {
+				name = "Department of National Security"
+				icon = GFX_intelligence_agency_logo_AUS_dsn
+			}
+			add_ideas = XWB_security_state
 		}
 	}
 	focus = {
@@ -197,7 +316,27 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_ideas = XWB_total_war
+			add_ideas = war_economy
+			50 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = { owns_state = 1024 }
+				1024 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			}
 		}
 	}
 	focus = {
@@ -213,7 +352,27 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_ideas = XWB_volkswagen_idea
+			unlock_military_industrial_organization_tooltip = mio:XWB_kdf_wagen_mio
+			50 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = { owns_state = 1026 }
+				1026 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			}
 		}
 	}
 	focus = {
@@ -229,7 +388,7 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_ideas = XWB_autarky_idea
 		}
 	}
 	focus = {
@@ -246,6 +405,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_research_slot = 1
+			add_ideas = XWB_research_slot_idea
 		}
 	}
 	focus = {
@@ -264,7 +424,8 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_political_power = 100
+			add_ideas = XWB_domination_corporatism_idea
 		}
 	}
 
@@ -288,6 +449,14 @@ focus_tree = {
 				has_government = fascism
 			}
 		}
+		allow_branch = {
+			has_country_flag = XWB_monarchist_leadership
+		}
+		bypass = {
+			has_country_leader = { 
+				character =  XHZ_frederick_hohenzollern
+			} 
+		}
 		completion_reward = {
 
 		}
@@ -306,6 +475,20 @@ focus_tree = {
 				}
 			}
 
+		}
+		allow_branch = {
+			has_country_flag = XWB_monarchist_leadership
+		}
+		bypass = {
+			OR = {
+				has_country_leader = { 
+					character =  XWB_albrecht_wurttemberg
+				} 
+				has_country_leader = {
+					character = XWB_philipp_wurttemberg
+				}
+			}
+			
 		}
 		completion_reward = {
 
@@ -506,7 +689,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XWB_war_focus
-		icon = GFX_focus_generic_steel
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
 		x = 8
 		y = 5
 		cost = 5
@@ -524,7 +707,7 @@ focus_tree = {
 	}
 	focus = {
 		id = XWB_economy_focus
-		icon = GFX_focus_generic_agricultural_subsidies
+		icon = GFX_focus_generic_economic_recovery
 		x = 10
 		y = 5
 		cost = 5
@@ -1095,7 +1278,22 @@ focus_tree = {
 			is_puppet = no			
 		}
 		completion_reward = {
-
+			custom_effect_tooltip = XWB_puppet_switzerland_tooltip
+			create_wargoal = {
+				type = annex_everything
+				target = XSA
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = XFC
+				expire = 0
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = XCS
+				expire = 0
+			}
 		}
 	}
 	focus = {
@@ -1110,7 +1308,140 @@ focus_tree = {
 			is_puppet = no
 		}
 		completion_reward = {
-
+		custom_effect_tooltip = XWB_puppet_hesse_tooltip	
+		custom_effect_tooltip = XWB_wtf_too_many_tags
+			hidden_effect = {
+				create_wargoal = {
+					type = annex_everything
+					target = XNR
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XLH
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL0
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL1
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL2
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL3
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL4
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL5
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL6
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL7
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL8
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XL9
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH0
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH1
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH2
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH3
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH4
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH5
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH6
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH7
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH8
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XH9
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XI0
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XI1
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XI2
+					expire = 0
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XI3
+					expire = 0
+				}
+			}
 		}
 	}
 	focus = {
@@ -1329,7 +1660,13 @@ focus_tree = {
 			is_puppet = no
 		}
 		completion_reward = {
-			set_cosmetic_tag = XWB_south_germany
+			if = {
+				limit = { has_cosmetic_tag = XWB_state }
+				set_cosmetic_tag = XWB_state_big
+			}
+			else = {
+				set_cosmetic_tag = XWB_south_germany
+			}
 			add_stability = 0.1
 			custom_effect_tooltip = XWB_cores_german
 			hidden_effect = {
@@ -1513,6 +1850,11 @@ focus_tree = {
 				target = XSI #hah that was my tag in the China warlord modding jam. I still need to make International Shanghai into it's own mod.
 				expire = 0
 			}
+			create_wargoal = {
+				type = annex_everything
+				target = XGD 
+				expire = 0
+			}
 		}
 	}
 	focus = {
@@ -1527,7 +1869,17 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			set_cosmetic_tag = XWB_north_germany
+			if = {
+				limit = { has_cosmetic_tag = XWB_state }
+				set_cosmetic_tag = XWB_state_big
+			}
+			else_if = {
+				limit = { has_country_leader = { character = XHZ_frederick_hohenzollern }  }
+				set_cosmetic_tag = XWB_prussian_big
+			}
+			else = {
+				set_cosmetic_tag = XWB_north_germany
+			}
 			add_stability = 0.1
 			custom_effect_tooltip = XWB_cores_german
 			hidden_effect = {

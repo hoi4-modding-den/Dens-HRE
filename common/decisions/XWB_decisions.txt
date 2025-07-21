@@ -123,3 +123,372 @@ form_burgundy_category = {
 		}
 	}
 }
+
+XWB_bop_category = {
+	XWB_fascist_boost = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		days_remove = 175
+		allowed = {
+			original_tag = XWB
+		}
+		cost = 50
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			add_stability = -0.025
+		}
+	}
+	XWB_neutrality_boost = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		cost = 50
+		allowed = {
+			original_tag = XWB
+		}
+		days_remove = 175
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			
+			add_stability = -0.025
+		}
+	}
+}
+XWB_bop_category_alt = {
+	XWB_fascist_boost_alt = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		days_remove = 175
+		allowed = {
+			original_tag = XWB
+		}
+		cost = 50
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = -0.15
+				tooltip_side = XWB_fascist_side
+				}
+			}
+			add_stability = -0.025
+		}
+	}
+	XWB_neutrality_boost_alt = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = XWB_fascist_balance
+							range > XWB_fascism_total
+						}
+					}
+				}
+			}
+		}
+		cost = 50
+		allowed = {
+			original_tag = XWB
+		}
+		days_remove = 175
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = XWB_fascist_balance
+				} }
+				add_power_balance_value = {
+				id = XWB_fascist_balance
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+				id = XWB_fascist_balance_failing
+				value = 0.15
+				tooltip_side = XWB_monarchist_side
+				}
+			}
+			
+			add_stability = -0.025
+		}
+	}
+}
+XWB_puppet_decisions_category = { #yes these decisions are incredibly jank, I made them in like 30 minutes. such is life.
+	XWB_puppet_switzerland_decision = {
+		available = {
+			if = {
+				limit = {
+					XWB = {
+						OR = {
+							owns_state = 3
+							owns_state = 151
+							owns_state = 845
+							owns_state = 846
+							owns_state = 847
+							owns_state = 1025
+							owns_state = 1035
+						}
+						has_completed_focus = XWB_puppet_switzerland
+					}
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = XWB_puppet_switzerland
+			XSA = {
+					NOT = {
+						XWB = {
+						owns_state = 3
+						owns_state = 151
+						owns_state = 845
+						owns_state = 846
+						owns_state = 847
+						owns_state = 1025
+						owns_state = 1035
+						}
+						
+					}
+				
+			}
+		}
+		
+		allowed = {
+			original_tag = XWB
+		}
+		complete_effect = {
+			if = {
+				limit = { 
+					any_state = {
+						is_owned_by = XWB
+						is_core_of = XSA
+						
+					} 
+				}
+				release_puppet = XSA
+				3 = {
+					add_core_of = XSA
+				}
+				846 = {
+					add_core_of = XSA
+				}
+				847 = {
+					add_core_of = XSA
+				}
+				1025 = {
+					add_core_of = XSA
+				}
+				1035 = {
+					add_core_of = XSA
+				}
+			}
+		}
+	}
+	XWB_puppet_hesse_decision = {
+		available = {
+			if = {
+				limit = {
+					XWB = {
+						OR = {
+							owns_state = 55
+							owns_state = 1054
+							owns_state = 1055
+							owns_state = 1056
+							owns_state = 1057
+							owns_state = 1058
+							owns_state = 1059
+							owns_state = 1060
+							owns_state = 1061
+							owns_state = 1062
+							owns_state = 1063
+							owns_state = 1064
+							owns_state = 1065
+							owns_state = 1066
+							owns_state = 1067
+							owns_state = 1068
+							owns_state = 1069
+							owns_state = 1070
+							owns_state = 1071
+							owns_state = 1072
+							owns_state = 1073
+							owns_state = 1074
+							owns_state = 1075
+							owns_state = 1076
+							owns_state = 1077
+							owns_state = 1078
+							owns_state = 1079
+							owns_state = 1080
+							owns_state = 1081
+							owns_state = 1082
+							owns_state = 1083
+						}
+						has_completed_focus = XWB_puppet_hesse
+					}
+				}
+			}
+		}
+		visible = {
+			has_completed_focus = XWB_puppet_hesse
+			XLH = {
+					NOT = {
+						XWB = {
+							owns_state = 55
+							owns_state = 1054
+							owns_state = 1055
+							owns_state = 1056
+							owns_state = 1057
+							owns_state = 1058
+							owns_state = 1059
+							owns_state = 1060
+							owns_state = 1061
+							owns_state = 1062
+							owns_state = 1063
+							owns_state = 1064
+							owns_state = 1065
+							owns_state = 1066
+							owns_state = 1067
+							owns_state = 1068
+							owns_state = 1069
+							owns_state = 1070
+							owns_state = 1071
+							owns_state = 1072
+							owns_state = 1073
+							owns_state = 1074
+							owns_state = 1075
+							owns_state = 1076
+							owns_state = 1077
+							owns_state = 1078
+							owns_state = 1079
+							owns_state = 1080
+							owns_state = 1081
+							owns_state = 1082
+							owns_state = 1083
+						}
+						
+					}
+				
+			}
+		}
+		
+		allowed = {
+			original_tag = XWB
+		}
+		complete_effect = {
+			if = {
+				limit = { 
+					any_state = {
+						is_owned_by = XWB
+						is_core_of = XLH
+						
+					} 
+				}
+				release_puppet = XLH
+				XLH = {
+					add_state_core = 55
+							add_state_core = 1054
+							add_state_core = 1055
+							add_state_core = 1056
+							add_state_core = 1057
+							add_state_core = 1058
+							add_state_core = 1059
+							add_state_core = 1060
+							add_state_core = 1061
+							add_state_core = 1062
+							add_state_core = 1063
+							add_state_core = 1064
+							add_state_core = 1065
+							add_state_core = 1066
+							add_state_core = 1067
+							add_state_core = 1068
+							add_state_core = 1069
+							add_state_core = 1070
+							add_state_core = 1071
+							add_state_core = 1072
+							add_state_core = 1073
+							add_state_core = 1074
+							add_state_core = 1075
+							add_state_core = 1076
+							add_state_core = 1077
+							add_state_core = 1078
+							add_state_core = 1079
+							add_state_core = 1080
+							add_state_core = 1081
+							add_state_core = 1082
+							add_state_core = 1083
+				}
+			}
+		}
+	}
+}
