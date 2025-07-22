@@ -74,6 +74,9 @@ country_event = { # Policy on IFF
 		custom_effect_tooltip = add_1_to_gov_support_var_tt
 		custom_effect_tooltip = XVE_harder_IFF_negotiation
 		set_country_flag = XVE_harder_IFF_negotiation_flag
+		ai_chance = {
+			factor = 3
+		}
     }
 	option = {
         name = XVE_domestic_events.4.b
@@ -82,6 +85,9 @@ country_event = { # Policy on IFF
 		}
 		custom_effect_tooltip = add_3_to_istria_integration_var_tt
 		add_political_power = 50
+		ai_chance = {
+			factor = 6
+		}		
     }	
 }
 
