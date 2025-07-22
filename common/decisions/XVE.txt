@@ -204,7 +204,7 @@ XVE_power_balance_decisions = {
 
 XVE_governmental_support_decisions = {
 	XVE_prolong_law_on_personal_freedoms = {
-		priority = 1
+		priority = 10
 		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
 
 		allowed = {
@@ -212,6 +212,7 @@ XVE_governmental_support_decisions = {
 		}
 
 		visible = {
+			has_completed_focus = XVE_prolong_law_personal_liberties
 		}	
 		
 		available = {
@@ -243,7 +244,138 @@ XVE_governmental_support_decisions = {
 		ai_will_do = {
 			base = 10
 		}
-	}	
+	}
+	XVE_the_magnate_speech_decision = {
+		priority = 5
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_completed_focus = XVE_the_magnate_speech
+		}	
+		
+		available = {
+		}
+
+		days_remove = 30
+		cost = 40
+		fire_only_once = yes	
+
+		remove_effect = {
+			country_event = XVE_domestic_events.14
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}
+	XVE_monarchist_publications_decision = {
+		priority = 5
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_completed_focus = XVE_monarchist_publications
+		}	
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}				
+			}			
+		}
+
+		days_remove = 15
+		cost = 20
+		fire_only_once = yes	
+
+		remove_effect = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_to_variable = {
+				var = XVE_gov_support_bar
+				value = 1
+				tooltip = add_1_to_gov_support_var_tt
+			}			
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}
+	XVE_legalize_royalist_symbols_decision = {
+		priority = 5
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = XVE
+		}
+
+		visible = {
+			has_completed_focus = XVE_legalize_royalist_symbols
+		}	
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}				
+			}			
+		}
+
+		days_remove = 15
+		cost = 20
+		fire_only_once = yes	
+
+		remove_effect = {
+			add_ideas = XVE_broad_royalist_support
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}		
+	XVE_ceremony_reminder = {
+		icon = GFX_decision_generic_political_rally
+		days_mission_timeout = 365
+		is_good = no
+		
+		priority = 100
+
+		allowed = {
+			has_country_flag = XVE_ceremony_reminder_flag
+		}
+		
+		available = {
+			always = no
+		}
+		
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+		
+		visible = {
+			NOT = {
+				has_completed_focus = XVE_the_ceremony_of_san_marco
+			}
+		}
+		
+		complete_effect = {
+			add_stability = -0.2
+		}
+	}			
 }
 
 XVE_IFF_conflict_decisions = {

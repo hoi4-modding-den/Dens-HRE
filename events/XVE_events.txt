@@ -293,7 +293,7 @@ country_event = { # Preparing the Ceremony of San Marco
     }	
 }
 
-country_event = { # The Magnate Speech v1
+country_event = { # The Magnate Speech
 	id = XVE_domestic_events.14
 	title = XVE_domestic_events.14.t
 	desc = XVE_domestic_events.14.desc
@@ -304,7 +304,78 @@ country_event = { # The Magnate Speech v1
 	
 	option = {
         name = XVE_domestic_events.14.a
-		#custom_effect_tooltip = 
-		#set_country_flag = 
+		custom_effect_tooltip = XVE_nationalists_grow
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.07
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = XVE_nationalists_grow_flag
+				}
+			}
+			set_country_flag = XVE_nationalists_grow_flag
+		}	
+		if = {
+			limit = { 
+				has_country_flag = XVE_nationalists_grow_flag 
+			}
+			set_country_flag = XVE_nationalist_big_grow_flag
+		}
+	}
+}
+
+country_event = { # Ceremony Reminder
+	id = XVE_domestic_events.15
+	title = XVE_domestic_events.15.t
+	desc = XVE_domestic_events.15.desc
+	
+	picture = GFX_report_event_DEN_celebration
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.15.a
+		activate_mission = XVE_ceremony_reminder
+		set_country_flag = XVE_ceremony_reminder_flag
     }
+}
+
+country_event = { # Alternative Partnerships
+	id = XVE_domestic_events.16
+	title = XVE_domestic_events.16.t
+	desc = XVE_domestic_events.16.desc
+	
+	picture = GFX_report_event_SOV_litvinov_beck
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.16.a
+		custom_effect_tooltip = XVE_royalists_grow
+		set_country_flag = XVE_royalists_grow_flag
+    }
+	option = {
+        name = XVE_domestic_events.16.b
+		custom_effect_tooltip = XVE_nationalists_grow
+		set_country_flag = XVE_nationalists_grow_flag
+    }	
+}
+
+country_event = { # Monarchist on the Rise
+	id = XVE_domestic_events.17
+	title = XVE_domestic_events.17.t
+	desc = XVE_domestic_events.17.desc
+	
+	picture = GFX_report_event_iww_demonstration
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = XVE_domestic_events.17.a
+		custom_effect_tooltip = XVE_monarchist_referundum_unlocked
+		set_country_flag = XVE_monarchist_referundum_unlocked_flag
+		add_stability = -0.05
+    }	
 }

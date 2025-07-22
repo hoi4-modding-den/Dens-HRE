@@ -22,11 +22,8 @@ focus_tree = {
 	focus = {
 		id = XVE_convene_the_alleanza_ducale
 		icon = GFX_focus_ETH_re-convene_the_parliament
-		#prerequisite = { focus = }
-		#mutually_exclusive = { focus =  }
 		x = 7
 		y = 0
-		#relative_position_id = 
 
 		cost = 2
 
@@ -50,7 +47,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			country_event = XVE_domestic_events.1
 		}
@@ -93,7 +90,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			unlock_decision_tooltip = XVE_prolong_law_on_personal_freedoms
 			add_stability = 0.04
@@ -143,7 +140,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			country_event = XVE_domestic_events.9
 			add_popularity = {
@@ -172,7 +169,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			unlock_decision_tooltip = XVE_expand_the_worker_aid_program  
 			unlock_decision_tooltip = XVE_facilitate_technocratic_policymaking 
@@ -205,7 +202,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			custom_effect_tooltip = XVE_party_agrarians_join_coalition
 			set_country_flag = XVE_party_agrarians
@@ -251,7 +248,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			custom_effect_tooltip = XVE_party_technocrats_join_coalition
 			set_country_flag = XVE_party_technocrats
@@ -300,7 +297,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_power_balance_value = {
 				id = XVE_power_balance
@@ -337,7 +334,20 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.16
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_istrian_situation_slight_worsen
+			hidden_effect = {
+				736 = {
+					add_resistance = 4
+					add_compliance = -2
+				}
+				852 = {
+					add_resistance = 5
+					add_compliance = -3
+				}				
+			}
 		}
 	}
 	focus = {
@@ -360,7 +370,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			country_event = XVE_domestic_events.12
 			
@@ -403,7 +413,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			unlock_decision_tooltip = XVE_the_magnate_speech_decision
+			add_political_power = -10
 		}
 	}
 	focus = {
@@ -422,13 +433,23 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}				
+			}			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			custom_effect_tooltip = XVE_royalist_critic_gov_allowed
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_tooltip = XVE_monarchist_publications_decision
 		}
 	}
 	focus = {
@@ -447,13 +468,27 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = XVE_majority_great_council_support
+				check_variable = {
+					var = XVE_gov_support_bar
+					value = 51
+				}				
+			}			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#country_event = XVE_domestic_events.4
+			country_event = XVE_domestic_events.17
+
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.03
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = XVE_legalize_royalist_symbols_decision
 		}
 	}
 	focus = {
@@ -478,9 +513,12 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			country_event = XVE_domestic_events.13
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVE_unlock_new_focus_tree
 		}
 	}									
 	focus = {
@@ -503,7 +541,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			country_event = XVE_domestic_events.4
 			add_political_power = 15
@@ -533,7 +571,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			add_offsite_building = {
 				type = industrial_complex
@@ -565,7 +603,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			1037 = {
 				add_building_construction = {
@@ -606,7 +644,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			hidden_effect = {
 				swap_ideas = {
@@ -638,7 +676,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			850 = {
 				add_resource = {
@@ -647,7 +685,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -678,7 +716,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		select_effect = {
 			add_ideas = XVE_butoniga_dam_funding
@@ -726,7 +764,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			736 = {
 				add_building_construction = {
@@ -780,7 +818,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_TFV_AUTONOMY FOCUS_FILTER_BALANCE_OF_POWER FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			country_event = XVE_domestic_events.5
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -813,7 +851,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_TFV_AUTONOMY }
 		completion_reward = {
 			736 = {
 				add_resistance = 5

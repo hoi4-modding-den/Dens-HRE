@@ -1,4 +1,14 @@
 on_actions = {
+    on_startup = {
+        effect = { 
+            XVE = {
+                country_event = { 
+                    id = XVE_domestic_events.15
+                    days = 100
+                }
+            }
+        }        
+    }
     on_monthly_XVE = {
         effect = {
             if = {
@@ -34,7 +44,19 @@ on_actions = {
                 }                           
                 set_country_flag = XVE_travel_controls_reaction
             }
-        }        
+        } 
+        effect = {
+            if = {
+                limit = {
+                    has_country_flag = XVE_anti_corruption_measures_successful
+                    NOT = {
+                        has_country_flag = XVE_anti_corruption_measures_successful_done
+                    }                      
+                }
+                country_event = XVE_domestic_events.10
+                set_country_flag = XVE_anti_corruption_measures_successful_done
+            }
+        }               
     }
     #on_monthly_XVE = { TODO once advisors are added
         #effect = {

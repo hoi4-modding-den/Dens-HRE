@@ -206,27 +206,34 @@ ideas={
 			}
 		}			
 
+		XVE_broad_royalist_support = { 
+			picture = BEL_fonderie_royale_de_canons_liege
+			allowed = {
+				original_tag = XVE
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
 
+			modifier = {
+				neutrality_drift = 0.05
+				drift_defence_factor = -0.15
+				stability_weekly = 0.001
+			}
+		}	
+	}
 		
 
-#-------------------------------------------------------
-#					MANUFACTURERS
-#-------------------------------------------------------
+
 	
-	#naval_manufacturer={
-			#designer = yes 
-			#}
-			
-	#aircraft_manufacturer={
-			#designer = yes 
-			#}
-			
-	#materiel_manufacturer={
-			#designer = yes 
-			#}
-			
-		industrial_concern={ 
-		}
+	industrial_concern = {
+
+		#-------------------------------------------------------
+		#					MANUFACTURERS
+		#-------------------------------------------------------	
+
 		XVE_tsm = {
 
 			picture = danieli
@@ -244,10 +251,10 @@ ideas={
 			research_bonus = {
 				industry = 0.05
 			}
-
+			
 			modifier = {
 				local_resources_factor = 0.03
-				country_resource_steel = 13	
+				country_resource_steel = 13				
 			}
 			
 			traits = { XVE_tsm_trait }
@@ -255,6 +262,6 @@ ideas={
 			ai_will_do = {
 				factor = 2
 			}
-		}		
+		}
 	}
-}	
+}			
