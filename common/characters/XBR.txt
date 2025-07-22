@@ -109,6 +109,20 @@ characters = {
 			logistics_skill = 3
 			legacy_id = -1
 		}
+		advisor = {
+			slot = army_chief
+			idea_token = XBR_henning_von_tresckow_token
+			allowed = {
+				original_tag = XBR
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8.000
+			}
+		}
 	}
 	XBR_wilhelm_behrens = {
 		name = XBR_wilhelm_behrens
