@@ -1,13 +1,20 @@
 bookmarks = {
 	bookmark = {
 		name = "The Iberian Civil War"
-		desc = "GATHERING_STORM_DESC"
+		desc = "BLITZKRIEG_DESC"
 		date = 1936.1.1.12
 		picture = "GFX_select_date_1939"
 		default_country = "---"
 		default = yes
 		
-		
+		"YCA"={
+			history = "YCA_BLITZKRIEG_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			}
+		}		
 
 		"---"={
 			history = "OTHER_GATHERING_STORM_DESC"
