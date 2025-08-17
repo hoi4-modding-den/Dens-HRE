@@ -2,21 +2,21 @@ state=
 {
 	id=118
 	name="STATE_118"
-	manpower=21372
+	manpower=48230
 	
-	state_category = enclave
+	state_category = rural
 	history={
-		owner = ZZZ #owner = ENG
-		victory_points = { 4135 10 }
+		owner = YGB
+		victory_points = { 4135 20 }
 		buildings = {
-			infrastructure = 3
-			air_base = 2
+			infrastructure = 2
+			air_base = 3
 			4135 = {
 				naval_base = 5
 				coastal_bunker = 2
+				bunker = 1
 			}
 		}
-		#add_claim_by = SPR
 	}
 	provinces={
 		4135
