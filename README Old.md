@@ -1,48 +1,47 @@
-# The Iberian Civil War
+# The Holy Roman Dempire
 
-Apart of the Modding Jam. All commits are due by September 19th, at 18:00 (6pm) EST.
+Apart of the Modding Jam. All commits are due by July 21st, at 03:00 (3am) EST.
 
 Rules: <br>
 <ol>
-  <li>All tags must begin with Y</li>
+  <li>All tags must begin with X</li>
   <li>Every file for your nation(s) must start with their TAG</li>
   <li>All majorly OP content will be removed</li>
   <li>Any files that cause many errors will be removed</li>
   <li>No teams</li>
   <li>Provinces and states in your territory <b>can</b> be modified, you can put multiple countries in your territory</li>
-  <li>Maximum 3 states for claimed land</li>
-  <li>Must have some level of realism (same as with Den's HRE)
+  <li>Maximum 4 states for claimed land</li>
 </ol>
-
 <br>
+See the note regarding setting up the HRE system for your nation(s).<br><br>
+
+<details>
+	<summary>A note to all participants:</summary>
+<ol>
+	<li>Please add your country's entry to both the GetEmperorName and the GetEmperorPortrait scripted localisation strings in <code>DEN_scripted_loc.txt</code></li>
+	<li>Please define a scripted loc key entry for the portrait of every possible leader of your country in your own, personal scripted loc file. If you need an example on how to create an entry of that sort, feel free to check out the <code>test_scripted_loc.txt</code> file.</li>
+	<li>Additionally, you can define certain policy stances that your nation has using variables:
+		<ol>
+			<li>Setting the variable <code>HRE_national_stance_federalism</code> to 1 within your nation's scope makes your country pro-federalist, whilst 3 makes you pro-regionalist.</li>
+			<li>Setting the variable <code>HRE_national_stance_welfare</code> to 1 within your nation's scope makes your country pro-welfare, whilst 3 makes you pro-militarization.</li>
+			<li>Setting the variable <code>HRE_national_stance_papacy</code> to 1 within your nation's scope makes your country pro-papacy, whilst 3 makes you pro-imperial.</li>
+		</ol>
+	</li>
+  <li>Please add the following line within your countries history file: <code>set_country_flag = HRE_member_state</code></li>
+</ol>
+</details><br>
 
 <ins>Guideline for choosing a country location:</ins><br>
 <ol>
   <li>Must be adjacent to a dark red state (or could include a dark red state) <b>OR</b> adjacent to an existing country (see state claim map on Discord)</li>
   <li>Must not include any state not marked in dark grey</li>
-  <li>You can only claim up to 3 states</li>
+  <li>You can only claim up to 4 states</li>
 </ol><br>
 
 Lore: <br><br>
- The Iberian Peninsula has been united, and under the Treaty of Paris in 1900 they were allowed by the other great powers to annex all of Morocco. Now, they fall into a civil war.
+HRE somehow existed until 1936. It must be at least semi-realistic (No robot mechs, no fantasy races)
 
-## Iberian Tag List:
-
-<details>
-  <summary>A list of every user via their Github and Discord name, and their claimed tags.</summary>
-  <br>
-
-  | Github Name | Discord Name | Tags |
-  | :---: | :---: | --- |
-  | Meepazor | meepazor | <details><summary>Baleric Islands</summary><ul><li>YBL</li></ul></details> |
-  | stupidlord | stupidlord | <details><summary>Sahara Occidental</summary><ul><li>YSO</li></ul></details> |
-  | 0rland2 | 0rland0 | <details><summary>Navarre</summary><ul><li>YBS</li></ul></details> |
-  | acer-xq | ace.r | <details><summary>Gibraltar</summary><ul><li>YGB</li></ul></details> |
-  | Furiousky | furiousky | <details><summary>Catalonia</summary><ul><li>YCA</li></ul></details> |
-  | Deservedgamer435 | guyond | <details><summary>Mercia</summary><ul><li>YRF</li></ul></details> |
-</details>
-
-## HRE tag list:
+## Current tag list:
 
 <details>
   <summary>A list of every current tag, and the associated Github and Discord name.</summary>
@@ -72,4 +71,6 @@ Lore: <br><br>
   | <details><summary>Rhine/Alsace</summary><ul><li>XNR<li>XFE<li>XLO<li>XBA<li>XVM<li>XLG</ul></summary> | Filler | Filler |
   | <details><summary>Thuringia</summary><ul><li>XWR<li>XTU<li>XRE</ul></summary> | Filler | Filler |
   | <details><summary>Baden</summary><ul><li>XBD<li>XBE<li>XFU</ul></summary> | Filler | Filler |
+  
+
 </details>
