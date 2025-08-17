@@ -193,15 +193,6 @@ focus_tree = {
 
 	id = XPL_coup_focus_tree
 	
-	country = {
-		factor = 0
-		
-		modifier = {
-			add = 11
-			tag = XPL
-			has_country_flag = XPL_coup_detat
-		}
-	}
 	
 	default = no
 
@@ -317,11 +308,13 @@ add_research_slot = 1
 
 		}
 		completion_reward = {
+67 = {
 add_building_construction = {
     type = arms_factory
     level = 1
     instant_build = yes
 }
+ }
 		}
 	}
 	focus = {
