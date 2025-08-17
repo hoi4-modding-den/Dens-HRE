@@ -1,14 +1,4 @@
 on_actions = {
-    on_startup = {
-        effect = { 
-            XVE = {
-                country_event = { 
-                    id = XVE_domestic_events.15
-                    days = 100
-                }
-            }
-        }        
-    }
     on_monthly_XVE = {
         effect = {
             if = {
