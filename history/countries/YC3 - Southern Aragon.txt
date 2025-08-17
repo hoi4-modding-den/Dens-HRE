@@ -1,10 +1,10 @@
-capital = 165
+capital = 794
 
-#oob = "YCA_1936"
+#oob = "YC3_1936"
 
-set_war_support = 0.25
-set_stability = 0.55
-set_research_slots = 3
+set_war_support = 0.6
+set_stability = 0.3
+set_research_slots = 2
 
 
 set_technology = {
@@ -72,19 +72,15 @@ add_ideas = {
 }
 
 set_politics = {
-	ruling_party = communism
+	ruling_party = neutrality
 	last_election = "1930.11.9"
 	election_frequency = 72
 	elections_allowed = no
 }
 
 set_popularities = {
-	neutrality = 31
-	democratic = 6
-	communism = 62
-	fascism = 1
+	neutrality = 47
+	democratic = 0
+	communism = 53
+	fascism = 0
 }
-
-set_country_flag = dont_use_default_political_advisors
-set_country_flag = dont_use_default_military_advisors
-#set_country_flag = YCA_welcome_message_flag

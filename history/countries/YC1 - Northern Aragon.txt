@@ -1,10 +1,10 @@
-capital = 165
+capital = 1094
 
-#oob = "YCA_1936"
+#oob = "YC1_1936"
 
-set_war_support = 0.25
-set_stability = 0.55
-set_research_slots = 3
+set_war_support = 0.40
+set_stability = 0.35
+set_research_slots = 2
 
 
 set_technology = {
@@ -79,12 +79,8 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 31
-	democratic = 6
-	communism = 62
-	fascism = 1
+	neutrality = 12
+	democratic = 0
+	communism = 88
+	fascism = 0
 }
-
-set_country_flag = dont_use_default_political_advisors
-set_country_flag = dont_use_default_military_advisors
-#set_country_flag = YCA_welcome_message_flag
