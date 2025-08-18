@@ -1,0 +1,76 @@
+﻿division_template = {
+	name = "Yeezy Men"
+
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+	}
+}
+
+
+units = {
+
+	division = {	
+		location = 7069
+		division_template = "Yeezy Men"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 7069
+		division_template = "Yeezy Men"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 7069
+		division_template = "Yeezy Men"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 7069
+		division_template = "Yeezy Men"
+		start_experience_factor = 0.3
+	}
+	division = {	
+		location = 7069
+		division_template = "Yeezy Men"
+		start_experience_factor = 0.3
+	}
+
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = YZY
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = YZY
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+
+	
+}
+
+#####################
