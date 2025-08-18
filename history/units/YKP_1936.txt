@@ -1,0 +1,149 @@
+division_template = {
+	name = "Divisão de Infantaria"		# Infantry Division
+	division_names_group = YKP_INF_01
+	# Note: each regiment could also mobilize a 3rd battalion if called up
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Full howitzer regiment
+		engineer = { x = 0 y = 1 }   
+	}
+}
+division_template = {
+	name = "Força de Caçadores"		# Elite light infantry, always fully mobilized w best equipment
+	division_names_group = YKP_CAC_01
+
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+		marine = { x = 2 y = 0 }
+		marine = { x = 2 y = 1 }
+	}
+	priority = 2
+}
+division_template = {
+	name = "Brigada de Cavalaria" 		# Cavalry Brigade
+	division_names_group = YKP_CAV_01
+	# Note: Cavalry regiments included about 5 squadrons/companies
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	###### Exército Portugues #####
+	# Governo Militar Portugues #
+
+	division = {
+		name = "Infantaria da Guarda do Rei"
+		location = 11805
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.9
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3926
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 2798
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 6924
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 924
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3798
+		division_template = "Força de Caçadores"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.9
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 6933
+		division_template = "Brigada de Cavalaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = YKP
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = YKP
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}		
+}
