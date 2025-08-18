@@ -72,6 +72,10 @@ if = {
 }
 
 add_ideas = {
+	YCA_vanguard_of_the_revolution
+	YCA_splintered_generalitat
+	YCA_red_trade_unions
+	YCA_workers_militias
 }
 
 set_politics = {
@@ -87,6 +91,14 @@ set_popularities = {
 	communism = 62
 	fascism = 1
 }
+
+set_autonomy = {
+	target = YC1
+	autonomy_state = autonomy_integrated_puppet
+}
+
+give_guarantee = YC2
+give_guarantee = YC3
 
 set_country_flag = dont_use_default_political_advisors
 set_country_flag = dont_use_default_military_advisors

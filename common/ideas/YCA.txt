@@ -1,0 +1,163 @@
+ideas={
+	country = {
+	
+		########################
+		### STARTING SPIRITS ###
+		########################
+
+		YCA_vanguard_of_the_revolution = {
+			picture = FRA_scw_intervention_republicans_focus
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 250
+				war_support_factor = 0.05
+				communism_drift = 0.05
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		YCA_splintered_generalitat = {
+			picture = NOR_sivog
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = -0.10
+				stability_factor = -0.1
+				political_advisor_cost_factor = -0.25
+				# Internal Tension: 30%
+			}
+		}
+
+		YCA_workers_militias = {
+			picture = MEX_revolutionary_army
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				recruitable_population_factor = 0.08
+				army_org_factor = -0.05	
+				training_time_army_factor = -0.1
+				planning_speed = -0.03
+			}
+		}
+	
+		YCA_red_trade_unions = {
+			picture = eng_spirit_of_the_industrial_revolution
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.07
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		YCA_anarchist_society = {
+			picture = SPR_anarchist_society
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.03
+				stability_factor = -0.1
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05	
+			}
+		}		
+
+		###############
+		### SPIRITS ###
+		###############
+	
+		YCA_ = {
+			picture = generic_economic_increase
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+			}
+		}
+
+
+	}
+		
+
+
+	
+	industrial_concern = {
+
+		#-------------------------------------------------------
+		#					MANUFACTURERS
+		#-------------------------------------------------------	
+
+		#YCA_ = {
+
+			#picture = danieli
+			
+			#allowed = {
+			#	original_tag = XVE
+			#}
+
+			#available = {
+			#	has_completed_focus = XVE_fund_the_tsm
+			#}
+
+			#cost = 150
+			
+			#research_bonus = {
+			#	industry = 0.05
+			#}
+			
+			#modifier = {
+			#	local_resources_factor = 0.03
+			#	country_resource_steel = 13				
+			#}
+			
+			#traits = { XVE_tsm_trait }
+			
+			#ai_will_do = {
+			#	factor = 2
+			#}
+		#}
+	}
+}			
