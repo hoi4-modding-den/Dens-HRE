@@ -12,4 +12,123 @@ characters = {
 			traits = { YKP_the_patriot YKP_the_unfortunate }
 		}
 	}
+
+	YKP_oscar_carmona = {
+		name = "Óscar Carmona"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Oscar_Carmona.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Oscar_Carmona.dds"
+			}
+		}
+		field_marshal = {
+			traits = { old_guard politically_connected }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = YKP_oscar_carmona_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8.000
+			}
+		}
+	}
+
+	YKP_jose_vicente_de_freitas = {
+		name = "José Vicente de Freitas"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Jose_Vicente.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Jose_Vicente.dds"
+			}
+		}
+		field_marshal = {
+			traits = { old_guard }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = YKP_jose_vicente_de_freitas_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8.000
+			}
+		}
+	}
+
+	YKP_humberto_delgado = {
+		name = "Humberto Delgado"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Humberto_Delgado.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Humberto_Delgado.dds"
+			}
+		}
+		corps_commander = {
+			traits = { media_personality }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_jose_humberto_delgado_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				aviation_pioneer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8.000
+			}
+		}
+	}
+
+	YKP_luis_filipe_de_castro = {
+		name = "General Luís Filipe de Castro"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Jose_Vicente.dds"
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+	}
+
+
 }
