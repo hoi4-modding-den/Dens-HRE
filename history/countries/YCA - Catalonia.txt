@@ -6,6 +6,9 @@ set_war_support = 0.25
 set_stability = 0.55
 set_research_slots = 3
 
+recruit_character = YCA_andreu_nin
+recruit_character = YCA_buenaventura_durruti
+recruit_character = YCA_joan_comorera
 
 set_technology = {
 	infantry_weapons = 1
@@ -22,7 +25,7 @@ set_technology = {
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
-	set_naval_oob = "XVE_1936_naval_legacy"
+	#set_naval_oob = "XVE_1936_naval_legacy"
 	set_technology = {
 		early_submarine = 1
 		early_destroyer = 1
@@ -39,7 +42,7 @@ if = {
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
-	set_naval_oob = "XVE_1936_naval_mtg"
+	#set_naval_oob = "XVE_1936_naval_mtg"
 	set_technology = {
 		basic_naval_mines = 1
 		submarine_mine_laying = 1

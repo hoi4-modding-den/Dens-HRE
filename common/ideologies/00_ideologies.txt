@@ -92,6 +92,17 @@ ideologies = {
 				can_be_randomly_selected = no
 				color =  { 238 247 158 }
 			}
+			
+			vanguardism = {
+				can_be_randomly_selected = no			
+				color =  { 201 20 0 }			
+			}
+
+			revolutionary_socialism = {
+				can_be_randomly_selected = no			
+				color =  { 201 20 0 }			
+			}	
+
 		}
 
 		dynamic_faction_names = {
@@ -208,6 +219,10 @@ ideologies = {
 			}
 			anarchism = {
 				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
+			}
+			anarcho_syndicalism = {
+				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
+				color = { 224 76 123 }
 			}
 
 			moderatism = {

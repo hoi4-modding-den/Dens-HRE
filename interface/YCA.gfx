@@ -1,0 +1,70 @@
+spriteTypes = {
+
+### PORTRAITS ###
+	spriteType = {
+		name = "GFX_portrait_YCA_andreu_nin"
+		texturefile = "gfx/leaders/YCA/YCA_andreu_nin.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_YC1_ramona_cin"
+		texturefile = "gfx/leaders/YCA/YC1_ramona_cin.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_YC2_vicente_uribe"
+		texturefile = "gfx/leaders/YCA/YC2_vicente_uribe.png"
+	}		
+	spriteType = {
+		name = "GFX_portrait_YC3_union_anarchist_collectives"
+		texturefile = "gfx/leaders/YCA/YC3_union_anarchist_collectives.png"
+	}	
+### IDEAS/TEXICONS ###
+	#spriteType = {
+	#	name = "GFX_idea_XVE_serenissima_legacy"
+	#	texturefile = "gfx/interface/ideas/XVE/XVE_serenissima_legacy.png"
+	#}	
+
+### INTRO ###
+	frameAnimatedSpriteType = {
+		name = "GFX_XVE_welcome_window_animation_loop"
+		texturefile = "gfx/interface/XVE/XVE_venice_animation.dds"
+		noOfFrames = 3
+		animation_rate_fps = 0.2
+		transparencecheck = no
+		looping = yes
+		play_on_show = yes
+		#pause_on_loop = 0.2
+		#alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	SpriteType = {
+		name = "GFX_XVE_continue_button_bloom"
+		texturefile = "gfx/interface/button_359x34.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/button_359x34.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 1.75			# in seconds
+			animationdelay = 0.35			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/button_359x34.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 1.75				# in seconds
+			animationdelay = 0.35			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+}
