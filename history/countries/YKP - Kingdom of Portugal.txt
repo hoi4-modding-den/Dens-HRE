@@ -1,0 +1,55 @@
+capital = 112
+
+recruit_character = YKP_king_manuel_ii
+
+set_party_name = {
+    ideology = neutrality
+    long_name = YKP_neutrality_party_long
+    name = YKP_neutrality_party
+}
+
+set_party_name = {
+    ideology = democratic
+    long_name = YKP_democratic_party_long
+    name = YKP_democratic_party
+}
+
+set_party_name = {
+    ideology = fascism
+    long_name = YKP_fascism_party_long
+    name = YKP_fascism_party
+}
+
+set_party_name = {
+    ideology = communism
+    long_name = YKP_communism_party_long
+    name = YKP_communism_party
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.6.12"
+	election_frequency = 24
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 72
+	democratic = 15
+	fascism = 8
+	communism = 5
+}
+
+add_opinion_modifier = {
+    target = YPR
+    modifier = YKP_communist_rebels
+}
+
+add_ideas = {
+    YKP_divided_nation
+    YKP_king_manuel_ii
+    YKP_royal_bankrupcy
+
+    limited_conscription
+    low_economic_mobilisation
+}

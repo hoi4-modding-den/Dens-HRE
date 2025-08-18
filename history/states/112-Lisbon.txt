@@ -6,7 +6,10 @@ state={
 	}
 
 	history={
-		owner = ZZZ #owner = POR
+		owner = YKP
+		add_core_of = YKP
+		add_core_of = YPR
+
 		victory_points = {
 			11805 20 
 		}
@@ -21,6 +24,13 @@ state={
 			dockyard = 2
 			11805 = {
 				naval_base = 8
+			}
+
+			6924 = {
+				bunker = 1
+			}
+			3798 = {
+				bunker = 2
 			}
 		}
 		#add_core_of = POR

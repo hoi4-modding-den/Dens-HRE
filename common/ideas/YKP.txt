@@ -1,0 +1,29 @@
+ideas = {
+	country = {
+		YKP_divided_nation = {
+			name = YKP_divided_nation_idea
+			picture = YKP_divided_nation
+			modifier = {
+				political_power_gain = -0.5
+				stability_factor = -0.2
+				war_support_factor = 0.3
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		YKP_king_manuel_ii = {
+			name = YKP_king_manuel_ii_idea
+			picture = YKP_king_manuel_ii
+			modifier = {
+				political_power_gain = 0.1
+			}
+		}
+		YKP_royal_bankrupcy = {
+			name = YKP_royal_bankrupcy_idea
+			picture = YKP_royal_bankrupcy
+			modifier = {
+				consumer_goods_factor = 0.3
+			}
+		}
+	}
+}
