@@ -2,15 +2,15 @@ state=
 {
 	id=118
 	name="STATE_118"
-	manpower=48230
+	manpower=37700
 	
 	state_category = rural
 	history={
 		owner = YGB
-		victory_points = { 4135 20 }
+		victory_points = { 4135 10 }
 		buildings = {
 			infrastructure = 2
-			air_base = 3
+			industrial_complex = 1
 			4135 = {
 				naval_base = 5
 				coastal_bunker = 2
@@ -19,7 +19,7 @@ state=
 		}
 	}
 	provinces={
-		4135
+		4135 13511
 	}
 
 	local_supplies=0.0 
