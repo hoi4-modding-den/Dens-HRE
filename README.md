@@ -42,6 +42,7 @@ Lore: <br><br>
   | Deservedgamer435 | guyond | <details><summary>Mercia</summary><ul><li>YRF</li></ul></details> |
   | kiro-dera | deki12 | <details><summary>Galicia</summary><ul><li>YGL</li></ul></details> |
   | Kasastul | kasastul | <details><summary>Northern Portugal</summary></ul><li>YPR</li></ul></details> |
+  | EnlightenedEsoteric | esoteric_ego | <details><summary>Canary Islands</summary></ul><li>YJT</li></ul></details> |
 </details>
 
 ## HRE tag list:
