@@ -1,0 +1,23 @@
+### Modified from GUI made by Kasastul ###
+
+scripted_gui = {
+	
+	YKP_welcome_message = {
+		context_type = player_context
+		window_name = "YKP_welcome_window"
+
+		visible = {
+			has_country_flag = YKP_welcome_message_flag
+		}
+		effects = {	
+			YKP_welcome_message_close_click = {
+				clr_country_flag = YKP_welcome_message_flag
+				clr_country_flag = YKP_credits_visible_flag
+			}
+			YKP_welcome_message_continue_click = {
+				clr_country_flag = YKP_welcome_message_flag
+				clr_country_flag = YKP_credits_visible_flag
+			}
+		}
+	}
+}

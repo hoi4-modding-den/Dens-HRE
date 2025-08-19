@@ -1,0 +1,64 @@
+spriteTypes = {
+    ### IDEAS ###
+
+    spriteType = {
+		name = "GFX_idea_YKP_divided_nation"
+		texturefile = "gfx/interface/ideas/YKP/YKP_idea_divided_nation.dds"
+	}
+
+    spriteType = {
+		name = "GFX_idea_YKP_king_manuel_ii"
+		texturefile = "gfx/interface/ideas/YKP/YKP_idea_king_manuel_ii.dds"
+	}
+
+    spriteType = {
+		name = "GFX_idea_YKP_royal_bankrupcy"
+		texturefile = "gfx/interface/ideas/YKP/YKP_idea_royal_bankrupcy.dds"
+	}
+
+    ### GUI ###
+
+	### WELCOME SCREEN ###
+
+	spriteType = {
+		name = "GFX_YKP_welcome"
+		texturefile = "gfx/interface/YKP/YKP_Intro_Picture.dds"
+	}
+
+	spriteType = {
+		name = "GFX_YKP_open_welcome_window_button"
+		texturefile = "gfx/interface/YKP/open_welcome_window_button.dds"
+	}
+
+    SpriteType = {
+		name = "GFX_YKP_continue_button_bloom"
+		texturefile = "gfx/interface/button_359x34.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/button_359x34.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 1.75			# in seconds
+			animationdelay = 0.35			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/button_359x34.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 1.75				# in seconds
+			animationdelay = 0.35			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+}

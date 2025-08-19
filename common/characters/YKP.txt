@@ -113,14 +113,48 @@ characters = {
 	}
 
 	YKP_luis_filipe_de_castro = {
-		name = "General Luís Filipe de Castro"
+		name = "Luís Filipe de Castro"
 		portraits = {
 			army = {
-				large = "/gfx/leaders/YKP/YKP_Leader_Jose_Vicente.dds"
+				large = "/gfx/leaders/YKP/YKP_Leader_Luis_Filipe_de_Castro.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Luis_Filipe_de_Castro.dds"
 			}
 		}
 		corps_commander = {
 			traits = { infantry_officer }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = theorist
+			idea_token = YKP_luis_filipe_de_castro_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+		}
+	}
+
+	YKP_francisco_craveiro_lopes = {
+		name = "Francisco Craveiro Lopes"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Francisco_Craveiro_Lopes.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Francisco_Craveiro_Lopes.dds"
+			}
+		}
+		corps_commander = {
+			traits = { fortress_buster brilliant_strategist }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 3
@@ -128,7 +162,136 @@ characters = {
 			logistics_skill = 1
 			legacy_id = -1
 		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_francisco_craveiro_lopes_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				
+			}
+			traits = {
+				army_artillery_3
+			}
+			cost = 150
+		}
 	}
 
+	YKP_arthur_carlos_barros_basto = {
+		name = "Arthur Carlos Barros Basto"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Arthur_Carlos_Barros_Basto.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
 
+	YKP_raul_esteves = {
+		name = "Raul Esteves"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Raul_Augusto_Esteves.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Raul_Augusto_Esteves.dds"
+			}
+		}
+		corps_commander = {
+			traits = { inflexible_strategist }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_raul_esteves_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				
+			}
+			traits = {
+				army_infantry_1
+			}
+			cost = 100
+		}
+	}
+
+	YKP_kaulza_de_arriaga = {
+		name = "Kaúlza de Arriaga"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Kaulza_de_Arriaga.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Kaulza_de_Arriaga.dds"
+			}
+		}
+		corps_commander = {
+			traits = { media_personality }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_kaulza_de_arriaga_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				
+			}
+			traits = {
+				army_CombinedArms_2
+			}
+			cost = 100
+		}
+	}
+
+	YKP_marcelino_da_mata = {
+		name = "Marcelino da Mata"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Marcelino_da_Mata.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Marcelino_da_Mata.dds"
+			}
+		}
+		corps_commander = {
+			traits = { guerilla_fighter expert_improviser camouflage_expert }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YKP_marcelino_da_mata_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				
+			}
+			traits = {
+				guerilla_warfare_expert
+			}
+			cost = 150
+		}
+	}
 }
