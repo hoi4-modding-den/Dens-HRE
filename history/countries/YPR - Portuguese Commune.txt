@@ -1,6 +1,29 @@
 capital = 180
 
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+    marines = 1
+}
+
+oob = "YPR_1936"
+
 recruit_character = YPR_provisionary_government
+
+recruit_character = YPR_jose_norton_de_matos
+recruit_character = YPR_francisco_miguel_duarte
+recruit_character = YPR_mario_castelhano
+recruit_character = YPR_jose_gregorio
+
+add_ideas = {
+	limited_conscription
+}
 
 set_politics = {
 	ruling_party = communism

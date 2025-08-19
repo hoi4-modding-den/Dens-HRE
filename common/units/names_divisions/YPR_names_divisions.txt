@@ -1,0 +1,43 @@
+
+YPR_INF_01 = 
+{
+	name = "Infantry Divisions"
+
+	for_countries = { YPR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+
+	fallback_name = "%d. Regional Defense Force"
+
+	ordered =
+	{
+		1 = { "Porto Regional Defense Force" }
+		2 = { "Braga Regional Defense Force" }
+		3 = { "Viseu Regional Defense Force" }
+		4 = { "Guarda Regional Defense Force" }		
+	}
+}
+
+YPR_INF_02 = 
+{
+	name = "Militia Forces"
+
+	for_countries = { YPR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+
+	fallback_name = "%d. Proletarian Militia"
+
+	ordered =
+	{
+		1 = { "1. Proletarian Militia" }	
+	}
+}
+
+

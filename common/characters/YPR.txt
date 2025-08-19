@@ -11,4 +11,92 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 	}
+	YPR_jose_norton_de_matos = {
+		name = "José Norton de Matos"
+		
+		portraits = {	
+			army = {
+				small = "GFX_idea_por_jose_norton_de_matos"
+				large = GFX_portrait_POR_jose_norton_de_matos
+			}
+		}
+		
+		field_marshal = {
+			traits = { old_guard war_hero }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	YPR_francisco_miguel_duarte = {
+		name = "Francisco Miguel Duarte"
+		
+		portraits = {	
+			army = {
+				small = gfx\leaders\YPR\Francisco_Miguel_Duarte_idea.png
+				large = gfx\leaders\YPR\Francisco_Miguel_Duarte.png
+			}
+			civilian = {
+				small = gfx\leaders\YPR\Francisco_Miguel_Duarte_minister.png
+			}
+		}
+		
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	YPR_mario_castelhano = {
+		name = "Mário Castelhano"
+		
+		portraits = {	
+			army = {
+				small = gfx\leaders\YPR\Mario_Castelhano_idea.png
+				large = gfx\leaders\YPR\Mario_Castelhano.png
+			}
+			civilian = {
+				small = gfx\leaders\YPR\Mario_Castelhano_minister.png
+			}
+		}
+		
+		corps_commander = {
+			traits = { reckless }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	YPR_jose_gregorio = {
+		name = "José Gregório"
+		
+		portraits = {	
+			army = {
+				small = gfx\leaders\YPR\Jose_Gregorio_idea.png
+				large = gfx\leaders\YPR\Jose_Gregorio.png
+			}
+			civilian = {
+				small = gfx\leaders\YPR\Jose_Gregorio_minister.png
+			}
+		}
+		
+		corps_commander = {
+			traits = { politically_connected }
+			skill = 2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
 }
