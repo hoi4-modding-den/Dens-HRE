@@ -16,8 +16,36 @@ characters = {
 		
 		portraits = {	
 			army = {
-				small = "GFX_idea_por_jose_norton_de_matos"
+				small = GFX_idea_por_jose_norton_de_matos
 				large = GFX_portrait_POR_jose_norton_de_matos
+			}
+		}
+		
+		advisor = {
+			cost = 100
+			slot = theorist
+			idea_token = YPR_jose_norton_de_matos_theorist
+			allowed = {
+				original_tag = YPR
+			}
+			ledger = army
+			traits = {
+				military_theorist
+			}
+		}
+		
+		advisor = {
+			slot = army_chief
+			idea_token = YPR_jose_norton_de_matos_chief
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 		
@@ -52,6 +80,20 @@ characters = {
 			logistics_skill = 4
 			legacy_id = -1
 		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_francisco_miguel_duarte_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				revolutionary_poet
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
 	}
 	YPR_mario_castelhano = {
 		name = "Mário Castelhano"
@@ -67,13 +109,27 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { reckless }
+			traits = { trait_reckless }
 			skill = 3
 			attack_skill = 4
 			defense_skill = 3
-			planning_skill = 3
+			planning_skill = 2
 			logistics_skill = 3
 			legacy_id = -1
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_mario_castelhano_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				YPR_revolutionary_trade_unionist
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
 		}
 	}
 	YPR_jose_gregorio = {
