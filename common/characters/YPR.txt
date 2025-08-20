@@ -155,4 +155,76 @@ characters = {
 			legacy_id = -1
 		}
 	}
+	YPR_jose_mendes_cabecadas = {
+		name = POR_jose_mendes_cabecadas
+		portraits = {
+			army = {
+				large = "GFX_portrait_por_jose_mendes_cabecadas"
+				small = GFX_portrait_POR_jose_mendes_cabecadas_small
+			}
+		}
+		navy_leader = {
+			traits = { gentlemanly }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 4
+			coordination_skill = 4
+			legacy_id = -1
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = YPR_jose_mendes_cabecadas_chief
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				navy_chief_decisive_battle_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	YPR_jose_manuel_sarmento_de_beires = {
+		advisor = {
+			cost = 100
+			slot = air_chief
+			idea_token = POR_jose_manuel_sarmento_de_beires_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				air_chief_reform_2
+			}
+		}
+		name = POR_jose_manuel_sarmento_de_beires
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_europe_2"
+			}
+		}
+	}
+	YPR_bento_de_jesus_caraca = {
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_bento_de_jesus_caraca_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				financial_expert 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name = POR_bento_de_jesus_caraca
+		portraits = {
+			army = {
+				small = "GFX_idea_POR_bento_de_jesus_caraca"
+			}
+		}
+	}
 }
