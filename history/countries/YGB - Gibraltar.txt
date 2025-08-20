@@ -12,8 +12,28 @@ oob = "YGB_1936"
 
 set_research_slots = 3
 set_convoys = 65
-set_stability = 0.6
+set_stability = 0.53
 set_war_support = 0.38
+
+set_variable = { YGB.reserves_penalty = 0 }
+set_variable = { YGB.reserves_penalty_10 = 0 }
+
+set_variable = { YGB.army_pp = 0.05 }
+set_variable = { YGB.army_attack = -0.25 }
+set_variable = { YGB.army_defence = -0.25 }
+set_variable = { YGB.army_speed_factor = -0.1 }
+set_variable = { YGB.army_recovery_rate = -0.1 }
+set_variable = { YGB.army_entrenchment = 0 }
+set_variable = { YGB.army_special_forces_min = 0 }
+set_variable = { YGB.army_low_org_loss = 0 }
+set_variable = { YGB.army_weekly_manpower = 0 }
+
+set_variable = { YGB.factories_pp = 0.05 }
+set_variable = { YGB.factories_civs = 0 }
+set_variable = { YGB.factories_mils = 0 }
+set_variable = { YGB.factories_civ_cost = 0.14 }
+set_variable = { YGB.factories_mil_cost = 0.2 }
+set_variable = { YGB.factories_assign_counter = 0 }
 
 set_technology = {
 	infantry_weapons = 1
@@ -51,6 +71,9 @@ if = {
 add_ideas = {
 	free_trade
 }
+
+add_dynamic_modifier = { modifier = YGB_currency_reserves }
+add_dynamic_modifier = { modifier = YGB_army }
 
 set_politics = {
 	ruling_party = neutrality

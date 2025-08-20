@@ -1,0 +1,118 @@
+focus_tree = {
+	id = YGB_focus
+
+	country = {
+		factor = 0
+		modifier = { add = 10 tag = YGB }
+	}
+
+	continuous_focus_position = { x = 100 y = 1000 }
+
+    reset_on_civilwar = no
+
+    focus = {
+		id = YGB_the_rock
+		available = {
+		}
+		icon = GFX_focus_generic_home_defense
+		x = 0
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = YGB_attract_foreign_investment
+		available = {
+		}
+		icon = GFX_focus_mex_privatisation
+		x = 5
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_category_tooltip = YGB_foreign_investments_category
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_dynamic_modifier = { modifier = YGB_factories }
+		}
+	}
+
+	focus = {
+		id = YGB_roads
+		available = {
+		}
+		prerequisite = { focus = YGB_attract_foreign_investment }
+		relative_position_id = YGB_attract_foreign_investment
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+			all_owned_state = {			
+				free_building_slots = {
+					building = infrastructure
+					size < 1
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_army_investments
+		available = {
+		}
+		icon = GFX_focus_SWI_issue_war_bonds
+		x = 12
+		y = 0
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+
+}

@@ -1,0 +1,15 @@
+YGB_stockpile_pp = {
+    allowed = { original_tag = YGB }
+    enable = { always = yes }
+    abort = { always = no }
+    ai_strategy = {
+        type = pp_spend_amount
+        id = idea
+        value = -10000
+    }
+    ai_strategy = {
+        type = pp_spend_amount
+        id = decision
+        value = -10000
+    }
+}

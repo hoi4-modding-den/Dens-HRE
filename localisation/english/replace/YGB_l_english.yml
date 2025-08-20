@@ -13,13 +13,32 @@
  STATE_1096:0 "Algeciras"
 
  ### FOCUS ###
+ YGB_the_rock:0 "The Rock of Gibraltar"
 
  ### EVENT ###
 
  ### IDEA ###
+ YGB_currency_reserves:0 "Currency Reserves"
+ YGB_currency_reserves_tt:0 "§RHaving low political power inflicts increasing penalties.§!§Y\nStockpile political power to alleviate.§!\n "
+ YGB_factories:0 "Foreign Investments"
+ YGB_factories_tt:0 "Offmap Military Factories: §Y[?YGB.factories_mils]§!\nOffmap Civilian Factories: §Y[?YGB.factories_civs]§!\n"
+ YGB_army:0 "Gibraltar Armed Forces"
 
  ### TRAIT ###
 
  ### DECISION ###
+ YGB_foreign_investments_category:0 "Investment Allocation"
+ YGB_factory_funds_changed_tt:0 "Has not modified investment fund allocation in the past 14 days"
+ YGB_add_civ:0 "Assign funds to consumer goods"
+ YGB_add_civ_tt:0 "Modify §Y$YGB_factories$§! by:\nOffmap Civilian Factories: §G+1§!\nDaily Political Power Gain: §R-[?YGB.factories_civ_cost|2]§!"
+ YGB_remove_civ:0 "Remove funds from consumer goods"
+ YGB_remove_civ_tt:0 "Modify §Y$YGB_factories$§! by:\nOffmap Civilian Factories: §R-1§!\nDaily Political Power Gain: §G+[?YGB.factories_civ_cost|2]§!"
+ YGB_can_remove_civ_tt:0 "Has more than §Y0§! Offmap Civilian Factories from §Y$YGB_factories$§!"
+ YGB_add_mil:0 "Assign funds to military purchasing"
+ YGB_add_mil_tt:0 "Modify §Y$YGB_factories$§! by:\nOffmap Military Factories: §G+1§!\nDaily Political Power Gain: §R-[?YGB.factories_mil_cost|2]§!"
+ YGB_remove_mil:0 "Remove funds from military purchasing"
+ YGB_remove_mil_tt:0 "Modify §Y$YGB_factories$§! by:\nOffmap Military Factories: §R-1§!\nDaily Political Power Gain: §G+[?YGB.factories_mil_cost|2]§!"
+ YGB_can_remove_mil_tt:0 "Has more than §Y0§! Offmap Military Factories from §Y$YGB_factories$§!"
+
 
  ### MIO ###

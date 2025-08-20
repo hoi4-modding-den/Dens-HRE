@@ -1,0 +1,20 @@
+YGB_can_remove_civ = {
+    custom_trigger_tooltip = {
+        tooltip = YGB_can_remove_civ_tt
+        check_variable = { YGB.factories_civs > 0 }
+    }
+}
+
+YGB_can_remove_mil = {
+    custom_trigger_tooltip = {
+        tooltip = YGB_can_remove_mil_tt
+        check_variable = { YGB.factories_mils > 0 }
+    }
+}
+
+YGB_factory_funds_changed = {
+    custom_trigger_tooltip = {
+        tooltip = YGB_factory_funds_changed_tt
+        check_variable = { YGB.factories_assign_counter < 1 }
+    }
+}

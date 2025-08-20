@@ -1,0 +1,154 @@
+YGB_foreign_investments_category = {
+
+	YGB_add_civ = {
+
+		priority = -1
+
+		icon = generic_consumer_goods
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 10
+                has_political_power > 499
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+		visible = {
+		}
+
+        available = {
+            YGB_factory_funds_changed = yes
+        }
+
+		cost = 0
+        
+        remove_effect = {
+            YGB_add_civ = yes
+            set_variable = { YGB.factories_assign_counter = 2 }
+        }
+	}
+
+    YGB_remove_civ = {
+
+		priority = -2
+
+		icon = generic_consumer_goods
+
+		ai_will_do = {
+			modifier = {
+                add = 10
+                OR = {
+                    has_political_power < 0
+                    AND = {
+                        political_power_daily < 0.4
+                        has_political_power < 500
+                    }
+                }
+                num_of_civilian_factories > 1
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+		visible = {
+		}
+
+        available = {
+            YGB_factory_funds_changed = yes
+            YGB_can_remove_civ = yes
+        }
+
+		cost = 0
+
+        remove_effect = {
+            YGB_remove_civ = yes
+            set_variable = { YGB.factories_assign_counter = 2 }
+        }
+	}
+
+    YGB_add_mil = {
+
+		priority = -3
+
+		icon = ger_military_buildup
+
+		ai_will_do = {
+            base = 0
+            modifier = {
+                add = 10
+                num_of_military_factories < 1
+                has_political_power > 99
+            }
+            modifier = {
+                add = 10
+                has_political_power > 499
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+		visible = {
+		}
+
+        available = {
+            YGB_factory_funds_changed = yes
+        }
+
+		cost = 0
+
+        remove_effect = {
+            YGB_add_mil = yes
+            set_variable = { YGB.factories_assign_counter = 2 }
+        }
+	}
+
+    YGB_remove_mil = {
+
+		priority = -4
+
+		icon = ger_military_buildup
+
+		ai_will_do = {
+            modifier = {
+                add = 10
+                OR = {
+                    has_political_power < 0
+                    AND = {
+                        political_power_daily < 0.2
+                        has_political_power < 500
+                    }
+                }
+                YGB_can_remove_civ = no
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+		visible = {
+		}
+
+        available = {
+            YGB_factory_funds_changed = yes
+            YGB_can_remove_mil = yes
+        }
+
+		cost = 0
+        
+
+        remove_effect = {
+            YGB_remove_mil = yes
+            set_variable = { YGB.factories_assign_counter = 2 }
+        }
+	}
+}

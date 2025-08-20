@@ -1,0 +1,49 @@
+YGB_add_civ = {
+	custom_effect_tooltip = YGB_add_civ_tt
+	hidden_effect = {
+		add_to_variable = { YGB.factories_civs = 1 }
+		add_offsite_building = { type = industrial_complex level = 1 }
+		YGB_recalculate_factory_costs = yes
+	}
+}
+
+YGB_remove_civ = {
+	custom_effect_tooltip = YGB_remove_civ_tt
+	hidden_effect = {
+		add_to_variable = { YGB.factories_civs = -1 }
+		add_offsite_building = { type = industrial_complex level = -1 }
+		YGB_recalculate_factory_costs = yes
+	}
+}
+
+YGB_add_mil = {
+	custom_effect_tooltip = YGB_add_mil_tt
+	hidden_effect = {
+		add_to_variable = { YGB.factories_mils = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		YGB_recalculate_factory_costs = yes
+	}
+}
+
+YGB_remove_mil = {
+	custom_effect_tooltip = YGB_remove_mil_tt
+	hidden_effect = {
+		add_to_variable = { YGB.factories_mils = -1 }
+		add_offsite_building = { type = arms_factory level = -1 }
+		YGB_recalculate_factory_costs = yes
+	}
+}
+
+YGB_recalculate_factory_costs = {
+	hidden_effect = {
+		set_temp_variable = { x = YGB.factories_civs }
+		multiply_temp_variable = { x = YGB.factories_civ_cost }
+
+		set_temp_variable = { y = YGB.factories_mils }
+		multiply_temp_variable = { y = YGB.factories_mil_cost }
+
+		set_variable = { YGB.factories_pp = 0.05 }
+		subtract_from_variable = { YGB.factories_pp = x }
+		subtract_from_variable = { YGB.factories_pp = y }
+	}
+}

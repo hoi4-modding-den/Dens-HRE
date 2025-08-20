@@ -1,0 +1,35 @@
+YGB_currency_reserves = {
+    enable = { always = yes }
+
+    icon = GFX_idea_RAJ_issue_bonds_on_the_stock_market
+
+    custom_modifier_tooltip = YGB_currency_reserves_tt
+    stability_weekly = YGB.reserves_penalty
+    war_support_weekly = YGB.reserves_penalty
+    research_speed_factor = YGB.reserves_penalty_10
+}
+
+YGB_army = { 
+	enable = { always = yes }
+
+	icon = GFX_idea_SWE_varnplikt
+	
+	political_power_gain = YGB.army_pp
+    army_attack_factor = YGB.army_attack
+    army_defence_factor = YGB.army_defence
+    army_speed_factor = YGB.army_speed_factor
+    army_morale_factor = YGB.army_recovery_rate
+    max_dig_in = YGB.army_entrenchment
+    special_forces_min = YGB.army_special_forces_min
+    org_loss_at_low_org_factor = YGB.army_low_org_loss
+    weekly_manpower = YGB.army_weekly_manpower
+}
+
+YGB_factories = {
+    enable = { always = yes }
+
+    icon = GFX_idea_GER_wirtschaftswunder
+	
+	political_power_gain = YGB.factories_pp
+    custom_modifier_tooltip = YGB_factories_tt
+}
