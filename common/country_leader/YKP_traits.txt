@@ -28,4 +28,16 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
+	royalist_administrator = {
+		random = no
+		sprite = 13
+		stability_factor = 0.05
+		consumer_goods_factor = -0.03
+		neutrality_drift = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

@@ -294,4 +294,70 @@ characters = {
 			cost = 150
 		}
 	}
+
+	YKP_henrique_de_paiva_couceiro = {
+		name = "Henrique de Paiva Couceiro"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Henrique_de_Paiva_Couceiro.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Henrique_de_Paiva_Couceiro.dds"
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 5
+			legacy_id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YKP_henrique_de_paiva_couceiro_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				
+			}
+			traits = {
+				royalist_administrator
+			}
+			cost = 200
+		}
+	}
+
+	YKP_jose_norton_de_matos = {
+		name = "José Norton de Matos"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Jose_Norton_de_Matos.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Jose_Norton_de_Matos.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YKP_jose_norton_de_matos_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				has_government = democratic
+			}
+			traits = {
+				technocrat
+			}
+			cost = 150
+		}
+	}
 }
