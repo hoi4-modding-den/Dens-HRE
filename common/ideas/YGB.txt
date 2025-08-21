@@ -1,2 +1,44 @@
 ideas = {
+    country = {
+        YGB_national_park = {
+            picture = generic_train_tracks
+            modifier = {
+                consumer_goods_factor = 0.1
+                political_power_gain = 0.08
+                special_forces_training_time_factor = -0.08
+            }
+        }
+
+        YGB_tourism = {
+            picture = generic_train_tracks
+            modifier = {
+                consumer_goods_factor = 0.12
+                political_power_gain = 0.15
+                enemy_justify_war_goal_time = 0.25
+            }
+            cancel = {
+                has_war = yes
+            }
+        }
+
+        YGB_british = {
+            picture = stiff_upper_lip
+            modifier = {
+                political_power_gain = -0.4
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                weekly_manpower = 750
+            }
+        }
+
+        YGB_revolution = {
+            picture = AUS_austromarxism
+            modifier = {
+                communism_drift = 0.2
+                production_factory_efficiency_gain_factor = 0.1
+                war_support_factor = 0.12
+                conscription = 0.015
+            }
+        }
+    }
 }

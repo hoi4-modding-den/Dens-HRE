@@ -10,33 +10,12 @@ focus_tree = {
 
     reset_on_civilwar = no
 
-    focus = {
-		id = YGB_the_rock
-		available = {
-		}
-		icon = GFX_focus_generic_home_defense
-		x = 0
-		y = 0
-		cost = 5
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.03
-		}
-	}
-
 	focus = {
 		id = YGB_attract_foreign_investment
 		available = {
 		}
 		icon = GFX_focus_mex_privatisation
-		x = 5
+		x = 0
 		y = 0
 		cost = 5
 
@@ -50,6 +29,72 @@ focus_tree = {
 			unlock_decision_category_tooltip = YGB_foreign_investments_category
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_dynamic_modifier = { modifier = YGB_factories }
+		}
+	}
+
+	focus = {
+		id = YGB_issue_bonds
+		available = {
+		}
+		prerequisite = { focus = YGB_attract_foreign_investment }
+		relative_position_id = YGB_attract_foreign_investment
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			subtract_from_variable = { YGB.factories_civ_cost = 0.02 }
+			custom_effect_tooltip = YGB_issue_bonds_tt
+			YGB_recalculate_factory_costs = yes
+		}
+	}
+
+	focus = {
+		id = YGB_coastal_railway
+		available = {
+		}
+		prerequisite = { focus = YGB_issue_bonds }
+		relative_position_id = YGB_issue_bonds
+		icon = GFX_focus_generic_railroad
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			118 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			build_railway = {
+				level = 2
+				fallback = yes
+				path = { 4135 13509 13510 }
+				start_province = 4135
+				target_province = 13510
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 5
+				producer = ROOT
+			}
 		}
 	}
 
@@ -80,6 +125,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_stability = 0.015
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -97,11 +143,211 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YGB_airbases
+		available = {
+		}
+		prerequisite = { focus = YGB_roads }
+		relative_position_id = YGB_roads
+		icon = GFX_focus_NORDIC_mon_airforce
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		bypass = {
+			all_owned_state = {			
+				free_building_slots = {
+					building = air_base
+					size < 1
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 2
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_the_rock
+		available = {
+		}
+		icon = GFX_focus_generic_home_defense
+		x = 7
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = YGB_invest_national_parks
+		available = {
+		}
+		prerequisite = { focus = YGB_the_rock }
+		prerequisite = { focus = YGB_attract_foreign_investment }
+		relative_position_id = YGB_the_rock
+		icon = GFX_focus_CHL_expand_the_forestry
+		x = -3
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			controls_state = 118
+			num_of_civilian_factories > 2
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { YGB_national_park }
+		}
+	}
+
+	focus = {
+		id = YGB_tourism
+		available = {
+		}
+		prerequisite = { focus = YGB_invest_national_parks }
+		relative_position_id = YGB_invest_national_parks
+		icon = GFX_focus_PER_feat_of_engineering
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_stability > 0.69
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { YGB_tourism }
+		}
+	}
+
+	focus = {
+		id = YGB_british_intervention
+		available = {
+			democratic > 0.39
+		}
+		prerequisite = { focus = YGB_the_rock }
+		relative_position_id = YGB_the_rock
+		mutually_exclusive = { focus = YGB_support_manuel }
+		mutually_exclusive = { focus = YGB_southern_revolution }
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			hidden_effect = {
+				set_cosmetic_tag = YGB_ENG
+			}
+			add_ideas = { YGB_british }
+		}
+	}
+
+	focus = {
+		id = YGB_support_manuel
+		available = {
+			neutrality > 0.49
+		}
+		prerequisite = { focus = YGB_the_rock }
+		relative_position_id = YGB_the_rock
+		mutually_exclusive = { focus = YGB_british_intervention }
+		mutually_exclusive = { focus = YGB_southern_revolution }
+		icon = GFX_focus_por_the_kingdom_reunited
+		x = 5
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = YGB_southern_revolution
+		available = {
+			communism > 0.14
+		}
+		prerequisite = { focus = YGB_the_rock }
+		relative_position_id = YGB_the_rock
+		mutually_exclusive = { focus = YGB_british_intervention }
+		mutually_exclusive = { focus = YGB_support_manuel }
+		icon = GFX_focus_focus_fra_revolution_utmost
+		x = 9
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { YGB_revolution }
+		}
+	}
+
+	focus = {
 		id = YGB_army_investments
 		available = {
 		}
 		icon = GFX_focus_SWI_issue_war_bonds
-		x = 12
+		x = 18
 		y = 0
 		cost = 10
 
