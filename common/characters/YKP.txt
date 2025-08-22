@@ -360,4 +360,269 @@ characters = {
 			cost = 150
 		}
 	}
+
+	YKP_americo_tomas = {
+		name = "Américo Tomás"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Americo_Tomas.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Americo_Tomas.dds"
+			}
+		}
+		navy_leader={
+			traits={ bold spotter superior_tactician }
+			skill=3
+			attack_skill = 1
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = YKP_americo_tomas_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				navy_chief_decisive_battle_3
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_jose_mendes_cabecadas = {
+		name = "José Mendes Cabeçadas"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Jose_Mendes_Cabcadas.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Jose_Mendes_Cabcadas.dds"
+			}
+		}
+		navy_leader={
+			traits={ ironside }
+			skill=2
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = YKP_jose_mendes_cabecadas_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				navy_chief_commerce_raiding_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_augusto_de_castilho = {
+		name = "Augusto de Castilho"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Augusto_de_Castilho.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Augusto_de_Castilho.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_augusto_de_castilho_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				navy_capital_ship_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_jaime_afreixo = {
+		name = "Jaime Afreixo"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Jaime_Afreixo.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Jaime_Afreixo.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_jaime_afreixo_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				navy_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_eduardo_gomes_da_silva = {
+		name = "Eduardo Gomes da Silva"
+		portraits = {
+			army = {
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Eduardo_Gomes_da_Silva.dds"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = YKP_eduardo_gomes_da_silva_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_antonio_champlimaud = {
+		name = "António Champalimaud"
+		portraits = {
+			army = {
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Antonio_Champalimaud.dds"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = YKP_antonio_champlimaud_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				air_warfare_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_sarmento_de_beires = {
+		name = "Sarmento de Beires"
+		portraits = {
+			army = {
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Sarmento_de_Beires.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YKP_sarmento_de_beires_idea
+			allowed = {
+				original_tag = YKP
+			}
+			available = {
+				YPR = {
+					exists = no
+				}
+			}
+			traits = {
+				air_air_superiority_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_manuel_gouveia = {
+		name = "Manuel Gouveia"
+		portraits = {
+			army = {
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Manuel_Gouveia.dds"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = YKP_manuel_gouveia_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				air_chief_safety_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_teofilo_duarte = {
+		name = "Teófilo Duarte"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Teofilo_Duarte.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Teofilo_Duarte.dds"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = YKP_teofilo_duarte_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				superior_firepower_expert
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	YKP_augusto_neuparth = {
+		name = "Augusto Neuparth"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Augusto_Neuparth.dds"
+				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Augusto_Neuparth.dds"
+			}
+		}
+		navy_leader={
+			traits={ seawolf spotter }
+			skill=3
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 4
+			coordination_skill = 2
+		}
+		advisor = {
+			slot = theorist
+			idea_token = YKP_augusto_neuparth_idea
+			allowed = {
+				original_tag = YKP
+			}
+			traits = {
+				naval_theorist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
 }
