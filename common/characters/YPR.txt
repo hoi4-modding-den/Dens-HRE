@@ -227,4 +227,89 @@ characters = {
 			}
 		}
 	}
+	YPR_alfredo_dinis = {
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_alfredo_dinis_idea
+			allowed = {
+				original_tag = YPR
+			}
+			available = {
+				has_intelligence_agency = yes
+			}
+			traits = {
+				YPR_the_man_in_the_shadows
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+			cost = 200
+		}
+		name = "Alfredo Dinis"
+		portraits = {
+			civilian = {
+				small = gfx/leaders/YPR/Alfredo_Dinis_minister.png
+			}
+		}
+	}
+	YPR_deolinda_lopes_vieira = {
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_deolinda_lopes_vieira_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				YPR_feminist_advocate
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name = "Deolinda Lopes Vieira"
+		portraits = {
+			civilian = {
+				small = gfx/leaders/YPR/deolinda_lopes_vieira_minister.png
+			}
+		}
+	}
+	YPR_ruy_luis_gomes = {
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_ruy_luis_gomes_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				YPR_skilled_mathematician
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name = "Ruy Luís Gomes"
+		portraits = {
+			civilian = {
+				small = GFX_idea_generic_political_advisor_europe_3
+			}
+		}
+	}
+	YPR_alvaro_cunhal = {
+		advisor = {
+			slot = political_advisor
+			idea_token = YPR_alvaro_cunhal_idea
+			allowed = {
+				original_tag = YPR
+			}
+			traits = {
+				marxist_academic  
+			}
+		}
+		name = POR_alvaro_cunhal
+		portraits = {
+			army = {
+				small = "GFX_idea_POR_alvaro_cunhal"
+			}
+		}
+	}
 }
