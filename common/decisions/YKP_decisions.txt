@@ -1,0 +1,32 @@
+YKP_debug_decisions = {
+
+	YKP_debug_kill_manuel_ii = {
+
+		priority = -1
+
+		icon = GFX_decision_generic_decision
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            is_debug = yes
+            is_ai = no
+            
+            NOT = {
+                has_country_flag = YKP_king_manuel_ii_dead
+            }
+        }
+
+        available = {
+            
+        }
+
+		cost = 0
+        
+        complete_effect = {
+            country_event = YKP.1
+        }
+	}
+}

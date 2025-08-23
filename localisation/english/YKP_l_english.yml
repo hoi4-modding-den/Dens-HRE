@@ -18,6 +18,9 @@
  YKP_neutrality_party:0 "PLR"
  YKP_neutrality_party_long:0 "Partido Legitimista Português"
 
+ YKP_neutrality_catholicism_party:0 "PTC"
+ YKP_neutrality_catholicism_party_long:0 "Partido Tradicionalista Católico"
+
  YKP_democratic_party:0 "PRL"
  YKP_democratic_party_long:0 "Partido Republicano Liberal"
 
@@ -33,12 +36,48 @@
  YKP_king_manuel_ii_idea:0 "King Manuel II"
  YKP_royal_bankrupcy_idea:0 "Royal Bankrupcy"
 
+ ### EVENTS ###
+
+ YKP.1.t:0 "King Manuel II assassinated!"
+ YKP.1.desc:0 "PLACEHOLDER"
+ YKP.1.a:0 "..."
+
+ YKP.2.t:0 "Declaring a regent"
+ YKP.2.desc:0 "PLACEHOLDER"
+ YKP.2.a:0 "The Queen Mother will act as regent."
+ YKP.2.b:0 "The military council will stay in"
+
+ YKP.3.t:0 "The royal funeral"
+ YKP.3.desc:0 "PLACEHOLDER"
+ YKP.3.a:0 "..."
+
+ YKP.4.t:0 "The new monarch"
+ YKP.4.desc:0 "PLACEHOLDER"
+ YKP.4.a:0 "Duarte Nuno de Bragança"
+ YKP.4.b:0 "Maria Adelaide de Bragança"
+ YKP.4.c:0 "Alfonso de Orleans Bourbon"
+
+ YKP.5.t:0 "Queen Maria IV asks for our blessing"
+ YKP.5.desc:0 "PLACEHOLDER"
+ YKP.5.a:0 "Provide guns to support their efforts."
+ YKP.5.b:0 "We cannot spare anything."
+
+ YKP.6.t:0 "The Holy See support us"
+ YKP.6.desc:0 "PLACEHOLDER"
+ YKP.6.a:0 "..."
+
+ YKP.7.t:0 "The Holy See regrets they cannot support us"
+ YKP.7.desc:0 "PLACEHOLDER"
+ YKP.7.a:0 "..."
+
  ### MISC ###
 
  YKP_communist_rebels:0 "§RCommunist rebels!§!"
+ YKP_supports_our_efforts:0 "Supports our efforts"
 
  YKP_the_patriot:0 "o Patriota"
  YKP_the_unfortunate:0 "o Desaventurado"
+ YKP_the_queen_mother:0 "Queen Mother"
 
  aviation_pioneer:0 "Aviation Pioneer"
 
@@ -49,3 +88,9 @@
  YKP_exit_tooltip:0 "§YExit§!"
 
  royalist_administrator:0 "Royalist administrator"
+
+ ### DEBUG ###
+
+ YKP_debug_decisions:0 "Debug decisions"
+
+ YKP_debug_kill_manuel_ii:0 "Kill Manuel II"

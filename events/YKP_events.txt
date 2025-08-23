@@ -1,0 +1,255 @@
+add_namespace = YKP
+
+### COUNTRY EVENTS ###
+
+country_event = {
+    id = YKP.1
+    title = YKP.1.t
+    desc = YKP.1.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.1.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		custom_effect_tooltip = YKP_king_manuel_ii_dies
+
+		hidden_effect = {
+			YKP_king_manuel_ii = {
+				retire = yes
+			}
+
+			set_country_flag = YKP_king_manuel_ii_dead
+		}
+
+		add_stability = -0.1
+		
+		add_country_leader_role = {
+			character = YKP_oscar_carmona
+			promote_leader = yes
+			country_leader = {
+				ideology = despotism
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+		}
+
+		hidden_effect = {
+			country_event = { id = YKP.2 days = 14 }
+			country_event = { id = YKP.3 days = 7 }
+		}
+    }
+}
+
+country_event = {
+    id = YKP.2
+    title = YKP.2.t
+    desc = YKP.2.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.2.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_country_leader_role = {
+			character = YKP_queen_mother_amelie
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchist_oligarchism
+				expire = "1965.1.1.1"
+				traits = { YKP_the_queen_mother }
+			}
+		}
+
+		country_event = { id = YKP.4 days = 30 }
+	}
+
+	option = {
+        name = YKP.2.b
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_political_power = -100
+	}
+}
+
+country_event = {
+    id = YKP.3
+    title = YKP.3.t
+    desc = YKP.3.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.3.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_stability = 0.03
+	}
+}
+
+country_event = {
+    id = YKP.4
+    title = YKP.4.t
+    desc = YKP.4.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.4.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_country_leader_role = {
+			character = YKP_duarte_nuno
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchist_oligarchism
+				expire = "1965.1.1.1"
+				traits = {  }
+			}
+		}
+	}
+
+	option = {
+        name = YKP.4.b
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_country_leader_role = {
+			character = YKP_maria_adelaide_de_braganca
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchist_oligarchism
+				expire = "1965.1.1.1"
+				traits = {  }
+			}
+		}
+	}
+
+	option = {
+        name = YKP.4.c
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_country_leader_role = {
+			character = YKP_infante_alfonso
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchist_oligarchism
+				expire = "1965.1.1.1"
+				traits = {  }
+			}
+		}
+	}
+}
+
+country_event = {
+    id = YKP.5
+    title = YKP.5.t
+    desc = YKP.5.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.5.a
+		
+		ai_chance = {
+			base = 80
+		}
+
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 1000
+			target = YKP
+		}
+
+		YKP = {
+			country_event = YKP.6
+
+			add_opinion_modifier = {
+				target = XRO
+				modifier = YKP_supports_our_efforts
+			}
+		}
+	}
+
+	option = {
+        name = YKP.5.b
+		
+		ai_chance = {
+			base = 20
+		}
+
+		YKP = {
+			country_event = YKP.7
+		}
+	}
+}
+
+country_event = {
+    id = YKP.6
+    title = YKP.6.t
+    desc = YKP.6.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.6.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			add_stability = 0.01
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = XRO
+			}
+		}
+	}
+}
+
+country_event = {
+    id = YKP.7
+    title = YKP.7.t
+    desc = YKP.7.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.7.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			add_political_power = -10
+		}
+	}
+}
+
+### NEWS EVENTS ###

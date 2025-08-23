@@ -13,6 +13,42 @@ characters = {
 		}
 	}
 
+	YKP_queen_mother_amelie = {
+		name = "Marie Amélie"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Queen_Mother_Maria.dds"
+			}
+		}
+	}
+
+	YKP_maria_adelaide_de_braganca = {
+		name = "Maria IV"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Maria_Adelaide_de_Braganca.dds"
+			}
+		}
+	}
+
+	YKP_duarte_nuno = {
+		name = "Duarte II"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Duarte_Nuno.dds"
+			}
+		}
+	}
+
+	YKP_infante_alfonso = {
+		name = "Alfonso I"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/YKP/YKP_Leader_Infante_Alfonso.dds"
+			}
+		}
+	}
+
 	YKP_oscar_carmona = {
 		name = "Óscar Carmona"
 		portraits = {
@@ -540,7 +576,7 @@ characters = {
 			traits = {
 				air_air_superiority_3
 			}
-			cost = 100
+			cost = 150
 			ai_will_do = {
 				factor = 1.000
 			}

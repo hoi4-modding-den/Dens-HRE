@@ -1,0 +1,70 @@
+focus_tree = {
+	id = YKP_focus
+
+	country = {
+		factor = 0
+		modifier = { add = 10 tag = YKP }
+	}
+
+	continuous_focus_position = { x = 100 y = 1000 }
+
+    reset_on_civilwar = no
+
+
+	### POLITICAL TREE ###
+
+	focus = {
+		id = YKP_look_to_god
+		icon = GFX_focus_generic_catholic_dominion
+		x = 0
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		available = {
+			has_country_leader = {
+				character = YKP_maria_adelaide_de_braganca
+				ruling_only = yes
+			}
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+
+			set_party_name = {
+				ideology = neutrality
+				long_name = YKP_neutrality_catholicism_party_long
+				name = YKP_neutrality_catholicism_party
+			}
+
+			XRO = {
+				country_event = { id = YKP.4 days = 15 }
+			}
+		}
+	}
+
+	### ECONOMIC TREE ###
+
+
+
+	### ARMY TREE ###
+
+
+
+	### NAVY TREE ###
+
+
+
+	### AIR TREE ###
+}
