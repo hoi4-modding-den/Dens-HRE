@@ -1,5 +1,16 @@
 ideas = {
     country = {
+        YGB_army_dummy = {
+	        picture = GFX_idea_SWE_varnplikt
+            name = YGB_army
+        }
+        YGB_army_dummy_enctrenchment = {
+	        picture = GFX_idea_SWE_varnplikt
+            name = YGB_army
+            modifier = {
+                max_dig_in = 6
+            }
+        }
         YGB_national_park = {
             picture = generic_train_tracks
             modifier = {
@@ -28,6 +39,19 @@ ideas = {
                 stability_factor = 0.05
                 war_support_factor = 0.05
                 weekly_manpower = 750
+            }
+        }
+
+        YGB_british_2 = {
+            name = YGB_british
+            picture = stiff_upper_lip
+            modifier = {
+                political_power_gain = -0.55
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                weekly_manpower = 1100
+                army_core_attack_factor = 0.2
+                army_core_defence_factor = 0.2
             }
         }
 

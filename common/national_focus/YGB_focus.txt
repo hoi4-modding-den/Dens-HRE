@@ -26,9 +26,9 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			unlock_decision_category_tooltip = YGB_foreign_investments_category
-			custom_effect_tooltip = generic_skip_one_line_tt
 			add_dynamic_modifier = { modifier = YGB_factories }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_category_tooltip = YGB_foreign_investments_category
 		}
 	}
 
@@ -190,36 +190,15 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = YGB_the_rock
-		available = {
-		}
-		icon = GFX_focus_generic_home_defense
-		x = 7
-		y = 0
-		cost = 5
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.03
-		}
-	}
-
-	focus = {
+		focus = {
 		id = YGB_invest_national_parks
 		available = {
 		}
 		prerequisite = { focus = YGB_the_rock }
 		prerequisite = { focus = YGB_attract_foreign_investment }
-		relative_position_id = YGB_the_rock
+		relative_position_id = YGB_attract_foreign_investment
 		icon = GFX_focus_CHL_expand_the_forestry
-		x = -3
+		x = 4
 		y = 1
 		cost = 10
 
@@ -266,6 +245,27 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YGB_the_rock
+		available = {
+		}
+		icon = GFX_focus_generic_home_defense
+		x = 15
+		y = 0
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
 		id = YGB_british_intervention
 		available = {
 			democratic > 0.39
@@ -275,7 +275,7 @@ focus_tree = {
 		mutually_exclusive = { focus = YGB_support_manuel }
 		mutually_exclusive = { focus = YGB_southern_revolution }
 		icon = GFX_focus_eng_the_sun_never_sets
-		x = 1
+		x = -5
 		y = 1
 		cost = 10
 
@@ -294,6 +294,318 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YGB_british_garrison
+		available = {
+		}
+		prerequisite = { focus = YGB_british_intervention }
+		relative_position_id = YGB_british_intervention
+		icon = GFX_focus_BEL_legacy_of_the_soldier_king
+		x = -1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			division_template = {
+				name = "Gibraltar Garrison"
+                division_names_group = ENG_INF_01
+                priority = 1
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 2 y = 0 }
+                    infantry = { x = 2 y = 1 }
+                }
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+            }
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Gibraltar Garrison\" division_template = \"Gibraltar Garrison\" start_experience_factor = 0.1 start_equipment_factor = 0.9"
+						owner = ROOT
+						count = 1
+					}
+				}
+				custom_effect_tooltip = YGB_british_garrison_tt
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_royal_navy
+		available = {
+		}
+		prerequisite = { focus = YGB_british_garrison }
+		relative_position_id = YGB_british_garrison
+		icon = GFX_goal_generic_navy_carrier
+		x = -2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				has_tech = early_ship_hull_light
+				has_tech = early_ship_hull_cruiser
+				has_tech = early_ship_hull_submarine
+			}
+			else = {
+				has_tech = early_destroyer
+				has_tech = early_light_cruiser
+				has_tech = early_heavy_cruiser
+				has_tech = early_submarine
+			}
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			load_oob = YGB_naval_eng
+			random_owned_controlled_state = {
+				prioritize = { 118 1096 }
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_raf_gibraltar
+		available = {
+		}
+		prerequisite = { focus = YGB_royal_navy }
+		relative_position_id = YGB_royal_navy
+		icon = GFX_focus_PER_raf_planes
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_tech = iw_small_airframe
+			has_tech = iw_medium_airframe
+			has_tech = engines_1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			hidden_effect = {
+				load_oob = YGB_air_ENG
+			}
+			custom_effect_tooltip = YGB_raf_gibraltar_tt
+		}
+	}
+
+	focus = {
+		id = YGB_defensive_focus
+		available = {
+		}
+		prerequisite = { focus = YGB_british_garrison }
+		relative_position_id = YGB_british_garrison
+		icon = GFX_focus_SWE_hedgehog_defense
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = YGB_army_dummy
+					add_idea = YGB_army_dummy_enctrenchment
+				}
+			}
+			add_to_variable = { army_entrenchment = 6 }
+			118 = {
+				if = {
+					limit = {
+						is_owned_by = ROOT
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						instant_build = yes
+						province = {
+							id = 4135
+						}
+					}
+				}
+			}
+			1096 = {
+				if = {
+					limit = {
+						is_owned_by = ROOT
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						instant_build = yes
+						province = {
+							id = 13510
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_imperial_trade_routes
+		available = {
+		}
+		prerequisite = { focus = YGB_defensive_focus }
+		prerequisite = { focus = YGB_raf_gibraltar }
+		relative_position_id = YGB_defensive_focus
+		icon = GFX_focus_generic_british_trade
+		x = 0
+		y = 2
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			threat > 0.19
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				add_idea = YGB_british_2
+				remove_idea = YGB_british
+			}
+
+			division_template = {
+				name = "Gibraltar Garrison"
+                division_names_group = ENG_INF_01
+                priority = 1
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                    infantry = { x = 2 y = 0 }
+                    infantry = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 2 }
+                }
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					anti_air = { x = 0 y = 2 }
+				}
+            }
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				hidden_effect = {
+					create_unit = {
+						division = "name = \"Gibraltar Garrison\" division_template = \"Gibraltar Garrison\" start_experience_factor = 0.2 start_equipment_factor = 0.9"
+						owner = ROOT
+						count = 1
+					}
+				}
+				custom_effect_tooltip = YGB_imperial_trade_routes_tt
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_british_settlers
+		available = {
+		}
+		prerequisite = { focus = YGB_british_intervention }
+		relative_position_id = YGB_british_intervention
+		icon = GFX_focus_BRA_deal_with_the_cangaco
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			118 = {
+				add_manpower = 4108
+			}
+			1096 = {
+				add_manpower = 2320
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_investment_from_london
+		available = {
+		}
+		prerequisite = { focus = YGB_british_settlers }
+		relative_position_id = YGB_british_settlers
+		icon = GFX_focus_GER_customs_union
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 125
+			custom_effect_tooltip = YGB_investment_from_london_tt
+			subtract_from_variable = { factories_civ_cost = 0.01 }
+			subtract_from_variable = { factories_mil_cost = 0.02 }
+		}
+	}
+
+	focus = {
 		id = YGB_support_manuel
 		available = {
 			neutrality > 0.49
@@ -303,7 +615,7 @@ focus_tree = {
 		mutually_exclusive = { focus = YGB_british_intervention }
 		mutually_exclusive = { focus = YGB_southern_revolution }
 		icon = GFX_focus_por_the_kingdom_reunited
-		x = 5
+		x = 0
 		y = 1
 		cost = 10
 
@@ -327,7 +639,7 @@ focus_tree = {
 		mutually_exclusive = { focus = YGB_british_intervention }
 		mutually_exclusive = { focus = YGB_support_manuel }
 		icon = GFX_focus_focus_fra_revolution_utmost
-		x = 9
+		x = 5
 		y = 1
 		cost = 10
 
@@ -347,7 +659,7 @@ focus_tree = {
 		available = {
 		}
 		icon = GFX_focus_SWI_issue_war_bonds
-		x = 18
+		x = 24
 		y = 0
 		cost = 10
 

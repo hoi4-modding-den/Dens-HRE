@@ -1,0 +1,34 @@
+units = {
+    fleet = {
+        name = "Royal Navy Gibraltar"
+        naval_base = 4135
+        task_force = {
+            name = "Main Fleet"
+            location = 4135
+            ship = { name = "HMS Devonshire" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YGB version_name = "County Class" } } }
+			ship = { name = "HMS Shropshire" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YGB version_name = "County Class" } } }
+            ship = { name = "HMS Colombo" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YGB version_name = "C-Class" } } }
+			ship = { name = "HMS Capetown" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YGB version_name = "C-Class" } } }
+            ship = { name = "HMS Wryneck" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }	
+			ship = { name = "HMS Keppel" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Vidette" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Vortigern" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Velox" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Watchman" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Douglas" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Active" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "A/B/C/D Class" } } }	
+			ship = { name = "HMS Wishart" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+			ship = { name = "HMS Wrestler" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = YGB version_name = "V/W Class"} } }
+        }
+        task_force = {
+            name = "Submarine Flotilla"
+            location = 4135
+            ship = { name = "HMS Sealion" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YGB version_name = "S Class" } } }		
+			ship = { name = "HMS Shark" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YGB version_name = "S Class" } } }		
+			ship = { name = "HMS Snapper" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YGB version_name = "S Class" } } }	
+			ship = { name = "HMS Salmon" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YGB version_name = "S Class" } } }		
+			ship = { name = "HMS Porpoise" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = YGB version_name = "S Class" } } }		
+        }
+    }
+
+}
