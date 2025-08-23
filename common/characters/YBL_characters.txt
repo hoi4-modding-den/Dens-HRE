@@ -1,0 +1,17 @@
+characters={
+	YBL_juan_march_ordinas = { 
+		name = YBL_juan_march_ordinas
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YBL/YBL_juan_march_ordinas.png"
+			}
+		}
+		country_leader = {
+			ideology = hyper_capitalism
+			desc = YBL_juan_march_ordinas_desc
+			expire = "1960.1.1.1"
+			traits = { financier_of_the_mediterranean foreign_riches }
+			id = -1
+		}
+	}
+}
