@@ -5,9 +5,14 @@ set_stability = 0.75
 set_war_support = 0.1
 
 add_ideas = {
-
+	YUS_economy
+	YUS_politics
 }
 
+set_variable = {
+    var = yus_economy
+    value = -12
+}
 recruit_character = YUS_council
 
 set_technology = {
