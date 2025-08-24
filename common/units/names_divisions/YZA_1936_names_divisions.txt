@@ -1,0 +1,18 @@
+YZA_DIV_0_0 = {
+	name = "Milicia Sindicalista"
+	for_countries = { YZA }
+	can_use = { always = yes }
+	division_types = { 
+		"irregular_infantry" 
+	}
+	fallback_name = "%d. Milicia Sindicalista"
+}
+YZA_DIV_1_0 = {
+	name = "División de Guardabosques"
+	for_countries = { YZA }
+	can_use = { always = yes }
+	division_types = { 
+		"mountaineers" 
+	}
+	fallback_name = "%d. División de Guardabosques"
+}

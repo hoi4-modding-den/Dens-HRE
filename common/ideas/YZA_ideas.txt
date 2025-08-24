@@ -1,0 +1,148 @@
+ideas = {
+	country = {
+
+		YZA_revolutionary_fervour_slowing = {
+			picture = YZA_revolutionary_fervour_slowing
+			ledger = army
+			modifier = {
+				stability_factor = 0.1
+
+				war_support_factor = 0.1
+
+				communism_drift = 0.05
+
+
+			}
+		}
+
+		YZA_lack_of_industry = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.4
+
+				production_speed_buildings_factor = -0.4 
+
+				production_factory_efficiency_gain_factor = -0.4
+
+				production_factory_max_efficiency_factor = -0.2
+
+				industrial_capacity_factory = -0.2
+
+				industrial_capacity_dockyard = -0.2
+
+
+			}
+		}
+
+		YZA_political_deadlock = {
+			picture = YZA_political_deadlock
+			modifier = {
+				
+
+			political_power_cost = 1.0
+
+
+			}
+		}
+		YZA_hatred_of_authoritarianism = {
+			picture = YZA_political_deadlock
+			modifier = {
+
+			fascism_acceptance = -100
+
+			neutrality_acceptance = -100
+
+			communism_acceptance = -10
+
+			democratic_acceptance = 50
+
+			war_support_factor = 0.1
+
+			surrender_limit = 0.1
+
+
+			}
+		}
+		YZA_centralising_trade_unions = {
+			picture = YZA_political_deadlock
+			modifier = {
+				
+
+			political_power_gain = 0.1
+
+			stability_factor = -0.05
+
+			factory_output = 0.1
+
+			
+
+
+			}
+		}
+		YZA_new_culture = {
+			picture = YZA_political_deadlock
+			modifier = {
+				
+
+			political_power_gain = 0.15
+
+			stability_factor = 0.15
+
+			war_support_factor = 0.1
+
+			weekly_manpower = 1000
+
+			monthly_population = -0.1
+
+			
+
+
+			}
+		}
+
+	}
+	mobilization_laws = {
+	}
+	economy = {
+	}
+	industrial_concern = {
+		YZA_idea_miners_union_of_zaragoza = {
+			allowed = {
+				tag = YZA
+			}
+			traits = { industrial_concern }
+			modifier = {
+
+				production_lack_of_resource_penalty_factor = -0.1
+
+				state_resources_factor = 0.1
+	
+				temporary_state_resource_steel = 10
+
+
+			}
+		}
+		YZA_idea_zaragozan_electronics_research_station = {
+			allowed = {
+				tag = YZA
+			}
+			traits = { electronics_concern }
+			modifier = {
+
+				research_speed_factor = 0.05
+
+
+			}
+		}
+	}
+	tank_manufacturer = {
+	}
+	naval_manufacturer = {
+	}
+	aircraft_manufacturer = {
+	}
+	materiel_manufacturer = {
+	}
+
+
+}

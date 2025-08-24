@@ -1,0 +1,99 @@
+capital = 166
+# Recruit Characters
+recruit_character = yza_characters_tuc
+recruit_character = yza_characters_eric_arthur_blair
+recruit_character = yza_characters_emma_goldman
+recruit_character = yza_characters_boris_souvarine
+recruit_character = yza_characters_joaquinmaurin
+recruit_character = yza_characters_angelpestana
+recruit_character = yza_characters_pierre_besnard
+recruit_character = yza_characters_james_p_cannon
+recruit_character = yza_characters_buenaventura_durruti
+recruit_character = yza_characters_juan_de_la_cierva
+recruit_character = yza_characters_andreu_nin
+recruit_character = yza_characters_augustin_souchy
+recruit_character = yza_characters_marinaginesta
+
+
+
+oob = "YZA_1936"
+starting_train_buffer = 3
+set_research_slots = 2
+set_stability = 0.6
+set_war_support = 0.4
+add_command_power = 0
+set_convoys = 0
+
+# Research
+set_technology = {
+	### Infantry ###
+	tech_mountaineers = 1
+	infantry_weapons = 1
+	basic_train = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	gw_artillery = 1
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_technology = {
+			aa_lmg = 1
+			early_bombs = 1
+			engines_1 = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			air_torpedoe_1 = 1
+		}
+	else = {
+		
+		set_technology = {
+			early_fighter = 1
+			naval_bomber1 = 1
+			early_bomber = 1
+		}
+	}
+}
+
+
+
+
+# Politics for 1936.1.1
+set_politics = {
+	ruling_party = communism
+	last_election = "1935.06.14"
+	election_frequency = 36
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 27
+	fascism = 4
+	communism = 67
+	neutrality = 2
+}
+# Government/National Spirits
+add_ideas = {
+	scraping_the_barrel
+	all_adults_serve
+	extensive_conscription
+	limited_conscription
+	volunteer_only
+	civilian_economy
+	YZA_lack_of_industry
+	YZA_political_deadlock
+}
+add_timed_idea = { 
+	idea = YZA_revolutionary_fervour_slowing
+	days = 180
+}
+
+clr_country_flag = filler_nation
+set_country_flag = YZA_tuc_available
+set_variable = { YZA_marxist_support = 56 }
+set_variable = { YZA_syndicalist_support = 44 }
+set_variable = { YZA_anarchist_support = 38 }
+set_variable = { YZA_marxist_popularity = 28 }
+set_variable = { YZA_syndicalist_popularity = 36 }
+set_variable = { YZA_anarchist_popularity = 36 }

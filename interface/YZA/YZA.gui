@@ -1,0 +1,138 @@
+guiTypes = {
+	
+
+	containerWindowType = {
+		name = "trade_union_decisions_YZA"
+		size = { width = 0 height = 465 }
+		position = { x = 0 y = 0 }
+
+			iconType = {
+				name = "COM"   #Congreso Obrero Marxista
+				spriteType = "GFX_YZA_GUI_com"
+				position = { x = 40 y = 75 }
+				scale = 1.00
+				Orientation = "LEFT"
+			}
+
+			iconType = {
+				name = "FST"   #Federación Sindicalista de Trabajadores
+				spriteType = "GFX_YZA_GUI_fst"
+				position = { x = 205 y = 75 }
+				scale = 1.00
+				Orientation = "LEFT"
+			}
+
+			iconType = {
+				name = "CTA"   #Consejo de Trabajadores Anarquistas
+				spriteType = "GFX_YZA_GUI_cta"
+				position = { x = 380 y = 75 }
+				scale = 1.00
+				Orientation = "LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "marxist_support"
+				position = { x = 25 y = 200 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = left
+				font = "hoi_16mbs"
+				text = YZA_marxist_support_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "marxist_popularity"
+				position = { x = 25 y = 232 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = left
+				font = "hoi_16mbs"
+				text = YZA_marxist_popularity_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "marxist_description"
+				position = { x = 25 y = 260 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = left
+				font = "hoi_16mbs"
+				text = YZA_marxist_description_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "syndicalist_support"
+				position = { x = 50 y = 200 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = center
+				font = "hoi_16mbs"
+				text = YZA_syndicalist_support_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "syndicalist_popularity"
+				position = { x = 50 y = 232 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = center
+				font = "hoi_16mbs"
+				text = YZA_syndicalist_popularity_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "syndicalist_description"
+				position = { x = 25 y = 315 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = left
+				font = "hoi_16mbs"
+				text = YZA_syndicalist_description_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "anarchist_support"
+				position = { x = 75 y = 200 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = right
+				font = "hoi_16mbs"
+				text = YZA_anarchist_support_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "anarchist_popularity"
+				position = { x = 75 y = 232 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = right
+				font = "hoi_16mbs"
+				text = YZA_anarchist_popularity_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "anarchist_description"
+				position = { x = 25 y = 385 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = left
+				font = "hoi_16mbs"
+				text = YZA_anarchist_description_loc
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "tuc"
+				position = { x = 90 y = 10 }
+				maxWidth = 374
+				maxHeight = 2000
+				format = left
+				font = "hoi_36header"
+				text = YZA_trade_union_congress_loc
+				alwaystransparent = yes
+			}
+
+
+		
+		
+	}
+}

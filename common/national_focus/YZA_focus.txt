@@ -1,0 +1,589 @@
+focus_tree = {
+	id = YZA_focus
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = YZA
+		}
+	}
+	#Congress of 1936
+	focus = {
+		id = YZA_congress_of_1936
+		icon = GFX_YZA_congress_of_1936
+		x = 15
+		y = 1
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = {
+			    id = yza_events.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			add_political_power = 25
+			
+			
+			
+		}
+	}
+
+	#Marxist Supremacy
+	focus = {
+		id = YZA_marxist_supremacy
+		icon = GFX_YZA_marxist_supremacy
+		x = 10
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_congress_of_1936  }
+		mutually_exclusive = { focus = YZA_anarchist_victory  } mutually_exclusive = { focus = YZA_syndicalist_majority  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+		set_cosmetic_tag = YZA_marx
+		set_party_name = { 
+    		ideology = communism
+    		long_name = YZA_marx_communism_party_long 
+    		name = YZA_marx_communism_party
+		}
+		add_political_power = 75
+		}
+		
+	}
+
+	#Anarchist Victory
+	focus = {
+		id = YZA_anarchist_victory
+		icon = GFX_YZA_anarchist_victory
+		x = 20
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_congress_of_1936  }
+		mutually_exclusive = { focus = YZA_marxist_supremacy  } mutually_exclusive = { focus = YZA_syndicalist_majority  }
+		ai_will_do = { factor = 1 }
+	}
+
+	#Syndicalist Majority
+	focus = {
+		id = YZA_syndicalist_majority
+		icon = GFX_YZA_syndicalist_majority
+		x = 15
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_congress_of_1936  }
+		mutually_exclusive = { focus = YZA_marxist_supremacy  } mutually_exclusive = { focus = YZA_anarchist_victory  }
+		ai_will_do = { factor = 1 }
+	}
+	#Guard against Authoritarianism
+	focus = {
+		id = YZA_guard_against_authoritarianism
+		icon = GFX_YZA_guard_against_authoritarianism
+		x = 9
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_marxist_supremacy  }
+		mutually_exclusive = { focus = YZA_trotskyist_bloc  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+			  promote_character = {
+			      character = yza_characters_eric_arthur_blair
+			      Ideology = democratic_socialism_com
+			  }
+			
+			
+		}
+	}
+
+	#Trotskyist Bloc
+	focus = {
+		id = YZA_trotskyist_bloc
+		icon = GFX_YZA_trotskyist_bloc
+		x = 11
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_marxist_supremacy  }
+		mutually_exclusive = { focus = YZA_guard_against_authoritarianism  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+			  promote_character = {
+			      character = yza_characters_boris_souvarine
+			      Ideology = trotskyism
+			  }
+			
+			
+		}
+	}
+
+	#Prevent 1984
+	focus = {
+		id = YZA_prevent_1984
+		icon = GFX_YZA_no_unique
+		x = 8
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_guard_against_authoritarianism  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = YZA_hatred_of_authoritarianism
+			
+			
+			
+			
+		}
+	}
+
+	#Invite Exiled Bolsheviks
+	focus = {
+		id = YZA_invite_exiled_bolsheviks
+		icon = GFX_YZA_no_unique
+		x = 12
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_trotskyist_bloc  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = yza_exiled_bolsheviks_return
+			
+			
+		}
+	}
+
+	#Centralise the Trade Unions
+	focus = {
+		id = YZA_centralise_the_trade_unions
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_guard_against_authoritarianism  focus = YZA_trotskyist_bloc  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_timed_idea = {
+			    idea = YZA_centralising_trade_unions
+			    days = 365
+			}
+			
+			
+			
+		}
+	}
+
+	#New Marxist Culture
+	focus = {
+		id = YZA_new_marxist_culture
+		icon = GFX_YZA_no_unique
+		x = 9
+		y = 5
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_centralise_the_trade_unions  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = YZA_new_culture
+			
+			add_political_power = 50
+			
+			country_event = {
+			    id = new_marxist_culture_flavour.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			
+			
+		}
+	}
+
+	#Minor Purges
+	focus = {
+		id = YZA_minor_purges
+		icon = GFX_YZA_no_unique
+		x = 11
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_centralise_the_trade_unions  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = {
+			    id = minor_purges_flavour.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			add_political_power = -25
+			add_popularity = {
+			    ideology = fascism
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.1
+			}
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = -0.1
+			}
+			
+			
+			
+		}
+	}
+
+	#Target the Basque
+	focus = {
+		id = YZA_target_the_basque
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = YZA_new_marxist_culture  } prerequisite = { focus = YZA_minor_purges  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			create_wargoal = {
+			    type = annex_wargoal_focus
+			    target = YBS
+			}
+			
+			
+			
+			add_state_claim = 172
+			
+			add_state_claim = 792
+			
+			
+		}
+	}
+
+	#Put Down Resistance
+	focus = {
+		id = YZA_put_down_resistance
+		icon = GFX_YZA_no_unique
+		x = 8
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_target_the_basque  }
+		ai_will_do = { factor = 1 }
+		available = {
+			owns_state = 172
+			owns_state = 792
+			
+			
+		}
+		completion_reward = {
+			country_event = {
+			    id = resistance_autonomy_or_violence.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			
+			
+		}
+	}
+
+	#Integrate The Basque into our Federation
+	focus = {
+		id = YZA_integrate_the_basque_into_our_federation
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 7
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_target_the_basque  }
+		ai_will_do = { factor = 1 }
+		available = {
+			owns_state = 172
+			owns_state = 792
+		}
+		completion_reward = {
+			add_state_core = 172
+			add_state_core = 792
+			
+			
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.05
+			}
+			
+			
+			add_popularity = {
+			    ideology = democratic
+			    popularity = 0.05
+			}
+			
+			
+			
+		}
+	}
+
+	#Nationalise Basque Industry
+	focus = {
+		id = YZA_nationalise_basque_industry
+		icon = GFX_YZA_no_unique
+		x = 12
+		y = 7
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_target_the_basque  }
+		ai_will_do = { factor = 1 }
+		available = {
+			owns_state = 172
+			owns_state = 792
+		}
+		completion_reward = {
+			
+			
+			172 = {
+			limit = {
+			free_building_slots = {
+			building = industrial_complex
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+			}
+			
+			}
+			
+			792 = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			}
+			
+			
+		}
+	}
+
+	#A New Internationale
+	focus = {
+		id = YZA_a_new_internationale
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_put_down_resistance  } prerequisite = { focus = YZA_integrate_the_basque_into_our_federation  } prerequisite = { focus = YZA_nationalise_basque_industry  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = {
+			    id = socialist_international_flavour.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			create_faction = YZA_socialist_internationale
+			
+			add_war_support = 0.1
+			
+			add_political_power = 100
+			
+			
+		}
+	}
+
+	#Hunt Down the French
+	focus = {
+		id = YZA_hunt_down_the_french
+		icon = GFX_YZA_no_unique
+		x = 8
+		y = 9
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = YZA_a_new_internationale  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			create_wargoal = {
+			    type = annex_wargoal_focus
+			    target = YFR
+			}
+			
+			
+			country_event = {
+			    id = what_is_the_legion_flavour.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			
+			
+			add_state_core = 793
+			
+			
+		}
+	}
+
+	#Another Maybe Depending on Jam Contestants Maybe Nobody
+	focus = {
+		id = YZA_another_maybe_depending_on_jam_contestants_maybe_nobody
+		icon = GFX_YZA_no_unique
+		x = 12
+		y = 9
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = YZA_a_new_internationale  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			create_wargoal = {
+			    type = annex_wargoal_focus
+			    target = IDK
+			}
+			
+			
+			
+		}
+	}
+
+	#The Catalan Problem
+	focus = {
+		id = YZA_the_catalan_problem
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 10
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = YZA_hunt_down_the_french  } prerequisite = { focus = YZA_another_maybe_depending_on_jam_contestants_maybe_nobody  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+			
+			country_event = {
+			    id = catalan_alliance_or_war.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			
+			
+		}
+	}
+
+	#Become a Real Contender
+	focus = {
+		id = YZA_become_a_real_contender
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_the_catalan_problem  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+
+			country_event = {
+			    id = contender_flavour.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			set_cosmetic_tag = YZA_marx_contender
+			
+			
+			add_state_core = 165
+			
+			
+			add_state_core = 167
+			
+			
+			add_state_core = 794
+			
+			
+		set_party_name = { 
+    		ideology = communism
+    		long_name = YZA_marx_contender_communism_party_long 
+    		name = YZA_marx_contender_communism_party
+		}
+		set_party_name = { 
+    		ideology = democratic
+    		long_name = YZA_marx_contender_democratic_party_long 
+    		name = YZA_marx_contender_democratic_party
+		}
+		set_party_name = { 
+    		ideology = neutrality
+    		long_name = YZA_marx_contender_neutrality_party_long 
+    		name = YZA_marx_contender_neutrality_party
+		}
+		set_party_name = { 
+    		ideology = fascism
+    		long_name = YZA_marx_contender_fascism_party_long 
+    		name = YZA_marx_contender_fascism_party
+		}
+		}
+	}
+
+}

@@ -1,0 +1,74 @@
+add_namespace = yza_events
+
+#The 1936 Congress Begins...
+country_event = {
+	id = yza_events.1
+	title = yza_events.1.t
+	desc = yza_events.1.d
+
+	picture = the_1936_congress_begins-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.1.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+    id = yza_events.2
+    days = 1
+    random = 1
+    random_days = 1
+}
+		}
+	}
+}
+
+#Autonomy of Workers
+country_event = {
+	id = yza_events.2
+	title = yza_events.2.t
+	desc = yza_events.2.d
+
+	picture = autonomy_of_workers-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.2.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = yza_events.2.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = yza_events.2.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}

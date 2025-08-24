@@ -1,0 +1,100 @@
+spriteTypes = { 
+	######## IDEAS ############
+	SpriteType = { 
+		name = "GFX_idea_YZA_revolutionary_fervour_slowing"
+		texturefile = "gfx/interface/ideas/YZA/YZA_revolutionary_fervour_slowing.dds"
+	}
+
+	##Icon For: Lack of Industry
+	SpriteType = { 
+		name = "GFX_idea_YZA_lack_of_industry"
+		texturefile = "gfx/interface/ideas/YZA/YZA_lack_of_industry.dds"
+	}
+
+	##Icon For: Political Deadlock
+	SpriteType = { 
+		name = "GFX_idea_YZA_political_deadlock"
+		texturefile = "gfx/interface/ideas/YZA/YZA_political_deadlock.dds"
+	}
+	##Icon For: Miners Union of Zaragoza
+	spriteType = { 
+		name = "GFX_idea_YZA_idea_miners_union_of_zaragoza"
+		texturefile = "gfx/interface/ideas/YZA/YZA_com.dds"
+	}
+	####### TRADE UNION CONGRESS ########
+	##Icon For: COM
+	spriteType = { 
+		name = "GFX_YZA_GUI_com"
+		texturefile = "gfx/interface/ideas/YZA/YZA_com.dds"
+	}
+	##Icon For: FST
+	spriteType = { 
+		name = "GFX_YZA_GUI_fst"
+		texturefile = "gfx/interface/ideas/YZA/YZA_fst.dds"
+	}
+	##Icon For: CTA
+	spriteType = { 
+		name = "GFX_YZA_GUI_cta"
+		texturefile = "gfx/interface/ideas/YZA/YZA_cta.dds"
+	}
+	######## FOCUS ICONS ############
+	SpriteType = { 
+		name = "GFX_YZA_congress_of_1936"
+		texturefile = "gfx/interface/goals/YZA/YZA_congress_of_1936.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_congress_of_1936_shine"
+		texturefile = "gfx/interface/goals/YZA/YZA_congress_of_1936.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YZA/YZA_congress_of_1936.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YZA/YZA_congress_of_1936.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = { 
+		name = "GFX_YZA_marxist_supremacy"
+		texturefile = "gfx/interface/goals/YZA/YZA_marxist_supremacy.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_anarchist_victory"
+		texturefile = "gfx/interface/goals/YZA/YZA_anarchist_victory.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_syndicalist_majority"
+		texturefile = "gfx/interface/goals/YZA/YZA_syndicalist_majority.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_guard_against_authoritarianism"
+		texturefile = "gfx/interface/goals/YZA/YZA_guard_against_authoritarianism.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_trotskyist_bloc"
+		texturefile = "gfx/interface/goals/YZA/YZA_trotskyist_bloc.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_no_unique"
+		texturefile = "gfx/interface/goals/YZA/YZA_no_unique.png"
+	}
+ 
+ }

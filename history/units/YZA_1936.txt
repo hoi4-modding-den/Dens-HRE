@@ -1,0 +1,68 @@
+#Create units
+division_template = {
+	name = "Milicia Sindicalista"
+	division_names_group = "YZA_DIV_0_0"
+	regiments = {
+		irregular_infantry = { x = 0 y = 0}
+		irregular_infantry = { x = 0 y = 1}
+		irregular_infantry = { x = 1 y = 0}
+		irregular_infantry = { x = 1 y = 1}
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+	}
+
+}
+division_template = {
+	name = "División de Guardabosques"
+	division_names_group = "YZA_DIV_1_0"
+	regiments = {
+		mountaineers = { x = 0 y = 0}
+		mountaineers = { x = 0 y = 1}
+		mountaineers = { x = 0 y = 2}
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+		recon = { x = 0 y = 1}
+	}
+
+}
+
+#Spawn units
+units = {
+	division= {
+		name = "1st Milicia Sindicalista"
+		location = 3816
+		division_template = "Milicia Sindicalista"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "2nd Milicia Sindicalista"
+		location = 3816
+		division_template = "Milicia Sindicalista"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "3rd Milicia Sindicalista"
+		location = 7213
+		division_template = "Milicia Sindicalista"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "4th Milicia Sindicalista"
+		location = 9840
+		division_template = "Milicia Sindicalista"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "5th División de Guardabosques"
+		location = 6878
+		division_template = "División de Guardabosques"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.8
+	}
+}

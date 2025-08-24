@@ -1,0 +1,13 @@
+
+YZA_trade_unions_category = {
+	scripted_gui = YZA_trade_union_gui
+
+	allowed = {
+		original_tag = YZA
+	}
+	visible = {
+		has_country_flag = YZA_tuc_available
+		
+	}
+	visible_when_empty = yes
+}

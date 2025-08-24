@@ -1,0 +1,302 @@
+characters = {
+	#Eric Arthur Blair
+	yza_characters_eric_arthur_blair = {
+		name = yza_characters_eric_arthur_blair
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_eric_arthur.dds
+				small = gfx/leaders/yza_characters/yza_eric_arthur_advisor.dds
+				
+			}
+			army = {
+				large = gfx/leaders/yza_characters/yza_eric_arthur.dds
+				small = gfx/leaders/yza_characters/yza_eric_arthur_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = democratic_socialism_com
+			traits = { socialist_novelist }
+			expire = "1950.03.21"
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = yza_characters_eric_arthur_blair
+			cost = 150
+			traits = { army_chief_defensive_2 }
+		}
+		field_marshal = {
+			traits = { 
+			politically_connected 
+			media_personality 
+			trait_cautious 
+			infantry_officer 
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	#Andreu Nin
+	yza_characters_andreu_nin = {
+		name = yza_characters_andreu_nin
+		portraits = {
+			civilian = {
+				small = gfx/leaders/yza_characters/yza_andreu_nin_advisor.dds
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_andreu_nin
+			cost = 150
+			traits = { chair_of_the_unions }
+		}
+	}
+	#Buenaventura Durruti
+	yza_characters_buenaventura_durruti = {
+		name = yza_characters_buenaventura_durruti
+		portraits = {
+			civilian = {
+				small = gfx/leaders/yza_characters/yza_durruti_advisor.dds
+			}
+			army = {
+				large = gfx/leaders/yza_characters/yza_durruti.dds
+				small = gfx/leaders/yza_characters/yza_durruti_advisor.dds
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = yza_characters_buenaventura_durruti
+			cost = 100
+			traits = { military_theorist }
+		}
+		corps_commander = {
+			traits = { 
+			politically_connected
+			infantry_officer  
+			brilliant_strategist 
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	#Juan de la Cierva
+	yza_characters_juan_de_la_cierva = {
+		name = yza_characters_juan_de_la_cierva
+		portraits = {
+			civilian = {
+				small = gfx/leaders/yza_characters/yza_cierva_advisor.dds
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = yza_characters_juan_de_la_cierva
+			cost = 150
+			traits = { air_chief_all_weather_2 }
+		}
+	}
+	#Marina Ginestà
+	yza_characters_marinaginesta = {
+		name = yza_characters_marinaginesta
+		portraits = {
+			civilian = {
+				small = gfx/leaders/yza_characters/yza_marina_advisor.dds
+			}
+			army = {
+				large = gfx/leaders/yza_characters/yza_marina.dds
+				small = gfx/leaders/yza_characters/yza_marina_advisor.dds
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_marinaginesta
+			cost = 150
+			traits = { militant_socialist }
+		}
+		corps_commander = {
+			traits = { 
+			desert_fox 
+			trait_reckless 
+			armor_officer 
+			}
+			skill = 2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	#Ángel Pestaña
+	yza_characters_angelpestana = {
+		name = yza_characters_angelpestana
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_angel.dds
+				small = gfx/leaders/yza_characters/yza_angel_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = syndicalism
+			traits = { peoples_commissar_of_finance }
+			expire = "1969.02.26"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_angelpestana
+			cost = 150
+			traits = { financial_expert peoples_commissar_of_finance }
+
+		}
+	}
+	#Emma Goldman
+	yza_characters_emma_goldman = {
+		name = yza_characters_emma_goldman
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_goldman.dds
+				small = gfx/leaders/yza_characters/yza_goldman_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = anarchist_communism
+			traits = { queen_of_the_people }
+			expire = "1943.11.13"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_emma_goldman
+			cost = 150
+			traits = { education_reformer }
+		}
+	}
+
+#Trade Union Congress
+	yza_characters_tuc = {
+		name = yza_characters_tuc
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_tuc.dds
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = {  }
+			expire = "1984.11.13"
+		}
+	}
+	#Augustin Souchy
+	yza_characters_augustin_souchy = {
+		name = yza_characters_augustin_souchy
+		portraits = {
+			civilian = {
+				small = gfx/leaders/yza_characters/yza_souchy_advisor.dds
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_augustin_souchy
+			cost = 150
+			traits = { anti_bolshevik_leftist }
+		}
+	}
+	#Pierre Besnard
+	yza_characters_pierre_besnard = {
+		name = yza_characters_pierre_besnard
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_besnard.dds
+				small = gfx/leaders/yza_characters/yza_besnard_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = anarchist_syndicalism_com
+			traits = { union_man }
+			expire = "1972.09.25"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_pierre_besnard
+			cost = 150
+			traits = { union_man }
+		}
+	}
+	#Boris Souvarine
+	yza_characters_boris_souvarine = {
+		name = yza_characters_boris_souvarine
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_souvarine.dds
+				small = gfx/leaders/yza_characters/yza_souvarine_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = trotskyism
+			traits = { stalin_servant_of_lenin }
+			expire = "1984.07.21"
+		}
+		advisor = {
+			slot = high_command
+			idea_token = yza_characters_boris_souvarine
+			cost = 150
+			traits = { infantry_expert }
+		}
+	}
+	#James P. Cannon
+	yza_characters_james_p_cannon = {
+		name = yza_characters_james_p_cannon
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_cannon.dds
+				small = gfx/leaders/yza_characters/yza_cannon_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = trotskyism
+			traits = { devoted_trotskyist }
+			expire = "1977.10.11"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_james_p_cannon
+			cost = 150
+			traits = { devoted_trotskyist }
+		}
+	}
+	#Joaquín Maurín
+	yza_characters_joaquinmaurin = {
+		name = yza_characters_joaquinmaurin
+		portraits = {
+			civilian = {
+				large = gfx/leaders/yza_characters/yza_maurin.dds
+				small = gfx/leaders/yza_characters/yza_maurin_advisor.dds
+			}
+			army = {
+				large = gfx/leaders/yza_characters/yza_maurin.dds
+				small = gfx/leaders/yza_characters/yza_maurin_advisor.dds
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { militant_socialist }
+			expire = "1954.03.12"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = yza_characters_joaquinmaurin
+			cost = 150
+			traits = { war_industrialist }
+		}
+		corps_commander = {
+			traits = { trait_mountaineer }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+}
