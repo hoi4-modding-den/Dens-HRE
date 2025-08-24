@@ -13,4 +13,19 @@ characters = {
 		    desc = YRF_KING_JUAN_I_DESC
 		}
 	}
+
+	YRF_pedro_rico = {
+		name = "Pedro Rico"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/YRF/YRF_pedro_rico.png"
+			}
+		}
+		country_leader = {
+			expire = "2004.1.1"
+			ideology = anti_revisionism
+			traits = {  }
+		    desc = YRF_PEDRO_RICO_DESC
+		}
+	}
 }
