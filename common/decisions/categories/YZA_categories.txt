@@ -9,5 +9,12 @@ YZA_trade_unions_category = {
 		has_country_flag = YZA_tuc_available
 		
 	}
+	priority = {
+		base = 1
+			modifier = {
+			add = 15
+			tag = YZA
+	}
+	}
 	visible_when_empty = yes
 }

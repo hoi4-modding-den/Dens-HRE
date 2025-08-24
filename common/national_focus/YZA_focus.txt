@@ -46,6 +46,10 @@ focus_tree = {
 		prerequisite = { focus = YZA_congress_of_1936  }
 		mutually_exclusive = { focus = YZA_anarchist_victory  } mutually_exclusive = { focus = YZA_syndicalist_majority  }
 		ai_will_do = { factor = 1 }
+		available = {
+			always = no
+				
+		}
 		completion_reward = {
 		set_cosmetic_tag = YZA_marx
 		set_party_name = { 
@@ -54,6 +58,7 @@ focus_tree = {
     		name = YZA_marx_communism_party
 		}
 		add_political_power = 75
+		activate_mission = YZA_marx_decrease
 		}
 		
 	}
@@ -71,6 +76,13 @@ focus_tree = {
 		prerequisite = { focus = YZA_congress_of_1936  }
 		mutually_exclusive = { focus = YZA_marxist_supremacy  } mutually_exclusive = { focus = YZA_syndicalist_majority  }
 		ai_will_do = { factor = 1 }
+		available = {
+			always = no
+				
+		}
+		completion_reward = {
+		activate_mission = YZA_anarchist_decrease
+		}
 	}
 
 	#Syndicalist Majority
@@ -86,6 +98,13 @@ focus_tree = {
 		prerequisite = { focus = YZA_congress_of_1936  }
 		mutually_exclusive = { focus = YZA_marxist_supremacy  } mutually_exclusive = { focus = YZA_anarchist_victory  }
 		ai_will_do = { factor = 1 }
+		available = {
+			always = no
+				
+		}
+		completion_reward = {
+		activate_mission = YZA_syndicalist_decrease
+		}
 	}
 	#Guard against Authoritarianism
 	focus = {
@@ -100,6 +119,10 @@ focus_tree = {
 		prerequisite = { focus = YZA_marxist_supremacy  }
 		mutually_exclusive = { focus = YZA_trotskyist_bloc  }
 		ai_will_do = { factor = 1 }
+		available = {
+			check_variable = { YZA_marxist_support > 75 }
+				
+		}
 		completion_reward = {
 			
 			  promote_character = {
@@ -124,6 +147,10 @@ focus_tree = {
 		prerequisite = { focus = YZA_marxist_supremacy  }
 		mutually_exclusive = { focus = YZA_guard_against_authoritarianism  }
 		ai_will_do = { factor = 1 }
+		available = {
+			check_variable = { YZA_marxist_support > 75 }
+				
+		}
 		completion_reward = {
 			
 			  promote_character = {
@@ -138,7 +165,7 @@ focus_tree = {
 	#Prevent 1984
 	focus = {
 		id = YZA_prevent_1984
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_prevent_1984
 		x = 8
 		y = 4
 		cost = 5
@@ -159,7 +186,7 @@ focus_tree = {
 	#Invite Exiled Bolsheviks
 	focus = {
 		id = YZA_invite_exiled_bolsheviks
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_invite_bolsheviks
 		x = 12
 		y = 4
 		cost = 5
@@ -178,7 +205,7 @@ focus_tree = {
 	#Centralise the Trade Unions
 	focus = {
 		id = YZA_centralise_the_trade_unions
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_centralise_the_trade_unions
 		x = 10
 		y = 4
 		cost = 5
@@ -201,7 +228,7 @@ focus_tree = {
 	#New Marxist Culture
 	focus = {
 		id = YZA_new_marxist_culture
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_marxist_culture
 		x = 9
 		y = 5
 		cost = 10
@@ -216,7 +243,7 @@ focus_tree = {
 			add_political_power = 50
 			
 			country_event = {
-			    id = new_marxist_culture_flavour.1
+			    id = yza_events.8
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -230,7 +257,7 @@ focus_tree = {
 	#Minor Purges
 	focus = {
 		id = YZA_minor_purges
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_minor_purges
 		x = 11
 		y = 5
 		cost = 5
@@ -241,7 +268,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			country_event = {
-			    id = minor_purges_flavour.1
+			    id = yza_events.7
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -269,7 +296,7 @@ focus_tree = {
 	#Target the Basque
 	focus = {
 		id = YZA_target_the_basque
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_target_the_basque
 		x = 10
 		y = 6
 		cost = 10
@@ -280,7 +307,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			create_wargoal = {
-			    type = annex_wargoal_focus
+			    type = annex_everything
 			    target = YBS
 			}
 			
@@ -314,7 +341,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = {
-			    id = resistance_autonomy_or_violence.1
+			    id = yza_events.9
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -328,7 +355,7 @@ focus_tree = {
 	#Integrate The Basque into our Federation
 	focus = {
 		id = YZA_integrate_the_basque_into_our_federation
-		icon = GFX_YZA_no_unique
+		icon = GFX_YZA_intergrate_the_basque_federation
 		x = 10
 		y = 7
 		cost = 10
@@ -432,7 +459,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			country_event = {
-			    id = socialist_international_flavour.1
+			    id = yza_events.10
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -461,13 +488,13 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			create_wargoal = {
-			    type = annex_wargoal_focus
+			    type = annex_everything
 			    target = YFR
 			}
 			
 			
 			country_event = {
-			    id = what_is_the_legion_flavour.1
+			    id = yza_events.11
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -495,7 +522,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			create_wargoal = {
-			    type = annex_wargoal_focus
+			    type = annex_everything
 			    target = IDK
 			}
 			
@@ -520,7 +547,7 @@ focus_tree = {
 			
 			
 			country_event = {
-			    id = catalan_alliance_or_war.1
+			    id = yza_events.12
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -546,7 +573,7 @@ focus_tree = {
 		completion_reward = {
 
 			country_event = {
-			    id = contender_flavour.1
+			    id = yza_events.14
 			    days = 1
 			    random = 1
 			    random_days = 1
@@ -561,6 +588,10 @@ focus_tree = {
 			
 			
 			add_state_core = 794
+
+			add_state_core = 1095
+
+			add_state_core = 1094
 			
 			
 		set_party_name = { 
@@ -583,6 +614,628 @@ focus_tree = {
     		long_name = YZA_marx_contender_fascism_party_long 
     		name = YZA_marx_contender_fascism_party
 		}
+		}
+	}
+	#A 2nd Term
+	focus = {
+		id = YZA_a_2nd_term
+		icon = GFX_YZA_congress_of_1936
+		x = 10
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			date > 1938.06.15
+			has_completed_focus = YZA_become_a_real_contender
+			
+			
+		}
+		completion_reward = {
+			add_political_power = 50
+			
+			add_stability = 0.05
+			
+			
+		}
+	}
+
+	#The Very Thing You Swore to Destroy
+	focus = {
+		id = YZA_the_very_thing_you_swore_to_destroy
+		icon = GFX_YZA_no_unique
+		x = 8
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_a_2nd_term  }
+		mutually_exclusive = { focus = YZA_continue_the_path_of_democracy  }
+		ai_will_do = { factor = 1 }
+		available = {
+			has_country_flag = YZA_stalin
+		}
+		completion_reward = {
+			add_ideas = my_idea
+			
+			
+			
+			
+			add_stability = -0.2
+			
+			
+		}
+	}
+
+	#Continue the Path of Democracy
+	focus = {
+		id = YZA_continue_the_path_of_democracy
+		icon = GFX_YZA_no_unique
+		x = 12
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_a_2nd_term  }
+		mutually_exclusive = { focus = YZA_the_very_thing_you_swore_to_destroy  }
+		ai_will_do = { factor = 1 }
+		available = {
+			has_country_flag = YZA_not_stalin
+		}
+		completion_reward = {
+			add_stability = 0.1
+
+			add_idea = my_idea
+			
+			
+			
+		}
+	}
+
+	#Major Purges
+	focus = {
+		id = YZA_major_purges
+		icon = GFX_YZA_no_unique
+		x = 7
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_the_very_thing_you_swore_to_destroy  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = my_idea
+			
+			
+			add_popularity = {
+			    ideology = communism
+			    popularity = 0.1
+			}
+			
+			
+			set_country_leader_ideology = stalinism
+			
+			
+		}
+	}
+
+	#The New Soviet Family
+	focus = {
+		id = YZA_the_new_soviet_family
+		icon = GFX_YZA_no_unique
+		x = 9
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_the_very_thing_you_swore_to_destroy  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			swap_ideas = {
+			    remove_idea = YZA_new_culture
+			    add_idea = YZA_soviet_family
+			}
+			
+			
+			
+		}
+	}
+
+	#Cement our Reforms
+	focus = {
+		id = YZA_cement_our_reforms
+		icon = GFX_YZA_no_unique
+		x = 8
+		y = 15
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_major_purges  } prerequisite = { focus = YZA_the_new_soviet_family  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			country_event = {
+			    id = yza_sovietunion.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			
+			
+			
+			set_cosmetic_tag = YZA_ussr
+			
+			set_politics = {
+				ruling_party = communism
+			        elections_allowed = no
+			        last_election = 0001.01.01
+			}
+			
+		}
+	}
+
+	#Democracy in the Workplace
+	focus = {
+		id = YZA_democracy_in_the_workplace
+		icon = GFX_YZA_no_unique
+		x = 11
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_continue_the_path_of_democracy  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = my_idea
+			
+			
+			
+			
+		}
+	}
+
+	#Start to Change Democracy
+	focus = {
+		id = YZA_start_to_change_democracy
+		icon = GFX_YZA_no_unique
+		x = 13
+		y = 14
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_continue_the_path_of_democracy  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_timed_idea = {
+			    idea = my_idea
+			    days = 180
+			}
+			
+			
+			
+		}
+	}
+
+	#Democracy, Democracy Everywhere
+	focus = {
+		id = YZA_democracydemocracyeverywhere
+		icon = GFX_YZA_no_unique
+		x = 12
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_democracy_in_the_workplace  } prerequisite = { focus = YZA_start_to_change_democracy  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			set_cosmetic_tag = YZA_marx_federation
+			
+			country_event = {
+			    id = yza_marx_dem_flavour.1
+			    days = 1
+			    random = 1
+			    random_days = 1
+			}
+			
+			
+			
+		}
+	}
+
+	#War Focuses
+	focus = {
+		id = YZA_war_focuses
+		icon = GFX_YZA_no_unique
+		x = 10
+		y = 16
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = YZA_democracydemocracyeverywhere  focus = YZA_cement_our_reforms  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_state_core = 168
+			add_state_core = 118
+			add_state_core = 173
+			add_state_core = 1096
+			add_state_core = 169
+			add_state_core = 789
+			add_state_core = 170
+			add_state_core = 175
+			add_state_core = 41
+			add_state_core = 788
+			add_state_core = 174
+			add_state_core = 791
+			add_state_core = 176
+			add_state_core = 790
+			add_state_core = 171
+			add_state_core = 177
+			
+			
+		}
+	}
+
+	#Electrification Programme
+	focus = {
+		id = YZA_electrification_programme
+		icon = GFX_YZA_congress_of_1936
+		x = 4
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = YZA_unlock_industrialisation_decisions
+			
+			
+		}
+	}
+
+	#Build Up Huesca
+	focus = {
+		id = YZA_build_up_huesca
+		icon = GFX_YZA_no_unique
+		x = 5
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_electrification_programme  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			166 = {
+			limit = {
+			free_building_slots = {
+			building = industrial_complex
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+			}
+			
+			
+		}
+	}
+
+	#Expand Rural Infrastructure
+	focus = {
+		id = YZA_expand_rural_infrastructure
+		icon = GFX_YZA_no_unique
+		x = 5
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_build_up_huesca  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_manpower = 10000
+			
+			
+		}
+	}
+
+	#Zaragozan Arms Factory
+	focus = {
+		id = YZA_zaragozan_arms_factory
+		icon = GFX_YZA_no_unique
+		x = 7
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_electrification_programme  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = yza_unlock_weapons_mio
+			
+			
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			}
+			
+			
+		}
+	}
+
+	#Artillery Factories
+	focus = {
+		id = YZA_artillery_factories
+		icon = GFX_YZA_no_unique
+		x = 7
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_zaragozan_arms_factory  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = yza_unlock_artilley_mio
+			
+			
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			}
+			
+			
+		}
+	}
+
+	#Establish a Currency
+	focus = {
+		id = YZA_establish_a_currency
+		icon = GFX_YZA_no_unique
+		x = 3
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_electrification_programme  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_timed_idea = {
+			    idea = my_idea
+			    days = 180
+			}
+			
+			
+			
+		}
+	}
+
+	#Expand Industry From Bilbao
+	focus = {
+		id = YZA_expand_industry_from_bilbao
+		icon = GFX_YZA_no_unique
+		x = 5
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_artillery_factories  focus = YZA_expand_rural_infrastructure  }
+		ai_will_do = { factor = 1 }
+		available = {
+			owns_state = 792
+			
+			
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = industrial_complex
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+			}
+			
+			}
+			
+			random_owned_controlled_state = {
+			limit = {
+			free_building_slots = {
+			building = arms_factory
+			size > 0
+			include_locked = yes
+			}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			
+			}
+			
+			
+		}
+	}
+
+	#Fishing Infrastructure
+	focus = {
+		id = YZA_fishing_infrastructure
+		icon = GFX_YZA_no_unique
+		x = 4
+		y = 5
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_expand_industry_from_bilbao  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = my_idea
+			
+			
+			
+			
+		}
+	}
+
+	#Economic Stability
+	focus = {
+		id = YZA_economic_stability
+		icon = GFX_YZA_no_unique
+		x = 5
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_worker_coops  focus = YZA_fishing_infrastructure  }
+		ai_will_do = { factor = 1 }
+		available = {
+			owns_state = 41
+			
+			
+		}
+		completion_reward = {
+			add_ideas = my_idea
+			
+			
+			
+			custom_effect_tooltip = yza_industry_gone
+			
+			
+		}
+	}
+
+	#Worker Co-ops
+	focus = {
+		id = YZA_worker_coops
+		icon = GFX_YZA_no_unique
+		x = 6
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_expand_industry_from_bilbao  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_ideas = my_idea
+			
+			
+			
+			
+		}
+	}
+
+	#Aluminium Mining
+	focus = {
+		id = YZA_aluminium_mining
+		icon = GFX_YZA_no_unique
+		x = 1
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = YZA_electrification_programme  }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			random_owned_state = {
+			add_resource = {
+			    type = aluminium
+			    amount = 12
+			}
+			
+			
+			
+			}
+			
+		}
+	}
+
+	#Drill for Oil
+	focus = {
+		id = YZA_drill_for_oil
+		icon = GFX_YZA_no_unique
+		x = 1
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = YZA_aluminium_mining  }
+		ai_will_do = { factor = 1 }
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			
+			
+			}
+			
+			
+		}
+		completion_reward = {
+			random_owned_state = {
+			
+			
+			add_resource = {
+			    type = oil
+			    amount = 10
+			}
+			
+			
+			
+			}
+			
 		}
 	}
 

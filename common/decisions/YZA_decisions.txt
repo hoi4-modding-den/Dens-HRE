@@ -1,4 +1,197 @@
 YZA_trade_unions_category = {
+	YZA_marxist_increase = {
+
+		icon = GFX_decision_generic_voting
+
+
+		visible = {
+			has_country_flag = YZA_is_marxist
+		}
+
+		days_remove = 14
+
+		days_re_enable = 10
+
+		cost = 15
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			YZA_increase_marxist = yes
+		}
+	}
+	YZA_syndicalist_increase = {
+
+		icon = GFX_decision_generic_voting
+
+
+		visible = {
+			has_country_flag = YZA_is_syndicalist
+		}
+
+		days_remove = 14
+
+		days_re_enable = 10
+
+		cost = 15
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			YZA_increase_syndicalist = yes
+		}
+	}
+	YZA_anarchist_increase = {
+
+		icon = GFX_decision_generic_voting
+
+
+		visible = {
+			has_country_flag = YZA_is_anarchist
+		}
+
+		days_remove = 14
+
+		days_re_enable = 10
+
+		cost = 15
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			YZA_increase_anarchist = yes
+		}
+	}
+	YZA_marx_decrease = {
+
+		icon = GFX_decision_generic_use_force
+
+			allowed = {
+			tag = YZA
+		}
+
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		days_mission_timeout = 140
+
+		timeout_effect = {
+			custom_effect_tooltip = YZA_the_marxists_will_be_less_powerful
+		
+			hidden_effect = {
+			YZA_decrease_marxist_big
+		
+			activate_mission = YZA_marx_decrease
+			}
+			
+		}
+
+	}
+	YZA_syndicalist_decrease = {
+
+		icon = GFX_decision_generic_use_force
+
+			allowed = {
+			tag = YZA
+		}
+
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		days_mission_timeout = 140
+
+		timeout_effect = {
+			custom_effect_tooltip = YZA_the_syndicalists_will_be_less_powerful
+		
+			hidden_effect = {
+			YZA_decrease_syndicalist_big
+		
+			activate_mission = YZA_syndicalist_decrease
+			}
+			
+		}
+
+	}
+	YZA_anarchist_decrease = {
+
+		icon = GFX_decision_generic_use_force
+
+			allowed = {
+			tag = YZA
+		}
+
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		days_mission_timeout = 140
+
+		timeout_effect = {
+			custom_effect_tooltip = YZA_the_anarchists_will_be_less_powerful
+		
+			hidden_effect = {
+			YZA_decrease_anarchist_big
+		
+			activate_mission = YZA_anarchist_decrease
+			}
+			
+		}
+
+	}
+
 
 
 }

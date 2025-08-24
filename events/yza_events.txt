@@ -19,11 +19,11 @@ country_event = {
 		
 		hidden_effect = {
 			country_event = {
-    id = yza_events.2
-    days = 1
-    random = 1
-    random_days = 1
-}
+    			id = yza_events.2
+    				days = 1
+    				random = 1
+    				random_days = 1
+			}
 		}
 	}
 }
@@ -46,7 +46,16 @@ country_event = {
 		ai_chance = { factor = 1 }
 		
 		hidden_effect = {
-			
+			country_event = {
+   			 id = yza_events.3
+   			 days = 1
+   			 random = 1
+   			 random_days = 1
+			}
+		YZA_congress_marx = yes
+
+
+
 		}
 	}
 	option = {
@@ -57,11 +66,462 @@ country_event = {
 		ai_chance = { factor = 1 }
 		
 		hidden_effect = {
-			
+			country_event = {
+   			 id = yza_events.3
+   			 days = 1
+   			 random = 1
+   			 random_days = 1
+			}
+		YZA_congress_syndicalist = yes
+
 		}
 	}
 	option = {
 		name = yza_events.2.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+   			 id = yza_events.3
+    			days = 1
+    			random = 1
+    			random_days = 1
+			}
+		YZA_congress_anarchist = yes
+		}
+	}
+}
+
+#Security Policy
+country_event = {
+	id = yza_events.3
+	title = yza_events.3.t
+	desc = yza_events.3.d
+
+	picture = security_policy-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 12
+	option = {
+		name = yza_events.3.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+    id = yza_events.4
+    days = 1
+    random = 1
+    random_days = 1
+}
+YZA_congress_marx = yes
+		}
+	}
+	option = {
+		name = yza_events.3.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+    id = yza_events.4
+    days = 1
+    random = 1
+    random_days = 1
+}
+YZA_congress_anarchist = yes
+YZA_congress_syndicalist = yes
+		}
+	}
+}
+
+#Foreign Policy
+country_event = {
+	id = yza_events.4
+	title = yza_events.4.t
+	desc = yza_events.4.d
+
+	picture = foreign_policy-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.4.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+    id = yza_events.5
+    days = 1
+    random = 1
+    random_days = 1
+}
+YZA_congress_marx = yes
+
+		}
+	}
+	option = {
+		name = yza_events.4.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+    id = yza_events.5
+    days = 1
+    random = 1
+    random_days = 1
+}
+YZA_congress_syndicalist = yes
+		}
+	}
+	option = {
+		name = yza_events.4.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			country_event = {
+  			 id = yza_events.5
+ 			 days = 1
+   			 random = 1
+    			 random_days = 1
+			}
+			YZA_congress_anarchist = yes
+		}
+	}
+}
+
+#The Congress Draws to a Close...
+country_event = {
+	id = yza_events.5
+	title = yza_events.5.t
+	desc = yza_events.5.d
+
+	picture = the_congress_draws_to_a_close-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.5.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			YZA_congress_marx = yes
+			country_event = {
+  			 id = yza_events.6
+ 			 days = 1
+   			 random = 1
+    			 random_days = 1
+			}
+		}
+	}
+	option = {
+		name = yza_events.5.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			YZA_congress_syndicalist = yes
+			country_event = {
+  			 id = yza_events.6
+ 			 days = 1
+   			 random = 1
+    			 random_days = 1
+			}
+		}
+	}
+	option = {
+		name = yza_events.5.c
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			YZA_congress_anarchist = yes
+			country_event = {
+  			 id = yza_events.6
+ 			 days = 1
+   			 random = 1
+    			 random_days = 1
+			}
+		}
+	}
+}
+
+#Who's In Charge?
+country_event = {
+	id = yza_events.6
+	title = yza_events.6.t
+	desc = yza_events.6.d
+
+	picture = whos_in_charge-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 13
+	option = {
+		name = yza_events.6.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			YZA_leader = yes
+		}
+	}
+}
+
+#Purges...
+country_event = {
+	id = yza_events.7
+	title = yza_events.7.t
+	desc = yza_events.7.d
+
+	picture = purges-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.7.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#A New Culture
+country_event = {
+	id = yza_events.8
+	title = yza_events.8.t
+	desc = yza_events.8.d
+
+	picture = a_new_culture-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.8.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#What to do?
+country_event = {
+	id = yza_events.9
+	title = yza_events.9.t
+	desc = yza_events.9.d
+
+	picture = what_to_do-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.9.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			set_country_flag = YZA_not_stalin
+		}
+	}
+	option = {
+		name = yza_events.9.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			set_country_flag = YZA_stalin
+		}
+	}
+}
+
+#The Socialist Internationale
+country_event = {
+	id = yza_events.10
+	title = yza_events.10.t
+	desc = yza_events.10.d
+
+	picture = the_socialist_internationale-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+}
+
+#The Lost Regiment
+country_event = {
+	id = yza_events.11
+	title = yza_events.11.t
+	desc = yza_events.11.d
+
+	picture = the_lost_regiment-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 12
+}
+
+#Alliance, Or War?
+country_event = {
+	id = yza_events.12
+	title = yza_events.12.t
+	desc = yza_events.12.d
+
+	picture = alliance_or_war-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 14
+	option = {
+		name = yza_events.12.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			YCA = {country_event = {
+    id = yza_events.13
+    days = 1
+    random = 1
+    random_days = 11
+}}
+
+
+
+		}
+	}
+	option = {
+		name = yza_events.12.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			create_wargoal = {
+    type = annex_everything
+    target = YCA
+}
+
+create_wargoal = {
+    type = annex_everything
+    target = YC1
+}
+create_wargoal = {
+    type = annex_everything
+    target = YC2
+}create_wargoal = {
+    type = annex_everything
+    target = YC3
+}
+
+
+
+		}
+	}
+}
+
+#An Offer
+country_event = {
+	id = yza_events.13
+	title = yza_events.13.t
+	desc = yza_events.13.d
+
+	picture = an_offer-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 12
+	option = {
+		name = yza_events.13.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		YZA = {add_to_faction = YCAadd_to_faction = YC1add_to_faction = YC2add_to_faction = YC3}
+
+
+		hidden_effect = {
+			
+		}
+	}
+	option = {
+		name = yza_events.13.b
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		YZA = {
+create_wargoal = {
+    type = annex_everything
+    target = YCA
+}
+
+create_wargoal = {
+    type = annex_everything
+    target = YC1
+}
+create_wargoal = {
+    type = annex_everything
+    target = YC2
+}
+create_wargoal = {
+    type = annex_everything
+    target = YC3
+}
+}
+		hidden_effect = {
+			
+		}
+	}
+}
+
+#Spain
+country_event = {
+	id = yza_events.14
+	title = yza_events.14.t
+	desc = yza_events.14.d
+
+	picture = spain-1
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	timeout_days = 11
+	option = {
+		name = yza_events.14.a
 		trigger = {
 			
 		}

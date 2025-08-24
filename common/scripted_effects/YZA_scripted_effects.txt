@@ -1,0 +1,110 @@
+YZA_congress_marx = {
+	add_to_variable = { congress_marx_power = 1 }
+	add_to_variable = { congress_syndicalist_power = -1 }
+	add_to_variable = { congress_anarchist_power = -1 }
+}
+YZA_congress_syndicalist = {
+	add_to_variable = { congress_marx_power = -1 }
+	add_to_variable = { congress_syndicalist_power = 1 }
+	add_to_variable = { congress_anarchist_power = -1 }
+}
+YZA_congress_anarchist = {
+	add_to_variable = { congress_marx_power = -1 }
+	add_to_variable = { congress_syndicalist_power = -1 }
+	add_to_variable = { congress_anarchist_power = 1 }
+}
+
+YZA_leader = {
+	if = {
+		limit = {
+		check_variable = { congress_marx_power > congress_syndicalist_power }
+		check_variable = { congress_marx_power > congress_anarchist_power }
+		}
+	set_variable = { YZA_marxist_support = 78 }
+	set_variable = { YZA_syndicalist_support = 42 }
+	set_variable = { YZA_anarchist_support = 21 }
+	set_variable = { YZA_marxist_popularity = 73 }
+	set_variable = { YZA_syndicalist_popularity = 47 }
+	set_variable = { YZA_anarchist_popularity = 23 }
+	set_country_flag = YZA_is_marxist
+	complete_national_focus = YZA_marxist_supremacy
+	}
+	else_if = {
+		limit = {
+		check_variable = { congress_marx_power < congress_syndicalist_power }
+		check_variable = { congress_anarchist_power < congress_syndicalist_power }
+		}
+	set_variable = { YZA_marxist_support = 43 }
+	set_variable = { YZA_syndicalist_support = 75 }
+	set_variable = { YZA_anarchist_support = 48 }
+	set_variable = { YZA_marxist_popularity = 34 }
+	set_variable = { YZA_syndicalist_popularity = 78 }
+	set_variable = { YZA_anarchist_popularity = 45 }
+	set_country_flag = YZA_is_syndicalist
+	complete_national_focus = YZA_syndicalist_majority
+	}
+	else_if = {
+		limit = {
+		check_variable = { congress_marx_power < congress_anarchist_power }
+		check_variable = { congress_syndicalist_power < congress_anarchist_power }
+		}
+	set_variable = { YZA_marxist_support = 23 }
+	set_variable = { YZA_syndicalist_support = 56 }
+	set_variable = { YZA_anarchist_support = 73 }
+	set_variable = { YZA_marxist_popularity = 19 }
+	set_variable = { YZA_syndicalist_popularity = 53 }
+	set_variable = { YZA_anarchist_popularity = 83 }
+	set_country_flag = YZA_is_anarchist
+	complete_national_focus = YZA_anarchist_victory
+	}
+}
+YZA_increase_marxist = {
+	add_to_variable = { YZA_marxist_support = 1 }
+	add_to_variable = { YZA_syndicalist_support = -1 }
+	add_to_variable = { YZA_anarchist_support = -1 }
+	add_to_variable = { YZA_marx_popularity = 1 }
+	add_to_variable = { YZA_syndicalist_popularity = -1 }
+	add_to_variable = { YZA_anarchist_popularity = -1 }
+}
+YZA_increase_syndicalist = {
+	add_to_variable = { YZA_marxist_support = -1 }
+	add_to_variable = { YZA_syndicalist_support = 1 }
+	add_to_variable = { YZA_anarchist_support = -1 }
+	add_to_variable = { YZA_marx_popularity = -1 }
+	add_to_variable = { YZA_syndicalist_popularity = 1 }
+	add_to_variable = { YZA_anarchist_popularity = -1 }
+}
+YZA_increase_anarchist = {
+	add_to_variable = { YZA_marxist_support = -1 }
+	add_to_variable = { YZA_syndicalist_support = -1 }
+	add_to_variable = { YZA_anarchist_support = 1 }
+	add_to_variable = { YZA_marx_popularity = -1 }
+	add_to_variable = { YZA_syndicalist_popularity = -1 }
+	add_to_variable = { YZA_anarchist_popularity = 1 }
+}
+YZA_decrease_marxist_big = {
+	add_to_variable = { YZA_marxist_support = -5 }
+	add_to_variable = { YZA_syndicalist_support = 5 }
+	add_to_variable = { YZA_anarchist_support = 5 }
+	add_to_variable = { YZA_marx_popularity = -5 }
+	add_to_variable = { YZA_syndicalist_popularity = 5 }
+	add_to_variable = { YZA_anarchist_popularity = 5 }
+}
+YZA_decrease_syndicalist_big = {
+	add_to_variable = { YZA_marxist_support = 5 }
+	add_to_variable = { YZA_syndicalist_support = -5 }
+	add_to_variable = { YZA_anarchist_support = 5 }
+	add_to_variable = { YZA_marx_popularity = 5 }
+	add_to_variable = { YZA_syndicalist_popularity = -5 }
+	add_to_variable = { YZA_anarchist_popularity = 5 }
+}
+YZA_decrease_anarchist_big = {
+	add_to_variable = { YZA_marxist_support = 5 }
+	add_to_variable = { YZA_syndicalist_support = 5 }
+	add_to_variable = { YZA_anarchist_support = -5 }
+	add_to_variable = { YZA_marx_popularity = 5 }
+	add_to_variable = { YZA_syndicalist_popularity = 5 }
+	add_to_variable = { YZA_anarchist_popularity = -5 }
+}
+			
+
