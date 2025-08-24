@@ -1,0 +1,49 @@
+add_namespace = YUS
+
+### COUNTRY EVENTS ###
+
+country_event = {
+    id = YUS.1
+    title = "1936 - Election Year"
+    desc = "blah blah blah elections, choose your path, never seen before mechanic"
+
+    is_triggered_only = yes
+
+	option = {
+        name = YUS.1.a
+		
+		ai_chance = {
+			base = 5
+		}
+		
+		hidden_effect = {
+			add_to_variable = {YUS_monarchist_popularity = 1}
+		}
+    }
+	
+	option = {
+        name = YUS.1.b
+		
+		ai_chance = {
+			base = 5
+		}
+		
+		hidden_effect = {
+			add_to_variable = {YUS_republican_popularity = 1}
+		}
+    }
+	
+	option = {
+        name = YUS.1.c
+		
+		ai_chance = {
+			base = 5
+		}
+		
+		hidden_effect = {
+			add_to_variable = {YUS_communist_popularity = 1}
+		}
+    }
+}
+
+### NEWS EVENTS ###
