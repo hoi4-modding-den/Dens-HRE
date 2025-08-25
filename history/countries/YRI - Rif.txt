@@ -1,0 +1,55 @@
+capital = 12100
+
+set_research_slots = 3
+set_convoys = 65
+set_stability = 0.67
+set_war_support = 0.42
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		basic_battery = 1
+		early_ship_hull_submarine = 1
+		basic_torpedo = 1
+	}
+}
+
+add_ideas = {
+	free_trade
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.1.1"
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 46
+	democratic = 34
+	fascism = 8
+	communism = 12
+}
