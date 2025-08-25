@@ -1,0 +1,99 @@
+focus_tree = {
+	id = YPR_focus
+
+	country = {
+		factor = 0
+		modifier = { 
+			add = 10 
+			tag = YPR
+		}
+	}
+
+	continuous_focus_position = { x = 100 y = 1000 }
+
+    reset_on_civilwar = no
+
+	focus = {
+		id = YPR_the_red_flag_over_portugal
+		icon = GFX_focus_GER_the_peoples_victory
+		x = 10
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_the_red_flag_over_portugal_tt
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = YPR_emphasize_international_solidarity
+		icon = GFX_focus_ETH_callout_to_the_world
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_the_red_flag_over_portugal }
+		relative_position_id = YPR_the_red_flag_over_portugal
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_emphasize_international_solidarity_tt
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = YPR_affirm_the_policy_of_equality
+		icon = GFX_focus_ARG_women_in_industry
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_the_red_flag_over_portugal }
+		relative_position_id = YPR_the_red_flag_over_portugal
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_affirm_the_policy_of_equality_tt
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = YPR_first_congress_of_the_portuguese_revolutionary_front
+		icon = GFX_focus_generic_soviet_politics
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_affirm_the_policy_of_equality }
+		prerequisite = { focus = YPR_emphasize_international_solidarity }
+		relative_position_id = YPR_affirm_the_policy_of_equality
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_first_congress_of_the_portuguese_revolutionary_front_tt
+			add_stability = 0.05
+		}
+	}
+}
