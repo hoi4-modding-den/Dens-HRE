@@ -1,0 +1,12 @@
+YCA_generalitat_factions_decisions = {
+	icon = GFX_decision_category_generic_propaganda
+	priority = 13	
+
+	allowed = {
+		tag = YCA
+	}
+
+	scripted_gui = YCA_generalitat_faction_decision_ui
+
+	visible_when_empty = yes
+}
