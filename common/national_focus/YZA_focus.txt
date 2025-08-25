@@ -59,6 +59,7 @@ focus_tree = {
 		}
 		add_political_power = 75
 		activate_mission = YZA_marx_decrease
+		remove_ideas = YZA_political_deadlock
 		}
 		
 	}
@@ -82,6 +83,7 @@ focus_tree = {
 		}
 		completion_reward = {
 		activate_mission = YZA_anarchist_decrease
+		remove_ideas = YZA_political_deadlock
 		}
 	}
 
@@ -104,6 +106,7 @@ focus_tree = {
 		}
 		completion_reward = {
 		activate_mission = YZA_syndicalist_decrease
+		remove_ideas = YZA_political_deadlock
 		}
 	}
 	#Guard against Authoritarianism
@@ -409,6 +412,7 @@ focus_tree = {
 			
 			
 			172 = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = industrial_complex
@@ -424,8 +428,10 @@ focus_tree = {
 			}
 			
 			}
+			}
 			
 			792 = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = arms_factory
@@ -438,6 +444,7 @@ focus_tree = {
 			type = arms_factory
 			level = 1
 			instant_build = yes
+			}
 			}
 			}
 			
@@ -898,6 +905,10 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			custom_effect_tooltip = YZA_unlock_industrialisation_decisions
+			swap_ideas = {
+    				remove_idea = YZA_lack_of_industry
+    				add_idea = YZA_lack_of_industry_1
+			}
 			
 			
 		}
@@ -917,6 +928,7 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			166 = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = industrial_complex
@@ -930,6 +942,11 @@ focus_tree = {
 			level = 1
 			instant_build = yes
 			}
+			}
+			}
+			swap_ideas = {
+    				remove_idea = YZA_lack_of_industry_1
+    				add_idea = YZA_lack_of_industry_2
 			}
 			
 			
@@ -950,6 +967,10 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		completion_reward = {
 			add_manpower = 10000
+			swap_ideas = {
+    				remove_idea = YZA_lack_of_industry_2
+    				add_idea = YZA_lack_of_industry_3
+			}
 			
 			
 		}
@@ -972,6 +993,7 @@ focus_tree = {
 			
 			
 			random_owned_controlled_state = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = arms_factory
@@ -984,6 +1006,7 @@ focus_tree = {
 			type = arms_factory
 			level = 1
 			instant_build = yes
+			}
 			}
 			}
 			
@@ -1008,6 +1031,7 @@ focus_tree = {
 			
 			
 			random_owned_controlled_state = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = arms_factory
@@ -1020,6 +1044,7 @@ focus_tree = {
 			type = arms_factory
 			level = 1
 			instant_build = yes
+			}
 			}
 			}
 			
@@ -1064,11 +1089,13 @@ focus_tree = {
 		ai_will_do = { factor = 1 }
 		available = {
 			owns_state = 792
+			has_idea = YZA_lack_of_industry_3
 			
 			
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = industrial_complex
@@ -1084,8 +1111,11 @@ focus_tree = {
 			}
 			
 			}
+			}
+
 			
 			random_owned_controlled_state = {
+			if = {
 			limit = {
 			free_building_slots = {
 			building = arms_factory
@@ -1101,7 +1131,9 @@ focus_tree = {
 			}
 			
 			}
-			
+			}
+    			remove_ideas = YZA_lack_of_industry_3
+  
 			
 		}
 	}
