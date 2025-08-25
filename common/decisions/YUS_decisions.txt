@@ -3,10 +3,12 @@ YUS_council_category = {
 	YUS_rally_monarchists = {
 		available = {
 			original_tag = YUS
-			date < 1937.1.1
 		}
 		visible = {
-			
+			has_global_flag = {
+				flag = factional_play
+				value = 1
+			}
 		}
 		icon = GFX_decision_eng_propaganda_campaigns
 		cost = 25
@@ -22,17 +24,19 @@ YUS_council_category = {
 	YUS_speak_of_freedom = {
 		available = {
 			original_tag = YUS
-			date < 1937.1.1
 		}
 		visible = {
-			
+			has_global_flag = {
+				flag = factional_play
+				value = 2
+			}
 		}
 		icon = GFX_decision_SWI_swiss_democratic_tradition_campaign
 		cost = 25
 		days_remove = 10
 		remove_effect = { 
 			hidden_effect = {
-				add_to_variable = { YUS_republican_popularity = 1 }
+				add_to_variable = { yus_republicans = 1 }
 			}
 			
 		}
@@ -41,10 +45,12 @@ YUS_council_category = {
 	YUS_inspire_the_proletariat = {
 		available = {
 			original_tag = YUS
-			date < 1937.1.1
 		}
 		visible = {
-			
+			has_global_flag = {
+				flag = factional_play
+				value = 3
+			}
 		}
 		icon = GFX_decision_SWI_consolidate_council_power
 		cost = 25
