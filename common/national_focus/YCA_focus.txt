@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = -500 y = 1000 }
+	continuous_focus_position = { x = 500 y = 1000 }
 
 	initial_show_position = {
 		x = 9
@@ -20,8 +20,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YCA_
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		id = YCA_institutionalize_the_front
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
 		x = 7
 		y = 0
 
@@ -38,7 +38,656 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
-			country_event = YCA_domestic_events.1
 		}
-	}					
+	}	
+	focus = {
+		id = YCA_revolutionary_tribunals
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_institutionalize_the_front
+		}
+		relative_position_id = YCA_institutionalize_the_front
+		x = -4
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_found_security_directorate
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_revolutionary_tribunals
+		}
+		relative_position_id = YCA_revolutionary_tribunals
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_reeducation_camps
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_found_security_directorate
+		}
+		relative_position_id = YCA_found_security_directorate
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_informant_networks
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_found_security_directorate
+		}
+		relative_position_id = YCA_found_security_directorate
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}		
+	focus = {
+		id = YCA_central_commissariats
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_revolutionary_tribunals
+		}
+		relative_position_id = YCA_revolutionary_tribunals
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_local_committees_reform
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_institutionalize_the_front
+		}
+		relative_position_id = YCA_institutionalize_the_front
+		x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_local_committees_reform
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_institutionalize_the_front
+		}
+		mutually_exclusive = {
+			focus = YCA_empower_consejos
+		}
+		relative_position_id = YCA_institutionalize_the_front
+		x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_empower_consejos
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_institutionalize_the_front
+		}
+		mutually_exclusive = {
+			focus = YCA_local_committees_reform
+		}		
+		relative_position_id = YCA_institutionalize_the_front
+		x = 9
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_barri_comites # local anarchist councils in targeted neighborhoods
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_empower_consejos
+		}	
+		relative_position_id = YCA_empower_consejos
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_reject_central_planning
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_empower_consejos
+		}	
+		relative_position_id = YCA_empower_consejos
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_reject_central_planning # slowly move towards decentralization
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_empower_consejos
+		}	
+		relative_position_id = YCA_empower_consejos
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_federations_of_collectives # Factories begin reporting more to federations of collectives than to state commissars. Unions push for production quotas to be set by worker congresses rather than a centralized plan.
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_reject_central_planning
+		}
+		prerequisite = {
+			focus = YCA_barri_comites
+		}			
+		relative_position_id = YCA_reject_central_planning
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_criticize_the_bureaucratization_of_the_revolution # both sides avoid open rupture due to war needs, but criticize the weak factionalization and effect of bureaucracy
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_reject_central_planning
+		}
+		prerequisite = {
+			focus = YCA_barri_comites
+		}			
+		relative_position_id = YCA_reject_central_planning
+		x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_CNT_FAI_merge # merge the CNT and the FAI for more anarcho-syndicalist power, with a focus of iberian anarchist federalism
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_federations_of_collectives
+		}		
+		relative_position_id = YCA_federations_of_collectives
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}						
+	focus = {
+		id = YCA_interim_constitution
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_revolutionary_tribunals
+		}		
+		relative_position_id = YCA_local_committees_reform
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			OR = {
+				has_completed_focus = YCA_empower_consejos
+				has_completed_focus = YCA_local_committees_reform
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_proletariat_bureaucratic_class
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_local_committees_reform
+		}	
+		relative_position_id = YCA_local_committees_reform
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_party_directives
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_proletariat_bureaucratic_class
+		}		
+		relative_position_id = YCA_proletariat_bureaucratic_class
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}		
+	focus = {
+		id = YCA_revolutionary_nationalism
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_party_directives
+		}		
+		relative_position_id = YCA_party_directives
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_institute_socialist_principles
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_party_directives
+		}		
+		relative_position_id = YCA_party_directives
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_unified_state
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_party_directives
+		}		
+		relative_position_id = YCA_party_directives
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_class_rights
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_empower_consejos
+			focus = YCA_local_committees_reform
+		}	
+		relative_position_id = YCA_local_committees_reform
+		x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_outlaw_republicans
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_class_rights
+		}	
+		mutually_exclusive = {
+			focus = YCA_social_democrats
+		}
+		relative_position_id = YCA_class_rights
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_social_democrats
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_class_rights
+		}	
+		mutually_exclusive = {
+			focus = YCA_outlaw_republicans
+		}		
+		relative_position_id = YCA_class_rights
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_peasant_councils
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_social_democrats
+			focus = YCA_outlaw_republicans
+		}	
+		relative_position_id = YCA_social_democrats
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_womens_leagues
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_social_democrats
+			focus = YCA_outlaw_republicans
+		}	
+		relative_position_id = YCA_social_democrats
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_first_party_congress
+		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
+		cost = 4
+		prerequisite = {
+			focus = YCA_CNT_FAI_merge
+			focus = YCA_revolutionary_nationalism
+		}	
+		relative_position_id = YCA_womens_leagues
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}															
 }
