@@ -100,6 +100,18 @@ set_autonomy = {
 give_guarantee = YC2
 give_guarantee = YC3
 
+set_variable = { 
+	YCA_generalitat_faction_progress_bar = modifier@YCA_generalitat_faction 
+}
+add_to_variable = {
+	var = YCA_generalitat_faction_progress_bar
+	value = 30
+}
+
+set_variable = { var = YCA_vanguardist_faction_var value = 0 }
+set_variable = { var = YCA_socialist_faction_var value = 26 }
+set_variable = { var = YCA_anarchist_faction_var value = 31 }
+
 set_country_flag = dont_use_default_political_advisors
 set_country_flag = dont_use_default_military_advisors
 #set_country_flag = YCA_welcome_message_flag

@@ -72,7 +72,7 @@ ideas = {
 
 			stability_factor = -0.05
 
-			factory_output = 0.1
+			industrial_capacity_factory = 0.1
 
 			
 
@@ -95,6 +95,59 @@ ideas = {
 			monthly_population = -0.1
 
 			
+
+
+			}
+		}
+		YZA_lack_of_industry_1 = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.3
+
+				production_speed_buildings_factor = -0.3
+
+				production_factory_efficiency_gain_factor = -0.3
+
+				production_factory_max_efficiency_factor = -0.1
+
+				industrial_capacity_factory = -0.15
+
+				industrial_capacity_dockyard = -0.15
+
+
+			}
+		}
+		YZA_lack_of_industry_2 = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.2
+
+				production_speed_buildings_factor = -0.2
+
+				production_factory_efficiency_gain_factor = -0.2
+
+				production_factory_max_efficiency_factor = -0.05
+
+				industrial_capacity_factory = -0.1
+
+				industrial_capacity_dockyard = -0.1
+
+
+			}
+		}
+		YZA_lack_of_industry_3 = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.1
+
+				production_speed_buildings_factor = -0.1
+
+				production_factory_efficiency_gain_factor = -0.1
+
+
+				industrial_capacity_factory = -0.05
+
+				industrial_capacity_dockyard = -0.05
 
 
 			}

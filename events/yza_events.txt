@@ -472,7 +472,12 @@ country_event = {
 			
 		}
 		ai_chance = { factor = 1 }
-		YZA = {add_to_faction = YCAadd_to_faction = YC1add_to_faction = YC2add_to_faction = YC3}
+		YZA = {
+		add_to_faction = YCA
+		add_to_faction = YC1
+		add_to_faction = YC2
+		add_to_faction = YC3
+		}
 
 
 		hidden_effect = {

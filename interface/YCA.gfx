@@ -68,3 +68,33 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 }
+
+### PIE CHART ###
+spriteTypes = {
+	spriteType = {
+		name = "GFX_YCA_piechart_segment"
+		texturefile = "gfx/interface/gui/YCA/pie_chart_segment.png"
+		noOfFrames = 3
+	}
+
+	spriteType = {
+		name = "GFX_YCA_piechart_overlay"
+		textureFile = "gfx/interface/pol_piechart_overlay.dds"
+	}
+}
+
+### PROGRESS BAR
+spriteTypes = {
+   progressbartype = {
+	name = "GFX_YCA_generalitat_faction_progress_bar"
+    textureFile1 = "gfx/interface/gui/YCA/YCA_tension_bar.dds"
+    textureFile2 = "gfx/interface/gui/YCA/YCA_tension_bar_empty.dds"
+    size = { x = 50 y = 257 }
+    effectFile = "gfx/FX/progress.lua"
+	horizontal = no
+	}
+	spriteType = {
+		name = "GFX_YCA_tension_bar_frame"
+		texturefile = "gfx/interface/gui/YCA/bar_frame_2.dds"
+	}  
+}    

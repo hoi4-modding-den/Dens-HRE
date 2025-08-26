@@ -111,7 +111,7 @@ YZA_trade_unions_category = {
 			custom_effect_tooltip = YZA_the_marxists_will_be_less_powerful
 		
 			hidden_effect = {
-			YZA_decrease_marxist_big
+			YZA_decrease_marxist_big = yes
 		
 			activate_mission = YZA_marx_decrease
 			}
@@ -147,7 +147,7 @@ YZA_trade_unions_category = {
 			custom_effect_tooltip = YZA_the_syndicalists_will_be_less_powerful
 		
 			hidden_effect = {
-			YZA_decrease_syndicalist_big
+			YZA_decrease_syndicalist_big = yes
 		
 			activate_mission = YZA_syndicalist_decrease
 			}
@@ -183,7 +183,7 @@ YZA_trade_unions_category = {
 			custom_effect_tooltip = YZA_the_anarchists_will_be_less_powerful
 		
 			hidden_effect = {
-			YZA_decrease_anarchist_big
+			YZA_decrease_anarchist_big = yes
 		
 			activate_mission = YZA_anarchist_decrease
 			}
@@ -194,4 +194,328 @@ YZA_trade_unions_category = {
 
 
 
+}
+
+
+
+
+
+
+
+YZA_industry_category = {
+	YZA_electrification_decision = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			has_completed_focus = YZA_electrification_programme
+		}
+
+		days_remove = 70
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			add_stability = 0.1
+			166 = {
+			add_extra_state_shared_building_slots = 3
+			}
+		}
+	}
+	YZA_huesca_industry = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			has_completed_focus = YZA_build_up_huesca
+		}
+
+		days_remove = 90
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+			type = arms_factory
+			level = 3
+			instant_build = yes
+			}
+			
+			}
+		}
+	}
+	YZA_bilbao_dockyards = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			has_completed_focus = YZA_expand_industry_from_bilbao
+		}
+
+		days_remove = 60
+
+		cost = 40
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			792 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+			type = dockyard
+			level = 3
+			instant_build = yes
+			}
+			}
+			
+		}
+	}
+	YZA_navaran_airfields = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			has_completed_focus = YZA_expand_industry_from_bilbao
+		}
+
+		days_remove = 35
+
+		cost = 20
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			172 = {	
+			add_building_construction = {
+			type = airport
+			level = 2
+			instant_build = yes
+			}
+			}
+			
+		}
+	}
+	YZA_chromium_mines = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			has_completed_focus = YZA_expand_industry_from_bilbao
+		}
+
+		days_remove = 60
+
+		cost = 80
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			166 = {
+			add_resource = {
+    				type = chromium
+    				amount = 7
+			}
+			}
+		}
+	}
+
+	YZA_expand_consumer_industry = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			num_of_controlled_states > 3
+		}
+
+		days_remove = 90
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+			type = industrial_complex
+			level = 3
+			instant_build = yes
+			}
+			}
+			
+		}
+	}
+	YZA_motorised_factory = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			num_of_controlled_states > 3
+		}
+
+		days_remove = 70
+
+		cost = 40
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+			type = arms_factory
+			level = 1
+			instant_build = yes
+			}
+			}
+			
+			army_experience = 25
+		}
+	}
+	YZA_expand_dockyards = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			num_of_controlled_states > 3
+		}
+
+		days_remove = 120
+
+		cost = 150
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+			type = dockyard
+			level = 4
+			instant_build = yes
+			
+			}
+			}
+			navy_experience = 50
+			
+		}
+	}
+	YZA_infrastructure_expansion = {
+
+		icon = GFX_decision_generic_voting
+
+
+		available = {
+			num_of_controlled_states > 3
+		}
+
+		days_remove = 35
+
+		cost = 40
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			random_owned_state = {
+      				  add_building_construction = {
+        			    type = infrastructure
+            				level = 2
+            				instant_build = yes
+        			}
+			}
+			random_owned_state = {
+      				  add_building_construction = {
+        			    type = infrastructure
+            				level = 1
+            				instant_build = yes
+        			}
+			}
+			random_owned_state = {
+      				  add_building_construction = {
+        			    type = infrastructure
+            				level = 1
+            				instant_build = yes
+        			}
+			}
+			
+		}
+	}
 }

@@ -1,0 +1,50 @@
+YCA_update_pie_chart = {
+	YCA = {
+		clear_array = YCA_pie_chart_frames
+		resize_array = { array = YCA_pie_chart_frames value = 1 size = 100 } # Vanguardist
+
+		### get the total of all alignment values
+		set_temp_variable = { YCA_forpol_total_var = YCA_vanguardist_faction_var }
+		add_to_temp_variable = { YCA_forpol_total_var = YCA_socialist_faction_var }
+		add_to_temp_variable = { YCA_forpol_total_var = YCA_anarchist_faction_var }
+
+		# Socialist
+		set_variable = { YCA_forpol_socialist_percentage_var = YCA_socialist_faction_var }
+		divide_variable = { YCA_forpol_socialist_percentage_var = YCA_forpol_total_var }
+
+		set_temp_variable = { YCA_piechart_socialist = YCA_forpol_socialist_percentage_var }
+		multiply_temp_variable = { YCA_piechart_socialist = 100 }
+		round_temp_variable = YCA_piechart_socialist
+
+		add_to_temp_variable = { YCA_piechart_end = YCA_piechart_socialist }
+		for_loop_effect = {
+			start = YCA_piechart_start
+			end = YCA_piechart_end
+			set_variable = { YCA_pie_chart_frames^v = 2 }
+		}
+		add_to_temp_variable = { YCA_piechart_start = YCA_piechart_socialist }
+
+		# Anarchist
+		set_variable = { YCA_forpol_anarchist_percentage_var = YCA_anarchist_faction_var }
+		divide_variable = { YCA_forpol_anarchist_percentage_var = YCA_forpol_total_var }
+
+		set_temp_variable = { YCA_piechart_anarchist = YCA_forpol_anarchist_percentage_var }
+		multiply_temp_variable = { YCA_piechart_anarchist = 100 }
+		round_temp_variable = YCA_piechart_anarchist
+
+		add_to_temp_variable = { YCA_piechart_end = YCA_piechart_anarchist }
+		for_loop_effect = {
+			start = YCA_piechart_start
+			end = YCA_piechart_end
+			set_variable = { YCA_pie_chart_frames^v = 3 }
+		}
+
+		# Vanguardist
+		set_temp_variable = { YCA_forpol_total_var = 1 }
+		subtract_from_temp_variable = { YCA_forpol_total_var = YCA_forpol_anarchist_percentage_var }
+		subtract_from_temp_variable = { YCA_forpol_total_var = YCA_forpol_socialist_percentage_var }
+		set_variable = { YCA_forpol_vanguardist_percentage_var = YCA_forpol_total_var }
+
+		set_variable_to_random = YCA_pie_chart_dirty
+	}
+}

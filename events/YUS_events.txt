@@ -17,7 +17,10 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			add_to_variable = {YUS_monarchist_popularity = 1}
+			set_global_flag = {
+				flag = factional_play
+				value = 2
+			}
 		}
     }
 	
@@ -29,7 +32,10 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			add_to_variable = {YUS_republican_popularity = 1}
+			set_global_flag = {
+				flag = factional_play
+				value = 2
+			}
 		}
     }
 	
@@ -41,7 +47,10 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			add_to_variable = {YUS_communist_popularity = 1}
+			set_global_flag = {
+				flag = factional_play
+				value = 3
+			}
 		}
     }
 }

@@ -1,0 +1,44 @@
+focus_tree = {
+	id = YCA_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = YCA
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = -500 y = 1000 }
+
+	initial_show_position = {
+		x = 9
+		y = 0
+	}
+
+	focus = {
+		id = YCA_
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		x = 7
+		y = 0
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			country_event = YCA_domestic_events.1
+		}
+	}					
+}
