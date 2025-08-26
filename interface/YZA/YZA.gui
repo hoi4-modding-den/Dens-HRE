@@ -135,4 +135,41 @@ guiTypes = {
 		
 		
 	}
+		containerWindowType = {
+			name = "syndi_decisions_YZA"
+			size = { width = 200 height = 500 }
+			position = { x = 18 y = -14 }
+
+			iconType = {
+				name = "syndi_picture_1"
+				spriteType = "GFX_YZA_synd_pic_1"
+				position = { x = -50 y = -200 }
+				scale = 1.00
+				Orientation = "CENTER"
+			}
+			#iconType = {
+			#	name = "syndi_picture_2"
+			#	spriteType = "GFX_YZA_synd_pic_2"
+			#	position = { x = 100 y = -100 }
+			#	scale = 1.00
+			#	Orientation = "CENTER"
+			#}
+			iconType = {
+				name = "syndi_picture_3"
+				spriteType = "GFX_YZA_synd_pic_3"
+				position = { x = 190 y = -200 }
+				scale = 1.00
+				Orientation = "CENTER"
+			}
+
+
+
+			iconType = {
+				name = "YZA_synd_revolution_progress_bar"
+				spriteType = "GFX_YZA_synd_bar"
+				position = { x = 43 y = -50 }
+				#frame = 64
+				pdx_tooltip = YZA_syndi_rev_progress_desc
+				Orientation = "CENTER"
+			}
 }

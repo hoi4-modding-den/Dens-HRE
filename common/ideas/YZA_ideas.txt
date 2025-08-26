@@ -152,6 +152,129 @@ ideas = {
 
 			}
 		}
+		YZA_rising_authoritarianism = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.1
+
+				stability_factor = -0.1
+
+				war_support_factor = 0.1
+
+				industrial_capacity_factory = 0.1
+
+				industrial_capacity_dockyard = 0.1
+
+
+			}
+		}
+		YZA_stalinist_emulation = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = -0.25
+
+				stability_factor = 0.1
+
+				monthly_population = -0.1
+
+
+			}
+		}
+		YZA_soviet_family = {
+			picture = YZA_political_deadlock
+			modifier = {
+				
+
+			political_power_gain = 0.1
+
+			war_support_factor = 0.2
+
+			weekly_manpower = 2000
+
+			monthly_population = 0.3
+
+			
+
+
+			}
+		}
+		YZA_1984 = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.05
+
+				stability_factor = -0.2
+
+				war_support_factor = 0.2
+
+				industrial_capacity_factory = 0.15
+
+				industrial_capacity_dockyard = 0.15
+
+
+			}
+		}
+		YZA_workplace_democracy = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				consumer_goods_factor = 0.05
+
+				stability_factor = 0.1
+
+				industrial_capacity_factory = -0.05
+
+
+
+			}
+		}
+		YZA_making_democracy_more_direct = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				political_power_cost = 0.2
+
+				weekly_stability_factor = 0.005
+
+				weekly_war_support_factor = 0.005
+
+
+
+			}
+		}
+		YZA_currency_creation = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				political_power_cost = 0.05
+
+				weekly_stability = -0.001
+
+				consumer_goods_factor = -0.25
+
+
+
+			}
+		}
+		YZA_fishing_industry = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				monthly_population = 0.1
+	
+				industrial_capacity_dockyard = 0.05
+					
+
+
+			}
+		}
+		YZA_worker_coops = {
+			picture = YZA_lack_of_industry
+			modifier = {
+				stability_factor = 0.05
+				
+				weekly_manpower = 100
+
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		
 
 	}
 	mobilization_laws = {

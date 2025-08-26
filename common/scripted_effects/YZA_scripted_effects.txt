@@ -28,6 +28,7 @@ YZA_leader = {
 	set_variable = { YZA_anarchist_popularity = 23 }
 	set_country_flag = YZA_is_marxist
 	complete_national_focus = YZA_marxist_supremacy
+	set_country_flag = YZA_tuc_available
 	}
 	else_if = {
 		limit = {
@@ -42,6 +43,7 @@ YZA_leader = {
 	set_variable = { YZA_anarchist_popularity = 45 }
 	set_country_flag = YZA_is_syndicalist
 	complete_national_focus = YZA_syndicalist_majority
+	set_country_flag = YZA_tuc_available
 	}
 	else_if = {
 		limit = {
@@ -56,31 +58,32 @@ YZA_leader = {
 	set_variable = { YZA_anarchist_popularity = 83 }
 	set_country_flag = YZA_is_anarchist
 	complete_national_focus = YZA_anarchist_victory
+	set_country_flag = YZA_tuc_available
 	}
 }
 YZA_increase_marxist = {
-	add_to_variable = { YZA_marxist_support = 1 }
+	add_to_variable = { YZA_marxist_support = 3 }
 	add_to_variable = { YZA_syndicalist_support = -1 }
 	add_to_variable = { YZA_anarchist_support = -1 }
-	add_to_variable = { YZA_marx_popularity = 1 }
+	add_to_variable = { YZA_marx_popularity = 3 }
 	add_to_variable = { YZA_syndicalist_popularity = -1 }
 	add_to_variable = { YZA_anarchist_popularity = -1 }
 }
 YZA_increase_syndicalist = {
 	add_to_variable = { YZA_marxist_support = -1 }
-	add_to_variable = { YZA_syndicalist_support = 1 }
+	add_to_variable = { YZA_syndicalist_support = 3 }
 	add_to_variable = { YZA_anarchist_support = -1 }
 	add_to_variable = { YZA_marx_popularity = -1 }
-	add_to_variable = { YZA_syndicalist_popularity = 1 }
+	add_to_variable = { YZA_syndicalist_popularity = 3 }
 	add_to_variable = { YZA_anarchist_popularity = -1 }
 }
 YZA_increase_anarchist = {
 	add_to_variable = { YZA_marxist_support = -1 }
 	add_to_variable = { YZA_syndicalist_support = -1 }
-	add_to_variable = { YZA_anarchist_support = 1 }
+	add_to_variable = { YZA_anarchist_support = 3 }
 	add_to_variable = { YZA_marx_popularity = -1 }
 	add_to_variable = { YZA_syndicalist_popularity = -1 }
-	add_to_variable = { YZA_anarchist_popularity = 1 }
+	add_to_variable = { YZA_anarchist_popularity = 3 }
 }
 YZA_decrease_marxist_big = {
 	add_to_variable = { YZA_marxist_support = -5 }

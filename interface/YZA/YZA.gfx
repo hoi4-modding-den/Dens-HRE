@@ -124,5 +124,44 @@ spriteTypes = {
 		name = "GFX_YZA_target_the_basque"
 		texturefile = "gfx/interface/goals/YZA/YZA_target_the_basque.png"
 	}
- 
+	SpriteType = { 
+		name = "GFX_YZA_legacy_of_the_cnt"
+		texturefile = "gfx/interface/goals/YZA/YZA_legacy_of_the_cnt_kx.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_resistance_basque"
+		texturefile = "gfx/interface/goals/YZA/YZA_resistance_kx.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_internationale_alliance"
+		texturefile = "gfx/interface/goals/YZA/YZA_internationale_alliance_kx.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_hunt_french"
+		texturefile = "gfx/interface/goals/YZA/YZA_hunt_french_kx.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_nationalise_basque"
+		texturefile = "gfx/interface/goals/YZA/YZA_nationalise_basque.png"
+	}
+ 	progressbartype = {
+		name = "GFX_YZA_synd_bar"
+		textureFile1 = "gfx/interface/ideas/YZA/YZA_full_syndi_bar.dds"
+		textureFile2 = "gfx/interface/ideas/YZA/YZA_empty_syndi_bar.dds"
+		size = { x = 374 y = 42 } 
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = GFX_YZA_synd_pic_2
+		texturefile = "gfx/interface/ideas/YZA/YZA_synd_image_1.dds"
+	}
+	spriteType = {
+		name = GFX_YZA_synd_pic_1
+		texturefile = "gfx/interface/ideas/YZA/YZA_synd_image_2.dds"
+	}
+	spriteType = {
+		name = GFX_YZA_synd_pic_3
+		texturefile = "gfx/interface/ideas/YZA/YZA_synd_image_3.dds"
+	}
  }

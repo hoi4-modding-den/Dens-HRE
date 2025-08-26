@@ -8,6 +8,18 @@ scripted_gui = {
 
 
 	}
+
+	YZA_syndi_rev_gui = {
+		context_type = decision_category
+		window_name = "syndi_decisions_YZA"
+		parent_window_token = decision_tab
+		visible = { always = yes }
+		properties = {
+			YZA_synd_revolution_progress_bar = {
+				frame = YZA_syndi_revolution
+			}
+		}
+	}
 	
 		
 	
