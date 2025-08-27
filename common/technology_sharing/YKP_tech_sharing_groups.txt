@@ -1,0 +1,13 @@
+technology_sharing_group = {
+	id = YKP_iberian_empire_tech_sharing_group
+	name = YKP_iberian_empire_tech_sharing_group_name
+	desc = YKP_iberian_empire_tech_sharing_group_desc
+	picture = GFX_technology_sharing_default
+	research_sharing_per_country_bonus = 0.1
+
+	available = {
+		is_in_faction_with = YKP
+		has_idea = YKP_holy_iberian_empire_member
+		NOT = { has_war_with = YKP }
+	}
+}

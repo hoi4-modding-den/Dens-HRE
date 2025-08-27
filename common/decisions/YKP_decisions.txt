@@ -30,3 +30,696 @@ YKP_debug_decisions = {
         }
 	}
 }
+
+YKP_conquest_decisions = {
+    YKP_conquer_claim_decision = {
+        priority = 100
+
+        target_root_trigger = {
+            has_country_flag = YKP_allow_iberian_war_decisions
+        }
+
+        target_array = YKP.conquer_targets
+        targets_dynamic = yes
+
+        target_trigger = { }
+
+        icon = GFX_decision_generic_tank
+        cost = 25
+        days_remove = 30
+        war_with_target_on_complete = yes
+
+        modifier = {
+            political_power_factor = -0.25
+        }
+
+        remove_effect = {
+            declare_war_on = {
+                target = FROM
+                type = annex_everything
+            }
+        }
+    }
+
+    YKP_conquer_porto_decision = {
+
+		priority = 200
+
+		icon = GFX_decision_generic_nationalism
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_allow_portuguese_war_decisions
+            YPR = {
+                exists = yes
+                NOT = {
+                    has_war_with = ROOT
+                }
+            }
+        }
+
+        available = {
+            controls_all_portugal = no
+            YPR = {
+                exists = yes
+                NOT = {
+                    has_war_with = ROOT
+                }
+            }
+        }
+
+		cost = 50
+        days_remove = 30
+
+        fire_only_once = yes
+
+        war_with_on_remove = YPR
+
+        modifier = {
+            political_power_factor = -0.5
+            training_time_factor = 0.5
+        }
+        
+        remove_effect = {
+            add_war_support = 0.05
+            declare_war_on = {
+                target = YPR
+                type = civil_war
+            }
+
+            hidden_effect = {
+                # NEWS EVENT
+                set_country_flag = YKP_portuguese_war_ongoing
+            }
+        }
+	}
+
+    YKP_operation_grifo = {
+		priority = 300
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_portuguese_war_ongoing
+            YPR = {
+                exists = yes
+                has_war_with = ROOT
+            }
+        }
+
+        available = {
+            controls_all_portugal = no
+            YPR = {
+                exists = yes
+                has_war_with = ROOT
+            }
+        }
+
+		custom_cost_trigger = {
+            command_power > 24
+        }
+        custom_cost_text = YKP_decision_cost_CP_25
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_timed_idea = {
+                idea = YKP_operation_grifo
+                days = 180
+            }
+
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+	}
+
+    YKP_claim_northern_spain_decision = {
+        priority = 50
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_reconquista_claims_decisions
+        }
+
+        available = {
+            NOT = {
+                has_country_flag = YKP_claiming_land_currently
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+
+        days_remove = 10
+
+        complete_effect = {
+            set_country_flag = YKP_claiming_land_currently
+        }
+        
+        remove_effect = {
+            clr_country_flag = YKP_claiming_land_currently
+            custom_effect_tooltip = YKP_claim_northern_spain_tt
+            for_each_scope_loop = {
+                array = global.northern_spain_states
+                if = {
+                    limit = {
+                        owner = {
+                            NOT = {
+                                OR = {
+                                    is_in_faction_with = ROOT
+                                    is_puppet_of = ROOT
+                                }
+                            }
+                        }
+                    }
+
+                    add_claim_by = ROOT
+                }
+            }
+
+            hidden_effect = {
+                YKP_update_conquer_targets = yes
+            }
+        }
+    }
+
+    YKP_claim_central_spain_decision = {
+        priority = 50
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_reconquista_claims_decisions
+        }
+
+        available = {
+            NOT = {
+                has_country_flag = YKP_claiming_land_currently
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+
+        days_remove = 10
+        
+        complete_effect = {
+            set_country_flag = YKP_claiming_land_currently
+        }
+        
+        remove_effect = {
+            clr_country_flag = YKP_claiming_land_currently
+            custom_effect_tooltip = YKP_claim_central_spain_tt
+            for_each_scope_loop = {
+                array = global.central_spain_states
+                if = {
+                    limit = {
+                        owner = {
+                            NOT = {
+                                OR = {
+                                    is_in_faction_with = ROOT
+                                    is_puppet_of = ROOT
+                                }
+                            }
+                        }
+                    }
+
+                    add_claim_by = ROOT
+                }
+            }
+
+            hidden_effect = {
+                YKP_update_conquer_targets = yes
+            }
+        }
+    }
+
+    YKP_claim_southern_spain_decision = {
+        priority = 50
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_reconquista_claims_decisions
+        }
+
+        available = {
+            NOT = {
+                has_country_flag = YKP_claiming_land_currently
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+        
+        days_remove = 10
+        
+        complete_effect = {
+            set_country_flag = YKP_claiming_land_currently
+        }
+        
+        remove_effect = {
+            clr_country_flag = YKP_claiming_land_currently
+            custom_effect_tooltip = YKP_claim_southern_spain_tt
+            for_each_scope_loop = {
+                array = global.southern_spain_states
+                if = {
+                    limit = {
+                        owner = {
+                            NOT = {
+                                OR = {
+                                    is_in_faction_with = ROOT
+                                    is_puppet_of = ROOT
+                                }
+                            }
+                        }
+                    }
+
+                    add_claim_by = ROOT
+                }
+            }
+
+            hidden_effect = {
+                YKP_update_conquer_targets = yes
+            }
+        }
+    }
+
+    YKP_claim_eastern_spain_decision = {
+        priority = 50
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_reconquista_claims_decisions
+        }
+
+        available = {
+            NOT = {
+                has_country_flag = YKP_claiming_land_currently
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+        
+        days_remove = 10
+        
+        complete_effect = {
+            set_country_flag = YKP_claiming_land_currently
+        }
+        
+        remove_effect = {
+            clr_country_flag = YKP_claiming_land_currently
+            custom_effect_tooltip = YKP_claim_eastern_spain_tt
+            for_each_scope_loop = {
+                array = global.eastern_spain_states
+                if = {
+                    limit = {
+                        owner = {
+                            NOT = {
+                                OR = {
+                                    is_in_faction_with = ROOT
+                                    is_puppet_of = ROOT
+                                }
+                            }
+                        }
+                    }
+
+                    add_claim_by = ROOT
+                }
+            }
+
+            hidden_effect = {
+                YKP_update_conquer_targets = yes
+            }
+        }
+    }
+
+    YKP_claim_spanish_africa_decision = {
+        priority = 50
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_reconquista_claims_decisions
+        }
+
+        available = {
+            allies_controls_all_spain = yes
+            NOT = {
+                has_country_flag = YKP_claiming_land_currently
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+
+        days_remove = 10
+        
+        complete_effect = {
+            set_country_flag = YKP_claiming_land_currently
+        }
+        
+        remove_effect = {
+            clr_country_flag = YKP_claiming_land_currently
+            custom_effect_tooltip = YKP_claim_spanish_africa_tt
+            for_each_scope_loop = {
+                array = global.spanish_africa_states
+                if = {
+                    limit = {
+                        owner = {
+                            NOT = {
+                                OR = {
+                                    is_in_faction_with = ROOT
+                                    is_puppet_of = ROOT
+                                }
+                            }
+                        }
+                    }
+
+                    add_claim_by = ROOT
+                }
+            }
+
+            hidden_effect = {
+                YKP_update_conquer_targets = yes
+            }
+        }
+    }
+}
+
+YKP_core_claimed_states = {
+    YKP_core_claimed_state_decision = {
+        state_target = yes
+        target_root_trigger = {
+            has_country_flag = YKP_core_claims_decisions
+        }
+        target_array = YKP.controlled_states
+        target_trigger = {
+            FROM = {
+                NOT = {
+                    is_core_of = YKP
+                }
+            }
+        }
+
+        available = {
+            FROM = {
+                compliance > 50
+            }
+        }
+
+        on_map_mode = map_and_decisions_view
+        icon = GFX_decision_generic_political_discourse
+        cost = 25
+
+        complete_effect = {
+            FROM = {
+                add_core_of = YKP
+            }
+        }
+    }
+
+    YKP_create_castille_decision = {
+        priority = 100
+
+		icon = GFX_decision_generic_form_nation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_puppet_claims_decisions
+            YPS = {
+                exists = no
+            }
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YKP_controls_any_castilian_states_tt
+                any_of_scopes = {
+                    array = global.castilian_states
+                    tooltip = YKP_controls_state_tt
+                    check_variable = { owner = PREV }
+                }
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_stability = 0.03
+            custom_effect_tooltip = YKP_establish_castilian_puppet_tt
+            for_each_scope_loop = {
+                array = global.castilian_states
+                if = {
+                    limit = {
+                        owner = {
+                            tag = ROOT
+                        }
+                    }
+                    transfer_state_to = YPS
+                }
+
+                add_core_of = YPS
+            }
+
+            hidden_effect = {
+                puppet = YPS
+                add_to_faction = YPS
+                YPS = {
+                    set_cosmetic_tag = YPS_holy_castille
+                    add_ideas = {
+                        YKP_holy_iberian_empire_member
+                    }
+                    add_to_tech_sharing_group = YKP_iberian_empire_tech_sharing_group
+                }
+            }
+        }
+    }
+
+    YKP_create_granada_decision = {
+        priority = 100
+
+		icon = GFX_decision_generic_form_nation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_puppet_claims_decisions
+            YPG = {
+                exists = no
+            }
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YKP_controls_any_granadan_states_tt
+                any_of_scopes = {
+                    array = global.granadan_states
+                    tooltip = YKP_controls_state_tt
+                    check_variable = { owner = PREV }
+                }
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_stability = 0.03
+            custom_effect_tooltip = YKP_establish_granadan_puppet_tt
+            for_each_scope_loop = {
+                array = global.granadan_states
+                if = {
+                    limit = {
+                        owner = {
+                            tag = ROOT
+                        }
+                    }
+                    transfer_state_to = YPG
+                }
+
+                add_core_of = YPG
+            }
+
+            hidden_effect = {
+                puppet = YPG
+                add_to_faction = YPG
+                YPG = {
+                    set_cosmetic_tag = YPG_holy_granada
+                    add_ideas = {
+                        YKP_holy_iberian_empire_member
+                    }
+                    add_to_tech_sharing_group = YKP_iberian_empire_tech_sharing_group
+                }
+            }
+        }
+    }
+
+    YKP_create_navarre_decision = {
+        priority = 100
+
+		icon = GFX_decision_generic_form_nation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_puppet_claims_decisions
+            YPN = {
+                exists = no
+            }
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YKP_controls_any_navarran_states_tt
+                any_of_scopes = {
+                    array = global.navarran_states
+                    tooltip = YKP_controls_state_tt
+                    check_variable = { owner = PREV }
+                }
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_stability = 0.03
+            custom_effect_tooltip = YKP_establish_navarran_puppet_tt
+            for_each_scope_loop = {
+                array = global.navarran_states
+                if = {
+                    limit = {
+                        owner = {
+                            tag = ROOT
+                        }
+                    }
+                    transfer_state_to = YPN
+                }
+
+                add_core_of = YPN
+            }
+
+            hidden_effect = {
+                puppet = YPN
+                add_to_faction = YPN
+                YPN = {
+                    set_cosmetic_tag = YPN_holy_navarre
+                    add_ideas = {
+                        YKP_holy_iberian_empire_member
+                    }
+                    add_to_tech_sharing_group = YKP_iberian_empire_tech_sharing_group
+                }
+            }
+        }
+    }
+
+    YKP_create_aragon_decision = {
+        priority = 100
+
+		icon = GFX_decision_generic_form_nation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_puppet_claims_decisions
+            YPA = {
+                exists = no
+            }
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YKP_controls_any_aragonese_states_tt
+                any_of_scopes = {
+                    array = global.aragonese_states
+                    tooltip = YKP_controls_state_tt
+                    check_variable = { owner = PREV }
+                }
+            }
+        }
+
+		cost = 100
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_stability = 0.03
+            custom_effect_tooltip = YKP_establish_aragonese_puppet_tt
+            for_each_scope_loop = {
+                array = global.aragonese_states
+                if = {
+                    limit = {
+                        owner = {
+                            tag = ROOT
+                        }
+                    }
+                    transfer_state_to = YPA
+                }
+
+                add_core_of = YPA
+            }
+
+            hidden_effect = {
+                puppet = YPA
+                add_to_faction = YPA
+                YPA = {
+                    set_cosmetic_tag = YPA_holy_aragon
+                    add_ideas = {
+                        YKP_holy_iberian_empire_member
+                    }
+                    add_to_tech_sharing_group = YKP_iberian_empire_tech_sharing_group
+                }
+            }
+        }
+    }
+}

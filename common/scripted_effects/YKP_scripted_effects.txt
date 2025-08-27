@@ -1,0 +1,66 @@
+YKP_update_conquer_targets = {
+	clear_array = YKP.conquer_targets
+	for_each_scope_loop = {
+		array = YKP.neighbors
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						is_puppet_of = YKP
+						is_in_faction_with = YKP
+					}
+				}
+				any_controlled_state = {
+					is_claimed_by = YKP
+				}
+				NOT = {
+					OR = {
+						original_tag = ZZZ
+						original_tag = YKP
+					}
+				}
+			}
+			add_to_array = {
+				array = YKP.conquer_targets
+				value = THIS.id
+			}
+		}
+	}
+	for_each_scope_loop = {
+		array = YKP.allies
+		log = "[THIS.GetName]"
+		for_each_scope_loop = {
+			array = THIS.neighbors
+			log = "[THIS.GetName]"
+			if = {
+				limit = {
+					NOT = {
+						is_in_array = {
+							array = YKP.conquer_targets
+							value = THIS.id
+						}
+					}
+					any_controlled_state = {
+						is_claimed_by = YKP
+					}
+					NOT = {
+						OR = {
+							original_tag = ZZZ
+							original_tag = YKP
+						}
+					}
+					NOT = {
+						OR = {
+							is_puppet_of = YKP
+							is_in_faction_with = YKP
+						}
+					}
+				}
+				add_to_array = {
+					array = YKP.conquer_targets
+					value = THIS.id
+				}
+			}
+		}
+	}
+}

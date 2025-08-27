@@ -1,0 +1,15 @@
+defined_text = {
+	name = YKP_get_conquest_decision_category_name
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = YKP_maria_adelaide_de_braganca
+				ruling_only = yes
+			}
+		}
+		localization_key = YKP_conquest_decision_category_reconquista
+	}
+	text = {
+		localization_key = YKP_conquest_decision_category_foreign_diplomacy
+	}
+}

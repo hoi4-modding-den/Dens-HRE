@@ -5,5 +5,25 @@ YKP_debug_decisions = {
 		original_tag = YKP
 	}
 
-	priority = 100
+	priority = 10000
+}
+
+YKP_conquest_decisions = {
+	icon = GFX_decision_category_spr_the_inevitable_civil_war
+
+	allowed = {
+		original_tag = YKP
+	}
+
+	priority = 1000
+}
+
+YKP_core_claimed_states = {
+	icon = GFX_decision_cat_iberian_summit
+
+	allowed = {
+		original_tag = YKP
+	}
+
+	priority = 500
 }

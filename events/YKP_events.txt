@@ -8,6 +8,7 @@ country_event = {
     desc = YKP.1.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.1.a
@@ -16,7 +17,13 @@ country_event = {
 			base = 100
 		}
 
-		custom_effect_tooltip = YKP_king_manuel_ii_dies
+		add_stability = -0.1
+
+		custom_effect_tooltip = YKP_king_manuel_ii_dies_tt
+
+		remove_ideas = {
+			YKP_king_manuel_ii
+		}
 
 		hidden_effect = {
 			YKP_king_manuel_ii = {
@@ -25,8 +32,6 @@ country_event = {
 
 			set_country_flag = YKP_king_manuel_ii_dead
 		}
-
-		add_stability = -0.1
 		
 		add_country_leader_role = {
 			character = YKP_oscar_carmona
@@ -51,6 +56,7 @@ country_event = {
     desc = YKP.2.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.2.a
@@ -89,6 +95,7 @@ country_event = {
     desc = YKP.3.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.3.a
@@ -107,6 +114,7 @@ country_event = {
     desc = YKP.4.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.4.a
@@ -169,6 +177,7 @@ country_event = {
     desc = YKP.5.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.5.a
@@ -212,6 +221,7 @@ country_event = {
     desc = YKP.6.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.6.a
@@ -238,6 +248,7 @@ country_event = {
     desc = YKP.7.desc
 
     is_triggered_only = yes
+	fire_only_once = yes
 
 	option = {
         name = YKP.7.a
@@ -249,6 +260,221 @@ country_event = {
 		effect_tooltip = {
 			add_political_power = -10
 		}
+	}
+}
+
+country_event = {
+    id = YKP.8
+    title = YKP.8.t
+    desc = YKP.8.desc
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = YKP.8.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			add_political_power = -10
+		}
+	}
+}
+
+country_event = {
+    id = YKP.9
+    title = YKP.9.t
+    desc = YKP.9.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.9.a
+		
+		ai_chance = {
+			base = 20
+
+			modifier = {
+				has_government = YKP
+				factor = 160
+			}
+
+			modifier = {
+				has_opinion = {
+					target = YKP
+					value > 50
+				}
+				factor = 40
+			}
+		}
+
+		add_political_power = -10
+		add_war_support = 0.05
+		add_ideas = {
+			YKP_holy_iberian_empire_member
+		}
+
+		YKP = {
+			add_to_faction = PREV
+		}
+
+		add_to_tech_sharing_group = YKP_iberian_empire_tech_sharing_group
+		custom_effect_tooltip = YKP_join_research_group_tt
+
+		hidden_effect = {
+			YKP = {
+				country_event = YKP.10
+			}
+		}
+	}
+
+	option = {
+        name = YKP.9.b
+		
+		ai_chance = {
+			base = 80
+
+			modifier = {
+				has_government = communism
+				factor = 300
+			}
+		}
+
+		custom_effect_tooltip = YKP_possible_hostilities_tt
+
+		YKP = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = YKP_denied_iberian_empire_membership
+			}
+		}
+
+		hidden_effect = {
+			YKP = {
+				country_event = YKP.11
+			}
+		}
+	}
+}
+
+country_event = {
+    id = YKP.10
+    title = YKP.10.t
+    desc = YKP.10.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.10.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_political_power = 10
+		add_stability = 0.03
+	}
+}
+
+country_event = {
+    id = YKP.11
+    title = YKP.11.t
+    desc = YKP.11.desc
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.11.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_political_power = -10
+		add_war_support = 0.03
+
+		if = {
+			limit = {
+				FROM = {
+					original_tag = YGL
+				}
+			}
+			custom_effect_tooltip = YKP_galicia_decision_unlocked_tt
+			add_state_claim = 171
+			YKP_update_conquer_targets = yes
+		}
+	}
+}
+
+country_event = {
+    id = YKP.12
+    title = YKP.12.t
+    desc = YKP.12.desc
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = YKP.12.a
+		
+		ai_chance = {
+			base = 20
+
+			modifier = {
+				has_government = YKP
+				factor = 160
+			}
+
+			modifier = {
+				has_opinion = {
+					target = YKP
+					value > 50
+				}
+				factor = 40
+			}
+		}
+
+		add_political_power = -10
+		add_war_support = 0.05
+
+		YKP = {
+			add_to_faction = ROOT
+		}
+	}
+
+	option = {
+        name = YKP.12.b
+		
+		ai_chance = {
+			base = 80
+
+			modifier = {
+				has_government = communism
+				factor = 300
+			}
+		}
+	}
+}
+
+country_event = {
+    id = YKP.13
+    title = YKP.13.t
+    desc = YKP.13.desc
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = YKP.13.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		custom_effect_tooltip = YKP_thank_you_for_playing_tt
 	}
 }
 

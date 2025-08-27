@@ -1,0 +1,27 @@
+controls_all_portugal = {
+    custom_trigger_tooltip = {
+        tooltip = YKP_controls_all_portugal_tt
+        controls_state = 180
+        controls_state = 181
+        controls_state = 112
+        controls_state = 795
+        controls_state = 179
+    }
+}
+
+allies_controls_all_spain = {
+    custom_trigger_tooltip = {
+        tooltip = YKP_allies_controls_all_spain_tt
+        all_of_scopes = {
+            array = global.iberian_states
+            tooltip = YKP_allies_controls_all_spain_tt
+            controller = {
+                OR = {
+                    original_tag = YKP
+                    is_in_faction_with = YKP
+                    is_puppet_of = YKP
+                }
+            }
+        }
+    }
+}

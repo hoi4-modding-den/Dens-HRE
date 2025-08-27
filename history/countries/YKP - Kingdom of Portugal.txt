@@ -146,6 +146,14 @@ add_ideas = {
     limited_conscription
     low_economic_mobilisation
 }
+
+set_rule = {
+    desc = YKP_basic_rules
+    can_create_factions = no
+	can_join_factions = no
+	can_not_declare_war = yes
+}
+
 if = {
     limit = { not = { has_dlc = "Man the Guns" } }
     create_equipment_variant = {
@@ -218,3 +226,101 @@ if = {
 		}
 	}
 }
+
+country_event = { id = YKP.1 days = 55 }
+
+YKP_update_conquer_targets = yes
+
+add_to_array = { global.iberian_states = 179 }
+add_to_array = { global.iberian_states = 795 }
+add_to_array = { global.iberian_states = 112 }
+add_to_array = { global.iberian_states = 181 }
+add_to_array = { global.iberian_states = 180 }
+add_to_array = { global.iberian_states = 171 }
+add_to_array = { global.iberian_states = 790 }
+add_to_array = { global.iberian_states = 174 }
+add_to_array = { global.iberian_states = 788 }
+add_to_array = { global.iberian_states = 170 }
+add_to_array = { global.iberian_states = 169 }
+add_to_array = { global.iberian_states = 789 }
+add_to_array = { global.iberian_states = 175 }
+add_to_array = { global.iberian_states = 41 }
+add_to_array = { global.iberian_states = 791 }
+add_to_array = { global.iberian_states = 176 }
+add_to_array = { global.iberian_states = 792 }
+add_to_array = { global.iberian_states = 172 }
+add_to_array = { global.iberian_states = 793 }
+add_to_array = { global.iberian_states = 168 }
+add_to_array = { global.iberian_states = 173 }
+add_to_array = { global.iberian_states = 1096 }
+add_to_array = { global.iberian_states = 118 }
+add_to_array = { global.iberian_states = 167 }
+add_to_array = { global.iberian_states = 794 }
+add_to_array = { global.iberian_states = 166 }
+add_to_array = { global.iberian_states = 1095 }
+add_to_array = { global.iberian_states = 1094 }
+add_to_array = { global.iberian_states = 165 }
+
+add_to_array = { global.northern_spain_states = 790 }
+add_to_array = { global.northern_spain_states = 174 }
+add_to_array = { global.northern_spain_states = 791 }
+add_to_array = { global.northern_spain_states = 176 }
+add_to_array = { global.northern_spain_states = 792 }
+add_to_array = { global.northern_spain_states = 172 }
+
+add_to_array = { global.central_spain_states = 788 }
+add_to_array = { global.central_spain_states = 170 }
+add_to_array = { global.central_spain_states = 175 }
+add_to_array = { global.central_spain_states = 41 }
+add_to_array = { global.central_spain_states = 793 }
+
+add_to_array = { global.southern_spain_states = 169 }
+add_to_array = { global.southern_spain_states = 789 }
+add_to_array = { global.southern_spain_states = 168 }
+add_to_array = { global.southern_spain_states = 173 }
+add_to_array = { global.southern_spain_states = 118 }
+add_to_array = { global.southern_spain_states = 1096 }
+
+add_to_array = { global.eastern_spain_states = 166 }
+add_to_array = { global.eastern_spain_states = 167 }
+add_to_array = { global.eastern_spain_states = 794 }
+add_to_array = { global.eastern_spain_states = 1095 }
+add_to_array = { global.eastern_spain_states = 1094 }
+add_to_array = { global.eastern_spain_states = 165 }
+add_to_array = { global.eastern_spain_states = 177 }
+
+add_to_array = { global.spanish_africa_states = 290 }
+add_to_array = { global.spanish_africa_states = 461 }
+add_to_array = { global.spanish_africa_states = 462 }
+add_to_array = { global.spanish_africa_states = 783 }
+add_to_array = { global.spanish_africa_states = 699 }
+add_to_array = { global.spanish_africa_states = 178 }
+add_to_array = { global.spanish_africa_states = 697 }
+
+add_to_array = { global.castilian_states = 169 }
+add_to_array = { global.castilian_states = 789 }
+add_to_array = { global.castilian_states = 168 }
+add_to_array = { global.castilian_states = 175 }
+add_to_array = { global.castilian_states = 170 }
+add_to_array = { global.castilian_states = 41 }
+add_to_array = { global.castilian_states = 793 }
+add_to_array = { global.castilian_states = 791 }
+add_to_array = { global.castilian_states = 174 }
+add_to_array = { global.castilian_states = 176 }
+add_to_array = { global.castilian_states = 788 }
+add_to_array = { global.castilian_states = 792 }
+add_to_array = { global.castilian_states = 790 }
+add_to_array = { global.castilian_states = 171 }
+add_to_array = { global.castilian_states = 118 }
+add_to_array = { global.castilian_states = 1096 }
+
+add_to_array = { global.granadan_states = 173 }
+
+add_to_array = { global.navarran_states = 172 }
+
+add_to_array = { global.aragonese_states = 167 }
+add_to_array = { global.aragonese_states = 794 }
+add_to_array = { global.aragonese_states = 166 }
+add_to_array = { global.aragonese_states = 1095 }
+add_to_array = { global.aragonese_states = 1094 }
+add_to_array = { global.aragonese_states = 165 }

@@ -15,6 +15,46 @@
  YKP_fascism_DEF:0 "the Portuguese State"
  YKP_fascism_ADJ:0 "Portuguese"
 
+ YKP_holy_kingdom_of_portugal:0 "Holy Kingdom of Portugal"
+ YKP_holy_kingdom_of_portugal_DEF:0 "the Holy Kingdom of Portugal"
+ YKP_holy_kingdom_of_portugal_ADJ:0 "Portuguese"
+
+ YKP_holy_kingdom_of_iberia:0 "Holy Kingdom of Iberia"
+ YKP_holy_kingdom_of_iberia_DEF:0 "the Holy Kingdom of Iberia"
+ YKP_holy_kingdom_of_iberia_ADJ:0 "Iberian"
+
+ YPS:0 "Portuguese Spain"
+ YPS_DEF:0 "Portuguese Spain"
+ YPS_ADJ:0 "Portuguese"
+
+ YPS_holy_castille:0 "Holy Castille"
+ YPS_holy_castille_DEF:0 "the Holy Kingdom of Castille"
+ YPS_holy_castille_ADJ:0 "Castilian"
+
+ YPG:0 "Portuguese Granada"
+ YPG_DEF:0 "Portuguese Granada"
+ YPG_ADJ:0 "Portuguese"
+
+ YPG_holy_granada:0 "Holy Granada"
+ YPG_holy_granada_DEF:0 "the Holy Kingdom of Granada"
+ YPG_holy_granada_ADJ:0 "Granadan"
+
+ YPA:0 "Portuguese Aragón"
+ YPA_DEF:0 "Portuguese Aragón"
+ YPA_ADJ:0 "Portuguese"
+
+ YPA_holy_aragon:0 "Holy Aragón"
+ YPA_holy_aragon_DEF:0 "the Holy Kingdom of Aragón"
+ YPA_holy_aragon_ADJ:0 "Aragonese"
+
+ YPN:0 "Portuguese Navarre"
+ YPN_DEF:0 "Portuguese Navarre"
+ YPN_ADJ:0 "Portuguese"
+
+ YPN_holy_navarre:0 "Holy Navarre"
+ YPN_holy_navarre_DEF:0 "the Holy Kingdom of Navarre"
+ YPN_holy_navarre_ADJ:0 "Navarran"
+
  YKP_neutrality_party:0 "PLR"
  YKP_neutrality_party_long:0 "Partido Legitimista Português"
 
@@ -33,8 +73,18 @@
  ### IDEAS ###
 
  YKP_divided_nation_idea:0 "Divided Nation"
- YKP_king_manuel_ii_idea:0 "King Manuel II"
+ YKP_king_manuel_ii_idea:0 "The Patriotic King"
  YKP_royal_bankrupcy_idea:0 "Royal Bankrupcy"
+ YKP_expanded_church_powers_idea:0 "Expanded church powers"
+ YKP_operation_grifo_idea:0 "Operation Grifo"
+ YKP_portugal_strong_idea:0 "Em perigos e guerras esforçados!"
+ YKP_holy_iberian_empire_member_idea:0 "Holy Iberian Empire"
+ YKP_reconquista_idea:0 "Reconquista"
+ YKP_overstretched_garrisons_idea:0 "Overstretched garrisons"
+ YKP_divinity_idea:0 "Divinity"
+ YKP_purificacao_idea:0 "Purificação"
+ YKP_conversion_idea:0 "Catholic missions"
+ YKP_christian_military_idea:0 "Christian military"
 
  ### EVENTS ###
 
@@ -70,14 +120,140 @@
  YKP.7.desc:0 "PLACEHOLDER"
  YKP.7.a:0 "..."
 
+ YKP.8.t:0 ""
+ YKP.8.desc:0 ""
+ YKP.8.a:0 ""
+
+ YKP.9.t:0 "[YKP.GetLeader] invites us to the fight beside them"
+ YKP.9.desc:0 "A portuguese delegate has presented us with an offer from [YKP.GetLeader]. They claim that through mutual support we could change Iberia and usher in a new era of stability."
+ YKP.9.a:0 "We shall fight together for a better Iberia!"
+ YKP.9.b:0 "It would be unwise to trust this offer."
+
+ YKP.10.t:0 "Galicians accept our offer"
+ YKP.10.desc:0 ""
+ YKP.10.a:0 "New brothers in arms!"
+
+ YKP.11.t:0 "Galicians reject our offer"
+ YKP.11.desc:0 ""
+ YKP.11.a:0 "They have chosen subjugation then."
+
+ YKP.12.t:0 "[YKP.GetLeader] implores us to fight in the Reconquista"
+ YKP.12.desc:0 ""
+ YKP.12.a:0 "A just and noble crusade"
+ YKP.12.b:0 "Fool's errand"
+
+ YKP.13.t:0 "God's victory"
+ YKP.13.desc:0 ""
+ YKP.13.a:0 "And on the seventh day He rested."
+
+ ### FOCUSES ###
+
+ YKP_reign_of_piety:0 "Reign of piety"
+ YKP_reign_of_piety_desc:0 ""
+
+ YKP_church_powers:0 "Church powers"
+ YKP_church_powers_desc:0 ""
+
+ YKP_promote_piety:0 "Voice of the Queen"
+ YKP_promote_piety_desc:0 ""
+
+ YKP_convert_the_infidel:0 "Convert the infidel"
+ YKP_convert_the_infidel_desc:0 ""
+
+ YKP_a_new_inquisition:0 "A new inquisition"
+ YKP_a_new_inquisition_desc:0 ""
+
+ YKP_a_divine_people:0 "A divine people"
+ YKP_a_divine_people_desc:0 ""
+
+ YKP_christian_discipline:0 "Christian discipline"
+ YKP_christian_discipline_desc:0 ""
+
+ YKP_catholic_heroism:0 "Catholic heroism"
+ YKP_catholic_heroism_desc:0 ""
+
+ YKP_support_from_the_pope:0 "Support from the Pope"
+ YKP_support_from_the_pope_desc:0 ""
+
+ YKP_expand_the_factories:0 "Expand the factories"
+ YKP_expand_the_factories_desc:0 ""
+
+ YKP_holy_equipment:0 "Holy equipment"
+ YKP_holy_equipment_desc:0 ""
+
+ YKP_retake_our_country:0 "Retake our country"
+ YKP_retake_our_country_desc:0 ""
+
+ YKP_unite_the_kingdom:0 "Unite the kingdom"
+ YKP_unite_the_kingdom_desc:0 ""
+
+ YKP_pride_in_our_people:0 "Pride in our people"
+ YKP_pride_in_our_people_desc:0 ""
+
+ YKP_restore_national_confidence:0 "Restore national confidence"
+ YKP_restore_national_confidence_desc:0 ""
+
+ YKP_recover_lost_research:0 "Recover lost research"
+ YKP_recover_lost_research_desc:0 ""
+
+ YKP_the_reconquista:0 "The Reconquista"
+ YKP_the_reconquista_desc:0 ""
+
+ YKP_united_iberia:0 "United Iberia"
+ YKP_united_iberia_desc:0 ""
+
+ YKP_iberian_holy_states:0 "Iberian holy states"
+ YKP_iberian_holy_states_desc:0 ""
+
+ YKP_gods_chosen:0 "God's chosen"
+ YKP_gods_chosen_desc:0 ""
+
+ YKP_peace_at_last:0 "Peace at last"
+ YKP_peace_at_last_desc:0 ""
+
+ YKP_conquer_galicia:0 "Conquer Galicia"
+ YKP_conquer_galicia_desc:0 ""
+
+ YKP_befriend_galicia:0 "Befriend Galicia"
+ YKP_befriend_galicia_desc:0 ""
+
+ YKP_befriend_gibraltar:0 "Seek support from Gibraltar"
+ YKP_befriend_gibraltar_desc:0 ""
+
+ ### DECISIONS ###
+
+ YKP_conquest_decisions:0 "[YKP_get_conquest_decision_category_name]"
+ YKP_conquest_decision_category_reconquista:0 "Reconquista"
+ YKP_conquest_decision_category_foreign_diplomacy:0 "Foreign diplomacy"
+
+ YKP_conquer_claim_decision:0 "Assert our claims over §Y[FROM.GetName]§!"
+ YKP_conquer_porto_decision:0 "Retake §YPorto§! from the rebels"
+ YKP_operation_grifo:0 "Operation §YGrifo§!"
+
+ YKP_claim_northern_spain_decision:0 "Claim §YNorthern Spain§!"
+ YKP_claim_central_spain_decision:0 "Claim §YCentral Spain§!"
+ YKP_claim_southern_spain_decision:0 "Claim §YSouthern Spain§!"
+ YKP_claim_eastern_spain_decision:0 "Claim §YEastern Spain§!"
+ YKP_claim_spanish_africa_decision:0 "Claim §YSpanish Africa§!"
+
+ YKP_core_claimed_states:0 "Occupied Iberia"
+ YKP_core_claimed_state_decision:0 "Induct §Y[FROM.GetName]§! as an official state"
+
+ YKP_create_castille_decision:0 "Reform §YCastille§! as a subject"
+ YKP_create_granada_decision:0 "Reform §YGranada§! as a subject"
+ YKP_create_navarre_decision:0 "Reform §YNavarre§! as a subject"
+ YKP_create_aragon_decision:0 "Reform §YAragón§! as a subject"
+
  ### MISC ###
 
  YKP_communist_rebels:0 "§RCommunist rebels!§!"
  YKP_supports_our_efforts:0 "Supports our efforts"
+ YKP_denied_iberian_empire_membership:0 "Denied Iberian Empire membership"
 
  YKP_the_patriot:0 "o Patriota"
  YKP_the_unfortunate:0 "o Desaventurado"
  YKP_the_queen_mother:0 "Queen Mother"
+ YKP_sword_of_god:0 "§1Sword of God§!"
 
  aviation_pioneer:0 "Aviation Pioneer"
 
@@ -88,6 +264,49 @@
  YKP_exit_tooltip:0 "§YExit§!"
 
  royalist_administrator:0 "Royalist administrator"
+
+ YKP_decision_cost_CP_25: "£command_power  §Y25§!"
+ YKP_decision_cost_CP_25_blocked: "£command_power  §R25§!"
+ YKP_decision_cost_CP_25_tooltip: "It costs £command_power  §Y25§! to take the decision"
+
+ YKP_iberian_empire_tech_sharing_group_name:0 "Iberian research council"
+ YKP_iberian_empire_tech_sharing_group_desc:0 ""
+
+ YKP_claiming_land_currently:0 "Currently making claims on §YIberian§! lands"
+
+ YKP_basic_rules:0 ""
+
+ HOLY_IBERIAN_EMPIRE:0 "Holy Iberian Empire"
+
+ ### TOOLTIPS ###
+
+ YKP_king_manuel_ii_dies_tt:0 "§YKing Manuel II§! dies."
+ YKP_controls_all_portugal_tt:0 "Controls all of §YPortugal§!"
+ YKP_controls_all_portugal_tt_NOT:0 "Does not control all of §YPortugal§!"
+ YKP_allow_portuguese_war_tt:0 "Will unlock §Y£GFX_decision_icon_small decisions§! to retake §YPortuguese§! lands."
+ YKP_galicia_decision_unlocked_tt:0 "Will unlock a §Y£GFX_decision_icon_small decision§! to conquer §YGalician§! lands."
+ YKP_possible_hostilities_tt:0 "§YThis may prompt Portugal to future hostilities with us.§!"
+ YKP_join_research_group_tt:0 "§YWe will join Portugal's research group.§!"
+ YKP_unlocks_claims_decisions_tt:0 "Will unlock §Y£GFX_decision_icon_small decisions§! to claim and conquer §YIberian§! lands."
+ YKP_unlocks_core_claims_decisions_tt:0 "Will unlock §Y£GFX_decision_icon_small decisions§! to core conquered §YIberian§! lands."
+ YKP_unlocks_puppet_claims_decisions_tt:0 "Will unlock §Y£GFX_decision_icon_small decisions§! to create holy states in §YIberian§! lands."
+ YKP_allies_controls_all_spain_tt:0 "Our allies control all of §YIberia§!"
+ YKP_allies_controls_all_spain_tt_NOT:0 "Our allies do not control all of §YIberia§!"
+ YKP_thank_you_for_playing_tt:0 "§LThis is the end of Portugal's content. Thank you for playing!\n\n- Milessmiles1§!"
+ YKP_claim_northern_spain_tt:0 "Will claim all §Ynorthern spanish§! states not controlled by an §Ysubject§! or §Yfaction member§!.\n\nUnlocks §Y£GFX_decision_icon_small decisions§! to conquer claimed territory in §YNorthern Spain§! that borders us or our allies."
+ YKP_claim_central_spain_tt:0 "Will claim all §Ycentral spanish§! states not controlled by an §Ysubject§! or §Yfaction member§!.\n\nUnlocks §Y£GFX_decision_icon_small decisions§! to conquer claimed territory in §YCentral Spain§! that borders us or our allies."
+ YKP_claim_southern_spain_tt:0 "Will claim all §Ysouthern spanish§! states not controlled by an §Ysubject§! or §Yfaction member§!.\n\nUnlocks §Y£GFX_decision_icon_small decisions§! to conquer claimed territory in §YSouthern Spain§! that borders us or our allies."
+ YKP_claim_eastern_spain_tt:0 "Will claim all §Yeastern spanish§! states not controlled by an §Ysubject§! or §Yfaction member§!.\n\nUnlocks §Y£GFX_decision_icon_small decisions§! to conquer claimed territory in §YEastern Spain§! that borders us or our allies."
+ YKP_claim_spanish_africa_tt:0 "Will claim all §Yspanish african§! states not controlled by an §Ysubject§! or §Yfaction member§!.\n\nUnlocks §Y£GFX_decision_icon_small decisions§! to conquer claimed territory in §YSpanish Africa§! that borders us or our allies."
+ YKP_controls_state_tt:0 "Controls state"
+ YKP_controls_any_castilian_states_tt:0 "Controls any §Ycastilian§! states"
+ YKP_establish_castilian_puppet_tt:0 "Create a §Ycastilian§! subject in all controlled §Ycastilian§! states."
+ YKP_controls_any_granadan_states_tt:0 "Controls any §Ygranadan§! states"
+ YKP_establish_granadan_puppet_tt:0 "Create a §Ygranadan§! subject in all controlled §Ygranadan§! states."
+ YKP_controls_any_navarran_states_tt:0 "Controls any §Ynavarran§! states"
+ YKP_establish_navarran_puppet_tt:0 "Create a §Ynavarran§! subject in all controlled §Ynavarran§! states."
+ YKP_controls_any_aragonese_states_tt:0 "Controls any §Yaragonese§! states"
+ YKP_establish_aragonese_puppet_tt:0 "Create a §Yaragonese§! subject in all controlled §Yaragonese§! states."
 
  ### DEBUG ###
 

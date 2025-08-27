@@ -205,7 +205,7 @@ characters = {
 				original_tag = YKP
 			}
 			available = {
-				
+				has_completed_focus = YKP_promote_piety
 			}
 			traits = {
 				army_artillery_3
@@ -437,28 +437,28 @@ characters = {
 				small = "/gfx/leaders/YKP/ministers/YKP_Minister_Jose_Mendes_Cabcadas.dds"
 			}
 		}
-		navy_leader={
-			traits={ ironside }
-			skill=2
-			attack_skill = 3
-			defense_skill = 2
-			maneuvering_skill = 1
-			coordination_skill = 2
-		}
-		advisor = {
-			slot = navy_chief
-			idea_token = YKP_jose_mendes_cabecadas_idea
-			allowed = {
-				original_tag = YKP
-			}
-			traits = {
-				navy_chief_commerce_raiding_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
+		#navy_leader={
+		#	traits={ ironside }
+		#	skill=2
+		#	attack_skill = 3
+		#	defense_skill = 2
+		#	maneuvering_skill = 1
+		#	coordination_skill = 2
+		#}
+		#advisor = {
+		#	slot = navy_chief
+		#	idea_token = YKP_jose_mendes_cabecadas_idea
+		#	allowed = {
+		#		original_tag = YKP
+		#	}
+		#	traits = {
+		#		navy_chief_commerce_raiding_2
+		#	}
+		#	cost = 100
+		#	ai_will_do = {
+		#		factor = 1.000
+		#	}
+		#}
 	}
 
 	YKP_augusto_de_castilho = {

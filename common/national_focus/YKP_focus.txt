@@ -6,15 +6,17 @@ focus_tree = {
 		modifier = { add = 10 tag = YKP }
 	}
 
-	continuous_focus_position = { x = 100 y = 1000 }
+	continuous_focus_position = { x = 1000 y = 1000 }
 
     reset_on_civilwar = no
 
 
 	### POLITICAL TREE ###
 
+	### HOLY KINGDOM PATH ###
+
 	focus = {
-		id = YKP_look_to_god
+		id = YKP_reign_of_piety
 		icon = GFX_focus_generic_catholic_dominion
 		x = 0
 		y = 0
@@ -50,6 +52,805 @@ focus_tree = {
 
 			XRO = {
 				country_event = { id = YKP.4 days = 15 }
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_church_powers
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 3
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_reign_of_piety
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_reign_of_piety
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_expanded_church_powers
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_promote_piety
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_church_powers
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_church_powers
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = YKP_francisco_craveiro_lopes_idea
+		}
+	}
+
+	focus = {
+		id = YKP_convert_the_infidel
+		icon = GFX_SOV_military_engineering_university_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_promote_piety
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_promote_piety
+		}
+
+		mutually_exclusive = {
+			focus = YKP_a_new_inquisition
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_conversion
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_a_new_inquisition
+		icon = GFX_SOV_consolidate_power_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_promote_piety
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_promote_piety
+		}
+
+		mutually_exclusive = {
+			focus = YKP_convert_the_infidel
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_purificacao
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_a_divine_people
+		icon = GFX_SOV_respect_baltic_self_determination_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_promote_piety
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_convert_the_infidel
+			focus = YKP_a_new_inquisition
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_divinity
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_christian_discipline
+		icon = GFX_SOV_war_measures_in_the_east_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_church_powers
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_church_powers
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_christian_military
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_catholic_heroism
+		icon = GFX_focus_BRA_air_force
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_christian_discipline
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_christian_discipline
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YKP_christian_military
+				add_idea = YKP_christian_military_upgraded
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_support_from_the_pope
+		icon = GFX_focus_generic_pope
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_a_divine_people
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_a_divine_people
+			focus = YKP_catholic_heroism
+		}
+
+		available = {
+			has_completed_focus = YKP_restore_national_confidence
+			XRO = {
+				exists = yes
+				has_government = ROOT
+			}
+		}
+
+		completion_reward = {
+			XRO = {
+				country_event = { id = YKP.12 days = 5 }
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_expand_the_factories
+		icon = GFX_SOV_expand_the_aircraft_industry_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_a_divine_people
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_a_divine_people
+			focus = YKP_catholic_heroism
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_holy_equipment
+		icon = GFX_focus_por_portuguese_legion
+		x = 0
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_expand_the_factories
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_expand_the_factories
+		}
+
+		available = {
+			num_of_military_factories > 6
+		}
+
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				bonus = 2.0
+				uses = 1
+				category = infantry_tech
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_retake_our_country
+		icon = GFX_SOV_the_old_enemy_ccp_2d_sov_compatibility
+		x = -3
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_reign_of_piety
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_reign_of_piety
+		}
+
+		bypass = {
+			controls_all_portugal = yes
+		}
+
+		available = {
+			controls_all_portugal = no
+			has_army_manpower = {
+				size > 90000
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YKP_allow_portuguese_war_tt
+
+			hidden_effect = {
+				set_country_flag = YKP_allow_portuguese_war_decisions
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_unite_the_kingdom
+		icon = GFX_focus_por_the_kingdom_reunited
+		x = 0
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_retake_our_country
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_retake_our_country
+		}
+
+		available = {
+			controls_all_portugal = yes
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			set_cosmetic_tag = YKP_holy_kingdom_of_portugal
+			remove_ideas = {
+				YKP_divided_nation
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_pride_in_our_people
+		icon = GFX_focus_generic_support_the_left_right
+		x = -2
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_unite_the_kingdom
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_unite_the_kingdom
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_portugal_strong
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_restore_national_confidence
+		icon = GFX_focus_por_concordat
+		x = 0
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_unite_the_kingdom
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_unite_the_kingdom
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			YKP_maria_adelaide_de_braganca = {
+				add_trait = {
+					ideology = monarchist_oligarchism
+					trait = YKP_sword_of_god
+				}
+			}
+
+			create_faction = HOLY_IBERIAN_EMPIRE
+			set_country_flag = YKP_allow_iberian_war_decisions
+		}
+	}
+
+	focus = {
+		id = YKP_recover_lost_research
+		icon = GFX_focus_research
+		x = 2
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_unite_the_kingdom
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_unite_the_kingdom
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = YKP_conquer_galicia
+		icon = GFX_SOV_claims_in_baltic_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_restore_national_confidence
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_restore_national_confidence
+		}
+
+		mutually_exclusive = {
+			focus = YKP_befriend_galicia
+		}
+
+		bypass = {
+			controls_state = 171
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YKP_galicia_decision_unlocked_tt
+			add_state_claim = 171
+		}
+	}
+
+	focus = {
+		id = YKP_befriend_galicia
+		icon = GFX_SOV_call_for_aid_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_restore_national_confidence
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_restore_national_confidence
+		}
+
+		mutually_exclusive = {
+			focus = YKP_conquer_galicia
+		}
+
+		available = {
+			NOT = {
+				controls_state = 171
+			}
+			NOT = {
+				171 = {
+					owner = {
+						has_government = communism
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			171 = {
+				owner = {
+					country_event = { id = YKP.9 days = 5 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_befriend_gibraltar
+		icon = GFX_focus_generic_home_defense
+		x = 3
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_restore_national_confidence
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_restore_national_confidence
+		}
+
+		available = {
+			YGB = {
+				exists = yes
+				has_completed_focus = YGB_support_manuel
+			}
+			NOT = {
+				OR = {
+					controls_state = 118
+					controls_state = 1096
+				}
+			}
+		}
+
+		completion_reward = {
+			YGB = {
+				country_event = { id = YKP.9 days = 5 }
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_the_reconquista
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_restore_national_confidence
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_conquer_galicia
+			focus = YKP_befriend_galicia
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YKP_unlocks_claims_decisions_tt
+			set_country_flag = YKP_reconquista_claims_decisions
+			add_ideas = {
+				YKP_reconquista
+			}
+
+			hidden_effect = {
+				set_rule = {
+    				desc = YKP_basic_rules
+					can_not_declare_war = no
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_united_iberia
+		icon = GFX_focus_por_iberian_summit
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_the_reconquista
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_the_reconquista
+		}
+
+		mutually_exclusive = {
+			focus = YKP_iberian_holy_states
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YKP_unlocks_core_claims_decisions_tt
+			set_country_flag = YKP_core_claims_decisions
+			add_ideas = {
+				YKP_overstretched_garrisons
+			}
+			set_cosmetic_tag = YKP_holy_kingdom_of_iberia
+		}
+	}
+
+	focus = {
+		id = YKP_iberian_holy_states
+		icon = GFX_focus_BEL_la_dame_blanche
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_the_reconquista
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_the_reconquista
+		}
+
+		mutually_exclusive = {
+			focus = YKP_united_iberia
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YKP_unlocks_puppet_claims_decisions_tt
+			set_country_flag = YKP_puppet_claims_decisions
+		}
+	}
+
+	focus = {
+		id = YKP_gods_chosen
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_the_reconquista
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_united_iberia
+			focus = YKP_iberian_holy_states
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YKP_reconquista
+				add_idea = YKP_reconquista_upgraded
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_peace_at_last
+		icon = GFX_focus_por_the_fifth_empire
+		x = 0
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_gods_chosen
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_gods_chosen
+		}
+
+		available = {
+			allies_controls_all_spain = yes
+		}
+
+		completion_reward = {
+			country_event = YKP.13
+
+			if = {
+				limit = {
+					has_idea = YKP_overstretched_garrisons
+				}
+
+				remove_ideas = {
+					YKP_overstretched_garrisons
+				}
 			}
 		}
 	}
