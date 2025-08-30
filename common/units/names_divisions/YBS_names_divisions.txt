@@ -1,0 +1,295 @@
+# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+YBS_INF_01 = {
+	name = "Infantry Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Infanteria Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Infanteria Brigada" }
+		2 = { "%d. Infanteria Brigada" }
+		3 = { "%d. Infanteria Brigada" }
+
+	}
+}
+
+YBS_INF_02 = {
+	name = "Infantry Divisions"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Infanteria Dibisioa"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Infanteria Dibisioa" }
+		2 = { "%d. Infanteria Dibisioa" }
+		3 = { "%d. Infanteria Dibisioa" }
+
+	}
+}
+
+YBS_MIL_01 = {
+	name = "Country Protection Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Herrialdea Babesteko Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Herrialdea Babesteko Brigada" }
+		2 = { "%d. Herrialdea Babesteko Brigada" }
+		3 = { "%d. Herrialdea Babesteko Brigada" }
+
+	}
+}
+
+YBS_ANT_01 = {
+	name = "Anti-Armour Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "anti_tank" }
+
+	fallback_name = "%d. Armaduraren Aurkako Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Armaduraren Aurkako Brigada" }
+		2 = { "%d. Armaduraren Aurkako Brigada" }
+		3 = { "%d. Armaduraren Aurkako Brigada" }
+
+	}
+}
+
+YBS_GAR_01 = {
+	name = "Border Security Units"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Mugako Segurtasun Unitatea"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Mugako Segurtasun Unitatea" }
+		2 = { "%d. Mugako Segurtasun Unitatea" }
+		3 = { "%d. Mugako Segurtasun Unitatea" }
+
+	}
+}
+
+YBS_MTN_01 = {
+	name = "Mountaineer Defense Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	fallback_name = "%d. Mendizaleen Defentsa Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Mendizaleen Defentsa Brigada" }
+		2 = { "%d. Mendizaleen Defentsa Brigada" }
+		3 = { "%d. Mendizaleen Defentsa Brigada" }
+	}
+}
+
+YBS_MAR_01 = {
+	name = "Maritime Enforcement Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "marine" }
+
+	fallback_name = "%d. Itsas Betearazteko Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Itsas Betearazteko Brigada" }
+		2 = { "%d. Itsas Betearazteko Brigada" }
+		3 = { "%d. Itsas Betearazteko Brigada" }
+
+	}
+}
+
+YBS_CAV_01 = {
+	name = "Cavalry Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	fallback_name = "%d. Zalditeria Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Zalditeria Brigada" }
+		2 = { "%d. Zalditeria Brigada" }
+		3 = { "%d. Zalditeria Brigada" }
+
+	}
+}
+
+YBS_CAV_02 = {
+	name = "Cavalry Divisions"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	fallback_name = "%d. Zalditeria Dibisioa"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Zalditeria Dibisioa" }
+		2 = { "%d. Zalditeria Dibisioa" }
+		3 = { "%d. Zalditeria Dibisioa" }
+
+	}
+}
+
+YBS_MOT_01 = {
+	name = "Motorised Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	fallback_name = "%d. Brigada Motorizatua"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Brigada Motorizatua" }
+		2 = { "%d. Brigada Motorizatua" }
+		3 = { "%d. Brigada Motorizatua" }
+
+	}
+}
+
+YBS_ARM_01 = {
+	name = "Armoured Cavalry Brigades"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Zalditeria Blindatuaren Brigada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Zalditeria Blindatuaren Brigada" }
+		2 = { "%d. Zalditeria Blindatuaren Brigada" }
+		3 = { "%d. Zalditeria Blindatuaren Brigada" }
+
+	}
+}
+
+YBS_ARM_02 = {
+	name = "Armour Divisions"
+
+	for_countries = { YBS }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	fallback_name = "%d. Blindaje Dibisioa"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Blindaje Dibisioa" }
+		2 = { "%d. Blindaje Dibisioa" }
+		3 = { "%d. Blindaje Dibisioa" }
+
+	}
+}

@@ -1,0 +1,186 @@
+ideas = {
+	country = {
+
+        YBS_underdeveloped_economy = {
+
+			picture = great_depression
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = -0.35
+                industrial_capacity_factory = -0.2
+                industrial_capacity_dockyard = -0.2
+			}
+		}
+
+        YBS_disjointed_military = {
+
+			picture = chi_army_corruption
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = -0.15
+                army_org_regain = -0.05
+			    army_advisor_cost_factor = 0.25
+                theorist_cost_factor = 0.25
+                mobilization_laws_cost_factor = 0.4
+                economy_cost_factor = 0.4
+			}
+		}
+		
+		YBS_language_issue = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.15
+                stability_factor = -0.1
+                army_org_factor = -0.02
+                army_morale_factor = -0.02
+			}
+		}
+
+        YBS_language_issue_basque_dominant = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                stability_factor = -0.1
+                army_morale_factor = -0.02
+                compliance_growth = -0.01
+			}
+		}
+
+        YBS_language_issue_mending_ties = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.15
+                army_org_factor = -0.02
+                compliance_growth = 0.01
+			}
+		}
+
+        YBS_falangist_remnants = {
+
+			picture = SPA_fet_y_de_las_jons
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+                political_power_cost = 0.1
+                fascism_acceptance = -100
+			}
+		}
+
+        YBS_national_pride = {
+
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				surrender_limit = 1
+                army_core_defence_factor = 0.1
+                conscription_factor = 0.05
+			}
+		}
+
+	}
+
+	industrial_concern = {
+
+		YBS_mondragon_cooperative = {
+
+			picture = FIN_finnish_federation_of_trade_unions_heavy
+			
+			allowed = {
+				original_tag = YBS
+			}
+
+			available = {
+				has_country_flag = YBS_mondragon_cooperative_founded
+			}
+
+			cost = 100
+			
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+                production_factory_efficiency_gain_factor = 0.02
+			}
+			
+			traits = { YBS_cooperative_trait }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+	}
+}

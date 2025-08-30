@@ -1,0 +1,154 @@
+﻿l_english:
+
+ YBS: "Basque Country"
+ YBS_DEF: "the Basque Country"
+ YBS_ADJ: "Basque"
+ YBS_democratic: "Basque Country Republic"
+ YBS_democratic_DEF: "the Republic of the Basque Country"
+ YBS_democratic_ADJ: "Basque"
+ YBS_neutrality: "Basque Stratocracy"
+ YBS_neutrality_DEF: "the Military Government of the Basque Country"
+ YBS_neutrality_ADJ: "Basque"
+ YBS_communism: "Basque Commune"
+ YBS_communism_DEF: "the Commune of the Basque Country"
+ YBS_communism_ADJ: "Basque"
+ YBS_fascism: "Basque Falangist State"
+ YBS_fascism_DEF: "the Basque Falangist State"
+ YBS_fascism_ADJ: "Basque"
+
+
+# PARTIES
+
+ YBS_democratic_party: "EAJ"
+ YBS_democratic_party_long: "Euzko Alderdi Jeltzalea (Basque Nationalist Party)"
+ YBS_democratic_party_socialist: "EAE"
+ YBS_democratic_party_socialist_long: "Eusko Abertzale Ekintza (Basque Nationalist Action)"
+ YBS_democratic_party_liberal: "GEA"
+ YBS_democratic_party_liberal_long: "Garapenerako Eusko Alderdia (Basque Development Party)"
+ YBS_neutrality_party: "EAK"
+ YBS_neutrality_party_long: "Euzkako Alderdi Karlista (Basque Carlist Party)"
+ YBS_neutrality_party_military: "Military Rule"
+ YBS_neutrality_party_military_long: "Alliance of the Armed Forces"
+ YBS_neutrality_party_hanse: "Hanseatic Control"
+ YBS_neutrality_party_hanse_long: "Vorstand der Vertreter der hanseatischen Interessen in Iberien (Board of Representatives of Hanseatic Interests in Iberia)"
+ YBS_communism_party: "EAS-PSV"
+ YBS_communism_party_long: "Euskal Alderdi Sindikalista / Partido Sindicalista Vasco (Syndicalist Party - Basque Branch)"
+ YBS_fascism_party: "FE"
+ YBS_fascism_party_long: "Falange Española (Spanish Phalanx)"
+
+
+# CHARACTERS
+
+ YBS_jose_antonio_aguirre_name: "José Antonio Aguirre"
+ YBS_jose_antonio_aguirre_desc: "§YFull Name:§! §LJosé Antonio Aguirre y Lecube§!\n§YBorn:§! §LMarch 6. 1904, in Bilbao§!\n§YBackground:§! §LLeader of the Basque Nationalist Party and the person to declare Basque Independence in the turmoil of the Iberian Civil War. He is the first President of the Republic of the Basque Country.§! $XHH_is_historical_character_tt$"
+
+
+# IDEAS
+
+ YBS_underdeveloped_economy: "Underdeveloped Economy"
+ YBS_underdeveloped_economy_desc: "Our Region had been neglected by the government in Madrid for years. Minimal infrastructure maintenance, low industrialisation and few investments into the Basque country have left us with few economic opportunities following our independence."
+ YBS_disjointed_military: "Disjointed Military"
+ YBS_disjointed_military_desc: "Our armed forces are not prepared for any direct conflict. While the Nationalist Party was eager to declare independence, our military power was barely enough to repel immediate attempts to subvert it. Our current army is made up of nationalist militia and sympathetic members of the former Iberian National Army. There are also rumours that some of the Carlist officers aren't as loyal to the parliament as expected."
+ YBS_language_issue: "Language Divisions"
+ YBS_language_issue_desc: "Our nation is divided between the native Basque people and the Spanish. Despite our government officially recognising both Spanish and Basque as our national languages, this division of culture and language is significantly affecting regular civilian life and our military cohesion."
+ YBS_language_issue_basque_dominant: "Enforcing Euskara"
+ YBS_language_issue_basque_dominant_desc: "The Basque language is being enforced as the only national language of [ROOT.GetNameDef]."
+ YBS_language_issue_mending_ties: "Euskara-Español National Languages"
+ YBS_language_issue_mending_ties_desc: "The Basque and Spanish languages are both put in equal positions within the government and in education."
+ YBS_falangist_remnants: "Falangist Remnants"
+ YBS_falangist_remnants_desc: "Following their attempted coup in late 1935, the Falangists have been under surveillance by state forces. Their leader is prone to abandon his efforts in the Basque Country should we finish off his little goon squads."
+ YBS_national_pride: "Harrotasun Nazionala"
+ YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
+
+ YBS_mondragon_cooperative: "Mondragón Corporación Cooperativa"
+
+
+# TRAITS
+
+ YBS_cooperative_trait: "Cooperative Federation"
+
+
+# FLAGS N STUFF
+
+ YBS_elections_happened: "The §Y1936 Election Week§! has begun"
+ YBS_mondragon_cooperative_founded: "The §YMondragón Corporation§! was founded"
+
+# ELECTION VAR STUFF
+
+ YBS_mon_effect_tt: "§gCarlist§! Popularity: $RIGHT|+=1%%$"
+ YBS_mon_trigger_tt: "At least §Y$RIGHT|0$§! §gCarlist§! Popularity"
+ YBS_con_effect_tt: "§cNationalist§! Popularity: $RIGHT|+=1%%$"
+ YBS_con_trigger_tt: "At least §Y$RIGHT|0$§! §cNationalist§! Popularity"
+ YBS_lib_effect_tt: "§lLiberal§! Popularity: $RIGHT|+=1%%$"
+ YBS_lib_trigger_tt: "At least §Y$RIGHT|0$§! §lLiberal§! Popularity"
+ YBS_soc_effect_tt: "§rSocialist§! Popularity: $RIGHT|+=1%%$"
+ YBS_soc_trigger_tt: "At least §Y$RIGHT|0$§! §rSocialist§! Popularity"
+ YBS_syn_effect_tt: "§SSyndicalist§! Popularity: $RIGHT|+=1%%$"
+ YBS_syn_trigger_tt: "At least §Y$RIGHT|0$§! §SSyndicalist§! Popularity"
+
+
+# FOCUS TREE
+
+ YBS_end_strikes: "End the Bilbao Strikes"
+ YBS_end_strikes_desc: ""
+ YBS_secure_rural_vote: "Campaign in the Rural Regions"
+ YBS_secure_rural_vote_desc: ""
+ YBS_secure_urban_vote: "Campaign in the Urban Regions"
+ YBS_secure_urban_vote_desc: ""
+ YBS_purge_conspiring_officers: "Purge the Conspirators"
+ YBS_purge_conspiring_officers_desc: ""
+ YBS_purge_conspiring_officers_tt: "If the §gConspirators§! have not been purged, they will §Yoverthrow§! any elected party opposed to their values (The §lLiberals§!, the §rSocialists§! and the §SSyndicalists§!)."
+ YBS_pro_war_propaganda: "'Protecting Basque Freedom'"
+ YBS_pro_war_propaganda_desc: ""
+ YBS_election_week: "Election Week"
+ YBS_election_week_desc: ""
+ YBS_autocompleted_by_election_tt: "§YAuto-completed§! when §Yelections§! have been held."
+ YBS_election_week_tt: "The outcome of the §YElections§! will be decided.\nThe party with §Yhighest popularity§! will win, unless the Military decides to §goverthrow the Republic§!."
+
+ YBS_military_coup: "The Officer Conspiracy"
+ YBS_military_coup_desc: ""
+ YBS_carlist_victory: "Carlist Victory"
+ YBS_carlist_victory_desc: ""
+ YBS_carlist_government: "Restore the Monarchy"
+ YBS_carlist_government_desc: ""
+
+ YBS_liberal_victory: "Liberal Victory"
+ YBS_liberal_victory_desc: ""
+
+ YBS_nationalist_victory: "Nationalist Victory"
+ YBS_nationalist_victory_desc: ""
+
+ YBS_socialist_victory: "Socialist Victory"
+ YBS_socialist_victory_desc: ""
+
+ YBS_unity_through_democracy: "Unity through Democracy"
+ YBS_unity_through_democracy_desc: ""
+
+ YBS_guardian_of_iberian_democracy: "Guardian of Iberian Democracy"
+ YBS_guardian_of_iberian_democracy_desc: ""
+
+ YBS_rule_of_capital: "Corporate Takeover"
+ YBS_rule_of_capital_desc: ""
+
+ YBS_we_will_always_have_hope: "We Will Always Have Hope"
+ YBS_we_will_always_have_hope_desc: ""
+
+ YBS_syndicalist_victory: "Syndicalist Victory"
+ YBS_syndicalist_victory_desc: ""
+
+
+# MAP
+
+ STATE_1097: "Gipuzkoa"
+ STATE_1098: "Araba"
+
+ YBS_STATE_806: "Ipparaldea"
+
+ VICTORY_POINTS_6756: "San Sebastián"
+ VICTORY_POINTS_13233: "Vitoria"
+
+ YBS_VICTORY_POINTS_740: "Bilbo"
+ YBS_VICTORY_POINTS_3933: "Iruñea"
+ YBS_VICTORY_POINTS_6756: "Donostia"
+ YBS_VICTORY_POINTS_9710: "Baiona"
+ YBS_VICTORY_POINTS_13233: "Gasteiz"

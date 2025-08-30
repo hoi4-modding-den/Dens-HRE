@@ -1,0 +1,586 @@
+focus_tree = {
+	id = YBS_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = YBS
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 5000 y = 1000 }
+
+	initial_show_position = {
+		x = 10
+		y = 0
+	}
+
+    focus = {
+		id = YBS_end_strikes
+		icon = GFX_goal_generic_war_with_comintern
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 6
+		y = 0
+		#relative_position_id =
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_country_flag = YBS_elections_happened }
+		}
+		
+		bypass = {
+			has_country_flag = YBS_elections_happened
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            add_stability = 0.05
+			add_popularity = { ideology = communism popularity = 0.05 }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_to_variable = { var = YBS_con_pop value = -10 tooltip = YBS_con_effect_tt }
+            add_to_variable = { var = YBS_soc_pop value = 5 tooltip = YBS_soc_effect_tt }
+            add_to_variable = { var = YBS_syn_pop value = 5 tooltip = YBS_syn_effect_tt }
+		}
+	}
+
+	focus = {
+		id = YBS_secure_rural_vote
+		icon = GFX_focus_generic_farmland
+		#prerequisite = { focus = }
+		mutually_exclusive = { focus = YBS_secure_urban_vote }
+		x = 3
+		y = 0
+		relative_position_id = YBS_end_strikes
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_country_flag = YBS_elections_happened }
+		}
+		
+		bypass = {
+			has_country_flag = YBS_elections_happened
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            add_political_power = 50
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_to_variable = { var = YBS_mon_pop value = -5 tooltip = YBS_mon_effect_tt }
+            add_to_variable = { var = YBS_syn_pop value = -5 tooltip = YBS_syn_effect_tt }
+            add_to_variable = { var = YBS_con_pop value = 10 tooltip = YBS_con_effect_tt }
+		}
+	}
+
+    focus = {
+		id = YBS_secure_urban_vote
+		icon = GFX_focus_SWE_urbanization
+		#prerequisite = { focus = }
+		mutually_exclusive = { focus = YBS_secure_rural_vote }
+		x = 2
+		y = 0
+		relative_position_id = YBS_secure_rural_vote
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_country_flag = YBS_elections_happened }
+		}
+		
+		bypass = {
+			has_country_flag = YBS_elections_happened
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            add_political_power = 50
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_to_variable = { var = YBS_lib_pop value = -5 tooltip = YBS_lib_effect_tt }
+            add_to_variable = { var = YBS_soc_pop value = -5 tooltip = YBS_soc_effect_tt }
+			add_to_variable = { var = YBS_con_pop value = 10 tooltip = YBS_con_effect_tt }
+		}
+	}
+
+    focus = {
+		id = YBS_purge_conspiring_officers
+		icon = GFX_focus_SOV_military_purge
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 0
+		relative_position_id = YBS_secure_urban_vote
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_country_flag = YBS_elections_happened }
+		}
+		
+		bypass = {
+			has_country_flag = YBS_elections_happened
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+            # country_event
+            custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YBS_purge_conspiring_officers_tt
+		}
+	}
+
+    focus = {
+		id = YBS_pro_war_propaganda
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = YBS_secure_rural_vote focus = YBS_secure_urban_vote }
+        prerequisite = { focus = YBS_end_strikes focus = YBS_purge_conspiring_officers }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = YBS_secure_rural_vote
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_country_flag = YBS_elections_happened }
+		}
+		
+		bypass = {
+			has_country_flag = YBS_elections_happened
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+    focus = {
+		id = YBS_election_week
+		icon = GFX_focus_generic_election
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = YBS_pro_war_propaganda
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+                tooltip = YBS_autocompleted_by_election_tt
+                always = no
+            }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = YBS_election_week_tt
+		}
+	}
+
+# CARLIST BRANCH
+
+    focus = {
+		id = YBS_military_coup
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_election_week }
+		mutually_exclusive = { focus = YBS_syndicalist_victory focus = YBS_carlist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		x = -14
+		y = 1
+		relative_position_id = YBS_election_week
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+    focus = {
+		id = YBS_carlist_victory
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_election_week }
+		mutually_exclusive = { focus = YBS_military_coup focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		x = 4
+		y = 0
+		relative_position_id = YBS_military_coup
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+    focus = {
+		id = YBS_carlist_government
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_military_coup focus = YBS_carlist_victory }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_military_coup
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+# LIBERAL BRANCH
+
+    focus = {
+		id = YBS_liberal_victory
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_election_week }
+		mutually_exclusive = { focus = YBS_military_coup focus = YBS_carlist_victory focus = YBS_nationalist_victory focus = YBS_syndicalist_victory focus = YBS_socialist_victory }
+		x = 3
+		y = 1
+		relative_position_id = YBS_election_week
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+# NATIONALIST BRANCH
+
+    focus = {
+		id = YBS_nationalist_victory
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_election_week }
+		mutually_exclusive = { focus = YBS_military_coup focus = YBS_carlist_victory focus = YBS_syndicalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		x = 7
+		y = 0
+		relative_position_id = YBS_liberal_victory
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+# SOCIALIST BRANCH
+
+    focus = {
+		id = YBS_socialist_victory
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_election_week }
+		mutually_exclusive = { focus = YBS_military_coup focus = YBS_carlist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_syndicalist_victory }
+		x = 7
+		y = 0
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+# DEMOCRATIC SUB-BRANCHES
+
+    focus = {
+		id = YBS_unity_through_democracy
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_rule_of_capital focus = YBS_we_will_always_have_hope }
+		x = -4
+		y = 6
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+    focus = {
+		id = YBS_guardian_of_iberian_democracy
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YBS_unity_through_democracy focus = YBS_rule_of_capital focus = YBS_we_will_always_have_hope }
+		x = 4
+		y = 6
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+    focus = {
+		id = YBS_rule_of_capital
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_liberal_victory }
+		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
+		x = -4
+		y = 6
+		relative_position_id = YBS_liberal_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+    focus = {
+		id = YBS_we_will_always_have_hope
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
+		x = 4
+		y = 6
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+# SYNDICALIST BRANCH
+
+    focus = {
+		id = YBS_syndicalist_victory
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_election_week }
+		mutually_exclusive = { focus = YBS_military_coup focus = YBS_carlist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		x = 10
+		y = 0
+		relative_position_id = YBS_socialist_victory
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+}

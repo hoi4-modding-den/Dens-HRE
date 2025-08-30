@@ -1,8 +1,8 @@
 state={
-	id=172
-	name="STATE_172"
+	id=1098
+	name="STATE_1098"
 	resources={
-		steel=12
+		aluminium=12
 	}
 
 	history={
@@ -10,23 +10,23 @@ state={
 		add_core_of = YBS
 		#add_core_of = NAV
 		#add_core_of = SPR
+
 		victory_points = {
-			3933 2
-		}
-		buildings = {
-			infrastructure = 2
-			arms_factory = 1
-			industrial_complex = 1
+			13233 1
 		}
 
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+		}
 	}
 
 	provinces={
-		932 3737 3931 3933 9857 
+		3735 13233
 	}
-	manpower=359880
+	manpower=151023
 	buildings_max_level_factor=1.000
-	state_category=town
+	state_category=rural
 
-	local_supplies=0.0 
+	local_supplies=0 
 }
