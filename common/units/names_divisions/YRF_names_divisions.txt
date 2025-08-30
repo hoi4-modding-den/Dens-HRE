@@ -1,0 +1,27 @@
+YRF_DIV_0_0 = {
+	name = "Paramilitar Real"
+	for_countries = { YRF }
+	can_use = { always = yes }
+	division_types = { 
+		"militia" 
+	}
+	fallback_name = "%d. Paramilitar Real"
+}
+YRF_DIV_1_0 = {
+	name = "Ejército Real Murciano"
+	for_countries = { YRF }
+	can_use = { always = yes }
+	division_types = { 
+		"infantry" 
+	}
+	fallback_name = "%d. Ejército Real Murciano"
+}
+YRF_DIV_2_0 = {
+	name = "Ejército Real Murciano"
+	for_countries = { YRF }
+	can_use = { always = yes }
+	division_types = { 
+		"infantry" 
+	}
+	fallback_name = "%d. Expedicionarios Extranjeros"
+}

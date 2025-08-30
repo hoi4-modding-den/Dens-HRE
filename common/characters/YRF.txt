@@ -14,6 +14,21 @@ characters = {
 		}
 	}
 
+	YRF_leah_aviv = {
+		name = "Leah Aviv"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/YRF/YRF_leah_aviv.png"
+			}
+		}
+		country_leader = {
+			expire = "2004.1.1"
+			ideology = conservatism
+			traits = {  }
+		    desc = YRF_LEAH_AVIV_DESC
+		}
+	}
+
 	YRF_pedro_rico = {
 		name = "Pedro Rico"
 		portraits = {
@@ -26,6 +41,27 @@ characters = {
 			ideology = anti_revisionism
 			traits = {  }
 		    desc = YRF_PEDRO_RICO_DESC
+		}
+	}
+
+	YRF_antoni_rodrigo_penna = {
+		name = "Antoni Rodrigo Penna"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YRF/YRF_antoni_rodrigo_penna.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_antoni_rodrigo_penna
+			}
+		}
+		corps_commander = {
+		traits = { politically_connected harsh_leader }
+		skill = 3
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+		legacy_id = -1
 		}
 	}
 }

@@ -1,0 +1,156 @@
+#Create units
+division_template = {
+	name = "Paramilitar Real"
+	division_names_group = "YRF_DIV_0_0"
+	regiments = {
+		militia = { x = 0 y = 0}
+		militia = { x = 0 y = 1}
+		militia = { x = 1 y = 0}
+	}
+	support = {
+
+	}
+	priority = 0
+	template_counter = 68
+}
+
+division_template = {
+	name = "Ejército Real Murciano"
+	division_names_group = "YRF_DIV_1_0"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+		recon = { x = 0 y = 1}
+	}
+}
+
+division_template = {
+	name = "Expedicionarios Extranjeros"
+	division_names_group = "YRF_DIV_2_0"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+		recon = { x = 0 y = 1}
+	}
+	priority = 2
+}
+
+units = {
+###ROYAL PARAMILITARIES###
+	division = {
+		name = "1. Paramilitar Real"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = "832"
+		division_template = "Paramilitar Real"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "2. Paramilitar Real"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = "9903"
+		division_template = "Paramilitar Real"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "3. Paramilitar Real"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = "9903"
+		division_template = "Paramilitar Real"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "4. Paramilitar Real"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = "832"
+		division_template = "Paramilitar Real"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "5. Paramilitar Real"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = "832"
+		division_template = "Paramilitar Real"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+###ROYAL MURCIAN ARMY###
+	division = {
+		name = "1. Ejército Real Murciano"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = "10024"
+		division_template = "Ejército Real Murciano"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "2. Ejército Real Murciano"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = "10024"
+		division_template = "Ejército Real Murciano"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "3. Ejército Real Murciano"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = "10024"
+		division_template = "Ejército Real Murciano"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+###FOREIGN EXPEDITIONARIES###
+	division = {
+		name = "1. Expedicionarios Extranjeros"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = "10024"
+		division_template = "Expedicionarios Extranjeros"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+}
