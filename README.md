@@ -40,7 +40,7 @@ Lore: <br><br>
   | acer-xq | ace.r | <details><summary>Gibraltar</summary><ul><li>YGB</li></ul></details> |
   | Furiousky | furiousky | <details><summary>Catalonia</summary><ul><li>YCA</li></ul></details> |
   | Deservedgamer435 | guyond | <details><summary>Mercia</summary><ul><li>YRF</li></ul></details> |
-  | kiro-dera | deki12 | <details><summary>Galicia</summary><ul><li>YGL</li></ul></details> |
+  | kiro-dera | (kiro12) deki12 | <details><summary>Galicia</summary><ul><li>YGL</li></ul></details> |
   | Kasastul | kasastul | <details><summary>Northern Portugal</summary></ul><li>YPR</li></ul></details> |
   | EnlightenedEsoteric | esoteric_ego | <details><summary>Canary Islands</summary></ul><li>YJT</li></ul></details> |
 </details>
