@@ -1,0 +1,136 @@
+characters = {
+    YGL_castelao = {
+        name = "Castelao"
+        portraits = {
+            civillian = {
+                large = GFX_portrait_YGL_castelao
+            }
+        }
+        country_leader = {
+            desc = "Alfonso Daniel Rodríguez Castelao, better known as Castelao, is the president of the current Galicianist party."
+            ideology = marxism
+            expire = 1950.1.1.1
+        }
+    }  
+    YGL_Ricardo_Carballo_Calero = {
+        name = "Ricardo Carballo Calero"
+
+        portraits = {
+            army = {
+                small = GFX_portrait_YGL_rcc_s
+                large = GFX_portrait_YGL_rcc_l
+            }
+        }
+
+        field_marshal = {
+            traits = {
+                army_organization
+            }
+            skill = 3
+            attack_skill = 2
+            defense_skill = 4
+            planning_skill = 5
+            logistics_skill = 4
+            legacy_id = -1
+        }
+
+        advisor = {
+            cost = 100
+            slot = political_advisor
+            idea_token = YGL_rcc_idea
+            allowed = {
+				original_tag = YGL
+			}
+            traits = {
+                national_integralist
+            }
+            ai_will_do = {
+                factor = 1.00
+            }
+
+        }
+    }
+    YGL_villar_ponte = {
+        name = "Villar Ponte"
+        portraits = {
+            civillian = {
+                large = GFX_portrait_YGL_villar_ponte
+            }
+        }
+        country_leader = {
+            ideology = conservatism
+            expire = 1950.1.1.1
+        }
+        advisor = {
+            cost = 100
+            slot = political_advisor
+            idea_token = YGL_vp_idea
+            allowed = {
+				original_tag = YGL
+			}
+            traits = {
+                liberal_journalist
+            }
+            ai_will_do = {
+                factor = 1.00
+            }
+
+        }
+    }
+    YGL_valverde = {
+      name = "Xosé Fernando Filgueira Valverde"
+       portraits = {
+        civillian = {
+                large = GFX_portrait_YGL_xose_valverde
+            }
+        }
+        country_leader = {
+            ideology = conservatism
+            expire = 1950.1.1.1
+        }
+        advisor = {
+            cost = 100
+            slot = political_advisor
+            idea_token = YGL_x_idea
+            allowed = {
+				original_tag = YGL
+			}
+            traits = {
+                editor
+            }
+            ai_will_do = {
+                factor = 1.00
+            }
+        }
+    }
+    YGL_vicente_risco = {
+      name = "Vicente Risco"
+       portraits = {
+        civillian = {
+                large = GFX_portrait_YGL_vrisco
+            }
+        }
+        country_leader = {
+            ideology = falangism
+            expire = 1950.1.1.1
+        }
+        advisor = {
+            cost = 100
+            slot = political_advisor
+            idea_token = YGL_vr_idea
+            allowed = {
+				original_tag = YGL
+			}
+            traits = {
+                ideological_crusader
+            }
+            ai_will_do = {
+                factor = 1.00
+            }
+        }
+    }
+}
+    
+
+
+    
