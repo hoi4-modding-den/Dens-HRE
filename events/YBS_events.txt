@@ -1,0 +1,401 @@
+add_namespace = YBS_election_events
+add_namespace = YBS_post_election_events
+
+country_event = { # Carlist Conspiracy
+	id = YBS_election_events.1
+	title = YBS_election_events.1.t
+	desc = YBS_election_events.1.desc
+    picture = GFX_report_event_soviet_purge_officers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_election_events.1.a
+        custom_effect_tooltip = SOV_characters_will_be_purged_tt
+        character_list_tooltip = {
+            limit = {
+                # has 'Carlist' trait
+            }
+        }
+
+        add_command_power = -20
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = YBS_election_events.1.a.tt
+        set_country_flag = YBS_carlist_coup_stopped
+    }
+
+    option = {
+        name = YBS_election_events.1.b
+        # some carlists lose their trait
+
+        add_political_power = -50
+        add_stability = -0.05
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		custom_effect_tooltip = YBS_election_events.1.b.tt
+        set_country_flag = YBS_carlist_compromise_made
+    }
+}
+
+country_event = { # ELECTION
+	id = YBS_election_events.2
+	title = YBS_election_events.2.t
+	desc = YBS_election_events.2.desc
+    picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            deactivate_shine_on_focus = YBS_election_week
+            unlock_national_focus = YBS_election_week
+            set_country_flag = YBS_elections_over
+        }
+    }
+	
+	option = { # Nationalists
+        name = YBS_election_events.2.a
+        trigger = {
+            check_variable = { YBS_con_pop > YBS_mon_pop }
+            check_variable = { YBS_con_pop > YBS_lib_pop }
+            check_variable = { YBS_con_pop > YBS_soc_pop }
+            check_variable = { YBS_con_pop > YBS_syn_pop }
+            check_variable = { YBS_con_pop > YBS_pf_pop } 
+        }
+        complete_national_focus = YBS_nationalist_victory
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = democratic
+            long_name = YBS_democratic_party_long
+            name = YBS_democratic_party
+            elections_allowed = no
+        }
+        promote_character = YBS_jose_antonio_aguirre
+    }
+
+    option = { # Liberals
+        name = YBS_election_events.2.b
+        trigger = {
+            check_variable = { YBS_lib_pop > YBS_mon_pop }
+            check_variable = { YBS_lib_pop > YBS_con_pop }
+            check_variable = { YBS_lib_pop > YBS_soc_pop }
+            check_variable = { YBS_lib_pop > YBS_syn_pop }
+            check_variable = { YBS_lib_pop > YBS_pf_pop }
+        }
+        complete_national_focus = YBS_liberal_victory
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = democratic
+            long_name = YBS_democratic_party_liberal_long
+            name = YBS_democratic_party_liberal
+            elections_allowed = no
+        }
+        # promote_character = 
+    }
+
+    option = { # Socialists
+        name = YBS_election_events.2.c
+        trigger = {
+            check_variable = { YBS_soc_pop > YBS_mon_pop }
+			check_variable = { YBS_soc_pop > YBS_con_pop }
+            check_variable = { YBS_soc_pop > YBS_lib_pop }
+            check_variable = { YBS_soc_pop > YBS_syn_pop }
+			NOT = { has_country_flag = YBS_pf_formed }
+        }
+        complete_national_focus = YBS_socialist_victory
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = democratic
+            long_name = YBS_democratic_party_socialist_long
+            name = YBS_democratic_party_socialist
+            elections_allowed = no
+        }
+        promote_character = YBS_tomas_bilbao_hospitalet
+    }
+
+    option = { # Popular Front
+        name = YBS_election_events.2.d
+        trigger = {
+            check_variable = { YBS_pf_pop > YBS_mon_pop }
+			check_variable = { YBS_pf_pop > YBS_con_pop }
+            check_variable = { YBS_pf_pop > YBS_lib_pop }
+			has_country_flag = YBS_pf_formed
+        }
+        complete_national_focus = YBS_socialist_victory
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = democratic
+            long_name = YBS_democratic_party_popular_front_long
+            name = YBS_democratic_party_popular_front
+            elections_allowed = no
+        }
+        # promote_character = 
+    }
+
+    option = { # Syndicalists
+        name = YBS_election_events.2.e
+        trigger = {
+            check_variable = { YBS_syn_pop > YBS_mon_pop }
+			check_variable = { YBS_syn_pop > YBS_con_pop }
+            check_variable = { YBS_syn_pop > YBS_lib_pop }
+            check_variable = { YBS_syn_pop > YBS_soc_pop }
+			NOT = { has_country_flag = YBS_pf_formed }
+        }
+        complete_national_focus = YBS_syndicalist_victory
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+        }
+    }
+
+    option = { # Nationalists because no majority
+        name = YBS_election_events.2.f
+        trigger = {
+            NOT = {
+                OR = {
+                    AND = {
+                        check_variable = { YBS_pf_pop > YBS_mon_pop }
+                        check_variable = { YBS_pf_pop > YBS_con_pop }
+                        check_variable = { YBS_pf_pop > YBS_lib_pop }
+                        has_country_flag = YBS_pf_formed
+                    }
+                    AND = {
+                        check_variable = { YBS_syn_pop > YBS_mon_pop }
+                        check_variable = { YBS_syn_pop > YBS_con_pop }
+                        check_variable = { YBS_syn_pop > YBS_lib_pop }
+                        check_variable = { YBS_syn_pop > YBS_soc_pop }
+                        NOT = { has_country_flag = YBS_pf_formed }
+                    }
+                    AND = {
+                        check_variable = { YBS_soc_pop > YBS_mon_pop }
+                        check_variable = { YBS_soc_pop > YBS_con_pop }
+                        check_variable = { YBS_soc_pop > YBS_lib_pop }
+                        check_variable = { YBS_soc_pop > YBS_syn_pop }
+                        NOT = { has_country_flag = YBS_pf_formed }
+                    }
+                    AND = {
+                        check_variable = { YBS_con_pop > YBS_mon_pop }
+                        check_variable = { YBS_con_pop > YBS_lib_pop }
+                        check_variable = { YBS_con_pop > YBS_soc_pop }
+                        check_variable = { YBS_con_pop > YBS_syn_pop }
+                        check_variable = { YBS_con_pop > YBS_pf_pop } 
+                    }
+                    AND = {
+                        check_variable = { YBS_lib_pop > YBS_mon_pop }
+                        check_variable = { YBS_lib_pop > YBS_con_pop }
+                        check_variable = { YBS_lib_pop > YBS_soc_pop }
+                        check_variable = { YBS_lib_pop > YBS_syn_pop }
+                        check_variable = { YBS_lib_pop > YBS_pf_pop }   
+                    }
+                }
+            }
+        }
+        add_stability = -0.1
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        complete_national_focus = YBS_nationalist_victory
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = democratic
+            long_name = YBS_democratic_party_long
+            name = YBS_democratic_party
+            elections_allowed = no
+        }
+        promote_character = YBS_jose_antonio_aguirre
+    }
+}
+
+country_event = { # Possible Popular Front?
+	id = YBS_election_events.3
+	title = YBS_election_events.3.t
+	desc = YBS_election_events.3.desc
+    picture = GFX_report_event_generic_communist_congress
+	
+	is_triggered_only = yes
+	
+	option = { # yes, we shall meet
+        name = YBS_election_events.3.a
+        country_event = {
+            id = YBS_election_events.4
+            days = 10
+        }
+    }
+
+    option = { # this is stupid
+        name = YBS_election_events.3.b
+        
+    }
+}
+
+country_event = { # Socialists announce Popular Front
+	id = YBS_election_events.4
+	title = YBS_election_events.4.t
+	desc = YBS_election_events.4.desc
+    picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_election_events.4.a
+        custom_effect_tooltip = YBS_form_pf_tt
+        set_country_flag = YBS_pf_formed
+
+        add_to_variable = { YBS_pf_pop = YBS_soc_pop }
+        add_to_variable = { YBS_pf_pop = YBS_syn_pop }
+        set_variable = { YBS_soc_pop = 0 }
+        set_variable = { YBS_syn_pop = 0 }
+    }
+}
+
+country_event = { # Military Coup
+	id = YBS_election_events.5
+	title = YBS_election_events.5.t
+	desc = YBS_election_events.5.desc
+    picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            deactivate_shine_on_focus = YBS_election_week
+            unlock_national_focus = YBS_election_week
+            set_country_flag = YBS_elections_over
+        }
+    }
+	
+	option = {
+        name = YBS_election_events.5.a
+        complete_national_focus = YBS_military_coup
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = neutrality
+            long_name = YBS_neutrality_party_military_long
+            name = YBS_neutrality_party_military
+            elections_allowed = no
+        }
+    }
+}
+
+country_event = { # Military Rule after Carlists win
+	id = YBS_election_events.6
+	title = YBS_election_events.6.t
+	desc = YBS_election_events.6.desc
+    picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            deactivate_shine_on_focus = YBS_election_week
+            unlock_national_focus = YBS_election_week
+            set_country_flag = YBS_elections_over
+        }
+    }
+	
+	option = {
+        name = YBS_election_events.6.a
+        complete_national_focus = YBS_military_coup
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_politics = {
+            ruling_party = neutrality
+            elections_allowed = no
+        }
+    }
+}
+
+country_event = { # Election Week begins
+	id = YBS_election_events.7
+	title = YBS_election_events.7.t
+	desc = YBS_election_events.7.desc
+    picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_election_events.7.a
+        activate_shine_on_focus = YBS_election_week
+        set_country_flag = YBS_elections_happened
+
+        hidden_effect = {
+            if = {
+				limit = {
+					OR = {
+						AND = {
+							check_variable = { YBS_con_pop > YBS_mon_pop }
+							check_variable = { YBS_con_pop > YBS_lib_pop }
+							check_variable = { YBS_con_pop > YBS_soc_pop }
+							check_variable = { YBS_con_pop > YBS_syn_pop }
+							check_variable = { YBS_con_pop > YBS_pf_pop } 
+						}
+						NOT = { has_country_flag = YBS_carlist_compromise_made }
+					}
+					NOT = { has_country_flag = YBS_carlist_coup_stopped }
+				}
+				country_event = { id = YBS_election_events.5 days = 7 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { YBS_mon_pop > YBS_con_pop }
+					check_variable = { YBS_mon_pop > YBS_lib_pop }
+					check_variable = { YBS_mon_pop > YBS_soc_pop }
+					check_variable = { YBS_mon_pop > YBS_syn_pop }
+					check_variable = { YBS_mon_pop > YBS_pf_pop }
+				}
+				country_event = { id = YBS_election_events.6 days = 7 }
+			}
+			else = {
+				country_event = { id = YBS_election_events.2 days = 7 }
+			}
+        }
+    }
+}
+
+country_event = { # Removing the Falangists
+	id = YBS_post_election_events.1
+	title = YBS_post_election_events.1.t
+	desc = YBS_post_election_events.1.desc
+    picture = GFX_report_event_spr_falange_troops2
+	
+	is_triggered_only = yes
+	
+	option = { # kill
+        name = YBS_post_election_events.1.a
+        add_political_power = -50
+        add_command_power = -20
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = SOV_characters_will_be_purged_tt
+        character_list_tooltip = {
+            limit = {
+                # has 'Falangist' trait
+            }
+        }
+    }
+
+    option = { # exile
+        name = YBS_post_election_events.1.b
+        
+    }
+}

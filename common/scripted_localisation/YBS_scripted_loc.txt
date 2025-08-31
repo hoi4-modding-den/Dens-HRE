@@ -1,0 +1,96 @@
+defined_text = {
+	name = YBSGetElectionProjection
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					check_variable = { YBS_con_pop > YBS_mon_pop }
+					check_variable = { YBS_con_pop > YBS_lib_pop }
+					check_variable = { YBS_con_pop > YBS_soc_pop }
+					check_variable = { YBS_con_pop > YBS_syn_pop }
+					check_variable = { YBS_con_pop > YBS_pf_pop } 
+				}
+				NOT = { has_country_flag = YBS_carlist_compromise_made }
+			}
+			NOT = { has_country_flag = YBS_carlist_coup_stopped }
+		}
+		localization_key = YBS_projection_coup
+	}
+    text = {
+		trigger = {
+			check_variable = { YBS_mon_pop > YBS_con_pop }
+			check_variable = { YBS_mon_pop > YBS_lib_pop }
+			check_variable = { YBS_mon_pop > YBS_soc_pop }
+			check_variable = { YBS_mon_pop > YBS_syn_pop }
+			check_variable = { YBS_mon_pop > YBS_pf_pop }
+		}
+		localization_key = YBS_projection_carlists
+	}
+    text = {
+		trigger = {
+            check_variable = { YBS_pf_pop > YBS_mon_pop }
+			check_variable = { YBS_pf_pop > YBS_con_pop }
+            check_variable = { YBS_pf_pop > YBS_lib_pop }
+			has_country_flag = YBS_pf_formed
+		}
+		localization_key = YBS_projection_popular_front
+	}
+	text = {
+		trigger = {
+			check_variable = { YBS_syn_pop > YBS_mon_pop }
+			check_variable = { YBS_syn_pop > YBS_con_pop }
+            check_variable = { YBS_syn_pop > YBS_lib_pop }
+            check_variable = { YBS_syn_pop > YBS_soc_pop }
+			NOT = { has_country_flag = YBS_pf_formed }
+		}
+		localization_key = YBS_projection_syndicalists
+	}
+	text = {
+		trigger = {
+			check_variable = { YBS_soc_pop > YBS_mon_pop }
+			check_variable = { YBS_soc_pop > YBS_con_pop }
+            check_variable = { YBS_soc_pop > YBS_lib_pop }
+            check_variable = { YBS_soc_pop > YBS_syn_pop }
+			NOT = { has_country_flag = YBS_pf_formed }
+		}
+		localization_key = YBS_projection_socialists
+	}
+	text = {
+		trigger = {
+			check_variable = { YBS_con_pop > YBS_mon_pop }
+            check_variable = { YBS_con_pop > YBS_lib_pop }
+            check_variable = { YBS_con_pop > YBS_soc_pop }
+            check_variable = { YBS_con_pop > YBS_syn_pop }
+            check_variable = { YBS_con_pop > YBS_pf_pop } 
+		}
+		localization_key = YBS_projection_nationalists
+	}
+	text = {
+		trigger = {
+			check_variable = { YBS_lib_pop > YBS_mon_pop }
+            check_variable = { YBS_lib_pop > YBS_con_pop }
+            check_variable = { YBS_lib_pop > YBS_soc_pop }
+            check_variable = { YBS_lib_pop > YBS_syn_pop }
+            check_variable = { YBS_lib_pop > YBS_pf_pop }   
+		}
+		localization_key = YBS_projection_liberals
+	}
+	text = {
+		localization_key = YBS_unknown_projection
+	}
+
+}
+
+defined_text = {
+	name = YBS_show_pf_or_synsoc
+    text = {
+		trigger = {
+            has_country_flag = YBS_pf_formed
+		}
+		localization_key = YBS_show_pf_pop_desc
+	}
+	text = {
+		localization_key = YBS_show_soc_syn_pop_desc
+	}
+
+}

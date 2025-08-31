@@ -8,11 +8,99 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { YBS_basque_nationalist }
 			ideology = populism
 			desc = YBS_jose_antonio_aguirre_desc
 			expire = "1950.1.1.1"
 			id = -1
+		}
+	}
+
+	YBS_tomas_bilbao_hospitalet = {
+		name = YBS_tomas_bilbao_hospitalet_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_tomas_bilbao_hospitalet
+                small = GFX_portrait_YBS_tomas_bilbao_hospitalet_small
+			}
+		}
+		country_leader = {
+			traits = { YBS_socialist_architect }
+			ideology = socialism
+			desc = YBS_tomas_bilbao_hospitalet_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_rosa_lavina = {
+		name = YBS_rosa_lavina_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_rosa_lavina
+                small = GFX_portrait_YBS_rosa_lavina_small
+			}
+		}
+		country_leader = {
+			traits = { YBS_catalan_anarchist YBS_esperantist }
+			ideology = anarchist_syndicalism_com
+			desc = YBS_rosa_lavina_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_carlist_junta = {
+		name = YBS_carlist_junta_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_carlist_junta
+			}
+		}
+		country_leader = {
+			traits = { YBS_carlist_junta_trait }
+			ideology = oligarchism
+			desc = YBS_carlist_junta_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_julio_ruiz_de_alda = {
+		name = YBS_julio_ruiz_de_alda_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_julio_ruiz_de_alda
+                small = GFX_portrait_YBS_julio_ruiz_de_alda_small
+			}
+			army = {
+				large = GFX_portrait_YBS_julio_ruiz_de_alda
+                small = GFX_portrait_YBS_julio_ruiz_de_alda_small
+			}
+		}
+		country_leader = {
+			traits = { YBS_falangist_founder }
+			ideology = falangism
+			desc = YBS_julio_ruiz_de_alda_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+
+		advisor = {
+			slot = air_chief
+			desc = YBS_julio_ruiz_de_alda_desc
+			idea_token = YBS_julio_ruiz_de_alda_token
+			allowed = {
+				YBS_is_iberian_country = yes
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = {
+				air_chief_all_weather_1
+			}
+
+			cost = 50
 		}
 	}
 }

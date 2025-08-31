@@ -1,0 +1,218 @@
+YBS_election_decision_cat = {
+
+    YBS_projected_election_victor = {
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+
+        priority = -100
+
+	}
+
+    YBS_timer_until_election_week = {
+
+        activation = {
+            always = no
+        }
+
+        available = {
+            hidden_trigger = {
+				always = no
+			}
+        }
+
+        is_good = yes
+
+        days_mission_timeout = 150
+
+        timeout_effect = {
+            country_event = YBS_election_events.7
+        }
+    }
+
+    YBS_debug_increase_mon = {
+
+        visible = {
+            OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+        }
+
+        ai_will_do = { base = 1 }
+
+        available = {
+            OR = {
+                AND = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                AND = {
+                    is_ai = yes
+                    has_country_flag = YBS_ai_path_carlist
+                }
+            }
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        complete_effect = {
+            add_to_variable = { var = YBS_mon_pop value = 5 tooltip = YBS_mon_effect_tt }
+        }
+    }
+
+    YBS_debug_increase_con = {
+
+        visible = {
+            OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+        }
+
+        ai_will_do = { base = 1 }
+
+        available = {
+            OR = {
+                AND = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                AND = {
+                    is_ai = yes
+                    has_country_flag = YBS_ai_path_nationalist
+                }
+            }
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        complete_effect = {
+            add_to_variable = { var = YBS_con_pop value = 5 tooltip = YBS_con_effect_tt }
+        }
+    }
+
+    YBS_debug_increase_lib = {
+
+        visible = {
+            OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+        }
+
+        ai_will_do = { base = 1 }
+
+        available = {
+            OR = {
+                AND = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                AND = {
+                    is_ai = yes
+                    has_country_flag = YBS_ai_path_liberals
+                }
+            }
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        complete_effect = {
+            add_to_variable = { var = YBS_lib_pop value = 5 tooltip = YBS_lib_effect_tt }
+        }
+    }
+
+    YBS_debug_increase_soc = {
+
+        visible = {
+            OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+        }
+
+        ai_will_do = { base = 1 }
+
+        available = {
+            OR = {
+                AND = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                AND = {
+                    is_ai = yes
+                    has_country_flag = YBS_ai_path_socialist
+                }
+            }
+            NOT = { has_country_flag = YBS_pf_formed }
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        complete_effect = {
+            add_to_variable = { var = YBS_soc_pop value = 5 tooltip = YBS_soc_effect_tt }
+        }
+    }
+
+    YBS_debug_increase_syn = {
+
+        visible = {
+            OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+        }
+
+        ai_will_do = { base = 1 }
+
+        available = {
+            OR = {
+                AND = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                AND = {
+                    is_ai = yes
+                    has_country_flag = YBS_ai_path_syndicalist
+                }
+            }
+            NOT = { has_country_flag = YBS_pf_formed }
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        complete_effect = {
+            add_to_variable = { var = YBS_syn_pop value = 5 tooltip = YBS_syn_effect_tt }
+        }
+    }
+
+    YBS_debug_increase_pf = {
+
+        visible = {
+            OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+        }
+
+        ai_will_do = { base = 1 }
+
+        available = {
+            OR = {
+                AND = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                AND = {
+                    is_ai = yes
+                    has_country_flag = YBS_ai_path_popular_front
+                }
+            }
+            has_country_flag = YBS_pf_formed
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        complete_effect = {
+            add_to_variable = { var = YBS_pf_pop value = 5 tooltip = YBS_pf_effect_tt }
+        }
+    }
+}

@@ -19,6 +19,23 @@ ideas = {
 				production_speed_buildings_factor = -0.35
                 industrial_capacity_factory = -0.2
                 industrial_capacity_dockyard = -0.2
+				custom_modifier_tooltip = YBS_underdeveloped_economy_tt
+			}
+
+			cancel = {
+				OR = {
+					AND = {
+						controls_state = 172
+						172 = { infrastructure > 3 }
+						controls_state = 792
+						792 = { infrastructure > 3 }
+						controls_state = 1097
+						1097 = { infrastructure > 3 }
+						controls_state = 1098
+						1098 = { infrastructure > 3 }
+					}
+					num_of_factories > 19
+				}
 			}
 		}
 

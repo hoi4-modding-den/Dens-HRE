@@ -1,0 +1,26 @@
+YBS_socialists_in_charge = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_socialists_in_charge_tt
+        AND = {
+            has_country_flag = YBS_socialists_elected
+            has_government = democratic
+        }
+    }
+}
+YBS_syndicalists_in_charge = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_syndicalists_in_charge_tt
+        has_government = communism
+    }
+}
+
+YBS_is_iberian_country = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_is_iberian_country_tt
+        OR = {
+            original_tag = YBS
+            original_tag = YGB
+            original_tag = YKP
+        }
+    }
+}

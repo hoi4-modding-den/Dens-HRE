@@ -2,6 +2,47 @@ leader_traits = {
 
     # Leaders
 
+	YBS_basque_nationalist = {
+        random = no
+
+        army_core_defence_factor = 0.05
+		defensive_war_stability_factor = 0.2
+    }
+
+	YBS_socialist_architect = {
+        random = no
+		
+		production_speed_infrastructure_factor = 0.1
+		political_power_factor = 0.05
+    }
+
+	YBS_catalan_anarchist = {
+        random = no
+		
+		stability_factor = -0.05
+		communism_drift = 0.02
+		weekly_manpower = 1000
+    }
+
+	YBS_esperantist = {
+        random = no
+		
+		political_power_gain = 0.02
+    }
+
+	YBS_carlist_junta_trait = {
+        random = no
+
+		stability_factor = -0.15
+    }
+
+	YBS_falangist_founder = {
+        random = no
+
+        fascism_drift = 0.04
+		war_support_factor = 0.1
+    }
+
     # Advisors
 
     # SPRITES

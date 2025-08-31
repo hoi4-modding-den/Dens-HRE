@@ -105,6 +105,9 @@ add_offsite_building = {
 
 # Leaders
 recruit_character = YBS_jose_antonio_aguirre
+recruit_character = YBS_tomas_bilbao_hospitalet
+recruit_character = YBS_rosa_lavina
+recruit_character = YBS_julio_ruiz_de_alda
 
 
 set_politics = {
@@ -120,10 +123,12 @@ set_popularities = {
 	communism = 13
 }
 
-set_variable = { YBS_mon_pop = 25 }
-set_variable = { YBS_con_pop = 40 }
-set_variable = { YBS_lib_pop = 15 }
-set_variable = { YBS_soc_pop = 10 }
+activate_mission = YBS_timer_until_election_week
+
+set_variable = { YBS_mon_pop = 10 }
+set_variable = { YBS_con_pop = 30 }
+set_variable = { YBS_lib_pop = 20 }
+set_variable = { YBS_soc_pop = 15 }
 set_variable = { YBS_syn_pop = 10 }
 
 # DESIGNS
