@@ -58,7 +58,7 @@ guiTypes = {
 			textureFile = ""
 			font = "hoi_36header"
 			borderSize = {x = 0 y = 0}
-			text = "The Maritime Powerhouse"
+			text = "Red Països Catalans"
 			maxWidth = 500
 			maxHeight = 20
 			format = center
@@ -84,13 +84,13 @@ guiTypes = {
 			}	
 		}
 		buttonType = {
-			name = "YCA_welcome_message_close"
+			name = "XVE_welcome_message_close"
 			spriteType = "GFX_closebutton"
 			position = { x = 764 y = 4 }
 			
 		}
 		buttonType = {
-			name ="YCA_welcome_message_continue"
+			name ="XVE_welcome_message_continue"
 			quadTextureSprite ="GFX_button_359x34"
 			position = { x=20 y=553 }
 			buttonText = "Continue"
@@ -98,14 +98,14 @@ guiTypes = {
 			shortcut = "ESCAPE"
 		}
 		iconType = {
-			name = "YCA_continue_button_bloom"
-			spriteType = "GFX_YCA_continue_button_bloom"
+			name = "XVE_continue_button_bloom"
+			spriteType = "GFX_XVE_continue_button_bloom"
 			position = { x=20 y=553 }
 			#pdx_tooltip = YCA_bloom_hint_loc
 			alwaystransparent = yes
 		}
 		instantTextboxType = {
-			name = "YCA_continue_button_text" 
+			name = "XVE_continue_button_text" 
 			position = { x=50 y=563 }
 			font = "hoi_16mbs"
 			text = "Continue"
@@ -145,7 +145,7 @@ guiTypes = {
 guiTypes = {
 	containerWindowType = {
 		name = "YCA_generalitat_faction_decision_ui_window"
-		size = { width = 100% height = 325 }
+		size = { width = 100% height = 400 }
 		position = { x = 0 y = 0 }
 
 		instantTextboxType = {
@@ -157,38 +157,33 @@ guiTypes = {
 			format = left
 		}
 
-		instantTextboxType = {
-			name = "YCA_pie_chart_title"
-			position = { x = 0 y = 170 }
-			font = "hoi_24header"
-			text = YCA_pie_chart_title
-			maxWidth = 110
-			maxHeight = 30
-			format = center
-			pdx_tooltip = YCA_pie_chart_desc_tt
-			pdx_tooltip_delayed = YCA_pie_chart_desc_delay_tt
-		}
-
-		iconType ={
-			name ="YCA_pie_chart_overlay"
-			spriteType = "GFX_YCA_piechart_overlay"
-			position = { x = 9 y = 201 }
-			scale = 1.33
-			pdx_tooltip = YCA_pie_chart_desc_tt
-		}	
-
 		# PROGRESS BAR
 		iconType = {
 			name = "YCA_generalitat_faction_progress_bar"
 			spriteType = "GFX_YCA_generalitat_faction_progress_bar"
-			position = { x = 420 y = 61 }
+			position = { x = 420 y = 70 }
 			frame = 100
 			pdx_tooltip = YCA_tension_bar_tt			
 		}
-		
+		iconType = {
+			name = "YCA_vanguardist_faction_progress_bar"
+			spriteType = "GFX_YCA_vanguardist_faction_progress_bar"
+			position = { x = 30 y = 130 }		
+		}	
+		iconType = {
+			name = "YCA_anarchist_faction_progress_bar"
+			spriteType = "GFX_YCA_anarchist_faction_progress_bar"
+			position = { x = 30 y = 270 }		
+		}	
+		iconType = {
+			name = "YCA_socialist_faction_progress_bar"
+			spriteType = "YCA_socialist_faction_progress_bar"
+			position = { x = 30 y = 200 }		
+		}	
+
 		#iconType = {
 		#	name = "frame"
-		#	spriteType = "GFX_YCA_tension_bar_frame"
+		#	spriteType = "GFX_YCA_tension_bar_frame" # FOR FONT USE hoi_24header
 		#	position = { x = 420 y = 60 }
 		#	pdx_tooltip = YCA_tension_bar_tt
 		#}		
@@ -196,7 +191,7 @@ guiTypes = {
 		# TEXT
 		instantTextBoxType = {
 			name ="YCA_generalitat_faction_percentage"
-			position = { x = 415 y = 260 }
+			position = { x = 427 y = 330 }
 			font = "hoi_24header"
 			text = "YCA_generalitat_faction_percentage"
 			format = left
@@ -204,39 +199,4 @@ guiTypes = {
 			maxWidth = 500
 		}												
 	}
-		containerWindowType = {
-			name = "pie"
-			position = { x = 52 y = -12 }
-
-			iconType = {
-				name = "pcd_pie1"
-				spriteType = "GFX_FRA_pie1"
-				position = { x = 0 y = 0 }
-				frame = 68
-			}
-			iconType = {
-				name = "pcd_pie2"
-				spriteType = "GFX_FRA_pie2"
-				position = { x = 0 y = 0 }
-				frame = 41
-			}
-			iconType = {
-				name = "pcd_pie3"
-				spriteType = "GFX_FRA_pie3"
-				position = { x = 0 y = 0 }
-				frame = 23
-			}
-			iconType = {
-				name = "pcd_pie4"
-				spriteType = "GFX_FRA_pie4"
-				position = { x = 0 y = 0 }
-				frame = 13
-			}
-			iconType = {
-				name = "pcd_pie5"
-				spriteType = "GFX_FRA_pie5"
-				position = { x = 0 y = 0 }
-				frame = 3
-			}
-	}		
 }

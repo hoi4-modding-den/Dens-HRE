@@ -69,20 +69,6 @@ spriteTypes = {
 	}
 }
 
-### PIE CHART ###
-spriteTypes = {
-	spriteType = {
-		name = "GFX_YCA_piechart_segment"
-		texturefile = "gfx/interface/gui/YCA/pie_chart_segment.png"
-		noOfFrames = 3
-	}
-
-	spriteType = {
-		name = "GFX_YCA_piechart_overlay"
-		textureFile = "gfx/interface/pol_piechart_overlay.dds"
-	}
-}
-
 ### PROGRESS BAR
 spriteTypes = {
    progressbartype = {
@@ -96,5 +82,29 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_YCA_tension_bar_frame"
 		texturefile = "gfx/interface/gui/YCA/bar_frame_2.dds"
-	}  
+	}
+   progressbartype = {
+	name = "GFX_YCA_vanguardist_faction_progress_bar"
+    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar.dds"
+    textureFile2 = "gfx/interface/gui/YCA/empty_bar.dds"
+    size = { x = 420 y = 32 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  }
+   progressbartype = {
+	name = "GFX_YCA_anarchist_faction_progress_bar"
+    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar.dds"
+    textureFile2 = "gfx/interface/gui/YCA/empty_bar.dds"
+    size = { x = 420 y = 32 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  }	 
+   progressbartype = {
+	name = "YCA_socialist_faction_progress_bar"
+    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar.dds"
+    textureFile2 = "gfx/interface/gui/YCA/empty_bar.dds"
+    size = { x = 420 y = 32 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  }	       	 
 }    
