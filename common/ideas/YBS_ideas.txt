@@ -102,7 +102,7 @@ ideas = {
 			modifier = {
                 stability_factor = -0.1
                 army_morale_factor = -0.02
-                compliance_growth = -0.01
+                compliance_gain = -0.01
 			}
 		}
 
@@ -123,7 +123,27 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.15
                 army_org_factor = -0.02
-                compliance_growth = 0.01
+                compliance_gain = 0.01
+			}
+		}
+
+		YBS_public_esperanto_classes = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.05
+                compliance_gain = 0.01
 			}
 		}
 
@@ -166,6 +186,27 @@ ideas = {
 				surrender_limit = 1
                 army_core_defence_factor = 0.1
                 conscription_factor = 0.05
+			}
+		}
+
+		YBS_republican_opposition = {
+
+			picture = EST_democratic_opposition
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = democratic }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.2
+				political_advisor_cost_factor = 0.5
+				democratic_drift = 0.01
 			}
 		}
 

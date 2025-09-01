@@ -3,12 +3,14 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				AND = {
-					check_variable = { YBS_con_pop > YBS_mon_pop }
-					check_variable = { YBS_con_pop > YBS_lib_pop }
-					check_variable = { YBS_con_pop > YBS_soc_pop }
-					check_variable = { YBS_con_pop > YBS_syn_pop }
-					check_variable = { YBS_con_pop > YBS_pf_pop } 
+				NOT = {
+					AND = {
+						check_variable = { YBS_con_pop > YBS_mon_pop }
+						check_variable = { YBS_con_pop > YBS_lib_pop }
+						check_variable = { YBS_con_pop > YBS_soc_pop }
+						check_variable = { YBS_con_pop > YBS_syn_pop }
+						check_variable = { YBS_con_pop > YBS_pf_pop } 
+					}
 				}
 				NOT = { has_country_flag = YBS_carlist_compromise_made }
 			}

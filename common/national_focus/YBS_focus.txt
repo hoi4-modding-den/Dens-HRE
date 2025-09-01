@@ -97,8 +97,16 @@ focus_tree = {
             custom_effect_tooltip = generic_skip_one_line_tt
 
             add_to_variable = { var = YBS_mon_pop value = -5 tooltip = YBS_mon_effect_tt }
-            add_to_variable = { var = YBS_syn_pop value = -5 tooltip = YBS_syn_effect_tt }
-            add_to_variable = { var = YBS_con_pop value = 10 tooltip = YBS_con_effect_tt }
+            if = {
+				limit = {
+					has_country_flag = YBS_pf_formed
+				}
+				add_to_variable = { var = YBS_pf_pop value = -5 tooltip = YBS_pf_effect_tt }
+			}
+			else = {
+				add_to_variable = { var = YBS_syn_pop value = -5 tooltip = YBS_syn_effect_tt }
+			}
+            add_to_variable = { var = YBS_con_pop value = 5 tooltip = YBS_con_effect_tt }
 		}
 	}
 
@@ -134,8 +142,16 @@ focus_tree = {
             custom_effect_tooltip = generic_skip_one_line_tt
 
             add_to_variable = { var = YBS_lib_pop value = -5 tooltip = YBS_lib_effect_tt }
-            add_to_variable = { var = YBS_soc_pop value = -5 tooltip = YBS_soc_effect_tt }
-			add_to_variable = { var = YBS_con_pop value = 10 tooltip = YBS_con_effect_tt }
+            if = {
+				limit = {
+					has_country_flag = YBS_pf_formed
+				}
+				add_to_variable = { var = YBS_pf_pop value = -5 tooltip = YBS_pf_effect_tt }
+			}
+			else = {
+				add_to_variable = { var = YBS_soc_pop value = -5 tooltip = YBS_soc_effect_tt }
+			}
+			add_to_variable = { var = YBS_con_pop value = 5 tooltip = YBS_con_effect_tt }
 		}
 	}
 
@@ -245,7 +261,7 @@ focus_tree = {
 		id = YBS_military_coup
 		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = YBS_election_week }
-		mutually_exclusive = { focus = YBS_syndicalist_victory focus = YBS_carlist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
 		x = -12
 		y = 1
 		relative_position_id = YBS_election_week
@@ -271,16 +287,23 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			promote_character = YBS_carlist_junta
 		}
 	}
 
 	focus = {
 		id = YBS_exile_the_falangists
 		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YBS_military_coup }
+		prerequisite = { focus = YBS_military_coup focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = 9
 		y = 1
 		relative_position_id = YBS_military_coup
 
@@ -291,7 +314,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = fascism }
 		}
 		
 		bypass = {
@@ -302,8 +325,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			remove_ideas = YBS_falangist_remnants
-
 			country_event = YBS_post_election_events.1
 		}
 	}
@@ -335,7 +356,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			country_event = YBS_post_election_events.2
 		}
 	}
 
@@ -402,7 +423,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			set_party_name = {
+				ideology = democratic
+				long_name = YBS_democratic_party_liberal_long
+				name = YBS_democratic_party_liberal
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# promote_character = 
 		}
 	}
 
@@ -438,7 +467,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			set_party_name = {
+				ideology = democratic
+				long_name = YBS_democratic_party_long
+				name = YBS_democratic_party
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			promote_character = YBS_jose_antonio_aguirre
 		}
 	}
 
@@ -474,112 +511,41 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			if = {
+				limit = {
+					has_country_flag = YBS_pf_formed
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = YBS_democratic_party_popular_front_long
+					name = YBS_democratic_party_popular_front
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				# promote_character = 
+			}
+			else = {
+				set_party_name = {
+					ideology = democratic
+					long_name = YBS_democratic_party_socialist_long
+					name = YBS_democratic_party_socialist
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				promote_character = YBS_tomas_bilbao_hospitalet
+			}
 		}
 	}
 
-# DEMOCRATIC SUB-BRANCHES
-
-    focus = {
-		id = YBS_unity_through_democracy
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
-		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_rule_of_capital focus = YBS_we_will_always_have_hope }
-		x = -4
-		y = 6
-		relative_position_id = YBS_nationalist_victory
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-			
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			
-		}
-	}
-
-    focus = {
-		id = YBS_guardian_of_iberian_democracy
-		icon = GFX_focus_ARG_defense_and_democracy
-		prerequisite = { focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
-		mutually_exclusive = { focus = YBS_unity_through_democracy focus = YBS_rule_of_capital focus = YBS_we_will_always_have_hope }
-		x = 4
-		y = 6
-		relative_position_id = YBS_nationalist_victory
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-			
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			
-		}
-	}
-
-    focus = {
-		id = YBS_rule_of_capital
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YBS_liberal_victory }
-		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
-		x = -4
-		y = 6
-		relative_position_id = YBS_liberal_victory
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-			
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			
-		}
-	}
-
-    focus = {
-		id = YBS_we_will_always_have_hope
+	focus = {
+		id = YSB_formalise_the_welfare_state
 		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = YBS_socialist_victory }
-		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
-		x = 4
-		y = 6
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
 		relative_position_id = YBS_socialist_victory
 
 		cost = 5
@@ -604,6 +570,480 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = YSB_urbanise_navarre
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_socialist_victory }
+		#mutually_exclusive = { focus = }
+		x = 3
+		y = 1
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YSB_spanish_basque_national_languages
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YSB_teach_esperanto }
+		x = 4
+		y = 3
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_idea = YBS_language_issue
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			remove_ideas = YBS_language_issue
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = YBS_language_issue_mending_ties
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = YSB_popular_front_promises
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_socialist_victory }
+		#mutually_exclusive = { focus = }
+		x = 6
+		y = 1
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_country_flag = YBS_pf_formed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# syndicalist advisors
+		}
+	}
+
+	focus = {
+		id = YSB_teach_esperanto
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YSB_popular_front_promises }
+		mutually_exclusive = { focus = YSB_spanish_basque_national_languages }
+		x = 0
+		y = 2
+		relative_position_id = YSB_popular_front_promises
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_idea = YBS_language_issue
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			remove_ideas = YBS_language_issue
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = YBS_public_esperanto_classes
+		}
+	}
+
+	focus = {
+		id = YSB_empower_the_unions
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YSB_popular_front_promises }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YSB_popular_front_promises
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_completed_focus = YBS_pro_union_policies
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+# DEMOCRATIC SUB-BRANCHES
+
+    focus = {
+		id = YBS_unity_through_democracy
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_rule_of_capital focus = YBS_we_will_always_have_hope }
+		x = -4
+		y = 5
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+			is_in_faction = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_unifier_democratic
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YBS_unifier
+				set_country_flag = YBS_became_unifier
+			}
+
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = YBS_iberian_unity_league
+		}
+	}
+
+    focus = {
+		id = YBS_guardian_of_iberian_democracy
+		icon = GFX_focus_ARG_defense_and_democracy
+		prerequisite = { focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
+		mutually_exclusive = { focus = YBS_unity_through_democracy focus = YBS_rule_of_capital focus = YBS_we_will_always_have_hope }
+		x = 4
+		y = 5
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+			is_in_faction = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_federal_state_democratic
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YBS_federal_state
+				set_country_flag = YBS_federal_state_formed
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = YBS_iberian_federation
+		}
+	}
+
+    focus = {
+		id = YBS_rule_of_capital
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_liberal_victory }
+		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
+		x = -5
+		y = 5
+		relative_position_id = YBS_liberal_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_hanse_neutrality
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YBS_hanse
+				set_country_flag = YBS_hanse_takeover
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
+				set_politics = {
+					ruling_party = neutrality
+					long_name = YBS_neutrality_party_hanse
+					name = YBS_neutrality_party_hanse
+					elections_allowed = no
+				}
+			}
+			hidden_effect = {
+				set_politics = {
+					ruling_party = neutrality
+					long_name = YBS_neutrality_party_hanse_long
+					name = YBS_neutrality_party_hanse
+					elections_allowed = no
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			promote_character = YBS_handelskommission
+		}
+	}
+
+	focus = {
+		id = YBS_lobby_for_intervention
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_rule_of_capital }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = YBS_rule_of_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			NOT = {
+				any_other_country = {
+					YBS_is_iberian_country = yes
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = YBS_lobby_for_intervention_tt
+		}
+	}
+
+	focus = {
+		id = YBS_approach_the_balearics
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_rule_of_capital }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = YBS_rule_of_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			OR = {
+				AND = {
+					YBL = {
+						NOT = { has_war_with = ROOT }
+						exists = yes
+					}
+				}
+				YBL = { NOT = { has_country_leader = { character = YBL_juan_march_ordinas ruling_only = yes } } }
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					YBL = { NOT = { has_country_leader = { character = YBL_juan_march_ordinas ruling_only = yes } } }
+				}
+				every_possible_country = {
+					limit = { has_character = YBL_juan_march_ordinas }
+					random_character = {
+						limit = { is_character = YBL_juan_march_ordinas }
+						set_nationality = ROOT
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = available_political_advisor
+				# the guy
+			}
+			else = {
+				# offer annexation
+
+				custom_effect_tooltip = if_they_accept_tt
+				efffect_tooltip = {
+					annex_country = {
+						target = YBL
+						transfer_troops = no
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				efffect_tooltip = {
+					every_possible_country = {
+						limit = { has_character = YBL_juan_march_ordinas }
+						random_character = {
+							limit = { is_character = YBL_juan_march_ordinas }
+							set_nationality = ROOT
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = available_political_advisor
+				# the guy
+			}
+		}
+	}
+
+    focus = {
+		id = YBS_we_will_always_have_hope
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YSB_teach_esperanto }
+		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
+		x = 6
+		y = 5
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = YBS_esperanto_republic_1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = YBS_esperanto_events.1
+		}
+	}
+
 # SYNDICALIST BRANCH
 
     focus = {
@@ -611,7 +1051,7 @@ focus_tree = {
 		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_military_coup focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
-		x = 10
+		x = 11
 		y = 0
 		relative_position_id = YBS_socialist_victory
 
@@ -636,7 +1076,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			promote_character = YBS_rosa_lavina
 		}
 	}
 

@@ -27,13 +27,15 @@ leader_traits = {
 	YBS_esperantist = {
         random = no
 		
-		political_power_gain = 0.02
+		democratic_acceptance = 30
     }
 
 	YBS_carlist_junta_trait = {
         random = no
 
+		army_org_factor = 0.05
 		stability_factor = -0.15
+		neutrality_drift = 0.01
     }
 
 	YBS_falangist_founder = {

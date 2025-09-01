@@ -1,0 +1,167 @@
+on_actions = {
+
+    on_ruling_party_change = {
+        effect = {
+            if = {
+                limit = {
+                    original_tag = YBS
+                }
+
+                # Communism
+                if = {
+                    limit = {
+                        has_government = communism
+                    }
+                    if = {
+                        limit = {
+                            has_country_flag = YBS_united_iberia
+                        }
+                        set_cosmetic_tag = YBS_iberian_defence_council
+                    }
+                    else_if = {
+                        limit = {
+                            NOT = { has_cosmetic_tag = YBS_unifier }
+                        }
+                        set_cosmetic_tag = YBS_syndicalist
+                    }
+                }
+
+                # Democratic
+                if = {
+                    limit = {
+                        has_government = democratic
+                    }
+                    if = {
+                        limit = {
+                            has_country_flag = YBS_united_iberia
+                        }
+                        set_cosmetic_tag = YBS_iberia
+                    }
+                    else_if = {
+                        limit = {
+                            has_country_flag = YBS_rde_flag_1
+                        }
+                        set_cosmetic_tag = YBS_esperanto_republic_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_country_flag = YBS_rde_flag_2
+                        }
+                        set_cosmetic_tag = YBS_esperanto_republic_2
+                    }
+                    else_if = {
+                        limit = {
+                            has_country_flag = YBS_rde_flag_3
+                        }
+                        set_cosmetic_tag = YBS_esperanto_republic_3
+                    }
+                    else_if = {
+                        limit = {
+                            has_country_flag = YBS_federal_state_formed
+                        }
+                        set_cosmetic_tag = YBS_federal_state
+                    }
+                }
+
+                # Neutrality
+                if = {
+                    limit = {
+                        has_government = neutrality
+                    }
+                    if = {
+                        limit = {
+                            has_country_flag = YBS_hanse_takeover
+                        }
+                        if = {
+                            limit = {
+                                has_country_flag = YBS_united_iberia
+                            }
+                            set_cosmetic_tag = YBS_hanse_iberia
+                        }
+                        else = {
+                            set_cosmetic_tag = YBS_hanse
+                        }
+                    }
+                    else = {
+                        if = {
+                            limit = {
+                                has_country_flag = YBS_united_iberia
+                            }
+                            set_cosmetic_tag = YBS_iberia_carlist
+                        }
+                    }
+                }
+
+                # Fascism
+                if = {
+                    limit = {
+                        has_government = fascism
+                    }
+                    if = {
+                        limit = {
+                            has_country_flag = YBS_united_iberia
+                        }
+                        set_cosmetic_tag = YBS_iberia_falangist
+                    }
+                }
+
+                # Remove Checks
+                if = {
+                    limit = {
+                        NOT = { has_government = communism }
+                        has_cosmetic_tag = YBS_syndicalist
+                    }
+                    drop_cosmetic_tag = yes
+                }
+                if = {
+                    limit = {
+                        NOT = { has_government = neutrality }
+                        has_cosmetic_tag = YBS_hanse
+                    }
+                    drop_cosmetic_tag = yes
+                }
+                if = {
+                    limit = {
+                        NOT = { has_government = democratic }
+                        has_cosmetic_tag = YBS_federal_state
+                    }
+                    drop_cosmetic_tag = yes
+                }
+                if = {
+                    limit = {
+                        OR = {
+                            has_cosmetic_tag = YBS_esperanto_republic_1
+                            has_cosmetic_tag = YBS_esperanto_republic_2
+                            has_cosmetic_tag = YBS_esperanto_republic_3
+                        }
+                        NOT = { has_government = democratic }
+                    }
+                    drop_cosmetic_tag = yes
+                }
+
+                # UNIFIER Tag
+                if = {
+                    limit = {
+                        has_government = neutrality
+                        OR = {
+                            has_cosmetic_tag = YBS_unifier
+                            has_country_flag = YBS_became_unifier
+                        }
+                    }
+                    set_cosmetic_tag = YBS_unifier_carlist
+                }
+                if = {
+                    limit = {
+                        NOT = { has_government = neutrality }
+                        OR = {
+                            has_cosmetic_tag = YBS_unifier_carlist
+                            has_country_flag = YBS_became_unifier
+                        }
+                    }
+                    set_cosmetic_tag = YBS_unifier
+                }
+            }
+        }
+    }
+
+}

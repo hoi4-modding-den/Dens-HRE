@@ -4,18 +4,79 @@
  YBS_DEF: "the Basque Country"
  YBS_ADJ: "Basque"
  YBS_democratic: "Basque Country Republic"
- YBS_democratic_DEF: "the Republic of the Basque Country"
+ YBS_democratic_DEF: "the Republic of the Greater Basque Country"
  YBS_democratic_ADJ: "Basque"
  YBS_neutrality: "Basque Stratocracy"
- YBS_neutrality_DEF: "the Military Government of the Basque Country"
+ YBS_neutrality_DEF: "the Military Government of the Greater Basque Country"
  YBS_neutrality_ADJ: "Basque"
  YBS_communism: "Basque Commune"
- YBS_communism_DEF: "the Commune of the Basque Country"
+ YBS_communism_DEF: "the Basque Commune"
  YBS_communism_ADJ: "Basque"
  YBS_fascism: "Basque Falangist State"
  YBS_fascism_DEF: "the Basque Falangist State"
  YBS_fascism_ADJ: "Basque"
 
+ YBS_iberian_defence_council_communism: "Iberian Defense Council"
+ YBS_iberian_defence_council_communism_DEF: "the Defense Council of the Iberian Peninsula"
+ YBS_iberian_defence_council_communism_ADJ: "Iberia"
+
+ YBS_federal_state_democratic: "Basque Federal State"
+ YBS_federal_state_democratic_DEF: "the Federal Autonomous State of the Greater Basque Country"
+ YBS_federal_state_democratic_ADJ: "Basque"
+
+ YBS_unifier_democratic: "Bilbao Federal Government"
+ YBS_unifier_democratic_DEF: "the Iberian Federal Government in Bilbao"
+ YBS_unifier_democratic_ADJ: "Federal"
+ YBS_unifier_fascism: "Bilbao Falangist Government"
+ YBS_unifier_fascism_DEF: "the Iberian Falangist Government in Bilbao"
+ YBS_unifier_fascism_ADJ: "Falangist"
+ YBS_unifier_communism: "Bilbao Revolutionary Government"
+ YBS_unifier_communism_DEF: "the Iberian Revolutionary Government in Bilbao"
+ YBS_unifier_communism_ADJ: "Revolutionary"
+
+ YBS_iberia_democratic: "Iberian Federal Republic"
+ YBS_iberia_democratic_DEF: "the Federal Republic of Iberia"
+ YBS_iberia_democratic_ADJ: "Iberian"
+
+ YBS_unifier_carlist_neutrality: "Bilbao Carlist Government"
+ YBS_unifier_carlist_neutrality_DEF: "the Carlist Loyalist Government in Bilbao"
+ YBS_unifier_carlist_neutrality_ADJ: "Carlist"
+ YBS_spain_carlist_neutrality: "Kingdom of Spain"
+ YBS_spain_carlist_neutrality_DEF: "the Kingdom of Spain"
+ YBS_spain_carlist_neutrality_ADJ: "Spanish"
+ YBS_iberia_carlist_neutrality: "United Kingdom of Iberia"
+ YBS_iberia_carlist_neutrality_DEF: "the United Kingdom of Spain and Portugal"
+ YBS_iberia_carlist_neutrality_ADJ: "Iberian"
+
+ YBS_iberia_falangist_neutrality: "Spanish Reactionary Republic"
+ YBS_iberia_falangist_neutrality_DEF: "the Spanish Reactionary Republic"
+ YBS_iberia_falangist_fneutrality_ADJ: "Iberian"
+ YBS_iberia_falangist_fascism: "Spanish Empire"
+ YBS_iberia_falangist_fascism_DEF: "the Spanish Empire"
+ YBS_iberia_falangist_fascism_ADJ: "Iberian"
+
+ YBS_hanse_neutrality: "Freihandelszone Baskenland"
+ YBS_hanse_neutrality_DEF: "the Free Trade Zone of the Basque Country"
+ YBS_hanse_neutrality_ADJ: "Basque"
+ YBS_hanse_iberia_neutrality: "Hanseatische Kompanie Iberien"
+ YBS_hanse_iberia_neutrality_DEF: "the Regime of the Hanseatic Company in Iberia"
+ YBS_hanse_iberia_neutrality_ADJ: "Basque"
+
+ YBS_esperanto_republic_1: "Republiko de Espero" # Actual Esperanto Flag
+ YBS_esperanto_republic_1_DEF: "the Republic of Hope"
+ YBS_esperanto_republic_1_ADJ: "Esperantist"
+ YBS_esperanto_republic_2: "Republiko de Espero" # Esperanto 'Tricolour' Flag
+ YBS_esperanto_republic_2_DEF: "the Republic of Hope"
+ YBS_esperanto_republic_2_ADJ: "Esperantist"
+ YBS_esperanto_republic_3: "Republiko de Espero" # EU-inspired Esperanto Flag
+ YBS_esperanto_republic_3_DEF: "the Republic of Hope"
+ YBS_esperanto_republic_3_ADJ: "Esperantist"
+
+
+# FACTIONS
+
+ YBS_iberian_unity_league: "Iberian Unity League"
+ YBS_iberian_federation: "Iberian Federation"
 
 # PARTIES
 
@@ -45,9 +106,12 @@
  YBS_jose_antonio_aguirre_desc: "§YFull Name:§! §LJosé Antonio Aguirre y Lecube§!\n§YBorn:§! §LMarch 6. 1904, in Bilbao§!\n§YBackground:§! §LLeader of the Basque Nationalist Party and the person to declare Basque Independence in the turmoil of the Iberian Civil War. He is the first President of the Republic of the Basque Country.§! $XHH_is_historical_character_tt$"
  YBS_tomas_bilbao_hospitalet_name: "Tomás Bilbao"
  YBS_tomas_bilbao_hospitalet_desc: "§YFull Name:§! §LTomás Bilbao Hospitalet§!\n§YBorn:§! §LSeptember 18. 1890, in Bilbao§!\n§YBackground:§! §LA Basque architect and socialist politician. He is one of the founders of the Basque National Action and previously served as minister of justice.§! $XHH_is_historical_character_tt$"
+ YBS_trade_union_congress_name: "Sindikatuen Kongresua"
  YBS_rosa_lavina_name: "Rosa Laviña"
  YBS_rosa_lavina_desc: "§YFull Name:§! §LRosa Laviña i Carreras§!\n§YBorn:§! §LJanuary 14. 1918, in Palafrugell§!\n§YBackground:§! §LLeading member of the Libertarian Youth in Catalonia and supporter of the Esperanto Movement, Laviña i Carreras has moved to the Basque country to support the revolutionary struggle in their Iberian neighbour state.§! $XHH_is_historical_character_tt$"
  YBS_carlist_junta_name: "Basque Military Junta"
+ YBS_handelskommission_name: "Reichshandelsonderkommission"
+ YBS_handelskommission_desc: "§YEnglish Name:§! §LImperial Special Commission for Trade§!"
  YBS_julio_ruiz_de_alda_name: "Julio Ruiz de Alda"
  YBS_julio_ruiz_de_alda_desc: "§YFull Name:§! §LJulio Ruiz de Alda Miqueleiz§!\n§YBorn:§! §LOctober 7. 1897, in Lizarra§!\n§YBackground:§! §LTogether with Primo de Rivera, he founded the Falangist movement. He was an aviator in the Iberian National Army and completed a transatlantic flight in 1926 in the 'Plus Ultra'. With the collapse of Iberia, he returned to his homelands to fight for Falangism and Iberian reunification.§! $XHH_is_historical_character_tt$"
 
@@ -77,10 +141,12 @@
  YBS_language_issue_basque_dominant_desc: "The Basque language is being enforced as the only national language of [ROOT.GetNameDef]."
  YBS_language_issue_mending_ties: "Euskara-Español National Languages"
  YBS_language_issue_mending_ties_desc: "The Basque and Spanish languages are both put in equal positions within the government and in education."
+ YBS_public_esperanto_classes: "Nationwide Esperanto Classes"
  YBS_falangist_remnants: "Falangist Remnants"
  YBS_falangist_remnants_desc: "Following their attempted coup in late 1935, the Falangists have been under surveillance by state forces. Their leader is prone to abandon his efforts in the Basque Country should we finish off his little goon squads."
  YBS_national_pride: "Harrotasun Nazionala"
  YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
+ YBS_republican_opposition: "Republican Opposition"
 
  YBS_mondragon_cooperative: "Mondragón Corporación Cooperativa"
 
@@ -91,7 +157,7 @@
  YBS_elections_over: "The §Y1936 Elections§! have been held"
 
  YBS_form_pf_tt: "The Popularity of the §SSocialists§! and §rSyndicalists§! will be merged into the §rPopular§! §SFront§!."
- YBS_pf_formed: "The Popular Front has been formed"
+ YBS_pf_formed: "The §rPopular§! §SFront§! has been formed"
 
  YBS_socialists_in_charge_tt: "The §SSocialists§! are in government"
  YBS_socialists_in_charge_tt_NOT: "The §SSocialists§! are not in government"
@@ -142,7 +208,7 @@
  YBS_carlist_campaigns: "§gCarlist§! Pride March"
  YBS_nationalist_campaigns: "Utilise §cPopulist§! Tactics"
  YBS_liberal_campaigns: "Promise §lLiberal§! Reforms"
- YBS_socialist_campaigns: "Call upon the §SWorkers§!"
+ YBS_socialist_campaigns: "Appeal to the §SWorkers§!"
  YBS_syndicalist_campaigns: "Rally the §rUnions§!"
  YBS_popular_front_campaigns: "Campaign for the §rPopular§! §SFront§!"
 
@@ -189,6 +255,19 @@
 
  YBS_socialist_victory: "Socialist Victory"
  YBS_socialist_victory_desc: ""
+ YSB_formalise_the_welfare_state: "Formalise the Welfare State"
+ YSB_formalise_the_welfare_state_desc: ""
+ YSB_urbanise_navarre: "Urbanise Navarre"
+ YSB_urbanise_navarre_desc: ""
+ YSB_spanish_basque_national_languages: "Deal with the Language Issue"
+ YSB_spanish_basque_national_languages_desc: ""
+
+ YSB_popular_front_promises: "Promises of the Fronto Populara"
+ YSB_popular_front_promises_desc: ""
+ YSB_teach_esperanto: "Introduce Public Esperanto Classes"
+ YSB_teach_esperanto_desc: ""
+ YSB_empower_the_unions: "Empower the Unions"
+ YSB_empower_the_unions_desc: ""
 
  YBS_unity_through_democracy: "Unity through Democracy"
  YBS_unity_through_democracy_desc: ""
@@ -198,6 +277,11 @@
 
  YBS_rule_of_capital: "Corporate Takeover"
  YBS_rule_of_capital_desc: ""
+ YBS_approach_the_balearics: "Approach Ordinas"
+ YBS_approach_the_balearics_desc: ""
+ YBS_lobby_for_intervention: "Lobby for Intervention"
+ YBS_lobby_for_intervention_desc: ""
+ YBS_lobby_for_intervention_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to declare war on other §YIberian nations§!"
 
  YBS_we_will_always_have_hope: "We Will Always Have Hope"
  YBS_we_will_always_have_hope_desc: ""
@@ -245,8 +329,8 @@
  YBS_election_events.2.f: "...as no majority is achieved, the Nationalists continue their rule!"
  YBS_election_events.3.t: "Leftist Politicians meet in Donostia"
  YBS_election_events.3.desc: "WIP"
- YBS_election_events.3.a: "We must work together!"
- YBS_election_events.3.b: "Pah! Your understanding of Socialism are laughable!"
+ YBS_election_events.3.a: "Solidarity forever!"
+ YBS_election_events.3.b: "Pah! You're just revisionists!"
  YBS_election_events.4.t: "Socialists announce the 'Fronte Herrikoia'"
  YBS_election_events.4.desc: "WIP"
  YBS_election_events.4.a: "Together for Victory!"
@@ -264,6 +348,16 @@
  YBS_post_election_events.1.desc: "WIP"
  YBS_post_election_events.1.a: "Hunt them down. They shall not escape Judgement."
  YBS_post_election_events.1.b: "Let them run, who cares about them."
+ YBS_post_election_events.2.t: "Ending Republican Resistance"
+ YBS_post_election_events.2.desc: "WIP"
+ YBS_post_election_events.2.a: "Hold a Parade, this will calm things down."
+ YBS_post_election_events.2.b: "Mobilise the garrison, open fire if the opposition acts violent."
+
+ YBS_esperanto_events.1.t: "A Flag for the Republic"
+ YBS_esperanto_events.1.desc: "WIP"
+ YBS_esperanto_events.1.a: "We will continue using the Esperanto Flag."
+ YBS_esperanto_events.1.b: "Adopt the 'Verda Stelo Trikoloro'"
+ YBS_esperanto_events.1.c: "Adopt the 'Naŭ Stelo' Proposal"
 
 
 # MAP

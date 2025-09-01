@@ -14,6 +14,8 @@ YBS_election_decision_cat = {
 
     YBS_timer_until_election_week = {
 
+        icon = generic_political_address
+
         activation = {
             always = no
         }
@@ -34,6 +36,8 @@ YBS_election_decision_cat = {
     }
 
     YBS_carlist_campaigns = {
+
+        icon = eng_blackshirt_march
 
         visible = {
             NOT = { has_country_flag = YBS_elections_happened }
@@ -65,6 +69,8 @@ YBS_election_decision_cat = {
 
     YBS_nationalist_campaigns = {
 
+        icon = hol_radio_oranje
+
         visible = {
             NOT = { has_country_flag = YBS_elections_happened }
         }
@@ -94,6 +100,8 @@ YBS_election_decision_cat = {
 
     YBS_liberal_campaigns = {
 
+        icon = SWI_swiss_democratic_tradition_campaign
+
         visible = {
             NOT = { has_country_flag = YBS_elections_happened }
         }
@@ -122,6 +130,8 @@ YBS_election_decision_cat = {
     }
 
     YBS_socialist_campaigns = {
+
+        icon = generic_speech
 
         visible = {
             NOT = { has_country_flag = YBS_elections_happened }
@@ -157,6 +167,8 @@ YBS_election_decision_cat = {
 
     YBS_syndicalist_campaigns = {
 
+        icon = generic_merge_plant_materiel
+
         visible = {
             NOT = { has_country_flag = YBS_elections_happened }
             NOT = { has_country_flag = YBS_pf_formed }
@@ -191,6 +203,8 @@ YBS_election_decision_cat = {
     }
 
     YBS_popular_front_campaigns = {
+
+        icon = generic_political_rally
 
         visible = {
             NOT = { has_country_flag = YBS_elections_happened }

@@ -16,6 +16,23 @@ characters = {
 		}
 	}
 
+	YBS_basque_liberal_guy = {
+		name = YBS_basque_liberal_guy_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_basque_liberal_guy
+                small = GFX_portrait_YBS_basque_liberal_guy_small
+			}
+		}
+		country_leader = {
+			traits = {  }
+			ideology = hyper_capitalism
+			desc = YBS_basque_liberal_guy_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
 	YBS_tomas_bilbao_hospitalet = {
 		name = YBS_tomas_bilbao_hospitalet_name
 		portraits = {
@@ -28,6 +45,22 @@ characters = {
 			traits = { YBS_socialist_architect }
 			ideology = socialism
 			desc = YBS_tomas_bilbao_hospitalet_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_trade_union_congress = {
+		name = YBS_trade_union_congress_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_trade_union_congress
+			}
+		}
+		country_leader = {
+			traits = {  }
+			ideology = syndicalism
+			#desc = YBS_trade_union_congress_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}
@@ -60,7 +93,23 @@ characters = {
 		country_leader = {
 			traits = { YBS_carlist_junta_trait }
 			ideology = oligarchism
-			desc = YBS_carlist_junta_desc
+			#desc = YBS_carlist_junta_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_handelskommission = {
+		name = YBS_handelskommission_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_handelskommission
+			}
+		}
+		country_leader = {
+			traits = {  }
+			ideology = oligarchism
+			desc = YBS_handelskommission_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}

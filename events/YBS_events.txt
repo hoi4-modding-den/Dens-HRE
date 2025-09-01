@@ -1,5 +1,6 @@
 add_namespace = YBS_election_events
 add_namespace = YBS_post_election_events
+add_namespace = YBS_esperanto_events
 
 country_event = { # Carlist Conspiracy
 	id = YBS_election_events.1
@@ -75,6 +76,9 @@ country_event = { # ELECTION
             name = YBS_democratic_party
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         promote_character = YBS_jose_antonio_aguirre
     }
 
@@ -97,6 +101,9 @@ country_event = { # ELECTION
             name = YBS_democratic_party_liberal
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         # promote_character = 
     }
 
@@ -119,6 +126,9 @@ country_event = { # ELECTION
             name = YBS_democratic_party_socialist
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         promote_character = YBS_tomas_bilbao_hospitalet
     }
 
@@ -140,6 +150,9 @@ country_event = { # ELECTION
             name = YBS_democratic_party_popular_front
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         # promote_character = 
     }
 
@@ -160,6 +173,10 @@ country_event = { # ELECTION
             ruling_party = communism
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = YBS_rosa_lavina
     }
 
     option = { # Nationalists because no majority
@@ -218,6 +235,9 @@ country_event = { # ELECTION
             name = YBS_democratic_party
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         promote_character = YBS_jose_antonio_aguirre
     }
 }
@@ -240,7 +260,8 @@ country_event = { # Possible Popular Front?
 
     option = { # this is stupid
         name = YBS_election_events.3.b
-        
+        add_political_power = 50
+        add_popularity = { ideology = communism popularity = -0.05 }
     }
 }
 
@@ -292,6 +313,12 @@ country_event = { # Military Coup
             name = YBS_neutrality_party_military
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = YBS_carlist_junta
+
+        add_ideas = YBS_republican_opposition
     }
 }
 
@@ -321,6 +348,12 @@ country_event = { # Military Rule after Carlists win
             ruling_party = neutrality
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = YBS_carlist_junta
+
+        add_ideas = YBS_republican_opposition
     }
 }
 
@@ -341,13 +374,15 @@ country_event = { # Election Week begins
             if = {
 				limit = {
 					OR = {
-						AND = {
-							check_variable = { YBS_con_pop > YBS_mon_pop }
-							check_variable = { YBS_con_pop > YBS_lib_pop }
-							check_variable = { YBS_con_pop > YBS_soc_pop }
-							check_variable = { YBS_con_pop > YBS_syn_pop }
-							check_variable = { YBS_con_pop > YBS_pf_pop } 
-						}
+						NOT = {
+                            AND = {
+                                check_variable = { YBS_con_pop > YBS_mon_pop }
+                                check_variable = { YBS_con_pop > YBS_lib_pop }
+                                check_variable = { YBS_con_pop > YBS_soc_pop }
+                                check_variable = { YBS_con_pop > YBS_syn_pop }
+                                check_variable = { YBS_con_pop > YBS_pf_pop } 
+                            }
+                        }
 						NOT = { has_country_flag = YBS_carlist_compromise_made }
 					}
 					NOT = { has_country_flag = YBS_carlist_coup_stopped }
@@ -392,10 +427,87 @@ country_event = { # Removing the Falangists
                 # has 'Falangist' trait
             }
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        remove_ideas = YBS_falangist_remnants
     }
 
     option = { # exile
         name = YBS_post_election_events.1.b
-        
+        # exile thingy
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        remove_ideas = YBS_falangist_remnants
+    }
+}
+
+country_event = { # Restoring Order
+	id = YBS_post_election_events.2
+	title = YBS_post_election_events.2.t
+	desc = YBS_post_election_events.2.desc
+    picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes
+	
+	option = { # Hold a 'Parade'
+        name = YBS_post_election_events.2.a
+        add_command_power = -40
+        add_equipment_to_stockpile = {
+            type = armored_car_equipment
+            amount = -20
+            producer = ROOT
+        }
+        add_equipment_to_stockpile = {
+            type = light_tank_chassis
+            amount = -50
+            producer = ROOT
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        remove_ideas = YBS_republican_opposition
+    }
+
+    option = { # Arm the Garrison
+        name = YBS_post_election_events.2.b
+        add_manpower = -30
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = -100
+            producer = ROOT
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        remove_ideas = YBS_republican_opposition
+    }
+}
+
+country_event = { # Flag for the RDE
+	id = YBS_esperanto_events.1
+	title = YBS_esperanto_events.1.t
+	desc = YBS_esperanto_events.1.desc
+    picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = { # Flag 1: The Actual Esperanto Flag
+        name = YBS_esperanto_events.1.a
+        set_country_flag = YBS_rde_flag_1
+        hidden_effect = { set_cosmetic_tag = YBS_esperanto_republic_1 }
+    }
+
+    option = { # Flag 2: The Esperanto 'Tricolour'
+        name = YBS_esperanto_events.1.b
+        set_country_flag = YBS_rde_flag_2
+        hidden_effect = { set_cosmetic_tag = YBS_esperanto_republic_2 }
+    }
+
+    option = { # Flag 3: The Nine Stars Proposal
+        name = YBS_esperanto_events.1.c
+        set_country_flag = YBS_rde_flag_3
+        hidden_effect = { set_cosmetic_tag = YBS_esperanto_republic_3 }
     }
 }
