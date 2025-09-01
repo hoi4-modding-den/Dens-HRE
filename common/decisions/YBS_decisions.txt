@@ -33,6 +33,194 @@ YBS_election_decision_cat = {
         }
     }
 
+    YBS_carlist_campaigns = {
+
+        visible = {
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        ai_will_do = { base = 0 }
+
+        available = {
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        cancel = {
+            has_country_flag = YBS_elections_happened
+        }
+
+        cost = 25
+
+        days_remove = 20
+
+        modifier = {
+            production_speed_buildings_factor = -0.05
+            neutrality_drift = 0.01
+        }
+
+        remove_effect = {
+            add_to_variable = { var = YBS_mon_pop value = 5 tooltip = YBS_mon_effect_tt }
+        }
+    }
+
+    YBS_nationalist_campaigns = {
+
+        visible = {
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        ai_will_do = { base = 0 }
+
+        available = {
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        cancel = {
+            has_country_flag = YBS_elections_happened
+        }
+
+        cost = 25
+
+        days_remove = 20
+
+        modifier = {
+            consumer_goods_factor = 0.1
+        }
+
+        remove_effect = {
+            add_to_variable = { var = YBS_con_pop value = 5 tooltip = YBS_con_effect_tt }
+        }
+    }
+
+    YBS_liberal_campaigns = {
+
+        visible = {
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        ai_will_do = { base = 0 }
+
+        available = {
+            NOT = { has_country_flag = YBS_elections_happened }
+        }
+
+        cancel = {
+            has_country_flag = YBS_elections_happened
+        }
+
+        cost = 25
+
+        days_remove = 20
+
+        modifier = {
+            political_power_cost = 0.02
+        }
+
+        remove_effect = {
+            add_to_variable = { var = YBS_lib_pop value = 5 tooltip = YBS_lib_effect_tt }
+        }
+    }
+
+    YBS_socialist_campaigns = {
+
+        visible = {
+            NOT = { has_country_flag = YBS_elections_happened }
+            NOT = { has_country_flag = YBS_pf_formed }
+        }
+
+        ai_will_do = { base = 0 }
+
+        available = {
+            NOT = { has_country_flag = YBS_elections_happened }
+            NOT = { has_country_flag = YBS_pf_formed }
+        }
+
+        cancel = {
+            OR = {
+                has_country_flag = YBS_elections_happened
+                has_country_flag = YBS_pf_formed
+            }
+        }
+
+        cost = 25
+
+        days_remove = 20
+
+        modifier = {
+            production_factory_efficiency_gain_factor = -0.05
+        }
+
+        remove_effect = {
+            add_to_variable = { var = YBS_soc_pop value = 5 tooltip = YBS_soc_effect_tt }
+        }
+    }
+
+    YBS_syndicalist_campaigns = {
+
+        visible = {
+            NOT = { has_country_flag = YBS_elections_happened }
+            NOT = { has_country_flag = YBS_pf_formed }
+        }
+
+        ai_will_do = { base = 0 }
+
+        available = {
+            NOT = { has_country_flag = YBS_elections_happened }
+            NOT = { has_country_flag = YBS_pf_formed }
+        }
+
+        cancel = {
+            OR = {
+                has_country_flag = YBS_elections_happened
+                has_country_flag = YBS_pf_formed
+            }
+        }
+
+        cost = 25
+
+        days_remove = 20
+
+        modifier = {
+            industrial_capacity_factory = -0.05
+            communism_drift = 0.01
+        }
+
+        remove_effect = {
+            add_to_variable = { var = YBS_syn_pop value = 5 tooltip = YBS_syn_effect_tt }
+        }
+    }
+
+    YBS_popular_front_campaigns = {
+
+        visible = {
+            NOT = { has_country_flag = YBS_elections_happened }
+            has_country_flag = YBS_pf_formed
+        }
+
+        ai_will_do = { base = 0 }
+
+        available = {
+            NOT = { has_country_flag = YBS_elections_happened }
+            has_country_flag = YBS_pf_formed
+        }
+
+        cancel = {
+            has_country_flag = YBS_elections_happened
+        }
+
+        cost = 25
+
+        days_remove = 20
+
+        modifier = {
+            communism_drift = 0.01
+        }
+
+        remove_effect = {
+            add_to_variable = { var = YBS_pf_pop value = 5 tooltip = YBS_pf_effect_tt }
+        }
+    }
+
     YBS_debug_increase_mon = {
 
         visible = {
