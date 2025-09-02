@@ -14,13 +14,57 @@ YBS_syndicalists_in_charge = {
     }
 }
 
+YBS_controls_basque_starting_states = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_controls_basque_starting_states_tt
+        controls_state = 172
+        controls_state = 792
+        controls_state = 1097
+        controls_state = 1098
+    }
+}
+
 YBS_is_iberian_country = {
     custom_trigger_tooltip = {
         tooltip = YBS_is_iberian_country_tt
+        capital_scope = {
+            is_core_of = PREV
+            YBS_is_iberian_state = yes
+        }
+    }
+}
+
+YBS_is_iberian_state = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_is_iberian_state_tt
         OR = {
-            original_tag = YBS
-            original_tag = YGB
-            original_tag = YKP
+            region = 41
+            region = 209
+            region = 210
+        }
+    }
+}
+
+YBS_controls_all_iberian_states = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_controls_all_iberian_states_tt
+        all_state = {
+            OR = {
+                YBS_is_iberian_state = no
+                is_controlled_by = ROOT
+            }
+        }
+    }
+}
+
+YBS_owns_all_iberian_states = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_owns_all_iberian_states_tt
+        all_state = {
+            OR = {
+                YBS_is_iberian_state = no
+                is_owned_by = ROOT
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 5000 y = 1000 }
+	continuous_focus_position = { x = 6000 y = 100 }
 
 	initial_show_position = {
 		x = 10
@@ -330,7 +330,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YSB_restore_order
+		id = YBS_restore_order
 		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = YBS_military_coup }
 		#mutually_exclusive = { focus = }
@@ -432,6 +432,8 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			# promote_character = 
+
+			set_country_flag = YBS_liberals_elected
 		}
 	}
 
@@ -476,6 +478,8 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			promote_character = YBS_jose_antonio_aguirre
+
+			set_country_flag = YBS_nationalists_elected
 		}
 	}
 
@@ -536,17 +540,54 @@ focus_tree = {
 
 				promote_character = YBS_tomas_bilbao_hospitalet
 			}
+
+			set_country_flag = YBS_socialists_elected
 		}
 	}
 
 	focus = {
-		id = YSB_formalise_the_welfare_state
-		icon = GFX_focus_PLACEHOLDER
+		id = YBS_formalise_the_welfare_state
+		icon = GFX_focus_generic_concessions
 		prerequisite = { focus = YBS_socialist_victory }
 		#mutually_exclusive = { focus = }
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_welfare_state_idea
+		}
+	}
+
+	focus = {
+		id = YBS_regulate_the_industries
+		icon = GFX_focus_DEN_heavy_regulations
+		prerequisite = { focus = YBS_formalise_the_welfare_state }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_formalise_the_welfare_state
 
 		cost = 5
 
@@ -571,13 +612,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YSB_urbanise_navarre
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YBS_socialist_victory }
+		id = YBS_market_socialism
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = YBS_regulate_the_industries }
 		#mutually_exclusive = { focus = }
-		x = 3
-		y = 1
-		relative_position_id = YBS_socialist_victory
+		x = 0
+		y = 2
+		relative_position_id = YBS_regulate_the_industries
 
 		cost = 5
 
@@ -602,10 +643,188 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YSB_spanish_basque_national_languages
-		icon = GFX_focus_PLACEHOLDER
+		id = YBS_georgist_reforms
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		prerequisite = { focus = YBS_regulate_the_industries }
+		prerequisite = { focus = YBS_socialist_praxis }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_regulate_the_industries
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_urbanise_navarre
+		icon = GFX_focus_generic_low_cost_housing
 		prerequisite = { focus = YBS_socialist_victory }
-		mutually_exclusive = { focus = YSB_teach_esperanto }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			controls_state = 172
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			172 = {
+				add_manpower = 10000
+				set_state_category = large_town
+				effect_tooltip = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_socialist_praxis
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = { focus = YBS_formalise_the_welfare_state }
+		prerequisite = { focus = YBS_urbanise_navarre }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_urbanise_navarre
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# unlocks decisions for temporary boni
+		}
+	}
+
+	focus = {
+		id = YBS_modernise_the_education_system
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = YBS_urbanise_navarre }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_urbanise_navarre
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_found_IISL
+		icon = GFX_focus_research2
+		prerequisite = { focus = YBS_modernise_the_education_system }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_modernise_the_education_system
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = YBS_spanish_basque_national_languages
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_modernise_the_education_system }
+		mutually_exclusive = { focus = YBS_teach_esperanto }
 		x = 4
 		y = 3
 		relative_position_id = YBS_socialist_victory
@@ -640,8 +859,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YSB_popular_front_promises
-		icon = GFX_focus_PLACEHOLDER
+		id = YBS_popular_front_promises
+		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = YBS_socialist_victory }
 		#mutually_exclusive = { focus = }
 		x = 6
@@ -676,13 +895,14 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YSB_teach_esperanto
+		id = YBS_teach_esperanto
 		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YSB_popular_front_promises }
-		mutually_exclusive = { focus = YSB_spanish_basque_national_languages }
+		prerequisite = { focus = YBS_popular_front_promises }
+		prerequisite = { focus = YBS_modernise_the_education_system }
+		mutually_exclusive = { focus = YBS_spanish_basque_national_languages }
 		x = 0
 		y = 2
-		relative_position_id = YSB_popular_front_promises
+		relative_position_id = YBS_popular_front_promises
 
 		cost = 5
 
@@ -711,13 +931,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YSB_empower_the_unions
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YSB_popular_front_promises }
+		id = YBS_empower_the_unions
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = YBS_popular_front_promises focus = YBS_syndicalist_victory }
 		#mutually_exclusive = { focus = }
 		x = 1
 		y = 1
-		relative_position_id = YSB_popular_front_promises
+		relative_position_id = YBS_popular_front_promises
 
 		cost = 5
 
@@ -786,6 +1006,74 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = YBS_alocate_military_budget_factories
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = YBS_unity_through_democracy focus = YBS_guardian_of_iberian_democracy }
+		mutually_exclusive = { focus = YBS_alocate_military_budget_forts }
+		x = 3
+		y = 1
+		relative_position_id = YBS_unity_through_democracy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_alocate_military_budget_forts
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = YBS_unity_through_democracy focus = YBS_guardian_of_iberian_democracy }
+		mutually_exclusive = { focus = YBS_alocate_military_budget_factories }
+		x = 2
+		y = 0
+		relative_position_id = YBS_alocate_military_budget_factories
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			YBS_controls_basque_starting_states = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
     focus = {
 		id = YBS_guardian_of_iberian_democracy
 		icon = GFX_focus_ARG_defense_and_democracy
@@ -847,6 +1135,12 @@ focus_tree = {
 		}
 
 		available = {
+			check_variable = {
+				tooltip = YBS_foreign_control_trigger_tt
+				var = YBS_foreign_control
+				value = 100
+				compare = greater_than_or_equals
+			}
 			is_subject = no
 		}
 		
@@ -982,7 +1276,7 @@ focus_tree = {
 				# offer annexation
 
 				custom_effect_tooltip = if_they_accept_tt
-				efffect_tooltip = {
+				effect_tooltip = {
 					annex_country = {
 						target = YBL
 						transfer_troops = no
@@ -991,7 +1285,7 @@ focus_tree = {
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				efffect_tooltip = {
+				effect_tooltip = {
 					every_possible_country = {
 						limit = { has_character = YBL_juan_march_ordinas }
 						random_character = {
@@ -1012,7 +1306,7 @@ focus_tree = {
     focus = {
 		id = YBS_we_will_always_have_hope
 		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YSB_teach_esperanto }
+		prerequisite = { focus = YBS_teach_esperanto }
 		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
 		x = 6
 		y = 5
@@ -1087,12 +1381,14 @@ focus_tree = {
 		}
 	}
 
+# ECONOMY TREE
+
 	focus = {
 		id = YBS_pro_union_policies
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		#prerequisite = { focus = }
 		mutually_exclusive = { focus = YBS_clamp_down_on_unions }
-		x = 45
+		x = 44
 		y = 0
 		#relative_position_id = 
 
@@ -1195,10 +1491,10 @@ focus_tree = {
 
 	focus = {
 		id = YBS_support_regional_cooperatives
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_consumer_goods
 		prerequisite = { focus = YBS_pro_union_policies }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = YBS_pro_union_policies
 
@@ -1226,12 +1522,44 @@ focus_tree = {
 
 	focus = {
 		id = YBS_mandatory_union_membership
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_workers
 		prerequisite = { focus = YBS_pro_union_policies }
 		#mutually_exclusive = { focus = }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = YBS_pro_union_policies
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_national_labour_federation
+		icon = GFX_focus_por_workers_of_iberia
+		prerequisite = { focus = YBS_support_regional_cooperatives }
+		prerequisite = { focus = YBS_mandatory_union_membership }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_mandatory_union_membership
 
 		cost = 5
 
@@ -1326,12 +1654,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBS_nationalise_gun_factories
-		icon = GFX_goal_generic_construct_mil_factory
+		id = YBS_reach_out_to_trade_partners
+		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = { focus = YBS_develop_infrastructure }
 		#mutually_exclusive = { focus = }
-		x = -1
-		y = 1
+		x = -3
+		y = 2
 		relative_position_id = YBS_develop_infrastructure
 
 		cost = 5
@@ -1342,6 +1670,37 @@ focus_tree = {
 
 		available = {
 			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_nationalise_gun_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = YBS_develop_infrastructure }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_develop_infrastructure
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_war_support > 0.5
 		}
 		
 		bypass = {
@@ -1372,11 +1731,42 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YBS_modern_economics
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = YBS_develop_infrastructure }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_develop_infrastructure
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
 		id = YBS_invest_in_navarre_steel_mills
 		icon = GFX_focus_generic_steel
 		prerequisite = { focus = YBS_develop_infrastructure }
 		#mutually_exclusive = { focus = }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = YBS_develop_infrastructure
 
@@ -1408,11 +1798,42 @@ focus_tree = {
 
 	focus = {
 		id = YBS_support_the_fisheries
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_fishing
 		prerequisite = { focus = YBS_develop_infrastructure }
 		#mutually_exclusive = { focus = }
 		x = 3
-		y = 1
+		y = 2
+		relative_position_id = YBS_develop_infrastructure
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_economic_growth
+		icon = GFX_focus_generic_modernize_industry
+		prerequisite = { focus = YBS_reach_out_to_trade_partners focus = YBS_modern_economics focus = YBS_support_the_fisheries }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 3
 		relative_position_id = YBS_develop_infrastructure
 
 		cost = 5
@@ -1439,10 +1860,10 @@ focus_tree = {
 
 	focus = {
 		id = YBS_subsidise_agricultural_companies
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_agricultural_subsidies
 		prerequisite = { focus = YBS_clamp_down_on_unions }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = YBS_clamp_down_on_unions
 
@@ -1473,7 +1894,7 @@ focus_tree = {
 		icon = GFX_focus_generic_devaluation
 		prerequisite = { focus = YBS_clamp_down_on_unions }
 		#mutually_exclusive = { focus = }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = YBS_clamp_down_on_unions
 
@@ -1494,6 +1915,787 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_reconstruct_the_economy
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = YBS_subsidise_agricultural_companies }
+		prerequisite = { focus = YBS_devalue_our_currency }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_subsidise_agricultural_companies
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+# ARMY TREE
+
+	focus = {
+		id = YBS_reorganise_high_command
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus = }
+		x = 50
+		y = 5
+		#relative_position_id = 
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_country_flag = YBS_elections_over
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			# improve disjointed army idea
+		}
+	}
+
+	focus = {
+		id = YBS_basque_military_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = YBS_reorganise_high_command }
+		#mutually_exclusive = { focus = }
+		x = -4
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_officer_meritocracy
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_basque_military_academy }
+		mutually_exclusive = { focus = YBS_officer_elections }
+		x = -3
+		y = 1
+		relative_position_id = YBS_basque_military_academy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_officer_elections
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_basque_military_academy }
+		mutually_exclusive = { focus = YBS_officer_meritocracy }
+		x = -1
+		y = 1
+		relative_position_id = YBS_basque_military_academy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_standardised_rifles
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = YBS_officer_meritocracy focus = YBS_officer_elections }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_officer_meritocracy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_radio_development
+		icon = GFX_focus_generic_radio_communication
+		prerequisite = { focus = YBS_officer_meritocracy focus = YBS_officer_elections }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_officer_meritocracy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_the_pan_national_army
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = YBS_standardised_rifles focus = YBS_radio_development }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 2
+		relative_position_id = YBS_officer_meritocracy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_new_leadership
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_basque_military_academy }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_basque_military_academy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_foreign_advisors
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = YBS_new_leadership }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_new_leadership
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_strengthen_the_militia
+		icon = GFX_focus_AUS_frontmiliz_focus
+		prerequisite = { focus = YBS_reorganise_high_command }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_expand_border_control
+		icon = GFX_focus_generic_provoke_border_clashes
+		prerequisite = { focus = YBS_strengthen_the_militia }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_strengthen_the_militia
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_focus_on_defence
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_reorganise_high_command }
+		mutually_exclusive = { focus = YBS_focus_on_offense }
+		x = 1
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			# improve disjointed army idea
+		}
+	}
+
+	focus = {
+		id = YBS_trench_warfare
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = YBS_focus_on_defence }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_focus_on_defence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_fortify_the_mountains
+		icon = GFX_focus_generic_mountain_fortification
+		prerequisite = { focus = YBS_focus_on_defence }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_focus_on_defence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_engineer_company_training
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_trench_warfare focus = YBS_fortify_the_mountains }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 2
+		relative_position_id = YBS_focus_on_defence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_shield_of_iberia
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = YBS_trench_warfare }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_trench_warfare
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_basque_defence_force
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_shield_of_iberia }
+		prerequisite = { focus = YBS_engineer_company_training }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_engineer_company_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			# improve disjointed army idea
+		}
+	}
+
+	focus = {
+		id = YBS_focus_on_offense
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_reorganise_high_command }
+		mutually_exclusive = { focus = YBS_focus_on_defence }
+		x = 3
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			# improve disjointed army idea
+		}
+	}
+
+	focus = {
+		id = YBS_artillery_development
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = YBS_focus_on_offense }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_focus_on_offense
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_radar_development
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = YBS_focus_on_offense focus = YBS_experimental_warfare_division }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_focus_on_offense
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_more_anti_tank
+		icon = GFX_focus_generic_anti_tank_guns
+		prerequisite = { focus = YBS_artillery_development }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_artillery_development
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_airforce_support
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = YBS_artillery_development }
+		prerequisite = { focus = YBS_radar_development }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_artillery_development
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_basque_war_force
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_more_anti_tank }
+		prerequisite = { focus = YBS_airforce_support }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_artillery_development
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			# improve disjointed army idea
+		}
+	}
+
+	focus = {
+		id = YBS_experimental_warfare_division
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_reorganise_high_command }
+		#mutually_exclusive = { focus = }
+		x = 8
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			
 		}

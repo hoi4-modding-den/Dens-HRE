@@ -49,7 +49,7 @@ YBS_election_decision_cat = {
             NOT = { has_country_flag = YBS_elections_happened }
         }
 
-        cancel = {
+        cancel_trigger = {
             has_country_flag = YBS_elections_happened
         }
 
@@ -81,7 +81,7 @@ YBS_election_decision_cat = {
             NOT = { has_country_flag = YBS_elections_happened }
         }
 
-        cancel = {
+        cancel_trigger = {
             has_country_flag = YBS_elections_happened
         }
 
@@ -112,7 +112,7 @@ YBS_election_decision_cat = {
             NOT = { has_country_flag = YBS_elections_happened }
         }
 
-        cancel = {
+        cancel_trigger = {
             has_country_flag = YBS_elections_happened
         }
 
@@ -145,7 +145,7 @@ YBS_election_decision_cat = {
             NOT = { has_country_flag = YBS_pf_formed }
         }
 
-        cancel = {
+        cancel_trigger = {
             OR = {
                 has_country_flag = YBS_elections_happened
                 has_country_flag = YBS_pf_formed
@@ -181,7 +181,7 @@ YBS_election_decision_cat = {
             NOT = { has_country_flag = YBS_pf_formed }
         }
 
-        cancel = {
+        cancel_trigger = {
             OR = {
                 has_country_flag = YBS_elections_happened
                 has_country_flag = YBS_pf_formed
@@ -218,7 +218,7 @@ YBS_election_decision_cat = {
             has_country_flag = YBS_pf_formed
         }
 
-        cancel = {
+        cancel_trigger = {
             has_country_flag = YBS_elections_happened
         }
 
