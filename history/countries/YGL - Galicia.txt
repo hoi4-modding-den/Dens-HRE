@@ -1,4 +1,5 @@
 ﻿capital = 171
+oob = YGL_1936
 if = {
 	limit = {
 		NOT = { has_dlc = "By Blood Alone" }
@@ -27,19 +28,24 @@ set_technology = {
 }
 
 set_politics = {
-	ruling_party = communism
+	ruling_party = democratic
 	last_election = "1935.10.27"
 	election_frequency = 48
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 45
-	fascism = 4
-	communism = 50
-	neutrality = 1
+	democratic = 66
+	fascism = 10
+	communism = 24
+	neutrality = 0
 }
 
 recruit_character = YGL_castelao
+recruit_character = YGL_Ricardo_Carballo_Calero
+recruit_character = YGL_villar_ponte
+recruit_character = YGL_valverde
+recruit_character = YGL_vicente_risco
+recruit_character = YGL_jose_maria
 set_stability = 0.6
 set_war_support = 0.4
 

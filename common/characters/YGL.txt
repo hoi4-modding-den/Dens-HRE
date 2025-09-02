@@ -8,7 +8,7 @@
         }
         country_leader = {
             desc = "Alfonso Daniel Rodríguez Castelao, better known as Castelao, is the president of the current Galicianist party."
-            ideology = marxism
+            ideology = socialism
             expire = 1950.1.1.1
         }
     }  
@@ -129,6 +129,32 @@
             }
         }
     }
+    YGL_jose_maria = {
+        name = "José María Gil-Robles y Quiñones"
+         portraits = {
+          civilian = {
+                  large = GFX_portrait_YGL_jmaria
+              }
+          }
+          country_leader = {
+              ideology = despotism
+              expire = 1950.1.1.1
+          }
+          advisor = {
+              cost = 100
+              slot = political_advisor
+              idea_token = YGL_vr_idea
+              allowed = {
+                  original_tag = YGL
+              }
+              traits = {
+                  traditionalist_theorist
+              }
+              ai_will_do = {
+                  factor = 1.00
+              }
+          }
+      }
 }
     
 
