@@ -84,13 +84,13 @@ guiTypes = {
 			}	
 		}
 		buttonType = {
-			name = "XVE_welcome_message_close"
+			name = "YCA_welcome_message_close"
 			spriteType = "GFX_closebutton"
 			position = { x = 764 y = 4 }
 			
 		}
 		buttonType = {
-			name ="XVE_welcome_message_continue"
+			name ="YCA_welcome_message_continue"
 			quadTextureSprite ="GFX_button_359x34"
 			position = { x=20 y=553 }
 			buttonText = "Continue"
@@ -98,14 +98,14 @@ guiTypes = {
 			shortcut = "ESCAPE"
 		}
 		iconType = {
-			name = "XVE_continue_button_bloom"
-			spriteType = "GFX_XVE_continue_button_bloom"
+			name = "YCA_continue_button_bloom"
+			spriteType = "GFX_YCA_continue_button_bloom"
 			position = { x=20 y=553 }
 			#pdx_tooltip = YCA_bloom_hint_loc
 			alwaystransparent = yes
 		}
 		instantTextboxType = {
-			name = "XVE_continue_button_text" 
+			name = "YCA_continue_button_text" 
 			position = { x=50 y=563 }
 			font = "hoi_16mbs"
 			text = "Continue"
@@ -145,58 +145,109 @@ guiTypes = {
 guiTypes = {
 	containerWindowType = {
 		name = "YCA_generalitat_faction_decision_ui_window"
-		size = { width = 100% height = 400 }
+		size = { width = 100% height = 470 }
 		position = { x = 0 y = 0 }
 
 		instantTextboxType = {
 			name = "YCA_generalitat_faction_decision_category_gui_desc"
-			position = { x = 118 y = -11 }
+			position = { x = 45 y = 10 }
 			font = "hoi_16mbs"
-			text = YCA_generalitat_faction_decision_tt
-			maxWidth = 380
-			format = left
+			text = YCA_generalitat_faction_decision_guidesc
+			maxWidth = 400
+			format = center
 		}
 
 		# PROGRESS BAR
 		iconType = {
 			name = "YCA_generalitat_faction_progress_bar"
 			spriteType = "GFX_YCA_generalitat_faction_progress_bar"
-			position = { x = 420 y = 70 }
-			frame = 100
-			pdx_tooltip = YCA_tension_bar_tt			
+			position = { x = 420 y = 140 }
+			frame = 100		
 		}
 		iconType = {
 			name = "YCA_vanguardist_faction_progress_bar"
 			spriteType = "GFX_YCA_vanguardist_faction_progress_bar"
-			position = { x = 30 y = 130 }		
+			position = { x = 100 y = 172 }		
+			pdx_tooltip = YCA_vanguardist_faction_progress_bar_tt_fake
 		}	
 		iconType = {
 			name = "YCA_anarchist_faction_progress_bar"
 			spriteType = "GFX_YCA_anarchist_faction_progress_bar"
-			position = { x = 30 y = 270 }		
+			position = { x = 100 y = 332 }			
+			pdx_tooltip = YCA_anarchist_faction_progress_bar_tt_fake	
 		}	
 		iconType = {
 			name = "YCA_socialist_faction_progress_bar"
 			spriteType = "YCA_socialist_faction_progress_bar"
-			position = { x = 30 y = 200 }		
+			position = { x = 100 y = 252 }		
+			pdx_tooltip = YCA_socialist_faction_progress_bar_tt_fake		
 		}	
 
-		#iconType = {
-		#	name = "frame"
-		#	spriteType = "GFX_YCA_tension_bar_frame" # FOR FONT USE hoi_24header
-		#	position = { x = 420 y = 60 }
-		#	pdx_tooltip = YCA_tension_bar_tt
-		#}		
+		# IMAGE
+		iconType = {
+			name = "YCA_anarcho_syndicalism_icon"
+			spriteType = "GFX_YCA_anarcho_syndicalism_icon"
+			position = { x = 30 y = 320 }
+		}
+		iconType = {
+			name = "YCA_vanguardism_icon"
+			spriteType = "GFX_YCA_vanguardism_icon"
+			position = { x = 30 y = 160 }
+		}
+		iconType = {
+			name = "YCA_socialism_icon"
+			spriteType = "GFX_YCA_socialism_icon"
+			position = { x = 30 y = 240 }
+		}	
+		iconType = {
+			name = "YCA_tension_image"
+			spriteType = "GFX_YCA_tension_image"
+			position = { x = 427 y = 405 }
+		}						
+
+		# TOOLTIP
+		instantTextBoxType = {
+			name ="YCA_tension_tt_fake"
+			position = { x = 427 y = 405 }
+			format = center
+			maxwidth = 36
+			maxHeight = 36
+			pdx_tooltip = YCA_tension_tt_fake
+		}		
+		instantTextBoxType = {
+			name ="YCA_vanguardism_icon_tt_fake"
+			position = { x = 30 y = 160 }
+			format = center
+			maxwidth = 53
+			maxHeight = 60
+			pdx_tooltip = YCA_vanguardism_icon_tt_fake
+		}	
+		instantTextBoxType = {
+			name ="YCA_socialism_icon_tt_fake"
+			position = { x = 30 y = 240 }
+			format = center
+			maxwidth = 53
+			maxHeight = 60
+			pdx_tooltip = YCA_socialism_icon_tt_fake
+		}					
+		instantTextBoxType = {
+			name ="YCA_anarcho_syndicalism_icon_tt_fake"
+			position = { x = 30 y = 320 }
+			format = center
+			maxwidth = 53
+			maxHeight = 60
+			pdx_tooltip = YCA_anarcho_syndicalism_icon_tt_fake
+		}					
 
 		# TEXT
 		instantTextBoxType = {
-			name ="YCA_generalitat_faction_percentage"
-			position = { x = 427 y = 330 }
+			name ="YCA_generalitat_dominant_faction"
+			position = { x = 30 y = 410 }
 			font = "hoi_24header"
-			text = "YCA_generalitat_faction_percentage"
+			text = "YCA_generalitat_dominant_faction"
 			format = left
 			maxHeight = 42
-			maxWidth = 500
-		}												
+			maxWidth = 370
+		}															
 	}
 }

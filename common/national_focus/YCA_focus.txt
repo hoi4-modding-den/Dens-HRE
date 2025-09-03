@@ -167,30 +167,6 @@ focus_tree = {
 		prerequisite = {
 			focus = YCA_institutionalize_the_front
 		}
-		relative_position_id = YCA_institutionalize_the_front
-		x = 3
-		y = 1
-
-		ai_will_do = {
-			factor = 30
-		}
-
-		available = {
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = YCA_local_committees_reform
-		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
-		cost = 4
-		prerequisite = {
-			focus = YCA_institutionalize_the_front
-		}
 		mutually_exclusive = {
 			focus = YCA_empower_consejos
 		}
@@ -247,30 +223,6 @@ focus_tree = {
 		}	
 		relative_position_id = YCA_empower_consejos
 		x = 2
-		y = 1
-
-		ai_will_do = {
-			factor = 30
-		}
-
-		available = {
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = YCA_reject_central_planning
-		icon = GFX_focus_AUS_union_of_danubian_socialist_republics
-		cost = 4
-		prerequisite = {
-			focus = YCA_empower_consejos
-		}	
-		relative_position_id = YCA_empower_consejos
-		x = 0
 		y = 1
 
 		ai_will_do = {

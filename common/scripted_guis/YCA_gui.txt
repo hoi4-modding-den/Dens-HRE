@@ -9,15 +9,15 @@ scripted_gui = {
 			has_country_flag = YCA_welcome_message_flag  ##change the flag names
 		}
 		effects = {	
-			XVE_welcome_message_close_click = {  ##make sure the button names match 
+			YCA_welcome_message_close_click = {  ##make sure the button names match 
 				clr_country_flag = YCA_welcome_message_flag
 				clr_country_flag = YCA_credits_visible_flag
 			}
-			XVE_welcome_message_continue_click = {
+			YCA_welcome_message_continue_click = {
 				clr_country_flag = YCA_welcome_message_flag
 				clr_country_flag = YCA_credits_visible_flag
 			}
-			XVE_welcome_message_credits_click = {
+			YCA_welcome_message_credits_click = {
 				if = {
 					limit = {
 						NOT = { has_country_flag = YCA_credits_visible_flag }
@@ -30,9 +30,9 @@ scripted_gui = {
 			}
 		}
 	}
-	XVE_credits_main_window = {  ##Controls the credits sub-window
+	YCA_credits_main_window = {  ##Controls the credits sub-window
 		context_type = player_context
-		window_name = "XVE_credits_main_window"
+		window_name = "YCA_credits_main_window"
 		visible = { has_country_flag = YCA_credits_visible_flag }
 		
 		

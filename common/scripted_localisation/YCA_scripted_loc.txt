@@ -1,0 +1,40 @@
+# Generalitat Faction
+defined_text = {
+	name = YCA_GeneralitatFactionDominant
+	text = {
+		trigger = {
+			original_tag = YCA
+            check_variable = {
+                YCA_vanguardist_faction_progress_bar > YCA_anarchist_faction_progress_bar
+            }
+			check_variable = {
+				YCA_vanguardist_faction_progress_bar > YCA_socialist_faction_progress_bar				
+			}
+		}
+		localization_key = YCA_vanguardists_dominant 
+	}
+	text = {
+		trigger = {
+			original_tag = YCA
+            check_variable = {
+                YCA_anarchist_faction_progress_bar > YCA_vanguardist_faction_progress_bar
+            }
+			check_variable = {
+				YCA_anarchist_faction_progress_bar > YCA_socialist_faction_progress_bar				
+			}
+		}
+		localization_key = YCA_anarchists_dominant
+	}
+	text = {
+		trigger = {
+			original_tag = YCA
+            check_variable = {
+                YCA_socialist_faction_progress_bar > YCA_anarchist_faction_progress_bar
+            }
+			check_variable = {
+				YCA_socialist_faction_progress_bar > YCA_vanguardist_faction_progress_bar				
+			}
+		}
+		localization_key = YCA_socialists_dominant 
+	}
+}

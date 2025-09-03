@@ -15,12 +15,14 @@ YC3_DEF:0 "the Free Territory of Lower Aragon"
 YC3_ADJ:0 "Catalan"
 
 ### INTRO ###
-#YCA_intro_loc:0 ""
-#YCA_credits:0 ""
+YCA_intro_loc:0 "WIP"
+YCA_credits:0 "Catalan Content: §Hfuriousky/Sky§!\nIntro GUI: §CKasastul§!\nRest of the mod: §HThe HOI4 Modding Den§!"
 
 ### PIE CHART/PROGRESS BAR ###
-YCA_pie_chart_desc_tt:0 "  \n§RVanguardist§! Alignment: [?YCA.YCA_forpol_vanguardist_percentage_var|%1R]\n§gRevolutionary Socialists§! Alignment: [?YCA.YCA_forpol_socialist_percentage_var|%1g]\n§jAnarcho-Syndicalists§! Alignment: [?YCA.YCA_forpol_anarchist_percentage_var|%1j]"
-YCA_generalitat_faction_percentage:0 "[?YCA_generalitat_faction_progress_bar|0]%"
+YCA_generalitat_dominant_faction:0 "Dominant Faction: [YCA_GeneralitatFactionDominant]"
+YCA_vanguardists_dominant:0 "§RVanguardists§!"
+YCA_anarchists_dominant:0 "§gAnarcho-Syndicalists§!"
+YCA_socialists_dominant:0 "§0Revolutionary Socialists§!"
 
 ### IDEAS/NATIONAL SPIRITS ###
 YCA_vanguard_of_the_revolution:0 "Vanguard of the Revolution"
@@ -36,6 +38,13 @@ YCA_anarchist_society_desc:0 "In the Free Territory of Lower Aragon, the Union o
 
 ### TOOLTIPS ###
 YCA_splintered_generalitat_tt: "--------------\nCurrent §tRevolutionary Infighting§!: §Y[?YCA_generalitat_faction_progress_bar|0]%§!"
+YCA_tension_tt_fake:0 "Current §tRevolutionary Infighting§!: §Y[?YCA_generalitat_faction_progress_bar|0]%§!"
+YCA_vanguardism_icon_tt_fake:0 "Vanguardists"
+YCA_socialism_icon_tt_fake:0 "Revolutionary Socialists"
+YCA_anarcho_syndicalism_icon_tt_fake:0 "Anarcho-Syndicalists"
+YCA_vanguardist_faction_progress_bar_tt_fake:0 "§RVanguardism§! Influence: §Y[?YCA_vanguardist_faction_progress_bar|0]%§!"
+YCA_anarchist_faction_progress_bar_tt_fake:0 "§gAnarcho-Syndicalism§! Influence: §Y[?YCA_anarchist_faction_progress_bar|0]%§!"
+YCA_socialist_faction_progress_bar_tt_fake:0 "§0Revolutionary Socialism§! Influence: §Y[?YCA_socialist_faction_progress_bar|0]%§!"
 
 ### CUSTOM MODIFIERS ###
 
@@ -53,7 +62,8 @@ YCA_splintered_generalitat_tt: "--------------\nCurrent §tRevolutionary Infight
 
 
 ### DECISIONS ###
-
+YCA_generalitat_factions_decisions:0 "The Generalitat"
+YCA_generalitat_faction_decision_guidesc:0 "The §LCatalan Generalitat§!, born from the §t1934 Revolution§!, began as a united front of §tleftist forces§!. Now, unity is fraying as three factions vie for control: the §rVanguardists§!, demanding a strong centralized authority; the §0Revolutionary Socialists§!, pushing for social democracy and left-wing governance; and the §gAnarcho-Syndicalists§!, seeking a stateless order of workers’ councils. The revolution’s future hangs in the balance."
 
 ### DYNAMIC MODIFIERS ###
 

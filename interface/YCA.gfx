@@ -18,15 +18,27 @@ spriteTypes = {
 		texturefile = "gfx/leaders/YCA/YC3_union_anarchist_collectives.png"
 	}	
 ### IDEAS/TEXICONS ###
-	#spriteType = {
-	#	name = "GFX_idea_XVE_serenissima_legacy"
-	#	texturefile = "gfx/interface/ideas/XVE/XVE_serenissima_legacy.png"
-	#}	
+	spriteType = {
+		name = "GFX_YCA_anarcho_syndicalism_icon"
+		texturefile = "gfx/interface/gui/YCA/anarcho_syndicalism_icon.png"
+	}
+	spriteType = {
+		name = "GFX_YCA_vanguardism_icon"
+		texturefile = "gfx/interface/gui/YCA/vanguardism_icon.png"
+	}	
+	spriteType = {
+		name = "GFX_YCA_socialism_icon"
+		texturefile = "gfx/interface/gui/YCA/socialism_icon.png"
+	}	
+	spriteType = {
+		name = "GFX_YCA_tension_image"
+		texturefile = "gfx/interface/gui/YCA/YCA_tension_image.png"
+	}					
 
 ### INTRO ###
 	frameAnimatedSpriteType = {
-		name = "GFX_XVE_welcome_window_animation_loop"
-		texturefile = "gfx/interface/XVE/XVE_venice_animation.dds"
+		name = "GFX_YCA_welcome_window_animation_loop"
+		texturefile = "gfx/interface/gui/YCA/YCA_catalan_animation.dds"
 		noOfFrames = 3
 		animation_rate_fps = 0.2
 		transparencecheck = no
@@ -37,7 +49,7 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}
 	SpriteType = {
-		name = "GFX_XVE_continue_button_bloom"
+		name = "GFX_YCA_continue_button_bloom"
 		texturefile = "gfx/interface/button_359x34.dds"			
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -87,23 +99,23 @@ spriteTypes = {
 	name = "GFX_YCA_vanguardist_faction_progress_bar"
     textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar.dds"
     textureFile2 = "gfx/interface/gui/YCA/empty_bar.dds"
-    size = { x = 420 y = 32 }
+    size = { x = 320 y = 32 }
     effectFile = "gfx/FX/progress.lua"
     steps = 100
   }
    progressbartype = {
 	name = "GFX_YCA_anarchist_faction_progress_bar"
-    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar.dds"
+    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar_2.dds"
     textureFile2 = "gfx/interface/gui/YCA/empty_bar.dds"
-    size = { x = 420 y = 32 }
+    size = { x = 320 y = 32 }
     effectFile = "gfx/FX/progress.lua"
     steps = 100
   }	 
    progressbartype = {
 	name = "YCA_socialist_faction_progress_bar"
-    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar.dds"
+    textureFile1 = "gfx/interface/gui/YCA/YCA_progress_bar_1.dds"
     textureFile2 = "gfx/interface/gui/YCA/empty_bar.dds"
-    size = { x = 420 y = 32 }
+    size = { x = 320 y = 32 }
     effectFile = "gfx/FX/progress.lua"
     steps = 100
   }	       	 
