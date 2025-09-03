@@ -238,25 +238,14 @@ YBS_election_decision_cat = {
     YBS_debug_increase_mon = {
 
         visible = {
-            OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+            is_ai = yes
         }
 
         ai_will_do = { base = 1 }
 
         available = {
-            OR = {
-                AND = {
-                    is_debug = yes
-                    is_ai = no
-                }
-                AND = {
-                    is_ai = yes
-                    has_country_flag = YBS_ai_path_carlist
-                }
-            }
+            is_ai = yes
+            has_country_flag = YBS_ai_path_carlist
             NOT = { has_country_flag = YBS_elections_happened }
         }
 
@@ -268,25 +257,14 @@ YBS_election_decision_cat = {
     YBS_debug_increase_con = {
 
         visible = {
-            OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+            is_ai = yes
         }
 
         ai_will_do = { base = 1 }
 
         available = {
-            OR = {
-                AND = {
-                    is_debug = yes
-                    is_ai = no
-                }
-                AND = {
-                    is_ai = yes
-                    has_country_flag = YBS_ai_path_nationalist
-                }
-            }
+            is_ai = yes
+            has_country_flag = YBS_ai_path_nationalist
             NOT = { has_country_flag = YBS_elections_happened }
         }
 
@@ -298,25 +276,14 @@ YBS_election_decision_cat = {
     YBS_debug_increase_lib = {
 
         visible = {
-            OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+            is_ai = yes
         }
 
         ai_will_do = { base = 1 }
 
         available = {
-            OR = {
-                AND = {
-                    is_debug = yes
-                    is_ai = no
-                }
-                AND = {
-                    is_ai = yes
-                    has_country_flag = YBS_ai_path_liberals
-                }
-            }
+            is_ai = yes
+            has_country_flag = YBS_ai_path_liberals
             NOT = { has_country_flag = YBS_elections_happened }
         }
 
@@ -328,27 +295,16 @@ YBS_election_decision_cat = {
     YBS_debug_increase_soc = {
 
         visible = {
-            OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+            is_ai = yes
         }
 
         ai_will_do = { base = 1 }
 
         available = {
-            OR = {
-                AND = {
-                    is_debug = yes
-                    is_ai = no
-                }
-                AND = {
-                    is_ai = yes
-                    has_country_flag = YBS_ai_path_socialist
-                }
-            }
-            NOT = { has_country_flag = YBS_pf_formed }
+            is_ai = yes
+            has_country_flag = YBS_ai_path_socialist
             NOT = { has_country_flag = YBS_elections_happened }
+            NOT = { has_country_flag = YBS_pf_formed }
         }
 
         complete_effect = {
@@ -359,27 +315,16 @@ YBS_election_decision_cat = {
     YBS_debug_increase_syn = {
 
         visible = {
-            OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+            is_ai = yes
         }
 
         ai_will_do = { base = 1 }
 
         available = {
-            OR = {
-                AND = {
-                    is_debug = yes
-                    is_ai = no
-                }
-                AND = {
-                    is_ai = yes
-                    has_country_flag = YBS_ai_path_syndicalist
-                }
-            }
-            NOT = { has_country_flag = YBS_pf_formed }
+            is_ai = yes
+            has_country_flag = YBS_ai_path_syndicalist
             NOT = { has_country_flag = YBS_elections_happened }
+            NOT = { has_country_flag = YBS_pf_formed }
         }
 
         complete_effect = {
@@ -390,27 +335,16 @@ YBS_election_decision_cat = {
     YBS_debug_increase_pf = {
 
         visible = {
-            OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+            is_ai = yes
         }
 
         ai_will_do = { base = 1 }
 
         available = {
-            OR = {
-                AND = {
-                    is_debug = yes
-                    is_ai = no
-                }
-                AND = {
-                    is_ai = yes
-                    has_country_flag = YBS_ai_path_popular_front
-                }
-            }
-            has_country_flag = YBS_pf_formed
+            is_ai = yes
+            has_country_flag = YBS_ai_path_popular_front
             NOT = { has_country_flag = YBS_elections_happened }
+            has_country_flag = YBS_pf_formed
         }
 
         complete_effect = {
@@ -418,3 +352,290 @@ YBS_election_decision_cat = {
         }
     }
 }
+
+YBS_purchase_old_ships_category = {
+
+	YBS_purchase_ships_XHH = {
+		cost = 50
+		icon = SWE_set_navy_budget
+		fire_only_once = no
+
+		visible = {
+			XHH = { 
+				NOT = { 
+					has_country_flag = sold_ships_to_us@ROOT
+					has_country_flag = negotiating_ship_purchase_flag@ROOT 
+				}
+			}
+			NOT = { has_war_with = XHH }
+		}
+
+		available = {
+			NOT = {
+				XHH = {
+					OR = {
+						has_civil_war = yes
+						has_capitulated = yes
+						has_opinion = {
+							target = FROM
+							value < 30
+						}
+					}					
+				}
+			}
+		}
+
+        cancel_trigger = {
+            has_war_with = XHH
+        }
+
+		days_remove = 14
+		remove_effect = {
+			XHH = {
+				country_event = {
+					id = generic_purchase_ships_events.01
+					hours = 1
+				}
+				set_country_flag = negotiating_ship_purchase_flag@ROOT
+			}			
+            custom_effect_tooltip = if_they_accept_tt
+            custom_effect_tooltip = YBS_XHH_transfers_ships_tt
+		}
+	}
+
+    YBS_purchase_ships_XHO = {
+		cost = 50
+		icon = SWE_set_navy_budget
+		fire_only_once = no
+
+		visible = {
+			XHO = { 
+				NOT = { 
+					has_country_flag = sold_ships_to_us@ROOT
+					has_country_flag = negotiating_ship_purchase_flag@ROOT 
+				}
+			}
+			NOT = { has_war_with = XHO }
+		}
+
+		available = {
+			NOT = {
+				XHO = {
+					OR = {
+						has_civil_war = yes
+						has_capitulated = yes
+						has_opinion = {
+							target = FROM
+							value < 30
+						}
+					}					
+				}
+			}
+		}
+
+        cancel_trigger = {
+            has_war_with = XHO
+        }
+
+		days_remove = 14
+		remove_effect = {
+			XHO = {
+				country_event = {
+					id = generic_purchase_ships_events.01
+					hours = 1
+				}
+				set_country_flag = negotiating_ship_purchase_flag@ROOT
+			}			
+            custom_effect_tooltip = if_they_accept_tt
+            custom_effect_tooltip = YBS_XHO_transfers_ships_tt
+		}
+	}
+
+    YBS_purchase_ships_XVE = {
+		cost = 50
+		icon = SWE_set_navy_budget
+		fire_only_once = no
+
+		visible = {
+			XVE = { 
+				NOT = { 
+					has_country_flag = sold_ships_to_us@ROOT
+					has_country_flag = negotiating_ship_purchase_flag@ROOT 
+				}
+			}
+			NOT = { has_war_with = XVE }
+		}
+
+		available = {
+			NOT = {
+				XVE = {
+					OR = {
+						has_civil_war = yes
+						has_capitulated = yes
+						has_opinion = {
+							target = FROM
+							value < 30
+						}
+					}					
+				}
+			}
+		}
+
+        cancel_trigger = {
+            has_war_with = XVE
+        }
+
+		days_remove = 14
+		remove_effect = {
+			XVE = {
+				country_event = {
+					id = generic_purchase_ships_events.01
+					hours = 1
+				}
+				set_country_flag = negotiating_ship_purchase_flag@ROOT
+			}			
+            custom_effect_tooltip = if_they_accept_tt
+            custom_effect_tooltip = YBS_XVE_transfers_ships_tt
+		}
+	}
+
+    YBS_purchase_ships_XEX = {
+		cost = 50
+		icon = SWE_set_navy_budget
+		fire_only_once = no
+
+		visible = {
+			XEX = { 
+				NOT = { 
+					has_country_flag = sold_ships_to_us@ROOT
+					has_country_flag = negotiating_ship_purchase_flag@ROOT 
+				}
+			}
+			NOT = { has_war_with = XEX }
+		}
+
+		available = {
+			NOT = {
+				XEX = {
+					OR = {
+						has_civil_war = yes
+						has_capitulated = yes
+						has_opinion = {
+							target = FROM
+							value < 30
+						}
+					}					
+				}
+			}
+		}
+
+        cancel_trigger = {
+            has_war_with = XEX
+        }
+
+		days_remove = 14
+		remove_effect = {
+			XEX = {
+				country_event = {
+					id = generic_purchase_ships_events.01
+					hours = 1
+				}
+				set_country_flag = negotiating_ship_purchase_flag@ROOT
+			}
+            custom_effect_tooltip = if_they_accept_tt
+            custom_effect_tooltip = YBS_XEX_transfers_ships_tt	
+		}
+	}
+
+}
+
+war_measures = {
+
+    YBS_turn_the_tide = {
+
+        icon = generic_tank
+        
+        allowed = {
+            original_tag = YBS
+        }
+
+        visible = {
+            has_completed_focus = YBS_focus_on_defence
+        }
+
+        available = {
+            has_completed_focus = YBS_basque_defence_force
+            surrender_progress < 0.5
+            any_other_country = {
+                has_war_with = ROOT
+                casualties_inflicted_by = {
+                    opponent = ROOT
+                    thousands > 50
+                }
+                NOT = {
+                    any_owned_state = {
+                        controller = {
+                            OR = {
+                                tag = ROOT
+                                is_subject_of = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        fire_only_once = no
+
+        days_remove = 100
+
+        days_re_enable = 300
+
+        modifier = {
+            army_attack_factor = 0.25
+            breakthrough_factor = 0.1
+            planning_speed = 0.1
+        }
+    }
+}
+
+economy_decisions = {
+
+    YBS_get_helicopters = {
+
+        icon = generic_research
+
+        allowed = {
+            original_tag = YBS
+        }
+
+        visible = {
+            has_completed_focus = YBS_aircraft_research
+        }
+
+        available = {
+            has_completed_focus = YBS_aircraft_research
+            owns_state = 168
+            controls_state = 168
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            if = {
+                limit = {
+                    NOT = { is_special_project_completed = sp:sp_air_helicopter }
+                }
+                complete_special_project = sp:sp_air_helicopter
+            }
+            else = {
+                add_breakthrough_progress = {
+                    specialization = specialization_air
+                    value = 0.5
+                }
+            }
+        }
+    }
+
+}
+

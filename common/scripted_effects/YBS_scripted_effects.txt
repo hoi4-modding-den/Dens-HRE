@@ -1,0 +1,474 @@
+YBS_get_ships_from_country = {
+	IF = {
+		limit = {
+			FROM = { tag = XHH }
+		}
+        custom_effect_tooltip = YBS_XHH_transfers_ships_tt
+		XHH = {
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 I"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 II"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 III"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 IV"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 V"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 VI"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 VII"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 IIX"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 IX"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Type 24"
+				creator = XHH
+				name = "Type 24 X"
+			}
+
+            # Transfer Hamburgian Destroyers
+			transfer_ship = {
+                prefer_name = "Type 24 I"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 II"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 III"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 IV"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 V"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 VI"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 VII"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 IIX"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 IX"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "Type 24 X"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+		}
+	}
+    ELSE_IF = {
+		limit = {
+			FROM = { tag = XHO }
+		}
+        custom_effect_tooltip = YBS_XHO_transfers_ships_tt
+		XHO = {
+			create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class I"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class II"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class III"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class IV"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class V"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class VI"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class VII"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class IIX"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class IX"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class X"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class XI"
+			}
+            create_ship = {
+				type = ship_hull_submarine_1
+				equipment_variant = "K-III Class"
+				creator = XHO
+				name = "K-III Class XII"
+			}
+		
+			# Transfer Hollander Cruisers
+			transfer_ship = {
+                prefer_name = "K-III Class I"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class II"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class III"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class IV"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class V"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class VI"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class VII"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class IIX"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class IX"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class X"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class XI"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "K-III Class XII"
+                type = submarine
+                target = ROOT
+                exclude_refitting = no
+			}
+		}
+	}
+	ELSE_IF = {
+		limit = {
+			FROM = { tag = XVE }
+		}
+        custom_effect_tooltip = YBS_XVE_transfers_ships_tt
+		XVE = {
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri I"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri II"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri III"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri IV"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri V"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri VI"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri VII"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri IIX"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri IX"
+			}
+            create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "In. Leggeri"
+				creator = XVE
+				name = "In. Leggeri X"
+			}
+		
+			# Transfer Venetian Destroyers
+			transfer_ship = {
+                prefer_name = "In. Leggeri I"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "In. Leggeri II"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "In. Leggeri III"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "In. Leggeri IV"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "In. Leggeri V"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "In. Leggeri VI"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+			}
+            transfer_ship = {
+                prefer_name = "In. Leggeri VII"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+            }
+            transfer_ship = {
+                prefer_name = "In. Leggeri IIX"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+            }
+            transfer_ship = {
+                prefer_name = "In. Leggeri IX"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+            }
+            transfer_ship = {
+                prefer_name = "In. Leggeri X"
+                type = destroyer
+                target = ROOT
+                exclude_refitting = no
+            }
+		}
+	}
+    ELSE_IF = {
+		limit = {
+			FROM = { tag = XEX }
+		}
+        custom_effect_tooltip = YBS_XEX_transfers_ships_tt
+		XEX = {
+			create_ship = {
+				type = ship_hull_cruiser_1
+				equipment_variant = "Imperium"
+				creator = XEX
+				name = "Imperium Class I"
+			}
+			create_ship = {
+				type = ship_hull_cruiser_1
+				equipment_variant = "Imperium"
+				creator = XEX
+				name = "Imperium Class II"
+			}
+			create_ship = {
+				type = ship_hull_cruiser_1
+				equipment_variant = "Imperium"
+				creator = XEX
+				name = "Imperium Class III"
+			}
+			create_ship = {
+				type = ship_hull_cruiser_1
+				equipment_variant = "Imperium"
+				creator = XEX
+				name = "Imperium Class IV"
+			}
+		
+			# Transfer Padanian Cruisers
+			transfer_ship = {
+                prefer_name = "Imperium Class I"
+                type = light_cruiser
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "Imperium Class II"
+                type = light_cruiser
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "Imperium Class III"
+                type = light_cruiser
+                target = ROOT
+                exclude_refitting = no
+			}
+			transfer_ship = {
+                prefer_name = "Imperium Class IV"
+                type = light_cruiser
+                target = ROOT
+                exclude_refitting = no
+			}
+		}
+	}
+}

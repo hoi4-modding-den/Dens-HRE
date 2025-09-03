@@ -1,0 +1,10 @@
+YBS_mountains_fortified = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SWI_attack_from_the_mountains
+	
+    cas_damage_reduction = 0.1
+    land_bunker_effectiveness_factor = 0.25
+    state_bunker_max_level_terrain_limit = 2
+	
+}

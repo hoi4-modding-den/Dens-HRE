@@ -62,7 +62,385 @@ ideas = {
                 economy_cost_factor = 0.4
 			}
 		}
+
+		YBS_disjointed_military_2 = {
+
+			name = YBS_disjointed_military
+			picture = chi_army_corruption3
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = -0.1
+                army_org_regain = -0.05
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
+
+		YBS_disjointed_military_defence = { 
+
+			picture = YUG_federal_defense_council
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_regain = -0.05
+				army_attack_factor = -0.05
+				army_defence_factor = 0.05
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
+
+		YBS_disjointed_military_defence_2 = {
+
+			name = YBS_disjointed_military_defence
+			picture = YUG_federal_defense_council
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_regain = -0.05
+				army_attack_factor = -0.05
+				army_defence_factor = 0.05
+				max_dig_in = 1
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
+
+		YBS_disjointed_military_defence_3 = {
+
+			name = YBS_disjointed_military_defence
+			picture = YUG_federal_defense_council
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.05
+				max_dig_in = 1
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
+
+		YBS_disjointed_military_defence_4 = {
+
+			picture = YUG_federal_defense_council
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.1
+				max_dig_in = 1
+				army_core_defence_factor = 0.15
+			}
+		}
+
+		YBS_disjointed_military_offence = {
+
+			picture = MEX_politicised_army_2
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                army_org_regain = -0.05
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
+
+		YBS_disjointed_military_offence_2 = {
+
+			name = YBS_disjointed_military_offence
+			picture = MEX_politicised_army_2
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = 0.05
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
 		
+		YBS_disjointed_military_offence_3 = {
+
+			name = YBS_disjointed_military_offence
+			picture = MEX_politicised_army_2
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				air_cas_efficiency = 0.15
+				army_attack_factor = 0.05
+                mobilization_laws_cost_factor = 0.2
+                economy_cost_factor = 0.2
+			}
+		}
+
+		YBS_disjointed_military_offence_4 = {
+
+			picture = MEX_politicised_army_2
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				air_cas_efficiency = 0.15
+				army_attack_factor = 0.05
+				initiative_factor = 0.05
+				org_loss_when_moving = -0.15
+			}
+		}
+
+		YBS_basque_military_academy_idea = {
+
+			name = YBS_basque_military_academy
+			picture = generic_army_war_college
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.05
+				max_command_power = 15
+			}
+		}
+
+		YBS_basque_military_academy_idea_2 = {
+
+			name = YBS_basque_military_academy
+			picture = generic_army_war_college
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.1
+				max_command_power = 15
+			}
+		}
+
+		YBS_meritocratic_promotions = {
+
+			picture = general_staff
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				promote_cost_factor = -0.5
+				army_advisor_cost_factor = -0.2
+				army_leader_start_planning_level = 1
+			}
+		}
+
+		YBS_democratic_promotions = {
+
+			picture = general_staff
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				promote_cost_factor = -0.5
+				army_advisor_cost_factor = -0.2
+				army_leader_start_logistics_level = 1
+			}
+		}
+
+		YBS_pan_national_army = {
+
+			picture = generic_reserve_divisions
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = 0.2
+			}
+		}
+
+		YBS_protected_supply_lines = {
+
+			picture = generic_supply_lines
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				supply_node_range = 0.15
+				truck_attrition_factor = -0.08
+				supply_factor = 0.05
+				cas_damage_reduction = 0.1
+        		experience_loss_factor = -0.15
+			}
+		}
+
+		YBS_rebuilding_the_armada = {
+
+			picture = AUS_streamline_cruiser_production_idea
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.4
+				naval_equipment_upgrade_xp_cost = -1
+				refit_speed = 0.15
+			}
+
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+		}
+
+		YBS_metal_dragon_doctrine = {
+
+			picture = ITA_bandits_war
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_against_major_factor = 0.1
+				army_breakthrough_against_major_factor = 0.1
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+			}
+		}
+
 		YBS_language_issue = {
 
 			#picture = 

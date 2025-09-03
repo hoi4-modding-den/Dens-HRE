@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 6000 y = 100 }
+	continuous_focus_position = { x = 5700 y = 350 }
 
 	initial_show_position = {
 		x = 10
@@ -216,8 +216,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = -50
 			add_war_support = 0.05
-			add_to_variable = { var = YBS_con_pop value = 5 tooltip = YBS_con_effect_tt }
 		}
 	}
 
@@ -259,7 +259,7 @@ focus_tree = {
 
     focus = {
 		id = YBS_military_coup
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_spa_no_compromise_on_carlist_ideals
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
 		x = -12
@@ -295,12 +295,19 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			promote_character = YBS_carlist_junta
+
+			hidden_effect = {
+				news_event = { 
+					id = YBS_news_events.1
+					hours = 6
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_exile_the_falangists
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_spa_the_phalanx_ascendant
 		prerequisite = { focus = YBS_military_coup focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
 		#mutually_exclusive = { focus = }
 		x = 9
@@ -433,6 +440,13 @@ focus_tree = {
 
 			# promote_character = 
 
+			hidden_effect = {
+				news_event = { 
+					id = YBS_news_events.3
+					hours = 6
+				}
+			}
+
 			set_country_flag = YBS_liberals_elected
 		}
 	}
@@ -479,7 +493,141 @@ focus_tree = {
 
 			promote_character = YBS_jose_antonio_aguirre
 
+			hidden_effect = {
+				news_event = { 
+					id = YBS_news_events.2
+					hours = 6
+				}
+			}
+
 			set_country_flag = YBS_nationalists_elected
+		}
+	}
+
+	focus = {
+		id = YBS_regulate_bread_prices
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		prerequisite = { focus = YBS_nationalist_victory }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_found_the_national_healthcare_fund
+		icon = GFX_focus_generic_bad_medical
+		prerequisite = { focus = YBS_nationalist_victory }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_patriotic_education
+		icon = GFX_focus_generic_university_2
+		prerequisite = { focus = YBS_found_the_national_healthcare_fund }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_found_the_national_healthcare_fund
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# conservative minister of education
+		}
+	}
+
+	focus = {
+		id = YBS_patriot_act
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = YBS_nationalist_victory }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 3
+		relative_position_id = YBS_nationalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
 		}
 	}
 
@@ -528,6 +676,13 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 
 				# promote_character = 
+
+				hidden_effect = {
+					news_event = { 
+						id = YBS_news_events.6
+						hours = 6
+					}
+				}
 			}
 			else = {
 				set_party_name = {
@@ -539,6 +694,13 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 
 				promote_character = YBS_tomas_bilbao_hospitalet
+
+				hidden_effect = {
+					news_event = { 
+						id = YBS_news_events.4
+						hours = 6
+					}
+				}
 			}
 
 			set_country_flag = YBS_socialists_elected
@@ -546,8 +708,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBS_formalise_the_welfare_state
-		icon = GFX_focus_generic_concessions
+		id = YBS_urbanise_navarre
+		icon = GFX_focus_generic_low_cost_housing
 		prerequisite = { focus = YBS_socialist_victory }
 		#mutually_exclusive = { focus = }
 		x = -1
@@ -561,7 +723,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			controls_state = 172
 		}
 		
 		bypass = {
@@ -572,22 +734,24 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_ideas = XHH_welfare_state_idea
+			172 = {
+				add_manpower = 10000
+				set_state_category = large_town
+				effect_tooltip = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_regulate_the_industries
 		icon = GFX_focus_DEN_heavy_regulations
-		prerequisite = { focus = YBS_formalise_the_welfare_state }
+		prerequisite = { focus = YBS_urbanise_navarre }
 		#mutually_exclusive = { focus = }
 		x = -1
 		y = 1
-		relative_position_id = YBS_formalise_the_welfare_state
+		relative_position_id = YBS_urbanise_navarre
 
 		cost = 5
 
@@ -690,49 +854,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBS_urbanise_navarre
-		icon = GFX_focus_generic_low_cost_housing
-		prerequisite = { focus = YBS_socialist_victory }
-		#mutually_exclusive = { focus = }
-		x = 1
-		y = 1
-		relative_position_id = YBS_socialist_victory
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			controls_state = 172
-		}
-		
-		bypass = {
-			
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			172 = {
-				add_manpower = 10000
-				set_state_category = large_town
-				effect_tooltip = {
-					add_extra_state_shared_building_slots = 1
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = YBS_socialist_praxis
 		icon = GFX_focus_generic_socialist_science
 		prerequisite = { focus = YBS_formalise_the_welfare_state }
 		prerequisite = { focus = YBS_urbanise_navarre }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = 1
 		y = 1
 		relative_position_id = YBS_urbanise_navarre
 
@@ -759,13 +886,48 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBS_modernise_the_education_system
-		icon = GFX_focus_generic_university_1
-		prerequisite = { focus = YBS_urbanise_navarre }
+		id = YBS_formalise_the_welfare_state
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = YBS_socialist_victory }
 		#mutually_exclusive = { focus = }
 		x = 1
 		y = 1
-		relative_position_id = YBS_urbanise_navarre
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XHH_welfare_state_idea
+		}
+	}
+
+	focus = {
+		id = YBS_modernise_the_education_system
+		icon = GFX_focus_generic_university_1
+		prerequisite = { focus = YBS_formalise_the_welfare_state }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_formalise_the_welfare_state
 
 		cost = 5
 
@@ -785,7 +947,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# socialist minister of education
 		}
 	}
 
@@ -859,6 +1024,37 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YBS_work_safety_regulations
+		icon = GFX_focus_generic_public_works
+		prerequisite = { focus = YBS_socialist_victory }
+		#mutually_exclusive = { focus = }
+		x = 4
+		y = 1
+		relative_position_id = YBS_socialist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
 		id = YBS_popular_front_promises
 		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = YBS_socialist_victory }
@@ -886,6 +1082,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# syndicalist advisors
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -979,6 +1180,7 @@ focus_tree = {
 		}
 
 		available = {
+			date > 1937.6.1
 			is_subject = no
 			is_in_faction = no
 		}
@@ -1008,7 +1210,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_alocate_military_budget_factories
-		icon = GFX_goal_generic_small_arms
+		icon = GFX_focus_secret_rearmament
 		prerequisite = { focus = YBS_unity_through_democracy focus = YBS_guardian_of_iberian_democracy }
 		mutually_exclusive = { focus = YBS_alocate_military_budget_forts }
 		x = 3
@@ -1070,7 +1272,21 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -1090,6 +1306,7 @@ focus_tree = {
 		}
 
 		available = {
+			date > 1937.6.1
 			is_subject = no
 			is_in_faction = no
 		}
@@ -1334,7 +1551,17 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			country_event = YBS_esperanto_events.1
+			country_event = {
+				id = YBS_esperanto_events.1
+				days = 7
+			}
+
+			hidden_effect = {
+				news_event = { 
+					id = YBS_news_events.7
+					hours = 6
+				}
+			}
 		}
 	}
 
@@ -1378,6 +1605,13 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			promote_character = YBS_rosa_lavina
+
+			hidden_effect = {
+				news_event = { 
+					id = YBS_news_events.5
+					hours = 6
+				}
+			}
 		}
 	}
 
@@ -1494,7 +1728,7 @@ focus_tree = {
 		icon = GFX_goal_generic_consumer_goods
 		prerequisite = { focus = YBS_pro_union_policies }
 		#mutually_exclusive = { focus = }
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = YBS_pro_union_policies
 
@@ -1525,7 +1759,7 @@ focus_tree = {
 		icon = GFX_focus_generic_workers
 		prerequisite = { focus = YBS_pro_union_policies }
 		#mutually_exclusive = { focus = }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = YBS_pro_union_policies
 
@@ -1579,17 +1813,98 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# cooperative organiser
+		}
+	}
+
+	focus = {
+		id = YBS_basque_engineering
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = YBS_pro_union_policies focus = YBS_clamp_down_on_unions }
+		#mutually_exclusive = { focus = }
+		x = 3
+		y = 1
+		relative_position_id = YBS_pro_union_policies
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
 			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = YBS_basque_engineering
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_industrial_growth
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = YBS_pro_union_policies focus = YBS_clamp_down_on_unions }
+		#mutually_exclusive = { focus = }
+		x = 5
+		y = 1
+		relative_position_id = YBS_pro_union_policies
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# ministery of economy
 		}
 	}
 
 	focus = {
 		id = YBS_develop_infrastructure
 		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = YBS_pro_union_policies focus = YBS_clamp_down_on_unions }
+		prerequisite = { focus = YBS_basque_engineering focus = YBS_industrial_growth }
 		#mutually_exclusive = { focus = }
 		x = 4
-		y = 1
+		y = 2
 		relative_position_id = YBS_pro_union_policies
 
 		cost = 5
@@ -1603,17 +1918,40 @@ focus_tree = {
 			controls_state = 1097
 			controls_state = 1098
 		}
-		
-		bypass = {
-			172 = { infrastructure > 4 }
-			1097 = { infrastructure > 4 }
-			1098 = { infrastructure > 4 }
-		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			custom_effect_tooltip = YBS_develop_infrastructure_tt
+			hidden_effect = {
+				build_railway = {
+					level = 2
+					build_only_on_allied = yes
+					controller_priority = {
+						base = 1
+						modifier = {
+							tag = ROOT
+							add = 2
+						}
+					}
+					fallback = yes
+					path = { 740 6756 3737 3933 }
+					start_province = 740
+					target_province = 3933
+				}
+				172 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = 3933
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = {
 				limit = {
 					172 = { infrastructure < 5 }
@@ -1680,7 +2018,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# minister of trade
 		}
 	}
 
@@ -1859,11 +2200,42 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YBS_dam_project
+		icon = GFX_focus_generic_hydroelectric_energy
+		prerequisite = { focus = YBS_modern_economics focus = YBS_support_the_fisheries }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_economic_growth
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
 		id = YBS_subsidise_agricultural_companies
 		icon = GFX_focus_generic_agricultural_subsidies
 		prerequisite = { focus = YBS_clamp_down_on_unions }
 		#mutually_exclusive = { focus = }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = YBS_clamp_down_on_unions
 
@@ -1894,7 +2266,7 @@ focus_tree = {
 		icon = GFX_focus_generic_devaluation
 		prerequisite = { focus = YBS_clamp_down_on_unions }
 		#mutually_exclusive = { focus = }
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = YBS_clamp_down_on_unions
 
@@ -1948,7 +2320,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# basque businessman
 		}
 	}
 
@@ -1959,8 +2334,8 @@ focus_tree = {
 		icon = GFX_focus_PLACEHOLDER
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 50
-		y = 5
+		x = 53
+		y = 7
 		#relative_position_id = 
 
 		cost = 5
@@ -1981,13 +2356,32 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			# improve disjointed army idea
+			# AdvisorsTM
+			custom_effect_tooltip = available_chief_of_army
+			# offense advisor
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_military_high_command
+			# morale advisor
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_military_high_command
+			# supply advisor
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military
+				add_idea = YBS_disjointed_military_2
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_basque_military_academy
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = YBS_reorganise_high_command }
 		#mutually_exclusive = { focus = }
 		x = -4
@@ -2012,13 +2406,13 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_ideas = YBS_basque_military_academy_idea
 		}
 	}
 
 	focus = {
 		id = YBS_officer_meritocracy
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_allies_build_infantry
 		prerequisite = { focus = YBS_basque_military_academy }
 		mutually_exclusive = { focus = YBS_officer_elections }
 		x = -3
@@ -2043,13 +2437,13 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_ideas = YBS_meritocratic_promotions
 		}
 	}
 
 	focus = {
 		id = YBS_officer_elections
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_support_democracy
 		prerequisite = { focus = YBS_basque_military_academy }
 		mutually_exclusive = { focus = YBS_officer_meritocracy }
 		x = -1
@@ -2074,7 +2468,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_ideas = YBS_democratic_promotions
 		}
 	}
 
@@ -2087,7 +2481,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_officer_meritocracy
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -2105,7 +2499,12 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = YBS_standardised_rifles
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
 		}
 	}
 
@@ -2118,7 +2517,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_officer_meritocracy
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -2136,7 +2535,12 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = YBS_radio_development
+				bonus = 2
+				uses = 1
+				category = electronics
+			}
 		}
 	}
 
@@ -2149,7 +2553,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = YBS_officer_meritocracy
 
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 2
@@ -2167,13 +2571,18 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			custom_effect_tooltip = available_military_high_command
+			# infantry advisor
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = YBS_pan_national_army
 		}
 	}
 
 	focus = {
 		id = YBS_new_leadership
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = YBS_basque_military_academy }
 		#mutually_exclusive = { focus = }
 		x = 1
@@ -2198,7 +2607,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			# unlocks new generals
 		}
 	}
 
@@ -2229,20 +2638,29 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			every_army_leader = {
+				add_planning = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_basque_military_academy_idea
+				add_idea = YBS_basque_military_academy_idea_2
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_strengthen_the_militia
-		icon = GFX_focus_AUS_frontmiliz_focus
+		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = YBS_reorganise_high_command }
 		#mutually_exclusive = { focus = }
 		x = -2
 		y = 1
 		relative_position_id = YBS_reorganise_high_command
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -2260,13 +2678,22 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			army_experience = 25
+			add_command_power = 10
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_technology = { militia_tech = 1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			# unlock general
 		}
 	}
 
 	focus = {
-		id = YBS_expand_border_control
-		icon = GFX_focus_generic_provoke_border_clashes
+		id = YBS_protect_supply_lines
+		icon = GFX_focus_FIN_motti_tactics
 		prerequisite = { focus = YBS_strengthen_the_militia }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -2291,7 +2718,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_ideas = YBS_protected_supply_lines
 		}
 	}
 
@@ -2322,7 +2749,19 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			# improve disjointed army idea
+			add_doctrine_cost_reduction = {
+				name = YBS_focus_on_defence
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_2
+				add_idea = YBS_disjointed_military_defence
+			}
 		}
 	}
 
@@ -2353,7 +2792,24 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = YBS_trench_warfare
+				bonus = 1
+				uses = 2
+				category = support_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_military_high_command
+			# entrenchment advisor
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_defence
+				add_idea = YBS_disjointed_military_defence_2
+			}
 		}
 	}
 
@@ -2373,7 +2829,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			YBS_controls_basque_starting_states = yes
 		}
 		
 		bypass = {
@@ -2384,20 +2840,59 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			1098 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = {
+						id = 13233
+						id = 3735
+					}
+				}
+			}
+			172 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = {
+						id = 3933
+						id = 3931
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = { 
+				limit = {
+					OR = {
+						state = 1097
+						state = 1098
+						state = 172
+					}
+				}
+				add_dynamic_modifier = { modifier = YBS_mountains_fortified scope = ROOT }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = { set_technology = { mountain_defensive_training = 1 } }
+			custom_effect_tooltip = AUS_osterreichische_gebirgsjager_tt
 		}
 	}
 
 	focus = {
 		id = YBS_engineer_company_training
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = YBS_trench_warfare focus = YBS_fortify_the_mountains }
 		#mutually_exclusive = { focus = }
 		x = -1
 		y = 2
 		relative_position_id = YBS_focus_on_defence
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -2415,7 +2910,25 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = YBS_engineer_company_training
+				bonus = 2
+				uses = 1
+				category = engineers_tech
+			}
+			add_tech_bonus = {
+				name = YBS_engineer_company_training
+				bonus = 2
+				uses = 1
+				category = cat_production
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 250
+			}
 		}
 	}
 
@@ -2446,13 +2959,16 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_defence_2
+				add_idea = YBS_disjointed_military_defence_3
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_basque_defence_force
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = YBS_shield_of_iberia }
 		prerequisite = { focus = YBS_engineer_company_training }
 		#mutually_exclusive = { focus = }
@@ -2460,7 +2976,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = YBS_engineer_company_training
 
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 2
@@ -2478,7 +2994,17 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			# improve disjointed army idea
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_defence_3
+				add_idea = YBS_disjointed_military_defence_4
+			}
+
+			unlock_decision_tooltip = {
+				decision = YBS_turn_the_tide
+				show_effect_tooltip = no
+				show_modifiers = yes
+			}
+			custom_effect_tooltip = YBS_basque_defence_force_tt
 		}
 	}
 
@@ -2509,7 +3035,20 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			# improve disjointed army idea
+			add_doctrine_cost_reduction = {
+				name = YBS_focus_on_offense
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_superior_firepower
+				category = cat_mobile_warfare
+			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_2
+				add_idea = YBS_disjointed_military_offence
+			}
 		}
 	}
 
@@ -2540,7 +3079,32 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_doctrine_cost_reduction = {
+				name = YBS_artillery_development
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				name = YBS_artillery_development
+				bonus = 0.5
+				uses = 3
+				category = artillery
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_offence
+				add_idea = YBS_disjointed_military_offence_2
+			}
 		}
 	}
 
@@ -2553,14 +3117,22 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_focus_on_offense
 
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 2
 		}
 
 		available = {
-			
+			if = {
+				limit = {
+					NOT = { is_special_project_completed = sp:sp_air_radar }
+				}
+				OR = {
+					has_facility_specialization = specialization_land
+					has_facility_specialization = specialization_air
+				}
+			}
 		}
 		
 		bypass = {
@@ -2571,14 +3143,21 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			if = {
+				limit = {
+					NOT = { is_special_project_completed = sp:sp_air_radar }
+				}
+				complete_special_project = sp:sp_air_radar
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_more_anti_tank
 		icon = GFX_focus_generic_anti_tank_guns
-		prerequisite = { focus = YBS_artillery_development }
+		prerequisite = { focus = YBS_fortify_the_mountains focus = YBS_artillery_development }
 		#mutually_exclusive = { focus = }
 		x = -1
 		y = 1
@@ -2602,7 +3181,43 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_doctrine_cost_reduction = {
+				name = YBS_more_anti_tank
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				name = YBS_more_anti_tank
+				bonus = 2.0
+				uses = 1
+				category = cat_anti_tank
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 300
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_template = "Anti-Armour Brigade"
+				}
+				custom_effect_tooltip = YBS_more_anti_tank_tt
+				hidden_effect = {
+					add_units_to_division_template = {
+						template_name = "Anti-Armour Brigade"
+						regiments = {
+							infantry = 0
+							anti_tank_brigade = 2
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -2634,19 +3249,406 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = YBS_airforce_support
+				bonus = 1.0
+				uses = 1
+				category = mio_cat_all_cas_and_modules
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_offence_2
+				add_idea = YBS_disjointed_military_offence_3
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_basque_war_force
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_support_the_left_right
 		prerequisite = { focus = YBS_more_anti_tank }
 		prerequisite = { focus = YBS_airforce_support }
 		#mutually_exclusive = { focus = }
 		x = 0
 		y = 2
 		relative_position_id = YBS_artillery_development
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YBS_disjointed_military_offence_3
+				add_idea = YBS_disjointed_military_offence_4
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_international_red_cross
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_reorganise_high_command }
+		#mutually_exclusive = { focus = }
+		x = 6
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			NOT = { has_government = fascism }
+			has_offensive_war = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			hidden_effect = {
+				set_technology = { YBS_red_cross_tech = 1 }
+			}
+			custom_effect_tooltip = YBS_red_cross_tech_effect_tt
+		}
+	}
+
+	focus = {
+		id = YBS_experimental_warfare_division
+		icon = GFX_goal_tfv_generic_tech_sharing
+		prerequisite = { focus = YBS_reorganise_high_command }
+		#mutually_exclusive = { focus = }
+		x = 8
+		y = 1
+		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_full_control_of_state = 1098
+		}
+		
+		bypass = {
+			has_facility_specialization = specialization_land
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = YBS_facility_construction_tt
+				temp_facility_state_loc = 1098
+				temp_facility_type_loc = land_facility
+				temp_facility_province_loc = 1098
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1098 = {
+							is_fully_controlled_by = ROOT
+							can_construct_building = land_facility
+						}
+					}
+					1098 = {
+						add_building_construction = {
+							type = land_facility
+							level = 1
+							instant_build = yes
+							province = 13233 # must be biggest victory point
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_armour_developments
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = YBS_experimental_warfare_division }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_experimental_warfare_division
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = YBS_armour_developments
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_military_high_command
+			# tank advisor
+		}
+	}
+
+	focus = {
+		id = YBS_semi_armoured_divisions
+		icon = GFX_focus_generic_tankette
+		prerequisite = { focus = YBS_armour_developments }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_armour_developments
+
+		cost = 4.4
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = YBS_semi_armoured_divisions
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_mobile_warfare
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				set_technology = { YBS_infantry_tank_support = 1 }
+			}
+			custom_effect_tooltip = YBS_infantry_tank_support_effect_tt
+		}
+	}
+
+	focus = {
+		id = YBS_railway_gun_development
+		icon = GFX_focus_generic_railway_gun
+		prerequisite = { focus = YBS_experimental_warfare_division }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_experimental_warfare_division
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_dlc = "No Step Back"
+		}
+		
+		bypass = {
+			NOT = { has_dlc = "No Step Back" }
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = armored_train }
+					}
+					set_technology = { armored_train = 1 }
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = railway_gun }
+					}
+					set_technology = { railway_gun = 1 }
+				}
+
+				custom_effect_tooltip = YBS_railway_gun_development_tt
+				hidden_effect = {
+					create_railway_gun = {
+						equipment = railway_gun_equipment_1
+						name = "1. 305 mm-ko Ordóñez kanoi mugikorra"
+					}
+					create_railway_gun = {
+						equipment = railway_gun_equipment_1
+						name = "2. 305 mm-ko Ordóñez kanoi mugikorra"
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = YBS_railway_gun_development_blocked_tt
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_aircraft_research
+		icon = GFX_focus_generic_air_research_boost
+		prerequisite = { focus = YBS_experimental_warfare_division }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_experimental_warfare_division
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_full_control_of_state = 1097
+		}
+		
+		bypass = {
+			has_facility_specialization = specialization_air
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = {
+				localization_key = YBS_facility_construction_tt
+				temp_facility_state_loc = 1097
+				temp_facility_type_loc = air_facility
+				temp_facility_province_loc = 1097
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1097 = {
+							is_fully_controlled_by = ROOT
+							can_construct_building = air_facility
+						}
+					}
+					1097 = {
+						add_building_construction = {
+							type = air_facility
+							level = 1
+							instant_build = yes
+							province = 6756 # must be biggest victory point
+						}
+					}
+				}
+			}
+
+			unlock_decision_tooltip = YBS_get_helicopters
+		}
+	}
+
+	focus = {
+		id = YBS_armoured_car_buffs
+		icon = GFX_focus_SWE_lynx_armored_car
+		prerequisite = { focus = YBS_experimental_warfare_division }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 2
+		relative_position_id = YBS_experimental_warfare_division
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = YBS_armoured_car_buffs
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_mobile_warfare
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				set_technology = { YBS_better_armoured_cars = 1 }
+			}
+			custom_effect_tooltip = YBS_better_armoured_cars_effect_tt
+		}
+	}
+
+	focus = {
+		id = YBS_experimental_combat_doctrine
+		icon = GFX_focus_ITA_ferrea_mole_ferreo_cuore
+		prerequisite = { focus = YBS_semi_armoured_divisions focus = YBS_railway_gun_development focus = YBS_armoured_car_buffs }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 3
+		relative_position_id = YBS_experimental_warfare_division
 
 		cost = 5
 
@@ -2666,18 +3668,193 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			# improve disjointed army idea
+			add_ideas = YBS_metal_dragon_doctrine
 		}
 	}
 
 	focus = {
-		id = YBS_experimental_warfare_division
-		icon = GFX_focus_PLACEHOLDER
+		id = YBS_coastal_defence
+		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = YBS_reorganise_high_command }
 		#mutually_exclusive = { focus = }
-		x = 8
-		y = 1
+		x = 12
+		y = 2
 		relative_position_id = YBS_reorganise_high_command
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			any_owned_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			navy_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = YBS_coastal_defence_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_marine_school
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = YBS_coastal_defence }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_coastal_defence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			controls_state = 792
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Maritime Enforcement Brigade" }
+					delete_unit_template_and_units = {
+						division_template = "Maritime Enforcement Brigade"
+						disband = yes #will refund equipment and manpower
+					}					
+				}
+				if = {
+					limit = {
+						is_special_project_completed = sp:sp_land_military_engineering_vehicles
+					}
+					division_template = {
+						name = "Maritime Enforcement Brigade"
+						division_names_group = YBS_MAR_01
+						priority = 2
+						regiments = {
+							marine = { x = 0 y = 0 }
+							marine = { x = 0 y = 1 }
+							marine = { x = 0 y = 2 }
+							marine = { x = 1 y = 0 }
+							marine = { x = 1 y = 1 }
+							marine = { x = 1 y = 2 }
+						}
+						support = {
+							armored_engineer = { x = 0 y = 0 }
+							light_tank_recon = { x = 0 y = 1 }
+							field_hospital = { x = 0 y = 2 }
+						}
+					}
+				}
+				else = {
+					division_template = {
+						name = "Maritime Enforcement Brigade"
+						division_names_group = YBS_MAR_01
+						priority = 2
+						regiments = {
+							marine = { x = 0 y = 0 }
+							marine = { x = 0 y = 1 }
+							marine = { x = 0 y = 2 }
+							marine = { x = 1 y = 0 }
+							marine = { x = 1 y = 1 }
+							marine = { x = 1 y = 2 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							light_tank_recon = { x = 0 y = 1 }
+							field_hospital = { x = 0 y = 2 }
+						}
+					}
+				}
+				
+				792 = {
+					create_unit = {
+						division = "name = \"1. Itsas Betearazteko Brigada\" division_template = \"Maritime Enforcement Brigade\" start_experience_factor = 0.2"
+						owner = ROOT
+					}
+					create_unit = {
+						division = "name = \"2. Itsas Betearazteko Brigada\" division_template = \"Maritime Enforcement Brigade\" start_experience_factor = 0.2"
+						owner = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = marines }
+				}
+				set_technology = {
+					marines = 1
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = XHH_marine_corps
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_marines_doctrine
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = YBS_marine_school_tt
+		}
+	}
+
+	focus = {
+		id = YBS_purchase_foreign_ships
+		icon = GFX_focus_SWE_italian_destroyers
+		prerequisite = { focus = YBS_coastal_defence }
+		mutually_exclusive = { focus = YBS_refit_merchant_vessels }
+		x = -1
+		y = 2
+		relative_position_id = YBS_coastal_defence
 
 		cost = 5
 
@@ -2695,9 +3872,130 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = {  }
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_category_tooltip = YBS_purchase_old_ships_category
+			set_country_flag = YBS_purchase_old_ships_flag
+		}
+	}
+
+	focus = {
+		id = YBS_refit_merchant_vessels
+		icon = GFX_focus_generic_refit_civilian_ships
+		prerequisite = { focus = YBS_coastal_defence }
+		mutually_exclusive = { focus = YBS_purchase_foreign_ships }
+		x = 1
+		y = 2
+		relative_position_id = YBS_coastal_defence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
 			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			unlock_decision_category_tooltip = generic_refit_civilian_ships_category
+			set_country_flag = refit_convoy_ships_flag
+		}
+	}
+
+	focus = {
+		id = YBS_restore_the_armada
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = YBS_purchase_foreign_ships focus = YBS_refit_merchant_vessels }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 3
+		relative_position_id = YBS_coastal_defence
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = YBS_rebuilding_the_armada
+				days = 730
+			}
 		}
 	}
 

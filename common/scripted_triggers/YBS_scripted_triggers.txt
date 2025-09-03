@@ -41,6 +41,7 @@ YBS_is_iberian_state = {
             region = 41
             region = 209
             region = 210
+            state = 177
         }
     }
 }
@@ -64,6 +65,19 @@ YBS_owns_all_iberian_states = {
             OR = {
                 YBS_is_iberian_state = no
                 is_owned_by = ROOT
+            }
+        }
+    }
+}
+
+YBS_other_carlist_nation = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_other_carlist_nation_tt
+        OR = {
+            AND = {
+                original_tag = YBS
+                has_government = neutrality
+                NOT = { has_country_flag = YBS_hanse_takeover }
             }
         }
     }

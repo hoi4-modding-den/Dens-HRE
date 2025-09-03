@@ -133,8 +133,22 @@
  YBS_underdeveloped_economy: "Underdeveloped Economy"
  YBS_underdeveloped_economy_desc: "Our Region had been neglected by the government in Madrid for years. Minimal infrastructure maintenance, low industrialisation and few investments into the Basque country have left us with few economic opportunities following our independence."
  YBS_underdeveloped_economy_tt: " \nWill be §Gremoved§! once all Basque starting states have at least §YLevel 4 Infrastructure§! or we have at least §Y20 Factories§!."
- YBS_disjointed_military: "Disjointed Military"
+ YBS_disjointed_military: "Disjointed Army"
  YBS_disjointed_military_desc: "Our armed forces are not prepared for any direct conflict. While the Nationalist Party was eager to declare independence, our military power was barely enough to repel immediate attempts to subvert it. Our current army is made up of nationalist militia and sympathetic members of the former Iberian National Army. There are also rumours that some of the Carlist officers aren't as loyal to the parliament as expected."
+ YBS_disjointed_military_defence: "Army of Defence"
+ YBS_disjointed_military_defence_4: "Basque Defence Force"
+ YBS_disjointed_military_offence: "Army of Offense"
+ YBS_disjointed_military_offence_4: "Basque War Force"
+ #YBS_basque_military_academy_idea: "$YBS_basque_military_academy$"
+ YBS_meritocratic_promotions: "Military Meritocracy"
+ YBS_democratic_promotions: "Officer Elections"
+ YBS_pan_national_army: "Non-Discriminate Conscription"
+ YBS_pan_national_army_desc: "No matter whether you're Basque, Catalonian, Galician, Portuguese or Spanish, in the army, you're a soldier."
+ YBS_protected_supply_lines: "Supply is Everything"
+ YBS_protected_supply_lines_desc: "Some of our generals have not yet understood the importance of supply, but luckily high command has already issued orders to ensure increased supply efficiency."
+ YBS_rebuilding_the_armada: "Rebuilding the Armada"
+ YBS_metal_dragon_doctrine: "Metal Dragon Doctrine"
+ YBS_metal_dragon_doctrine_desc: "$ITA_ferrea_mole_ferreo_cuore_desc$"
  YBS_language_issue: "Language Divisions"
  YBS_language_issue_desc: "Our nation is divided between the native Basque people and the Spanish. Despite our government officially recognising both Spanish and Basque as our national languages, this division of culture and language is significantly affecting regular civilian life and our military cohesion."
  YBS_language_issue_basque_dominant: "Enforcing Euskara"
@@ -151,7 +165,12 @@
  YBS_mondragon_cooperative: "Mondragón Corporación Cooperativa"
 
 
-# FLAGS N STUFF
+# DYNAMIC MODIFIERS
+
+ YBS_mountains_fortified: "Fortified Mountain Passes"
+
+
+# FLAGS, TOOLTIPS N STUFF
 
  YBS_elections_happened: "The §Y1936 Election Week§! has begun"
  YBS_elections_over: "The §Y1936 Elections§! have been held"
@@ -173,6 +192,12 @@
  YBS_controls_all_iberian_states_tt_NOT: "Does not control all Iberian states"
  YBS_owns_all_iberian_states_tt: "Owns all Iberian states"
  YBS_owns_all_iberian_states_tt_NOT: "Does not own all Iberian states"
+
+ YBS_facility_construction_tt: "If there are no other §YExperimental Facilities§! in §Y[$temp_facility_state_loc$.GetName]§!, we will gain a §Y$temp_facility_type_loc$§! in §Y[$temp_facility_province_loc$.GetCapitalVictoryPointName]§!.\n\n"
+
+ YBS_red_cross_tech_effect_tt: "Enables §H$YBS_red_cross_tech$§!\n§H$field_hospital$\n     Batallion Modifier: All Infantry & Mot/Mech§!\n        Recovery Rate: §G+5.00%§!\n     Trickleback & War Support Protection: §G+10.00%§!\n     Suppression Bonus: §R-25%§!\n$MODIFIER_CAS_DAMAGE_REDUCTION$: §G+10.0%§!\n$MODIFIER_EXPERIENCE_LOSS_FACTOR$: §G-15.0%§!"
+ YBS_infantry_tank_support_effect_tt: "Enables §H$YBS_infantry_tank_support$§!\n§H$light_tank_recon$\n     Batallion Modifier: All Infantry & Mot/Mech§!\n        Defense: §G+5.00%§!\n        Hard Attack: §G+10.00%§!\n     Breakthrough: §G+0.6§!\n     Hardness: §G+100%§!"
+ YBS_better_armoured_cars_effect_tt: "Enables §H$YBS_better_armoured_cars$§!\n§H$armored_car$§!\n     §H$urban$§!\n        Attack: §G+10.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+5.0§!\n     Piercing: §G+50%§!\n     Hard Attack: §G15%§!\n§H$motorized$§!\n     §H$urban$§!\n        Attack: §G+20.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+2.0§!\n     Piercing: §G+20%§!\n     Hard Attack: §G15%§!\n§H$armored_car_recon$§!\n     §H$urban$§!\n        Attack: §G+10.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+3.0§!\n     Piercing: §G+50%§!\n     Hard Attack: §G10%§!\n§H$mot_recon$§!\n     §H$urban$§!\n        Attack: §G+20.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+1.0§!\n     Piercing: §G+10%§!\n     Hard Attack: §G10%§!"
 
  YBS_foreign_control_trigger_tt: "Has reached §R$RIGHT|0$%§! £GFX_puppet_texticon Foreign Economic Control"
 
@@ -204,6 +229,14 @@
  YBS_projection_liberals: "victory for the §lBasque Development Party§!"
  YBS_unknown_projection: "§Yunknown§! as there exists a tie of popularity. Should Elections end like this, the §cBasque Nationalist Party§! will win by default"
 
+
+# TECH
+
+ YBS_red_cross_tech: "International Red Cross Cooperation"
+ YBS_infantry_tank_support: "Infantry Armoured Support"
+ YBS_better_armoured_cars: "Motorised Urban Warfare Tactics"
+
+
 # DECISIONS
 
  YBS_election_decision_cat: "The 1936 Basque Country Elections"
@@ -221,6 +254,22 @@
  YBS_socialist_campaigns: "Appeal to the §SWorkers§!"
  YBS_syndicalist_campaigns: "Rally the §rUnions§!"
  YBS_popular_front_campaigns: "Campaign for the §rPopular§! §SFront§!"
+
+ YBS_purchase_old_ships_category: "$generic_purchase_old_ships_category$"
+ YBS_purchase_old_ships_category_desc: "$generic_purchase_old_ships_category_desc$"
+ YBS_purchase_ships_XHH: "@XHH Purchase [XHH.GetAdjective] Destroyers"
+ YBS_XHH_transfers_ships_tt: "We will get §gten§! §YType 24 Destroyers§! from §Y[XHH.GetNameDef]§!."
+ YBS_purchase_ships_XHO: "@XHO Purchase [XHO.GetAdjective] Submarines"
+ YBS_XHO_transfers_ships_tt: "We will get §gtwelve§! §YK-III Class Submarines§! from §Y[XHO.GetNameDef]§!."
+ YBS_purchase_ships_XVE: "@XVE Purchase [XVE.GetAdjective] Destroyers"
+ YBS_XVE_transfers_ships_tt: "We will get §gten§! §YIn. Leggeri Destroyers§! from §Y[XVE.GetNameDef]§!."
+ YBS_purchase_ships_XEX: "@XEX Purchase [XEX.GetAdjective] Cruisers"
+ YBS_XEX_transfers_ships_tt: "We will get §gfour§! §YImperium Class Cruisers§! from §Y[XEX.GetNameDef]§!."
+
+ YBS_turn_the_tide: "Turn the Tide"
+ YBS_turn_the_tide_desc: "Our enemy has been weakened from attacking our defences. It is time for a decisive attack!"
+
+ YBS_get_helicopters: "Study Juan de la Cierva's Autogiro Blueprints"
 
 
 # FOCUS TREE
@@ -262,27 +311,37 @@
 
  YBS_nationalist_victory: "Nationalist Victory"
  YBS_nationalist_victory_desc: ""
+ YBS_regulate_bread_prices: "Regulate Bread Prices"
+ YBS_regulate_bread_prices_desc: ""
+ YBS_found_the_national_healthcare_fund: "Found the National Healthcare Fund"
+ YBS_found_the_national_healthcare_fund_desc: ""
+ YBS_patriotic_education: "Patriotic Education"
+ YBS_patriotic_education_desc: ""
+ YBS_patriot_act: "The Patriot Act"
+ YBS_patriot_act_desc: ""
 
  YBS_socialist_victory: "Socialist Victory"
  YBS_socialist_victory_desc: ""
- YBS_formalise_the_welfare_state: "Formalise the Welfare State"
- YBS_formalise_the_welfare_state_desc: ""
+ YBS_urbanise_navarre: "Urbanise Navarre"
+ YBS_urbanise_navarre_desc: ""
  YBS_regulate_the_industries: "Regulate the Industries"
  YBS_regulate_the_industries_desc: ""
  YBS_market_socialism: "Market Socialism"
  YBS_market_socialism_desc: ""
  YBS_georgist_reforms: "Georgist Reforms"
  YBS_georgist_reforms_desc: ""
- YBS_urbanise_navarre: "Urbanise Navarre"
- YBS_urbanise_navarre_desc: ""
  YBS_socialist_praxis: "Socialist Praxis"
  YBS_socialist_praxis_desc: ""
+ YBS_formalise_the_welfare_state: "Formalise the Welfare State"
+ YBS_formalise_the_welfare_state_desc: ""
  YBS_modernise_the_education_system: "Modernise the Curriculum"
  YBS_modernise_the_education_system_desc: ""
  YBS_found_IISL: "Lege Soziologiako Nazioarteko Erakundea"
  YBS_found_IISL_desc: ""
  YBS_spanish_basque_national_languages: "Deal with the Language Issue"
  YBS_spanish_basque_national_languages_desc: ""
+ YBS_work_safety_regulations: "Work Safety Regulations"
+ YBS_work_safety_regulations_desc: ""
 
  YBS_popular_front_promises: "Promises of the Fronto Populara"
  YBS_popular_front_promises_desc: ""
@@ -326,8 +385,13 @@
  YBS_mandatory_union_membership_desc: ""
  YBS_national_labour_federation: "The National Labour Federation"
  YBS_national_labour_federation_desc: ""
+ YBS_basque_engineering: "Basque Engineering"
+ YBS_basque_engineering_desc: ""
+ YBS_industrial_growth: "Developing Industries"
+ YBS_industrial_growth_desc: ""
  YBS_develop_infrastructure: "Develop Basque Infrastructure"
  YBS_develop_infrastructure_desc: ""
+ YBS_develop_infrastructure_tt: "Builds a §YLevel 2 Railway§! from §Y$YBS_VICTORY_POINTS_740$§! to §Y$YBS_VICTORY_POINTS_3933$§! and a §YSupply Hub§! in §Y$YBS_VICTORY_POINTS_3933$§!."
  YBS_reach_out_to_trade_partners: "Reach out to Trade Partners"
  YBS_reach_out_to_trade_partners_desc: ""
  YBS_nationalise_gun_factories: "Nationalise Arms Factories"
@@ -340,6 +404,8 @@
  YBS_support_the_fisheries_desc: ""
  YBS_economic_growth: "Industrialised Economy"
  YBS_economic_growth_desc: ""
+ YBS_dam_project: "The Gasteiz Dam"
+ YBS_dam_project_desc: ""
  YBS_subsidise_agricultural_companies: "Subsidise Agricultural Products"
  YBS_subsidise_agricultural_companies_desc: ""
  YBS_devalue_our_currency: "Devalue the Txanpona"
@@ -363,12 +429,12 @@
  YBS_the_pan_national_army_desc: ""
  YBS_new_leadership: "New Leadership"
  YBS_new_leadership_desc: ""
- YBS_foreign_advisors: "Foreign Advisors"
+ YBS_foreign_advisors: "Foreign Instructors"
  YBS_foreign_advisors_desc: ""
  YBS_strengthen_the_militia: "Strengthen the Militia"
  YBS_strengthen_the_militia_desc: ""
- YBS_expand_border_control: "Expand Border Control Operations"
- YBS_expand_border_control_desc: ""
+ YBS_protect_supply_lines: "Protect the Supply Lines"
+ YBS_protect_supply_lines_desc: ""
  YBS_focus_on_defence: "Defensive Doctrines"
  YBS_focus_on_defence_desc: ""
  YBS_trench_warfare: "Trench Warfare"
@@ -381,20 +447,50 @@
  YBS_shield_of_iberia_desc: ""
  YBS_basque_defence_force: "Basque Defence Force"
  YBS_basque_defence_force_desc: ""
+ YBS_basque_defence_force_tt: "Available after causing §Yat least 50.000 casualties§! against an enemy §Rwithout taking any territory§!."
  YBS_focus_on_offense: "Offensive Doctrines"
  YBS_focus_on_offense_desc: ""
  YBS_artillery_development: "Let Fire Rain"
  YBS_artillery_development_desc: ""
- YBS_radar_development: "RADAR Development"
+ YBS_radar_development: "Radio Detection"
  YBS_radar_development_desc: ""
  YBS_more_anti_tank: "Expand the Anti-Tank Brigades"
  YBS_more_anti_tank_desc: ""
+ YBS_more_anti_tank_tt: "Adds §gone§! §YInfantry Battalion§! and §gone§! §YAnti-Tank Batallion§! to the §YAnti-Armour Brigade§! template."
  YBS_airforce_support: "Airforce Support"
  YBS_airforce_support_desc: ""
  YBS_basque_war_force: "Basque War Force"
  YBS_basque_war_force_desc: ""
+ YBS_international_red_cross: "Cooperate with the Red Cross"
+ YBS_international_red_cross_desc: ""
  YBS_experimental_warfare_division: "Experimental Warfare Division"
  YBS_experimental_warfare_division_desc: ""
+ YBS_armour_developments: "Armour Developments"
+ YBS_armour_developments_desc: ""
+ YBS_semi_armoured_divisions: "Tank Support Corps"
+ YBS_semi_armoured_divisions_desc: ""
+ YBS_railway_gun_development: "Mobilise the Coastal Artillery"
+ YBS_railway_gun_development_desc: ""
+ YBS_railway_gun_development_tt: "Deploy §gtwo§! §YRailway Guns§! in §Y[ROOT.capital.GetCapitalVictoryPointName]§!."
+ YBS_railway_gun_development_blocked_tt: "§YRailway Guns§! §Rare a§! §YNo Step Back§!§R-only feature.§!"
+ YBS_aircraft_research: "Air Combat Innovations"
+ YBS_aircraft_research_desc: ""
+ YBS_armoured_car_buffs: "Motorised Urban Warfare Tactics"
+ YBS_armoured_car_buffs_desc: ""
+ YBS_experimental_combat_doctrine: "Metalezko Dragoia Doctrine"
+ YBS_experimental_combat_doctrine_desc: "$ITA_ferrea_mole_ferreo_cuore_desc$" # PEAK FOCUS DESCRIPTION 'They must also have Hearts of Iron'
+ YBS_coastal_defence: "Coastal Defence"
+ YBS_coastal_defence_desc: ""
+ YBS_coastal_defence_tt: "Builds §gtwo§! §YCoastal Forts§! on every costal tile and §gfour§! §YCoastal Forts§! on every port."
+ YBS_marine_school: "Marine School"
+ YBS_marine_school_desc: ""
+ YBS_marine_school_tt: "Deploy §gtwo§! §YMaritime Enforcement Brigade§! divisions in §YBilbao§!."
+ YBS_purchase_foreign_ships: "Purchase Foreign Ships"
+ YBS_purchase_foreign_ships_desc: ""
+ YBS_refit_merchant_vessels: "Refit Merchant Vessels"
+ YBS_refit_merchant_vessels_desc: ""
+ YBS_restore_the_armada: "Restore the Armada"
+ YBS_restore_the_armada_desc: ""
 
 
 # EVENTS
@@ -440,10 +536,59 @@
  YBS_post_election_events.2.b: "Mobilise the garrison, open fire if the opposition acts violent."
 
  YBS_esperanto_events.1.t: "A Flag for the Republic"
- YBS_esperanto_events.1.desc: "WIP"
+ YBS_esperanto_events.1.desc: "Upon the declaration of the Republik of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexandr Memerskai, insists upon its name as 'Tricolour' in a symbolic sense.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."
  YBS_esperanto_events.1.a: "We will continue using the Esperanto Flag."
+ YBS_esperanto_events.1.a.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_1_texticon\n \n \n \n§G'The Esperanto Flag'§!"
  YBS_esperanto_events.1.b: "Adopt the 'Verda Stelo Trikoloro'"
- YBS_esperanto_events.1.c: "Adopt the 'Naŭ Stelo' Proposal"
+ YBS_esperanto_events.1.b.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_2_texticon\n \n \n \n§G'Green Star Tricolour'§!"
+ YBS_esperanto_events.1.c: "Adopt the 'Standardo de Naŭ Stelo'"
+ YBS_esperanto_events.1.c.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_3_texticon\n \n \n \n§G'Banner of Nine Stars'§!"
+
+ YBS_news_events.1.t: "Carlists overthrow the Basque Country Republic"
+ YBS_news_events.1.desc: "WIP"
+ YBS_news_events.1.a: "A sad day for democracy."
+ YBS_news_events.1.b: "Another one falls to reaction."
+ YBS_news_events.1.c: "They remain an enemy..."
+ YBS_news_events.1.d: "A potential ally?"
+ YBS_news_events.1.e: "Okay."
+ YBS_news_events.1.f: "We will restore the Kingdom!"
+
+ YBS_news_events.2.t: "Nationalists win Basque Elections"
+ YBS_news_events.2.desc: "WIP"
+ YBS_news_events.2.a: "Who would have guessed..."
+ YBS_news_events.2.b: "The bourgeoisie remains in control."
+ YBS_news_events.2.c: "We have a lot to do!"
+
+ YBS_news_events.3.t: "Liberals win Basque Elections"
+ YBS_news_events.3.desc: "WIP"
+ YBS_news_events.3.a: "Capital always wins."
+ YBS_news_events.3.b: "The bourgeoisie strengthens its hold."
+ YBS_news_events.3.c: "It's time for reform!"
+
+ YBS_news_events.4.t: "Socialists win Basque Elections"
+ YBS_news_events.4.desc: "WIP"
+ YBS_news_events.4.a: "Reform rather than revolution?"
+ YBS_news_events.4.b: "Perhaps the workers don't have to free themselves?"
+ YBS_news_events.4.c: "Let's focus on the task at hand!"
+
+ YBS_news_events.5.t: "Syndicalists win Basque Elections"
+ YBS_news_events.5.desc: "WIP"
+ YBS_news_events.5.a: "Will they join their Catalonian friends?"
+ YBS_news_events.5.b: "Workers, unite!"
+ YBS_news_events.5.c: "Another Victory for the Workers!"
+
+ YBS_news_events.6.t: "Popular Front win Basque Elections"
+ YBS_news_events.6.desc: "WIP"
+ YBS_news_events.6.a: "Social-Democrats and Syndicalists together?"
+ YBS_news_events.6.b: "Workers, unite!"
+ YBS_news_events.6.c: "We will hold our promises!"
+
+ YBS_news_events.7.t: "Proclamation of the Republic of Hope"
+ YBS_news_events.7.desc: "WIP"
+ YBS_news_events.7.a: "Can they do that?"
+ YBS_news_events.7.b: "An interesting experiment."
+ YBS_news_events.7.c: "This must be the work of 'subversive elements'!"
+ YBS_news_events.7.d: "Espero triumfos!"
 
 
 # MAP

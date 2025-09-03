@@ -16,3 +16,22 @@ YBS_election_decision_cat = {
 	visible_when_empty = yes
 
 }
+
+YBS_purchase_old_ships_category = {
+	icon = GFX_decision_category_MTG_naval_treaties
+	picture = GFX_decision_cat_picture_naval_treaties
+	
+	allowed = {
+		OR = {
+			original_tag = YBS
+		}
+	}
+	visible = {
+		has_country_flag = YBS_purchase_old_ships_flag
+	}
+	
+	priority = {
+		base = 8
+	}
+	visible_when_empty = no
+}

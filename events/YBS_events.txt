@@ -1,6 +1,7 @@
 add_namespace = YBS_election_events
 add_namespace = YBS_post_election_events
 add_namespace = YBS_esperanto_events
+add_namespace = YBS_news_events
 
 country_event = { # Carlist Conspiracy
 	id = YBS_election_events.1
@@ -252,6 +253,16 @@ country_event = { # Possible Popular Front?
 	
 	option = { # yes, we shall meet
         name = YBS_election_events.3.a
+        ai_chance = {
+            base = 1
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YBS_ai_path_socialist
+                    has_country_flag = YBS_ai_path_syndicalist
+                }
+            }
+        }
         country_event = {
             id = YBS_election_events.4
             days = 10
@@ -260,6 +271,13 @@ country_event = { # Possible Popular Front?
 
     option = { # this is stupid
         name = YBS_election_events.3.b
+        ai_chance = {
+            base = 1
+            modifier = {
+                factor = 0
+                has_country_flag = YBS_ai_path_popular_front
+            }
+        }
         add_political_power = 50
         add_popularity = { ideology = communism popularity = -0.05 }
     }
@@ -495,19 +513,308 @@ country_event = { # Flag for the RDE
 	
 	option = { # Flag 1: The Actual Esperanto Flag
         name = YBS_esperanto_events.1.a
+        custom_effect_tooltip = YBS_esperanto_events.1.a.tt
         set_country_flag = YBS_rde_flag_1
         hidden_effect = { set_cosmetic_tag = YBS_esperanto_republic_1 }
     }
 
-    option = { # Flag 2: The Esperanto 'Tricolour'
+    option = { # Flag 2: The 'Green Star Tricolour'
         name = YBS_esperanto_events.1.b
+        custom_effect_tooltip = YBS_esperanto_events.1.b.tt
         set_country_flag = YBS_rde_flag_2
         hidden_effect = { set_cosmetic_tag = YBS_esperanto_republic_2 }
     }
 
-    option = { # Flag 3: The Nine Stars Proposal
+    option = { # Flag 3: The 'Banner of Nine Stars'
         name = YBS_esperanto_events.1.c
+        custom_effect_tooltip = YBS_esperanto_events.1.c.tt
         set_country_flag = YBS_rde_flag_3
         hidden_effect = { set_cosmetic_tag = YBS_esperanto_republic_3 }
     }
 }
+
+# NEWS EVENTS
+
+news_event = { # Elections: Carlists
+	id = YBS_news_events.1
+	title = YBS_news_events.1.t
+	desc = YBS_news_events.1.desc
+    picture = GFX_news_event_021
+	
+	is_triggered_only = yes
+	
+	option = { # reaction sad
+        name = YBS_news_events.1.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            YBS_is_iberian_country = yes
+            has_government = democratic
+        }
+    }
+
+    option = { # reaction bad
+        name = YBS_news_events.1.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            YBS_is_iberian_country = yes
+            has_government = communism
+        }
+    }
+
+    option = { # reaction meh
+        name = YBS_news_events.1.c
+        trigger = {
+            NOT = { original_tag = YBS }
+            YBS_is_iberian_country = yes
+            OR = {
+                has_government = neutrality
+                has_government = fascism
+            }
+            YBS_other_carlist_nation = no
+        }
+    }
+
+    option = { # reaction good because carlist
+        name = YBS_news_events.1.d
+        trigger = {
+            NOT = { original_tag = YBS }
+            YBS_is_iberian_country = yes
+            YBS_other_carlist_nation = yes
+        }
+    }
+
+    option = { # reaction who cares
+        name = YBS_news_events.1.e
+        trigger = {
+            YBS_is_iberian_country = no
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.1.f
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
+news_event = { # Elections: Nationalists
+	id = YBS_news_events.2
+	title = YBS_news_events.2.t
+	desc = YBS_news_events.2.desc
+    picture = GFX_news_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # reaction meh
+        name = YBS_news_events.2.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction pah
+        name = YBS_news_events.2.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.2.c
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
+news_event = { # Elections: Liberals
+	id = YBS_news_events.3
+	title = YBS_news_events.3.t
+	desc = YBS_news_events.3.desc
+    picture = GFX_news_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # reaction meh
+        name = YBS_news_events.3.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction pah
+        name = YBS_news_events.3.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.3.c
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
+news_event = { # Elections: Socialists
+	id = YBS_news_events.4
+	title = YBS_news_events.4.t
+	desc = YBS_news_events.4.desc
+    picture = GFX_news_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # reaction meh
+        name = YBS_news_events.4.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction hurray?
+        name = YBS_news_events.4.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.4.c
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
+news_event = { # Elections: Syndicalists
+	id = YBS_news_events.5
+	title = YBS_news_events.5.t
+	desc = YBS_news_events.5.desc
+    picture = GFX_news_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # reaction meh
+        name = YBS_news_events.5.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.5.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.5.c
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
+news_event = { # Elections: Popular Front
+	id = YBS_news_events.6
+	title = YBS_news_events.6.t
+	desc = YBS_news_events.6.desc
+    picture = GFX_news_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # reaction meh
+        name = YBS_news_events.6.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.6.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.6.c
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
+news_event = { # Republic of Hope declared
+	id = YBS_news_events.7
+	title = YBS_news_events.7.t
+	desc = YBS_news_events.7.desc
+    picture = GFX_news_event_YBS_esperanto_republic
+	
+	is_triggered_only = yes
+	
+	option = { # reaction what?
+        name = YBS_news_events.7.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            has_government = democratic
+        }
+    }
+
+    option = { # reaction cool
+        name = YBS_news_events.7.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            OR = {
+                has_government = communism
+                AND = {
+                    has_government = neutrality
+                    OR = {
+                        has_country_leader_ideology = anarchism
+                        has_country_leader_ideology = anarcho_syndicalism
+                    }
+                }
+            }
+        }
+    }
+
+    option = { # reaction no!
+        name = YBS_news_events.7.c
+        trigger = {
+            NOT = { original_tag = YBS }
+            OR = {
+                has_government = fascism
+                AND = {
+                    has_government = neutrality
+                    NOT = {
+                        OR = {
+                            has_country_leader_ideology = anarchism
+                            has_country_leader_ideology = anarcho_syndicalism
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    option = { # reaction ourselves
+        name = YBS_news_events.7.d
+        trigger = {
+            original_tag = YBS
+        }
+    }
+}
+
