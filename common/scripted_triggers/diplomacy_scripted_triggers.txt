@@ -43,6 +43,25 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME_TRIGGER = {
 DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 	if = {
 		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
+	if = {
+		limit = {
 			has_game_rule = {
 				rule = allow_guarantees
 				option = ALWAYS_FREE
@@ -1118,6 +1137,25 @@ DIPLOMACY_REQUEST_LICENSED_PRODUCTION_ENABLE_TRIGGER = {
 DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 	if = {
 		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
+	if = {
+		limit = {
 			has_game_rule = {
 				rule = allow_wargoals
 				option = ALWAYS_FREE
@@ -1832,6 +1870,25 @@ game_weight_can_add_communist = {
 }
 
 DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
 	if = { 
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
@@ -1889,6 +1946,25 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
 	if = { 
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
@@ -1946,6 +2022,25 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
 	if = { 
 		limit = {
 			has_dlc = "Arms Against Tyranny"
@@ -1961,6 +2056,25 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
 	if = { 
 		limit = {
 			has_dlc = "Arms Against Tyranny"
@@ -1976,5 +2090,45 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 		}
 	}
 }
-
-
+DIPLOMACY_CREATE_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
+}
+DIPLOMACY_WAR_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_country = yes }
+					FROM = { YBS_is_iberian_country = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_country = no }
+					FROM = { YBS_is_iberian_country = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
+}
