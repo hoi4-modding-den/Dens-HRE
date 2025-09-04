@@ -434,6 +434,7 @@
  XVD_agrarian_economy_desc: "While some industrialisation has taken place in Verden, mostly through Imperial investments, the majority of the country's economy is reliant on the agrarian sector."
  XVD_ecclesiastical_government: "Ecclesiastical Government"
  XVD_free_city_idea: "Freistadt Administration"
+ XHH_iberian_intervention: "Iberian Intervention"
 
 # LAWS
  XVD_free_market: "Open Markets"
@@ -787,6 +788,8 @@
 
  XHH_mobilise_the_public: "Mobilise the Public"
  XHH_mobilise_the_public_desc: ""
+ XHH_spanish_cw_volunteers: "Volunteers for the Iberian Civil War"
+ XHH_spanish_cw_volunteers_desc: ""
  XHH_unite_the_empire: "Unite the North"
  XHH_unite_the_empire_desc: ""
  XHH_compact_of_northern_self_determination: "Compact for Northern Autonomy"
@@ -895,7 +898,7 @@
  XHH_doctrines_of_offence_desc: ""
  XHH_fast_moving_army: "Armoured Unit Development"
  XHH_fast_moving_army_desc: ""
- XHH_instruct_tank_officers: "Instruct Tank commanders"
+ XHH_instruct_tank_officers: "Instruct Tank Commanders"
  XHH_instruct_tank_officers_desc: ""
  XHH_equipment_modernisation: "Equipment Modernisation"
  XHH_equipment_modernisation_desc: ""
@@ -1150,6 +1153,12 @@
  XHH_diplo_events.25.t: "Working with the [FROM.GetAdjective] Opposition"
  XHH_diplo_events.25.desc: "While the ruling government in [FROM.capital.GetCapitalVictoryPointName] has refused our approaches, the [FROM.GetAdjective] opposition has reached out to us, intending to work with us."
  XHH_diplo_events.25.a: "I suppose this suffices..."
+ XHH_diplo_events.26.t: "Intervention in the Iberian Civil War?"
+ XHH_diplo_events.26.desc: "The conflict in Iberia, while stabilised since the collapse of the monarchy, is still running hot. We should consider supporting certain factions within the civil war and expand our influence."
+ XHH_diplo_events.26.a: "Support any democratic factions."
+ XHH_diplo_events.26.b: "Support any non-aligned factions."
+ XHH_diplo_events.26.c: "Support the Hanseatic Free Trade Zone."
+ XHH_diplo_events.26.d: "Why die for Iberia?"
 
  XHH_news_events.1.t: "Hamburg restricts Princely Powers"
  XHH_news_events.1.desc: "In a constitutional referendum, the senate of Hamburg has voted to revoke the veto powers of the Kurfürst of Hamburg. This, in addition with other acts reducing the Kurfürst's influence in politics, have essentially made [FROM.GetLeader] into a figurehead.\n \nWhile the Kurfürst will still be up for election within the Empire, he will most likely only be a representative of the senate and the people of Hamburg."

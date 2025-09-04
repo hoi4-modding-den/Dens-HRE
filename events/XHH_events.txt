@@ -1533,6 +1533,137 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 
 }
 
+country_event = { # XHH seeks trade deal with Venice // refuse
+	id = XHH_diplo_events.26
+	title = XHH_diplo_events.26.t
+	desc = XHH_diplo_events.26.desc
+	picture = GFX_report_event_ITA_democratic_parlament
+	
+	is_triggered_only = yes
+
+	option = { # help democrats
+		name = XHH_diplo_events.26.a
+		trigger = {
+			any_country = {
+				YBS_is_iberian_country = yes
+				has_government = democratic
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+		}
+		every_other_country = {
+			limit = {
+				YBS_is_iberian_country = yes
+				has_government = democratic
+			}
+			ROOT = {
+				add_relation_rule_override = {
+					target = PREV
+					usage_desc = YBS_democratic_iberian_nation_tt
+					trigger = YBS_democratic_iberian_nation
+					can_send_volunteers = yes
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		add_ideas = XHH_iberian_intervention
+	}
+
+	option = { # help despots
+		name = XHH_diplo_events.26.b
+		trigger = {
+			any_country = {
+				YBS_is_iberian_country = yes
+				has_government = neutrality
+				NOT = {
+					OR = {
+                        has_country_leader_ideology = anarchism
+                        has_country_leader_ideology = anarcho_syndicalism
+                    }
+				}
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 2
+				has_government = neutrality
+			}
+			modifier = {
+				factor = 0
+				has_government = democratic
+			}
+		}
+		every_other_country = {
+			limit = {
+				YBS_is_iberian_country = yes
+				has_government = neutrality
+				NOT = {
+					OR = {
+                        has_country_leader_ideology = anarchism
+                        has_country_leader_ideology = anarcho_syndicalism
+                    }
+				}
+			}
+			ROOT = {
+				add_relation_rule_override = {
+					target = PREV
+					usage_desc = YBS_nonaligned_iberian_nation_tt
+					trigger = YBS_nonaligned_iberian_nation
+					can_send_volunteers = yes
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = XHH_iberian_intervention
+	}
+
+	option = { # help the Hanse
+		name = XHH_diplo_events.26.c
+		trigger = {
+			YBS = { 
+				has_country_flag = YBS_hanse_takeover
+				has_government = neutrality
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+		add_relation_rule_override = {
+			target = YBS
+			usage_desc = YBS_nonaligned_iberian_nation_tt
+			trigger = YBS_nonaligned_iberian_nation
+			can_send_volunteers = yes
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = XHH_iberian_intervention
+	}
+
+	option = { # ignore the conflict
+		name = XHH_diplo_events.26.d
+		ai_chance = {
+			base = 1
+		}
+		add_political_power = 20
+	}
+
+}
+
 news_event = {
 	id = XHH_news_events.1
 	title = XHH_news_events.1.t

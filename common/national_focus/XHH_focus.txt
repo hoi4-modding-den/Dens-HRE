@@ -438,7 +438,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_hannover_housing_development
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 5
@@ -595,7 +595,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_cooperate_with_hannoverian_industrialists
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 5
@@ -1726,7 +1726,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_hamburgs_broad_coalition
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 5
@@ -1805,7 +1805,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_national_conservative_coalition
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 5
@@ -2532,7 +2532,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_democracy_in_the_empire
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 10
@@ -2985,7 +2985,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XHH_negotiate_reduced_interventionism
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 10
@@ -3182,7 +3182,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_the_venice_of_the_north
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 7
@@ -3349,7 +3349,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_imperial_ascension
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 10
@@ -3891,7 +3891,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_integrate_hre_volunteer_corps
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 5
@@ -3963,8 +3963,6 @@ focus_tree = {
 				XHH_influence = -15
 				tooltip = XHH_influence_effect_tt
 			}
-
-			custom_effect_tooltip = XHH_WIP_TT
 		}
 	}
 
@@ -4026,7 +4024,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 15
+			factor = 50
 		}
 
 		available = {
@@ -4105,6 +4103,38 @@ focus_tree = {
 					tooltip = XHH_influence_effect_tt
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = XHH_spanish_cw_volunteers
+		icon = GFX_focus_YBS_attack_iberia
+		prerequisite = { focus = XHH_mobilise_the_public }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XHH_mobilise_the_public
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		available = {
+			is_subject = no
+			YBS_civil_war_over = no
+		}
+
+		bypass = {
+			YBS_civil_war_over = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			country_event = XHH_diplo_events.26
 		}
 	}
 
@@ -6981,7 +7011,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_modernise_the_landeswehr
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 0
@@ -7023,7 +7053,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_modernise_the_landeswehr
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 7

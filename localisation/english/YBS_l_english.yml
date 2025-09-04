@@ -133,6 +133,9 @@
  YBS_underdeveloped_economy: "Underdeveloped Economy"
  YBS_underdeveloped_economy_desc: "Our Region had been neglected by the government in Madrid for years. Minimal infrastructure maintenance, low industrialisation and few investments into the Basque country have left us with few economic opportunities following our independence."
  YBS_underdeveloped_economy_tt: " \nWill be §Gremoved§! once all Basque starting states have at least §YLevel 4 Infrastructure§! or we have at least §Y20 Factories§!."
+ YBS_developed_economy: "Unleashed Economic Potential"
+ YBS_devalued_currency: "Devalued Txanpona"
+ YBS_industrial_reconstruction: "Economic Reconstruction"
  YBS_disjointed_military: "Disjointed Army"
  YBS_disjointed_military_desc: "Our armed forces are not prepared for any direct conflict. While the Nationalist Party was eager to declare independence, our military power was barely enough to repel immediate attempts to subvert it. Our current army is made up of nationalist militia and sympathetic members of the former Iberian National Army. There are also rumours that some of the Carlist officers aren't as loyal to the parliament as expected."
  YBS_disjointed_military_defence: "Army of Defence"
@@ -177,6 +180,7 @@
 
  YBS_form_pf_tt: "The Popularity of the §SSocialists§! and §rSyndicalists§! will be merged into the §rPopular§! §SFront§!."
  YBS_pf_formed: "The §rPopular§! §SFront§! has been formed"
+ YBS_world_esperanto_congress_held: "The §G29th World Esperanto Congress§! has been held in §YBilbao§!."
 
  YBS_socialists_in_charge_tt: "The §SSocialists§! are in government"
  YBS_socialists_in_charge_tt_NOT: "The §SSocialists§! are not in government"
@@ -192,6 +196,14 @@
  YBS_controls_all_iberian_states_tt_NOT: "Does not control all Iberian states"
  YBS_owns_all_iberian_states_tt: "Owns all Iberian states"
  YBS_owns_all_iberian_states_tt_NOT: "Does not own all Iberian states"
+ YBS_other_carlist_nation_tt: "Is a Carlist Nation"
+ YBS_other_carlist_nation_tt_NOT: "Is not a Carlist Nation"
+ YBS_democratic_iberian_nation_tt: "Is a democratic Iberian nation"
+ YBS_democratic_iberian_nation_tt_NOT: "Is not a democratic Iberian nation"
+ YBS_nonaligned_iberian_nation_tt: "Is a non-aligned Iberian nation (excluding Anarchists)"
+ YBS_nonaligned_iberian_nation_tt_NOT: "Is not a non-aligned Iberian nation"
+ YBS_civil_war_over_tt: "The §YIberian Civil War§! has ended"
+ YBS_civil_war_over_tt_NOT: "The §YIberian Civil War§! has not ended"
 
  YBS_facility_construction_tt: "If there are no other §YExperimental Facilities§! in §Y[$temp_facility_state_loc$.GetName]§!, we will gain a §Y$temp_facility_type_loc$§! in §Y[$temp_facility_province_loc$.GetCapitalVictoryPointName]§!.\n\n"
 
@@ -236,6 +248,8 @@
  YBS_infantry_tank_support: "Infantry Armoured Support"
  YBS_better_armoured_cars: "Motorised Urban Warfare Tactics"
 
+ YBS_sp_air_helicopter: "Autogiro"
+
 
 # DECISIONS
 
@@ -247,6 +261,7 @@
 
  YBS_projected_election_victor: "View Projected Election Outcome"
  YBS_projected_election_victor_desc: " \nThe current §Yprojected outcome§! of the election is [Root.YBSGetElectionProjection]."
+ TBS_timer_for_popular_front: "Socialist-Syndicalist Meeting in Donostia"
  YBS_timer_until_election_week: "Election Week approaching..."
  YBS_carlist_campaigns: "§gCarlist§! Pride March"
  YBS_nationalist_campaigns: "Utilise §cPopulist§! Tactics"
@@ -268,6 +283,13 @@
 
  YBS_turn_the_tide: "Turn the Tide"
  YBS_turn_the_tide_desc: "Our enemy has been weakened from attacking our defences. It is time for a decisive attack!"
+
+ YBS_socialist_praxis_decision_cat: "Realise Democratic Socialism"
+ YBS_socialist_praxis_active: "currently undertaking a project"
+ YBS_fund_welfare: "Expand Welfare Programs"
+ YBS_fund_unions: "Fund the Trade Unions"
+ YBS_fund_democratic_institutions: "Strengthen the Democratic Institutions"
+ YBS_fund_research: "Fund Research Projects"
 
  YBS_get_helicopters: "Study Juan de la Cierva's Autogiro Blueprints"
 
@@ -313,12 +335,28 @@
  YBS_nationalist_victory_desc: ""
  YBS_regulate_bread_prices: "Regulate Bread Prices"
  YBS_regulate_bread_prices_desc: ""
+ YBS_national_autarky: "National Autarky"
+ YBS_national_autarky_desc: ""
+ YBS_freedom_democracy_unity: "Askatasuna, Demokrazia, Unitatea"
+ YBS_freedom_democracy_unity_desc: ""
+ YBS_restore_the_fueros: "Restore the Foru"
+ YBS_restore_the_fueros_desc: ""
  YBS_found_the_national_healthcare_fund: "Found the National Healthcare Fund"
  YBS_found_the_national_healthcare_fund_desc: ""
  YBS_patriotic_education: "Patriotic Education"
  YBS_patriotic_education_desc: ""
  YBS_patriot_act: "The Patriot Act"
  YBS_patriot_act_desc: ""
+ YBS_institutionalise_catholicism: "Basque Catholic Democracy"
+ YBS_institutionalise_catholicism_desc: ""
+ YBS_in_service_of_the_nation: "In Service of the Country"
+ YBS_in_service_of_the_nation_desc: ""
+ YBS_the_republic_wakes: "The Republic Wakes"
+ YBS_the_republic_wakes_desc: ""
+ YBS_public_work_programs: "Public Work Programs"
+ YBS_public_work_programs_desc: ""
+ YBS_found_IISL_con: "Lege Soziologiako Nazioarteko Erakundea"
+ YBS_found_IISL_con_desc: ""
 
  YBS_socialist_victory: "Socialist Victory"
  YBS_socialist_victory_desc: ""
@@ -328,16 +366,16 @@
  YBS_regulate_the_industries_desc: ""
  YBS_market_socialism: "Market Socialism"
  YBS_market_socialism_desc: ""
- YBS_georgist_reforms: "Georgist Reforms"
- YBS_georgist_reforms_desc: ""
+ YBS_foreign_support: "Foreign Revolutionary Support"
+ YBS_foreign_support_desc: ""
  YBS_socialist_praxis: "Socialist Praxis"
  YBS_socialist_praxis_desc: ""
  YBS_formalise_the_welfare_state: "Formalise the Welfare State"
  YBS_formalise_the_welfare_state_desc: ""
  YBS_modernise_the_education_system: "Modernise the Curriculum"
  YBS_modernise_the_education_system_desc: ""
- YBS_found_IISL: "Lege Soziologiako Nazioarteko Erakundea"
- YBS_found_IISL_desc: ""
+ YBS_found_IISL_soc: "International Institute for the Sociology of Law"
+ YBS_found_IISL_soc_desc: ""
  YBS_spanish_basque_national_languages: "Deal with the Language Issue"
  YBS_spanish_basque_national_languages_desc: ""
  YBS_work_safety_regulations: "Work Safety Regulations"
@@ -402,6 +440,8 @@
  YBS_invest_in_navarre_steel_mills_desc: ""
  YBS_support_the_fisheries: "Support the Fishing Industry"
  YBS_support_the_fisheries_desc: ""
+ YBS_tire_factory: "Bilbao Rubber Production"
+ YBS_tire_factory_desc: ""
  YBS_economic_growth: "Industrialised Economy"
  YBS_economic_growth_desc: ""
  YBS_dam_project: "The Gasteiz Dam"
@@ -443,8 +483,8 @@
  YBS_fortify_the_mountains_desc: ""
  YBS_engineer_company_training: "Engineer Company Training"
  YBS_engineer_company_training_desc: ""
- YBS_shield_of_iberia: "The Shield of Iberia"
- YBS_shield_of_iberia_desc: ""
+ YBS_organised_engineers: "Organised Saboteur Infiltrators"
+ YBS_organised_engineers_desc: ""
  YBS_basque_defence_force: "Basque Defence Force"
  YBS_basque_defence_force_desc: ""
  YBS_basque_defence_force_tt: "Available after causing §Yat least 50.000 casualties§! against an enemy §Rwithout taking any territory§!."
@@ -501,6 +541,7 @@
  YBS_election_events.1.a.tt: "Any chance for a §gmilitary coup§! will be §Gcrushed§!."
  YBS_election_events.1.b: "Perhaps some negotiations can be made?"
  YBS_election_events.1.b.tt: "The §gMilitary Coup§! won't occur if the §cNationalists§! win the election."
+
  YBS_election_events.2.t: "The Election Outcome!"
  YBS_election_events.2.desc: "WIP"
  YBS_election_events.2.a: "...the Basque Nationalist Party!"
@@ -509,22 +550,32 @@
  YBS_election_events.2.d: "...the Popular Front!"
  YBS_election_events.2.e: "...the Syndicalist Party!"
  YBS_election_events.2.f: "...as no majority is achieved, the Nationalists continue their rule!"
+ 
  YBS_election_events.3.t: "Leftist Politicians meet in Donostia"
  YBS_election_events.3.desc: "WIP"
  YBS_election_events.3.a: "Solidarity forever!"
  YBS_election_events.3.b: "Pah! You're just revisionists!"
+
  YBS_election_events.4.t: "Socialists announce the 'Fronte Herrikoia'"
  YBS_election_events.4.desc: "WIP"
  YBS_election_events.4.a: "Together for Victory!"
+
  YBS_election_events.5.t: "The Military seizes control!"
  YBS_election_events.5.desc: "WIP"
  YBS_election_events.5.a: "Now to sort out this chaos..."
+
  YBS_election_events.6.t: "Carlists end the Republic!"
  YBS_election_events.6.desc: "WIP"
  YBS_election_events.6.a: "Long live the King!"
+
  YBS_election_events.7.t: "Election Week begins"
  YBS_election_events.7.desc: "WIP"
  YBS_election_events.7.a: "We'll await the results."
+
+ YBS_election_events.8.t: "Falangist Agitation"
+ YBS_election_events.8.desc: "WIP"
+ YBS_election_events.8.a: "We'll deal with them soon enough!"
+
 
  YBS_post_election_events.1.t: "Fate of the Falangists"
  YBS_post_election_events.1.desc: "WIP"
@@ -535,6 +586,7 @@
  YBS_post_election_events.2.a: "Hold a Parade, this will calm things down."
  YBS_post_election_events.2.b: "Mobilise the garrison, open fire if the opposition acts violent."
 
+
  YBS_esperanto_events.1.t: "A Flag for the Republic"
  YBS_esperanto_events.1.desc: "Upon the declaration of the Republik of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexandr Memerskai, insists upon its name as 'Tricolour' in a symbolic sense.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."
  YBS_esperanto_events.1.a: "We will continue using the Esperanto Flag."
@@ -543,6 +595,14 @@
  YBS_esperanto_events.1.b.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_2_texticon\n \n \n \n§G'Green Star Tricolour'§!"
  YBS_esperanto_events.1.c: "Adopt the 'Standardo de Naŭ Stelo'"
  YBS_esperanto_events.1.c.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_3_texticon\n \n \n \n§G'Banner of Nine Stars'§!"
+
+ YBS_esperanto_events.3.t: "Application for the 29th World Esperanto Congress"
+ YBS_esperanto_events.3.desc: "WIP"
+ YBS_esperanto_events.3.a: "Ni devas esti la gastigantoj!"
+ YBS_esperanto_events.3.a.tt: "The §G29th World Esperanto Congress§! will be held in §YBilbao§!, unless §Rwar§! disturbs it."
+ YBS_esperanto_events.3.b: "While nice, it is not our priority."
+ YBS_esperanto_events.3.b.tt: "The §G29th World Esperanto Congress§! will be held in §gWarsaw§!, depriving us of its §Ypossibilities§!."
+
 
  YBS_news_events.1.t: "Carlists overthrow the Basque Country Republic"
  YBS_news_events.1.desc: "WIP"
@@ -589,6 +649,11 @@
  YBS_news_events.7.b: "An interesting experiment."
  YBS_news_events.7.c: "This must be the work of 'subversive elements'!"
  YBS_news_events.7.d: "Espero triumfos!"
+
+ YBS_news_events.8.t: "29th World Esperanto Congress in Bilbao"
+ YBS_news_events.8.desc: "WIP"
+ YBS_news_events.8.a: "Interesting."
+ YBS_news_events.8.b: "Estas honoro!"
 
 
 # MAP

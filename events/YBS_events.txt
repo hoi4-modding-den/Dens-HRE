@@ -55,6 +55,7 @@ country_event = { # ELECTION
             deactivate_shine_on_focus = YBS_election_week
             unlock_national_focus = YBS_election_week
             set_country_flag = YBS_elections_over
+            mark_focus_tree_layout_dirty = yes
         }
     }
 	
@@ -250,6 +251,15 @@ country_event = { # Possible Popular Front?
     picture = GFX_report_event_generic_communist_congress
 	
 	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = {
+                id = YBS_election_events.8
+                days = 30
+            }
+        }
+    }
 	
 	option = { # yes, we shall meet
         name = YBS_election_events.3.a
@@ -307,7 +317,7 @@ country_event = { # Military Coup
 	id = YBS_election_events.5
 	title = YBS_election_events.5.t
 	desc = YBS_election_events.5.desc
-    picture = GFX_report_event_communists_cheer
+    picture = GFX_report_event_tanks_mexico_city
 	
 	is_triggered_only = yes
 
@@ -316,6 +326,7 @@ country_event = { # Military Coup
             deactivate_shine_on_focus = YBS_election_week
             unlock_national_focus = YBS_election_week
             set_country_flag = YBS_elections_over
+            mark_focus_tree_layout_dirty = yes
         }
     }
 	
@@ -344,7 +355,7 @@ country_event = { # Military Rule after Carlists win
 	id = YBS_election_events.6
 	title = YBS_election_events.6.t
 	desc = YBS_election_events.6.desc
-    picture = GFX_report_event_communists_cheer
+    picture = GFX_report_event_tanks_mexico_city
 	
 	is_triggered_only = yes
 
@@ -353,6 +364,7 @@ country_event = { # Military Rule after Carlists win
             deactivate_shine_on_focus = YBS_election_week
             unlock_national_focus = YBS_election_week
             set_country_flag = YBS_elections_over
+            mark_focus_tree_layout_dirty = yes
         }
     }
 	
@@ -379,7 +391,7 @@ country_event = { # Election Week begins
 	id = YBS_election_events.7
 	title = YBS_election_events.7.t
 	desc = YBS_election_events.7.desc
-    picture = GFX_report_event_communists_cheer
+    picture = GFX_report_event_election_vote
 	
 	is_triggered_only = yes
 	
@@ -422,6 +434,22 @@ country_event = { # Election Week begins
 			}
         }
     }
+}
+
+country_event = { # Falangist Agitation
+	id = YBS_election_events.8
+	title = YBS_election_events.8.t
+	desc = YBS_election_events.8.desc
+    picture = GFX_report_event_spr_falange_troops2
+	
+	is_triggered_only = yes
+	
+	option = { # damn them!
+        name = YBS_election_events.8.a
+        add_stability = -0.02
+        add_popularity = { ideology = fascism popularity = 0.01 }
+    }
+
 }
 
 country_event = { # Removing the Falangists
@@ -533,6 +561,96 @@ country_event = { # Flag for the RDE
     }
 }
 
+country_event = { # Check for Esperanto Congress
+	id = YBS_esperanto_events.2
+	
+	fire_only_once = yes
+    hidden = yes
+
+    trigger = {
+		date > 1936.9.1
+		date < 1937.1.1
+		country_exists = YBS
+		# is on socialist, syndicalist or popular front path
+        YBS = {
+            OR = {
+                has_completed_focus = YBS_socialist_victory
+                has_completed_focus = YBS_syndicalist_victory
+            }
+        }
+	}
+
+    mean_time_to_happen = {
+		days = 2
+	}
+
+    immediate = {
+        YBS = {
+            country_event = YBS_esperanto_events.3
+        }
+    }
+	
+	option = { 
+        name = YBS_esperanto_events.2.a
+        
+    }
+}
+
+country_event = { # Esperanto Congress Proposal
+	id = YBS_esperanto_events.3
+	title = YBS_esperanto_events.3.t
+	desc = YBS_esperanto_events.3.desc
+    picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = { # It would be an honour
+        name = YBS_esperanto_events.3.a
+        custom_effect_tooltip = YBS_esperanto_events.3.a.tt
+        set_country_flag = YBS_esperanto_congress_in_bilbao
+    }
+
+    option = { # nah
+        name = YBS_esperanto_events.3.b
+        custom_effect_tooltip = YBS_esperanto_events.3.b.tt
+        
+    }
+}
+
+country_event = { # Check if Congress will be held
+	id = YBS_esperanto_events.4
+
+    fire_only_once = yes
+    hidden = yes
+
+    trigger = {
+		date > 1937.2.1
+		date < 1937.6.1
+		country_exists = YBS
+        YBS = {
+            has_country_flag = YBS_esperanto_congress_in_bilbao
+            has_offensive_war = no
+            has_capitulated = no
+            controls_state = 792
+        }
+	}
+
+    mean_time_to_happen = {
+		days = 2
+	}
+	
+	immediate = {
+        hidden_effect = {
+            news_event = YBS_news_events.8
+        }
+    }
+	
+	option = {
+        name = YBS_esperanto_events.4.a
+        
+    }
+}
+
 # NEWS EVENTS
 
 news_event = { # Elections: Carlists
@@ -542,6 +660,7 @@ news_event = { # Elections: Carlists
     picture = GFX_news_event_021
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction sad
         name = YBS_news_events.1.a
@@ -605,6 +724,7 @@ news_event = { # Elections: Nationalists
     picture = GFX_news_event_election_vote
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction meh
         name = YBS_news_events.2.a
@@ -637,6 +757,7 @@ news_event = { # Elections: Liberals
     picture = GFX_news_event_election_vote
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction meh
         name = YBS_news_events.3.a
@@ -669,6 +790,7 @@ news_event = { # Elections: Socialists
     picture = GFX_news_event_election_vote
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction meh
         name = YBS_news_events.4.a
@@ -701,6 +823,7 @@ news_event = { # Elections: Syndicalists
     picture = GFX_news_event_election_vote
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction meh
         name = YBS_news_events.5.a
@@ -733,6 +856,7 @@ news_event = { # Elections: Popular Front
     picture = GFX_news_event_election_vote
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction meh
         name = YBS_news_events.6.a
@@ -765,6 +889,7 @@ news_event = { # Republic of Hope declared
     picture = GFX_news_event_YBS_esperanto_republic
 	
 	is_triggered_only = yes
+    major = yes
 	
 	option = { # reaction what?
         name = YBS_news_events.7.a
@@ -815,6 +940,31 @@ news_event = { # Republic of Hope declared
         trigger = {
             original_tag = YBS
         }
+    }
+}
+
+news_event = { # 29 World Esperanto Congress held in Bilbao
+	id = YBS_news_events.8
+	title = YBS_news_events.8.t
+	desc = YBS_news_events.8.desc
+    picture = GFX_news_event_YBS_esperanto_congress
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = { # okay
+        name = YBS_news_events.8.a
+        trigger = {
+            NOT = { original_tag = YBS }
+        }
+    }
+
+    option = { # we are happy
+        name = YBS_news_events.8.b
+        trigger = {
+            original_tag = YBS
+        }
+        set_country_flag = YBS_world_esperanto_congress_held
     }
 }
 

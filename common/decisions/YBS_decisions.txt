@@ -4,13 +4,47 @@ YBS_election_decision_cat = {
 
 		available = {
 			hidden_trigger = {
-				always = no
+				is_debug = yes
 			}
 		}
+
+        complete_effect = {
+            if = {
+                limit = {
+                    is_debug = yes
+                    is_ai = no
+                }
+                activate_mission = TBS_timer_for_popular_front
+                activate_mission = YBS_timer_until_election_week
+            }
+        }
 
         priority = -100
 
 	}
+
+    TBS_timer_for_popular_front = {
+
+        icon = generic_political_discourse
+
+        activation = {
+            always = no
+        }
+
+        available = {
+            hidden_trigger = {
+				always = no
+			}
+        }
+
+        is_good = yes
+
+        days_mission_timeout = 31
+
+        timeout_effect = {
+            country_event = YBS_election_events.3
+        }
+    }
 
     YBS_timer_until_election_week = {
 
@@ -554,6 +588,8 @@ war_measures = {
     YBS_turn_the_tide = {
 
         icon = generic_tank
+
+        cost = 25
         
         allowed = {
             original_tag = YBS
@@ -599,6 +635,113 @@ war_measures = {
     }
 }
 
+YBS_socialist_praxis_decision_cat = {
+
+    YBS_fund_welfare = {
+
+        icon = generic_welfare
+
+        cost = 50
+
+        available = {
+            NOT = { has_country_flag = YBS_socialist_praxis_active }
+        }
+
+        days_remove = 100
+
+        modifier = {
+            consumer_goods_factor = 0.1
+            monthly_population = 0.25
+        }
+
+        complete_effect = {
+            set_country_flag = YBS_socialist_praxis_active
+        }
+
+        remove_effect = {
+            clr_country_flag = YBS_socialist_praxis_active
+        }
+    }
+
+    YBS_fund_unions = {
+
+        icon = generic_merge_plant_materiel
+
+        cost = 50
+
+        available = {
+            NOT = { has_country_flag = YBS_socialist_praxis_active }
+        }
+
+        days_remove = 100
+
+        modifier = {
+            industrial_capacity_factory = 0.1
+            industrial_capacity_dockyard = 0.1
+        }
+
+        complete_effect = {
+            set_country_flag = YBS_socialist_praxis_active
+        }
+
+        remove_effect = {
+            clr_country_flag = YBS_socialist_praxis_active
+        }
+    }
+
+    YBS_fund_democratic_institutions = {
+
+        icon = SWI_swiss_democratic_tradition_campaign
+
+        cost = 50
+
+        available = {
+            NOT = { has_country_flag = YBS_socialist_praxis_active }
+        }
+
+        days_remove = 100
+
+        modifier = {
+            democratic_drift = 0.01
+            stability_weekly = 0.01
+        }
+
+        complete_effect = {
+            set_country_flag = YBS_socialist_praxis_active
+        }
+
+        remove_effect = {
+            clr_country_flag = YBS_socialist_praxis_active
+        }
+    }
+
+    YBS_fund_research = {
+
+        icon = generic_research
+
+        cost = 50
+
+        available = {
+            NOT = { has_country_flag = YBS_socialist_praxis_active }
+        }
+
+        days_remove = 100
+
+        modifier = {
+            research_speed_factor = 0.1
+        }
+
+        complete_effect = {
+            set_country_flag = YBS_socialist_praxis_active
+        }
+
+        remove_effect = {
+            clr_country_flag = YBS_socialist_praxis_active
+        }
+    }
+
+}
+
 economy_decisions = {
 
     YBS_get_helicopters = {
@@ -608,6 +751,8 @@ economy_decisions = {
         allowed = {
             original_tag = YBS
         }
+
+        cost = 100
 
         visible = {
             has_completed_focus = YBS_aircraft_research

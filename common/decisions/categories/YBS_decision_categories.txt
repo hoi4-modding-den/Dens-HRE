@@ -35,3 +35,24 @@ YBS_purchase_old_ships_category = {
 	}
 	visible_when_empty = no
 }
+
+YBS_socialist_praxis_decision_cat = {
+
+	icon = GFX_decision_category_SOV_permanent_revolution
+
+	priority = 10	
+
+	allowed = {
+		tag = YBS
+	}
+
+    visible = {
+        has_country_flag = YBS_socialist_praxis_unlocked
+		OR = {
+			has_government = democratic
+			has_government = communism
+		}
+    }
+
+}
+

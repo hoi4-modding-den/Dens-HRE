@@ -82,3 +82,40 @@ YBS_other_carlist_nation = {
         }
     }
 }
+
+YBS_democratic_iberian_nation = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_democratic_iberian_nation_tt
+        YBS_is_iberian_country = yes
+        has_government = democratic
+    }
+}
+
+YBS_nonaligned_iberian_nation = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_nonaligned_iberian_nation_tt
+        YBS_is_iberian_country = yes
+        has_government = neutrality
+        NOT = {
+            OR = {
+                has_country_leader_ideology = anarchism
+                has_country_leader_ideology = anarcho_syndicalism
+            }
+        }
+    }
+}
+
+YBS_civil_war_over = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_civil_war_over_tt
+        OR = {
+            AND = {
+                any_country = {
+                    YBS_is_iberian_country = yes
+                    YBS_owns_all_iberian_states = yes
+                }
+            }
+            has_global_flag = YBS_iberian_civil_war_ended
+        }
+    }
+}

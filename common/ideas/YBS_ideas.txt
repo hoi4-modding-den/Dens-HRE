@@ -39,6 +39,67 @@ ideas = {
 			}
 		}
 
+		YBS_developed_economy = {
+
+			picture = ARG_public_works_investment
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				local_resources_factor = 0.1
+                industrial_capacity_factory = 0.15
+                industrial_capacity_dockyard = 0.15
+				research_speed_factor = 0.05
+			}
+		}
+
+		YBS_devalued_currency = {
+
+			picture = ITA_devaluated_lira
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = -0.05
+			}
+		}
+
+		YBS_industrial_reconstruction = {
+
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
         YBS_disjointed_military = {
 
 			picture = chi_army_corruption

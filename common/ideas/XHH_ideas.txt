@@ -1369,6 +1369,31 @@ ideas = {
 			}
 		}
 
+		XHH_iberian_intervention = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			cancel = {
+				YBS_civil_war_over = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+
+			modifier = {
+				send_volunteer_size = 3
+				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -1
+			}
+		}
+
 	}
 
 	hidden_ideas = {
