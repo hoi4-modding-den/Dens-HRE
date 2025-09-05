@@ -17,6 +17,22 @@ YBS_election_decision_cat = {
 
 }
 
+YBS_spanish_civil_war_cat = {
+
+	icon = GFX_decision_category_spr_civil_war_offensives
+
+	priority = 100
+
+	allowed = {
+		tag = YBS
+	}
+
+    visible = {
+        has_country_flag = YBS_civil_war_decisions_unlocked
+    }
+
+}
+
 YBS_purchase_old_ships_category = {
 	icon = GFX_decision_category_MTG_naval_treaties
 	picture = GFX_decision_cat_picture_naval_treaties

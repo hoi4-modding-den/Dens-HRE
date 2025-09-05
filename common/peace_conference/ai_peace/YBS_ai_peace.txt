@@ -1,0 +1,24 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_ai_desires = {
+
+    YBS_annex_iberian_states = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM.FROM = {
+                OR = {
+                    is_claimed_by = ROOT
+                    is_core_of = ROOT
+                    YBS_is_iberian_state = yes
+                }
+            }
+            ROOT = {
+                YBS_is_iberian_country = yes
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 1000
+    }
+
+}

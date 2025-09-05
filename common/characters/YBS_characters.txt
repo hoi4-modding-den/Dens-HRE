@@ -152,4 +152,208 @@ characters = {
 			cost = 50
 		}
 	}
+
+	YBS_falangist_general_1 = {
+		name = YBS_falangist_general_1_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_falangist_general_1
+                small = GFX_portrait_YBS_falangist_general_1_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_falangist_loyalties cavalry_officer }
+			visible = {
+				OR = {
+					original_tag = YBS
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			desc = YBS_generic_fictional_general_desc
+			skill=1
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+		}
+	}
+
+	YBS_falangist_general_2 = {
+		name = YBS_falangist_general_2_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_falangist_general_2
+                small = GFX_portrait_YBS_falangist_general_2_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_falangist_loyalties old_guard }
+			visible = {
+				OR = {
+					original_tag = YBS
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			desc = YBS_generic_fictional_general_desc
+			skill=3
+			attack_skill=4
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+		}
+	}
+
+	YBS_carlist_general_1 = {
+		name = YBS_carlist_general_1_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_1
+                small = GFX_portrait_YBS_carlist_general_1_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_carlist_loyalties cavalry_officer politically_connected }
+			desc = YBS_generic_fictional_general_desc
+			skill=3
+			attack_skill=5
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+		}
+	}
+
+	YBS_carlist_general_2 = {
+		name = YBS_carlist_general_2_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_2
+                small = GFX_portrait_YBS_carlist_general_2_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_carlist_loyalties cavalry_officer old_guard }
+			desc = YBS_generic_fictional_general_desc
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+		}
+	}
+
+	YBS_carlist_general_3 = {
+		name = YBS_carlist_general_3_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_3
+                small = GFX_portrait_YBS_carlist_general_3_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_carlist_loyalties media_personality politically_connected }
+			desc = YBS_generic_fictional_general_desc
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=2
+		}
+	}
+
+	YBS_carlist_general_4 = {
+		name = YBS_carlist_general_4_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_4
+                small = GFX_portrait_YBS_carlist_general_4_small
+			}
+		}
+
+		field_marshal = {
+			traits = { trait_SPA_carlist_loyalties inflexible_strategist old_guard }
+			desc = YBS_generic_fictional_general_desc
+			skill=5
+			attack_skill=2
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=3
+		}
+	}
+
+	YBS_carlist_general_5 = {
+		name = YBS_carlist_general_5_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_5
+                small = GFX_portrait_YBS_carlist_general_5_small
+			}
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_carlist_loyalties brave }
+			desc = YBS_generic_fictional_general_desc
+			skill=3
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+		}
+	}
+
+	YBS_militia_general = {
+		name = YBS_militia_general_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_militia_general
+                small = GFX_portrait_YBS_militia_general_small
+			}
+		}
+	}
+
+	YBS_young_general_1 = {
+		name = YBS_young_general_1_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_young_general_1
+                small = GFX_portrait_YBS_young_general_1_small
+			}
+		}
+	}
+
+	YBS_young_general_2 = {
+		name = YBS_young_general_2_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_young_general_2
+                small = GFX_portrait_YBS_young_general_2_small
+			}
+		}
+	}
+
+	YBS_young_general_3 = {
+		name = YBS_young_general_3_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_young_general_3
+                small = GFX_portrait_YBS_young_general_3_small
+			}
+		}
+	}
+
+	YBS_german_general = {
+		name = YBS_german_general_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_german_general
+                small = GFX_portrait_YBS_german_general_small
+			}
+		}
+	}
 }

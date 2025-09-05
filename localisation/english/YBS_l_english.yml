@@ -75,7 +75,7 @@
 
 # FACTIONS
 
- YBS_iberian_unity_league: "Iberian Unity League"
+ YBS_iberian_unity_league: "Iberian Unity Front"
  YBS_iberian_federation: "Iberian Federation"
 
 # PARTIES
@@ -115,6 +115,22 @@
  YBS_julio_ruiz_de_alda_name: "Julio Ruiz de Alda"
  YBS_julio_ruiz_de_alda_desc: "§YFull Name:§! §LJulio Ruiz de Alda Miqueleiz§!\n§YBorn:§! §LOctober 7. 1897, in Lizarra§!\n§YBackground:§! §LTogether with Primo de Rivera, he founded the Falangist movement. He was an aviator in the Iberian National Army and completed a transatlantic flight in 1926 in the 'Plus Ultra'. With the collapse of Iberia, he returned to his homelands to fight for Falangism and Iberian reunification.§! $XHH_is_historical_character_tt$"
 
+ YBS_falangist_general_1_name: "Carlos Ferrandis"
+ YBS_falangist_general_2_name: "Teodoro Mendigur"
+ YBS_carlist_general_1_name: "Maximiano Urquieta"
+ YBS_carlist_general_2_name: "Adelardo Larregain"
+ YBS_carlist_general_3_name: "Eusebi Eguiluz"
+ YBS_carlist_general_4_name: "Kalistenes Abeyo"
+ YBS_carlist_general_5_name: "Jaume Martínez"
+ YBS_militia_general_name: "Gabin Ellacuriazabala"
+ YBS_young_general_1_name: "Ezekiel Amescua"
+ YBS_young_general_2_name: "Martzel Barua"
+ YBS_young_general_3_name: "Konstantzio Uria"
+ YBS_german_general_name: "Hugo Friedrich-Morgna zu Bielefeld"
+ YBS_german_general_desc: "§YFull Name:§! §LHugo Maria Friedrich-Morgna Freiherr zu Bielefeld§!\n§YBorn:§! §LJuli 1. 1889, in Bielefeld§!\n§YBackground:§! §LBorn the son of a small noble house, Hugo joined the military and went through officer training. Eager to fight, he volunteered to support the Basque Country military by both training new officers as well as leading troops in the field.§! $XHH_is_fictional_character_tt$"
+
+ YBS_generic_fictional_general_desc: "£GFX_victory_points  §YThis is a generic pre-determined character.§!"
+
 
 # TRAITS
 
@@ -126,6 +142,18 @@
  YBS_falangist_founder: "Co-Pilot of the Phalanx"
 
  YBS_cooperative_trait: "Cooperative Federation"
+
+ YBS_young_officer_trait: "Young Officer"
+ YBS_young_officer_trait_desc: "§LYoung and full of new ideas for warfare.§!"
+
+
+# CHARACTER TOOLTIPS
+
+ YBS_young_general_1_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y1§!, £trait_defense §Y1§!, £trait_planning §Y4§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$YBS_young_officer_trait$§!, §C$career_officer$§!"
+ YBS_young_general_2_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y1§!, £trait_defense §Y3§!, £trait_planning §Y1§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$YBS_young_officer_trait$§!, §C$engineer_officer$§!"
+ YBS_young_general_3_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y3§!, £trait_defense §Y1§!, £trait_planning §Y2§!, £trait_logistics §Y1§!)\n§gTraits§!: §C$YBS_young_officer_trait$§!, §C$armor_officer$§!"
+ YBS_german_general_stats_tt: "§gLevel§!: §Y3§!, (£trait_attack §Y4§!, £trait_defense §Y2§!, £trait_planning §Y3§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$trait_SOV_foreign_military_advisor$§!, §C$trait_reckless$§!, §C$adaptable$§!"
+ YBS_militia_general_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y2§!, £trait_defense §Y1§!, £trait_planning §Y1§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$militias_officer$§!, §C$urban_assault_specialist$§!"
 
 
 # IDEAS
@@ -164,6 +192,7 @@
  YBS_national_pride: "Harrotasun Nazionala"
  YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
  YBS_republican_opposition: "Republican Opposition"
+ YBS_womens_rights_idea: "Gender Equality"
 
  YBS_mondragon_cooperative: "Mondragón Corporación Cooperativa"
 
@@ -182,6 +211,9 @@
  YBS_pf_formed: "The §rPopular§! §SFront§! has been formed"
  YBS_world_esperanto_congress_held: "The §G29th World Esperanto Congress§! has been held in §YBilbao§!."
 
+ YBS_exile_characters_tt: "§RThe following characters will be exiled:§!"
+ YBS_exiled_characters_arrive_tt: "§GThe following characters will become available:§!"
+
  YBS_socialists_in_charge_tt: "The §SSocialists§! are in government"
  YBS_socialists_in_charge_tt_NOT: "The §SSocialists§! are not in government"
  YBS_syndicalists_in_charge_tt: "The §rSyndicalists§! are in government"
@@ -192,10 +224,12 @@
  YBS_is_iberian_country_tt_NOT: "Is not an Iberian country"
  YBS_is_iberian_state_tt: "Is a state in Iberia"
  YBS_is_iberian_state_tt_NOT: "Is not a state in Iberia"
- YBS_controls_all_iberian_states_tt: "Controls all Iberian states"
- YBS_controls_all_iberian_states_tt_NOT: "Does not control all Iberian states"
- YBS_owns_all_iberian_states_tt: "Owns all Iberian states"
- YBS_owns_all_iberian_states_tt_NOT: "Does not own all Iberian states"
+ YBS_controls_all_iberian_states_tt: "Controls all §YIberian states§!"
+ YBS_controls_all_iberian_states_tt_NOT: "Does not control all §YIberian states§!"
+ YBS_owns_all_iberian_states_tt: "Owns all §YIberian states§!"
+ YBS_owns_all_iberian_states_tt_NOT: "Does not own all §YIberian states§!"
+ YBS_iberian_federation_complete_tt: "Owns all §YIberian states§! directly or via §Ysubjects§!"
+ YBS_iberian_federation_complete_tt_NOT: "Does not own all §YIberian states§! directly or via §Ysubjects§!"
  YBS_other_carlist_nation_tt: "Is a Carlist Nation"
  YBS_other_carlist_nation_tt_NOT: "Is not a Carlist Nation"
  YBS_democratic_iberian_nation_tt: "Is a democratic Iberian nation"
@@ -272,6 +306,10 @@
  YBS_syndicalist_campaigns: "Rally the §rUnions§!"
  YBS_popular_front_campaigns: "Campaign for the §rPopular§! §SFront§!"
 
+ YBS_spanish_civil_war_cat: "The Iberian Civil War Continues"
+ YBS_start_civil_war_in_iberia: "Restart the Civil War with [FROM.GetName]"
+ YBS_justifying_civil_war: "currently preparing to restart the civil war"
+
  YBS_purchase_old_ships_category: "$generic_purchase_old_ships_category$"
  YBS_purchase_old_ships_category_desc: "$generic_purchase_old_ships_category_desc$"
  YBS_purchase_ships_XHH: "@XHH Purchase [XHH.GetAdjective] Destroyers"
@@ -294,6 +332,8 @@
  YBS_fund_research: "Fund Research Projects"
 
  YBS_get_helicopters: "Study Juan de la Cierva's Autogiro Blueprints"
+
+ YBS_relocate_to_madrid: "Move the Capital to Madrid"
 
 
 # FOCUS TREE
@@ -323,8 +363,6 @@
 
  YBS_military_coup: "The Fall of the Republic"
  YBS_military_coup_desc: ""
- YBS_exile_the_falangists: "Eliminate the Falangists"
- YBS_exile_the_falangists_desc: ""
  YBS_restore_order: "Restore Civil Order"
  YBS_restore_order_desc: ""
  YBS_restore_the_monarchy: "Restore the Carlist Monarchy"
@@ -332,6 +370,28 @@
 
  YBS_liberal_victory: "Liberal Victory"
  YBS_liberal_victory_desc: ""
+ YBS_deregulate_the_industries: "Reduce Regulations"
+ YBS_deregulate_the_industries_desc: ""
+ YBS_sell_to_the_corporations: "Privatise the Construction Industry"
+ YBS_sell_to_the_corporations_desc: ""
+ YBS_the_corporatist_model: "Tax Exemptions"
+ YBS_the_corporatist_model_desc: ""
+ YBS_trade_council: "Republic Trade Council"
+ YBS_trade_council_desc: ""
+ YBS_streamlining_the_administration: "Streamlining the Administration"
+ YBS_streamlining_the_administration_desc: ""
+ YBS_enforce_administration_language: "Multilingual Governance"
+ YBS_enforce_administration_language_desc: ""
+ YBS_liberal_corporatism: "Liberal Corporatism"
+ YBS_liberal_corporatism_desc: ""
+ YBS_iberian_bastion_of_liberalism: "Iberian Bastion of Liberalism"
+ YBS_iberian_bastion_of_liberalism_desc: ""
+ YBS_protect_personal_freedoms: "Protect Personal Freedoms"
+ YBS_protect_personal_freedoms_desc: ""
+ YBS_modernise_schools: "Modernise the Schools"
+ YBS_modernise_schools_desc: ""
+ YBS_found_IISL_lib: "Institut International de Sociologie du Droit"
+ YBS_found_IISL_lib_desc: ""
 
  YBS_nationalist_victory: "Nationalist Victory"
  YBS_nationalist_victory_desc: ""
@@ -378,10 +438,12 @@
  YBS_modernise_the_education_system_desc: ""
  YBS_found_IISL_soc: "International Institute for the Sociology of Law"
  YBS_found_IISL_soc_desc: ""
- YBS_spanish_basque_national_languages: "Deal with the Language Issue"
+ YBS_spanish_basque_national_languages: "Officialise National Multilingualism"
  YBS_spanish_basque_national_languages_desc: ""
  YBS_work_safety_regulations: "Work Safety Regulations"
  YBS_work_safety_regulations_desc: ""
+ YBS_womens_rights: "Introduce Women's Rights"
+ YBS_womens_rights_desc: ""
 
  YBS_popular_front_promises: "Promises of the Fronto Populara"
  YBS_popular_front_promises_desc: ""
@@ -392,14 +454,48 @@
 
  YBS_unity_through_democracy: "Unity through Democracy"
  YBS_unity_through_democracy_desc: ""
+ YBS_march_into_asturias: "March into Austurias"
+ YBS_march_into_asturias_desc: ""
+ YBS_integrate_galicia: "Integrate Galicia"
+ YBS_integrate_galicia_desc: ""
+ YBS_restore_order_in_catalonia: "Restore Order in Catalonia"
+ YBS_restore_order_in_catalonia_desc: ""
+ YBS_stop_the_french: "Banish the Legion"
+ YBS_stop_the_french_desc: ""
+ YBS_enter_the_fray: "Enter the Fray"
+ YBS_enter_the_fray_desc: ""
+ YBS_regional_civil_administrations: "Establish Civil Administrations"
+ YBS_regional_civil_administrations_desc: ""
 
  YBS_alocate_military_budget_factories: "Prioritise Arms Production"
  YBS_alocate_military_budget_factories_desc: ""
  YBS_alocate_military_budget_forts: "Prioritise Fort Construction"
  YBS_alocate_military_budget_forts_desc: ""
+ YBS_establish_the_federal_army: "Establish the Federal Army"
+ YBS_establish_the_federal_army_desc: ""
+ YBS_international_volunteers: "International Volunteer Corps"
+ YBS_international_volunteers_desc: ""
+ YBS_seize_army_depots: "Seize Military Depots"
+ YBS_seize_army_depots_desc: ""
+ YBS_for_the_republican_dream: "For the Republican Dream!"
+ YBS_for_the_republican_dream_desc: ""
+ YBS_victory_in_the_civil_war: "Iberia United!"
+ YBS_victory_in_the_civil_war_desc: ""
+ YBS_victory_in_the_civil_war_regional: "Peace in Iberia"
+ YBS_victory_in_the_civil_war_regional_desc: ""
 
  YBS_guardian_of_iberian_democracy: "Guardian of Iberian Democracy"
  YBS_guardian_of_iberian_democracy_desc: ""
+ YBS_establish_catalan_federal_state: "Establish a Catalan Authority"
+ YBS_establish_catalan_federal_state_desc: ""
+ YBS_reach_out_to_galicia: "Contact Galician Democrats"
+ YBS_reach_out_to_galicia_desc: ""
+ YBS_secure_castille_and_leon: "Secure Castille and Leon"
+ YBS_secure_castille_and_leon_desc: ""
+ YBS_exile_the_french: "Bring the French Home"
+ YBS_exile_the_french_desc: ""
+ YBS_move_south: "Move South"
+ YBS_move_south_desc: ""
 
  YBS_rule_of_capital: "Corporate Takeover"
  YBS_rule_of_capital_desc: ""
@@ -471,8 +567,8 @@
  YBS_the_pan_national_army_desc: ""
  YBS_new_leadership: "New Leadership"
  YBS_new_leadership_desc: ""
- YBS_foreign_advisors: "Foreign Instructors"
- YBS_foreign_advisors_desc: ""
+ YBS_foreign_advisors: "German Instructors"
+ YBS_foreign_advisors_desc: "We have found a group of military officers from southwestern Germany that has accepted to assist in training our military personnel."
  YBS_strengthen_the_militia: "Strengthen the Militia"
  YBS_strengthen_the_militia_desc: ""
  YBS_protect_supply_lines: "Protect the Supply Lines"
@@ -580,23 +676,26 @@
 
 
  YBS_post_election_events.1.t: "Fate of the Falangists"
- YBS_post_election_events.1.desc: "WIP"
- YBS_post_election_events.1.a: "Hunt them down. They shall not escape Judgement."
- YBS_post_election_events.1.b: "Let them run, who cares about them."
+ YBS_post_election_events.1.desc: "With the elections over, we can finally focus our attention on the Falangist rabble still roaming our lands. While de Alda and his men are no threat to the republic, they still continue to sabotage our military and make the people feel unsafe. It is time to get rid of them."
+ YBS_post_election_events.1.a: "Just get them across the border."
+
  YBS_post_election_events.2.t: "Ending Republican Resistance"
  YBS_post_election_events.2.desc: "WIP"
  YBS_post_election_events.2.a: "Hold a Parade, this will calm things down."
  YBS_post_election_events.2.b: "Mobilise the garrison, open fire if the opposition acts violent."
 
+ YBS_post_election_events.3.t: "Exiled Basque Falangists arrive in [ROOT.capital.GetCapitalVictoryPointName]"
+ YBS_post_election_events.3.desc: "The falangist branch in the Basque Country has been exiled from the country and now our brothers arrive in our capital as heroes that fought for our beliefs in a foreign land."
+ YBS_post_election_events.3.a: "Welcome, Brothers!"
 
  YBS_esperanto_events.1.t: "A Flag for the Republic"
- YBS_esperanto_events.1.desc: "Upon the declaration of the Republik of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexandr Memerskai, insists upon its name as 'Tricolour' in a symbolic sense.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."
+ YBS_esperanto_events.1.desc: "Upon the declaration of the Republic of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexei Kemersky, insists upon its name as 'Tricolour' in a symbolic sense, as many notable republics in history were represented by them.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."
  YBS_esperanto_events.1.a: "We will continue using the Esperanto Flag."
- YBS_esperanto_events.1.a.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_1_texticon\n \n \n \n§G'The Esperanto Flag'§!"
+ YBS_esperanto_events.1.a.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_1_texticon\n \n \n \n§L'The Esperanto Flag'§!"
  YBS_esperanto_events.1.b: "Adopt the 'Verda Stelo Trikoloro'"
- YBS_esperanto_events.1.b.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_2_texticon\n \n \n \n§G'Green Star Tricolour'§!"
+ YBS_esperanto_events.1.b.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_2_texticon\n \n \n \n§L'Green Star Tricolour'§!"
  YBS_esperanto_events.1.c: "Adopt the 'Standardo de Naŭ Stelo'"
- YBS_esperanto_events.1.c.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_3_texticon\n \n \n \n§G'Banner of Nine Stars'§!"
+ YBS_esperanto_events.1.c.tt: "We will adopt this flag as a §Ynational flag§!.\n \n \n£GFX_focus_YBS_esperanto_flag_3_texticon\n \n \n \n§L'Banner of Nine Stars'§!"
 
  YBS_esperanto_events.3.t: "Application for the 29th World Esperanto Congress"
  YBS_esperanto_events.3.desc: "WIP"

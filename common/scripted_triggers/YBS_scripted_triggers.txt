@@ -70,6 +70,18 @@ YBS_owns_all_iberian_states = {
     }
 }
 
+YBS_iberian_federation_complete = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_iberian_federation_complete_tt
+        all_state = {
+            OR = {
+                YBS_is_iberian_state = no
+                owns_or_subject_of = yes
+            }
+        }
+    }
+}
+
 YBS_other_carlist_nation = {
     custom_trigger_tooltip = {
         tooltip = YBS_other_carlist_nation_tt

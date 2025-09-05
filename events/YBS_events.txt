@@ -16,8 +16,21 @@ country_event = { # Carlist Conspiracy
         custom_effect_tooltip = SOV_characters_will_be_purged_tt
         character_list_tooltip = {
             limit = {
-                # has 'Carlist' trait
+                OR = {
+                    is_character = YBS_carlist_general_1
+                    is_character = YBS_carlist_general_2
+                    is_character = YBS_carlist_general_3
+                    is_character = YBS_carlist_general_4
+                    is_character = YBS_carlist_general_5
+                }
             }
+        }
+        hidden_effect = {
+            retire_character = YBS_carlist_general_1
+            retire_character = YBS_carlist_general_2
+            retire_character = YBS_carlist_general_3
+            retire_character = YBS_carlist_general_4
+            retire_character = YBS_carlist_general_5
         }
 
         add_command_power = -20
@@ -448,6 +461,13 @@ country_event = { # Falangist Agitation
         name = YBS_election_events.8.a
         add_stability = -0.02
         add_popularity = { ideology = fascism popularity = 0.01 }
+
+        hidden_effect = {
+            country_event = {
+                id = YBS_post_election_events.1
+                days = 100
+            }
+        }
     }
 
 }
@@ -460,32 +480,103 @@ country_event = { # Removing the Falangists
 	
 	is_triggered_only = yes
 	
-	option = { # kill
+	option = {
         name = YBS_post_election_events.1.a
         add_political_power = -50
-        add_command_power = -20
+        add_popularity = { ideology = fascism popularity = -0.25 }
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        custom_effect_tooltip = SOV_characters_will_be_purged_tt
+        remove_ideas = YBS_falangist_remnants
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = YBS_exile_characters_tt
         character_list_tooltip = {
             limit = {
-                # has 'Falangist' trait
+                OR = {
+                    is_character = YBS_julio_ruiz_de_alda
+                    is_character = YBS_falangist_general_1
+                    is_character = YBS_falangist_general_2
+                }
             }
         }
 
-        custom_effect_tooltip = generic_skip_one_line_tt
-
-        remove_ideas = YBS_falangist_remnants
-    }
-
-    option = { # exile
-        name = YBS_post_election_events.1.b
-        # exile thingy
-
-        custom_effect_tooltip = generic_skip_one_line_tt
-
-        remove_ideas = YBS_falangist_remnants
+        if = {
+            limit = {
+                any_other_country = {
+                    has_country_leader_ideology = falangism
+                    YBS_is_iberian_country = yes
+                }
+            }
+            random_other_country = {
+                limit = {
+                    has_country_leader_ideology = falangism
+                    YBS_is_iberian_country = yes
+                }
+                hidden_effect = {
+                    ROOT = {
+                        set_nationality = {
+                            target_country = PREV
+                            character = YBS_julio_ruiz_de_alda
+                        }
+                    }
+                    ROOT = {
+                        set_nationality = {
+                            target_country = PREV
+                            character = YBS_falangist_general_1
+                        }
+                    }
+                    ROOT = {
+                        set_nationality = {
+                            target_country = PREV
+                            character = YBS_falangist_general_2
+                        }
+                    }
+                }
+                country_event = { id = YBS_post_election_events.3 days = 3 }
+            }
+        }
+        else_if = {
+            limit = {
+                any_other_country = {
+                    has_country_leader_ideology = falangism
+                }
+            }
+            random_other_country = {
+                limit = {
+                    has_country_leader_ideology = falangism
+                }
+                hidden_effect = {
+                    ROOT = {
+                        set_nationality = {
+                            target_country = PREV
+                            character = YBS_julio_ruiz_de_alda
+                        }
+                    }
+                    ROOT = {
+                        set_nationality = {
+                            target_country = PREV
+                            character = YBS_falangist_general_1
+                        }
+                    }
+                    ROOT = {
+                        set_nationality = {
+                            target_country = PREV
+                            character = YBS_falangist_general_2
+                        }
+                    }
+                }
+                country_event = { id = YBS_post_election_events.3 days = 3 }
+            }
+        }
+        else = {
+            hidden_effect = {
+                retire_character = YBS_julio_ruiz_de_alda
+                retire_character = YBS_falangist_general_1
+                retire_character = YBS_falangist_general_2
+            }
+        }
     }
 }
 
@@ -528,6 +619,29 @@ country_event = { # Restoring Order
         custom_effect_tooltip = generic_skip_one_line_tt
 
         remove_ideas = YBS_republican_opposition
+    }
+}
+
+country_event = { # Exiled Falangists arrive from YBS
+	id = YBS_post_election_events.3
+	title = YBS_post_election_events.3.t
+	desc = YBS_post_election_events.3.desc
+    picture = GFX_report_event_spr_falange_troops2
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_post_election_events.3.a
+        custom_effect_tooltip = YBS_exiled_characters_arrive_tt
+        character_list_tooltip = {
+            limit = {
+                OR = {
+                    is_character = YBS_julio_ruiz_de_alda
+                    is_character = YBS_falangist_general_1
+                    is_character = YBS_falangist_general_2
+                }
+            }
+        }
     }
 }
 

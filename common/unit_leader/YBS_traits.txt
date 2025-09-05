@@ -1,0 +1,26 @@
+leader_traits = {
+
+	YBS_young_officer_trait = { 
+		type = land
+		trait_type = personality_trait
+	
+		non_shared_modifier = {
+			experience_gain_factor = 0.1
+		}
+		
+		new_commander_weight = {
+			factor = 0
+
+            modifier = {
+                factor = 1
+                FROM = { 
+                    OR = {
+                        original_tag = XHH
+                        original_tag = YBS
+                    }
+                }
+            }
+		}
+	}
+
+}
