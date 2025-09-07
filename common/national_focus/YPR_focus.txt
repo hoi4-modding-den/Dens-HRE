@@ -20,7 +20,7 @@ focus_tree = {
 		y = 0
 		cost = 5
 
-		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		ai_will_do = {
@@ -29,7 +29,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_the_red_flag_over_portugal_tt
-			add_stability = 0.05
+			add_political_power = 25
 		}
 	}
 	focus = {
@@ -41,7 +41,7 @@ focus_tree = {
 		prerequisite = { focus = YPR_the_red_flag_over_portugal }
 		relative_position_id = YPR_the_red_flag_over_portugal
 
-		available_if_capitulated = yes
+	
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		ai_will_do = {
@@ -62,7 +62,7 @@ focus_tree = {
 		prerequisite = { focus = YPR_the_red_flag_over_portugal }
 		relative_position_id = YPR_the_red_flag_over_portugal
 
-		available_if_capitulated = yes
+	
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		ai_will_do = {
@@ -84,7 +84,7 @@ focus_tree = {
 		prerequisite = { focus = YPR_emphasize_international_solidarity }
 		relative_position_id = YPR_affirm_the_policy_of_equality
 
-		available_if_capitulated = yes
+		
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		ai_will_do = {
@@ -93,6 +93,50 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_first_congress_of_the_portuguese_revolutionary_front_tt
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = YPR_establish_the_vanguard_party
+		icon = GFX_focus_SOV_the_path_of_marxism_leninism
+		x = 4
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_first_congress_of_the_portuguese_revolutionary_front }
+		relative_position_id = YPR_first_congress_of_the_portuguese_revolutionary_front
+		mutually_exclusive = { focus = YPR_all_power_to_the_councils }
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_establish_the_vanguard_party_tt
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = YPR_all_power_to_the_councils
+		icon = GFX_focus_ARG_no_gods_no_masters
+		x = -4
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_first_congress_of_the_portuguese_revolutionary_front }
+		relative_position_id = YPR_first_congress_of_the_portuguese_revolutionary_front
+		mutually_exclusive = { focus = YPR_establish_the_vanguard_party }
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_all_power_to_the_councils_tt
 			add_stability = 0.05
 		}
 	}
