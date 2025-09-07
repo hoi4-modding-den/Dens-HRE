@@ -17,6 +17,22 @@ YBS_election_decision_cat = {
 
 }
 
+YBS_iberian_federation_cat = {
+
+	icon = GFX_decision_cat_iberian_summit
+
+	priority = 100
+
+	allowed = {
+		tag = YBS
+	}
+
+    visible = {
+        YBS_is_iberian_federation_leader = yes
+    }
+
+}
+
 YBS_spanish_civil_war_cat = {
 
 	icon = GFX_decision_category_spr_civil_war_offensives
@@ -50,6 +66,29 @@ YBS_purchase_old_ships_category = {
 		base = 8
 	}
 	visible_when_empty = no
+}
+
+YBS_foreign_economic_control_cat = {
+
+	icon = GFX_decision_category_gre_paying_ifc_debt
+
+	priority = 10	
+
+	allowed = {
+		tag = YBS
+	}
+
+    visible = {
+        check_variable = {
+			YBS_foreign_control > 0
+		}
+		NOT = { has_completed_focus = YBS_rule_of_capital }
+    }
+
+	visible_when_empty = yes
+
+	scripted_gui = YBS_foreign_control_decision_ui
+
 }
 
 YBS_socialist_praxis_decision_cat = {

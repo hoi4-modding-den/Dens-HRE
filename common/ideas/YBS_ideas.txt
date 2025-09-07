@@ -257,6 +257,7 @@ ideas = {
                 army_org_regain = -0.05
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
+				ai_focus_aggressive_factor = 0.2
 			}
 		}
 
@@ -279,6 +280,7 @@ ideas = {
 				army_attack_factor = 0.05
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
+				ai_focus_aggressive_factor = 0.2
 			}
 		}
 		
@@ -302,6 +304,7 @@ ideas = {
 				army_attack_factor = 0.05
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
+				ai_focus_aggressive_factor = 0.2
 			}
 		}
 
@@ -324,6 +327,7 @@ ideas = {
 				army_attack_factor = 0.05
 				initiative_factor = 0.05
 				org_loss_when_moving = -0.15
+				ai_focus_aggressive_factor = 0.2
 			}
 		}
 
@@ -505,7 +509,7 @@ ideas = {
 
 		YBS_language_issue = {
 
-			#picture = 
+			picture = RAJ_partition_india_united
 
 			allowed = {
 				original_tag = YBS
@@ -527,7 +531,7 @@ ideas = {
 
         YBS_language_issue_basque_dominant = {
 
-			#picture = 
+			picture = hol_the_foundations_of_defense
 
 			allowed = {
 				original_tag = YBS
@@ -548,7 +552,7 @@ ideas = {
 
         YBS_language_issue_mending_ties = {
 
-			#picture = 
+			picture = hol_the_foundations_of_defense
 
 			allowed = {
 				original_tag = YBS
@@ -629,6 +633,28 @@ ideas = {
 			}
 		}
 
+		YBS_national_pride_improved = {
+
+			name = YBS_national_pride
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				surrender_limit = 1
+                army_core_defence_factor = 0.15
+                conscription_factor = 0.15
+			}
+		}
+
 		YBS_republican_opposition = {
 
 			picture = EST_democratic_opposition
@@ -647,6 +673,154 @@ ideas = {
 				stability_factor = -0.2
 				political_advisor_cost_factor = 0.5
 				democratic_drift = 0.01
+			}
+		}
+
+		YBS_personal_freedoms = {
+
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			cancel = {
+				has_completed_focus = YBS_rule_of_capital
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		YBS_private_schools = {
+
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.1
+				research_speed_factor = 0.05
+			}
+		}
+
+		YBS_economic_downturn = {
+
+			picture = generic_devalue_currency
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+			}
+		}
+
+		YBS_bread_prices_regulated = {
+
+			picture = generic_goods_red_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		YBS_national_autarky_idea = {
+
+			picture = generic_goods_red_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.2
+				weekly_convoys_war_support = 0.005
+			}
+		}
+
+		YBS_restored_fueros = {
+
+			picture = generic_local_self_management
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				political_advisor_cost_factor = -0.5
+			}
+		}
+
+		YBS_national_healthcare_fund = {
+
+			picture = generic_political_support
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.02
+				experience_loss_factor = -0.15
+				consumer_goods_factor = 0.08
 			}
 		}
 
@@ -671,6 +845,31 @@ ideas = {
 				political_power_factor = -0.15
 				conscription = 0.002
 				consumer_goods_factor = -0.05
+			}
+		}
+
+		YBS_iberian_federation_spirit = {
+
+			picture = generic_pp_unity_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.15
+				conscription_factor = 0.05
+				consumer_goods_factor = -0.1
+				global_building_slots_factor = 0.1
 			}
 		}
 

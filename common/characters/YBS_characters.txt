@@ -16,18 +16,18 @@ characters = {
 		}
 	}
 
-	YBS_basque_liberal_guy = {
-		name = YBS_basque_liberal_guy_name
+	YBS_eli_gallastegi = {
+		name = YBS_eli_gallastegi_name
 		portraits = {
 			civilian = {
-				large = GFX_portrait_YBS_basque_liberal_guy
-                small = GFX_portrait_YBS_basque_liberal_guy_small
+				large = GFX_portrait_YBS_eli_gallastegi
+                small = GFX_portrait_YBS_eli_gallastegi_small
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { YBS_liberal_reformer }
 			ideology = hyper_capitalism
-			desc = YBS_basque_liberal_guy_desc
+			desc = YBS_eli_gallastegi_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}

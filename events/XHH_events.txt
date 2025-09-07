@@ -1153,14 +1153,6 @@ country_event = { # XHH demanded we be annexed by XLH
 
 	option = {
 		name = XHH_diplo_events.16.a
-		trigger = {
-			NOT = { 
-				has_opinion = {
-					target = FROM
-					value = 150
-				}
-			}
-		}
 		ai_chance = {
 			factor = 20
 			modifier = {
