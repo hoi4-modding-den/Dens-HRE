@@ -1,0 +1,45 @@
+add_namespace = the_pine_trees
+add_namespace = vengeance
+
+country_event = {
+    id = the_pine_trees.1
+    title = the_pine_trees.1.t
+    desc = the_pine_trees.1.d
+    picture = GFX_office_YGL
+
+    is_triggered_only = yes
+
+    option = {
+        name = the_pine_trees.1.a
+    }
+
+}
+country_event = {
+    id = vengeance.1
+    title = vengeance.1.t
+    desc = vengeance.1.d
+    picture = GFX_office_YGL
+
+    is_triggered_only = yes
+
+    option = {
+        name = vengeance.1.a
+    }
+
+}
+country_event = {
+    id = fight_fire.1
+    title = fight_fire.1.t
+    desc = fight_fire.1.d
+    picture = GFX_office_YGL
+
+    is_triggered_only = yes
+
+    option = {
+        name = fight_fire.1.a
+    declare_war_on = {
+    target = YAS
+    type = annex_everything
+}
+    }
+}
