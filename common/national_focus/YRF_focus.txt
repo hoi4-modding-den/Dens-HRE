@@ -1,0 +1,51 @@
+focus_tree = {
+	id = YRF_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = YRF
+		}
+	}
+	continuous_focus_position = { x = 3800 y = 1000 }
+	focus = {
+		id = YRF_the_neutral_king
+		icon = GFX_goal_generic_neutrality_focus
+		x = 10
+		y = 0
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+		custom_effect_tooltip = YRF_neutral_king_TT
+		hidden_effect = {
+		country_event = { id = YRF.1 days = 1 }
+		add_manpower = 5500
+		add_stability = 0.10
+        add_war_support = -0.05
+		}
+		}
+	}
+	
+	#Our Helping Hand
+	focus = {
+		id = YRF_our_helping_hand
+		icon = GFX_SOV_respect_baltic_self_determination_ccp_2d_sov_compatibility
+		x = 10
+		y = 1
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	    prerequisite = {
+		    focus = YRF_the_neutral_king
+	    }
+		completion_reward = {
+		custom_effect_tooltip = YRF_helping_hand_TT
+		hidden_effect = {
+		add_manpower = 5500
+		}
+		}
+	}
+}

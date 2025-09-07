@@ -44,6 +44,126 @@ characters = {
 		}
 	}
 
+	YRF_otto_rasch = {
+		name = "Otto Rasch"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YRF/YRF_otto_rasch.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_otto_rasch
+			}
+		}
+		country_leader = {
+			expire = "2004.1.1"
+			ideology = fascism_ideology
+			traits = {  }
+		    desc = YRF_OTTO_RASCH_DESC
+		}
+		field_marshal = {
+		traits = { infantry_officer trait_reckless aggressive_assaulter harsh_leader }
+		skill = 4
+		attack_skill = 3
+		defense_skill = 2
+		planning_skill = 4
+		logistics_skill = 1
+		legacy_id = -1
+		}
+	}
+
+	YRF_jose_luis_arrese = {
+		name = "José Luis de Arrese"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YRF/YRF_jose_luis_arrese.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_oscar_alfredo_ramos
+			}
+		}
+		corps_commander = {
+		traits = { politically_connected aggressive_assaulter }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+		legacy_id = -1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = YRF_jose_luis_arrese
+			allowed  = {
+				original_tag = YRF
+			}
+			traits  = {
+				ideological_crusader
+			}
+		}
+	}
+
+	YRF_oscar_alfredo_ramos={
+		name="Oscar Alfredo Ramos"
+		portraits={
+			army = {
+				large = "/gfx/leaders/YRF/YRF_oscar_alfredo_ramos.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_oscar_alfredo_ramos
+			}
+		}
+		corps_commander = {
+		traits = { media_personality politically_connected brilliant_strategist }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 2
+		legacy_id = -1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = YRF_oscar_alfredo_ramos
+			allowed  = {
+				original_tag = YRF
+			}
+			traits  = {
+				prince_of_terror
+			}
+		}
+	}
+
+	YRF_yitzhak_gamzon = {
+		name = "Yizhak Gamzon"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YRF/YRF_yitzhak_gamzon.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_yitzhak_gamzon
+			}
+		}
+		corps_commander = {
+		traits = { politically_connected aggressive_assaulter }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 1
+		legacy_id = -1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = YRF_yitzhak_gamzon
+			allowed  = {
+				original_tag = YRF
+			}
+			traits  = {
+				silent_workhorse
+			}
+		}
+	}
+
 	YRF_antoni_rodrigo_penna = {
 		name = "Antoni Rodrigo Penna"
 		portraits = {
@@ -60,6 +180,48 @@ characters = {
 		attack_skill = 2
 		defense_skill = 1
 		planning_skill = 2
+		logistics_skill = 1
+		legacy_id = -1
+		}
+	}
+
+	YRF_rolon_aznar_rojas = {
+		name = "Rolon Aznar Rojas"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YRF/YRF_rolon_aznar_rojas.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_rolon_aznar_rojas
+			}
+		}
+		corps_commander = {
+		traits = {  }
+		skill = 2
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 2
+		logistics_skill = 1
+		legacy_id = -1
+		}
+	}
+	
+	YRF_miguel_hernandez = {
+		name = "Miguel Gilabert"
+		portraits = {
+			army = {
+				large = "/gfx/leaders/YRF/YRF_miguel_hernandez.png"
+			}
+			civilian={
+				small= GFX_idea_YRF_miguel_hernandez
+			}
+		}
+		corps_commander = {
+		traits = { politically_connected }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 1
 		logistics_skill = 1
 		legacy_id = -1
 		}
