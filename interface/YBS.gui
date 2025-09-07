@@ -1,0 +1,54 @@
+guiTypes = {
+
+    # Copied from XVE
+	containerWindowType = {
+		name = "YBS_foreign_control_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 250 }
+		
+		# PROGRESS BAR
+		iconType = {
+		name = "YBS_foreign_control_progress_bar"
+		spriteType = "GFX_XVE_gov_support_progress_bar"
+		position = { x = 35 y = 191 }
+		}	
+
+		#TEXT
+		instantTextBoxType = {
+			name ="YBS_foreign_control_percentage"
+			position = { x = 1 y = 195 }
+			font = "hoi_24header"
+			text = "YBS_foreign_control_percentage"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}
+		instantTextBoxType = {
+			name ="YBS_foreign_control_text"
+			position = { x = 15 y = 40 }
+			font = "cg_16b"
+			text = "YBS_foreign_control_text"
+			format = center
+			maxHeight = 42
+			maxWidth = 460
+		}
+		instantTextBoxType = {
+			name ="YBS_foreign_control_header"
+			position = { x = 0 y = 0 }
+			font = "hoi_30header"
+			text = "YBS_foreign_control_header"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}	
+        instantTextBoxType = {
+			name ="YBS_foreign_control_header2"
+			position = { x = 0 y = 150 }
+			font = "hoi_24header"
+			text = "YBS_foreign_control_header2"
+			format = center
+			maxHeight = 42
+			maxWidth = 500
+		}								
+	}
+}

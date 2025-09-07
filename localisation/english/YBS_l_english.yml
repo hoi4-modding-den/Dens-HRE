@@ -21,8 +21,35 @@
  YBS_iberian_defence_council_communism_ADJ: "Iberia"
 
  YBS_federal_state_democratic: "Basque Federal State"
- YBS_federal_state_democratic_DEF: "the Federal Autonomous State of the Greater Basque Country"
+ YBS_federal_state_democratic_DEF: "the Autonomous Federal State of the Greater Basque Country"
  YBS_federal_state_democratic_ADJ: "Basque"
+ YBS_federal_state_spain: "Spanish Federal State"
+ YBS_federal_state_spain_DEF: "the Federal State of Central Spain"
+ YBS_federal_state_spain_ADJ: "Spanish"
+ YBS_federal_state_portugal: "Portuguese Federal State"
+ YBS_federal_state_portugal_DEF: "the Federal State of Portugal"
+ YBS_federal_state_portugal_ADJ: "Portuguese"
+ YBS_federal_state_galicia: "Galician Federal State"
+ YBS_federal_state_galicia_DEF: "the Autonomous Federal State of Galicia"
+ YBS_federal_state_galicia_ADJ: "Galician"
+ YBS_federal_state_asturias: "Federal State of Asturias"
+ YBS_federal_state_asturias_DEF: "the Federal State of Asturias"
+ YBS_federal_state_asturias_ADJ: "Asturian"
+ YBS_federal_state_castille_leon: "Federal State of Castile and León"
+ YBS_federal_state_castille_leon_DEF: "the Federal State of Castile and León"
+ YBS_federal_state_castille_leon_ADJ: "Castellanoleonés"
+ YBS_federal_state_aragon: "Federal State of Aragón"
+ YBS_federal_state_aragon_DEF: "the Autonomous Federal State of Aragón"
+ YBS_federal_state_aragon_ADJ: "Aragónese"
+ YBS_federal_state_catalonia: "Federal State of Catalonia and Valencia"
+ YBS_federal_state_catalonia_DEF: "the Autonomous Federal State of Catalonia and Valencia"
+ YBS_federal_state_catalonia_ADJ: "Catalan-Valencian"
+ YBS_federal_state_balearics: "Balearic Federal State"
+ YBS_federal_state_balearics_DEF: "the Autonomous Federal State of the Balearic Islands"
+ YBS_federal_state_balearics_ADJ: "Balearic"
+ YBS_federal_state_andalusia: "Federal State of Andalusia"
+ YBS_federal_state_andalusia_DEF: "the Federal State of Andalusia"
+ YBS_federal_state_andalusia_ADJ: "Andalusian"
 
  YBS_unifier_democratic: "Bilbao Federal Government"
  YBS_unifier_democratic_DEF: "the Iberian Federal Government in Bilbao"
@@ -78,6 +105,12 @@
  YBS_iberian_unity_league: "Iberian Unity Front"
  YBS_iberian_federation: "Iberian Federation"
 
+
+# AUTONOMY STATES
+
+ autonomy_YBS_federal_state: "Federal State"
+ YBS_federal_state_forever_tt: "§RFederal States cannot leave the §YIberian Federation§!§R.§!"
+
 # PARTIES
 
  YBS_democratic_party: "EAJ"
@@ -104,14 +137,16 @@
 
  YBS_jose_antonio_aguirre_name: "José Antonio Aguirre"
  YBS_jose_antonio_aguirre_desc: "§YFull Name:§! §LJosé Antonio Aguirre y Lecube§!\n§YBorn:§! §LMarch 6. 1904, in Bilbao§!\n§YBackground:§! §LLeader of the Basque Nationalist Party and the person to declare Basque Independence in the turmoil of the Iberian Civil War. He is the first President of the Republic of the Basque Country.§! $XHH_is_historical_character_tt$"
+ YBS_eli_gallastegi_name: "Eli Gallastegi"
+ YBS_eli_gallastegi_desc: "§YFull Name:§! §LElias ''Eli'' Gallastegi Uriarte§!\n§YBorn:§! §LJuly 20. 1892, in Bilbao§!\n§YBackground:§! §LA former member of the Basque Nationalist Party, Eli formed his own party after the declaration of Basque Independence to promote more liberal policies which he was unable to in the EAJ.§! $YBS_changed_historical_character_tt$"
  YBS_tomas_bilbao_hospitalet_name: "Tomás Bilbao"
  YBS_tomas_bilbao_hospitalet_desc: "§YFull Name:§! §LTomás Bilbao Hospitalet§!\n§YBorn:§! §LSeptember 18. 1890, in Bilbao§!\n§YBackground:§! §LA Basque architect and socialist politician. He is one of the founders of the Basque National Action and previously served as minister of justice.§! $XHH_is_historical_character_tt$"
  YBS_trade_union_congress_name: "Sindikatuen Kongresua"
  YBS_rosa_lavina_name: "Rosa Laviña"
  YBS_rosa_lavina_desc: "§YFull Name:§! §LRosa Laviña i Carreras§!\n§YBorn:§! §LJanuary 14. 1918, in Palafrugell§!\n§YBackground:§! §LLeading member of the Libertarian Youth in Catalonia and supporter of the Esperanto Movement, Laviña i Carreras has moved to the Basque country to support the revolutionary struggle in their Iberian neighbour state.§! $XHH_is_historical_character_tt$"
  YBS_carlist_junta_name: "Basque Military Junta"
- YBS_handelskommission_name: "Reichshandelsonderkommission"
- YBS_handelskommission_desc: "§YEnglish Name:§! §LImperial Special Commission for Trade§!"
+ YBS_handelskommission_name: "Hansesonderkommission Iberien"
+ YBS_handelskommission_desc: "§YEnglish Name:§! §LHanseatic Special Commission in Iberia§!"
  YBS_julio_ruiz_de_alda_name: "Julio Ruiz de Alda"
  YBS_julio_ruiz_de_alda_desc: "§YFull Name:§! §LJulio Ruiz de Alda Miqueleiz§!\n§YBorn:§! §LOctober 7. 1897, in Lizarra§!\n§YBackground:§! §LTogether with Primo de Rivera, he founded the Falangist movement. He was an aviator in the Iberian National Army and completed a transatlantic flight in 1926 in the 'Plus Ultra'. With the collapse of Iberia, he returned to his homelands to fight for Falangism and Iberian reunification.§! $XHH_is_historical_character_tt$"
 
@@ -129,17 +164,21 @@
  YBS_german_general_name: "Hugo Friedrich-Morgna zu Bielefeld"
  YBS_german_general_desc: "§YFull Name:§! §LHugo Maria Friedrich-Morgna Freiherr zu Bielefeld§!\n§YBorn:§! §LJuli 1. 1889, in Bielefeld§!\n§YBackground:§! §LBorn the son of a small noble house, Hugo joined the military and went through officer training. Eager to fight, he volunteered to support the Basque Country military by both training new officers as well as leading troops in the field.§! $XHH_is_fictional_character_tt$"
 
+ YBS_changed_historical_character_tt: "\n \n£GFX_victory_points  §CThis is a historical character, though his depiction is not accurate to his OTL self.§!"
  YBS_generic_fictional_general_desc: "£GFX_victory_points  §YThis is a generic pre-determined character.§!"
 
 
 # TRAITS
 
  YBS_basque_nationalist: "Basque Nationalist"
+ YBS_liberal_reformer: "Liberal Reformer"
  YBS_socialist_architect: "Studied Architect"
  YBS_catalan_anarchist: "Catalan Anarchist"
  YBS_esperantist: "Esperantist"
  YBS_carlist_junta_trait: "Carlist Leadership"
  YBS_falangist_founder: "Co-Pilot of the Phalanx"
+
+ YBS_YBL_foreign_riches: "Balearic Financier"
 
  YBS_cooperative_trait: "Cooperative Federation"
 
@@ -182,9 +221,9 @@
  YBS_metal_dragon_doctrine_desc: "$ITA_ferrea_mole_ferreo_cuore_desc$"
  YBS_language_issue: "Language Divisions"
  YBS_language_issue_desc: "Our nation is divided between the native Basque people and the Spanish. Despite our government officially recognising both Spanish and Basque as our national languages, this division of culture and language is significantly affecting regular civilian life and our military cohesion."
- YBS_language_issue_basque_dominant: "Enforcing Euskara"
+ YBS_language_issue_basque_dominant: "Enforcing Euskara Monolingualism"
  YBS_language_issue_basque_dominant_desc: "The Basque language is being enforced as the only national language of [ROOT.GetNameDef]."
- YBS_language_issue_mending_ties: "Euskara-Español National Languages"
+ YBS_language_issue_mending_ties: "Euskara-Español Multilingualism"
  YBS_language_issue_mending_ties_desc: "The Basque and Spanish languages are both put in equal positions within the government and in education."
  YBS_public_esperanto_classes: "Nationwide Esperanto Classes"
  YBS_falangist_remnants: "Falangist Remnants"
@@ -192,7 +231,15 @@
  YBS_national_pride: "Harrotasun Nazionala"
  YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
  YBS_republican_opposition: "Republican Opposition"
+ YBS_personal_freedoms: "Guaranteed Personal Freedoms"
+ YBS_private_schools: "Privatised Education System"
+ YBS_economic_downturn: "Stunted Economic Growth"
+ YBS_bread_prices_regulated: "Affordable Consumer Goods"
+ YBS_national_autarky_idea: "National Autarky"
+ YBS_restored_fueros: "Restored Fueros"
+ YBS_national_healthcare_fund: "National Healthcare Fund"
  YBS_womens_rights_idea: "Gender Equality"
+ YBS_iberian_federation_spirit: "Iberian Federal Authority"
 
  YBS_mondragon_cooperative: "Mondragón Corporación Cooperativa"
 
@@ -200,6 +247,11 @@
 # DYNAMIC MODIFIERS
 
  YBS_mountains_fortified: "Fortified Mountain Passes"
+
+
+# OPINION MODIFIERS
+
+ YBS_state_catholicism: "Catholic Brotherhood"
 
 
 # FLAGS, TOOLTIPS N STUFF
@@ -228,8 +280,8 @@
  YBS_controls_all_iberian_states_tt_NOT: "Does not control all §YIberian states§!"
  YBS_owns_all_iberian_states_tt: "Owns all §YIberian states§!"
  YBS_owns_all_iberian_states_tt_NOT: "Does not own all §YIberian states§!"
- YBS_iberian_federation_complete_tt: "Owns all §YIberian states§! directly or via §Ysubjects§!"
- YBS_iberian_federation_complete_tt_NOT: "Does not own all §YIberian states§! directly or via §Ysubjects§!"
+ YBS_iberian_federation_complete_tt: "Has established all §YFederal States§! and united §YIberia§!"
+ YBS_iberian_federation_complete_tt_NOT: "Has not established all §YFederal States§! and united §YIberia§!"
  YBS_other_carlist_nation_tt: "Is a Carlist Nation"
  YBS_other_carlist_nation_tt_NOT: "Is not a Carlist Nation"
  YBS_democratic_iberian_nation_tt: "Is a democratic Iberian nation"
@@ -239,13 +291,16 @@
  YBS_civil_war_over_tt: "The §YIberian Civil War§! has ended"
  YBS_civil_war_over_tt_NOT: "The §YIberian Civil War§! has not ended"
 
+ YBS_owns_controls_highlighted_states_tt: "Owns and controls all §Yhighlighted§! states"
  YBS_facility_construction_tt: "If there are no other §YExperimental Facilities§! in §Y[$temp_facility_state_loc$.GetName]§!, we will gain a §Y$temp_facility_type_loc$§! in §Y[$temp_facility_province_loc$.GetCapitalVictoryPointName]§!.\n\n"
 
  YBS_red_cross_tech_effect_tt: "Enables §H$YBS_red_cross_tech$§!\n§H$field_hospital$\n     Batallion Modifier: All Infantry & Mot/Mech§!\n        Recovery Rate: §G+5.00%§!\n     Trickleback & War Support Protection: §G+10.00%§!\n     Suppression Bonus: §R-25%§!\n$MODIFIER_CAS_DAMAGE_REDUCTION$: §G+10.0%§!\n$MODIFIER_EXPERIENCE_LOSS_FACTOR$: §G-15.0%§!"
  YBS_infantry_tank_support_effect_tt: "Enables §H$YBS_infantry_tank_support$§!\n§H$light_tank_recon$\n     Batallion Modifier: All Infantry & Mot/Mech§!\n        Defense: §G+5.00%§!\n        Hard Attack: §G+10.00%§!\n     Breakthrough: §G+0.6§!\n     Hardness: §G+100%§!"
  YBS_better_armoured_cars_effect_tt: "Enables §H$YBS_better_armoured_cars$§!\n§H$armored_car$§!\n     §H$urban$§!\n        Attack: §G+10.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+5.0§!\n     Piercing: §G+50%§!\n     Hard Attack: §G15%§!\n§H$motorized$§!\n     §H$urban$§!\n        Attack: §G+20.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+2.0§!\n     Piercing: §G+20%§!\n     Hard Attack: §G15%§!\n§H$armored_car_recon$§!\n     §H$urban$§!\n        Attack: §G+10.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+3.0§!\n     Piercing: §G+50%§!\n     Hard Attack: §G10%§!\n§H$mot_recon$§!\n     §H$urban$§!\n        Attack: §G+20.0%§!\n        Movement: §G+5.0%§!\n     Organization: §G+1.0§!\n     Piercing: §G+10%§!\n     Hard Attack: §G10%§!"
 
- YBS_foreign_control_trigger_tt: "Has reached §R$RIGHT|0$%§! £GFX_puppet_texticon Foreign Economic Control"
+ YBS_foreign_control: "£GFX_puppet_texticon Foreign Economic Control"
+ YBS_foreign_control_effect_tt: "$YBS_foreign_control$: $RIGHT|-=1%%$"
+ YBS_foreign_control_trigger_tt: "Has reached §R$RIGHT|0$%§! $YBS_foreign_control$"
 
  YBS_mondragon_cooperative_founded: "The §YMondragón Corporation§! was founded"
 
@@ -306,6 +361,18 @@
  YBS_syndicalist_campaigns: "Rally the §rUnions§!"
  YBS_popular_front_campaigns: "Campaign for the §rPopular§! §SFront§!"
 
+ YBS_iberian_federation_cat: "The Iberian Federation"
+ YBS_create_spanish_federal_state: "Establish a Spanish Federal State"
+ YBS_create_portuguese_federal_state: "Establish a Portuguese Federal State"
+ YBS_create_galician_federal_state: "Establish a Galician Federal State"
+ YBS_create_asturian_federal_state: "Establish an Asturian Federal State"
+ YBS_create_castile_leonese_federal_state: "Establish a Castile-Leonese Federal State"
+ YBS_create_aragonese_federal_state: "Establish an Aragónese Federal State"
+ YBS_create_catalan_federal_state: "Establish a Catalan-Valencian Federal State"
+ YBS_create_balearic_federal_state: "Establish a Balearic Federal State"
+ YBS_create_andalusian_federal_state: "Establish an Andalusian Federal State"
+ YBS_create_federal_state_tt: "The §Yhighlighted states§! will be transferred to our subject §Y$YBS_fedstate_loc$§!."
+
  YBS_spanish_civil_war_cat: "The Iberian Civil War Continues"
  YBS_start_civil_war_in_iberia: "Restart the Civil War with [FROM.GetName]"
  YBS_justifying_civil_war: "currently preparing to restart the civil war"
@@ -323,6 +390,17 @@
 
  YBS_turn_the_tide: "Turn the Tide"
  YBS_turn_the_tide_desc: "Our enemy has been weakened from attacking our defences. It is time for a decisive attack!"
+
+ YBS_foreign_economic_control_cat: "Negotiations with Foreign Monopolies"
+ YBS_foreign_control_header: "Corporate Influence"
+ YBS_foreign_control_text: "§gThanks to the economic reforms of the §!§lBasque Development Party§!§g, foreign corporations have gained significantly in influence within the §!§YBasque Country§!§g. Should their hold over our economic affairs become too strong, they are likely to take §!§Rfull control§!§g of our internal and external affairs.§!"
+ YBS_foreign_control_header2: "$YBS_foreign_control$:"
+ YBS_foreign_control_percentage: "[?ROOT.YBS_foreign_control|0].0%"
+ YBS_lobbying_efforts: "Corporate Lobbying Efforts"
+ YBS_arms_contracts: "Government Arms Contracts"
+ YBS_building_buffs: "Government Construction Projects"
+ YBS_foreign_arms_imports: "Foreign Weapon Imports"
+ YBS_reduce_corporate_powers: "Limit Corporate Rights"
 
  YBS_socialist_praxis_decision_cat: "Realise Democratic Socialism"
  YBS_socialist_praxis_active: "currently undertaking a project"
@@ -370,13 +448,14 @@
 
  YBS_liberal_victory: "Liberal Victory"
  YBS_liberal_victory_desc: ""
- YBS_deregulate_the_industries: "Reduce Regulations"
+ YBS_deregulate_the_industries: "Open up the Market"
  YBS_deregulate_the_industries_desc: ""
  YBS_sell_to_the_corporations: "Privatise the Construction Industry"
  YBS_sell_to_the_corporations_desc: ""
  YBS_the_corporatist_model: "Tax Exemptions"
  YBS_the_corporatist_model_desc: ""
- YBS_trade_council: "Republic Trade Council"
+ YBS_the_corporatist_model_tt: "§RLocks you out from taking the foci §!§Y$YBS_unity_through_democracy$§!§R or §!§Y$YBS_guardian_of_iberian_democracy$§!§R.§!"
+ YBS_trade_council: "Basque Country Trade Council"
  YBS_trade_council_desc: ""
  YBS_streamlining_the_administration: "Streamlining the Administration"
  YBS_streamlining_the_administration_desc: ""
@@ -388,7 +467,7 @@
  YBS_iberian_bastion_of_liberalism_desc: ""
  YBS_protect_personal_freedoms: "Protect Personal Freedoms"
  YBS_protect_personal_freedoms_desc: ""
- YBS_modernise_schools: "Modernise the Schools"
+ YBS_modernise_schools: "Privatise the Schools"
  YBS_modernise_schools_desc: ""
  YBS_found_IISL_lib: "Institut International de Sociologie du Droit"
  YBS_found_IISL_lib_desc: ""
@@ -454,11 +533,11 @@
 
  YBS_unity_through_democracy: "Unity through Democracy"
  YBS_unity_through_democracy_desc: ""
- YBS_march_into_asturias: "March into Austurias"
+ YBS_march_into_asturias: "March into Asturias"
  YBS_march_into_asturias_desc: ""
  YBS_integrate_galicia: "Integrate Galicia"
  YBS_integrate_galicia_desc: ""
- YBS_restore_order_in_catalonia: "Restore Order in Catalonia"
+ YBS_restore_order_in_catalonia: "Restore Order in Aragón and Catalonia"
  YBS_restore_order_in_catalonia_desc: ""
  YBS_stop_the_french: "Banish the Legion"
  YBS_stop_the_french_desc: ""
@@ -475,20 +554,17 @@
  YBS_establish_the_federal_army_desc: ""
  YBS_international_volunteers: "International Volunteer Corps"
  YBS_international_volunteers_desc: ""
+ YBS_international_volunteers_tt: "We will gain §YManpower§! based on §Ydemocratic popularity§! across all other nations. (The amount of manpower gained will only be visible after completing the focus.)"
  YBS_seize_army_depots: "Seize Military Depots"
  YBS_seize_army_depots_desc: ""
  YBS_for_the_republican_dream: "For the Republican Dream!"
  YBS_for_the_republican_dream_desc: ""
- YBS_victory_in_the_civil_war: "Iberia United!"
- YBS_victory_in_the_civil_war_desc: ""
- YBS_victory_in_the_civil_war_regional: "Peace in Iberia"
- YBS_victory_in_the_civil_war_regional_desc: ""
 
  YBS_guardian_of_iberian_democracy: "Guardian of Iberian Democracy"
  YBS_guardian_of_iberian_democracy_desc: ""
- YBS_establish_catalan_federal_state: "Establish a Catalan Authority"
- YBS_establish_catalan_federal_state_desc: ""
- YBS_reach_out_to_galicia: "Contact Galician Democrats"
+ YBS_infiltrate_catalonia: "Infiltrate Aragón and Catalonia"
+ YBS_infiltrate_catalonia_desc: ""
+ YBS_reach_out_to_galicia: "Ally Galician Democrats"
  YBS_reach_out_to_galicia_desc: ""
  YBS_secure_castille_and_leon: "Secure Castille and Leon"
  YBS_secure_castille_and_leon_desc: ""
@@ -497,13 +573,19 @@
  YBS_move_south: "Move South"
  YBS_move_south_desc: ""
 
+ YBS_victory_in_the_civil_war: "Iberia United!"
+ YBS_victory_in_the_civil_war_desc: ""
+ YBS_victory_in_the_civil_war_regional: "Peace in Iberia"
+ YBS_victory_in_the_civil_war_regional_desc: ""
+
  YBS_rule_of_capital: "Corporate Takeover"
  YBS_rule_of_capital_desc: ""
+ YBS_rule_of_capital_tt: "§YAuto-completed§! if $YBS_foreign_control$ reaches §R100%§! and §Yprevious foci§! were completed\n "
  YBS_approach_the_balearics: "Approach Ordinas"
  YBS_approach_the_balearics_desc: ""
  YBS_lobby_for_intervention: "Lobby for Intervention"
  YBS_lobby_for_intervention_desc: ""
- YBS_lobby_for_intervention_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to declare war on other §YIberian nations§!"
+ YBS_lobby_for_intervention_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to declare war on other §YIberian nations§!."
 
  YBS_we_will_always_have_hope: "We Will Always Have Hope"
  YBS_we_will_always_have_hope_desc: ""
@@ -687,6 +769,45 @@
  YBS_post_election_events.3.t: "Exiled Basque Falangists arrive in [ROOT.capital.GetCapitalVictoryPointName]"
  YBS_post_election_events.3.desc: "The falangist branch in the Basque Country has been exiled from the country and now our brothers arrive in our capital as heroes that fought for our beliefs in a foreign land."
  YBS_post_election_events.3.a: "Welcome, Brothers!"
+
+ YBS_post_election_events.4.t: "Corporations seize Control of the Nation"
+ YBS_post_election_events.4.desc: "With the growing influence of the Hanseatic League and other foreign companies, the liberals have become a de facto puppet government of their corporate overlords. Now a special commission has been established to officially represent Hanseatic interests in the Basque Country and Iberia."
+ YBS_post_election_events.4.a: "Time to make some more money."
+
+ YBS_diplo_events.1.t: "[FROM.GetNameDefCap] officially adopts State Catholicism"
+ YBS_diplo_events.1.desc: "The [FROM.GetAdjective] government recently passed a new constitutional referendum in which Catholicism was officially adopted as the state religion of [FROM.GetNameDef]."
+ YBS_diplo_events.1.a: "May God bless them."
+
+ YBS_diplo_events.2.t: "[FROM.GetAdjectiveCap] wants us to join them"
+ YBS_diplo_events.2.desc: ""
+ YBS_diplo_events.2.a: "Very well, together."
+ YBS_diplo_events.2.b: "We cannot surrender our independence!"
+
+ YBS_diplo_events.3.t: "Galicia accepts our Protection!"
+ YBS_diplo_events.3.desc: "The Galician government has accepted our proposal and has handed over control over their lands to us."
+ YBS_diplo_events.3.a: "United we stand!"
+
+ YBS_diplo_events.4.t: "Galicia refuses!"
+ YBS_diplo_events.4.desc: ""
+ YBS_diplo_events.4.a: "I suppose not today."
+
+ YBS_diplo_events.5.t: "[FROM.GetNameDefCap] prepares for War!"
+ YBS_diplo_events.5.desc: "Recent reports from our border show a buildup of [FROM.GetAdjective] troops. Our officers worry that this indicates a continuation of the Iberian Civil War between us and [FROM.GetNameDef]."
+ YBS_diplo_events.5.a: "Ready the Army!"
+ YBS_diplo_events.5.a.tt: "[FROM.GetNameWithFlag] will declare §RWar§! in §Y50 Days§!."
+
+ YBS_diplo_events.6.t: "[FROM.GetNameDefCap] offers a Merger"
+ YBS_diplo_events.6.desc: "WIP"
+ YBS_diplo_events.6.a: "This will increase our profits!"
+ YBS_diplo_events.6.b: "We can't risk this."
+
+ YBS_diplo_events.7: "Ordinas accepts the Merger"
+ YBS_diplo_events.7.desc: "The government of the Balearic Islands has accepted our offer for a merger!"
+ YBS_diplo_events.7.a: "Record profits!"
+
+ YBS_diplo_events.8: "Ordinas refuses the Merger"
+ YBS_diplo_events.8.desc: "The government of the Balearic Islands has refused our offer to combine our enterprises."
+ YBS_diplo_events.8.a: "It could have been a great opportunity."
 
  YBS_esperanto_events.1.t: "A Flag for the Republic"
  YBS_esperanto_events.1.desc: "Upon the declaration of the Republic of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexei Kemersky, insists upon its name as 'Tricolour' in a symbolic sense, as many notable republics in history were represented by them.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."

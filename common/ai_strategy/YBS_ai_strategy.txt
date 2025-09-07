@@ -1,0 +1,252 @@
+YBS_ignore_anarchy = {
+	allowed = { original_tag = YBS }
+
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		mission_target = ZZZ
+		value = -1000
+	}
+}
+
+YBS_dont_bother_guaranteeing = {
+	allowed = { original_tag = YBS }
+
+	enable = {
+		has_government = democratic
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -1000
+	}
+}
+
+YBS_be_aggressive_during_the_cw = {
+	allowed = { original_tag = YBS }
+
+	enable = {
+		YBS_civil_war_over = no
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = build_army
+        id = suppression
+        value = -1000
+    }
+    ai_strategy = {
+        type = build_army
+        id = infantry
+        value = 10
+    }
+    ai_strategy = {
+        type = role_ratio
+        id = mountaineers
+        value = 30
+    }
+    ai_strategy = {
+        type = build_army
+        id = mountaineers
+        value = 200
+    }
+	ai_strategy = {
+        type = force_build_armies
+        value = 1000
+    }
+
+    ai_strategy = {
+		type = front_control
+
+		state_trigger = {
+			FROM = { has_war_with = FROM.FROM }
+			FROM = { divisions_in_state = { state = ROOT size < 1 } }
+		}
+
+		ratio = 0.8
+
+		priority = 5000
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+    ai_strategy = {
+		type = front_control
+
+		state_trigger = {
+			FROM = { has_war_with = FROM.FROM }
+			FROM = { divisions_in_state = { state = ROOT size < 3 } }
+		}
+
+		ratio = 0.5
+
+		priority = 5000
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+
+    ai_strategy = {
+		type = front_control
+
+		state_trigger = {
+			FROM = { has_war_with = FROM.FROM }
+			FROM = { YBS_is_iberian_state = no }
+		}
+
+		ratio = 0.5
+
+		priority = 5000
+		ordertype = front
+		execution_type = careful
+		execute_order = no
+	}
+}
+
+YBS_build_infrastructure_early = {
+    allowed = { original_tag = YBS }
+
+	enable = {
+		has_idea = YBS_underdeveloped_economy
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = build_building
+        id = infrastructure
+        target = 172
+        value = 1000
+    }
+    ai_strategy = {
+        type = build_building
+        id = infrastructure
+        target = 792
+        value = 1000
+    }
+    ai_strategy = {
+        type = build_building
+        id = infrastructure
+        target = 1097
+        value = 1000
+    }
+    ai_strategy = {
+        type = build_building
+        id = infrastructure
+        target = 1098
+        value = 1000
+    }
+
+}
+
+YBS_ignore_YGL_puppet_if_no_border = {
+    allowed = { original_tag = YBS }
+
+	enable = {
+        YGL = { is_subject_of = ROOT }
+		NOT = { is_neighbor_of = YGL }
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = dont_defend_ally_borders
+        id = YGL
+        value = 10
+    }
+}
+
+YBS_improve_opinions_for_boat_purchases_XHH = {
+    allowed = { original_tag = YBS }
+
+	enable = {
+        has_country_flag = YBS_purchase_old_ships_flag
+        NOT = { XHH = { has_country_flag = sold_ships_to_us@ROOT } }
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = XHH
+        value = 1000
+        target = improve_relation
+    }
+}
+
+YBS_improve_opinions_for_boat_purchases_XHO = {
+    allowed = { original_tag = YBS }
+
+	enable = {
+        has_country_flag = YBS_purchase_old_ships_flag
+        NOT = { XHO = { has_country_flag = sold_ships_to_us@ROOT } }
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = XHO
+        value = 1000
+        target = improve_relation
+    }
+}
+
+YBS_improve_opinions_for_boat_purchases_XVE = {
+    allowed = { original_tag = YBS }
+
+	enable = {
+        has_country_flag = YBS_purchase_old_ships_flag
+        NOT = { XVE = { has_country_flag = sold_ships_to_us@ROOT } }
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = XVE
+        value = 1000
+        target = improve_relation
+    }
+}
+
+YBS_improve_opinions_for_boat_purchases_XEX = {
+    allowed = { original_tag = YBS }
+
+	enable = {
+        has_country_flag = YBS_purchase_old_ships_flag
+        NOT = { XEX = { has_country_flag = sold_ships_to_us@ROOT } }
+	}
+	abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = XEX
+        value = 1000
+        target = improve_relation
+    }
+}
+
+YBS_get_the_balearics = {
+
+	allowed = { original_tag = YBS }
+
+	enable = {
+		has_war_with = YBL
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 100
+	}
+
+	ai_strategy = {
+		type = invade
+		id = YBL
+		value = 500
+	}
+}

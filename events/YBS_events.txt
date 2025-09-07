@@ -1,5 +1,6 @@
 add_namespace = YBS_election_events
 add_namespace = YBS_post_election_events
+add_namespace = YBS_diplo_events
 add_namespace = YBS_esperanto_events
 add_namespace = YBS_news_events
 
@@ -39,6 +40,17 @@ country_event = { # Carlist Conspiracy
 
 		custom_effect_tooltip = YBS_election_events.1.a.tt
         set_country_flag = YBS_carlist_coup_stopped
+
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YBS_ai_path_nationalist
+                    has_country_flag = YBS_ai_path_carlist
+                }
+            }
+        }
     }
 
     option = {
@@ -52,6 +64,17 @@ country_event = { # Carlist Conspiracy
 
 		custom_effect_tooltip = YBS_election_events.1.b.tt
         set_country_flag = YBS_carlist_compromise_made
+
+        ai_chance = {
+            base = 0
+            modifier = {
+                add = 10
+                OR = {
+                    has_country_flag = YBS_ai_path_nationalist
+                    has_country_flag = YBS_ai_path_carlist
+                }
+            }
+        }
     }
 }
 
@@ -119,7 +142,7 @@ country_event = { # ELECTION
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        # promote_character = 
+        promote_character = YBS_eli_gallastegi
     }
 
     option = { # Socialists
@@ -168,7 +191,7 @@ country_event = { # ELECTION
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        # promote_character = 
+        promote_character = YBS_tomas_bilbao_hospitalet
     }
 
     option = { # Syndicalists
@@ -280,10 +303,7 @@ country_event = { # Possible Popular Front?
             base = 1
             modifier = {
                 factor = 0
-                OR = {
-                    has_country_flag = YBS_ai_path_socialist
-                    has_country_flag = YBS_ai_path_syndicalist
-                }
+                NOT = { has_country_flag = YBS_ai_path_popular_front }
             }
         }
         country_event = {
@@ -465,7 +485,7 @@ country_event = { # Falangist Agitation
         hidden_effect = {
             country_event = {
                 id = YBS_post_election_events.1
-                days = 100
+                days = 120
             }
         }
     }
@@ -642,6 +662,278 @@ country_event = { # Exiled Falangists arrive from YBS
                 }
             }
         }
+    }
+}
+
+country_event = { # Corporate Takeover triggered
+	id = YBS_post_election_events.4
+	title = YBS_post_election_events.4.t
+	desc = YBS_post_election_events.4.desc
+    picture = GFX_report_event_generic_stock_traders
+
+    fire_only_once = yes
+	
+	trigger = {
+		tag = YBS
+		has_completed_focus = YBS_the_corporatist_model
+        check_variable = { YBS_foreign_control > 99 }
+	}
+
+    mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+        name = YBS_post_election_events.4.a
+        complete_national_focus = YBS_rule_of_capital
+    }
+}
+
+country_event = { # YBS appoints new bishop
+	id = YBS_diplo_events.1
+	title = YBS_diplo_events.1.t
+	desc = YBS_diplo_events.1.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.1.a
+        add_political_power = 20
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_opinion_modifier = {
+            modifier = YBS_state_catholicism
+            target = FROM
+        }
+        reverse_add_opinion_modifier = {
+            modifier = YBS_state_catholicism
+            target = FROM
+        }
+    }
+}
+
+country_event = { # YBS approaches YGL
+	id = YBS_diplo_events.2
+	title = YBS_diplo_events.2.t
+	desc = YBS_diplo_events.2.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.2.a
+        ai_chance = {
+            base = 4
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+					target = FROM
+					value > 50
+				}
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.3 days = 3 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
+            }
+        }
+        custom_effect_tooltip = GAME_OVER_TT
+    }
+
+    option = {
+        name = YBS_diplo_events.2.b
+        ai_chance = {
+            base = 1
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.4 days = 4 } }
+    }
+}
+
+country_event = { # YBS approaches YGL / Accepted
+	id = YBS_diplo_events.3
+	title = YBS_diplo_events.3.t
+	desc = YBS_diplo_events.3.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.3.a
+        annex_country = {
+            target = FROM
+            transfer_troops = no
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_state = {
+            limit = {
+                is_core_of = FROM
+            }
+            add_core_of = ROOT
+        }
+    }
+}
+
+country_event = { # YBS approaches YGL / Refused
+	id = YBS_diplo_events.4
+	title = YBS_diplo_events.4.t
+	desc = YBS_diplo_events.4.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.4.a
+        add_political_power = -25
+    }
+}
+
+country_event = { # YBS will declare war on us
+	id = YBS_diplo_events.5
+	title = YBS_diplo_events.5.t
+	desc = YBS_diplo_events.5.desc
+    picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.5.a
+        custom_effect_tooltip = YBS_diplo_events.5.a.tt
+        add_ai_strategy = {
+            type = prepare_for_war
+            id = FROM
+            value = 10
+        }
+        FROM = {
+            add_ai_strategy = {
+                type = prepare_for_war
+                id = ROOT
+                value = 1000
+            }
+        }
+    }
+}
+
+country_event = { # YBS approaches YBL
+	id = YBS_diplo_events.6
+	title = YBS_diplo_events.6.t
+	desc = YBS_diplo_events.6.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.6.a
+        ai_chance = {
+            base = 3
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+					target = FROM
+					value > 50
+				}
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.7 days = 3 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        YBL_juan_march_ordinas = {
+            set_nationality = FROM
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
+            }
+        }
+        custom_effect_tooltip = GAME_OVER_TT
+    }
+
+    option = {
+        name = YBS_diplo_events.6.b
+        ai_chance = {
+            base = 1
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.8 days = 4 } }
+    }
+}
+
+country_event = { # YBS approaches YBL / Accepted
+	id = YBS_diplo_events.7
+	title = YBS_diplo_events.7.t
+	desc = YBS_diplo_events.7.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.7.a
+        annex_country = {
+            target = FROM
+            transfer_troops = yes
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_state = {
+            limit = {
+                is_core_of = FROM
+            }
+            add_core_of = ROOT
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+        custom_effect_tooltip = available_political_advisor
+        add_advisor_role = {
+            character = YBL_juan_march_ordinas
+            activate = no
+            advisor = {
+                slot = political_advisor
+                cost = 100
+                idea_token = YBL_juan_march_ordinas_YBS_token
+                traits = {
+                    YBS_YBL_foreign_riches
+                }
+            }
+        }
+    }
+}
+
+country_event = { # YBS approaches YBL / Refused
+	id = YBS_diplo_events.8
+	title = YBS_diplo_events.8.t
+	desc = YBS_diplo_events.8.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.8.a
+        add_political_power = -25
     }
 }
 

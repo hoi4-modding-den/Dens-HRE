@@ -1,0 +1,11 @@
+scripted_gui = {
+	YBS_foreign_control_decision_ui = {
+		context_type = decision_category
+		window_name = "YBS_foreign_control_decision_ui_window"
+		properties = {  
+			YBS_foreign_control_progress_bar = {
+				frame = YBS.YBS_foreign_control
+			}
+		}		
+	}	
+}

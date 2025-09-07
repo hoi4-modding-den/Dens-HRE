@@ -472,3 +472,43 @@ YBS_get_ships_from_country = {
 		}
 	}
 }
+
+YBS_become_federal_state = {
+	set_country_flag = YBS_federal_state_puppet
+	ROOT = {
+		set_autonomy = {
+			target = PREV
+			autonomous_state = autonomy_YBS_federal_state
+			end_wars = no
+			end_civil_wars = no
+		}
+	}
+	load_focus_tree = {
+		tree = generic_focus
+		keep_completed = no
+	}
+	add_ideas = YBS_iberian_federation_spirit
+}
+
+YBS_calc_volunteer_manpower = {
+	every_other_country = {
+		limit = {
+			democratic > 0
+			YBS_is_iberian_country = no
+		}
+		set_variable = { YBS_dem_pop_to_manpower = party_popularity@democratic }
+		if = {
+			limit = {
+				is_major = yes
+			}
+			multiply_variable =  { YBS_dem_pop_to_manpower =  40000 }
+
+		}
+		else = {
+			multiply_variable =  { YBS_dem_pop_to_manpower =  3000 }
+		}
+
+		add_to_variable = { ROOT.YBS_volunteer_manpower = YBS_dem_pop_to_manpower }
+
+	}
+}

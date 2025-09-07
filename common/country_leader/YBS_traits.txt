@@ -9,6 +9,14 @@ leader_traits = {
 		defensive_war_stability_factor = 0.2
     }
 
+	YBS_liberal_reformer = {
+        random = no
+
+        economy_cost_factor = -0.25
+		trade_laws_cost_factor = -0.25
+		embargo_cost_factor = 0.5
+    }
+
 	YBS_socialist_architect = {
         random = no
 		
@@ -66,6 +74,18 @@ leader_traits = {
 	# 16 = ARTILLERY
 	# 17 = HORSE
 	# 18 = SALUTE
+
+	YBS_YBL_foreign_riches = {
+		random = no
+		sprite = 10
+
+		country_resource_oil = 20
+		country_resource_aluminium = 20
+		country_resource_rubber = 20
+		country_resource_tungsten = 20
+		country_resource_steel = 20
+		country_resource_chromium = 20
+	}
 
     # Concerns
 
