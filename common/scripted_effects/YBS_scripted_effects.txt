@@ -488,6 +488,14 @@ YBS_become_federal_state = {
 		keep_completed = no
 	}
 	add_ideas = YBS_iberian_federation_spirit
+
+	if = {
+		limit = {
+			has_country_flag = YBS_federal_army_formed
+		}
+
+		add_ideas = YBS_federal_army
+	}
 }
 
 YBS_calc_volunteer_manpower = {

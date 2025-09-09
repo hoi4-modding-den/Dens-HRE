@@ -432,6 +432,27 @@ ideas = {
 
 			modifier = {
 				conscription_factor = 0.2
+				non_core_manpower = 0.25
+			}
+		}
+
+		YBS_militia_recruitment = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				recruitable_population_factor = 0.1
+				mobilization_speed = 0.25
 			}
 		}
 
@@ -571,6 +592,26 @@ ideas = {
 			}
 		}
 
+		YBS_esperanto_clubs_idea = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.05
+                compliance_gain = 0.01
+			}
+		}
+
 		YBS_public_esperanto_classes = {
 
 			#picture = 
@@ -673,6 +714,56 @@ ideas = {
 				stability_factor = -0.2
 				political_advisor_cost_factor = 0.5
 				democratic_drift = 0.01
+			}
+		}
+
+		YBS_deregulated_capitalism = {
+
+			picture = RAJ_external_investments
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			cancel = {
+				has_completed_focus = YBS_rule_of_capital
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		YBS_deregulated_capitalism_2 = {
+
+			name = YBS_deregulated_capitalism
+			picture = RAJ_external_investments
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			cancel = {
+				has_completed_focus = YBS_rule_of_capital
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.15
+				political_advisor_cost_factor = -0.5
 			}
 		}
 
@@ -842,15 +933,14 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				political_power_factor = -0.15
 				conscription = 0.002
 				consumer_goods_factor = -0.05
 			}
 		}
 
-		YBS_iberian_federation_spirit = {
+		YBS_mobilise_the_farmers_idea = {
 
-			picture = generic_pp_unity_bonus
+			picture = generic_communist_army
 
 			allowed = {
 				original_tag = YBS
@@ -866,6 +956,51 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				mobilization_speed = 0.1
+				monthly_population = 0.25
+			}
+		}
+
+		YBS_defenders_of_the_peasantry_idea = {
+
+			picture = generic_communist_army
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				mobilization_speed = 0.1
+				monthly_population = 0.25
+				army_core_defence_factor = 0.1
+				attrition = -0.05
+			}
+		}
+
+		YBS_iberian_federation_spirit = {
+
+			picture = generic_pp_unity_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			modifier = {
 				political_power_factor = 0.15
 				conscription_factor = 0.05
 				consumer_goods_factor = -0.1
@@ -873,9 +1008,180 @@ ideas = {
 			}
 		}
 
+		YBS_federal_army = {
+
+			picture = generic_war_preparation
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				army_attack_factor = 0.08
+				conscription_factor = 0.1
+			}
+		}
+
+		YBS_esperanto_republic_idea = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				defensive_war_stability_factor = 0.2
+				offensive_war_stability_factor = -0.2
+                compliance_gain = 0.01
+			}
+		}
+
+		YBS_esperanto_internationale_idea = {
+
+			#picture = 
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.2
+				defensive_war_stability_factor = 0.2
+				offensive_war_stability_factor = -0.2
+                compliance_gain = 0.05
+			}
+		}
+
+		YBS_esperanto_volunteer_corps = {
+
+			picture = generic_volunteer_expedition_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 1000
+				send_volunteer_size = 5
+				send_volunteers_tension = -1
+			}
+		}
+
+		YBS_insurrectionary_army = {
+
+			picture = MEX_revolutionary_army
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.05
+				resistance_damage_to_garrison_on_our_occupied_states = 0.25
+				resistance_growth_on_our_occupied_states = 0.25
+			}
+		}
+
 	}
 
 	industrial_concern = {
+
+		YBS_construction_concern = {
+
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				original_tag = YBS
+			}
+
+			available = {
+				has_completed_focus = YBS_sell_to_the_corporations
+			}
+
+			visible = {
+				NOT = { has_completed_focus = YBS_military_coup }
+				NOT = { has_completed_focus = YBS_nationalist_victory }
+				NOT = { has_completed_focus = YBS_socialist_victory }
+				NOT = { has_completed_focus = YBS_syndicalist_victory }
+			}
+
+			cost = 100
+			
+			modifier = {
+				production_speed_buildings_factor = 0.15
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			
+			traits = { YBS_foreign_construction_company_trait }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+		YBS_aluminium_mill = {
+
+			picture = generic_industrial_concern_3
+			
+			allowed = {
+				original_tag = YBS
+			}
+
+			available = {
+				
+			}
+
+			cost = 100
+			
+			modifier = {
+				country_resource_aluminium = 24
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			
+			traits = { YBS_aluminium_mill_trait }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
 
 		YBS_mondragon_cooperative = {
 
@@ -894,6 +1200,10 @@ ideas = {
 			modifier = {
 				production_factory_max_efficiency_factor = 0.1
                 production_factory_efficiency_gain_factor = 0.02
+			}
+
+			research_bonus = {
+				industry = 0.1
 			}
 			
 			traits = { YBS_cooperative_trait }

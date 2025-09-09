@@ -898,6 +898,156 @@ YBS_iberian_federation_cat = {
 
 }
 
+YBS_seeds_of_discord_cat = {
+    
+    YBS_make_false_nap = {
+
+		icon = eng_trade_unions_support
+
+		ai_will_do = {
+			base = 20
+		}
+
+		available = {
+            NOT = { has_country_flag = YBS_doing_subversive_activity }
+			OR = {
+                is_neighbor_of = FROM
+                any_other_country = {
+                    is_ally_with = ROOT
+                    is_neighbor_of = FROM
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    FROM = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = FROM }
+		}
+
+        visible = {
+            NOT = { has_war_with = FROM }
+            NOT = { is_ally_with = FROM }
+            NOT = { has_non_aggression_pact_with = FROM }
+        }
+
+		cancel_trigger = {
+			OR = {
+                has_war_with = FROM
+                is_ally_with = FROM
+            }
+		}
+
+		target_trigger = {
+			FROM = {
+				YBS_is_iberian_country = yes
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 50
+
+        complete_effect = {
+            FROM = {
+                #country_event = YBS_diplo_events.
+            }
+        }
+	}
+
+    YBS_break_false_nap = {
+
+		icon = generic_prepare_civil_war
+
+		ai_will_do = {
+			base = 25
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = FROM
+            }
+            modifier = {
+                factor = 0.1
+                NOT = { is_neighbor_of = FROM }
+                NOT = {
+                    any_other_country = {
+                        is_ally_with = ROOT
+                        is_neighbor_of = FROM
+                    }
+                }
+            }
+		}
+
+		available = {
+            NOT = { has_country_flag = YBS_justifying_civil_war }
+			OR = {
+                is_neighbor_of = FROM
+                any_other_country = {
+                    is_ally_with = ROOT
+                    is_neighbor_of = FROM
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    FROM = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = FROM }
+            has_non_aggression_pact_with = FROM
+		}
+
+        visible = {
+            NOT = { has_war_with = FROM }
+            NOT = { is_ally_with = FROM }
+            has_non_aggression_pact_with = FROM
+        }
+
+		cancel_trigger = {
+			OR = {
+                has_war_with = FROM
+                is_ally_with = FROM
+                NOT = { has_non_aggression_pact_with = FROM }
+            }
+		}
+
+		target_trigger = {
+			FROM = {
+				YBS_is_iberian_country = yes
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 50
+
+		days_remove = 50
+
+        complete_effect = {
+            set_country_flag = YBS_justifying_civil_war
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = FROM
+                type = civil_war
+            }
+            clr_country_flag = YBS_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YBS_justifying_civil_war
+        }
+	}
+
+}
+
 YBS_spanish_civil_war_cat = {
     
     YBS_start_civil_war_in_iberia = {

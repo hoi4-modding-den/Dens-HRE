@@ -200,6 +200,43 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_focus_YBS_attack_galicia"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_attack_galicia.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_YBS_attack_galicia_shine"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_attack_galicia.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_attack_galicia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_attack_galicia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
 		name = "GFX_focus_YBS_attack_iberia"
 		texturefile = "gfx/interface/goals/YBS/focus_YBS_attack_iberia.png"
 	}
@@ -223,6 +260,80 @@ spriteTypes = {
 
 		animation = {
 			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_attack_iberia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_YBS_befriend_balearic_islands"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_befriend_balearic_islands.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_YBS_befriend_balearic_islands_shine"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_befriend_balearic_islands.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_befriend_balearic_islands.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_befriend_balearic_islands.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_YBS_befriend_galicia"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_befriend_galicia.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_YBS_befriend_galicia_shine"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_befriend_galicia.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_befriend_galicia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_befriend_galicia.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -273,6 +384,43 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
+	spriteType = {
+		name = "GFX_focus_YBS_esperanto_education"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_esperanto_education.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_YBS_esperanto_education_shine"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_esperanto_education.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_esperanto_education.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_esperanto_education.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
     spriteType = {
 		name = "GFX_focus_YBS_fishing"
 		texturefile = "gfx/interface/goals/YBS/focus_YBS_fishing.png"
@@ -297,6 +445,80 @@ spriteTypes = {
 
 		animation = {
 			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_fishing.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_YBS_liberal_victory"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_free_market.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_YBS_liberal_victory_shine"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_free_market.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_free_market.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_free_market.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_YBS_protect_the_basque_country"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_protect_the_basque_country.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_YBS_protect_the_basque_country_shine"
+		texturefile = "gfx/interface/goals/YBS/focus_YBS_protect_the_basque_country.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_protect_the_basque_country.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/YBS/focus_YBS_protect_the_basque_country.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

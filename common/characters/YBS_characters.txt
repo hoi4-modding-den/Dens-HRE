@@ -26,7 +26,7 @@ characters = {
 		}
 		country_leader = {
 			traits = { YBS_liberal_reformer }
-			ideology = hyper_capitalism
+			ideology = YBS_market_liberalism
 			desc = YBS_eli_gallastegi_desc
 			expire = "1950.1.1.1"
 			id = -1
@@ -42,7 +42,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { YBS_socialist_architect }
+			traits = { YBS_socialist_architect YBS_anti_fascist_socialist }
 			ideology = socialism
 			desc = YBS_tomas_bilbao_hospitalet_desc
 			expire = "1950.1.1.1"

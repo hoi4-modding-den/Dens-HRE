@@ -611,6 +611,10 @@ country_event = { # Restoring Order
 	option = { # Hold a 'Parade'
         name = YBS_post_election_events.2.a
         add_command_power = -40
+        add_manpower = -30
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         add_equipment_to_stockpile = {
             type = armored_car_equipment
             amount = -20
@@ -629,7 +633,10 @@ country_event = { # Restoring Order
 
     option = { # Arm the Garrison
         name = YBS_post_election_events.2.b
-        add_manpower = -30
+        add_manpower = -400
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         add_equipment_to_stockpile = {
             type = infantry_equipment
             amount = -100
@@ -686,6 +693,27 @@ country_event = { # Corporate Takeover triggered
 	option = {
         name = YBS_post_election_events.4.a
         complete_national_focus = YBS_rule_of_capital
+    }
+}
+
+country_event = { # Guns of the Patriots
+	id = YBS_post_election_events.5
+	title = YBS_post_election_events.5.t
+	desc = YBS_post_election_events.5.desc
+    picture = GFX_report_event_spr_civil_war_equipment
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_post_election_events.5.a
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 5000
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 250
+        }
     }
 }
 
@@ -937,6 +965,173 @@ country_event = { # YBS approaches YBL / Refused
     }
 }
 
+country_event = { # YBS appropriates our assets!
+	id = YBS_diplo_events.9
+	title = YBS_diplo_events.9.t
+	desc = YBS_diplo_events.9.desc
+    picture = GFX_report_event_generic_stock_traders
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.9.a
+        add_political_power = -25
+        if = {
+            limit = {
+                has_dlc = "Man the Guns"
+            }
+            send_embargo = FROM
+        }
+        else = {
+            add_opinion_modifier = {
+                target = FROM
+                modifier = embargo
+            }
+            reverse_add_opinion_modifier = {
+                target = FROM
+                modifier = embargoed_us
+            }
+        }
+    }
+}
+
+country_event = { # YBS sends Ultimatum to fellow Socialists
+	id = YBS_diplo_events.10
+	title = YBS_diplo_events.10.t
+	desc = YBS_diplo_events.10.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.10.a
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+					target = FROM
+					value > 50
+				}
+            }
+            modifier = {
+                factor = 3
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+            modifier = {
+                factor = 3
+                is_ally_with = FROM
+            }
+            modifier = {
+                factor = 1.2
+                has_government = communism
+                FROM = { has_government = communism }
+            }
+            modifier = {
+                factor = 0.8
+                NOT = { is_neighbor_of = FROM }
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.11 days = 3 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
+            }
+        }
+        custom_effect_tooltip = GAME_OVER_TT
+    }
+
+    option = {
+        name = YBS_diplo_events.10.b
+        trigger = {
+            OR = {
+                is_ai = no
+                NOT = { is_subject_of = FROM }
+            }
+        }
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 0.1
+                has_war = yes
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.12 days = 4 } }
+
+        if = {
+            limit = {
+                is_subject_of = FROM
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            
+            FROM = { end_puppet = ROOT }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                create_wargoal = {
+                    target = ROOT
+                    type = civil_war
+                }
+            }
+        }
+    }
+}
+
+country_event = { # YBS sends Ultimatum to fellow Socialists / Accepted
+	id = YBS_diplo_events.11
+	title = YBS_diplo_events.11.t
+	desc = YBS_diplo_events.11.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.11.a
+        annex_country = {
+            target = FROM
+            transfer_troops = yes
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_state = {
+            limit = {
+                is_core_of = FROM
+            }
+            add_core_of = ROOT
+        }
+    }
+}
+
+country_event = { # YBS sends Ultimatum to fellow Socialists / Refused
+	id = YBS_diplo_events.12
+	title = YBS_diplo_events.12.t
+	desc = YBS_diplo_events.12.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.12.a
+        create_wargoal = {
+            target = FROM
+            type = civil_war
+        }
+    }
+}
+
 country_event = { # Flag for the RDE
 	id = YBS_esperanto_events.1
 	title = YBS_esperanto_events.1.t
@@ -1014,12 +1209,28 @@ country_event = { # Esperanto Congress Proposal
         name = YBS_esperanto_events.3.a
         custom_effect_tooltip = YBS_esperanto_events.3.a.tt
         set_country_flag = YBS_esperanto_congress_in_bilbao
+        ai_chance = {
+            base = 10
+			modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YBS_ai_path_republic
+					has_country_flag = YBS_ai_path_federation
+                }
+            }
+        }
     }
 
     option = { # nah
         name = YBS_esperanto_events.3.b
         custom_effect_tooltip = YBS_esperanto_events.3.b.tt
-        
+        ai_chance = {
+            base = 10
+			modifier = {
+                factor = 0
+                has_country_flag = YBS_ai_path_esperantism
+            }
+        }
     }
 }
 

@@ -28,7 +28,25 @@ YBS_iberian_federation_cat = {
 	}
 
     visible = {
+		is_subject = no
         YBS_is_iberian_federation_leader = yes
+    }
+
+}
+
+YBS_seeds_of_discord_cat = {
+
+	icon = GFX_decision_category_spr_the_inevitable_civil_war
+
+	priority = 100
+
+	allowed = {
+		tag = YBS
+	}
+
+    visible = {
+		is_subject = no
+        has_country_flag = YBS_seeds_of_discord_unlocked
     }
 
 }
@@ -44,6 +62,7 @@ YBS_spanish_civil_war_cat = {
 	}
 
     visible = {
+		is_subject = no
         has_country_flag = YBS_civil_war_decisions_unlocked
     }
 
@@ -79,6 +98,7 @@ YBS_foreign_economic_control_cat = {
 	}
 
     visible = {
+		is_subject = no
         check_variable = {
 			YBS_foreign_control > 0
 		}

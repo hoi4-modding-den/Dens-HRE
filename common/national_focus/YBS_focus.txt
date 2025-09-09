@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 5700 y = 350 }
+	continuous_focus_position = { x = 6000 y = 350 }
 
 	initial_show_position = {
 		x = 10
@@ -180,6 +180,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				has_country_flag = YBS_ai_path_carlist
+			}
 		}
 
 		allow_branch = {
@@ -283,10 +287,10 @@ focus_tree = {
 
     focus = {
 		id = YBS_military_coup
-		icon = GFX_focus_spa_no_compromise_on_carlist_ideals
+		icon = GFX_focus_spr_crush_the_revolution
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
-		x = -12
+		x = -14
 		y = 1
 		relative_position_id = YBS_election_week
 
@@ -330,8 +334,39 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YBS_recruit_the_conservatives
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = YBS_military_coup }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_military_coup
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# unlocks some of the Nationalist advisors
+		}
+	}
+
+	focus = {
 		id = YBS_restore_order
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_strike_at_democracy2
 		prerequisite = { focus = YBS_military_coup }
 		#mutually_exclusive = { focus = }
 		x = 1
@@ -361,14 +396,72 @@ focus_tree = {
 		}
 	}
 
-    focus = {
+	focus = {
 		id = YBS_restore_the_monarchy
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = YBS_military_coup }
+		icon = GFX_focus_spa_no_compromise_on_carlist_ideals
+		prerequisite = { focus = YBS_recruit_the_conservatives }
+		prerequisite = { focus = YBS_restore_order }
 		#mutually_exclusive = { focus = }
 		x = 0
-		y = 4
+		y = 2
 		relative_position_id = YBS_military_coup
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			date > 1937.6.1
+			is_subject = no
+			is_in_faction = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_unifier_carlist_neutrality
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YBS_unifier_carlist
+				set_country_flag = YBS_became_unifier
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = YBS_carlist_league
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_victory_at_all_costs
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = YBS_restore_the_monarchy }
+		mutually_exclusive = { focus = YBS_honourbound }
+		x = -3
+		y = 1
+		relative_position_id = YBS_restore_the_monarchy
 
 		cost = 5
 
@@ -392,11 +485,874 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = YBS_meet_with_the_french
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = YBS_victory_at_all_costs }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_victory_at_all_costs
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			# either you annex them or you declare war on them once you border them
+		}
+	}
+
+	focus = {
+		id = YBS_invade_the_revolutionaries
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = YBS_meet_with_the_french }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_meet_with_the_french
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
+		bypass = {
+			AND = {
+				OR = {
+					has_war_with = YZA
+					NOT = { country_exists = YZA }
+					is_ally_with = YZA
+				}
+				OR = {
+					has_war_with = YC1
+					NOT = { country_exists = YC1 }
+					is_ally_with = YC1
+				}
+				OR = {
+					has_war_with = YC2
+					NOT = { country_exists = YC2 }
+					is_ally_with = YC2
+				}
+				OR = {
+					has_war_with = YC3
+					NOT = { country_exists = YC3 }
+					is_ally_with = YC3
+				}
+				OR = {
+					has_war_with = YCA
+					NOT = { country_exists = YCA }
+					is_ally_with = YCA
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YZA
+		will_lead_to_war_with = YC1
+		will_lead_to_war_with = YC2
+		will_lead_to_war_with = YC3
+		will_lead_to_war_with = YCA
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YZA
+							NOT = { country_exists = YZA }
+							is_ally_with = YZA
+						}
+					}
+				}
+				create_wargoal = {
+					target = YZA
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC1
+							NOT = { country_exists = YC1 }
+							is_ally_with = YC1
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC1
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC2
+							NOT = { country_exists = YC2 }
+							is_ally_with = YC2
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC2
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC3
+							NOT = { country_exists = YC3 }
+							is_ally_with = YC3
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC3
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YCA
+							NOT = { country_exists = YCA }
+							is_ally_with = YCA
+						}
+					}
+				}
+				create_wargoal = {
+					target = YCA
+					type = civil_war
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_ally_the_reactionaries
+		icon = GFX_focus_spa_unify_the_nationalist_front
+		prerequisite = { focus = YBS_victory_at_all_costs }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_victory_at_all_costs
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			always = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_threaten_the_galicians
+		icon = GFX_focus_YBS_attack_galicia
+		prerequisite = { focus = YBS_ally_the_reactionaries }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_ally_the_reactionaries
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+		
+		bypass = {
+			OR = {
+				has_war_with = YGL
+				NOT = { country_exists = YGL }
+				is_ally_with = YGL
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YGL
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_seeds_of_discord
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = YBS_invade_the_revolutionaries }
+		prerequisite = { focus = YBS_threaten_the_galicians }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 5
+		relative_position_id = YBS_victory_at_all_costs
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = YBS_seeds_of_discord_tt
+			set_country_flag = YBS_seeds_of_discord_unlocked
+		}
+	}
+
+	focus = {
+		id = YBS_all_that_fight
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = YBS_victory_at_all_costs focus = YBS_honourbound }
+		mutually_exclusive = { focus = YBS_army_of_honour }
+		x = 2
+		y = 1
+		relative_position_id = YBS_victory_at_all_costs
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_doctrine_of_fire
+		icon = GFX_focus_generic_army_doctrines_2
+		prerequisite = { focus = YBS_all_that_fight focus = YBS_army_of_honour }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_all_that_fight
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_promote_new_commanders
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = YBS_doctrine_of_fire }
+		prerequisite = { focus = YBS_all_that_fight }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_all_that_fight
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_honourbound
+		icon = GFX_focus_generic_pope
+		prerequisite = { focus = YBS_restore_the_monarchy }
+		mutually_exclusive = { focus = YBS_victory_at_all_costs }
+		x = 3
+		y = 1
+		relative_position_id = YBS_restore_the_monarchy
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
+		bypass = {
+			always = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_march_against_the_traitors
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = YBS_honourbound }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_honourbound
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+		
+		bypass = {
+			always = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_ultimatum_to_galicia
+		icon = GFX_focus_YBS_attack_galicia
+		prerequisite = { focus = YBS_march_against_the_traitors }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_march_against_the_traitors
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			OR = {
+				has_war_with = YGL
+				NOT = { country_exists = YGL }
+				is_ally_with = YGL
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YGL
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_strike_the_revolutionaries
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = YBS_honourbound }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_honourbound
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
+		bypass = {
+			AND = {
+				OR = {
+					has_war_with = YZA
+					NOT = { country_exists = YZA }
+					is_ally_with = YZA
+				}
+				OR = {
+					has_war_with = YC1
+					NOT = { country_exists = YC1 }
+					is_ally_with = YC1
+				}
+				OR = {
+					has_war_with = YC2
+					NOT = { country_exists = YC2 }
+					is_ally_with = YC2
+				}
+				OR = {
+					has_war_with = YC3
+					NOT = { country_exists = YC3 }
+					is_ally_with = YC3
+				}
+				OR = {
+					has_war_with = YCA
+					NOT = { country_exists = YCA }
+					is_ally_with = YCA
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YZA
+		will_lead_to_war_with = YC1
+		will_lead_to_war_with = YC2
+		will_lead_to_war_with = YC3
+		will_lead_to_war_with = YCA
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YZA
+							NOT = { country_exists = YZA }
+							is_ally_with = YZA
+						}
+					}
+				}
+				create_wargoal = {
+					target = YZA
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC1
+							NOT = { country_exists = YC1 }
+							is_ally_with = YC1
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC1
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC2
+							NOT = { country_exists = YC2 }
+							is_ally_with = YC2
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC2
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC3
+							NOT = { country_exists = YC3 }
+							is_ally_with = YC3
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC3
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YCA
+							NOT = { country_exists = YCA }
+							is_ally_with = YCA
+						}
+					}
+				}
+				create_wargoal = {
+					target = YCA
+					type = civil_war
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_strike_the_remnants
+		icon = GFX_focus_attack_france
+		prerequisite = { focus = YBS_strike_the_revolutionaries }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_strike_the_revolutionaries
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YFR
+				NOT = { country_exists = YFR }
+				is_ally_with = YFR
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YFR
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				target = YFR
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_army_of_honour
+		icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = YBS_victory_at_all_costs focus = YBS_honourbound }
+		mutually_exclusive = { focus = YBS_all_that_fight }
+		x = -2
+		y = 1
+		relative_position_id = YBS_honourbound
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_anti_communist_positioning
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		prerequisite = { focus = YBS_doctrine_of_fire }
+		prerequisite = { focus = YBS_army_of_honour }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_army_of_honour
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_spanish_fighting_spirit
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		prerequisite = { focus = YBS_promote_new_commanders focus = YBS_anti_communist_positioning }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_anti_communist_positioning
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_the_restoration_wars
+		icon = GFX_focus_YBS_attack_iberia
+		prerequisite = { focus = YBS_ultimatum_to_galicia }
+		prerequisite = { focus = YBS_strike_the_remnants }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 5
+		relative_position_id = YBS_honourbound
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = YBS_lobby_for_intervention_tt
+			set_country_flag = YBS_civil_war_decisions_unlocked
+		}
+	}
+
+	focus = {
+		id = YBS_the_kingdom_restored
+		icon = GFX_focus_spa_supremacy_of_the_communion
+		prerequisite = { focus = YBS_seeds_of_discord focus = YBS_the_restoration_wars }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_spanish_fighting_spirit
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_war = no
+			YBS_owns_all_iberian_states = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_global_flag = YBS_iberian_civil_war_ended
+
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_iberia_carlist_neutrality
+			}
+			hidden_effect = {
+				set_country_flag = YBS_united_iberia
+				set_cosmetic_tag = YBS_iberia_carlist
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
 # LIBERAL BRANCH
 
     focus = {
 		id = YBS_liberal_victory
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_liberal_victory
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_military_coup focus = YBS_nationalist_victory focus = YBS_syndicalist_victory focus = YBS_socialist_victory }
 		x = 3
@@ -458,6 +1414,13 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+                factor = 0.5
+                OR = {
+                    has_country_flag = YBS_ai_path_republic
+					has_country_flag = YBS_ai_path_federation
+                }
+            }
 		}
 
 		available = {
@@ -487,6 +1450,26 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = YBS_deregulated_capitalism
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -541,6 +1524,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = YBS_construction_concern
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -550,7 +1534,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_the_corporatist_model
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_mex_privatisation
 		prerequisite = { focus = YBS_sell_to_the_corporations }
 		#mutually_exclusive = { focus = }
 		x = -1
@@ -560,7 +1544,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
                 factor = 0
                 OR = {
@@ -571,6 +1555,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			check_variable = {
 				tooltip = YBS_foreign_control_trigger_tt
 				var = YBS_foreign_control
@@ -666,7 +1651,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = YBS_deregulated_capitalism
+				add_idea = YBS_deregulated_capitalism_2
+			}
 		}
 	}
 
@@ -686,11 +1674,11 @@ focus_tree = {
 		}
 
 		available = {
-			has_idea = YBS_language_issue
+			
 		}
 		
 		bypass = {
-			
+			NOT = { has_idea = YBS_language_issue }
 		}
 
 		available_if_capitulated = no
@@ -710,7 +1698,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_liberal_corporatism
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = YBS_deregulate_the_industries focus = YBS_protect_personal_freedoms }
 		#mutually_exclusive = { focus = }
 		x = 1
@@ -721,6 +1709,13 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+                factor = 10
+                OR = {
+                    has_country_flag = YBS_ai_path_republic
+					has_country_flag = YBS_ai_path_federation
+                }
+            }
 		}
 
 		available = {
@@ -771,7 +1766,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_iberian_bastion_of_liberalism
-		icon = GFX_focus_generic_the_giant_wakes
+		icon = GFX_goal_support_democracy
 		prerequisite = { focus = YBS_liberal_corporatism }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -803,6 +1798,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = 120
 			unlock_decision_tooltip = YBS_reduce_corporate_powers
 		}
 	}
@@ -916,7 +1912,7 @@ focus_tree = {
 
     focus = {
 		id = YBS_nationalist_victory
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_protect_the_basque_country
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_military_coup focus = YBS_syndicalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
 		x = 7
@@ -1168,6 +2164,13 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
+			add_tech_bonus = {
+				name = YBS_patriotic_education
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_political_advisor
@@ -1192,8 +2195,8 @@ focus_tree = {
 			factor = 2
 		}
 
-		available = {
-			has_idea = YBS_language_issue
+		bypass = {
+			NOT = { has_idea = YBS_language_issue }
 		}
 
 		available_if_capitulated = no
@@ -1286,6 +2289,17 @@ focus_tree = {
 				remove_idea = YBS_national_pride
 				add_idea = YBS_national_pride_improved
 			}
+
+			if = {
+				limit = {
+					OR = {
+						has_idea = disarmed_nation
+						has_idea = volunteer_only
+						has_idea = limited_conscription
+					}
+				}
+				add_ideas = extensive_conscription
+			}
 		}
 	}
 
@@ -1306,6 +2320,7 @@ focus_tree = {
 
 		available = {
 			has_government = democratic
+			has_war_support > 0.49
 		}
 		
 		bypass = {
@@ -1346,6 +2361,20 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_ideas = war_economy
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = { id = YBS_post_election_events.5 days = 15 }
 		}
 	}
 
@@ -1776,7 +2805,7 @@ focus_tree = {
 		icon = GFX_focus_research2
 		prerequisite = { focus = YBS_modernise_the_education_system }
 		#mutually_exclusive = { focus = }
-		x = 0
+		x = -1
 		y = 2
 		relative_position_id = YBS_modernise_the_education_system
 
@@ -1803,6 +2832,37 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YBS_womens_rights
+		icon = GFX_focus_ARG_women_in_industry 
+		prerequisite = { focus = YBS_modernise_the_education_system }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 2
+		relative_position_id = YBS_modernise_the_education_system
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = YBS_womens_rights_idea
+		}
+	}
+
+	focus = {
 		id = YBS_spanish_basque_national_languages
 		icon = GFX_focus_hol_the_foundations_of_defense
 		prerequisite = { focus = YBS_modernise_the_education_system }
@@ -1814,15 +2874,19 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 4
+			factor = 10
+			modifier = {
+                factor = 0
+                has_country_flag = YBS_ai_path_esperantism
+            }
 		}
 
 		available = {
-			has_idea = YBS_language_issue
+			
 		}
 		
 		bypass = {
-			
+			NOT = { has_idea = YBS_language_issue }
 		}
 
 		available_if_capitulated = no
@@ -1843,9 +2907,9 @@ focus_tree = {
 	focus = {
 		id = YBS_work_safety_regulations
 		icon = GFX_focus_generic_workers 
-		prerequisite = { focus = YBS_socialist_victory }
+		prerequisite = { focus = YBS_socialist_victory focus = YBS_syndicalist_victory }
 		#mutually_exclusive = { focus = }
-		x = 4
+		x = 8
 		y = 1
 		relative_position_id = YBS_socialist_victory
 
@@ -1877,18 +2941,18 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBS_womens_rights
-		icon = GFX_focus_ARG_women_in_industry 
-		prerequisite = { focus = YBS_work_safety_regulations focus = YBS_popular_front_promises }
+		id = YBS_social_work_programs
+		icon = GFX_focus_generic_public_works
+		prerequisite = { focus = YBS_work_safety_regulations }
 		#mutually_exclusive = { focus = }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = YBS_work_safety_regulations
 
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
-			factor = 1.5
+			factor = 2
 		}
 
 		available = {
@@ -1903,7 +2967,97 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = YBS_womens_rights_idea
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = YBS_social_work_programs_tt
+
+			hidden_effect = {
+				reverse_add_opinion_modifier = {
+					modifier = YBS_shared_focus_design_modifier
+					target = YPR
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_mobilise_the_farmers
+		icon = GFX_focus_ITA_peasants_rise
+		prerequisite = { focus = YBS_socialist_victory }
+		#mutually_exclusive = { focus = }
+		x = 4
+		y = 1
+		relative_position_id = YBS_socialist_victory
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = YBS_mobilise_the_farmers_idea
+		}
+	}
+
+	focus = {
+		id = YBS_defenders_of_the_peasantry
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		prerequisite = { focus = YBS_mobilise_the_farmers }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_mobilise_the_farmers
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			has_idea = YBS_mobilise_the_farmers_idea
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YBS_mobilise_the_farmers_idea
+				add_idea = YBS_defenders_of_the_peasantry_idea
+			}
 		}
 	}
 
@@ -1950,7 +3104,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_teach_esperanto
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_esperanto_education
 		prerequisite = { focus = YBS_popular_front_promises }
 		prerequisite = { focus = YBS_modernise_the_education_system }
 		mutually_exclusive = { focus = YBS_spanish_basque_national_languages }
@@ -1961,7 +3115,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 4
+			factor = 15
 		}
 
 		available = {
@@ -1987,9 +3141,9 @@ focus_tree = {
 	focus = {
 		id = YBS_empower_the_unions
 		icon = GFX_goal_generic_soviet_construction
-		prerequisite = { focus = YBS_popular_front_promises focus = YBS_syndicalist_victory }
+		prerequisite = { focus = YBS_popular_front_promises focus = YBS_appropriate_foreign_assets }
 		#mutually_exclusive = { focus = }
-		x = 1
+		x = 5
 		y = 1
 		relative_position_id = YBS_popular_front_promises
 
@@ -2029,7 +3183,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
                 factor = 0
                 OR = {
@@ -2095,7 +3249,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_march_into_asturias
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = YBS_unity_through_democracy }
 		#mutually_exclusive = { focus = }
 		x = -1
@@ -2106,6 +3260,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2131,7 +3289,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_integrate_galicia
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_attack_galicia
 		prerequisite = { focus = YBS_march_into_asturias }
 		#mutually_exclusive = { focus = }
 		x = -1
@@ -2142,6 +3300,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2157,6 +3319,8 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no
+
+		will_lead_to_war_with = YGL
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -2177,7 +3341,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_restore_order_in_catalonia
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_anti_comintern_pact
 		prerequisite = { focus = YBS_unity_through_democracy }
 		#mutually_exclusive = { focus = }
 		x = 1
@@ -2188,6 +3352,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2228,6 +3396,12 @@ focus_tree = {
 		}
 
 		available_if_capitulated = no
+
+		will_lead_to_war_with = YZA
+		will_lead_to_war_with = YC1
+		will_lead_to_war_with = YC2
+		will_lead_to_war_with = YC3
+		will_lead_to_war_with = YCA
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -2322,6 +3496,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2513,21 +3691,32 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_alocate_military_budget_factories
 
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 2
 		}
 
 		available = {
-			
+			has_government = democratic
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			add_ideas = YBS_federal_army
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					YBS_is_iberian_country = yes
+					is_subject_of = ROOT
+				}
+				add_ideas = YBS_federal_army
+			}
+			set_country_flag = YBS_federal_army_formed
 		}
 	}
 
@@ -2547,7 +3736,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = democratic
 		}
 
 		available_if_capitulated = no
@@ -2580,7 +3769,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = democratic
 		}
 
 		available_if_capitulated = no
@@ -2614,10 +3803,14 @@ focus_tree = {
 		y = 2
 		relative_position_id = YBS_establish_the_federal_army
 
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 2
+		}
+		
+		available = {
+			has_government = democratic
 		}
 
 		bypass = {
@@ -2644,7 +3837,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
                 factor = 0
                 OR = {
@@ -2699,7 +3892,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_infiltrate_catalonia
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_anti_comintern_pact
 		prerequisite = { focus = YBS_guardian_of_iberian_democracy }
 		#mutually_exclusive = { focus = }
 		x = -1
@@ -2710,11 +3903,17 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			is_subject = no
-			
+			has_army_manpower = {
+				size > 50000
+			}
 		}
 
 		bypass = {
@@ -2757,7 +3956,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_reach_out_to_galicia
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_befriend_galicia
 		prerequisite = { focus = YBS_guardian_of_iberian_democracy }
 		#mutually_exclusive = { focus = }
 		x = 1
@@ -2767,7 +3966,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 8
 		}
 
 		available = {
@@ -2805,7 +4004,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_secure_castille_and_leon
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = YBS_reach_out_to_galicia }
 		#mutually_exclusive = { focus = }
 		x = 2
@@ -2816,6 +4015,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2850,13 +4053,14 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 
 		available = {
 			is_subject = no
-			has_army_manpower = {
-				size > 50000
-			}
 		}
 
 		bypass = {
@@ -2926,7 +4130,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 20
 		}
 
 		available = {
@@ -2968,7 +4172,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 20
 		}
 
 		available = {
@@ -3051,51 +4255,121 @@ focus_tree = {
 	}
 
 	focus = {
-		id = YBS_lobby_for_intervention
-		icon = GFX_focus_YBS_attack_iberia
+		id = YBS_consolidate_our_capital
+		icon = GFX_focus_RAJ_issue_bonds_on_the_stock_market
 		prerequisite = { focus = YBS_rule_of_capital }
-		#mutually_exclusive = { focus =  }
-		x = 0
-		y = 2
+		#mutually_exclusive = { focus = }
+		x = -3
+		y = 1
 		relative_position_id = YBS_rule_of_capital
 
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 5
 		}
 
 		available = {
 			is_subject = no
+			has_government = neutrality
 		}
-		
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_secure_galicia
+		icon = GFX_focus_YBS_attack_galicia
+		prerequisite = { focus = YBS_rule_of_capital }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_rule_of_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
 		bypass = {
-			YBS_owns_all_iberian_states = yes
+			OR = {
+				has_war_with = YGL
+				NOT = { country_exists = YGL }
+				is_ally_with = YGL
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YGL
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				target = YGL
+				type = civil_war
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_secure_castile_leon_and_asturias
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = YBS_rule_of_capital }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_rule_of_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
+		bypass = {
+			always = yes
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			custom_effect_tooltip = YBS_lobby_for_intervention_tt
-			set_country_flag = YBS_civil_war_decisions_unlocked
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_state = {
-				limit = {
-					YBS_is_iberian_state = yes
-					NOT = { is_core_of = ROOT }
-					NOT = { is_claimed_by = ROOT }
-				}
-				add_claim_by = ROOT
-			}
+			
 		}
 	}
 
 	focus = {
 		id = YBS_approach_the_balearics
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_YBS_befriend_balearic_islands
 		prerequisite = { focus = YBS_rule_of_capital }
 		#mutually_exclusive = { focus =  }
 		x = 3
@@ -3105,7 +4379,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 10
 		}
 
 		available = {
@@ -3200,6 +4474,192 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = YBS_crush_the_revolution
+		icon = GFX_focus_RAJ_crush_the_anathema
+		prerequisite = { focus = YBS_secure_galicia }
+		prerequisite = { focus = YBS_secure_castile_leon_and_asturias }
+		prerequisite = { focus = YBS_approach_the_balearics }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 2
+		relative_position_id = YBS_rule_of_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			AND = {
+				OR = {
+					has_war_with = YZA
+					NOT = { country_exists = YZA }
+					is_ally_with = YZA
+				}
+				OR = {
+					has_war_with = YC1
+					NOT = { country_exists = YC1 }
+					is_ally_with = YC1
+				}
+				OR = {
+					has_war_with = YC2
+					NOT = { country_exists = YC2 }
+					is_ally_with = YC2
+				}
+				OR = {
+					has_war_with = YC3
+					NOT = { country_exists = YC3 }
+					is_ally_with = YC3
+				}
+				OR = {
+					has_war_with = YCA
+					NOT = { country_exists = YCA }
+					is_ally_with = YCA
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YZA
+		will_lead_to_war_with = YC1
+		will_lead_to_war_with = YC2
+		will_lead_to_war_with = YC3
+		will_lead_to_war_with = YCA
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YZA
+							NOT = { country_exists = YZA }
+							is_ally_with = YZA
+						}
+					}
+				}
+				create_wargoal = {
+					target = YZA
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC1
+							NOT = { country_exists = YC1 }
+							is_ally_with = YC1
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC1
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC2
+							NOT = { country_exists = YC2 }
+							is_ally_with = YC2
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC2
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YC3
+							NOT = { country_exists = YC3 }
+							is_ally_with = YC3
+						}
+					}
+				}
+				create_wargoal = {
+					target = YC3
+					type = civil_war
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_war_with = YCA
+							NOT = { country_exists = YCA }
+							is_ally_with = YCA
+						}
+					}
+				}
+				create_wargoal = {
+					target = YCA
+					type = civil_war
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_lobby_for_intervention
+		icon = GFX_focus_YBS_attack_iberia
+		prerequisite = { focus = YBS_crush_the_revolution }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = YBS_crush_the_revolution
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			YBS_owns_all_iberian_states = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = YBS_lobby_for_intervention_tt
+			set_country_flag = YBS_civil_war_decisions_unlocked
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+
     focus = {
 		id = YBS_we_will_always_have_hope
 		icon = GFX_focus_PLACEHOLDER
@@ -3212,7 +4672,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
                 factor = 0
                 OR = {
@@ -3239,6 +4699,11 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			swap_ideas = {
+				remove_idea = YBS_public_esperanto_classes
+				add_idea = YBS_esperanto_republic_idea
+			}
+
 			country_event = {
 				id = YBS_esperanto_events.1
 				days = 7
@@ -3253,6 +4718,170 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = YBS_revolutionary_call_for_freedom
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_we_will_always_have_hope }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_we_will_always_have_hope
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_spread_esperanto
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_revolutionary_call_for_freedom }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_revolutionary_call_for_freedom
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = YBS_spread_esperanto_tt
+		}
+	}
+
+	focus = {
+		id = YBS_the_hopeful_internationale
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_we_will_always_have_hope }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_we_will_always_have_hope
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YBS_esperanto_republic_idea
+				add_idea = YBS_esperanto_internationale_idea
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_volunteer_corps
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = YBS_we_will_always_have_hope }
+		#mutually_exclusive = { focus = }
+		x = 3
+		y = 1
+		relative_position_id = YBS_we_will_always_have_hope
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_rule = {
+				can_send_volunteers = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = YBS_esperanto_volunteer_corps
+		}
+	}
+
+	focus = {
+		id = YBS_the_internationalist_fight
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_we_will_always_have_hope }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 2
+		relative_position_id = YBS_we_will_always_have_hope
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
 # SYNDICALIST BRANCH
 
     focus = {
@@ -3260,7 +4889,7 @@ focus_tree = {
 		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_military_coup focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
-		x = 11
+		x = 14
 		y = 0
 		relative_position_id = YBS_socialist_victory
 
@@ -3303,6 +4932,734 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = YBS_appropriate_foreign_assets
+		icon = GFX_focus_generic_communist_industry
+		prerequisite = { focus = YBS_syndicalist_victory }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_syndicalist_victory
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = XHH
+						original_tag = XWB
+						original_tag = XVE
+						original_tag = XAS
+					}
+					NOT = { has_government = communism }
+				}
+				add_opinion_modifier = {
+					modifier = YBS_appropriated_assets
+					target = ROOT
+				}
+				country_event = { id = YBS_diplo_events.9 days = 5 random_days = 10 }
+			}
+			
+		}
+	}
+
+	focus = {
+		id = YBS_worker_welfare
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = YBS_appropriate_foreign_assets }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_appropriate_foreign_assets
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = XHH_welfare_state_idea_2
+		}
+	}
+
+	focus = {
+		id = YBS_the_workers_economy
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		prerequisite = { focus = YBS_empower_the_unions }
+		prerequisite = { focus = YBS_worker_welfare }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_appropriate_foreign_assets
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_anti_fascist_government
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = YBS_syndicalist_victory }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_syndicalist_victory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = -0.1 }
+			add_popularity = { ideology = communism popularity = 0.1 }
+		}
+	}
+
+	focus = {
+		id = YBS_womens_rights_syndicalist
+		icon = GFX_focus_ARG_women_in_industry
+		prerequisite = { focus = YBS_syndicalist_victory }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_syndicalist_victory
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = YBS_womens_rights_idea
+		}
+	}
+
+	focus = {
+		id = YBS_sideline_the_reactionaries
+		icon = GFX_focus_eng_crush_the_dream
+		prerequisite = { focus = YBS_womens_rights_syndicalist }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_womens_rights_syndicalist
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = -0.15 }
+			add_popularity = { ideology = neutrality popularity = -0.15 }
+		}
+	}
+
+	focus = {
+		id = YBS_esperantist_clubs
+		icon = GFX_focus_YBS_esperanto_education
+		prerequisite = { focus = YBS_womens_rights_syndicalist }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_womens_rights_syndicalist
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			NOT = { has_idea = YBS_language_issue }
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			remove_ideas = YBS_language_issue
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = YBS_esperanto_clubs_idea
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_public_education
+		icon = GFX_focus_research2
+		prerequisite = { focus = YBS_sideline_the_reactionaries }
+		prerequisite = { focus = YBS_esperantist_clubs }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_womens_rights_syndicalist
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = YBS_revolutionary_fervour
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		prerequisite = { focus = YBS_anti_fascist_government }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 3
+		relative_position_id = YBS_anti_fascist_government
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			date > 1937.6.1
+			is_subject = no
+			is_in_faction = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = YBS_socialist_pact
+		}
+	}
+
+	focus = {
+		id = YBS_strike_the_reactionaries
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = YBS_revolutionary_fervour }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_revolutionary_fervour
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
+		bypass = {
+			always = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_liberate_galicia
+		icon = GFX_focus_YBS_attack_galicia
+		prerequisite = { focus = YBS_strike_the_reactionaries }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = YBS_strike_the_reactionaries
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YGL
+				NOT = { country_exists = YGL }
+				is_ally_with = YGL
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YGL
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					YGL = { has_government = democratic }
+				}
+				YGL = { country_event = { id = YBS_diplo_events.2 days = 3 } }
+			}
+			else = {
+				create_wargoal = {
+					target = YGL
+					type = civil_war
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_demand_revolutionary_unity
+		icon = GFX_focus_spr_regional_defense_council_of_aragon
+		prerequisite = { focus = YBS_revolutionary_fervour }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = YBS_revolutionary_fervour
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 50000
+			}
+		}
+
+		bypass = {
+			AND = {
+				OR = {
+					has_war_with = YZA
+					NOT = { country_exists = YZA }
+				}
+				OR = {
+					has_war_with = YC1
+					NOT = { country_exists = YC1 }
+				}
+				OR = {
+					has_war_with = YC2
+					NOT = { country_exists = YC2 }
+				}
+				OR = {
+					has_war_with = YC3
+					NOT = { country_exists = YC3 }
+				}
+				OR = {
+					has_war_with = YCA
+					NOT = { country_exists = YCA }
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YZA
+		will_lead_to_war_with = YC1
+		will_lead_to_war_with = YC2
+		will_lead_to_war_with = YC3
+		will_lead_to_war_with = YCA
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			IF = {
+				limit = {
+					country_exists = YZA
+					NOT = { has_war_with = YZA }
+				}
+				YZA = {
+					country_event = {
+						id = YBS_diplo_events.10
+						days = 10
+					}
+				}
+			}
+			IF = {
+				limit = {
+					country_exists = YC1
+					NOT = { has_war_with = YC1 }
+				}
+				YC1 = {
+					country_event = {
+						id = YBS_diplo_events.10
+						days = 20
+						random_days = 5
+					}
+				}
+			}
+			IF = {
+				limit = {
+					country_exists = YC2
+					NOT = { has_war_with = YC2 }
+				}
+				YC2 = {
+					country_event = {
+						id = YBS_diplo_events.10
+						days = 20
+						random_days = 5
+					}
+				}
+			}
+			IF = {
+				limit = {
+					country_exists = YC3
+					NOT = { has_war_with = YC3 }
+				}
+				YC3 = {
+					country_event = {
+						id = YBS_diplo_events.10
+						days = 20
+						random_days = 5
+					}
+				}
+			}
+			IF = {
+				limit = {
+					country_exists = YCA
+					NOT = { has_war_with = YCA }
+				}
+				YCA = {
+					country_event = {
+						id = YBS_diplo_events.10
+						days = 30
+						random_days = 10
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_the_insurrectionary_army
+		icon = GFX_focus_generic_spur_communist_revolutions
+		prerequisite = { focus = YBS_strike_the_reactionaries focus = YBS_demand_revolutionary_unity }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = YBS_demand_revolutionary_unity
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = YBS_insurrectionary_army
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_take_down_the_french
+		icon = GFX_focus_attack_france
+		prerequisite = { focus = YBS_demand_revolutionary_unity }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_demand_revolutionary_unity
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YFR
+				NOT = { country_exists = YFR }
+				is_ally_with = YFR
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = YFR
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			create_wargoal = {
+				target = YFR
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_liberation_for_all
+		icon = GFX_focus_YBS_attack_iberia
+		prerequisite = { focus = YBS_liberate_galicia }
+		prerequisite = { focus = YBS_the_insurrectionary_army }
+		prerequisite = { focus = YBS_take_down_the_french }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_the_insurrectionary_army
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			YBS_owns_all_iberian_states = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = YBS_lobby_for_intervention_tt
+			set_country_flag = YBS_civil_war_decisions_unlocked
+		}
+	}
+
+	focus = {
+		id = YBS_victory_in_iberia
+		icon = GFX_focus_GER_the_peoples_victory
+		prerequisite = { focus = YBS_liberation_for_all }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = YBS_liberation_for_all
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_war = no
+			YBS_owns_all_iberian_states = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			set_global_flag = YBS_iberian_civil_war_ended
+
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_iberian_defence_council_communism
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YBS_iberian_defence_council
+				set_country_flag = YBS_united_iberia
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
 # ECONOMY TREE
 
 	focus = {
@@ -3310,14 +5667,14 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		#prerequisite = { focus = }
 		mutually_exclusive = { focus = YBS_clamp_down_on_unions }
-		x = 44
+		x = 45
 		y = 0
 		#relative_position_id = 
 
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -3371,7 +5728,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -3548,7 +5905,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
 		}
 
 		available_if_capitulated = no
@@ -3700,7 +6057,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
@@ -3745,7 +6102,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 3
+			factor = 4
 		}
 
 		available_if_capitulated = no
@@ -3768,7 +6125,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
@@ -3884,7 +6241,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 5
 		}
 
 		available = {
@@ -3923,6 +6280,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			1098 = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dam
 					level = 1
@@ -4021,6 +6379,7 @@ focus_tree = {
 		}
 
 		available = {
+			YBS_controls_basque_starting_states = yes
 			NOT = { has_idea = YBS_devalued_currency }
 		}
 		
@@ -4032,12 +6391,22 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
-			custom_effect_tooltip = available_political_advisor
-			# basque businessman
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = YBS_industrial_reconstruction
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = available_political_advisor
+			# basque businessman
 		}
 	}
 
@@ -4048,14 +6417,14 @@ focus_tree = {
 		icon = GFX_focus_generic_military_dictatorship
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 53
+		x = 54
 		y = 6
 		#relative_position_id = 
 
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 
 		available = {
@@ -4427,7 +6796,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 2
+			factor = 5
 		}
 
 		available = {
@@ -4442,12 +6811,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
-			army_experience = 25
-			add_command_power = 10
+			set_technology = { militia_tech = 1 }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			set_technology = { militia_tech = 1 }
+			add_ideas = YBS_militia_recruitment
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -4508,7 +6876,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 10
 		}
 
 		available = {
@@ -4801,7 +7169,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 10
 		}
 
 		available = {
