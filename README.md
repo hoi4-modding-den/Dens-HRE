@@ -36,7 +36,7 @@ Lore: <br><br>
   | :---: | :---: | --- |
   | Meepazor | meepazor | <details><summary>Baleric Islands</summary><ul><li>YBL</li></ul></details> |
   | stupidlord | stupidlord | <details><summary>Sahara Occidental</summary><ul><li>YSO</li></ul></details> |
-  | 0rland2 | 0rland0 | <details><summary>Navarre</summary><ul><li>YBS</li></ul></details> |
+  | 0rland2 | 0rland0 | <details><summary>Navarre</summary><ul><li>YBS</li></ul><summary>Burgos</summary><ul><li>YRR</li></ul></details> |
   | acer-xq | ace.r | <details><summary>Gibraltar</summary><ul><li>YGB</li></ul></details> |
   | Furiousky | furiousky | <details><summary>Catalonia</summary><ul><li>YCA</li></ul></details> |
   | Deservedgamer435 | guyond | <details><summary>Mercia</summary><ul><li>YRF</li></ul></details> |

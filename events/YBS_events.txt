@@ -524,49 +524,9 @@ country_event = { # Removing the Falangists
 
         if = {
             limit = {
-                any_other_country = {
-                    has_country_leader_ideology = falangism
-                    YBS_is_iberian_country = yes
-                }
+                country_exists = YRR
             }
-            random_other_country = {
-                limit = {
-                    has_country_leader_ideology = falangism
-                    YBS_is_iberian_country = yes
-                }
-                hidden_effect = {
-                    ROOT = {
-                        set_nationality = {
-                            target_country = PREV
-                            character = YBS_julio_ruiz_de_alda
-                        }
-                    }
-                    ROOT = {
-                        set_nationality = {
-                            target_country = PREV
-                            character = YBS_falangist_general_1
-                        }
-                    }
-                    ROOT = {
-                        set_nationality = {
-                            target_country = PREV
-                            character = YBS_falangist_general_2
-                        }
-                    }
-                }
-                country_event = { id = YBS_post_election_events.3 days = 3 }
-            }
-        }
-        else_if = {
-            limit = {
-                any_other_country = {
-                    has_country_leader_ideology = falangism
-                }
-            }
-            random_other_country = {
-                limit = {
-                    has_country_leader_ideology = falangism
-                }
+            YRR = {
                 hidden_effect = {
                     ROOT = {
                         set_nationality = {
@@ -669,6 +629,8 @@ country_event = { # Exiled Falangists arrive from YBS
                 }
             }
         }
+
+        promote_character = YBS_julio_ruiz_de_alda
     }
 }
 

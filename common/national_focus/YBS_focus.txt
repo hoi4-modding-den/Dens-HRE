@@ -345,7 +345,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 5
 		}
 
 		available = {
@@ -376,7 +376,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 5
 		}
 
 		available = {
@@ -688,14 +688,20 @@ focus_tree = {
 		}
 
 		bypass = {
-			always = yes
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+				is_ally_with = YRR
+			}
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			YRR = {
+				# country event
+			}
 		}
 	}
 
@@ -935,14 +941,23 @@ focus_tree = {
 		}
 		
 		bypass = {
-			always = yes
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+				is_ally_with = YRR
+			}
 		}
 
 		available_if_capitulated = no
 
+		will_lead_to_war_with = YRR
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			create_wargoal = {
+				target = YRR
+				type = civil_war
+			}
 		}
 	}
 
@@ -3274,16 +3289,23 @@ focus_tree = {
 		}
 
 		bypass = {
-			always = yes
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+				is_ally_with = YRR
+			}
 		}
 
 		available_if_capitulated = no
 
-		will_lead_to_war_with = YGL
+		will_lead_to_war_with = YRR
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			create_wargoal = {
+				target = YRR
+				type = civil_war
+			}
 		}
 	}
 
@@ -4029,14 +4051,23 @@ focus_tree = {
 		}
 
 		bypass = {
-			always = yes
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+				is_ally_with = YRR
+			}
 		}
 
 		available_if_capitulated = no
 
+		will_lead_to_war_with = YRR
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			create_wargoal = {
+				target = YRR
+				type = civil_war
+			}
 		}
 	}
 
@@ -4356,14 +4387,23 @@ focus_tree = {
 		}
 
 		bypass = {
-			always = yes
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+				is_ally_with = YRR
+			}
 		}
 
 		available_if_capitulated = no
 
+		will_lead_to_war_with = YRR
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			create_wargoal = {
+				target = YRR
+				type = civil_war
+			}
 		}
 	}
 
@@ -4886,7 +4926,7 @@ focus_tree = {
 
     focus = {
 		id = YBS_syndicalist_victory
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_CHL_union_of_hispanic_republics
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_military_coup focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
 		x = 14
@@ -5303,14 +5343,23 @@ focus_tree = {
 		}
 
 		bypass = {
-			always = yes
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+				is_ally_with = YRR
+			}
 		}
 
 		available_if_capitulated = no
 
+		will_lead_to_war_with = YRR
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			create_wargoal = {
+				target = YRR
+				type = civil_war
+			}
 		}
 	}
 
