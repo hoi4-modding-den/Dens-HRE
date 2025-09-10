@@ -1094,6 +1094,277 @@ country_event = { # YBS sends Ultimatum to fellow Socialists / Refused
     }
 }
 
+country_event = { # YBS allies YRR
+	id = YBS_diplo_events.13
+	title = YBS_diplo_events.13.t
+	desc = YBS_diplo_events.13.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.13.a
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 1.5
+                has_opinion = {
+					target = FROM
+					value > 50
+				}
+            }
+            modifier = {
+                factor = 3
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+            modifier = {
+                factor = 3
+                is_ally_with = FROM
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.14 days = 3 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
+            }
+        }
+        custom_effect_tooltip = GAME_OVER_TT
+    }
+
+    option = {
+        name = YBS_diplo_events.13.b
+        trigger = {
+            OR = {
+                is_ai = no
+                NOT = { is_subject_of = FROM }
+            }
+        }
+        ai_chance = {
+            base = 2
+            modifier = {
+                factor = 0.1
+                has_war = yes
+            }
+            modifier = {
+                factor = 0.5
+                NOT = { has_government = neutrality }
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.15 days = 4 } }
+
+        if = {
+            limit = {
+                is_subject_of = FROM
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            
+            FROM = { end_puppet = ROOT }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                create_wargoal = {
+                    target = ROOT
+                    type = civil_war
+                }
+            }
+        }
+    }
+}
+
+country_event = { # YBS allies YRR / Accepted
+	id = YBS_diplo_events.14
+	title = YBS_diplo_events.14.t
+	desc = YBS_diplo_events.14.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.14.a
+        annex_country = {
+            target = FROM
+            transfer_troops = yes
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_state = {
+            limit = {
+                is_core_of = FROM
+            }
+            add_core_of = ROOT
+        }
+    }
+}
+
+country_event = { # YBS allies YRR / Refused
+	id = YBS_diplo_events.15
+	title = YBS_diplo_events.15.t
+	desc = YBS_diplo_events.15.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.15.a
+        create_wargoal = {
+            target = FROM
+            type = civil_war
+        }
+    }
+}
+
+country_event = { # YBS allies YFR
+	id = YBS_diplo_events.16
+	title = YBS_diplo_events.16.t
+	desc = YBS_diplo_events.16.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.16.a
+        ai_chance = {
+            base = 5
+            modifier = {
+                factor = 1.5
+                has_opinion = {
+					target = FROM
+					value > 25
+				}
+            }
+            modifier = {
+                factor = 2
+                has_opinion = {
+					target = FROM
+					value > 50
+				}
+            }
+            modifier = {
+                factor = 3
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+            modifier = {
+                factor = 3
+                is_ally_with = FROM
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.17 days = 3 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
+            }
+        }
+        custom_effect_tooltip = GAME_OVER_TT
+    }
+
+    option = {
+        name = YBS_diplo_events.16.b
+        trigger = {
+            OR = {
+                is_ai = no
+                NOT = { is_subject_of = FROM }
+            }
+        }
+        ai_chance = {
+            base = 0.1
+        }
+        FROM = { country_event = { id = YBS_diplo_events.18 days = 4 } }
+
+        if = {
+            limit = {
+                is_subject_of = FROM
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            
+            FROM = { end_puppet = ROOT }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                create_wargoal = {
+                    target = ROOT
+                    type = civil_war
+                }
+            }
+        }
+    }
+}
+
+country_event = { # YBS allies YFR / Accepted
+	id = YBS_diplo_events.17
+	title = YBS_diplo_events.17.t
+	desc = YBS_diplo_events.17.desc
+    picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.17.a
+        annex_country = {
+            target = FROM
+            transfer_troops = no
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_state = {
+            limit = {
+                is_core_of = FROM
+            }
+            add_core_of = ROOT
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_equipment_to_stockpile = {
+            type = train_equipment
+            amount = -1
+        }
+        custom_effect_tooltip = YBS_diplo_events.17.a.tt
+    }
+}
+
+country_event = { # YBS allies YFR / Refused
+	id = YBS_diplo_events.18
+	title = YBS_diplo_events.18.t
+	desc = YBS_diplo_events.18.desc
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.18.a
+        create_wargoal = {
+            target = FROM
+            type = civil_war
+        }
+    }
+}
+
 country_event = { # Flag for the RDE
 	id = YBS_esperanto_events.1
 	title = YBS_esperanto_events.1.t

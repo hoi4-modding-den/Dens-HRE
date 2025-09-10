@@ -1,0 +1,31 @@
+political_actions = {
+
+    YRR_power_struggle_mission = {
+
+        icon = generic_political_discourse
+
+        allowed = {
+            original_tag = YRR
+        }
+
+        activation = {
+            has_character = YBS_julio_ruiz_de_alda
+            has_government = neutrality
+            NOT = { has_country_flag = YRR_power_struggle_over }
+        }
+
+        available = {
+            has_government = neutrality
+        }
+
+        is_good = yes
+
+        days_mission_timeout = 500
+
+        timeout_effect = {
+            country_event = YRR_events.1
+            set_country_flag = YRR_power_struggle_over
+        }
+    }
+
+}

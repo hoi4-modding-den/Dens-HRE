@@ -86,6 +86,33 @@ ideas = {
 				political_power_cost = 0.25
                 war_support_factor = -0.1
                 opinion_gain_monthly_factor = -0.5
+				resistance_target = 0.1
+			}
+		}
+
+		YRR_low_legitimacy_2 = {
+
+			name = YRR_low_legitimacy
+			picture = prc_low_popular_support3
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+            available = {
+                has_cosmetic_tag = YRR_spanish_pretenders
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+                opinion_gain_monthly_factor = -0.5
+				resistance_target = 0.1
 			}
 		}
 

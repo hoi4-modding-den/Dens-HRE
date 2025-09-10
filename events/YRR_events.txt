@@ -1,0 +1,48 @@
+add_namespace = YRR_events
+
+country_event = { # Power Struggle ends
+	id = YRR_events.1
+	title = YRR_events.1.t
+	desc = YRR_events.1.desc
+    picture = GFX_report_event_spr_nationalist_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YRR_events.1.a
+        set_politics = {
+            ruling_party = neutrality
+            elections_allowed = no
+        }
+
+        if = {
+            limit = {
+                has_idea = YRR_low_legitimacy
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            swap_ideas = {
+                remove_idea = YRR_low_legitimacy
+                add_idea = YRR_low_legitimacy_2
+            }
+        }
+    }
+
+    option = {
+        name = YRR_events.1.b
+        set_politics = {
+            ruling_party = fascism
+            elections_allowed = no
+        }
+
+        if = {
+            limit = {
+                has_idea = YRR_low_legitimacy
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            swap_ideas = {
+                remove_idea = YRR_low_legitimacy
+                add_idea = YRR_low_legitimacy_2
+            }
+        }
+    }
+}

@@ -8,9 +8,9 @@ guiTypes = {
 		
 		# PROGRESS BAR
 		iconType = {
-		name = "YBS_foreign_control_progress_bar"
-		spriteType = "GFX_XVE_gov_support_progress_bar"
-		position = { x = 35 y = 191 }
+			name = "YBS_foreign_control_progress_bar"
+			spriteType = "GFX_XVE_gov_support_progress_bar"
+			position = { x = 35 y = 191 }
 		}	
 
 		#TEXT
@@ -22,6 +22,7 @@ guiTypes = {
 			format = center
 			maxHeight = 42
 			maxWidth = 500
+			pdx_tooltip = YBS_foreign_control_percentage_tt
 		}
 		instantTextBoxType = {
 			name ="YBS_foreign_control_text"
@@ -50,5 +51,107 @@ guiTypes = {
 			maxHeight = 42
 			maxWidth = 500
 		}								
+	}
+
+	# Welcome Message GUI by Kasastul
+	containerWindowType = {
+		name = "YBS_welcome_window"
+		moveable = yes
+		position = { x = -400 y = -300 }
+		orientation = center
+		size = { width = 800 height = 600 }
+		
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+		iconType = {
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+            alwaystransparent = yes
+		}	
+		instantTextboxType = {
+			name = "YBS_welcome_Desc"
+			position = { x = 3 y = 7 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "The Greater Basque Country"
+			maxWidth = 500
+			maxHeight = 20
+			format = center
+            alwaystransparent = yes
+		}
+		
+		containerWindowType = {
+			name = "YBS_welcome_image_window"
+			position = { x=500 y=0 }
+			size = { width = 300 height = 600 }
+			
+			background = {
+				name = "YBS_welcome_Image_Border"
+				quadTextureSprite ="GFX_tiled_window_thin_border2"
+			}
+			iconType ={
+				name ="YBS_welcome_window_image"
+				spriteType = "GFX_YBS_welcome"
+				position = { x= 8 y = 8 }
+				Orientation = "UPPER_LEFT"
+				scale = 1.00
+			}	
+		}
+		buttonType = {
+			name = "YBS_welcome_message_close"
+			spriteType = "GFX_closebutton"
+			position = { x = 764 y = 4 }
+			shortcut = "ESCAPE"
+			pdx_tooltip = YBS_exit_tooltip
+		}
+		buttonType = {
+			name ="YBS_welcome_message_continue"
+			quadTextureSprite ="GFX_button_359x34"
+			position = { x=20 y=553 }
+			buttonText = ""
+			buttonFont = "hoi_16mbs"
+			shortcut = "SPACE"
+			pdx_tooltip = YBS_continue_tooltip
+		}
+		iconType = {
+			name = "YBS_continue_button_bloom"
+			spriteType = "GFX_YKP_continue_button_bloom"
+			position = { x=20 y=553 }
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "YBS_continue_button_text" 
+			position = { x=50 y=563 }
+			font = "hoi_16mbs"
+			text = "Continue"
+			maxWidth = 300
+			maxHeight = 375
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "YBS_introduction_text" 
+			position = { x=10 y=52 }
+			font = "cg_16b"
+			text = YBS_intro_loc
+			maxWidth = 493
+			maxHeight = 375
+			multiline = yes
+			format = left
+		}
+		buttonType = {
+			name ="YBS_welcome_message_credits"
+			quadTextureSprite ="GFX_button_94x31"
+			position = { x=400 y=555 }
+			buttonText = "Credits"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = YBS_credits
+		}
+		
 	}
 }

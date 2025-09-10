@@ -489,9 +489,10 @@ focus_tree = {
 		id = YBS_meet_with_the_french
 		icon = GFX_focus_chi_reach_out_to_france
 		prerequisite = { focus = YBS_victory_at_all_costs }
+		prerequisite = { focus = YBS_ally_the_reactionaries }
 		#mutually_exclusive = { focus = }
-		x = -1
-		y = 1
+		x = 0
+		y = 2
 		relative_position_id = YBS_victory_at_all_costs
 
 		cost = 5
@@ -509,14 +510,48 @@ focus_tree = {
 		}
 		
 		bypass = {
-			
+			OR = {
+				has_war_with = YFR
+				NOT = { country_exists = YFR }
+			}
 		}
 
 		available_if_capitulated = no
 
+		will_lead_to_war_with = YFR
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			# either you annex them or you declare war on them once you border them
+			YFR = {
+				country_event = { id = YBS_diplo_events.16 days = 5 }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			effect_tooltip = {
+				annex_country = {
+                    target = YFR
+                    transfer_troops = no
+                }
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = YFR
+					}
+					add_core_of = ROOT
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = -1
+				}
+
+				custom_effect_tooltip = YBS_diplo_events.17.a.tt
+			}
 		}
 	}
 
@@ -669,8 +704,8 @@ focus_tree = {
 		icon = GFX_focus_spa_unify_the_nationalist_front
 		prerequisite = { focus = YBS_victory_at_all_costs }
 		#mutually_exclusive = { focus = }
-		x = 0
-		y = 2
+		x = -1
+		y = 1
 		relative_position_id = YBS_victory_at_all_costs
 
 		cost = 5
@@ -691,16 +726,35 @@ focus_tree = {
 			OR = {
 				has_war_with = YRR
 				NOT = { country_exists = YRR }
-				is_ally_with = YRR
 			}
 		}
 
 		available_if_capitulated = no
 
+		will_lead_to_war_with = YRR
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			YRR = {
-				# country event
+				country_event = { id = YBS_diplo_events.13 days = 5 }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			effect_tooltip = {
+				annex_country = {
+                    target = YRR
+                    transfer_troops = no
+                }
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = YRR
+					}
+					add_core_of = ROOT
+				}
 			}
 		}
 	}
@@ -998,7 +1052,25 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			
+			YGL = { country_event = { id = YBS_diplo_events.2 days = 3 } }
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			effect_tooltip = {
+				annex_country = {
+                    target = YGL
+                    transfer_troops = no
+                }
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = YGL
+					}
+					add_core_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -4014,6 +4086,24 @@ focus_tree = {
 					YGL = { has_government = democratic }
 				}
 				YGL = { country_event = { id = YBS_diplo_events.2 days = 3 } }
+
+				custom_effect_tooltip = if_they_accept_tt
+
+				effect_tooltip = {
+					annex_country = {
+						target = YGL
+						transfer_troops = no
+					}
+
+					custom_effect_tooltip = generic_skip_one_line_tt
+
+					every_state = {
+						limit = {
+							is_core_of = YGL
+						}
+						add_core_of = ROOT
+					}
+				}
 			}
 			else = {
 				create_wargoal = {
@@ -4073,7 +4163,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_exile_the_french
-		icon = GFX_focus_attack_france
+		icon = GFX_focus_chi_reach_out_to_france
 		prerequisite = { focus = YBS_infiltrate_catalonia }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -4098,7 +4188,6 @@ focus_tree = {
 			OR = {
 				has_war_with = YFR
 				NOT = { country_exists = YFR }
-				is_ally_with = YFR
 			}
 		}
 
@@ -4108,9 +4197,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			create_wargoal = {
-				target = YFR
-				type = annex_everything
+			YFR = {
+				country_event = { id = YBS_diplo_events.16 days = 5 }
 			}
 		}
 	}

@@ -355,6 +355,16 @@
  YBS_unknown_projection: "§Yunknown§! as there exists a tie of popularity. Should Elections end like this, the §cBasque Nationalist Party§! will win by default"
 
 
+# INTRO GUI
+
+ YBS_BLITZKRIEG_DESC: "The Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the Basque Nationalist Party and José Antonio Aguirre."
+
+ YBS_intro_loc: "§LThe Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the §cBasque Nationalist Party§! and §YJosé Antonio Aguirre§!.\n \nWhile the early new republic was plagued by political infighting and attacks from both the Falangists and the Communists, the §cEAK§! managed to establish their authority and in an alliance with the Carlist-dominated military crushed the rebellious falangists.\n \nNow the §Yyoung republic§! faces another crisis as the §gCarlists§! prepare to overthrow the government to prevent the upcoming elections.§!\n \n§YPossible Paths to unite Iberia:§!\n§g  - The Carlist Restoration\n  - The Corporate Regime\n  - The Federal Republic\n  - The Federation\n  - The International Republic\n  - The Defence Council§!"
+ YBS_credits: "Basque Country Content: §H0rland0§!\nIntro GUI: §HKåsastul§!\nEverything else: §HHoi4 Modding Den Discord§!"
+ YBS_open_welcome_tooltip: "Open §YWelcome Screen§!"
+ YBS_continue_tooltip: "§CEuskal Errepublika libre geldituko da!§!"
+ YBS_exit_tooltip: "§YExit§!"
+
 # TECH
 
  YBS_red_cross_tech: "International Red Cross Cooperation"
@@ -374,7 +384,7 @@
 
  YBS_projected_election_victor: "View Projected Election Outcome"
  YBS_projected_election_victor_desc: " \nThe current §Yprojected outcome§! of the election is [Root.YBSGetElectionProjection]."
- TBS_timer_for_popular_front: "Socialist-Syndicalist Meeting in Donostia"
+ YBS_timer_for_popular_front: "Socialist-Syndicalist Meeting in Donostia"
  YBS_timer_until_election_week: "Election Week approaching..."
  YBS_carlist_campaigns: "§gCarlist§! Pride March"
  YBS_nationalist_campaigns: "Utilise §cPopulist§! Tactics"
@@ -423,6 +433,7 @@
  YBS_foreign_control_text: "§gThanks to the economic reforms of the §!§lBasque Development Party§!§g, foreign corporations have gained significantly in influence within the §!§YBasque Country§!§g. Should their hold over our economic affairs become too strong, they are likely to take §!§Rfull control§!§g of our internal and external affairs.§!"
  YBS_foreign_control_header2: "$YBS_foreign_control$:"
  YBS_foreign_control_percentage: "[?ROOT.YBS_foreign_control|0].0%"
+ YBS_foreign_control_percentage_tt: "£GFX_puppet_texticon Foreign Economic Control is at §R[?ROOT.YBS_foreign_control|0].0%§!"
  YBS_lobbying_efforts: "Corporate Lobbying Efforts"
  YBS_arms_contracts: "Government Arms Contracts"
  YBS_building_buffs: "Government Construction Projects"
@@ -955,6 +966,33 @@
  YBS_diplo_events.12.t: "[FROM.GetNameDefCap] refuses Unity!"
  YBS_diplo_events.12.desc: "The [FROM.GetAdjective] leaders have betrayed the revolution and denounced us as revisionists!"
  YBS_diplo_events.12.a: "Another betrays the Revolution."
+
+ YBS_diplo_events.13.t: "[FROM.GetNameDefCap] offer Reconciliation"
+ YBS_diplo_events.13.desc: "WIP"
+ YBS_diplo_events.13.a: "Carlism doens't sound too bad."
+ YBS_diplo_events.13.b: "We cannot compromise on our values!"
+
+ YBS_diplo_events.14.t: "[FROM.capital.GetCapitalVictoryPointName] surrenders!"
+ YBS_diplo_events.14.desc: "The traitors have accepted our offer to subjugate themselves to the crown."
+ YBS_diplo_events.14.a: "Wise choice."
+
+ YBS_diplo_events.15.t: "The Traitors refuse our Mercy!"
+ YBS_diplo_events.15.desc: "The traitors that escaped to [FROM.capital.GetCapitalVictoryPointName] have refused our merciful offer. It's time for war."
+ YBS_diplo_events.15.a: "They have chosen... Death."
+
+ YBS_diplo_events.16.t: "Carlists offer Passage Home"
+ YBS_diplo_events.16.desc: "WIP"
+ YBS_diplo_events.16.a: "Finally home!"
+ YBS_diplo_events.16.b: "No! We will stay!"
+
+ YBS_diplo_events.17.t: "French Commanders accept our offer"
+ YBS_diplo_events.17.desc: "The commanders of the French Regiment have accepted our offer to send them home, allowing our troops to enter their occupied territory."
+ YBS_diplo_events.17.a: "We will organise a train home."
+ YBS_diplo_events.17.a.tt: "The §YFrench Regiment§! returns home."
+
+ YBS_diplo_events.18.t: "French Commanders refuse negotiations"
+ YBS_diplo_events.18.desc: "Our diplomats sent to the remnants of the French intervention force have returned unsuccessful due to the French commanders stubborness to hear us out."
+ YBS_diplo_events.18.a: "Their loss. To War!"
 
  YBS_esperanto_events.1.t: "A Flag for the Republic"
  YBS_esperanto_events.1.desc: "Upon the declaration of the Republic of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexei Kemersky, insists upon its name as 'Tricolour' in a symbolic sense, as many notable republics in history were represented by them.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."

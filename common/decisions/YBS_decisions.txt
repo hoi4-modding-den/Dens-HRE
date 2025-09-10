@@ -15,7 +15,7 @@ YBS_election_decision_cat = {
                     is_debug = yes
                     is_ai = no
                 }
-                activate_mission = TBS_timer_for_popular_front
+                activate_mission = YBS_timer_for_popular_front
                 activate_mission = YBS_timer_until_election_week
             }
         }
@@ -24,7 +24,7 @@ YBS_election_decision_cat = {
 
 	}
 
-    TBS_timer_for_popular_front = {
+    YBS_timer_for_popular_front = {
 
         icon = generic_political_discourse
 
