@@ -17,6 +17,7 @@ scripted_gui = {
 		visible = {
 			NOT = { has_country_flag = YBS_welcome_message_flag }
 			is_ai = no
+			tag = YBS
 		}
 		effects = {	
 			YBS_welcome_message_close_click = {
