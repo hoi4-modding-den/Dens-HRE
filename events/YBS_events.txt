@@ -897,19 +897,10 @@ country_event = { # YBS approaches YBL / Accepted
         }
 
         custom_effect_tooltip = generic_skip_one_line_tt
+
         custom_effect_tooltip = available_political_advisor
-        add_advisor_role = {
-            character = YBL_juan_march_ordinas
-            activate = no
-            advisor = {
-                slot = political_advisor
-                cost = 100
-                idea_token = YBL_juan_march_ordinas_YBS_token
-                traits = {
-                    YBS_YBL_foreign_riches
-                }
-            }
-        }
+        show_ideas_tooltip = YBS_juan_march_ordinas_fake
+        set_country_flag = YBS_juan_march_ordinas_is_here
     }
 }
 

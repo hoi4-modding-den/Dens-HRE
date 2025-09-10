@@ -153,6 +153,33 @@ characters = {
 		}
 	}
 
+	YBS_juan_march_ordinas_fake = {
+		name = YBS_juan_march_ordinas_fake_name
+		portraits = {
+			civilian = {
+                small = GFX_portrait_YBS_juan_march_ordinas_fake_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_juan_march_ordinas_fake
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_government = neutrality
+			}
+			visible = {
+				has_country_flag = YBS_juan_march_ordinas_is_here
+			}
+			traits = {
+				YBS_YBL_foreign_riches
+			}
+
+			cost = 50
+		}
+	}
+
 	YBS_falangist_general_1 = {
 		name = YBS_falangist_general_1_name
 		portraits = {

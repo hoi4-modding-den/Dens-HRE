@@ -1,5 +1,62 @@
 political_actions = {
 
+    YRR_reunify_spain = {
+
+        icon = generic_nationalism
+
+        priority = -100
+
+        ai_will_do = {
+            base = 10
+        }
+
+        allowed = {
+            original_tag = YRR
+        }
+
+        available = {
+            YBS_owns_all_iberian_states = yes
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            set_global_flag = YBS_iberian_civil_war_ended
+            set_cosmetic_tag = YRR_spain
+
+            if = {
+                limit = {
+                    NOT = { has_government = fascism }
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                hidden_effect = {
+                    YKP = {
+                        every_core_state = {
+                            remove_core_of = YKP
+                        }
+                    }
+                    180 = { add_core_of = YKP }
+                    181 = { add_core_of = YKP }
+                    112 = { add_core_of = YKP }
+                    795 = { add_core_of = YKP }
+                    179 = { add_core_of = YKP }
+                }
+                release_puppet = YKP
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+                    is_owned_by = ROOT
+				}
+				add_core_of = ROOT
+			}
+        }
+    }
+
     YRR_power_struggle_mission = {
 
         icon = generic_political_discourse
@@ -25,6 +82,64 @@ political_actions = {
         timeout_effect = {
             country_event = YRR_events.1
             set_country_flag = YRR_power_struggle_over
+        }
+    }
+
+    YRR_attack_YBS = {
+
+        icon = generic_prepare_civil_war
+
+        priority = -99
+
+        cost = 100
+
+        ai_will_do = {
+            base = 10
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+        }
+
+        allowed = {
+            original_tag = YRR
+        }
+
+        available = {
+            #date > 1938.6.1
+			is_subject = no
+            NOT = { is_ally_with = YBS }
+        }
+
+        visible = {
+            country_exists = YBS
+            NOT = { has_war_with = YBS }
+        }
+
+        cancel_trigger = {
+            OR = {
+                is_subject = yes
+                is_ally_with = YBS
+                has_war_with = YBS
+                NOT = { country_exists = YBS }
+            }
+        }
+
+        days_remove = 50
+
+        complete_effect = {
+            YBS = {
+                country_event = YBS_diplo_events.5
+            }
+        }
+
+        war_with_on_remove = YBS
+
+        remove_effect = {
+            declare_war_on = {
+                target = YBS
+                type = civil_war
+            }
         }
     }
 

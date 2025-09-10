@@ -451,7 +451,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				recruitable_population_factor = 0.1
+				conscription_factor = 0.1
 				mobilization_speed = 0.25
 			}
 		}
@@ -497,6 +497,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.4
 				naval_equipment_upgrade_xp_cost = -1
 				refit_speed = 0.15
+				ai_focus_naval_factor = 0.5
 			}
 
 			research_bonus = {
@@ -1192,7 +1193,7 @@ ideas = {
 			}
 
 			available = {
-				has_country_flag = YBS_mondragon_cooperative_founded
+				has_completed_focus = YBS_support_regional_cooperatives
 			}
 
 			cost = 100

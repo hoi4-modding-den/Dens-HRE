@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 6000 y = 350 }
+	continuous_focus_position = { x = 6200 y = 350 }
 
 	initial_show_position = {
 		x = 10
@@ -894,7 +894,18 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			add_doctrine_cost_reduction = {
+				name = YBS_doctrine_of_fire
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				name = YBS_doctrine_of_fire
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
 		}
 	}
 
@@ -924,9 +935,11 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
-			
+			custom_effect_tooltip = YBS_carlist_general_6_stats_tt
+
+			custom_effect_tooltip = YBS_carlist_general_7_stats_tt
 		}
 	}
 
@@ -4378,9 +4391,38 @@ focus_tree = {
 		icon = GFX_focus_RAJ_issue_bonds_on_the_stock_market
 		prerequisite = { focus = YBS_rule_of_capital }
 		#mutually_exclusive = { focus = }
-		x = -3
-		y = 1
+		x = -2
+		y = 2
 		relative_position_id = YBS_rule_of_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YBS_import_military_tech
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = YBS_consolidate_our_capital }
+		prerequisite = { focus = YBS_lobby_for_intervention }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = YBS_consolidate_our_capital
 
 		cost = 5
 
@@ -4512,12 +4554,8 @@ focus_tree = {
 
 		available = {
 			OR = {
-				AND = {
-					YBL = {
-						NOT = { has_war_with = ROOT }
-						exists = yes
-					}
-				}
+				YBL = { NOT = { has_war_with = ROOT } }
+				NOT = { country_exists = YBL }
 				YBL = { NOT = { has_country_leader = { character = YBL_juan_march_ordinas ruling_only = yes } } }
 			}
 		}
@@ -4532,30 +4570,23 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					YBL = { NOT = { has_country_leader = { character = YBL_juan_march_ordinas ruling_only = yes } } }
+					OR = {
+						YBL = { NOT = { has_country_leader = { character = YBL_juan_march_ordinas ruling_only = yes } } }
+						NOT = { country_exists = YBL }
+					}
 				}
 				every_possible_country = {
 					limit = { has_character = YBL_juan_march_ordinas }
 					random_character = {
 						limit = { is_character = YBL_juan_march_ordinas }
 						set_nationality = ROOT
-
-						custom_effect_tooltip = generic_skip_one_line_tt
-
-						add_advisor_role = {
-							character = YBL_juan_march_ordinas
-							activate = no
-							advisor = {
-								slot = political_advisor
-								cost = 100
-								idea_token = YBL_juan_march_ordinas_YBS_token
-								traits = {
-									YBS_YBL_foreign_riches
-								}
-							}
-						}
 					}
 				}
+				set_country_flag = YBS_juan_march_ordinas_is_here
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				custom_effect_tooltip = available_political_advisor
+				show_ideas_tooltip = YBS_juan_march_ordinas_fake
 			}
 			else = {
 				YBL = { country_event = { id = YBS_diplo_events.6 days = 3 } }
@@ -4582,22 +4613,8 @@ focus_tree = {
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				effect_tooltip = {
-					YBL = {
-						add_advisor_role = {
-							character = YBL_juan_march_ordinas
-							activate = no
-							advisor = {
-								slot = political_advisor
-								cost = 100
-								idea_token = YBL_juan_march_ordinas_YBS_token
-								traits = {
-									YBS_YBL_foreign_riches
-								}
-							}
-						}
-					}
-				}
+				custom_effect_tooltip = available_political_advisor
+				show_ideas_tooltip = YBS_juan_march_ordinas_fake
 			}
 		}
 	}
@@ -4784,6 +4801,56 @@ focus_tree = {
 					NOT = { is_claimed_by = ROOT }
 				}
 				add_claim_by = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = YBS_corporate_consolidation_in_iberia
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = YBS_lobby_for_intervention }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = YBS_lobby_for_intervention
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			is_subject = no
+			YBS_owns_all_iberian_states = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_global_flag = YBS_iberian_civil_war_ended
+
+			set_country_flag = YBS_united_iberia
+			effect_tooltip = {
+				set_cosmetic_tag = YBS_hanse_neutrality
+			}
+			hidden_effect = {
+				set_cosmetic_tag = YBS_hanse
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+				}
+				add_core_of = ROOT
 			}
 		}
 	}
@@ -5004,7 +5071,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			
 		}
@@ -5932,7 +5999,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = YBS_mondragon_cooperative
 		}
 	}
 
@@ -6338,7 +6410,7 @@ focus_tree = {
 	focus = {
 		id = YBS_tire_factory
 		icon = GFX_focus_generic_improve_roads
-		prerequisite = { focus = YBS_modern_economics focus = YBS_support_the_fisheries }
+		prerequisite = { focus = YBS_reach_out_to_trade_partners focus = YBS_modern_economics focus = YBS_support_the_fisheries }
 		#mutually_exclusive = { focus = }
 		x = -2
 		y = 3
@@ -6396,7 +6468,7 @@ focus_tree = {
 	focus = {
 		id = YBS_dam_project
 		icon = GFX_focus_generic_hydroelectric_energy
-		prerequisite = { focus = YBS_modern_economics focus = YBS_support_the_fisheries }
+		prerequisite = { focus = YBS_reach_out_to_trade_partners focus = YBS_modern_economics focus = YBS_support_the_fisheries }
 		#mutually_exclusive = { focus = }
 		x = 2
 		y = 3

@@ -426,7 +426,7 @@ YBS_iberian_federation_cat = {
 			}
             hidden_effect = {
                 create_dynamic_country = {
-                    original_tag = YPG
+                    original_tag = YPS
                     every_core_state = {
                         remove_core_of = PREV
                     }
@@ -650,7 +650,7 @@ YBS_iberian_federation_cat = {
 			}
             hidden_effect = {
                 create_dynamic_country = {
-                    original_tag = YPS
+                    original_tag = YRR
                     every_core_state = {
                         remove_core_of = PREV
                     }
@@ -1386,7 +1386,7 @@ war_measures = {
                 has_war_with = ROOT
                 casualties_inflicted_by = {
                     opponent = ROOT
-                    thousands > 50
+                    thousands > 25
                 }
                 NOT = {
                     any_owned_state = {
@@ -1820,7 +1820,10 @@ debug_decisions = {
 		}
 
         allowed = {
-            original_tag = YBS
+            OR = {
+                original_tag = YBS
+                original_tag = YRR
+            }
         }
 
 		fire_only_once = no

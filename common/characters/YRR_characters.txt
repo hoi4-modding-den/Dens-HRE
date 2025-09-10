@@ -1,0 +1,33 @@
+characters = {
+
+	YRR_gonzalo_queipo_de_llano = {
+		name = YRR_gonzalo_queipo_de_llano_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YRR_gonzalo_queipo_de_llano
+			}
+            army = {
+				large = GFX_portrait_YRR_gonzalo_queipo_de_llano
+			}
+		}
+		country_leader = {
+			traits = {  }
+			ideology = oligarchism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+
+        field_marshal = {
+			traits = { infantry_officer old_guard }
+			visible = {
+				NOT = { has_government = communism }
+			}
+			skill=1
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+		}
+	}
+
+}

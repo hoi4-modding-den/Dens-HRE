@@ -154,6 +154,7 @@
  YBS_handelskommission_desc: "§YEnglish Name:§! §LHanseatic Special Commission in Iberia§!"
  YBS_julio_ruiz_de_alda_name: "Julio Ruiz de Alda"
  YBS_julio_ruiz_de_alda_desc: "§YFull Name:§! §LJulio Ruiz de Alda Miqueleiz§!\n§YBorn:§! §LOctober 7. 1897, in Lizarra§!\n§YBackground:§! §LTogether with Primo de Rivera, he founded the Falangist movement. He was an aviator in the Iberian National Army and completed a transatlantic flight in 1926 in the 'Plus Ultra'. With the collapse of Iberia, he returned to his homelands to fight for Falangism and Iberian reunification.§! $XHH_is_historical_character_tt$"
+ YBS_juan_march_ordinas_fake_name: "Juan March Ordinas"
 
  YBS_falangist_general_1_name: "Carlos Ferrandis"
  YBS_falangist_general_2_name: "Teodoro Mendigur"
@@ -196,6 +197,8 @@
 
 # CHARACTER TOOLTIPS
 
+ YBS_carlist_general_6_stats_tt: "§gLevel§!: §Y3§!, (£trait_attack §Y1§!, £trait_defense §Y3§!, £trait_planning §Y2§!, £trait_logistics §Y3§!)\n§gTraits§!: §C$trait_SPA_carlist_loyalties$§!, §C$infantry_officer$§!, §C$inflexible_strategist$§!"
+ YBS_carlist_general_7_stats_tt: "§gLevel§!: §Y3§!, (£trait_attack §Y4§!, £trait_defense §Y1§!, £trait_planning §Y1§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$trait_SPA_carlist_loyalties$§!, §C$armor_officer$§!"
  YBS_young_general_1_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y1§!, £trait_defense §Y1§!, £trait_planning §Y4§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$YBS_young_officer_trait$§!, §C$career_officer$§!"
  YBS_young_general_2_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y1§!, £trait_defense §Y3§!, £trait_planning §Y1§!, £trait_logistics §Y2§!)\n§gTraits§!: §C$YBS_young_officer_trait$§!, §C$engineer_officer$§!"
  YBS_young_general_3_stats_tt: "§gLevel§!: §Y2§!, (£trait_attack §Y3§!, £trait_defense §Y1§!, £trait_planning §Y2§!, £trait_logistics §Y1§!)\n§gTraits§!: §C$YBS_young_officer_trait$§!, §C$armor_officer$§!"
@@ -304,6 +307,8 @@
  YBS_owns_all_iberian_states_tt_NOT: "Does not own all §YIberian states§!"
  YBS_iberian_federation_complete_tt: "Has established all §YFederal States§! and united §YIberia§!"
  YBS_iberian_federation_complete_tt_NOT: "Has not established all §YFederal States§! and united §YIberia§!"
+ YBS_owns_all_spanish_states_tt: "Owns all Spanish states"
+ YBS_owns_all_spanish_states_tt_NOT: "Does not own all Spanish states"
  YBS_other_carlist_nation_tt: "Is a Carlist Nation"
  YBS_other_carlist_nation_tt_NOT: "Is not a Carlist Nation"
  YBS_democratic_iberian_nation_tt: "Is a democratic Iberian nation"
@@ -323,8 +328,6 @@
  YBS_foreign_control: "£GFX_puppet_texticon Foreign Economic Control"
  YBS_foreign_control_effect_tt: "$YBS_foreign_control$: $RIGHT|-=1%%$"
  YBS_foreign_control_trigger_tt: "Has reached §R$RIGHT|0$%§! $YBS_foreign_control$"
-
- YBS_mondragon_cooperative_founded: "The §YMondragón Corporation§! was founded"
 
  YBS_limited_diplo_from_cw_tt: "§RDiplomatic Actions between §!§YIberia§!§R and the rest of the world are limited until the §!§YCivil War§!§R ends.§!"
 
@@ -412,7 +415,7 @@
 
  YBS_spanish_civil_war_cat: "The Iberian Civil War Continues"
  YBS_start_civil_war_in_iberia: "Restart the Civil War with [FROM.GetName]"
- YBS_justifying_civil_war: "currently preparing to restart the civil war"
+ YBS_justifying_civil_war: "currently preparing to strike"
 
  YBS_purchase_old_ships_category: "$generic_purchase_old_ships_category$"
  YBS_purchase_old_ships_category_desc: "$generic_purchase_old_ships_category_desc$"
@@ -669,6 +672,8 @@
  YBS_rule_of_capital_tt: "§YAuto-completed§! if $YBS_foreign_control$ reaches §R100%§! and §Yprevious foci§! were completed\n "
  YBS_consolidate_our_capital: "Consolidate our Capital"
  YBS_consolidate_our_capital_desc: ""
+ YBS_import_military_tech: "Import Military Equipment"
+ YBS_import_military_tech_desc: ""
  YBS_secure_galicia: "Secure the Galician Ports"
  YBS_secure_galicia_desc: ""
  YBS_secure_castile_leon_and_asturias: "Economic Potential of Northern Spain"
@@ -680,6 +685,8 @@
  YBS_lobby_for_intervention: "Lobby for further Intervention"
  YBS_lobby_for_intervention_desc: ""
  YBS_lobby_for_intervention_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to declare war on other §YIberian nations§!."
+ YBS_corporate_consolidation_in_iberia: "Cement Corporate Overlordship"
+ YBS_corporate_consolidation_in_iberia_desc: ""
 
  YBS_we_will_always_have_hope: "We Will Always Have Hope"
  YBS_we_will_always_have_hope_desc: ""
