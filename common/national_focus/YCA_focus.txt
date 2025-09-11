@@ -1389,19 +1389,35 @@ focus_tree = {
 		x = 20
 		y = 8		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
 		}
+
+		select_effect = {
+			add_ideas = YCA_military_restructuring
+		}		
 
 		available = {
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			#Tooltip purposes (Select Effect)
+			custom_effect_tooltip = SOV_focus_select_effect_tt
+			effect_tooltip = {
+				add_ideas = YCA_military_restructuring
+			}	
+			
+			#(Complete Effect)
+			custom_effect_tooltip = SOV_focus_complete_effect_tt
+			hidden_effect = {
+				remove_ideas = YCA_military_restructuring
+			}
+			country_event = YCA_domestic_events.1
 		}
 	}
 	focus = {
@@ -1411,7 +1427,7 @@ focus_tree = {
 		x = 26
 		y = 8	
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -1615,7 +1631,7 @@ focus_tree = {
 		x = 30
 		y = 8		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -1850,19 +1866,37 @@ focus_tree = {
 		x = -2
 		y = 1		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
 		}
 
 		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = YCA_vanguardist_one_third_support
+					check_variable = {
+						var = YCA_vanguardist_faction_progress_bar
+						value = 33
+					}			
+				}				
+				custom_trigger_tooltip = {
+					tooltip = YCA_socialist_one_third_support
+					check_variable = {
+						var = YCA_socialist_faction_progress_bar
+						value = 33
+					}			
+				}				
+			}			
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			remove_ideas = YCA_workers_militias
+			add_ideas = YCA_the_iberian_liberation_army_idea
 		}
 	}	
 	focus = {
@@ -1875,7 +1909,7 @@ focus_tree = {
 		x = -1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1886,8 +1920,10 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			unlock_decision_tooltip = YCA_revolutionary_defense_decree
+			army_experience = 75
 		}
 	}
 	focus = {
@@ -2029,19 +2065,31 @@ focus_tree = {
 		x = 1
 		y = 1		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = YCA_anarchist_one_third_support
+				check_variable = {
+					var = YCA_anarchist_faction_progress_bar
+					value = 33
+				}			
+			}			
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_workers_militias
+				add_idea = YCA_workers_militias_1
+			}
+			army_experience = 25	
 		}
 	}
 	focus = {
@@ -2065,7 +2113,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { }
 		completion_reward = {
 		}
 	}		

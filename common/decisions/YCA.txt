@@ -1,2 +1,74 @@
-YCA_generalitat_factions_decisions = {	
+YCA_generalitat_factions_decisions = {
+	YCA_revolutionary_defense_decree = {
+		priority = 10
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_revolutionary_military_committee
+		}	
+		
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = YCA_vanguardist_one_third_support
+					check_variable = {
+						var = YCA_vanguardist_faction_progress_bar
+						value = 33
+					}			
+				}				
+				custom_trigger_tooltip = {
+					tooltip = YCA_socialist_one_third_support
+					check_variable = {
+						var = YCA_socialist_faction_progress_bar
+						value = 33
+					}			
+				}				
+			}
+		}
+
+		days_remove = 70
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 50
+		custom_cost_trigger = {
+			command_power > 49
+			has_political_power > 49
+		}		
+		custom_cost_text = decision_cost_CP_50_pp_50
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -50
+				add_political_power = -50
+			}			
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}			
+			swap_ideas = {
+				remove_idea = YCA_the_iberian_liberation_army_idea
+				add_idea = YCA_the_iberian_liberation_army_idea_1
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}	
 }

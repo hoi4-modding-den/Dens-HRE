@@ -31,10 +31,20 @@ YCA_splintered_generalitat:0 "The Splintered Generalitat"
 YCA_splintered_generalitat_desc:0 "The Catalan left is fractured, divided between Vanguardists, Anarcho-Syndicalists, and Revolutionary Socialists. While a tenuous alliance holds for now, each faction jostles for influence, and tensions threaten to erupt. In the long term, a daring experiment in pluralist governance might reshape the political landscape entirely."
 YCA_workers_militias:0 "Workers’ Militias"
 YCA_workers_militias_desc:0 "Mobilized at a moment’s notice, the workers’ militias embody the people’s determination to defend the revolution. Armed and resolute, they are a living symbol of ordinary citizens standing united to protect their ideals and their communities."
+YCA_workers_militias_1:0 "Workers’ Militias"
+YCA_workers_militias_desc_1:0 "Mobilized at a moment’s notice, the workers’ militias embody the people’s determination to defend the revolution. Armed and resolute, they are a living symbol of ordinary citizens standing united to protect their ideals and their communities."
+YCA_workers_militias_2:0 "Workers’ Militias"
+YCA_workers_militias_desc_2:0 "Mobilized at a moment’s notice, the workers’ militias embody the people’s determination to defend the revolution. Armed and resolute, they are a living symbol of ordinary citizens standing united to protect their ideals and their communities."
 YCA_red_trade_unions:0 "Red Trade Unions"
 YCA_red_trade_unions_desc:0 "As Catalonia asserts its independence, trade unions and syndicates gain unprecedented influence, becoming the backbone of the emerging society. They work tirelessly to organize labor, defend workers’ rights, and ensure that the revolution benefits all. Through collective action, mutual aid, and solidarity, these unions aim to reshape the economy and social order, laying the foundations for a fairer, more equitable nation where the people themselves hold the power to build their future."
 YCA_anarchist_society:0 "Anarchist Society"
 YCA_anarchist_society_desc:0 "In the Free Territory of Lower Aragon, the Union of Anarchist Collectives guides a society built on cooperation, self-management, and voluntary association. Communities govern themselves through councils and assemblies, making decisions collectively and ensuring that every voice is heard. Daily life is shaped by mutual aid, shared responsibility, and a commitment to individual freedom balanced with communal solidarity. This unique experiment in anarchist governance demonstrates the potential of a society free from centralized authority, where people work together to create a just and sustainable way of life, defending their ideals against external threats while cultivating a culture of autonomy and cooperation."
+YCA_military_restructuring:0 "Military Restructuring"
+YCA_military_restructuring_desc:0 ""
+YCA_the_iberian_liberation_army_idea:0 "Ejército de Liberación Ibérica"
+YCA_the_iberian_liberation_army_idea_desc:0 ""
+YCA_the_iberian_liberation_army_idea_1:0 "Ejército de Liberación Ibérica"
+YCA_the_iberian_liberation_army_idea_1_desc:0 ""
 
 ### TOOLTIPS ###
 YCA_splintered_generalitat_tt: "--------------\nCurrent §tRevolutionary Infighting§!: §Y[?YCA_generalitat_faction_progress_bar|0]%§!"
@@ -45,6 +55,10 @@ YCA_anarcho_syndicalism_icon_tt_fake:0 "Anarcho-Syndicalists"
 YCA_vanguardist_faction_progress_bar_tt_fake:0 "§RVanguardism§! Influence: §Y[?YCA_vanguardist_faction_progress_bar|0]%§!"
 YCA_anarchist_faction_progress_bar_tt_fake:0 "§gAnarcho-Syndicalism§! Influence: §Y[?YCA_anarchist_faction_progress_bar|0]%§!"
 YCA_socialist_faction_progress_bar_tt_fake:0 "§0Revolutionary Socialism§! Influence: §Y[?YCA_socialist_faction_progress_bar|0]%§!"
+YCA_anarchist_one_third_support:0 "The §gAnarcho-Syndicalists§! have §Y33% influence§! or more within the §LGeneralitat§!"
+YCA_vanguardist_one_third_support:0 "The §RVanguardists§! have §Y33% influence§! or more within the §LGeneralitat§!"
+YCA_socialist_one_third_support:0 "The §0Revolutionary Socialists§! have §Y33% influence§! or more within the §LGeneralitat§!"
+vanguardist_small_influence_gain_tt:0 "The §RVanguardists§! §Yinfluence§! will increase by a §Ysmall amount§!"
 
 ### CUSTOM MODIFIERS ###
 
@@ -53,7 +67,10 @@ YCA_socialist_faction_progress_bar_tt_fake:0 "§0Revolutionary Socialism§! Infl
 
 
 ### EVENTS ###
-
+YCA_domestic_events.1.t:0 "Future of the Forces Armades"
+YCA_domestic_events.1.desc:0 ""
+YCA_domestic_events.1.a:0 ""
+YCA_domestic_events.1.b:0 ""
 
 ### TRAITS ###
 
@@ -64,6 +81,8 @@ YCA_socialist_faction_progress_bar_tt_fake:0 "§0Revolutionary Socialism§! Infl
 ### DECISIONS ###
 YCA_generalitat_factions_decisions:0 "The Generalitat"
 YCA_generalitat_faction_decision_guidesc:0 "The §LCatalan Generalitat§!, born from the §t1934 Revolution§!, began as a united front of §tleftist forces§!. Now, unity is fraying as three factions vie for control: the §rVanguardists§!, demanding a strong centralized authority; the §0Revolutionary Socialists§!, pushing for social democracy and left-wing governance; and the §gAnarcho-Syndicalists§!, seeking a stateless order of workers’ councils. The revolution’s future hangs in the balance."
+YCA_revolutionary_defense_decree:0 "Revolutionary Defense Decree"
+YCA_revolutionary_defense_decree_desc:0 ""
 
 ### DYNAMIC MODIFIERS ###
 

@@ -1,0 +1,20 @@
+add_namespace = YCA_domestic_events
+add_namespace = YCA_diplo_events
+add_namespace = YCA_news_events
+
+country_event = { # Future of the Forces Armades
+	id = YCA_domestic_events.1
+	title = YCA_domestic_events.1.t
+	desc = YCA_domestic_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.1.a
+    }
+	option = {
+        name = YCA_domestic_events.1.b
+    }	
+}
