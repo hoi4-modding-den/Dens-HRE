@@ -1,0 +1,52 @@
+division_template = {
+	name = "División de Infantería"
+	division_names_group = SPAN_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 1 y = 0 }
+	}
+}
+
+units = {
+    division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3938
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 3938
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 13221
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+	division= {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 3930
+		division_template = "División de Infantería"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.3
+	}
+}
