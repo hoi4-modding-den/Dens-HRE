@@ -58,7 +58,10 @@ YBS_spanish_civil_war_cat = {
 	priority = 100
 
 	allowed = {
-		tag = YBS
+		OR = {
+			tag = YBS
+			tag = YRR
+		}
 	}
 
     visible = {

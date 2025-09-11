@@ -250,3 +250,40 @@ YBS_get_the_balearics = {
 		value = 500
 	}
 }
+
+YBS_ai_can_have_fun_unlocked = {
+
+	allowed = { original_tag = YBS }
+
+	enable = {
+        has_country_flag = YBS_ai_can_have_fun
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 100
+	}
+
+	ai_strategy = {
+        type = conquer
+        id = XEX
+        value = 1000
+    }
+    ai_strategy = {
+        type = conquer
+        id = XHH
+        value = 1000
+    }
+    ai_strategy = {
+        type = conquer
+        id = XWB
+        value = 1000
+    }
+    ai_strategy = {
+        type = conquer
+        id = XAS
+        value = 1000
+    }
+}

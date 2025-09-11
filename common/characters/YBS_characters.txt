@@ -153,6 +153,22 @@ characters = {
 		}
 	}
 
+	YBS_xavier_of_bourbon_parma = {
+		name = YBS_xavier_of_bourbon_parma_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_xavier_of_bourbon_parma
+			}
+		}
+		country_leader = {
+			traits = { YBS_carlist_king }
+			ideology = despotism
+			desc = YBS_xavier_of_bourbon_parma_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
 	YBS_juan_march_ordinas_fake = {
 		name = YBS_juan_march_ordinas_fake_name
 		portraits = {
@@ -176,7 +192,7 @@ characters = {
 				YBS_YBL_foreign_riches
 			}
 
-			cost = 50
+			cost = 100
 		}
 	}
 

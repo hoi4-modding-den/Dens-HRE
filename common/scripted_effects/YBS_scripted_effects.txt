@@ -520,3 +520,59 @@ YBS_calc_volunteer_manpower = {
 
 	}
 }
+
+YBS_increase_war_exhaustion = {
+	if = {
+		limit = {
+			has_idea = YBS_war_exhaustion
+		}
+		swap_ideas = {
+			remove_idea = YBS_war_exhaustion
+			add_idea = YBS_war_exhaustion_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = YBS_war_exhaustion_2
+		}
+		swap_ideas = {
+			remove_idea = YBS_war_exhaustion_2
+			add_idea = YBS_war_exhaustion_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = YBS_war_exhaustion_3
+		}
+		swap_ideas = {
+			remove_idea = YBS_war_exhaustion_3
+			add_idea = YBS_war_exhaustion_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = YBS_war_exhaustion_4
+		}
+		swap_ideas = {
+			remove_idea = YBS_war_exhaustion_4
+			add_idea = YBS_war_exhaustion_5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = YBS_war_exhaustion_5
+		}
+		add_war_support = -0.05
+		transfer_units_fraction= {
+			target = YBS
+			size = 0.05
+			stockpile_ratio = 0.15
+			army_ratio = 0.05
+			navy_ratio = 0.05
+			air_ratio = 0.1
+			keep_unit_leaders_trigger = {
+				has_trait = trait_SPA_nationalist_sympathies
+			}
+		}
+	}
+}

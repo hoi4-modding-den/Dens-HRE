@@ -36,13 +36,22 @@ leader_traits = {
         random = no
 		
 		stability_factor = -0.05
-		communism_drift = 0.02
+		communism_drift = 0.01
 		weekly_manpower = 1000
     }
 
 	YBS_esperantist = {
         random = no
 		
+		non_core_manpower = 0.05
+		democratic_acceptance = 30
+    }
+	
+	YBS_uea_chairwoman = {
+        random = no
+		
+		compliance_gain = 0.05
+		stability_weekly = 0.005
 		non_core_manpower = 0.1
 		democratic_acceptance = 30
     }
@@ -60,6 +69,16 @@ leader_traits = {
 
         fascism_drift = 0.04
 		war_support_factor = 0.1
+    }
+
+	YBS_carlist_king = {
+        random = no
+
+		stability_factor = 0.1
+		war_support_factor = 0.1
+		neutrality_drift = 0.04
+		political_power_factor = 0.15
+		conscription_factor = 0.08
     }
 
     # Advisors

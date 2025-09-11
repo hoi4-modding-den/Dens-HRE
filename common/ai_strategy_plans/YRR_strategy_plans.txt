@@ -1,0 +1,106 @@
+YRR_neutrality_path = {
+	name = "The Reactionary Republic"
+	desc = "Stay Non-Aligned"
+
+	allowed = {
+		original_tag = YRR
+	}
+	enable = {
+		has_country_flag = YRR_ai_path_neutrality
+	}
+	abort = {
+		NOT = { has_government = neutrality }
+	}
+
+	ai_national_focuses = {
+		industrial_effort
+		construction_effort
+		construction_effort_2
+		infrastructure_effort
+		construction_effort_3
+		production_effort
+		production_effort_2
+		production_effort_3
+		infrastructure_effort_2
+		extra_tech_slot
+		army_effort
+		political_effort
+		liberty_ethos
+		interventionism_focus
+	}
+
+	research = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+
+YRR_fascism_path = {
+	name = "The Spanish Empire"
+	desc = "Become Fascist"
+
+	allowed = {
+		original_tag = YRR
+	}
+	enable = {
+		has_country_flag = YRR_ai_path_fascism
+	}
+	abort = {
+		OR = {
+			has_government = democratic
+			has_government = communism
+			AND = {
+				has_government = neutrality
+				has_country_flag = YRR_power_struggle_over
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		industrial_effort
+		construction_effort
+		construction_effort_2
+		infrastructure_effort
+		construction_effort_3
+		production_effort
+		production_effort_2
+		production_effort_3
+		infrastructure_effort_2
+		extra_tech_slot
+		army_effort
+		political_effort
+		collectivist_ethos
+		nationalism_focus
+	}
+
+	research = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}

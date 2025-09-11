@@ -426,7 +426,7 @@ YBS_iberian_federation_cat = {
 			}
             hidden_effect = {
                 create_dynamic_country = {
-                    original_tag = YPS
+                    original_tag = YAO
                     every_core_state = {
                         remove_core_of = PREV
                     }
@@ -1361,6 +1361,31 @@ YBS_purchase_old_ships_category = {
 
 war_measures = {
 
+    YBS_increasing_war_exhaustion = {
+
+        icon = revolt
+
+        activation = {
+            always = no
+        }
+
+        available = {
+            NOT = { has_war_with = YBS }
+        }
+
+        is_good = yes
+
+        days_mission_timeout = 100
+
+        timeout_effect = {
+            YBS_increase_war_exhaustion = yes
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            activate_mission = YBS_increasing_war_exhaustion
+        }
+    }
+
     YBS_turn_the_tide = {
 
         icon = generic_tank
@@ -1808,16 +1833,28 @@ political_actions = {
         }
     }
 
-}
-
-debug_decisions = {
-
     YBS_debug_annex_iberia = {
 
 		visible = {
-			is_ai = no
 			is_debug = yes
 		}
+
+        available = {
+            OR = {
+                is_ai = no
+                AND = {
+                    all_state = {
+                        OR = {
+                            YBS_is_iberian_state = no
+                            is_owned_by = ZZZ
+                            is_owned_by = ROOT
+                            owns_or_subject_of = yes
+                        }
+                    }
+                    has_war = no
+                }
+            }
+        }
 
         allowed = {
             OR = {
@@ -1851,7 +1888,7 @@ debug_decisions = {
 		}
 
 		ai_will_do = {
-			base = 0
+			base = 1
 		}
 
 	}

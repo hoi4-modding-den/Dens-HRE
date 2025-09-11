@@ -99,9 +99,11 @@
 
 # FACTIONS
 
- YBS_carlist_league: "Carlist League"
+ YBS_carlist_league: "Carlist Legitimist League"
+ YBS_holy_league: "Holy Alliance"
  YBS_iberian_unity_league: "Iberian Unity Front"
  YBS_iberian_federation: "Iberian Federation"
+ YBS_hopeful_internationale: "Esperema Internacio"
  YBS_socialist_pact: "Socialist Pact"
 
 
@@ -118,6 +120,8 @@
  YBS_democratic_party_socialist_long: "Eusko Abertzale Ekintza (Basque Nationalist Action)"
  YBS_democratic_party_popular_front: "FH-PF"
  YBS_democratic_party_popular_front_long: "Fronte Herrikoia / Populara Fronto (Popular Front)"
+ YBS_democratic_party_uea_committee: "UEA Komitato"
+ YBS_democratic_party_uea_committee_long: "Universala Esperanto-Asocio Komitato (Committee of the Universal Esperanto Association)"
  YBS_democratic_party_liberal: "GEA"
  YBS_democratic_party_liberal_long: "Garapenerako Eusko Alderdia (Basque Development Party)"
  YBS_neutrality_party: "EAK"
@@ -136,6 +140,8 @@
 
  YBS_market_liberalism: "Market Liberalism"
  YBS_market_liberalism_desc: "An uncompromising devotion to free markets and private wealth, Market Liberalism seeks to ensure that democracy serves the interests of commerce. The state intervenes only to safeguard property and contracts, while industry, trade, and finance shape the course of the nation. Politics is defined less by ideology than by the pursuit of prosperity." # copied _desc from hyper_capitalism in YBL_l_english.yml
+ YBS_international_esperantism: "International Esperantism"
+ YBS_international_esperantism_desc: "Covering a wide range of ideological positions, from Anarchism and Socialism to Social Liberalism, International Esperantism seeks to unite people and nations using the Esperanto auxiliary language. Its most prominent representative organisation is the Universala Esperanto-Asocio."
 
 
 # CHARACTERS
@@ -154,6 +160,8 @@
  YBS_handelskommission_desc: "§YEnglish Name:§! §LHanseatic Special Commission in Iberia§!"
  YBS_julio_ruiz_de_alda_name: "Julio Ruiz de Alda"
  YBS_julio_ruiz_de_alda_desc: "§YFull Name:§! §LJulio Ruiz de Alda Miqueleiz§!\n§YBorn:§! §LOctober 7. 1897, in Lizarra§!\n§YBackground:§! §LTogether with Primo de Rivera, he founded the Falangist movement. He was an aviator in the Iberian National Army and completed a transatlantic flight in 1926 in the 'Plus Ultra'. With the collapse of Iberia, he returned to his homelands to fight for Falangism and Iberian reunification.§! $XHH_is_historical_character_tt$"
+ YBS_xavier_of_bourbon_parma_name: "Javier I."
+ YBS_xavier_of_bourbon_parma_desc: "§YFull Name:§! §LFrancisco Javier de Borbón-Parma y de Braganza§!\n§YBorn:§! §LMay 25. 1889, in Lucca, Padania§!\n§YBackground:§! §LDon Javier is the rightful heir to the throne of Spain following Carlist succession.§! $XHH_is_historical_character_tt$"
  YBS_juan_march_ordinas_fake_name: "Juan March Ordinas"
 
  YBS_falangist_general_1_name: "Carlos Ferrandis"
@@ -182,8 +190,10 @@
  YBS_anti_fascist_socialist: "Anti-Fascist Socialist"
  YBS_catalan_anarchist: "Catalan Anarchist"
  YBS_esperantist: "Esperantist"
+ YBS_uea_chairwoman: "Komitatanoj of the Iberian Esperanto Organisation"
  YBS_carlist_junta_trait: "Carlist Leadership"
  YBS_falangist_founder: "Co-Pilot of the Phalanx"
+ YBS_carlist_king: "The Duke of Parma and Piacenza, the Rightful Successor of the Iberian Crown"
 
  YBS_YBL_foreign_riches: "Balearic Financier"
 
@@ -246,6 +256,7 @@
  YBS_falangist_remnants_desc: "Following their attempted coup in late 1935, the Falangists have been under surveillance by state forces. Their leader is prone to abandon his efforts in the Basque Country should we finish off his little goon squads."
  YBS_national_pride: "Harrotasun Nazionala"
  YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
+ YBS_national_pride_tt: "Our enemies will become §Rdemoralised§! if war continues for too long."
  YBS_republican_opposition: "Republican Opposition"
  YBS_deregulated_capitalism: "Deregulated Capitalism"
  YBS_personal_freedoms: "Guaranteed Personal Freedoms"
@@ -261,6 +272,8 @@
  YBS_iberian_federation_spirit: "Iberian Federal Authority"
  YBS_federal_army: "Federal Army of Iberia"
  YBS_insurrectionary_army: "Iberian Insurrectionary Army"
+ YBS_war_exhaustion: "War Exhaustion"
+ YBS_war_exhaustion_5_tt: "Divisions will begin §Rdefecting§! to our enemy."
 
  YBS_construction_concern: "HanseBau GmbH"
  YBS_aluminium_mill: "Aluminiozko Lantegi Batuak"
@@ -328,6 +341,8 @@
  YBS_foreign_control: "£GFX_puppet_texticon Foreign Economic Control"
  YBS_foreign_control_effect_tt: "$YBS_foreign_control$: $RIGHT|-=1%%$"
  YBS_foreign_control_trigger_tt: "Has reached §R$RIGHT|0$%§! $YBS_foreign_control$"
+
+ YBS_no_france_yet_tt: "§YFrance§! has been added to the §CJam§!."
 
  YBS_limited_diplo_from_cw_tt: "§RDiplomatic Actions between §!§YIberia§!§R and the rest of the world are limited until the §!§YCivil War§!§R ends.§!"
 
@@ -428,6 +443,7 @@
  YBS_purchase_ships_XEX: "@XEX Purchase [XEX.GetAdjective] Cruisers"
  YBS_XEX_transfers_ships_tt: "We will get §gfour§! §YImperium Class Cruisers§! from §Y[XEX.GetNameDef]§!."
 
+ YBS_increasing_war_exhaustion: "Growing War Exhaustion..."
  YBS_turn_the_tide: "Turn the Tide"
  YBS_turn_the_tide_desc: "Our enemy has been weakened from attacking our defences. It is time for a decisive attack!"
 
@@ -527,6 +543,28 @@
  YBS_the_restoration_wars_desc: ""
  YBS_the_kingdom_restored: "The Kingdom of Iberia Restored"
  YBS_the_kingdom_restored_desc: ""
+ YBS_reclaim_the_colonies: "Reclaim the Colonies"
+ YBS_reclaim_the_colonies_desc: ""
+ YBS_holy_alliance: "The Holy Alliance"
+ YBS_holy_alliance_desc: ""
+ YBS_phoenix_from_the_ashes: "A Phoenix Rising"
+ YBS_phoenix_from_the_ashes_desc: ""
+ YBS_prepare_for_franco_iberian_war: "Our Neighbouring Rival"
+ YBS_prepare_for_franco_iberian_war_desc: ""
+ YBS_claim_french_navarre: "Encourage Separatism in French Navarre"
+ YBS_claim_french_navarre_desc: ""
+ YBS_meddling_in_the_hre: "The Rotting Corpse"
+ YBS_meddling_in_the_hre_desc: ""
+ YBS_support_papal_italy: "Italy under the Papal Tiara"
+ YBS_support_papal_italy_desc: ""
+ YBS_spanish_dominion_in_holland: "Crown of the Netherlands"
+ YBS_spanish_dominion_in_holland_desc: ""
+ YBS_fortify_the_border: "Prepare against the Common Enemy"
+ YBS_fortify_the_border_desc: ""
+ YBS_franco_iberian_war: "Once More Unto France"
+ YBS_franco_iberian_war_desc: ""
+ YBS_thanks_for_playing_mon: "The Bourbon Dominion"
+ YBS_thanks_for_playing_mon_desc: ""
 
  YBS_liberal_victory: "Path to Prosperity"
  YBS_liberal_victory_desc: ""
@@ -662,10 +700,28 @@
  YBS_move_south: "Move South"
  YBS_move_south_desc: ""
 
- YBS_victory_in_the_civil_war: "Iberia United!"
+ YBS_victory_in_the_civil_war: "Iberia at Peace"
  YBS_victory_in_the_civil_war_desc: ""
- YBS_victory_in_the_civil_war_regional: "Peace in Iberia"
+ YBS_victory_in_the_civil_war_regional: "Victory of the Federation"
  YBS_victory_in_the_civil_war_regional_desc: ""
+ YBS_restore_spanish_north_africa: "Restore Spanish North Africa"
+ YBS_restore_spanish_north_africa_desc: ""
+ YBS_guidance_for_the_colonies: "Guide the Former Colonies"
+ YBS_guidance_for_the_colonies_desc: ""
+ YBS_european_involvement: "European Beacon of Democracy"
+ YBS_european_involvement_desc: ""
+ YBS_join_a_democratic_alliance: "Seek Democratic Allies"
+ YBS_join_a_democratic_alliance_desc: ""
+ YBS_claim_navarre: "Recognise the Free Navarre Association"
+ YBS_claim_navarre_desc: ""
+ YBS_lead_the_free_democracies: "Lead the Free Democracies"
+ YBS_lead_the_free_democracies_desc: ""
+ YBS_liberate_french_navarre: "Our Final Liberation"
+ YBS_liberate_french_navarre_desc: ""
+ YBS_thanks_for_playing_dem: "The Future of Iberia"
+ YBS_thanks_for_playing_dem_desc: ""
+ YBS_centralise_the_federation: "Centralise the Federation"
+ YBS_centralise_the_federation_desc: ""
 
  YBS_rule_of_capital: "Corporate Takeover"
  YBS_rule_of_capital_desc: ""
@@ -936,8 +992,8 @@
  YBS_diplo_events.3.a: "United we stand!"
 
  YBS_diplo_events.4.t: "Galicia refuses!"
- YBS_diplo_events.4.desc: "WIP"
- YBS_diplo_events.4.a: "I suppose not today."
+ YBS_diplo_events.4.desc: "The Galician government has refused, citing that their own sovereignty is more important than restoring order and democracy in Iberia."
+ YBS_diplo_events.4.a: "I suppose that's fair."
 
  YBS_diplo_events.5.t: "[FROM.GetNameDefCap] prepares for War!"
  YBS_diplo_events.5.desc: "Recent reports from our border show a buildup of [FROM.GetAdjective] troops. Our officers worry that this indicates a continuation of the Iberian Civil War between us and [FROM.GetNameDef]."
@@ -1001,6 +1057,23 @@
  YBS_diplo_events.18.desc: "Our diplomats sent to the remnants of the French intervention force have returned unsuccessful due to the French commanders stubborness to hear us out."
  YBS_diplo_events.18.a: "Their loss. To War!"
 
+ YBS_diplo_events.19.t: "Demoralised Troops"
+ YBS_diplo_events.19.desc: "Our continuing war with [YBS.GetNameDef] has begun to demoralise our troops as they see the spirit of the Basque people triumph even in adversity."
+ YBS_diplo_events.19.a: "Continue Fighting!"
+
+ YBS_diplo_events.20.t: "Formation of a Holy Alliance"
+ YBS_diplo_events.20.desc: "WIP"
+ YBS_diplo_events.20.a: "God Wills It."
+ YBS_diplo_events.20.b: "Heresy."
+
+ YBS_diplo_events.21.t: "The Papal State joins the Holy Alliance"
+ YBS_diplo_events.21.desc: "The Pope has blessed our alliance by joining it!"
+ YBS_diplo_events.21.a: "God Wills It!"
+
+ YBS_diplo_events.22.t: "The Papal State refuses to join the Holy Alliance"
+ YBS_diplo_events.22.desc: "The Pope has refused to be part of a Holy Alliance led by us."
+ YBS_diplo_events.22.a: "If it is His will..."
+
  YBS_esperanto_events.1.t: "A Flag for the Republic"
  YBS_esperanto_events.1.desc: "Upon the declaration of the Republic of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexei Kemersky, insists upon its name as 'Tricolour' in a symbolic sense, as many notable republics in history were represented by them.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."
  YBS_esperanto_events.1.a: "We will continue using the Esperanto Flag."
@@ -1028,31 +1101,31 @@
  YBS_news_events.1.f: "Thy Kingdom Come!"
 
  YBS_news_events.2.t: "Nationalists win Basque Elections"
- YBS_news_events.2.desc: "WIP"
+ YBS_news_events.2.desc: "The Basque Nationalist Party has won the elections in the Basque Country. As the ones to declare independence, it is only natural that their popularity with the people is high. Their campaign mostly focused on protecting independence and supporting the people."
  YBS_news_events.2.a: "Who would have guessed..."
  YBS_news_events.2.b: "The bourgeoisie remains in control."
  YBS_news_events.2.c: "We have a lot to do!"
 
  YBS_news_events.3.t: "Liberals win Basque Elections"
- YBS_news_events.3.desc: "WIP"
+ YBS_news_events.3.desc: "The Basque Development Party has won the elections in the Basque Country. Their party leader, Eli Gallastegi, a former Nationalist Party member who left after the declaration of independence due to the disunity in the party, has mostly made tame promises during his campaign. From allowing international business into our nation to decreasing administratiorial bloat, the liberals have promised a wide range of reforms."
  YBS_news_events.3.a: "Capital always wins."
  YBS_news_events.3.b: "The bourgeoisie strengthens its hold."
  YBS_news_events.3.c: "It's time for reform!"
 
  YBS_news_events.4.t: "Socialists win Basque Elections"
- YBS_news_events.4.desc: "WIP"
+ YBS_news_events.4.desc: "The Basque National Action has won the elections in the Basque Country. Their party leader, Tomás Bilbao, had promised during the campaign to increase social spending and begin the construction of a welfare state and protecting the poor. While slightly opposed to the Syndicalists, they still wish to cooperate with the Unions."
  YBS_news_events.4.a: "Reform rather than revolution?"
  YBS_news_events.4.b: "Perhaps the workers don't have to free themselves?"
  YBS_news_events.4.c: "Let's focus on the task at hand!"
 
  YBS_news_events.5.t: "Syndicalists win Basque Elections"
- YBS_news_events.5.desc: "WIP"
+ YBS_news_events.5.desc: "The Syndicalist Party has won the elections in the Basque Country. Their close relationship with the unions and the workers and their promises for a welfare program and public education has brought them their win. Despite being one of the most radical parties in the country, they do not plan on dismantling the institutions of the republic, believing that since the Basque Country is a young state, it is still possible to achieve their aims through reform."
  YBS_news_events.5.a: "Will they join their Catalonian friends?"
  YBS_news_events.5.b: "Another Victory for the Workers!"
  YBS_news_events.5.c: "Workers, unite!"
 
  YBS_news_events.6.t: "Popular Front wins Basque Elections"
- YBS_news_events.6.desc: "WIP"
+ YBS_news_events.6.desc: "The Popular Front, the coalition of the Basque National Action and the Syndicalist Party, has won the elections in the Basque Country. While most of their program has been adopted from the Basque National Action, some of the most important goals of the Syndicalists has been integrated, including teaching Esperanto and increasing support for the Unions."
  YBS_news_events.6.a: "Democratic Socialists and Syndicalists together?"
  YBS_news_events.6.b: "Workers, unite!"
  YBS_news_events.6.c: "We will hold our promises!"

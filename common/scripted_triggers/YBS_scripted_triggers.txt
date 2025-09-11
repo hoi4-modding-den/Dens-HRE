@@ -80,11 +80,11 @@ YBS_iberian_federation_complete = {
             }
         }
         YBS_is_iberian_federation_leader = yes
-        YPG = { is_subject_of = ROOT }
+        YAO = { is_subject_of = ROOT }
         YKP = { is_subject_of = ROOT }
         YGL = { is_subject_of = ROOT }
         YPN = { is_subject_of = ROOT }
-        YPS = { is_subject_of = ROOT }
+        YRR = { is_subject_of = ROOT }
         YZA = { is_subject_of = ROOT }
         YCA = { is_subject_of = ROOT }
         YBL = { is_subject_of = ROOT }
@@ -213,5 +213,15 @@ YBS_civil_war_over = {
             }
             has_global_flag = YBS_iberian_civil_war_ended
         }
+    }
+}
+
+YBS_has_war_exhaustion = {
+    OR = {
+        has_idea = YBS_war_exhaustion
+        has_idea = YBS_war_exhaustion_2
+        has_idea = YBS_war_exhaustion_3
+        has_idea = YBS_war_exhaustion_4
+        has_idea = YBS_war_exhaustion_5
     }
 }

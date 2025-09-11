@@ -1356,6 +1356,107 @@ country_event = { # YBS allies YFR / Refused
     }
 }
 
+country_event = { # War Exhaustion effect
+	id = YBS_diplo_events.19
+	title = YBS_diplo_events.19.t
+	desc = YBS_diplo_events.19.desc
+    picture = GFX_report_event_spr_civil_war_equipment
+	
+	trigger = {
+        has_war_with = YBS
+        war_length_with = {
+            tag = YBS
+            months > 6
+        }
+        YBS = { surrender_progress < 0.5 }
+        YBS = { has_capitulated = no }
+        YBS_has_war_exhaustion = no
+        YBS = {
+            OR = {
+                has_idea = YBS_national_pride
+                has_idea = YBS_national_pride_improved
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+        name = YBS_diplo_events.19.a
+        add_war_support = -0.15
+        add_ideas = YBS_war_exhaustion
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        activate_mission = YBS_increasing_war_exhaustion
+    }
+}
+
+country_event = { # Holy Alliance Invitation
+	id = YBS_diplo_events.20
+	title = YBS_diplo_events.20.t
+	desc = YBS_diplo_events.20.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.20.a
+        ai_chance = {
+            base = 10
+        }
+        FROM = { country_event = YBS_diplo_events.21 }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = { add_to_faction = ROOT }
+        }
+    }
+
+    option = {
+        name = YBS_diplo_events.20.b
+        ai_chance = {
+            base = 0
+        }
+        FROM = { country_event = YBS_diplo_events.22 }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_political_power = -100
+    }
+}
+
+country_event = { # Holy Alliance Invitation accepted
+	id = YBS_diplo_events.21
+	title = YBS_diplo_events.21.t
+	desc = YBS_diplo_events.21.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.21.a
+        add_to_faction = FROM
+    }
+}
+
+country_event = { # Holy Alliance Invitation rejected
+	id = YBS_diplo_events.22
+	title = YBS_diplo_events.22.t
+	desc = YBS_diplo_events.22.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.22.a
+        set_faction_name = YBS_carlist_league
+    }
+}
+
 country_event = { # Flag for the RDE
 	id = YBS_esperanto_events.1
 	title = YBS_esperanto_events.1.t

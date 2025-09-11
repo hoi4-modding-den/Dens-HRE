@@ -1,5 +1,25 @@
 on_actions = {
 
+    on_startup = {
+        effect = {
+            YRR = {
+                # AI MAIN PATH
+                if = {
+                    limit = {
+                        is_historical_focus_on = no
+                    }
+                    random_list = {
+                        50 = { set_country_flag = YRR_ai_path_neutrality }
+                        50 = { set_country_flag = YRR_ai_path_fascism }
+                    }
+                }
+                else = {
+                    set_country_flag = YRR_ai_path_fascism
+                }
+            }
+        }
+    }
+
     on_ruling_party_change = {
         effect = {
             if = {

@@ -1,4 +1,30 @@
 ideas = {
+
+	hidden_ideas = {
+
+		YBS_ai_army_assistance = {
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				original_tag = YBS
+				is_ai = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army = 0.03
+				ai_focus_aggressive_factor = 2
+				ai_desired_divisions_factor = 3
+				terrain_penalty_reduction = 0.25
+			}
+		}
+
+	}
+
 	country = {
 
         YBS_underdeveloped_economy = {
@@ -190,6 +216,7 @@ ideas = {
 				army_attack_factor = -0.05
 				army_defence_factor = 0.05
 				max_dig_in = 1
+				terrain_penalty_reduction = 0.15
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
 			}
@@ -213,6 +240,7 @@ ideas = {
 			modifier = {
 				army_defence_factor = 0.05
 				max_dig_in = 1
+				terrain_penalty_reduction = 0.15
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
 			}
@@ -235,6 +263,7 @@ ideas = {
 			modifier = {
 				army_defence_factor = 0.1
 				max_dig_in = 1
+				terrain_penalty_reduction = 0.15
 				army_core_defence_factor = 0.15
 			}
 		}
@@ -672,6 +701,7 @@ ideas = {
 				surrender_limit = 1
                 army_core_defence_factor = 0.1
                 conscription_factor = 0.05
+				custom_modifier_tooltip = YBS_national_pride_tt
 			}
 		}
 
@@ -694,6 +724,7 @@ ideas = {
 				surrender_limit = 1
                 army_core_defence_factor = 0.15
                 conscription_factor = 0.15
+				custom_modifier_tooltip = YBS_national_pride_tt
 			}
 		}
 
@@ -1115,6 +1146,152 @@ ideas = {
 			}
 		}
 
+		YBS_war_exhaustion = {
+
+			picture = generic_army_problems
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				has_war_with = YBS
+			}
+
+			available = {
+				has_war_with = YBS
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.05
+				attrition = 0.02
+				supply_factor = -0.05
+				conscription_factor = -0.02
+				resistance_target = 0.05
+			}
+		}
+
+		YBS_war_exhaustion_2 = {
+
+			name = YBS_war_exhaustion
+			picture = generic_army_problems
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				has_war_with = YBS
+			}
+
+			available = {
+				has_war_with = YBS
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.07
+				attrition = 0.04
+				supply_factor = -0.07
+				conscription_factor = -0.05
+				non_core_manpower = -0.05
+				resistance_target = 0.05
+			}
+		}
+
+		YBS_war_exhaustion_3 = {
+
+			name = YBS_war_exhaustion
+			picture = generic_army_problems
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				has_war_with = YBS
+			}
+
+			available = {
+				has_war_with = YBS
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.1
+				attrition = 0.07
+				supply_factor = -0.1
+				conscription_factor = -0.1
+				non_core_manpower = -0.1
+				resistance_target = 0.05
+			}
+		}
+
+		YBS_war_exhaustion_4 = {
+
+			name = YBS_war_exhaustion
+			picture = generic_army_problems
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				has_war_with = YBS
+			}
+
+			available = {
+				has_war_with = YBS
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.12
+				attrition = 0.1
+				supply_factor = -0.12
+				conscription_factor = -0.15
+				non_core_manpower = -0.15
+				resistance_target = 0.05
+				surrender_limit = -0.1
+			}
+		}
+
+		YBS_war_exhaustion_5 = {
+
+			name = YBS_war_exhaustion
+			picture = generic_army_problems
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				has_war_with = YBS
+			}
+
+			available = {
+				has_war_with = YBS
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.15
+				attrition = 0.15
+				supply_factor = -0.15
+				conscription_factor = -0.25
+				non_core_manpower = -0.25
+				resistance_target = 0.1
+				surrender_limit = -0.25
+				custom_modifier_tooltip = YBS_war_exhaustion_5_tt
+			}
+		}
+
 	}
 
 	industrial_concern = {
@@ -1138,7 +1315,7 @@ ideas = {
 				NOT = { has_completed_focus = YBS_syndicalist_victory }
 			}
 
-			cost = 100
+			cost = 150
 			
 			modifier = {
 				production_speed_buildings_factor = 0.15
@@ -1167,7 +1344,7 @@ ideas = {
 				
 			}
 
-			cost = 100
+			cost = 150
 			
 			modifier = {
 				country_resource_aluminium = 24
@@ -1196,7 +1373,7 @@ ideas = {
 				has_completed_focus = YBS_support_regional_cooperatives
 			}
 
-			cost = 100
+			cost = 150
 			
 			modifier = {
 				production_factory_max_efficiency_factor = 0.1
