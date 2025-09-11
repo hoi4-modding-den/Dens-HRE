@@ -721,7 +721,7 @@ focus_tree = {
 		id = YCA_establish_the_national_planning_commission
 		icon = GFX_focus_GER_the_peoples_victory
 		relative_position_id = YCA_institutionalize_the_front
-		x = 20
+		x = 24
 		y = 0		
 
 		cost = 2
@@ -767,6 +767,326 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = YCA_federate_the_syndicates
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_power_to_the_workers_councils
+		}		
+		relative_position_id = YCA_power_to_the_workers_councils
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_direct_democracy_in_the_economy
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_federate_the_syndicates
+		}		
+		relative_position_id = YCA_federate_the_syndicates
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_self_managed_workshops
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_power_to_the_workers_councils
+		}		
+		relative_position_id = YCA_power_to_the_workers_councils
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_collectivized_industries
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_self_managed_workshops
+		}		
+		relative_position_id = YCA_self_managed_workshops
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_streamline_the_cnt_fai
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_collectivized_industries
+		}	
+		prerequisite = {
+			focus = YCA_direct_democracy_in_the_economy
+		}			
+		relative_position_id = YCA_collectivized_industries
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_confederation_of_european_unions
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4	
+		prerequisite = {
+			focus = YCA_direct_democracy_in_the_economy
+		}			
+		relative_position_id = YCA_direct_democracy_in_the_economy
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_collective_harvest_committees
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4	
+		prerequisite = {
+			focus = YCA_confederation_of_european_unions
+		}			
+		relative_position_id = YCA_confederation_of_european_unions
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_regional_laborer_federations
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4	
+		prerequisite = {
+			focus = YCA_confederation_of_european_unions
+		}			
+		relative_position_id = YCA_confederation_of_european_unions
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_achieve_the_anarchist_dream
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4	
+		prerequisite = {
+			focus = YCA_confederation_of_european_unions
+		}			
+		relative_position_id = YCA_confederation_of_european_unions
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}			
+	focus = {
+		id = YCA_workers_technical_education
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_collectivized_industries
+		}			
+		relative_position_id = YCA_collectivized_industries
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}			
+	focus = {
+		id = YCA_land_distribution_act
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_power_to_the_workers_councils
+			focus = YCA_comite_de_planificacion_popular
+		}		
+		relative_position_id = YCA_power_to_the_workers_councils
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_nationalize_the_banc_de_barcelona
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_power_to_the_workers_councils
+			focus = YCA_comite_de_planificacion_popular
+		}		
+		relative_position_id = YCA_power_to_the_workers_councils
+		x = -4
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_bolster_the_anti_capitalist_struggle
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		cost = 4
+		prerequisite = {
+			focus = YCA_nationalize_the_banc_de_barcelona
+		}	
+		prerequisite = {
+			focus = YCA_land_distribution_act
+		}				
+		relative_position_id = YCA_nationalize_the_banc_de_barcelona
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}					
+	focus = {
 		id = YCA_comite_de_planificacion_popular # Comité de Planificación Popular
 		icon = GFX_focus_generic_communist
 		cost = 4
@@ -792,7 +1112,274 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 		}
+	}	
+	focus = {
+		id = YCA_the_catalan_complan
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_comite_de_planificacion_popular
+		}			
+		relative_position_id = YCA_comite_de_planificacion_popular
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_five_year_industrial_leap
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_comite_de_planificacion_popular
+		}			
+		relative_position_id = YCA_comite_de_planificacion_popular
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_enforce_labor_discipline
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_five_year_industrial_leap
+		}		
+		prerequisite = {
+			focus = YCA_the_catalan_complan
+		}			
+		relative_position_id = YCA_five_year_industrial_leap
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_oversight_of_collective_farms
+		icon = GFX_focus_generic_communist
+		cost = 4		
+		prerequisite = {
+			focus = YCA_the_catalan_complan
+		}			
+		relative_position_id = YCA_the_catalan_complan
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_state_distribution_network
+		icon = GFX_focus_generic_communist
+		cost = 4		
+		prerequisite = {
+			focus = YCA_oversight_of_collective_farms
+		}			
+		relative_position_id = YCA_oversight_of_collective_farms
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_inaugurate_the_academia_del_proletariat
+		icon = GFX_focus_generic_communist
+		cost = 4		
+		prerequisite = {
+			focus = YCA_oversight_of_collective_farms
+		}			
+		relative_position_id = YCA_oversight_of_collective_farms
+		x = -1
+		y = 2
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_the_puigite_movement
+		icon = GFX_focus_generic_communist
+		cost = 4		
+		prerequisite = {
+			focus = YCA_inaugurate_the_academia_del_proletariat
+		}			
+		relative_position_id = YCA_inaugurate_the_academia_del_proletariat
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}			
+	focus = {
+		id = YCA_heavy_industry_priority
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_five_year_industrial_leap
+		}				
+		relative_position_id = YCA_five_year_industrial_leap
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
 	}		
+	focus = {
+		id = YCA_industrialize_the_campina
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_heavy_industry_priority
+		}				
+		relative_position_id = YCA_heavy_industry_priority
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_cultivate_the_ideological_vanguard
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_heavy_industry_priority
+		}				
+		relative_position_id = YCA_heavy_industry_priority
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_promote_socialist_emulation
+		icon = GFX_focus_generic_communist
+		cost = 4
+		prerequisite = {
+			focus = YCA_cultivate_the_ideological_vanguard
+		}				
+		relative_position_id = YCA_cultivate_the_ideological_vanguard
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}				
 
 	# ARMY/NAVY/AIR BRANCH
 	focus = {
@@ -800,7 +1387,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_march_to_la_casa_rosada
 		relative_position_id = YCA_institutionalize_the_front
 		x = 20
-		y = 5		
+		y = 8		
 
 		cost = 2
 
@@ -821,8 +1408,8 @@ focus_tree = {
 		id = YCA_people_aviation_bureau
 		icon = GFX_focus_PER_the_peoples_airforce
 		relative_position_id = YCA_institutionalize_the_front
-		x = 24
-		y = 5		
+		x = 26
+		y = 8	
 
 		cost = 2
 
@@ -840,11 +1427,293 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = YCA_red_air_arm # form air battallion
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_people_aviation_bureau
+		}	
+		relative_position_id = YCA_people_aviation_bureau	
+		x = 1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_secure_the_skies # air defense
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_people_aviation_bureau
+		}	
+		relative_position_id = YCA_people_aviation_bureau	
+		x = -3
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_new_generation_of_airmen # training
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_people_aviation_bureau
+		}	
+		relative_position_id = YCA_people_aviation_bureau	
+		x = -1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_form_unified_command_centers
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_new_generation_of_airmen
+		}
+		prerequisite = {
+			focus = YCA_red_air_arm
+		}				
+		relative_position_id = YCA_new_generation_of_airmen	
+		x = 1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_wings_of_the_revolution # fighter focus
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_form_unified_command_centers
+		}			
+		relative_position_id = YCA_form_unified_command_centers	
+		x = -1
+		y = 2		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_integrated_aerial_support
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_form_unified_command_centers
+		}			
+		relative_position_id = YCA_form_unified_command_centers	
+		x = 1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_the_aero_maritime_complex
+		icon = GFX_focus_PER_the_peoples_airforce
+		prerequisite = {
+			focus = YCA_integrated_aerial_support
+		}
+		prerequisite = {
+			focus = YCA_defensa_de_las_costas
+			focus = YCA_mediterranean_power_projection
+		}							
+		relative_position_id = YCA_integrated_aerial_support	
+		x = 2
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}					
+	focus = {
 		id = YCA_flota_del_pueblo
 		icon = GFX_focus_PER_the_peoples_navy
 		relative_position_id = YCA_institutionalize_the_front
-		x = 27
-		y = 5		
+		x = 30
+		y = 8		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_prevent_balearic_incursions # mine sea between balearic islands and catalonia
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_flota_del_pueblo
+		}		
+		relative_position_id = YCA_flota_del_pueblo
+		x = -1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_sailors_assemblies # training officers
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_flota_del_pueblo
+		}		
+		relative_position_id = YCA_flota_del_pueblo
+		x = 1
+		y = 1
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}			
+	focus = {
+		id = YCA_expand_catalan_shipbuilding_abilities # dockyard stuff and temp nat spirit
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_sailors_assemblies
+		}		
+		relative_position_id = YCA_sailors_assemblies
+		x = 2
+		y = 1	
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_submarinos_de_la_revolucion
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_expand_catalan_shipbuilding_abilities
+		}		
+		relative_position_id = YCA_expand_catalan_shipbuilding_abilities
+		x = 1
+		y = 1	
 
 		cost = 2
 
@@ -861,6 +1730,113 @@ focus_tree = {
 		completion_reward = {
 		}
 	}		
+	focus = {
+		id = YCA_conscription_based_crews # gain nat spirit with small conscription stuff
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_expand_catalan_shipbuilding_abilities
+		}		
+		relative_position_id = YCA_expand_catalan_shipbuilding_abilities
+		x = 0
+		y = 2	
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_seafarers_protection_from_above # gain naval bombers and tech
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_prevent_balearic_incursions
+			focus = YCA_red_air_arm
+		}		
+		relative_position_id = YCA_prevent_balearic_incursions
+		x = -1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}	
+	focus = {
+		id = YCA_defensa_de_las_costas # coastal defense focus
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_seafarers_protection_from_above
+		}		
+		mutually_exclusive = {
+			focus = YCA_mediterranean_power_projection
+		}
+		relative_position_id = YCA_seafarers_protection_from_above
+		x = 1
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = YCA_mediterranean_power_projection # blue-water navy
+		icon = GFX_focus_PER_the_peoples_navy
+		prerequisite = {
+			focus = YCA_seafarers_protection_from_above
+		}		
+		mutually_exclusive = {
+			focus = YCA_defensa_de_las_costas
+		}
+		relative_position_id = YCA_seafarers_protection_from_above
+		x = 3
+		y = 1		
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}					
 	focus = {
 		id = YCA_the_iberian_liberation_army
 		icon = GFX_focus_SOV_builder_of_the_red_army
@@ -1094,10 +2070,11 @@ focus_tree = {
 		}
 	}		
 	focus = {
-		id = YCA_mobilize_the_communes # prerueq in aviationt too
+		id = YCA_mobilize_the_communes
 		icon = GFX_focus_YCA_mobilize_the_communes
 		prerequisite = {
 			focus = YCA_strenghen_catalan_militas
+			focus = YCA_new_generation_of_airmen
 		}			
 		relative_position_id = YCA_strenghen_catalan_militas
 		x = 3
@@ -1170,5 +2147,5 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 		}
-	}																							
+	}																				
 }
