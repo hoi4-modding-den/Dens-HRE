@@ -1,6 +1,4 @@
-add_namespace = the_pine_trees
-add_namespace = vengeance
-
+# Event 1 - The Pine Trees
 country_event = {
     id = the_pine_trees.1
     title = the_pine_trees.1.t
@@ -12,8 +10,9 @@ country_event = {
     option = {
         name = the_pine_trees.1.a
     }
-
 }
+
+# Event 2 - Vengeance
 country_event = {
     id = vengeance.1
     title = vengeance.1.t
@@ -25,8 +24,9 @@ country_event = {
     option = {
         name = vengeance.1.a
     }
-
 }
+
+# Event 3 - Fight Fire
 country_event = {
     id = fight_fire.1
     title = fight_fire.1.t
@@ -37,9 +37,11 @@ country_event = {
 
     option = {
         name = fight_fire.1.a
-    declare_war_on = {
-    target = YAS
-    type = annex_everything
-}
+        
+        # Declare war action
+        declare_war_on = {
+            target = YAS
+            type = annex_everything
+        }
     }
 }
