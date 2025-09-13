@@ -388,6 +388,71 @@ YBS_election_decision_cat = {
     }
 }
 
+YBS_esperanto_coring_cat = {
+
+    YBS_core_this_state_with_esperanto = {
+
+        icon = eng_propaganda_campaigns
+
+		cost = 25
+
+		highlight_states = { 
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+                resistance < 10
+                compliance > 10
+			}
+		}
+
+		visible = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cancel_trigger = {
+			FROM = { NOT = { is_owned_and_controlled_by = ROOT } }
+		}
+
+
+		targets_dynamic = yes
+
+		state_target = yes
+
+		on_map_mode = decision_view_only  
+
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ROOT
+                NOT = { is_core_of = ROOT }
+			}
+		}
+
+		days_remove = 70
+
+        modifier = {
+            research_speed_factor = -0.01
+        }
+
+		remove_effect = {
+			FROM = {
+                add_core_of = ROOT
+            }
+		}
+
+    }
+}
+
 YBS_iberian_federation_cat = {
 
     YBS_create_spanish_federal_state = {
@@ -895,7 +960,6 @@ YBS_iberian_federation_cat = {
             }         
         }
     }
-
 }
 
 YBS_seeds_of_discord_cat = {
@@ -945,11 +1009,13 @@ YBS_seeds_of_discord_cat = {
 
 		targets_dynamic = yes
 
+        days_re_enable = 70
+
 		cost = 50
 
         complete_effect = {
             FROM = {
-                #country_event = YBS_diplo_events.
+                country_event = { id = YBS_diplo_events.25 days = 10 }
             }
         }
 	}
@@ -1046,6 +1112,180 @@ YBS_seeds_of_discord_cat = {
         }
 	}
 
+    YBS_sabotage_enemy_industry = {
+
+		icon = generic_ignite_civil_war
+
+		ai_will_do = {
+			base = 20
+		}
+
+		available = {
+            NOT = { has_country_flag = YBS_doing_subversive_activity }
+			has_war_with = FROM
+            FROM = {
+                any_controlled_state = {
+                    is_owned_by = FROM
+                    non_damaged_building_level = {
+                        building = arms_factory
+                        level > 0
+                    }
+                }
+            }
+		}
+
+        visible = {
+            has_war_with = FROM
+        }
+
+		cancel_trigger = {
+			NOT = { has_war_with = FROM }
+		}
+
+		target_trigger = {
+			FROM = {
+				YBS_is_iberian_country = yes
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 20
+
+        days_remove = 15
+
+        remove_effect = {
+            FROM = {
+                add_war_support = -0.01
+                random_owned_controlled_state = {
+                    limit = {
+                        non_damaged_building_level = {
+                            building = arms_factory
+                            level > 0
+                        }
+                    }
+                    damage_building = {
+                        type = arms_factory
+                        damage = 1
+                    }
+                }
+            }
+        }
+	}
+
+    YBS_cause_war_between_neighbours = {
+
+		icon = SWI_expand_covert_operations
+
+		ai_will_do = {
+			base = 20
+		}
+
+		available = {
+            NOT = { has_country_flag = YBS_doing_subversive_activity }
+			has_war_with = FROM
+            FROM = {
+                any_neighbor_country = {
+                    YBS_is_iberian_country = yes
+                    NOT = { is_ally_with = FROM }
+                    NOT = { has_war_with = FROM }
+                    is_subject = no
+                }
+            }
+		}
+
+        visible = {
+            has_war_with = FROM
+        }
+
+		cancel_trigger = {
+			NOT = { has_war_with = FROM }
+		}
+
+		target_trigger = {
+			FROM = {
+				YBS_is_iberian_country = yes
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 20
+
+        days_remove = 15
+
+        remove_effect = {
+            FROM = {
+                random_neighbor_country = {
+                    limit = {
+                        YBS_is_iberian_country = yes
+                        NOT = { is_ally_with = FROM }
+                        NOT = { has_war_with = FROM }
+                        is_subject = no
+                    }
+                    country_event = YBS_diplo_events.23
+
+                    custom_effect_tooltip = generic_skip_one_line_tt
+
+                    effect_tooltip = {
+                        random_list = {
+                            90 = { declare_war_on = { target = FROM type = topple_government } }
+                            10 = { }
+                        }
+                    }
+                }
+            }
+        }
+	}
+
+    YBS_ai_kick_ally_out = {
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+            is_ally_with = FROM
+            has_war = no
+            FROM = { has_war = no }
+		}
+
+        visible = {
+            is_ai = yes
+        }
+
+		cancel_trigger = {
+			NOT = { is_ally_with = FROM }
+		}
+
+		target_trigger = {
+			FROM = { 
+                is_ally_with = ROOT 
+                is_ai = yes
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_remove = 70
+
+        remove_effect = {
+            if = {
+                limit = {
+                    FROM = {
+                        is_subject_of = ROOT
+                    }
+                }
+                annex_country = {
+                    target = FROM
+                    transfer_troops = yes
+                }
+            }
+            else = {
+                remove_from_faction = FROM
+            }
+        }
+	}
 }
 
 YBS_spanish_civil_war_cat = {
@@ -1145,6 +1385,151 @@ YBS_spanish_civil_war_cat = {
         }
 	}
 
+    YBS_start_civil_war_in_africa = {
+
+		icon = generic_prepare_civil_war
+
+		ai_will_do = {
+			base = 25
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = FROM
+            }
+            modifier = {
+                factor = 0.1
+                NOT = { is_neighbor_of = FROM }
+                NOT = {
+                    any_other_country = {
+                        is_ally_with = ROOT
+                        is_neighbor_of = FROM
+                    }
+                }
+            }
+		}
+
+        visible = {
+            has_country_flag = YBS_colonial_affairs_restarted
+        }
+
+		available = {
+            NOT = { has_country_flag = YBS_justifying_civil_war }
+			OR = {
+                is_neighbor_of = FROM
+                any_other_country = {
+                    is_ally_with = ROOT
+                    is_neighbor_of = FROM
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    FROM = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = FROM }
+		}
+
+        visible = {
+            NOT = { has_war_with = FROM }
+            NOT = { is_ally_with = FROM }
+        }
+
+		cancel_trigger = {
+			OR = {
+                has_war_with = FROM
+                is_ally_with = FROM
+            }
+		}
+
+		target_trigger = {
+			FROM = {
+				YBS_is_spanish_african_country = yes
+			}
+		}
+
+		targets_dynamic = yes
+
+		cost = 50
+
+		days_remove = 50
+
+        war_with_target_on_remove = yes
+        war_with_target_on_complete = yes
+
+        complete_effect = {
+            set_country_flag = YBS_justifying_civil_war
+            FROM = {
+                country_event = YBS_diplo_events.5
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = FROM
+                type = civil_war
+            }
+            clr_country_flag = YBS_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YBS_justifying_civil_war
+        }
+	}
+
+    YBS_ai_kick_ally_out_alt = {
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+            is_ally_with = FROM
+		}
+
+        visible = {
+            is_ai = yes
+        }
+
+		cancel_trigger = {
+			NOT = { is_ally_with = FROM }
+		}
+
+		target_trigger = {
+			FROM = { 
+                is_ally_with = ROOT 
+                is_ai = yes
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_remove = 70
+
+        remove_effect = {
+            if = {
+                limit = {
+                    FROM = {
+                        is_subject_of = ROOT
+                    }
+                }
+                annex_country = {
+                    target = FROM
+                    transfer_troops = yes
+                }
+            }
+            else = {
+                remove_from_faction = FROM
+            }
+        }
+	}
 }
 
 YBS_purchase_old_ships_category = {
@@ -1356,7 +1741,6 @@ YBS_purchase_old_ships_category = {
             custom_effect_tooltip = YBS_XEX_transfers_ships_tt	
 		}
 	}
-
 }
 
 war_measures = {
@@ -1649,7 +2033,6 @@ YBS_foreign_economic_control_cat = {
 			}
         }
     }
-    
 }
 
 YBS_socialist_praxis_decision_cat = {
@@ -1756,7 +2139,6 @@ YBS_socialist_praxis_decision_cat = {
             clr_country_flag = YBS_socialist_praxis_active
         }
     }
-
 }
 
 economy_decisions = {
@@ -1801,7 +2183,149 @@ economy_decisions = {
             }
         }
     }
+}
 
+foreign_politics = {
+
+    YBS_return_italian_lands_to_XRO = {
+
+        icon = infiltrate_state
+
+        priority = -100
+
+        allowed = {
+            tag = YBS
+        }
+
+        visible = {
+            is_ally_with = XRO
+            country_exists = XRO
+            has_completed_focus = YBS_support_papal_italy
+            any_state = {
+                YBS_is_italian_state = yes
+                NOT = { is_owned_by = XRO }
+                NOT = { is_owned_by = ZZZ }
+            }
+        }
+
+        available = {
+            is_ally_with = XRO
+            country_exists = XRO
+            any_owned_state = {
+                YBS_is_italian_state = yes
+            }
+        }
+
+        complete_effect = {
+            every_owned_state = {
+                limit = {
+                    YBS_is_italian_state = yes
+                }
+                transfer_state_to = XRO
+                add_core_of = XRO
+            }
+
+            hidden_effect = {
+                XRO = {
+                    every_owned_state = {
+                        limit =  {
+                            YBS_is_italian_state = yes
+                        }
+                        add_core_of = XRO
+                    }
+                }
+            }
+        }
+    }
+
+    YBS_release_dutch_puppet = {
+
+        icon = generic_colonial_administration
+
+        allowed = {
+            tag = YBS
+        }
+
+        visible = {
+            is_subject = no
+            has_completed_focus = YBS_spanish_dominion_in_holland
+        }
+
+        fire_only_once = yes
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_or_zzz_highlighted_states_tt
+                OR = {
+                    6 = { is_owned_and_controlled_by = ROOT }
+                    6 = { is_owned_and_controlled_by = ZZZ }
+                }
+                7 = { is_owned_and_controlled_by = ROOT }
+                #8 = { is_owned_and_controlled_by = ROOT }
+                OR = {
+                    34 = { is_owned_and_controlled_by = ROOT }
+                    34 = { is_owned_and_controlled_by = ZZZ }
+                }
+                35 = { is_owned_and_controlled_by = ROOT }
+                36 = { is_owned_and_controlled_by = ROOT }
+                977 = { is_owned_and_controlled_by = ROOT }
+                #980 = { is_owned_and_controlled_by = ROOT }
+                1032 = { is_owned_and_controlled_by = ROOT }
+                1033 = { is_owned_and_controlled_by = ROOT }
+                1049 = { is_owned_and_controlled_by = ROOT }
+                1050 = { is_owned_and_controlled_by = ROOT }
+                1051 = { is_owned_and_controlled_by = ROOT }
+            }
+            XNE = { exists = no }
+        }
+
+        on_map_mode = decision_view_only
+        highlight_states = {
+            highlight_state_targets = {
+                state = 6
+                state = 7
+                #state = 8
+                state = 34
+                state = 35
+                state = 36
+                state = 977
+                #state = 980
+                state = 1032
+                state = 1033
+                state = 1049
+                state = 1050
+                state = 1051
+            }
+        }
+
+        complete_effect = {
+            XNE = {
+                set_cosmetic_tag = UNL_UNIFIED
+                set_country_flag = formed_UNL
+                hidden_effect = {
+                    6 = { add_core_of = XNE transfer_state_to = XNE }
+                    7 = { add_core_of = XNE transfer_state_to = XNE }
+                    8 = { add_core_of = XNE }
+                    34 = { add_core_of = XNE transfer_state_to = XNE }
+                    35 = { add_core_of = XNE transfer_state_to = XNE }
+                    36 = { add_core_of = XNE transfer_state_to = XNE }
+                    977 = { add_core_of = XNE transfer_state_to = XNE }
+                    980 = { add_core_of = XNE }
+                    1032 = { add_core_of = XNE transfer_state_to = XNE }
+                    1033 = { add_core_of = XNE transfer_state_to = XNE }
+                    1049 = { add_core_of = XNE transfer_state_to = XNE }
+                    1050 = { add_core_of = XNE transfer_state_to = XNE }
+                    1051 = { add_core_of = XNE transfer_state_to = XNE }
+                }
+            }
+            set_autonomy = {
+                target = XNE
+                autonomous_state = autonomy_integrated_puppet
+                end_wars = no
+                end_civil_wars = no
+            }
+		}
+    }
 }
 
 political_actions = {
@@ -1836,7 +2360,10 @@ political_actions = {
     YBS_debug_annex_iberia = {
 
 		visible = {
-			is_debug = yes
+			OR = {
+                is_debug = yes
+                is_ai = yes
+            }
 		}
 
         available = {
@@ -1881,6 +2408,69 @@ political_actions = {
 			every_state = {
                 limit = {
                     YBS_is_iberian_state = yes
+                }
+                transfer_state_to = ROOT
+            }
+
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+	}
+
+    YBS_debug_annex_iberian_africa = {
+
+		visible = {
+			OR = {
+                is_debug = yes
+                is_ai = yes
+            }
+		}
+
+        available = {
+            OR = {
+                is_ai = no
+                AND = {
+                    all_state = {
+                        OR = {
+                            YBS_is_spanish_africa_state = no
+                            is_owned_by = ZZZ
+                            is_owned_by = ROOT
+                            owns_or_subject_of = yes
+                        }
+                    }
+                    has_war = no
+                }
+            }
+        }
+
+        allowed = {
+            OR = {
+                original_tag = YBS
+                original_tag = YRR
+            }
+        }
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+            every_other_country = {
+                limit = {
+                    YBS_is_spanish_african_country = yes
+                }
+                ROOT = {
+                    annex_country = {
+                        target = PREV
+                        transfer_troops = no
+                    }
+                }
+            }
+			every_state = {
+                limit = {
+                    YBS_is_spanish_africa_state = yes
                 }
                 transfer_state_to = ROOT
             }

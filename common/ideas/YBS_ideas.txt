@@ -19,6 +19,7 @@ ideas = {
 				experience_gain_army = 0.03
 				ai_focus_aggressive_factor = 2
 				ai_desired_divisions_factor = 3
+				ai_focus_war_production_factor = 0.5
 				terrain_penalty_reduction = 0.25
 			}
 		}
@@ -330,6 +331,7 @@ ideas = {
 
 			modifier = {
 				air_cas_efficiency = 0.15
+				terrain_penalty_reduction = 0.15
 				army_attack_factor = 0.05
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
@@ -353,6 +355,7 @@ ideas = {
 
 			modifier = {
 				air_cas_efficiency = 0.15
+				terrain_penalty_reduction = 0.15
 				army_attack_factor = 0.05
 				initiative_factor = 0.05
 				org_loss_when_moving = -0.15
@@ -749,6 +752,94 @@ ideas = {
 			}
 		}
 
+		YBS_carlist_honour = {
+
+			picture = por_volunteers_in_the_war3
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				conscription_factor = -0.02
+			}
+		}
+
+		YBS_anti_communist_bulwark = {
+
+			picture = ger_bulwark_against_bolshevism
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				army_defence_factor = 0.05
+				communism_drift = -0.01
+			}
+		}
+
+		YBS_naval_preparations_to_africa = {
+
+			picture = generic_naval_invasion
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				YBS_controls_all_spanish_africa_states = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				naval_invasion_penalty = -0.25
+				naval_invasion_capacity = 3
+			}
+		}
+
+		YBS_rising_phoenix = {
+
+			picture = BEL_maritime_phoenix
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_morale_factor = 0.05
+				conscription_factor = 0.08
+				industrial_capacity_dockyard = 0.15
+				neutrality_drift = 0.01
+			}
+		}
+
 		YBS_deregulated_capitalism = {
 
 			picture = RAJ_external_investments
@@ -1125,6 +1216,44 @@ ideas = {
 			}
 		}
 
+		YBS_none_shall_pass = {
+
+			picture = SPR_anti_fascist_crusade
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.15
+			}
+		}
+
+		YBS_class_war_idea = {
+
+			picture = eng_tackle_capitalism
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_against_major_factor = 0.25
+			}
+		}
+
 		YBS_insurrectionary_army = {
 
 			picture = MEX_revolutionary_army
@@ -1290,6 +1419,53 @@ ideas = {
 				surrender_limit = -0.25
 				custom_modifier_tooltip = YBS_war_exhaustion_5_tt
 			}
+		}
+
+		YBS_have_fun_now = {
+
+			picture = CHL_liberal_party_in_power
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.25
+			}
+		}
+
+		YBS_fake_colonial_police_garrison_law = {
+
+			name = YBS_colonial_police
+			
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target 				= -0.35
+				compliance_gain 				= -0.015
+				required_garrison_factor 		= -0.5
+				resistance_damage_to_garrison	= -0.45
+				local_factories 				= 0.25
+				local_resources 				= 0.25
+			}
+
 		}
 
 	}

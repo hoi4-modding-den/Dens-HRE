@@ -22,10 +22,15 @@ on_actions = {
                 }
                 # AI DEMOCRATIC SUBPATH (useless if not democratic)
                 random_list = {
-                    20 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
-                    20 = { set_country_flag = YBS_ai_path_federation }
-                    20 = { set_country_flag = YBS_ai_path_republic }
+                    #20 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
+                    30 = { set_country_flag = YBS_ai_path_federation }
+                    30 = { set_country_flag = YBS_ai_path_republic }
                     40 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front }} set_country_flag = YBS_ai_path_esperantism }
+                }
+                # AI CARLIST SUBPATH (useless if not carlist)
+                random_list = {
+                    30 = { set_country_flag = YBS_ai_path_honour }
+                    70 = { set_country_flag = YBS_ai_path_trickster }
                 }
             }
         }

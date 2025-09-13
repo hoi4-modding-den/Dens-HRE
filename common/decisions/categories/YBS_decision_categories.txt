@@ -17,6 +17,24 @@ YBS_election_decision_cat = {
 
 }
 
+YBS_esperanto_coring_cat = {
+
+	icon = GFX_decision_category_generic_formable_nations
+
+	priority = 100
+
+	allowed = {
+		tag = YBS
+	}
+
+    visible = {
+		is_subject = no
+        has_government = democratic
+		has_country_flag = YBS_esperanto_coring_unlocked
+    }
+
+}
+
 YBS_iberian_federation_cat = {
 
 	icon = GFX_decision_cat_iberian_summit
@@ -66,7 +84,10 @@ YBS_spanish_civil_war_cat = {
 
     visible = {
 		is_subject = no
-        has_country_flag = YBS_civil_war_decisions_unlocked
+        Or = {
+			has_country_flag = YBS_civil_war_decisions_unlocked
+			has_country_flag = YBS_colonial_affairs_restarted
+		}
     }
 
 }

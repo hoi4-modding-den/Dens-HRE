@@ -61,30 +61,35 @@ if = {
 }
 
 if = {
-	limit = {
-		has_dlc = "Man the Guns"
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
 	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
 	set_technology = {
 		basic_naval_mines = 1
+		submarine_mine_laying = 1
 		early_ship_hull_light = 1
 		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
 		early_ship_hull_submarine = 1
-		mtg_transport = 1
-		basic_torpedo = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
 		basic_battery = 1
-		basic_light_battery = 1
-	}
-	#set_naval_oob = "YBS_1936_naval_mtg"
-	else = {
-		set_technology = {
-			early_submarine = 1
-			early_destroyer = 1
-			basic_destroyer = 1
-			early_light_cruiser = 1
-			transport = 1
-		}
-		#set_naval_oob = "YBS_1936_naval_legacy"
+		basic_medium_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		mtg_transport = 1
 	}
 }
 
@@ -108,11 +113,13 @@ recruit_character = YBS_jose_antonio_aguirre
 recruit_character = YBS_eli_gallastegi
 recruit_character = YBS_tomas_bilbao_hospitalet
 recruit_character = YBS_trade_union_congress
+recruit_character = YBS_defence_council
 recruit_character = YBS_rosa_lavina
 recruit_character = YBS_carlist_junta
 recruit_character = YBS_handelskommission
 recruit_character = YBS_julio_ruiz_de_alda
 recruit_character = YBS_xavier_of_bourbon_parma
+recruit_character = YBS_literal_anarchy
 
 # Advisors
 recruit_character = YBS_juan_march_ordinas_fake
@@ -125,6 +132,8 @@ recruit_character = YBS_carlist_general_2
 recruit_character = YBS_carlist_general_3
 recruit_character = YBS_carlist_general_4
 recruit_character = YBS_carlist_general_5
+recruit_character = YBS_carlist_general_6
+recruit_character = YBS_carlist_general_7
 recruit_character = YBS_militia_general
 recruit_character = YBS_young_general_1
 recruit_character = YBS_young_general_2

@@ -58,9 +58,25 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { YBS_syndicalist_unions }
 			ideology = syndicalism
 			#desc = YBS_trade_union_congress_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_defence_council = {
+		name = YBS_defence_council_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_defence_council
+			}
+		}
+		country_leader = {
+			traits = { YBS_defence_council_trait }
+			ideology = anarchist_syndicalism_com
+			#desc = YBS_defence_council_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}
@@ -76,7 +92,7 @@ characters = {
 		}
 		country_leader = {
 			traits = { YBS_catalan_anarchist YBS_esperantist }
-			ideology = anarchist_syndicalism_com
+			ideology = platformism
 			desc = YBS_rosa_lavina_desc
 			expire = "1950.1.1.1"
 			id = -1
@@ -164,6 +180,22 @@ characters = {
 			traits = { YBS_carlist_king }
 			ideology = despotism
 			desc = YBS_xavier_of_bourbon_parma_desc
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+
+	YBS_literal_anarchy = {
+		name = YBS_literal_anarchy_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YBS_literal_anarchy
+			}
+		}
+		country_leader = {
+			traits = { YBS_spirit_of_anarchism }
+			ideology = synthesis_anarchism
+			desc = YBS_literal_anarchy_desc
 			expire = "1950.1.1.1"
 			id = -1
 		}
@@ -347,6 +379,26 @@ characters = {
 			defense_skill=3
 			planning_skill=1
 			logistics_skill=1
+		}
+	}
+
+	YBS_carlist_general_6 = {
+		name = YBS_carlist_general_6_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_6
+                small = GFX_portrait_YBS_carlist_general_6_small
+			}
+		}
+	}
+
+	YBS_carlist_general_7 = {
+		name = YBS_carlist_general_7_name
+		portraits = {
+			army = {
+				large = GFX_portrait_YBS_carlist_general_7
+                small = GFX_portrait_YBS_carlist_general_7_small
+			}
 		}
 	}
 

@@ -1537,8 +1537,7 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 		name = XHH_diplo_events.26.a
 		trigger = {
 			any_country = {
-				YBS_is_iberian_country = yes
-				has_government = democratic
+				YBS_democratic_iberian_nation = yes
 			}
 		}
 		ai_chance = {
@@ -1552,20 +1551,25 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 				has_government = democratic
 			}
 		}
-		every_other_country = {
-			limit = {
-				YBS_is_iberian_country = yes
-				has_government = democratic
-			}
-			ROOT = {
-				add_relation_rule_override = {
-					target = PREV
-					usage_desc = YBS_democratic_iberian_nation_tt
-					trigger = YBS_democratic_iberian_nation
-					can_send_volunteers = yes
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					YBS_democratic_iberian_nation = yes
+				}
+				ROOT = {
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = PREV
+						value = 1000
+					}					
 				}
 			}
 		}
+
+		set_rule = {
+			can_send_volunteers = yes
+		}
+		
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 		
@@ -1576,14 +1580,7 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 		name = XHH_diplo_events.26.b
 		trigger = {
 			any_country = {
-				YBS_is_iberian_country = yes
-				has_government = neutrality
-				NOT = {
-					OR = {
-                        has_country_leader_ideology = anarchism
-                        has_country_leader_ideology = anarcho_syndicalism
-                    }
-				}
+				YBS_nonaligned_iberian_nation = yes
 			}
 		}
 		ai_chance = {
@@ -1597,25 +1594,23 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 				has_government = democratic
 			}
 		}
-		every_other_country = {
-			limit = {
-				YBS_is_iberian_country = yes
-				has_government = neutrality
-				NOT = {
-					OR = {
-                        has_country_leader_ideology = anarchism
-                        has_country_leader_ideology = anarcho_syndicalism
-                    }
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					YBS_nonaligned_iberian_nation = yes
+				}
+				ROOT = {
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = PREV
+						value = 1000
+					}					
 				}
 			}
-			ROOT = {
-				add_relation_rule_override = {
-					target = PREV
-					usage_desc = YBS_nonaligned_iberian_nation_tt
-					trigger = YBS_nonaligned_iberian_nation
-					can_send_volunteers = yes
-				}
-			}
+		}
+
+		set_rule = {
+			can_send_volunteers = yes
 		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
@@ -1634,10 +1629,15 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 		ai_chance = {
 			base = 20
 		}
-		add_relation_rule_override = {
-			target = YBS
-			usage_desc = YBS_nonaligned_iberian_nation_tt
-			trigger = YBS_nonaligned_iberian_nation
+		hidden_effect = {
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = YBS
+				value = 1000
+			}
+		}
+
+		set_rule = {
 			can_send_volunteers = yes
 		}
 
@@ -1652,6 +1652,21 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 			base = 1
 		}
 		add_political_power = 20
+
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					YBS_is_iberian_country = yes
+				}
+				ROOT = {
+					add_ai_strategy = {
+						type = send_volunteers_desire
+						id = PREV
+						value = -100
+					}					
+				}
+			}
+		}
 	}
 
 }

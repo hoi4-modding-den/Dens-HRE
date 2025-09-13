@@ -11,10 +11,14 @@ peace_ai_desires = {
                     is_claimed_by = ROOT
                     is_core_of = ROOT
                     YBS_is_iberian_state = yes
+                    YBS_is_spanish_africa_state = yes
                 }
             }
             ROOT = {
-                YBS_is_iberian_country = yes
+                OR = {
+                    YBS_is_iberian_country = yes
+                    YBS_is_spanish_african_country = yes
+                }
             }
 			ROOT.FROM = { tag = ROOT }
         }

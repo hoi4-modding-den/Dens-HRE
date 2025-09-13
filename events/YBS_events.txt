@@ -2,6 +2,7 @@ add_namespace = YBS_election_events
 add_namespace = YBS_post_election_events
 add_namespace = YBS_diplo_events
 add_namespace = YBS_esperanto_events
+add_namespace = YBS_anarchist_events
 add_namespace = YBS_news_events
 
 country_event = { # Carlist Conspiracy
@@ -214,7 +215,7 @@ country_event = { # ELECTION
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        promote_character = YBS_rosa_lavina
+        promote_character = YBS_trade_union_congress
     }
 
     option = { # Nationalists because no majority
@@ -675,6 +676,36 @@ country_event = { # Guns of the Patriots
         add_equipment_to_stockpile = {
             type = support_equipment
             amount = 250
+        }
+    }
+}
+
+country_event = { # Get Navy from Reunification
+	id = YBS_post_election_events.6
+	title = YBS_post_election_events.6.t
+	desc = YBS_post_election_events.6.desc
+    picture = GFX_report_event_generic_naval_treaty
+	
+	trigger = {
+		tag = YBS
+		OR = {
+            YBS_owns_all_iberian_states = yes
+            YBS_iberian_federation_complete = yes
+        }
+	}
+
+    fire_only_once = yes
+	
+	option = {
+        name = YBS_post_election_events.6.a
+        if = {
+            limit = {
+                has_dlc = "Man the Guns"
+            }
+            load_oob = "SPR_1936_naval_mtg"
+        }
+        else = {
+            load_oob = "SPR_1936_naval_legacy"
         }
     }
 }
@@ -1457,6 +1488,175 @@ country_event = { # Holy Alliance Invitation rejected
     }
 }
 
+country_event = { # Fake Conflict between us and FROM.FROM
+	id = YBS_diplo_events.23
+	title = YBS_diplo_events.23.t
+	desc = YBS_diplo_events.23.desc
+    picture = GFX_report_event_spr_spanish_civil_war2
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.23.a
+        trigger = {
+            NOT = { is_ally_with = FROM.FROM }
+            is_subject = no
+        }
+        ai_chance = {
+            base = 5
+        }
+        FROM.FROM = { country_event = { id = YBS_diplo_events.24 days = 10 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            declare_war_on = {
+                target = FROM.FROM
+                type = topple_government
+            }
+        }
+    }
+
+    option = {
+        name = YBS_diplo_events.23.b
+        ai_chance = {
+            base = 0.1
+            modifier = {
+                factor = 10
+                num_divisions < 5
+            }
+        }
+        add_political_power = -100
+        add_stability = -0.05
+        add_war_support = -0.05
+    }
+}
+
+country_event = { # Fake Conflict between us and FROM.FROM / WAR
+	id = YBS_diplo_events.24
+	title = YBS_diplo_events.24.t
+	desc = YBS_diplo_events.24.desc
+    picture = GFX_report_event_spr_spanish_civil_war2
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.24.a
+        FROM = {
+            declare_war_on = {
+                target = ROOT
+                type = topple_government
+            }
+        }
+    }
+
+}
+
+country_event = { # Fake NAP offered
+	id = YBS_diplo_events.25
+	title = YBS_diplo_events.25.t
+	desc = YBS_diplo_events.25.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.25.a
+        ai_chance = {
+            base = 5
+            modifier = {
+                factor = 10
+                num_divisions < 5
+            }
+            modifier = {
+                factor = 10
+                has_opinion = {
+					target = FROM
+					value > 50
+				}
+            }
+        }
+        FROM = { country_event = { id = YBS_diplo_events.26 days = 3 } }
+        effect_tooltip = {
+            diplomatic_relation = {
+                country = FROM
+                relation = non_aggression_pact
+                active = yes
+            }
+        }
+    }
+
+    option = {
+        name = YBS_diplo_events.25.b
+        ai_chance = {
+            base = 1
+        }
+        FROM = { country_event = { id = YBS_diplo_events.27 days = 3 } }
+        diplomatic_relation = {
+            country = FROM
+            relation = non_aggression_pact
+            active = no
+        }
+    }
+
+}
+
+country_event = { # Fake NAP offered / accepted
+	id = YBS_diplo_events.26
+	title = YBS_diplo_events.26.t
+	desc = YBS_diplo_events.26.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.26.a
+        add_political_power = 25
+        FROM = {
+            diplomatic_relation = {
+                country = ROOT
+                relation = non_aggression_pact
+                active = yes
+            }
+        }
+    }
+
+}
+
+country_event = { # Fake NAP offered / refused
+	id = YBS_diplo_events.27
+	title = YBS_diplo_events.27.t
+	desc = YBS_diplo_events.27.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.27.a
+        add_political_power = -25
+        FROM = {
+            diplomatic_relation = {
+                country = ROOT
+                relation = non_aggression_pact
+                active = no
+            }
+        }
+    }
+
+    option = {
+        name = YBS_diplo_events.27.b
+        ai_chance = {
+            base = 0
+        }
+        add_political_power = -100
+        create_wargoal = {
+            target = FROM
+            type = civil_war
+        }
+    }
+
+}
+
 country_event = { # Flag for the RDE
 	id = YBS_esperanto_events.1
 	title = YBS_esperanto_events.1.t
@@ -1590,6 +1790,348 @@ country_event = { # Check if Congress will be held
 	option = {
         name = YBS_esperanto_events.4.a
         
+    }
+}
+
+country_event = { # Regional Elections Events soon
+	id = YBS_anarchist_events.1
+	title = YBS_anarchist_events.1.t
+	desc = YBS_anarchist_events.1.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.1.a
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.2 days = 3 }
+        }
+    }
+}
+
+country_event = { # Regional Elections Event 1 / Catalonia
+	id = YBS_anarchist_events.2
+	title = YBS_anarchist_events.2.t
+	desc = YBS_anarchist_events.2.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.3 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+
+    }
+}
+
+country_event = { # Regional Elections Event 2 / Aragon
+	id = YBS_anarchist_events.3
+	title = YBS_anarchist_events.3.t
+	desc = YBS_anarchist_events.3.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.4 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+
+    }
+}
+
+country_event = { # Regional Elections Event 3 / Galicia
+	id = YBS_anarchist_events.4
+	title = YBS_anarchist_events.4.t
+	desc = YBS_anarchist_events.4.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.5 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+
+    }
+}
+
+country_event = { # Regional Elections Event 4 / Portugal
+	id = YBS_anarchist_events.5
+	title = YBS_anarchist_events.5.t
+	desc = YBS_anarchist_events.5.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.6 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+
+    }
+}
+
+country_event = { # Regional Elections Event 5 / Andalusia
+	id = YBS_anarchist_events.6
+	title = YBS_anarchist_events.6.t
+	desc = YBS_anarchist_events.6.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.7 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+
+    }
+}
+
+country_event = { # Regional Elections Event 6 / Leon and Castile
+	id = YBS_anarchist_events.7
+	title = YBS_anarchist_events.7.t
+	desc = YBS_anarchist_events.7.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.8 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+
+    }
+}
+
+country_event = { # Regional Elections Event 7 / Asturias
+	id = YBS_anarchist_events.8
+	title = YBS_anarchist_events.8.t
+	desc = YBS_anarchist_events.8.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.9 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+    }
+}
+
+country_event = { # Regional Elections Event 8 / Murcia
+	id = YBS_anarchist_events.9
+	title = YBS_anarchist_events.9.t
+	desc = YBS_anarchist_events.9.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.10 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+    }
+}
+
+country_event = { # Regional Elections Event 9 / Central Spain
+	id = YBS_anarchist_events.10
+	title = YBS_anarchist_events.10.t
+	desc = YBS_anarchist_events.10.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.11 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+    }
+}
+
+country_event = { # Regional Elections Event 10 / Basque Country
+	id = YBS_anarchist_events.11
+	title = YBS_anarchist_events.11.t
+	desc = YBS_anarchist_events.11.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            country_event = { id = YBS_anarchist_events.12 days = 15 }
+        }
+    }
+	
+	option = { # Anarchists
+        name = YBS_anarchist_events.2.a
+        add_to_variable = { YBS_anarchist_election = 1 }
+    }
+
+    option = { # Moderates
+        name = YBS_anarchist_events.2.b
+    }
+}
+
+country_event = { # Regional Elections over
+	id = YBS_anarchist_events.12
+	title = YBS_anarchist_events.12.t
+	desc = YBS_anarchist_events.12.desc
+    picture = GFX_report_event_spr_anarchist_success
+	
+	is_triggered_only = yes
+	
+	option = { # Full Anarchist Victory
+        name = YBS_anarchist_events.12.a
+        trigger = {
+            check_variable = { YBS_anarchist_election > 9 }
+        }
+        promote_character = YBS_literal_anarchy
+
+        set_party_name = {
+            ideology = communism
+            name = YBS_communism_party_anarchy
+            long_name = YBS_communism_party_anarchy_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            set_cosmetic_tag = YBS_free_territory_communism
+        }
+        hidden_effect = {
+            set_cosmetic_tag = YBS_free_territory
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_faction_name = YBS_world_anarchist_federation
+
+        set_country_flag = YBS_final_election_event_triggered
+    }
+
+    option = { # Anarchist Victory
+        name = YBS_anarchist_events.12.b
+        trigger = {
+            check_variable = { YBS_anarchist_election > 5 }
+            check_variable = { YBS_anarchist_election < 10 }
+        }
+        promote_character = YBS_defence_council
+
+        set_party_name = {
+            ideology = communism
+            name = YBS_communism_party_defence_council
+            long_name = YBS_communism_party_defence_council_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_faction_name = YBS_world_anarchist_federation
+
+        set_country_flag = YBS_final_election_event_triggered
+    }
+
+    option = { # Moderate Victory
+        name = YBS_anarchist_events.12.c
+        trigger = {
+            check_variable = { YBS_anarchist_election < 6 }
+        }
+        promote_character = YBS_trade_union_congress
+        add_trait = {
+            character = YBS_trade_union_congress
+            ideology = syndicalism
+            trait = YBS_trade_union_trait
+        }
+
+        set_party_name = {
+            ideology = communism
+            name = YBS_communism_party_defence_council
+            long_name = YBS_communism_party_defence_council_long
+        }
+
+        set_country_flag = YBS_final_election_event_triggered
     }
 }
 

@@ -32,6 +32,29 @@ leader_traits = {
 		communism_acceptance = 30
     }
 
+	YBS_syndicalist_unions = {
+        random = no
+		
+		communism_drift = 0.02
+    }
+
+	YBS_trade_union_trait = {
+        random = no
+		
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		weekly_manpower = 1000
+    }
+
+	YBS_defence_council_trait = {
+        random = no
+		
+		compliance_growth = 0.05
+		conscription_factor = 0.15
+		weekly_manpower = 1200
+		
+    }
+
 	YBS_catalan_anarchist = {
         random = no
 		
@@ -50,10 +73,18 @@ leader_traits = {
 	YBS_uea_chairwoman = {
         random = no
 		
-		compliance_gain = 0.05
+		compliance_growth = 0.1
 		stability_weekly = 0.005
 		non_core_manpower = 0.1
 		democratic_acceptance = 30
+    }
+
+	YBS_spirit_of_anarchism = {
+        random = no
+		
+		compliance_gain = 0.15
+		non_core_manpower = 0.25
+		stability_factor = -0.1
     }
 
 	YBS_carlist_junta_trait = {

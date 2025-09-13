@@ -70,6 +70,79 @@ YBS_owns_all_iberian_states = {
     }
 }
 
+YBS_is_spanish_africa_state = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_is_spanish_africa_state_tt
+        OR = {
+            region = 182
+            state = 697
+            state = 178
+        }
+    }
+}
+
+YBS_is_spanish_african_country = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_is_spanish_african_country_tt
+        capital_scope = {
+            is_core_of = PREV
+            YBS_is_spanish_africa_state = yes
+        }
+    }
+}
+
+YBS_controls_all_spanish_africa_states = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_controls_all_spanish_africa_states_tt
+        all_state = {
+            OR = {
+                YBS_is_spanish_africa_state = no
+                is_controlled_by = ROOT
+            }
+        }
+    }
+}
+
+YBS_is_italian_state = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_is_italian_state_tt
+        OR = {
+            region = 23
+            state = 1
+            state = 21
+            state = 32
+            state = 39
+            state = 158
+            state = 159
+            state = 160
+            state = 735
+            state = 736
+            state = 850
+            state = 851
+            state = 852
+            state = 846
+            state = 1027
+            state = 1028
+            state = 1029
+            state = 1037
+            state = 1038
+            state = 1039
+            state = 1041
+            state = 1042
+        }
+    }
+}
+
+YBS_is_italian_country = {
+    custom_trigger_tooltip = {
+        tooltip = YBS_is_italian_country_tt
+        capital_scope = {
+            is_core_of = PREV
+            YBS_is_italian_state = yes
+        }
+    }
+}
+
 YBS_iberian_federation_complete = {
     custom_trigger_tooltip = {
         tooltip = YBS_iberian_federation_complete_tt
