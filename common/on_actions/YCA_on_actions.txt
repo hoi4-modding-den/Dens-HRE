@@ -1,0 +1,26 @@
+on_actions = {
+	on_state_control_changed = {
+		# FINNISH MOTTI - Remove Motti Tactics state modifier if Finland loses a state
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = {
+						has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+					}
+					FROM = { tag = FIN }
+				}
+				FROM.FROM = {
+					remove_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+				}
+				#Cost decrease for Motti decisions in Finland
+				hidden_effect = {
+					FROM = {
+						divide_variable = { FIN_motti_decision_cost = FIN_motti_decision_cost_increase }
+						set_variable = { FIN_motti_decision_cost_for_trigger = FIN_motti_decision_cost } #For trigger purposes
+						subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
+					}
+				}
+			}
+		}   
+    }         
+}

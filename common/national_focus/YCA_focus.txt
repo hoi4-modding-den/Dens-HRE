@@ -1404,7 +1404,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			#Tooltip purposes (Select Effect)
 			custom_effect_tooltip = SOV_focus_select_effect_tt
@@ -1893,10 +1893,16 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			remove_ideas = YCA_workers_militias
 			add_ideas = YCA_the_iberian_liberation_army_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_superior_firepower
+			}			
 		}
 	}	
 	focus = {
@@ -1923,6 +1929,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
 			unlock_decision_tooltip = YCA_revolutionary_defense_decree
+			unlock_decision_tooltip = YCA_fund_the_cuerpo_de_artilleria
 			army_experience = 75
 		}
 	}
@@ -1936,7 +1943,7 @@ focus_tree = {
 		x = 0
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1947,8 +1954,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_war_support = 0.05
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.3
+				uses = 2
+				category = cat_superior_firepower
+			}
 		}
 	}	
 	focus = {
@@ -1961,7 +1974,7 @@ focus_tree = {
 		x = -2
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1972,8 +1985,23 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			custom_effect_tooltip = YCA_political_commissars_tt # need to add once OOB/generals are added, use the YBS_foreign_advisors
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}				
 		}
 	}		
 	focus = {
@@ -1987,7 +2015,7 @@ focus_tree = {
 		x = 2
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1998,8 +2026,19 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			unlock_decision_tooltip = YCA_bolster_weapons_rd
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1200
+				producer = YCA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 350
+				producer = YCA
+			}							
 		}
 	}
 	focus = {
@@ -2012,7 +2051,7 @@ focus_tree = {
 		x = -1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2023,8 +2062,36 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_INTERNAL_AFFAIRS FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			165 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}		
+			}
+			167 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}		
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}			
 		}
 	}	
 	focus = {
@@ -2037,7 +2104,7 @@ focus_tree = {
 		x = 0
 		y = 2		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -2048,8 +2115,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { }
 		completion_reward = {
+			unlock_decision_tooltip = YCA_fortify_the_southern_frontier
+			unlock_decision_tooltip = YCA_protect_the_catalan_shores_against_the_capitalist_threat
+			add_popularity = {
+				ideology = communism
+				popularity = 0.04
+			}
 		}
 	}						
 	focus = {
@@ -2102,7 +2175,7 @@ focus_tree = {
 		x = 1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2115,6 +2188,8 @@ focus_tree = {
 
 		search_filters = { }
 		completion_reward = {
+			country_event = YCA_domestic_events.2
+			add_manpower = 21600			
 		}
 	}		
 	focus = {
@@ -2128,7 +2203,7 @@ focus_tree = {
 		x = 3
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2139,8 +2214,27 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_ideas = YCA_mobilize_the_communes_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}			
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 2
+				tooltip = anarchist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}			
 		}
 	}	
 	focus = {
@@ -2156,7 +2250,7 @@ focus_tree = {
 		x = 1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2167,10 +2261,16 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			army_experience = 25
+			unlock_decision_category_tooltip = YCA_guerrilla_tradicional_tactics_category
+			hidden_effect = {
+				unlock_decision_tooltip = YCA_prepare_guerrilla_tactics_in_state
+				unlock_decision_tooltip = YCA_cancel_guerrilla_tactics_in_state
+			}
 		}
-	}	
+	}
 	focus = {
 		id = YCA_comrade_elected_commanders # Comrade-Elected Commanders
 		icon = GFX_focus_HUN_officialize_the_rakosi_battalion
@@ -2181,7 +2281,7 @@ focus_tree = {
 		x = -1
 		y = 1		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -2192,8 +2292,26 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_workers_militias_1
+				add_idea = YCA_workers_militias_2
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 2
+				tooltip = anarchist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}				
 		}
 	}																				
 }

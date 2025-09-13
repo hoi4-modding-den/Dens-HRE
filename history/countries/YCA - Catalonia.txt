@@ -132,6 +132,12 @@ add_to_variable = {
 	value = 26
 }
 
+### MOTTI SYSTEM
+set_variable = { FIN_motti_decision_cost = 25 }
+set_variable = { FIN_motti_decision_cost_increase = 2 } #Will be multiplied by current CP/PP cost
+set_variable = { FIN_motti_decision_cost_for_trigger = FIN_motti_decision_cost } #For trigger purposes
+subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
+
 set_country_flag = dont_use_default_political_advisors
 set_country_flag = dont_use_default_military_advisors
 set_country_flag = YCA_welcome_message_flag

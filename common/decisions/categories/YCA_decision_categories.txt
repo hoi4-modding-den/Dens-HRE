@@ -1,6 +1,6 @@
 YCA_generalitat_factions_decisions = {
 	icon = GFX_decision_category_generic_propaganda
-	priority = 13	
+	priority = 100
 
 	allowed = {
 		tag = YCA
@@ -9,4 +9,34 @@ YCA_generalitat_factions_decisions = {
 	scripted_gui = YCA_generalitat_faction_decision_ui
 
 	visible_when_empty = yes
+}
+
+YCA_guerrilla_tradicional_tactics_category = {
+	icon = GFX_decision_category_FIN_motti_tactics
+
+	picture = GFX_decision_cat_picture_FIN_motti_tactics
+	
+	allowed = {
+		original_tag = YCA
+	}
+	
+	priority = 10
+	
+	visible = {
+		has_completed_focus = YCA_guerrilla_tradicional
+	}
+
+	on_map_area = {
+		target_array = core_states
+		target_trigger = {
+			FROM = {
+				YCA_state_is_valid_for_guerrilla = yes
+			}
+		}
+		name = YCA_guerrilla_tradicional_tactics_category
+		zoom = 300
+		state = 167
+	}
+	visible_when_empty = yes
+
 }

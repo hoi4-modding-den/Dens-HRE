@@ -18,3 +18,18 @@ country_event = { # Future of the Forces Armades
         name = YCA_domestic_events.1.b
     }	
 }
+
+country_event = { # The Worker Battalions Rise
+	id = YCA_domestic_events.2
+	title = YCA_domestic_events.2.t
+	desc = YCA_domestic_events.2.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.2.a
+		# adds 2 free militia divisions in Barcelona
+    }
+}

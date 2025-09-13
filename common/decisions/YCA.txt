@@ -71,4 +71,348 @@ YCA_generalitat_factions_decisions = {
 			base = 10
 		}
 	}	
+	YCA_bolster_weapons_rd = {
+		priority = 10
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_revolutionary_military_committee
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 35
+		cost = 35
+
+		remove_effect = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}	
+	YCA_fund_the_cuerpo_de_artilleria = {
+		priority = 10
+		icon = GFX_decision_generic_research 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_revolutionary_military_committee
+		}	
+		
+		available = {
+		}
+
+		days_remove = 40
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 25
+		cost = 25
+
+		remove_effect = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}
+	YCA_fortify_the_southern_frontier = {
+		priority = 5
+		icon = GFX_decision_generic_fortification 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_fortress_against_imperialism
+		}	
+		
+		available = {
+		}
+
+		days_remove = 70
+		fire_only_once = yes	
+
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+
+		remove_effect = {
+			add_war_support = 0.05
+			167 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4098
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9889
+				}				
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6856
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3799
+				}					
+			}
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}
+	YCA_protect_the_catalan_shores_against_the_capitalist_threat = {
+		priority = 5
+		icon = GFX_decision_generic_fortification 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_fortress_against_imperialism
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		custom_cost_trigger = {
+			command_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+
+		remove_effect = {
+			add_war_support = 0.02
+			167 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 4098
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 6906
+				}				
+			}
+			165 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 9764
+				}			
+			}			
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}							
+}
+
+YCA_guerrilla_tradicional_tactics_category = {
+	YCA_prepare_guerrilla_tactics_in_state = {
+		icon = generic_operation
+
+		priority = 10
+
+		state_target = yes
+
+		on_map_mode = map_and_decisions_view
+
+		target_array = ROOT.core_states
+
+		target_trigger = {
+			FROM = {
+				YCA_state_is_valid_for_guerrilla = yes
+				NOT = { has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier } }
+			}
+		}
+
+		visible = {
+			FROM = {
+				is_controlled_by = ROOT
+			}
+		}
+		
+		cancel_if_not_visible = yes
+
+		custom_cost_trigger = {
+			command_power > FIN_motti_decision_cost_for_trigger
+			has_political_power > FIN_motti_decision_cost_for_trigger
+		}
+		custom_cost_text = FIN_motti_tactics_decision_cost_dynamic_cp_pp
+		ai_hint_pp_cost = 25 #It increases every time this decision is taken though
+
+		days_remove = 15
+
+		available = {
+			FROM = {
+				NOT = { has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier } }
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			FROM = {
+				NOT = { is_controlled_by = ROOT }
+			}
+		}
+
+		cancel_effect = {
+			#Reset cost
+			hidden_effect = {
+				divide_variable = { FIN_motti_decision_cost = FIN_motti_decision_cost_increase }
+				set_variable = { FIN_motti_decision_cost_for_trigger = FIN_motti_decision_cost } #For trigger purposes
+				subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
+			}
+		}
+
+		complete_effect = {
+			#Cost increase
+			hidden_effect = {
+				set_temp_variable = { FIN_remove_mana_cost = FIN_motti_decision_cost }
+				multiply_temp_variable = { FIN_remove_mana_cost = -1 }
+				add_command_power = FIN_remove_mana_cost
+				add_political_power = FIN_remove_mana_cost
+				
+				multiply_variable = { FIN_motti_decision_cost = FIN_motti_decision_cost_increase }
+				set_variable = { FIN_motti_decision_cost_for_trigger = FIN_motti_decision_cost } #For trigger purposes
+				subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
+			}
+
+			custom_effect_tooltip = FIN_motti_tactics_cost_increase_tt
+		}
+
+		remove_effect = {
+			FROM = {	
+				add_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+			}
+		}
+
+		ai_will_do = {
+			base = 0.1
+			modifier = {
+				factor = 10
+				FROM = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				FROM = {
+					NOT = { is_fully_controlled_by = ROOT }
+				}
+			}
+		}
+	}
+
+	YCA_cancel_guerrilla_tactics_in_state = {
+		icon = GFX_decision_FIN_stop_motti_tactics
+
+		priority = 1
+
+		state_target = yes
+
+		on_map_mode = map_and_decisions_view
+
+		target_array = ROOT.core_states
+
+		target_trigger = {
+			FROM = {
+				has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+			}
+		}
+
+		available = {
+			FROM = {
+				has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+			}
+		}
+
+		complete_effect = {
+			FROM = {	
+				remove_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+			}
+
+			#Cost decrease
+			hidden_effect = {
+				divide_variable = { FIN_motti_decision_cost = FIN_motti_decision_cost_increase }
+				set_variable = { FIN_motti_decision_cost_for_trigger = FIN_motti_decision_cost } #For trigger purposes
+				subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
+			}
+
+			custom_effect_tooltip = FIN_motti_tactics_cost_decrease_tt
+		}
+
+		ai_will_do = {
+			base = 0.1
+			modifier = {
+				factor = 1000
+				FROM = {
+					is_fully_controlled_by = ROOT
+					all_neighbor_state = {
+						controller = {
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+			}
+		}
+	}
 }
