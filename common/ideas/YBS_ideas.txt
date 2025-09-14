@@ -731,6 +731,27 @@ ideas = {
 			}
 		}
 
+		YBS_war_propaganda_idea = {
+
+			picture = FRA_national_mobilization_focus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_weekly = 0.01
+				political_power_cost = 0.25
+				mobilization_speed = 0.02
+			}
+		}
+
 		YBS_republican_opposition = {
 
 			picture = EST_democratic_opposition
@@ -787,9 +808,35 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_org_factor = 0.05
+				army_org_factor = 0.1
 				army_defence_factor = 0.05
+				conscription_factor = -0.02
 				communism_drift = -0.01
+			}
+		}
+
+		YBS_spanish_fighting_spirit_idea = {
+
+			name YBS_spanish_fighting_spirit
+			picture = SPA_crusade_against_democracy
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.1
+				army_attack_factor = 0.15
+				experience_loss_factor = -0.25
+				breakthrough_factor = 0.1
+				army_morale_factor = 0.15
+
 			}
 		}
 
@@ -932,6 +979,25 @@ ideas = {
 				stability_factor = 0.1
 				consumer_goods_factor = -0.1
 				research_speed_factor = 0.05
+			}
+		}
+
+		YBS_investment_returns = {
+
+			picture = RAJ_external_investments
+
+			allowed = {
+				original_tag = XHH
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.25
 			}
 		}
 
@@ -1446,7 +1512,7 @@ ideas = {
 		YBS_fake_colonial_police_garrison_law = {
 
 			name = YBS_colonial_police
-			
+
 			allowed = {
 				original_tag = YBS
 			}

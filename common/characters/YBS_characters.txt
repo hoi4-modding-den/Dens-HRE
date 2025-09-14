@@ -123,7 +123,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { YBS_corporate_control }
 			ideology = oligarchism
 			desc = YBS_handelskommission_desc
 			expire = "1950.1.1.1"
@@ -227,6 +227,526 @@ characters = {
 			cost = 100
 		}
 	}
+
+	YBS_generic_pp_guy = {
+		portraits = {
+			civilian = {
+                small = GFX_Portrait_Europe_Generic_3_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_pp_guy
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				
+			}
+			traits = {
+				silent_workhorse
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_war_support_guy = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_EST_artur_sirk
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_war_support_guy
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				
+			}
+			traits = {
+				propaganda_expert
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_technocrat = {
+		portraits = {
+			civilian = {
+                small = GFX_portrait_FIN_aimo_cajander_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_technocrat
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				
+			}
+			traits = {
+				technocrat
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_regional_traditionalist_leader = {
+		portraits = {
+			civilian = {
+                small = GFX_portrait_FIN_torsti_verkkola_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_regional_traditionalist_leader
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_victory_at_all_costs
+			}
+			traits = {
+				regional_traditionalist_leader
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_carlist_intellectual = {
+		portraits = {
+			civilian = {
+                small = GFX_portrait_GER_hans_luther_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_carlist_intellectual
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_honourbound
+			}
+			traits = {
+				carlist_intellectual
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_popular_liberal = {
+		portraits = {
+			civilian = {
+                small = GFX_portrait_GER_alfred_rosenberg_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_popular_liberal
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_trade_council
+			}
+			traits = {
+				HUN_popular_liberal
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_war_profiteer = {
+		name = YBS_generic_war_profiteer_name
+		portraits = {
+			civilian = {
+                small = GFX_idea_ITA_ferruccio_parri
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_war_profiteer
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_consolidate_our_capital
+			}
+			traits = {
+				war_profiteer
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_corporate_knight = {
+		name = YBS_generic_corporate_knight_name
+		portraits = {
+			civilian = {
+                small = GFX_idea_LAT_fricis_menders
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_corporate_knight
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_consolidate_our_capital
+			}
+			traits = {
+				corporate_knight
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_conservative = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_NIC_anastasio_somoza_garcia
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_conservative
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_freedom_democracy_unity
+			}
+			traits = {
+				SWI_conservative_democrat
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_education_minister = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_POL_wladyslaw_gomulka
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_education_minister
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				OR = {
+					has_completed_focus = YBS_patriotic_education
+					has_completed_focus = YBS_modernise_the_education_system
+				}
+			}
+			traits = {
+				minister_of_ecclesiastical_affairs_upgraded
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_soc_economist = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_ROM_octavian_goga
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_soc_economist
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				OR = {
+					has_completed_focus = YBS_the_workers_economy
+					has_completed_focus = YBS_popular_front_promises
+				}
+			}
+			traits = {
+				socialist_economist_upgraded
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_socialist_bulwark = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_YUG_milan_grol
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_socialist_bulwark
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				OR = {
+					has_completed_focus = YBS_sideline_the_reactionaries
+					has_completed_focus = YBS_popular_front_promises
+				}
+			}
+			traits = {
+				HUN_socialist_bulwark
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_revolutionary_internationalist = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_europe_generic_4
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_revolutionary_internationalist
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				OR = {
+					has_completed_focus = YBS_poum_troops
+					has_completed_focus = YBS_foreign_support
+				}
+			}
+			traits = {
+				HUN_revolutionary_internationalist_trait
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_captain_of_industry = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_europe_generic_6
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_captain_of_industry
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_industrial_growth
+			}
+			traits = {
+				captain_of_industry
+			}
+
+			cost = 100
+		}
+	}
+	YBS_generic_economic_reformer = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_ENG_palme_dutt
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_economic_reformer
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_reach_out_to_trade_partners
+			}
+			traits = {
+				economic_reformer
+			}
+
+			cost = 100
+		}
+	}
+	YBS_generic_trade_unionist = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_EST_konstantin_pats
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_trade_unionist
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_national_labour_federation
+			}
+			traits = {
+				SWI_trade_unionist
+			}
+
+			cost = 100
+		}
+	}
+	YBS_generic_industry_magnate = {
+		portraits = {
+			civilian = {
+                small = GFX_idea_EST_otto_heinze
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YBS_generic_industry_magnate
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_reconstruct_the_economy
+			}
+			traits = {
+				industry_magnate
+			}
+
+			cost = 100
+		}
+	}
+
+
+	YBS_generic_army_chief_offensive = {
+		portraits = {
+			army = {
+                small = YBS_generic_army_chief_offensive_small
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = YBS_generic_army_chief_offensive
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_reorganise_high_command
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_high_command_infantry = {
+		portraits = {
+			army = {
+                small = YBS_generic_high_command_infantry_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YBS_generic_high_command_infantry
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_reorganise_high_command
+			}
+			traits = {
+				army_infantry_3
+			}
+
+			cost = 200
+		}
+	}
+
+	YBS_generic_high_command_regrouping = {
+		portraits = {
+			army = {
+                small = YBS_generic_high_command_regrouping_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YBS_generic_high_command_regrouping
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_reorganise_high_command
+			}
+			traits = {
+				army_regrouping_2
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_high_command_radio = {
+		portraits = {
+			army = {
+                small = YBS_generic_high_command_radio_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YBS_generic_high_command_radio
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_radio_development
+			}
+			traits = {
+				army_radio_intelligence_2
+			}
+
+			cost = 100
+		}
+	}
+
+	YBS_generic_high_command_tank = {
+		portraits = {
+			army = {
+                small = YBS_generic_high_command_tank_small
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = YBS_generic_high_command_tank
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_armour_developments
+			}
+			traits = {
+				army_armored_2
+			}
+
+			cost = 100
+		}
+	}
+
+	
 
 	YBS_falangist_general_1 = {
 		name = YBS_falangist_general_1_name
