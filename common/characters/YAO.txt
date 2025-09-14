@@ -9,8 +9,132 @@ characters = {
 
 		country_leader = {
 			ideology = despotism
+			traits = {
+				YAO_king_of_iberia
+			}
 			expire = "1969.1.1"
 			id = -1
+			decs = YAO_King_Alfonso_desc
+		}
+	}
+
+	YAO_Consejo_de_Madrid = {
+		name = YAO_Consejo_de_Madrid
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_King_Alfonso
+			}
+		}
+
+		country_leader = {
+			ideology = marxism
+			traits = {
+				
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = YAO_Consejo_de_Madrid_desc
+		}
+	}
+
+	YAO_Manuel_Azana = {
+		name = YAO_Manuel_Azana
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Manuel_Azana
+			}
+		}
+
+		country_leader = {
+			ideology = socialism
+			traits = {
+				
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = YAO_Manuel_Azana_desc
+		}
+	}
+
+	YAO_conservative_leader = {
+		name = YAO_conservative_leader
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+			}
+		}
+
+		country_leader = {
+			ideology = conservatism
+			traits = {
+				
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = YAO_conservative_leader_desc
+		}
+	}
+
+	YAO_conservative_leader_neutrality = {
+		name = YAO_conservative_leader
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+			}
+		}
+
+		country_leader = {
+			ideology = oligarchism
+			traits = {
+				
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = YAO_conservative_leader_desc
+		}
+	}
+
+	YAO_military_high_command_1 = {
+		name = YAO_military_high_command_1
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command }
+			cost = 125
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_1
+    		ledger = army
+    		traits = { 
+				army_attack_factor = 0.1
+				army_infantry_attack_factor = 0.15
+				army_infantry_speed_factor = 0.05
+			}
+		}
+	}
+
+	YAO_military_high_command_2 = {
+		name = YAO_military_high_command_2
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command }
+			cost = 125
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_2
+    		ledger = army
+    		traits = { 
+				army_org_factor = 0.1
+				cavalry_attack_factor = 0.1
+				cavalry_speed_factor = 0.05
+			}
 		}
 	}
 }

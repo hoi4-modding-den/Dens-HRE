@@ -1,0 +1,127 @@
+add_namespace = YAO_event
+## LOST REGIMENT ASKED TO SUBMIT ##
+country_event = {
+	id = YAO_event.1
+	title = YAO_event.1.t
+	desc = YAO_event.1.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.1.a
+		ai_chance = { 
+            factor = 50 
+        }
+		trigger = { }
+		YAO = { country_event = YAO_event.3 }
+	}
+	option = {
+		name = YAO_event.1.b
+		ai_chance = { 
+            factor = 50 
+        }
+		trigger = { }
+		YAO = { country_event = YAO_event.2 }
+	}
+}
+
+## LOST REGIMENT SUBMISSION ##
+country_event = {
+	id = YAO_event.2
+	title = YAO_event.2.t
+	desc = YAO_event.2.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.2.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+		annex_country = {
+            target = YFR
+            transfer_troops = yes
+        }
+	}
+}
+
+## LOST REGIMENT REFUSE ##
+country_event = {
+	id = YAO_event.3
+	title = YAO_event.3.t
+	desc = YAO_event.3.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.3.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+		declare_war_on = {
+            target = YFR
+            type = annex_everything
+        }
+	}
+}
+
+## POPE MESSAGE ##
+country_event = {
+	id = YAO_event.4
+	title = YAO_event.4.t
+	desc = YAO_event.4.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.4.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+		YAO = { country_event = YAO_event.5 }
+	}
+}
+
+## ANSWER FROM THE POPE ##
+country_event = {
+	id = YAO_event.5
+	title = YAO_event.5.t
+	desc = YAO_event.5.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.5.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+	}
+}
+
+#news_event = {}

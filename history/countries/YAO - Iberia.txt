@@ -16,8 +16,16 @@ if = {
 }
 
 recruit_character = YAO_King_Alfonso
+recruit_character = YAO_Consejo_de_Madrid
+recruit_character = YAO_Manuel_Azana
 
-set_research_slots = 3
+recruit_character = YAO_conservative_leader
+recruit_character = YAO_conservative_leader_neutrality
+
+recruit_character = YAO_military_high_command_1
+recruit_character = YAO_military_high_command_2
+
+set_research_slots = 2
 
 set_technology = {
 	infantry_weapons = 1
@@ -38,10 +46,12 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 74
-	democratic = 12
-	communism = 7
-	fascism = 7
+	neutrality = 63
+	democratic = 32
+	communism = 2
+	fascism = 3
 }
 
+add_ideas = YAO_the_legitimate_government
+add_ideas = YAO_state_of_the_armed_forces
 
