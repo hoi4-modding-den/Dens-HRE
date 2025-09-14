@@ -1,5 +1,8 @@
 capital = 180
 
+set_stability = 0.30
+set_war_support = 0.55
+
 set_technology = {
 	infantry_weapons = 1
 	tech_support = 1		
@@ -15,6 +18,8 @@ set_technology = {
 oob = "YPR_1936"
 
 recruit_character = YPR_provisionary_government
+recruit_character = YPR_bento_goncalves
+recruit_character = YPR_workers_councils
 
 recruit_character = YPR_jose_norton_de_matos
 recruit_character = YPR_francisco_miguel_duarte
@@ -31,7 +36,11 @@ recruit_character = YPR_alvaro_cunhal
 
 add_ideas = {
 	limited_conscription
+	YPR_the_spirit_of_1934
+	YPR_proletarian_military_dummy
 }
+
+add_dynamic_modifier = { modifier = YPR_proletarian_military }
 
 set_politics = {
 	ruling_party = communism

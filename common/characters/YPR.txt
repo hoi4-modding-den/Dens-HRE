@@ -11,6 +11,22 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 	}
+	YPR_bento_goncalves = {
+		name = POR_bento_goncalves
+		portraits = {
+			civilian = {
+				large = GFX_portrait_POR_bento_goncalves
+			}
+		}
+	}
+	YPR_workers_councils = {
+		name = "Workers' Councils"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/YPR/Portrait_spr_anarchist_commune.png"
+			}
+		}
+	}
 	YPR_jose_norton_de_matos = {
 		name = "José Norton de Matos"
 		
@@ -264,6 +280,10 @@ characters = {
 			}
 			ai_will_do = {
 				factor = 1.000
+			}
+			cost = 75
+			available = {
+				has_completed_focus = YPR_affirm_the_policy_of_equality
 			}
 		}
 		name = "Deolinda Lopes Vieira"

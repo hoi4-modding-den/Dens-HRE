@@ -50,7 +50,10 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_emphasize_international_solidarity_tt
-			add_stability = 0.05
+			add_timed_idea = {
+				idea = YPR_international_volunteers
+				days = 100
+			}
 		}
 	}
 	focus = {
@@ -71,7 +74,9 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_affirm_the_policy_of_equality_tt
-			add_stability = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = YPR_deolinda_lopes_vieira_idea
 		}
 	}
 	focus = {
@@ -93,7 +98,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_first_congress_of_the_portuguese_revolutionary_front_tt
-			add_stability = 0.05
+			country_event = YPR.1
 		}
 	}
 	focus = {
@@ -101,10 +106,13 @@ focus_tree = {
 		icon = GFX_focus_SOV_the_path_of_marxism_leninism
 		x = 4
 		y = 1
-		cost = 5
+		cost = 1
 		prerequisite = { focus = YPR_first_congress_of_the_portuguese_revolutionary_front }
 		relative_position_id = YPR_first_congress_of_the_portuguese_revolutionary_front
 		mutually_exclusive = { focus = YPR_all_power_to_the_councils }
+		available = {
+			always = false
+		}
 
 		
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -115,7 +123,16 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_establish_the_vanguard_party_tt
-			add_stability = 0.05
+			effect_tooltip = { 
+				add_country_leader_role = {
+					character = YPR_bento_goncalves
+					promote_leader = yes
+					country_leader = {
+						ideology = leninism
+						expire = "1965.1.1.1"
+					}		
+				}
+			}
 		}
 	}
 	focus = {
@@ -123,10 +140,13 @@ focus_tree = {
 		icon = GFX_focus_ARG_no_gods_no_masters
 		x = -4
 		y = 1
-		cost = 5
+		cost = 1
 		prerequisite = { focus = YPR_first_congress_of_the_portuguese_revolutionary_front }
 		relative_position_id = YPR_first_congress_of_the_portuguese_revolutionary_front
 		mutually_exclusive = { focus = YPR_establish_the_vanguard_party }
+		available = {
+			always = false
+		}
 
 		
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -137,7 +157,16 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_all_power_to_the_councils_tt
-			add_stability = 0.05
+			effect_tooltip = { 
+				add_country_leader_role = {
+					character = YPR_workers_councils
+					promote_leader = yes
+					country_leader = {
+						ideology = anarchist_communism
+						expire = "1965.1.1.1"
+					}		
+				}
+			}
 		}
 	}
 }
