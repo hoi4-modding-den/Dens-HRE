@@ -1,0 +1,14 @@
+YCA_guerrilla_tactics_modifier = { #Gets removed via on_action
+	enable = { always = yes }
+	icon = GFX_modifiers_FIN_motti_tactics_modifier
+
+	army_speed_factor_for_controller = 0.15
+	attrition_for_controller = -0.1
+	local_supplies_for_controller = 0.15
+
+    resistance_growth = 0.3
+
+	enemy_army_speed_factor = -0.15
+	enemy_local_supplies = -0.15
+	enemy_attrition = 0.15
+}

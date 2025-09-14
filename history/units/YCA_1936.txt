@@ -1,0 +1,193 @@
+﻿division_template = {
+	name = "Infantería Profesional"
+
+	division_names_group = YCA_INF_01
+
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }		
+	}
+	support = { 
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+
+	priority = 2
+}
+
+division_template = {
+	name = "Milicia Catalana"
+
+	division_names_group = YCA_INF_02
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+	
+	priority = 0
+	division_cap = 16
+	template_counter = 68
+}
+
+division_template = {
+	name = "Especialista en Montañismo" 
+
+	division_names_group = YCA_MNT_01 
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+        mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		mountaineers = { x = 2 y = 0 }
+	}
+	
+	support = {
+        engineer = { x = 0 y = 0 }
+        recon = { x = 0 y = 1 }
+	}
+
+	priority = 2
+}
+
+division_template = {
+	name = "Explorador de Caballería"
+
+	division_names_group = YCA_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	
+	support = {
+        recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {	
+		location = 9797
+		division_template = "Especialista en Montañismo"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+	}	
+	division = {	
+		location = 3899
+		division_template = "Especialista en Montañismo"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+	}	
+
+	division = {	
+		location = 9764
+		division_template = "Infantería Profesional"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}			
+	division = {	
+		location = 6906
+		division_template = "Infantería Profesional"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {	
+		location = 4098
+		division_template = "Infantería Profesional"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+
+	division = {	
+		location = 6966
+		division_template = "Explorador de Caballería"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+
+	division = {	
+		location = 6836
+		division_template = "Milicia Catalana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	division = {	
+		location = 3799
+		division_template = "Milicia Catalana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	division = {	
+		location = 9896
+		division_template = "Milicia Catalana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}	
+	division = {	
+		location = 6927
+		division_template = "Milicia Catalana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}	
+	division = {	
+		location = 9764
+		division_template = "Milicia Catalana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}							
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = YCA
+		}
+		requested_factories = 2
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = YCA
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = YCA
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+	}		
+}
+
+#####################

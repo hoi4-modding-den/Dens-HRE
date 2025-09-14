@@ -30,6 +30,39 @@ country_event = { # The Worker Battalions Rise
 	
 	option = {
         name = YCA_domestic_events.2.a
-		# adds 2 free militia divisions in Barcelona
+		# adds 2 free militia divisions in Barcelona + boost to doctrine
+    }
+}
+
+country_event = { # The Radical Triumvirate
+	id = YCA_domestic_events.3
+	title = YCA_domestic_events.3.t
+	desc = YCA_domestic_events.3.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.3.a
+		add_to_variable = {
+			var = YCA_generalitat_faction_progress_bar
+			value = 6
+			tooltip = YCA_tension_increase_by_6_tt
+		}			
+    }
+}
+
+country_event = { # Interim Constitution, Preamble/Foundational Principles (followed by Collectivization/Privatization of industries (State Oversight), Freedoms, Secularism, One-party rule)
+	id = YCA_domestic_events.4
+	title = YCA_domestic_events.4.t
+	desc = YCA_domestic_events.4.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.4.a		
     }
 }

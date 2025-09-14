@@ -39,6 +39,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.3
+			add_stability = 0.05
 		}
 	}	
 	focus = {
@@ -61,14 +63,30 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {		
+			add_political_power = -25	
+			unlock_decision_tooltip = YCA_establish_the_tribunales_revolucionarios
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}						
 		}
 	}	
 	focus = {
 		id = YCA_found_security_directorate
 		icon = GFX_focus_AFG_integrate_tajik_and_uzbek_republics
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_revolutionary_tribunals
 		}
@@ -87,6 +105,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_ideas = YCA_CPCIA_empowered
+			custom_effect_tooltip = generic_skip_one_line_tt
+			create_intelligence_agency = {
+				name = "CPCIA" #Catalan People's Commissariat of Internal Affairs
+				icon = GFX_intelligence_agency_logo_generic_8
+			}
 		}
 	}	
 	focus = {
@@ -109,8 +133,18 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_timed_idea = {
+				idea = YCA_catalan_pacification_campaign
+				days = 365
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 3
+				tooltip = YCA_tension_increase_by_3_tt
+			}			
 		}
 	}	
 	focus = {
@@ -129,12 +163,18 @@ focus_tree = {
 		}
 
 		available = {
+			has_idea = YCA_CPCIA_empowered
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = YCA_CPCIA_empowered
+				add_idea = YCA_CPCIA_empowered_1
+			}
 		}
 	}		
 	focus = {
@@ -159,12 +199,26 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_to_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 4
+				tooltip = YCA_tension_increase_by_4_tt
+			}				
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = YCA_juan_andrade
+			show_ideas_tooltip = YCA_juan_garcia_oliver
+			show_ideas_tooltip = YCA_indalecio_prieto
 		}
 	}	
 	focus = {
 		id = YCA_local_committees_reform
 		icon = GFX_focus_SWE_socialist_reforms
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_institutionalize_the_front
 		}
@@ -179,19 +233,33 @@ focus_tree = {
 			factor = 30
 		}
 
-		available = {
+		available = {						
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			add_to_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 4
+				tooltip = socialist_medium_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 6		
+			}			
 		}
 	}	
 	focus = {
 		id = YCA_empower_consejos
 		icon = GFX_focus_generic_workers_and_farmers_rise
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_institutionalize_the_front
 		}
@@ -211,8 +279,21 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 6
+				tooltip = anarchist_large_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 3		
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 3		
+			}			
 		}
 	}
 	focus = {
@@ -231,6 +312,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = YCA_interim_constitution_adopted
 		}
 
 		available_if_capitulated = no
@@ -255,6 +337,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = YCA_interim_constitution_adopted
 		}
 
 		available_if_capitulated = no
@@ -320,7 +403,7 @@ focus_tree = {
 	focus = {
 		id = YCA_CNT_FAI_merge # merge the CNT and the FAI for more anarcho-syndicalist power, with a focus of iberian anarchist federalism
 		icon = GFX_focus_chi_mission_to_the_soviet_union # replace flag with CNT-FAI one
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_federations_of_collectives
 		}		
@@ -344,7 +427,7 @@ focus_tree = {
 	focus = {
 		id = YCA_interim_constitution
 		icon = GFX_focus_generic_treaty
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_revolutionary_tribunals
 		}		
@@ -367,6 +450,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_political_power = 200
+			custom_effect_tooltip = YCA_interim_constitution_tt
+			hidden_effect = {
+				country_event = {
+					id = YCA_domestic_events.4
+					days = 1
+				}				
+			}
 		}
 	}	
 	focus = {
@@ -385,6 +476,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = YCA_interim_constitution_adopted
 		}
 
 		available_if_capitulated = no
@@ -420,7 +512,7 @@ focus_tree = {
 	focus = {
 		id = YCA_revolutionary_nationalism
 		icon = GFX_focus_generic_spur_communist_revolutions
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_party_directives
 		}		
@@ -462,7 +554,9 @@ focus_tree = {
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
-		completion_reward = {
+		completion_reward = {			
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = YCA_jesus_hernandez_tomas			
 		}
 	}	
 	focus = {
@@ -506,6 +600,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = YCA_interim_constitution_adopted
 		}
 
 		available_if_capitulated = no
@@ -564,8 +659,21 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_to_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 6
+				tooltip = socialist_large_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 3		
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 3		
+			}			
 		}
 	}	
 	focus = {
@@ -621,7 +729,7 @@ focus_tree = {
 	focus = {
 		id = YCA_first_party_congress
 		icon = GFX_focus_YUG_pan_slavic_congress
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_CNT_FAI_merge
 			focus = YCA_revolutionary_nationalism
@@ -646,7 +754,7 @@ focus_tree = {
 	focus = {
 		id = YCA_vanguardist_legacy
 		icon = GFX_focus_GER_legacy_of_the_spartacus_league
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_first_party_congress
 		}	
@@ -658,7 +766,14 @@ focus_tree = {
 			factor = 30
 		}
 
-		available = {
+		available = {	
+			custom_trigger_tooltip = {
+				tooltip = YCA_vanguardist_majority_support
+				check_variable = {
+					var = YCA_vanguardist_faction_progress_bar
+					value = 50
+				}			
+			}						
 		}
 
 		available_if_capitulated = no
@@ -670,7 +785,7 @@ focus_tree = {
 	focus = {
 		id = YCA_the_indigo_movement # purple movement for the socialists
 		icon = GFX_focus_YCA_the_indigo_movement
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_first_party_congress
 		}	
@@ -683,6 +798,13 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = YCA_socialist_majority_support
+				check_variable = {
+					var = YCA_socialist_faction_progress_bar
+					value = 50
+				}			
+			}				
 		}
 
 		available_if_capitulated = no
@@ -694,7 +816,7 @@ focus_tree = {
 	focus = {
 		id = YCA_towards_stateless_order
 		icon = GFX_focus_ARG_no_gods_no_masters
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_first_party_congress
 		}	
@@ -707,6 +829,13 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = YCA_anarchist_majority_support
+				check_variable = {
+					var = YCA_anarchist_faction_progress_bar
+					value = 50
+				}			
+			}				
 		}
 
 		available_if_capitulated = no
@@ -1648,7 +1777,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YCA_prevent_balearic_incursions # mine sea between balearic islands and catalonia
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_focus_GER_wage_war_on_capitalism
 		prerequisite = {
 			focus = YCA_flota_del_pueblo
 		}		
