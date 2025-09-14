@@ -103,6 +103,10 @@
  UNL_UNIFIED_YBS_neutrality_subject_DEF: "the Dominion of the Netherlands"
  UNL_UNIFIED_YBS_neutrality_subject_ADJ: "Dutch"
 
+ YRI_autonomy_YBS_subsidiary: "Hanseatisch-Nordafrika GmbH"
+ YRI_autonomy_YBS_subsidiary_DEF: "the Hanseatic North Africa Company with Limited Liability"
+ YRI_autonomy_YBS_subsidiary_ADJ: "Hanseatic North African"
+
 
 # FACTIONS
 
@@ -119,6 +123,7 @@
 
  autonomy_YBS_federal_state: "Federal State"
  YBS_federal_state_forever_tt: "§RFederal States cannot leave the §YIberian Federation§!§R.§!"
+ autonomy_YBS_subsidiary: "Subsidiary Company"
 
 # PARTIES
 
@@ -137,7 +142,7 @@
  YBS_neutrality_party_military: "Military Rule"
  YBS_neutrality_party_military_long: "Alliance of the Carlist Elements in the Armed Forces"
  YBS_neutrality_party_hanse: "Hanseatic Control"
- YBS_neutrality_party_hanse_long: "Vorstand der Vertreter der hanseatischen Interessen in Iberien (Board of Representatives of Hanseatic Interests in Iberia)"
+ YBS_neutrality_party_hanse_long: "Vorstand der Vertreter der Hanseatischen Interessen in Iberien (Board of Representatives of Hanseatic Interests in Iberia)"
  YBS_communism_party: "EAS-PSV"
  YBS_communism_party_long: "Euskal Alderdi Sindikalista / Partido Sindicalista Vasco (Syndicalist Party - Basque Branch)"
  YBS_communism_party_anarchy: "Anarĥio"
@@ -180,6 +185,8 @@
  YBS_literal_anarchy_name: "Mother Anarchy"
  YBS_literal_anarchy_desc: "Anarchy reigns supreme! Humanity has been unshackled from the constraints of Authoritarian rule and within the Free Lands, they are safe from kings, dictators and all kinds of despots. After all, Mother Anarchy loves her Sons!"
  YBS_juan_march_ordinas_fake_name: "Juan March Ordinas"
+ YBS_generic_war_profiteer_name: "Adole Holzler"
+ YBS_generic_corporate_knight_name: "Sebastian Waideck"
 
  YBS_falangist_general_1_name: "Carlos Ferrandis"
  YBS_falangist_general_2_name: "Teodoro Mendigur"
@@ -205,6 +212,7 @@
 
  YBS_basque_nationalist: "Basque Nationalist"
  YBS_liberal_reformer: "Liberal Reformer"
+ YBS_corporate_control: "Corporate Control"
  YBS_socialist_architect: "Studied Architect"
  YBS_anti_fascist_socialist: "Anti-Fascist Socialist"
  YBS_syndicalist_unions: "Syndicalist Unions"
@@ -282,6 +290,7 @@
  YBS_national_pride: "Harrotasun Nazionala"
  YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
  YBS_national_pride_tt: "Our enemies will become §Rdemoralised§! if war continues for too long."
+ YBS_war_propaganda_idea: "'Protecting Basque Freedom!'"
  YBS_republican_opposition: "Republican Opposition"
  YBS_carlist_honour: "Imperial Honour Guard"
  YBS_anti_communist_bulwark: "Anti-Communist Bulwark"
@@ -290,6 +299,7 @@
  YBS_deregulated_capitalism: "Deregulated Capitalism"
  YBS_personal_freedoms: "Guaranteed Personal Freedoms"
  YBS_private_schools: "Privatised Education System"
+ YBS_investment_returns: "Iberian Investment Returns"
  YBS_economic_downturn: "Stunted Economic Growth"
  YBS_bread_prices_regulated: "Affordable Consumer Goods"
  YBS_national_autarky_idea: "National Autarky"
@@ -534,7 +544,7 @@
  YBS_purge_conspiring_officers: "Purge the Conspirators"
  YBS_purge_conspiring_officers_desc: ""
  YBS_purge_conspiring_officers_tt: "If the §gConspirators§! have not been purged, they will §Yoverthrow§! any elected party opposed to their values."
- YBS_pro_war_propaganda: "'Protecting Basque Freedom'"
+ YBS_pro_war_propaganda: "War Propaganda"
  YBS_pro_war_propaganda_desc: ""
  YBS_election_week: "Election Week"
  YBS_election_week_desc: ""
@@ -800,6 +810,17 @@
  YBS_lobby_for_intervention_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to declare war on other §YIberian nations§!."
  YBS_corporate_consolidation_in_iberia: "Cement Corporate Overlordship"
  YBS_corporate_consolidation_in_iberia_desc: ""
+ YBS_expand_corporate_interests_in_africa: "Expand our Interests in Africa"
+ YBS_expand_corporate_interests_in_africa_desc: ""
+ YBS_establish_subsidiary_in_africa: "Establish a North African Subsidiary"
+ YBS_establish_subsidiary_in_africa_desc: ""
+ YBS_establish_subsidiary_in_africa_tt: "Release §Y$YRI_autonomy_YBS_subsidiary$§! as a subject in the conquered §YNorth African states§!."
+ YBS_ally_hamburg: "Appeal to Hamburg"
+ YBS_ally_hamburg_desc: ""
+ YBS_support_hamburg: "Support our Homelands"
+ YBS_support_hamburg_desc: ""
+ YBS_thanks_for_playing_corp: "There's Profit in Expansion"
+ YBS_thanks_for_playing_corp_desc: ""
 
  YBS_we_will_always_have_hope: "We Will Always Have Hope"
  YBS_we_will_always_have_hope_desc: ""
@@ -1214,33 +1235,33 @@
  YBS_anarchist_events.1.desc: "WIP Platformists versus Syndicalists"
  YBS_anarchist_events.1.a: "Let's who will prevail!"
 
- YBS_anarchist_events.2.t: "The Representative of Catalonia"
+ YBS_anarchist_events.2.t: "The Representative of Andalusia"
  YBS_anarchist_events.2.desc: "WIP"
  YBS_anarchist_events.2.a: "The Platformists secure the position!"
  YBS_anarchist_events.2.b: "The Syndicalists secure the position!"
 
- YBS_anarchist_events.3.t: "The Representative of Aragón"
+ YBS_anarchist_events.3.t: "The Representative of Aragón-La Rioja"
  YBS_anarchist_events.3.desc: "WIP"
 
- YBS_anarchist_events.4.t: "The Representative of Galicia"
+ YBS_anarchist_events.4.t: "The Representative of Asturias-León"
  YBS_anarchist_events.4.desc: "WIP"
 
- YBS_anarchist_events.5.t: "The Representative of Portugal"
+ YBS_anarchist_events.5.t: "The Representative of Catalonia-Balearics"
  YBS_anarchist_events.5.desc: "WIP"
 
- YBS_anarchist_events.6.t: "The Representative of Andalusia"
+ YBS_anarchist_events.6.t: "The Representative of the Central Region"
  YBS_anarchist_events.6.desc: "WIP"
 
- YBS_anarchist_events.7.t: "The Representative of Castile and León"
+ YBS_anarchist_events.7.t: "The Representative of Extremadura"
  YBS_anarchist_events.7.desc: "WIP"
 
- YBS_anarchist_events.8.t: "The Representative of Asturias"
+ YBS_anarchist_events.8.t: "The Representative of Galicia-Portugal"
  YBS_anarchist_events.8.desc: "WIP"
 
- YBS_anarchist_events.9.t: "The Representative of Murcia"
+ YBS_anarchist_events.9.t: "The Representative of the Levante Region"
  YBS_anarchist_events.9.desc: "WIP"
 
- YBS_anarchist_events.10.t: "The Representative of the Central Region"
+ YBS_anarchist_events.10.t: "The Representative of Murcia"
  YBS_anarchist_events.10.desc: "WIP"
 
  YBS_anarchist_events.11.t: "The Representative of the Basque Country"

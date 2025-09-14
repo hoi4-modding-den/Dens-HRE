@@ -1,0 +1,32 @@
+ideas = {
+	country = {
+		YPR_the_spirit_of_1934 = {
+			picture = home_of_revolution
+
+			modifier = {
+				weekly_casualties_war_support = 0.0015
+				army_morale_factor = 0.05
+			}
+		}
+		YPR_proletarian_military_dummy = {
+			picture = generic_communist_army
+			
+			modifier = {
+				#conscription = 0.025
+				custom_modifier_tooltip = YPR_proletarian_military_dummy_conscription_tt
+				army_attack_factor = 0.05
+				army_org_factor = -0.1
+				experience_gain_army_factor = -0.15
+				equipment_capture_factor = 0.03
+			}
+		}
+		YPR_international_volunteers = {
+			picture = mex_revolutionary_army
+			
+			modifier = {
+				weekly_manpower = 500
+				mobilization_speed = 0.15
+			}
+		}
+	}
+}

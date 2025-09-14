@@ -70,7 +70,60 @@ YCA_generalitat_factions_decisions = {
 		ai_will_do = {
 			base = 10
 		}
-	}	
+	}
+	YCA_establish_the_tribunales_revolucionarios = {
+		priority = 15
+		icon = GFX_decision_oppression
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_revolutionary_tribunals
+		}	
+		
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = YCA_vanguardist_one_third_support
+					check_variable = {
+						var = YCA_vanguardist_faction_progress_bar
+						value = 33
+					}			
+				}				
+				custom_trigger_tooltip = {
+					tooltip = YCA_socialist_one_third_support
+					check_variable = {
+						var = YCA_socialist_faction_progress_bar
+						value = 33
+					}			
+				}				
+			}
+		}
+
+		days_remove = 35
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 40
+		cost = 40
+
+		modifier = {
+			communism_drift = 0.02
+			stability_factor = -0.03
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.15
+			}
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}			
 	YCA_bolster_weapons_rd = {
 		priority = 10
 		icon = GFX_decision_generic_industry
@@ -202,7 +255,7 @@ YCA_generalitat_factions_decisions = {
 	}
 	YCA_protect_the_catalan_shores_against_the_capitalist_threat = {
 		priority = 5
-		icon = GFX_decision_generic_fortification 
+		icon = GFX_decision_generic_coastal_fortification 
 
 		allowed = {
 			original_tag = YCA
@@ -276,7 +329,7 @@ YCA_guerrilla_tradicional_tactics_category = {
 		target_trigger = {
 			FROM = {
 				YCA_state_is_valid_for_guerrilla = yes
-				NOT = { has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier } }
+				NOT = { has_dynamic_modifier = { modifier = YCA_guerrilla_tactics_modifier } }
 			}
 		}
 
@@ -299,7 +352,7 @@ YCA_guerrilla_tradicional_tactics_category = {
 
 		available = {
 			FROM = {
-				NOT = { has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier } }
+				NOT = { has_dynamic_modifier = { modifier = YCA_guerrilla_tactics_modifier } }
 				is_controlled_by = ROOT
 			}
 		}
@@ -332,12 +385,12 @@ YCA_guerrilla_tradicional_tactics_category = {
 				subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
 			}
 
-			custom_effect_tooltip = FIN_motti_tactics_cost_increase_tt
+			custom_effect_tooltip = YCA_guerilla_tactics_cost_increase_tt
 		}
 
 		remove_effect = {
 			FROM = {	
-				add_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+				add_dynamic_modifier = { modifier = YCA_guerrilla_tactics_modifier }
 			}
 		}
 
@@ -375,19 +428,19 @@ YCA_guerrilla_tradicional_tactics_category = {
 
 		target_trigger = {
 			FROM = {
-				has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+				has_dynamic_modifier = { modifier = YCA_guerrilla_tactics_modifier }
 			}
 		}
 
 		available = {
 			FROM = {
-				has_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+				has_dynamic_modifier = { modifier = YCA_guerrilla_tactics_modifier }
 			}
 		}
 
 		complete_effect = {
 			FROM = {	
-				remove_dynamic_modifier = { modifier = FIN_motti_tactics_modifier }
+				remove_dynamic_modifier = { modifier = YCA_guerrilla_tactics_modifier }
 			}
 
 			#Cost decrease
@@ -397,7 +450,7 @@ YCA_guerrilla_tradicional_tactics_category = {
 				subtract_from_variable = { FIN_motti_decision_cost_for_trigger = 1 } 
 			}
 
-			custom_effect_tooltip = FIN_motti_tactics_cost_decrease_tt
+			custom_effect_tooltip = YCA_guerilla_tactics_cost_decrease_tt
 		}
 
 		ai_will_do = {

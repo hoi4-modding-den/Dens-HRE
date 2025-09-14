@@ -1,4 +1,17 @@
 ﻿l_english:
+
+  YAO_BLITZKRIEG_DESC: "Our struggle is not yet over: we are the Legitimate Government of Iberia, and we will reunite it! Communists, out! The glory of Iberia will be reborn."
+
+  ####################
+  ## VICTORY POINTS ##
+  ####################
+
+  VICTORY_POINTS_9767: "Guadalaja"
+
+  ###################
+  ## COUNTRY NAMES ##
+  ###################
+
   YAO: "Kingdom of Iberia"
   YAO_DEF: "the Kingdom of Iberia"
   YAO_ADJ: "Iberian"
@@ -12,7 +25,9 @@
   YAO_communism_DEF: "the Iberian Soviet Republic"
   YAO_communism_ADJ: "Iberian Soviet"
 
-  YAO_neutrality_party: "Royalists"
+    ## COUNTRY'S PARTIES ##
+
+  YAO_neutrality_party: "Royalists Leagues"
   YAO_neutrality_party_long: "Alfonsismo"
   YAO_democratic_party: "UR"
   YAO_democratic_party_long: "Unión Republicana"
@@ -21,4 +36,166 @@
   YAO_communism_party: "UGT"
   YAO_communism_party_long: "Unión General de Trabajadores"
 
+  #######################
+  ## COUNTRY'S LEADERS ##
+  #######################
+
   YAO_King_Alfonso: "King Alfonso XIII"
+  YAO_King_Alfonso_desc: ""
+
+  YAO_Consejo_de_Madrid: "Consejo de Madrid"
+  YAO_Consejo_de_Madrid_desc: ""
+
+  YAO_Manuel_Azana: "Manuel Azaña"
+  YAO_Manuel_Azana_desc: ""
+
+  YAO_conservative_leader: "Miguel Maura"
+  YAO_conservative_leader_desc: ""
+
+  ######################
+  ## IDEAS AND TRAITS ##
+  ######################
+
+  YAO_king_of_iberia: "The King of Iberia"
+
+  ###################
+  ## COSMETIC TAGS ##
+  ###################
+
+  YAOrepublic: "National Republic of Iberia"
+  YAOrepublic_DEF: "the National Republic of Iberia"
+
+  YAOspanishstate: "Iberian State"
+  YAOspanishstate_DEF: "the Iberian State"
+
+
+  ################
+  ## FOCUS TREE ##
+  ################
+
+  iberian_reunification_not_yet: "§RWe need to focus on other things before thinking about reunification of our Kingdom.§!"
+  YAO_unlock_new_commanders: "We will unlock §Gnew commanders§! for our military high command"
+
+  ## POLITICAL LOCS ##
+
+  YAO_focus_legitimate_government: "The Legitimate Government"
+  YAO_focus_legitimate_government_desc: ""
+  YAO_stabilise_the_kingdom: "Stabilise the Kingdom"
+  YAO_stabilise_the_kingdom_desc: ""
+  YAO_democratic_values: "The Democratic King"
+  YAO_democratic_values_desc: ""
+  YAO_institute_the_congreso: "Institute the Congreso"
+  YAO_institute_the_congreso_desc: ""
+  YAO_create_a_constitution: "Draft a Constitution"
+  YAO_create_a_constitution_desc: ""
+  YAO_guarantee_liberties: "Guarantee Civil Liberties"
+  YAO_guarantee_liberties_desc: ""
+  YAO_fight_extremism: "Fight against Extremism"
+  YAO_fight_extremism_desc: ""
+  YAO_a_democratic_kingdom: "A Democratic Kingdom"
+  YAO_a_democratic_kingdom_desc: ""
+  YAO_reduce_the_power_of_the_monarchy: "Reduce the power of the Monarchy"
+  YAO_reduce_the_power_of_the_monarchy_desc: ""
+  YAO_reduce_republican_influence: "Reduce Republican Influence"
+  YAO_reduce_republican_influence_desc: ""
+  YAO_armed_democracy: "Armed Democracy"
+  YAO_armed_democracy_desc: ""
+
+  YAO_authoritarian_rule: "An Authoritarian King"
+  YAO_authoritarian_rule_desc: ""
+  YAO_guarantee_the_king_powers: "Safeguard the King's Powers"
+  YAO_guarantee_the_king_powers_desc: ""
+  YAO_oppress_the_communists: "Oppress the Communists"
+  YAO_oppress_the_communists_desc: ""
+  YAO_harass_the_democrats: "Harass the Democrats"
+  YAO_harass_the_democrats_desc: ""
+  YAO_collaborate_with_the_fascists: "Collaborate with the Fascists"
+  YAO_collaborate_with_the_fascists_desc: ""
+  YAO_a_spanish_state: "A Iberian-Spanish State"
+  YAO_a_spanish_state_desc: ""
+
+
+
+  YAO_proclaim_the_republic: "Proclaim the Republic!"
+  YAO_proclaim_the_republic_desc: ""
+  YAO_democratic_socialism: "Democratic Socialism"
+  YAO_democratic_socialism_desc: ""
+  YAO_public_housing: "Build Public Housing solutions"
+  YAO_public_housing_desc: ""
+  YAO_welfare_state: "The Welfare State"
+  YAO_welfare_state_desc: ""
+  YAO_conservatism_in_the_assembly: "Conservatism in the Assembly"
+  YAO_conservatism_in_the_assembly_desc: ""
+
+
+  ## MILITARY LOCS ##
+
+  YAO_restore_the_military_forces: "Restore the Military Forces of Iberia"
+  YAO_the_high_command: "The High Command"
+  YAO_depolitise_the_army: "Depolitise the Army"
+  YAO_train_new_officers: "Train New Officers"
+  YAO_the_three_branches: "The Three Branches"
+  YAO_ground_forces_of_iberia: "The Ground Forces of Iberia"
+  YAO_reform_our_infantry: "Reform our Infantry"
+  YAO_fix_our_supply: "Fix our Supply"
+  YAO_recruit_more: "More, more for the Blood God!"
+  YAO_training_for_liberty: "Training for Liberty"
+  YAO_airforce: "Iberian Airforce"
+  YAO_fighters_for_the_fighters: "Fighters for the fighters"
+  YAO_bombers_for_the_communists: "Bombers for the communists"
+  YAO_navy_of_iberia: "Navy of Iberia"
+  YAO_the_iberian_fleet: "The Iberian Fleet"
+  YAO_the_grand_armada: "The Grand Armada"
+
+  YAO_the_liberation_army: "The Liberation Army"
+
+
+  ## INDUSTRY LOCS ##
+
+  YAO_industrial_expansion: "The Industrial Expansion of Iberia"
+  YAO_develop_badajoz: "Develop Badajoz"
+  YAO_madrid_center_of_industry: "Madrid, center of Industry"
+  YAO_develop_salamanca: "Develop Sala- where?"
+  YAO_spanish_development_scheme: "The Iberian Development Scheme"
+  YAO_university_of_madrid: "The University of Madrid"
+
+
+  ## REUNIFICATION LOCS ##
+
+  YAO_road_to_reunification: "Road to Reunification"
+  YAO_ask_the_castillans: "Ask the Castillans"
+  YAO_crush_the_castillans: "Crush the Castillans"
+  YAO_the_lost_regiment: "The Lost Regiment's question"
+  YAO_lay_claims_in_the_east: "Lay claims in the East"
+  YAO_ask_for_murcian_submission: "Ask for Murcian Submission"
+  YAO_deal_with_murcia: "Deal with Murcia"
+  YAO_lay_claims_in_the_west: "Lay claims in the West"
+  YAO_the_southern_issue: "The Southern Issue"
+  YAO_the_northern_issue: "The Northern Issue"
+
+
+  ## POST-REUNIFICATION PATH ##
+
+  YAO_manifest_our_destiny: "Manifest our Destiny"
+
+
+  ################
+  ## EVENTS LOC ##
+  ################
+
+  YAO_event.1.t: "Kingdom of Iberia demands surrender to the Lost Regiment"
+  YAO_event.1.d: ""
+  YAO_event.1.a: "What? Who?"
+  YAO_event.1.b: "I hate spanish."
+  YAO_event.2.t: "The Lost Regiment accepts submission!"
+  YAO_event.2.d: ""
+  YAO_event.2.a: "They are not lost anymore."
+  YAO_event.3.t: "The Lost Regiment refuses submission!"
+  YAO_event.3.d: ""
+  YAO_event.3.a: "We'll send them to Paris, with our guns!"
+  YAO_event.4.t: "Message from Iberia"
+  YAO_event.4.d: ""
+  YAO_event.4.a: "Alright, why not."
+  YAO_event.5.t: "Answer from the Pope!"
+  YAO_event.5.d: ""
+  YAO_event.5.a: "The Pope, my Hero."

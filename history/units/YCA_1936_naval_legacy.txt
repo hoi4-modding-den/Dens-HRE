@@ -1,0 +1,20 @@
+﻿units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Flota Catalana"			
+		naval_base = 9764 # Barcelona
+		task_force = {				
+			name = "Armada Contrarrevolucionaria" # Main Fleet
+			location = 9764 # Barcelona	
+			ship = { name = "AR Aurora Roja" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = YCA } } }	
+			ship = { name = "AR Solidaridad" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = YCA } } }								
+			ship = { name = "AR Revolución" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = YCA } } }
+			ship = { name = "AR Internacional" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = YCA } } }
+			ship = { name = "AR Tierra y Libertad" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = YCA } } }
+			ship = { name = "AR Igualdad" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = YCA } } }		
+			ship = { name = "AR Ibárruri" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = YCA } } }		
+			ship = { name = "AR Pueblo Unido" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = YCA } } }	
+		}												
+	}
+}

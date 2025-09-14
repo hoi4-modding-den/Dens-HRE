@@ -1,0 +1,56 @@
+﻿units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Flota Catalana"			
+		naval_base = 9764 # Barcelona				
+		task_force = {					
+			name = "Armada Contrarrevolucionaria"	
+			location = 9764 # Barcelona
+			ship = { name = "AR Aurora Roja" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YCA version_name =  "Serie de Cruceros Pesados" } } }
+			ship = { name = "AR Solidaridad" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YCA version_name =  "Serie de Cruceros Pesados" } } }
+			ship = { name = "AR Revolución" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = YCA version_name =  "Serie Cruiser Uno" } } }
+			ship = { name = "AR Internacional" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YCA version_name =  "Destructor Avanzado" } } }
+			ship = { name = "AR Tierra y Libertad" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YCA version_name =  "Destructor Avanzado" } } }
+			ship = { name = "AR Igualdad" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = YCA version_name =  "Destructor Avanzado" } } }
+			ship = { name = "AR Ibárruri" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YCA version_name =  "Clase Destructor" } } }
+			ship = { name = "AR Pueblo Unido" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YCA version_name =  "Clase Destructor" } } }														
+		}								
+	}
+}
+
+instant_effect = {
+	### Ongoing Ship Production Jan 1 1936 ###
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "YCA" 
+			version_name = "Clase Destructor"
+		}
+		name = "AR La Comuna"		
+		requested_factories = 2
+		progress = 0.8
+		amount = 2
+		#industrial_manufacturer = mio:
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "YCA" 
+			version_name = "Destructor Avanzado"
+		}
+		name = "AR Durruti"
+		requested_factories = 1
+		progress = 0.45
+		amount = 1
+		#industrial_manufacturer = mio:
+	}
+}
+
+
+
+
+
+
+
+

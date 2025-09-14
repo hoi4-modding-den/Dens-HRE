@@ -1,0 +1,44 @@
+add_namespace = YPR
+
+country_event = {
+	id = YPR.1
+	title = YPR.1.t
+	desc = YPR.1.d
+	
+	picture = GFX_report_event_SWE_summer_government
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YPR.1.a
+		hidden_effect = {
+			retire_character = YPR_provisionary_government
+		}
+		add_country_leader_role = {
+			character = YPR_bento_goncalves
+			promote_leader = yes
+			country_leader = {
+				ideology = leninism
+				expire = "1965.1.1.1"
+			}		
+		}
+		complete_national_focus = YPR_establish_the_vanguard_party
+    }
+	option = {
+        name = YPR.1.b
+		hidden_effect = {
+			retire_character = YPR_provisionary_government
+		}
+		add_country_leader_role = {
+			character = YPR_workers_councils
+			promote_leader = yes
+			country_leader = {
+				ideology = anarchist_communism
+				expire = "1965.1.1.1"
+			}		
+		}
+		complete_national_focus = YPR_all_power_to_the_councils
+    }
+}
+
