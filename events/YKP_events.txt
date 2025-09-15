@@ -1,4 +1,5 @@
 add_namespace = YKP
+add_namespace = YKP_news
 
 ### COUNTRY EVENTS ###
 
@@ -6,6 +7,8 @@ country_event = {
     id = YKP.1
     title = YKP.1.t
     desc = YKP.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
 
     is_triggered_only = yes
 	fire_only_once = yes
@@ -44,6 +47,7 @@ country_event = {
 		}
 
 		hidden_effect = {
+			news_event = YKP_news.1
 			country_event = { id = YKP.2 days = 14 }
 			country_event = { id = YKP.3 days = 7 }
 		}
@@ -54,6 +58,8 @@ country_event = {
     id = YKP.2
     title = YKP.2.t
     desc = YKP.2.desc
+
+	picture = GFX_report_event_YKP_cathedral
 
     is_triggered_only = yes
 	fire_only_once = yes
@@ -82,7 +88,7 @@ country_event = {
         name = YKP.2.b
 		
 		ai_chance = {
-			base = 100
+			base = 0
 		}
 
 		add_political_power = -100
@@ -93,6 +99,8 @@ country_event = {
     id = YKP.3
     title = YKP.3.t
     desc = YKP.3.desc
+
+	picture = GFX_report_event_YKP_funeral
 
     is_triggered_only = yes
 	fire_only_once = yes
@@ -113,26 +121,28 @@ country_event = {
     title = YKP.4.t
     desc = YKP.4.desc
 
+	picture = GFX_report_event_YKP_cathedral
+
     is_triggered_only = yes
 	fire_only_once = yes
 
-	option = {
-        name = YKP.4.a
-		
-		ai_chance = {
-			base = 100
-		}
-
-		add_country_leader_role = {
-			character = YKP_duarte_nuno
-			promote_leader = yes
-			country_leader = {
-				ideology = monarchist_oligarchism
-				expire = "1965.1.1.1"
-				traits = {  }
-			}
-		}
-	}
+	#option = {
+    #    name = YKP.4.a
+	#	
+	#	ai_chance = {
+	#		base = 100
+	#	}
+#
+	#	add_country_leader_role = {
+	#		character = YKP_duarte_nuno
+	#		promote_leader = yes
+	#		country_leader = {
+	#			ideology = monarchist_oligarchism
+	#			expire = "1965.1.1.1"
+	#			traits = {  }
+	#		}
+	#	}
+	#}
 
 	option = {
         name = YKP.4.b
@@ -152,29 +162,31 @@ country_event = {
 		}
 	}
 
-	option = {
-        name = YKP.4.c
-		
-		ai_chance = {
-			base = 100
-		}
-
-		add_country_leader_role = {
-			character = YKP_infante_alfonso
-			promote_leader = yes
-			country_leader = {
-				ideology = monarchist_oligarchism
-				expire = "1965.1.1.1"
-				traits = {  }
-			}
-		}
-	}
+	#option = {
+    #    name = YKP.4.c
+	#	
+	#	ai_chance = {
+	#		base = 100
+	#	}
+#
+	#	add_country_leader_role = {
+	#		character = YKP_infante_alfonso
+	#		promote_leader = yes
+	#		country_leader = {
+	#			ideology = monarchist_oligarchism
+	#			expire = "1965.1.1.1"
+	#			traits = {  }
+	#		}
+	#	}
+	#}
 }
 
 country_event = {
     id = YKP.5
     title = YKP.5.t
     desc = YKP.5.desc
+
+	picture = GFX_report_event_YKP_lisbon
 
     is_triggered_only = yes
 	fire_only_once = yes
@@ -220,6 +232,8 @@ country_event = {
     title = YKP.6.t
     desc = YKP.6.desc
 
+	picture = GFX_report_event_YKP_lisbon
+
     is_triggered_only = yes
 	fire_only_once = yes
 
@@ -247,6 +261,8 @@ country_event = {
     title = YKP.7.t
     desc = YKP.7.desc
 
+	picture = GFX_report_event_YKP_lisbon
+
     is_triggered_only = yes
 	fire_only_once = yes
 
@@ -268,6 +284,8 @@ country_event = {
     title = YKP.8.t
     desc = YKP.8.desc
 
+	picture = GFX_report_event_YKP_lisbon
+
     is_triggered_only = yes
 	fire_only_once = yes
 
@@ -288,6 +306,8 @@ country_event = {
     id = YKP.9
     title = YKP.9.t
     desc = YKP.9.desc
+
+	picture = GFX_report_event_YKP_lisbon
 
     is_triggered_only = yes
 
@@ -365,6 +385,8 @@ country_event = {
     title = YKP.10.t
     desc = YKP.10.desc
 
+	picture = GFX_report_event_YKP_lisbon
+
     is_triggered_only = yes
 
 	option = {
@@ -383,6 +405,8 @@ country_event = {
     id = YKP.11
     title = YKP.11.t
     desc = YKP.11.desc
+
+	picture = GFX_report_event_YKP_lisbon
 
     is_triggered_only = yes
 
@@ -413,6 +437,8 @@ country_event = {
     id = YKP.12
     title = YKP.12.t
     desc = YKP.12.desc
+
+	picture = GFX_report_event_YKP_lisbon
 
     is_triggered_only = yes
 	fire_only_once = yes
@@ -464,6 +490,8 @@ country_event = {
     title = YKP.13.t
     desc = YKP.13.desc
 
+	picture = GFX_report_event_YKP_lisbon
+
     is_triggered_only = yes
 	fire_only_once = yes
 
@@ -479,3 +507,36 @@ country_event = {
 }
 
 ### NEWS EVENTS ###
+
+news_event = {
+	id = YKP_news.1
+	title = YKP_news.1.t
+	desc = YKP_news.1.desc
+    picture = GFX_news_event_YKP_manuel_ii_death
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = YKP_news.1.a
+        trigger = {
+            NOT = { original_tag = YKP }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = {
+        name = YKP_news.1.b
+        trigger = {
+            NOT = { original_tag = YKP }
+            has_government = communism
+        }
+    }
+
+    option = {
+        name = YKP_news.1.c
+        trigger = {
+            original_tag = YKP
+        }
+    }
+}
