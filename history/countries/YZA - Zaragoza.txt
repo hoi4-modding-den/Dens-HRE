@@ -89,41 +89,6 @@ add_timed_idea = {
 }
 
 clr_country_flag = filler_nation
-set_variable = { YZA_syndi_revolution = 0 }
-clamp_variable = {
-    var = YZA_syndi_revolution
-    min = 0
-    max = 100
-}
-clamp_variable = {
-    var = YZA_marxist_support
-    min = 0
-    max = 100
-}
-clamp_variable = {
-    var = YZA_syndicalist_support
-    min = 0
-    max = 100
-}
-clamp_variable = {
-    var = YZA_anarchist_support
-    min = 0
-    max = 100
-}
-clamp_variable = {
-    var = YZA_marxist_popularity
-    min = 0
-    max = 100
-}
-clamp_variable = {
-    var = YZA_syndicalist_popularity
-    min = 0
-    max = 100
-}
-clamp_variable = {
-    var = YZA_anarchist_popularity
-    min = 0
-    max = 100
-}
+
 
 

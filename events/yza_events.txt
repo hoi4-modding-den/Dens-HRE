@@ -58,41 +58,7 @@ country_event = {
 
 		}
 	}
-	option = {
-		name = yza_events.2.b
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			country_event = {
-   			 id = yza_events.3
-   			 days = 1
-   			 random = 1
-   			 random_days = 1
-			}
-		YZA_congress_syndicalist = yes
-
-		}
-	}
-	option = {
-		name = yza_events.2.c
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			country_event = {
-   			 id = yza_events.3
-    			days = 1
-    			random = 1
-    			random_days = 1
-			}
-		YZA_congress_anarchist = yes
-		}
-	}
+	
 }
 
 #Security Policy
@@ -122,24 +88,7 @@ country_event = {
 YZA_congress_marx = yes
 		}
 	}
-	option = {
-		name = yza_events.3.b
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			country_event = {
-    id = yza_events.4
-    days = 1
-    random = 1
-    random_days = 1
-}
-YZA_congress_anarchist = yes
-YZA_congress_syndicalist = yes
-		}
-	}
+	
 }
 
 #Foreign Policy
@@ -170,40 +119,7 @@ YZA_congress_marx = yes
 
 		}
 	}
-	option = {
-		name = yza_events.4.b
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			country_event = {
-    id = yza_events.5
-    days = 1
-    random = 1
-    random_days = 1
-}
-YZA_congress_syndicalist = yes
-		}
-	}
-	option = {
-		name = yza_events.4.c
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			country_event = {
-  			 id = yza_events.5
- 			 days = 1
-   			 random = 1
-    			 random_days = 1
-			}
-			YZA_congress_anarchist = yes
-		}
-	}
+	
 }
 
 #The Congress Draws to a Close...
@@ -233,40 +149,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = yza_events.5.b
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			YZA_congress_syndicalist = yes
-			country_event = {
-  			 id = yza_events.6
- 			 days = 1
-   			 random = 1
-    			 random_days = 1
-			}
-		}
-	}
-	option = {
-		name = yza_events.5.c
-		trigger = {
-			
-		}
-		ai_chance = { factor = 1 }
-		
-		hidden_effect = {
-			YZA_congress_anarchist = yes
-			country_event = {
-  			 id = yza_events.6
- 			 days = 1
-   			 random = 1
-    			 random_days = 1
-			}
-		}
-	}
+	
 }
 
 #Who's In Charge?
@@ -382,6 +265,14 @@ country_event = {
 	is_triggered_only = yes
 	mean_time_to_happen = { days = 1 }
 	timeout_days = 14
+	option = {
+		name = yza_events.10.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+	}
 }
 
 #The Lost Regiment
@@ -394,6 +285,14 @@ country_event = {
 	is_triggered_only = yes
 	mean_time_to_happen = { days = 1 }
 	timeout_days = 12
+	option = {
+		name = yza_events.11.a
+		trigger = {
+			
+		}
+		ai_chance = { factor = 1 }
+		
+	}
 }
 
 #Alliance, Or War?
