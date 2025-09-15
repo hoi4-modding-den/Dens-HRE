@@ -1,4 +1,25 @@
 on_actions = {
+    on_startup = {
+        effect = {
+            YCA = {
+                # AI MAIN PATH
+                if = {
+                    limit = {
+                        is_historical_focus_on = no
+                    }
+                    random_list = {
+                        20 = { set_country_flag = YCA_ai_path_vanguardist }
+                        10 = { set_country_flag = YCA_ai_path_socialist }
+                        20 = { set_country_flag = YCA_ai_path_anarchist }
+                    }
+                }
+                else = {
+                    set_country_flag = YCA_ai_path_vanguardist
+                }
+            }
+        }
+    }
+
 	on_state_control_changed = {
 		# Guerilla Tatics Stuff
 		effect = {

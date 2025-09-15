@@ -455,7 +455,7 @@ focus_tree = {
 			hidden_effect = {
 				country_event = {
 					id = YCA_domestic_events.4
-					days = 1
+					days = 3
 				}				
 			}
 		}
@@ -1998,7 +1998,13 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 20
+			factor = 10
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YCA_ai_path_anarchist
+                }
+            }			
 		}
 
 		available = {
@@ -2278,7 +2284,14 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 20
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_socialist
+					has_country_flag = YCA_ai_path_vanguardist
+				}
+			}					
 		}
 
 		available = {

@@ -7,15 +7,41 @@ country_event = { # Future of the Forces Armades
 	title = YCA_domestic_events.1.t
 	desc = YCA_domestic_events.1.desc
 	
-	picture = GFX_report_event_generic_conference
+	picture = GFX_report_event_por_salazar_military
 	
 	is_triggered_only = yes
 	
 	option = {
         name = YCA_domestic_events.1.a
+		add_war_support = 0.02
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = YCA_vanguardist_army_tt
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+            }
+        }		
     }
 	option = {
         name = YCA_domestic_events.1.b
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.03
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = YCA_anarchist_army_tt
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YCA_ai_path_socialist
+                    has_country_flag = YCA_ai_path_vanguardist
+                }
+            }
+        }		
     }	
 }
 
@@ -24,13 +50,32 @@ country_event = { # The Worker Battalions Rise
 	title = YCA_domestic_events.2.t
 	desc = YCA_domestic_events.2.desc
 	
-	picture = GFX_report_event_generic_conference
+	picture = GFX_report_event_generic_communist_militia
 	
 	is_triggered_only = yes
 	
 	option = {
         name = YCA_domestic_events.2.a
-		# adds 2 free militia divisions in Barcelona + boost to doctrine
+		165 = {
+			create_unit = {
+				division = "name = \"Milicia Obrera Catalana\" division_template = \"Milicia Catalana\" start_experience_factor = 0.3"
+				owner = YCA
+				count = 2
+			}
+		}
+		167 = {
+			create_unit = {
+				division = "name = \"Milicia Obrera Catalana\" division_template = \"Milicia Catalana\" start_experience_factor = 0.3"
+				owner = YCA
+				count = 1
+			}
+		}		
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = cat_mass_assault
+		}		
     }
 }
 
@@ -53,7 +98,7 @@ country_event = { # The Radical Triumvirate
     }
 }
 
-country_event = { # Interim Constitution, Preamble/Foundational Principles (followed by Collectivization/Privatization of industries (State Oversight), Freedoms, Secularism, One-party rule)
+country_event = { # Interim Constitution: Preamble
 	id = YCA_domestic_events.4
 	title = YCA_domestic_events.4.t
 	desc = YCA_domestic_events.4.desc
@@ -63,6 +108,347 @@ country_event = { # Interim Constitution, Preamble/Foundational Principles (foll
 	is_triggered_only = yes
 	
 	option = {
-        name = YCA_domestic_events.4.a		
+        name = YCA_domestic_events.4.a	
+		custom_effect_tooltip = YCA_vanguardist_constitution_tt	
+		add_to_variable = {
+			var = YCA_vanguardist_constitution
+			value = 3
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.5
+				days = 7
+			}				
+		}			
     }
+	option = {
+        name = YCA_domestic_events.4.b
+		custom_effect_tooltip = YCA_socialist_constitution_tt
+		add_to_variable = {
+			var = YCA_socialist_constitution
+			value = 3
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.5
+				days = 7
+			}				
+		}				
+    }
+	option = {
+        name = YCA_domestic_events.4.c
+		custom_effect_tooltip = YCA_anarchist_constitution_tt
+		add_to_variable = {
+			var = YCA_anarchist_constitution
+			value = 3
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.5
+				days = 7
+			}				
+		}				
+    }			
+}
+
+country_event = { # Interim Constitution: Collectivization/Privatization (State Oversight)
+	id = YCA_domestic_events.5
+	title = YCA_domestic_events.5.t
+	desc = YCA_domestic_events.5.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.5.a	
+		custom_effect_tooltip = YCA_vanguardist_socialist_constitution_tt	
+		add_to_variable = {
+			var = YCA_vanguardist_constitution
+			value = 1
+		}		
+		add_to_variable = {
+			var = YCA_socialist_constitution
+			value = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.6
+				days = 7
+			}				
+		}					
+    }
+	option = {
+        name = YCA_domestic_events.5.b
+		custom_effect_tooltip = YCA_anarchist_constitution_tt
+		add_to_variable = {
+			var = YCA_anarchist_constitution
+			value = 2
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.6
+				days = 7
+			}				
+		}					
+    }			
+}
+
+country_event = { # Interim Constitution: Individual Freedoms
+	id = YCA_domestic_events.6
+	title = YCA_domestic_events.6.t
+	desc = YCA_domestic_events.6.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.6.a	
+		custom_effect_tooltip = YCA_anarchist_socialist_constitution_tt	
+		add_to_variable = {
+			var = YCA_anarchist_constitution
+			value = 1
+		}		
+		add_to_variable = {
+			var = YCA_socialist_constitution
+			value = 1
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.7
+				days = 7
+			}				
+		}				
+    }
+	option = {
+        name = YCA_domestic_events.6.b
+		custom_effect_tooltip = YCA_vanguardist_constitution_tt
+		add_to_variable = {
+			var = YCA_vanguardist_constitution
+			value = 2
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.7
+				days = 7
+			}				
+		}					
+    }				
+}
+
+country_event = { # Interim Constitution: Secularism
+	id = YCA_domestic_events.7
+	title = YCA_domestic_events.7.t
+	desc = YCA_domestic_events.7.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.7.a	
+		custom_effect_tooltip = YCA_socialist_constitution_tt		
+		add_to_variable = {
+			var = YCA_socialist_constitution
+			value = 2
+		}		
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.8
+				days = 7
+			}				
+		}			
+    }
+	option = {
+        name = YCA_domestic_events.7.b
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.8
+				days = 7
+			}				
+		}			
+    }			
+}
+
+country_event = { # Interim Constitution: One-Party Rule
+	id = YCA_domestic_events.8
+	title = YCA_domestic_events.8.t
+	desc = YCA_domestic_events.8.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.8.a	
+		custom_effect_tooltip = YCA_vanguardist_constitution_tt	
+		add_to_variable = {
+			var = YCA_vanguardist_constitution
+			value = 4
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.9
+				days = 3
+			}			
+			IF = {
+				check_variable = {
+					YCA_vanguardist_constitution > YCA_anarchist_constitution
+				}
+				check_variable = {
+					YCA_vanguardist_constitution > YCA_socialist_constitution				
+				}
+			}
+		}		
+    }
+	option = {
+        name = YCA_domestic_events.8.b
+		custom_effect_tooltip = YCA_socialist_constitution_tt
+		add_to_variable = {
+			var = YCA_socialist_constitution
+			value = 4
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.10
+				days = 3
+			}			
+			IF = {
+				check_variable = {
+					YCA_socialist_constitution > YCA_anarchist_constitution
+				}
+				check_variable = {
+					YCA_socialist_constitution > YCA_vanguardist_constitution				
+				}
+			}
+		}						
+    }
+	option = {
+        name = YCA_domestic_events.8.c
+		custom_effect_tooltip = YCA_anarchist_constitution_tt
+		add_to_variable = {
+			var = YCA_anarchist_constitution
+			value = 4
+		}	
+		hidden_effect = {
+			country_event = {
+				id = YCA_domestic_events.11
+				days = 3
+			}			
+			IF = {
+				check_variable = {
+					YCA_anarchist_constitution > YCA_socialist_constitution
+				}
+				check_variable = {
+					YCA_anarchist_constitution > YCA_vanguardist_constitution				
+				}
+			}
+		}					
+    }			
+}
+
+country_event = { # Interim Constitution: Vanguardist Victory
+	id = YCA_domestic_events.9
+	title = YCA_domestic_events.9.t
+	desc = YCA_domestic_events.9.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.9.a
+		add_popularity = {
+			ideology = communism
+			popularity = 0.06
+		}		
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		custom_effect_tooltip = YCA_vanguardist_constitution_victory_tt
+		set_country_flag = YCA_interim_constitution_adopted
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_to_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2
+			tooltip = vanguardist_small_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 1			
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 1			
+		}
+    }		
+}
+
+country_event = { # Interim Constitution: Socialist Victory
+	id = YCA_domestic_events.10
+	title = YCA_domestic_events.10.t
+	desc = YCA_domestic_events.10.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.10.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.12
+		}		
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		custom_effect_tooltip = YCA_socialist_constitution_victory_tt
+		set_country_flag = YCA_interim_constitution_adopted
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_to_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 4
+			tooltip = socialist_medium_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2		
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 2		
+		}			
+    }		
+}
+
+country_event = { # Interim Constitution: Anarchist Victory
+	id = YCA_domestic_events.11
+	title = YCA_domestic_events.11.t
+	desc = YCA_domestic_events.11.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.11.a
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.09
+		}		
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		custom_effect_tooltip = YCA_anarchist_constitution_victory_tt
+		set_country_flag = YCA_interim_constitution_adopted
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		add_to_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 2
+			tooltip = anarchist_small_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 1			
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 1			
+		}		
+    }		
 }
