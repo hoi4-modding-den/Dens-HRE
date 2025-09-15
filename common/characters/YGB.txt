@@ -1,0 +1,112 @@
+characters = {
+	YGB_vicente_torres = {
+		name = YGB_vicente_torres
+		portraits = {
+			civilian = { large = GFX_portrait_Jose_Luis_Tejada_Sorzano }
+		}
+		country_leader = {
+			ideology = moderatism
+			traits = { indecisive champion_of_peace_4 }
+			expire = "1965.1.1.1"
+		}
+	}
+
+	YGB_edmund_ironside = {
+			name = YGB_edmund_ironside
+			portraits = {
+				civilian = { large = GFX_portrait_ENG_john_tovey }
+			}
+			country_leader = {
+				ideology = conservatism
+				traits = { reluctant_veteran }
+				expire = "1965.1.1.1"
+			}
+		}
+
+
+    YGB_juan_lopez_sanchez={
+		name=YGB_juan_lopez_sanchez
+		portraits={
+			army={
+				small="GFX_idea_SPR_juan_lopez_sanchez"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = YGB_juan_lopez_sanchez
+            allowed = {
+                original_tag = YGB
+            }
+			available = {
+			}
+			traits = {
+				captain_of_industry 
+			}
+            cost = 150
+			ai_will_do = {
+				factor = 1.000
+				modifier = {
+					factor = 0.000
+					has_political_power < 500
+				}
+			}
+		}
+	}
+
+    YGB_duarte_jose_pacheco = {
+		name = YGB_duarte_jose_pacheco
+		portraits = {
+			army = {
+				small = "GFX_idea_POR_duarte_jose_pacheco"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YGB_duarte_jose_pacheco
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+                has_completed_focus = YGB_portuguese_advisors
+			}
+			traits = {
+				technocrat 
+			}
+            cost = 75
+			ai_will_do = {
+				factor = 1.000
+                modifier = {
+					factor = 0.000
+					has_political_power < 500
+				}
+			}
+		}
+	}
+
+    YGB_augusto_de_vasconcelos = {
+        name = YGB_augusto_de_vasconcelos
+        portraits = {
+            army = {
+                small = "GFX_idea_por_augusto_de_vasconcelos"
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = YGB_augusto_de_vasconcelos
+            allowed = {
+                original_tag = YGB
+            }
+            available = {
+                has_completed_focus = YGB_portuguese_advisors
+            }
+            traits = {
+                compassionate_gentleman
+            }
+            cost = 75
+            name = POR_augusto_de_vasconcelos 
+            ai_will_do = {
+                factor = 0.000
+            }
+        }
+	}
+}

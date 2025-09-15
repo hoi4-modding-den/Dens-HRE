@@ -6,7 +6,7 @@ focus_tree = {
 		modifier = { add = 10 tag = YGB }
 	}
 
-	continuous_focus_position = { x = 100 y = 1000 }
+	continuous_focus_position = { x = 100 y = 1500 }
 
     reset_on_civilwar = no
 
@@ -190,7 +190,37 @@ focus_tree = {
 		}
 	}
 
-		focus = {
+	focus = {
+		id = YGB_deregulate_banks
+		available = {
+		}
+		prerequisite = { focus = YGB_airbases focus = YGB_coastal_railway }
+		relative_position_id = YGB_airbases
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = -100
+			add_to_variable = { YGB.factories_base = 0.1 }
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = YGB_investment_dummy
+					add_idea = YGB_investment_dummy_2
+				}
+			}
+			YGB_recalculate_factory_costs = yes
+		}
+	}
+
+	focus = {
 		id = YGB_invest_national_parks
 		available = {
 		}
@@ -235,6 +265,7 @@ focus_tree = {
 
 		available = {
 			has_stability > 0.69
+			NOT = { has_war = yes }
 		}
 
 		available_if_capitulated = yes
@@ -268,11 +299,10 @@ focus_tree = {
 	focus = {
 		id = YGB_british_intervention
 		available = {
-			democratic > 0.39
 		}
 		prerequisite = { focus = YGB_the_rock }
 		relative_position_id = YGB_the_rock
-		mutually_exclusive = { focus = YGB_support_manuel }
+		mutually_exclusive = { focus = YGB_reestablish_kingdom }
 		mutually_exclusive = { focus = YGB_southern_revolution }
 		icon = GFX_focus_eng_the_sun_never_sets
 		x = -5
@@ -296,10 +326,11 @@ focus_tree = {
 	focus = {
 		id = YGB_british_garrison
 		available = {
+			democratic > 0.41
 		}
 		prerequisite = { focus = YGB_british_intervention }
 		relative_position_id = YGB_british_intervention
-		icon = GFX_focus_BEL_legacy_of_the_soldier_king
+		icon = GFX_focus_eng_chiefs_of_staff_committee
 		x = -1
 		y = 1
 		cost = 10
@@ -311,6 +342,12 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			division_template = {
 				name = "Gibraltar Garrison"
                 division_names_group = ENG_INF_01
@@ -431,6 +468,36 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YGB_general_gott
+		available = {
+		}
+		prerequisite = { focus = YGB_raf_gibraltar }
+		relative_position_id = YGB_raf_gibraltar
+		icon = GFX_focus_BEL_legacy_of_the_soldier_king
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ENG = {
+				ENG_william_gott = {
+					set_nationality = YGB
+				}
+			}
+			add_command_power = 35
+		}
+	}
+
+	focus = {
 		id = YGB_defensive_focus
 		available = {
 		}
@@ -439,7 +506,7 @@ focus_tree = {
 		icon = GFX_focus_SWE_hedgehog_defense
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -454,7 +521,7 @@ focus_tree = {
 					add_idea = YGB_army_dummy_enctrenchment
 				}
 			}
-			add_to_variable = { army_entrenchment = 6 }
+			add_to_variable = { army_entrenchment = 1.5 }
 			118 = {
 				if = {
 					limit = {
@@ -462,7 +529,7 @@ focus_tree = {
 					}
 					add_building_construction = {
 						type = bunker
-						level = 4
+						level = 1
 						instant_build = yes
 						province = {
 							id = 4135
@@ -477,7 +544,7 @@ focus_tree = {
 					}
 					add_building_construction = {
 						type = bunker
-						level = 4
+						level = 1
 						instant_build = yes
 						province = {
 							id = 13510
@@ -577,6 +644,11 @@ focus_tree = {
 			1096 = {
 				add_manpower = 2320
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
 		}
 	}
 
@@ -605,16 +677,178 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = YGB_support_manuel
+		focus = {
+		id = YGB_control_strait
 		available = {
-			neutrality > 0.49
+		}
+		prerequisite = { focus = YGB_imperial_trade_routes }
+		relative_position_id = YGB_imperial_trade_routes
+		icon = GFX_focus_POL_romania_bridgehead_strategy
+		x = -1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			YRI = { exists = yes }
+			is_subject = no
+		}
+
+		bypass = {
+			YRI = { exists = no }
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = YRI
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+						YRI = { is_ai = yes }
+					}
+					annex_country = {
+						target = YRI
+						transfer_troops = no
+					}
+				}
+				else = {
+					create_wargoal = {
+						type = annex_everything
+						target = YRI
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = YGB_unsinkable_carriers
+		available = {
+		}
+		prerequisite = { focus = YGB_imperial_trade_routes }
+		relative_position_id = YGB_imperial_trade_routes
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			YJT = { exists = yes }
+			is_subject = no
+		}
+
+		bypass = {
+			YJT = { exists = no }
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = YJT
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = yes
+						YJT = { is_ai = yes }
+					}
+					annex_country = {
+						target = YJT
+						transfer_troops = no
+					}
+				}
+				else = {
+					create_wargoal = {
+						type = annex_everything
+						target = YJT
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_british_iberia
+		available = {
+		}
+		prerequisite = { focus = YGB_unsinkable_carriers focus = YGB_control_strait }
+		mutually_exclusive = { focus = YGB_defend_ideals }
+		relative_position_id = YGB_unsinkable_carriers
+		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
+		x = -6
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = YGB_ENG_2
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_character = {
+				limit = {
+					is_country_leader = yes
+				}
+				add_trait = {
+					ideology = conservatism
+					trait = british_bulldog
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					is_owned_by = YGB
+					OR = {
+						state = 290
+						state = 178
+						state = 697
+						state = 783
+					}
+				}
+				add_core_of = YGB
+			}
+
+			# set_rule = { can_join_factions = no }
+			# set_rule = { can_declare_war_on_same_ideology = yes }
+			# set_rule = { can_only_justify_war_on_threat_country = no }
+		}
+	}
+
+	focus = {
+		id = YGB_reestablish_kingdom
+		available = {
 		}
 		prerequisite = { focus = YGB_the_rock }
 		relative_position_id = YGB_the_rock
 		mutually_exclusive = { focus = YGB_british_intervention }
 		mutually_exclusive = { focus = YGB_southern_revolution }
-		icon = GFX_focus_por_the_kingdom_reunited
+		icon = GFX_focus_CHL_a_new_araucanian_noble_class
 		x = 0
 		y = 1
 		cost = 10
@@ -626,18 +860,525 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = 45
+			add_ideas = { YGB_kingdom }
+		}
+	}
+
+	focus = {
+		id = YGB_support_manuel
+		available = {
+			YKP = { exists = yes }
+			neutrality > 0.54
+		}
+		mutually_exclusive = { focus = YGB_support_alfonso }
+		prerequisite = { focus = YGB_reestablish_kingdom }
+		relative_position_id = YGB_reestablish_kingdom
+		icon = GFX_focus_por_the_kingdom_reunited
+		x = -1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			YKP = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_puppet
+					end_wars = yes
+				}
+			}
+
+			create_country_leader = {
+				name = "Dom Duarte Nuno"
+				desc = "POLITICS_DOM_DUARTE_NUNO_DESC"
+				picture = GFX_portrait_Dom_Duarte_Nuno
+				expire = "1976.12.24"
+				ideology = despotism
+				traits = { 
+					socialite_connections
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_portuguese_training
+		available = {
+			is_subject_of = YKP
+			179 = { is_controlled_by = YKP }
+		}
+		prerequisite = { focus = YGB_support_manuel }
+		relative_position_id = YGB_support_manuel
+		icon = GFX_focus_SMB_tierra_del_fuego_training
+		x = -1
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			army_experience = 40
+			navy_experience = 10
+			air_experience = 10
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = YGB_kingdom
+				add_idea = YGB_kingdom_2_a
+			}
+			add_to_variable	= { YGB.army_special_forces_min = 24 }
+			add_to_variable	= { YGB.army_attack = 0.05 }
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = YGB_army_dummy
+					add_idea = YGB_army_dummy_special_forces_min
+				}
+			}
+
+			YKP = {
+				add_ideas = { YGB_portugal_gibraltar_training }
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_portuguese_advisors
+		available = {
+			is_subject_of = YKP
+		}
+		prerequisite = { focus = YGB_portuguese_training }
+		relative_position_id = YGB_portuguese_training
+		icon = GFX_focus_por_the_fifth_empire
+		x = 0
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = YGB_duarte_jose_pacheco
+			show_ideas_tooltip = YGB_augusto_de_vasconcelos
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_political_power = 75
+			add_stability = 0.03
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			YKP = {
+				add_political_power = 200
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_metal_imports
+		available = {
+			is_subject_of = YKP
+		}
+		prerequisite = { focus = YGB_portuguese_advisors }
+		relative_position_id = YGB_portuguese_advisors
+		icon = GFX_focus_generic_tungsten
+		x = 0
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			CAPITAL_SCOPE = {
+				add_resource = {
+					type = steel
+					amount = 3
+					state = THIS
+				}
+				add_resource = {
+					type = tungsten
+					amount = 4
+					state = THIS
+				}
+			}
+
+			add_tech_bonus = {
+				category = industry
+				uses = 2
+				bonus = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			YKP = {
+				add_tech_bonus = {
+					category = industry
+					uses = 2
+					bonus = 0.5
+				}
+				CAPITAL_SCOPE = {
+					add_resource = {
+						type = steel
+						amount = 8
+						state = THIS
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_support_alfonso
+		available = {
+			YAO = { exists = yes }
+			neutrality > 0.54
+		}
+		mutually_exclusive = { focus = YGB_support_manuel }
+		prerequisite = { focus = YGB_reestablish_kingdom }
+		relative_position_id = YGB_reestablish_kingdom
+		icon = GFX_focus_spr_maintain_the_republic
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			YAO = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_puppet
+					end_wars = yes
+				}
+			}
+
+			create_country_leader = {
+				name = "Placeholder"
+				desc = "POLITICS_DOM_DUARTE_NUNO_DESC"
+				picture = GFX_portrait_Dom_Duarte_Nuno
+				expire = "1976.12.24"
+				ideology = despotism
+				traits = { 
+					anti_communist the_director
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_anti_communism
+		available = {
+			is_subject_of = YAO
+		}
+		prerequisite = { focus = YGB_support_alfonso }
+		relative_position_id = YGB_support_alfonso
+		icon = GFX_focus_PAR_neuter_the_guion_rojo
+		x = 1
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YGB_kingdom
+				add_idea = YGB_kingdom_1_a
+			}
+
+			YAO = {
+				add_ideas = { YGB_spain_anti_communism }
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_rearmament_policy
+		available = {
+			is_subject_of = YAO
+		}
+		prerequisite = { focus = YGB_anti_communism }
+		relative_position_id = YGB_anti_communism
+		icon = GFX_focus_AFG_a_modern_economy
+		x = 0
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_state = {
+				limit = {
+					is_owned_by = YAO
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YGB_rearmament_policy_tt
+			subtract_from_variable = { YGB.factories_mil_cost = 0.03 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			YAO = {
+				add_ideas = { YGB_rearmament }
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_kingdom_spain
+		available = {
+			is_subject_of = YAO
+		}
+		prerequisite = { focus = YGB_rearmament_policy }
+		relative_position_id = YGB_rearmament_policy
+		icon = GFX_focus_CHL_restore_the_old_kingdom
+		x = 0
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = YGB_kingdom_1_a
+				add_idea = YGB_kingdom_1_b
+			}
+			YAO = {
+				add_war_support = 0.1
+				add_manpower = 50000
+				add_command_power = 35
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_economic_union
+		available = {
+		}
+		prerequisite = { focus = YGB_support_manuel focus = YGB_support_alfonso }
+		relative_position_id = YGB_support_manuel
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			OVERLORD = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_royal_guards
+		available = {
+			is_subject = yes
+		}
+		prerequisite = { focus = YGB_economic_union }
+		relative_position_id = YGB_economic_union
+		icon = GFX_focus_generic_monarchist_sentiment
+		x = 0
+		y = 1
+		cost = 10
+
+		bypass = {
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			OVERLORD = {
+				country_event = {
+					id = YGB.1
+					days = 1
+					random_hours = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_control_sevilla
+		available = {
+			is_subject = yes
+		}
+		prerequisite = { focus = YGB_royal_guards }
+		relative_position_id = YGB_royal_guards
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_state_claim = 169
+			custom_effect_tooltip = generic_skip_one_line_tt
+			169 = {
+				OWNER = {
+					country_event = {
+						id = YGB.3
+						days = 1
+						random_hours = 24
+					}
+				}
+			}
+			custom_effect_tooltip = YGB_control_sevilla_tt
+		}
+	}
+
+	focus = {
+		id = YGB_war_preparations
+		available = {
+			is_subject = yes
+		}
+		prerequisite = { focus = YGB_control_sevilla }
+		prerequisite = { focus = YGB_metal_imports focus = YGB_kingdom_spain }
+		relative_position_id = YGB_control_sevilla
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			upgrade_economy_law = yes
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { has_idea = YGB_kingdom_1_b }
+				swap_ideas = {
+					remove_idea = YGB_kingdom_1_b
+					add_idea = YGB_kingdom_1_c
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = YGB_kingdom_2_a
+					add_idea = YGB_kingdom_2_b
+				}
+			}
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = YGB_defend_ideals
+		available = {
+		}
+		prerequisite = { focus = YGB_unsinkable_carriers focus = YGB_control_strait focus = YGB_war_preparations }
+		mutually_exclusive = { focus = YGB_british_iberia }
+		relative_position_id = YGB_control_sevilla
+		icon = GFX_focus_GER_defender_of_democracy
+		x = 0
+		y = 2
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
 		}
 	}
 
 	focus = {
 		id = YGB_southern_revolution
 		available = {
-			communism > 0.14
 		}
 		prerequisite = { focus = YGB_the_rock }
 		relative_position_id = YGB_the_rock
 		mutually_exclusive = { focus = YGB_british_intervention }
-		mutually_exclusive = { focus = YGB_support_manuel }
+		mutually_exclusive = { focus = YGB_reestablish_kingdom }
 		icon = GFX_focus_focus_fra_revolution_utmost
 		x = 5
 		y = 1
@@ -661,7 +1402,7 @@ focus_tree = {
 		icon = GFX_focus_SWI_issue_war_bonds
 		x = 24
 		y = 0
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -670,6 +1411,14 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			army_experience = 5
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = YGB_army_dummy
+					add_idea = YGB_army_dummy_org_loss
+				}
+			}
+			subtract_from_variable = { YGB.army_low_org_loss = 0.1 }
 		}
 	}
 

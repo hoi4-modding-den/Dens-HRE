@@ -1,4 +1,10 @@
 on_actions = {
+    on_startup = {
+        effect = {
+            set_variable = { YGB.factory_base = 0.05 }
+        }
+    }
+
 	on_weekly_YGB = {
         effect = {
             if = {
