@@ -246,6 +246,9 @@ characters = {
 			traits = {
 				silent_workhorse
 			}
+			ai_will_do = {
+				factor = 10
+			}
 
 			cost = 100
 		}
@@ -315,6 +318,9 @@ characters = {
 			traits = {
 				regional_traditionalist_leader
 			}
+			ai_will_do = {
+				factor = 10
+			}
 
 			cost = 100
 		}
@@ -337,6 +343,9 @@ characters = {
 			}
 			traits = {
 				carlist_intellectual
+			}
+			ai_will_do = {
+				factor = 10
 			}
 
 			cost = 100
@@ -484,6 +493,9 @@ characters = {
 			traits = {
 				socialist_economist_upgraded
 			}
+			ai_will_do = {
+				factor = 10
+			}
 
 			cost = 100
 		}
@@ -535,6 +547,9 @@ characters = {
 			}
 			traits = {
 				HUN_revolutionary_internationalist_trait
+			}
+			ai_will_do = {
+				factor = 10
 			}
 
 			cost = 100
@@ -632,11 +647,6 @@ characters = {
 
 
 	YBS_generic_army_chief_offensive = {
-		portraits = {
-			army = {
-                small = YBS_generic_army_chief_offensive_small
-			}
-		}
 		advisor = {
 			slot = army_chief
 			idea_token = YBS_generic_army_chief_offensive
@@ -649,17 +659,15 @@ characters = {
 			traits = {
 				army_chief_offensive_2
 			}
+			ai_will_do = {
+				factor = 20
+			}
 
 			cost = 100
 		}
 	}
 
 	YBS_generic_high_command_infantry = {
-		portraits = {
-			army = {
-                small = YBS_generic_high_command_infantry_small
-			}
-		}
 		advisor = {
 			slot = high_command
 			idea_token = YBS_generic_high_command_infantry
@@ -678,11 +686,6 @@ characters = {
 	}
 
 	YBS_generic_high_command_regrouping = {
-		portraits = {
-			army = {
-                small = YBS_generic_high_command_regrouping_small
-			}
-		}
 		advisor = {
 			slot = high_command
 			idea_token = YBS_generic_high_command_regrouping
@@ -701,11 +704,6 @@ characters = {
 	}
 
 	YBS_generic_high_command_radio = {
-		portraits = {
-			army = {
-                small = YBS_generic_high_command_radio_small
-			}
-		}
 		advisor = {
 			slot = high_command
 			idea_token = YBS_generic_high_command_radio
@@ -724,11 +722,6 @@ characters = {
 	}
 
 	YBS_generic_high_command_tank = {
-		portraits = {
-			army = {
-                small = YBS_generic_high_command_tank_small
-			}
-		}
 		advisor = {
 			slot = high_command
 			idea_token = YBS_generic_high_command_tank
