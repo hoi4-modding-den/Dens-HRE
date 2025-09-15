@@ -793,28 +793,18 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
 				}
-			}
-			else_if = {
-				limit = { 790 = { NOT = { is_owned_by = ZZZ } } }
-				790 = { transfer_state_to = ROOT }
+				create_wargoal = {
+					target = YAS
+					type = civil_war
+				}
 			}
 			if = {
 				limit = {
@@ -838,7 +828,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { 174 = { NOT = { is_owned_by = ZZZ } } }
+				limit = { 174 = { is_owned_by = ZZZ } }
 				174 = { transfer_state_to = ROOT }
 			}
 		}
@@ -1142,13 +1132,10 @@ focus_tree = {
 					NOT = { country_exists = YRR }
 					is_ally_with = YRR
 				}
-				790 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
+				OR = {
+					has_war_with = YAS
+					NOT = { country_exists = YAS }
+					is_ally_with = YAS
 				}
 				174 = {
 					owner = {
@@ -1184,23 +1171,17 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
+				}
+				create_wargoal = {
+					target = YAS
+					type = civil_war
 				}
 			}
 			if = {
@@ -1223,6 +1204,10 @@ focus_tree = {
 						}
 					}
 				}
+			}
+			else_if = {
+				limit = { 174 = { is_owned_by = ZZZ } }
+				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -4201,13 +4186,10 @@ focus_tree = {
 					NOT = { country_exists = YRR }
 					is_ally_with = YRR
 				}
-				790 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
+				OR = {
+					has_war_with = YAS
+					NOT = { country_exists = YAS }
+					is_ally_with = YAS
 				}
 				174 = {
 					owner = {
@@ -4243,28 +4225,18 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
 				}
-			}
-			else_if = {
-				limit = { 790 = { NOT = { is_owned_by = ZZZ } } }
-				790 = { transfer_state_to = ROOT }
+				create_wargoal = {
+					target = YAS
+					type = civil_war
+				}
 			}
 			if = {
 				limit = {
@@ -4288,7 +4260,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { 174 = { NOT = { is_owned_by = ZZZ } } }
+				limit = { 174 = { is_owned_by = ZZZ } }
 				174 = { transfer_state_to = ROOT }
 			}
 		}
@@ -5079,13 +5051,10 @@ focus_tree = {
 					NOT = { country_exists = YRR }
 					is_ally_with = YRR
 				}
-				790 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
+				OR = {
+					has_war_with = YAS
+					NOT = { country_exists = YAS }
+					is_ally_with = YAS
 				}
 				174 = {
 					owner = {
@@ -5121,28 +5090,18 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
 				}
-			}
-			else_if = {
-				limit = { 790 = { NOT = { is_owned_by = ZZZ } } }
-				790 = { transfer_state_to = ROOT }
+				create_wargoal = {
+					target = YAS
+					type = civil_war
+				}
 			}
 			if = {
 				limit = {
@@ -5166,7 +5125,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { 174 = { NOT = { is_owned_by = ZZZ } } }
+				limit = { 174 = { is_owned_by = ZZZ } }
 				174 = { transfer_state_to = ROOT }
 			}
 		}
@@ -5920,13 +5879,10 @@ focus_tree = {
 					NOT = { country_exists = YRR }
 					is_ally_with = YRR
 				}
-				790 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
+				OR = {
+					has_war_with = YAS
+					NOT = { country_exists = YAS }
+					is_ally_with = YAS
 				}
 				174 = {
 					owner = {
@@ -5962,28 +5918,18 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
 				}
-			}
-			else_if = {
-				limit = { 790 = { NOT = { is_owned_by = ZZZ } } }
-				790 = { transfer_state_to = ROOT }
+				create_wargoal = {
+					target = YAS
+					type = civil_war
+				}
 			}
 			if = {
 				limit = {
@@ -6007,7 +5953,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { 174 = { NOT = { is_owned_by = ZZZ } } }
+				limit = { 174 = { is_owned_by = ZZZ } }
 				174 = { transfer_state_to = ROOT }
 			}
 		}
@@ -6395,7 +6341,7 @@ focus_tree = {
 				exists = yes
 				NOT = { has_war_with = ROOT }
 				NOT = { has_government = communism }
-				is_faction_leader = yes
+				is_subject = no
 			}
 		}
 
@@ -6407,10 +6353,30 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			XHH = {
-				country_event = {
-					id = generic.2
-					days = 3
+			if = {
+				limit = {
+					XHH = { is_in_faction = no }
+				}
+				set_rule = {
+					can_create_factions = yes
+				}
+				create_faction = YBS_german_iberian_faction
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				XHH = {
+					country_event = {
+						id = generic.5
+						days = 3
+					}
+				}
+			}
+			else = {
+				XHH = {
+					country_event = {
+						id = generic.2
+						days = 3
+					}
 				}
 			}
 		}
@@ -6812,13 +6778,10 @@ focus_tree = {
 					NOT = { country_exists = YRR }
 					is_ally_with = YRR
 				}
-				790 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
+				OR = {
+					has_war_with = YAS
+					NOT = { country_exists = YAS }
+					is_ally_with = YAS
 				}
 				174 = {
 					owner = {
@@ -6854,28 +6817,18 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
 				}
-			}
-			else_if = {
-				limit = { 790 = { NOT = { is_owned_by = ZZZ } } }
-				790 = { transfer_state_to = ROOT }
+				create_wargoal = {
+					target = YAS
+					type = civil_war
+				}
 			}
 			if = {
 				limit = {
@@ -6899,7 +6852,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { 174 = { NOT = { is_owned_by = ZZZ } } }
+				limit = { 174 = { is_owned_by = ZZZ } }
 				174 = { transfer_state_to = ROOT }
 			}
 		}
@@ -7997,13 +7950,10 @@ focus_tree = {
 					NOT = { country_exists = YRR }
 					is_ally_with = YRR
 				}
-				790 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
+				OR = {
+					has_war_with = YAS
+					NOT = { country_exists = YAS }
+					is_ally_with = YAS
 				}
 				174 = {
 					owner = {
@@ -8039,28 +7989,18 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					790 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						} 
-					}
-				}
-				790 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
+					NOT = {
+						OR = {
+							has_war_with = YAS
+							NOT = { country_exists = YAS }
+							is_ally_with = YAS
 						}
 					}
 				}
-			}
-			else_if = {
-				limit = { 790 = { NOT = { is_owned_by = ZZZ } } }
-				790 = { transfer_state_to = ROOT }
+				create_wargoal = {
+					target = YAS
+					type = civil_war
+				}
 			}
 			if = {
 				limit = {
@@ -8084,7 +8024,7 @@ focus_tree = {
 				}
 			}
 			else_if = {
-				limit = { 174 = { NOT = { is_owned_by = ZZZ } } }
+				limit = { 174 = { is_owned_by = ZZZ } }
 				174 = { transfer_state_to = ROOT }
 			}
 		}

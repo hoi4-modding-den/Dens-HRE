@@ -1506,6 +1506,8 @@ YBS_spanish_civil_war_cat = {
 			FROM = { 
                 is_ally_with = ROOT 
                 is_ai = yes
+                NOT = { has_autonomy_state = autonomy_YBS_federal_state }
+                NOT = { has_autonomy_state = autonomy_YBS_subsidiary }
             }
 		}
 
