@@ -1,0 +1,52 @@
+newline_YBL = {
+	custom_effect_tooltip = YBL_newline_tt
+}
+
+YBL_do_next_focus = {
+	hidden_effect = {
+		set_variable_to_random = {
+			var = YBL_next_focus
+			min = 0
+			max = YBL_foci^num
+			integer = yes
+		}
+		meta_effect = { 
+			text = {
+				activate_shine_on_focus = [FOCUS]
+			}
+			FOCUS = "[?YBL_foci^YBL_next_focus.GetTokenKey]"
+		}
+		add_timed_idea = {
+			idea = YBL_focus_idea
+			days = 49
+		}
+		set_country_flag = {
+			flag = YBL_focus_progress
+			days = 49
+			value = 1
+		}
+	}
+}
+
+YBL_end_current_focus = {
+	hidden_effect = {
+		meta_effect = { 
+			text = {
+				complete_national_focus = [FOCUS]
+				deactivate_shine_on_focus = [FOCUS]
+			}
+			FOCUS = "[?YBL_foci^YBL_next_focus.GetTokenKey]"
+		}
+		remove_from_array = {
+			array = YBL_foci
+			value = YBL_foci^YBL_next_focus
+		}
+		clr_country_flag = YBL_focus_progress
+		YBL_do_next_focus = yes
+	}
+}
+
+YBL_reduce_x_decisions = {
+	custom_effect_tooltip = YBL_reduce_x_decisions
+	subtract_from_variable = { YBL_address_school_failings_dec = YBL_decision_pp }
+}

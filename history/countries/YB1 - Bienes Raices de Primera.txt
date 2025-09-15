@@ -1,6 +1,6 @@
-﻿capital = 177
+﻿capital = 175
 
-oob = "YBL_1936"
+oob = "YB1_1936"
 
 set_research_slots = 3
 
@@ -19,36 +19,27 @@ set_technology = {
 }
 
 add_ideas = {
-	free_trade
+	export_focus
 	volunteer_only
 	civilian_economy
 }
 
 set_convoys = 50
-add_cic = 5000
 
-recruit_character = YBL_juan_march_ordinas
+recruit_character = YB1_the_corporation_authority
+
+YBL = { puppet = YB1 }
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	democratic = 70
+	neutrality = 70
+	democratic = 10
 	communism = 10
 	fascism = 10
-	neutrality = 10
 }
-
-add_to_array = {
-	array = YBL_foci
-	value = token:YBL_mercantile_revolution
-}
-
-set_variable = { YBL_address_school_failings_dec = 75 }
-set_variable = { YBL_address_housing_crisis_dec = 75 }
-set_variable = { YBL_address_rampant_corruption_dec = 75 }
-set_variable = { YBL_address_army_deficiencies_dec = 75 }

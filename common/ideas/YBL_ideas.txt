@@ -1,4 +1,119 @@
 ideas = {
 	country = {
+		YBL_food_surplus = {
+			picture = LIT_invested_in_farms
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				monthly_population = 2
+			}
+		}
+		YBL_migration_economy = {
+			picture = ARG_civilian_economy_boost
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				monthly_population = 2
+				stability_factor = -0.05
+				research_speed_factor = 0.05
+			}
+		}
+		YBL_mallorcan_family_plan = {
+			picture = BEL_traditional_family_values
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			on_remove = { add_ideas = YBL_mallorcan_family_plan_legacy }
+			
+			modifier = {
+				monthly_population = 2
+				conscription_factor = -0.15
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		YBL_mallorcan_family_plan_legacy = {
+			picture = BEL_traditional_family_values
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				monthly_population = 1
+				consumer_goods_factor = 0.1
+			}
+		}
+		YBL_xavier_report_education = {
+			picture = AFG_parliament_building_damaged
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				communism_drift = 0.1
+				drift_defence_factor = -0.25
+				research_speed_factor = -0.3
+				
+			}
+		}
+		YBL_xavier_report_industry = {
+			picture = ARG_economic_reactivation
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = -0.25
+				production_oil_factor = -0.75
+				industrial_capacity_factory = -0.6
+			}
+		}
+		YBL_xavier_report_politics = {
+			picture = generic_disjointed_gov
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_cost = 0.5
+				stability_factor = -0.25
+				trade_opinion_factor = -0.75
+			}
+		}
+		YBL_xavier_report_security = {
+			picture = DEN_occupation_laws
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+				army_attack_factor = -0.4
+				army_defence_factor = -0.2
+				land_doctrine_cost_factor = 0.75
+			}
+		}
+	}
+	hidden_ideas = {
+		YBL_focus_idea = {
+			picture = LIT_invested_in_farms
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			#on_remove = { YBL_end_focus = yes }
+			
+			modifier = {
+				political_power_cost = 1
+			}
+		}
 	}
 }

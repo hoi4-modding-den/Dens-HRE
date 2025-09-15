@@ -1,5 +1,97 @@
-#add_namespace = example
+add_namespace = YBL
 
-#country_event = {}
+country_event = {
+	id = YBL.1
+	title = YBL.1.title
+	desc = YBL.1.desc
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_handshake
+
+	option = { #keep
+		name = YBL.1.a
+		
+		add_stability = 0.1
+		set_country_flag = YBL_event_1
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+	
+	option = { #oust
+		name = YBL.1.b
+		
+		country_event = {
+			id = YBL.2
+			days = 5
+		}
+		add_stability = -0.15
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = YBL.2
+	title = YBL.2.title
+	desc = YBL.2.desc
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_handshake
+
+	option = {
+		name = YBL.2.a
+		
+		add_stability = 0.1
+		add_war_support = 0.1
+		set_country_flag = YBL_event_2
+		
+		add_country_leader_role = {
+			character = YBL_juan_march_ordinas
+			promote_leader = yes
+			country_leader = {
+				ideology = extreme_capitalism
+				expire = "1965.1.1.1"
+				traits = { financier_of_the_mediterranean foreign_riches }
+			}
+		}
+		
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			long_name = YBL_fascism_party_ordinas_long
+			name = YBL_fascism_party_ordinas
+		}
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = YBL.3
+	title = YBL.3.title
+	desc = YBL.3.desc
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_handshake
+
+	option = {
+		name = YBL.3.a
+		
+		add_ideas = YBL_xavier_report_education
+		newline_YBL = yes
+		add_ideas = YBL_xavier_report_industry
+		newline_YBL = yes
+		add_ideas = YBL_xavier_report_politics
+		newline_YBL = yes
+		add_ideas = YBL_xavier_report_security
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
 
 #news_event = {}
