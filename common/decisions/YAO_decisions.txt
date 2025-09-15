@@ -1,0 +1,453 @@
+crisis = {
+
+	southern_threat = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			169 = { is_owned_by = YAO }
+		}
+
+		days_mission_timeout = 25
+
+		activation = {
+			YAO = { has_country_flag = YAO_refused_transfer_south }
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 170
+                    num_provinces = 4
+                    on_win = YAO_border_conflict.1
+                    on_lose = YAO_border_conflict.2
+                    on_cancel = YAO_border_conflict.3
+                    modifier = 0.1
+                    dig_in_factor = 0
+                    terrain_factor = 0
+                }	
+                defender = {
+                    state = 169
+                    num_provinces = 2
+                    on_win = YAO_border_conflict.2
+                    on_lose = YAO_border_conflict.1
+                    on_cancel = YAO_border_conflict.3
+                }
+            }
+			
+		}
+	}
+
+    northern_threat = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			174 = { is_owned_by = YAO } 
+		}
+
+		days_mission_timeout = 25
+
+		activation = {
+			YAO = { has_country_flag = YAO_refused_transfer_north }
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 788
+                    num_provinces = 4
+                    on_win = YAO_border_conflict.4
+                    on_lose = YAO_border_conflict.5
+                    on_cancel = YAO_border_conflict.6
+                    modifier = 0.1
+                    dig_in_factor = 0
+                    terrain_factor = 0
+                }	
+                defender = {
+                    state = 174
+                    num_provinces = 2
+                    on_win = YAO_border_conflict.5
+                    on_lose = YAO_border_conflict.4
+                    on_cancel = YAO_border_conflict.6
+                }
+            }
+			
+		}
+	}
+
+    western_threat = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			789 = { is_owned_by = YAO }
+		}
+
+		days_mission_timeout = 15
+
+		activation = {
+			YAO = { has_country_flag = YAO_west_not_accept_ZZZ }
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 170
+                    num_provinces = 4
+                    on_win = YAO_border_conflict.4
+                    on_lose = YAO_border_conflict.5
+                    on_cancel = YAO_border_conflict.6
+                    modifier = 0.1
+                    dig_in_factor = 0
+                    terrain_factor = 0
+                }	
+                defender = {
+                    state = 789
+                    num_provinces = 2
+                    on_win = YAO_border_conflict.5
+                    on_lose = YAO_border_conflict.4
+                    on_cancel = YAO_border_conflict.6
+                }
+            }
+			
+		}
+	}
+
+    western_threat2 = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			175 = { is_owned_by = YAO }
+		}
+
+		days_mission_timeout = 15
+
+		activation = {
+			YAO = { has_country_flag = YAO_west_not_accept_ZZZ2 }
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 170
+                    num_provinces = 4
+                    on_win = YAO_border_conflict.4
+                    on_lose = YAO_border_conflict.5
+                    on_cancel = YAO_border_conflict.6
+                    modifier = 0.1
+                    dig_in_factor = 0
+                    terrain_factor = 0
+                }	
+                defender = {
+                    state = 175
+                    num_provinces = 2
+                    on_win = YAO_border_conflict.5
+                    on_lose = YAO_border_conflict.4
+                    on_cancel = YAO_border_conflict.6
+                }
+            }
+			
+		}
+	}
+
+    push_again = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+        days_mission_timeout = 40
+
+		allowed = {
+        	original_tag = YAO
+    	}
+		available = {
+			AND = {
+                790 = { is_owned_by = YAO }
+                YAO = { has_country_flag = YAO_won_on_north }
+                174 = { is_owned_by = YAO }
+            }
+		}
+        activation = {
+            AND = {
+                NOT = {  
+                    790 = { is_owned_by = YAO }
+                }
+                YAO = { has_country_flag = YAO_won_on_north }
+                174 = { is_owned_by = YAO }
+            }
+        }
+        visible = {
+            original_tag = YAO
+		}
+		complete_effect = {
+		}
+        timeout_effect = {
+            start_border_war = {
+                change_state_after_war = no
+                attacker = {
+                    state = 174
+                    num_provinces = 4
+                    on_win = YAO_border_conflict.7
+                    on_lose = YAO_border_conflict.8
+                    on_cancel = YAO_border_conflict.9
+                    modifier = 0.1
+                    dig_in_factor = 0
+                    terrain_factor = 0
+                }	
+                defender = {
+                    state = 790
+                    num_provinces = 2
+                    on_win = YAO_border_conflict.8
+                    on_lose = YAO_border_conflict.7
+                    on_cancel = YAO_border_conflict.9
+                }
+            }
+        }
+
+	}
+
+    castillan_negociations_failed = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+        war_with_on_remove = YRR
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			OR = {
+                AND = { 
+                    791 = { is_owned_by = YAO }
+                    176 = { is_owned_by = YAO }
+                }
+                YRR = { exists = no }
+            }
+		}
+
+		days_mission_timeout = 40
+
+		activation = {
+			YAO = { has_country_flag = YAO_castille_refused_ultimatum }
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			YAO = {
+                declare_war_on = {
+                    target = YRR
+                    type = annex_everything
+                }
+            }	
+		}
+	}
+
+    attack_the_castillans = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+        war_with_on_remove = YRR
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			OR = {
+                AND = { 
+                    791 = { is_owned_by = YAO }
+                    176 = { is_owned_by = YAO }
+                }
+                YRR = { exists = no }
+            }
+		}
+
+		days_mission_timeout = 20
+
+		activation = {
+			has_completed_focus = YAO_crush_the_castillans
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			YAO = {
+                declare_war_on = {
+                    target = YRR
+                    type = annex_everything
+                }
+            }		
+		}
+	}
+
+    murcian_negociations_failed = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+        war_with_on_remove = YRF
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			OR = {
+                AND = { 
+                    168 = { is_owned_by = YAO }
+                }
+                YRF = { exists = no }
+            }
+		}
+
+		days_mission_timeout = 40
+
+		activation = {
+			YAO = { has_country_flag = YAO_murcia_refused }
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			YAO = {
+                declare_war_on = {
+                    target = YRF
+                    type = annex_everything
+                }
+            }	
+		}
+	}
+
+    kill_murcia = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+        war_with_on_remove = YRF
+
+		allowed = {
+        	original_tag = YAO
+    	}
+
+		available = {
+			OR = {
+                AND = { 
+                    168 = { is_owned_by = YAO }
+                }
+                YRF = { exists = no }
+            }
+		}
+
+		days_mission_timeout = 20
+
+		activation = {
+			has_completed_focus = YAO_deal_with_murcia
+		}
+		visible = {
+			original_tag = YAO
+		}
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			YAO = {
+                declare_war_on = {
+                    target = YRF
+                    type = annex_everything
+                }
+            }		
+		}
+	}
+
+
+
+
+
+    take_the_north_by_force = {
+
+		icon = generic_civil_support
+		fire_only_once = yes
+        cost = 150
+        days_remove = 30
+
+		allowed = {
+        	original_tag = YAO
+    	}
+		available = {
+			AND = {
+                NOT = { 
+                    174 = { is_owned_by = YAO } 
+                    790 = { is_owned_by = YAO }
+                }
+                OR = { 
+                    YAO = { has_country_flag = YAO_lost_on_north }
+                    YAO = { has_country_flag = YAO_tie_on_north }
+                }
+            }
+		}
+        visible = {
+            original_tag = YAO
+		}
+		complete_effect = {
+			add_command_power = -15
+		}
+
+	}
+
+
+
+}

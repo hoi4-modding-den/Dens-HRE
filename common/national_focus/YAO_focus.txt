@@ -1,6 +1,6 @@
 focus_tree = {
 	id = YAO_focus
-	continuous_focus_position = { x = -40 y = 2050 } 
+	continuous_focus_position = { x = -40 y = 2550 } 
 	country = {
 		factor = 0
 		modifier = {
@@ -471,6 +471,124 @@ focus_tree = {
 		}
 	}
 
+## LINKED FOCUSES ##
+	#Create a Constitution
+	focus = {
+		id = YAO_create_a_constitution
+		icon = GFX_focus_AUS_lawmaking_leniency
+		x = 0
+		y = 2
+		relative_position_id = YAO_stabilise_the_kingdom
+		cost = 10
+		available = {}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL
+		}
+		
+		prerequisite = { focus = YAO_democratic_values focus = YAO_authoritarian_rule }
+		completion_reward = {
+			add_ideas = YAO_a_constitutional_regime
+		}
+	}
+
+	#Proclaim the Republic
+	focus = {
+		id = YAO_proclaim_the_republic
+		icon = GFX_focus_NOR_send_the_king_back_to_denmark
+		x = 1
+		y = 5
+		relative_position_id = YAO_stabilise_the_kingdom
+		cost = 12
+		available = {}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL
+		}
+		
+		prerequisite = { focus = YAO_fight_extremism focus = YAO_collaborate_with_the_fascists }
+		mutually_exclusive = { focus = YAO_a_democratic_kingdom }
+		mutually_exclusive = { focus = YAO_a_spanish_state } 
+		completion_reward = {
+			set_cosmetic_tag = YAOrepublic
+			add_ideas = YAO_newly_proclaimed_republic
+			if = { 
+				limit = { has_idea = YAO_the_regime_stays }
+				promote_character = YAO_conservative_leader_neutrality
+			}
+			if = {
+				limit = { has_completed_focus = YAO_fight_extremism has_idea = YAO_democratisation }
+				swap_ideas = {
+					remove_idea = YAO_democratisation
+					add_idea = YAO_bastion_of_democracy
+				}
+				set_politics = {
+				ruling_party = democratic
+    			elections_allowed = yes
+    			last_election = "1935.12.17"
+    			election_frequency = 48
+				}
+				else = {
+					limit = { has_idea = YAO_the_regime_stays }
+					swap_ideas = {
+						remove_idea = YAO_the_regime_stays
+						add_idea = YAO_authoritarianism_is_back_in_fashion
+					}
+				}
+			}
+		}
+	}
+
+	#Different Means, Same Goal
+	focus = {
+		id = YAO_different_means_same_goal
+		icon = GFX_focus_generic_industry_1
+		x = 0
+		y = 4
+		relative_position_id = YAO_proclaim_the_republic
+		cost = 7
+		available = {}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+		}
+		
+		prerequisite = { focus = YAO_welfare_state focus = YAO_austerity_government }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	#For Iberia!
+	focus = {
+		id = YAO_for_iberia
+		icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
+		x = 3
+		y = 6
+		relative_position_id = YAO_proclaim_the_republic
+		cost = 12
+		available = {}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+		}
+		
+		prerequisite = { focus = YAO_the_congress_of_the_republic focus = YAO_law_and_order focus = YAO_spain_will_lead }
+		completion_reward = {
+			complete_national_focus = YAO_road_to_reunification
+		}
+	}
+
 	#A Democratic Kingdom
 	focus = {
 		id = YAO_a_democratic_kingdom
@@ -540,7 +658,6 @@ focus_tree = {
 		}
 		
 		prerequisite = { focus = YAO_a_democratic_kingdom }
-		prerequisite = { focus = YAO_reduce_the_power_of_the_monarchy }
 		completion_reward = {
 		}
 	}
@@ -572,12 +689,12 @@ focus_tree = {
 		y = 3
 		relative_position_id = YAO_a_democratic_kingdom
 		cost = 7
-		available = {}
+		available = { has_government = democratic }
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
 		}
 		
-		prerequisite = { focus = YAO_a_democratic_kingdom }
+		prerequisite = { focus = YAO_a_democratic_kingdom focus = YAO_proclaim_the_republic }
 		prerequisite = { focus = YAO_the_liberation_army }
 		completion_reward = {
 			swap_ideas = {
@@ -868,125 +985,6 @@ focus_tree = {
 
 
 
-	## LINKED FOCUSES ##
-	#Create a Constitution
-	focus = {
-		id = YAO_create_a_constitution
-		icon = GFX_focus_AUS_lawmaking_leniency
-		x = 0
-		y = 2
-		relative_position_id = YAO_stabilise_the_kingdom
-		cost = 10
-		available = {}
-		search_filters = {  
-			FOCUS_FILTER_POLITICAL
-		}
-		
-		prerequisite = { focus = YAO_democratic_values focus = YAO_authoritarian_rule }
-		completion_reward = {
-			add_ideas = YAO_a_constitutional_regime
-		}
-	}
-
-	#Proclaim the Republic
-	focus = {
-		id = YAO_proclaim_the_republic
-		icon = GFX_focus_NOR_send_the_king_back_to_denmark
-		x = 1
-		y = 5
-		relative_position_id = YAO_stabilise_the_kingdom
-		cost = 12
-		available = {}
-		search_filters = {  
-			FOCUS_FILTER_POLITICAL
-		}
-		
-		prerequisite = { focus = YAO_fight_extremism focus = YAO_collaborate_with_the_fascists }
-		mutually_exclusive = { focus = YAO_a_democratic_kingdom }
-		mutually_exclusive = { focus = YAO_a_spanish_state } 
-		completion_reward = {
-			set_cosmetic_tag = YAOrepublic
-			add_ideas = YAO_newly_proclaimed_republic
-			if = { 
-				limit = { has_idea = YAO_the_regime_stays }
-				promote_character = YAO_conservative_leader_neutrality
-			}
-			if = {
-				limit = { has_completed_focus = YAO_fight_extremism has_idea = YAO_democratisation }
-				swap_ideas = {
-					remove_idea = YAO_democratisation
-					add_idea = YAO_bastion_of_democracy
-				}
-				set_politics = {
-				ruling_party = democratic
-    			elections_allowed = yes
-    			last_election = "1935.12.17"
-    			election_frequency = 48
-				}
-				else = {
-					limit = { has_idea = YAO_the_regime_stays }
-					swap_ideas = {
-						remove_idea = YAO_the_regime_stays
-						add_idea = YAO_authoritarianism_is_back_in_fashion
-					}
-				}
-			}
-		}
-	}
-
-	#Different Means, Same Goal
-	focus = {
-		id = YAO_different_means_same_goal
-		icon = GFX_focus_generic_industry_1
-		x = 0
-		y = 4
-		relative_position_id = YAO_proclaim_the_republic
-		cost = 7
-		available = {}
-		search_filters = {  
-			FOCUS_FILTER_POLITICAL
-			FOCUS_FILTER_INDUSTRY
-		}
-		
-		prerequisite = { focus = YAO_welfare_state focus = YAO_austerity_government }
-		completion_reward = {
-			random_owned_controlled_state = {
-				add_building_construction = {
-    				type = arms_factory
-    				level = 1
-    				instant_build = yes
-				}
-				add_building_construction = {
-    				type = industrial_complex
-    				level = 1
-    				instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 2
-			}
-		}
-	}
-
-	#For Iberia!
-	focus = {
-		id = YAO_for_iberia
-		icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
-		x = 3
-		y = 6
-		relative_position_id = YAO_proclaim_the_republic
-		cost = 12
-		available = {}
-		search_filters = {  
-			FOCUS_FILTER_POLITICAL
-			FOCUS_FILTER_INDUSTRY
-		}
-		
-		prerequisite = { focus = YAO_the_congress_of_the_republic focus = YAO_law_and_order focus = YAO_spain_will_lead }
-		completion_reward = {
-			complete_national_focus = YAO_road_to_reunification
-		}
-	}
-
-
 		## END OF PRE-UNIFICATION PATH ##
 
 	#Manifest our Destiny
@@ -1269,11 +1267,6 @@ focus_tree = {
 		prerequisite = { focus = YAO_navy_of_iberia }
 		completion_reward = {
 			navy_experience = 50
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-    			category = navy_equipment
-			}
 		}
 	}
 
@@ -1333,6 +1326,20 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_airforce }
 		completion_reward = {
+			add_equipment_to_stockpile = {
+    			type = fighter_equipment_0
+    			amount = 50
+			}
+			add_tech_bonus = {
+    			bonus = 0.5
+    			uses = 3
+    			category = light_air
+			}
+			add_tech_bonus = {
+    			bonus = 0.7
+    			uses = 1
+    			category = medium_air
+			}
 		}
 	}
 
@@ -1352,6 +1359,20 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_airforce }
 		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment_0
+				amount = 80
+			}
+			add_tech_bonus = {
+    			bonus = 0.8
+    			uses = 1
+    			category = medium_air
+			}
+			add_tech_bonus = {
+    			bonus = 0.5
+    			uses = 1
+    			category = heavy_air
+			}
 		}
 	}
 
@@ -1383,7 +1404,7 @@ focus_tree = {
 		y = 4
 		relative_position_id = YAO_restore_the_military_forces
 		cost = 10
-		available = {}
+		available = { has_tech = motorized_equipment }
 		search_filters = {  
 			FOCUS_FILTER_ARMY_XP
 			FOCUS_FILTER_POLITICAL
@@ -1391,6 +1412,20 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_ground_forces_of_iberia }
 		completion_reward = {
+			add_equipment_to_stockpile = {
+    			type = motorized_equipment
+    			amount = 210
+			}
+			add_equipment_to_stockpile = {
+    			type = train_equipment_1
+    			amount = 10
+			}
+			add_tech_bonus = {
+    			bonus = 0.5
+    			uses = 1
+    			category = train_tech
+			}
+			army_experience = 20
 		}
 	}
 
@@ -1438,6 +1473,10 @@ focus_tree = {
 				remove_idea = YAO_state_of_the_armed_forces1
 				add_idea = YAO_state_of_the_armed_forces2
 			}
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment_1
+    			amount = 1500
+			}
 		}
 	}
 
@@ -1458,7 +1497,20 @@ focus_tree = {
 		prerequisite = { focus = YAO_reform_our_infantry focus = YAO_fix_our_supply focus = YAO_the_iberian_fleet }
 		completion_reward = {
 			add_manpower = 25631
-			conscription = 0.002
+			random_owned_controlled_state = {
+				create_unit = {
+    				division = "name = \"Fuerzas del Gobierno Central\" division_template = \"División de Infantería\" start_experience_factor = 0.5 start_equipment_factor = 0.67 start_manpower_factor = 0.6"
+    				owner = YAO
+					count = 2
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+    				division = "name = \"Fuerzas del Gobierno Central\" division_template = \"División de Infantería\" start_experience_factor = 0.7 start_equipment_factor = 0.5 start_manpower_factor = 0.4"
+    				owner = YAO
+					count = 1
+				}
+			}
 		}
 	}
 
@@ -1519,7 +1571,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 6
 		available = { 
 		
 		}
@@ -1530,8 +1582,10 @@ focus_tree = {
 		prerequisite = { focus = YAO_road_to_reunification }
 		mutually_exclusive = { focus = YAO_crush_the_castillans }
 		completion_reward = {
-			791 = { add_core_of = ROOT }
-			176 = { add_core_of = ROOT }
+			176 = { owner = { country_event = YAO_event.12 }}
+			791 = { add_claim_by = ROOT }
+			176 = { add_claim_by = ROOT }
+
 		}
 	}
 
@@ -1542,7 +1596,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 6
 		available = { 
 	
 		}
@@ -1565,7 +1619,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 5
 		available = { 
 		
 		}
@@ -1577,7 +1631,7 @@ focus_tree = {
 		completion_reward = {
 			793 = { add_core_of = ROOT }
 			if = {
-				limit = { NOT = { YFR = exists }}
+				limit = { YFR = { exists = yes }}
 				YFR = { country_event = YAO_event.1 }
 			}
 		}
@@ -1600,6 +1654,12 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_the_lost_regiment }
 		completion_reward = {
+			YRR = { every_owned_state = { add_claim_by = YAO }}
+			YBS = { every_owned_state = { add_claim_by = YAO }}
+			YGL = { every_owned_state = { add_claim_by = YAO }}
+			169 = { add_claim_by = YAO }
+			174 = { add_claim_by = YAO }
+			790 = { add_claim_by = YAO }
 		}
 	}
 
@@ -1610,7 +1670,7 @@ focus_tree = {
 		x = -1
 		y = 4
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 8
 		available = { 
 		
 		}
@@ -1622,6 +1682,12 @@ focus_tree = {
 		completion_reward = {
 			174 = { add_core_of = ROOT }
 			790 = { add_core_of = ROOT }
+			if = { 
+				limit = { 174 = { is_owned_by = YAO } 790 = { is_owned_by = YAO }}
+				else = { 
+					174 = { owner = { country_event = YAO_event.14 }}
+				}
+			}
 		}
 	}
 
@@ -1632,7 +1698,7 @@ focus_tree = {
 		x = -3
 		y = 4
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 8
 		available = { 
 		
 		}
@@ -1642,7 +1708,45 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_lay_claims_in_the_west }
 		completion_reward = {
-			169 = { add_core_of = ROOT }
+			if = { 
+				limit = { 169 = { is_owned_by = YAO }}
+				169 = { add_core_of = ROOT } 
+				else = { 
+					169 = { add_core_of = ROOT } 
+					169 = { owner = { country_event = YAO_event.10 }}
+				}
+			}
+		}
+	}
+
+	#Unite the West
+	focus = {
+		id = YAO_unite_the_west
+		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		x = -2
+		y = 5
+		relative_position_id = YAO_road_to_reunification
+		cost = 10
+		available = { 
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_the_northern_issue }
+		prerequisite = { focus = YAO_the_southern_issue }
+		completion_reward = {
+			171 = { 
+				owner = {
+					YAO = {
+						create_wargoal = {
+    						type = take_state_focus
+    						target = PREV
+    						generator = { 171 }
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -1663,6 +1767,15 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_the_lost_regiment }
 		completion_reward = {
+			YZA = { every_owned_state = { add_claim_by = YAO }}
+			YC2 = { every_owned_state = { add_claim_by = YAO }}
+			YC3 = { every_owned_state = { add_claim_by = YAO }}
+			YC1 = { every_owned_state = { add_claim_by = YAO }}
+			YCA = { every_owned_state = { add_claim_by = YAO }}
+			YRF = { every_owned_state = { add_claim_by = YAO }}
+			YUS = { every_owned_state = { add_claim_by = YAO }}
+			175 = { add_claim_by = YAO }
+			789 = { add_claim_by = YAO }
 		}
 	}
 
@@ -1673,12 +1786,9 @@ focus_tree = {
 		x = 3
 		y = 4
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 8
 		available = { 
-			any_state = {
-				is_controlled_by = ROOT
-				is_neighbor_of = YRF
-			}
+			is_neighbor_of = YRF
 		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL 
@@ -1687,6 +1797,7 @@ focus_tree = {
 		prerequisite = { focus = YAO_lay_claims_in_the_east }
 		mutually_exclusive = { focus = YAO_ask_for_murcian_submission }
 		completion_reward = {
+			custom_effect_tooltip = YAO_deal_with_murcia_text
 		}
 	}
 
@@ -1697,9 +1808,9 @@ focus_tree = {
 		x = 1
 		y = 4
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 7
 		available = { 
-			
+			is_neighbor_of = YRF
 		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL 
@@ -1708,6 +1819,148 @@ focus_tree = {
 		prerequisite = { focus = YAO_lay_claims_in_the_east }
 		mutually_exclusive = { focus = YAO_deal_with_murcia }
 		completion_reward = {
+			168 = { owner = { country_event = YAO_event.16 }}
+		}
+	}
+
+	#March On the Buffer States
+	focus = {
+		id = YAO_march_on_the_buffer_states
+		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		x = 2
+		y = 5
+		relative_position_id = YAO_road_to_reunification
+		cost = 10
+		available = { 
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_ask_for_murcian_submission focus = YAO_deal_with_murcia }
+		completion_reward = {
+			if = {
+				limit = { NOT = { 175 = { is_owned_by = ZZZ }}}
+			175 = { 
+				owner = {
+					YAO = {
+						create_wargoal = {
+    						type = take_state_focus
+    						target = PREV
+    						generator = { 175 }
+						}
+					}
+				}
+			}
+			else = {
+				ZZZ = { country_event = YAO_event.18 }
+			}
+			}
+			if = {
+				limit = { NOT = { 789 = { is_owned_by = ZZZ }}}
+			789 = { 
+				owner = {
+					YAO = {
+						create_wargoal = {
+    						type = take_state_focus
+    						target = PREV
+    						generator = { 789 }
+						}
+					}
+				}
+			}
+			else = {
+				ZZZ = { country_event = YAO_event.18 }
+			}
+			}
+		}
+	}
+
+	#Strike at the South
+	focus = {
+		id = YAO_strike_at_the_south
+		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		x = 0
+		y = 6
+		relative_position_id = YAO_road_to_reunification
+		cost = 8
+		available = { 
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_unite_the_west }
+		prerequisite = { focus = YAO_march_on_the_buffer_states }
+		completion_reward = {
+			173 = { 
+				owner = {
+					YAO = {
+						create_wargoal = {
+    						type = take_state_focus
+    						target = PREV
+    						generator = { 173 }
+						}
+					}
+				}
+			}
+			YAO = {
+				create_wargoal = {
+    				type = take_state_focus
+    				target = YGB
+    				generator = { 118 }
+				}
+			}
+		}
+	}
+
+	#Ask the Basques
+	focus = {
+		id = YAO_ask_the_basques
+		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		x = 1
+		y = 7
+		relative_position_id = YAO_road_to_reunification
+		cost = 7
+		available = { 
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_strike_at_the_south }
+		completion_reward = {
+			YBS = { country_event = YAO_event.20 }
+		}
+	}
+
+	#The Portugese Problem
+	focus = {
+		id = YAO_the_portuguese_problem
+		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		x = -1
+		y = 7
+		relative_position_id = YAO_road_to_reunification
+		cost = 5
+		available = { 
+			OR = {
+				AND = {
+					YPR = { exists = no }
+					YKP = { exists = yes }
+				}
+				AND = {
+					YPR = { exists = yes }
+					YKP = { exists = no }
+				}
+			}
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_strike_at_the_south }
+		completion_reward = {
+			
 		}
 	}
 
@@ -1842,7 +2095,6 @@ focus_tree = {
 		relative_position_id = YAO_industrial_expansion
 		cost = 10
 		available = {  
-			788 = { is_owned_by = YAO } 
 		}
 		search_filters = {  
 			FOCUS_FILTER_INDUSTRY 
@@ -1865,7 +2117,7 @@ focus_tree = {
 		relative_position_id = YAO_industrial_expansion
 		cost = 10
 		available = {  
-			788 = { is_owned_by = YAO } 
+			41 = { is_owned_by = YAO } 
 		}
 		search_filters = {  
 			FOCUS_FILTER_RESEARCH
@@ -1876,6 +2128,41 @@ focus_tree = {
 		prerequisite = { focus = YAO_develop_salamanca }
 		completion_reward = {
 			add_research_slot = 1
+		}
+	}
+
+	#Iberian Military Industry
+	focus = {
+		id = YAO_the_iberian_military_industry
+		icon = GFX_focus_research
+		x = 2
+		y = 4
+		relative_position_id = YAO_industrial_expansion
+		cost = 10
+		available = {  
+		}
+		search_filters = {  
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		prerequisite = { focus = YAO_spanish_development_scheme }
+		completion_reward = {
+			random_owned_controlled_state = {  
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {  
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 

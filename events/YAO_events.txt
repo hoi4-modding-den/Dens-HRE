@@ -1,4 +1,5 @@
 add_namespace = YAO_event
+add_namespace = YAO_border_conflict
 ## LOST REGIMENT ASKED TO SUBMIT ##
 country_event = {
 	id = YAO_event.1
@@ -16,7 +17,7 @@ country_event = {
 	option = {
 		name = YAO_event.1.a
 		ai_chance = { 
-            factor = 50 
+            factor = 1
         }
 		trigger = { }
 		YAO = { country_event = YAO_event.3 }
@@ -24,7 +25,7 @@ country_event = {
 	option = {
 		name = YAO_event.1.b
 		ai_chance = { 
-            factor = 50 
+            factor = 0.5 
         }
 		trigger = { }
 		YAO = { country_event = YAO_event.2 }
@@ -123,5 +124,597 @@ country_event = {
 		trigger = { }
 	}
 }
+
+
+## ASKING THE UNNAMED NATION ##
+country_event = {
+	id = YAO_event.10
+	title = YAO_event.10.t
+	desc = YAO_event.10.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.10.a
+		ai_chance = {
+			factor = 1 
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 169 = { is_owned_by = YAO }}}
+			169 = { transfer_state_to = YAO }
+		}
+	}
+	option = {
+		name = YAO_event.10.b
+		ai_chance = {
+			factor = 1 
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 169 = { is_owned_by = YAO }}}
+			YAO = { set_country_flag = YAO_refused_transfer_south }
+			YAO = { country_event = YAO_event.11 }
+		}
+	}
+}
+
+country_event = {
+	id = YAO_event.11
+	title = YAO_event.11.t
+	desc = YAO_event.11.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.11.a
+		ai_chance = {
+			factor = 1
+		}
+		trigger = { }
+	}
+}
+
+
+
+## ASKING CASTILLE ##
+country_event = {
+	id = YAO_event.12
+	title = YAO_event.12.t
+	desc = YAO_event.12.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.12.a
+		ai_chance = {
+			factor = 0.3
+		}
+		trigger = { }
+		annex_country = {
+            target = YRR
+            transfer_troops = yes
+        }
+	}
+	option = {
+		name = YAO_event.12.b
+		ai_chance = {
+			factor = 1
+		}
+		trigger = { }
+		YAO = { country_event = YAO_event.13 }
+		791 = { add_core_of = YAO }
+		176 = { add_core_of = YAO }
+	}
+}
+
+country_event = {
+	id = YAO_event.13
+	title = YAO_event.13.t
+	desc = YAO_event.13.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.13.a
+		ai_chance = {
+			factor = 1
+		}
+		trigger = { }
+		YAO = { set_country_flag = YAO_castille_refused_ultimatum }
+	}
+}
+
+
+## ASKING THE UNNAMED NATION NORTH ##
+country_event = {
+	id = YAO_event.14
+	title = YAO_event.14.t
+	desc = YAO_event.14.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.14.a
+		ai_chance = {
+			factor = 0.3
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 174 = { is_owned_by = YAO } 790 = { is_owned_by = YAO }}}
+			174 = { transfer_state_to = YAO }
+			790 = { transfer_state_to = YAO }
+		}
+	}
+	option = {
+		name = YAO_event.14.b
+		ai_chance = {
+			factor = 1 
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 174 = { is_owned_by = YAO } 790 = { is_owned_by = YAO }}}
+			YAO = { set_country_flag = YAO_refused_transfer_north }
+			YAO = { country_event = YAO_event.15 }
+		}
+	}
+}
+
+country_event = {
+	id = YAO_event.15
+	title = YAO_event.15.t
+	desc = YAO_event.15.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.15.a
+		ai_chance = {
+			factor = 1
+		}
+		trigger = { }
+	}
+}
+
+## ASKING MURCIA ##
+country_event = {
+	id = YAO_event.16
+	title = YAO_event.16.t
+	desc = YAO_event.16.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.16.a
+		ai_chance = {
+			factor = 0.3
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 168 = { is_owned_by = YAO }}}
+			annex_country = {
+            	target = YRF
+            	transfer_troops = yes
+        	}
+		}
+	}
+	option = {
+		name = YAO_event.16.b
+		ai_chance = {
+			factor = 1 
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 168 = { is_owned_by = YAO }}}
+			YAO = { set_country_flag = YAO_murcia_refused }
+			YAO = { country_event = YAO_event.17 }
+		}
+	}
+}
+
+## ASKING BIG NPC NATION ##
+country_event = {
+	id = YAO_event.18
+	title = YAO_event.18.t
+	desc = YAO_event.18.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.18.a
+		ai_chance = {
+			factor = 0.3
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 175 = { is_owned_by = YAO }} 175 = { is_owned_by = ZZZ }}
+			175 = { transfer_state_to = YAO }
+		}
+		if = {
+			limit = { NOT = { 789 = { is_owned_by = YAO }} 789 = { is_owned_by = ZZZ}}
+			789 = { transfer_state_to = YAO }
+		}
+	}
+	option = {
+		name = YAO_event.18.b
+		ai_chance = {
+			factor = 1 
+		}
+		trigger = { }
+		if = {
+			limit = { NOT = { 175 = { is_owned_by = YAO }}}
+			YAO = { set_country_flag = YAO_west_not_accept_ZZZ }
+			YAO = { country_event = YAO_event.19 }
+		}
+		if = {
+			limit = { NOT = { 789 = { is_owned_by = YAO }}}
+			YAO = { set_country_flag = YAO_west_not_accept_ZZZ2 }
+			YAO = { country_event = YAO_event.19 }
+		}
+	}
+}
+
+country_event = {
+	id = YAO_event.19
+	title = YAO_event.19.t
+	desc = YAO_event.19.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.19.a
+		ai_chance = {
+			factor = 1
+		}
+		trigger = { }
+	}
+}
+
+
+## THE BASQUE ##
+country_event = {
+	id = YAO_event.20
+	title = YAO_event.20.t
+	desc = YAO_event.20.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.20.a
+		ai_chance = {
+			factor = 0.3
+		}
+		trigger = { }
+		YAO = { puppet = YBS }
+	}
+	option = {
+		name = YAO_event.20.b
+		ai_chance = {
+			factor = 1 
+		}
+		trigger = { }
+		YAO = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = YBS
+			}
+		}
+	}
+}
+
+
+
+
+
+## BORDER CONFLICTS YAO ##
+country_event = {
+	id = YAO_border_conflict.1
+	title = YAO_border_conflict.1.t
+	desc = YAO_border_conflict.1.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_won_on_south }
+	}
+	option = {
+		name = YAO_border_conflict.1.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+		169 = { transfer_state_to = YAO }
+	}
+}
+
+country_event = {
+	id = YAO_border_conflict.2
+	title = YAO_border_conflict.2.t
+	desc = YAO_border_conflict.2.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_lost_on_south }
+	}
+	option = {
+		name = YAO_border_conflict.2.a
+		ai_chance = { factor = 1 }
+		trigger = { tag = YAO }
+	}
+	option = {
+		name = YAO_border_conflict.2.b
+		ai_chance = { factor = 1 }
+		trigger = { NOT = { tag = YAO }}
+		
+	}
+}
+
+country_event = {
+	id = YAO_border_conflict.3
+	title = YAO_border_conflict.3.t
+	desc = YAO_border_conflict.3.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_tie_on_south }
+	}
+	option = {
+		name = YAO_border_conflict.3.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+	}
+}
+
+
+
+
+
+country_event = {
+	id = YAO_border_conflict.4
+	title = YAO_border_conflict.4.t
+	desc = YAO_border_conflict.4.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		if = { 
+			limit = { YAO = { NOT = { has_country_flag = YAO_won_on_north has_country_flag = YAO_tie_on_north has_country_flag = YAO_lost_on_north }}}
+			YAO = { set_country_flag = YAO_won_on_north }
+		}
+	}
+	option = {
+		name = YAO_border_conflict.4.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+		if = { 
+			limit = { NOT = { 174 = { is_owned_by = YAO }}}
+			174 = { transfer_state_to = YAO }
+		}
+		if = {
+			limit = { YAO = { has_country_flag = YAO_west_not_accept_ZZZ }}
+			789 = { transfer_state_to = YAO }
+		}
+		if = {
+			limit = { YAO = { has_country_flag = YAO_west_not_accept_ZZZ2 }}
+			175 = { transfer_state_to = YAO }
+		}
+	}
+}
+
+country_event = {
+	id = YAO_border_conflict.5
+	title = YAO_border_conflict.5.t
+	desc = YAO_border_conflict.5.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_lost_on_north }
+	}
+	option = {
+		name = YAO_border_conflict.5.a
+		ai_chance = { factor = 1 }
+		trigger = { tag = YAO }
+	}
+	option = {
+		name = YAO_border_conflict.5.b
+		ai_chance = { factor = 1 }
+		trigger = { NOT = { tag = YAO }}
+		
+	}
+}
+
+country_event = {
+	id = YAO_border_conflict.6
+	title = YAO_border_conflict.6.t
+	desc = YAO_border_conflict.6.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_tie_on_north }
+	}
+	option = {
+		name = YAO_border_conflict.6.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+	}
+}
+
+
+
+
+country_event = {
+	id = YAO_border_conflict.7
+	title = YAO_border_conflict.7.t
+	desc = YAO_border_conflict.7.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_won_on_asturias }
+	}
+	option = {
+		name = YAO_border_conflict.7.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+		790 = { transfer_state_to = YAO }
+	}
+}
+
+country_event = {
+	id = YAO_border_conflict.8
+	title = YAO_border_conflict.8.t
+	desc = YAO_border_conflict.8.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_lost_on_asturias }
+	}
+	option = {
+		name = YAO_border_conflict.8.a
+		ai_chance = { factor = 1 }
+		trigger = { tag = YAO }
+	}
+	option = {
+		name = YAO_border_conflict.8.b
+		ai_chance = { factor = 1 }
+		trigger = { NOT = { tag = YAO }}
+		
+	}
+}
+
+country_event = {
+	id = YAO_border_conflict.9
+	title = YAO_border_conflict.9.t
+	desc = YAO_border_conflict.9.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	immediate = {
+		YAO = { set_country_flag = YAO_tie_on_asturias }
+	}
+	option = {
+		name = YAO_border_conflict.9.a
+		ai_chance = { factor = 1 }
+		trigger = { }
+	}
+}
+
 
 #news_event = {}

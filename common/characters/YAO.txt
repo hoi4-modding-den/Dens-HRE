@@ -14,7 +14,7 @@ characters = {
 			}
 			expire = "1969.1.1"
 			id = -1
-			decs = YAO_King_Alfonso_desc
+			desc = YAO_King_Alfonso_desc
 		}
 	}
 
@@ -103,15 +103,23 @@ characters = {
 			}
 		}
 		advisor = {
-			available = { has_completed_focus = YAO_the_high_command }
+			available = { 
+				has_completed_focus = YAO_the_high_command 
+				AND = {
+					OR = { 
+						has_government = neutrality
+						has_government = fascism
+					}
+					NOT = { has_cosmetic_tag = YAOrepublic }
+				}
+			}
 			cost = 125
     		slot = high_command
     		idea_token = YAO_character_military_high_command_1
     		ledger = army
     		traits = { 
-				army_attack_factor = 0.1
-				army_infantry_attack_factor = 0.15
-				army_infantry_speed_factor = 0.05
+				army_infantry_2
+				monarchist_puppet
 			}
 		}
 	}
@@ -126,15 +134,115 @@ characters = {
 		}
 		advisor = {
 			available = { has_completed_focus = YAO_the_high_command }
-			cost = 125
+			cost = 145
     		slot = high_command
     		idea_token = YAO_character_military_high_command_2
     		ledger = army
     		traits = { 
-				army_org_factor = 0.1
-				cavalry_attack_factor = 0.1
-				cavalry_speed_factor = 0.05
+				fascist_militia_leader
+				army_cavalry_2
 			}
 		}
 	}
+
+	YAO_military_high_command_3 = {
+		name = YAO_military_high_command_3
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command }
+			cost = 100
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_3
+    		ledger = army
+    		traits = { 
+				blitzkrieg_theorist
+			}
+		}
+	}
+
+	YAO_military_high_command_4 = {
+		name = YAO_military_high_command_4
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command has_completed_focus = YAO_airforce }
+			cost = 100
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_4
+    		ledger = air
+    		traits = { 
+				famous_aviator
+			}
+		}
+	}
+
+	YAO_military_high_command_5 = {
+		name = YAO_military_high_command_5
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command has_completed_focus = YAO_airforce }
+			cost = 150
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_5
+    		ledger = air
+    		traits = { 
+				dive_bomber
+			}
+		}
+	}
+
+	YAO_military_high_command_6 = {
+		name = YAO_military_high_command_6
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command has_completed_focus = YAO_navy_of_iberia }
+			cost = 100
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_6
+    		ledger = navy
+    		traits = { 
+				navy_chief_decisive_battle_1
+			}
+		}
+	}
+
+	YAO_military_high_command_7 = {
+		name = YAO_military_high_command_7
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_Miguel_Maura
+				small = GFX_portrait_YAO
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command has_completed_focus = YAO_navy_of_iberia }
+			cost = 130
+    		slot = high_command
+    		idea_token = YAO_character_military_high_command_7
+    		ledger = navy
+    		traits = { 
+				navy_chief_commerce_raiding_2
+			}
+		}
+	}
+
 }
