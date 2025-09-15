@@ -13,6 +13,150 @@ focus_tree = {
 
 	### ARMY PATH ###
 
+	focus = {
+		id = YKP_estado_carmonista
+		icon = GFX_focus_generic_catholic_dominion
+		x = 15
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		available = {
+			has_country_flag = YKP_military_maintained_power
+			has_country_leader = {
+				character = YKP_oscar_carmona
+				ruling_only = yes
+			}
+		}
+
+		completion_reward = {
+			add_stability = -0.1
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+
+			set_party_name = {
+				ideology = fascism
+				long_name = YKP_fascism_military_party_long
+				name = YKP_fascism_military_party
+			}
+
+			swap_ideas = {
+				remove_idea = YKP_widespread_protests
+				add_idea = YKP_public_protests
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_solidify_military_control
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_estado_carmonista
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_estado_carmonista
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+			add_popularity = {
+				ideology = communism
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.03
+			}
+
+			### EVENT AND ADVISOR ###
+		}
+	}
+
+	focus = {
+		id = YKP_censor_the_press
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_estado_carmonista
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_estado_carmonista
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = YKP_censored_media
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_address_the_people
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_estado_carmonista
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		prerequisite = {
+			focus = YKP_solidify_military_control
+		}
+
+		prerequisite = {
+			focus = YKP_censor_the_press
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			set_cosmetic_tag = YKP_military_government
+		}
+	}
+
 	### HOLY KINGDOM PATH ###
 
 	focus = {
@@ -51,7 +195,7 @@ focus_tree = {
 			}
 
 			XRO = {
-				country_event = { id = YKP.4 days = 15 }
+				country_event = { id = YKP.5 days = 15 }
 			}
 		}
 	}
