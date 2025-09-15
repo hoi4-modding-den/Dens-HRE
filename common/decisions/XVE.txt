@@ -356,11 +356,12 @@ XVE_governmental_support_decisions = {
 		priority = 100
 
 		allowed = {
-			has_country_flag = XVE_ceremony_reminder_flag
+			#has_country_flag = XVE_ceremony_reminder_flag
 		}
 		
 		available = {
 			always = no
+			has_country_flag = XVE_ceremony_reminder_flag
 		}
 		
 		cancel_if_not_visible = yes
