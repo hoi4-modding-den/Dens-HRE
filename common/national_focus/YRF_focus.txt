@@ -11,9 +11,9 @@ focus_tree = {
 	focus = {
 		id = YRF_the_neutral_king
 		icon = GFX_goal_generic_neutrality_focus
-		x = 10
+		x = 25
 		y = 0
-		cost = 1
+		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -32,9 +32,9 @@ focus_tree = {
 	focus = {
 		id = YRF_our_helping_hand
 		icon = GFX_SOV_respect_baltic_self_determination_ccp_2d_sov_compatibility
-		x = 10
+		x = 25
 		y = 1
-		cost = 1
+		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -48,4 +48,113 @@ focus_tree = {
 		}
 		}
 	}
+
+	#Reinforce the Kingdom
+	focus = {
+		id = YRF_reinforce_the_kingdom
+		icon = GFX_SOV_capital_of_the_tsars_ccp_2d_sov_compatibility
+		x = 25
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	    prerequisite = {
+		    focus = YRF_our_helping_hand
+	    }
+		completion_reward = {
+			add_political_power = 45
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+		}
+	}
+
+	#Build up Murcia
+	focus = {
+		id = YRF_build_up_murcian_industry
+		icon = GFX_focus_generic_modernize_industry
+		x = 25
+		y = 3
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	    prerequisite = {
+		    focus = YRF_reinforce_the_kingdom
+	    }
+		completion_reward = {
+			168 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			add_victory_points = {
+				province = 10024
+				value = 10
+			}
+			}
+		}
+	}
+
+	#Murcian Civilian Factories
+	focus = {
+		id = YRF_murcian_civilian_factories
+		icon = GFX_SOV_capital_of_the_tsars_ccp_2d_sov_compatibility
+		x = 28
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	    prerequisite = {
+		    focus = YRF_reinforce_the_kingdom
+	    }
+		completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+			168 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+		}
+	}
+ }
+
+	#Murcian Military Factories
+	focus = {
+		id = YRF_murcian_military_factories
+		icon = GFX_SOV_expand_the_aircraft_industry_ccp_2d_sov_compatibility
+		x = 22
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	    prerequisite = {
+		    focus = YRF_reinforce_the_kingdom
+	    }
+		completion_reward = {
+			add_stability = -0.10
+            add_war_support = 0.10
+			168 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+		}
+	}
+ }
+
 }
