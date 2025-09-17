@@ -1,0 +1,122 @@
+ ##  ###     ###  ### #  #  ##  #   # ###  ##  ###  
+#  #  #      #  # #   #  # #  # #   #  #  #  # #  # 
+####  #      ###  ##  #### ####  # #   #  #  # ###  
+#  #  #      #  # #   #  # #  #  # #   #  #  # #  # 
+#  # ###     ###  ### #  # #  #   #   ###  ##  #  # 
+
+YBS_ai_behavior_elections = {
+	name = "YBS_AI_BEHAVIOR_ELECTIONS"
+	group = "00_RULE_GROUP_YBS_AI_BEHAVIOR"
+	option = {
+		name = DEFAULT
+		text = "YBS_RULE_OPTION_DEFAULT"
+		desc = "YBS_RULE_OPTION_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_SOCIALIST_OPTION
+		text = "YBS_RULE_OPTION_SOCIALIST"
+		desc = "YBS_RULE_OPTION_SOCIALIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_NATIONALIST_OPTION
+		text = "YBS_RULE_OPTION_NATIONALIST"
+		desc = "YBS_RULE_OPTION_NATIONALIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_LIBERAL_OPTION
+		text = "YBS_RULE_OPTION_LIBERAL"
+		desc = "YBS_RULE_OPTION_LIBERAL_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_POPULAR_FRONT_OPTION
+		text = "YBS_RULE_OPTION_POPULAR_FRONT"
+		desc = "YBS_RULE_OPTION_POPULAR_FRONT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_CARLIST_OPTION
+		text = "YBS_RULE_OPTION_CARLIST"
+		desc = "YBS_RULE_OPTION_CARLIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_SYNDICALIST_OPTION
+		text = "YBS_RULE_OPTION_SYNDICALIST"
+		desc = "YBS_RULE_OPTION_SYNDICALIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		allow_achievements = yes
+	}
+}
+
+YBS_ai_behavior_democratic_path = {
+	name = "YBS_AI_BEHAVIOR_DEMOCRACY"
+	group = "00_RULE_GROUP_YBS_AI_BEHAVIOR"
+	option = {
+		name = DEFAULT
+		text = "YBS_RULE_OPTION_DEFAULT"
+		desc = "YBS_RULE_OPTION_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_DEMOCRATIC_REPUBLIC_OPTION
+		text = "YBS_RULE_OPTION_DEMOCRATIC_REPUBLIC"
+		desc = "YBS_RULE_OPTION_DEMOCRATIC_REPUBLIC_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_DEMOCRATIC_FEDERATION_OPTION
+		text = "YBS_RULE_OPTION_DEMOCRATIC_FEDERATION"
+		desc = "YBS_RULE_OPTION_DEMOCRATIC_FEDERATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_DEMOCRATIC_CORPORATION_OPTION
+		text = "YBS_RULE_OPTION_DEMOCRATIC_CORPORATION"
+		desc = "YBS_RULE_OPTION_DEMOCRATIC_CORPORATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_DEMOCRATIC_ESPERANTO_OPTION
+		text = "YBS_RULE_OPTION_DEMOCRATIC_ESPERANTO"
+		desc = "YBS_RULE_OPTION_DEMOCRATIC_ESPERANTO_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		allow_achievements = yes
+	}
+}
+
+YBS_ai_behavior_carlist_path = {
+	name = "YBS_AI_BEHAVIOR_CARLISTS"
+	group = "00_RULE_GROUP_YBS_AI_BEHAVIOR"
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_CARLIST_TRICKSTER_OPTION
+		text = "YBS_RULE_OPTION_CARLIST_TRICKSTER"
+		desc = "YBS_RULE_OPTION_CARLIST_TRICKSTER_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YBS_CARLIST_HONOUR_OPTION
+		text = "YBS_RULE_OPTION_CARLIST_HONOUR"
+		desc = "YBS_RULE_OPTION_CARLIST_HONOUR_DESC"
+		allow_achievements = yes
+	}
+}

@@ -6,8 +6,75 @@ on_actions = {
                 # AI MAIN PATH
                 if = {
                     limit = {
-                        is_historical_focus_on = no
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = DEFAULT
+                        }
                     }
+                    set_country_flag = YBS_ai_path_popular_front
+                }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = YBS_SOCIALIST_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_socialist
+                }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = YBS_NATIONALIST_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_nationalist
+                }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = YBS_LIBERAL_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_liberals
+                }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = YBS_POPULAR_FRONT_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_popular_front
+                }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = YBS_CARLIST_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_carlist
+                }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_elections
+                            option = YBS_SYNDICALIST_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_syndicalist
+                }
+                else = {
                     random_list = {
                         10 = { set_country_flag = YBS_ai_path_carlist }
                         20 = { set_country_flag = YBS_ai_path_nationalist }
@@ -17,21 +84,91 @@ on_actions = {
                         20 = { set_country_flag = YBS_ai_path_popular_front }
                     }
                 }
-                else = {
-                    set_country_flag = YBS_ai_path_popular_front
-                }
+
+
                 # AI DEMOCRATIC SUBPATH (useless if not democratic)
-                random_list = {
-                    #20 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
-                    30 = { set_country_flag = YBS_ai_path_federation }
-                    30 = { set_country_flag = YBS_ai_path_republic }
-                    40 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front }} set_country_flag = YBS_ai_path_esperantism }
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_democratic_path
+                            option = DEFAULT
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_federation
                 }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_democratic_path
+                            option = DEFAULT
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_capitalism
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_democratic_path
+                            option = DEFAULT
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_federation
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_democratic_path
+                            option = DEFAULT
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_republic
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_democratic_path
+                            option = DEFAULT
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_esperantism
+                }
+                else = {
+                    random_list = {
+                        #20 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
+                        30 = { set_country_flag = YBS_ai_path_federation }
+                        30 = { set_country_flag = YBS_ai_path_republic }
+                        40 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front }} set_country_flag = YBS_ai_path_esperantism }
+                    }
+                }
+
+
                 # AI CARLIST SUBPATH (useless if not carlist)
-                random_list = {
-                    30 = { set_country_flag = YBS_ai_path_honour }
-                    70 = { set_country_flag = YBS_ai_path_trickster }
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_carlist_path
+                            option = YBS_CARLIST_HONOUR_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_honour
                 }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YBS_ai_behavior_carlist_path
+                            option = YBS_CARLIST_TRICKSTER_OPTION
+                        }
+                    }
+                    set_country_flag = YBS_ai_path_trickster
+                }
+                else = {
+                    random_list = {
+                        30 = { set_country_flag = YBS_ai_path_honour }
+                        70 = { set_country_flag = YBS_ai_path_trickster }
+                    }
+                }
+
 
                 if = {
                     limit = {
