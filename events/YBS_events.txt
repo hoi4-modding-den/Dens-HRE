@@ -694,19 +694,41 @@ country_event = { # Get Navy from Reunification
         }
 	}
 
+    mean_time_to_happen = {
+        days = 14
+    }
+
     fire_only_once = yes
 	
 	option = {
         name = YBS_post_election_events.6.a
-        if = {
-            limit = {
-                has_dlc = "Man the Guns"
+        hidden_effect = {
+            if = {
+                limit = {
+                    has_dlc = "Man the Guns"
+                }
+                load_oob = "YBS_SPR_1936_naval_mtg"
             }
-            load_oob = "SPR_1936_naval_mtg"
+            else = {
+                load_oob = "YBS_SPR_1936_naval_legacy"
+            }
         }
-        else = {
-            load_oob = "SPR_1936_naval_legacy"
-        }
+        custom_effect_tooltip = YBS_post_election_events.6.a.tt
+        set_country_flag = YBS_navy_returned
+    }
+}
+
+country_event = { # whispers of resistance against centralisation
+	id = YBS_post_election_events.7
+	title = YBS_post_election_events.7.t
+	desc = YBS_post_election_events.7.desc
+    picture = GFX_report_event_spr_anarchist_uprising
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_post_election_events.7.a
+        add_stability = -0.1
     }
 }
 
@@ -1412,6 +1434,14 @@ country_event = { # War Exhaustion effect
 
     mean_time_to_happen = {
 		days = 5
+        modifier = {
+            factor = 2
+            has_war_support > 0.49
+        }
+        modifier = {
+            factor = 10
+            has_war_support > 0.99
+        }
 	}
 	
 	option = {
@@ -1797,12 +1827,13 @@ country_event = { # Regional Elections Events soon
 	id = YBS_anarchist_events.1
 	title = YBS_anarchist_events.1.t
 	desc = YBS_anarchist_events.1.desc
-    picture = GFX_report_event_spr_anarchist_success
+    picture = GFX_report_event_election_vote
 	
 	is_triggered_only = yes
 	
 	option = { # Anarchists
         name = YBS_anarchist_events.1.a
+        custom_effect_tooltip = YBS_anarchist_events.1.a.tt
         hidden_effect = {
             country_event = { id = YBS_anarchist_events.2 days = 3 }
         }
@@ -1826,11 +1857,12 @@ country_event = { # Regional Elections Event 1 / Catalonia
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
-
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -1851,11 +1883,12 @@ country_event = { # Regional Elections Event 2 / Aragon
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
-
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -1876,11 +1909,12 @@ country_event = { # Regional Elections Event 3 / Galicia
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
-
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -1901,11 +1935,12 @@ country_event = { # Regional Elections Event 4 / Portugal
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
-
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -1926,11 +1961,12 @@ country_event = { # Regional Elections Event 5 / Andalusia
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
-
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -1951,11 +1987,12 @@ country_event = { # Regional Elections Event 6 / Leon and Castile
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
-
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -1976,10 +2013,12 @@ country_event = { # Regional Elections Event 7 / Asturias
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -2000,10 +2039,12 @@ country_event = { # Regional Elections Event 8 / Murcia
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -2024,10 +2065,12 @@ country_event = { # Regional Elections Event 9 / Central Spain
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -2048,10 +2091,12 @@ country_event = { # Regional Elections Event 10 / Basque Country
 	option = { # Anarchists
         name = YBS_anarchist_events.2.a
         add_to_variable = { YBS_anarchist_election = 1 }
+        add_stability = 0.01
     }
 
     option = { # Moderates
         name = YBS_anarchist_events.2.b
+        add_popularity = { ideology = communism popularity = 0.01 }
     }
 }
 
@@ -2059,7 +2104,7 @@ country_event = { # Regional Elections over
 	id = YBS_anarchist_events.12
 	title = YBS_anarchist_events.12.t
 	desc = YBS_anarchist_events.12.desc
-    picture = GFX_report_event_spr_anarchist_success
+    picture = GFX_report_event_spr_anarchist_uprising
 	
 	is_triggered_only = yes
 	
@@ -2452,3 +2497,303 @@ news_event = { # 29 World Esperanto Congress held in Bilbao
     }
 }
 
+news_event = { # Hopeful Internationale formed
+	id = YBS_news_events.9
+	title = YBS_news_events.9.t
+	desc = YBS_news_events.9.desc
+    picture = GFX_news_event_YBS_esperanto_congress
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = { # reaction meh
+        name = YBS_news_events.9.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.9.b
+        trigger = {
+            OR = {
+                original_tag = YBS
+                is_ally_with = YBS
+            }
+        }
+    }
+
+}
+
+news_event = { # YBS unifies Iberia // Carlist
+	id = YBS_news_events.10
+	title = YBS_news_events.10.t
+	desc = YBS_news_events.10.desc
+    picture = GFX_news_event_034
+
+    trigger = {
+        YBS = {
+            exists = yes
+            is_subject = no
+            has_government = neutrality
+            NOT = { has_completed_focus = YBS_rule_of_capital }
+            OR = {
+                YBS_owns_all_iberian_states = yes
+                YBS_iberian_federation_complete = yes
+            } 
+        }
+        YBS_civil_war_over = yes
+    }
+
+    mean_time_to_happen = {
+        days = 2
+    }
+	
+	fire_only_once = yes
+    major = yes
+	
+	option = { # reaction damn it
+        name = YBS_news_events.10.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction meh
+        name = YBS_news_events.10.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.10.c
+        trigger = {
+            OR = {
+                original_tag = YBS
+                is_ally_with = YBS
+            }
+        }
+    }
+
+}
+
+news_event = { # YBS unifies Iberia // Democratic
+	id = YBS_news_events.11
+	title = YBS_news_events.11.t
+	desc = YBS_news_events.11.desc
+    picture = GFX_news_event_034
+
+    trigger = {
+        YBS = { 
+            exists = yes
+            is_subject = no
+            has_government = democratic
+            NOT = { has_completed_focus = YBS_we_will_always_have_hope }
+            OR = {
+                YBS_owns_all_iberian_states = yes
+                YBS_iberian_federation_complete = yes
+            } 
+        }
+        YBS_civil_war_over = yes
+    }
+
+    mean_time_to_happen = {
+        days = 2
+    }
+	
+	fire_only_once = yes
+    major = yes
+	
+	option = { # reaction damn it
+        name = YBS_news_events.11.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            NOT = { has_government = democratic }
+        }
+    }
+
+    option = { # reaction meh
+        name = YBS_news_events.11.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            has_government = democratic
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.11.c
+        trigger = {
+            OR = {
+                original_tag = YBS
+                is_ally_with = YBS
+            }
+        }
+    }
+
+}
+
+news_event = { # YBS unifies Iberia // Syndicalist
+	id = YBS_news_events.12
+	title = YBS_news_events.12.t
+	desc = YBS_news_events.12.desc
+    picture = GFX_news_event_034
+
+    trigger = {
+        YBS = { 
+            exists = yes
+            is_subject = no
+            has_government = communism
+            OR = {
+                YBS_owns_all_iberian_states = yes
+                YBS_iberian_federation_complete = yes
+            } 
+        }
+        YBS_civil_war_over = yes
+    }
+
+    mean_time_to_happen = {
+        days = 2
+    }
+	
+	fire_only_once = yes
+    major = yes
+	
+	option = { # reaction damn it
+        name = YBS_news_events.12.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = { # reaction meh
+        name = YBS_news_events.12.b
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            has_government = communism
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.12.c
+        trigger = {
+            OR = {
+                original_tag = YBS
+                is_ally_with = YBS
+            }
+        }
+    }
+
+}
+
+news_event = { # YBS unifies Iberia // Esperantist
+	id = YBS_news_events.13
+	title = YBS_news_events.13.t
+	desc = YBS_news_events.13.desc
+    picture = GFX_news_event_YBS_esperanto_republic
+
+    trigger = {
+        YBS = { 
+            exists = yes
+            is_subject = no
+            has_government = democratic
+            has_completed_focus = YBS_we_will_always_have_hope
+            OR = {
+                YBS_owns_all_iberian_states = yes
+                YBS_iberian_federation_complete = yes
+            } 
+        }
+        YBS_civil_war_over = yes
+    }
+
+    mean_time_to_happen = {
+        days = 2
+    }
+	
+	fire_only_once = yes
+    major = yes
+	
+	option = { # reaction what
+        name = YBS_news_events.13.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.13.b
+        trigger = {
+            OR = {
+                original_tag = YBS
+                is_ally_with = YBS
+            }
+        }
+    }
+
+}
+
+news_event = { # YBS unifies Iberia // Corporatist
+	id = YBS_news_events.14
+	title = YBS_news_events.14.t
+	desc = YBS_news_events.14.desc
+    picture = GFX_news_event_saf_coup
+
+    trigger = {
+        YBS = { 
+            exists = yes
+            is_subject = no
+            has_government = neutrality
+            has_completed_focus = YBS_rule_of_capital
+            OR = {
+                YBS_owns_all_iberian_states = yes
+                YBS_iberian_federation_complete = yes
+            } 
+        }
+        YBS_civil_war_over = yes
+    }
+
+    mean_time_to_happen = {
+        days = 2
+    }
+	
+	fire_only_once = yes
+    major = yes
+	
+	option = { # reaction what
+        name = YBS_news_events.14.a
+        trigger = {
+            NOT = { original_tag = YBS }
+            NOT = { is_ally_with = YBS }
+            OR = {
+                NOT = { original_tag = XHH }
+                has_government = communism
+            }
+        }
+    }
+
+    option = { # reaction hurray
+        name = YBS_news_events.14.b
+        trigger = {
+            OR = {
+                original_tag = YBS
+                is_ally_with = YBS
+                AND = {
+                    original_tag = XHH
+                    NOT = { has_government = communism }
+                }
+            }
+        }
+    }
+
+}

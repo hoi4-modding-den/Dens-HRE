@@ -16,11 +16,11 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				experience_gain_army = 0.03
 				ai_focus_aggressive_factor = 2
 				ai_desired_divisions_factor = 3
 				ai_focus_war_production_factor = 0.5
 				terrain_penalty_reduction = 0.25
+				conscription_factor = 0.25
 			}
 		}
 
@@ -105,6 +105,25 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.15
 				stability_factor = -0.05
+			}
+		}
+
+		YBS_labour_federation_cooperation = {
+
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
 
@@ -511,6 +530,241 @@ ideas = {
 			}
 		}
 
+		YBS_airforce_development = {
+
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.25
+			}
+		}
+
+		YBS_airforce_development_fighter = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.15
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+
+		YBS_airforce_development_cas = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.15
+				air_cas_efficiency = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+
+		YBS_airforce_development_naval = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.15
+				air_nav_efficiency = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+
+		YBS_airforce_development_fighter_cas = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.2
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+
+		YBS_airforce_development_fighter_naval = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.2
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_nav_efficiency = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+
+		YBS_airforce_development_cas_naval = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.2
+				air_cas_efficiency = 0.1
+				air_nav_efficiency = 0.1
+			}
+
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+
+		YBS_airforce_development_fighter_cas_naval = {
+
+			name = YBS_airforce_development
+			picture = generic_air_fighter
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				ai_focus_naval_air_factor = 0.1
+				air_equipment_upgrade_xp_cost = -0.5
+				air_training_xp_gain_factor = 0.25
+				air_ace_generation_chance_factor = 0.4
+				experience_gain_air_factor = 0.25
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+				air_nav_efficiency = 0.1
+			}
+		}
+
 		YBS_rebuilding_the_armada = {
 
 			picture = AUS_streamline_cruiser_production_idea
@@ -627,7 +881,7 @@ ideas = {
 
 		YBS_esperanto_clubs_idea = {
 
-			#picture = 
+			picture = GFX_idea_YBS_esperanto_spirit
 
 			allowed = {
 				original_tag = YBS
@@ -647,7 +901,7 @@ ideas = {
 
 		YBS_public_esperanto_classes = {
 
-			#picture = 
+			picture = GFX_idea_YBS_esperanto_spirit
 
 			allowed = {
 				original_tag = YBS
@@ -817,7 +1071,6 @@ ideas = {
 
 		YBS_spanish_fighting_spirit_idea = {
 
-			name YBS_spanish_fighting_spirit
 			picture = SPA_crusade_against_democracy
 
 			allowed = {
@@ -1175,6 +1428,29 @@ ideas = {
 			}
 		}
 
+		YBS_work_safety_regulations_idea = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				OR = {
+					has_government = democratic
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.1
+			}
+		}
+
 		YBS_iberian_federation_spirit = {
 
 			picture = generic_pp_unity_bonus
@@ -1199,7 +1475,7 @@ ideas = {
 
 		YBS_federal_army = {
 
-			picture = generic_war_preparation
+			picture = eng_imperial_conscription
 
 			allowed = {
 				original_tag = YBS
@@ -1212,15 +1488,63 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_org_factor = 0.05
-				army_attack_factor = 0.08
-				conscription_factor = 0.1
+				army_org_factor = 0.08
+				conscription = 0.01
+				non_core_manpower = 0.25
+				training_time_factor = -0.15
+			}
+		}
+
+		YBS_confirmed_independence = {
+
+			picture = can_patriation
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				enemy_justify_war_goal_time = 0.05
+				autonomy_gain = 0.15
+			}
+		}
+
+		YBS_european_affairs = {
+
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				democratic_acceptance = 80
+				guarantee_tension = -1
+				guarantee_cost = -0.5
+				lend_lease_tension = -1
+				send_volunteers_tension = -1
+				send_volunteer_size = 5
 			}
 		}
 
 		YBS_esperanto_republic_idea = {
 
-			#picture = 
+			picture = GFX_idea_YBS_esperanto_spirit_2
 
 			allowed = {
 				original_tag = YBS
@@ -1241,7 +1565,7 @@ ideas = {
 
 		YBS_esperanto_internationale_idea = {
 
-			#picture = 
+			picture = GFX_idea_YBS_esperanto_spirit_2
 
 			allowed = {
 				original_tag = YBS
@@ -1484,6 +1808,42 @@ ideas = {
 				resistance_target = 0.1
 				surrender_limit = -0.25
 				custom_modifier_tooltip = YBS_war_exhaustion_5_tt
+			}
+		}
+
+		YBS_revolt_spirit = {
+
+			picture = FRA_scw_intervention_republicans_focus
+
+			allowed = {
+				NOT = { original_tag = YBS }
+			}
+
+			allowed_civil_war = {
+				has_war_with = YBS
+			}
+
+			available = {
+				has_war_with = YBS
+			}
+
+			on_remove = {
+				if = {
+					limit = {
+						is_faction_leader = yes
+					}
+					dismantle_faction = yes
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				surrender_limit = 0.8
+				conscription_factor = 0.3
+				army_core_defence_factor = 0.15
+				army_attack_against_major_factor = 0.05
+				resistance_growth_on_our_occupied_states = 0.25
 			}
 		}
 

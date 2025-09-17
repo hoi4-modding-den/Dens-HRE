@@ -1772,6 +1772,46 @@ war_measures = {
         }
     }
 
+    YBS_peace_out_with_YBS = {
+
+        icon = generic_form_nation
+
+        cost = 25
+
+        ai_will_do = {
+            base = 2
+        }
+        
+        allowed = {
+            NOT = { original_tag = YBS }
+        }
+
+        visible = {
+            has_defensive_war_with = YBS
+            YBS_has_war_exhaustion = yes
+            YBS_is_iberian_cw_contender = no
+            is_ai = no
+            YBS = { is_ai = yes }
+        }
+
+        available = {
+            war_length_with = {
+                tag = YBS
+                months > 8
+            }
+            surrender_progress < 0.1
+            YBS = { surrender_progress < 0.1 }
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            add_war_support = -0.25
+            add_stability = -0.15
+            white_peace = YBS
+        }
+    }
+
     YBS_turn_the_tide = {
 
         icon = generic_tank
@@ -2189,6 +2229,64 @@ economy_decisions = {
 
 foreign_politics = {
 
+    YBS_invite_defending_democratic_country = {
+
+		icon = generic_protection
+
+		ai_will_do = {
+			base = 20
+		}
+
+		available = {
+            FROM = {
+                has_defensive_war = yes
+                has_government = democratic
+            }
+            NOT = { has_war_with = FROM }
+		}
+
+        visible = {
+            NOT = { has_war_with = FROM }
+            NOT = { is_ally_with = FROM }
+            FROM = {
+                is_subject = no
+                has_defensive_war = yes
+            }
+            is_subject = no
+            has_country_flag = YBS_democratic_protector_unlocked
+            has_government = democratic
+        }
+
+		cancel_trigger = {
+			OR = {
+                FROM = { has_war = no }
+                FROM = { is_subject = yes }
+                has_war_with = FROM
+                is_ally_with = FROM
+            }
+		}
+
+		target_trigger = {
+			FROM = {
+				has_government = democratic
+			}
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 70
+
+        days_remove = 7
+
+		cost = 50
+
+        remove_effect = {
+            FROM = {
+                country_event = { id = generic.5 }
+            }
+        }
+	}
+
     YBS_return_italian_lands_to_XRO = {
 
         icon = infiltrate_state
@@ -2361,6 +2459,8 @@ political_actions = {
 
     YBS_debug_annex_iberia = {
 
+        fire_only_once = yes
+
 		visible = {
 			OR = {
                 is_debug = yes
@@ -2377,7 +2477,6 @@ political_actions = {
                             YBS_is_iberian_state = no
                             is_owned_by = ZZZ
                             is_owned_by = ROOT
-                            owns_or_subject_of = yes
                         }
                     }
                     has_war = no
@@ -2424,6 +2523,8 @@ political_actions = {
 
     YBS_debug_annex_iberian_africa = {
 
+        fire_only_once = yes
+
 		visible = {
 			OR = {
                 is_debug = yes
@@ -2440,7 +2541,6 @@ political_actions = {
                             YBS_is_spanish_africa_state = no
                             is_owned_by = ZZZ
                             is_owned_by = ROOT
-                            owns_or_subject_of = yes
                         }
                     }
                     has_war = no

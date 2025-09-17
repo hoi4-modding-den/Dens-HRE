@@ -21,7 +21,7 @@ YBS_colonial_police = {
 
 
 	ai_will_do = {
-		base = 250
+		base = 25000
 		modifier = {
 			check_variable  = { resistance_target_without_law > 0.3}
 			add = 200
@@ -62,6 +62,6 @@ YBS_iberian_reconciliation = {
 	}
 
 	ai_will_do = {
-		base = 1000
+		base = 25000
 	}
 }

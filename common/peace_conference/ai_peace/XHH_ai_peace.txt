@@ -12,9 +12,6 @@ peace_ai_desires = {
                     is_core_of = ROOT
                 }
             }
-            ROOT = {
-                original_tag = XHH
-            }
 			ROOT.FROM = { tag = ROOT }
         }
         ai_desire = 1000
@@ -26,9 +23,6 @@ peace_ai_desires = {
             FROM.FROM.FROM = {
                 NOT = { is_claimed_by = ROOT }
                 NOT = { is_core_of = ROOT }
-            }
-            ROOT = {
-                original_tag = XHH
             }
 			ROOT.FROM = { tag = ROOT }
         }

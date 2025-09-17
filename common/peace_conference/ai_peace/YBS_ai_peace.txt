@@ -25,4 +25,15 @@ peace_ai_desires = {
         ai_desire = 1000
     }
 
+    YBS_always_annex = {
+        peace_action_type = take_states
+        enable = {
+            ROOT = {
+                has_country_leader_ideology = YBS_international_esperantism
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 1000
+    }
+
 }

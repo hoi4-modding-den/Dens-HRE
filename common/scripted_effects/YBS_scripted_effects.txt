@@ -576,3 +576,165 @@ YBS_increase_war_exhaustion = {
 		}
 	}
 }
+
+YBS_start_anti_centralisation_revolt = {
+	clr_global_flag = YBS_iberian_civil_war_ended
+	hidden_effect = {
+		release = YC1
+		YC1 = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_popularities = {
+				communism = 90
+				democratic = 6
+				neutrality = 4
+			}
+			set_major = yes
+			add_ideas = YBS_revolt_spirit
+			declare_war_on = {
+				target = ROOT
+				type = topple_government
+			}
+			division_template = {
+				name = "Revolt Brigade"
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Revolt Brigade\" division_template = \"Revolt Brigade\" start_experience_factor = 0.5"
+					count = 3
+					owner = YC1
+				}
+			}
+		}
+		release = YKP
+		YKP = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 80
+				fascism = 2
+				communism = 4
+				neutrality = 14
+			}
+			set_major = yes
+			add_ideas = YBS_revolt_spirit
+			declare_war_on = {
+				target = ROOT
+				type = topple_government
+			}
+			division_template = {
+				name = "Revolt Brigade"
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Revolt Brigade\" division_template = \"Revolt Brigade\" start_experience_factor = 0.5"
+					count = 10
+					owner = YKP
+				}
+			}
+		}
+		release = YUS
+		YUS = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			set_popularities = {
+				neutrality = 80
+				fascism = 2
+				communism = 4
+				democratic = 14
+			}
+			set_major = yes
+			add_ideas = YBS_revolt_spirit
+			declare_war_on = {
+				target = ROOT
+				type = topple_government
+			}
+			division_template = {
+				name = "Revolt Brigade"
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Revolt Brigade\" division_template = \"Revolt Brigade\" start_experience_factor = 0.5"
+					count = 5
+					owner = YUS
+				}
+			}
+		}
+		release = YRR
+		YRR = {
+			drop_cosmetic_tag = yes
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 90
+				fascism = 2
+				communism = 4
+				neutrality = 4
+			}
+			set_major = yes
+			add_ideas = YBS_revolt_spirit
+			declare_war_on = {
+				target = ROOT
+				type = topple_government
+			}
+			division_template = {
+				name = "Revolt Brigade"
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Revolt Brigade\" division_template = \"Revolt Brigade\" start_experience_factor = 0.5"
+					count = 12
+					owner = YRR
+				}
+			}
+			create_faction = "Anti-Centralisation Revolt"
+			add_to_faction = YKP
+			add_to_faction = YUS
+			add_to_faction = YC1
+		}
+	}
+}

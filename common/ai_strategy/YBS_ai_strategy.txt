@@ -18,7 +18,7 @@ YBS_dont_bother_guaranteeing = {
 	allowed = { original_tag = YBS }
 
 	enable = {
-		has_government = democratic
+		YBS_civil_war_over = no
 	}
 	abort_when_not_enabled = yes
 
@@ -29,11 +29,11 @@ YBS_dont_bother_guaranteeing = {
 	}
 }
 
-YBS_be_aggressive_during_the_cw = {
+YBS_be_aggressive = {
 	allowed = { original_tag = YBS }
 
 	enable = {
-		YBS_civil_war_over = no
+		always = yes
 	}
 	abort_when_not_enabled = yes
 
@@ -45,7 +45,7 @@ YBS_be_aggressive_during_the_cw = {
     ai_strategy = {
         type = build_army
         id = infantry
-        value = 10
+        value = 1000
     }
     ai_strategy = {
         type = role_ratio
@@ -59,7 +59,7 @@ YBS_be_aggressive_during_the_cw = {
     }
 	ai_strategy = {
         type = force_build_armies
-        value = 1000
+        value = 10000
     }
 
     ai_strategy = {
@@ -109,20 +109,6 @@ YBS_be_aggressive_during_the_cw = {
 		execute_order = yes
 	}
 
-    ai_strategy = {
-		type = front_control
-
-		country_trigger = {
-            YBS_is_iberian_country = no
-        }
-
-		ratio = 0.1
-
-		priority = 1000
-		ordertype = front
-		execution_type = careful
-		execute_order = no
-	}
 }
 
 YBS_build_infrastructure_early = {
@@ -255,14 +241,41 @@ YBS_get_the_balearics = {
 
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 100
+		value = 10000
 	}
 
 	ai_strategy = {
 		type = invade
 		id = YBL
-		value = 500
+		value = 50000
 	}
+}
+
+YBS_do_stupid_naval_invasions_please = {
+
+	allowed = { original_tag = YBS }
+
+	enable = {
+		any_other_country = {
+            has_war_with = ROOT
+            NOT = {
+                is_neighbor_of = ROOT
+            }
+            any_controlled_state = {
+                is_coastal = yes
+            }
+        }
+        any_controlled_state = {
+            is_coastal = yes
+        }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 10000
+	}
+
 }
 
 YBS_ai_can_have_fun_unlocked = {

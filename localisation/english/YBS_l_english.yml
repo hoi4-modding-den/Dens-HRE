@@ -110,11 +110,12 @@
 
 # FACTIONS
 
- YBS_carlist_league: "Bilbao League"
+ YBS_carlist_league: "Carlist League"
  YBS_holy_league: "Holy Alliance"
  YBS_german_iberian_faction: "Hamburg-Madrid Axis"
  YBS_iberian_unity_league: "Iberian Unity Front"
  YBS_iberian_federation: "Iberian Federation"
+ YBS_iberia_democratic_faction: "Bilbao Accords"
  YBS_hopeful_internationale: "Esperema Internacio"
  YBS_socialist_pact: "Socialist Pact"
  YBS_world_anarchist_federation: "World Anarchist Federation"
@@ -221,7 +222,7 @@
  YBS_defence_council_trait: "Unity in the Council"
  YBS_catalan_anarchist: "Catalan Anarchist"
  YBS_esperantist: "Esperantist Connections"
- YBS_uea_chairwoman: "Ĝenerala Komitatanoj de la Respubliko de Espero"
+ YBS_uea_chairwoman: "Ĝeneralaj Komitatanoj de la Respubliko de Espero"
  YBS_spirit_of_anarchism: "The Eternal and Everlasting Spirit of Revolution and Freedom"
  YBS_carlist_junta_trait: "Carlist Leadership"
  YBS_falangist_founder: "Co-Pilot of the Phalanx"
@@ -250,11 +251,14 @@
 
 # IDEAS
 
+ YBS_ai_army_assistance: "YBS AI Buff"
+
  YBS_underdeveloped_economy: "Underdeveloped Economy"
  YBS_underdeveloped_economy_desc: "Our Region had been neglected by the government in Madrid for years. Minimal infrastructure maintenance, low industrialisation and few investments into the Basque country have left us with few economic opportunities following our independence."
  YBS_underdeveloped_economy_tt: " \nWill be §Gremoved§! once all Basque starting states have at least §YLevel 4 Infrastructure§! or we have at least §Y20 Factories§!."
  YBS_developed_economy: "Unleashed Economic Potential"
  YBS_devalued_currency: "Devalued Txanpona"
+ YBS_labour_federation_cooperation: "Cooperative Labour Federations"
  YBS_industrial_reconstruction: "Economic Reconstruction"
  YBS_disjointed_military: "Disjointed Army"
  YBS_disjointed_military_desc: "Our armed forces are not prepared for any direct conflict. While the Nationalist Party was eager to declare independence, our military power was barely enough to repel immediate attempts to subvert it. Our current army is made up of nationalist militia and sympathetic members of the former Iberian National Army. There are also rumours that some of the Carlist officers aren't as loyal to the parliament as expected."
@@ -270,6 +274,7 @@
  YBS_militia_recruitment: "Militia Recruitment"
  YBS_protected_supply_lines: "Supply is Everything"
  YBS_protected_supply_lines_desc: "Some of our generals have not yet understood the importance of supply, but luckily high command has already issued orders to ensure increased supply efficiency."
+ YBS_airforce_development: "[ROOT.GetAdjectiveCap] Airforce"
  YBS_rebuilding_the_armada: "Rebuilding the Armada"
  YBS_metal_dragon_doctrine: "Metal Dragon Doctrine"
  YBS_metal_dragon_doctrine_desc: "$ITA_ferrea_mole_ferreo_cuore_desc$"
@@ -295,6 +300,7 @@
  YBS_republican_opposition: "Republican Opposition"
  YBS_carlist_honour: "Imperial Honour Guard"
  YBS_anti_communist_bulwark: "Anti-Communist Bulwark"
+ YBS_spanish_fighting_spirit_idea: "Fight for the Fatherland!"
  YBS_naval_preparations_to_africa: "Prepare the Fleet for Africa"
  YBS_rising_phoenix: "Rising Phoenix of Europe"
  YBS_deregulated_capitalism: "Deregulated Capitalism"
@@ -309,11 +315,16 @@
  YBS_womens_rights_idea: "Gender Equality"
  YBS_mobilise_the_farmers_idea: "Rural Militia Readiness"
  YBS_defenders_of_the_peasantry_idea: "Defenders of the Peasantry"
+ YBS_work_safety_regulations_idea: "Work Safety Regulations"
  YBS_iberian_federation_spirit: "Iberian Federal Authority"
  YBS_federal_army: "Federal Army of Iberia"
+ YBS_confirmed_independence: "Affirmed Independence"
+ YBS_confirmed_independence_desc: "[YBS.GetNameDefCap] has officially recognised us as an independent nation, free from Iberian colonialism."
+ YBS_european_affairs: "Involvement in European Affairs"
  YBS_insurrectionary_army: "Iberian Insurrectionary Army"
  YBS_war_exhaustion: "War Exhaustion"
  YBS_war_exhaustion_5_tt: "Divisions will begin §Rdefecting§! to our enemy."
+ YBS_revolt_spirit: "Revolt against the Central Government"
  YBS_have_fun_now: "War on the Horizon"
 
  YBS_construction_concern: "HanseBau GmbH"
@@ -387,6 +398,8 @@
  YBS_facility_construction_tt: "If there are no other §YExperimental Facilities§! in §Y[$temp_facility_state_loc$.GetName]§!, we will gain a §Y$temp_facility_type_loc$§! in §Y[$temp_facility_province_loc$.GetCapitalVictoryPointName]§!.\n\n"
 
  YBS_colonial_garrison_unlocked: "Unlocks a unique Garrison Law in §YAfrican States§!:"
+
+ YBS_navy_returned: "Remnants of the §YIberian Fleet§! have joined us"
 
  YBS_red_cross_tech_effect_tt: "Enables §H$YBS_red_cross_tech$§!\n§H$field_hospital$\n     Batallion Modifier: All Infantry & Mot/Mech§!\n        Recovery Rate: §G+5.00%§!\n     Trickleback & War Support Protection: §G+10.00%§!\n     Suppression Bonus: §R-25%§!\n$MODIFIER_CAS_DAMAGE_REDUCTION$: §G+10.0%§!\n$MODIFIER_EXPERIENCE_LOSS_FACTOR$: §G-15.0%§!"
  YBS_infantry_tank_support_effect_tt: "Enables §H$YBS_infantry_tank_support$§!\n§H$light_tank_recon$\n     Batallion Modifier: All Infantry & Mot/Mech§!\n        Defense: §G+5.00%§!\n        Hard Attack: §G+10.00%§!\n     Breakthrough: §G+0.6§!\n     Hardness: §G+100%§!"
@@ -504,6 +517,7 @@
  YBS_XEX_transfers_ships_tt: "We will get §gfour§! §YImperium Class Cruisers§! from §Y[XEX.GetNameDef]§!."
 
  YBS_increasing_war_exhaustion: "Growing War Exhaustion..."
+ YBS_peace_out_with_YBS: "Sign White Peace with [YBS.GetName]"
  YBS_turn_the_tide: "Turn the Tide"
  YBS_turn_the_tide_desc: "Our enemy has been weakened from attacking our defences. It is time for a decisive attack!"
 
@@ -528,6 +542,7 @@
 
  YBS_get_helicopters: "Study Juan de la Cierva's Autogiro Blueprints"
 
+ YBS_invite_defending_democratic_country: "Help Protect [FROM.GetAdjective] Democracy"
  YBS_return_italian_lands_to_XRO: "Hand Italian Lands to the Pope"
  YBS_release_dutch_puppet: "Establish a Dutch Dominion"
 
@@ -755,7 +770,7 @@
 
  YBS_guardian_of_iberian_democracy: "Guardian of Iberian Democracy"
  YBS_guardian_of_iberian_democracy_desc: ""
- YBS_infiltrate_catalonia: "Infiltrate Aragón and Catalonia"
+ YBS_infiltrate_catalonia: "Strike Eastwards"
  YBS_infiltrate_catalonia_desc: ""
  YBS_reach_out_to_galicia: "Ally Galician Democrats"
  YBS_reach_out_to_galicia_desc: ""
@@ -768,28 +783,31 @@
 
  YBS_victory_in_the_civil_war: "Iberia at Peace"
  YBS_victory_in_the_civil_war_desc: ""
- YBS_victory_in_the_civil_war_regional: "Victory of the Federation"
+ YBS_victory_in_the_civil_war_regional: "Victory for Iberia"
  YBS_victory_in_the_civil_war_regional_desc: ""
  YBS_restore_spanish_north_africa: "Restore Spanish North Africa"
  YBS_restore_spanish_north_africa_desc: ""
  YBS_guidance_for_the_colonies: "Guide the Former Colonies"
  YBS_guidance_for_the_colonies_desc: ""
+ YBS_guidance_for_the_colonies_tt: "We will request every §Yformer Iberian Colony§! to join our §Yfaction§!. We will §Rnot gain wargoals§! on any country that refuses."
  YBS_naval_invasions_to_africa: "Naval Preparations"
  YBS_naval_invasions_to_africa_desc: ""
  YBS_european_involvement: "European Beacon of Democracy"
  YBS_european_involvement_desc: ""
- YBS_join_a_democratic_alliance: "Seek Democratic Allies"
+ YBS_join_a_democratic_alliance: "Ally the Venetian Republic"
  YBS_join_a_democratic_alliance_desc: ""
  YBS_claim_navarre: "Recognise the Free Navarre Association"
  YBS_claim_navarre_desc: ""
- YBS_lead_the_free_democracies: "Lead the Free Democracies"
- YBS_lead_the_free_democracies_desc: ""
+ YBS_protector_of_democracy: "Protector of European Democracy"
+ YBS_protector_of_democracy_desc: ""
+ YBS_protector_of_democracy_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to invite minor §CDemocratic§! Countries in §gdefensive wars§!."
  YBS_liberate_french_navarre: "Our Final Liberation"
  YBS_liberate_french_navarre_desc: ""
  YBS_thanks_for_playing_dem: "The Future of Iberia"
  YBS_thanks_for_playing_dem_desc: ""
  YBS_centralise_the_federation: "Centralise the Federation"
  YBS_centralise_the_federation_desc: ""
+ YBS_centralise_the_federation_tt: "§RThis is an Act of Tyranny!§!"
 
  YBS_rule_of_capital: "Corporate Takeover"
  YBS_rule_of_capital_desc: ""
@@ -842,6 +860,10 @@
  YBS_invite_esperanto_sympathisers_desc: ""
  YBS_protect_iberia: "Protect Iberia"
  YBS_protect_iberia_desc: ""
+ YBS_republican_support: "Republican Favour"
+ YBS_republican_support_desc: ""
+ YBS_internationale_scientific_association: "Host the Akademio de Esperanto"
+ YBS_internationale_scientific_association_desc: ""
  YBS_bring_freedom_to_northern_spain: "Establish a Foothold in Africa"
  YBS_bring_freedom_to_northern_spain_desc: ""
  YBS_support_in_the_rif: "Support from the Rif"
@@ -1013,6 +1035,14 @@
  YBS_armoured_car_buffs_desc: ""
  YBS_experimental_combat_doctrine: "Metalezko Dragoia Doctrine"
  YBS_experimental_combat_doctrine_desc: "$ITA_ferrea_mole_ferreo_cuore_desc$" # PEAK FOCUS DESCRIPTION 'They must also have Hearts of Iron'
+ YBS_establish_an_airforce: "Establish an Airforce"
+ YBS_establish_an_airforce_desc: ""
+ YBS_develop_fighters: "Secure Victory in the Skies"
+ YBS_develop_fighters_desc: ""
+ YBS_develop_cas: "Close Air Support Tactics"
+ YBS_develop_cas_desc: ""
+ YBS_naval_bombers: "Naval Bomber Development"
+ YBS_naval_bombers_desc: ""
  YBS_coastal_defence: "Coastal Defence"
  YBS_coastal_defence_desc: ""
  YBS_coastal_defence_tt: "Builds §gtwo§! §YCoastal Forts§! on every costal tile and §gfour§! §YCoastal Forts§! on every port."
@@ -1092,9 +1122,14 @@
  YBS_post_election_events.5.desc: "WIP Metal Gear reference goes here"
  YBS_post_election_events.5.a: "Our Independence is backed by Force of Arms!"
 
- YBS_post_election_events.6.t: "Return of the Navy"
+ YBS_post_election_events.6.t: "Remnants of the Iberian Fleet join us!"
  YBS_post_election_events.6.desc: "WIP"
  YBS_post_election_events.6.a: "We welcome the brave sailors!"
+ YBS_post_election_events.6.a.tt: "A fraction of the §YNavy§! that defected before the §gCollapse of Iberia§! will §Gjoin us§!."
+
+ YBS_post_election_events.7.t: "Anti-Government Militias expand Operations"
+ YBS_post_election_events.7.desc: "In the wake of our attempts to centralise the Federation into a Federal Republic, multiple groups across the nation have begun to work against us, organising militia groups and sabotaging the integration of regional administrations."
+ YBS_post_election_events.7.a: "Stop them!"
 
  YBS_diplo_events.1.t: "[FROM.GetNameDefCap] officially adopts State Catholicism"
  YBS_diplo_events.1.desc: "The [FROM.GetAdjective] government recently passed a new constitutional referendum in which Catholicism was officially adopted as the state religion of [FROM.GetNameDef]."
@@ -1161,7 +1196,7 @@
  YBS_diplo_events.15.desc: "The traitors that escaped to [FROM.capital.GetCapitalVictoryPointName] have refused our merciful offer. It's time for war."
  YBS_diplo_events.15.a: "They have chosen... Death."
 
- YBS_diplo_events.16.t: "Carlists offer Passage Home"
+ YBS_diplo_events.16.t: "[FROM.GetAdjectiveCap] Government offers Passage Home"
  YBS_diplo_events.16.desc: "WIP"
  YBS_diplo_events.16.a: "Finally home!"
  YBS_diplo_events.16.b: "No! We will stay!"
@@ -1235,6 +1270,7 @@
  YBS_anarchist_events.1.t: "Elections in the Regional Councils"
  YBS_anarchist_events.1.desc: "WIP Platformists versus Syndicalists"
  YBS_anarchist_events.1.a: "Let's who will prevail!"
+ YBS_anarchist_events.1.a.tt: "We will get §Ysuccessive events§! about the election in each region.\n \nOur §gpolitical situation§! will change depending on who got the §Ymajority§!."
 
  YBS_anarchist_events.2.t: "The Representative of Andalusia"
  YBS_anarchist_events.2.desc: "WIP"
@@ -1325,6 +1361,39 @@
  YBS_news_events.8.desc: "The 29th World Esperanto Congress was held this week in the capital city of the Basque Country, Bilbao. Many Esperantists from across the world attended the congress, which was held in the Txabarri Jauregia (Chavarri Palace) in the centre of the city. Among the attendees were the leader of the Popular Front's Syndicalists, the Anarcho-Syndicalist Rosa Laviña, the Chinese Anarchist Lu Jianbo and the Georgian Linguist Nikolai Marr."
  YBS_news_events.8.a: "Interesting."
  YBS_news_events.8.b: "Estas honoro!"
+
+ YBS_news_events.9.t: "Formation of the Hopeful Internationale"
+ YBS_news_events.9.desc: "WIP"
+ YBS_news_events.9.a: "What are they plotting?"
+ YBS_news_events.9.b: "The Internationale will save the Human Race!"
+
+ YBS_news_events.10.t: "Carlist Victory in Iberia"
+ YBS_news_events.10.desc: "WIP"
+ YBS_news_events.10.a: "Curse the Reactionary Crown!"
+ YBS_news_events.10.b: "At least the bloodshed is over."
+ YBS_news_events.10.c: "The Kingdom is dead, long live the Kingdom!"
+
+ YBS_news_events.11.t: "Federalist Victory in Iberia"
+ YBS_news_events.11.desc: "WIP"
+ YBS_news_events.11.a: "At least the bloodshed is over."
+ YBS_news_events.11.b: "Democracy prevails in Europe."
+ YBS_news_events.11.c: "Victory at last."
+
+ YBS_news_events.12.t: "Anarcho-Syndicalist Victory in Iberia"
+ YBS_news_events.12.desc: "WIP"
+ YBS_news_events.12.a: "Curse those Socialists!"
+ YBS_news_events.12.b: "The Age of Revolution will come."
+ YBS_news_events.12.c: "Our Revolution is not yet over."
+
+ YBS_news_events.13.t: "Esperantist Victory in Iberia"
+ YBS_news_events.13.desc: "WIP"
+ YBS_news_events.13.a: "They are a threat to every Nation State!"
+ YBS_news_events.13.b: "Internationalism is the way forward for the Human Race!"
+
+ YBS_news_events.14.t: "Hanseatic Victory in Iberia"
+ YBS_news_events.14.desc: "WIP"
+ YBS_news_events.14.a: "Aren't they just a puppet of Hamburg?"
+ YBS_news_events.14.b: "Our stocks will rise dramatically!"
 
 
 # OCCUPATION LAWS

@@ -28,7 +28,9 @@ YBS_is_iberian_country = {
     custom_trigger_tooltip = {
         tooltip = YBS_is_iberian_country_tt
         capital_scope = {
-            is_core_of = PREV
+            YBS_is_iberian_state = yes
+        }
+        any_core_state = {
             YBS_is_iberian_state = yes
         }
     }
@@ -85,7 +87,9 @@ YBS_is_spanish_african_country = {
     custom_trigger_tooltip = {
         tooltip = YBS_is_spanish_african_country_tt
         capital_scope = {
-            is_core_of = PREV
+            YBS_is_spanish_africa_state = yes
+        }
+        any_core_state = {
             YBS_is_spanish_africa_state = yes
         }
     }
@@ -138,6 +142,8 @@ YBS_is_italian_country = {
         tooltip = YBS_is_italian_country_tt
         capital_scope = {
             is_core_of = PREV
+        }
+        any_core_state = {
             YBS_is_italian_state = yes
         }
     }
@@ -274,14 +280,26 @@ YBS_nonaligned_iberian_nation = {
     }
 }
 
+YBS_is_iberian_cw_contender = {
+    OR = {
+        YBS_is_iberian_country = yes
+        YBS_is_spanish_african_country = yes
+    }
+}
+
 YBS_civil_war_over = {
     custom_trigger_tooltip = {
         tooltip = YBS_civil_war_over_tt
         OR = {
-            AND = {
-                any_country = {
-                    YBS_is_iberian_country = yes
-                    YBS_owns_all_iberian_states = yes
+            any_country = {
+                YBS_is_iberian_cw_contender = yes
+                YBS_owns_all_iberian_states = yes
+                all_other_country = {
+                    OR = {
+                        YBS_is_iberian_cw_contender = no
+                        is_subject_of = PREV
+                        exists = no
+                    }
                 }
             }
             has_global_flag = YBS_iberian_civil_war_ended

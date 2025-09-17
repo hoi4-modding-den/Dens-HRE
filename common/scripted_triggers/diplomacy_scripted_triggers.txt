@@ -45,12 +45,12 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -1139,12 +1139,12 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -1874,12 +1874,12 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -1950,12 +1950,12 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -2026,12 +2026,12 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -2060,12 +2060,12 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -2095,12 +2095,12 @@ DIPLOMACY_CREATE_FACTION_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no
@@ -2116,12 +2116,12 @@ DIPLOMACY_WAR_ENABLE_TRIGGER = {
 		limit = {
 			OR = {
 				AND = {
-					ROOT = { YBS_is_iberian_country = yes }
-					FROM = { YBS_is_iberian_country = no }
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
 				}
 				AND = {
-					ROOT = { YBS_is_iberian_country = no }
-					FROM = { YBS_is_iberian_country = yes }
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
 				}
 			}
 			YBS_civil_war_over = no

@@ -32,6 +32,13 @@ on_actions = {
                     30 = { set_country_flag = YBS_ai_path_honour }
                     70 = { set_country_flag = YBS_ai_path_trickster }
                 }
+
+                if = {
+                    limit = {
+                        YBS = { is_ai = yes }
+                    }
+                    add_ideas = YBS_ai_army_assistance # because AI is stupid
+                }
             }
         }
     }

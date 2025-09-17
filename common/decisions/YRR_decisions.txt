@@ -178,6 +178,8 @@ foreign_politics = {
 
         cost = 100
 
+        fire_only_once = yes
+
         ai_will_do = {
             base = 10
         }
@@ -193,7 +195,7 @@ foreign_politics = {
 
         complete_effect = {
             custom_effect_tooltip = YBS_lobby_for_intervention_tt
-			set_country_flag = YBS_civil_war_decisions_unlocked
+			set_country_flag = YBS_seeds_of_discord_unlocked
 
             custom_effect_tooltip = generic_skip_one_line_tt
 

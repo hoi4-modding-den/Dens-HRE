@@ -59,7 +59,10 @@ YBS_seeds_of_discord_cat = {
 	priority = 100
 
 	allowed = {
-		tag = YBS
+		OR = {
+			original_tag = YBS
+			original_tag = YRR
+		}
 	}
 
     visible = {
@@ -76,10 +79,7 @@ YBS_spanish_civil_war_cat = {
 	priority = 100
 
 	allowed = {
-		OR = {
-			tag = YBS
-			tag = YRR
-		}
+		tag = YBS
 	}
 
     visible = {
