@@ -109,4 +109,180 @@ characters = {
             }
         }
 	}
+
+	YGB_sandro_pertini = {
+		name = YGB_sandro_pertini
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ITA_sandro_pertini
+				small = GFX_portrait_ITA_sandro_pertini_small
+			}
+		}
+
+		country_leader = {
+			ideology = stalinism
+			traits = { staunch_anti_fascist }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = YGB_sandro_pertini
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+				has_completed_focus = YGB_grant_asylum_to_exiles
+				NOT = { 
+					has_country_leader = {
+						character = YGB_sandro_pertini
+						ruling_only = yes
+					}
+				}
+			}
+			
+			traits = {
+				marxist_philosopher
+			}
+			
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1
+					has_political_power > 250
+				}
+			}
+		}
+	}
+
+	YGB_markos_vafiadis={
+		instance={
+			allowed={ has_dlc = "Battle for the Bosporus" }
+			name=YGB_markos_vafiadis
+			portraits={
+				army={
+					large="GFX_portrait_GRE_markos_vafiadis"
+					small=GFX_portrait_GRE_markos_vafiadis_small
+				}
+				civilian={
+					large=GFX_portrait_GRE_markos_vafiadis
+				}
+			}
+			advisor={
+				slot = political_advisor
+				idea_token = YGB_markos_vafiadis
+				allowed = {
+					original_tag = YGB
+				}
+				available = {
+					has_completed_focus = YGB_grant_asylum_to_exiles
+				}
+				traits = {
+					YGB_guerilla_warfare_expert 
+				}
+			}
+		}
+	}
+
+	YGB_mateo_villar = {
+		name = YGB_mateo_villar
+		portraits = { 
+			army = { small = GFX_idea_FRA_generic_3 }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = army_chief_organizational_2
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+
+			cost = 100
+		}
+	}
+
+	YGB_arturo_de_la_llave = {
+		name = YGB_arturo_de_la_llave
+		portraits = { 
+			army = { small = GFX_idea_generic_army_europe_6 }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = army_chief_offensive_1
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				army_chief_offensive_1
+			}
+
+			cost = 50
+		}
+	}
+
+	YGB_jose_hevia = {
+		name = YGB_jose_hevia
+		portraits = { 
+			army = { small = GFX_idea_generic_army_europe_5 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_infantry_2
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				army_infantry_2
+			}
+
+			cost = 100
+		}
+	}
+
+	YGB_vicente_de_la_fuente = {
+		name = YGB_vicente_de_la_fuente
+		portraits = { 
+			army = { small = GFX_idea_ITA_generic_land_6 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_artillery_1
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				army_artillery_1
+			}
+
+			cost = 50
+		}
+	}
+
+	YGB_santiago_martinez_campos = {
+		name = YGB_santiago_martinez_campos
+		portraits = { 
+			army = { small = GFX_idea_ITA_generic_land_5 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_CombinedArms_1
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+				has_completed_focus = YGB_military_advisors
+			}
+			traits = {
+				army_CombinedArms_1
+			}
+
+			cost = 50
+		}
+	}
 }

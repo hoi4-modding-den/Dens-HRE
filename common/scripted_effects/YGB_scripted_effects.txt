@@ -42,6 +42,10 @@ YGB_recalculate_factory_costs = {
 		set_temp_variable = { y = YGB.factories_mils }
 		multiply_temp_variable = { y = YGB.factories_mil_cost }
 
+		set_variable = { YGB.factories_total = 0 }
+		add_to_variable = { YGB.factories_total = YGB.factories_civs }
+		add_to_variable = { YGB.factories_total = YGB.factories_mils }
+
 		set_variable = { YGB.factories_pp = YGB.factory_base }
 		subtract_from_variable = { YGB.factories_pp = x }
 		subtract_from_variable = { YGB.factories_pp = y }

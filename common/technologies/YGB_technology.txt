@@ -1,0 +1,17 @@
+technologies = {
+    mountain_training = {
+        research_cost = 1
+
+        allow = { always = no }
+
+        show_effect_as_desc = yes
+
+        category_all_infantry = {
+			mountain = {
+				movement = 0.1
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+    }
+}

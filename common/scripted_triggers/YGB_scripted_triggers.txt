@@ -18,3 +18,10 @@ YGB_factory_funds_changed = {
         check_variable = { YGB.factories_assign_counter < 1 }
     }
 }
+
+YGB_army_funds_changed = {
+    custom_trigger_tooltip = {
+        tooltip = YGB_army_funds_changed_tt
+        check_variable = { YGB.army_assign_counter < 1 }
+    }
+}

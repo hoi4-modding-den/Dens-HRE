@@ -5,5 +5,38 @@ YGB_foreign_investments_category = {
 		original_tag = YGB
 	}
 
+	visible = {
+		has_completed_focus = YGB_attract_foreign_investment
+		NOT = { has_completed_focus = YGB_reject_capitalist_ideas }
+	}
+
+	priority = 100
+}
+
+YGB_incite_revolution_category = {
+	icon = intervention_in_spain
+
+	allowed = {
+		original_tag = YGB
+	}
+
+	visible = {
+	# 	has_completed_focus = YGB_granada_revolution
+	}
+
+	priority = 100
+}
+
+YGB_army_investments_category = {
+	icon = generic_fortification
+
+	allowed = {
+		original_tag = YGB
+	}
+
+	visible = {
+
+	}
+
 	priority = 100
 }

@@ -11,6 +11,14 @@ YGB_foreign_investments_category = {
             modifier = {
                 add = 10
                 has_political_power > 499
+                political_power_daily > 0.3
+            }
+            modifier = {
+                add = 100
+                focus_progress = {
+                    focus = YGB_reject_capitalist_ideas
+                    progress > 0
+                }
             }
 		}
 
@@ -18,15 +26,10 @@ YGB_foreign_investments_category = {
             original_tag = YGB
         }
 
-		visible = {
-		}
-
         available = {
             YGB_factory_funds_changed = yes
         }
 
-		cost = 0
-        
         remove_effect = {
             YGB_add_civ = yes
             set_variable = { YGB.factories_assign_counter = 2 }
@@ -45,7 +48,7 @@ YGB_foreign_investments_category = {
                 OR = {
                     has_political_power < 0
                     AND = {
-                        political_power_daily < 0.4
+                        political_power_daily < 0.1
                         has_political_power < 500
                     }
                 }
@@ -57,15 +60,10 @@ YGB_foreign_investments_category = {
             original_tag = YGB
         }
 
-		visible = {
-		}
-
         available = {
             YGB_factory_funds_changed = yes
             YGB_can_remove_civ = yes
         }
-
-		cost = 0
 
         remove_effect = {
             YGB_remove_civ = yes
@@ -89,6 +87,14 @@ YGB_foreign_investments_category = {
             modifier = {
                 add = 10
                 has_political_power > 499
+                political_power_daily > 0.2
+            }
+            modifier = {
+                add = 100
+                focus_progress = {
+                    focus = YGB_reject_capitalist_ideas
+                    progress > 0
+                }
             }
 		}
 
@@ -96,14 +102,10 @@ YGB_foreign_investments_category = {
             original_tag = YGB
         }
 
-		visible = {
-		}
 
         available = {
             YGB_factory_funds_changed = yes
         }
-
-		cost = 0
 
         remove_effect = {
             YGB_add_mil = yes
@@ -123,7 +125,7 @@ YGB_foreign_investments_category = {
                 OR = {
                     has_political_power < 0
                     AND = {
-                        political_power_daily < 0.2
+                        political_power_daily < 0
                         has_political_power < 500
                     }
                 }
@@ -135,20 +137,528 @@ YGB_foreign_investments_category = {
             original_tag = YGB
         }
 
-		visible = {
-		}
-
         available = {
             YGB_factory_funds_changed = yes
             YGB_can_remove_mil = yes
         }
 
-		cost = 0
-        
-
         remove_effect = {
             YGB_remove_mil = yes
             set_variable = { YGB.factories_assign_counter = 2 }
+        }
+	}
+}
+
+YGB_incite_revolution_category = {
+    YGB_boost_communism = {
+
+		priority = -1
+
+		icon = eng_blackshirt_march
+
+		ai_will_do = {
+			base = 100
+		}
+
+		target_root_trigger = {
+			has_completed_focus = YGB_granada_revolution
+		}
+        
+        targets = { YUS }
+
+		visible = { 
+			has_completed_focus = YGB_granada_revolution
+		}
+
+		cost = 60
+
+        days_re_enable = 100
+
+        complete_effect = {
+            FROM = {
+                add_popularity = {
+                    ideology = communism
+                    popularity = 0.05
+                }
+                add_timed_idea = {
+                    idea = YGB_left_wing_tensions
+                    days = 100
+                }
+            }
+        }
+	}
+
+    YGB_start_revolution = {
+
+		priority = -2
+
+		icon = generic_scorched_earth
+
+		ai_will_do = {
+			base = 100
+		}
+
+		target_root_trigger = {
+			has_completed_focus = YGB_granada_revolution
+		}
+        
+        targets = { YUS }
+
+        target_trigger = {
+            FROM = {
+                check_variable = { num_owned_states > 1 }
+            }
+        }
+
+        available = {
+            FROM = {
+                communism > 0.4
+            }
+        }
+
+		visible = { 
+			has_completed_focus = YGB_granada_revolution
+		}
+
+        fire_only_once = yes
+
+        complete_effect = {
+            FROM = {
+                start_civil_war = {
+                    ideology = communism
+                    size = party_popularity@communism
+                    YGB = {
+                        set_autonomy = {
+                            target = PREV
+                            autonomous_state = autonomy_puppet
+                            end_wars = no
+                            end_civil_wars = no
+                        }
+                    }
+                }
+            }
+            YGB = {
+                declare_war_on = {
+                    target = FROM
+                    type = puppet_wargoal_focus
+                }
+            }
+        }
+	}
+
+    YGB_start_revolution_2 = {
+		priority = -2
+
+		icon = generic_scorched_earth
+
+		ai_will_do = {
+			base = 100
+		}
+
+		target_root_trigger = {
+			has_completed_focus = YGB_granada_revolution
+		}
+        
+        targets = { YUS }
+
+        target_trigger = {
+            FROM = {
+                check_variable = { num_owned_states < 2 }
+            }
+        }
+
+        available = {
+            FROM = {
+                communism > 0.8
+            }
+        }
+
+		visible = { 
+			has_completed_focus = YGB_granada_revolution
+		}
+
+        fire_only_once = yes
+
+        complete_effect = {
+            YGB = {
+                set_autonomy = {
+                    target = FROM
+                    autonomous_state = autonomy_puppet
+                    end_wars = no
+                    end_civil_wars = no
+                }
+            }
+            FROM = {
+                set_equipment_fraction = 0.7
+            }
+        }
+	}
+}
+
+YGB_army_investments_category = {
+    YGB_add_attack = {
+		priority = -1
+		icon = generic_industry
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 4
+                check_variable = { YGB.army_attack < 0 }
+                has_political_power > 300
+            }
+            modifier = {
+                add = 3
+                check_variable = { YGB.army_attack > 0.09 }
+                check_variable = { YGB.army_attack < 0.2 }
+                has_political_power > 500
+                political_power_daily > 0.1
+            }
+            modifier = {
+                factor = 0
+                num_of_military_factories < 2
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_squad_equipment
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_low_tt
+                check_variable = { YGB.army_pp > -2.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy
+                    add_idea = YGB_army_dummy_add_attack
+                }
+            }
+            add_to_variable = { YGB.army_attack = 0.05 }
+            add_to_variable = { YGB.army_pp = -0.09 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_remove_attack = {
+		priority = -2
+		icon = generic_industry
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 2
+                check_variable = { YGB.army_attack > -0.3 }
+                has_political_power < 300
+            }
+            modifier = {
+                factor = 0
+                has_war = yes
+                has_political_power > -200
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_squad_equipment
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_high_tt
+                check_variable = { YGB.army_pp < 3.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy_add_attack
+                    add_idea = YGB_army_dummy
+                }
+            }
+            add_to_variable = { YGB.army_attack = -0.05 }
+            add_to_variable = { YGB.army_pp = 0.09 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_add_defence = {
+		priority = -3
+		icon = generic_protection
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 5
+                check_variable = { YGB.army_defence < 0.05 }
+                has_political_power > 300
+                political_power_daily > 0.1
+            }
+            modifier = {
+                factor = 0
+                num_of_military_factories < 2
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_fortifications
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_low_tt
+                check_variable = { YGB.army_pp > -2.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy
+                    add_idea = YGB_army_dummy_add_defence
+                }
+            }
+            add_to_variable = { YGB.army_defence = 0.05 }
+            add_to_variable = { YGB.army_pp = -0.06 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_remove_defence = {
+		priority = -4
+		icon = generic_protection
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 3
+                check_variable = { YGB.army_defence > -0.4 }
+                has_political_power < 300
+            }
+            modifier = {
+                factor = 0
+                has_war = yes
+                has_political_power > -200
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_fortifications
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_high_tt
+                check_variable = { YGB.army_pp < 3.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy_add_defence
+                    add_idea = YGB_army_dummy
+                }
+            }
+            add_to_variable = { YGB.army_defence = -0.05 }
+            add_to_variable = { YGB.army_pp = 0.06 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_add_recovery = {
+		priority = -5
+		icon = generic_political_discourse
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 3
+                check_variable = { YGB.army_recovery_rate < 0 }
+                has_political_power > 400
+                political_power_daily > 0.1
+            }
+            modifier = {
+                factor = 0
+                num_of_military_factories < 1
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_officers
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_low_tt
+                check_variable = { YGB.army_pp > -2.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy
+                    add_idea = YGB_army_dummy_add_recovery
+                }
+            }
+            add_to_variable = { YGB.army_recovery_rate = 0.08 }
+            add_to_variable = { YGB.army_pp = -0.12 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_remove_recovery = {
+		priority = -6
+		icon = generic_political_discourse
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 2
+                check_variable = { YGB.army_recovery_rate > -0.1 }
+                has_political_power < 300
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_officers
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_high_tt
+                check_variable = { YGB.army_pp < 3.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy_add_recovery
+                    add_idea = YGB_army_dummy
+                }
+            }
+            add_to_variable = { YGB.army_recovery_rate = -0.08 }
+            add_to_variable = { YGB.army_pp = 0.12 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_add_manpower = {
+		priority = -7
+		icon = generic_military
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 4
+                check_variable = { YGB.army_weekly_manpower < 100 }
+                has_political_power > 450
+                political_power_daily > 0.1
+            }
+            modifier = {
+                factor = 3
+                has_manpower < 1
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+        
+        visible = {
+            has_completed_focus = YGB_recruitment
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_low_tt
+                check_variable = { YGB.army_pp > -2.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy
+                    add_idea = YGB_army_dummy_add_manpower
+                }
+            }
+            add_to_variable = { YGB.army_weekly_manpower = 100 }
+            add_to_variable = { YGB.army_pp = -0.25 }
+            set_variable = { YGB.army_assign_counter = 2 }
+        }
+	}
+    YGB_remove_manpower = {
+		priority = -8
+		icon = generic_military
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 2 
+                check_variable = { YGB.army_weekly_manpower > 0 }
+                has_manpower > 0
+                has_political_power < 200
+            }
+		}
+
+        allowed = {
+            original_tag = YGB
+        }
+
+        visible = {
+            has_completed_focus = YGB_recruitment
+        }
+
+        available = {
+            YGB_army_funds_changed = yes
+            custom_trigger_tooltip = {
+                tooltip = YGB_army_pp_too_high_tt
+                check_variable = { YGB.army_pp < 3.001 }
+            }
+        }
+        
+        remove_effect = {
+            effect_tooltip = {
+                swap_ideas = {
+                    remove_idea = YGB_army_dummy_add_manpower
+                    add_idea = YGB_army_dummy
+                }
+            }
+            add_to_variable = { YGB.army_weekly_manpower = -100 }
+            add_to_variable = { YGB.army_pp = 0.25 }
+            set_variable = { YGB.army_assign_counter = 2 }
         }
 	}
 }

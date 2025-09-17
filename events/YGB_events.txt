@@ -379,3 +379,69 @@ country_event = {
         }
     }
 }
+
+country_event = {
+    id = YGB.6
+	title = YGB.6.t
+	desc = YGB.6.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+    option = {
+        name = YGB.6.a
+        FROM = {
+            country_event = {
+                id = YGB.7
+                days = 1
+            }
+        }
+    }
+
+    option = {
+        name = YGB.6.b
+        FROM = {
+            country_event = {
+                id = YGB.8
+                days = 1
+            }
+        }
+    }
+}
+
+country_event = {
+    id = YGB.7
+	title = YGB.7.t
+	desc = YGB.7.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+    option = {
+        name = YGB.7.a
+        annex_country = {
+            target = FROM
+            transfer_troops = yes
+        }
+    }
+}
+
+country_event = {
+    id = YGB.8
+	title = YGB.8.t
+	desc = YGB.8.d
+
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+    option = {
+        name = YGB.8.a
+        create_wargoal = {
+            target = FROM
+            type = annex_everything
+        }
+    }
+}

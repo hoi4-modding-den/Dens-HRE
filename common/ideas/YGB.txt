@@ -1,41 +1,94 @@
 ideas = {
     country = {
         YGB_army_dummy = {
-	        picture = GFX_idea_SWE_varnplikt
             name = YGB_army
         }
         YGB_army_dummy_enctrenchment = {
-	        picture = GFX_idea_SWE_varnplikt
             name = YGB_army
             modifier = {
                 max_dig_in = 1.5
             }
         }
         YGB_army_dummy_special_forces_min = {
-	        picture = GFX_idea_SWE_varnplikt
             name = YGB_army
             modifier = {
                 special_forces_min = 24
                 army_attack_factor = 0.05
             }
         }
+        YGB_army_dummy_special_forces_min_2 = {
+            name = YGB_army
+            modifier = {
+                special_forces_min = 6
+                political_power_gain = -0.04
+            }
+        }
         YGB_army_dummy_org_loss = {
-	        picture = GFX_idea_SWE_varnplikt
             name = YGB_army
             modifier = {
                 org_loss_at_low_org_factor = -0.1
             }
         }
+        
+        YGB_army_dummy_speed_1 = {
+            name = YGB_army
+            modifier = {
+                army_speed_factor = 0.1
+                political_power_gain = -0.03
+            }
+        }
+
+        YGB_army_dummy_add_attack = {
+            name = YGB_army
+            modifier = {
+                army_attack_factor = 0.05
+                political_power_gain = -0.09
+            }
+        }
+
+        YGB_army_dummy_add_defence = {
+            name = YGB_army
+            modifier = {
+                army_defence_factor = 0.05
+                political_power_gain = -0.06
+            }
+        }
+
+        YGB_army_dummy_add_recovery = {
+            name = YGB_army
+            modifier = {
+                army_morale_factor = 0.08
+                political_power_gain = -0.12
+            }
+        }
+        
+        YGB_army_dummy_add_manpower = {
+            name = YGB_army
+            modifier = {
+                weekly_manpower = 100
+                political_power_gain = -0.25
+            }
+        }
+        YGB_army_dummy_pp = {
+            name = YGB_army
+            modifier = {
+                political_power_gain = 0.1
+            }
+        }
 
         YGB_investment_dummy = {
-            picture = GFX_idea_SWE_varnplikt
             name = YGB_factories
         }
         YGB_investment_dummy_2 = {
-            picture = GFX_idea_SWE_varnplikt
             name = YGB_factories
             modifier = {
                 political_power_gain = 0.1
+            }
+        }
+        YGB_investment_dummy_3 = {
+            name = YGB_factories
+            modifier = {
+                political_power_gain = -0.05
             }
         }
 
@@ -76,12 +129,13 @@ ideas = {
             name = YGB_british
             picture = stiff_upper_lip
             modifier = {
-                political_power_gain = -0.45
+                political_power_gain = -0.5
                 stability_factor = 0.05
                 war_support_factor = 0.05
                 weekly_manpower = 600
                 army_core_attack_factor = 0.1
                 army_core_defence_factor = 0.1
+                democratic_drift = 0.1
             }
         }
 
@@ -192,15 +246,95 @@ ideas = {
             }
         }
 
+        YGB_volunteers = {
+            picture = idea_springfield_armory
+            modifier = {
+                send_volunteer_size = 3
+                send_volunteers_tension = -0.2
+            }
+        }
+
         YGB_revolution = {
             picture = AUS_austromarxism
             modifier = {
                 communism_drift = 0.2
-                production_factory_efficiency_gain_factor = 0.1
+                production_factory_efficiency_gain_factor = 0.06
                 war_support_factor = 0.12
-                conscription = 0.015
+                conscription = 0.01
             }
         }
 
+        YGB_revolution_2 = {
+            picture = HUN_resurgent_communist_party_idea
+            modifier = {
+                communism_drift = 0.2
+                production_factory_efficiency_gain_factor = 0.12
+                war_support_factor = 0.12
+                conscription = 0.03
+            }
+        }
+
+        YGB_left_wing_tensions = {
+            picture = FRA_scw_intervention_republicans_focus
+            modifier = {
+                communism_drift = 0.25
+                stability_factor = -0.1
+                political_advisor_cost_factor = 0.1
+            }
+        }
+
+        YGB_spain_anti_monarchist = {
+            picture = ARG_anti_soviet
+            modifier = {
+                army_attack_factor = 0.05
+                army_speed_factor = 0.05
+            }
+            targeted_modifier = {
+                tag = YAO
+                attack_bonus_against = 0.15
+                defense_bonus_against = -0.1
+            }
+            targeted_modifier = {
+                tag = YKP
+                attack_bonus_against = 0.15
+                defense_bonus_against = -0.1
+            }
+        }
+
+        YGB_mountain_strongholds_idea = {
+            picture = FRA_scw_intervention_republicans_focus
+            modifier = {
+                resistance_target_on_our_occupied_states = 0.1
+                army_intel_to_others = -6
+                dig_in_speed_factor = 0.35
+                pocket_penalty = -0.1
+            }
+        }
+
+    }
+
+    industrial_concern = {
+        YGB_gibraltar_construction_company = { 
+			name = YGB_gibraltar_construction_company
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+				has_completed_focus = YGB_construction
+			}
+			visible = {
+				always = yes
+			}
+			cost = 25
+			modifier = {
+                production_speed_buildings_factor = 0.1
+                consumer_goods_factor = -0.1
+			}
+
+			research_bonus = {
+				industry = 0.15
+			}
+		}
     }
 }

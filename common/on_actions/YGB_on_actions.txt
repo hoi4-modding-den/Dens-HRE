@@ -49,6 +49,13 @@ on_actions = {
                 subtract_from_variable = { factories_assign_counter = 1 }
             }
 
+            if = {
+                limit = {
+                    check_variable = { YGB.army_assign_counter > 0 }
+                }
+                subtract_from_variable = { army_assign_counter = 1 }
+            }
+
         }
     }
 }
