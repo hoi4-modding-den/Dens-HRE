@@ -1,4 +1,32 @@
 on_actions = {
+    on_startup = {
+        effect = {
+            YKP = {
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YKP_ai_behaviour_path
+                            option = YKP_MARIA_IV_OPTION
+                        }
+                    }
+
+                    set_country_flag = YKP_AI_Maria_IV_path
+                }
+
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = YKP_ai_behaviour_path
+                            option = YKP_MILITARY_OPTION
+                        }
+                    }
+
+                    set_country_flag = YKP_AI_Military_path
+                }
+            }
+        }
+    }
+
 	on_weekly_YKP = {
         effect = {
             YKP_update_conquer_targets = yes

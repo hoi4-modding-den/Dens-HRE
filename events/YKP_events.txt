@@ -68,7 +68,14 @@ country_event = {
         name = YKP.2.a
 		
 		ai_chance = {
-			base = 100
+			base = 0
+
+			modifier = {
+				factor = 100
+				NOT = {
+					has_country_flag = YKP_AI_Military_path
+				}
+			}
 		}
 
 		add_country_leader_role = {
@@ -89,12 +96,23 @@ country_event = {
 		
 		ai_chance = {
 			base = 0
+
+			modifier = {
+				factor = 60
+				NOT = {
+					has_country_flag = YKP_AI_Maria_IV_path
+				}
+			}
 		}
 
 		custom_effect_tooltip = YKP_portuguese_people_will_dislike_this_tt
 
 		set_country_flag = YKP_military_maintained_power
 		add_political_power = -100
+
+		hidden_effect = {
+			news_event = YKP_news.3
+		}
 	}
 }
 
@@ -163,6 +181,8 @@ country_event = {
 				traits = {  }
 			}
 		}
+
+		news_event = YKP_news.2
 	}
 
 	#option = {
@@ -511,6 +531,7 @@ country_event = {
 
 ### NEWS EVENTS ###
 
+# Manuel II dies
 news_event = {
 	id = YKP_news.1
 	title = YKP_news.1.t
@@ -540,6 +561,116 @@ news_event = {
         name = YKP_news.1.c
         trigger = {
             original_tag = YKP
+        }
+    }
+}
+
+# Maria IV coronated
+news_event = {
+	id = YKP_news.2
+	title = YKP_news.2.t
+	desc = YKP_news.2.desc
+    picture = GFX_news_event_YKP_maria_coronation
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = YKP_news.2.a
+        trigger = {
+            NOT = { original_tag = YKP }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = {
+        name = YKP_news.2.b
+        trigger = {
+            NOT = { original_tag = YKP }
+            has_government = communism
+        }
+    }
+
+    option = {
+        name = YKP_news.2.c
+        trigger = {
+            original_tag = YKP
+        }
+    }
+}
+
+# Carmona maintains control
+news_event = {
+	id = YKP_news.3
+	title = YKP_news.3.t
+	desc = YKP_news.3.desc
+    picture = GFX_news_event_YKP_oscar_carmona
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = YKP_news.3.a
+        trigger = {
+            NOT = { original_tag = YKP }
+        }
+    }
+
+    option = {
+        name = YKP_news.3.b
+        trigger = {
+            original_tag = YKP
+        }
+    }
+}
+
+# Portuguese civil war
+news_event = {
+	id = YKP_news.4
+	title = YKP_news.4.t
+	desc = YKP_news.4.desc
+    picture = GFX_news_event_YKP_portuguese_civil_war
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = YKP_news.4.a
+        trigger = {
+            NOT = {
+				OR = {
+					original_tag = YKP
+					original_tag = YPR
+				}
+			}
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = {
+        name = YKP_news.4.b
+        trigger = {
+            NOT = {
+				OR = {
+					original_tag = YKP
+					original_tag = YPR
+				}
+			}
+            has_government = communism
+        }
+    }
+
+    option = {
+        name = YKP_news.4.c
+        trigger = {
+            original_tag = YKP
+        }
+    }
+
+	option = {
+        name = YKP_news.4.d
+        trigger = {
+            original_tag = YPR
         }
     }
 }

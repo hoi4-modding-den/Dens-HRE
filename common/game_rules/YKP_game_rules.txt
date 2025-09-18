@@ -1,0 +1,28 @@
+ ##  ###     ###  ### #  #  ##  #   # ###  ##  ###  
+#  #  #      #  # #   #  # #  # #   #  #  #  # #  # 
+####  #      ###  ##  #### ####  # #   #  #  # ###  
+#  #  #      #  # #   #  # #  #  # #   #  #  # #  # 
+#  # ###     ###  ### #  # #  #   #   ###  ##  #  # 
+
+YKP_ai_behaviour_path = {
+	name = "YKP_AI_BEHAVIOUR_PATH"
+	group = "00_RULE_GROUP_YKP_AI_BEHAVIOR"
+	option = {
+		name = DEFAULT
+		text = "YKP_RULE_OPTION_DEFAULT"
+		desc = "YKP_RULE_OPTION_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YKP_MARIA_IV_OPTION
+		text = "YKP_RULE_OPTION_MARIA_IV"
+		desc = "YKP_RULE_OPTION_MARIA_IV_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YKP_MILITARY_OPTION
+		text = "YKP_RULE_OPTION_MILITARY"
+		desc = "YKP_RULE_OPTION_MILITARY_DESC"
+		allow_achievements = yes
+	}
+}
