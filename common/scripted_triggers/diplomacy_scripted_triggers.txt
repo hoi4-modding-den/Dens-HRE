@@ -122,6 +122,12 @@ DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
 DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 	if = {
 		limit = {
+			FROM = { original_tag = ZZZ }
+		}
+		NOT = { FROM = { original_tag = ZZZ } }
+	}
+	if = {
+		limit = {
 			has_game_rule = {
 				rule = allow_release_nations
 				option = FREE
@@ -2112,6 +2118,12 @@ DIPLOMACY_CREATE_FACTION_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_WAR_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			FROM = { original_tag = ZZZ }
+		}
+		NOT = { FROM = { original_tag = ZZZ } }
+	}
 	if = {
 		limit = {
 			OR = {

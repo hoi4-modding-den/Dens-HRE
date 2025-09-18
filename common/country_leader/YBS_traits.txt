@@ -89,8 +89,9 @@ leader_traits = {
 	YBS_spirit_of_anarchism = {
         random = no
 		
-		compliance_gain = 0.15
-		non_core_manpower = 0.25
+		compliance_gain = 0.25
+		resistance_decay = 0.2
+		non_core_manpower = 0.75
 		stability_factor = -0.1
     }
 

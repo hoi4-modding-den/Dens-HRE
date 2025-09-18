@@ -1722,6 +1722,23 @@ country_event = { # Fake NAP offered / refused
 
 }
 
+country_event = { # Defections to the Basque (from Focus)
+	id = YBS_diplo_events.28
+	title = YBS_diplo_events.28.t
+	desc = YBS_diplo_events.28.desc
+    picture = GFX_report_event_spr_civil_war_equipment
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.28.a
+        add_war_support = -0.02
+        add_manpower = -10000
+        FROM = { add_manpower = 10000 }
+    }
+
+}
+
 country_event = { # Flag for the RDE
 	id = YBS_esperanto_events.1
 	title = YBS_esperanto_events.1.t
@@ -2168,6 +2185,21 @@ country_event = { # Regional Elections over
         custom_effect_tooltip = generic_skip_one_line_tt
 
         set_faction_name = YBS_world_anarchist_federation
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_core_state = {
+            remove_core_of = ROOT
+            hidden_effect = {
+                add_core_of = ZZZ
+            }
+            if = {
+                limit = {
+                    is_controlled_by = ROOT
+                }
+                set_compliance = 100
+            }
+        }
 
         set_country_flag = YBS_final_election_event_triggered
     }

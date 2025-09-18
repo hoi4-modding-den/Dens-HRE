@@ -1,0 +1,18 @@
+unique_id = XHH_achievements
+
+XHH_meine_perle_achievement = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = XHH
+    }
+
+    happened = {
+        custom_trigger_tooltip = {
+            tooltip = XHH_de_united_tt
+            has_cosmetic_tag = XHH_germany
+        }
+        capital_scope = { 1044 }
+    }
+}

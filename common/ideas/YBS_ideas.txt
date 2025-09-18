@@ -1235,6 +1235,25 @@ ideas = {
 			}
 		}
 
+		YBS_paying_for_mercs = {
+
+			picture = ger_mefo_bills_payment
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+
 		YBS_investment_returns = {
 
 			picture = RAJ_external_investments
@@ -1659,7 +1678,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_core_attack_factor = 0.05
+				army_attack_factor = 0.02
+				army_org_regain = 0.05
 				resistance_damage_to_garrison_on_our_occupied_states = 0.25
 				resistance_growth_on_our_occupied_states = 0.25
 			}

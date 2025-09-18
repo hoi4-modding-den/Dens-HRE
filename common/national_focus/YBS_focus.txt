@@ -1861,7 +1861,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			# bonus against france
+			FRA = {
+				limit = {
+					# is france (?)
+				}
+				add_opinion_modifier = {
+					modifier = threatened_us_opinion_modifier
+					target = ROOT
+				}
+				add_opinion_modifier = {
+					modifier = minor_sanctions
+					target = ROOT
+				}
+			}
 		}
 	}
 
@@ -1923,9 +1935,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			# bonus against the Dutch
-
-			# bonus against the Italians
+			every_other_country = {
+				limit = {
+					has_country_flag = HRE_member_state
+				}
+				add_opinion_modifier = {
+					modifier = threatened_us_opinion_modifier
+					target = ROOT
+				}
+				add_opinion_modifier = {
+					modifier = minor_sanctions
+					target = ROOT
+				}
+			}
 		}
 	}
 
@@ -3564,7 +3586,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
-
+			add_manpower = 50000
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3963,7 +3985,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_political_power = 100
 
@@ -4854,6 +4876,22 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_war_support = 0.1
+			add_popularity = { ideology = democratic popularity = 0.1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = YRS
+						AND = {
+							original_tag = YAO
+							has_cosmetic_tag = YAOrepublic
+						}
+					}
+				}
+				country_event = YBS_diplo_events.28
+			}
 		}
 	}
 
@@ -6045,6 +6083,81 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YBS_mercenaries
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = YBS_consolidate_our_capital }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = YBS_consolidate_our_capital
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			division_template = {
+				name = "Mercenary Division"
+				template_counter = 65
+				regiments = { 
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					light_armor = { x = 2 y = 0 }
+					light_armor = { x = 2 y = 1 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					artillery = { x = 0 y = 2 }
+				}
+			}
+			capital_scope = {
+				create_unit = { 
+					division = "name = \"Corps de la République\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"Ordensbrigade Hyperborea\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"Smaragd-Fraktion\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"Brigada Prijateljstva\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"Yorkshire Bandits\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+					owner = ROOT
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = YBS_paying_for_mercs
+				days = 100
+			}
+		}
+	}
+
+	focus = {
 		id = YBS_secure_galicia
 		icon = GFX_focus_YBS_attack_galicia
 		prerequisite = { focus = YBS_rule_of_capital }
@@ -6872,8 +6985,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
+			add_war_support = 0.05
+			add_manpower = 10000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_corps_commander_role = {
 				character = YBS_anarchist_general_2
 				traits = { trait_SPR_anti_stalinist_loyalties infantry_officer brave }
@@ -6904,7 +7022,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_spread_esperanto
-		icon = GFX_goal_tfv_generic_tech_sharing
+		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = YBS_revolutionary_call_for_freedom }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -7395,13 +7513,28 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_popularity = { ideology = democratic popularity = 0.1 }
-			add_manpower  = 200000
+			add_manpower  = 100000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = YRS
+						AND = {
+							original_tag = YAO
+							has_cosmetic_tag = YAOrepublic
+						}
+					}
+				}
+				country_event = YBS_diplo_events.28
+			}
 		}
 	}
 
 	focus = {
 		id = YBS_internationale_scientific_association
-		icon = GFX_goal_generic_scientific_exchange
+		icon = GFX_focus_research
 		prerequisite = { focus = YBS_protect_iberia }
 		#mutually_exclusive = { focus = }
 		x = 1
@@ -7420,7 +7553,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -7949,6 +8082,21 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = YBS_republican_troops_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = YRS
+						AND = {
+							original_tag = YAO
+							has_cosmetic_tag = YAOrepublic
+						}
+					}
+				}
+				country_event = YBS_diplo_events.28
+			}
 		}
 	}
 
@@ -8608,7 +8756,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_ideas = YBS_insurrectionary_army
 
@@ -8909,6 +9057,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_war_support = 0.25
+			add_stability = 0.25
 		}
 	}
 
@@ -10126,7 +10275,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_ARMY_XP }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			every_army_leader = {
 				add_planning = 1
@@ -11529,6 +11678,7 @@ focus_tree = {
 					division_template = {
 						name = "Maritime Enforcement Brigade"
 						division_names_group = YBS_MAR_01
+						template_counter = 34
 						priority = 2
 						regiments = {
 							marine = { x = 0 y = 0 }
@@ -11549,6 +11699,7 @@ focus_tree = {
 					division_template = {
 						name = "Maritime Enforcement Brigade"
 						division_names_group = YBS_MAR_01
+						template_counter = 34
 						priority = 2
 						regiments = {
 							marine = { x = 0 y = 0 }

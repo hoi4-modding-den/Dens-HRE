@@ -1,0 +1,65 @@
+unique_id = YBS_achievements
+
+YBS_return_home_achievement = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = YBS
+    }
+
+    happened = {
+        has_completed_focus = YBS_rule_of_capital
+        has_government = neutrality
+        controls_state = 1044
+    }
+}
+
+YBS_civil_war_victory_achievement = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = YBS
+    }
+
+    happened = {
+        YBS_civil_war_over = yes
+        OR = {
+            YBS_owns_all_iberian_states = yes
+            YBS_iberian_federation_complete = yes
+        }
+    }
+}
+
+YBS_mother_anarchy_achievement = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = YBS
+    }
+
+    happened = {
+        has_completed_focus = YBS_victory_in_iberia
+        has_country_leader = { character = YBS_literal_anarchy ruling_only = yes }
+    }
+}
+
+YBS_do_you_speak_english_achievement = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = YBS
+    }
+
+    happened = {
+        has_completed_focus = YBS_we_will_always_have_hope
+        has_government = democratic
+        any_core_state = {
+            YBS_is_iberian_state = no
+        }
+    }
+}
+

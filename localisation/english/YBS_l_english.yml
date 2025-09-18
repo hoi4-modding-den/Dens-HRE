@@ -20,7 +20,7 @@
  YBS_iberian_defence_council_communism_DEF: "the Contumacy of the Iberian Peninsula"
  YBS_iberian_defence_council_communism_ADJ: "Iberia"
  YBS_free_territory_communism: "Free Lands of the Free"
- YBS_free_territory_communism_DEF: "the Free Lands of the Free People under no Authority of Man"
+ YBS_free_territory_communism_DEF: "the Free Lands of the Free People under no Authority but Mother Anarchy"
  YBS_free_territory_communism_ADJ: "Free"
 
  YBS_federal_state_democratic: "Basque Federal State"
@@ -85,8 +85,8 @@
  YBS_hanse_neutrality: "Freihandelszone Baskenland"
  YBS_hanse_neutrality_DEF: "the Free Trade Zone of the Basque Country"
  YBS_hanse_neutrality_ADJ: "Basque"
- YBS_hanse_iberia_neutrality: "Hanseatische Kompanie Iberien"
- YBS_hanse_iberia_neutrality_DEF: "the Regime of the Hanseatic Company in Iberia"
+ YBS_hanse_iberia_neutrality: "Hanseatisch-Iberien GmbH"
+ YBS_hanse_iberia_neutrality_DEF: "the Hanseatic Iberia Company with Limited Liability"
  YBS_hanse_iberia_neutrality_ADJ: "Basque"
 
  YBS_esperanto_republic_1: "Respubliko de Espero" # Actual Esperanto Flag
@@ -107,6 +107,10 @@
  YRI_autonomy_YBS_subsidiary_DEF: "the Hanseatic North Africa Company with Limited Liability"
  YRI_autonomy_YBS_subsidiary_ADJ: "Hanseatic North African"
 
+ YRI_YBS_democratic_subject: "Rif Free State"
+ YRI_YBS_democratic_subject_DEF: "the Free State of the Rif"
+ YRI_YBS_democratic_subject_ADJ: "Rif"
+
 
 # FACTIONS
 
@@ -117,7 +121,7 @@
  YBS_iberian_federation: "Iberian Federation"
  YBS_iberia_democratic_faction: "Bilbao Accords"
  YBS_hopeful_internationale: "Esperema Internacio"
- YBS_socialist_pact: "Socialist Pact"
+ YBS_socialist_pact: "People's Liberation Pact"
  YBS_world_anarchist_federation: "World Anarchist Federation"
 
 
@@ -326,6 +330,7 @@
  YBS_deregulated_capitalism: "Deregulated Capitalism"
  YBS_personal_freedoms: "Guaranteed Personal Freedoms"
  YBS_private_schools: "Privatised Education System"
+ YBS_paying_for_mercs: "Mercenary Payments"
  YBS_investment_returns: "Iberian Investment Returns"
  YBS_economic_downturn: "Stunted Economic Growth"
  YBS_bread_prices_regulated: "Affordable Consumer Goods"
@@ -724,7 +729,7 @@
  YBS_socialist_victory_desc: ""
  YBS_urbanise_navarre: "Urbanise Navarre"
  YBS_urbanise_navarre_desc: ""
- YBS_regulate_the_industries: "Regulate the Industries"
+ YBS_regulate_the_industries: "Nationalise Key Industries"
  YBS_regulate_the_industries_desc: ""
  YBS_market_socialism: "Market Socialism"
  YBS_market_socialism_desc: ""
@@ -836,6 +841,8 @@
  YBS_consolidate_our_capital_desc: ""
  YBS_import_military_tech: "Import Military Equipment"
  YBS_import_military_tech_desc: ""
+ YBS_mercenaries: "Recruit Mercenaries"
+ YBS_mercenaries_desc: ""
  YBS_secure_galicia: "Secure the Galician Ports"
  YBS_secure_galicia_desc: ""
  YBS_secure_castile_leon_and_asturias: "Economic Potential of Northern Spain"
@@ -1275,6 +1282,10 @@
  YBS_diplo_events.27.a: "They'll come around..."
  YBS_diplo_events.27.b: "Then we strike now!"
 
+ YBS_diplo_events.28.t: "Defections to [FROM.GetNameDef]"
+ YBS_diplo_events.28.desc: "Soldiers are defecting to [FROM.GetNameDef], expecting their Republican government to stand victorious."
+ YBS_diplo_events.28.a: "Curses!"
+
  YBS_esperanto_events.1.t: "A Flag for the Republic"
  YBS_esperanto_events.1.desc: "Upon the declaration of the Republic of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexei Kemersky, insists upon its name as 'Tricolour' in a symbolic sense, as many notable republics in history were represented by them.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."
  YBS_esperanto_events.1.a: "We will continue using the Esperanto Flag."
@@ -1393,30 +1404,30 @@
  YBS_news_events.9.b: "The Internationale will save the Human Race!"
 
  YBS_news_events.10.t: "Carlist Victory in Iberia"
- YBS_news_events.10.desc: "WIP"
+ YBS_news_events.10.desc: "The Iberian Civil War has come to an end, with the Carlist Loyalists successfully restoring their long-lost crown. Despite their humble beginning as a local insurrection in the Basque Country, the Carlist forces have come far.\n \nWith the collapse of Iberia undone, the Royal House has already announced plans to restore Iberian colonies in Africa and seek approvement from His Holiness, the Pope."
  YBS_news_events.10.a: "Curse the Reactionary Crown!"
  YBS_news_events.10.b: "At least the bloodshed is over."
  YBS_news_events.10.c: "The Kingdom is dead, long live the Kingdom!"
 
  YBS_news_events.11.t: "Federalist Victory in Iberia"
- YBS_news_events.11.desc: "WIP"
+ YBS_news_events.11.desc: "The Iberian Civil War has come to an end, with the forces of the Basque Democrats successfully entrenching Federalism as Iberia's new future. [YBS.GetNameDefCap] has already gained wide recognition as the legitimate government of Iberia, but there is sitll the matter of the lost African colonial territories, since the Iberian parliament is split on whether to restore colonial rule or let them remain free."
  YBS_news_events.11.a: "At least the bloodshed is over."
  YBS_news_events.11.b: "Democracy prevails in Europe."
  YBS_news_events.11.c: "Victory at last."
 
  YBS_news_events.12.t: "Anarcho-Syndicalist Victory in Iberia"
- YBS_news_events.12.desc: "WIP"
+ YBS_news_events.12.desc: "The Iberian Civil War has come to an end, with a coalition of leftist forces, ranging from Anarchists to Authoritarian Communists, leading the peninsula under a joint Defence Council.\n \nNo concrete form of government except local unions and councils and a semi-centralised government under the Defence Council exist, but news have reached the world that regional elections to end this state of limbo the government is in will soon be held."
  YBS_news_events.12.a: "Curse those Socialists!"
  YBS_news_events.12.b: "The Age of Revolution will come."
  YBS_news_events.12.c: "Our Revolution is not yet over."
 
  YBS_news_events.13.t: "Esperantist Victory in Iberia"
- YBS_news_events.13.desc: "WIP"
+ YBS_news_events.13.desc: "The Iberian Civil War has come to an end and in a strange string of circumstances, the Republic of Hope has prevailed."
  YBS_news_events.13.a: "They are a threat to every Nation State!"
  YBS_news_events.13.b: "Internationalism is the way forward for the Human Race!"
 
  YBS_news_events.14.t: "Hanseatic Victory in Iberia"
- YBS_news_events.14.desc: "WIP"
+ YBS_news_events.14.desc: "The Iberian Civil War has come to an end, with the Corporate-controlled Free Trade Zone of the Basque Country successfully uniting the peninsula."
  YBS_news_events.14.a: "Aren't they just a puppet of Hamburg?"
  YBS_news_events.14.b: "Our stocks will rise dramatically!"
 
@@ -1505,6 +1516,7 @@
  CIVIL_WAR_NAME_YBS_YRR: "Continuing Iberian Civil War"
  CIVIL_WAR_NAME_YBS_YAO: "Continuing Iberian Civil War"
  CIVIL_WAR_NAME_YBS_YAS: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YRS: "Continuing Iberian Civil War"
  WAR_NAME_YBS_YFR: "French Pacification Campaign"
  CIVIL_WAR_NAME_YBS_YFR: "French Pacification Campaign"
  CIVIL_WAR_NAME_YBS_YBL: "Reclamation of the Balearic Islands"
@@ -1515,3 +1527,17 @@
  CIVIL_WAR_NAME_YBS_YJT: "Canary Protectorate War"
  WAR_NAME_YBS_YSO: "Special Military Operation in East-Sahara"
  CIVIL_WAR_NAME_YBS_YSO: "Special Military Operation in East-Sahara"
+
+
+# ACHIEVEMENTS
+
+ YBS_achievements: "Basque Country Achievements"
+
+ YBS_return_home_achievement_NAME: "Zurück nach Hause"
+ YBS_return_home_achievement_DESC: "As the Basque Country, form the Hanseatisch-Iberien GmbH and control Hamburg."
+ YBS_civil_war_victory_achievement_NAME: "Iberia At Peace"
+ YBS_civil_war_victory_achievement_DESC: "As the Basque Country, win the Iberian Civil War."
+ YBS_mother_anarchy_achievement_NAME: "Mother Anarchy Loves Her Sons"
+ YBS_mother_anarchy_achievement_DESC: "As the Basque Country, form the Iberian Contumacy and abolish the Defence Council after the elections."
+ YBS_do_you_speak_english_achievement_NAME: "Do you speak English?"
+ YBS_do_you_speak_english_achievement_DESC: "As the Basque Country, form the Republic of Hope and core any non-Iberian state."
