@@ -91,6 +91,10 @@ focus_tree = {
 			}
 
 			### EVENT AND ADVISOR ###
+
+			country_event = YKP.14
+
+
 		}
 	}
 
@@ -154,6 +158,13 @@ focus_tree = {
 
 		completion_reward = {
 			set_cosmetic_tag = YKP_military_government
+
+			custom_effect_tooltip = YKP_available_political_advisor
+			show_ideas_tooltip = YKP_antonio_de_oliveira_salazar_idea
+
+			hidden_effect = {
+				news_event = YKP_news.3
+			}
 		}
 	}
 
@@ -259,7 +270,7 @@ focus_tree = {
 				popularity = 0.05
 			}
 
-			custom_effect_tooltip = available_political_advisor
+			custom_effect_tooltip = YKP_available_political_advisor
 			show_ideas_tooltip = YKP_francisco_craveiro_lopes_idea
 		}
 	}
@@ -726,7 +737,6 @@ focus_tree = {
 		}
 
 		available = {
-
 		}
 
 		completion_reward = {

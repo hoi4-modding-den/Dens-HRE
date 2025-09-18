@@ -109,9 +109,8 @@ country_event = {
 
 		set_country_flag = YKP_military_maintained_power
 		add_political_power = -100
-
-		hidden_effect = {
-			news_event = YKP_news.3
+		add_ideas = {
+			YKP_widespread_protests
 		}
 	}
 }
@@ -147,26 +146,8 @@ country_event = {
     is_triggered_only = yes
 	fire_only_once = yes
 
-	#option = {
-    #    name = YKP.4.a
-	#	
-	#	ai_chance = {
-	#		base = 100
-	#	}
-#
-	#	add_country_leader_role = {
-	#		character = YKP_duarte_nuno
-	#		promote_leader = yes
-	#		country_leader = {
-	#			ideology = monarchist_oligarchism
-	#			expire = "1965.1.1.1"
-	#			traits = {  }
-	#		}
-	#	}
-	#}
-
 	option = {
-        name = YKP.4.b
+        name = YKP.4.a
 		
 		ai_chance = {
 			base = 100
@@ -185,23 +166,45 @@ country_event = {
 		news_event = YKP_news.2
 	}
 
-	#option = {
-    #    name = YKP.4.c
-	#	
-	#	ai_chance = {
-	#		base = 100
-	#	}
-#
-	#	add_country_leader_role = {
-	#		character = YKP_infante_alfonso
-	#		promote_leader = yes
-	#		country_leader = {
-	#			ideology = monarchist_oligarchism
-	#			expire = "1965.1.1.1"
-	#			traits = {  }
-	#		}
-	#	}
-	#}
+	option = {
+        name = YKP.4.b
+		
+		ai_chance = {
+			base = 0
+		}
+
+		custom_effect_tooltip = YKP_end_story_content_tt
+
+		add_country_leader_role = {
+			character = YKP_duarte_nuno
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchist_oligarchism
+				expire = "1965.1.1.1"
+				traits = {  }
+			}
+		}
+	}
+
+	option = {
+        name = YKP.4.c
+		
+		ai_chance = {
+			base = 0
+		}
+
+		custom_effect_tooltip = YKP_end_story_content_tt
+
+		add_country_leader_role = {
+			character = YKP_infante_alfonso
+			promote_leader = yes
+			country_leader = {
+				ideology = monarchist_oligarchism
+				expire = "1965.1.1.1"
+				traits = {  }
+			}
+		}
+	}
 }
 
 country_event = {
