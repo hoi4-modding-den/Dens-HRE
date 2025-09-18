@@ -791,6 +791,46 @@ characters = {
 		}
 	}
 
+	YBS_theorist_council = {
+		name = YBS_theorist_council_name
+
+		portraits = {
+			army = {
+                small = GFX_portrait_YBS_theorist_council_small
+			}
+		}
+
+		advisor = {
+			slot = theorist
+			idea_token = YBS_theorist_council
+			allowed = {
+				original_tag = YBS
+			}
+			available = {
+				has_completed_focus = YBS_the_insurrectionary_army
+			}
+			visible = {
+				NOT = {
+					OR = {
+						has_completed_focus = YBS_military_coup
+						has_completed_focus = YBS_liberal_victory
+						has_completed_focus = YBS_nationalist_victory
+						has_completed_focus = YBS_socialist_victory
+					}
+				}
+			}
+			traits = {
+				council_of_theorists
+			}
+
+			ai_will_do = {
+				factor = 20
+			}
+
+			cost = 100
+		}
+	}
+
 	
 
 	YBS_republican_general_1 = {

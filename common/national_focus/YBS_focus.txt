@@ -6874,7 +6874,31 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			add_corps_commander_role = {
+				character = YBS_anarchist_general_2
+				traits = { trait_SPR_anti_stalinist_loyalties infantry_officer brave }
+				desc = YBS_generic_fictional_general_desc
+				skill = 3
+				attack_skill = 5
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			custom_effect_tooltip = YBS_anarchist_general_2_stats_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_corps_commander_role = {
+				character = YBS_anarchist_general_4
+				traits = { trait_SPR_anti_stalinist_loyalties trickster guerilla_fighter }
+				desc = YBS_generic_fictional_general_desc
+				skill = 4
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 4
+			}
+			custom_effect_tooltip = YBS_anarchist_general_4_stats_tt
 		}
 	}
 
@@ -6949,8 +6973,6 @@ focus_tree = {
 				remove_idea = YBS_esperanto_republic_idea
 				add_idea = YBS_esperanto_internationale_idea
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
 
 			news_event = { id = YBS_news_events.9 hours = 12 }
 		}
@@ -7586,7 +7608,7 @@ focus_tree = {
 
 	focus = {
 		id = YBS_thanks_for_playing_esperanto
-		icon = GFX_focus_usa_focus_on_europe
+		icon = GFX_focus_SWE_refuge_from_war
 		prerequisite = { focus = YBS_towards_france }
 		prerequisite = { focus = YBS_towards_italy }
 		#mutually_exclusive = { focus =  }
@@ -8589,6 +8611,11 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = YBS_insurrectionary_army
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_theorist
+			show_ideas_tooltip = YBS_theorist_council
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 

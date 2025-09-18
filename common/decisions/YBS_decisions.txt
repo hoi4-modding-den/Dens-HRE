@@ -405,8 +405,13 @@ YBS_esperanto_coring_cat = {
 		available = {
 			FROM = {
 				is_owned_and_controlled_by = ROOT
-                resistance < 10
-                compliance > 10
+                OR = {
+                    AND = {
+                        resistance < 10
+                        compliance > 10
+                    }
+                    has_resistance = no
+                }
 			}
 		}
 

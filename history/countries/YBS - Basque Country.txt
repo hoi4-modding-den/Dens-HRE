@@ -72,7 +72,7 @@ if = {
 		early_battleship = 1
 		transport = 1
 	}
-	set_naval_oob = "YCA_1936_naval_legacy"
+	set_naval_oob = "YBS_1936_naval_legacy"
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -92,7 +92,7 @@ if = {
 		basic_depth_charges = 1
 		mtg_transport = 1
 	}
-	set_naval_oob = "YCA_1936_naval_mtg"
+	set_naval_oob = "YBS_1936_naval_mtg"
 }
 
 add_ideas = {
@@ -148,6 +148,7 @@ recruit_character = YBS_generic_high_command_infantry
 recruit_character = YBS_generic_high_command_regrouping
 recruit_character = YBS_generic_high_command_radio
 recruit_character = YBS_generic_high_command_tank
+recruit_character = YBS_theorist_council
 
 # "Generic" Generals
 recruit_character = YBS_republican_general_1

@@ -51,7 +51,13 @@ YBS_iberian_reconciliation = {
 	visible = {
 		original_tag = YBS
         NOT = { has_government = fascism }
-		FROM = { YBS_is_iberian_country = yes }
+		OR = {
+			FROM = { YBS_is_iberian_country = yes }
+			AND = {
+				has_completed_focus = YBS_spread_esperanto
+				has_government = democratic
+			}
+		}
 	}
 
 	state_modifier = {

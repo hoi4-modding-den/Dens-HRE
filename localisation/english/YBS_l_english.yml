@@ -200,6 +200,7 @@
  YBS_anarchist_general_2_name: "Kritias Saroihandy"
  YBS_anarchist_general_3_name: "Màrius Nou"
  YBS_anarchist_general_4_name: "Vícenç Terès"
+ YBS_theorist_council_name: "Konsilio de Armeaj Teoriuloj"
  YBS_falangist_general_1_name: "Carlos Ferrandis"
  YBS_falangist_general_2_name: "Teodoro Mendigur"
  YBS_carlist_general_1_name: "Maximiano Urquieta"
@@ -1147,7 +1148,7 @@
  YBS_post_election_events.5.a: "Our Independence is backed by Force of Arms!"
 
  YBS_post_election_events.6.t: "Remnants of the Iberian Fleet join us!"
- YBS_post_election_events.6.desc: "WIP"
+ YBS_post_election_events.6.desc: "During the tensions that brought the collapse of the Kingdom of Iberia, there had been a large sailor revolt and a significant portion of the Iberian fleet mutinied. With our restoration of an Iberian authority, these sailors have now made their return in hopes of being pardoned for their mutiny."
  YBS_post_election_events.6.a: "We welcome the brave sailors!"
  YBS_post_election_events.6.a.tt: "A fraction of the §YNavy§! that defected before the §gCollapse of Iberia§! will §Gjoin us§!."
 
@@ -1207,7 +1208,7 @@
  YBS_diplo_events.12.desc: "The [FROM.GetAdjective] leaders have betrayed the revolution and denounced us as revisionists!"
  YBS_diplo_events.12.a: "Another betrays the Revolution."
 
- YBS_diplo_events.13.t: "[FROM.GetNameDefCap] offer Reconciliation"
+ YBS_diplo_events.13.t: "[FROM.GetNameDefCap] offers Reconciliation"
  YBS_diplo_events.13.desc: "WIP"
  YBS_diplo_events.13.a: "Carlism doens't sound too bad."
  YBS_diplo_events.13.b: "We cannot compromise on our values!"
@@ -1266,11 +1267,11 @@
  YBS_diplo_events.25.b: "We refuse."
 
  YBS_diplo_events.26.t: "[FROM.GetName] accepts Non-Aggression Pact"
- YBS_diplo_events.26.desc: "WIP"
+ YBS_diplo_events.26.desc: "The [FROM.GetAdjective] government has fallen for our trap and accepted our "Non-Aggression Pact"."
  YBS_diplo_events.26.a: "Perfect."
 
  YBS_diplo_events.27.t: "[FROM.GetName] refuses Non-Aggression Pact"
- YBS_diplo_events.27.desc: "WIP"
+ YBS_diplo_events.27.desc: "The [FROM.GetAdjective] government has seen through our ruse and refused the pact."
  YBS_diplo_events.27.a: "They'll come around..."
  YBS_diplo_events.27.b: "Then we strike now!"
 
@@ -1387,7 +1388,7 @@
  YBS_news_events.8.b: "Estas honoro!"
 
  YBS_news_events.9.t: "Formation of the Hopeful Internationale"
- YBS_news_events.9.desc: "WIP"
+ YBS_news_events.9.desc: "In an effort to oppose the influences of the Third International, the Esperantists of the Respubliko de Espero have proclaimed the formation of the 'Hopeful Internationale', an international organisation for cooperation between the many international Esperantist movements across the globe.\n \nInternational recognition of the Internationale has however been low, with many nations seeing the project as a plan to subvert the powers of the state and erase national structures and borders."
  YBS_news_events.9.a: "What are they plotting?"
  YBS_news_events.9.b: "The Internationale will save the Human Race!"
 
@@ -1484,3 +1485,33 @@
  YBS_RULE_OPTION_CARLIST_HONOUR: "Honourbound"
  YBS_RULE_OPTION_CARLIST_HONOUR_DESC: "The §gCarlists§! will stick to their Honour.\n \n§CRequires §YBasque Carlist Party§! in §YBasque Elections§! or the AI to randomly choose the path.§!"
 
+# WAR NAMES
+
+ CIVIL_WAR_NAME_YBS_YCA: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YC1: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YC2: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YC3: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YPR: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YRF: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YGB: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YKP: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YUS: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YZA: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YGL: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YPS: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YPG: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YPA: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YPN: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YRR: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YAO: "Continuing Iberian Civil War"
+ CIVIL_WAR_NAME_YBS_YAS: "Continuing Iberian Civil War"
+ WAR_NAME_YBS_YFR: "French Pacification Campaign"
+ CIVIL_WAR_NAME_YBS_YFR: "French Pacification Campaign"
+ CIVIL_WAR_NAME_YBS_YBL: "Reclamation of the Balearic Islands"
+
+ WAR_NAME_YBS_YRI: "War for the Straits"
+ CIVIL_WAR_NAME_YBS_YRI: "War for the Straits"
+ WAR_NAME_YBS_YJT: "Canary Protectorate War"
+ CIVIL_WAR_NAME_YBS_YJT: "Canary Protectorate War"
+ WAR_NAME_YBS_YSO: "Special Military Operation in East-Sahara"
+ CIVIL_WAR_NAME_YBS_YSO: "Special Military Operation in East-Sahara"
