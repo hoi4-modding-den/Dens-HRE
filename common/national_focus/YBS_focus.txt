@@ -3976,6 +3976,34 @@ focus_tree = {
 
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = YBS_generic_socialist_bulwark
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = YBS_rosa_lavina
+					traits = {  }
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+			}
+			custom_effect_tooltip = YBS_rosa_lavina_stats_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_corps_commander_role = {
+				character = YBS_anarchist_general_3
+				traits = { trait_SPR_anti_stalinist_loyalties inflexible_strategist }
+				desc = YBS_generic_fictional_general_desc
+				skill = 2
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			custom_effect_tooltip = YBS_anarchist_general_3_stats_tt
 		}
 	}
 
@@ -4027,11 +4055,15 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
 			has_completed_focus = YBS_pro_union_policies
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
 		}
 		
 		bypass = {
@@ -7654,7 +7686,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
@@ -7738,11 +7770,11 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -7774,11 +7806,11 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -7843,7 +7875,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -7878,7 +7910,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -7887,10 +7919,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_popularity = { ideology = democratic popularity = 0.05 }
 			add_manpower = 50000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = YBS_republican_troops_tt
 		}
 	}
 
@@ -7906,11 +7942,11 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 3
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -7919,9 +7955,23 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_ideas = YBS_none_shall_pass
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_corps_commander_role = {
+				character = YBS_anarchist_general_3
+				traits = { trait_SPR_anti_stalinist_loyalties inflexible_strategist }
+				desc = YBS_generic_fictional_general_desc
+				skill = 2
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			custom_effect_tooltip = YBS_anarchist_general_3_stats_tt
 		}
 	}
 
@@ -7937,11 +7987,11 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 3
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -7950,9 +8000,23 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_ideas = YBS_class_war_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_corps_commander_role = {
+				character = YBS_anarchist_general_2
+				traits = { trait_SPR_anti_stalinist_loyalties infantry_officer brave }
+				desc = YBS_generic_fictional_general_desc
+				skill = 3
+				attack_skill = 5
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			custom_effect_tooltip = YBS_anarchist_general_2_stats_tt
 		}
 	}
 
@@ -7968,11 +8032,11 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 5
+			factor = 3
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -8005,11 +8069,11 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 4
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -8040,11 +8104,11 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 2
+			factor = 3
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -8077,11 +8141,11 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 4
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -8116,11 +8180,11 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 4
 		}
 
 		available = {
-			
+			has_government = communism
 		}
 		
 		bypass = {
@@ -8151,6 +8215,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_government = communism
 			date > 1937.1.1
 			is_subject = no
 		}
@@ -8521,11 +8586,23 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = YBS_insurrectionary_army
 
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_corps_commander_role = {
+				character = YBS_anarchist_general_4
+				traits = { trait_SPR_anti_stalinist_loyalties trickster guerilla_fighter }
+				desc = YBS_generic_fictional_general_desc
+				skill = 4
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 4
+			}
+			custom_effect_tooltip = YBS_anarchist_general_4_stats_tt
 		}
 	}
 

@@ -4976,14 +4976,18 @@ focus_tree = {
 
 			every_possible_country = {
 				limit = {
-					XHH_german_nations = yes
+					any_core_state = {
+						is_core_of = ROOT
+					}
+					any_unit_leader = {
+						is_country_leader = no
+					}
 					exists = no
 				}
 				custom_effect_tooltip = XHH_transfer_army_leaders_tt
 				every_unit_leader = {
 					limit = {
-						is_advisor = no
-						can_be_country_leader = no
+						is_country_leader = no
 					}
 					set_nationality = ROOT
 				}

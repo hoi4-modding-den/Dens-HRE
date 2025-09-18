@@ -488,6 +488,41 @@ country_event = { # Falangist Agitation
                 id = YBS_post_election_events.1
                 days = 120
             }
+            country_event = {
+                id = YBS_election_events.9
+                days = 14
+            }
+        }
+    }
+
+}
+
+country_event = { # Lore Event - French Navarre
+	id = YBS_election_events.9
+	title = YBS_election_events.9.t
+	desc = YBS_election_events.9.desc
+    picture = GFX_report_event_french_resistance_02
+	
+	is_triggered_only = yes
+	
+	option = { 
+        name = YBS_election_events.9.a
+        add_offsite_building = {
+            type = arms_factory
+            level = 1
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_equipment_to_stockpile = {
+            type = infantry_equipment
+            amount = 200
+            producer = FRA
+        }
+        add_equipment_to_stockpile = {
+            type = support_equipment
+            amount = 40
+            producer = FRA
         }
     }
 

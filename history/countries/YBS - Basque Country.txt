@@ -72,6 +72,7 @@ if = {
 		early_battleship = 1
 		transport = 1
 	}
+	set_naval_oob = "YCA_1936_naval_legacy"
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -91,6 +92,7 @@ if = {
 		basic_depth_charges = 1
 		mtg_transport = 1
 	}
+	set_naval_oob = "YCA_1936_naval_mtg"
 }
 
 add_ideas = {
@@ -140,6 +142,7 @@ recruit_character = YBS_generic_captain_of_industry
 recruit_character = YBS_generic_economic_reformer
 recruit_character = YBS_generic_trade_unionist
 recruit_character = YBS_generic_industry_magnate
+recruit_character = YBS_generic_army_chief_drill
 recruit_character = YBS_generic_army_chief_offensive
 recruit_character = YBS_generic_high_command_infantry
 recruit_character = YBS_generic_high_command_regrouping
@@ -147,6 +150,16 @@ recruit_character = YBS_generic_high_command_radio
 recruit_character = YBS_generic_high_command_tank
 
 # "Generic" Generals
+recruit_character = YBS_republican_general_1
+recruit_character = YBS_republican_general_2
+recruit_character = YBS_republican_general_3
+recruit_character = YBS_republican_general_4
+recruit_character = YBS_republican_general_5
+recruit_character = YBS_republican_general_6
+recruit_character = YBS_anarchist_general_1
+recruit_character = YBS_anarchist_general_2
+recruit_character = YBS_anarchist_general_3
+recruit_character = YBS_anarchist_general_4
 recruit_character = YBS_falangist_general_1
 recruit_character = YBS_falangist_general_2
 recruit_character = YBS_carlist_general_1
@@ -211,6 +224,8 @@ if = {
 
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
+	# copies from Spain because of the navy joining event
+
 	### Ship Variants ###
 	create_equipment_variant = {
 		name = "C Class"

@@ -1,0 +1,15 @@
+﻿units= {
+
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Bilboko Itsas Basea"
+		naval_base = 740
+		task_force = {
+			name = "Lehen Errepublikar Eskuadroia"
+			location = 740
+			ship = { name = "EO Iraun" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YBS version_name = "Furor-Class" } } }
+			ship = { name = "EO Iraultzaileak" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YBS version_name = "Furor-Class" } } }
+			ship = { name = "EO Iberiako Koroa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = YBS version_name = "Furor-Class" } } }
+		}
+	}
+} 
