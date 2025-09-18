@@ -140,7 +140,7 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 0
 		y = 1
-		cost = 1
+		cost = 5
 		prerequisite = { focus = YPR_establish_the_vanguard_party }
 		relative_position_id = YPR_establish_the_vanguard_party
 
@@ -153,7 +153,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_institute_a_dictatorship_of_the_proletariat_tt
-			
+			add_dynamic_modifier = { modifier = YPR_dictatorship_of_the_proletariat }
 		}
 	}
 	focus = {
@@ -195,7 +195,7 @@ focus_tree = {
 		icon = GFX_focus_generic_workers_and_farmers_rise
 		x = 0
 		y = 1
-		cost = 1
+		cost = 5
 		prerequisite = { focus = YPR_all_power_to_the_councils }
 		relative_position_id = YPR_all_power_to_the_councils
 		
@@ -207,6 +207,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_wage_war_against_unjust_hierarchies_tt
+			add_dynamic_modifier = { modifier = YPR_anarchist_society }
 		}
 	}
 }

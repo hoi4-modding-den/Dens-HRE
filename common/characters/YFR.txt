@@ -1,0 +1,29 @@
+﻿characters = {
+    YFR_gastonhenri_billotte = {
+        name = "Gaston-Henri Billotte"
+        portraits={
+			army={
+				large=GFX_portrait_FRA_gastonhenri_billotte
+				small=GFX_portrait_FRA_gastonhenri_billotte_small
+			}
+		}
+        country_leader = {
+            ideology = despotism
+            expire = 1950.1.1.1
+        }
+		corps_commander={
+			traits={ old_guard trait_cautious infantry_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=0
+		}
+    }  
+    
+}
+    
+
+
+    

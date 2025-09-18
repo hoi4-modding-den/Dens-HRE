@@ -42,6 +42,23 @@ add_ideas = {
 
 add_dynamic_modifier = { modifier = YPR_proletarian_military }
 
+#anarchist society dynmod
+
+set_variable = { YPR_as_stability_factor = -0.10 }
+set_variable = { YPR_as_stability_weekly = -0.005 }
+set_variable = { YPR_as_global_building_slots_factor = 0.15 }
+set_variable = { YPR_as_production_factory_efficiency_gain_factor = 0.05 }
+set_variable = { YPR_as_local_resources_factor = 0.15 }
+set_variable = { YPR_as_consumer_goods_factor = -0.05 }
+
+#dotp dynmod
+
+set_variable = { YPR_dotp_stability_factor = 0.025 }
+set_variable = { YPR_dotp_political_power_factor = 0.05 }
+set_variable = { YPR_dotp_production_factory_max_efficiency_factor = 0.05 }
+set_variable = { YPR_dotp_production_speed_buildings_factor = 0.1 }
+
+
 set_politics = {
 	ruling_party = communism
 	last_election = "1931.11.8"
