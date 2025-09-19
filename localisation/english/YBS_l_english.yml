@@ -321,6 +321,8 @@
  YBS_national_pride_desc: "One of the few things even the left and right can agree upon is that the people of the Basque country were unfairly disadvantaged by the Spanish government and even if we should come to cooperate with them, we must never again let ourselves be put into a lower position to Madrid. The Basque Country will be free forevermore!"
  YBS_national_pride_tt: "Our enemies will become §Rdemoralised§! if war continues for too long."
  YBS_war_propaganda_idea: "'Protecting Basque Freedom!'"
+ YBS_sagrada_familia_construction: "Sagrada Família Reconstruction"
+ YBS_church_loot: "Church Riches"
  YBS_republican_opposition: "Republican Opposition"
  YBS_carlist_honour: "Imperial Honour Guard"
  YBS_anti_communist_bulwark: "Anti-Communist Bulwark"
@@ -469,7 +471,7 @@
 
  YBS_BLITZKRIEG_DESC: "The Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the Basque Nationalist Party and José Antonio Aguirre."
 
- YBS_intro_loc: "§LThe Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the §cBasque Nationalist Party§! and §YJosé Antonio Aguirre§!.\n \nWhile the early new republic was plagued by political infighting and attacks from both the Falangists and the Communists, the §cEAK§! managed to establish their authority and in an alliance with the Carlist-dominated military crushed the rebellious falangists.\n \nNow the §Yyoung republic§! faces another crisis as the §gCarlists§! prepare to overthrow the government to prevent the upcoming elections.§!\n \n§YPossible Paths to unite Iberia:§!\n§g  - The Carlist Restoration\n  - The Corporate Dominion\n  - The Federal Republic\n  - The Federation\n  - The Internationalist Republic\n  - The Contumacy§!"
+ YBS_intro_loc: "§LThe Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the §cBasque Nationalist Party§! and §YJosé Antonio Aguirre§!.\n \nWhile the early new republic was plagued by political infighting and attacks from both the Falangists and the Communists, the §cEAK§! managed to establish their authority and in an alliance with the Carlist-dominated military crushed the rebellious falangists.\n \nNow the §Yyoung republic§! faces another crisis as the §gCarlists§! prepare to overthrow the government to prevent the upcoming elections.§!\n \n§YPossible Paths to unite Iberia:§!\n§g  - The Carlist Restoration\n  - The Corporate Dominion\n  - The Federal Republic\n  - The Federation\n  - The Internationalist Republic\n  - The Contumacy§!\n \n§YAchievements:§!§g\n  - $YBS_civil_war_victory_achievement_NAME$\n  - $YBS_return_home_achievement_NAME$\n  - $YBS_do_you_speak_english_achievement_NAME$\n  - $YBS_mother_anarchy_achievement_NAME$§!"
  YBS_credits: "Basque Country Content: §H0rland0§!\nIntro GUI: §HKåsastul§!\nEverything else: §HHoi4 Modding Den Discord§!"
  YBS_open_welcome_tooltip: "Open §YWelcome Screen§!"
  YBS_continue_tooltip: "§CEuskal Errepublika libre geldituko da!§!"
@@ -606,7 +608,7 @@
  YBS_restore_order: "Restore Civil Order"
  YBS_restore_order_desc: ""
  YBS_restore_the_monarchy: "Restore the Carlist Monarchy"
- YBS_restore_the_monarchy_desc: ""
+ YBS_restore_the_monarchy_desc: "With Carlist rule cemented and all remnants of the republic driven out, it is time to formally offer the Iberian crown to Francisco Javier de Borbón-Parma y de Braganza, the Carlist pretender, who will be crowned Javier I. of Iberia."
  YBS_victory_at_all_costs: "Victory at All Costs"
  YBS_victory_at_all_costs_desc: ""
  YBS_meet_with_the_french: "Meet with the French Remnants"
@@ -632,7 +634,7 @@
  YBS_march_against_the_traitors_desc: ""
  YBS_ultimatum_to_galicia: "Ultimatum for Galicia"
  YBS_ultimatum_to_galicia_desc: ""
- YBS_strike_the_revolutionaries: "Liberate the Sagrada Familia"
+ YBS_strike_the_revolutionaries: "Liberate the Sagrada Família"
  YBS_strike_the_revolutionaries_desc: ""
  YBS_strike_the_remnants: "Expel the French Intruders"
  YBS_strike_the_remnants_desc: ""
@@ -868,8 +870,8 @@
  YBS_thanks_for_playing_corp: "There's Profit in Expansion"
  YBS_thanks_for_playing_corp_desc: ""
 
- YBS_we_will_always_have_hope: "We Will Always Have Hope"
- YBS_we_will_always_have_hope_desc: ""
+ YBS_we_will_always_have_hope: "Espero Mortas Laste"
+ YBS_we_will_always_have_hope_desc: "As the saying goes, hope dies last. And we will always have Hope."
  YBS_revolutionary_call_for_freedom: "Follow the Call of Revolution"
  YBS_revolutionary_call_for_freedom_desc: ""
  YBS_spread_esperanto: "Spread the Lingvo Internacia"
@@ -944,7 +946,7 @@
  YBS_liberation_for_all: "The Liberation Comes For All"
  YBS_liberation_for_all_desc: ""
  YBS_victory_in_iberia: "Victory of the People"
- YBS_victory_in_iberia_desc: ""
+ YBS_victory_in_iberia_desc: "Our coalition of Anarchists and Syndicalists has successfully liberated all of Iberia! This must be cause for celebration!"
  YBS_regional_council_elections: "Elect Regional Representatives"
  YBS_regional_council_elections_desc: ""
  YBS_regional_council_elections_tt: "Upon §YFocus Selection§! starts the §Y'Regional Representative Elections'§! event chain.\n \nDepending on which party has a majority, a §Ynew leader§! will be elected. If the §rAnarchists§! have all votes, they will abolish the §Yposition of leadership§!."
@@ -1163,6 +1165,11 @@
  YBS_post_election_events.7.desc: "In the wake of our attempts to centralise the Federation into a Federal Republic, multiple groups across the nation have begun to work against us, organising militia groups and sabotaging the integration of regional administrations."
  YBS_post_election_events.7.a: "Stop them!"
 
+ YBS_post_election_events.8.t: "The Sagrada Família captured!"
+ YBS_post_election_events.8.desc: "Our troops have finally secure the Sagrada Família after a very long fight with some militia that had hunkered down in the cathedral's lower areas. It was the last part of Barcelona to fall.\n \nWhat should be done with the site?"
+ YBS_post_election_events.8.a: "Begin reconstruction. We will complete Gaudí's work!"
+ YBS_post_election_events.8.b: "Take everything not nailed down!"
+
  YBS_diplo_events.1.t: "[FROM.GetNameDefCap] officially adopts State Catholicism"
  YBS_diplo_events.1.desc: "The [FROM.GetAdjective] government recently passed a new constitutional referendum in which Catholicism was officially adopted as the state religion of [FROM.GetNameDef]."
  YBS_diplo_events.1.a: "May God bless them."
@@ -1183,7 +1190,7 @@
  YBS_diplo_events.5.t: "[FROM.GetNameDefCap] prepares for War!"
  YBS_diplo_events.5.desc: "Recent reports from our border show a buildup of [FROM.GetAdjective] troops. Our officers worry that this indicates a continuation of the Iberian Civil War between us and [FROM.GetNameDef]."
  YBS_diplo_events.5.a: "Ready the Army!"
- YBS_diplo_events.5.a.tt: "[FROM.GetNameWithFlag] will declare §RWar§! in §Y50 Days§!."
+ YBS_diplo_events.5.a.tt: "[FROM.GetNameWithFlag] will declare §RWar§! in §Y30 Days§!."
 
  YBS_diplo_events.6.t: "[FROM.GetNameDefCap] offers a Merger"
  YBS_diplo_events.6.desc: "WIP"
@@ -1422,7 +1429,7 @@
  YBS_news_events.12.c: "Our Revolution is not yet over."
 
  YBS_news_events.13.t: "Esperantist Victory in Iberia"
- YBS_news_events.13.desc: "The Iberian Civil War has come to an end and in a strange string of circumstances, the Republic of Hope has prevailed."
+ YBS_news_events.13.desc: "The Iberian Civil War has come to an end and in an unexpected string of circumstances, the Republic of Hope has prevailed against all odds.\n \nThe General Committee of the Republic has already reaffirmed their commitment to the internationalist cause, seeking to liberate the former Iberian colonies first before Europe will get their full attention."
  YBS_news_events.13.a: "They are a threat to every Nation State!"
  YBS_news_events.13.b: "Internationalism is the way forward for the Human Race!"
 

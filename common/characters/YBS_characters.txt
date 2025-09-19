@@ -182,10 +182,27 @@ characters = {
 				has_government = fascism
 			}
 			traits = {
-				air_chief_all_weather_1
+				air_chief_safety_2
 			}
 
-			cost = 50
+			cost = 100
+		}
+
+		corps_commander = {
+			traits = { trait_SPA_falangist_loyalties trickster guerilla_fighter urban_assault_specialist }
+			visible = {
+				OR = {
+					original_tag = YBS
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			desc = YBS_julio_ruiz_de_alda_desc
+			skill=4
+			attack_skill=5
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=2
 		}
 	}
 

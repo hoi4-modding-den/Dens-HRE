@@ -767,6 +767,48 @@ country_event = { # whispers of resistance against centralisation
     }
 }
 
+country_event = { # Sagrada Familia captured
+	id = YBS_post_election_events.8
+	title = YBS_post_election_events.8.t
+	desc = YBS_post_election_events.8.desc
+    picture = GFX_report_event_YBS_sagrada_familia
+
+    trigger = {
+        controls_province = 9764
+        original_tag = YBS
+    }
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 5
+    }
+	
+	option = {
+        name = YBS_post_election_events.8.a
+        trigger = {
+            NOT = { has_government = fascism }
+        }
+        add_timed_idea = {
+            idea = YBS_sagrada_familia_construction
+            days = 365
+        }
+    }
+
+    option = {
+        name = YBS_post_election_events.8.b
+        trigger = {
+            OR = {
+                has_government = communism
+                has_government = fascism
+            }
+        }
+        add_timed_idea = {
+            idea = YBS_church_loot
+            days = 365
+        }
+    }
+}
+
 country_event = { # YBS appoints new bishop
 	id = YBS_diplo_events.1
 	title = YBS_diplo_events.1.t
@@ -2184,14 +2226,27 @@ country_event = { # Regional Elections over
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        set_faction_name = YBS_world_anarchist_federation
+        if = {
+            limit = {
+                is_faction_leader = yes
+            }
+            set_faction_name = YBS_world_anarchist_federation
+        }
+        else = {
+            create_faction = YBS_world_anarchist_federation
+        }
 
         custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_rule = {
+            can_create_collaboration_government = no
+        }
 
         every_core_state = {
             remove_core_of = ROOT
             hidden_effect = {
                 add_core_of = ZZZ
+                start_resistance = ZZZ
             }
             if = {
                 limit = {
@@ -2220,7 +2275,15 @@ country_event = { # Regional Elections over
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        set_faction_name = YBS_world_anarchist_federation
+        if = {
+            limit = {
+                is_faction_leader = yes
+            }
+            set_faction_name = YBS_world_anarchist_federation
+        }
+        else = {
+            create_faction = YBS_world_anarchist_federation
+        }
 
         set_country_flag = YBS_final_election_event_triggered
     }
@@ -2605,10 +2668,7 @@ news_event = { # YBS unifies Iberia // Carlist
             is_subject = no
             has_government = neutrality
             NOT = { has_completed_focus = YBS_rule_of_capital }
-            OR = {
-                YBS_owns_all_iberian_states = yes
-                YBS_iberian_federation_complete = yes
-            } 
+            YBS_owns_all_iberian_states = yes
         }
         YBS_civil_war_over = yes
     }
@@ -2718,10 +2778,7 @@ news_event = { # YBS unifies Iberia // Syndicalist
             exists = yes
             is_subject = no
             has_government = communism
-            OR = {
-                YBS_owns_all_iberian_states = yes
-                YBS_iberian_federation_complete = yes
-            } 
+            YBS_owns_all_iberian_states = yes
         }
         YBS_civil_war_over = yes
     }
@@ -2775,10 +2832,7 @@ news_event = { # YBS unifies Iberia // Esperantist
             is_subject = no
             has_government = democratic
             has_completed_focus = YBS_we_will_always_have_hope
-            OR = {
-                YBS_owns_all_iberian_states = yes
-                YBS_iberian_federation_complete = yes
-            } 
+            YBS_owns_all_iberian_states = yes
         }
         YBS_civil_war_over = yes
     }
@@ -2822,10 +2876,7 @@ news_event = { # YBS unifies Iberia // Corporatist
             is_subject = no
             has_government = neutrality
             has_completed_focus = YBS_rule_of_capital
-            OR = {
-                YBS_owns_all_iberian_states = yes
-                YBS_iberian_federation_complete = yes
-            } 
+            YBS_owns_all_iberian_states = yes
         }
         YBS_civil_war_over = yes
     }

@@ -16,7 +16,6 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
-                        is_historical_focus_on = yes
                         has_game_rule = {
                             rule = YBS_ai_behavior_elections
                             option = YBS_SOCIALIST_OPTION
@@ -26,7 +25,6 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
-                        is_historical_focus_on = yes
                         has_game_rule = {
                             rule = YBS_ai_behavior_elections
                             option = YBS_NATIONALIST_OPTION
@@ -36,7 +34,6 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
-                        is_historical_focus_on = yes
                         has_game_rule = {
                             rule = YBS_ai_behavior_elections
                             option = YBS_LIBERAL_OPTION
@@ -46,7 +43,6 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
-                        is_historical_focus_on = yes
                         has_game_rule = {
                             rule = YBS_ai_behavior_elections
                             option = YBS_POPULAR_FRONT_OPTION
@@ -56,7 +52,6 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
-                        is_historical_focus_on = yes
                         has_game_rule = {
                             rule = YBS_ai_behavior_elections
                             option = YBS_CARLIST_OPTION
@@ -66,7 +61,6 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
-                        is_historical_focus_on = yes
                         has_game_rule = {
                             rule = YBS_ai_behavior_elections
                             option = YBS_SYNDICALIST_OPTION
@@ -99,6 +93,7 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
+                        has_country_flag = YBS_ai_path_liberals
                         has_game_rule = {
                             rule = YBS_ai_behavior_democratic_path
                             option = YBS_DEMOCRATIC_CORPORATION_OPTION
@@ -126,6 +121,7 @@ on_actions = {
                 }
                 else_if = {
                     limit = {
+                        has_country_flag = YBS_ai_path_popular_front
                         has_game_rule = {
                             rule = YBS_ai_behavior_democratic_path
                             option = YBS_DEMOCRATIC_ESPERANTO_OPTION

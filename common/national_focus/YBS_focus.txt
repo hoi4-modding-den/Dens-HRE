@@ -1862,9 +1862,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			FRA = {
-				limit = {
-					# is france (?)
-				}
 				add_opinion_modifier = {
 					modifier = threatened_us_opinion_modifier
 					target = ROOT
@@ -1938,6 +1935,7 @@ focus_tree = {
 			every_other_country = {
 				limit = {
 					has_country_flag = HRE_member_state
+					NOT = { is_ally_with = ROOT }
 				}
 				add_opinion_modifier = {
 					modifier = threatened_us_opinion_modifier
@@ -3644,6 +3642,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 2
+				has_country_flag = YBS_ai_path_esperantism
+			}
 		}
 
 		available = {
@@ -3675,6 +3677,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 2
+				has_country_flag = YBS_ai_path_esperantism
+			}
 		}
 
 		available = {
@@ -7578,6 +7584,7 @@ focus_tree = {
 			has_war = no
 			is_subject = no
 			YBS_owns_all_iberian_states = yes
+			YBS_civil_war_over = yes
 		}
 
 		bypass = {

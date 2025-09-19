@@ -294,13 +294,6 @@ YBS_civil_war_over = {
             any_country = {
                 YBS_is_iberian_cw_contender = yes
                 YBS_owns_all_iberian_states = yes
-                all_other_country = {
-                    OR = {
-                        YBS_is_iberian_cw_contender = no
-                        is_subject_of = PREV
-                        exists = no
-                    }
-                }
             }
             has_global_flag = YBS_iberian_civil_war_ended
         }
