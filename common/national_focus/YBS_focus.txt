@@ -755,6 +755,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -805,31 +806,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -1137,20 +1113,13 @@ focus_tree = {
 					NOT = { country_exists = YAS }
 					is_ally_with = YAS
 				}
-				174 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
-				}
 			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -1183,31 +1152,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -4250,20 +4194,13 @@ focus_tree = {
 					NOT = { country_exists = YAS }
 					is_ally_with = YAS
 				}
-				174 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
-				}
 			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -4296,31 +4233,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -5215,20 +5127,13 @@ focus_tree = {
 					NOT = { country_exists = YAS }
 					is_ally_with = YAS
 				}
-				174 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
-				}
 			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -5261,31 +5166,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -6248,20 +6128,13 @@ focus_tree = {
 					NOT = { country_exists = YAS }
 					is_ally_with = YAS
 				}
-				174 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
-				}
 			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -6294,31 +6167,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -6962,6 +6810,10 @@ focus_tree = {
 					id = YBS_news_events.7
 					hours = 6
 				}
+
+				set_rule = {
+					can_create_collaboration_government = no
+				}
 			}
 		}
 	}
@@ -7175,20 +7027,13 @@ focus_tree = {
 					NOT = { country_exists = YAS }
 					is_ally_with = YAS
 				}
-				174 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
-				}
 			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -7221,31 +7066,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}
@@ -7484,6 +7304,8 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = YBS_lobby_for_intervention_tt
 			set_country_flag = YBS_civil_war_decisions_unlocked
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			every_state = {
 				limit = {
@@ -8483,20 +8305,13 @@ focus_tree = {
 					NOT = { country_exists = YAS }
 					is_ally_with = YAS
 				}
-				174 = {
-					owner = {
-						OR = {
-							has_war_with = ROOT
-							is_ally_with = ROOT
-						}
-					}
-				}
 			}
 		}
 
 		available_if_capitulated = no
 
 		will_lead_to_war_with = YRR
+		will_lead_to_war_with = YAS
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
@@ -8529,31 +8344,6 @@ focus_tree = {
 					target = YAS
 					type = civil_war
 				}
-			}
-			if = {
-				limit = {
-					174 = { 
-						NOT = { is_owned_by = ZZZ }
-						owner = {
-							NOT = { has_war_with = ROOT }
-							NOT = { is_ally_with = ROOT }
-						}
-					}
-				}
-				174 = {
-					owner = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								type = civil_war
-							}
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { 174 = { is_owned_by = ZZZ } }
-				174 = { transfer_state_to = ROOT }
 			}
 		}
 	}

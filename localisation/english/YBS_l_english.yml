@@ -401,7 +401,7 @@
  YBS_is_spanish_africa_state_tt_NOT: "Is not a state in Iberian Africa"
  YBS_is_spanish_african_country_tt: "Is a former Iberian Colony"
  YBS_is_spanish_african_country_tt_NOT: "Is not a former Iberian Colony"
- YBS_controls_all_spanish_africa_states_tt: "Owns all §YIberian Africa states§!"
+ YBS_controls_all_spanish_africa_states_tt: "All §YIberian Africa states§! are controlled by §Y[PREV.GetNameWithFlag]§! or §Y[ZZZ.GetNameWithFlag]§!."
  YBS_controls_all_spanish_africa_states_tt_NOT: "Does not own all §YIberian Africa states§!"
  YBS_is_italian_state_tt: "Is a state in Italy"
  YBS_is_italian_state_tt_NOT: "Is not a state in Italy"
@@ -471,11 +471,20 @@
 
  YBS_BLITZKRIEG_DESC: "The Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the Basque Nationalist Party and José Antonio Aguirre."
 
- YBS_intro_loc: "§LThe Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the §cBasque Nationalist Party§! and §YJosé Antonio Aguirre§!.\n \nWhile the early new republic was plagued by political infighting and attacks from both the Falangists and the Communists, the §cEAK§! managed to establish their authority and in an alliance with the Carlist-dominated military crushed the rebellious falangists.\n \nNow the §Yyoung republic§! faces another crisis as the §gCarlists§! prepare to overthrow the government to prevent the upcoming elections.§!\n \n§YPossible Paths to unite Iberia:§!\n§g  - The Carlist Restoration\n  - The Corporate Dominion\n  - The Federal Republic\n  - The Federation\n  - The Internationalist Republic\n  - The Contumacy§!\n \n§YAchievements:§!§g\n  - $YBS_civil_war_victory_achievement_NAME$\n  - $YBS_return_home_achievement_NAME$\n  - $YBS_do_you_speak_english_achievement_NAME$\n  - $YBS_mother_anarchy_achievement_NAME$§!"
+ YBS_intro_loc: "§LThe Basque Country has been consistently neglected by the Iberian government and the Spanish before that. With the collapse of Iberia and the start of the Iberian Civil War, the Basque people have seized their own destiny, rallying for their independence under the §cBasque Nationalist Party§! and §YJosé Antonio Aguirre§!.\n \nWhile the early new republic was plagued by political infighting and attacks from both the Falangists and the Communists, the §cEAK§! managed to establish their authority and in an alliance with the Carlist-dominated military crushed the rebellious falangists.\n \nNow the §Yyoung republic§! faces another crisis as the §gCarlists§! prepare to overthrow the government to prevent the upcoming elections.§!\n \n§YPossible Paths to unite Iberia:§!\n§g  - The Carlist Restoration\n  - The Corporate Dominion\n  - The Federal Republic\n  - The Federation\n  - The Internationalist Republic\n  - The Contumacy§!\n \n§YAchievements:§!§g\n[YBS_achievements_intro_gui_1]\n[YBS_achievements_intro_gui_2]\n[YBS_achievements_intro_gui_3]\n[YBS_achievements_intro_gui_4]\n"
  YBS_credits: "Basque Country Content: §H0rland0§!\nIntro GUI: §HKåsastul§!\nEverything else: §HHoi4 Modding Den Discord§!"
  YBS_open_welcome_tooltip: "Open §YWelcome Screen§!"
  YBS_continue_tooltip: "§CEuskal Errepublika libre geldituko da!§!"
  YBS_exit_tooltip: "§YExit§!"
+
+ YBS_achievements_intro_gui_1_y: "§G  - $YBS_civil_war_victory_achievement_NAME$§!"
+ YBS_achievements_intro_gui_1_n: "§g  - $YBS_civil_war_victory_achievement_NAME$§!"
+ YBS_achievements_intro_gui_2_y: "§G  - $YBS_return_home_achievement_NAME$§!"
+ YBS_achievements_intro_gui_2_n: "§g  - $YBS_return_home_achievement_NAME$§!"
+ YBS_achievements_intro_gui_3_y: "§G  - $YBS_do_you_speak_english_achievement_NAME$§!"
+ YBS_achievements_intro_gui_3_n: "§g  - $YBS_do_you_speak_english_achievement_NAME$§!"
+ YBS_achievements_intro_gui_4_y: "§G  - $YBS_mother_anarchy_achievement_NAME$§!"
+ YBS_achievements_intro_gui_4_n: "§g  - $YBS_mother_anarchy_achievement_NAME$§!"
 
 # TECH
 
@@ -827,7 +836,7 @@
  YBS_claim_navarre_desc: ""
  YBS_protector_of_democracy: "Protector of European Democracy"
  YBS_protector_of_democracy_desc: ""
- YBS_protector_of_democracy_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to invite minor §CDemocratic§! Countries in §gdefensive wars§!."
+ YBS_protector_of_democracy_tt: "Unlocks £GFX_decision_icon_small §YDecisions§! to invite minor §CDemocratic§! Countries currently fighting §gdefensive wars§!."
  YBS_liberate_french_navarre: "Our Final Liberation"
  YBS_liberate_french_navarre_desc: ""
  YBS_thanks_for_playing_dem: "The Future of Iberia"
@@ -881,7 +890,7 @@
  YBS_the_hopeful_internationale_desc: ""
  YBS_volunteer_corps: "Establish the OdVB" # Organizo de Volontulaj Batalantoj
  YBS_volunteer_corps_desc: ""
- YBS_the_internationalist_fight: "The Internationalist Fight"
+ YBS_the_internationalist_fight: "Establish our Presence"
  YBS_the_internationalist_fight_desc: ""
  YBS_invite_galicia: "Invite Galicia"
  YBS_invite_galicia_desc: ""
@@ -1407,7 +1416,7 @@
 
  YBS_news_events.9.t: "Formation of the Hopeful Internationale"
  YBS_news_events.9.desc: "In an effort to oppose the influences of the Third International, the Esperantists of the Respubliko de Espero have proclaimed the formation of the 'Hopeful Internationale', an international organisation for cooperation between the many international Esperantist movements across the globe.\n \nInternational recognition of the Internationale has however been low, with many nations seeing the project as a plan to subvert the powers of the state and erase national structures and borders."
- YBS_news_events.9.a: "What are they plotting?"
+ YBS_news_events.9.a: "Interesting?"
  YBS_news_events.9.b: "The Internationale will save the Human Race!"
 
  YBS_news_events.10.t: "Carlist Victory in Iberia"
@@ -1430,7 +1439,7 @@
 
  YBS_news_events.13.t: "Esperantist Victory in Iberia"
  YBS_news_events.13.desc: "The Iberian Civil War has come to an end and in an unexpected string of circumstances, the Republic of Hope has prevailed against all odds.\n \nThe General Committee of the Republic has already reaffirmed their commitment to the internationalist cause, seeking to liberate the former Iberian colonies first before Europe will get their full attention."
- YBS_news_events.13.a: "They are a threat to every Nation State!"
+ YBS_news_events.13.a: "A-Ha."
  YBS_news_events.13.b: "Internationalism is the way forward for the Human Race!"
 
  YBS_news_events.14.t: "Hanseatic Victory in Iberia"

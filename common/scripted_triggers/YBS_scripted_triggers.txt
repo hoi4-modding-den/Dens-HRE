@@ -54,7 +54,7 @@ YBS_controls_all_iberian_states = {
         all_state = {
             OR = {
                 YBS_is_iberian_state = no
-                is_controlled_by = ROOT
+                is_controlled_by = PREV
             }
         }
     }
@@ -66,7 +66,7 @@ YBS_owns_all_iberian_states = {
         all_state = {
             OR = {
                 YBS_is_iberian_state = no
-                is_owned_by = ROOT
+                is_owned_by = PREV
             }
         }
     }
@@ -101,7 +101,8 @@ YBS_controls_all_spanish_africa_states = {
         all_state = {
             OR = {
                 YBS_is_spanish_africa_state = no
-                is_controlled_by = ROOT
+                is_controlled_by = PREV
+                is_controlled_by = ZZZ
             }
         }
     }
@@ -159,15 +160,15 @@ YBS_iberian_federation_complete = {
             }
         }
         YBS_is_iberian_federation_leader = yes
-        YAO = { is_subject_of = ROOT }
-        YKP = { is_subject_of = ROOT }
-        YGL = { is_subject_of = ROOT }
-        YPN = { is_subject_of = ROOT }
-        YRR = { is_subject_of = ROOT }
-        YZA = { is_subject_of = ROOT }
-        YCA = { is_subject_of = ROOT }
-        YBL = { is_subject_of = ROOT }
-        YGB = { is_subject_of = ROOT }
+        YAO = { is_subject_of = PREV }
+        YKP = { is_subject_of = PREV }
+        YGL = { is_subject_of = PREV }
+        YPN = { is_subject_of = PREV }
+        YRR = { is_subject_of = PREV }
+        YZA = { is_subject_of = PREV }
+        YCA = { is_subject_of = PREV }
+        YBL = { is_subject_of = PREV }
+        YGB = { is_subject_of = PREV }
     }
 }
 

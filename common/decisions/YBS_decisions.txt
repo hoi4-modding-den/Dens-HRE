@@ -1253,6 +1253,7 @@ YBS_seeds_of_discord_cat = {
             is_ally_with = FROM
             has_war = no
             FROM = { has_war = no }
+            YBS_civil_war_over = no
 		}
 
         visible = {
@@ -1267,6 +1268,8 @@ YBS_seeds_of_discord_cat = {
 			FROM = { 
                 is_ally_with = ROOT 
                 is_ai = yes
+                NOT = { has_autonomy_state = autonomy_YBS_federal_state }
+                NOT = { has_autonomy_state = autonomy_YBS_subsidiary }
             }
 		}
 
@@ -1497,8 +1500,10 @@ YBS_spanish_civil_war_cat = {
 
 		available = {
             is_ally_with = FROM
+            has_war = no
+            FROM = { has_war = no }
+            YBS_civil_war_over = no
 		}
-
         visible = {
             is_ai = yes
         }
@@ -2467,26 +2472,11 @@ political_actions = {
         fire_only_once = yes
 
 		visible = {
-			OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+			is_debug = yes
 		}
 
         available = {
-            OR = {
-                is_ai = no
-                AND = {
-                    all_state = {
-                        OR = {
-                            YBS_is_iberian_state = no
-                            is_owned_by = ZZZ
-                            is_owned_by = ROOT
-                        }
-                    }
-                    has_war = no
-                }
-            }
+            is_ai = no
         }
 
         allowed = {
@@ -2531,26 +2521,11 @@ political_actions = {
         fire_only_once = yes
 
 		visible = {
-			OR = {
-                is_debug = yes
-                is_ai = yes
-            }
+			is_debug = yes
 		}
 
         available = {
-            OR = {
-                is_ai = no
-                AND = {
-                    all_state = {
-                        OR = {
-                            YBS_is_spanish_africa_state = no
-                            is_owned_by = ZZZ
-                            is_owned_by = ROOT
-                        }
-                    }
-                    has_war = no
-                }
-            }
+            is_ai = no
         }
 
         allowed = {

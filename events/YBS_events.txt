@@ -2662,22 +2662,7 @@ news_event = { # YBS unifies Iberia // Carlist
 	desc = YBS_news_events.10.desc
     picture = GFX_news_event_034
 
-    trigger = {
-        YBS = {
-            exists = yes
-            is_subject = no
-            has_government = neutrality
-            NOT = { has_completed_focus = YBS_rule_of_capital }
-            YBS_owns_all_iberian_states = yes
-        }
-        YBS_civil_war_over = yes
-    }
-
-    mean_time_to_happen = {
-        days = 2
-    }
-	
-	fire_only_once = yes
+    is_triggered_only = yes
     major = yes
 	
 	option = { # reaction damn it
@@ -2716,25 +2701,7 @@ news_event = { # YBS unifies Iberia // Democratic
 	desc = YBS_news_events.11.desc
     picture = GFX_news_event_034
 
-    trigger = {
-        YBS = { 
-            exists = yes
-            is_subject = no
-            has_government = democratic
-            NOT = { has_completed_focus = YBS_we_will_always_have_hope }
-            OR = {
-                YBS_owns_all_iberian_states = yes
-                YBS_iberian_federation_complete = yes
-            } 
-        }
-        YBS_civil_war_over = yes
-    }
-
-    mean_time_to_happen = {
-        days = 2
-    }
-	
-	fire_only_once = yes
+    is_triggered_only = yes
     major = yes
 	
 	option = { # reaction damn it
@@ -2773,21 +2740,7 @@ news_event = { # YBS unifies Iberia // Syndicalist
 	desc = YBS_news_events.12.desc
     picture = GFX_news_event_034
 
-    trigger = {
-        YBS = { 
-            exists = yes
-            is_subject = no
-            has_government = communism
-            YBS_owns_all_iberian_states = yes
-        }
-        YBS_civil_war_over = yes
-    }
-
-    mean_time_to_happen = {
-        days = 2
-    }
-	
-	fire_only_once = yes
+    is_triggered_only = yes
     major = yes
 	
 	option = { # reaction damn it
@@ -2826,22 +2779,7 @@ news_event = { # YBS unifies Iberia // Esperantist
 	desc = YBS_news_events.13.desc
     picture = GFX_news_event_YBS_esperanto_republic
 
-    trigger = {
-        YBS = { 
-            exists = yes
-            is_subject = no
-            has_government = democratic
-            has_completed_focus = YBS_we_will_always_have_hope
-            YBS_owns_all_iberian_states = yes
-        }
-        YBS_civil_war_over = yes
-    }
-
-    mean_time_to_happen = {
-        days = 2
-    }
-	
-	fire_only_once = yes
+    is_triggered_only = yes
     major = yes
 	
 	option = { # reaction what
@@ -2870,22 +2808,7 @@ news_event = { # YBS unifies Iberia // Corporatist
 	desc = YBS_news_events.14.desc
     picture = GFX_news_event_saf_coup
 
-    trigger = {
-        YBS = { 
-            exists = yes
-            is_subject = no
-            has_government = neutrality
-            has_completed_focus = YBS_rule_of_capital
-            YBS_owns_all_iberian_states = yes
-        }
-        YBS_civil_war_over = yes
-    }
-
-    mean_time_to_happen = {
-        days = 2
-    }
-	
-	fire_only_once = yes
+    is_triggered_only = yes
     major = yes
 	
 	option = { # reaction what
@@ -2913,5 +2836,83 @@ news_event = { # YBS unifies Iberia // Corporatist
             }
         }
     }
+
+}
+
+news_event = { # YBS unifies Iberia // Trigger Event
+	id = YBS_news_events.15
+
+    trigger = {
+        tag = YBS
+        YBS = { 
+            exists = yes
+            is_subject = no
+            OR = {
+                YBS_owns_all_iberian_states = yes
+                YBS_iberian_federation_complete = yes
+            }
+        }
+        YBS_civil_war_over = yes
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                YBS = {
+                    has_government = neutrality
+                    NOT = { has_completed_focus = YBS_rule_of_capital }
+                }
+            }
+            news_event = YBS_news_events.10
+        }
+        if = {
+            limit = {
+                YBS = {
+                    has_government = democratic
+                    NOT = { has_completed_focus = YBS_we_will_always_have_hope }
+                }
+            }
+            news_event = YBS_news_events.11
+        }
+        if = {
+            limit = {
+                YBS = {
+                    has_government = communism
+                }
+            }
+            news_event = YBS_news_events.12
+        }
+        if = {
+            limit = {
+                YBS = {
+                    has_government = democratic
+                    has_completed_focus = YBS_we_will_always_have_hope
+                }
+            }
+            news_event = YBS_news_events.13
+        }
+        if = {
+            limit = {
+                YBS = {
+                    has_government = neutrality
+                    has_completed_focus = YBS_rule_of_capital
+                }
+            }
+            news_event = YBS_news_events.14
+        }
+    }
+
+    mean_time_to_happen = {
+        hours = 6
+    }
+	
+	fire_only_once = yes
+    hidden = yes
+	
+	option = {
+        name = YBS_news_events.15.a
+        
+    }
+
 
 }
