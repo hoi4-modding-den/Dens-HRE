@@ -185,5 +185,36 @@ ideas = {
 				production_speed_buildings_factor = -0.15
 			}
 		}
+
+		YKP_exercito_portugues = {
+			name = YKP_exercito_portugues_idea
+			picture = ARG_subdue_dissension
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				mobilization_speed = 0.2
+				army_speed_factor = 0.1
+				army_org_factor = 0.1
+			}
+		}
+
+		YKP_officer_training_regimens = {
+			name = YKP_officer_training_regimens_idea
+			picture = chi_wargaming_division
+			modifier = {
+				training_time_factor = 0.1
+				experience_gain_army = 0.05
+				army_morale_factor = 0.2
+			}
+		}
+
+		YKP_brigada_patriotica = {
+			name = YKP_brigada_patriotica_idea
+			picture = MEX_politicised_army_2
+			modifier = {
+				war_support_factor = 0.1
+				conscription = 0.03
+			}
+		}
 	}
 }

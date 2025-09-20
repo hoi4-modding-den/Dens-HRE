@@ -6,7 +6,7 @@ focus_tree = {
 		modifier = { add = 10 tag = YKP }
 	}
 
-	continuous_focus_position = { x = 1000 y = 1000 }
+	continuous_focus_position = { x = 4100 y = 1000 }
 
     reset_on_civilwar = no
 
@@ -15,7 +15,7 @@ focus_tree = {
 
 	focus = {
 		id = YKP_estado_carmonista
-		icon = GFX_focus_generic_catholic_dominion
+		icon = GFX_focus_por_estado_novo
 		x = 15
 		y = 0
 		cost = 5
@@ -58,7 +58,7 @@ focus_tree = {
 
 	focus = {
 		id = YKP_solidify_military_control
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_advanced_military_studies
 		x = -1
 		y = 1
 		cost = 8
@@ -93,14 +93,12 @@ focus_tree = {
 			### EVENT AND ADVISOR ###
 
 			country_event = YKP.14
-
-
 		}
 	}
 
 	focus = {
 		id = YKP_censor_the_press
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_political_pressure
 		x = 1
 		y = 1
 		cost = 8
@@ -131,7 +129,7 @@ focus_tree = {
 
 	focus = {
 		id = YKP_address_the_people
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_befriend_portugal
 		x = 0
 		y = 2
 		cost = 8
@@ -165,6 +163,1040 @@ focus_tree = {
 			hidden_effect = {
 				news_event = YKP_news.3
 			}
+		}
+	}
+
+	focus = {
+		id = YKP_sharpen_our_blades
+		icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
+		x = -4
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_address_the_people
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_address_the_people
+		}
+
+		mutually_exclusive = {
+			focus = YKP_revolutionise_our_industry
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_exercito_portugues
+			}
+
+			custom_effect_tooltip = YKP_will_be_removed_after_portugal_is_unified_tt
+		}
+	}
+
+	focus = {
+		id = YKP_lisbon_arms_company
+		icon = GFX_focus_AFG_scavenging
+		x = -2
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_sharpen_our_blades
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_sharpen_our_blades
+		}
+
+		available = {
+			controls_state = 112
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+			unlock_military_industrial_organization_tooltip = mio:YKP_lisbon_arms_company_organization
+			112 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_aircraft_production
+		icon = GFX_focus_generic_aircraft_production
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_lisbon_arms_company
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_lisbon_arms_company
+		}
+
+		available = {
+			controls_state = 179
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+			mio:YKP_faro_costrucoes_aeronauticas = {
+				add_mio_funds = 1000
+			}
+			179 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_expanding_arsenal_do_alfeite
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_lisbon_arms_company
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_lisbon_arms_company
+		}
+
+		available = {
+			controls_state = 112
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = naval_equipment
+			}
+			mio:YKP_arsenal_do_alfeite_organization = {
+				add_mio_funds = 1000
+			}
+			112 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_design_lessons_learned
+		icon = GFX_focus_generic_reorient_production
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_lisbon_arms_company
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_aircraft_production
+		}
+
+		prerequisite = {
+			focus = YKP_expanding_arsenal_do_alfeite
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+		}
+	}
+
+	focus = {
+		id = YKP_officer_training_schools
+		icon = GFX_focus_RAJ_military_into_the_workforce
+		x = 2
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_sharpen_our_blades
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_sharpen_our_blades
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			army_experience = 25
+			add_ideas = {
+				YKP_officer_training_regimens
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_the_brigada_patriotica
+		icon = GFX_focus_por_remember_olivenca
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_officer_training_schools
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_officer_training_schools
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				YKP_brigada_patriotica
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_lessons_from_the_last_war
+		icon = GFX_focus_AUS_frontmiliz_focus
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_officer_training_schools
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_officer_training_schools
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			112 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6924
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3798
+				}
+			}
+			795 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 924
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 844
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3926
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_high_command_conference
+		icon = GFX_SOV_experts_in_camouflage_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_officer_training_schools
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_the_brigada_patriotica
+		}
+
+		prerequisite = {
+			focus = YKP_lessons_from_the_last_war
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			country_event = YKP.15
+
+			custom_effect_tooltip = YKP_available_political_advisor
+			show_ideas_tooltip = YKP_francisco_craveiro_lopes_idea
+		}
+	}
+
+	focus = {
+		id = YKP_raise_the_flag
+		icon = GFX_YKP_focus_raise_the_flag
+		x = 0
+		y = 4
+		cost = 8
+
+		relative_position_id = YKP_sharpen_our_blades
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_design_lessons_learned
+		}
+
+		prerequisite = {
+			focus = YKP_high_command_conference
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				YKP_public_protests
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_revolutionise_our_industry
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 4
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_address_the_people
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_address_the_people
+		}
+
+		mutually_exclusive = {
+			focus = YKP_sharpen_our_blades
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_restructure_financing
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -3
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_revolutionise_our_industry
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_roads_to_lisbon
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_revolutionise_our_industry
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_open_the_alentejo_iron_mines
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_revolutionise_our_industry
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_invest_in_industrial_research
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 3
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_revolutionise_our_industry
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_new_distribution_hubs
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -2
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_restructure_financing
+		}
+
+		prerequisite = {
+			focus = YKP_roads_to_lisbon
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_home_production_schemes
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_new_distribution_hubs
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_new_distribution_hubs
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_revitalised_rail_industry
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_new_distribution_hubs
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_new_distribution_hubs
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_new_production_methods
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 2
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_open_the_alentejo_iron_mines
+		}
+
+		prerequisite = {
+			focus = YKP_invest_in_industrial_research
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_expand_the_santarem_line
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_new_production_methods
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_new_production_methods
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_improved_naval_facilities
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_new_production_methods
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_new_production_methods
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_iberian_economic_powerhouse
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 4
+		cost = 8
+
+		relative_position_id = YKP_revolutionise_our_industry
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_home_production_schemes
+		}
+
+		prerequisite = {
+			focus = YKP_revitalised_rail_industry
+		}
+
+		prerequisite = {
+			focus = YKP_expand_the_santarem_line
+		}
+
+		prerequisite = {
+			focus = YKP_improved_naval_facilities
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_operation_fogo_e_sangue
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 6
+		cost = 8
+
+		relative_position_id = YKP_address_the_people
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_raise_the_flag
+			focus = YKP_iberian_economic_powerhouse
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_rebuild_our_country
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_operation_fogo_e_sangue
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_operation_fogo_e_sangue
+		}
+
+		available = {
+			controls_all_portugal = yes
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = YKP_exercito_portugues
+				}
+
+				remove_idea = YKP_exercito_portugues
+			}
+		}
+	}
+
+	focus = {
+		id = YKP_look_outwards
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 1
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_operation_fogo_e_sangue
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_operation_fogo_e_sangue
+		}
+
+		available = {
+			controls_all_portugal = yes
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_anti_communist_pact
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_operation_fogo_e_sangue
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_rebuild_our_country
+		}
+
+		prerequisite = {
+			focus = YKP_look_outwards
+		}
+
+		available = {
+			controls_all_portugal = yes
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_anti_communist_pact
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_operation_fogo_e_sangue
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_rebuild_our_country
+		}
+
+		prerequisite = {
+			focus = YKP_look_outwards
+		}
+
+		available = {
+			controls_all_portugal = yes
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_claims_on_galicia
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = -2
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_anti_communist_pact
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_anti_communist_pact
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_secure_iberia
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_anti_communist_pact
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_anti_communist_pact
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_planned_client_states
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 2
+		y = 1
+		cost = 8
+
+		relative_position_id = YKP_anti_communist_pact
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_anti_communist_pact
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = YKP_portugal_saved
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		x = 0
+		y = 2
+		cost = 8
+
+		relative_position_id = YKP_anti_communist_pact
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 400
+		}
+
+		prerequisite = {
+			focus = YKP_claims_on_galicia
+		}
+
+		prerequisite = {
+			focus = YKP_secure_iberia
+		}
+
+		prerequisite = {
+			focus = YKP_planned_client_states
+		}
+
+		available = {
+
+		}
+
+		completion_reward = {
+			
 		}
 	}
 
