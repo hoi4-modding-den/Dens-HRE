@@ -3,11 +3,13 @@ YPR_proletarian_military = {
 
 	icon = GFX_idea_generic_communist_army
 	
-	conscription = 0.025
-	army_attack_factor = 0.05
-	army_org_factor = -0.1
-	experience_gain_army_factor = -0.15
-	equipment_capture_factor = 0.03
+	conscription = YPR_pm_conscription
+	army_attack_factor = YPR_pm_army_attack_factor
+	army_org_factor = YPR_pm_army_org_factor
+	experience_gain_army_factor = YPR_pm_experience_gain_army_factor
+	equipment_capture_factor = YPR_pm_equipment_capture_factor
+	army_org_regain = YPR_pm_army_org_regain
+	army_defence_factor = YPR_pm_army_defense_factor
 
 }
 

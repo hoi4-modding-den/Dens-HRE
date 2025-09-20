@@ -5,7 +5,7 @@
  
  YPR_communism:0 "Revolutionary Communes of Porto and Guarda"
  YPR_communism_DEF:0 "the Revolutionary Communes of Porto and Guarda"
- YPR_communism_ADJ:0 "Communal"
+ YPR_communism_ADJ:0 "Portuguese"
  
  YPR_communism_party:0 "PCP-GCT"
  YPR_communism_party_long:0 "Partido Comunista Português - Confederação Geral do Trabalho"
@@ -17,6 +17,20 @@
  YPR_international_volunteers:0 "International Volunteers"
  YPR_anarchist_society:0 "Anarchist Society"
  YPR_dictatorship_of_the_proletariat:0 "Dictatorship of the Proletariat"
+ 
+ YPR_portuguese_red_army_new_unit_tt:0 "\nCreates a new fully-equipped §HInfantry Division§! in §HPorto§!"
+ YPR_arm_the_councils_new_unit_tt:0 "\nCreates three poorly-equipped §HMilitia Units§! in §HPorto§!"
+ 
+ YBR_prepare_for_the_great_struggle_dynmod_tt:0 "\nModify §HProletarian Military§! by\nArmy Experience Gain: §G+5.00%§!\n"
+ YPR_doctrinal_developments_dynmod_tt:0 "\nModify §HProletarian Military§! by\nDivision Organization: §G+5.00%§!\n"
+ YPR_arm_the_councils_dynmod_tt:0 "\nModify §HProletarian Military§! by\nConscription: §H+1.00%§!\nDivision Attack: §G+5.00%§!\nDivision Defense: §G+5.00%§!\n"
+ YPR_portuguese_red_army_dynmod_tt:0 "Modify §HProletarian Military§! by\nDivision Organization: §G+5.00%§!\nArmy Experience Gain: §G+10.00%§!\n"
+ YPR_political_commissars_dynmod_tt:0 "Modify §HProletarian Military§! by\nDivision Organization: §G+5.00%§!\nArmy Organization Regain: §G+5.00%§!\nEquipment Capture Ratio Modifier: §R-3.00%§!\n\n"
+ YPR_proletarianize_the_peasants_dynmod_tt:0 "Modify §HDictatorship of the Proletariat§! by\nStability: §G+2.50%§!\nConstruction Speed: §G+2.50%§!\n\n"
+ YPR_policy_of_war_communism_dynmod_tt:0 "Modify §HDictatorship of the Proletariat§! by\n£GFX_prod_eff_cap Production Efficiency Cap: §G+5.00%§!\n\n"
+ YPR_self_management_of_production_dynmod_tt:0 "Modify §HAnarchist Society§! by\nStability Factor: §R-5.00%§!\n£GFX_prod_eff Production Efficiency Cap: §G+10.00%§!\nFactory Output: §G+10.00%§!\n\n"
+ YPR_collectivize_the_chestnut_farms_dynmod_tt:0 "Modify §HAnarchist Society§! by\nResource Gain Efficiency: §G+15.00%§!\n\n"
+ YPR_communal_autonomy_dynmod_tt:0 "Modify §HAnarchist Society§! by\nStability: §R-10.00%§!\nWeekly Stability: §R-0.50%§!\nMax Factories in a State: §G+10.00%§!\nConsumer Goods Factories factor: §H-10.00%§!\n"
  
  YPR.1.t:0 "The Inaugral Congress of the Portuguese Revolutionaries"
  YPR.1.d:0 "For the first time since the Revolution of 1934, the key figures of both the PCP and the GCT meet each other in an effort to solidify the foundations of the newly-established Communist government. The most burning question of the day is the philosophical basis of the new constitution; The PCP argues that it should follow the principles set by Lenin and the Bolsheviks, whilst the GCT leans more towards Anarcho-Syndicalist views."
@@ -55,7 +69,7 @@
  YPR_proletarianize_the_peasants:0 "Proletarianize the Peasants"
  YPR_proletarianize_the_peasants_tt:0 "§g"There is no doubt that in a country where the overwhelming majority of the population consists of small agricultural producers, a socialist revolution can be carried out only through the implementation of a whole series of special transitional measures..."\n - V.I. Lenin, Introducing the NEP, 1921§!\n\n"
  
- YPR_rapid_industrialization:0 "Rapid Industrialization"
+ YPR_rapid_industrialization:0 "Develop the Iron Mines of Moncorvo"
  YPR_rapid_industrialization_tt:0 "§g"The country that is more developed industrially only shows, to the less developed, the image of its own future."\n - Karl Marx, Capital, Volume I, 1867§!\n\n"
  
  YPR_policy_of_war_communism:0 "Policy of War Communism"
@@ -64,8 +78,38 @@
  YPR_portuguese_red_army:0 "The Portuguese Red Army"
  YPR_portuguese_red_army_tt:0 "§g"The proletarian army must be exclusively composed of persons belonging to the working class, of persons who do not expoloit labour and who are directly interested in the victory of the workers' revolution."\n - Nikolai Bukharin, The ABC of Communism, 1920§!\n\n"
  
+ YPR_political_commissars:0 "Political Commissars"
+ YPR_political_commissars_tt:0 "§g"Root out the counterrevolutionaries without mercy, lock up suspicious characters in concentration camps... Shirkers will be shot, regardless of past service."\n - Lev Trotsky, 1918§!\n\n"
+ 
+ YPR_prepare_for_the_great_struggle:0 "Prepare for the Great Struggle"
+ YPR_prepare_for_the_great_struggle_tt:0 "§g"We have no compassion and we ask no compassion from you. When our turn comes, we shall not make excuses for the terror. But the royal terrorists, the terrorists by the grace of God and the law, are in practice brutal, disdainful, and mean, in theory cowardly, secretive, and deceitful, and in both respects disreputable."\n - Karl Marx, the New Rheinish Newspaper, 1849§!\n\n"
+ 
  YPR_all_power_to_the_councils:0 "Empower the Workers' Councils"
  YPR_all_power_to_the_councils_tt:0 "§g"The freedom of any individual carries within it the seed of a free and complete community without government, a free society that lives in organic and decentralized totality, united in its pursuit of the great human goal: Anarchist Communism!"\n - Nestor Makhno, The Anarchist Revolution, 1920§!\n\n"
  
+ YPR_arm_the_councils:0 "Arm the Councils"
+ YPR_arm_the_councils_tt:0 "§g"I'd rather die on my feet, than live on my knees."\n - Emiliano Zapata§!\n"
+ 
+ YPR_self_management_of_production:0 "The Principles of Self-Management"
+ YPR_self_management_of_production_tt:0 "§g"To be governed is to be watched over, inspected, spied on, directed, legislated at, regulated, docketed, indoctrinated, preached at, controlled, assessed, weighed, censored, ordered about, by men who have neither the right, nor the knowledge, nor the virtue."\n - Pierre-Joseph Proudhon, The General Idea of the Revolution in the 19th Century, 1851§!\n\n"
+ 
+ YPR_collectivize_the_chestnut_farms:0 "Collectivize the Chestnut Farms"
+ YPR_collectivize_the_chestnut_farms_tt:0 "§g"The means of production being the collective work of humanity, the product should be the collective property of the race. Individual appropriation is neither just nor serviceable."\n - Peter Kropotkin, The Conquest of Bread, 1892§!\n\n"
+ 
+ YPR_communal_autonomy:0 "Broaden Communal Autonomy"
+ YPR_communal_autonomy_tt:0 "§g"A natural society, in the midst of which every man is born and outside of which he could never become a rational and free being, becomes humanized only in the measure that all men comprising it become, individually and collectively, free to an ever greater extent."\n - Mikhail Bakunin, Man, Society, Freedom, 1871§!\n\n"
+ 
+ YPR_doctrinal_developments:0 "The Doctrinal Legacy of the 1934 Revolution"
+ YPR_doctrinal_developments_tt:0 "§g"It is a fact that under equal conditions, large-scale battles and whole wars are won by troops which have a strong will for victory, clear goals before them, high moral standards, and devotion to the banner under which they go into battle."\n - Georgy Zhukov§!\n\n"
+ 
+ YPR_rifle_modernization:0 "Modernize the Mauser–Vergueiro"
+ YPR_rifle_modernization_tt:0 "§g"Every Communist must grasp the truth; Political power grows out of the barrel of a gun."\n - Mao Zedong, Problems of War and Strategy, 1938§!\n\n"
+ 
+ YPR_mass_production_of_weapons:0 "Mass Production of Weapons"
+ YPR_mass_production_of_weapons_tt:0 "§g"The pickaxe and the shovel are as important as the rifle. I can't say it often enough."\n - Buenaventura Durruti, 1936§!\n\n"
+ 
  YPR_wage_war_against_unjust_hierarchies:0 "Topple Unjust Hierarchies"
- YPR_wage_war_against_unjust_hierarchies_tt:0 "§g"It is often said that Anarchists live in a world of dreams to come, and do not see the things which happen today. We do see them only too well, and in their true colors, and that is what makes us carry the hatchet into the forest of prejudice that besets us."\n - Peter Kropotkin, Anarchism: Its Philosophy and Ideal, 1896§!\n\n"
+ YPR_wage_war_against_unjust_hierarchies_tt:0 "§g"When, in the course of human development, existing institutions prove inadequate to the needs of man, when they serve merely to enslave, rob, and oppress mankind, the people have the eternal right to rebel against, and overthrow, these institutions."\n - Emma Goldman, What I Believe, 1908§!\n\n"
+ 
+ YPR_strike_at_the_kingdom:0 "Strike at the Royalists"
+ YPR_strike_at_the_kingdom_tt:0 "§g"The Communists disdain to conceal their views and aims. They openly declare that their ends can be attained only by the forcible overthrow of all existing social conditions. Let the ruling classes tremble at a Communistic revolution!"\n - Karl Marx, The Communist Manifesto, 1848§!\n\n"

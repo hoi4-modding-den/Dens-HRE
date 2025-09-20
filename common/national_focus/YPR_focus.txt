@@ -9,7 +9,7 @@ focus_tree = {
 		}
 	}
 
-	continuous_focus_position = { x = 100 y = 1000 }
+	continuous_focus_position = { x = 2300 y = 1000 }
 
     reset_on_civilwar = no
 
@@ -104,7 +104,7 @@ focus_tree = {
 	focus = {
 		id = YPR_establish_the_vanguard_party
 		icon = GFX_focus_SOV_the_path_of_marxism_leninism
-		x = 5
+		x = 6
 		y = 1
 		cost = 1
 		prerequisite = { focus = YPR_first_congress_of_the_portuguese_revolutionary_front }
@@ -157,12 +157,145 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = YPR_prepare_for_the_great_struggle
+		icon = GFX_goal_generic_war_with_comintern
+		x = -6
+		y = 1
+		cost = 5
+		prerequisite = { 
+			focus = YPR_establish_the_vanguard_party
+			focus = YPR_all_power_to_the_councils
+		}
+		relative_position_id = YPR_establish_the_vanguard_party
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_prepare_for_the_great_struggle_tt
+			army_experience = 35
+			custom_effect_tooltip = YBR_prepare_for_the_great_struggle_dynmod_tt
+			add_to_variable = { YPR_pm_experience_gain_army_factor = 0.05 }
+		}
+	}
+	focus = {
+		id = YPR_doctrinal_developments
+		icon = GFX_goal_generic_army_doctrines
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_prepare_for_the_great_struggle }
+		relative_position_id = YPR_prepare_for_the_great_struggle
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_doctrinal_developments_tt
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_to_variable = { YPR_pm_army_org_factor = 0.05 }
+			custom_effect_tooltip = YPR_doctrinal_developments_dynmod_tt
+		}
+	}
+	focus = {
+		id = YPR_rifle_modernization
+		icon = GFX_goal_generic_small_arms
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_prepare_for_the_great_struggle }
+		relative_position_id = YPR_prepare_for_the_great_struggle
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_rifle_modernization_tt
+			add_tech_bonus = {
+				name = YPR_infantry_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	focus = {
+		id = YPR_mass_production_of_weapons
+		icon = GFX_focus_generic_communist_industry
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_rifle_modernization }
+		prerequisite = { focus = YPR_doctrinal_developments }
+		relative_position_id = YPR_rifle_modernization
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_mass_production_of_weapons_tt
+			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
 		id = YPR_portuguese_red_army
 		icon = GFX_focus_SOV_builder_of_the_red_army
 		x = -2
 		y = 1
 		cost = 5
 		prerequisite = { focus = YPR_institute_a_dictatorship_of_the_proletariat }
+		prerequisite = { focus = YPR_prepare_for_the_great_struggle }
 		relative_position_id = YPR_institute_a_dictatorship_of_the_proletariat
 
 		
@@ -174,6 +307,43 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_portuguese_red_army_tt
+			custom_effect_tooltip = YPR_portuguese_red_army_dynmod_tt
+			custom_effect_tooltip = YPR_portuguese_red_army_new_unit_tt
+			add_to_variable = { YPR_pm_army_org_factor = 0.05 }
+			add_to_variable = { YPR_pm_experience_gain_army_factor = 0.1 }
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "division_template =\"Infantry Division\" start_experience_factor = 0.1 start_equipment_factor = 1"
+						owner = ROOT
+						count = 1
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = YPR_political_commissars
+		icon = GFX_focus_AFG_defender_of_central_asia
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_portuguese_red_army }
+		relative_position_id = YPR_portuguese_red_army
+
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_political_commissars_tt
+			custom_effect_tooltip = YPR_political_commissars_dynmod_tt
+			set_technology = {
+				tech_military_police = 1
+			}
 		}
 	}
 	focus = {
@@ -194,17 +364,24 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_proletarianize_the_peasants_tt
+			add_to_variable = { YPR_dotp_stability_factor = 0.025 }
+			add_to_variable = { YPR_dotp_production_speed_buildings_factor = 0.025 }
+			custom_effect_tooltip = YPR_proletarianize_the_peasants_dynmod_tt
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
 		}
 	}
 	focus = {
 		id = YPR_rapid_industrialization
-		icon = GFX_focus_generic_communist_industry
+		icon = GFX_goal_generic_soviet_construction
 		x = 1
 		y = 1
 		cost = 5
 		prerequisite = { focus = YPR_proletarianize_the_peasants }
 		relative_position_id = YPR_proletarianize_the_peasants
 		mutually_exclusive = { focus = YPR_policy_of_war_communism }
+		available = { controls_state = 180 }
 
 		
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -215,6 +392,25 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_rapid_industrialization_tt
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 180
+			}
+			180 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = YPR_excavation_bonus
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
 		}
 	}
 	focus = {
@@ -239,12 +435,15 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = YPR_policy_of_war_communism_tt
+			custom_effect_tooltip = YPR_policy_of_war_communism_dynmod_tt
+			add_to_variable = { YPR_dotp_production_factory_max_efficiency_factor = 0.05 }
+			add_ideas = { war_economy }
 		}
 	}
 	focus = {
 		id = YPR_all_power_to_the_councils
 		icon = GFX_focus_ARG_no_gods_no_masters
-		x = -5
+		x = -6
 		y = 1
 		cost = 1
 		prerequisite = { focus = YPR_first_congress_of_the_portuguese_revolutionary_front }
@@ -277,7 +476,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YPR_wage_war_against_unjust_hierarchies
-		icon = GFX_focus_generic_workers_and_farmers_rise
+		icon = GFX_focus_spr_masters_of_our_own_fate
 		x = 0
 		y = 1
 		cost = 5
@@ -293,6 +492,162 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = YPR_wage_war_against_unjust_hierarchies_tt
 			add_dynamic_modifier = { modifier = YPR_anarchist_society }
+		}
+	}
+	focus = {
+		id = YPR_arm_the_councils
+		icon = GFX_focus_generic_spur_communist_revolutions
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_wage_war_against_unjust_hierarchies }
+		prerequisite = { focus = YPR_prepare_for_the_great_struggle }
+		relative_position_id = YPR_wage_war_against_unjust_hierarchies
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_arm_the_councils_tt
+			custom_effect_tooltip = YPR_arm_the_councils_dynmod_tt
+			custom_effect_tooltip = YPR_arm_the_councils_new_unit_tt
+			add_to_variable = { YPR_pm_conscription = 0.01 }
+			add_to_variable = { YPR_pm_army_attack_factor = 0.05 }
+			add_to_variable = { YPR_pm_army_defense_factor = 0.05 }
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "division_template =\"Proletarian Militia\" start_experience_factor = 0.0 start_equipment_factor = 0.7"
+						owner = ROOT
+						count = 3
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = YPR_self_management_of_production
+		icon = GFX_focus_generic_communist
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_wage_war_against_unjust_hierarchies }
+		relative_position_id = YPR_wage_war_against_unjust_hierarchies
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_self_management_of_production_tt
+			custom_effect_tooltip = YPR_self_management_of_production_dynmod_tt
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+			add_to_variable = { YPR_as_production_factory_efficiency_gain_factor = 0.10 }
+			add_to_variable = { YPR_as_industrial_capacity_factory = 0.10 }
+			add_to_variable = { YPR_as_stability_factor = -0.05 }
+		}
+	}
+	focus = {
+		id = YPR_collectivize_the_chestnut_farms
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_wage_war_against_unjust_hierarchies }
+		relative_position_id = YPR_wage_war_against_unjust_hierarchies
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_collectivize_the_chestnut_farms_tt
+			custom_effect_tooltip = YPR_collectivize_the_chestnut_farms_dynmod_tt
+			add_to_variable = { YPR_as_local_resources_factor = 0.15 }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = YPR_communal_autonomy
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_collectivize_the_chestnut_farms }
+		prerequisite = { focus = YPR_self_management_of_production }
+		prerequisite = { focus = YPR_arm_the_councils }
+		relative_position_id = YPR_collectivize_the_chestnut_farms
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_communal_autonomy_tt
+			custom_effect_tooltip = YPR_communal_autonomy_dynmod_tt
+			add_to_variable = { YPR_as_stability_factor = -0.10 }
+			add_to_variable = { YPR_as_stability_weekly = -0.005 }
+			add_to_variable = { YPR_as_global_building_slots_factor = 0.10 }
+			add_to_variable = { YPR_as_consumer_goods_factor = -0.10 }
+		}
+	}
+	focus = {
+		id = YPR_strike_at_the_kingdom
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_mass_production_of_weapons }
+		prerequisite = { focus = YPR_communal_autonomy focus = YPR_political_commissars focus = YPR_policy_of_war_communism focus = YPR_rapid_industrialization }
+		
+		available = {
+			if = {
+				limit = {
+					has_completed_focus = YPR_all_power_to_the_councils
+				}
+				has_completed_focus = YPR_communal_autonomy
+			}
+			if = {
+				limit = {
+					has_completed_focus = YPR_establish_the_vanguard_party
+				}
+				has_completed_focus = YPR_political_commissars
+				OR = {
+					has_completed_focus = YPR_policy_of_war_communism
+					has_completed_focus = YPR_rapid_industrialization
+				}
+			}
+		}
+		relative_position_id = YPR_mass_production_of_weapons
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_strike_at_the_kingdom_tt
+			create_wargoal = {
+				type = annex_everything
+				target = YKP
+			}
 		}
 	}
 }
