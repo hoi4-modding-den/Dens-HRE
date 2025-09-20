@@ -511,6 +511,14 @@ YBS_iberian_federation_cat = {
                     YBS_become_federal_state = yes
     
                     set_cosmetic_tag = YBS_federal_state_spain
+
+					create_country_leader = {
+						name = "Parliament of Central Spain"
+						picture = GFX_portrait_YBS_parliament
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = { anti_fascist_committee }
+					}
                 }
             }   
         }
@@ -623,6 +631,14 @@ YBS_iberian_federation_cat = {
                     YBS_become_federal_state = yes
     
                     set_cosmetic_tag = YBS_federal_state_galicia
+
+                    create_country_leader = {
+						name = "Xeremias Miramontes"
+						picture = GFX_portrait_POL_stanislaw_sosabowski
+						expire = "1965.1.1"
+						ideology = populism
+						traits = { retired_officer }
+					}
                 }  
             }          
         }
@@ -679,6 +695,14 @@ YBS_iberian_federation_cat = {
                     YBS_become_federal_state = yes
     
                     set_cosmetic_tag = YBS_federal_state_asturias
+
+                    create_country_leader = {
+						name = "Adam Gabasa"
+						picture = GFX_portrait_POL_rudiger_von_der_goltz
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = { strict_austerity_adherent }
+					}
                 }  
             }          
         }
@@ -791,6 +815,14 @@ YBS_iberian_federation_cat = {
                     YBS_become_federal_state = yes
     
                     set_cosmetic_tag = YBS_federal_state_aragon
+
+                    create_country_leader = {
+						name = "Alberto Verdugo"
+						picture = GFX_portrait_POL_karol_korytowski
+						expire = "1965.1.1"
+						ideology = socialism
+						traits = { moderate_reformist }
+					}
                 }   
             }         
         }
@@ -847,6 +879,14 @@ YBS_iberian_federation_cat = {
                     YBS_become_federal_state = yes
     
                     set_cosmetic_tag = YBS_federal_state_catalonia
+
+                    create_country_leader = {
+						name = "Silvestre Tarradel"
+						picture = GFX_portrait_lat_vilis_lacis
+						expire = "1965.1.1"
+						ideology = socialism
+						traits = { resolute_social_democrat }
+					}
                 }   
             }         
         }
@@ -903,6 +943,14 @@ YBS_iberian_federation_cat = {
                     YBS_become_federal_state = yes
     
                     set_cosmetic_tag = YBS_federal_state_balearics
+
+                    create_country_leader = {
+						name = "Francés Vilasis"
+						picture = GFX_portrait_POL_tadeusz_bielecki
+						expire = "1965.1.1"
+						ideology = YBS_market_liberalism
+						traits = { CAN_liberal_corporatist }
+					}
                 }    
             }        
         }

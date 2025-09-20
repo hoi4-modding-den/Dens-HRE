@@ -96,6 +96,9 @@
  YKP_widespread_protests_idea:0 "Widespread protests"
  YKP_public_protests_idea:0 "Public protests"
  YKP_censored_media_idea:0 "Censored media"
+ YKP_exercito_portugues_idea:0 "Exército Português"
+ YKP_officer_training_regimens_idea:0 "Officer training regimens"
+ YKP_brigada_patriotica_idea:0 "Brigada Patriótica"
 
  ### EVENTS ###
 
@@ -156,6 +159,13 @@
  YKP.13.t:0 "God's victory"
  YKP.13.desc:0 ""
  YKP.13.a:0 "And on the seventh day He rested."
+
+
+ 
+ YKP.15.t:0 "Strategic debates"
+ YKP.15.desc:0 ""
+ YKP.15.a:0 "Plan Sunset seems to have a higher chance of success."
+ YKP.15.b:0 "Plan River Shield prevents us from overextending."
 
  YKP_news.1.t:0 "King Manuel II of Portugal Assassinated!"
  YKP_news.1.desc:0 "Lisbon reports that Manuel II has been assassinated by communist partisans from the Porto region. His escort was intercepted while walking down Rua Augusta and a small skirmish ensued leaving eight dead including the portuguese monarch. The Kingdom of Portugal has expressed its outrage and has assured the communists in control of the north of the country that there will be severe consequences. The northern revolutionaries deny involvement in the assassination. The kingdom is now led by General Carmona in a provisional government until a new monarch can be selected."
@@ -259,6 +269,48 @@
  YKP_defeat_the_royal_debt:0 "Defeat the Royal Debt"
  YKP_defeat_the_royal_debt_desc:0 ""
 
+ YKP_estado_carmonista:0 "Estado Carmonista"
+ YKP_estado_carmonista_desc:0 ""
+
+ YKP_solidify_military_control:0 "Solidify Military Control"
+ YKP_solidify_military_control_desc:0 ""
+
+ YKP_censor_the_press:0 "Censor the Press"
+ YKP_censor_the_press_desc:0 ""
+
+ YKP_address_the_people:0 "Address the People"
+ YKP_address_the_people_desc:0 ""
+
+ YKP_sharpen_our_blades:0 "Sharpen our Blades"
+ YKP_sharpen_our_blades_desc:0 ""
+
+ YKP_lisbon_arms_company:0 "Lisbon Arms Company"
+ YKP_lisbon_arms_company_desc:0 ""
+
+ YKP_aircraft_production:0 "Aircraft Production"
+ YKP_aircraft_production_desc:0 ""
+
+ YKP_expanding_arsenal_do_alfeite:0 "Expanding Arsenal do Alfeite"
+ YKP_expanding_arsenal_do_alfeite_desc:0 ""
+
+ YKP_design_lessons_learned:0 "Design Lessons Learned"
+ YKP_design_lessons_learned_desc:0 ""
+
+ YKP_officer_training_schools:0 "Officer Training Schools"
+ YKP_officer_training_schools_desc:0 ""
+
+ YKP_the_brigada_patriotica:0 "The Brigada Patriótica"
+ YKP_the_brigada_patriotica_desc:0 ""
+
+ YKP_lessons_from_the_last_war:0 "Lessons from the Last War"
+ YKP_lessons_from_the_last_war_desc:0 ""
+
+ YKP_high_command_conference:0 "High Command Conference"
+ YKP_high_command_conference_desc:0 ""
+
+ YKP_raise_the_flag:0 "Raise the Flag"
+ YKP_raise_the_flag_desc:0 ""
+
  ### DECISIONS ###
 
  YKP_conquest_decisions:0 "[YKP_get_conquest_decision_category_name]"
@@ -334,6 +386,13 @@
 
  YKP_available_political_advisor:0 "\n§GAvailable§! as §YPolitical Advisor§!:"
 
+ custom_diff_strong_ykp:0 "Strengthen @YKP Kingdom of Portugal"
+ custom_diff_strong_ypr:0 "Strengthen @YPR Revolutionary Communes of Porto and Guarda"
+
+ YKP_lisbon_arms_company_organization:0 "Lisbon Arms Company"
+ YKP_arsenal_do_alfeite_organization:0 "Arsenal do Alfeite"
+ YKP_faro_costrucoes_aeronauticas:0 "Faro Costruções Aeronáuticas"
+
  ### TOOLTIPS ###
 
  YKP_king_manuel_ii_dies_tt:0 "§YKing Manuel II§! dies."
@@ -365,6 +424,9 @@
  YKP_establish_aragonese_puppet_tt:0 "Create a §Yaragonese§! subject in all controlled §Yaragonese§! states."
  YKP_portuguese_people_will_dislike_this_tt:0 "§RThis will lead to conflict!§!"
  YKP_end_story_content_tt:0 "§YThere is no content for this leader!§!"
+ YKP_will_be_removed_after_portugal_is_unified_tt:0 "\n§YWill be removed after Portugal is unified.§!"
+ YKP_unlocks_plan_sunset_tt:0 "Will unlock §Y£GFX_decision_icon_small decisions§! to enact §YPlan Sunset§! when the time comes."
+ YKP_unlocks_plan_river_shield_tt:0 "Will unlock §Y£GFX_decision_icon_small decisions§! to enact §YPlan River Shield§! when the time comes."
 
  ### DEBUG ###
 
