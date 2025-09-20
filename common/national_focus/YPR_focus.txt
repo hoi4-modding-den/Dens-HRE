@@ -650,4 +650,52 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = YPR_purge_the_royalists
+		icon = GFX_focus_SOV_military_purge
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_strike_at_the_kingdom }
+		relative_position_id = YPR_strike_at_the_kingdom
+		available = { NOT = { country_exists = YKP } }
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_purge_the_royalists_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_political_power = 75
+			add_manpower = -5791
+		}
+	}
+	focus = {
+		id = YPR_consolidate_the_proletariat_of_the_south
+		icon = GFX_focus_por_workers_of_iberia
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_strike_at_the_kingdom }
+		relative_position_id = YPR_strike_at_the_kingdom
+		available = { NOT = { country_exists = YKP } }
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_consolidate_the_proletariat_of_the_south_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = YPR_rebuild_the_south
+				days = 100
+			}
+		}
+	}
 }
