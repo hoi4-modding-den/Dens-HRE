@@ -70,11 +70,11 @@ on_actions = {
                 }
                 else = {
                     random_list = {
-                        10 = { set_country_flag = YBS_ai_path_carlist }
-                        20 = { set_country_flag = YBS_ai_path_nationalist }
+                        20 = { set_country_flag = YBS_ai_path_carlist }
+                        10 = { set_country_flag = YBS_ai_path_nationalist }
                         20 = { set_country_flag = YBS_ai_path_liberals }
-                        20 = { set_country_flag = YBS_ai_path_socialist }
-                        10 = { set_country_flag = YBS_ai_path_syndicalist }
+                        10 = { set_country_flag = YBS_ai_path_socialist }
+                        20 = { set_country_flag = YBS_ai_path_syndicalist }
                         20 = { set_country_flag = YBS_ai_path_popular_front }
                     }
                 }
@@ -131,10 +131,10 @@ on_actions = {
                 }
                 else = {
                     random_list = {
-                        #20 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
-                        30 = { set_country_flag = YBS_ai_path_federation }
-                        30 = { set_country_flag = YBS_ai_path_republic }
-                        40 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front }} set_country_flag = YBS_ai_path_esperantism }
+                        30 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
+                        20 = { set_country_flag = YBS_ai_path_federation }
+                        20 = { set_country_flag = YBS_ai_path_republic }
+                        30 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front }} set_country_flag = YBS_ai_path_esperantism }
                     }
                 }
 
@@ -160,8 +160,8 @@ on_actions = {
                 }
                 else = {
                     random_list = {
-                        30 = { set_country_flag = YBS_ai_path_honour }
-                        70 = { set_country_flag = YBS_ai_path_trickster }
+                        40 = { set_country_flag = YBS_ai_path_honour }
+                        60 = { set_country_flag = YBS_ai_path_trickster }
                     }
                 }
 
