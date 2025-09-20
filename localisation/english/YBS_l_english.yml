@@ -227,7 +227,7 @@
 
 # TRAITS
 
- YBS_basque_nationalist: "Basque Nationalist"
+ YBS_basque_nationalist: "Father of the Republic"
  YBS_liberal_reformer: "Liberal Reformer"
  YBS_corporate_control: "Corporate Control"
  YBS_socialist_architect: "Studied Architect"
@@ -328,6 +328,7 @@
  YBS_anti_communist_bulwark: "Anti-Communist Bulwark"
  YBS_spanish_fighting_spirit_idea: "Fight for the Fatherland!"
  YBS_naval_preparations_to_africa: "Prepare the Fleet for Africa"
+ YBS_naval_preparations_to_africa_tt: "This §YNational Spirit§! will be removed after the §gAfrican Colonies§! have been recovered."
  YBS_rising_phoenix: "Rising Phoenix of Europe"
  YBS_deregulated_capitalism: "Deregulated Capitalism"
  YBS_personal_freedoms: "Guaranteed Personal Freedoms"
@@ -371,6 +372,12 @@
  YBS_shared_focus_design_modifier: "Shared Focus Design ;) "
 
 
+# MIOs
+
+ YBS_armoured_car_organisation: "Bilbao Car Manufactory"
+ YBS_support_equipment_organisation: "Navarre Armouries"
+ YBS_castille_tank_organisation: "Burgos Armour Bureau"
+
 # FLAGS, TOOLTIPS N STUFF
 
  YBS_elections_happened: "The §Y1936 Election Week§! has begun"
@@ -401,8 +408,8 @@
  YBS_is_spanish_africa_state_tt_NOT: "Is not a state in Iberian Africa"
  YBS_is_spanish_african_country_tt: "Is a former Iberian Colony"
  YBS_is_spanish_african_country_tt_NOT: "Is not a former Iberian Colony"
- YBS_controls_all_spanish_africa_states_tt: "All §YIberian Africa states§! are controlled by §Y[PREV.GetNameWithFlag]§! or §Y[ZZZ.GetNameWithFlag]§!."
- YBS_controls_all_spanish_africa_states_tt_NOT: "Does not own all §YIberian Africa states§!"
+ YBS_controls_all_spanish_africa_states_tt: "Controls all §YIberian Africa states§!"
+ YBS_controls_all_spanish_africa_states_tt_NOT: "Does not control all §YIberian Africa states§!"
  YBS_is_italian_state_tt: "Is a state in Italy"
  YBS_is_italian_state_tt_NOT: "Is not a state in Italy"
  YBS_is_italian_country_tt: "Is an Italian country"
@@ -537,8 +544,9 @@
  YBS_doing_subversive_activity: "currently committed to a subversive activity"
 
  YBS_spanish_civil_war_cat: "The Iberian Civil War Continues"
- YBS_start_civil_war_in_iberia: "Restart the Civil War with [FROM.GetName]"
- YBS_start_civil_war_in_africa: "Intervention in [FROM.GetName]"
+ YBS_start_civil_war_in_iberia: "Restart the Civil War with [FROM.GetNameDef]"
+ YBS_start_civil_war_in_africa: "Intervention in [FROM.GetNameDef]"
+ YBS_annex_colonial_state_in_africa: "Skirmish for [FROM.GetName]"
  YBS_justifying_civil_war: "currently preparing to strike"
 
  YBS_purchase_old_ships_category: "$generic_purchase_old_ships_category$"
@@ -794,6 +802,7 @@
  YBS_alocate_military_budget_factories_desc: ""
  YBS_alocate_military_budget_forts: "Prioritise Fort Construction"
  YBS_alocate_military_budget_forts_desc: ""
+ YBS_alocate_military_budget_forts_tt: "Builds §gtwo§! §YForts§! on every border province."
  YBS_establish_the_federal_army: "Establish the Federal Army"
  YBS_establish_the_federal_army_desc: ""
  YBS_international_volunteers: "International Volunteer Corps"
@@ -1177,7 +1186,7 @@
  YBS_post_election_events.8.t: "The Sagrada Família captured!"
  YBS_post_election_events.8.desc: "Our troops have finally secure the Sagrada Família after a very long fight with some militia that had hunkered down in the cathedral's lower areas. It was the last part of Barcelona to fall.\n \nWhat should be done with the site?"
  YBS_post_election_events.8.a: "Begin reconstruction. We will complete Gaudí's work!"
- YBS_post_election_events.8.b: "Take everything not nailed down!"
+ YBS_post_election_events.8.b: "Take everything not nailed down! We can repair later!"
 
  YBS_diplo_events.1.t: "[FROM.GetNameDefCap] officially adopts State Catholicism"
  YBS_diplo_events.1.desc: "The [FROM.GetAdjective] government recently passed a new constitutional referendum in which Catholicism was officially adopted as the state religion of [FROM.GetNameDef]."
@@ -1469,6 +1478,14 @@
  YBS_VICTORY_POINTS_6756: "Donostia"
  YBS_VICTORY_POINTS_9710: "Baiona"
  YBS_VICTORY_POINTS_13233: "Gasteiz"
+
+
+# BUILDINGS
+
+ YBS_landmark_sagrada_familia: "Sagrada Família"
+ YBS_landmark_sagrada_familia_plural: "$YBS_landmark_sagrada_familia$"
+ YBS_landmark_sagrada_familia_desc: "§LThe Basílica i Temple Expiatori de la Sagrada Família, otherwise known as Sagrada Família, is a church under construction in the Eixample district of Barcelona. It is the largest unfinished Catholic church in the world. Designed by the Catalan architect Antoni Gaudí, who worked on it until his death in 1926. While it was ransacked by the anarchists during the Collapse of Iberia, Gaudí's original plans luckily survived, due to being stolen weeks before.§!"
+ YBS_sagrada_familia_effect_once_repaired_tt: "Once repaired, the §Y$YBS_landmark_sagrada_familia$§! will grant:\n  $MODIFIER_RESISTANCE_TARGET$: §G-10%§!"
 
 
 # SETTINGS

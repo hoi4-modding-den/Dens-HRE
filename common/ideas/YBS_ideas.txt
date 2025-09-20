@@ -1021,8 +1021,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_weekly = 0.01
+				stability_weekly = 0.001
 				consumer_goods_factor = 0.1
+				industry_repair_factor = 0.5
 			}
 		}
 
@@ -1531,6 +1532,7 @@ ideas = {
 				conscription_factor = 0.05
 				consumer_goods_factor = -0.1
 				global_building_slots_factor = 0.1
+				civil_war_involvement_tension = -1
 			}
 		}
 
@@ -1922,10 +1924,6 @@ ideas = {
 			}
 
 			removal_cost = -1
-
-			rule = {
-				can_only_justify_war_on_threat_country = no
-			}
 
 			modifier = {
 				army_attack_factor = 0.05

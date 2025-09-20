@@ -4054,13 +4054,13 @@ focus_tree = {
 					check_variable = {
 						tooltip = XHH_money_trigger_tt
 						var = XHH_money
-						value = 10
+						value = 5
 						compare = greater_than_or_equals
 					}
 					check_variable = {
 						tooltip = XHH_influence_trigger_tt
 						var = XHH_influence
-						value = 10
+						value = 5
 						compare = greater_than_or_equals
 					}
 				}
@@ -4087,7 +4087,7 @@ focus_tree = {
 					is_ai = no
 				}
 				add_to_variable = {
-					XHH_money = -10
+					XHH_money = -5
 					tooltip = XHH_money_effect_tt
 				}
 			}
@@ -4097,7 +4097,7 @@ focus_tree = {
 					is_ai = no
 				}
 				add_to_variable = {
-					XHH_influence = -10
+					XHH_influence = -5
 					tooltip = XHH_influence_effect_tt
 				}
 			}
@@ -4896,11 +4896,16 @@ focus_tree = {
 				}
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			mio:XHH_kriegsmarinewerft_wilhelmshaven_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.1
+				mio:XHH_kriegsmarinewerft_wilhelmshaven_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.1
+				}
 			}
 		}
 	}
@@ -5835,11 +5840,16 @@ focus_tree = {
 				}
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			mio:XHH_porsche_organization = {
-				add_mio_size = 1
-				add_mio_funds_gain_factor = 0.1
+				mio:XHH_porsche_organization = {
+					add_mio_size = 1
+					add_mio_funds_gain_factor = 0.1
+				}
 			}
 		}
 	}
@@ -5890,10 +5900,15 @@ focus_tree = {
 				}
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			mio:XHH_porsche_organization = {
-				add_mio_size = 1
+				mio:XHH_porsche_organization = {
+					add_mio_size = 1
+				}
 			}
 		}
 	}
@@ -7196,11 +7211,16 @@ focus_tree = {
 				category = infantry_weapons
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			mio:XHH_hamburger_waffenfabrik = {
-				add_mio_size = 1
-				add_mio_research_bonus = 0.15
+				mio:XHH_hamburger_waffenfabrik = {
+					add_mio_size = 1
+					add_mio_research_bonus = 0.15
+				}
 			}
 		}
 	}
@@ -7239,11 +7259,16 @@ focus_tree = {
 				category = artillery
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			mio:XHH_rheinmetall_organization = {
-				add_mio_size = 1
-				add_mio_research_bonus = 0.15
+				mio:XHH_rheinmetall_organization = {
+					add_mio_size = 1
+					add_mio_research_bonus = 0.15
+				}
 			}
 		}
 	}
@@ -7593,9 +7618,14 @@ focus_tree = {
 
 			XHH_reduce_worker_unrest_effect = yes
 
-			mio:XHH_deschimag_organization = {
-				add_mio_funds_gain_factor = 0.1
-				add_mio_research_bonus = 0.15
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:XHH_deschimag_organization = {
+					add_mio_funds_gain_factor = 0.1
+					add_mio_research_bonus = 0.15
+				}
 			}
 		}
 	}
@@ -7832,16 +7862,21 @@ focus_tree = {
 				}
 			}
 
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
 
-			mio:XHH_arado_flugzeugwerke_organization = {
-				add_mio_size = 1
-			}
-			mio:XHH_heinkel_organization = {
-				add_mio_size = 1
-			}
-			mio:XHH_focke_wulf_organization = {
-				add_mio_size = 1
+				mio:XHH_arado_flugzeugwerke_organization = {
+					add_mio_size = 1
+				}
+				mio:XHH_heinkel_organization = {
+					add_mio_size = 1
+				}
+				mio:XHH_focke_wulf_organization = {
+					add_mio_size = 1
+				}
 			}
 		}
 	}

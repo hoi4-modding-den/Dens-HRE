@@ -1492,6 +1492,90 @@ YBS_spanish_civil_war_cat = {
         }
 	}
 
+    YBS_annex_colonial_state_in_africa = {
+
+        icon = generic_reorganize_irregulars
+
+		cost = 25
+
+        ai_will_do = {
+            base = 10
+            modifier = {
+                factor = 0.5
+                has_war = yes
+            }
+        }
+
+		highlight_states = { 
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		available = {
+			FROM = {
+				is_owned_and_controlled_by = ZZZ
+                any_neighbor_state = {
+                    is_owned_and_controlled_by = ROOT
+                }
+			}
+		}
+
+		visible = {
+			has_country_flag = YBS_colonial_affairs_restarted
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cancel_trigger = {
+			FROM = { NOT = { is_owned_and_controlled_by = ZZZ } }
+		}
+
+
+		targets_dynamic = yes
+
+		state_target = yes
+
+		on_map_mode = map_only  
+
+		target_trigger = {
+			FROM = {
+				is_owned_and_controlled_by = ZZZ
+                YBS_is_spanish_africa_state = yes
+			}
+		}
+
+		days_remove = 35
+
+        modifier = {
+            army_org_regain = -0.05
+        }
+
+        complete_effect = {
+            FROM = { set_demilitarized_zone = yes }
+        }
+
+		remove_effect = {
+			FROM = {
+                set_demilitarized_zone = no
+                transfer_state_to = ROOT
+                hidden_effect = {
+                    add_core_of = YRI
+                    start_resistance = YRI
+                }
+            }
+		}
+
+        cancel_effect = {
+            FROM = {
+                set_demilitarized_zone = no
+            }
+        }
+
+    }
+
     YBS_ai_kick_ally_out_alt = {
 
 		ai_will_do = {
@@ -2466,6 +2550,10 @@ political_actions = {
             set_capital = { state = 41 }
         }
     }
+
+}
+
+debug_decisions = {
 
     YBS_debug_annex_iberia = {
 
