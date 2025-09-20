@@ -92,7 +92,7 @@ political_actions = {
 
         is_good = yes
 
-        days_mission_timeout = 500
+        days_mission_timeout = 300
 
         timeout_effect = {
             country_event = YRR_events.1
@@ -277,6 +277,14 @@ foreign_politics = {
                 }
                 custom_effect_tooltip = generic_skip_one_line_tt
                 remove_ideas = YRR_low_legitimacy_2
+            }
+
+            if = {
+                limit = {
+                    has_government = fascim
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                add_ideas = YRR_spanish_destiny
             }
         }
     }

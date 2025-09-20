@@ -659,6 +659,13 @@ country_event = { # Exiled Falangists arrive from YBS
 	
 	option = {
         name = YBS_post_election_events.3.a
+        add_timed_idea = {
+            idea = YRR_falangist_support
+            days = 500
+        }
+
+        custom_effect_tooltip = generic_skip_on_line_tt
+
         custom_effect_tooltip = YBS_exiled_characters_arrive_tt
         character_list_tooltip = {
             limit = {

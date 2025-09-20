@@ -7,7 +7,7 @@ ideas = {
 			picture = prc_the_long_march2
 
 			allowed = {
-				original_tag = YBS
+				original_tag = YRR
 			}
 
 			allowed_civil_war = {
@@ -33,7 +33,7 @@ ideas = {
 			picture = SPR_anarchist_society
 
 			allowed = {
-				original_tag = YBS
+				original_tag = YRR
 			}
 
 			allowed_civil_war = {
@@ -62,7 +62,7 @@ ideas = {
 			picture = prc_low_popular_support2
 
 			allowed = {
-				original_tag = YBS
+				original_tag = YRR
 			}
 
 			allowed_civil_war = {
@@ -89,7 +89,7 @@ ideas = {
 			picture = prc_low_popular_support3
 
 			allowed = {
-				original_tag = YBS
+				original_tag = YRR
 			}
 
 			allowed_civil_war = {
@@ -106,6 +106,61 @@ ideas = {
 				political_power_cost = 0.15
                 opinion_gain_monthly_factor = -0.5
 				resistance_target = 0.1
+			}
+		}
+
+		YRR_falangist_support = {
+
+			picture = generic_fascism_drift_bonus
+
+			allowed = {
+				original_tag = YRR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+            available = {
+                OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				fascism_drift = 0.01
+				stability_factor = -0.1
+			}
+		}
+
+		YRR_spanish_destiny = {
+
+			picture = SPA_embrace_the_spanish_destiny
+
+			allowed = {
+				original_tag = YRR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+            available = {
+                OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				political_power_factor = 0.1
+				annex_cost_factor = -0.25
 			}
 		}
 
