@@ -14,6 +14,26 @@ YBS_ignore_anarchy = {
 	}
 }
 
+YBS_support_portuguese_commies = {
+	allowed = { original_tag = YBS }
+
+	enable = {
+        has_government = communism
+		YPR = { 
+            has_completed_focus = YPR_all_power_to_the_councils
+            has_government = communism
+            has_war_with = YKP 
+        }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = XPR
+		value = 1000
+	}
+}
+
 YBS_dont_bother_guaranteeing = {
 	allowed = { original_tag = YBS }
 

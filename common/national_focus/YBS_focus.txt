@@ -276,7 +276,7 @@ focus_tree = {
 		icon = GFX_focus_SWE_organize_a_putsch
 		prerequisite = { focus = YBS_election_week }
 		mutually_exclusive = { focus = YBS_syndicalist_victory focus = YBS_nationalist_victory focus = YBS_liberal_victory focus = YBS_socialist_victory }
-		x = -11
+		x = -10
 		y = 1
 		relative_position_id = YBS_election_week
 
@@ -2169,11 +2169,23 @@ focus_tree = {
 			}
 			add_ideas = YBS_have_fun_now
 
+			custom_effect_tooltip = YBS_thanks_for_playing_tt
+
 			if = {
 				limit = {
 					is_ai = yes
 				}
 				set_country_flag = YBS_ai_can_have_fun
+
+				every_other_country = {
+					ROOT = {
+						ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 1000
+						}
+					}
+				}
 			}
 		}
 	}
@@ -2315,7 +2327,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 
 		available = {
@@ -2367,7 +2379,7 @@ focus_tree = {
 		icon = GFX_focus_mex_privatisation
 		prerequisite = { focus = YBS_sell_to_the_corporations }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = YBS_sell_to_the_corporations
 
@@ -2431,7 +2443,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
+			factor = 10
 		}
 
 		available = {
@@ -2543,14 +2555,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 2
-			modifier = {
-                factor = 10
-                OR = {
-                    has_country_flag = YBS_ai_path_republic
-					has_country_flag = YBS_ai_path_federation
-                }
-            }
+			factor = 10
 		}
 
 		available = {
@@ -2626,7 +2631,7 @@ focus_tree = {
 		}
 		
 		bypass = {
-			
+			has_completed_focus = YBS_rule_of_capital
 		}
 
 		available_if_capitulated = no
@@ -5731,11 +5736,23 @@ focus_tree = {
 			}
 			add_ideas = YBS_have_fun_now
 
+			custom_effect_tooltip = YBS_thanks_for_playing_tt
+
 			if = {
 				limit = {
 					is_ai = yes
 				}
 				set_country_flag = YBS_ai_can_have_fun
+
+				every_other_country = {
+					ROOT = {
+						ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 1000
+						}
+					}
+				}
 			}
 		}
 	}
@@ -5825,7 +5842,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = YBS_the_corporatist_model }
 		mutually_exclusive = { focus = YBS_guardian_of_iberian_democracy focus = YBS_unity_through_democracy }
-		x = -5
+		x = -4
 		y = 5
 		relative_position_id = YBS_liberal_victory
 
@@ -6682,11 +6699,23 @@ focus_tree = {
 			}
 			add_ideas = YBS_have_fun_now
 
+			custom_effect_tooltip = YBS_thanks_for_playing_tt
+
 			if = {
 				limit = {
 					is_ai = yes
 				}
 				set_country_flag = YBS_ai_can_have_fun
+
+				every_other_country = {
+					ROOT = {
+						ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 1000
+						}
+					}
+				}
 			}
 		}
 	}
@@ -7635,11 +7664,23 @@ focus_tree = {
 			}
 			add_ideas = YBS_have_fun_now
 
+			custom_effect_tooltip = YBS_thanks_for_playing_tt
+
 			if = {
 				limit = {
 					is_ai = yes
 				}
 				set_country_flag = YBS_ai_can_have_fun
+
+				every_other_country = {
+					ROOT = {
+						ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 1000
+						}
+					}
+				}
 			}
 		}
 	}
@@ -7897,6 +7938,7 @@ focus_tree = {
 
 		available = {
 			has_government = communism
+			communism > 0.3
 		}
 		
 		bypass = {
@@ -8068,7 +8110,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 3
+			factor = 20
 		}
 
 		available = {
@@ -8085,6 +8127,12 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = { ideology = communism popularity = 0.05 }
 			add_manpower = 50000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = {
+				can_send_volunteers = yes
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -8941,11 +8989,23 @@ focus_tree = {
 			}
 			add_ideas = YBS_have_fun_now
 
+			custom_effect_tooltip = YBS_thanks_for_playing_tt
+
 			if = {
 				limit = {
 					is_ai = yes
 				}
 				set_country_flag = YBS_ai_can_have_fun
+
+				every_other_country = {
+					ROOT = {
+						ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 1000
+						}
+					}
+				}
 			}
 		}
 	}

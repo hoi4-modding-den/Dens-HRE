@@ -1970,18 +1970,22 @@ YBS_foreign_economic_control_cat = {
         cost = 25
 
         ai_will_do = {
-            base = 10
+            base = 0
             modifier = {
-                factor = 0
-                OR = {
-                    has_country_flag = YBS_ai_path_republic
-                    has_country_flag = YBS_ai_path_federation
-                }
+                add = 50
+                has_country_flag = YBS_ai_path_capitalism
             }
         }
 
         available = {
-            
+            NOT = {
+                check_variable = {
+                    tooltip = YBS_foreign_control_trigger_tt
+                    var = YBS_foreign_control
+                    value = 95
+                    compare = greater_than_or_equals
+                }
+            }
         }
 
         days_remove = 50
@@ -2006,18 +2010,22 @@ YBS_foreign_economic_control_cat = {
         cost = 25
 
         ai_will_do = {
-            base = 10
+            base = 0
             modifier = {
-                factor = 0
-                OR = {
-                    has_country_flag = YBS_ai_path_republic
-                    has_country_flag = YBS_ai_path_federation
-                }
+                add = 50
+                has_country_flag = YBS_ai_path_capitalism
             }
         }
 
         available = {
-            
+            NOT = {
+                check_variable = {
+                    tooltip = YBS_foreign_control_trigger_tt
+                    var = YBS_foreign_control
+                    value = 100
+                    compare = greater_than_or_equals
+                }
+            }
         }
 
         days_remove = 100
@@ -2044,17 +2052,22 @@ YBS_foreign_economic_control_cat = {
         cost = 25
 
         ai_will_do = {
-            base = 10
+            base = 0
             modifier = {
-                factor = 0
-                OR = {
-                    has_country_flag = YBS_ai_path_republic
-                    has_country_flag = YBS_ai_path_federation
-                }
+                add = 50
+                has_country_flag = YBS_ai_path_capitalism
             }
         }
 
         available = {
+            NOT = {
+                check_variable = {
+                    tooltip = YBS_foreign_control_trigger_tt
+                    var = YBS_foreign_control
+                    value = 100
+                    compare = greater_than_or_equals
+                }
+            }
             has_completed_focus = YBS_sell_to_the_corporations
         }
 
@@ -2082,18 +2095,22 @@ YBS_foreign_economic_control_cat = {
         cost = 25
 
         ai_will_do = {
-            base = 10
+            base = 0
             modifier = {
-                factor = 0
-                OR = {
-                    has_country_flag = YBS_ai_path_republic
-                    has_country_flag = YBS_ai_path_federation
-                }
+                add = 50
+                has_country_flag = YBS_ai_path_capitalism
             }
         }
 
         available = {
-            
+            NOT = {
+                check_variable = {
+                    tooltip = YBS_foreign_control_trigger_tt
+                    var = YBS_foreign_control
+                    value = 100
+                    compare = greater_than_or_equals
+                }
+            }
         }
 
         days_remove = 50
