@@ -122,6 +122,26 @@ characters = {
 				monarchist_puppet
 			}
 		}
+		advisor = {
+			available = { 
+				has_completed_focus = YAO_the_high_command 
+				AND = {
+					OR = { 
+						has_government = neutrality
+						has_government = fascism
+					}
+					NOT = { has_cosmetic_tag = YAOrepublic }
+				}
+			}
+			cost = 125
+    		slot = army_chief
+    		idea_token = YAO_character_military_army_1
+    		ledger = army
+    		traits = { 
+				army_infantry_2
+				monarchist_puppet
+			}
+		}
 	}
 
 	YAO_military_high_command_2 = {
@@ -139,7 +159,16 @@ characters = {
     		idea_token = YAO_character_military_high_command_2
     		ledger = army
     		traits = { 
-				fascist_militia_leader
+				army_cavalry_2
+			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command }
+			cost = 145
+    		slot = army_chief
+    		idea_token = YAO_character_military_army_2
+    		ledger = army
+    		traits = { 
 				army_cavalry_2
 			}
 		}
@@ -156,7 +185,7 @@ characters = {
 		advisor = {
 			available = { has_completed_focus = YAO_the_high_command }
 			cost = 100
-    		slot = high_command
+    		slot = theorist
     		idea_token = YAO_character_military_high_command_3
     		ledger = army
     		traits = { 
@@ -203,6 +232,16 @@ characters = {
 				dive_bomber
 			}
 		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command has_completed_focus = YAO_airforce }
+			cost = 150
+    		slot = air_chief
+    		idea_token = YAO_character_military_air_chief_5
+    		ledger = air
+    		traits = { 
+				dive_bomber
+			}
+		}
 	}
 
 	YAO_military_high_command_6 = {
@@ -242,6 +281,171 @@ characters = {
     		traits = { 
 				navy_chief_commerce_raiding_2
 			}
+		}
+		advisor = {
+			available = { has_completed_focus = YAO_the_high_command has_completed_focus = YAO_navy_of_iberia }
+			cost = 130
+    		slot = navy_chief
+    		idea_token = YAO_character_military_navy_7
+    		ledger = navy
+    		traits = { 
+				navy_chief_commerce_raiding_2
+			}
+		}
+	}
+	
+
+
+
+	SPA_emilio_herrera={
+		name=SPA_emilio_herrera
+		portraits={
+			army={
+				small="GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = SPA_emilio_herrera
+			ledger = air
+			name = SPA_emilio_herrera
+			allowed = {
+				NOT = {
+					has_dlc = "La Resistance"
+				}
+				original_tag = YAO
+			}
+			visible = {
+				has_government = fascism
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+
+	YAO_jose_asensio_torrado={
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name=YAO_jose_asensio_torrado
+			portraits={
+				army={
+					large="GFX_portrait_YAO_jose_asensio_torrado"
+					small=GFX_portrait_YAO_jose_asensio_torrado_small
+				}
+			}
+			corps_commander={
+				traits={ career_officer infantry_leader }
+				skill=2
+				attack_skill=1
+				defense_skill=3
+				planning_skill=2
+				logistics_skill=1
+				legacy_id=1101
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "La Resistance" }
+			}
+			name=YAO_jose_asensio_torrado
+			portraits={
+				army={
+					large=GFX_portrait_YAO_jose_asensio_torrado
+					small=GFX_portrait_YAO_jose_asensio_torrado_small
+				}
+			}
+			corps_commander={
+				traits={ defensive_doctrine organisational_leader }
+				skill=2
+				attack_skill=1
+				defense_skill=3
+				planning_skill=2
+				logistics_skill=1
+				legacy_id=1100
+			}
+		}
+	}
+
+	YAO_valentin_gonzalez={
+		name=YAO_valentin_gonzalez
+		portraits={
+			army={
+				large="GFX_portrait_YAO_valentin_gonzalez"
+				small=GFX_portrait_YAO_valentin_gonzalez_small
+			}
+		}
+		corps_commander={
+			traits={ harsh_leader }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=1104
+		}
+	}
+
+	YAO_enrique_lister={
+		name = YAO_enrique_lister
+		portraits={
+			army={
+				large="GFX_portrait_YAO_enrique_lister"
+				small = GFX_portrait_YAO_enrique_lister_small
+			}
+		}
+		corps_commander={
+			traits={ politically_connected infantry_leader trickster }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=1119
+		}
+	}
+
+	YAO_juan_modesto={
+		name=YAO_juan_modesto
+		portraits={
+			army={
+				large="GFX_portrait_YAO_juan_modesto"
+				small=GFX_portrait_YAO_juan_modesto_small
+			}
+		}
+		corps_commander={
+			traits={ trait_mountaineer }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=1105
+		}
+	}
+
+	YAO_antonio_cordon_garcia={
+		name=YAO_antonio_cordon_garcia
+		portraits={
+			army={
+				large="GFX_portrait_YAO_antonio_cordon_garcia"
+				small=GFX_portrait_YAO_antonio_cordon_garcia_small
+			}
+		}
+		corps_commander={
+			traits={ infantry_leader }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=1106
 		}
 	}
 

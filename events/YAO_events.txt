@@ -462,6 +462,48 @@ country_event = {
 	}
 }
 
+## THE BASQUE ##
+country_event = {
+	id = YAO_event.21
+	title = YAO_event.21.t
+	desc = YAO_event.21.d
+	
+	trigger = {
+    }
+
+	picture = j
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = YAO_event.21.a
+		ai_chance = {
+			factor = 0.9
+		}
+		trigger = { }
+		YAO = { 
+			annex_country = {
+				target = YRS 
+				transfer_troops = yes
+			}
+		}
+	}
+	option = {
+		name = YAO_event.21.b
+		ai_chance = {
+			factor = 1
+		}
+		trigger = { }
+		YAO = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = YRS
+			}
+		}
+	}
+}
+
 
 
 

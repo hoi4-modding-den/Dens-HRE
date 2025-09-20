@@ -342,6 +342,23 @@ focus_tree = {
 		prerequisite = { focus = YAO_public_works }
 		prerequisite = { focus = YAO_spain_will_lead }
 		completion_reward = {
+			random_owned_controlled_state = {  
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {  
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = war_economy
 		}
 	}
 
@@ -569,6 +586,26 @@ focus_tree = {
 		}
 	}
 
+	#Reunite with the Republic
+	focus = {
+		id = YAO_reunite_with_the_republic
+		icon = GFX_focus_spr_regional_defense_council_of_aragon
+		x = 0
+		y = 5
+		relative_position_id = YAO_proclaim_the_republic
+		cost = 7
+		available = { has_completed_focus = YAO_proclaim_the_republic YRS = { exists = yes } }
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_INDUSTRY
+		}
+		
+		prerequisite = { focus = YAO_different_means_same_goal }
+		completion_reward = {
+			YRS = { country_event = YAO_event.21 }
+		}
+	}
+
 	#For Iberia!
 	focus = {
 		id = YAO_for_iberia
@@ -701,6 +738,7 @@ focus_tree = {
 				remove_idea = YAO_state_of_the_armed_forces4
 				add_idea = YAO_state_of_the_armed_forces5
 			}
+			add_ideas = war_economy
 		}
 	}
 
@@ -721,6 +759,7 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.05
 			add_political_power = 25
+			add_manpower = 15200
 		}
 	}
 
@@ -1561,6 +1600,9 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = iberian_reunification_not_yet
+			hidden_effect = {
+				add_ideas = YAO_road_to_reunification
+			}
 		}
 	}
 
@@ -1609,6 +1651,12 @@ focus_tree = {
 		completion_reward = {
 			791 = { add_core_of = ROOT }
 			176 = { add_core_of = ROOT }
+			YAO = {
+				create_wargoal = {
+					type = annex_everything
+					target = YRR
+				}
+			}
 		}
 	}
 
@@ -1722,12 +1770,19 @@ focus_tree = {
 	#Unite the West
 	focus = {
 		id = YAO_unite_the_west
-		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		icon = GFX_goal_fortify_the_westwall
 		x = -2
 		y = 5
 		relative_position_id = YAO_road_to_reunification
 		cost = 10
 		available = { 
+			171 = { 
+				owner = {
+					YAO = {
+						is_neighbor_of = PREV
+					}
+				}
+			}
 		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL 
@@ -1826,7 +1881,7 @@ focus_tree = {
 	#March On the Buffer States
 	focus = {
 		id = YAO_march_on_the_buffer_states
-		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		icon = GFX_SOV_lessons_of_war_ccp_2d_sov_compatibility
 		x = 2
 		y = 5
 		relative_position_id = YAO_road_to_reunification
@@ -1840,7 +1895,7 @@ focus_tree = {
 		prerequisite = { focus = YAO_ask_for_murcian_submission focus = YAO_deal_with_murcia }
 		completion_reward = {
 			if = {
-				limit = { NOT = { 175 = { is_owned_by = ZZZ }}}
+				limit = { NOT = { 175 = { is_owned_by = ZZZ is_owned_by = YAO }}}
 			175 = { 
 				owner = {
 					YAO = {
@@ -1857,7 +1912,7 @@ focus_tree = {
 			}
 			}
 			if = {
-				limit = { NOT = { 789 = { is_owned_by = ZZZ }}}
+				limit = { NOT = { 789 = { is_owned_by = ZZZ is_owned_by = YAO }}}
 			789 = { 
 				owner = {
 					YAO = {
@@ -1879,7 +1934,7 @@ focus_tree = {
 	#Strike at the South
 	focus = {
 		id = YAO_strike_at_the_south
-		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		icon = GFX_SOV_the_modern_war_in_the_skies_ccp_2d_sov_compatibility
 		x = 0
 		y = 6
 		relative_position_id = YAO_road_to_reunification
@@ -1917,12 +1972,13 @@ focus_tree = {
 	#Ask the Basques
 	focus = {
 		id = YAO_ask_the_basques
-		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_subjugation
 		x = 1
 		y = 7
 		relative_position_id = YAO_road_to_reunification
 		cost = 7
 		available = { 
+			is_neighbor_of = YBS
 		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL 
@@ -1937,7 +1993,7 @@ focus_tree = {
 	#The Portugese Problem
 	focus = {
 		id = YAO_the_portuguese_problem
-		icon = GFX_SOV_the_hands_do_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_attack_portugal
 		x = -1
 		y = 7
 		relative_position_id = YAO_road_to_reunification
@@ -1960,7 +2016,69 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_strike_at_the_south }
 		completion_reward = {
-			
+			custom_effect_tooltip = YAO_portugese
+			if = {
+				limit = { 
+					AND = {
+						YPR = { exists = no }
+						YKP = { exists = yes }
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = YKP
+				}
+			}
+			if = {
+				limit = { 
+					AND = {
+						YPR = { exists = yes }
+						YKP = { exists = no }
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = YPR
+				}
+			}
+		}
+	}
+
+	#The Eastern Communists
+	focus = {
+		id = YAO_the_eastern_communists
+		icon = GFX_focus_GER_end_european_communism
+		x = 0
+		y = 8
+		relative_position_id = YAO_road_to_reunification
+		cost = 7
+		available = { 
+			OR = { 
+				is_neighbor_of = YCA
+				is_neighbor_of = YZA
+			}
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_the_portuguese_problem }
+		prerequisite = { focus = YAO_ask_the_basques }
+		completion_reward = {
+			YC2 = { every_owned_state = { add_core_of = YAO }}
+			YC3 = { every_owned_state = { add_core_of = YAO }}
+			YC1 = { every_owned_state = { add_core_of = YAO }}
+			YZA = { every_owned_state = { add_core_of = YAO }}
+			YCA = { every_owned_state = { add_core_of = YAO }}
+
+			create_wargoal = {
+				type = annex_everything
+				target = YCA
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YZA
+			}
 		}
 	}
 
@@ -2051,6 +2169,12 @@ focus_tree = {
 				province = 6902
 				value = 15
 			}
+			788 = {
+				add_resource = {
+    				type = tungsten
+    				amount = 15
+				}
+			}
 		}
 	}
 
@@ -2072,6 +2196,7 @@ focus_tree = {
 		prerequisite = { focus = YAO_industrial_expansion }
 		completion_reward = {
 			788 = {
+				set_state_category = large_town
 				add_building_construction = {
     				type = industrial_complex
     				level = 1
@@ -2082,6 +2207,12 @@ focus_tree = {
 			add_victory_points = {
 				province = 3874
 				value = 8
+			}
+			788 = {
+				add_resource = {
+    				type = tungsten
+    				amount = 5
+				}
 			}
 		}
 	}
@@ -2131,10 +2262,42 @@ focus_tree = {
 		}
 	}
 
+	#Resources Exploitation in Madrid
+	focus = {
+		id = YAO_resources_exploitation
+		icon = GFX_focus_GER_factories_for_resources
+		x = 0
+		y = 5
+		relative_position_id = YAO_industrial_expansion
+		cost = 10
+		available = {  
+			41 = { is_owned_by = YAO } 
+		}
+		search_filters = {  
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		prerequisite = { focus = YAO_university_of_madrid }
+		completion_reward = {
+			41 = {
+				add_resource = {
+    				type = aluminium
+    				amount = 17
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
 	#Iberian Military Industry
 	focus = {
 		id = YAO_the_iberian_military_industry
-		icon = GFX_focus_research
+		icon = GFX_SOV_rehabilitated_military_ccp_2d_sov_compatibility
 		x = 2
 		y = 4
 		relative_position_id = YAO_industrial_expansion
@@ -2163,6 +2326,26 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
+		}
+	}
+
+	#International Aid
+	focus = {
+		id = YAO_international_aid
+		icon = GFX_focus_generic_manpower
+		x = -2
+		y = 4
+		relative_position_id = YAO_industrial_expansion
+		cost = 10
+		available = {  
+		}
+		search_filters = {  
+			FOCUS_FILTER_RESEARCH
+		}
+		
+		prerequisite = { focus = YAO_spanish_development_scheme }
+		completion_reward = {
+			add_manpower = 25180
 		}
 	}
 
