@@ -21,7 +21,7 @@ on_actions = {
                         }
                     }
 
-                    set_country_flag = YKP_AI_Military_path
+                    set_country_flag = YKP_AdI_Military_path
                 }
             }
         }
@@ -29,7 +29,18 @@ on_actions = {
 
 	on_weekly_YKP = {
         effect = {
-            YKP_update_conquer_targets = yes
+            if = {
+                limit = {
+                    YKP = {
+                        has_country_leader = {
+                            character = YKP_maria_adelaide_de_braganca
+                            ruling_only = yes
+                        }
+                    }
+                }
+
+                YKP_update_conquer_targets = yes
+            }
         }
     }
 }
