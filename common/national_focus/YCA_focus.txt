@@ -972,6 +972,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			# add global event on takeover			
 		}
 	}		
 	focus = {
@@ -1003,6 +1004,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			# add global event on takeover			
 		}
 	}
 	focus = {
@@ -1034,6 +1036,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			# add global event on takeover
 		}
 	}	
 
@@ -1774,11 +1777,20 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			167 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1			
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = YCA_people_aviation_bureau_idea		
 		}
 	}
 	focus = {
 		id = YCA_red_air_arm # form air battallion
-		icon = GFX_focus_PER_the_peoples_airforce
+		icon = GFX_SOV_ground_support_ccp_2d_sov_compatibility
 		prerequisite = {
 			focus = YCA_people_aviation_bureau
 		}	
@@ -1786,7 +1798,7 @@ focus_tree = {
 		x = 1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1799,11 +1811,28 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = YCA_more_fighter
+				bonus = 1.5
+				uses = 1
+				category = light_fighter
+				category = cat_heavy_fighter
+			}				
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = YCA_forming_the_red_air_arm
+				days = 365
+			}
 		}
 	}	
 	focus = {
 		id = YCA_secure_the_skies # air defense
-		icon = GFX_focus_PER_the_peoples_airforce
+		icon = GFX_focus_PER_construct_air_defenses
 		prerequisite = {
 			focus = YCA_people_aviation_bureau
 		}	
@@ -1811,7 +1840,7 @@ focus_tree = {
 		x = -3
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1824,11 +1853,37 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			if = {
+				limit = { 
+					has_tech = interwar_antiair
+				}
+				set_technology = {
+					antiair1 = 1
+				}
+			}
+			if = {
+				limit = { 
+					NOT = {
+						has_tech = interwar_antiair					
+					}
+				}
+				set_technology = {
+					interwar_antiair = 1
+				}
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = YCA_construct_the_air_defense_ring
+			add_tech_bonus = {
+				name = YCA_more_AA
+				bonus = 0.5
+				uses = 2
+				category = cat_anti_air
+			}	
 		}
 	}	
 	focus = {
 		id = YCA_new_generation_of_airmen # training
-		icon = GFX_focus_PER_the_peoples_airforce
+		icon = GFX_focus_generic_air_partners
 		prerequisite = {
 			focus = YCA_people_aviation_bureau
 		}	
@@ -1836,7 +1891,7 @@ focus_tree = {
 		x = -1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1849,11 +1904,21 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_people_aviation_bureau_idea
+				add_idea = YCA_people_aviation_bureau_idea_gen
+			}
+			add_ace = {
+				name = "Josep"
+				surname = "Falcó"
+				callsign = "Lleó dels Cels"
+				type = fighter_genius
+			}									
 		}
 	}	
 	focus = {
-		id = YCA_form_unified_command_centers
-		icon = GFX_focus_PER_the_peoples_airforce
+		id = YCA_form_unified_command_centers # gain nat spirit
+		icon = GFX_focus_FIN_expand_air_force_academy
 		prerequisite = {
 			focus = YCA_new_generation_of_airmen
 		}
@@ -1877,11 +1942,17 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			air_experience = 75
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = YCA_people_aviation_bureau_idea_gen
+				add_idea = YCA_people_aviation_bureau_idea_unified
+			}
 		}
 	}
 	focus = {
 		id = YCA_wings_of_the_revolution # fighter focus
-		icon = GFX_focus_PER_the_peoples_airforce
+		icon = GFX_focus_NORDIC_com_airforce
 		prerequisite = {
 			focus = YCA_form_unified_command_centers
 		}			
@@ -1889,24 +1960,36 @@ focus_tree = {
 		x = -1
 		y = 2		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
 		}
 
 		available = {
+			has_completed_focus = YCA_integrated_aerial_support
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_tech_bonus = {
+				name = YCA_more_batt_sup
+				bonus = 0.7
+				uses = 2
+				category = cat_battlefield_support
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			swap_ideas = {
+				remove_idea = YCA_people_aviation_bureau_idea_support
+				add_idea = YCA_people_aviation_bureau_idea_revolution
+			}			
 		}
 	}	
 	focus = {
 		id = YCA_integrated_aerial_support
-		icon = GFX_focus_PER_the_peoples_airforce
+		icon = GFX_focus_generic_copy_plane_designs
 		prerequisite = {
 			focus = YCA_form_unified_command_centers
 		}			
@@ -1914,7 +1997,7 @@ focus_tree = {
 		x = 1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -1927,11 +2010,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_people_aviation_bureau_idea_unified
+				add_idea = YCA_people_aviation_bureau_idea_support
+			}
 		}
 	}
 	focus = {
 		id = YCA_the_aero_maritime_complex
-		icon = GFX_focus_PER_the_peoples_airforce
+		icon = GFX_SOV_naval_infantry_ccp_2d_sov_compatibility
 		prerequisite = {
 			focus = YCA_integrated_aerial_support
 		}
@@ -1943,7 +2030,7 @@ focus_tree = {
 		x = 2
 		y = 1		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -1956,6 +2043,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_war_support = 0.15
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = YCA_the_aero_maritime_complex_idea			
 		}
 	}					
 	focus = {
@@ -1978,6 +2068,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			165 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1			
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = YCA_flota_del_pueblo_idea					
 		}
 	}
 	focus = {
@@ -1990,24 +2089,48 @@ focus_tree = {
 		x = -1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
 		}
 
 		available = {
+			any_owned_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+			}			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YCA_prevent_balearic_incursions_tt
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}				
+			}
 		}
 	}
 	focus = {
 		id = YCA_sailors_assemblies # training officers
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
 		prerequisite = {
 			focus = YCA_flota_del_pueblo
 		}		
@@ -2015,7 +2138,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2028,11 +2151,37 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			1099 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 1			
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 2
+				tooltip = anarchist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}		
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = YCA_flota_del_pueblo_idea
+				add_idea = YCA_flota_del_pueblo_idea_sailor
+			}					
 		}
 	}			
 	focus = {
 		id = YCA_expand_catalan_shipbuilding_abilities # dockyard stuff and temp nat spirit
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
 		prerequisite = {
 			focus = YCA_sailors_assemblies
 		}		
@@ -2040,7 +2189,7 @@ focus_tree = {
 		x = 2
 		y = 1	
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -2053,11 +2202,27 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			165 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+				}
+				add_dynamic_modifier = {
+					modifier = YCA_ramped_up_shipyards
+				}
+				add_extra_state_shared_building_slots = 3		
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			167 = {
+				add_dynamic_modifier = {
+					modifier = YCA_ramped_up_shipyards
+				}	
+			}							
 		}
 	}	
 	focus = {
 		id = YCA_submarinos_de_la_revolucion
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_SOV_submarine_warfare_ccp_2d_sov_compatibility
 		prerequisite = {
 			focus = YCA_expand_catalan_shipbuilding_abilities
 		}		
@@ -2065,7 +2230,7 @@ focus_tree = {
 		x = 1
 		y = 1	
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2078,11 +2243,18 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			navy_experience = 30
+			add_tech_bonus = {
+				name = YCA_subsy_subs
+				bonus = 1
+				uses = 2
+				category = mio_cat_tech_all_submarine_and_modules
+			}			
 		}
 	}		
 	focus = {
 		id = YCA_conscription_based_crews # gain nat spirit with small conscription stuff
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_focus_generic_manpower
 		prerequisite = {
 			focus = YCA_expand_catalan_shipbuilding_abilities
 		}		
@@ -2090,7 +2262,7 @@ focus_tree = {
 		x = 0
 		y = 2	
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2103,11 +2275,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_flota_del_pueblo_idea_sailor
+				add_idea = YCA_flota_del_pueblo_idea_crews
+			}			
 		}
 	}	
 	focus = {
 		id = YCA_seafarers_protection_from_above # gain naval bombers and tech
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_focus_BEL_maritime_phoenix
 		prerequisite = {
 			focus = YCA_prevent_balearic_incursions
 			focus = YCA_red_air_arm
@@ -2116,7 +2292,7 @@ focus_tree = {
 		x = -1
 		y = 1		
 
-		cost = 2
+		cost = 4
 
 		ai_will_do = {
 			factor = 20
@@ -2129,11 +2305,20 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			air_experience = 25
+			navy_experience = 25
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = YCA_more_air_weapons
+				bonus = 1
+				uses = 2
+				category = cat_air_bombs
+			}	
 		}
 	}	
 	focus = {
 		id = YCA_defensa_de_las_costas # coastal defense focus
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_focus_SWE_coastal_support
 		prerequisite = {
 			focus = YCA_seafarers_protection_from_above
 		}		
@@ -2144,7 +2329,7 @@ focus_tree = {
 		x = 1
 		y = 1		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -2157,11 +2342,29 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_tech_bonus = {
+				name = YCA_cruiser_bonus
+				bonus = 0.5
+				uses = 2
+				category = mio_cat_tech_all_cruiser_and_modules
+				category = mio_cat_tech_all_destroyer_and_modules
+			}			
+			add_tech_bonus = {
+				name = YCA_trade_interdiction_bonus
+				bonus = 0.7
+				uses = 1
+				category = cat_trade_interdiction
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			add_offsite_building = {
+				type = dockyard
+				level = 1
+			}				
 		}
 	}
 	focus = {
 		id = YCA_mediterranean_power_projection # blue-water navy
-		icon = GFX_focus_PER_the_peoples_navy
+		icon = GFX_SOV_offensive_maritime_strategy_ccp_2d_sov_compatibility
 		prerequisite = {
 			focus = YCA_seafarers_protection_from_above
 		}		
@@ -2172,7 +2375,7 @@ focus_tree = {
 		x = 3
 		y = 1		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 20
@@ -2185,6 +2388,23 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_tech_bonus = {
+				name = YCA_heavy_ship_bonus
+				bonus = 2
+				uses = 1
+				category = cat_ship_heavy_battery
+			}	
+			add_tech_bonus = {
+				name = YCA_fleet_in_being_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fleet_in_being
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_offsite_building = {
+				type = dockyard
+				level = 1
+			}								
 		}
 	}					
 	focus = {

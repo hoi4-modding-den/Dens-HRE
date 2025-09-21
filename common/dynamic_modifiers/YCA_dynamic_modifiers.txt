@@ -12,3 +12,12 @@ YCA_guerrilla_tactics_modifier = { #Gets removed via on_action
 	enemy_local_supplies = -0.15
 	enemy_attrition = 0.15
 }
+
+YCA_ramped_up_shipyards = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_RAJ_aden_treaty_port
+
+	industrial_capacity_dockyard = 0.05
+	production_speed_dockyard_factor = 0.15
+	refit_speed = 0.25 
+}

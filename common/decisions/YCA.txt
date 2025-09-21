@@ -524,7 +524,77 @@ YCA_generalitat_factions_decisions = {
 		ai_will_do = {
 			base = 2
 		}
-	}							
+	}	
+	
+	YCA_construct_the_air_defense_ring = {
+		priority = 5
+		icon = GFX_decision_SWE_set_air_budget 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_secure_the_skies
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 25
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+
+		remove_effect = {
+			army_experience = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
+			167 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 4
+					instant_build = yes
+				}			
+			}
+			165 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 4
+					instant_build = yes
+				}			
+			}
+			1100 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}			
+			}
+			1099 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}			
+			}						
+		}
+
+		ai_will_do = {
+			base = 2
+		}
+	}		
 }
 
 YCA_guerrilla_tradicional_tactics_category = {
