@@ -1934,6 +1934,62 @@ ideas = {
 			}
 		}
 
+		YBS_defend_from_zaragoza = {
+
+			picture = generic_shield_against_communism
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				has_war_with = YZA
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = YZA
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.25
+			}
+		}
+
+		YBS_defend_from_madrid = {
+
+			picture = generic_purge
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				has_war_with = YAO
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_speed_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = YAO
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+		}
+
 		YBS_have_fun_now = {
 
 			picture = CHL_liberal_party_in_power

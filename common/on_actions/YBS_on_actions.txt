@@ -340,4 +340,23 @@ on_actions = {
         }
     }
 
+    on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = { original_tag = YZA }
+                    FROM = { original_tag = YBS }
+                }
+                FROM = { country_event = YBS_diplo_events.29 }
+            }
+            if = {
+                limit = {
+                    ROOT = { original_tag = YAO }
+                    FROM = { original_tag = YBS }
+                }
+                FROM = { country_event = YBS_diplo_events.30 }
+            }
+        }
+    }
+
 }

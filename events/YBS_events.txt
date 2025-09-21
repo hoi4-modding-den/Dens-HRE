@@ -1855,6 +1855,44 @@ country_event = { # Defections to the Basque (from Focus)
 
 }
 
+country_event = { # Zaragoza attacks
+	id = YBS_diplo_events.29
+	title = YBS_diplo_events.29.t
+	desc = YBS_diplo_events.29.desc
+    picture = GFX_report_event_spr_spanish_civil_war2
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.29.a
+        add_war_support = 0.1
+        add_timed_idea = {
+            idea = YBS_defend_from_zaragoza
+            days = 300
+        }
+    }
+
+}
+
+country_event = { # Madrid attacks
+	id = YBS_diplo_events.30
+	title = YBS_diplo_events.30.t
+	desc = YBS_diplo_events.30.desc
+    picture = GFX_report_event_spr_spanish_civil_war2
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.30.a
+        add_war_support = 0.1
+        add_timed_idea = {
+            idea = YBS_defend_from_madrid
+            days = 300
+        }
+    }
+
+}
+
 country_event = { # Flag for the RDE
 	id = YBS_esperanto_events.1
 	title = YBS_esperanto_events.1.t
