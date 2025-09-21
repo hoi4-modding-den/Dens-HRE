@@ -37,5 +37,21 @@ ideas = {
 				consumer_goods_factor = -0.10
 			}
 		}
+		YPR_lend_lease_idea = {
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				lend_lease_tension = -0.75
+			}
+		}
+		YPR_crush_the_spanish_bourgeoisie = {
+			picture = SPR_anti_fascist_crusade
+			
+			modifier = {
+				army_attack_factor = 0.05
+				breakthrough_factor = 0.10
+				org_loss_when_moving = -0.10
+			}
+		}
 	}
 }

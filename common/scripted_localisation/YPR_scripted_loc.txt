@@ -1,0 +1,32 @@
+defined_text = {
+    name = GetSafeguardTheRevolutionName
+    text = {
+        trigger = {
+        	YPR = {
+			    has_completed_focus = YPR_all_power_to_the_councils
+		    }
+        }
+        localization_key = YPR_safeguard_the_revolution_anarchist
+    }
+	text = {
+        trigger = {
+        	YPR = {
+			    has_completed_focus = YPR_establish_the_vanguard_party
+		    }
+        }
+        localization_key = YPR_safeguard_the_revolution_leninist
+    }
+	text = {
+        trigger = {
+        	YPR = {
+				NOT = {
+					AND = {
+						has_completed_focus = YPR_establish_the_vanguard_party
+						has_completed_focus = YPR_all_power_to_the_councils
+					}
+				}
+		    }
+        }
+        localization_key = YPR_safeguard_the_revolution_default
+    }
+}

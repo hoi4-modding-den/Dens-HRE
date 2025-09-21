@@ -10,6 +10,14 @@
  YPR_communism_party:0 "PCP-GCT"
  YPR_communism_party_long:0 "Partido Comunista Português - Confederação Geral do Trabalho"
  
+ YPR_united_iberia_leninist:0 "United Soviet Republic of Iberia"
+ YPR_united_iberia_leninist_DEF:0 "the United Soviet Republic of Iberia"
+ YPR_united_iberia_leninist_ADJ:0 "Iberian"
+ 
+ YPR_united_iberia_anarchist:0 "Free Territory of Iberia"
+ YPR_united_iberia_anarchist_DEF:0 "the Free Territory of Iberia"
+ YPR_united_iberia_anarchist_ADJ:0 "Iberian"
+ 
  YPR_the_spirit_of_1934:0 "The Spirit of 1934"
  YPR_proletarian_military_dummy:0 "Proletarian Military"
  YPR_proletarian_military_dummy_conscription_tt:0 "Recruitable Population: §H2.50%§!"
@@ -18,25 +26,59 @@
  YPR_anarchist_society:0 "Anarchist Society"
  YPR_dictatorship_of_the_proletariat:0 "Dictatorship of the Proletariat"
  YPR_rebuild_the_south:0 "Rebuild the South"
+ YPR_defensive_focus:0 "Defend the Revolutionary Banner"
+ YPR_lend_lease_idea:0 "Aid the Revolutions Abroad"
+ YPR_crush_the_spanish_bourgeoisie:0 "Crush the Spanish Reactionaries"
  
  YPR_portuguese_red_army_new_unit_tt:0 "\nCreates a new fully-equipped §HInfantry Division§! in §HPorto§!"
  YPR_arm_the_councils_new_unit_tt:0 "\nCreates three poorly-equipped §HMilitia Units§! in §HPorto§!"
+ YPR_begin_the_eastward_push_decision_tt:0 "Unlocks £GFX_decision_icon_small §HDecisions§! to invade non-communist §HIberian States§!"
+ YPR_fuse_the_fronts_trigger_tt:0 "All formerly §HCapitalist Iberian countries§! have either been defeated, or have §Ha Communist or an Anarchist government in-place§!\n\n"
+ 
+ YPR_iberian_wars:0 "The Iberian Wars"
+ 
+ YPR_invade_galicia:0 "Invade [YGL.GetNameWithFlag]"
+ YPR_invade_asturias:0 "Invade [YAS.GetNameWithFlag]"
+ YPR_invade_castille:0 "Invade [YRR.GetNameWithFlag]"
+ YPR_invade_madrid:0 "Invade [YAO.GetNameWithFlag]"
+ YPR_invade_sevilla:0 "Invade [YRS.GetNameWithFlag]"
+ YPR_invade_primera:0 "Invade [YB1.GetNameWithFlag]"
+ YPR_invade_gibraltar:0 "Invade [YGB.GetNameWithFlag]"
+ YPR_invade_granada:0 "Invade [YUS.GetName]"
+ YPR_invade_murcia:0 "Invade [YRF.GetNameWithFlag]"
+ YPR_invade_cuenca:0 "Invade [YFR.GetNameWithFlag]"
+ YPR_invade_bilbao:0 "Invade [YBS.GetNameWithFlag]"
  
  YBR_prepare_for_the_great_struggle_dynmod_tt:0 "\nModify §HProletarian Military§! by\nArmy Experience Gain: §G+5.00%§!\n"
  YPR_doctrinal_developments_dynmod_tt:0 "\nModify §HProletarian Military§! by\nDivision Organization: §G+5.00%§!\n"
- YPR_arm_the_councils_dynmod_tt:0 "\nModify §HProletarian Military§! by\nRecruitable Population: §H+1.00%§!\nDivision Attack: §G+5.00%§!\nDivision Defense: §G+5.00%§!\n"
+ YPR_arm_the_councils_dynmod_tt:0 "\nModify §HProletarian Military§! by\nRecruitable Population: §H+1.00%§!\nDivision Attack: §G+7.50%§!\nDivision Defense: §G+7.50%§!\n"
  YPR_portuguese_red_army_dynmod_tt:0 "Modify §HProletarian Military§! by\nDivision Organization: §G+5.00%§!\nArmy Experience Gain: §G+10.00%§!\n"
  YPR_political_commissars_dynmod_tt:0 "Modify §HProletarian Military§! by\nDivision Organization: §G+5.00%§!\nArmy Organization Regain: §G+5.00%§!\nEquipment Capture Ratio Modifier: §R-3.00%§!\n\n"
  YPR_proletarianize_the_peasants_dynmod_tt:0 "Modify §HDictatorship of the Proletariat§! by\nStability: §G+2.50%§!\nConstruction Speed: §G+2.50%§!\n\n"
  YPR_policy_of_war_communism_dynmod_tt:0 "Modify §HDictatorship of the Proletariat§! by\n£GFX_prod_eff_cap Production Efficiency Cap: §G+5.00%§!\n\n"
+ YPR_a_new_era_for_portugal_dynmod_tt:0 "Modify §HDictatorship of the Proletariat§! by\nStability: §G+5.00%§!\n\n"
  YPR_self_management_of_production_dynmod_tt:0 "Modify §HAnarchist Society§! by\nStability Factor: §R-5.00%§!\n£GFX_prod_eff Production Efficiency Cap: §G+10.00%§!\nFactory Output: §G+10.00%§!\n\n"
  YPR_collectivize_the_chestnut_farms_dynmod_tt:0 "Modify §HAnarchist Society§! by\nResource Gain Efficiency: §G+15.00%§!\n\n"
  YPR_communal_autonomy_dynmod_tt:0 "Modify §HAnarchist Society§! by\nStability: §R-10.00%§!\nWeekly Stability: §R-0.50%§!\nMax Factories in a State: §G+10.00%§!\nConsumer Goods Factories factor: §H-10.00%§!\n"
+ YPR_a_red_fortress_dynmod_tt:0 "Modify §HDefend the Revolutionary Banner§! by\n§HLand Fort§! Construction Speed: §G+15.00%§!\n§HCoastal Fort§! Construction Speed: §G+15.00%§!\n"
  
  YPR.1.t:0 "The Inaugral Congress of the Portuguese Revolutionaries"
  YPR.1.d:0 "For the first time since the Revolution of 1934, the key figures of both the PCP and the GCT meet each other in an effort to solidify the foundations of the newly-established Communist government. The most burning question of the day is the philosophical basis of the new constitution; The PCP argues that it should follow the principles set by Lenin and the Bolsheviks, whilst the GCT leans more towards Anarcho-Syndicalist views."
  YPR.1.a:0 "We need a vanguard party to guide the revolution!"
  YPR.1.b:0 "True liberty can only be found within an Anarchist framework!"
+ 
+ YPR.2.t:0 "[YPR.GetNameDefCap] Proposes Unification!"
+ YPR.2.d:0 "Following the successes in the Iberian Wars, the Portuguese have drafted a proposal that would see our countries unify under a single banner."
+ YPR.2.a:0 "Accept the proposal"
+ YPR.2.b:0 "Refuse the offer"
+ 
+ YPR.3.t:0 "[FROM.GetName] Accepts Our Call For Unification!"
+ YPR.3.d:0 "Our proposal was accepted."
+ YPR.3.a:0 "Brilliant"
+ 
+ YPR.4.t:0 "[FROM.GetName] Refuses Our Offer!"
+ YPR.4.d:0 "The diplomats from [FROM.GetName] have turned down our proposal!"
+ YPR.4.a:0 "This means war!"
  
  YPR_revolutionary_trade_unionist:0 "Working Class Hero"
  YPR_the_man_in_the_shadows:0 "The Man in the Shadows"
@@ -68,7 +110,7 @@
  YPR_institute_a_dictatorship_of_the_proletariat_tt:0 "§g"I repeat: the experience of the notorious dictatorship of the proletariat in Russia has clearly shown even to those who are incapable of thinking or have had no occasion to give thought to the matter that absolute centralisation and rigorous discipline in the proletariat are an essential condition of victory over the bourgeoisie."\n - V.I. Lenin, "Left-Wing" Communism: An Infantile Disorder, 1920§!\n\n"
  
  YPR_proletarianize_the_peasants:0 "Proletarianize the Peasants"
- YPR_proletarianize_the_peasants_tt:0 "§g"There is no doubt that in a country where the overwhelming majority of the population consists of small agricultural producers, a socialist revolution can be carried out only through the implementation of a whole series of special transitional measures..."\n - V.I. Lenin, Introducing the NEP, 1921§!\n\n"
+ YPR_proletarianize_the_peasants_tt:0 "§g"There is no doubt that in a country where the overwhelming majority of the population consists of small agricultural producers, a socialist revolution can be carried out only through the implementation of a whole series of special transitional measures..."\n - V.I. Lenin, 10th Party Congress of the CPSU, 1921§!\n\n"
  
  YPR_rapid_industrialization:0 "Develop the Iron Mines of Moncorvo"
  YPR_rapid_industrialization_tt:0 "§g"The country that is more developed industrially only shows, to the less developed, the image of its own future."\n - Karl Marx, Capital, Volume I, 1867§!\n\n"
@@ -121,4 +163,35 @@
  YPR_consolidate_the_proletariat_of_the_south:0 "Consolidate the Proletariat of the South"
  YPR_consolidate_the_proletariat_of_the_south_tt:0 "§g"We have spilt an ocean of blood for the brotherhood and unity of the proletariat and we shall not allow anyone to touch or destroy it from within."\n - Josip Broz Tito§!"
  
+ YPR_a_new_era_for_portugal:0 "A New Era for Portugal"
+ YPR_a_new_era_for_portugal_tt:0 "§g"I believe that the proletarian class is destined, in a more or less near future, to take the direction of the destinies of the world into their own hands, completely transforming the entire existing social organisation."\n - Bento de Jesus Caraça, 1929§!\n\n"
  
+ YPR_safeguard_the_revolution:0 "[GetSafeguardTheRevolutionName]"
+ YPR_safeguard_the_revolution_anarchist:0 "Safeguard the Free Territory"
+ YPR_safeguard_the_revolution_leninist:0 "Safeguard the Soviet Republic"
+ YPR_safeguard_the_revolution_default:0 "Safeguard the Revolution"
+ YPR_safeguard_the_revolution_tt:0 "§g"Before we are completely routed, let us retreat and reorganise everything, but on a firmer basis."\n - V.I. Lenin, The New Economic Policy, 1921§!\n\n"
+ 
+ YPR_solidarity_with_our_spanish_comrades:0 "Solidarity with Our Spanish Comrades"
+ YPR_solidarity_with_our_spanish_comrades_tt:0 "§g"The proletarians have nothing to lose but their chains. They have a world to win. Workers of the world, unite!"\n - Karl Marx, The Communist Manifesto, 1848§!\n\n"
+ 
+ YPR_provide_indirect_aid_to_our_allies:0 "Provide Indirect Aid to Our Allies"
+ YPR_provide_indirect_aid_to_our_allies_tt:0 "§g"We should support whatever our enemies oppose and oppose whatever our enemies support."\n - Mao Zedong, 1939§!\n\n"
+ 
+ YPR_a_red_fortress:0 "A Fortaleza Vermelha"
+ YPR_a_red_fortress_tt:0 "§g"Raise the revolutionary flag\nWhich carries us ceaselessly towards triumph!\nTo the Barricades!"\n - Valeriano Orobón Fernández, A las Barricadas, 1933§!\n\n"
+ 
+ YPR_industrial_advancements:0 "Industrial Advancements"
+ YPR_industrial_advancements_tt:0 "§g"If we enjoy the benefits of peace, it is only because we have an excellent armed force and a fine socialist economy"\n - Kliment Voroshilov§!\n\n"
+ 
+ YPR_the_vanguards_against_capitalism:0 "The Vanguards Against Capitalism"
+ YPR_the_vanguards_against_capitalism_tt:0 "§g"To carry on a war for the overthrow of the international bourgeoisie, a war which is a hundred times more difficult, protracted and complex than the most stubborn of ordinary wars between states, and to renounce in advance any change of tack, or any utilisation of a conflict of interests among one’s enemies, or any conciliation or compromise with possible allies — is that not ridiculous in the extreme?"\n - V.I. Lenin, "Left-Wing" Communism, An Infantile Disorder, 1920§!\n\n"
+ 
+ YPR_begin_the_eastward_push:0 "Begin the Eastward Push"
+ YPR_begin_the_eastward_push_tt:0 "§g"Naturally our party must defend the working classes against the Fascisti. Naturally we must defend them by force of arms, for if the Fascisti gain power they will rivet the chains of Capitalism upon us."\n - Karl Radek, Lenin, 1923§!\n\n"
+ 
+ YPR_fuse_the_fronts:0 "Fuse the Fronts"
+ YPR_fuse_the_fronts_tt:0 "§g"Is it not true that our brotherhood transcends distances, different languages, and the absence of close cultural links, and unites us in the struggle? Ought not a Japanese worker be closer to an Argentine laborer, a Bolivian miner, a man working for United Fruit Company or a Cuban cane cutter, than to a Japanese samurai?"\n - Ernesto 'Che' Guevara, Humanismo, 1959§!\n\n"
+ 
+ YPR_unite_the_iberian_workers:0 "Unite the Iberian Working Class"
+ YPR_unite_the_iberian_workers_tt:0 "§g"Long live the fraternal trust and fighting alliance of the workers of all nations in the struggle to overthrow capital!"\n - V.I. Lenin, 1919§!\n\n"

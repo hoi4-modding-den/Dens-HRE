@@ -1,0 +1,278 @@
+YPR_iberian_wars = {
+
+	YPR_invade_galicia = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YGL
+			}
+		}
+		visible = {
+			country_exists = YGL
+			YGL = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YGL
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_asturias = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YAS
+			}
+		}
+		visible = {
+			country_exists = YAS
+			YAS = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YAS
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_castille = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YRR
+			}
+		}
+		visible = {
+			country_exists = YRR
+			YRR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YRR
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_madrid = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YAO
+			}
+		}
+		visible = {
+			country_exists = YAO
+			YAO = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YAO
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_sevilla = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YRS
+			}
+		}
+		visible = {
+			country_exists = YRS
+			YRS = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YRS
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_primera = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YB1
+			}
+		}
+		visible = {
+			country_exists = YB1
+			YB1 = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YB1
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_gibraltar = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YGB
+			}
+		}
+		visible = {
+			country_exists = YGB
+			YGB = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YGB
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_granada = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YUS
+			}
+		}
+		visible = {
+			country_exists = YUS
+			YUS = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YUS
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_murcia = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YRF
+			}
+		}
+		visible = {
+			country_exists = YRF
+			YRF = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YRF
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_cuenca = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YFR
+			}
+		}
+		visible = {
+			country_exists = YFR
+			YFR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YFR
+                type = annex_everything
+            }
+		}
+	}
+	
+	YPR_invade_bilbao = {
+		available = {
+			any_neighbor_country = {
+				original_tag = YBS
+			}
+		}
+		visible = {
+			country_exists = YBS
+			YBS = {
+				NOT = {
+					has_completed_focus = YBS_syndicalist_victory
+				}
+			}
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		cost = 25
+		days_remove = 15
+		remove_effect = { 
+			declare_war_on = {
+                target = YBS
+                type = annex_everything
+            }
+		}
+	}
+	
+}

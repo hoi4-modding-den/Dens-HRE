@@ -515,8 +515,8 @@ focus_tree = {
 			custom_effect_tooltip = YPR_arm_the_councils_dynmod_tt
 			custom_effect_tooltip = YPR_arm_the_councils_new_unit_tt
 			add_to_variable = { YPR_pm_conscription = 0.01 }
-			add_to_variable = { YPR_pm_army_attack_factor = 0.05 }
-			add_to_variable = { YPR_pm_army_defense_factor = 0.05 }
+			add_to_variable = { YPR_pm_army_attack_factor = 0.075 }
+			add_to_variable = { YPR_pm_army_defense_factor = 0.075 }
 			hidden_effect = {
 				capital_scope = {
 					create_unit = {
@@ -675,7 +675,8 @@ focus_tree = {
 	}
 	focus = {
 		id = YPR_consolidate_the_proletariat_of_the_south
-		icon = GFX_focus_por_workers_of_iberia
+		icon = GFX_focus_YUG_pan_slavic_congress
+		#icon = GFX_focus_por_workers_of_iberia
 		x = 2
 		y = 1
 		cost = 5
@@ -698,4 +699,422 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = YPR_a_new_era_for_portugal
+		icon = GFX_focus_por_workers_of_iberia
+		x = -2
+		y = 1
+		cost = 1
+		prerequisite = { focus = YPR_consolidate_the_proletariat_of_the_south }
+		prerequisite = { focus = YPR_purge_the_royalists }
+		relative_position_id = YPR_consolidate_the_proletariat_of_the_south
+		available = { controls_state = 112 }
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_a_new_era_for_portugal_tt
+			set_capital = { state = 112 }
+			if = {
+				limit = {
+					has_completed_focus = YPR_all_power_to_the_councils
+				}
+				add_war_support = 0.05
+			}
+			if = {
+				limit = {
+					has_completed_focus = YPR_establish_the_vanguard_party
+				}
+				add_to_variable = { YPR_dotp_stability_factor = 0.05 }
+				custom_effect_tooltip = YPR_a_new_era_for_portugal_dynmod_tt
+			}
+		}
+	}
+	focus = {
+		id = YPR_safeguard_the_revolution
+		icon = GFX_goal_generic_defence
+		x = -4
+		y = 1
+		cost = 5
+		dynamic = yes
+		prerequisite = { focus = YPR_a_new_era_for_portugal }
+		relative_position_id = YPR_a_new_era_for_portugal
+		mutually_exclusive = { focus = YPR_solidarity_with_our_spanish_comrades }
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_safeguard_the_revolution_tt
+			add_dynamic_modifier = { modifier = YPR_defensive_focus }
+		}
+	}
+	focus = {
+		id = YPR_provide_indirect_aid_to_our_allies
+		icon = GFX_focus_GER_support_the_proletarian_uprising
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = { focus = YPR_safeguard_the_revolution }
+		relative_position_id = YPR_safeguard_the_revolution
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_provide_indirect_aid_to_our_allies_tt
+			add_ideas = { YPR_lend_lease_idea }
+		}
+	}
+	focus = {
+		id = YPR_a_red_fortress
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = { focus = YPR_safeguard_the_revolution }
+		relative_position_id = YPR_safeguard_the_revolution
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_a_red_fortress_tt
+			custom_effect_tooltip = YPR_a_red_fortress_dynmod_tt
+			add_to_variable = { YPR_df_production_speed_bunker_factor = 0.15 }
+			add_to_variable = { YPR_df_production_speed_coastal_bunker_factor = 0.15 }
+		}
+	}
+	focus = {
+		id = YPR_industrial_advancements
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_safeguard_the_revolution }
+		relative_position_id = YPR_safeguard_the_revolution
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_industrial_advancements_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+			
+		}
+	}
+	focus = {
+		id = YPR_solidarity_with_our_spanish_comrades
+		icon = GFX_focus_ger_great_red_menace
+		x = 4
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_a_new_era_for_portugal }
+		relative_position_id = YPR_a_new_era_for_portugal
+		mutually_exclusive = { focus = YPR_safeguard_the_revolution }
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_solidarity_with_our_spanish_comrades_tt
+			add_ideas = { YPR_crush_the_spanish_bourgeoisie }
+		}
+	}
+	focus = {
+		id = YPR_begin_the_eastward_push
+		icon = GFX_focus_generic_communism_anti_fascism
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_solidarity_with_our_spanish_comrades }
+		relative_position_id = YPR_solidarity_with_our_spanish_comrades
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_begin_the_eastward_push_tt
+			custom_effect_tooltip = YPR_begin_the_eastward_push_decision_tt
+		}
+	}
+	focus = {
+		id = YPR_the_vanguards_against_capitalism
+		icon = GFX_focus_SOV_support_spanish_poum
+		x = -2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_solidarity_with_our_spanish_comrades }
+		relative_position_id = YPR_solidarity_with_our_spanish_comrades
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_the_vanguards_against_capitalism_tt
+			if = {
+				limit = {
+					YBS = {
+						has_completed_focus = YBS_syndicalist_victory
+					}
+				}
+				YBS = {
+					add_opinion_modifier = {
+						target = YPR
+						modifier = huge_increase
+					}
+				}
+				add_opinion_modifier = {
+					target = YBS
+					modifier = huge_increase
+				}
+			}
+			YZA = {
+				add_opinion_modifier = {
+					target = YPR
+					modifier = huge_increase
+				}
+			}
+			add_opinion_modifier = {
+				target = YZA
+				modifier = huge_increase
+			}
+			YCA = {
+				add_opinion_modifier = {
+					target = YPR
+					modifier = huge_increase
+				}
+			}
+			add_opinion_modifier = {
+				target = YCA
+				modifier = huge_increase
+			}
+			YC1 = {
+				add_opinion_modifier = {
+					target = YPR
+					modifier = huge_increase
+				}
+			}
+			add_opinion_modifier = {
+				target = YC1
+				modifier = huge_increase
+			}
+			YC2 = {
+				add_opinion_modifier = {
+					target = YPR
+					modifier = huge_increase
+				}
+			}
+			add_opinion_modifier = {
+				target = YC2
+				modifier = huge_increase
+			}
+			YC3 = {
+				add_opinion_modifier = {
+					target = YPR
+					modifier = huge_increase
+				}
+			}
+			add_opinion_modifier = {
+				target = YC3
+				modifier = huge_increase
+			}
+		}
+	}
+	focus = {
+		id = YPR_fuse_the_fronts
+		icon = GFX_focus_generic_free_iberia
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_the_vanguards_against_capitalism }
+		prerequisite = { focus = YPR_begin_the_eastward_push }
+		relative_position_id = YPR_the_vanguards_against_capitalism
+		
+		available = {
+			custom_trigger_tooltip = {
+			tooltip = YPR_fuse_the_fronts_trigger_tt
+				OR = {
+					NOT = { country_exists = YGL }
+					YGL = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YAS }
+					YAS = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YRR }
+					YRR = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YAO }
+					YAO = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YFR }
+					YFR = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YBS }
+					YBS = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YB1 }
+					YB1 = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YRF }
+					YRF = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YUS }
+					YUS = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YGB }
+					YGB = { has_government = communism }
+				}
+				OR = {
+					NOT = { country_exists = YRS }
+					YRS = { has_government = communism }
+				}
+			}
+		}
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_fuse_the_fronts_tt
+			every_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = 41
+							region = 209
+							region = 210
+						}
+					}
+					OR = {
+						has_government = communism
+						original_tag = YC3
+						original_tag = YCA
+					}
+					NOT = {
+						original_tag = YPR
+					}
+					is_subject = no
+				}
+				country_event = YPR.2
+			}
+		}
+	}
+	focus = {
+		id = YPR_unite_the_iberian_workers
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = YPR_fuse_the_fronts }
+		relative_position_id = YPR_fuse_the_fronts
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = YPR_unite_the_iberian_workers_tt
+			every_state = {
+				limit = {
+					OR = {
+						region = 41
+						region = 209
+						region = 210
+					}
+				}
+				add_core_of = YPR
+			}
+			if = {
+				limit = {
+					has_completed_focus = YPR_establish_the_vanguard_party
+				}
+				set_cosmetic_tag = YPR_united_iberia_leninist
+			}
+			if = {
+				limit = {
+					has_completed_focus = YPR_all_power_to_the_councils
+				}
+				set_cosmetic_tag = YPR_united_iberia_anarchist
+			}
+		}
+	}
+	
 }

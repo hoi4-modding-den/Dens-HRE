@@ -1,0 +1,17 @@
+YPR_iberian_wars = {
+
+	icon = GFX_decision_category_SOV_permanent_revolution
+	picture = GFX_decision_cat_picture_spr_civil_war_offensives
+	
+	allowed = {
+		original_tag = YPR
+	}
+	
+	visible = {
+		has_completed_focus = YPR_begin_the_eastward_push
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 10
+}

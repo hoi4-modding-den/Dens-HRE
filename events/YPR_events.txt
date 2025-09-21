@@ -44,3 +44,86 @@ country_event = {
     }
 }
 
+country_event = {
+	id = YPR.2
+	title = YPR.2.t
+	desc = YPR.2.d
+	
+	picture = GFX_report_event_worker_protests
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YPR.2.a
+		every_country = {
+			limit = {
+				is_subject = yes
+				is_subject_of = ROOT
+			}
+			overlord = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+		}
+		
+		YPR = {
+			country_event = YPR.3
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+		ai_chance = { 
+			factor = 0.5
+		}		
+    }
+	option = {
+        name = YPR.2.b
+		YPR = {
+			country_event = YPR.4
+		}
+		ai_chance = { 
+			factor = 0.5
+		}
+    }
+}
+
+country_event = {
+	id = YPR.3
+	title = YPR.3.t
+	desc = YPR.3.d
+	
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = YPR.3.a
+		annex_country = {
+			tag = FROM
+			transfer_troops = yes
+		}
+	}
+}
+
+country_event = {
+	id = YPR.4
+	title = YPR.4.t
+	desc = YPR.4.d
+	
+	picture = GFX_report_event_worker_protests
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = YPR.4.a
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+	}
+}
+
