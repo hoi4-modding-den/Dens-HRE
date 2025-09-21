@@ -578,10 +578,10 @@ focus_tree = {
 				}
 				add_building_construction = {
     				type = industrial_complex
-    				level = 1
+    				level = 2
     				instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 			}
 		}
 	}
@@ -1306,6 +1306,28 @@ focus_tree = {
 		prerequisite = { focus = YAO_navy_of_iberia }
 		completion_reward = {
 			navy_experience = 50
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_coastal = no }
+					add_building_construction = {
+    					type = dockyard
+    					level = 2
+    					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_coastal = no }
+					add_building_construction = {
+    					type = dockyard
+    					level = 2
+    					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
 		}
 	}
 
@@ -1326,6 +1348,38 @@ focus_tree = {
 		prerequisite = { focus = YAO_navy_of_iberia }
 		completion_reward = {
 			navy_experience = 10
+			add_tech_bonus = {
+    			bonus = 1
+    			uses = 2
+    			category = naval_doctrine
+			}
+			add_tech_bonus = {
+    			bonus = 1
+    			uses = 1
+    			category = naval_equipment
+			}
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_coastal = no }
+					add_building_construction = {
+    					type = dockyard
+    					level = 2
+    					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				if = {
+					limit = { is_coastal = no }
+					add_building_construction = {
+    					type = dockyard
+    					level = 1
+    					instant_build = yes
+					add_extra_state_shared_building_slots = 2
+					}
+				}
+			}
 		}
 	}
 
@@ -1432,6 +1486,11 @@ focus_tree = {
 		prerequisite = { focus = YAO_the_three_branches }
 		completion_reward = {
 			army_experience = 50
+			add_tech_bonus = {
+    			bonus = 0.5
+    			uses = 1
+    			category = infantry_weapons
+			}
 		}
 	}
 
@@ -1489,6 +1548,7 @@ focus_tree = {
 				remove_idea = YAO_state_of_the_armed_forces2
 				add_idea = YAO_state_of_the_armed_forces3
 			}
+			add_manpower = 12100
 		}
 	}
 
@@ -1540,14 +1600,14 @@ focus_tree = {
 				create_unit = {
     				division = "name = \"Fuerzas del Gobierno Central\" division_template = \"División de Infantería\" start_experience_factor = 0.5 start_equipment_factor = 0.67 start_manpower_factor = 0.6"
     				owner = YAO
-					count = 2
+					count = 3
 				}
 			}
 			random_owned_controlled_state = {
 				create_unit = {
-    				division = "name = \"Fuerzas del Gobierno Central\" division_template = \"División de Infantería\" start_experience_factor = 0.7 start_equipment_factor = 0.5 start_manpower_factor = 0.4"
+    				division = "name = \"Fuerzas del Gobierno Central\" division_template = \"División de Infantería\" start_experience_factor = 0.7 start_equipment_factor = 0.8 start_manpower_factor = 0.7"
     				owner = YAO
-					count = 1
+					count = 2
 				}
 			}
 		}
@@ -2082,6 +2142,41 @@ focus_tree = {
 		}
 	}
 
+	#The Remaining
+	focus = {
+		id = YAO_the_remaining_countries
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		x = 0
+		y = 9
+		relative_position_id = YAO_road_to_reunification
+		cost = 7
+		available = { 
+		}
+		search_filters = {  
+			FOCUS_FILTER_POLITICAL 
+		}
+		
+		prerequisite = { focus = YAO_the_eastern_communists }
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = YAS
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YRI
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YSO
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YJT
+			}
+		}
+	}
+
 
 	## INDUSTRIAL PATH ##
 	########################
@@ -2101,6 +2196,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = no
+				}
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 
@@ -2124,10 +2227,10 @@ focus_tree = {
 			41 = {
 				add_building_construction = {
     				type = industrial_complex
-    				level = 2
+    				level = 3
     				instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 			}
 			add_victory_points = {
 				province = 858
@@ -2160,7 +2263,7 @@ focus_tree = {
 			170 = {
 				add_building_construction = {
     				type = industrial_complex
-    				level = 1
+    				level = 2
     				instant_build = yes
 				}
 				add_extra_state_shared_building_slots = 2
@@ -2169,7 +2272,7 @@ focus_tree = {
 				province = 6902
 				value = 15
 			}
-			788 = {
+			170 = {
 				add_resource = {
     				type = tungsten
     				amount = 15
@@ -2199,7 +2302,7 @@ focus_tree = {
 				set_state_category = large_town
 				add_building_construction = {
     				type = industrial_complex
-    				level = 1
+    				level = 2
     				instant_build = yes
 				}
 				add_extra_state_shared_building_slots = 3
@@ -2286,10 +2389,10 @@ focus_tree = {
 				}
 				add_building_construction = {
     				type = industrial_complex
-    				level = 1
+    				level = 2
     				instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
