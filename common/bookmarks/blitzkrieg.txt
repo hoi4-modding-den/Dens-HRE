@@ -80,7 +80,21 @@ bookmarks = {
 				YAO_democratic_values
 				YAO_a_spanish_state
 			}
-		}		
+		}	
+		"YRR"={
+			history = "YRR_BLITZKRIEG_DESC"
+			ideology = neutrality
+			ideas = {
+				YRR_army_state
+				YRR_anarchist_resistance
+				YRR_low_legitimacy
+			}
+			focuses = {
+				army_effort
+				industrial_effort
+				political_effort
+			}
+		}	
 
 		"---"={
 			history = "OTHER_GATHERING_STORM_DESC"

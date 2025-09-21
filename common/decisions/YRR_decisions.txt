@@ -32,6 +32,10 @@ political_actions = {
 
         days_remove = 200
 
+        complete_effect = {
+            add_stability = -0.1
+        }
+
         remove_effect = {
             remove_ideas = YRR_anarchist_resistance
         }
@@ -62,6 +66,7 @@ political_actions = {
         }
 
         modifier = {
+            army_org_factor = -0.05
             experience_gain_army_factor = -0.25
         }
 
@@ -281,7 +286,7 @@ foreign_politics = {
 
             if = {
                 limit = {
-                    has_government = fascim
+                    has_government = fascism
                 }
                 custom_effect_tooltip = generic_skip_one_line_tt
                 add_ideas = YRR_spanish_destiny
