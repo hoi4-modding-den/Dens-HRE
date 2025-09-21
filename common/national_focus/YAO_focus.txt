@@ -16,12 +16,13 @@ focus_tree = {
 		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
 		x = 12
 		y = 2
-		cost = 6
+		cost = 2
 		available = {}
 		search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		prerequisite = {}
 		completion_reward = {
+			add_political_power = 40
 		}
 	}
 
@@ -35,7 +36,10 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = YAO_focus_legitimate_government
-		cost = 7
+		cost = 6
+		ai_will_do = {
+    		base = 5
+		}
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
@@ -78,7 +82,7 @@ focus_tree = {
 		x = 3
 		y = 2
 		relative_position_id = YAO_stabilise_the_kingdom
-		cost = 10
+		cost = 6
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
@@ -86,6 +90,10 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_authoritarian_rule }
 		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.2
+			}
 		}
 	}
 
@@ -96,7 +104,7 @@ focus_tree = {
 		x = 4
 		y = 3
 		relative_position_id = YAO_stabilise_the_kingdom
-		cost = 10
+		cost = 7
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
@@ -119,7 +127,7 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = YAO_stabilise_the_kingdom
-		cost = 10
+		cost = 5
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
@@ -168,6 +176,9 @@ focus_tree = {
 		relative_position_id = YAO_stabilise_the_kingdom
 		cost = 12
 		available = {}
+		ai_will_do = {
+    		base = 5
+		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
 		}
@@ -249,7 +260,11 @@ focus_tree = {
 		
 		prerequisite = { focus = YAO_a_loyal_government }
 		completion_reward = {
-			
+			add_trait = {
+				slot = YAO_King_Alfonso_fascist
+    			ideology = falangism
+    			trait = YAO_spanish_king
+			}
 		}
 	}
 
@@ -496,7 +511,10 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = YAO_stabilise_the_kingdom
-		cost = 10
+		cost = 8
+		ai_will_do = {
+    		base = 5
+		}
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
@@ -517,6 +535,9 @@ focus_tree = {
 		relative_position_id = YAO_stabilise_the_kingdom
 		cost = 12
 		available = {}
+		ai_will_do = {
+    		base = 5
+		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
 		}
@@ -613,7 +634,10 @@ focus_tree = {
 		x = 3
 		y = 6
 		relative_position_id = YAO_proclaim_the_republic
-		cost = 12
+		cost = 10
+		ai_will_do = {
+    		base = 5
+		}
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
@@ -635,6 +659,9 @@ focus_tree = {
 		relative_position_id = YAO_stabilise_the_kingdom
 		cost = 12
 		available = {}
+		ai_will_do = {
+    		base = 5
+		}
 		search_filters = {  
 			FOCUS_FILTER_POLITICAL
 		}
@@ -1072,7 +1099,10 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = YAO_focus_legitimate_government
-		cost = 10
+		cost = 8
+		ai_will_do = {
+    		base = 2
+		}
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_ARMY_XP
@@ -1092,7 +1122,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = YAO_restore_the_military_forces
-		cost = 10
+		cost = 8
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_ARMY_XP
@@ -1113,7 +1143,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = YAO_restore_the_military_forces
-		cost = 10
+		cost = 8
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_ARMY_XP
@@ -1136,6 +1166,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = YAO_restore_the_military_forces
 		cost = 10
+		ai_will_do = {
+    		base = 1
+			modifier = {
+				factor = 2
+				has_completed_focus = YAO_the_three_branches
+			}
+			modifier = {
+				factor = -2
+				NOT = { has_completed_focus = YAO_the_three_branches }
+			}
+		}
 		available = {}
 		search_filters = {  
 			FOCUS_FILTER_ARMY_XP
@@ -1754,7 +1795,7 @@ focus_tree = {
 		x = -2
 		y = 3
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 6
 		available = { 
 		
 		}
@@ -1874,7 +1915,7 @@ focus_tree = {
 		x = 2
 		y = 3
 		relative_position_id = YAO_road_to_reunification
-		cost = 10
+		cost = 6
 		available = { 
 		
 		}
@@ -2190,7 +2231,18 @@ focus_tree = {
 		x = 30
 		y = 0
 		relative_position_id = YAO_focus_legitimate_government
-		cost = 10
+		cost = 8
+		ai_will_do = {
+    		base = 1
+			modifier = {
+				factor = 2
+				has_completed_focus = YAO_create_a_constitution
+			}
+			modifier = {
+				factor = -2
+				NOT = { has_completed_focus = YAO_create_a_constitution }
+			}
+		}
 		available = {  
 		}
 		search_filters = {  
@@ -2216,7 +2268,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = YAO_industrial_expansion
-		cost = 10
+		cost = 8
 		available = {  
 			41 = { is_owned_by = YAO }
 		}
@@ -2329,7 +2381,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = YAO_industrial_expansion
-		cost = 10
+		cost = 8
 		available = {  
 		}
 		search_filters = {  
@@ -2351,7 +2403,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = YAO_industrial_expansion
-		cost = 10
+		cost = 6
 		available = {  
 			41 = { is_owned_by = YAO } 
 		}
@@ -2374,7 +2426,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		relative_position_id = YAO_industrial_expansion
-		cost = 10
+		cost = 8
 		available = {  
 			41 = { is_owned_by = YAO } 
 		}
@@ -2406,7 +2458,7 @@ focus_tree = {
 		x = 2
 		y = 4
 		relative_position_id = YAO_industrial_expansion
-		cost = 10
+		cost = 8
 		available = {  
 		}
 		search_filters = {  
@@ -2441,7 +2493,7 @@ focus_tree = {
 		x = -2
 		y = 4
 		relative_position_id = YAO_industrial_expansion
-		cost = 10
+		cost = 5
 		available = {  
 		}
 		search_filters = {  

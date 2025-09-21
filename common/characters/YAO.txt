@@ -18,6 +18,26 @@ characters = {
 		}
 	}
 
+	YAO_King_Alfonso_fascist = {
+		name = YAO_King_Alfonso_fascist
+		portraits = {
+			civilian = {
+				large = GFX_portrait_YAO_King_Alfonso
+			}
+		}
+
+		country_leader = {
+			ideology = falangism
+			traits = {
+				YAO_king_of_iberia
+				YAO_fascist_alfonso
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = YAO_King_Alfonso_fascist_desc
+		}
+	}
+
 	YAO_Consejo_de_Madrid = {
 		name = YAO_Consejo_de_Madrid
 		portraits = {
