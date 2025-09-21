@@ -29,7 +29,7 @@ focus_tree = {
 		cost = 2
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
@@ -55,7 +55,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 100
 		}
 
 		available = {
@@ -95,7 +95,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 20
 		}
 
 		available = {
@@ -125,7 +125,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 10
 		}
 
 		available = {
@@ -159,7 +159,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 10
 		}
 
 		available = {
@@ -189,7 +189,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 20
 		}
 
 		available = {
@@ -211,7 +211,11 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt			
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = YCA_juan_andrade
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = YCA_juan_garcia_oliver
+			custom_effect_tooltip = generic_skip_one_line_tt			
+			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = YCA_indalecio_prieto
 		}
 	}	
@@ -230,7 +234,13 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 50
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YCA_ai_path_anarchist
+                }
+            }			
 		}
 
 		available = {						
@@ -240,6 +250,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			unlock_decision_tooltip = YCA_local_committees_reform_decision
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_to_variable = {
 				var = YCA_vanguardist_faction_progress_bar
 				value = 2
@@ -271,7 +283,14 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_socialist
+					has_country_flag = YCA_ai_path_vanguardist
+				}
+			}					
 		}
 
 		available = {
@@ -281,6 +300,8 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_stability = -0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_to_variable = {
 				var = YCA_anarchist_faction_progress_bar
 				value = 6
@@ -319,6 +340,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.20
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.06
+			}				
 		}
 	}	
 	focus = {
@@ -342,8 +368,17 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_red_trade_unions
+				add_idea = YCA_decentralized_union_network
+			}
+			add_to_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 3
+				tooltip = YCA_tension_increase_by_3_tt
+			}			
 		}
 	}	
 	focus = {
@@ -371,6 +406,14 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_decentralized_union_network
+				add_idea = YCA_decentralized_union_network_1
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}			
 		}
 	}	
 	focus = {
@@ -396,13 +439,33 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			country_event = YCA_domestic_events.21
+			custom_effect_tooltip = generic_skip_one_line_tt
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 6	
+				tooltip = vanguardist_large_influence_loss_tt
+			}			
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 3
+			}
+			add_to_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 3		
+			}			
+			add_to_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 7
+				tooltip = YCA_tension_increase_by_7_tt
+			}					
 		}
 	}	
 	focus = {
-		id = YCA_CNT_FAI_merge # merge the CNT and the FAI for more anarcho-syndicalist power, with a focus of iberian anarchist federalism
-		icon = GFX_focus_chi_mission_to_the_soviet_union # replace flag with CNT-FAI one
+		id = YCA_CNT_FAI_merge
+		icon = GFX_focus_YCA_CNT_FAI_merge
 		cost = 6
 		prerequisite = {
 			focus = YCA_federations_of_collectives
@@ -420,8 +483,29 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			set_party_name = {
+				ideology = neutrality
+				long_name = YCA_neutrality_party_cnt_fai_long
+				name = YCA_neutrality_party_cnt_fai
+			}	
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			subtract_from_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 2
+				tooltip = YCA_tension_decrease_by_2_tt
+			}	
+			hidden_effect = {
+				country_event = {
+					id = YCA_domestic_events.YCA_domestic_events.19
+					days = 7
+				}				
+			}			
 		}
 	}						
 	focus = {
@@ -483,6 +567,26 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.16
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YCA_proletariat_bureaucratic_class_leader_traits_tt
+			hidden_effect = {
+				add_trait = {
+					character = YCA_andreu_nin
+					ideology = vanguardism
+					trait = YCA_socialist_administrator
+				}	
+				add_trait = {
+					character = YCA_joan_comorera
+					ideology = revolutionary_socialism
+					trait = YCA_socialist_administrator
+				}		
+				add_trait = {
+					character = YCA_joan_comorera_1
+					ideology = socialism
+					trait = YCA_socialist_administrator
+				}				
+			}								
 		}
 	}	
 	focus = {
@@ -505,8 +609,17 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
+			unlock_decision_tooltip = YCA_directive_workers_representation
+			unlock_decision_tooltip = YCA_directive_socialized_production
+			unlock_decision_tooltip = YCA_directive_party_discipline
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 8
+				tooltip = YCA_tension_increase_by_8_tt
+			}			
 		}
 	}		
 	focus = {
@@ -531,6 +644,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = YCA_revolutionary_zeal
 		}
 	}
 	focus = {
@@ -556,7 +672,21 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {			
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = YCA_jesus_hernandez_tomas			
+			show_ideas_tooltip = YCA_jesus_hernandez_tomas
+			custom_effect_tooltip = generic_skip_one_line_tt	
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}						
 		}
 	}	
 	focus = {
@@ -581,6 +711,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_splintered_generalitat
+				add_idea = YCA_splintered_generalitat_1
+			}
 		}
 	}	
 	focus = {
@@ -607,6 +741,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_ideas = YCA_class_rights
 		}
 	}	
 	focus = {
@@ -632,8 +767,41 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			hidden_effect = {
+				set_party_name = {
+					ideology = democratic
+					long_name = YCA_democratic_party_banned_long
+					name = YCA_democratic_party_banned
+				}					
+			}
+			custom_effect_tooltip = YCA_banned_democratic_party_tt
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.08
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 4
+				tooltip = socialist_medium_influence_loss_tt
+			}
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2	
+			}
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 2
+			}	
+			hidden_effect = {
+				country_event = {
+					id = YCA_domestic_events.15
+					days = 5
+				}
+			}
+			
 		}
 	}	
 	focus = {
@@ -661,6 +829,11 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.12
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt			
 			add_to_variable = {
 				var = YCA_socialist_faction_progress_bar
 				value = 6
@@ -699,6 +872,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
+			1099 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_extra_state_shared_building_slots = 2				
+			}
 		}
 	}	
 	focus = {
@@ -724,6 +906,9 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.17
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = YCA_womens_leagues_idea
 		}
 	}
 	focus = {
@@ -747,8 +932,15 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
+			country_event = YCA_domestic_events.18
+			custom_effect_tooltip = generic_skip_one_line_tt
+			subtract_from_variable = {
+				var = YCA_generalitat_faction_progress_bar
+				value = 10
+				tooltip = YCA_tension_decrease_by_10_tt
+			}				
 		}
 	}	
 	focus = {
@@ -856,7 +1048,7 @@ focus_tree = {
 		cost = 2
 
 		ai_will_do = {
-			factor = 20
+			factor = 30
 		}
 
 		available = {
@@ -884,6 +1076,13 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 30
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_socialist
+					has_country_flag = YCA_ai_path_vanguardist
+				}
+			}					
 		}
 
 		available = {
@@ -1231,6 +1430,12 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 30
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YCA_ai_path_anarchist
+                }
+            }			
 		}
 
 		available = {
@@ -1763,7 +1968,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 20
+			factor = 10
 		}
 
 		available = {
@@ -1998,7 +2203,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
             modifier = {
                 factor = 0
                 OR = {
@@ -2284,7 +2489,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 10
+			factor = 20
 			modifier = {
 				factor = 0
 				OR = {

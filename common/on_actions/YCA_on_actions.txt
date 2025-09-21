@@ -19,7 +19,44 @@ on_actions = {
             }
         }
     }
-
+    on_monthly_YCA = {
+        effect = {
+            if = {
+                limit = {
+                    check_variable = { YCA_generalitat_faction_progress_bar > 50 }
+                    NOT = {
+                        has_country_flag = YCA_moderate_tensions_flag
+                    }
+                }
+                country_event = YCA_domestic_events.12
+                set_country_flag = YCA_moderate_tensions_flag
+            }
+        }
+        effect = {
+            if = {
+                limit = {
+                    check_variable = { YCA_generalitat_faction_progress_bar > 70 }
+                    NOT = {
+                        has_country_flag = YCA_high_tensions_flag
+                    }
+                }
+                country_event = YCA_domestic_events.13
+                set_country_flag = YCA_high_tensions_flag
+            }
+        }
+        effect = {
+            if = {
+                limit = {
+                    check_variable = { YCA_generalitat_faction_progress_bar > 90 }
+                    NOT = {
+                        has_country_flag = YCA_boiling_tensions_flag
+                    }
+                }
+                country_event = YCA_domestic_events.14
+                set_country_flag = YCA_boiling_tensions_flag
+            }
+        }                
+	}	
 	on_state_control_changed = {
 		# Guerilla Tatics Stuff
 		effect = {

@@ -56,20 +56,23 @@ country_event = { # The Worker Battalions Rise
 	
 	option = {
         name = YCA_domestic_events.2.a
-		165 = {
-			create_unit = {
-				division = "name = \"Milicia Obrera Catalana\" division_template = \"Milicia Catalana\" start_experience_factor = 0.3"
-				owner = YCA
-				count = 2
+		hidden_effect = {
+			165 = {
+				create_unit = {
+					division = "name = \"Milicia Obrera Catalana\" division_template = \"Milicia Catalana\" start_experience_factor = 0.3"
+					owner = YCA
+					count = 2
+				}
 			}
+			167 = {
+				create_unit = {
+					division = "name = \"Milicia Obrera Catalana\" division_template = \"Milicia Catalana\" start_experience_factor = 0.3"
+					owner = YCA
+					count = 1
+				}
+			}				
 		}
-		167 = {
-			create_unit = {
-				division = "name = \"Milicia Obrera Catalana\" division_template = \"Milicia Catalana\" start_experience_factor = 0.3"
-				owner = YCA
-				count = 1
-			}
-		}		
+		custom_effect_tooltip = YCA_worker_battalions_rise_new_unit_tt
 		custom_effect_tooltip = generic_skip_one_line_tt
 		add_doctrine_cost_reduction = {
 			cost_reduction = 0.5
@@ -119,7 +122,15 @@ country_event = { # Interim Constitution: Preamble
 				id = YCA_domestic_events.5
 				days = 7
 			}				
-		}			
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }				
     }
 	option = {
         name = YCA_domestic_events.4.b
@@ -133,7 +144,15 @@ country_event = { # Interim Constitution: Preamble
 				id = YCA_domestic_events.5
 				days = 7
 			}				
-		}				
+		}
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+				has_country_flag = YCA_ai_path_vanguardist
+            }
+        }						
     }
 	option = {
         name = YCA_domestic_events.4.c
@@ -146,8 +165,16 @@ country_event = { # Interim Constitution: Preamble
 			country_event = {
 				id = YCA_domestic_events.5
 				days = 7
-			}				
-		}				
+			}			
+		}
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }						
     }			
 }
 
@@ -176,7 +203,14 @@ country_event = { # Interim Constitution: Collectivization/Privatization (State 
 				id = YCA_domestic_events.6
 				days = 7
 			}				
-		}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+            }
+        }							
     }
 	option = {
         name = YCA_domestic_events.5.b
@@ -190,7 +224,15 @@ country_event = { # Interim Constitution: Collectivization/Privatization (State 
 				id = YCA_domestic_events.6
 				days = 7
 			}				
-		}					
+		}
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }								
     }			
 }
 
@@ -219,7 +261,14 @@ country_event = { # Interim Constitution: Individual Freedoms
 				id = YCA_domestic_events.7
 				days = 7
 			}				
-		}				
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+            }
+        }						
     }
 	option = {
         name = YCA_domestic_events.6.b
@@ -233,7 +282,15 @@ country_event = { # Interim Constitution: Individual Freedoms
 				id = YCA_domestic_events.7
 				days = 7
 			}				
-		}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }							
     }				
 }
 
@@ -258,7 +315,15 @@ country_event = { # Interim Constitution: Secularism
 				id = YCA_domestic_events.8
 				days = 7
 			}				
-		}			
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+				has_country_flag = YCA_ai_path_anarchist
+            }
+        }					
     }
 	option = {
         name = YCA_domestic_events.7.b
@@ -267,7 +332,14 @@ country_event = { # Interim Constitution: Secularism
 				id = YCA_domestic_events.8
 				days = 7
 			}				
-		}			
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }					
     }			
 }
 
@@ -287,20 +359,58 @@ country_event = { # Interim Constitution: One-Party Rule
 			var = YCA_vanguardist_constitution
 			value = 4
 		}	
-		hidden_effect = {
-			country_event = {
-				id = YCA_domestic_events.9
-				days = 3
-			}			
-			IF = {
-				check_variable = {
-					YCA_vanguardist_constitution > YCA_anarchist_constitution
+		hidden_effect = {			
+			if = {
+				limit = {
+					check_variable = {
+						YCA_anarchist_constitution > YCA_socialist_constitution
+					}
+					check_variable = {
+						YCA_anarchist_constitution > YCA_vanguardist_constitution				
+					}					
 				}
-				check_variable = {
-					YCA_vanguardist_constitution > YCA_socialist_constitution				
-				}
+				country_event = {
+					id = YCA_domestic_events.11	
+					days = 3
+				}				
 			}
-		}		
+			if = {
+				limit = {
+					check_variable = {
+						YCA_socialist_constitution > YCA_anarchist_constitution
+					}
+					check_variable = {
+						YCA_socialist_constitution > YCA_vanguardist_constitution				
+					}					
+				}
+				country_event = {
+					id = YCA_domestic_events.10
+					days = 3
+				}	
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						YCA_vanguardist_constitution > YCA_anarchist_constitution
+					}
+					check_variable = {
+						YCA_vanguardist_constitution > YCA_socialist_constitution				
+					}					
+				}
+				country_event = {
+					id = YCA_domestic_events.9	
+					days = 3
+				}	
+			}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }				
     }
 	option = {
         name = YCA_domestic_events.8.b
@@ -309,20 +419,58 @@ country_event = { # Interim Constitution: One-Party Rule
 			var = YCA_socialist_constitution
 			value = 4
 		}	
-		hidden_effect = {
-			country_event = {
-				id = YCA_domestic_events.10
-				days = 3
-			}			
-			IF = {
-				check_variable = {
-					YCA_socialist_constitution > YCA_anarchist_constitution
+		hidden_effect = {			
+			if = {
+				limit = {
+					check_variable = {
+						YCA_anarchist_constitution > YCA_socialist_constitution
+					}
+					check_variable = {
+						YCA_anarchist_constitution > YCA_vanguardist_constitution				
+					}					
 				}
-				check_variable = {
-					YCA_socialist_constitution > YCA_vanguardist_constitution				
-				}
+				country_event = {
+					id = YCA_domestic_events.11	
+					days = 3
+				}				
 			}
-		}						
+			if = {
+				limit = {
+					check_variable = {
+						YCA_socialist_constitution > YCA_anarchist_constitution
+					}
+					check_variable = {
+						YCA_socialist_constitution > YCA_vanguardist_constitution				
+					}					
+				}
+				country_event = {
+					id = YCA_domestic_events.10
+					days = 3
+				}	
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						YCA_vanguardist_constitution > YCA_anarchist_constitution
+					}
+					check_variable = {
+						YCA_vanguardist_constitution > YCA_socialist_constitution				
+					}					
+				}
+				country_event = {
+					id = YCA_domestic_events.9	
+					days = 3
+				}	
+			}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+				has_country_flag = YCA_ai_path_anarchist
+            }
+        }							
     }
 	option = {
         name = YCA_domestic_events.8.c
@@ -331,20 +479,58 @@ country_event = { # Interim Constitution: One-Party Rule
 			var = YCA_anarchist_constitution
 			value = 4
 		}	
-		hidden_effect = {
-			country_event = {
-				id = YCA_domestic_events.11
-				days = 3
-			}			
-			IF = {
-				check_variable = {
-					YCA_anarchist_constitution > YCA_socialist_constitution
+		hidden_effect = {			
+			if = {
+				limit = {
+					check_variable = {
+						YCA_anarchist_constitution > YCA_socialist_constitution
+					}
+					check_variable = {
+						YCA_anarchist_constitution > YCA_vanguardist_constitution				
+					}					
 				}
-				check_variable = {
-					YCA_anarchist_constitution > YCA_vanguardist_constitution				
-				}
+				country_event = {
+					id = YCA_domestic_events.11	
+					days = 3
+				}				
 			}
-		}					
+			if = {
+				limit = {
+					check_variable = {
+						YCA_socialist_constitution > YCA_anarchist_constitution
+					}
+					check_variable = {
+						YCA_socialist_constitution > YCA_vanguardist_constitution				
+					}					
+				}
+				country_event = {
+					id = YCA_domestic_events.10
+					days = 3
+				}	
+			}	
+			if = {
+				limit = {
+					check_variable = {
+						YCA_vanguardist_constitution > YCA_anarchist_constitution
+					}
+					check_variable = {
+						YCA_vanguardist_constitution > YCA_socialist_constitution				
+					}					
+				}
+				country_event = {
+					id = YCA_domestic_events.9	
+					days = 3
+				}	
+			}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }							
     }			
 }
 
@@ -404,12 +590,12 @@ country_event = { # Interim Constitution: Socialist Victory
 		custom_effect_tooltip = generic_skip_one_line_tt
 		add_to_variable = {
 			var = YCA_socialist_faction_progress_bar
-			value = 4
+			value = 5
 			tooltip = socialist_medium_influence_gain_tt
 		}
 		subtract_from_variable = {
 			var = YCA_vanguardist_faction_progress_bar
-			value = 2		
+			value = 3
 		}
 		subtract_from_variable = {
 			var = YCA_anarchist_faction_progress_bar
@@ -439,16 +625,312 @@ country_event = { # Interim Constitution: Anarchist Victory
 		custom_effect_tooltip = generic_skip_one_line_tt		
 		add_to_variable = {
 			var = YCA_anarchist_faction_progress_bar
-			value = 2
+			value = 3
 			tooltip = anarchist_small_influence_gain_tt
 		}
 		subtract_from_variable = {
 			var = YCA_vanguardist_faction_progress_bar
-			value = 1			
+			value = 2			
 		}
 		subtract_from_variable = {
 			var = YCA_socialist_faction_progress_bar
 			value = 1			
 		}		
     }		
+}
+
+country_event = { # Tensions: Moderate
+	id = YCA_domestic_events.12
+	title = YCA_domestic_events.12.t
+	desc = YCA_domestic_events.12.desc
+	
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.12.a
+		add_stability = -0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = YCA_moderate_tension_warning_tt
+    }		
+}
+
+country_event = { # Tensions: High
+	id = YCA_domestic_events.13
+	title = YCA_domestic_events.13.t
+	desc = YCA_domestic_events.13.desc
+	
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.13.a
+		add_stability = -0.1
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		add_ideas = YCA_high_factional_tensions
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		custom_effect_tooltip = YCA_high_tension_warning_tt
+    }		
+}
+
+country_event = { # Tensions: Boiling
+	id = YCA_domestic_events.14
+	title = YCA_domestic_events.14.t
+	desc = YCA_domestic_events.14.desc
+	
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.14.a
+		add_stability = -0.20
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		swap_ideas = {
+			remove_idea = YCA_high_factional_tensions
+			add_idea = YCA_boiling_factional_tensions
+		}	
+    }		
+}
+
+country_event = { # Revolutionary Socialists Boycott the Generalitat
+	id = YCA_domestic_events.15
+	title = YCA_domestic_events.15.t
+	desc = YCA_domestic_events.15.desc
+	
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.15.a
+		add_stability = -0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_to_variable = {
+			var = YCA_generalitat_faction_progress_bar
+			value = 5
+			tooltip = YCA_tension_increase_by_5_tt
+		}				
+    }		
+}
+
+country_event = { # Classifying the Revolutionary Administration
+	id = YCA_domestic_events.16
+	title = YCA_domestic_events.16.t
+	desc = YCA_domestic_events.16.desc
+	
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.16.a
+		add_to_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2
+			tooltip = vanguardist_small_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 1			
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 1			
+		}		
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }			
+    }
+	option = {
+        name = YCA_domestic_events.16.a	
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_to_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 4
+			tooltip = socialist_medium_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 2		
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2		
+		}				
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+            }
+        }		
+    }			
+}
+
+country_event = { # Women of the Revolution
+	id = YCA_domestic_events.17
+	title = YCA_domestic_events.17.t
+	desc = YCA_domestic_events.17.desc
+	
+	picture = GFX_report_event_generic_croatia_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.17.a
+		add_stability = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		add_to_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 2
+			tooltip = socialist_small_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 1			
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 1			
+		}						
+    }		
+}
+
+country_event = { # The Barcelona Radical Congress (pick who will be its speaker, one of the three factions)
+	id = YCA_domestic_events.18
+	title = YCA_domestic_events.18.t
+	desc = YCA_domestic_events.18.desc
+	
+	picture = GFX_report_event_SWE_summer_government
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.18.a
+		add_to_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2
+			tooltip = vanguardist_small_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 1			
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 1			
+		}					
+    }
+	option = {
+        name = YCA_domestic_events.18.b		
+		add_to_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 4
+			tooltip = socialist_medium_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2		
+		}
+		subtract_from_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 2		
+		}					
+    }	
+	option = {
+        name = YCA_domestic_events.18.c
+		add_to_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 6
+			tooltip = anarchist_large_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 3		
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 3		
+		}						
+    }					
+}
+
+country_event = { # Anarcho-Syndicalist Union Proves Successful in the Generalitat
+	id = YCA_domestic_events.19
+	title = YCA_domestic_events.19.t
+	desc = YCA_domestic_events.19.desc
+	
+	picture = GFX_report_event_SWE_summer_government
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.19.a
+		add_to_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 2
+			tooltip = anarchist_small_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 1			
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 1			
+		}					
+    }				
+}
+
+country_event = { # Raise Local Anarchist Councils
+	id = YCA_domestic_events.20
+	title = YCA_domestic_events.20.t
+	desc = YCA_domestic_events.20.desc
+	
+	picture = GFX_report_event_SWE_summer_government
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.20.a	
+		add_to_variable = {
+			var = YCA_anarchist_faction_progress_bar
+			value = 4
+			tooltip = anarchist_medium_influence_gain_tt
+		}
+		subtract_from_variable = {
+			var = YCA_socialist_faction_progress_bar
+			value = 2		
+		}
+		subtract_from_variable = {
+			var = YCA_vanguardist_faction_progress_bar
+			value = 2		
+		}						
+    }				
+}
+
+country_event = { # The Fuerza Obrera Manifesto (worker power manifesto shared in generalitat)
+	id = YCA_domestic_events.21
+	title = YCA_domestic_events.21.t
+	desc = YCA_domestic_events.21.desc
+	
+	picture = GFX_report_event_SWE_summer_government
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.21.a		
+		# unlock anarchist decisions within the Generalitat (leaflet campaign, direct workplace outreach)
+    }				
 }

@@ -43,6 +43,24 @@ ideas={
 			}
 		}
 
+		YCA_splintered_generalitat_1 = {
+			picture = NOR_sivog
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.07
+				political_advisor_cost_factor = -0.25
+				custom_modifier_tooltip = YCA_splintered_generalitat_tt
+			}
+		}		
+
 		YCA_workers_militias = {
 			picture = MEX_revolutionary_army
 			allowed = {
@@ -78,7 +96,7 @@ ideas={
 				production_factory_efficiency_gain_factor = -0.07
 				industrial_capacity_factory = 0.1
 			}
-		}
+		}	
 
 		YCA_anarchist_society = {
 			picture = SPR_anarchist_society
@@ -161,6 +179,61 @@ ideas={
 				army_leader_cost_factor = -0.25
 				planning_speed = -0.05
 				max_planning_factor = -0.08
+			}
+		}	
+		
+		YCA_directive_socialized_production_idea = {
+			picture = HUN_resurgent_communist_party_idea
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				cic_construction_boost_factor = 0.1
+				local_resources_factor = 0.05
+			}
+		}	
+		
+		YCA_directive_party_discipline_idea = {
+			picture = HUN_resurgent_communist_party_idea
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				drift_defence_factor = 0.20
+				communism_drift = 0.03
+				political_power_factor = 0.05
+				political_advisor_cost_factor = 0.30
+			}
+		}		
+
+		YCA_revolutionary_zeal = {
+			picture = GER_iron_front
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				recruitable_population_factor = 0.05
+				army_attack_factor = 0.1
+				experience_gain_army = 0.02
+				dig_in_speed_factor = -0.05
 			}
 		}		
 
@@ -258,6 +331,66 @@ ideas={
 				intel_network_gain_factor = 0.25
 				own_operative_detection_chance_factor = -0.3							
 			}
+		}	
+		
+		YCA_red_trade_unions_1 = {
+			picture = eng_spirit_of_the_industrial_revolution
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.07
+				stability_factor = 0.02
+				industrial_capacity_factory = 0.15
+			}
+		}	
+		
+		YCA_decentralized_union_network = {
+			picture = HUN_mwg_raba
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.02
+				production_factory_efficiency_gain_factor = -0.1
+				production_factory_max_efficiency_factor = 0.1
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.2
+			}
+		}
+		
+		YCA_decentralized_union_network_1 = {
+			picture = HUN_mwg_raba
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.03
+				production_factory_efficiency_gain_factor = -0.1
+				production_factory_max_efficiency_factor = 0.15
+				production_lack_of_resource_penalty_factor = 0.1
+				stability_factor = 0.1
+				industrial_capacity_factory = 0.25
+			}
 		}			
 		
 		YCA_catalan_pacification_campaign = {
@@ -275,6 +408,93 @@ ideas={
 				political_power_factor = 0.25
 				weekly_manpower = -150
 				stability_factor = -0.08					
+			}
+		}	
+		
+		YCA_high_factional_tensions = {
+			picture = RAJ_partition_chaos_less_bad # ITA_il_sol_dell_avvenire_ns
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.001
+				political_power_factor = -0.15		
+			}
+		}		
+
+		YCA_boiling_factional_tensions = {
+			picture = RAJ_partition_chaos_bad # ITA_il_sol_dell_avvenire_ns
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.002
+				political_power_factor = -0.25		
+			}
+		}	
+		
+		YCA_successful_committee_reforms = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_buildings_factor = 0.1	
+			}
+		}
+		
+		YCA_class_rights = {
+			picture = SPR_class_war
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.03
+				communism_drift = 0.02
+			}
+		}
+		
+		YCA_womens_leagues_idea = {
+			picture = ARG_women_in_industry
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.05
+				conscription_factor = 0.03
+				drift_defence_factor = 0.1
 			}
 		}		
 
