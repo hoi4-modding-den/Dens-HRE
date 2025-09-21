@@ -129,6 +129,7 @@ YKP_conquest_decisions = {
 
         visible = {
             has_country_flag = YKP_portuguese_war_ongoing
+            NOT = { has_country_flag = YKP_military_maintained_power }
             YPR = {
                 exists = yes
                 has_war_with = ROOT
@@ -153,6 +154,98 @@ YKP_conquest_decisions = {
         complete_effect = {
             add_timed_idea = {
                 idea = YKP_operation_grifo
+                days = 180
+            }
+
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+	}
+
+    YKP_plan_sunset = {
+		priority = 300
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_portuguese_war_ongoing
+            has_country_flag = YKP_military_maintained_power
+            has_country_flag = YKP_plan_sunset_decision_unlocked
+            YPR = {
+                exists = yes
+                has_war_with = ROOT
+            }
+        }
+
+        available = {
+            controls_all_portugal = no
+            YPR = {
+                exists = yes
+                has_war_with = ROOT
+            }
+        }
+
+		custom_cost_trigger = {
+            command_power > 24
+        }
+        custom_cost_text = YKP_decision_cost_CP_25
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_timed_idea = {
+                idea = YKP_plan_sunset
+                days = 180
+            }
+
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+	}
+
+    YKP_plan_river_shield = {
+		priority = 300
+
+		icon = GFX_decision_generic_operation
+
+        allowed = {
+            original_tag = YKP
+        }
+
+        visible = {
+            has_country_flag = YKP_portuguese_war_ongoing
+            has_country_flag = YKP_military_maintained_power
+            has_country_flag = YKP_plan_river_shield_decision_unlocked
+            YPR = {
+                exists = yes
+                has_war_with = ROOT
+            }
+        }
+
+        available = {
+            controls_all_portugal = no
+            YPR = {
+                exists = yes
+                has_war_with = ROOT
+            }
+        }
+
+		custom_cost_trigger = {
+            command_power > 24
+        }
+        custom_cost_text = YKP_decision_cost_CP_25
+
+        fire_only_once = yes
+        
+        complete_effect = {
+            add_timed_idea = {
+                idea = YKP_plan_river_shield
                 days = 180
             }
 

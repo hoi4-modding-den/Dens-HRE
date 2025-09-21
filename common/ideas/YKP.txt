@@ -216,5 +216,63 @@ ideas = {
 				conscription = 0.03
 			}
 		}
+
+		YKP_investments_in_industry = {
+			name = YKP_investments_in_industry_idea
+			picture = RAJ_special_economic_zones
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.2
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		YKP_home_production_schemes = {
+			name = YKP_home_production_schemes_idea
+			picture = generic_production_bonus
+			modifier = {
+				consumer_goods_factor = -0.1
+				mobilization_speed = 0.25
+			}
+		}
+
+		YKP_railway_construction_incentivised = {
+			name = YKP_railway_construction_incentivised_idea
+			picture = ARG_invest_in_railways
+			modifier = {
+				production_speed_rail_way_factor = 0.5
+				production_speed_supply_node_factor = 0.5
+			}
+		}
+
+		YKP_new_production_methods = {
+			name = YKP_new_production_methods_idea
+			picture = raj_rifle_factory_ishapore
+			modifier = {
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+			}
+		}
+
+		YKP_powerhouse_economy = {
+			name = YKP_powerhouse_economy_idea
+			picture = RAJ_special_economic_zones
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.3
+				industrial_capacity_dockyard = 0.2
+				industrial_capacity_factory = 0.2
+			}
+		}
+
+		YKP_rebuilding_our_country = {
+			name = YKP_rebuilding_our_country_idea
+			picture = GFX_focus_generic_economic_recovery
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.25
+			}
+		}
 	}
 }

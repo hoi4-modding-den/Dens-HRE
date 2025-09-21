@@ -99,6 +99,12 @@
  YKP_exercito_portugues_idea:0 "Exército Português"
  YKP_officer_training_regimens_idea:0 "Officer training regimens"
  YKP_brigada_patriotica_idea:0 "Brigada Patriótica"
+ YKP_investments_in_industry_idea:0 "Investments in Industry"
+ YKP_home_production_schemes_idea:0 "Home Production Schemes"
+ YKP_railway_construction_incentivised_idea:0 "Railway Construction Incentivised"
+ YKP_new_production_methods_idea:0 "New Production Methods"
+ YKP_powerhouse_economy_idea:0 "Powerhouse Economy"
+ YKP_rebuilding_our_country_idea:0 "Rebuilding our Country"
 
  ### EVENTS ###
 
@@ -160,12 +166,23 @@
  YKP.13.desc:0 ""
  YKP.13.a:0 "And on the seventh day He rested."
 
-
+ YKP.14.t:0 "Boots on the Ground"
+ YKP.14.desc:0 ""
+ YKP.14.a:0 "Our control grows with every crackdown."
  
  YKP.15.t:0 "Strategic debates"
  YKP.15.desc:0 ""
  YKP.15.a:0 "Plan Sunset seems to have a higher chance of success."
  YKP.15.b:0 "Plan River Shield prevents us from overextending."
+
+ YKP.16.t:0 "An invite to the Anti-Communist Pact"
+ YKP.16.desc:0 "[YKP.GetName] has invited us to join the Anti-Communist Pact to guard against the rising red wave across Iberia."
+ YKP.16.a:0 "We will stand against the red tide."
+ YKP.16.b:0 "It would be best to decline this invitation..."
+
+ YKP.17.t:0 "[FROM.GetName] has accepted our invitation"
+ YKP.17.desc:0 "[FROM.GetName] has sent a delegation to Lisbon to accept our invitation to the Anti-Communist pact and they are eager to fight together against the growing threat of the reds."
+ YKP.17.a:0 "Our cause grows stronger!"
 
  YKP_news.1.t:0 "King Manuel II of Portugal Assassinated!"
  YKP_news.1.desc:0 "Lisbon reports that Manuel II has been assassinated by communist partisans from the Porto region. His escort was intercepted while walking down Rua Augusta and a small skirmish ensued leaving eight dead including the portuguese monarch. The Kingdom of Portugal has expressed its outrage and has assured the communists in control of the north of the country that there will be severe consequences. The northern revolutionaries deny involvement in the assassination. The kingdom is now led by General Carmona in a provisional government until a new monarch can be selected."
@@ -191,6 +208,11 @@
  YKP_news.4.c:0 "And so it begins..."
  YKP_news.4.d:0 "We'll be in Lisbon in a fortnight!"
 
+ YKP_news.5.t:0 "Creation of the Anti-Communist Pact"
+ YKP_news.5.desc:0 "Portugal's head of state [YKP.GetLeader] has announced the creation of the Anti-Communist pact along with other states with similar sentiments with the purpose of guarding against the expansion of communism in Iberia. Although Portugal recently emerged from its own battles with communism, this is a step towards a united Iberia not under the hammer and sickle and is good news for many of Iberia's breakaway states. Time will tell whether this deescalates the situation or makes the situation between the reds and the loyalists much worse."
+ YKP_news.5.a:0 "..."
+ YKP_news.5.b:0 "Authoritarian swine."
+ YKP_news.5.c:0 "A step towards a brighter future."
 
  ### FOCUSES ###
 
@@ -311,6 +333,54 @@
  YKP_raise_the_flag:0 "Raise the Flag"
  YKP_raise_the_flag_desc:0 ""
 
+ YKP_revolutionise_our_industry:0 "Revolutionise our Industry"
+ YKP_revolutionise_our_industry_desc:0 ""
+
+ YKP_restructure_financing:0 "Restructure Our Debt"
+ YKP_restructure_financing_desc:0 ""
+
+ YKP_roads_to_lisbon:0 "Roads to Lisbon"
+ YKP_roads_to_lisbon_desc:0 ""
+
+ YKP_open_the_alentejo_iron_mines:0 "Open the Alentejo Iron Mines"
+ YKP_open_the_alentejo_iron_mines_desc:0 ""
+
+ YKP_invest_in_industrial_research:0 "Invest in Industrial Ingenuity"
+ YKP_invest_in_industrial_research_desc:0 ""
+
+ YKP_new_distribution_hubs:0 "New Distribution Hubs"
+ YKP_new_distribution_hubs_desc:0 ""
+
+ YKP_home_production_schemes:0 "Home Production Schemes"
+ YKP_home_production_schemes_desc:0 ""
+
+ YKP_revitalised_rail_industry:0 "Revitalised Rail Industry"
+ YKP_revitalised_rail_industry_desc:0 ""
+
+ YKP_new_production_methods:0 "New Production Methods"
+ YKP_new_production_methods_desc:0 ""
+
+ YKP_expand_the_santarem_line:0 "Expand the Santarem Line"
+ YKP_expand_the_santarem_line_desc:0 ""
+
+ YKP_improved_naval_facilities:0 "Improved Naval Facilities"
+ YKP_improved_naval_facilities_desc:0 ""
+
+ YKP_iberian_economic_powerhouse:0 "Iberian Economic Powerhouse"
+ YKP_iberian_economic_powerhouse_desc:0 ""
+
+ YKP_operation_fogo_e_sangue:0 "Operation Fogo e Sangue"
+ YKP_operation_fogo_e_sangue_desc:0 ""
+
+ YKP_rebuild_our_country:0 "Rebuild our Country"
+ YKP_rebuild_our_country_desc:0 ""
+
+ YKP_look_outwards:0 "Look Outwards"
+ YKP_look_outwards_desc:0 ""
+
+ YKP_anti_communist_pact:0 "Anti-Communist Pact"
+ YKP_anti_communist_pact_desc:0 ""
+
  ### DECISIONS ###
 
  YKP_conquest_decisions:0 "[YKP_get_conquest_decision_category_name]"
@@ -320,6 +390,8 @@
  YKP_conquer_claim_decision:0 "Assert our claims over §Y[FROM.GetName]§!"
  YKP_conquer_porto_decision:0 "Retake §YPorto§! from the rebels"
  YKP_operation_grifo:0 "Operation §YGrifo§!"
+ YKP_plan_sunset:0 "Plan §YSunset§!"
+ YKP_plan_river_shield:0 "Plan §YRiver Shield§!"
 
  YKP_claim_northern_spain_decision:0 "Claim §YNorthern Spain§!"
  YKP_claim_central_spain_decision:0 "Claim §YCentral Spain§!"
@@ -370,6 +442,7 @@
  YKP_basic_rules:0 ""
 
  HOLY_IBERIAN_EMPIRE:0 "Holy Iberian Empire"
+ ANTI_COMMUNIST_PACT:0 "Anti-Communist Pact"
 
  YKP_military_maintained_power:0 "The military maintained control"
 

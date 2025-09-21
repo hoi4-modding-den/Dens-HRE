@@ -586,6 +586,88 @@ country_event = {
 	}
 }
 
+country_event = {
+    id = YKP.16
+    title = YKP.16.t
+    desc = YKP.16.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.16.a
+		
+		ai_chance = {
+			base = 20
+
+			modifier = {
+				factor = 100
+				any_neighbor_country = {
+					has_government = communism
+				}
+			}
+
+			modifier = {
+				factor = 100
+				ic_ratio = {
+					tag = YKP
+					ratio > 0.75
+				}	
+			}
+
+			modifier = {
+				factor = 100
+				has_government = neutrality
+			}
+
+			modifier = {
+				factor = 100
+				strength_ratio = {
+					tag = YKP
+					ratio > 0.7
+				}	
+			}
+		}
+
+		add_war_support = 0.03
+		YKP = {
+			add_to_faction = ROOT
+			country_event = YKP.17
+		}
+	}
+
+	option = {
+        name = YKP.16.b
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_political_power = 10
+	}
+}
+
+country_event = {
+    id = YKP.17
+    title = YKP.17.t
+    desc = YKP.17.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+
+	option = {
+        name = YKP.17.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_war_support = 0.03
+	}
+}
+
 ### NEWS EVENTS ###
 
 # Manuel II dies
@@ -728,6 +810,44 @@ news_event = {
         name = YKP_news.4.d
         trigger = {
             original_tag = YPR
+        }
+    }
+}
+
+# Creation of Anti-Communist Pact
+news_event = {
+	id = YKP_news.5
+	title = YKP_news.5.t
+	desc = YKP_news.5.desc
+    picture = GFX_news_event_YKP_anti_communist_pact
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = YKP_news.5.a
+        trigger = {
+            NOT = {
+				original_tag = YKP
+			}
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = {
+        name = YKP_news.5.b
+        trigger = {
+            NOT = {
+				original_tag = YKP
+			}
+            has_government = communism
+        }
+    }
+
+    option = {
+        name = YKP_news.5.c
+        trigger = {
+            original_tag = YKP
         }
     }
 }

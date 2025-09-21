@@ -559,15 +559,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			remove_ideas = {
-				YKP_public_protests
-			}
+			remove_ideas = YKP_public_protests
+			remove_ideas = YKP_royal_bankrupcy
 		}
 	}
 
 	focus = {
 		id = YKP_revolutionise_our_industry
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_modernize_industry
 		x = 4
 		y = 1
 		cost = 8
@@ -593,13 +592,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			add_ideas = {
+				YKP_investments_in_industry
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_restructure_financing
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_RAJ_institutional_money_laundering
 		x = -3
 		y = 1
 		cost = 8
@@ -621,13 +622,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			remove_ideas = YKP_royal_bankrupcy
 		}
 	}
 
 	focus = {
 		id = YKP_roads_to_lisbon
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_construct_infrastructure
 		x = -1
 		y = 1
 		cost = 8
@@ -649,13 +650,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			add_stability = 0.05
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_open_the_alentejo_iron_mines
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_SOV_steel_casting_industry_ccp_2d_sov_compatibility
 		x = 1
 		y = 1
 		cost = 8
@@ -677,13 +685,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			set_victory_points = {
+				province = 6933
+				value = 5
+			}			
+			add_resource = {
+				type = steel
+				amount = 32
+				state = 179
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_invest_in_industrial_research
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_research
 		x = 3
 		y = 1
 		cost = 8
@@ -705,13 +721,23 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_new_distribution_hubs
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_supply_line
 		x = -2
 		y = 2
 		cost = 8
@@ -733,17 +759,51 @@ focus_tree = {
 		}
 
 		available = {
-
+			controls_state = 112
+			controls_state = 795
+			controls_state = 179
 		}
 
 		completion_reward = {
-			
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				controller_priority = {
+					base = 1
+					modifier = {
+						tag = YKP
+						add = 2
+					}
+				}
+				fallback = yes
+				path = { 3926 6986 9869 6933 9765 3790 }
+				start_province = 3926
+				target_province = 3790
+			}
+
+			112 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 6924
+				}
+			}
+
+			795 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 3926
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_home_production_schemes
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_reinforcing_the_supply_network
 		x = -1
 		y = 1
 		cost = 8
@@ -765,13 +825,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			add_ideas = {
+				YKP_home_production_schemes
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_revitalised_rail_industry
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_SOV_pc_of_mechanical_engineering_ccp_2d_sov_compatibility
 		x = 1
 		y = 1
 		cost = 8
@@ -793,13 +855,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			add_tech_bonus = {
+				bonus = 2.0
+				uses = 1
+				category = train_tech
+			}
+			add_timed_idea = {
+				idea = YKP_railway_construction_incentivised
+				days = 365
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_new_production_methods
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_SOV_third_five_year_plan_ccp_2d_sov_compatibility
 		x = 2
 		y = 2
 		cost = 8
@@ -825,13 +895,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			add_ideas = {
+				YKP_new_production_methods
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_expand_the_santarem_line
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_SOV_improve_the_stalin_line_ccp_2d_sov_compatibility
 		x = -1
 		y = 1
 		cost = 8
@@ -853,13 +925,46 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			112 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6924
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3798
+				}
+			}
+			795 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 924
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 844
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3926
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_improved_naval_facilities
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 1
 		y = 1
 		cost = 8
@@ -881,13 +986,34 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			112 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 799
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			179 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_iberian_economic_powerhouse
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_ICE_state_corporatism
 		x = 0
 		y = 4
 		cost = 8
@@ -921,13 +1047,16 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = YKP_investments_in_industry
+				add_idea = YKP_powerhouse_economy
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_operation_fogo_e_sangue
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_por_the_fifth_empire
 		x = 0
 		y = 6
 		cost = 8
@@ -945,18 +1074,29 @@ focus_tree = {
 			focus = YKP_iberian_economic_powerhouse
 		}
 
-		available = {
+		bypass = {
+			controls_all_portugal = yes
+		}
 
+		available = {
+			controls_all_portugal = no
+			has_army_manpower = {
+				size > 90000
+			}
 		}
 
 		completion_reward = {
-			
+			custom_effect_tooltip = YKP_allow_portuguese_war_tt
+
+			hidden_effect = {
+				set_country_flag = YKP_allow_portuguese_war_decisions
+			}
 		}
 	}
 
 	focus = {
 		id = YKP_rebuild_our_country
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_SOV_rebuild_the_nation_ccp_2d_sov_compatibility
 		x = -1
 		y = 1
 		cost = 8
@@ -983,14 +1123,18 @@ focus_tree = {
 					has_idea = YKP_exercito_portugues
 				}
 
-				remove_idea = YKP_exercito_portugues
+				remove_ideas = YKP_exercito_portugues
+			}
+			add_timed_idea = {
+				idea = YKP_rebuilding_our_country
+				days = 365
 			}
 		}
 	}
 
 	focus = {
 		id = YKP_look_outwards
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_little_entente
 		x = 1
 		y = 1
 		cost = 8
@@ -1012,13 +1156,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
+			remove_ideas = YKP_divided_nation
 		}
 	}
 
 	focus = {
 		id = YKP_anti_communist_pact
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+		icon = GFX_focus_BRA_cohen_plan
 		x = 0
 		y = 2
 		cost = 8
@@ -1044,159 +1188,81 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			
-		}
-	}
+			create_faction = ANTI_COMMUNIST_PACT
 
-	focus = {
-		id = YKP_anti_communist_pact
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		x = 0
-		y = 2
-		cost = 8
+			YGL = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-		relative_position_id = YKP_operation_fogo_e_sangue
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
+					country_event = YKP.16
+				}
+			}
 
-		ai_will_do = {
-			factor = 400
-		}
+			YAS = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-		prerequisite = {
-			focus = YKP_rebuild_our_country
-		}
+					country_event = YKP.16
+				}
+			}
 
-		prerequisite = {
-			focus = YKP_look_outwards
-		}
+			YRR = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-		available = {
-			controls_all_portugal = yes
-		}
+					country_event = YKP.16
+				}
+			}
 
-		completion_reward = {
-			
-		}
-	}
+			YAO = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-	focus = {
-		id = YKP_claims_on_galicia
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		x = -2
-		y = 1
-		cost = 8
+					country_event = YKP.16
+				}
+			}
 
-		relative_position_id = YKP_anti_communist_pact
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
+			YGB = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-		ai_will_do = {
-			factor = 400
-		}
+					country_event = YKP.16
+				}
+			}
 
-		prerequisite = {
-			focus = YKP_anti_communist_pact
-		}
+			YRF = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-		available = {
-			
-		}
+					country_event = YKP.16
+				}
+			}
 
-		completion_reward = {
-			
-		}
-	}
+			YUS = {
+				if = {
+					limit = {
+						NOT = { has_government = communism }
+					}
 
-	focus = {
-		id = YKP_secure_iberia
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		x = 0
-		y = 1
-		cost = 8
+					country_event = YKP.16
+				}
+			}
 
-		relative_position_id = YKP_anti_communist_pact
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		ai_will_do = {
-			factor = 400
-		}
-
-		prerequisite = {
-			focus = YKP_anti_communist_pact
-		}
-
-		available = {
-
-		}
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = YKP_planned_client_states
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		x = 2
-		y = 1
-		cost = 8
-
-		relative_position_id = YKP_anti_communist_pact
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		ai_will_do = {
-			factor = 400
-		}
-
-		prerequisite = {
-			focus = YKP_anti_communist_pact
-		}
-
-		available = {
-
-		}
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
-		id = YKP_portugal_saved
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		x = 0
-		y = 2
-		cost = 8
-
-		relative_position_id = YKP_anti_communist_pact
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		ai_will_do = {
-			factor = 400
-		}
-
-		prerequisite = {
-			focus = YKP_claims_on_galicia
-		}
-
-		prerequisite = {
-			focus = YKP_secure_iberia
-		}
-
-		prerequisite = {
-			focus = YKP_planned_client_states
-		}
-
-		available = {
-
-		}
-
-		completion_reward = {
-			
+			hidden_effect = {
+				news_event = YKP_news.5
+			}
 		}
 	}
 
