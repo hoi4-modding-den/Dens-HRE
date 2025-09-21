@@ -1190,6 +1190,10 @@ focus_tree = {
 		completion_reward = {
 			create_faction = ANTI_COMMUNIST_PACT
 
+			add_ideas = {
+				YKP_shield_against_communism
+			}
+
 			YGL = {
 				if = {
 					limit = {

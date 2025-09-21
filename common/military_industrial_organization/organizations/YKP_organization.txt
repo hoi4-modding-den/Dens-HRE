@@ -9,20 +9,6 @@ YKP_lisbon_arms_company_organization = {
 		}
 	}
 	
-	visible = {
-		OR = {
-			AND = {
-				original_tag = YPR
-				YKP = {
-					has_completed_focus = YKP_lisbon_arms_company
-				}
-			}
-			NOT = {
-				original_tag = YPR
-			}
-		}
-	}
-	
 	available = {
 		YKP = {
 			has_completed_focus = YKP_lisbon_arms_company

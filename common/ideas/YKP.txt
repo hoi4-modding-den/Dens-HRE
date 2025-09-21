@@ -274,5 +274,33 @@ ideas = {
 				production_speed_buildings_factor = 0.25
 			}
 		}
+
+		YKP_plan_sunset = {
+			name = YKP_plan_sunset_idea
+			picture = generic_war_preparation
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_speed_factor = 0.2
+			}
+		}
+
+		YKP_plan_river_shield = {
+			name = YKP_plan_river_shield_idea
+			picture = generic_war_preparation
+			modifier = {
+				max_dig_in_factor = 0.3
+				dig_in_speed_factor = 0.5
+			}
+		}
+
+		YKP_shield_against_communism = {
+			name = YKP_plan_river_shield_idea
+			picture = generic_shield_against_communism
+			modifier = {
+				army_defence_factor = 0.1
+				communism_acceptance = -100
+				communism_drift = -0.03
+			}
+		}
 	}
 }

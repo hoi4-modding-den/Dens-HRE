@@ -306,29 +306,6 @@ country_event = {
 }
 
 country_event = {
-    id = YKP.8
-    title = YKP.8.t
-    desc = YKP.8.desc
-
-	picture = GFX_report_event_YKP_lisbon
-
-    is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-        name = YKP.8.a
-		
-		ai_chance = {
-			base = 100
-		}
-
-		effect_tooltip = {
-			add_political_power = -10
-		}
-	}
-}
-
-country_event = {
     id = YKP.9
     title = YKP.9.t
     desc = YKP.9.desc
@@ -631,6 +608,9 @@ country_event = {
 		}
 
 		add_war_support = 0.03
+		add_ideas = {
+			YKP_shield_against_communism
+		}
 		YKP = {
 			add_to_faction = ROOT
 			country_event = YKP.17
