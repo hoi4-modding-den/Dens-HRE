@@ -694,10 +694,6 @@ country_event = { # Corporate Takeover triggered
 		has_completed_focus = YBS_the_corporatist_model
         check_variable = { YBS_foreign_control > 99 }
 	}
-
-    mean_time_to_happen = {
-		days = 5
-	}
 	
 	option = {
         name = YBS_post_election_events.4.a
@@ -740,10 +736,6 @@ country_event = { # Get Navy from Reunification
             YBS_iberian_federation_complete = yes
         }
 	}
-
-    mean_time_to_happen = {
-        days = 14
-    }
 
     fire_only_once = yes
 	
@@ -793,10 +785,6 @@ country_event = { # Sagrada Familia captured
         }
     }
     fire_only_once = yes
-
-    mean_time_to_happen = {
-        days = 1
-    }
 
     immediate = {
         hidden_effect = {
@@ -888,10 +876,6 @@ country_event = { # info event about occupation law
         }
     }
     fire_only_once = yes
-
-    mean_time_to_happen = {
-        days = 1
-    }
 	
 	option = {
         name = YBS_post_election_events.9.a
@@ -1920,10 +1904,6 @@ country_event = { # Check for Esperanto Congress
         }
 	}
 
-    mean_time_to_happen = {
-		days = 2
-	}
-
     immediate = {
         YBS = {
             country_event = YBS_esperanto_events.3
@@ -1989,10 +1969,6 @@ country_event = { # Check if Congress will be held
             has_capitulated = no
             controls_state = 792
         }
-	}
-
-    mean_time_to_happen = {
-		days = 2
 	}
 	
 	immediate = {
@@ -2990,10 +2966,6 @@ news_event = { # YBS unifies Iberia // Trigger Event
             }
             news_event = YBS_news_events.14
         }
-    }
-
-    mean_time_to_happen = {
-        days = 1
     }
 	
 	fire_only_once = yes

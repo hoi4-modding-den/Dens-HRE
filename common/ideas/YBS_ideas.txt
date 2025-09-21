@@ -1558,6 +1558,29 @@ ideas = {
 			}
 		}
 
+		YBS_federal_army_alt = {
+
+			name = YBS_federal_army
+			picture = eng_imperial_conscription
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.08
+				conscription = 0.01
+				conscription_factor = 0.25
+				training_time_factor = -0.15
+			}
+		}
+
 		YBS_confirmed_independence = {
 
 			picture = can_patriation

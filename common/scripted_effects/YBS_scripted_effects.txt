@@ -491,10 +491,10 @@ YBS_become_federal_state = {
 
 	if = {
 		limit = {
-			has_country_flag = YBS_federal_army_formed
+			PREV = { has_country_flag = YBS_federal_army_formed }
 		}
 
-		add_ideas = YBS_federal_army
+		add_ideas = YBS_federal_army_alt
 	}
 }
 
