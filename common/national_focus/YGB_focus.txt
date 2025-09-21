@@ -560,6 +560,9 @@ focus_tree = {
 			ENG = {
 				ENG_william_gott = {
 					set_nationality = YGB
+					hidden_effect = {
+						gain_xp = 1000
+					}
 				}
 			}
 			add_command_power = 20
@@ -781,6 +784,7 @@ focus_tree = {
 		prerequisite = { focus = YGB_imperial_trade_routes }
 		relative_position_id = YGB_imperial_trade_routes
 		icon = GFX_focus_POL_romania_bridgehead_strategy
+		will_lead_to_war_with = YRI
 		x = -1
 		y = 1
 		cost = 10
@@ -835,6 +839,7 @@ focus_tree = {
 		prerequisite = { focus = YGB_imperial_trade_routes }
 		relative_position_id = YGB_imperial_trade_routes
 		icon = GFX_goal_generic_navy_doctrines_tactics
+		will_lead_to_war_with = YJT
 		x = 1
 		y = 1
 		cost = 10
@@ -932,11 +937,584 @@ focus_tree = {
 				add_core_of = YGB
 			}
 
-			# set_rule = { can_join_factions = no }
-			# set_rule = { can_declare_war_on_same_ideology = yes }
-			# set_rule = { can_only_justify_war_on_threat_country = no }
+			set_rule = { can_join_factions = no }
+			set_rule = { can_declare_war_on_same_ideology = yes }
+			set_rule = { can_only_justify_war_on_threat_country = no }
 		}
 	}
+
+	focus = {
+		id = YGB_british_army_expertise
+		available = {
+		}
+		prerequisite = { focus = YGB_british_iberia }
+		relative_position_id = YGB_british_iberia
+		icon = GFX_focus_eng_special_air_service
+		x = -2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		}
+
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_tech_bonus = {
+				category = land_doctrine
+				bonus = 1
+				uses = 2
+			}
+			ENG = {
+				ENG_alan_brooke = {
+					set_nationality = YGB
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_british_deployment
+		available = {
+		}
+		prerequisite = { focus = YGB_british_army_expertise }
+		relative_position_id = YGB_british_army_expertise
+		icon = GFX_focus_generic_full_social_mobilization
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			division_template = {
+				name = "British Infantry Division"
+				is_locked = yes
+                division_names_group = ENG_INF_01
+                priority = 1
+				template_counter = 76
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                    infantry = { x = 2 y = 0 }
+                    infantry = { x = 2 y = 1 }
+                }
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					anti_air = { x = 0 y = 2 }
+				}
+            }
+			CAPITAL_SCOPE = {
+				create_unit = {
+					division = "division_template = \"British Infantry Division\" start_experience_factor = 0.15"
+					owner = ROOT
+					count = 1
+				}
+			}
+			custom_effect_tooltip = YGB_british_deployment_tt
+		}
+	}
+
+	focus = {
+		id = YGB_british_tanks
+		available = {
+			OR = {
+				has_tech = gwtank_chassis
+				has_tech = gwtank
+			}
+		}
+		prerequisite = { focus = YGB_british_deployment }
+		relative_position_id = YGB_british_deployment
+		icon = GFX_focus_SWE_lynx_armored_car
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			division_template = {
+				name = "Tank Division"
+                division_names_group = ENG_ARM_01
+                priority = 2
+                regiments = {
+                    light_armor = { x = 0 y = 0 }
+                    light_armor = { x = 0 y = 1 }
+                    light_armor = { x = 0 y = 2 }
+                    light_armor = { x = 1 y = 0 }
+                    light_armor = { x = 1 y = 1 }
+                    light_armor = { x = 1 y = 2 }
+                    motorized = { x = 2 y = 0 }
+                    motorized = { x = 2 y = 1 }
+                    motorized = { x = 2 y = 2 }
+                    motorized = { x = 2 y = 3 }
+                }
+				support = {
+					engineer = { x = 0 y = 0 }
+					logistics_company = { x = 0 y = 1 }
+				}
+            }
+			CAPITAL_SCOPE = {
+				create_unit = {
+					division = "division_template = \"Tank Division\" start_experience_factor = 0.3"
+					owner = ROOT
+					count = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_british_unite_iberia
+		available = {
+		}
+		prerequisite = { focus = YGB_british_army_expertise }
+		prerequisite = { focus = YGB_southern_iberia_wargoal }
+		relative_position_id = YGB_british_army_expertise
+		icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
+		x = 2
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YGB_british_2
+				add_idea = YGB_british_3
+			}
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+				}
+				add_core_of = YGB
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_for_the_empire
+		available = {
+		}
+		prerequisite = { focus = YGB_british_unite_iberia }
+		relative_position_id = YGB_british_unite_iberia
+		icon = GFX_focus_eng_imperial_federation
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			all_state = {
+				OR = {
+					is_core_of = YGB
+					NOT = { YBS_is_iberian_state = yes }
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YGB_british_3
+				add_idea = YGB_british_4
+			}
+			add_political_power = 200
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = YGB_southern_iberia_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_british_iberia }
+		relative_position_id = YGB_british_iberia
+		icon = GFX_focus_generic_attack_republican_spain
+		will_lead_to_war_with = YRS
+		will_lead_to_war_with = YUS
+		x = 3
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = YGB_british_deployment }
+			}
+		}
+
+		available = {
+			OR = {
+				YRS = { exists = yes }
+				YUS = { exists = yes }
+			}
+		}
+
+		bypass = {
+			YRS = { exists = no }
+			YUS = { exists = no }
+		}
+
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = { YRS = { exists = yes } }
+				create_wargoal = {
+					target = YRS
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { YUS = { exists = yes } }
+				create_wargoal = {
+					target = YUS
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_kingdom_spain_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_southern_iberia_wargoal }
+		relative_position_id = YGB_southern_iberia_wargoal
+		icon = GFX_focus_generic_attack_nationalist_spain_focus
+		will_lead_to_war_with = YAO
+		x = 3
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			YAO = { exists = yes }
+		}
+
+		bypass = {
+			YAO = { exists = no }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			create_wargoal = {
+				target = YAO
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_castille_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_kingdom_spain_wargoal }
+		relative_position_id = YGB_kingdom_spain_wargoal
+		icon = GFX_goal_generic_major_war
+		will_lead_to_war_with = YRR
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			YRR = { exists = yes }
+		}
+
+		bypass = {
+			YRR = { exists = no }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			create_wargoal = {
+				target = YRR
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_eastern_iberia_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_southern_iberia_wargoal }
+		relative_position_id = YGB_southern_iberia_wargoal
+		icon = GFX_goal_generic_major_war
+		will_lead_to_war_with = YRF
+		will_lead_to_war_with = YFR
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			# any_state = {
+			# 	OR = {
+			# 		state = 175
+			# 		state = 793
+			# 		state = 168
+			# 	}
+			# 	owner = {
+			# 		NOT = {
+			# 			tag = YGB
+			# 			is_ally_with = YGB
+			# 		}
+			# 	}
+			# }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					any_owned_state = {
+						OR = {
+							state = 175
+							state = 793
+							state = 168
+						}
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_communists_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_eastern_iberia_wargoal }
+		relative_position_id = YGB_eastern_iberia_wargoal
+		icon = GFX_focus_generic_attack_communist_spain
+		will_lead_to_war_with = YCA
+		will_lead_to_war_with = YZA
+		will_lead_to_war_with = YC2
+		will_lead_to_war_with = YC3
+		x = -1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				YCA = { exists = yes }
+				YZA = { exists = yes }
+				YC2 = { exists = yes }
+				YC3 = { exists = yes }
+			}
+		}
+
+		bypass = {
+			YCA = { exists = no }
+			YZA = { exists = no }
+			YC2 = { exists = no }
+			YC3 = { exists = no }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = { YCA = { exists = yes } }
+				create_wargoal = {
+					target = YCA
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { YZA = { exists = yes } }
+				create_wargoal = {
+					target = YZA
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { YC2 = { exists = yes } }
+				create_wargoal = {
+					target = YC2
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { YC3 = { exists = yes } }
+				create_wargoal = {
+					target = YC3
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_portugal_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_eastern_iberia_wargoal }
+		relative_position_id = YGB_eastern_iberia_wargoal
+		icon = GFX_focus_generic_attack_portugal
+		will_lead_to_war_with = YKP
+		will_lead_to_war_with = YPR
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			OR = {
+				YKP = { exists = yes }
+				YPR = { exists = yes }
+			}
+		}
+
+		bypass = {
+			YKP = { exists = no }
+			YPR = { exists = no }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = { YKP = { exists = yes } }
+				create_wargoal = {
+					target = YKP
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = { YPR = { exists = yes } }
+				create_wargoal = {
+					target = YPR
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_northern_iberia_wargoal
+		available = {
+		}
+		prerequisite = { focus = YGB_portugal_wargoal focus = YGB_castille_wargoal }
+		relative_position_id = YGB_portugal_wargoal
+		icon = GFX_goal_generic_major_war
+		will_lead_to_war_with = YGL
+		will_lead_to_war_with = YAS
+		will_lead_to_war_with = YBS
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			# any_state = {
+			# 	OR = {
+			# 		state = 171
+			# 		state = 790
+			# 		state = 792
+			# 		state = 1098
+			# 		state = 1097
+			# 		state = 172
+			# 	}
+			# 	owner = {
+			# 		NOT = {
+			# 			tag = YGB
+			# 			is_ally_with = YGB
+			# 		}
+			# 	}
+			# }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					any_owned_state = {
+						OR = {
+							state = 171
+							state = 790
+							state = 792
+							state = 1098
+							state = 1097
+							state = 172
+						}
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+
+	
 
 	focus = {
 		id = YGB_reestablish_kingdom
@@ -1477,6 +2055,205 @@ focus_tree = {
 	}
 
 	focus = {
+		id = YGB_defend_homeland
+		available = {
+		}
+		prerequisite = { focus = YGB_defend_ideals }
+		relative_position_id = YGB_defend_ideals
+		icon = GFX_focus_generic_home_defense
+		x = -2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_to_variable = { YGB.max_dig_in = 3 }
+			add_to_variable = { YGB.army_defence_factor = 0.1 }
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = YGB_army_dummy
+					add_idea = YGB_army_dummy_homeland_1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_espionage
+		available = {
+		}
+		prerequisite = { focus = YGB_defend_homeland }
+		relative_position_id = YGB_defend_homeland
+		icon = GFX_focus_generic_secret_service_agency
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { YGB_espionage_idea }
+		}
+	}
+
+	focus = {
+		id = YGB_conscription
+		available = {
+		}
+		prerequisite = { focus = YGB_defend_ideals }
+		relative_position_id = YGB_defend_ideals
+		icon = GFX_focus_SOV_mobilization_plan
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			increase_conscription_law = yes
+		}
+	}
+
+	focus = {
+		id = YGB_marine_corps
+		available = {
+		}
+		prerequisite = { focus = YGB_conscription }
+		relative_position_id = YGB_conscription
+		icon = GFX_goal_generic_amphibious_assault
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_tech = marines }
+				}
+				set_technology = { marines = 1 }
+			}
+			else = {
+				add_political_power = 40
+			}
+			add_potential_special_forces_tree = yes
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_marines_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_friend_same_government
+		available = {
+		}
+		prerequisite = { focus = YGB_espionage }
+		prerequisite = { focus = YGB_marine_corps }
+		relative_position_id = YGB_espionage
+		icon = GFX_focus_GER_monarchy_compromise
+		x = 1
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					YBS_is_iberian_country = yes
+					has_government = ROOT
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = large_increase
+				}
+			}
+			add_to_variable = { YGB.factory_base = 0.2 }
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = YGB_investment_dummy
+					add_idea = YGB_investment_dummy_4
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_gibraltar_stronghold
+		available = {
+			controls_state = 118
+		}
+		prerequisite = { focus = YGB_defend_ideals }
+		relative_position_id = YGB_defend_ideals
+		icon = GFX_focus_POL_ukrainian_army
+		x = 2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			118 = {
+				increase_state_category = yes
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = YGB_southern_revolution
 		available = {
 		}
@@ -1906,6 +2683,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = army_CombinedArms_1
+			show_ideas_tooltip = army_chief_planning_3
 		}
 	}
 
@@ -2134,6 +2912,11 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = YGB_add_defence
 			unlock_decision_tooltip = YGB_remove_defence
+			add_tech_bonus = {
+				category = support_tech
+				uses = 3
+				bonus = 1
+			}
 		}
 	}
 
@@ -2158,6 +2941,7 @@ focus_tree = {
 			unlock_decision_tooltip = YGB_add_recovery
 			unlock_decision_tooltip = YGB_remove_recovery
 			add_command_power = 15
+			army_experience = 10
 		}
 	}
 

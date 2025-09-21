@@ -25,3 +25,29 @@ YGB_army_funds_changed = {
         check_variable = { YGB.army_assign_counter < 1 }
     }
 }
+
+YGB_is_revolution_target = {
+    NOT = {
+        any_enemy_country = {
+            is_subject_of = YGB
+        } 
+    }
+    any_neighbor_country = {
+        OR = {
+            original_tag = YGB
+            is_ally_with = YGB
+        }
+    }
+    NOT = { has_government = communism }
+    if = {
+        limit = { OR = { original_tag = YCA original_tag = YC3 } }
+        NOT = { has_government = neutrality }
+    }
+    OR = {
+        original_tag = YUS
+        AND = {
+            YBS_is_iberian_country = yes
+            YGB = { has_completed_focus = YGB_across_iberia }
+        }
+    }
+}

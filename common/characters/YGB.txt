@@ -285,4 +285,27 @@ characters = {
 			cost = 50
 		}
 	}
+
+	YGB_julian_moreno = {
+		name = YGB_julian_moreno
+		portraits = { 
+			army = { small = GFX_idea_ITA_generic_land_5 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_chief_planning_3
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+				has_completed_focus = YGB_military_advisors
+			}
+			traits = {
+				army_chief_planning_3
+			}
+
+			cost = 150
+		}
+	}
 }

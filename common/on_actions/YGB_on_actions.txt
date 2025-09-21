@@ -58,4 +58,28 @@ on_actions = {
 
         }
     }
+
+    on_monthly_YGB = {
+        effect = {
+            if = {
+                limit = {
+                    has_completed_focus = YGB_british_deployment
+                }
+                add_to_variable = { YGB.british_deployment_timer = 1 }
+                if = {
+                    limit = {
+                        check_variable = { YGB.british_deployment_timer > 5 }
+                    }
+                    set_variable = { YGB.british_deployment_timer = 0 }
+                    CAPITAL_SCOPE = {
+                        create_unit = {
+                            division = "division_template = \"British Infantry Division\" start_experience_factor = 0.15"
+                            owner = ROOT
+                            count = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

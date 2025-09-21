@@ -76,6 +76,14 @@ ideas = {
             }
         }
 
+        YGB_army_dummy_homeland_1 = {
+            name = YGB_army
+            modifier = {
+                max_dig_in = 3
+                army_defence_factor = 0.1
+            }
+        }
+
         YGB_investment_dummy = {
             name = YGB_factories
         }
@@ -89,6 +97,12 @@ ideas = {
             name = YGB_factories
             modifier = {
                 political_power_gain = -0.05
+            }
+        }
+        YGB_investment_dummy_4 = {
+            name = YGB_factories
+            modifier = {
+                political_power_gain = 0.2
             }
         }
 
@@ -135,6 +149,34 @@ ideas = {
                 weekly_manpower = 600
                 army_core_attack_factor = 0.1
                 army_core_defence_factor = 0.1
+                democratic_drift = 0.1
+            }
+        }
+
+        YGB_british_3 = {
+            name = YGB_british
+            picture = stiff_upper_lip
+            modifier = {
+                political_power_gain = -0.6
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                weekly_manpower = 600
+                army_attack_factor = 0.15
+                army_defence_factor = 0.15
+                democratic_drift = 0.1
+            }
+        }
+
+        YGB_british_4 = {
+            name = YGB_british
+            picture = stiff_upper_lip
+            modifier = {
+                political_power_gain = -0.2
+                stability_factor = 0.05
+                war_support_factor = 0.05
+                army_attack_factor = 0.15
+                army_defence_factor = 0.15
+                production_factory_max_efficiency_factor = 0.15
                 democratic_drift = 0.1
             }
         }
@@ -251,6 +293,15 @@ ideas = {
             modifier = {
                 send_volunteer_size = 3
                 send_volunteers_tension = -0.2
+            }
+        }
+
+        YGB_espionage_idea = {
+            picture = generic_disjointed_gov
+            modifier = {
+                operative_slot = 1
+                civilian_intel_to_others = -5
+                army_intel_to_others = -5
             }
         }
 
