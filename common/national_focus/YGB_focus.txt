@@ -721,6 +721,9 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = silent_workhorse
 		}
 	}
 
@@ -892,8 +895,6 @@ focus_tree = {
 		available = {
 		}
 		prerequisite = { focus = YGB_unsinkable_carriers focus = YGB_control_strait }
-		mutually_exclusive = { focus = YGB_defend_ideals }
-		mutually_exclusive = { focus = YGB_across_iberia }
 		relative_position_id = YGB_unsinkable_carriers
 		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
 		x = -6
@@ -1570,6 +1571,15 @@ focus_tree = {
 				}
 			}
 
+			hidden_effect = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+					long_name = YGB_neutrality_party_king_long
+					name = YGB_neutrality_party_king
+				}
+			}
+
 			create_country_leader = {
 				name = "Dom Duarte Nuno"
 				desc = "POLITICS_DOM_DUARTE_NUNO_DESC"
@@ -1745,10 +1755,19 @@ focus_tree = {
 				}
 			}
 
+			hidden_effect = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+					long_name = YGB_neutrality_party_king_long
+					name = YGB_neutrality_party_king
+				}
+			}
+
 			create_country_leader = {
-				name = "Placeholder"
-				desc = "POLITICS_DOM_DUARTE_NUNO_DESC"
-				picture = GFX_portrait_Dom_Duarte_Nuno
+				name = "Rafael Díaz Lorenzo"
+				desc = ""
+				picture = GFX_portrait_per_oscar_benavides
 				expire = "1976.12.24"
 				ideology = despotism
 				traits = { 
@@ -1938,6 +1957,9 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = air_tactical_bombing_2
+			custom_effect_tooltip = generic_skip_one_line_tt
 			OVERLORD = {
 				country_event = {
 					id = YGB.1
@@ -2026,8 +2048,6 @@ focus_tree = {
 		available = {
 		}
 		prerequisite = { focus = YGB_unsinkable_carriers focus = YGB_control_strait focus = YGB_war_preparations focus = YGB_mountain_strongholds }
-		mutually_exclusive = { focus = YGB_british_iberia }
-		mutually_exclusive = { focus = YGB_across_iberia }
 		relative_position_id = YGB_control_sevilla
 		icon = GFX_focus_GER_defender_of_democracy
 		x = 0
@@ -2196,6 +2216,8 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_other_country = {
 				limit = {
 					YBS_is_iberian_country = yes
@@ -2206,6 +2228,7 @@ focus_tree = {
 					modifier = large_increase
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_to_variable = { YGB.factory_base = 0.2 }
 			effect_tooltip = {
 				swap_ideas = {
@@ -2250,6 +2273,69 @@ focus_tree = {
 					}
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = YGB_anti_air
+		available = {
+		}
+		prerequisite = { focus = YGB_gibraltar_stronghold }
+		relative_position_id = YGB_gibraltar_stronghold
+		icon = GFX_focus_generic_air_defense
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = army_concealment_3
+
+			every_owned_state = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_military_university
+		available = {
+		}
+		prerequisite = { focus = YGB_anti_air }
+		relative_position_id = YGB_anti_air
+		icon = GFX_focus_NORDIC_com_capstone_research
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			army_experience = 15
+			air_experience = 15
+			navy_experience = 15
 		}
 	}
 
@@ -2814,10 +2900,11 @@ focus_tree = {
 	focus = {
 		id = YGB_across_iberia
 		available = {
+			has_army_manpower = {
+				size > 8000
+			}
 		}
 		prerequisite = { focus = YGB_mountain_strongholds }
-		mutually_exclusive = { focus = YGB_british_iberia }
-		mutually_exclusive = { focus = YGB_defend_ideals }
 		relative_position_id = YGB_mountain_strongholds
 		icon = GFX_focus_spr_anarchism_knows_no_borders
 		x = 3
@@ -2833,6 +2920,170 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			custom_effect_tooltip = YGB_across_iberia_tt
+		}
+	}
+
+	focus = {
+		id = YGB_four_year_plan
+		available = {
+		}
+		prerequisite = { focus = YGB_across_iberia }
+		relative_position_id = YGB_across_iberia
+		icon = GFX_focus_SOV_organize_wreckers
+		x = -2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_timed_idea = {
+				idea = YGB_fyp
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_transformation_of_nature
+		available = {
+		}
+		prerequisite = { focus = YGB_four_year_plan }
+		relative_position_id = YGB_four_year_plan
+		icon = GFX_focus_AFG_integrate_tajik_and_uzbek_republics
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = YGB_revolution_2
+				add_idea = YGB_revolution_3
+			}
+
+			CAPITAL_SCOPE = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+				add_resource = {
+					type = rubber
+					amount = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_spread_revolution
+		available = {
+			any_owned_state = {
+				NOT = { is_core_of = ROOT }
+				YBS_is_iberian_state = yes
+			}
+		}
+		prerequisite = { focus = YGB_across_iberia }
+		relative_position_id = YGB_across_iberia
+		icon = GFX_focus_ARG_women_in_industry
+		x = 2
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.06
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = YGB_war_heroes
+		available = {
+		}
+		prerequisite = { focus = YGB_spread_revolution }
+		relative_position_id = YGB_spread_revolution
+		icon = GFX_focus_SOV_organization_centralization_discipline
+		x = 0
+		y = 1
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = { SOV_war_heroes_ns }
+		}
+	}
+
+	focus = {
+		id = YGB_revolution_triumphant
+		available = {
+			all_state = {
+				OR = {
+					YBS_is_iberian_state = no
+					OWNER = { 
+						if = {
+							limit = {
+								OR = {
+									original_tag = YCA 
+									original_tag = YC3 
+								}
+							}
+							OR = {
+								has_government = communism
+								has_government = neutrality
+							}
+						}
+						else = {
+							has_government = communism
+						}
+					}
+				}
+			}
+		}
+		prerequisite = { focus = YGB_transformation_of_nature }
+		prerequisite = { focus = YGB_war_heroes }
+		relative_position_id = YGB_transformation_of_nature
+		icon = GFX_focus_SOV_organization_centralization_discipline
+		x = 2
+		y = 1
+		cost = 15
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 300
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_cosmetic_tag = YGB_iberia
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = { YGB_revolution_triumphant_idea }
 		}
 	}
 
@@ -3068,6 +3319,7 @@ focus_tree = {
 				category = land_doctrine
 			}
 			add_to_variable = { YGB.army_pp = 0.1 }
+			YGB_alfonso_jalisco = { custom_effect_tooltip = unlock_general_tt }
 		}
 	}
 

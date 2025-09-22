@@ -119,13 +119,6 @@ characters = {
 			}
 		}
 
-		country_leader = {
-			ideology = stalinism
-			traits = { staunch_anti_fascist }
-			expire = "1965.1.1.1"
-			id = -1
-		}
-
 		advisor = {
 			slot = political_advisor
 			idea_token = YGB_sandro_pertini
@@ -182,13 +175,27 @@ characters = {
 					YGB_guerilla_warfare_expert 
 				}
 			}
+			corps_commander = {
+				visible = {
+					has_completed_focus = YGB_grant_asylum_to_exiles
+				}
+				traits = { brilliant_strategist war_hero infantry_leader }
+				skill = 4
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 5
+			}
 		}
 	}
 
 	YGB_mateo_villar = {
 		name = YGB_mateo_villar
 		portraits = { 
-			army = { small = GFX_idea_FRA_generic_3 }
+			army = { 
+				small = GFX_idea_ITA_angelo_iachino
+				large = GFX_portrait_ITA_ezio_rosi
+			}
 		}
 		advisor = {
 			slot = army_chief
@@ -201,6 +208,14 @@ characters = {
 			}
 
 			cost = 100
+		}
+		corps_commander = {
+			traits = { trait_reckless career_officer organizer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
 		}
 	}
 
@@ -292,8 +307,7 @@ characters = {
 			army = { small = GFX_idea_ITA_generic_land_5 }
 		}
 		advisor = {
-			slot = high_command
-			ledger = army
+			slot = army_chief
 			idea_token = army_chief_planning_3
 			allowed = {
 				original_tag = YGB
@@ -306,6 +320,160 @@ characters = {
 			}
 
 			cost = 150
+		}
+	}
+
+	YGB_arthur_milne = {
+		name = YGB_arthur_milne
+		portraits = { 
+			army = { small = GFX_idea_ENG_generic_1 }
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = silent_workhorse
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+				has_completed_focus = YGB_british_settlers
+			}
+			traits = {
+				silent_workhorse 
+			}
+		}
+	}
+
+	YGB_alfonso_jalisco = {
+		name = YGB_alfonso_jalisco
+		portraits = { 
+			army = { large = GFX_Portrait_Italy_Generic_land_1 }
+		}
+		corps_commander = {
+			visible = {
+				has_completed_focus = YGB_army_funding
+			}
+			traits = { infantry_officer inflexible_strategist }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+
+	YGB_valeriano_maroto = {
+		name = YGB_valeriano_maroto
+		portraits = { 
+			army = { small = GFX_idea_LIT_antanas_gustaitis }
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = navy_chief_decisive_battle_1
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				navy_chief_decisive_battle_1
+			}
+
+			cost = 50
+		}
+	}
+
+	YGB_diego_hererra = {
+		name = YGB_diego_hererra
+		portraits = { 
+			army = { small = GFX_idea_mario_roatta }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = air_chief_all_weather_1
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				air_chief_all_weather_1
+			}
+
+			cost = 50
+		}
+	}
+
+	YGB_dionisio_silveira = {
+		name = YGB_dionisio_silveira
+		portraits = { 
+			army = { small = GFX_idea_por_jose_norton_de_matos }
+		}
+		advisor = {
+			slot = high_command
+			ledger = air
+			idea_token = air_tactical_bombing_2
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+				has_completed_focus = YGB_royal_guards
+			}
+			traits = {
+				air_tactical_bombing_2
+			}
+
+			cost = 75
+		}
+	}
+
+	YGB_jacques_anthoine = {
+		name = YGB_jacques_anthoine
+		portraits = { 
+			army = { small = GFX_idea_GUA_jorge_ubico }
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = economist
+			allowed = {
+				original_tag = YGB
+			}
+			traits = {
+				economist 
+			}
+		}
+	}
+
+	YGB_mateo_millan_astray = {
+		name = YGB_mateo_millan_astray
+		portraits = { 
+			army = { small = GFX_idea_generic_air_europe_2 }
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = army_concealment_3
+			allowed = {
+				original_tag = YGB
+			}
+			available = {
+			}
+			traits = {
+				army_concealment_3
+			}
+
+			cost = 50
+		}
+	}
+
+	YGB_jorge_de_mariana = {
+		name = YGB_jorge_de_mariana
+		portraits = {
+			civilian = {
+				large = portrait_ARG_victorio_codovilla
+			}
+		}
+
+		country_leader = {
+			ideology = stalinism
+			traits = { vatan_ideologue }
+			expire = "1965.1.1.1"
+			id = -1
 		}
 	}
 }
