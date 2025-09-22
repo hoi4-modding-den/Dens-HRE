@@ -391,6 +391,267 @@ ideas={
 				stability_factor = 0.1
 				industrial_capacity_factory = 0.25
 			}
+		}
+		
+		YCA_people_aviation_bureau_idea = {
+			picture = generic_aircraft_support
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				air_chief_cost_factor = -0.2
+				air_accidents_factor = 0.05
+			}
+
+			equipment_bonus = {
+				fighter = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+
+		}	
+
+		YCA_people_aviation_bureau_idea_gen = {
+			picture = generic_aircraft_support
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				air_chief_cost_factor = -0.2
+				air_accidents_factor = -0.05
+				air_ace_generation_chance_factor = 0.1
+				air_wing_xp_loss_when_killed_factor = -0.15
+				air_fuel_consumption_factor = 0.1
+			}
+
+			equipment_bonus = {
+				fighter = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		
+		YCA_people_aviation_bureau_idea_unified = {
+			picture = generic_aircraft_support
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				air_chief_cost_factor = -0.2
+				air_accidents_factor = -0.05
+				air_ace_generation_chance_factor = 0.1
+				air_wing_xp_loss_when_killed_factor = -0.15
+				air_agility_factor = 0.05
+				air_range_factor = 0.1
+				air_fuel_consumption_factor = 0.15
+			}
+
+			equipment_bonus = {
+				fighter = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}		
+
+		YCA_people_aviation_bureau_idea_revolution = {
+			picture = generic_aircraft_support
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+				air_wing_xp_loss_when_killed_factor = -0.15
+				air_agility_factor = 0.1
+				air_range_factor = 0.15
+				air_attack_factor = 0.05
+				air_attack_factor = 0.1
+				ground_attack_factor = 0.1								
+				air_fuel_consumption_factor = 0.15
+			}
+
+			equipment_bonus = {
+				fighter = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+		
+		YCA_people_aviation_bureau_idea_support = {
+			picture = generic_aircraft_support
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				air_accidents_factor = -0.05				
+				air_ace_generation_chance_factor = 0.1
+				air_wing_xp_loss_when_killed_factor = -0.15
+				air_agility_factor = 0.1
+				air_range_factor = 0.15
+				ground_attack_factor = 0.1
+				air_fuel_consumption_factor = 0.15
+			}
+
+			equipment_bonus = {
+				fighter = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}			
+		
+		YCA_forming_the_red_air_arm = {
+			picture = air_war_plans_division_focus
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.07
+			}
+
+			equipment_bonus = {
+				fighter = {
+					instant = yes
+					build_cost_ic = -0.25
+				}
+				cas = {
+					instant = yes
+					build_cost_ic = -0.15
+				}				
+			}
+
+		}
+		
+		YCA_flota_del_pueblo_idea = {
+			picture = liberty_ships_focus
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				naval_defense_factor = 0.05
+				screening_efficiency = 0.1
+				navy_max_range_factor = 0.1
+				naval_speed_factor = -0.05
+			}
+		}	
+		
+		YCA_flota_del_pueblo_idea_sailor = {
+			picture = liberty_ships_focus
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				naval_defense_factor = 0.05
+				screening_efficiency = 0.1
+				navy_max_range_factor = 0.1
+				naval_speed_factor = -0.05
+				naval_coordination = 0.15
+			}
+
+			equipment_bonus = {
+				screen_ship = {
+					instant = yes
+					build_cost_ic = -0.1
+				}			
+			}			
+		}
+		
+		YCA_flota_del_pueblo_idea_crews = {
+			picture = liberty_ships_focus
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				naval_defense_factor = 0.1
+				screening_efficiency = 0.1
+				navy_max_range_factor = 0.15
+				naval_speed_factor = -0.1
+				naval_coordination = 0.15
+				recruitable_population_factor = 0.03
+			}
+
+			equipment_bonus = {
+				screen_ship = {
+					instant = yes
+					build_cost_ic = -0.15
+				}			
+			}			
+		}		
+
+		YCA_the_aero_maritime_complex_idea = {
+			picture = BEL_maritime_phoenix
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				production_speed_dockyard_factor = 0.15
+				production_speed_arms_factory_factor = 0.1
+				experience_gain_air = 0.05
+				experience_gain_navy = 0.05		
+			}
 		}			
 		
 		YCA_catalan_pacification_campaign = {
