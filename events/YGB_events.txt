@@ -207,7 +207,7 @@ country_event = {
         else_if = {
             limit = { has_country_flag = YGB.1.b }
             add_manpower = 6000
-            YKP = {
+            FROM = {
                 send_equipment = {
                     equipment = infantry_equipment
                     amount = 250
@@ -219,7 +219,7 @@ country_event = {
             limit = { has_country_flag = YGB.1.c }
             add_manpower = 14000
             add_war_support = 0.01
-            YKP = {
+            FROM = {
                 send_equipment = {
                     equipment = infantry_equipment
                     amount = 750
@@ -232,7 +232,7 @@ country_event = {
             add_manpower = 25000
             add_war_support = 0.05
             add_stability = 0.01
-            YKP = {
+            FROM = {
                 send_equipment = {
                     equipment = infantry_equipment
                     amount = 1500
@@ -306,7 +306,7 @@ country_event = {
         ai_chance = {
 			factor = 5
 			modifier = {
-                tag = ZZZ
+                tag = YRS
 				add = 0
 			}
 		}
@@ -338,6 +338,7 @@ country_event = {
         name = YGB.4.a
         OVERLORD = {
             169 = {
+                add_core_of = PREV
                 transfer_state_to = PREV
             }
         }
@@ -346,6 +347,7 @@ country_event = {
     option = {
         name = YGB.4.b
         169 = {
+            add_core_of = YGB
             transfer_state_to = YGB
         }
     }
