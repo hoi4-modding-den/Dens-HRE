@@ -403,6 +403,341 @@ YCA_generalitat_factions_decisions = {
 			base = 10
 		}
 	}
+	YCA_industrialize_llieda  = {
+		priority = 6
+		icon = GFX_decision_generic_industry 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_industrialize_the_campina
+			1100 = {
+				is_controlled_by = ROOT
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 70
+		cost = 70
+
+		remove_effect = {
+			1100 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+				add_extra_state_shared_building_slots = 1									
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.03			
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}
+	YCA_industrialize_sobrarbe  = {
+		priority = 6
+		icon = GFX_decision_generic_industry 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_industrialize_the_campina
+			1094 = {
+				is_controlled_by = ROOT
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 70
+		cost = 70
+
+		remove_effect = {
+			1094 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+				add_extra_state_shared_building_slots = 1									
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.02	
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}
+	YCA_industrialize_monegros  = {
+		priority = 6
+		icon = GFX_decision_generic_industry 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_industrialize_the_campina
+			1095 = {
+				is_controlled_by = ROOT
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 70
+		cost = 70
+
+		remove_effect = {
+			1095 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}				
+				add_extra_state_shared_building_slots = 1									
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.02	
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}
+	YCA_industrialize_alcaniz  = {
+		priority = 6
+		icon = GFX_decision_generic_industry 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_industrialize_the_campina
+			794 = {
+				is_controlled_by = ROOT
+			}
+		}	
+		
+		available = {
+		}
+
+		days_remove = 50
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 100
+		cost = 100
+
+		remove_effect = {
+			794 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}				
+				add_extra_state_shared_building_slots = 1									
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.04
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}		
+	YCA_leaflet_campaign  = {
+		priority = 15
+		icon = GFX_decision_eng_trade_unions_demand 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_criticize_the_bureaucratization_of_the_revolution
+		}	
+		
+		available = {
+		}
+
+		days_remove = 70
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 65
+		cost = 65
+
+		remove_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 6
+				tooltip = vanguardist_medium_influence_loss_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 4
+				tooltip = socialist_small_influence_loss_tt
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 2		
+			}			
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}
+	YCA_the_land_distribution_act  = {
+		priority = 15
+		icon = GFX_decision_hol_attract_foreign_investors 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_land_distribution_act
+		}	
+		
+		available = {
+		}
+
+		days_remove = 70
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 65
+		cost = 65
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}		
+			custom_effect_tooltip = generic_skip_one_line_tt					
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 2
+				tooltip = anarchist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 1		
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1	
+			}					
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}	
+	YCA_workplace_outreach  = {
+		priority = 15
+		icon = GFX_decision_eng_propaganda_campaigns 
+
+		allowed = {
+			original_tag = YCA
+		}
+
+		visible = {
+			has_completed_focus = YCA_criticize_the_bureaucratization_of_the_revolution
+		}	
+		
+		available = {
+		}
+
+		days_remove = 25
+		fire_only_once = yes	
+
+		ai_hint_pp_cost = 40
+		cost = 40
+
+		remove_effect = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 2
+				tooltip = anarchist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 1		
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1	
+			}				
+		}
+
+		ai_will_do = {
+			base = 10
+		}
+	}	
 	YCA_fortify_the_southern_frontier = {
 		priority = 5
 		icon = GFX_decision_generic_fortification 

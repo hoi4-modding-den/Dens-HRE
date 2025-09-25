@@ -20,6 +20,15 @@ leader_traits = {
 
     # Advisors
 
+	YCA_cnt_anarchist = {
+		random = no
+		sprite = 13
+		war_support_factor = 0.05
+		stability_factor = -0.1
+		conscription_factor = 0.1
+		neutrality_drift = 0.03
+	}	
+
     # SPRITES
 	# 1 = PLANE
 	# 2 = BOMB

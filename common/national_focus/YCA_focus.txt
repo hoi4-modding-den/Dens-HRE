@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 500 y = 1000 }
+	continuous_focus_position = { x = 700 y = 1500 }
 
 	initial_show_position = {
 		x = 9
@@ -168,7 +168,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 50
 			swap_ideas = {
@@ -338,7 +338,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = YCA_domestic_events.20
 			add_popularity = {
@@ -368,7 +368,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = YCA_red_trade_unions
@@ -404,7 +404,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = YCA_decentralized_union_network
@@ -439,7 +439,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
 			country_event = YCA_domestic_events.21
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -483,7 +483,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
 			set_party_name = {
 				ideology = neutrality
@@ -502,7 +502,7 @@ focus_tree = {
 			}	
 			hidden_effect = {
 				country_event = {
-					id = YCA_domestic_events.YCA_domestic_events.19
+					id = YCA_domestic_events.19
 					days = 7
 				}				
 			}			
@@ -827,7 +827,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
 			add_popularity = {
 				ideology = democratic
@@ -928,6 +928,11 @@ focus_tree = {
 		}
 
 		available = {
+			has_completed_focus = YCA_establish_the_national_planning_commission
+			OR = {
+				has_completed_focus = YCA_comite_de_planificacion_popular
+				has_completed_focus = YCA_power_to_the_workers_councils
+			}
 		}
 
 		available_if_capitulated = no
@@ -974,7 +979,7 @@ focus_tree = {
 		completion_reward = {
 			# add global event on takeover			
 		}
-	}		
+	}			
 	focus = {
 		id = YCA_the_indigo_movement # purple movement for the socialists
 		icon = GFX_focus_YCA_the_indigo_movement
@@ -1002,11 +1007,44 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			set_party_name = {
+				ideology = communism
+				long_name = YCA_rev_social_communism_long
+				name = YCA_rev_social_communism
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			promote_character = YCA_joan_comorera			
 			# add global event on takeover			
 		}
 	}
+	focus = {
+		id = YCA_the_red_frontier
+		icon = GFX_focus_AUS_danubian_socialist_communes
+		cost = 6
+		prerequisite = {
+			focus = YCA_vanguardist_legacy
+			focus = YCA_the_indigo_movement
+		}	
+		relative_position_id = YCA_vanguardist_legacy
+		x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			#country_event = YCA_domestic_events.26 # Meeting with other members to annex em, they get an event too	
+		}
+	}	
 	focus = {
 		id = YCA_towards_stateless_order
 		icon = GFX_focus_ARG_no_gods_no_masters
@@ -1034,8 +1072,9 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			custom_effect_tooltip = YCA_path_in_dev
 			# add global event on takeover
 		}
 	}	
@@ -1048,25 +1087,36 @@ focus_tree = {
 		x = 24
 		y = 0		
 
-		cost = 2
+		cost = 6
 
 		ai_will_do = {
 			factor = 30
 		}
 
 		available = {
+			NOT = {
+				has_completed_focus = YCA_first_party_congress
+			}				
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_ideas = YCA_national_planning_commission
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = YCA_industry_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}				
 		}
 	}	
 	focus = {
 		id = YCA_power_to_the_workers_councils
 		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_establish_the_national_planning_commission
 		}
@@ -1089,18 +1139,26 @@ focus_tree = {
 		}
 
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = YCA_anarchist_one_third_support
+				check_variable = {
+					var = YCA_anarchist_faction_progress_bar
+					value = 33
+				}			
+			}				
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			custom_effect_tooltip = YCA_path_in_dev
 		}
 	}
 	focus = {
 		id = YCA_federate_the_syndicates
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 4
+		icon = GFX_focus_GER_proletarian_solidarity
+		cost = 6
 		prerequisite = {
 			focus = YCA_power_to_the_workers_councils
 		}		
@@ -1117,13 +1175,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}
 	focus = {
 		id = YCA_direct_democracy_in_the_economy
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_focus_ARG_defense_and_democracy
 		cost = 4
 		prerequisite = {
 			focus = YCA_federate_the_syndicates
@@ -1141,13 +1199,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}	
 	focus = {
 		id = YCA_self_managed_workshops
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_focus_generic_reinforcing_the_supply_network
 		cost = 4
 		prerequisite = {
 			focus = YCA_power_to_the_workers_councils
@@ -1165,13 +1223,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}	
 	focus = {
 		id = YCA_collectivized_industries
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_focus_GER_integrated_economies
 		cost = 4
 		prerequisite = {
 			focus = YCA_self_managed_workshops
@@ -1189,13 +1247,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}
 	focus = {
 		id = YCA_streamline_the_cnt_fai
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_focus_YCA_streamline_the_cnt_fai
 		cost = 4
 		prerequisite = {
 			focus = YCA_collectivized_industries
@@ -1216,14 +1274,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}	
 	focus = {
 		id = YCA_confederation_of_european_unions
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 4	
+		icon = GFX_focus_GER_european_confederation
+		cost = 6
 		prerequisite = {
 			focus = YCA_direct_democracy_in_the_economy
 		}			
@@ -1240,13 +1298,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}	
 	focus = {
 		id = YCA_collective_harvest_committees
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_SOV_reverse_the_collectivization_process_ccp_2d_sov_compatibility
 		cost = 4	
 		prerequisite = {
 			focus = YCA_confederation_of_european_unions
@@ -1264,13 +1322,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}
 	focus = {
 		id = YCA_regional_laborer_federations
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_focus_spr_regional_defense_council_of_aragon
 		cost = 4	
 		prerequisite = {
 			focus = YCA_confederation_of_european_unions
@@ -1288,14 +1346,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}	
 	focus = {
 		id = YCA_achieve_the_anarchist_dream
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 4	
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		cost = 6	
 		prerequisite = {
 			focus = YCA_confederation_of_european_unions
 		}			
@@ -1312,13 +1370,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}			
 	focus = {
 		id = YCA_workers_technical_education
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
 		cost = 4
 		prerequisite = {
 			focus = YCA_collectivized_industries
@@ -1336,13 +1394,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 		}
 	}			
 	focus = {
 		id = YCA_land_distribution_act
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		icon = GFX_SOV_reorganize_the_pc_of_heavy_industry_ccp_2d_sov_compatibility
 		cost = 4
 		prerequisite = {
 			focus = YCA_power_to_the_workers_councils
@@ -1363,11 +1421,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_stability = 0.03
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = YCA_the_land_distribution_act
+			# unlock decision to pass the act
 		}
 	}
 	focus = {
 		id = YCA_nationalize_the_banc_de_barcelona
-		icon = GFX_focus_generic_communist
+		icon = GFX_focus_AUS_austromarxism
 		cost = 4
 		prerequisite = {
 			focus = YCA_power_to_the_workers_councils
@@ -1382,24 +1444,40 @@ focus_tree = {
 		}
 
 		available = {
+			any_owned_state = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			# event (gains temp national spirit)
+			country_event = YCA_domestic_events.22
+			custom_effect_tooltip = generic_skip_one_line_tt
+			165 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1									
+			}
 		}
 	}
 	focus = {
 		id = YCA_bolster_the_anti_capitalist_struggle
-		icon = GFX_focus_ICE_embrace_the_workers_revolution
-		cost = 4
+		icon = GFX_SOV_a_global_class_struggle_ccp_2d_sov_compatibility
+		cost = 6
 		prerequisite = {
 			focus = YCA_nationalize_the_banc_de_barcelona
-		}	
-		prerequisite = {
-			focus = YCA_land_distribution_act
-		}				
+			focus = YCA_land_distribution_act			
+		}					
 		relative_position_id = YCA_nationalize_the_banc_de_barcelona
 		x = 1
 		y = 1
@@ -1415,12 +1493,13 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_ideas = YCA_anti_capitalist_struggle
 		}
 	}					
 	focus = {
 		id = YCA_comite_de_planificacion_popular # Comité de Planificación Popular
 		icon = GFX_focus_generic_communist
-		cost = 4
+		cost = 6
 		prerequisite = {
 			focus = YCA_establish_the_national_planning_commission
 		}	
@@ -1442,17 +1521,41 @@ focus_tree = {
 		}
 
 		available = {
+			NOT = {
+				has_completed_focus = YCA_first_party_congress
+			}				
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = YCA_vanguardist_one_third_support
+					check_variable = {
+						var = YCA_vanguardist_faction_progress_bar
+						value = 33
+					}			
+				}				
+				custom_trigger_tooltip = {
+					tooltip = YCA_socialist_one_third_support
+					check_variable = {
+						var = YCA_socialist_faction_progress_bar
+						value = 33
+					}			
+				}				
+			}				
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_national_planning_commission
+				add_idea = YCA_popular_planification_committee
+			}
+			add_political_power = -35
 		}
 	}	
 	focus = {
 		id = YCA_the_catalan_complan
-		icon = GFX_focus_generic_communist
+		icon = GFX_SOV_restoration_and_development_ccp_2d_sov_compatibility
 		cost = 4
 		prerequisite = {
 			focus = YCA_comite_de_planificacion_popular
@@ -1472,11 +1575,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_popular_planification_committee
+				add_idea = YCA_catalan_complan
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}			
 		}
 	}
 	focus = {
 		id = YCA_five_year_industrial_leap
-		icon = GFX_focus_generic_communist
+		icon = GFX_SOV_aristocratic_investments_ccp_2d_sov_compatibility
 		cost = 4
 		prerequisite = {
 			focus = YCA_comite_de_planificacion_popular
@@ -1496,11 +1607,13 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.23
+			# add idea for 5 years (5 year plan)
 		}
 	}	
 	focus = {
 		id = YCA_enforce_labor_discipline
-		icon = GFX_focus_generic_communist
+		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
 		cost = 4
 		prerequisite = {
 			focus = YCA_five_year_industrial_leap
@@ -1523,11 +1636,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = YCA_catalan_complan
+				add_idea = YCA_catalan_complan_labor
+			}
 		}
 	}
 	focus = {
 		id = YCA_oversight_of_collective_farms
-		icon = GFX_focus_generic_communist
+		icon = GFX_SOV_increase_state_reserves_ccp_2d_sov_compatibility
 		cost = 4		
 		prerequisite = {
 			focus = YCA_the_catalan_complan
@@ -1547,11 +1664,34 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_tech_bonus = {
+				name = YCA_industry_bonus
+				bonus = 1
+				uses = 1
+				category = concentrated_industry_category
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}						
 		}
 	}
 	focus = {
 		id = YCA_state_distribution_network
-		icon = GFX_focus_generic_communist
+		icon = GFX_focus_SOV_organize_wreckers
 		cost = 4		
 		prerequisite = {
 			focus = YCA_oversight_of_collective_farms
@@ -1569,14 +1709,23 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_tech_bonus = {
+				name = YCA_construction_bonus
+				bonus = 0.5
+				uses = 2
+				category = construction_tech
+			}			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = YCA_joaquin_maurin			
 		}
 	}
 	focus = {
 		id = YCA_inaugurate_the_academia_del_proletariat
-		icon = GFX_focus_generic_communist
-		cost = 4		
+		icon = GFX_focus_BEL_the_grand_place
+		cost = 6		
 		prerequisite = {
 			focus = YCA_oversight_of_collective_farms
 		}			
@@ -1595,11 +1744,13 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_research_slot = 1
+			# modify gosplan for more research
 		}
 	}	
 	focus = {
 		id = YCA_the_puigite_movement
-		icon = GFX_focus_generic_communist
+		icon = GFX_SOV_revive_the_stakhanovite_movement_ccp_2d_sov_compatibility
 		cost = 4		
 		prerequisite = {
 			focus = YCA_inaugurate_the_academia_del_proletariat
@@ -1619,12 +1770,15 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.25
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = YCA_the_puigite_movement_idea
 		}
 	}			
 	focus = {
 		id = YCA_heavy_industry_priority
-		icon = GFX_focus_generic_communist
-		cost = 4
+		icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+		cost = 6
 		prerequisite = {
 			focus = YCA_five_year_industrial_leap
 		}				
@@ -1643,17 +1797,44 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}				
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_resource = {
+				type = steel
+				amount = 7
+				state = 1100
+			}
 		}
 	}		
 	focus = {
 		id = YCA_industrialize_the_campina
-		icon = GFX_focus_generic_communist
+		icon = GFX_focus_ITA_grande_rivolta_rurale
 		cost = 4
 		prerequisite = {
 			focus = YCA_heavy_industry_priority
 		}				
 		relative_position_id = YCA_heavy_industry_priority
-		x = -2
+		x = -1
 		y = 1
 
 		ai_will_do = {
@@ -1661,23 +1842,53 @@ focus_tree = {
 		}
 
 		available = {
+			1100 = {
+				is_controlled_by = ROOT
+			}
 		}
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			unlock_decision_tooltip = YCA_industrialize_llieda
+			if = {
+				limit = { 
+					1094 = {
+						is_controlled_by = ROOT
+					}
+				}
+				unlock_decision_tooltip = YCA_industrialize_sobrarbe
+			}
+			if = {
+				limit = { 
+					1095 = {
+						is_controlled_by = ROOT
+					}
+				}
+				unlock_decision_tooltip = YCA_industrialize_monegros
+			}
+			if = {
+				limit = { 
+					794 = {
+						is_controlled_by = ROOT
+					}
+				}
+				unlock_decision_tooltip = YCA_industrialize_alcaniz
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YCA_industrialize_the_campina_tt
 		}
 	}	
 	focus = {
 		id = YCA_cultivate_the_ideological_vanguard
-		icon = GFX_focus_generic_communist
-		cost = 4
+		icon = GFX_goal_generic_soviet_construction
+		cost = 6
 		prerequisite = {
 			focus = YCA_heavy_industry_priority
 		}				
 		relative_position_id = YCA_heavy_industry_priority
-		x = 0
+		x = 1
 		y = 1
 
 		ai_will_do = {
@@ -1691,17 +1902,23 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			add_war_support = 0.05
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = war_economy
 		}
 	}	
 	focus = {
 		id = YCA_promote_socialist_emulation
-		icon = GFX_focus_generic_communist
+		icon = GFX_SOV_socialist_realism_ccp_2d_sov_compatibility
 		cost = 4
 		prerequisite = {
 			focus = YCA_cultivate_the_ideological_vanguard
-		}				
+		}	
+		prerequisite = {
+			focus = YCA_enforce_labor_discipline
+		}						
 		relative_position_id = YCA_cultivate_the_ideological_vanguard
-		x = 2
+		x = 1
 		y = 1
 
 		ai_will_do = {
@@ -1715,6 +1932,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			country_event = YCA_domestic_events.24
+			custom_effect_tooltip = generic_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = YCA_catalan_complan_labor
+				add_idea = YCA_catalan_complan_emulation
+			}			
 		}
 	}				
 
@@ -1790,7 +2013,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YCA_red_air_arm # form air battallion
-		icon = GFX_SOV_ground_support_ccp_2d_sov_compatibility
+		icon = GFX_focus_SOV_flying_clubs
 		prerequisite = {
 			focus = YCA_people_aviation_bureau
 		}	
@@ -1972,7 +2195,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_tech_bonus = {
 				name = YCA_more_batt_sup
@@ -2241,7 +2464,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			navy_experience = 30
 			add_tech_bonus = {
@@ -2340,7 +2563,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_tech_bonus = {
 				name = YCA_cruiser_bonus

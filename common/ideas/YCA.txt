@@ -652,7 +652,188 @@ ideas={
 				experience_gain_air = 0.05
 				experience_gain_navy = 0.05		
 			}
-		}			
+		}
+		
+		YCA_national_planning_commission = {
+			picture = gre_schachtplan
+			allowed = {
+				original_tag = YCA
+				NOT = {
+					has_completed_focus = YCA_first_party_congress
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+				custom_modifier_tooltip = YCA_removed_upon_first_congress
+			}
+		}
+		
+		YCA_popular_planification_committee = {
+			picture = gre_schachtplan
+			allowed = {
+				original_tag = YCA
+				NOT = {
+					has_completed_focus = YCA_first_party_congress
+				}
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_industrial_complex_factor = 0.1
+				political_power_factor = -0.1
+				industrial_capacity_factory = 0.05
+				custom_modifier_tooltip = YCA_removed_upon_first_congress
+			}
+		}
+		
+		YCA_catalan_complan = {
+			picture = ARG_public_works_investment
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_industrial_complex_factor = 0.15
+				political_power_factor = -0.1
+				industrial_capacity_factory = 0.05
+				local_resources_factor = 0.15
+				stability_factor = -0.02
+			}
+		}
+
+		YCA_catalan_complan_labor = {
+			picture = ARG_public_works_investment
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				production_speed_industrial_complex_factor = 0.15
+				political_power_factor = -0.12
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.05 
+				local_resources_factor = 0.15
+				stability_factor = -0.05
+			}
+		}	
+		
+		YCA_catalan_complan_emulation = {
+			picture = ARG_public_works_investment
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.10
+				political_power_factor = -0.12
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.05 
+				local_resources_factor = 0.15
+				stability_factor = -0.05		
+			}
+		}	
+		
+		YCA_first_five_year_leap_idea = {
+			picture = SOV_third_five_year_plan_civilian
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.05
+				supply_factor = 0.08
+				industrial_capacity_factory = 0.10		
+			}
+		}
+		
+		YCA_anti_capitalist_struggle = {
+			picture = GER_wage_war_on_capitalism
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				war_support_weekly = 0.001
+				army_breakthrough_against_major_factor = 0.10	
+			}
+		}
+		
+		YCA_the_puigite_movement_idea = {
+			picture = SOV_stakhanovite_movement
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.1
+				stability_factor = 0.05
+				conscription = -0.003
+			}
+		}		
+		
+		YCA_banc_de_barcelona_communalized = {
+			picture = tur_balkan_central_bank_wealthy_greece
+			allowed = {
+				original_tag = YCA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = 0.15
+			}
+		}		
 		
 		YCA_catalan_pacification_campaign = {
 			picture = generic_oppression

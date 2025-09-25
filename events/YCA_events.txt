@@ -661,7 +661,7 @@ country_event = { # Tensions: High
 	title = YCA_domestic_events.13.t
 	desc = YCA_domestic_events.13.desc
 	
-	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	picture = GFX_report_event_FIN_helsinki_bombed
 	
 	is_triggered_only = yes
 	
@@ -680,7 +680,7 @@ country_event = { # Tensions: Boiling
 	title = YCA_domestic_events.14.t
 	desc = YCA_domestic_events.14.desc
 	
-	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	picture = GFX_report_event_DEN_resistance
 	
 	is_triggered_only = yes
 	
@@ -700,7 +700,7 @@ country_event = { # Revolutionary Socialists Boycott the Generalitat
 	title = YCA_domestic_events.15.t
 	desc = YCA_domestic_events.15.desc
 	
-	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	picture = GFX_report_event_ITA_democratic_parlament
 	
 	is_triggered_only = yes
 	
@@ -721,7 +721,7 @@ country_event = { # Classifying the Revolutionary Administration
 	title = YCA_domestic_events.16.t
 	desc = YCA_domestic_events.16.desc
 	
-	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+	picture = GFX_report_event_ITA_democratic_parlament
 	
 	is_triggered_only = yes
 	
@@ -783,7 +783,7 @@ country_event = { # Women of the Revolution
 	title = YCA_domestic_events.17.t
 	desc = YCA_domestic_events.17.desc
 	
-	picture = GFX_report_event_generic_croatia_handshake
+	picture = GFX_report_event_canada_ronnie
 	
 	is_triggered_only = yes
 	
@@ -807,12 +807,12 @@ country_event = { # Women of the Revolution
     }		
 }
 
-country_event = { # The Barcelona Radical Congress (pick who will be its speaker, one of the three factions)
+country_event = { # The Barcelona Radical Congress
 	id = YCA_domestic_events.18
 	title = YCA_domestic_events.18.t
 	desc = YCA_domestic_events.18.desc
 	
-	picture = GFX_report_event_SWE_summer_government
+	picture = GFX_report_event_SWE_riksdag
 	
 	is_triggered_only = yes
 	
@@ -871,7 +871,7 @@ country_event = { # Anarcho-Syndicalist Union Proves Successful in the Generalit
 	title = YCA_domestic_events.19.t
 	desc = YCA_domestic_events.19.desc
 	
-	picture = GFX_report_event_SWE_summer_government
+	picture = GFX_report_event_SOV_national_academy_of_sciences
 	
 	is_triggered_only = yes
 	
@@ -898,7 +898,7 @@ country_event = { # Raise Local Anarchist Councils
 	title = YCA_domestic_events.20.t
 	desc = YCA_domestic_events.20.desc
 	
-	picture = GFX_report_event_SWE_summer_government
+	picture = GFX_report_event_SOV_demands
 	
 	is_triggered_only = yes
 	
@@ -925,12 +925,81 @@ country_event = { # The Fuerza Obrera Manifesto (worker power manifesto shared i
 	title = YCA_domestic_events.21.t
 	desc = YCA_domestic_events.21.desc
 	
-	picture = GFX_report_event_SWE_summer_government
+	picture = GFX_report_event_crowd_in_prague
 	
 	is_triggered_only = yes
 	
 	option = {
         name = YCA_domestic_events.21.a		
-		# unlock anarchist decisions within the Generalitat (leaflet campaign, direct workplace outreach)
+		unlock_decision_tooltip = YCA_leaflet_campaign
+		unlock_decision_tooltip = YCA_workplace_outreach
+    }				
+}
+
+country_event = { # Banc de Barcelona Communalized
+	id = YCA_domestic_events.22
+	title = YCA_domestic_events.22.t
+	desc = YCA_domestic_events.22.desc
+	
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.22.a	
+		add_timed_idea = {
+			idea = YCA_banc_de_barcelona_communalized
+			days = 180
+		}
+    }				
+}
+
+country_event = { # The First Five-Year Leap
+	id = YCA_domestic_events.23
+	title = YCA_domestic_events.23.t
+	desc = YCA_domestic_events.23.desc
+	
+	picture = GFX_report_event_china_ledo_road
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.23.a	
+		add_timed_idea = {
+			idea = YCA_first_five_year_leap_idea
+			days = 1825
+		}
+    }				
+}
+
+country_event = { # Socialist Emulation Campaign
+	id = YCA_domestic_events.24
+	title = YCA_domestic_events.24.t
+	desc = YCA_domestic_events.24.desc
+	
+	picture = GFX_report_event_SOV_young_builders_of_communism
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.24.a	
+		add_offsite_building = {
+			type = arms_factory
+			level = 1
+		}
+    }				
+}
+
+country_event = { # The Legend of Raimon Puig
+	id = YCA_domestic_events.25
+	title = YCA_domestic_events.25.t
+	desc = YCA_domestic_events.25.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.25.a	
     }				
 }

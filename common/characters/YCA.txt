@@ -144,7 +144,7 @@ characters = {
 				}
 			}
 			traits = {
-				social_revolutionary 
+				ARG_anarchosyndicalist 
 			}
 			ai_will_do = {
 				factor = 1
@@ -169,7 +169,7 @@ characters = {
 				}
 				has_completed_focus = YCA_central_commissariats
 			}
-			traits = { war_industrialist }
+			traits = { social_revolutionary }
 			ai_will_do = {
 				factor = 1
 			}
@@ -219,7 +219,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { collectivization_specialist }
+			traits = { protector_of_cultural_heritage }
 		}
 	}
 	YCA_council_of_theorists = {
@@ -242,7 +242,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { council_of_theorists }
+			traits = { anarcho_communist_council }
 		}
 	}	
 	YCA_dolores_ibarruri={
@@ -290,7 +290,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { education_reformer }
+			traits = { marxist_philosopher }
 		}
 	}
 	YCA_francisco_largo_caballero={
@@ -313,7 +313,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { silent_workhorse }
+			traits = { conservative_communist }
 		}
 	}
 	YCA_antonia_adroher_i_pascual={
@@ -337,7 +337,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { revolutionary_culture_minister }
+			traits = { war_industrialist }
 		}
 	}
 	YCA_domingo_ascaso={
@@ -360,7 +360,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { revolutionary_culture_minister }
+			traits = { YCA_cnt_anarchist }
 		}
 	}
 	YCA_joaquin_maurin={
@@ -379,11 +379,12 @@ characters = {
 				NOT = {
 					#has_completed_focus = YCA_towards_stateless_order 
 				}
+				has_completed_focus = YCA_state_distribution_network
 			}
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { revolutionary_culture_minister }
+			traits = { industry_reformer }
 		}
 	}
 	YCA_julian_besteiro={
@@ -406,7 +407,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { revolutionary_culture_minister }
+			traits = { subservient_democrat_democratic }
 		}
 	}
 	YCA_rafael_campalans={
@@ -429,7 +430,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { revolutionary_culture_minister }
+			traits = { modernist_and_reformer }
 		}
 	}					
 	YCA_indalecio_prieto={
@@ -453,7 +454,7 @@ characters = {
 			ai_will_do = {
 				factor = 1
 			}
-			traits = { propaganda_expert }
+			traits = { HUN_socialist_bulwark }
 		}
 	}	
 	
@@ -937,7 +938,7 @@ characters = {
 			name="José Miaja"
 			portraits={
 				army={
-					small="GFX_idea_generic_army_europe_2"
+					small="GFX_idea_generic_army_europe_4"
 				}
 			}
 			advisor={
