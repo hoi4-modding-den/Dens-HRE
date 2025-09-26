@@ -68,6 +68,9 @@ YBS_owns_all_iberian_states = {
             OR = {
                 YBS_is_iberian_state = no
                 is_owned_by = PREV
+                owner = {
+                    is_subject_of = PREV
+                }
             }
         }
     }
@@ -289,6 +292,13 @@ YBS_is_iberian_cw_contender = {
 }
 
 YBS_civil_war_over = {
+    any_country = {
+        YBS_is_iberian_cw_contender = yes
+        YBS_owns_all_iberian_states = yes
+    }
+}
+
+test = {
     custom_trigger_tooltip = {
         tooltip = YBS_civil_war_over_tt
         OR = {

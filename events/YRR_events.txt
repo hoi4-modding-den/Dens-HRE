@@ -60,3 +60,18 @@ country_event = { # Power Struggle ends
         }
     }
 }
+
+country_event = { # Basque goes Commie or Democratic Socialist
+	id = YRR_events.2
+	title = YRR_events.2.t
+	desc = YRR_events.2.desc
+    picture = GFX_report_event_spr_nationalist_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YRR_events.2.a
+        add_ideas  =YRR_increased_anti_communist_sentiment
+    }
+
+}

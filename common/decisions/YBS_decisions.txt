@@ -1959,6 +1959,69 @@ war_measures = {
         }
     }
 
+    YBS_remove_war_exhaustion = {
+
+        icon = generic_speech
+
+        ai_hint_pp_cost = 80
+        custom_cost_trigger = {
+			has_war_support > 0.14
+            has_political_power > 79.9
+		}
+		custom_cost_text = decision_cost_15_ws_80_pp
+        
+        allowed = {
+            NOT = { original_tag = YBS }
+        }
+
+        visible = {
+            YBS_has_war_exhaustion = yes
+            YBS_is_iberian_cw_contender = yes
+            is_ai = no
+        }
+
+        available = {
+            YBS_has_war_exhaustion = yes
+        }
+
+        complete_effect = {
+            hidden_effect = {
+                add_political_power = -80
+                add_war_support = -0.15
+            }
+            if = {
+                limit = {
+                    has_idea = YBS_war_exhaustion
+                }
+                remove_ideas = YBS_war_exhaustion
+            }
+            else_if = {
+                limit = {
+                    has_idea = YBS_war_exhaustion_2
+                }
+                remove_ideas = YBS_war_exhaustion_2
+            }
+            else_if = {
+                limit = {
+                    has_idea = YBS_war_exhaustion_3
+                }
+                remove_ideas = YBS_war_exhaustion_3
+            }
+            else_if = {
+                limit = {
+                    has_idea = YBS_war_exhaustion_4
+                }
+                remove_ideas = YBS_war_exhaustion_4
+            }
+            else_if = {
+                limit = {
+                    has_idea = YBS_war_exhaustion_5
+                }
+                remove_ideas = YBS_war_exhaustion_5
+            }
+        }
+    }
+
     YBS_turn_the_tide = {
 
         icon = generic_tank

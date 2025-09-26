@@ -410,8 +410,8 @@
  YBS_is_iberian_state_tt_NOT: "Is not a state in Iberia"
  YBS_controls_all_iberian_states_tt: "Controls all §YIberian states§!"
  YBS_controls_all_iberian_states_tt_NOT: "Does not control all §YIberian states§!"
- YBS_owns_all_iberian_states_tt: "Owns all §YIberian states§!"
- YBS_owns_all_iberian_states_tt_NOT: "Does not own all §YIberian states§!"
+ YBS_owns_all_iberian_states_tt: "Owns all §YIberian states§! directly or via puppets"
+ YBS_owns_all_iberian_states_tt_NOT: "Does not own all §YIberian states§! directly or via puppets"
  YBS_is_spanish_africa_state_tt: "Is a state in Iberian Africa"
  YBS_is_spanish_africa_state_tt_NOT: "Is not a state in Iberian Africa"
  YBS_is_spanish_african_country_tt: "Is a former Iberian Colony"
@@ -512,6 +512,10 @@
 
 # DECISIONS
 
+ decision_cost_15_ws_80_pp: "£GFX_pol_power §Y80§! £GFX_YBS_war_support_texticon §Y15§!"
+ decision_cost_15_ws_80_pp_blocked: "£GFX_pol_power §R80§! £GFX_YBS_war_support_texticon §R15§!"
+ decision_cost_15_ws_80_pp_tooltip: "It costs £GFX_pol_power §Y80§! £GFX_YBS_war_support_texticon §Y15§! to take the decision"
+
  YBS_election_decision_cat: "The 1936 Basque Country Elections"
  YBS_election_decision_cat_desc: "Following the §Ydeclaration of independence§! and the §Yestablishment of the Republic§!, the §cBasque Nationalist Party§!, together with other §Cdemocratic parties§!, began their rule over the region. Now, the first-ever elections are scheduled to happen this year, with all parties, even those opposed to parliamentarian democracy, campaigning for their cause in the hopes of getting to §Crealise their vision§! for the Basque Country and Iberia.\n \nCurrent Popularities of the Parties:\n§cBasque Nationalist Party§!: §G[?ROOT.YBS_con_pop]§!\n§gBasque Carlist Party§!: §G[?ROOT.YBS_mon_pop]§!\n§lBasque Development Party§!: §G[?ROOT.YBS_lib_pop]§!\n[YBS_show_pf_or_synsoc]\n "
 
@@ -570,6 +574,7 @@
 
  YBS_increasing_war_exhaustion: "Growing War Exhaustion..."
  YBS_peace_out_with_YBS: "Sign White Peace with [YBS.GetName]"
+ YBS_remove_war_exhaustion: "Motivate the Soldiers"
  YBS_turn_the_tide: "Turn the Tide"
  YBS_turn_the_tide_desc: "Our enemy has been weakened from attacking our defences. It is time for a decisive attack!"
 
@@ -1029,6 +1034,7 @@
  YBS_reorganise_high_command_desc: ""
  YBS_basque_military_academy: "Bilbao Military Academy"
  YBS_basque_military_academy_desc: ""
+ YBS_basque_military_academy_tt: "Our officers will begin §Gpreparations§! against possible offensive strikes coming from §Y[YZA.GetNameWithFlag]§! or §Y[YAO.GetNameWithFlag]§!"
  YBS_officer_meritocracy: "Meritocratic Officer Promotions"
  YBS_officer_meritocracy_desc: ""
  YBS_officer_elections: "Democratic Officer Promotions"

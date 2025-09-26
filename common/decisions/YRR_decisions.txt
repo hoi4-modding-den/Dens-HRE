@@ -117,13 +117,82 @@ political_actions = {
 
 foreign_politics = {
 
+    YRR_attack_YAS = {
+
+        icon = generic_prepare_civil_war
+
+        priority = -98
+
+        cost = 50
+
+        ai_will_do = {
+            base = 10
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+            modifier = { # only attack if Basque is growing too strong
+                factor = 0
+                YZA = {
+                    exists = yes
+                    has_capitulated = no
+                }
+                YCA = {
+                    exists = yes
+                    has_capitulated = no
+                }
+            }
+        }
+
+        allowed = {
+            original_tag = YRR
+        }
+
+        available = {
+            date > 1937.1.1
+			is_subject = no
+            NOT = { is_ally_with = YAS }
+        }
+
+        visible = {
+            country_exists = YBS
+            NOT = { has_war_with = YAS }
+        }
+
+        cancel_trigger = {
+            OR = {
+                is_subject = yes
+                is_ally_with = YAS
+                has_war_with = YAS
+                NOT = { country_exists = YAS }
+            }
+        }
+
+        days_remove = 30
+
+        complete_effect = {
+            YAS = {
+                country_event = YBS_diplo_events.5
+            }
+        }
+
+        war_with_on_remove = YAS
+
+        remove_effect = {
+            declare_war_on = {
+                target = YAS
+                type = civil_war
+            }
+        }
+    }
+
     YRR_attack_YBS = {
 
         icon = generic_prepare_civil_war
 
         priority = -98
 
-        cost = 100
+        cost = 50
 
         ai_will_do = {
             base = 10
@@ -138,7 +207,7 @@ foreign_politics = {
         }
 
         available = {
-            date > 1939.1.1
+            date > 1938.1.1
 			is_subject = no
             NOT = { is_ally_with = YBS }
         }
@@ -157,7 +226,7 @@ foreign_politics = {
             }
         }
 
-        days_remove = 50
+        days_remove = 30
 
         complete_effect = {
             YBS = {
@@ -181,7 +250,7 @@ foreign_politics = {
 
         priority = -99
 
-        cost = 100
+        cost = 50
 
         fire_only_once = yes
 
@@ -290,6 +359,13 @@ foreign_politics = {
                 }
                 custom_effect_tooltip = generic_skip_one_line_tt
                 add_ideas = YRR_spanish_destiny
+            }
+
+            if = {
+                limit = {
+                    is_ai = yes
+                }
+                set_country_flag = YBS_ai_can_have_fun
             }
         }
     }

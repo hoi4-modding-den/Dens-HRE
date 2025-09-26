@@ -3345,6 +3345,9 @@ focus_tree = {
 						id = YBS_news_events.6
 						hours = 6
 					}
+					YRR = {
+						country_event = YRR_events.2
+					}
 				}
 			}
 			else = {
@@ -3362,6 +3365,9 @@ focus_tree = {
 					news_event = { 
 						id = YBS_news_events.4
 						hours = 6
+					}
+					YRR = {
+						country_event = YRR_events.2
 					}
 				}
 			}
@@ -5323,6 +5329,17 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_stability = 0.15
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					is_subject_of = ROOT
+				}
+				add_stability = 0.2
+			}
+
 			set_global_flag = YBS_iberian_civil_war_ended
 		}
 	}
@@ -7732,6 +7749,9 @@ focus_tree = {
 					id = YBS_news_events.5
 					hours = 6
 				}
+				YRR = {
+					country_event = YRR_events.2
+				}
 			}
 		}
 	}
@@ -9928,6 +9948,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_ideas = YBS_basque_military_academy_idea
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = YBS_basque_military_academy_tt
 		}
 	}
 

@@ -1,5 +1,10 @@
 YBS_ignore_anarchy = {
-	allowed = { original_tag = YBS }
+	allowed = {
+        OR = {
+            original_tag = YBS
+            original_tag = YRR
+        }
+    }
 
 	enable = {
 		always = yes
@@ -50,9 +55,16 @@ YBS_dont_bother_guaranteeing = {
 }
 
 YBS_be_aggressive = {
-	allowed = { original_tag = YBS }
+	allowed = {
+        OR = {
+            original_tag = YBS
+            original_tag = YRR
+        }
+    }
 
 	enable = {
+        YBS = { is_ai = yes }
+        YRR = { is_ai = yes }
 		always = yes
 	}
 	abort_when_not_enabled = yes
@@ -171,7 +183,13 @@ YBS_ignore_YGL_puppet_if_no_border = {
 
 	enable = {
         YGL = { is_subject_of = ROOT }
-		NOT = { is_neighbor_of = YGL }
+		YGL = { 
+            NOT = {
+                any_neighbor_country = {
+                    is_ally_with = ROOT
+                }
+            }
+        }
 	}
 	abort_when_not_enabled = yes
 
@@ -252,7 +270,12 @@ YBS_improve_opinions_for_boat_purchases_XEX = {
 
 YBS_get_the_balearics = {
 
-	allowed = { original_tag = YBS }
+	allowed = {
+        OR = {
+            original_tag = YBS
+            original_tag = YRR
+        }
+    }
 
 	enable = {
 		has_war_with = YBL
@@ -273,7 +296,12 @@ YBS_get_the_balearics = {
 
 YBS_do_stupid_naval_invasions_please = {
 
-	allowed = { original_tag = YBS }
+	allowed = {
+        OR = {
+            original_tag = YBS
+            original_tag = YRR
+        }
+    }
 
 	enable = {
 		any_other_country = {
@@ -300,7 +328,12 @@ YBS_do_stupid_naval_invasions_please = {
 
 YBS_ai_can_have_fun_unlocked = {
 
-	allowed = { original_tag = YBS }
+	allowed = {
+        OR = {
+            original_tag = YBS
+            original_tag = YRR
+        }
+    }
 
 	enable = {
         has_country_flag = YBS_ai_can_have_fun

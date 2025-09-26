@@ -20,7 +20,7 @@ ideas = {
 				ai_desired_divisions_factor = 3
 				ai_focus_war_production_factor = 0.5
 				terrain_penalty_reduction = 0.25
-				conscription_factor = 0.25
+				conscription_factor = 0.15
 			}
 		}
 
@@ -81,9 +81,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				local_resources_factor = 0.1
-                industrial_capacity_factory = 0.15
-                industrial_capacity_dockyard = 0.15
+				local_resources_factor = 0.2
+                industrial_capacity_factory = 0.1
+                industrial_capacity_dockyard = 0.1
 				research_speed_factor = 0.05
 			}
 		}
@@ -123,7 +123,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.15
 			}
 		}
 
@@ -165,8 +165,8 @@ ideas = {
                 army_org_regain = -0.05
 			    army_advisor_cost_factor = 1
                 theorist_cost_factor = 0.5
-                mobilization_laws_cost_factor = 0.4
-                economy_cost_factor = 0.4
+                mobilization_laws_cost_factor = 0.5
+                economy_cost_factor = 0.5
 			}
 		}
 
@@ -186,7 +186,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_attack_factor = -0.1
+				army_attack_factor = -0.15
                 army_org_regain = -0.05
                 mobilization_laws_cost_factor = 0.2
                 economy_cost_factor = 0.2
@@ -1128,7 +1128,7 @@ ideas = {
 
 			modifier = {
 				army_defence_factor = 0.1
-				army_attack_factor = 0.15
+				army_attack_factor = 0.1
 				experience_loss_factor = -0.25
 				breakthrough_factor = 0.1
 				army_morale_factor = 0.15
@@ -1985,8 +1985,8 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = YAO
-				attack_bonus_against = 0.25
-				defense_bonus_against = 0.25
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.1
 			}
 		}
 
