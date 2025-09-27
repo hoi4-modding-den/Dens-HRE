@@ -352,7 +352,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_manpower = 5000
+			add_manpower = 10000
 			add_war_support = 0.01
 			if = {
 				limit = {
@@ -548,6 +548,368 @@ focus_tree = {
 	}
 
 	focus = {
+		id = XVD_protestant_alliance
+		icon = GFX_goal_generic_alliance
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 8
+		y = 5
+		#relative_position_id = 
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+				is_faction_leader = no
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+			OR = {
+				XH1 = {
+					exists = yes
+					is_subject = no
+					NOT = { has_war_with = ROOT }
+				}
+				XH2 = {
+					exists = yes
+					is_subject = no
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					is_guaranteed_by = XHH
+				}
+				XHH = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = guarantee
+						active = no
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = {
+				limit = {
+					XHH = { has_military_access_to = ROOT }
+				}
+				XHH = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = military_access
+						active = no
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			set_rule = { can_create_factions = yes }
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XVD_protestant_alliance_name
+			}
+			else = {
+				create_faction = XVD_protestant_alliance_name
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XVD_protestant_alliance_tt
+
+			hidden_effect = {
+				if = {
+					limit = {
+						XH1 = {
+							exists = yes
+							is_subject = no
+							NOT = { has_war_with = ROOT }
+						}
+					}
+					if = {
+						limit = {
+							XH1 = { 
+								is_ai = yes 
+								OR = {
+									is_in_faction = no
+									faction_leader = { is_ai = yes }
+								} 
+							}
+						}
+						add_to_faction = XH1
+					}
+					else = {
+						XH1 = { country_event = generic.5 }
+					}
+				}
+
+				if = {
+					limit = {
+						XH2 = {
+							exists = yes
+							is_subject = no
+							NOT = { has_war_with = ROOT }
+						}
+					}
+					if = {
+						limit = {
+							XH2 = { 
+								is_ai = yes 
+								OR = {
+									is_in_faction = no
+									faction_leader = { is_ai = yes }
+								} 
+							}
+						}
+						add_to_faction = XH2
+					}
+					else = {
+						XH2 = { country_event = generic.5 }
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_expand_the_alliance
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = XVD_protestant_alliance }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XVD_protestant_alliance
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+			is_in_faction = yes
+			OR = {
+				XPO = {
+					exists = yes
+					is_subject = no
+					NOT = { has_war_with = ROOT }
+				}
+				XFT = {
+					exists = yes
+					is_subject = no
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = XVD_expand_the_alliance_tt
+
+			hidden_effect = {
+				if = {
+					limit = {
+						XPO = {
+							exists = yes
+							is_subject = no
+							NOT = { has_war_with = ROOT }
+						}
+					}
+					XPO = { country_event = generic.5 }
+				}
+
+				if = {
+					limit = {
+						XFT = {
+							exists = yes
+							is_subject = no
+							NOT = { has_war_with = ROOT }
+						}
+					}
+					XFT = { country_event = generic.5 }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_others_shall_lead
+		icon = GFX_focus_ger_return_of_the_kaiser
+		prerequisite = { focus = XVD_protestant_alliance }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XVD_protestant_alliance
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+			is_in_faction = yes
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 200
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			hidden_effect = {
+				division_template = {
+					name = "Protestant Volunteer Brigade"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+					}
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Evangelische Freiwilligenbrigade\" division_template = \"Protestant Volunteer Brigade\" start_experience_factor = 0.2"
+					owner = ROOT
+					count = 4
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_share_our_wealth
+		icon = GFX_focus_XVD_potatoes
+		prerequisite = { focus = XVD_expand_the_alliance focus = XVD_others_shall_lead }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XVD_expand_the_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+			is_in_faction = yes
+			controls_state = 1046
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+			add_manpower = 5000
+
+			1046 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_stability = 0.1
+				add_manpower = 5000
+
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			XVD_improve_agrarian_economy = yes
+
+			hidden_effect = {
+				set_province_name = { id = 405 name = "Lippe" }
+				56 = { add_core_of = ROOT }
+			}
+		}
+	}
+
+	focus = {
+		id = XVD_ensure_northern_security
+		icon = GFX_focus_generic_subjugation
+		prerequisite = { focus = XVD_protestant_alliance }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XVD_protestant_alliance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			is_subject = no
+			has_government = neutrality
+			is_in_faction = yes
+			XHH = {
+				exists = yes
+				is_subject = no
+			}
+		}
+
+		bypass = {
+			XHH = { is_subject_of = ROOT }
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = XHH
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			XHH = {
+				country_event = generic.20
+			}
+		}
+	}
+
+	focus = {
 		id = XVD_free_city
 		icon = GFX_focus_generic_league_of_nations
 		#prerequisite = { focus = }
@@ -713,16 +1075,12 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				has_defensive_war = yes
-			}
-			else = {
-				OR = {
-					has_war = yes
-					threat > 0.2
+			OR = {
+				has_war = yes
+				threat > 0.2
+				AND = {
+					is_in_faction = yes
+					is_subject = no
 				}
 			}
 		}
@@ -751,14 +1109,13 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				has_defensive_war = yes
-			}
-			else = {
+			OR = {
 				has_war = yes
+				threat > 0.5
+				AND = {
+					is_in_faction = yes
+					is_subject = no
+				}
 			}
 		}
 
@@ -790,14 +1147,13 @@ focus_tree = {
 		}
 
 		available = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				has_defensive_war = yes
-			}
-			else = {
+			OR = {
 				has_war = yes
+				threat > 0.5
+				AND = {
+					is_in_faction = yes
+					is_subject = no
+				}
 			}
 			controls_state = 1046
 		}
@@ -835,17 +1191,20 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				add = 20
+				is_in_faction = yes
+				is_subject = no
+			}
 		}
 
 		available = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				has_defensive_war = yes
-			}
-			else = {
+			OR = {
 				has_war = yes
+				AND = {
+					is_in_faction = yes
+					is_subject = no
+				}
 			}
 		}
 

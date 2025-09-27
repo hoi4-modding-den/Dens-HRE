@@ -106,6 +106,9 @@ YBS_controls_all_spanish_africa_states = {
             OR = {
                 YBS_is_spanish_africa_state = no
                 is_controlled_by = PREV
+                controller = {
+                    is_subject_of = PREV
+                }
             }
         }
     }

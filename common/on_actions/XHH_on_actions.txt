@@ -133,13 +133,15 @@ on_actions = {
                             original_tag = XH1
                             original_tag = XH2
                         }
-                        has_government = neutrality
+                        NOT = { has_government = communism }
                     }
                 }
-                add_to_array = { global.HRE_members = THIS.id }
-				add_to_array = { global.HRE_voting_array = THIS.id }
-				set_country_flag = HRE_member_state
-				add_dynamic_modifier = { modifier = HRE_member_state_spirit }
+                ROOT = {
+                    add_to_array = { global.HRE_members = THIS.id }
+                    add_to_array = { global.HRE_voting_array = THIS.id }
+                    set_country_flag = HRE_member_state
+                    add_dynamic_modifier = { modifier = HRE_member_state_spirit }
+                }
             }
         }
     }

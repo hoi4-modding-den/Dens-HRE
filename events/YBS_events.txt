@@ -664,7 +664,7 @@ country_event = { # Exiled Falangists arrive from YBS
             days = 500
         }
 
-        custom_effect_tooltip = generic_skip_on_line_tt
+        custom_effect_tooltip = generic_skip_one_line_tt
 
         custom_effect_tooltip = YBS_exiled_characters_arrive_tt
         character_list_tooltip = {
@@ -678,6 +678,10 @@ country_event = { # Exiled Falangists arrive from YBS
         }
 
         promote_character = YBS_julio_ruiz_de_alda
+
+        effect_tooltip = {
+            activate_mission = YRR_power_struggle_mission
+        }
     }
 }
 

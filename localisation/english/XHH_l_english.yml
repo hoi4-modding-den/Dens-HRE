@@ -91,7 +91,7 @@
  XH1_DEF: "Hanover"
  XH1_ADJ: "Hanoverian"
  XH1_neutrality: "Herzogtum Hannover"
- XH1_neutrality_DEF: "the Duchy of Westphalia"
+ XH1_neutrality_DEF: "the Duchy of Hannover"
  XH1_neutrality_ADJ: "Hanoverian"
  XH1_democratic: "Republik Hannover"
  XH1_democratic_DEF: "the Republic of Hanover"
@@ -177,6 +177,10 @@
  XHH_prussian_puppet_autonomy_XHH_protectorate: "Protektorat Pommern und Preußen"
  XHH_prussian_puppet_autonomy_XHH_protectorate_DEF: "the Protectorate of Pomerania and Prussia"
  XHH_prussian_puppet_autonomy_XHH_protectorate_ADJ: "Prusso-Pommeranian"
+
+ XHH_XVD_neutrality_subject: "Kirchenprotektorat Hamburg"
+ XHH_XVD_neutrality_subject_DEF: "the Church Protectorate of Hamburg"
+ XHH_XVD_neutrality_subject_ADJ: "Hamburgian"
 
 
 # LEADER NAMES
@@ -369,6 +373,7 @@
  XHH_german_confederation_improved: "Deutsche Allianz"
  XHH_german_imperial_league: "German Imperial League"
  XHH_national_league: "Deutsch-Nationaler Bund"
+ XVD_protestant_alliance_name: "Deutsche Evangelische Gemeinschaft"
 
  RULE_ALLOW_RELEASE_NATIONS_NOT_XHH_TOOLTIP: "§Y[ROOT.GetNameWithFlag]§! §Ris not allowed to release§! §Y[XH1.GetNameWithFlag]§! §Ror§! §Y[XH2.GetNameWithFlag]§! §Rat this point in time.§!"
 
@@ -994,6 +999,20 @@
  XVD_agricultural_focus_desc: ""
  XVD_give_to_the_poor: "Care for the Poor"
  XVD_give_to_the_poor_desc: ""
+
+ XVD_protestant_alliance: "Alliance of German Protestants"
+ XVD_protestant_alliance_desc: ""
+ XVD_protestant_alliance_tt: "We will invite §Y[XH1.GetNameWithFlag]§! and §Y[XH2.GetNameWithFlag]§! to our faction."
+ XVD_expand_the_alliance: "Expand the Alliance"
+ XVD_expand_the_alliance_desc: ""
+ XVD_expand_the_alliance_tt: "We will invite §Y[XPO.GetNameWithFlag]§! and §Y[XFT.GetNameWithFlag]§! to our faction."
+ XVD_others_shall_lead: "Stewardship of the North"
+ XVD_others_shall_lead_desc: ""
+ XVD_share_our_wealth: "Potato Exports"
+ XVD_share_our_wealth_desc: ""
+ XVD_ensure_northern_security: "Ensure Northern Security"
+ XVD_ensure_northern_security_desc: ""
+
  XVD_free_city: "The Free City of Verden"
  XVD_free_city_desc: ""
  XVD_administratorial_oversight: "Industrial Support"

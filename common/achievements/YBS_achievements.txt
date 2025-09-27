@@ -59,6 +59,7 @@ YBS_do_you_speak_english_achievement = {
         has_government = democratic
         any_core_state = {
             YBS_is_iberian_state = no
+            NOT = { state = 806 }
         }
     }
 }
