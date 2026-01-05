@@ -3,5 +3,5 @@ picture="thumbnail.png"
 tags={
 	"Alternative History"
 }
-name="Den's World: The Holy Roman Empire DEV"
+name="Den's World: The Iberian Civil War"
 supported_version="1.16.10"
