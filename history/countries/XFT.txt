@@ -22,7 +22,7 @@ set_technology = {
 	tech_trucks = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	trade_interdiction = 1
+	#trade_interdiction = 1
 	fuel_silos = 1
 	fuel_refining = 1
 }
@@ -88,7 +88,7 @@ if = {
 		early_ship_hull_heavy = 1
 		early_ship_hull_carrier = 1
 		basic_battery = 1
-		basic_medium_battery = 1
+		#basic_medium_battery = 1
 		basic_torpedo = 1
 		basic_depth_charges = 1
 		mtg_transport = 1
@@ -97,158 +97,7 @@ if = {
 
 set_convoys = 300
 
-1939.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		
-		interwar_artillery = 1
-		interwar_antitank = 1
-		infantry_weapons2 = 1
-		support_weapons = 1
-		support_weapons2 = 1
 
-		#doctrines
-		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		low_echelon_support = 1
-		dispersed_fighting = 1
-		
-		grand_battle_plan = 1
-
-		trench_warfare = 1
-		prepared_defense = 1
-		battlefleet_concentration = 1
-		subsidiary_carrier_role = 1
-		convoy_sailing = 1
-		submarine_operations = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		mechanical_computing = 1
-		computing_machine = 1
-		basic_encryption = 1
-		basic_decryption = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		fuel_refining2 = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
-	}
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		set_technology = {
-			fighter1 = 1
-			fighter2 = 1
-			heavy_fighter1 = 1
-			tactical_bomber2 = 1
-			strategic_bomber1 = 1
-			cv_fighter1 = 1
-			cv_CAS1 = 1
-		}
-	}
-	if = {
-		limit = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
-		}
-		set_technology = {
-			improved_light_tank = 1
-			basic_medium_tank = 1
-			basic_heavy_tank = 1
-		}
-	}
-	if = {
-		limit = {
-			
-			has_dlc = "No Step Back"
-			
-		}
-		set_technology = {
-			improved_light_tank_chassis = 1
-			basic_medium_tank_chassis = 1
-			basic_heavy_tank_chassis = 1
-		}
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		set_technology = {
-			basic_battleship = 1
-			basic_battlecruiser = 1
-		}
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		set_technology = {
-			improved_ship_hull_light = 1
-			improved_ship_hull_heavy = 1
-			basic_ship_hull_carrier = 1
-			improved_heavy_armor_scheme = 1
-			improved_light_battery = 1
-			basic_heavy_battery = 1
-			improved_ship_torpedo_launcher = 1
-		}
-	}
-}
-
-if = {
-	limit = { has_dlc = "Man the Guns" }
-	# Submarines #
-	create_equipment_variant = {
-		name = "Wilk Class"				
-		type = ship_hull_submarine_2
-		name_group = POL_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = ship_mine_layer_sub
-		}
-	}
-	# Destroyers #
-	create_equipment_variant = {
-		name = "Wicher Class"				
-		type = ship_hull_light_1
-		name_group = POL_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_mine_layer_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
-	}
-}
 
 #ideas
 add_ideas = {

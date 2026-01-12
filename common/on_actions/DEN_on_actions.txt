@@ -40,6 +40,17 @@ on_actions = {
 					remove_dynamic_modifier = { modifier = international_city }
 				}
 			}
+			every_country = {
+				limit = {
+					exists = yes
+				}
+				capital_scope = {
+					add_resource = {
+						type = coal
+						amount = 5
+					}
+				}
+			}
 			
 			set_variable = { global.HRE_election_timeout_length = 10 }
 			set_variable = { global.HRE_agenda_voting_timeout_length = 20 }
