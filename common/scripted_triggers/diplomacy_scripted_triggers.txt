@@ -43,25 +43,6 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME_TRIGGER = {
 DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 	if = {
 		limit = {
-			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
-			}
-			YBS_civil_war_over = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
-	}
-	if = {
-		limit = {
 			has_game_rule = {
 				rule = allow_guarantees
 				option = ALWAYS_FREE
@@ -124,7 +105,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 		limit = {
 			FROM = { original_tag = ZZZ }
 		}
-		NOT = { FROM = { original_tag = ZZZ } }
+		always = no
 	}
 	if = {
 		limit = {
@@ -165,7 +146,12 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				NOT = { has_dlc = "Trial of Allegiance" }
 				NOT = { original_tag = CHL }
 			}
-			NOT = { original_tag = SOV }
+			OR = {
+				NOT = { original_tag = SOV }
+				FROM = {
+					SOV_is_soviet_republic_tag_strict = no
+				}
+			}
 			NOT = { original_tag = XHH }
 			NOT = { original_tag = ZZZ }
 		}
@@ -620,6 +606,9 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				option = FREE
 			}
 			original_tag = SOV
+			FROM = {
+				SOV_is_soviet_republic_tag_strict = yes
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
@@ -642,7 +631,17 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			OR = {
 				NOT = { has_dlc = "La Resistance" }
 				NOT = { original_tag = SPR }
-		}
+			}
+			OR = {
+				NOT = { original_tag = SOV }
+				FROM = {
+					SOV_is_soviet_republic_tag_strict = no
+				}
+				OR = {
+					has_completed_focus = SOV_autonomous_soviet_republics
+					has_completed_focus = SOV_reconvene_the_zemsky_sobor
+				}
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
@@ -723,10 +722,22 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				option = PEACE_ONLY
 			}
 			original_tag = SOV
+			FROM = {
+				SOV_is_soviet_republic_tag_strict = yes
+			}
+			NOT = {
+				has_completed_focus = SOV_autonomous_soviet_republics
+				has_completed_focus = SOV_reconvene_the_zemsky_sobor
+			}
 		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
-			has_war = no
+		if = {
+			limit = {
+				has_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
+				has_war = no
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
@@ -828,18 +839,48 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 
 	if = {
 		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
+			OR = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+				has_game_rule = {
+					rule = allow_release_nations
+					option = PEACE_ONLY
+				}
 			}
+
 			has_dlc = "Graveyard of Empires"
 			
-			original_tag = RAJ
 			FROM = { tag = DIP }
 		}
 
 		NOT = { FROM = { tag = DIP } }
 	}
+
+	if = {
+		limit = {
+			OR = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+				has_game_rule = {
+					rule = allow_release_nations
+					option = PEACE_ONLY
+				}
+			}
+			is_chinese_warlord = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_WARLORD_CHINA_TOOLTIP
+			NOT = { 
+				FROM = { tag = CHI } 
+				FROM = { tag = PRC } 
+			}
+		}
+	}
+
 }
 DIPLOMACY_MILACC_ENABLE_TRIGGER = {
 	if = {
@@ -911,6 +952,85 @@ DIPLOMACY_OFFER_MILACC_ENABLE_TRIGGER = {
 		}
 	}
 }
+
+DIPLOMACY_REVOKE_OFFER_MILACC_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			original_tag = PHI
+			FROM = {
+				original_tag = USA
+			}
+		}
+		NOT = {
+			has_country_flag = PHI_permanent_usa_land_bases
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+			original_tag = IRQ
+			FROM = {
+				original_tag = ENG
+			}
+		}
+		NOT = {
+			has_idea = IRQ_anglo_iraqi_treaty
+		}
+	}
+}
+
+DIPLOMACY_REVOKE_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			original_tag = PHI
+			FROM = {
+				original_tag = USA
+			}
+		}
+		NOT = {
+			has_country_flag = PHI_permanent_usa_naval_bases
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+			original_tag = IRQ
+			FROM = {
+				original_tag = ENG
+			}
+		}
+		NOT = {
+			has_idea = IRQ_anglo_iraqi_treaty
+		}
+	}
+}
+
+DIPLOMACY_REVOKE_OFFER_AIR_BASE_ACCESS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			original_tag = PHI
+			FROM = {
+				original_tag = USA
+			}
+		}
+		NOT = {
+			has_country_flag = PHI_permanent_usa_air_bases
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+			original_tag = IRQ
+			FROM = {
+				original_tag = ENG
+			}
+		}
+		NOT = {
+			has_idea = IRQ_anglo_iraqi_treaty
+		}
+	}
+}
+
 DIPLOMACY_DOCKING_RIGHTS_ENABLE_TRIGGER = {
 	if = {
 		limit = {
@@ -1144,27 +1264,20 @@ DIPLOMACY_GENERATE_WARGOAL_ENABLE_TRIGGER = {
 	if = {
 		limit = {
 			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
+				original_tag = ZZZ
+				FROM = { original_tag = ZZZ }
 			}
-			YBS_civil_war_over = no
 		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
+		always = no
 	}
 	if = {
 		limit = {
 			has_game_rule = {
 				rule = allow_wargoals
 				option = ALWAYS_FREE
+			}
+			NOT = {
+				FROM = { original_tag = ZZZ }
 			}
 		}
 		always = yes
@@ -1547,6 +1660,11 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 					has_completed_focus = SOV_the_gobi_gambit
 					has_completed_focus = SOV_two_red_flags
 					has_completed_focus = SOV_support_the_kuomintang
+					FROM = {
+						tag = SIK
+						has_war_with = KHM
+						has_idea = SIK_battle_for_sinkiang
+					}
 				}
 				NOT = {
 					AND = {
@@ -1876,25 +1994,6 @@ game_weight_can_add_communist = {
 }
 
 DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
-			}
-			YBS_civil_war_over = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
-	}
 	if = { 
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
@@ -1952,25 +2051,6 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
-			}
-			YBS_civil_war_over = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
-	}
 	if = { 
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
@@ -2028,25 +2108,6 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
-			}
-			YBS_civil_war_over = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
-	}
 	if = { 
 		limit = {
 			has_dlc = "Arms Against Tyranny"
@@ -2062,25 +2123,6 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 	}
 }
 DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
-			}
-			YBS_civil_war_over = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
-	}
 	if = { 
 		limit = {
 			has_dlc = "Arms Against Tyranny"
@@ -2096,33 +2138,15 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 		}
 	}
 }
-DIPLOMACY_CREATE_FACTION_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			OR = {
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = yes }
-					FROM = { YBS_is_iberian_cw_contender = no }
-				}
-				AND = {
-					ROOT = { YBS_is_iberian_cw_contender = no }
-					FROM = { YBS_is_iberian_cw_contender = yes }
-				}
-			}
-			YBS_civil_war_over = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = YBS_limited_diplo_from_cw_tt
-			always = no
-		}
-	}
-}
 DIPLOMACY_WAR_ENABLE_TRIGGER = {
 	if = {
 		limit = {
-			FROM = { original_tag = ZZZ }
+			OR = {
+				FROM = { original_tag = ZZZ }
+				original_tag = ZZZ
+			}
 		}
-		NOT = { FROM = { original_tag = ZZZ } }
+		always = no
 	}
 	if = {
 		limit = {
@@ -2144,3 +2168,6 @@ DIPLOMACY_WAR_ENABLE_TRIGGER = {
 		}
 	}
 }
+
+
+
