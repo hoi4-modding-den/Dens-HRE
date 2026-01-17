@@ -1,0 +1,51 @@
+capital = 350
+
+#oob = "ZKR_1936"
+
+set_research_slots = 3
+set_stability = 0.7
+set_war_support = 0.5
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	tech_support = 1
+	tech_recon = 1
+	gw_artillery = 1
+	basic_train = 1
+}
+
+add_ideas = {
+	closed_economy
+
+	ZKR_an_independent_kurdistan
+	ZKR_liberal_versus_communist
+	ZKR_tribal_republic
+}
+
+set_rule = {
+	can_create_collaboration_government = no
+}
+
+# Leaders
+recruit_character = ZKR_seyid_riza
+recruit_character = ZKR_ahmed_barzani
+recruit_character = ZKR_qazi_muhamad
+recruit_character = ZKR_ihsan_nuri
+recruit_character = ZKR_mahmud_barzanji
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.6.12"
+	election_frequency = 12
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 12
+	democratic = 42
+	fascism = 8
+	communism = 38
+}

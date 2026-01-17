@@ -1,0 +1,39 @@
+debug_decisions = {
+
+    ZKR_debug_greater_kurdistan = {
+
+        fire_only_once = yes
+
+		visible = {
+			is_debug = yes
+		}
+
+        available = {
+            is_ai = no
+        }
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+            add_state_core = 344
+            transfer_state = 344
+            add_state_core = 353
+            transfer_state = 353
+            add_state_core = 354
+            transfer_state = 354
+            add_state_core = 419
+            transfer_state = 419
+            add_state_core = 676
+            transfer_state = 676
+            add_state_core = 1103
+            transfer_state = 1103
+		}
+
+	}
+
+}

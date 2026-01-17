@@ -1,0 +1,80 @@
+ideas = {
+	country = {
+		
+		ZKR_an_independent_kurdistan = {
+
+			picture = KUR_united_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+            cancel = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.1
+                army_core_defence_factor = 0.1
+			}
+		}
+
+        ZKR_liberal_versus_communist = {
+
+			picture = generic_deal_with_the_devil2
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                political_power_factor = -0.15
+                political_advisor_cost_factor = 0.2
+				communism_drift = 0.02
+                democratic_drift = 0.02
+			}
+		}
+
+        ZKR_tribal_republic = {
+
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+                min_export = -0.2
+                local_resources_factor = -0.3
+                global_building_slots_factor = -0.1
+                production_speed_buildings_factor = -0.25
+			}
+		}
+
+	}
+
+	industrial_concern = {
+
+		
+
+	}
+}
