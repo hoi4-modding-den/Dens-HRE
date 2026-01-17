@@ -1,0 +1,56 @@
+capital = 344
+oob = ZAG_1936
+
+set_stability = 0.41
+set_war_support = 0.37
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+		early_bomber = 1
+		naval_bomber1 = 1
+	}
+}
+
+recruit_character = ZAG_mihran_damadian
+recruit_character = ZAG_sahak_ii
+
+set_research_slots = 2
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_trucks = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	fuel_silos = 1
+	basic_train = 1
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.10.27"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 23
+	democratic = 52
+	communism = 12
+	fascism = 13
+}
+
+set_cosmetic_tag = ZAGfront
+
+add_ideas = {
+	early_economic_mobilisation
+	ZAG_liberation_front_of_cilicia
+	ZAG_armenian_state
+	ZAG_volonteer_legions
+}
+

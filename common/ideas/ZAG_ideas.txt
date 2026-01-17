@@ -1,0 +1,153 @@
+ideas = {
+	country = {
+		ZAG_liberation_front_of_cilicia = {
+			name = "National Liberation Front"
+			picture = tur_coordinated_balkan_armed_forces
+			modifier = {
+				political_power_factor = -0.1
+				stability_weekly_factor = -0.005
+				war_support_factor = 0.12
+				democratic_drift = 0.01
+				neutrality_drift = 0.01
+			}
+		}
+
+		ZAG_armenian_state = {
+			name = "An Armenian State"
+			picture = GFX
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.05
+			}
+		}
+
+		ZAG_volonteer_legions = {
+			name = "Volonteer Legions"
+			picture = tur_disorganised_armed_forces
+			modifier = {
+				political_power_factor = -0.2
+				army_attack_factor = -0.2
+				army_speed_factor = -0.3
+				army_org_factor = -0.4
+			}
+		}
+
+
+
+
+
+
+
+		ZAG_the_second_republic = {
+			name = "The Second Republic"
+			picture = AFG_republic_idea
+			modifier = {
+				political_power_factor = 0.2
+				stability_factor = 0.1
+				war_support_factor = 0.15
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		ZAG_democratisation = {
+			name = "Democratisation in Progress"
+			picture = RAJ_independence_movement
+			modifier = {
+				political_power_factor = 0.2
+				stability_weekly_factor = -0.002
+				war_support_weekly = -0.01
+				democratic_drift = 0.05
+				fascism_drift = -0.03
+				neutrality_drift = -0.03
+			}
+		}
+
+		ZAG_bastion_of_democracy = {
+			name = "Bastion of Democracy"
+			picture = RAJ_independence_movement
+			modifier = {
+				political_power_factor = 0.2
+				stability_weekly_factor = 0.002
+				democratic_drift = 0.05
+				conscription = 0.02
+			}
+		}
+
+		ZAG_the_regime_stays = {
+			name = "The Regime Stays"
+			picture = COG_the_invisible_roof
+			modifier = {
+				political_power_factor = 0.2
+				war_support_weekly = 0.01
+				fascism_drift = 0.03
+				neutrality_drift = 0.03
+				democratic_drift = -0.05
+			}
+		}
+
+		ZAG_authoritarianism_is_back_in_fashion = {
+			name = "Authoritarianism is Back in Fashion!"
+			picture = COG_the_invisible_roof
+			modifier = {
+				political_power_factor = 0.2
+				war_support_weekly = 0.001
+				neutrality_drift = 0.03
+			}
+		}
+
+		ZAG_democratic_opposition = {
+			name = "Democratic Opposition"
+			picture = ARG_subdue_dissension
+			modifier = {
+				political_power_factor = -0.3
+				stability_weekly_factor = -0.002
+				democratic_drift = 0.02
+				communism_drift = 0.02
+			}
+		}
+
+		ZAG_a_constitutional_regime = {
+			name = "A Constitutional Regime"
+			picture = HUN_treaty_of_triannon
+			modifier = {
+				political_power_cost = -0.3
+				war_support_factor = 0.05
+				conscription = 0.02
+			}
+		}
+
+		ZAG_a_constitution_in_the_hands_of_a_state = {
+			name = "A Regime with a Constitution"
+			picture = generic_democratic_opposition
+			modifier = {
+				political_power_cost = -0.5
+				war_support_factor = 0.2
+				conscription = 0.05
+			}
+		}
+
+		ZAG_fascists_in_the_government = {
+			name = "Fascists in the Government"
+			picture = generic_fascism_drift_2
+			modifier = {
+				political_power_cost = 0.3
+				stability_factor = -0.1
+				fascism_drift = 0.03
+				neutrality_drift = 0.02
+			}
+		}
+
+		ZAG_a_parliamentary_kingdom = {
+			name = "A Parliamentary Kingdom"
+			picture = gre_schachtplan
+			modifier = {
+				political_power_cost = -0.5
+				stability_factor = 0.1
+				war_support_factor = 0.05
+				conscription = 0.04
+				democratic_drift = 0.05
+			}
+		}
+	}
+}

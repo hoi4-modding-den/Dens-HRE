@@ -1,0 +1,37 @@
+characters = {
+	ZAG_mihran_damadian = {
+		name = ZAG_mihran_damadian
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAG_mihran_damadian
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = ZAG_mihran_damadian_desc
+		}
+	}
+
+	ZAG_sahak_ii = {
+		name = ZAG_sahak_ii
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAG_sahak_ii
+			}
+		}
+		country_leader = {
+			ideology = theocracy
+			traits = {
+				ZAG_catholicos_of_cilicia
+			}
+			expire = "1939.1.1"
+			id = -1
+			desc = ZAG_sahak_ii_desc
+		}
+	}
+
+}
