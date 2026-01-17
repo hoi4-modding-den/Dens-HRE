@@ -1,0 +1,33 @@
+
+state={
+	id=1110
+	name="STATE_1110"
+	manpower = 25438
+	resources={
+
+	}
+	
+	state_category = rural
+
+	history={
+		owner = ZJO #owner = ENG
+	
+		buildings = {
+			infrastructure = 2
+			4115 = {
+				naval_base = 1
+			}
+		}
+		victory_points = { 
+			4115 2 #Aqaba
+		}
+		
+		add_core_of = ZJO
+	}
+
+	provinces={
+		4115
+	}
+
+	local_supplies=0.0 
+}
