@@ -3161,7 +3161,12 @@ focus_tree = {
 				set_faction_name = XHH_german_confederation
 			}
 			else = {
-				create_faction = XHH_german_confederation
+				create_faction_from_template = {
+					template = faction_template_defensive_democratic
+					name = XHH_german_confederation
+					icon = GFX_faction_logo_generic_8
+					color = { 128 128 128 }
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4000,7 +4005,12 @@ focus_tree = {
 				set_faction_name = XHH_german_imperial_league
 			}
 			else = {
-				create_faction = XHH_german_imperial_league
+				create_faction_from_template = {
+					template = faction_template_european_dominance_monarchist
+					name = XHH_german_imperial_league
+					icon = GFX_faction_logo_generic_5
+					color = { 128 128 128 }
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4176,7 +4186,12 @@ focus_tree = {
 				set_faction_name = XHH_mecklenburg_aegis
 			}
 			else = {
-				create_faction = XHH_mecklenburg_aegis
+				create_faction_from_template = {
+					template = faction_template_industrial_focus
+					name = XHH_mecklenburg_aegis
+					icon = GFX_faction_logo_generic_6
+					color = { 84 104 181 }
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -5217,6 +5232,11 @@ focus_tree = {
 
 				custom_effect_tooltip = XHH_the_grand_crusade_tt
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = { can_only_justify_war_on_threat_country = no }
+			hidden_effect = { set_rule = { can_declare_war_on_same_ideology = yes } }
 		}
 	}
 
@@ -5791,7 +5811,12 @@ focus_tree = {
 				set_faction_name = XHH_national_league
 			}
 			else = {
-				create_faction = XHH_national_league
+				create_faction_from_template = {
+					template = faction_template_european_dominance
+					name = XHH_national_league
+					icon = GFX_faction_logo_axis
+					color = { 128 128 128 }
+				}
 			}
 		}
 	}
@@ -6903,6 +6928,11 @@ focus_tree = {
 
 				news_event = { id = XHH_news_events.10 hours = 3 }
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = { can_only_justify_war_on_threat_country = no }
+			hidden_effect = { set_rule = { can_declare_war_on_same_ideology = yes } }
 		}
 	}
 

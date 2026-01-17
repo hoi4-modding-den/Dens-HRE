@@ -1,0 +1,89 @@
+every_possible_country = {
+	limit = {
+		original_tag = YRR
+	}
+
+	generate_character = {
+		token_base = generic_advisor_silent_workhorse # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { silent_workhorse }
+			cost = 100
+            ai_will_do = {
+				factor = 5
+			}
+		}
+		portraits = { 
+			civilian = { small = GFX_idea_ENG_brian_horrocks }
+		}
+	}
+	generate_character = {
+		token_base = generic_advisor_anti_communist_crusader # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { anti_communist_crusader }
+			cost = 100
+            available = {
+                NOT = { has_government = communism }
+            }
+		}
+		portraits = { 
+			civilian = { small = GFX_idea_COS_ricardo_jiminez_oreamuno }
+		}
+	}
+	generate_character = {
+		token_base = generic_advisor_prince_of_terror # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { prince_of_terror }
+			cost = 100
+            ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			civilian = { small = GFX_portrait_FIN_hugo_osterman_small }
+		}
+	}
+	generate_character = {
+		token_base = generic_advisor_guerilla_warfare_expert # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { guerilla_warfare_expert }
+			cost = 100
+            ai_will_do = {
+				factor = 10
+			}
+		}
+		portraits = { 
+			civilian = { small = GFX_idea_ENG_generic_land_6 }
+		}
+	}
+    generate_character = {
+		token_base = generic_advisor_agricultural_capitalist # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { agricultural_capitalist }
+			cost = 200
+            ai_will_do = {
+				factor = 15
+			}
+            available = {
+                if = {
+                    limit = {
+                        is_ai = yes
+                    }
+                    has_government = neutrality
+                }
+                else = {
+                    NOT = { has_government = communism }
+                }
+            }
+		}
+		portraits = { 
+			civilian = { small = GFX_idea_CUB_jose_barnet }
+		}
+	}
+
+}
+

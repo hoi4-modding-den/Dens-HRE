@@ -437,6 +437,12 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction = YBS_carlist_league
+			create_faction_from_template = {
+				template = faction_template_european_dominance_monarchist
+				name = YBS_carlist_league
+				icon = GFX_faction_logo_generic_3
+				color = { 255 191 16 }
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1709,7 +1715,12 @@ focus_tree = {
 				set_faction_name = YBS_holy_league
 			}
 			else = {
-				create_faction = YBS_holy_league
+				create_faction_from_template = {
+					template = faction_template_european_dominance_monarchist
+					name = YBS_holy_league
+					icon = GFX_faction_logo_generic_3
+					color = { 255 191 16 }
+				}
 			}
 			
 			XRO = {
@@ -1729,7 +1740,12 @@ focus_tree = {
 				set_faction_name = YBS_holy_league
 			}
 			else = {
-				create_faction = YBS_holy_league
+				create_faction_from_template = {
+					template = faction_template_european_dominance_monarchist
+					name = YBS_holy_league
+					icon = GFX_faction_logo_generic_3
+					color = { 255 191 16 }
+				}
 			}
 		}
 	}
@@ -4154,7 +4170,12 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = YBS_iberian_unity_league
+			create_faction_from_template = {
+				template = faction_template_anti_fascist
+				name = YBS_iberian_unity_league
+				icon = GFX_faction_logo_generic_12
+				color = { 229 138 47 }
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -4890,7 +4911,12 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = YBS_iberian_federation
+			create_faction_from_template = {
+				template = faction_template_regional
+				name = YBS_iberian_federation
+				icon = GFX_faction_logo_generic_12
+				color = { 229 138 47 }
+			}
 			set_country_flag = YBS_iberian_federation_formed
 		}
 	}
@@ -6012,10 +6038,66 @@ focus_tree = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 1000
+				producer = XHH
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment
 				amount = 250
+				producer = XHH
+			}
+
+			if = {
+				limit = {
+					XHH = {
+						exists = yes
+						NOT = { has_war_with = ROOT }
+						NOT = { has_government = communism }
+					}
+					OR = {
+						has_dlc = "By Blood Alone"
+						has_dlc = "No Step Back"
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				XHH = {
+					if = {
+						limit = {
+							has_dlc = "By Blood Alone"
+						}
+						create_production_license = {
+							target = ROOT
+							equipment = {
+								type = small_plane_airframe_1
+							}
+							cost_factor = 0
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "No Step Back"
+						}
+						create_production_license = {
+							target = ROOT
+							equipment = {
+								type = light_tank_chassis_2
+							}
+							cost_factor = 0
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				reverse_add_opinion_modifier = { target = XHH modifier = SWI_bought_equipment_from_us }
+			}
+			else_if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_cic = 1000
 			}
 		}
 	}
@@ -6063,28 +6145,31 @@ focus_tree = {
 					artillery = { x = 0 y = 2 }
 				}
 			}
-			capital_scope = {
-				create_unit = { 
-					division = "name = \"Corps de la République\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
-					owner = ROOT
-				}
-				create_unit = { 
-					division = "name = \"Ordensbrigade Hyperborea\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
-					owner = ROOT
-				}
-				create_unit = { 
-					division = "name = \"Smaragd-Fraktion\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
-					owner = ROOT
-				}
-				create_unit = { 
-					division = "name = \"Brigada Prijateljstva\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
-					owner = ROOT
-				}
-				create_unit = { 
-					division = "name = \"Yorkshire Bandits\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
-					owner = ROOT
+			hidden_effect = {
+				capital_scope = {
+					create_unit = { 
+						division = "name = \"Corps de la République\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"Ordensbrigade Sachsen\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"Smaragd-Fraktion\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"Brigada Prijateljstva\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"Yorkshire Bandits\" division_template = \"Mercenary Division\" start_experience_factor = 0.7" 
+						owner = ROOT
+					}
 				}
 			}
+			custom_effect_tooltip = YBS_mercenaries_tt
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -6624,7 +6709,12 @@ focus_tree = {
 				set_rule = {
 					can_create_factions = yes
 				}
-				create_faction = YBS_german_iberian_faction
+				create_faction_from_template = {
+					template = faction_template_industrial_focus
+					name = YBS_german_iberian_faction
+					icon = GFX_faction_logo_generic_13
+					color = { 128 128 128 }
+				}
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -7012,7 +7102,12 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = YBS_hopeful_internationale
+			create_faction_from_template = {
+				template = faction_template_world_revolution
+				name = YBS_hopeful_internationale
+				icon = GFX_faction_logo_eu
+				color = { 38 154 49 }
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -8352,7 +8447,12 @@ focus_tree = {
 				set_faction_name = YBS_socialist_pact
 			}
 			else = {
-				create_faction = YBS_socialist_pact
+				create_faction_from_template = {
+					template = faction_template_world_revolution
+					name = YBS_socialist_pact
+					icon = GFX_faction_logo_generic_9
+					color = { 180 0 0 }
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt

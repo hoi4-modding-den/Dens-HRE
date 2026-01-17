@@ -273,6 +273,19 @@ foreign_politics = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
+            every_owned_state = {
+                limit = {
+                    OR = {
+                        is_core_of = YBS
+                        is_core_of = YAS
+                    }
+                    NOT = { is_core_of = ROOT }
+                }
+                add_core_of = ROOT
+
+                custom_effect_tooltip = generic_skip_one_line_tt
+            }
+
 			every_state = {
 				limit = {
 					YBS_is_iberian_state = yes
@@ -326,6 +339,13 @@ foreign_politics = {
                     179 = { add_core_of = YKP }
                 }
                 release_puppet = YKP
+                YKP = { 
+                    drop_cosmetic_tag = yes
+
+                    custom_effect_tooltip = generic_skip_one_line_tt
+                    
+                    promote_character = YKP_oscar_carmona
+                }
             }
 
             custom_effect_tooltip = generic_skip_one_line_tt
