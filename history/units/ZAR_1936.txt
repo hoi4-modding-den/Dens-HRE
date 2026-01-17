@@ -1,0 +1,49 @@
+#Create units
+division_template = {
+	name = "Zhoghovrdakan Azgayin Divizia"
+	division_names_group = "ZAR_DIV_0_0"
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1}
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1}
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+	}
+
+}
+
+
+#Spawn units
+units = {
+	division= {
+		name = "Yerevan Hreshtakner"
+		location = 12320
+		division_template = "Zhoghovrdakan Azgayin Divizia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division= {
+		name = "Ch’arents Pahapan"
+		location = 12320
+		division_template = "Zhoghovrdakan Azgayin Divizia"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.9
+	}
+	division= {
+		name = "Gumrii Antarrapahner"
+		location = 12441
+		division_template = "Zhoghovrdakan Azgayin Divizia"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.8
+	}
+	division= {
+		name = "Trapizoni Patuhasy"
+		location = 9932
+		division_template = "Zhoghovrdakan Azgayin Divizia"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+
+}
