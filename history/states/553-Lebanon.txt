@@ -1,31 +1,39 @@
-
-state={
-	id=553
-	name="STATE_553"
+state = {
+	id = 553
+	name = "STATE_553"
 	manpower = 1104000
 	
 	state_category = town
 
-	history={
-		owner = ZZZ #owner = LEB
-		victory_points = {
-			792 5 
+	history = {
+		owner = ZLE
+		add_core_of = ZLE
+
+		victory_points = { # Tripoli
+			1108 5
 		}
+
+		victory_points = { # Beirut
+			792 10
+		}
+
+		victory_points = { # Tyre
+			11919 5
+		}
+
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			air_base = 5
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+
 			792 = {
 				naval_base = 3
 			}
 		}
-
-		#add_core_of = LEB
 	}
 
-	provinces={
-		792 1108 11919 
+	provinces = {
+		1108 792 11919
 	}
-
-	local_supplies=0.0 
 }
