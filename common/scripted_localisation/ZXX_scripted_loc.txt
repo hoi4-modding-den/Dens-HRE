@@ -16,3 +16,15 @@ defined_text = {
 		localization_key = "[?ZXX.national_focus_array^temp_counter.GetTokenKey] [GetAllFociForCountry]"
 	}
 }
+defined_text = {
+	name = ZxxGetSarYear
+	text = { 
+		trigger = {
+			has_variable = ZXX_the_saharan_authority_report_year
+		}
+		localization_key = "[?ZXX_the_saharan_authority_report_year]"
+	}
+	text = { 
+		localization_key = "[?global.year]"
+	}
+}
