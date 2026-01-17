@@ -1,0 +1,30 @@
+
+state={
+	id=1111
+	name="STATE_1111"
+	manpower = 921
+	resources={
+
+	}
+	
+	state_category = pastoral
+
+	history={
+		owner = DN1 #owner = ENG
+	
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = { 
+			1015 1 #Umm al-Rashrash
+		}
+		
+		add_core_of = DN1
+	}
+
+	provinces={
+		1015
+	}
+
+	local_supplies=0.0 
+}

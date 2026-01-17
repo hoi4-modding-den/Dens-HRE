@@ -7,19 +7,17 @@ state = {
 
 	history = {
 
-		owner = ZZZ #owner = JOR
-		#add_core_of = JOR
+		owner = ZJO #owner = JOR
+		add_core_of = ZJO
 
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
-			4115 = {
-				naval_base = 1
-			}
+			industrial_complex = 2
+			arms_factory = 1
 		}
 
 		victory_points = {
-			7151 2 # Amman
+			7151 3 # Amman
 		}
 		victory_points = {
 			11976 1 # Ma'an
@@ -28,7 +26,7 @@ state = {
 	}
 
 	provinces = {
-		1544 4017 4115 4440 4562 4574 4591 4603 7001 7151 7170 10089 11976 
+		1544 4017 4440 4562 4574 4591 4603 7001 7151 7170 10089 11976 13527
 	}
 
 	local_supplies = 0.0 
