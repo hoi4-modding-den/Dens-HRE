@@ -21,7 +21,7 @@ YCA_guerrilla_tradicional_tactics_category = {
 		has_completed_focus = YCA_guerrilla_tradicional		
 	}
 	
-	priority = 10
+	priority = 5
 	
 	visible = {
 	}
@@ -37,6 +37,26 @@ YCA_guerrilla_tradicional_tactics_category = {
 		zoom = 300
 		state = 167
 	}
+	visible_when_empty = yes
+
+}
+
+YCA_revolutionary_expansion = {
+	icon = GFX_decision_category_sov_great_patriotic_war
+
+	picture = GFX_decision_cat_picture_spreading_the_red_flame
+	
+	allowed = {
+		original_tag = YCA
+		has_completed_focus = YCA_the_red_frontier
+	}
+	
+	priority = 10
+	
+	visible = {
+		has_completed_focus = YCA_the_red_frontier
+	}
+
 	visible_when_empty = yes
 
 }

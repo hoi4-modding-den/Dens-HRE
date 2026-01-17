@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 700 y = 1500 }
+	continuous_focus_position = { x = 2000 y = 2200 }
 
 	initial_show_position = {
 		x = 9
@@ -29,7 +29,7 @@ focus_tree = {
 		cost = 2
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 		}
 
 		available = {
@@ -329,7 +329,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -359,7 +359,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -396,7 +396,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -475,7 +475,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -520,7 +520,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -556,7 +556,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -601,7 +601,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -634,7 +634,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -924,7 +924,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 100
 		}
 
 		available = {
@@ -956,11 +956,18 @@ focus_tree = {
 			focus = YCA_first_party_congress
 		}	
 		relative_position_id = YCA_first_party_congress
-		x = -8
+		x = -12
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_socialist
+					has_country_flag = YCA_ai_path_anarchist
+				}
+			}					
 		}
 
 		available = {	
@@ -992,7 +999,14 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_anarchist
+					has_country_flag = YCA_ai_path_vanguardist
+				}
+			}					
 		}
 
 		available = {
@@ -1015,7 +1029,9 @@ focus_tree = {
 				name = YCA_rev_social_communism
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			promote_character = YCA_joan_comorera			
+			promote_character = YCA_joan_comorera		
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YCA_path_in_dev							
 			# add global event on takeover			
 		}
 	}
@@ -1028,6 +1044,1074 @@ focus_tree = {
 			focus = YCA_the_indigo_movement
 		}	
 		relative_position_id = YCA_vanguardist_legacy
+		x = 6
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			unlock_decision_category_tooltip = YCA_revolutionary_expansion
+			custom_effect_tooltip = generic_skip_one_line_tt
+			country_event = YCA_domestic_events.26
+		}
+	}	
+	focus = {
+		id = YCA_aid_the_portuguese_communes
+		icon = GFX_focus_SOV_support_spanish_poum
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_red_frontier
+		}	
+		relative_position_id = YCA_the_red_frontier
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			YPR = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			YPR = {
+				add_war_support = 0.05
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			#unlock_decision_tooltip = YCA_aid_the_northern_communes
+			#unlock_decision_tooltip = YCA_develop_diplomatic_channels
+			#set_country_flag = YCA_por_intervention_flag
+			activate_targeted_decision = {
+				target = YCA
+				decision = YCA_aid_the_northern_communes
+			}
+			activate_targeted_decision = {
+				target = YCA
+				decision = YCA_develop_diplomatic_channels
+			}			
+		}
+	}	
+	focus = {
+		id = YCA_spread_revolutionary_ideals
+		icon = GFX_focus_focus_fra_revolution_utmost
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_red_frontier
+		}	
+		relative_position_id = YCA_the_red_frontier
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# Mercia and Basque get communist support and a temp nat spirit boosting it, if it reaches 50% they get an event to become a communist puppet
+			YBS = {
+				if = {
+					limit = { 
+						exists = yes
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.1
+					}
+					add_timed_idea = {
+						idea = YCA_catalan_socialist_propaganda_campaign
+						days = 270
+					}
+					set_country_flag = YCA_sent_propaganda
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			YRF = {
+				if = {
+					limit = { 
+						exists = yes
+					}
+					add_popularity = {
+						ideology = communism
+						popularity = 0.1
+					}
+					add_timed_idea = {
+						idea = YCA_catalan_socialist_propaganda_campaign
+						days = 270
+					}
+					set_country_flag = YCA_sent_propaganda
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = YCA_popularity_puppet_tt			
+		}
+	}	
+	focus = {
+		id = YCA_the_zaragoza_inquiry
+		icon = GFX_focus_AFG_establish_darulaman
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_red_frontier
+		}	
+		relative_position_id = YCA_the_red_frontier
+		x = 0
+		y = 3
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YZA
+				NOT = { country_exists = YZA }
+			}
+		}			
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# gets event to decide how to deal with zaragoza, denounce or ally
+			country_event = YCA_domestic_events.29
+		}
+	}
+	focus = {
+		id = YCA_false_revolutionaries
+		icon = GFX_focus_GER_end_european_communism
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_zaragoza_inquiry
+		}	
+		mutually_exclusive = {
+			focus = YCA_the_iberian_radical_bloc
+		}
+		relative_position_id = YCA_the_zaragoza_inquiry
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			YZA = {
+				add_timed_idea = {
+					idea = YCA_catalan_invasion
+					days = 180
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			declare_war_on = {
+				target = YZA
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = YCA_total_aragonese_integration
+		icon = GFX_focus_generic_currency_reforms
+		cost = 6
+		prerequisite = {
+			focus = YCA_false_revolutionaries
+		}	
+		relative_position_id = YCA_false_revolutionaries
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# gains core on western aragon and add temp dynamic modifier "recent integration"
+			every_state = {
+				limit = {
+					is_core_of = YZA
+				}
+				add_core_of = YCA
+			}	
+			custom_effect_tooltip = generic_skip_one_line_tt
+			166 = {
+				add_dynamic_modifier = {
+					modifier = YCA_recent_integration
+				}
+			}
+		}
+	}		
+	focus = {
+		id = YCA_the_iberian_radical_bloc
+		icon = GFX_focus_CHL_the_future_of_Chile
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_zaragoza_inquiry
+		}	
+		mutually_exclusive = {
+			focus = YCA_false_revolutionaries
+		}
+		relative_position_id = YCA_the_zaragoza_inquiry
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# autocompleted, friendly towards zragoza + make a faction
+			create_faction = "European Radical Bloc"
+			custom_effect_tooltip = generic_skip_one_line_tt
+			YZA = {
+				country_event = YCA_diplo_events.3
+			}
+		}
+	}
+	focus = {
+		id = YCA_socialist_cooperative_efforts
+		icon = GFX_goal_generic_national_unity
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_iberian_radical_bloc
+		}	
+		relative_position_id = YCA_the_iberian_radical_bloc
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {		
+			YZA = {
+				is_in_faction_with = YCA
+			}				
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = YCA_aragonese_cooperation
+			custom_effect_tooltip = generic_skip_one_line_tt
+			YZA = {
+				add_ideas = YCA_aragonese_cooperation
+			}
+		}
+	}					
+	focus = {
+		id = YCA_expell_the_french
+		icon = GFX_focus_attack_france
+		cost = 6
+		prerequisite = {
+			focus = YCA_false_revolutionaries
+			focus = YCA_the_iberian_radical_bloc
+		}	
+		relative_position_id = YCA_the_iberian_radical_bloc
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YFR
+				NOT = { country_exists = YFR }
+			}
+		}		
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			create_wargoal = {
+				target = YFR
+				type = annex_everything
+			}			
+		}
+	}
+	focus = {
+		id = YCA_the_southern_key
+		icon = GFX_focus_generic_mediterranean_sea_focus
+		cost = 6
+		prerequisite = {
+			focus = YCA_expell_the_french
+		}	
+		relative_position_id = YCA_expell_the_french
+		x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YUS
+				NOT = { country_exists = YUS }
+			}
+		}			
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					YUS = {
+						NOT = {
+							is_puppet_of = YCA							
+						}
+					}
+				}
+				create_wargoal = {
+					target = YUS
+					type = annex_everything
+				}						
+			}
+			if = {
+				limit = {
+					YRF = {
+						NOT = {
+							is_puppet_of = YCA							
+						}
+					}
+				}
+				create_wargoal = {
+					target = YRF
+					type = annex_everything
+				}						
+			}						
+		}
+	}
+	focus = {
+		id = YCA_end_the_capitalist_menace
+		icon = GFX_focus_GER_wage_war_on_capitalism
+		cost = 6
+		prerequisite = {
+			focus = YCA_expell_the_french
+		}	
+		relative_position_id = YCA_expell_the_french
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YBL
+				NOT = { country_exists = YBL }
+			}
+		}			
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# gets event against Balearic Islands (wargoal)
+			country_event = YCA_domestic_events.30
+		}
+	}	
+	focus = {
+		id = YCA_crush_the_imperalists
+		icon = GFX_focus_generic_communism_anti_fascism
+		cost = 6
+		prerequisite = {
+			focus = YCA_end_the_capitalist_menace
+		}	
+		relative_position_id = YCA_end_the_capitalist_menace
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YAO
+				NOT = { country_exists = YAO }
+			}
+			OR = {
+				has_war_with = YRR
+				NOT = { country_exists = YRR }
+			}			
+		}			
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# anti-commies and iberia get an event in which we denounce em + wargoal
+			create_wargoal = {
+				target = YRR
+				type = annex_everything
+			}		
+			create_wargoal = {
+				target = YAO
+				type = annex_everything
+			}								
+		}
+	}
+	focus = {
+		id = YCA_bring_the_basques_into_the_fold
+		icon = GFX_focus_GER_liberate_exploited_colonial_workers
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_iberian_radical_bloc
+			focus = YCA_false_revolutionaries
+		}	
+		relative_position_id = YCA_false_revolutionaries
+		x = 3
+		y = 2
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = YBS
+				NOT = { country_exists = YBS }
+			}
+		}			
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					YBS = {
+						NOT = {
+							is_puppet_of = YCA							
+						}
+					}
+				}
+				create_wargoal = {
+					target = YBS
+					type = annex_everything
+				}	
+				custom_effect_tooltip = generic_skip_one_line_tt
+				custom_effect_tooltip = YCA_YBS_puppet_tt				
+			}				
+			if = {
+				limit = {
+					YBS = {
+						is_puppet_of = YCA
+					}
+				}
+				annex_country = {
+					target = YBS
+					transfer_troops = yes
+				}	
+				every_state = {
+					limit = {
+						is_core_of = YBS
+					}
+					add_core_of = YCA
+				}						
+			}				
+		}
+	}	
+	focus = {
+		id = YCA_the_revolution_spreads
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		cost = 6
+		prerequisite = {
+			focus = YCA_end_the_capitalist_menace
+		}	
+		relative_position_id = YCA_end_the_capitalist_menace
+		x = -1
+		y = 2
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# unlocks decisions to gain war goals against spanish
+			# becomes the Revolutionary Iberian Syndicates (if vanguardist) or Socialist Confederations of Iberia (if rev socialist)
+			custom_effect_tooltip = YBS_lobby_for_intervention_tt
+			hidden_effect = {
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_attack_YRS_rep_spain
+				}	
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_attack_YGL_galicia
+				}
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_attack_YAS_asturias
+				}
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_attack_YGB_gilbraltar
+				}
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_attack_YKP_portugal
+				}																			
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { 
+					YCA_andreu_nin = {
+						is_country_leader = yes						
+					}
+				}
+				set_cosmetic_tag = YCA_rev_iberian_syndicates
+			}		
+			if = {
+				limit = { 
+					YCA_joan_comorera = {
+						is_country_leader = yes							
+					}
+				}
+				set_cosmetic_tag = YCA_socialist_confederation_iberia
+			}				
+		}
+	}	
+	focus = {
+		id = YCA_free_the_moroccan_colonies
+		icon = GFX_SOV_the_onslaught_on_colonialism_ccp_2d_sov_compatibility
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_revolution_spreads
+		}	
+		relative_position_id = YCA_the_revolution_spreads
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 35
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# unlocks decisions to gain war goals former iberian colonies
+			# unlocks decision to form the Moroccan Revolutionary Commune
+			custom_effect_tooltip = YBS_reclaim_the_colonies_tt
+			hidden_effect = {
+				activate_targeted_decision = {
+					target = YCA
+					decision = attack_YRI_rif
+				}
+				activate_targeted_decision = {
+					target = YCA
+					decision = attack_YSO_west_arab
+				}
+				activate_targeted_decision = {
+					target = YCA
+					decision = attack_YJT_canary
+				}
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_attack_morocco
+				}					
+				
+			}			
+			unlock_decision_tooltip = YCA_form_the_moroccan_revolutionary_commune	
+			hidden_effect = {
+				activate_targeted_decision = {
+					target = YCA
+					decision = YCA_form_the_moroccan_revolutionary_commune
+				}					
+			}				
+		}
+	}	
+	focus = {
+		id = YCA_unite_the_socialist_homelands
+		icon = GFX_focus_ETH_callout_to_the_world
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_revolution_spreads
+		}	
+		relative_position_id = YCA_the_revolution_spreads
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			YPR = {
+				country_event = {
+					id = YCA_diplo_events.4
+					days = 3
+				} 
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					YRF = {
+						is_puppet_of = YCA
+					}
+				}
+				annex_country = {
+					target = YRF
+					transfer_troops = yes
+				}	
+				every_state = {
+					limit = {
+						is_core_of = YRF
+					}
+					add_core_of = YCA
+				}						
+			}				
+		}
+	}	
+	focus = {
+		id = YCA_one_iberia_one_revolution
+		icon = GFX_focus_por_workers_of_iberia
+		cost = 6
+		prerequisite = {
+			focus = YCA_the_revolution_spreads
+		}	
+		relative_position_id = YCA_the_revolution_spreads
+		x = 1
+		y = 2
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			add_war_support = 0.1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+				}
+				add_core_of = ROOT
+			}			
+		}
+	}										
+	focus = {
+		id = YCA_symbol_of_the_revolution
+		icon = GFX_focus_AFG_against_kabul
+		cost = 6
+		prerequisite = {
+			focus = YCA_vanguardist_legacy
+		}	
+		relative_position_id = YCA_vanguardist_legacy
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# adds trait to Andreu Nin = Symbol of the Revolution
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}	
+		}
+	}
+	focus = {
+		id = YCA_establish_the_checas
+		icon = GFX_SOV_nkvd_primacy_ccp_2d_sov_compatibility
+		cost = 6
+		prerequisite = {
+			focus = YCA_symbol_of_the_revolution
+		}	
+		mutually_exclusive = {
+			focus = YCA_crush_the_anarchist_fringe
+		}
+		relative_position_id = YCA_symbol_of_the_revolution
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# add idea, surveillance/acts primarly against the rev socialist, they lose influence
+		}	
+	}
+	focus = {
+		id = YCA_crush_the_anarchist_fringe
+		icon = GFX_focus_spr_crush_the_revolution
+		cost = 6
+		prerequisite = {
+			focus = YCA_symbol_of_the_revolution
+		}	
+		mutually_exclusive = {
+			focus = YCA_establish_the_checas
+		}
+		relative_position_id = YCA_symbol_of_the_revolution
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# target the anarchists, lose stability, add temp idea of a campaign against em
+		}	
+	}		
+	focus = {
+		id = YCA_outlaw_factionalism
+		icon = GFX_focus_generic_conspiracy
+		cost = 6
+		prerequisite = {
+			focus = YCA_crush_the_anarchist_fringe
+			focus = YCA_establish_the_checas
+		}	
+		relative_position_id = YCA_crush_the_anarchist_fringe
+		x = -1
+		y = 2
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# unlock decision, which will remove revolutionary infighting
+		}	
+	}
+	focus = {
+		id = YCA_one_party_one_union
+		icon = GFX_focus_ITA_peasants_rise
+		cost = 6
+		prerequisite = {
+			focus = YCA_crush_the_anarchist_fringe
+		}	
+		relative_position_id = YCA_crush_the_anarchist_fringe
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# integrate anarchist remnants and syndicaes
+		}	
+	}	
+	focus = {
+		id = YCA_rat_them_out
+		icon = GFX_focus_SOV_the_last_purge
+		cost = 6
+		prerequisite = {
+			focus = YCA_crush_the_anarchist_fringe
+		}	
+		relative_position_id = YCA_crush_the_anarchist_fringe
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# purge anarchist advisors and lose manpower 
+		}	
+	}
+	focus = {
+		id = YCA_guide_the_deviants
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 6
+		prerequisite = {
+			focus = YCA_establish_the_checas
+		}	
+		relative_position_id = YCA_establish_the_checas
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# unloock decisions to 're-educate' rev socialists and gain temp idea
+		}	
+	}	
+	focus = {
+		id = YCA_harmonize_the_party_line
+		icon = GFX_focus_YCA_harmonize_the_party_line
+		cost = 6
+		prerequisite = {
+			focus = YCA_establish_the_checas
+		}	
+		relative_position_id = YCA_establish_the_checas
+		x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# integrate the rev socialists into union, gains stability and merges half of rev socialist support into vanguardist
+		}	
+	}				
+	focus = {
+		id = YCA_revolutionary_truth_council
+		icon = GFX_focus_GER_proletarian_dictatorship
+		cost = 6
+		prerequisite = {
+			focus = YCA_vanguardist_legacy
+		}	
+		relative_position_id = YCA_vanguardist_legacy
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# adds idea on censorship of the press and books
+			add_stability = -0.05
+		}	
+	}	
+	focus = {
+		id = YCA_the_youth_pioneers_of_tomorrow
+		icon = GFX_focus_HUN_reinstate_the_lenin_boys
+		cost = 6
+		prerequisite = {
+			focus = YCA_revolutionary_truth_council
+		}	
+		relative_position_id = YCA_revolutionary_truth_council
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# adds idea based on youth pioneers of communism
+		}
+	}
+	focus = {
+		id = YCA_open_the_party_gates
+		icon = GFX_focus_generic_printing_press
+		cost = 6
+		prerequisite = {
+			focus = YCA_revolutionary_truth_council
+		}	
+		relative_position_id = YCA_revolutionary_truth_council
+		x = -4
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# gain decisions for recruitement for the party
+			add_popularity = {
+				ideology = communism
+				popularity = 0.04
+			}
+		}
+	}	
+	focus = {
+		id = YCA_supreme_power_to_the_politburo
+		icon = GFX_SOV_the_stalin_constitutiony_ccp_2d_sov_compatibility
+		cost = 6
+		prerequisite = {
+			focus = YCA_open_the_party_gates
+		}	
+		prerequisite = {
+			focus = YCA_the_youth_pioneers_of_tomorrow
+		}		
+		relative_position_id = YCA_open_the_party_gates
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# political related, gain pp, unlock advisor maybe
+		}
+	}
+	focus = {
+		id = YCA_codify_state_atheism
+		icon = GFX_focus_BRA_state_atheism
+		cost = 6
+		prerequisite = {
+			focus = YCA_supreme_power_to_the_politburo
+		}		
+		relative_position_id = YCA_supreme_power_to_the_politburo
 		x = 3
 		y = 1
 
@@ -1042,9 +2126,111 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
-			#country_event = YCA_domestic_events.26 # Meeting with other members to annex em, they get an event too	
+			# unlock decision to pass a law of atheism + decision on seizure of clerical property
+		}
+	}
+	focus = {
+		id = YCA_the_great_helmsman
+		icon = GFX_focus_RAJ_red_in_the_shadows
+		cost = 6
+		prerequisite = {
+			focus = YCA_supreme_power_to_the_politburo
+		}		
+		relative_position_id = YCA_supreme_power_to_the_politburo
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# increase trait + cult of personality
+		}
+	}			
+	focus = {
+		id = YCA_order_through_radicalism
+		icon = GFX_focus_YCA_order_through_radicalism # replace flag
+		cost = 6
+		prerequisite = {
+			focus = YCA_supreme_power_to_the_politburo
+		}		
+		relative_position_id = YCA_supreme_power_to_the_politburo
+		x = -1
+		y = 2
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# propaganda decisions + influence neighboring countries too
 		}
 	}	
+	focus = {
+		id = YCA_the_eternal_vanguard
+		icon = GFX_focus_ITA_il_sol_dell_avvenire
+		cost = 6
+		prerequisite = {
+			focus = YCA_order_through_radicalism
+			focus = YCA_the_great_helmsman
+		}		
+		relative_position_id = YCA_order_through_radicalism
+		x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# increase trait + cult of personality
+		}
+	}
+	focus = {
+		id = YCA_la_revolucion_cultural
+		icon = GFX_focus_FIN_socialist_welfare
+		cost = 6
+		prerequisite = {
+			focus = YCA_codify_state_atheism
+			focus = YCA_the_great_helmsman
+		}		
+		relative_position_id = YCA_codify_state_atheism
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {						
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+			# increase trait + cult of personality
+		}
+	}							
 	focus = {
 		id = YCA_towards_stateless_order
 		icon = GFX_focus_ARG_no_gods_no_masters
@@ -1053,11 +2239,18 @@ focus_tree = {
 			focus = YCA_first_party_congress
 		}	
 		relative_position_id = YCA_first_party_congress
-		x = 4
+		x = 8
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_socialist
+					has_country_flag = YCA_ai_path_vanguardist
+				}
+			}					
 		}
 
 		available = {
@@ -1084,7 +2277,7 @@ focus_tree = {
 		id = YCA_establish_the_national_planning_commission
 		icon = GFX_focus_GER_the_peoples_victory
 		relative_position_id = YCA_institutionalize_the_front
-		x = 24
+		x = 26
 		y = 0		
 
 		cost = 6
@@ -1411,7 +2604,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 20
 		}
 
 		available = {
@@ -1440,7 +2633,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 20
 		}
 
 		available = {
@@ -1483,7 +2676,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 10
 		}
 
 		available = {
@@ -1640,6 +2833,19 @@ focus_tree = {
 				remove_idea = YCA_catalan_complan
 				add_idea = YCA_catalan_complan_labor
 			}
+			add_to_variable = {
+				var = YCA_vanguardist_faction_progress_bar
+				value = 2
+				tooltip = vanguardist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 1			
+			}			
 		}
 	}
 	focus = {
@@ -1701,7 +2907,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 10
 		}
 
 		available = {
@@ -1838,7 +3044,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 10
 		}
 
 		available = {
@@ -1878,6 +3084,20 @@ focus_tree = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = YCA_industrialize_the_campina_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				var = YCA_socialist_faction_progress_bar
+				value = 2
+				tooltip = socialist_small_influence_gain_tt
+			}
+			subtract_from_variable = {
+				var = YCA_anarchist_faction_progress_bar
+				value = 1			
+			}
+			subtract_from_variable = {
+				var = YCA_vanguardist_faction_progress_bar 
+				value = 1			
+			}			
 		}
 	}	
 	focus = {
@@ -1946,7 +3166,7 @@ focus_tree = {
 		id = YCA_restructure_the_defence_forces # Restructure the Exèrcit Popular
 		icon = GFX_focus_ARG_march_to_la_casa_rosada
 		relative_position_id = YCA_institutionalize_the_front
-		x = 20
+		x = 22
 		y = 8		
 
 		cost = 4
@@ -1984,7 +3204,7 @@ focus_tree = {
 		id = YCA_people_aviation_bureau
 		icon = GFX_focus_PER_the_peoples_airforce
 		relative_position_id = YCA_institutionalize_the_front
-		x = 26
+		x = 28
 		y = 8	
 
 		cost = 6
@@ -2275,7 +3495,7 @@ focus_tree = {
 		id = YCA_flota_del_pueblo
 		icon = GFX_focus_PER_the_peoples_navy
 		relative_position_id = YCA_institutionalize_the_front
-		x = 30
+		x = 32
 		y = 8		
 
 		cost = 6
@@ -2541,7 +3761,7 @@ focus_tree = {
 	}	
 	focus = {
 		id = YCA_defensa_de_las_costas # coastal defense focus
-		icon = GFX_focus_SWE_coastal_support
+		icon = GFX_focus_ARG_study_the_battle_of_the_river_plate
 		prerequisite = {
 			focus = YCA_seafarers_protection_from_above
 		}		
@@ -2690,7 +3910,7 @@ focus_tree = {
 	}	
 	focus = {
 		id = YCA_revolutionary_military_committee # Comité Militar Revolucionario
-		icon = GFX_focus_por_workers_of_iberia
+		icon = GFX_focus_GER_gebirgsjager
 		prerequisite = {
 			focus = YCA_the_iberian_liberation_army
 		}		
@@ -2797,7 +4017,7 @@ focus_tree = {
 	}		
 	focus = {
 		id = YCA_arsenal_del_pueblo # Arsenal del Pueblo
-		icon = GFX_focus_AUS_raid_military_storages
+		icon = GFX_focus_CONGO_copper_cartridges
 		prerequisite = {
 			focus = YCA_the_iberian_liberation_army
 			focus = YCA_strenghen_catalan_militas
@@ -2965,7 +4185,7 @@ focus_tree = {
 	}
 	focus = {
 		id = YCA_every_worker_a_soldier
-		icon = GFX_focus_ETH_freedom_at_gunpoint
+		icon = GFX_focus_GER_support_the_proletarian_uprising
 		prerequisite = {
 			focus = YCA_strenghen_catalan_militas
 		}			

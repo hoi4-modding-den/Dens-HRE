@@ -56,7 +56,46 @@ on_actions = {
                 set_country_flag = YCA_boiling_tensions_flag
             }
         }                
-	}	
+	}
+    on_weekly_YCA = {
+        effect = {
+            if = {
+                limit = {
+                    YBS = {
+                        communism > 0.5
+                        has_country_flag = YCA_sent_propaganda
+                    }
+                    NOT = {
+                        has_country_flag = YCA_basque_turned_sister
+                    }
+                }
+                country_event = YCA_domestic_events.27
+                puppet = YBS
+                YBS = {
+                    set_cosmetic_tag = YCA_sister_republic_basque
+                }
+                set_country_flag = YCA_basque_turned_sister
+            }
+        }
+        effect = {
+            if = {
+                limit = {
+                    YRF = {
+                        communism > 0.5
+                        has_country_flag = YCA_sent_propaganda
+                    }
+                    NOT = {
+                        has_country_flag = YCA_mercia_turned_sister
+                    }                    
+                }
+                country_event = YCA_domestic_events.28
+                YRF = {
+                    set_cosmetic_tag = YCA_sister_republic_mercia
+                }
+                set_country_flag = YCA_mercia_turned_sister
+            }
+        }                         
+	}	    	    	
 	on_state_control_changed = {
 		# Guerilla Tatics Stuff
 		effect = {

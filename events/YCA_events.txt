@@ -749,7 +749,7 @@ country_event = { # Classifying the Revolutionary Administration
         }			
     }
 	option = {
-        name = YCA_domestic_events.16.a	
+        name = YCA_domestic_events.16.b
 		add_popularity = {
 			ideology = democratic
 			popularity = 0.03
@@ -830,7 +830,15 @@ country_event = { # The Barcelona Radical Congress
 		subtract_from_variable = {
 			var = YCA_anarchist_faction_progress_bar
 			value = 1			
-		}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }							
     }
 	option = {
         name = YCA_domestic_events.18.b		
@@ -846,7 +854,15 @@ country_event = { # The Barcelona Radical Congress
 		subtract_from_variable = {
 			var = YCA_anarchist_faction_progress_bar
 			value = 2		
-		}					
+		}	
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_anarchist
+				has_country_flag = YCA_ai_path_vanguardist
+            }
+        }							
     }	
 	option = {
         name = YCA_domestic_events.18.c
@@ -862,7 +878,15 @@ country_event = { # The Barcelona Radical Congress
 		subtract_from_variable = {
 			var = YCA_socialist_faction_progress_bar
 			value = 3		
-		}						
+		}
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = YCA_ai_path_vanguardist
+				has_country_flag = YCA_ai_path_socialist
+            }
+        }									
     }					
 }
 
@@ -1002,4 +1026,238 @@ country_event = { # The Legend of Raimon Puig
 	option = {
         name = YCA_domestic_events.25.a	
     }				
+}
+
+country_event = { # The Comisariado Conference
+	id = YCA_domestic_events.26
+	title = YCA_domestic_events.26.t
+	desc = YCA_domestic_events.26.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.26.a	
+		YC1 = {
+			country_event = {
+				id = YCA_diplo_events.1
+				days = 2
+			}				
+		}
+		YC2 = {
+			country_event = {
+				id = YCA_diplo_events.1
+				days = 7
+			}	
+		}
+		YC3 = {
+			country_event = {
+				id = YCA_diplo_events.1
+				days = 11
+			}	
+		}				
+    }				
+}
+
+country_event = { # The Catalan Revolutionary Fronts Proposes a United Front
+	id = YCA_diplo_events.1
+	title = YCA_diplo_events.1.t
+	desc = YCA_diplo_events.1.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_diplo_events.1.a
+		YCA = {
+			annex_country = {
+				target = ROOT
+			}
+			every_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_core_of = YCA
+			}			
+		}		
+    }				
+}
+
+country_event = { # The Catalan Revolutionary Front Prepares for War
+	id = YCA_diplo_events.2
+	title = YCA_diplo_events.2.t
+	desc = YCA_diplo_events.2.desc
+    picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_diplo_events.2.a
+        add_ai_strategy = {
+            type = prepare_for_war
+            id = FROM
+            value = 10
+        }
+        FROM = {
+            add_ai_strategy = {
+                type = prepare_for_war
+                id = ROOT
+                value = 1000
+            }
+        }
+    }
+}
+
+country_event = { # The [YCA.GetName] invites us to the European Socialist Bloc
+	id = YCA_diplo_events.3
+	title = YCA_diplo_events.3.t
+	desc = YCA_diplo_events.3.desc
+    picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_diplo_events.3.a
+		YCA = {
+			add_to_faction = ROOT
+		}
+        ai_chance = {
+            base = 10
+        }				
+    }
+	option = {
+        name = YCA_diplo_events.3.b
+        ai_chance = {
+            base = 0
+        }				
+    }	
+}
+
+country_event = { # Join Arms with the Radical Iberians
+	id = YCA_diplo_events.4
+	title = YCA_diplo_events.4.t
+	desc = YCA_diplo_events.4.desc
+    picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_diplo_events.4.a
+		YCA = {
+			annex_country = {
+				target = YPR
+				transfer_troops = yes
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_core_of = YPR
+				}
+				add_core_of = YCA
+			}			
+		}
+        ai_chance = {
+            base = 10
+        }				
+    }
+	option = {
+        name = YCA_diplo_events.4.b
+		YCA = {
+			create_wargoal = {
+				target = YFR
+				type = annex_everything
+			}			
+		}
+        ai_chance = {
+            base = 2
+        }				
+    }	
+}
+
+country_event = { # Turned into Sister Republic: Mercia
+	id = YCA_domestic_events.27
+	title = YCA_domestic_events.27.t
+	desc = YCA_domestic_events.27.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.27.a	
+		puppet = YBS		
+		custom_effect_tooltip = generic_skip_one_line_tt
+		YBS = {
+			set_cosmetic_tag = YCA_sister_republic_basque
+		}			
+    }				
+}
+
+country_event = { # Turned into Sister Republic: Basque
+	id = YCA_domestic_events.28
+	title = YCA_domestic_events.28.t
+	desc = YCA_domestic_events.28.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.28.a	
+		puppet = YRF
+		custom_effect_tooltip = generic_skip_one_line_tt		
+		YRF = {
+			set_cosmetic_tag = YCA_sister_republic_mercia
+		}				
+    }				
+}
+
+country_event = { # The Zaragoza Inquiry
+	id = YCA_domestic_events.29
+	title = YCA_domestic_events.29.t
+	desc = YCA_domestic_events.29.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.29.a	
+		complete_national_focus = YCA_false_revolutionaries
+        ai_chance = {
+            base = 10
+        }				
+    }
+	option = {
+        name = YCA_domestic_events.29.a	
+		complete_national_focus = YCA_the_iberian_radical_bloc
+        ai_chance = {
+            base = 0
+        }				
+    }						
+}
+
+country_event = { # Free the Islanders from Capitalism
+	id = YCA_domestic_events.30
+	title = YCA_domestic_events.30.t
+	desc = YCA_domestic_events.30.desc
+	
+	picture = GFX_report_event_communists_cheer
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = YCA_domestic_events.30.a	
+		#add_ideas = YCA_liberators_and_seafarers
+		custom_effect_tooltip = generic_skip_one_line_tt
+		create_wargoal = {
+			target = YBL
+			type = annex_everything
+		}			
+        ai_chance = {
+            base = 10
+        }				
+    }					
 }

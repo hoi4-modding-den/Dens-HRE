@@ -21,3 +21,12 @@ YCA_ramped_up_shipyards = {
 	production_speed_dockyard_factor = 0.15
 	refit_speed = 0.25 
 }
+
+YCA_recent_integration = { 
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource
+
+	industry_free_repair_factor = 0.3
+	production_speed_buildings_factor = 0.05
+	local_resources_factor = -0.1
+}

@@ -932,6 +932,847 @@ YCA_generalitat_factions_decisions = {
 	}		
 }
 
+YCA_revolutionary_expansion = {
+	YCA_aid_the_northern_communes = {
+		priority = 5
+		icon = GFX_decision_ger_military_buildup
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_aid_the_portuguese_communes
+			#has_country_flag = YCA_por_intervention_flag
+		}	
+		
+		available = {
+			#has_completed_focus = YCA_aid_the_portuguese_communes	
+			#has_country_flag = YCA_por_intervention_flag
+		}
+
+		days_remove = 50
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 25
+		custom_cost_trigger = {
+			command_power > 24
+			has_political_power > 24
+		}
+		custom_cost_text = decision_cost_CP_25_pp_25
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+
+		remove_effect = {
+			YPR = {
+				add_war_support = 0.02
+				if = {
+					limit = {
+						YCA = {
+							has_tech = infantry_weapons1							
+						}
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 1500
+						producer = YCA
+					}					
+				}	
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 200
+					producer = YCA
+				}				
+			}
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+	}	
+	YCA_develop_diplomatic_channels = {
+		priority = 15
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		allowed = {
+			#always = no
+		}
+
+		visible = {
+			#always = no
+		}	
+		
+		available = {
+			#has_completed_focus = YCA_aid_the_portuguese_communes
+			#has_country_flag = YCA_por_intervention_flag		
+		}
+
+		days_remove = 30
+		fire_only_once = yes
+
+		cost = 50
+
+		remove_effect = {
+			YPR = {
+				add_war_support = 0.05	
+				add_opinion_modifier = {
+					target = YCA
+					modifier = SPA_spanish_civil_war_commitments
+				}			
+			}
+		}
+
+		ai_will_do = {
+			base = 8
+		}
+	}	
+	YCA_attack_YRS_rep_spain = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_the_revolution_spreads
+            NOT = { has_war_with = YRS }
+            NOT = { is_ally_with = YRS }
+			YRS = {
+				exists = yes
+			}			
+		}	
+		
+		available = {
+            NOT = { has_country_flag = YCA_justifying_civil_war }
+			OR = {
+                is_neighbor_of = YRS
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YRS
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YRS = { any_controlled_state = { is_coastal = yes } }
+                }
+            }						
+            NOT = { is_ally_with = YRS }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            set_country_flag = YCA_justifying_civil_war
+            YRS = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YRS
+                type = civil_war
+            }
+            clr_country_flag = YCA_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YCA_justifying_civil_war
+        }		
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YRS
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YRS }
+            }			
+		}
+	}
+	YCA_attack_YGL_galicia = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_the_revolution_spreads
+            NOT = { has_war_with = YGL }
+            NOT = { is_ally_with = YGL }
+			YGL = {
+				exists = yes
+			}							
+		}	
+		
+		available = {
+            NOT = { has_country_flag = YCA_justifying_civil_war }
+			OR = {
+                is_neighbor_of = YGL
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YGL
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YGL = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YGL }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            set_country_flag = YCA_justifying_civil_war
+            YGL = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YGL
+                type = civil_war
+            }
+            clr_country_flag = YCA_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YCA_justifying_civil_war
+        }		
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YGL
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YGL }
+            }			
+		}
+	}
+	YCA_attack_YAS_asturias = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_the_revolution_spreads
+            NOT = { has_war_with = YAS }
+            NOT = { is_ally_with = YAS }		
+			YAS = {
+				exists = yes
+			}					
+		}	
+		
+		available = {
+            NOT = { has_country_flag = YCA_justifying_civil_war }
+			OR = {
+                is_neighbor_of = YAS
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YAS
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YAS = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YAS }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            set_country_flag = YCA_justifying_civil_war
+            YAS = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YAS
+                type = civil_war
+            }
+            clr_country_flag = YCA_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YCA_justifying_civil_war
+        }		
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YAS
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YAS }
+            }			
+		}
+	}
+	YCA_attack_YGB_gilbraltar = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_the_revolution_spreads
+            NOT = { has_war_with = YGB }
+            NOT = { is_ally_with = YGB }	
+			YGB = {
+				exists = yes
+			}						
+		}	
+		
+		available = {
+            NOT = { has_country_flag = YCA_justifying_civil_war }
+			OR = {
+                is_neighbor_of = YGB
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YGB
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YGB = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YGB }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            set_country_flag = YCA_justifying_civil_war
+            YGB = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YGB
+                type = civil_war
+            }
+            clr_country_flag = YCA_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YCA_justifying_civil_war
+        }		
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YGB
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YGB }
+            }			
+		}
+	}	
+	YCA_attack_YKP_portugal = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_the_revolution_spreads
+            NOT = { has_war_with = YKP }
+            NOT = { is_ally_with = YKP }	
+			YKP = {
+				exists = yes
+			}						
+		}	
+		
+		available = {
+            NOT = { has_country_flag = YCA_justifying_civil_war }
+			OR = {
+                is_neighbor_of = YKP
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YKP
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YKP = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YKP }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            set_country_flag = YCA_justifying_civil_war
+            YKP = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YKP
+                type = civil_war
+            }
+            clr_country_flag = YCA_justifying_civil_war
+		}
+
+        cancel_effect = {
+            clr_country_flag = YCA_justifying_civil_war
+        }		
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YKP
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YKP }
+            }			
+		}
+	}	
+	attack_YRI_rif = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_free_the_moroccan_colonies
+            NOT = { has_war_with = YRI }
+            NOT = { is_ally_with = YRI }	
+			YRI = {
+				exists = yes
+			}						
+		}	
+		
+		available = {
+			OR = {
+                is_neighbor_of = YRI
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YRI
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YRI = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YRI }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            YRI = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YRI
+                type = civil_war
+            }
+		}	
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YRI
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YRI }
+            }			
+		}
+	}
+	attack_YSO_west_arab = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_free_the_moroccan_colonies
+            NOT = { has_war_with = YSO }
+            NOT = { is_ally_with = YSO }	
+			YSO = {
+				exists = yes
+			}						
+		}	
+		
+		available = {
+			OR = {
+                is_neighbor_of = YSO
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YSO
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YSO = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YSO }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            YSO = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YSO
+                type = civil_war
+            }
+		}	
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YSO
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YSO }
+            }			
+		}
+	}
+	attack_YJT_canary = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_free_the_moroccan_colonies
+            NOT = { has_war_with = YJT }
+            NOT = { is_ally_with = YJT }	
+			YJT = {
+				exists = yes
+			}						
+		}	
+		
+		available = {
+			OR = {
+                is_neighbor_of = YJT
+                any_other_country = {
+                    is_ally_with = YCA
+                    is_neighbor_of = YJT
+                }
+                AND = {
+                    any_controlled_state = { is_coastal = yes }
+                    YJT = { any_controlled_state = { is_coastal = yes } }
+                }
+            }
+            NOT = { is_ally_with = YJT }			
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+	
+        complete_effect = {
+            YJT = {
+                country_event = YCA_diplo_events.2
+            }
+        }
+
+		remove_effect = {
+			declare_war_on = {
+                target = YJT
+                type = civil_war
+            }
+		}	
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+            modifier = {
+				factor = 0
+				has_war = yes
+			}
+            modifier = {
+                factor = 1.2
+                is_neighbor_of = YJT
+            }
+            modifier = {
+                factor = 0.3
+                NOT = { is_neighbor_of = YJT }
+            }			
+		}
+	}	
+	YCA_attack_morocco = {
+		priority = 20
+		icon = GFX_decision_infiltrate_state
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_free_the_moroccan_colonies					
+		}	
+		
+		available = {
+			NOT = {
+				461 = {
+					is_controlled_by = YCA
+				}	
+				462 = {
+					is_controlled_by = YCA
+				}									
+			}
+		
+		}
+
+		days_remove = 10
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 50
+		cost = 50
+
+		remove_effect = {
+			461 = {
+				set_state_owner_to = YCA				
+			}	
+			462 = {
+				set_state_owner_to = YCA
+			}			
+		}	
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_major = yes
+				}
+			}
+		}
+	}
+	YCA_form_the_moroccan_revolutionary_commune = {
+		priority = 30
+		icon = GFX_decision_generic_orginization_of_african_unity
+
+		allowed = {
+			#original_tag = YCA
+		}
+
+		visible = {
+			#has_completed_focus = YCA_free_the_moroccan_colonies					
+		}	
+		
+		available = {
+			461 = {
+				is_controlled_by = YCA
+			}	
+			462 = {
+				is_controlled_by = YCA
+			}	
+			290 = {
+				is_controlled_by = YCA
+			}	
+			783 = {
+				is_controlled_by = YCA
+			}	
+			699 = {
+				is_controlled_by = YCA
+			}																		
+		}
+
+		fire_only_once = yes
+
+		ai_hint_pp_cost = 100
+		cost = 100
+
+		remove_effect = {
+			custom_effect_tooltip = YCA_creation_of_moroccan_colony_tt
+            hidden_effect = {
+				461 = {
+					transfer_state_to = YRI
+				}	
+				462 = {
+					transfer_state_to = YRI
+				}	
+				290 = {
+					transfer_state_to = YRI
+				}	
+				783 = {
+					transfer_state_to = YRI
+				}	
+				699 = {
+					transfer_state_to = YRI
+				}					
+                puppet = YRI
+				if = {
+					limit = { 
+						is_in_faction = yes
+					}
+					add_to_faction = YRI
+				}
+                YRI = {
+                    set_cosmetic_tag = YRI_moroccan_commune_puppet
+                    inherit_technology = YCA
+                }
+            }
+		}	
+
+		ai_will_do = {
+			base = 100
+		}
+	}	
+	
+}
+
 YCA_guerrilla_tradicional_tactics_category = {
 	YCA_prepare_guerrilla_tactics_in_state = {
 		icon = generic_operation
