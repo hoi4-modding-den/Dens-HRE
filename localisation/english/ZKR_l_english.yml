@@ -1,5 +1,9 @@
 ﻿l_english:
 
+ ZKR_GATHERING_STORM_DESC: "The Republic of Kurdistan was officially proclaimed following the successful 1930 Kurdish rebellion ending with the Xoybûn-led Republic of Ararat declaring victory against Ottoman forces. Since then, the Xoybûn military junta has stepped down and allowed the formation of a Kurdish parliament and a democratic republic. But fragile peace rarely lasts and Kurdish democracy is at a breaking point."
+
+# COUNTRY NAMES
+
  ZKR: "Kurdistan"
  ZKR_DEF: "the Republic of Kurdistan"
  ZKR_ADJ: "Kurdish"
@@ -14,6 +18,9 @@
  ZKR_greater_kurdistan: "Greater Kurdistan"
  ZKR_greater_kurdistan_DEF: "the Republic of Greater Kurdistan"
  ZKR_greater_kurdistan_ADJ: "Kurdish"
+ ZKR_greater_kurdistan_communism: "Socialist Union of Kurdistan"
+ ZKR_greater_kurdistan_communism_DEF: "the Socialist Union of Kurdistan"
+ ZKR_greater_kurdistan_communism_ADJ: "Kurdish"
 
  ZKR_greater_kurdistan_subject: "Autonomy of Greater Kurdistan"
  ZKR_greater_kurdistan_subject_DEF: "the Autonomy of Greater Kurdistan"
@@ -28,6 +35,8 @@
  ZKR_confederation_subject_ADJ: "Mesopotamian"
 
 
+# PARTIES
+
  ZKR_communism_party: "PŞK"
  ZKR_communism_party_long: "Partiya Şoreşa Kurdistan\n§L(Revolutionary Party of Kurdistan)§!"
  ZKR_democratic_party: "PAR"
@@ -37,19 +46,132 @@
  ZKR_fascism_party: "Xoybûn Committee"
  ZKR_fascism_party_long: "Xoybûn Military Committee"
 
+
+# IDEOLOGIES
+
  ZKR_kurdish_ultranationalism: "Kurdish Ultranationalism"
  ZKR_kurdish_ultranationalism_desc: "Expanding upon the ideas of Kurdish Nationalism, Kurdish Ultranationalism advocates for the destruction of all states that oppose the full unification of the Kurdish tribes."
 
+
+# CHARACTERS
 
  ZKR_seyid_riza: "Seyid Riza" # federalist advisor, dem leader
  ZKR_ahmed_barzani: "Ahmed Barzani" # environmentalist advisor, possible dem leader
  ZKR_qazi_muhamad: "Qazi Muhamad" # communist advisor, com leader
  ZKR_ihsan_nuri: "Ihsan Nuri" # military advisor, fas leader
  ZKR_mahmud_barzanji: "Mahmud Barzanji" # military advisor, neu leader
+ ZKR_mustafa_yamulki: "Mustafa Yamulki"
 
+
+# TRAITS
+
+ ZKR_respected_leader: "Respected Leader"
+ ZKR_evironmentalist: "Environmentalist"
+ ZKR_all_for_the_people: "All for the People"
+ ZKR_liberator_of_kurds: "Liberator of Kurds"
+ ZKR_determined_king: "The Determined King of Kurdistan"
+ ZKR_hates_the_british: "Hates the British"
+ ZKR_federalist_advisor: "Federalist Advisor"
+ ZKR_revolutionary_intellectual: "Revolutionary Intellectual"
+
+
+# IDEAS
 
  ZKR_an_independent_kurdistan: "Kurdish Fervour"
  ZKR_an_independent_kurdistan_desc: "The Republic of Kurdistan was officially proclaimed following the successful 1930 Kurdish rebellion ending with the Xoybûn-led Republic of Ararat declaring victory against Ottoman forces. Since then, the Xoybûn military junta has stepped down and allowed the formation of a Kurdish parliament and a democratic republic."
+ ZKR_a_greater_kurdistan_desc: "The Kurdish people have been freed from oppression and the Kurdish homelands are finally fully under Kurdish control!"
  ZKR_liberal_versus_communist: "Alliance for Kurdistan"
  ZKR_liberal_versus_communist_desc: "The Kurdish Parliament is split among those that want to achieve Greater Kurdistan and those that seek to maintain Kurdish self-determination and help other ethnicities in the Middle East do the same. The Xoybûn maintains neutrality in this internal conflict, though some members are advocating for the restoration of the military government to achieve Kurdish unification."
- ZKR_tribal_republic: "Tribal Agriculture"
+ ZKR_kurdish_federalism_idea: "Devolved Authority"
+ ZKR_kurdish_unitarianism_idea: "Centralised Authority"
+ ZKR_empowered_local_authorities: "Kurdish People's Police Force"
+ ZKR_police_force: "National Inspectorates-General"
+ ZKR_gendarmerie: "People's Gendarmerie of Kurdistan"
+ ZKR_government_news: "Kurdish Journalist Association"
+ ZKR_codified_kurdish_language: "Kurdish Academy"
+ ZKR_agrarian_society: "Agrarian Society"
+ ZKR_industrialising_society: "Industrialising Society"
+
+
+# FOCI
+
+ ZKR_kurdish_federalism: "Kurdish Federalism"
+ ZKR_kurdish_federalism_desc: ""
+ ZKR_inform_the_people: "National Newspaper"
+ ZKR_inform_the_people_desc: ""
+ ZKR_support_cooperatives: "Support Cooperatives"
+ ZKR_support_cooperatives_desc: ""
+ ZKR_empower_local_authorities: "Empower Local Authorities"
+ ZKR_empower_local_authorities_desc: ""
+ ZKR_devolution: "Policy of Devolution"
+ ZKR_devolution_desc: ""
+ ZKR_integrate_the_volunteer_militia: "Integrate the Volunteer Militias"
+ ZKR_integrate_the_volunteer_militia_desc: ""
+ ZKR_strengthen_the_judiciary: "Strengthen the Judiciary"
+ ZKR_strengthen_the_judiciary_desc: ""
+ ZKR_syrian_intervention: "Syrian Intervention"
+ ZKR_syrian_intervention_desc: "The situation in Syria is difficult right now. However, part of our nation is still in their hands. We must decide on a strategy to reclaim Kurdish territory from Syria with as little bloodshed as possible."
+ ZKR_reorganise_the_police: "Reorganise the Police"
+ ZKR_reorganise_the_police_desc: ""
+ ZKR_centralise_the_administration: "Centralise Government Administration"
+ ZKR_centralise_the_administration_desc: ""
+ ZKR_open_the_first_kurdistan_university: "The First Universty of Kurdistan"
+ ZKR_open_the_first_kurdistan_university_desc: ""
+ ZKR_kurdish_academy: "Codify the Kurdish Language"
+ ZKR_kurdish_academy_desc: ""
+ ZKR_disband_the_volunteer_militia: "Disband the Volunteer Militias"
+ ZKR_disband_the_volunteer_militia_desc: ""
+ ZKR_pluralist_constitution: "Enforce Pluralism"
+ ZKR_pluralist_constitution_desc: ""
+ ZKR_pluralist_constitution_tt: "If §Y$ZKR_form_gendarmerie$§! has not been completed, the §YXoybûn§! will launch a §RCoup d'état§! against the current government."
+ ZKR_lose_kurdish_claims_tt: "§Y[ROOT.GetNameWithFlag]§! will lose §Yclaims§! on all states without §YKurdish majority§!:"
+ ZKR_kurdish_supremacy: "Kurdish Irridentism"
+ ZKR_kurdish_supremacy_desc: ""
+ ZKR_kurdish_supremacy_tt: "If §Y$ZKR_form_gendarmerie$§! has not been completed, the §YXoybûn§! will launch a §RCoup d'état§! against the current government."
+ ZKR_greater_kurdistan_decision_unlock_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_form_greater_kurdistan$§!"
+ ZKR_form_gendarmerie: "Form a Kurdish Gendarmerie"
+ ZKR_form_gendarmerie_desc: ""
+ ZKR_gendarmerie_merge_tt: "Merge §Y$ZKR_empowered_local_authorities$§! and §Y$ZKR_police_force$§! into"
+ ZKR_form_gendarmerie_tt: "If §Y$ZKR_disband_the_volunteer_militia$§! or §Y$ZKR_devolution$§! have not been completed, §YMahmud Barzanji§! will launch a §RCoup d'état§! against the current government."
+
+ ZKR_kurdish_industrial_revolution: "The Kurdish Industrial Revolution"
+ ZKR_kurdish_industrial_revolution_desc: ""
+ ZKR_expand_first_factories: "Construction Equipment Imports"
+ ZKR_expand_first_factories_desc: ""
+ ZKR_mining_programs: "Mining Programs"
+ ZKR_mining_programs_desc: ""
+ ZKR_road_works_ahead: "Road Works Ahead"
+ ZKR_road_works_ahead_desc: "I sure hope it does!"
+ ZKR_open_up_kurdistan: "Open Up Kurdistan"
+ ZKR_open_up_kurdistan_desc: ""
+ ZKR_capital_city_industrial_park: "[ROOT.Capital.GetCapitalVictoryPointName] Industrial Park"
+ ZKR_capital_city_industrial_park_desc: ""
+
+ ZKR_enforce_military_neutrality: "Enforce Military Neutrality"
+ ZKR_enforce_military_neutrality_desc: ""
+
+
+# DECISIONS
+
+ ZKR_form_greater_kurdistan: "Form Greater Kurdistan"
+
+
+# EVENTS
+
+ ZKR_politics_events.1.t: "Barzanji makes his Move!"
+ ZKR_politics_events.1.desc: "WIP"
+ ZKR_politics_events.1.a: "Long live Sheikh Mahmud Barzanji!"
+
+ ZKR_politics_events.2.t: "Xoybûn step in!"
+ ZKR_politics_events.2.desc: "WIP"
+ ZKR_politics_events.2.a: "We shall lead Kurdistan to Greatness!"
+
+ ZKR_politics_events.3.t: "Elections!"
+ ZKR_politics_events.3.desc: "Despite many challenges, the Republic of Kurdistan endures and elections are once again being held."
+ ZKR_politics_events.3.a: "Seyid Riza is reelected."
+ ZKR_politics_events.3.b: "Ahmed Barzani is nominated for PAR leadership."
+ ZKR_politics_events.3.c: "The PŞK and Qazi Muhamad win!"
+
+ ZKR_technical_events.1.t: "Another Victory for [ROOT.GetLeader]"
+ ZKR_technical_events.1.desc: "The last British bastion in the middle east, the colonial administration in Palestine, has finally been vanquished. The last British boots on our part of the sub-continent have been driven out and our people shall finally be free from their tyranny."
+ ZKR_technical_events.1.a: "Forever free! Forevermore!"

@@ -25,6 +25,33 @@ ideas = {
 			}
 		}
 
+		ZKR_a_greater_kurdistan = {
+
+			name = ZKR_an_independent_kurdistan
+			desc = ZKR_a_greater_kurdistan_desc
+			picture = KUR_united_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+            cancel = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.15
+                army_core_defence_factor = 0.15
+				conscription = 0.01
+			}
+		}
+
         ZKR_liberal_versus_communist = {
 
 			picture = generic_deal_with_the_devil2
@@ -47,7 +74,238 @@ ideas = {
 			}
 		}
 
-        ZKR_tribal_republic = {
+		ZKR_kurdish_federalism_idea = {
+
+			picture = generic_local_self_management
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                political_power_factor = -0.05
+				political_advisor_cost_factor = 0.2
+                communism_drift = 0.01
+                democratic_drift = 0.02
+			}
+		}
+
+		ZKR_kurdish_unitarianism_idea = {
+
+			picture = generic_central_management
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.1
+                communism_drift = 0.02
+                democratic_drift = 0.01
+			}
+		}
+
+		ZKR_empowered_local_authorities = {
+
+			picture = POL_ideology_drift_defence
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				required_garrison_factor = -0.1
+			}
+		}
+
+		ZKR_empowered_local_authorities_2 = {
+
+			name = ZKR_empowered_local_authorities
+			picture = POL_ideology_drift_defence
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				required_garrison_factor = -0.1
+				conscription_factor = 0.15
+			}
+		}
+
+		ZKR_police_force = {
+
+			picture = generic_manpower_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.15
+			}
+		}
+
+		ZKR_police_force_2 = {
+
+			name = ZKR_police_force
+			picture = generic_manpower_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.15
+				resistance_target = -0.1
+				political_power_gain = 0.05
+			}
+		}
+
+		ZKR_gendarmerie_1 = {
+
+			name = ZKR_gendarmerie
+			picture = PER_special_units_division_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				required_garrison_factor = -0.1
+				conscription_factor = 0.2
+			}
+		}
+
+		ZKR_gendarmerie_2 = {
+
+			name = ZKR_gendarmerie
+			picture = PER_special_units_division_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_army_factor = 0.15
+				resistance_target = -0.15
+				political_power_gain = 0.05
+			}
+		}
+
+		ZKR_gendarmerie_3 = {
+
+			name = ZKR_gendarmerie
+			picture = PER_special_units_division_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				required_garrison_factor = -0.1
+				conscription_factor = 0.2
+				experience_gain_army_factor = 0.15
+				resistance_target = -0.15
+				political_power_gain = 0.05
+			}
+		}
+
+		ZKR_government_news = {
+
+			picture = JAP_press_association_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.05
+				drift_defence_factor = 0.2
+			}
+		}
+
+		ZKR_codified_kurdish_language = {
+
+			picture = jap_supremacy_of_will
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+
+        ZKR_agrarian_society = {
 
 			picture = generic_agrarian_society
 
@@ -63,10 +321,119 @@ ideas = {
 
 			modifier = {
 				consumer_goods_factor = -0.15
-                min_export = -0.2
                 local_resources_factor = -0.3
                 global_building_slots_factor = -0.1
                 production_speed_buildings_factor = -0.25
+			}
+		}
+
+		ZKR_agrarian_society_2 = {
+
+			name = ZKR_agrarian_society
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+                local_resources_factor = -0.3
+                global_building_slots_factor = -0.05
+                production_speed_buildings_factor = -0.15
+			}
+		}
+
+		ZKR_agrarian_society_3 = { # ZKR_expand_first_factories
+
+			name = ZKR_agrarian_society
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+                local_resources_factor = -0.3
+                production_speed_buildings_factor = -0.05
+			}
+		}
+
+		ZKR_agrarian_society_4 = { # ZKR_open_up_kurdistan
+
+			name = ZKR_agrarian_society
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.1
+                local_resources_factor = -0.15
+                global_building_slots_factor = -0.05
+                production_speed_buildings_factor = -0.1
+			}
+		}
+
+		ZKR_agrarian_society_5 = {
+
+			name = ZKR_agrarian_society
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.1
+                local_resources_factor = -0.1
+			}
+		}
+
+		ZKR_industrialising_society = {
+
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
 			}
 		}
 

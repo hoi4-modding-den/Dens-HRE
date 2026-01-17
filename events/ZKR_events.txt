@@ -1,0 +1,150 @@
+add_namespace = ZKR_politics_events
+add_namespace = ZKR_technical_events
+
+# Monarchist Coup
+country_event = {
+	id = ZKR_politics_events.1
+	title = ZKR_politics_events.1.t
+	desc = ZKR_politics_events.1.desc
+	
+	picture = GFX_report_event_tur_sultan_and_pashas
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.1.a
+		set_politics = {
+            ruling_party = neutrality
+            elections_allowed = no
+        }
+    }
+}
+
+# Fascist Coup
+country_event = {
+	id = ZKR_politics_events.2
+	title = ZKR_politics_events.2.t
+	desc = ZKR_politics_events.2.desc
+	
+	picture = GFX_report_event_fascist_militia
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.2.a
+		set_politics = {
+            ruling_party = fascism
+            elections_allowed = no
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        if = {
+            limit = {
+                has_completed_focus = ZKR_pluralist_constitution
+            }
+            uncomplete_national_focus = {
+                focus = ZKR_pluralist_constitution
+                uncomplete_children = yes
+                refund_political_power = no
+            }
+            unlock_national_focus = ZKR_kurdish_supremacy
+
+            hidden_effect = {
+                add_state_claim = 344
+                add_state_claim = 354
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+
+        if = {
+            limit = {
+                has_idea = ZKR_kurdish_unitarianism_idea
+            }
+            remove_ideas = ZKR_kurdish_federalism_idea
+        }
+        if = {
+            limit = {
+                has_idea = ZKR_kurdish_unitarianism_idea
+            }
+            remove_ideas = ZKR_kurdish_unitarianism_idea
+        }
+    }
+}
+
+# Elections
+country_event = {
+	id = ZKR_politics_events.3
+	title = ZKR_politics_events.3.t
+	desc = ZKR_politics_events.3.desc
+	
+	picture = GFX_report_event_election_vote
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.3.a
+		set_politics = {
+            ruling_party = democratic
+            elections_allowed = yes
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_seyid_riza
+    }
+
+    option = {
+        name = ZKR_politics_events.3.b
+		set_politics = {
+            ruling_party = democratic
+            elections_allowed = yes
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_ahmed_barzani
+    }
+
+    option = {
+        name = ZKR_politics_events.3.c
+		set_politics = {
+            ruling_party = communism
+            elections_allowed = yes
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_qazi_muhamad
+    }
+}
+
+country_event = {
+	id = ZKR_technical_events.1
+	title = ZKR_technical_events.1.t
+	desc = ZKR_technical_events.1.desc
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict
+
+    trigger = {
+        tag = ZKR
+        has_country_leader_with_trait = ZKR_hates_the_british
+        DN1 = {
+            OR = {
+                NOT = { has_government = neutrality }
+                is_subject_of = ROOT
+            }
+        }
+    }
+	
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.1.a
+		remove_country_leader_trait = ZKR_hates_the_british
+    }
+}
