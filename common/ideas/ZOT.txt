@@ -1,0 +1,167 @@
+ideas={
+	country = {
+	
+		########################
+		### STARTING SPIRITS ###
+		########################
+
+		ZOT_fractured_eyalets = {
+			picture = DEN_occupation_laws
+			allowed = {
+				original_tag = ZOT
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = -0.1
+				consumer_goods_factor = 0.03
+				compliance_growth = -0.1
+			}
+		}	
+
+		ZOT_the_emergency_requisition_act = {
+			picture = tur_tdpa
+			allowed = {
+				original_tag = ZOT
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = 0.1
+				stability_factor = -0.10
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		
+		ZOT_steel_will = {
+			picture = tur_ottoman_spirit
+			allowed = {
+				original_tag = ZOT
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = 0.25
+				fascism_drift = 0.03
+				custom_modifier_tooltip = ZOT_steel_will_tt
+			}
+		}		
+		
+		ZOT_muhacir_refugee_crisis = {
+			picture = ARG_social_welfare_fund_ns
+			allowed = {
+				original_tag = ZOT
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.2
+				stability_factor = -0.05
+			}
+		}	
+
+		ZOT_wreckage_of_the_empire = {
+			picture = BEL_the_kings_surrender
+			allowed = {
+				original_tag = ZOT
+				has_stability < 45
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.20
+				command_power_gain = -0.15
+				political_advisor_cost_factor = 0.1
+				custom_modifier_tooltip = ZOT_wreckage_of_the_empire_tt
+			}
+		}			
+		
+		ZOT_the_imperial_gendarmerie = {
+			picture = tur_kemalist_army_officers_powerless_effect
+			allowed = {
+				original_tag = ZOT
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				resistance_damage_to_garrison = -0.20
+				army_core_attack_factor = 0.10
+				army_org_factor = -0.15
+				experience_gain_army = -0.05
+				training_time_factor = 0.05
+			}
+		}			
+		
+
+		###############
+		### SPIRITS ###
+		###############	
+
+	}
+		
+
+
+	
+	industrial_concern = {
+
+		#-------------------------------------------------------
+		#					MANUFACTURERS
+		#-------------------------------------------------------	
+
+		#YCA_ = {
+
+			#picture = danieli
+			
+			#allowed = {
+			#	original_tag = XVE
+			#}
+
+			#available = {
+			#	has_completed_focus = XVE_fund_the_tsm
+			#}
+
+			#cost = 150
+			
+			#research_bonus = {
+			#	industry = 0.05
+			#}
+			
+			#modifier = {
+			#	local_resources_factor = 0.03
+			#	country_resource_steel = 13				
+			#}
+			
+			#traits = { XVE_tsm_trait }
+			
+			#ai_will_do = {
+			#	factor = 2
+			#}
+		#}
+	}
+}			

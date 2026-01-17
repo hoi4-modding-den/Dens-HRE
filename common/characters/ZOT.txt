@@ -1,4 +1,23 @@
 characters = {
+	# Leaders
+	ZOT_abdulmecid_ii = {
+		name = "Abdülmecid II"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZOT_Abdulmecid_ii
+			}
+		}
+		country_leader = {
+			traits = { 
+				ZOT_caliph_of_muslims # Caliph of the Muslims
+				ZOT_shadow_of_the_sublime_porte # Shadow of the Sublime Porte
+			}
+			desc = ZOT_Abdulmecid_ii_leader_desc		
+			ideology = despotism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}	
 	
 	# Political Advisors				
 }

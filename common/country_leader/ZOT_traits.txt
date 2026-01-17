@@ -1,0 +1,26 @@
+leader_traits = {
+
+    # Leaders
+
+	ZOT_caliph_of_muslims = {
+        random = no
+
+        stability_factor = 0.1
+		political_power_factor = 0.05
+    }
+
+	ZOT_shadow_of_the_sublime_porte = {
+        random = no
+ 
+        recruitable_population_factor = -0.15
+        justify_war_goal_time = 0.30
+        war_support_factor = -0.10
+        research_speed_factor = 0.05
+        improve_relations_maintain_cost_factor = -0.25
+    }    
+
+    # Advisors
+
+    # Concerns
+
+}
