@@ -1,0 +1,9 @@
+african_wasteland = {
+	enable = { always = yes }
+	icon = GFX_modifier_generic_sabotage
+
+	attrition_for_controller = african_wasteland_att
+	enemy_attrition = african_wasteland_att
+	army_speed_factor_for_controller = african_wasteland_spd
+	enemy_army_speed_factor = african_wasteland_spd
+}

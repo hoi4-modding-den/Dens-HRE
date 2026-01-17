@@ -5,15 +5,18 @@ state={
 	manpower = 18539
 	
 	state_category = wasteland
-	impassable = yes
+	# impassable = yes
 
 	history={
-		owner = ZZZ #owner = ENG
+		owner = ZXX
 		buildings = {
 			infrastructure = 0
 		}
+		set_variable = { african_wasteland_att = 0.9 }
+		set_variable = { african_wasteland_spd = -0.9 }
+		add_dynamic_modifier = { modifier = african_wasteland }
 
-		#add_core_of = EGY
+		add_core_of = ZXX
 
 	}
 
