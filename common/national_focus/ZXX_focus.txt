@@ -13,7 +13,87 @@ focus_tree={
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 1000 y = 1000 }
+	continuous_focus_position = { x = 11000 y = 11000 }
+	initial_show_position = { focus = ZXX_construction_of_central_complex }
+
+	focus = { 
+		id = ZXX_construction_of_central_complex
+		icon = GFX_focus_AFG_parliamentary_democracy
+		x = 19
+		y = 0
+		#relative_position_id = 
+		
+		cancelable = no
+		
+		cost = 20
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = {}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = ROOT
+				popularity = 0.06
+			}
+			newline_YBL = yes
+			273 = {
+				add_victory_points = {
+					province = 1057
+					value = 9
+				}
+				newline_YBL = yes
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 1057
+				}
+				newline_YBL = yes
+				increase_state_category = yes
+				newline_YBL = yes
+				set_temp_variable = { temp_african_att = -0.1 }
+				set_temp_variable = { temp_african_spd = 0.15 }
+				ZXX_reduce_african_wasteland = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = ZXX_assemble_the_first_council
+		icon = GFX_focus_POL_complete_april_constitution
+		x = 0
+		y = 1
+		relative_position_id = ZXX_construction_of_central_complex
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZXX_construction_of_central_complex }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			activate_advisor = ZXX_richard_clayton_idea
+			newline_YBL = yes
+			activate_advisor = ZXX_gordon_stonewall_idea
+			newline_YBL = yes
+			activate_advisor = ZXX_brian_donnelly_idea
+		}
+	}
 
 	focus = {
 		id = ZXX_army_effort
@@ -994,6 +1074,8 @@ focus_tree={
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		
+		allow_branch = { always = no }
+		
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -1899,6 +1981,8 @@ focus_tree={
 		cost = 10
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		allow_branch = { always = no }
 	
 		available_if_capitulated = yes
 

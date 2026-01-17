@@ -1,0 +1,42 @@
+ZXX_reduce_african_wasteland = {
+	if = {
+		limit = {
+			has_variable = temp_african_att
+			has_variable = temp_african_spd
+		}
+		add_to_variable = { african_wasteland_att = temp_african_att }
+		add_to_variable = { african_wasteland_spd = temp_african_spd }
+		custom_effect_tooltip = ZXX_reduce_african_wasteland_both
+	}
+	else_if = {
+		limit = {
+			has_variable = temp_african_att
+			NOT = { has_variable = temp_african_spd }
+		}
+		add_to_variable = { african_wasteland_att = temp_african_att }
+		custom_effect_tooltip = ZXX_reduce_african_wasteland_att
+	}
+	else_if = {
+		limit = {
+			has_variable = temp_african_spd
+			NOT = { has_variable = temp_african_att }
+		}
+		add_to_variable = { african_wasteland_spd = temp_african_spd }
+		custom_effect_tooltip = ZXX_reduce_african_wasteland_spd
+	}
+	force_update_dynamic_modifier = yes
+}
+ZXX_increase_each_national_focus = {
+	multiply_temp_variable = { temp_days = -1 }
+	
+	meta_effect = {
+		text = {
+			reduce_focus_completion_cost = {
+				focus = { [META_GetAllFociForCountry] }
+				cost = [META_temp_days]
+			}
+		}
+		META_GetAllFociForCountry = "[GetAllFociForCountry]"
+		META_temp_days = "[?temp_days]"
+	}
+}

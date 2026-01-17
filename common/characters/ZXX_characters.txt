@@ -12,4 +12,90 @@ characters={
 			id = -1
 		}
 	}
+	ZXX_richard_clayton = {
+		name = ZXX_richard_clayton
+		portraits = {
+			civilian = {
+				small = GFX_idea_bul_aleksandar_tsankov
+			}
+		}
+		advisor = {
+			cost = 0
+			slot = political_advisor
+			available = {
+				hidden_trigger = { has_country_flag = ZXX_richard_clayton_hired }
+			}
+			idea_token = ZXX_richard_clayton_idea
+			can_be_fired = no
+			on_add = {
+				ROOT = { set_country_flag = ZXX_richard_clayton_hired }
+				hidden_effect = {
+					set_temp_variable = { temp_days = 14 }
+					ZXX_increase_each_national_focus = yes
+				}
+			}
+			on_remove = {
+				ROOT = { clr_country_flag = ZXX_richard_clayton_hired }
+				hidden_effect = {
+					set_temp_variable = { temp_days = -14 }
+					ZXX_increase_each_national_focus = yes
+				}
+			}
+			traits = {
+				ZXX_richard_clayton_trait
+			}
+		}
+	}
+	ZXX_gordon_stonewall = {
+		name = ZXX_gordon_stonewall
+		portraits = {
+			civilian = {
+				small = GFX_idea_EST_hendrik_allik
+			}
+		}
+		advisor = {
+			cost = 0
+			slot = political_advisor
+			available = {
+				hidden_trigger = { has_country_flag = ZXX_gordon_stonewall_hired }
+			}
+			idea_token = ZXX_gordon_stonewall_idea
+			can_be_fired = no
+			on_add = {
+				ROOT = { set_country_flag = ZXX_gordon_stonewall_hired }
+			}
+			on_remove = {
+				ROOT = { clr_country_flag = ZXX_gordon_stonewall_hired }
+			}
+			traits = {
+				ZXX_gordon_stonewall_trait
+			}
+		}
+	}
+	ZXX_brian_donnelly = {
+		name = ZXX_brian_donnelly
+		portraits = {
+			civilian = {
+				small = GFX_idea_EST_johannes_kabin
+			}
+		}
+		advisor = {
+			cost = 0
+			slot = political_advisor
+			available = {
+				hidden_trigger = { has_country_flag = ZXX_brian_donnelly_hired }
+			}
+			idea_token = ZXX_brian_donnelly_idea
+			can_be_fired = no
+			on_add = {
+				ROOT = { set_country_flag = ZXX_brian_donnelly_hired }
+			}
+			on_remove = {
+				ROOT = { clr_country_flag = ZXX_brian_donnelly_hired }
+			}
+			traits = {
+				ZXX_brian_donnelly_trait
+			}
+		}
+	}
 }

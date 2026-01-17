@@ -1,2 +1,24 @@
 leader_traits = {
+	ZXX_richard_clayton_trait = {
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+		custom_modifier_tooltip = ZXX_richard_clayton_trait_longer_foci
+	}
+	ZXX_gordon_stonewall_trait = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.1
+		stability_factor = -0.05
+	}
+	ZXX_brian_donnelly_trait = {
+		random = no
+		sprite = 13
+		
+		democratic_drift = 0.05
+		command_power_gain = 0.5
+		political_power_factor = -0.15
+	}
 }

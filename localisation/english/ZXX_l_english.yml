@@ -19,6 +19,14 @@
  
  african_wasteland: "African Wasteland"
 
+ ZXX_richard_clayton: "Richard Clayton"
+ ZXX_richard_clayton_trait: "Careful Organizer"
+ ZXX_richard_clayton_trait_longer_foci: "Each §YNational Focus§! takes an additional §R14§! days to complete."
+ ZXX_gordon_stonewall: "Gordon Stonewall"
+ ZXX_gordon_stonewall_trait: "Corner Cutter"
+ ZXX_brian_donnelly: "Brian Donnelly"
+ ZXX_brian_donnelly_trait: "Devil's Advocat"
+
  #FOCUS LOCALISATIONS
  ZXX_army_effort: "Army Effort"
  ZXX_army_effort_desc: "Army Effort Description"
@@ -132,3 +140,10 @@
  ZXX_ideological_fanaticism_desc: "Ideological Fanaticism Description"
  ZXX_technology_sharing: "Technology Sharing"
  ZXX_technology_sharing_desc: "Technology Sharing Description"
+ 
+ ZXX_reduce_african_wasteland_att: "Modify §Y$african_wasteland$§! in §Y[THIS.GetName]§! by: \n      Division Attrition: [?temp_african_att|2%-=] \n"
+ ZXX_reduce_african_wasteland_spd: "Modify §Y$african_wasteland$§! in §Y[THIS.GetName]§! by: \n      Division Speed: [?temp_african_spd|2%+=] \n"
+ ZXX_reduce_african_wasteland_both: "Modify §Y$african_wasteland$§! in §Y[THIS.GetName]§! by: \n      Division Speed: [?temp_african_spd|2%+=] \n      Division Attrition: [?temp_african_att|2%-=] \n"
+ 
+ ZXX_construction_of_central_complex: "Construction of the Central Complex"
+ ZXX_assemble_the_first_council: "Assemble the First Council"

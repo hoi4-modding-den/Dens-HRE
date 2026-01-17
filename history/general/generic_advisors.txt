@@ -35,6 +35,7 @@ every_possible_country = {
 			limit = { has_dlc = "Graveyard of Empires" }
 			NOT = { tag = AFG tag = IRQ tag = PER tag = RAJ }
 		}
+		NOT = { has_country_flag = no_generic_characters }
 	}
 	generate_character = {
 		token_base = generic_communist_revolutionary # token will be TAG_token_base
@@ -97,6 +98,7 @@ every_possible_country = {
 			limit = { has_dlc = "Graveyard of Empires" }
 			NOT = { tag = AFG tag = IRQ tag = PER tag = RAJ }
 		}
+		NOT = { has_country_flag = no_generic_characters }
 	}
 	generate_character = {
 		token_base = generic_democratic_reformer # token will be TAG_token_base
@@ -161,6 +163,7 @@ every_possible_country = {
 			limit = { has_dlc = "Graveyard of Empires" }
 			NOT = { tag = AFG tag = IRQ tag = PER tag = RAJ }
 		}
+		NOT = { has_country_flag = no_generic_characters }
 	}
 	generate_character = {
 		token_base = generic_fascist_demagogue # token will be TAG_token_base
@@ -237,6 +240,7 @@ every_possible_country = {
 		NOT = {
 			has_allowed_idea_with_traits = { idea = head_of_intelligence characters = yes }
 		}
+		NOT = { has_country_flag = no_generic_characters }
 
 		is_dynamic_country = no
 	}

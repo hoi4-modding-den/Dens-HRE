@@ -26,6 +26,9 @@ add_ideas = {
 set_convoys = 50
 
 recruit_character = ZXX_samuel_insull
+recruit_character = ZXX_richard_clayton
+recruit_character = ZXX_gordon_stonewall
+recruit_character = ZXX_brian_donnelly
 
 set_politics = {
 	ruling_party = neutrality
@@ -40,6 +43,8 @@ set_popularities = {
 	communism = 5
 	fascism = 5
 }
+
+set_country_flag = no_generic_characters
 
 generate_character = { token_base = generic_army_chief_off advisor = { slot = army_chief traits = { army_chief_offensive_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_off } } }
 generate_character = { token_base = generic_army_chief_def advisor = { slot = army_chief traits = { army_chief_defensive_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_def } } }
@@ -88,15 +93,71 @@ generate_character = { token_base = generic_air_air_tac_bomb advisor = { slot = 
 # generate_character = { token_base = generic_air_warfare_theorist advisor = { slot = theorist traits = { air_warfare_theorist } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_air_warfare_theorist } } }
 # generate_character = { token_base = generic_victory_through_airpower advisor = { slot = theorist traits = { victory_through_airpower } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_victory_through_airpower } } }
 # generate_character = { token_base = generic_close_air_support_proponent advisor = { slot = theorist traits = { close_air_support_proponent } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_close_air_support_proponent } } }
-#generate_character = { token_base = generic_assault_avaition advisor = { slot = theorist traits = { assault_avaition } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_assault_avaition } } }
-generate_character = { token_base = generic_armaments_organizer_advisor advisor = { slot = political_advisor traits = { armaments_organizer } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_bul_aleksandar_tsankov } } }
-generate_character = { token_base = generic_fortification_engineer_advisor advisor = { slot = political_advisor traits = { fortification_engineer } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_johannes_kabin } } }
-generate_character = { token_base = generic_quartermaster_general_advisor advisor = { slot = political_advisor traits = { quartermaster_general } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_hjalmar_mae } } }
-generate_character = { token_base = generic_smooth_talking_charmer_advisor advisor = { slot = political_advisor traits = { smooth_talking_charmer } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_BEL_hubert_pierlot } } }
-generate_character = { token_base = generic_ideological_crusader_advisor advisor = { slot = political_advisor traits = { ideological_crusader } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_bernard_montgomery } } }
-generate_character = { token_base = generic_propaganda_expert_advisor advisor = { slot = political_advisor traits = { propaganda_expert } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_hendrik_allik } } }
-generate_character = { token_base = generic_popular_figurehead_advisor advisor = { slot = political_advisor traits = { popular_figurehead } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_boris_kumm } } }
-generate_character = { token_base = generic_technocrat_advisor advisor = { slot = political_advisor traits = { technocrat } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_august_rei } } }
-generate_character = { token_base = generic_prince_of_terror_advisor advisor = { slot = political_advisor traits = { prince_of_terror } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_juri_uluots } } }
-generate_character = { token_base = generic_backroom_backstabber_advisor advisor = { slot = political_advisor traits = { backroom_backstabber } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_konstantin_pats } } }
-generate_character = { token_base = generic_compassionate_gentleman_advisor advisor = { slot = political_advisor traits = { compassionate_gentleman } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_BRA_getulio_vargas } } }
+# generate_character = { token_base = generic_assault_avaition advisor = { slot = theorist traits = { assault_avaition } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_assault_avaition } } }
+# generate_character = { token_base = generic_quartermaster_general_advisor advisor = { slot = political_advisor traits = { quartermaster_general } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_hjalmar_mae } } }
+# generate_character = { token_base = generic_smooth_talking_charmer_advisor advisor = { slot = political_advisor traits = { smooth_talking_charmer } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_BEL_hubert_pierlot } } }
+# generate_character = { token_base = generic_ideological_crusader_advisor advisor = { slot = political_advisor traits = { ideological_crusader } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_bernard_montgomery } } }# generate_character = { token_base = generic_propaganda_expert_advisor advisor = { slot = political_advisor traits = { propaganda_expert } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_hendrik_allik } } }
+# generate_character = { token_base = generic_popular_figurehead_advisor advisor = { slot = political_advisor traits = { popular_figurehead } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_boris_kumm } } }
+# generate_character = { token_base = generic_technocrat_advisor advisor = { slot = political_advisor traits = { technocrat } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_august_rei } } }
+# generate_character = { token_base = generic_prince_of_terror_advisor advisor = { slot = political_advisor traits = { prince_of_terror } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_juri_uluots } } }
+# generate_character = { token_base = generic_backroom_backstabber_advisor advisor = { slot = political_advisor traits = { backroom_backstabber } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_konstantin_pats } } }
+# generate_character = { token_base = generic_compassionate_gentleman_advisor advisor = { slot = political_advisor traits = { compassionate_gentleman } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_BRA_getulio_vargas } } }
+
+add_to_array = { national_focus_array = token:ZXX_construction_of_central_complex }
+add_to_array = { national_focus_array = token:ZXX_the_first_council }
+add_to_array = { national_focus_array = token:ZXX_army_effort }
+add_to_array = { national_focus_array = token:ZXX_equipment_effort }
+add_to_array = { national_focus_array = token:ZXX_motorization_effort }
+add_to_array = { national_focus_array = token:ZXX_doctrine_effort }
+add_to_array = { national_focus_array = token:ZXX_equipment_effort_2 }
+add_to_array = { national_focus_array = token:ZXX_mechanization_effort }
+add_to_array = { national_focus_array = token:ZXX_doctrine_effort_2 }
+add_to_array = { national_focus_array = token:ZXX_equipment_effort_3 }
+add_to_array = { national_focus_array = token:ZXX_armor_effort }
+add_to_array = { national_focus_array = token:ZXX_special_forces }
+add_to_array = { national_focus_array = token:ZXX_aviation_effort }
+add_to_array = { national_focus_array = token:ZXX_fighter_focus }
+add_to_array = { national_focus_array = token:ZXX_bomber_focus }
+add_to_array = { national_focus_array = token:ZXX_aviation_effort_2 }
+add_to_array = { national_focus_array = token:ZXX_CAS_effort }
+add_to_array = { national_focus_array = token:ZXX_rocket_effort }
+add_to_array = { national_focus_array = token:ZXX_NAV_effort }
+add_to_array = { national_focus_array = token:ZXX_naval_effort }
+add_to_array = { national_focus_array = token:ZXX_flexible_navy }
+add_to_array = { national_focus_array = token:ZXX_large_navy }
+add_to_array = { national_focus_array = token:ZXX_submarine_effort }
+add_to_array = { national_focus_array = token:ZXX_cruiser_effort }
+add_to_array = { national_focus_array = token:ZXX_destroyer_effort }
+add_to_array = { national_focus_array = token:ZXX_capital_ships_effort }
+add_to_array = { national_focus_array = token:ZXX_industrial_effort }
+add_to_array = { national_focus_array = token:ZXX_construction_effort }
+add_to_array = { national_focus_array = token:ZXX_production_effort }
+add_to_array = { national_focus_array = token:ZXX_construction_effort_2 }
+add_to_array = { national_focus_array = token:ZXX_production_effort_2 }
+add_to_array = { national_focus_array = token:ZXX_infrastructure_effort }
+add_to_array = { national_focus_array = token:ZXX_production_effort_3 }
+add_to_array = { national_focus_array = token:ZXX_infrastructure_effort_2 }
+add_to_array = { national_focus_array = token:ZXX_construction_effort_3 }
+add_to_array = { national_focus_array = token:ZXX_nuclear_effort }
+add_to_array = { national_focus_array = token:ZXX_extra_tech_slot }
+add_to_array = { national_focus_array = token:ZXX_extra_tech_slot_2 }
+add_to_array = { national_focus_array = token:ZXX_secret_weapons }
+add_to_array = { national_focus_array = token:ZXX_political_effort }
+add_to_array = { national_focus_array = token:ZXX_collectivist_ethos }
+add_to_array = { national_focus_array = token:ZXX_nationalism_focus }
+add_to_array = { national_focus_array = token:ZXX_internationalism_focus }
+add_to_array = { national_focus_array = token:ZXX_liberty_ethos }
+add_to_array = { national_focus_array = token:ZXX_militarism }
+add_to_array = { national_focus_array = token:ZXX_political_correctness }
+add_to_array = { national_focus_array = token:ZXX_neutrality_focus }
+add_to_array = { national_focus_array = token:ZXX_interventionism_focus }
+add_to_array = { national_focus_array = token:ZXX_military_youth }
+add_to_array = { national_focus_array = token:ZXX_deterrence }
+add_to_array = { national_focus_array = token:ZXX_volunteer_corps }
+add_to_array = { national_focus_array = token:ZXX_paramilitarism }
+add_to_array = { national_focus_array = token:ZXX_indoctrination_focus }
+add_to_array = { national_focus_array = token:ZXX_foreign_expeditions }
+add_to_array = { national_focus_array = token:ZXX_why_we_fight }
+add_to_array = { national_focus_array = token:ZXX_political_commissars }
+add_to_array = { national_focus_array = token:ZXX_ideological_fanaticism }
+add_to_array = { national_focus_array = token:ZXX_technology_sharing }

@@ -1,0 +1,18 @@
+defined_text = {
+	name = GetAllFociForCountry
+	text = { 
+		trigger = {
+			if = {
+				limit = {
+					has_variable = temp_counter
+				}
+				add_to_temp_variable = { temp_counter = 1 }
+			}
+			else = {
+				set_temp_variable = { temp_counter = 0 }
+			}
+			check_variable = { temp_counter < ZXX.national_focus_array^num }
+		}
+		localization_key = "[?ZXX.national_focus_array^temp_counter.GetTokenKey] [GetAllFociForCountry]"
+	}
+}
