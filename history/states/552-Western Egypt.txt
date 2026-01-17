@@ -2,7 +2,7 @@
 state={
 	id=552
 	name="STATE_552"
-	manpower = 18539
+	manpower = 24023 #was 18539
 	
 	state_category = wasteland
 	# impassable = yes
@@ -17,11 +17,14 @@ state={
 		add_dynamic_modifier = { modifier = african_wasteland }
 
 		add_core_of = ZXX
-
+		add_core_of = ZEG
+		victory_points = {
+			13515 1 
+		}
 	}
 
 	provinces={
-		1143 2064 7216 10127 10869 10907 12099 12733 12764 12816 
+		1143 2064 7117 7148 7216 10097 10127 10869 10907 12099 12733 12764 12816 13515 13518 13519
 	}
 
 	local_supplies=0.0 

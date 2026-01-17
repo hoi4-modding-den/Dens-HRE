@@ -2,12 +2,12 @@ state=
 {
 	id=457
 	name="STATE_457" # Arabian Desert
-	manpower = 2194
+	manpower = 9239
 	
 	state_category = wasteland
 	
 	history = {
-		owner = ZZZ #owner = ENG
+		owner = ZZZ #will make ZEG owner if nobody claims this
 		buildings = {
 			infrastructure = 1
 		}
@@ -16,10 +16,10 @@ state=
 			12002 1
 		}
 
-		#add_core_of = EGY
+		add_core_of = ZEG
 	}
 	provinces={
-		1080 4068 4910 5069 7156 9957 10126 12002 12889 
+		1080 4068 4910 5069 7156 9957 10126 12002 12889 13521 13522
 	}
 
 	local_supplies=0.0 

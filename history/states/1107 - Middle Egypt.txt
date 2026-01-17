@@ -1,0 +1,35 @@
+
+state={
+	id=1107
+	name="STATE_1107"
+	manpower = 4426647 #was 3859239
+	resources={
+
+	}
+	
+	state_category = town
+
+	history={
+		owner = ZEG #owner = ENG
+		
+		victory_points = {
+			1068 3 
+		}
+		victory_points = {
+			11974 1 # Asyut
+		}
+	
+		buildings = {
+			infrastructure = 2 
+			industrial_complex = 1
+		}
+
+		add_core_of = ZEG
+	}
+
+	provinces={
+		1068 1151 7030 7144 7188 10028 10031 11974 12044 13517 13520
+	}
+
+	local_supplies=0.0 
+}
