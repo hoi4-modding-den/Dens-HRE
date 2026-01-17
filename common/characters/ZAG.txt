@@ -34,4 +34,40 @@ characters = {
 		}
 	}
 
+	ZAG_arek_haroutioun = {
+		name = ZAG_arek_haroutioun
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAG_arek_haroutioun
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = {
+				
+			}
+			expire = "1960.1.1"
+			id = -1
+			desc = ZAG_arek_haroutioun_desc
+		}
+	}
+
+	ZAG_zadig_azad = {
+		name = ZAG_zadig_azad
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAG_zadig_azad
+			}
+		}
+		country_leader = {
+			ideology = syndicalism
+			traits = {
+				
+			}
+			expire = "1960.1.1"
+			id = -1
+			desc = ZAG_zadig_azad_desc
+		}
+	}
+
 }

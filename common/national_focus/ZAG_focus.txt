@@ -1,18 +1,18 @@
 focus_tree = {
-	id = ZAG_focus
+	id = ZAG
 	continuous_focus_position = { x = -40 y = 2550 } 
 	country = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = YAO
+			tag = ZAG
 		}
 	}
 
 
-	#The Legitimate Government
+	#The Front Rises
 	focus = {
-		id = ZAG_focus_legitimate_government
+		id = ZAG_the_front_rises
 		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
 		x = 12
 		y = 2
@@ -23,6 +23,7 @@ focus_tree = {
 		prerequisite = {}
 		completion_reward = {
 			add_political_power = 40
+			drop_cosmetic_tag = yes
 		}
 	}
 
