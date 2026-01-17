@@ -43,6 +43,15 @@ on_actions = {
 			every_country = {
 				limit = {
 					exists = yes
+					NOT = {
+						OR =  {
+							tag = ZSR
+							tag = ZBS
+							tag = ZAD
+							tag = ZRS
+							tag = ZCS
+						}
+					}
 				}
 				capital_scope = {
 					add_resource = {
