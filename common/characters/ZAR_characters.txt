@@ -12,12 +12,12 @@ characters = {
 		}
 		country_leader = {
 			ideology = futurism
-			traits = { ZAR_Armenian_Poet }
+			traits = { ZAR_Armenian_Poet ZAR_Hates_Turkey }
 			expire = "1939.07.10"
 		}
 		country_leader = {
 			ideology = futurism_radical
-			traits = { ZAR_Armenian_Poet }
+			traits = { ZAR_Armenian_Poet ZAR_Hates_Turkey }
 			expire = "1939.07.10"
 		}
 		field_marshal = {
@@ -31,6 +31,39 @@ characters = {
 			defense_skill = 3
 			planning_skill = 1
 			logistics_skill = 3
+		}
+	}
+
+	ZAR_Sargis_Srapionyan = {
+		name = ZAR_Sargis_Srapionyan
+		portraits = {
+			civilian = {
+				large = GFX_d
+				
+			}
+			army = {
+				large = GFX_d
+			}
+		}
+		country_leader = {
+			ideology = futurism
+			traits = { }
+			expire = "1947.07.10"
+		}
+		country_leader = {
+			ideology = futurism_radical
+			traits = { }
+			expire = "1947.07.10"
+		}
+		corps_commander = {
+			traits = { 
+			 politically_connected
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
 		}
 	}
 
