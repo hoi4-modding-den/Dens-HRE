@@ -1,0 +1,64 @@
+characters = {
+	ZPE_Davud_Monshizadeh = {
+		name = "Davud Monshizadeh"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPE_Davud_Monshizadeh.png"
+			}
+			army = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPE_Davud_Monshizadeh.png"
+			}
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = fascism_ideology
+			traits = {  }
+		}
+		field_marshal = {
+		traits = { politically_connected media_personality infantry_leader }
+		skill = 5
+		attack_skill = 2
+		defense_skill = 1
+		planning_skill = 4
+		logistics_skill = 3
+		legacy_id = -1
+		}
+	}
+
+	ZPR_abol_ghasem_kashani = {
+		name = "Abol-Ghasem Kashani"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPR_abol_ghasem_kashani.png"
+			}
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = despotism
+			traits = {  }
+		}
+	}	
+
+	ZPA_sobir_rakhimov = {
+		name = "Sobir Rakhimov"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPA_sobir_rakhimov.png"
+			}
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = stalinism
+			traits = {  }
+		}
+		field_marshal = {
+		traits = { harsh_leader infantry_leader }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+		legacy_id = -1
+		}
+	}
+}

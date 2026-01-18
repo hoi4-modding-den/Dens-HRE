@@ -48,3 +48,69 @@ country_event = {
 
 }
 
+country_event = {
+	id = ZAR.3
+	title = ZAR.3.t
+	desc = ZAR.3.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.3.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+		}
+	}
+
+}
+
+country_event = {
+	id = ZAR.4
+	title = ZAR.4.t
+	desc = ZAR.4.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.4.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+		}
+	}
+
+}
+
+country_event = {
+	id = ZAR.5
+	title = ZAR.5.t
+	desc = ZAR.5.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.5.a
+		ai_chance = { factor = 1 }
+		ZAR_Radical_Increase_Small = yes
+		hidden_effect = {
+		}
+	}
+
+}
+
+country_event = {
+	id = ZAR.6
+	title = ZAR.6.t
+	desc = ZAR.6.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.6.a
+		ai_chance = { factor = 1 }
+		ZAR_Radical_Increase_Small = yes
+		hidden_effect = {
+		}
+	}
+
+}
+
