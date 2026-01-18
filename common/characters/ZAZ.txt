@@ -1,0 +1,33 @@
+characters = {
+	# Leaders
+	ZAZ_mahammad_rasulzade = {
+		name = "Mahammad Amin Rasulzade"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAZ_mahammad_rasulzade
+			}
+		}
+		country_leader = {
+			desc = ZAZ_mahammad_rasulzade_leader_desc		
+			ideology = liberalism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}	
+	ZAZ_qara_qarabeyov = {
+		name = "Qara bey Qarabeyov"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAZ_qara_qarabeyov
+			}
+		}
+		country_leader = {
+			desc = ZAZ_qara_qarabeyov_leader_desc		
+			ideology = conservatism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}	
+	
+	# Political Advisors				
+}
