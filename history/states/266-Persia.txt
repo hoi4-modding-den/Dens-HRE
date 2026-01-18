@@ -11,7 +11,7 @@ state={
 	state_category = city
 
 	history={
-		owner = ZZZ #owner = PER
+		owner = ZPE
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
@@ -28,9 +28,16 @@ state={
 			}
 		}
 		victory_points = {
-			10837 10 
+			10837 15
 		}
-		#add_core_of = PER
+		victory_points = {
+			10768 5 
+		}
+		victory_points = {
+			7602 3
+		}
+		add_core_of = ZPE
+		add_core_of = ZPR
 	}
 
 	provinces={

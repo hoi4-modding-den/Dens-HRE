@@ -9,7 +9,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { ZKR_respected_leader }
 			ideology = liberalism
 			desc = ZKR_seyid_riza_desc
 			expire = "1950.1.1.1"
@@ -25,7 +25,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { ZKR_evironmentalist }
 			ideology = socialism
 			desc = ZKR_ahmed_barzani_desc
 			expire = "1950.1.1.1"
@@ -40,6 +40,23 @@ characters = {
 			planning_skill=2
 			logistics_skill=3
 		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_ahmed_barzani_desc
+			idea_token = ZKR_ahmed_barzani_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_kurdish_federalism
+			}
+			traits = {
+				ZKR_federalist_advisor
+			}
+
+			cost = 150
+		}
 	}
 
     ZKR_qazi_muhamad = {
@@ -51,7 +68,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { ZKR_all_for_the_people }
 			ideology = trotskyism
 			desc = ZKR_qazi_muhamad_desc
 			expire = "1950.1.1.1"
@@ -67,7 +84,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { ZKR_liberator_of_kurds }
 			ideology = ZKR_kurdish_ultranationalism
 			desc = ZKR_ihsan_nuri_desc
 			expire = "1950.1.1.1"
@@ -82,6 +99,23 @@ characters = {
 			planning_skill=4
 			logistics_skill=2
 		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_ihsan_nuri_desc
+			idea_token = ZKR_ihsan_nuri_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_strengthen_the_judiciary
+			}
+			traits = {
+				ZKR_revolutionary_intellectual
+			}
+
+			cost = 100
+		}
 	}
 
     ZKR_mahmud_barzanji = {
@@ -93,7 +127,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = {  }
+			traits = { ZKR_determined_king ZKR_hates_the_british }
 			ideology = despotism
 			desc = ZKR_mahmud_barzanji_desc
 			expire = "1950.1.1.1"
@@ -107,6 +141,43 @@ characters = {
 			defense_skill=2
 			planning_skill=4
 			logistics_skill=2
+		}
+	}
+
+	ZKR_mustafa_yamulki = {
+		name = ZKR_mustafa_yamulki
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZKR_mustafa_yamulki
+                small = GFX_portrait_ZKR_mustafa_yamulki_small
+			}
+		}
+
+		corps_commander = {
+			traits = { career_officer politically_connected }
+			desc = ZKR_mustafa_yamulki_desc
+			skill=3
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=3
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_mustafa_yamulki_desc
+			idea_token = ZKR_mustafa_yamulki_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_inform_the_people
+			}
+			traits = {
+				IRQ_minister_of_education
+			}
+
+			cost = 150
 		}
 	}
 

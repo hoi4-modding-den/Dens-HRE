@@ -1,3 +1,77 @@
+political_actions = {
+
+    ZKR_form_greater_kurdistan = {
+
+        icon = generic_nationalism
+
+        fire_only_once = yes
+
+        available = {
+            has_completed_focus = ZKR_kurdish_supremacy
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                344 = { is_owned_and_controlled_by = ROOT }
+                350 = { is_owned_and_controlled_by = ROOT }
+                352 = { is_owned_and_controlled_by = ROOT }
+                353 = { is_owned_and_controlled_by = ROOT }
+                354 = { is_owned_and_controlled_by = ROOT }
+                419 = { is_owned_and_controlled_by = ROOT }
+                676 = { is_owned_and_controlled_by = ROOT }
+                680 = { is_owned_and_controlled_by = ROOT }
+                800 = { is_owned_and_controlled_by = ROOT }
+                1001 = { is_owned_and_controlled_by = ROOT }
+                1103 = { is_owned_and_controlled_by = ROOT }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+                    state = 344
+                    state = 350
+                    state = 352
+                    state = 353
+                    state = 354
+                    state = 419
+                    state = 676
+                    state = 680
+                    state = 800
+                    state = 1001
+                    state = 1103
+                }
+			}
+		}
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        complete_effect = {
+            set_cosmetic_tag = ZKR_greater_kurdistan
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_state_core = 344
+            add_state_core = 354
+            add_state_core = 680
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_state_claim = 355
+            add_state_claim = 349
+            add_state_claim = 798
+            add_state_claim = 348
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            swap_ideas = {
+                remove_idea = ZKR_an_independent_kurdistan
+                add_idea = ZKR_a_greater_kurdistan
+            }
+        }
+    }
+}
+
 debug_decisions = {
 
     ZKR_debug_greater_kurdistan = {
@@ -16,21 +90,14 @@ debug_decisions = {
             original_tag = ZKR
         }
 
-		fire_only_once = no
-		cost = 0
-
 		complete_effect = {
-            add_state_core = 344
             transfer_state = 344
-            add_state_core = 353
             transfer_state = 353
-            add_state_core = 354
             transfer_state = 354
-            add_state_core = 419
             transfer_state = 419
-            add_state_core = 676
             transfer_state = 676
-            add_state_core = 1103
+            transfer_state = 680
+            transfer_state = 1001
             transfer_state = 1103
 		}
 
