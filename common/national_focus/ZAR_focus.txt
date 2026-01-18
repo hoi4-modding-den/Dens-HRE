@@ -39,6 +39,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			ZAR_Pragmatic_Increase_Large = yes
+			add_stability = 0.05
+			swap_ideas = {
+			remove_idea = ZAR_Orthodox_Resistance
+			add_idea = ZAR_Religious_Acceptance
+			}
 		}
 		
 	}
@@ -58,6 +63,13 @@ focus_tree = {
 		}
 		completion_reward = {
 			ZAR_Radical_Increase_Large = yes
+			add_stability = -0.05
+			add_war_support = 0.10
+			remove_ideas = ZAR_Orthodox_Resistance
+			add_timed_idea = {
+    			idea = ZAR_Religious_Crackdown
+    			days = 180
+			}
 		}
 		
 	}
@@ -74,7 +86,7 @@ focus_tree = {
 				
 		}
 		completion_reward = {
-			
+			country_event = { id = ZAR.2 }
 		}
 		
 	}

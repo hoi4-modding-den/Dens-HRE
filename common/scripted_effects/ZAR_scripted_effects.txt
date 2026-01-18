@@ -1,0 +1,25 @@
+ZAR_Pragmatic_Increase_Small = {
+	custom_effect_tooltip = ZAR_Pragmatism_Increase_Small
+	add_to_variable = { ZAR_Pragmatic_Power = 1 }
+	add_to_variable = { ZAR_Radical_Power = -1 }
+
+}
+ZAR_Pragmatic_Increase_Large = {
+	custom_effect_tooltip = ZAR_Pragmatism_Increase_Large
+	add_to_variable = { ZAR_Pragmatic_Power = 2 }
+	add_to_variable = { ZAR_Radical_Power = -2 }
+
+}
+ZAR_Radical_Increase_Small = {
+	custom_effect_tooltip = ZAR_Radical_Increase_Small
+	add_to_variable = { ZAR_Pragmatic_Power = -1 }
+	add_to_variable = { ZAR_Radical_Power = 1 }
+
+}
+ZAR_Radical_Increase_Large = {
+	custom_effect_tooltip = ZAR_Radical_Increase_Large
+	add_to_variable = { ZAR_Pragmatic_Power = -2 }
+	add_to_variable = { ZAR_Radical_Power = 2 }
+
+}
+

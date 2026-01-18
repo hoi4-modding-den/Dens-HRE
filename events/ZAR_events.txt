@@ -1,0 +1,50 @@
+add_namespace = ZAR
+#country_event = {
+#    		id = ZAR.
+#   			days = 
+#    			random = 
+#    			random_days = 
+#}
+country_event = {
+	id = ZAR.1
+	title = ZAR.1.t
+	desc = ZAR.1.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.1.a
+		ai_chance = { factor = 1 }
+			custom_effect_tooltip = ZAR_Anti_Orthodox
+			complete_national_focus = ZAR_The_Orthodox_Problem_Rears_Its_Head_Yet_Again
+		hidden_effect = {
+			set_country_flag = ZAR_Chose_Violence_Against_The_Orthodox_Church
+		}
+	}
+	option = {
+		name = ZAR.1.b
+		ai_chance = { factor = 1 }
+			custom_effect_tooltip = ZAR_Leniant_Orthodox
+			complete_national_focus = ZAR_The_Orthodox_Problem_Rears_Its_Head_Yet_Again
+		hidden_effect = {
+			set_country_flag = ZAR_Chose_Leniancy_Against_The_Orthodox_Church
+		}
+	}
+}
+
+country_event = {
+	id = ZAR.2
+	title = ZAR.2.t
+	desc = ZAR.2.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.2.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+		}
+	}
+
+}
+

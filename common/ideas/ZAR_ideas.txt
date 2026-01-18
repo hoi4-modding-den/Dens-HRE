@@ -8,17 +8,39 @@ ideas = {
 				war_support_factor = -0.06
 				political_power_gain = -0.15
 				consumer_goods_factor = 0.16
-				production_speed_buildings_factor = 0.13
+				production_speed_buildings_factor = -0.13
 
 
 			}
 		}
+
 		ZAR_Build_Up_Yerevan_Underway = {
 			picture = ZAR_Yerevan_Middling
 			modifier = {
 				industrial_capacity_factory = -0.05
 				consumer_goods_factor = 0.05
 				production_speed_buildings_factor = -0.1
+
+
+			}
+		}
+
+		ZAR_Religious_Crackdown = {
+			picture = ZAR_Orthodox_Resistance
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.45
+
+
+			}
+		}
+
+		ZAR_Religious_Acceptance = {
+			picture = ZAR_Orthodox_Resistance
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = -0.05
+				production_speed_buildings_factor = 0.05
 
 
 			}
