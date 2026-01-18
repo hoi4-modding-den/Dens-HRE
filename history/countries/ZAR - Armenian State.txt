@@ -1,6 +1,6 @@
-capital = 230
+capital = 1114
 
-set_research_slots = 2
+set_research_slots = 3
 set_stability = 0.5
 set_war_support = 0.2
 
@@ -14,7 +14,7 @@ set_technology = {
 	tech_support = 1
 	tech_recon = 1
 	basic_train = 1
-	artillery = 1
+	gw_artillery = 1
 }
 
 set_politics = {
@@ -32,7 +32,10 @@ set_popularities = {
 add_ideas = ZAR_Orthodox_Resistance
 add_ideas = ZAR_Build_Up_Yerevan_Underway
 
-
+set_autonomy = {
+	target = ZA1
+	autonomy_state = autonomy_integrated_puppet
+}
 
 
 
