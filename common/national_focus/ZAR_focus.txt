@@ -103,7 +103,7 @@ focus_tree = {
 				
 		}
 		completion_reward = {
-			
+			add_ideas = ZAR_Preparations_For_Battle
 		}
 		
 	}
@@ -121,6 +121,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			ZAR_Pragmatic_Increase_Small = yes
+			swap_ideas = {
+			remove_idea = ZAR_Preparations_For_Battle
+			add_idea = ZAR_An_Armed_Citizenship
+			}
 		}
 		
 	}
@@ -138,7 +142,153 @@ focus_tree = {
 		}
 		completion_reward = {
 			ZAR_Radical_Increase_Small = yes
+			swap_ideas = {
+			remove_idea = ZAR_Preparations_For_Battle
+			add_idea = ZAR_Marching_Boots
+			}
 		}
+		
+	}
+	focus = {
+		id = ZAR_Hunker_Down
+		icon = GFX_fish
+		x = 12
+		y = 6
+		cost = 5
+		prerequisite = { focus = ZAR_Expand_The_Special_Forces focus = ZAR_Distribute_Arms_To_The_People }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			1114 = {
+			add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 12320
+			}
+			add_building_construction = {
+    				type = anti_air_building
+    				level = 2
+    				instant_build = yes
+			}
+			}
+			230 = {
+			add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 3564
+			}
+			add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 6997
+			}
+			add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 4660
+			}
+			}
+		}
+		
+	}
+	focus = {
+		id = ZAR_Efficent_Industry_For_Thunderous_Battle
+		icon = GFX_fish
+		x = 12
+		y = 7
+		cost = 6
+		prerequisite = { focus = ZAR_Hunker_Down }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			1114 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+			}
+			}
+			354 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+			}
+			
+			}
+		}
+		
+		
+	}
+	focus = {
+		id = ZAR_Exemplify_Industrial_Society
+		icon = GFX_fish
+		x = 14
+		y = 7
+		cost = 4
+		prerequisite = { focus = ZAR_Hunker_Down }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			320 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+			}
+			}
+			354 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+			}
+			}
+			1113 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+			}
+			
+			}
+		}
+		
+		
+	}
+	focus = {
+		id = ZAR_A_Fearful_Hatred
+		icon = GFX_fish
+		x = 14
+		y = 8
+		cost = 4
+		prerequisite = { focus = ZAR_Exemplify_Industrial_Society }
+		prerequisite = { focus = ZAR_Efficent_Industry_For_Thunderous_Battle }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			ZAR_Radical_Increase_Small = yes
+			add_ideas = ZAR_Ingrained_Hatred
+		}
+		
 		
 	}
 
