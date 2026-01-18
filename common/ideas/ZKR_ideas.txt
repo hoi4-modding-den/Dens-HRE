@@ -27,8 +27,6 @@ ideas = {
 
 		ZKR_a_greater_kurdistan = {
 
-			name = ZKR_an_independent_kurdistan
-			desc = ZKR_a_greater_kurdistan_desc
 			picture = KUR_united_idea
 
 			allowed = {
@@ -59,11 +57,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -81,11 +75,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -103,11 +93,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -124,11 +110,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -144,11 +126,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -164,11 +142,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -184,11 +158,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -206,11 +176,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -227,11 +193,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -249,11 +211,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -272,11 +230,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -292,11 +246,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -312,11 +262,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				is_subject = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -335,11 +281,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				is_subject = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -358,11 +300,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				is_subject = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -380,11 +318,7 @@ ideas = {
 			allowed = {
 				original_tag = ZKR
 			}
-
-			allowed_civil_war = {
-				is_subject = no
-			}
-
+			
 			removal_cost = -1
 
 			modifier = {
@@ -404,10 +338,6 @@ ideas = {
 				original_tag = ZKR
 			}
 
-			allowed_civil_war = {
-				is_subject = no
-			}
-
 			removal_cost = -1
 
 			modifier = {
@@ -424,8 +354,41 @@ ideas = {
 				original_tag = ZKR
 			}
 
-			allowed_civil_war = {
-				is_subject = no
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+
+		ZKR_industrialising_society_2 = { # ZKR_electrification
+
+			name = ZKR_industrialising_society
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.15
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		ZKR_industrialising_society_3 = { # ZKR_kurdish_national_rail
+
+			name = ZKR_industrialising_society
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
 			}
 
 			removal_cost = -1
@@ -434,6 +397,117 @@ ideas = {
                 local_resources_factor = -0.1
 				production_factory_efficiency_gain_factor = 0.05
 				production_factory_max_efficiency_factor = 0.05
+
+				production_speed_infrastructure_factor = 0.2
+				production_speed_rail_way_factor = 0.25
+			}
+		}
+
+		ZKR_industrialising_society_4 = { # ZKR_electrification and ZKR_kurdish_national_rail
+
+			name = ZKR_industrialising_society
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.15
+				global_building_slots_factor = 0.1
+
+				production_speed_infrastructure_factor = 0.2
+				production_speed_rail_way_factor = 0.25
+			}
+		}
+
+		ZKR_industrialising_society_5 = { # ZKR_careful_resource_extraction
+
+			name = ZKR_industrialising_society
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.15
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		ZKR_industrialising_society_6 = { # ZKR_careful_resource_extraction and ZKR_kurdish_national_rail
+
+			name = ZKR_industrialising_society
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.15
+				global_building_slots_factor = 0.1
+
+				production_speed_infrastructure_factor = 0.2
+				production_speed_rail_way_factor = 0.25
+			}
+		}
+
+		ZKR_industrialised_society = { # ZKR_modern_industry
+
+			picture = generic_improved_industries
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                local_resources_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.25
+				global_building_slots_factor = 0.1
+
+				production_speed_buildings_factor = 0.15
+
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+
+		ZKR_ammunition_production = {
+
+			picture = SWE_hodgepodge_of_equipment
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
 			}
 		}
 

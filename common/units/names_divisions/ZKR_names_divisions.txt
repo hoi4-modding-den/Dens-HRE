@@ -1,0 +1,131 @@
+ZKR_INF_01 = {
+	name = "Infantry Divisions"
+
+	for_countries = { ZKR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Firqeya Piyadeyan"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Firqeya Piyadeyan" }
+		2 = { "%d. Firqeya Piyadeyan" }
+		3 = { "%d. Firqeya Piyadeyan" }
+
+	}
+}
+
+ZKR_MIL_01 = {
+	name = "Xoybûn Militias"
+
+	for_countries = { ZKR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Milîsên Xoybûnê"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Milîsên Xoybûnê" }
+		2 = { "%d. Milîsên Xoybûnê" }
+		3 = { "%d. Milîsên Xoybûnê" }
+
+	}
+}
+
+ZKR_MTN_01 = {
+	name = "Mountain Infantry Divisions"
+
+	for_countries = { ZKR }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	fallback_name = "%d. Firqeya Piyadeyên Çiyayî"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Firqeya Piyadeyên Çiyayî" }
+		2 = { "%d. Firqeya Piyadeyên Çiyayî" }
+		3 = { "%d. Firqeya Piyadeyên Çiyayî" }
+	}
+}
+
+ZKR_CAV_01 = {
+	name = "Cavalry Brigades"
+
+	for_countries = { ZKR }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	fallback_name = "%d. Lîwaya Siwarî"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Lîwaya Siwarî" }
+		2 = { "%d. Lîwaya Siwarî" }
+		3 = { "%d. Lîwaya Siwarî" }
+
+	}
+}
+
+
+ZKR_MOT_01 = {
+	name = "Motorised Divisions"
+
+	for_countries = { ZKR }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	fallback_name = "%d. Beşa Motorîzekirî"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Beşa Motorîzekirî" }
+		2 = { "%d. Beşa Motorîzekirî" }
+		3 = { "%d. Beşa Motorîzekirî" }
+
+	}
+}
+
+ZKR_ARM_01 = {
+	name = "Armoured Divisions"
+
+	for_countries = { ZKR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Firqeya Tankan"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d. Firqeya Tankan" }
+		2 = { "%d. Firqeya Tankan" }
+		3 = { "%d. Firqeya Tankan" }
+
+	}
+}

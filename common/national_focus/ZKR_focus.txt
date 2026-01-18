@@ -30,7 +30,7 @@ focus_tree = {
 		y = 0
 		#relative_position_id = 
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -66,7 +66,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_federalism
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -106,7 +106,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_inform_the_people
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -155,7 +155,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_federalism
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -186,7 +186,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_empower_local_authorities
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -215,14 +215,14 @@ focus_tree = {
 
     focus = {
 		id = ZKR_integrate_the_volunteer_militia
-		icon = GFX_goal_generic_small_arms
+		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = ZKR_empower_local_authorities }
 		#mutually_exclusive = { focus =  }
 		x = 1
 		y = 1
 		relative_position_id = ZKR_empower_local_authorities
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -262,7 +262,7 @@ focus_tree = {
 		y = 0
 		#relative_position_id = 
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -298,7 +298,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_federalism
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -306,13 +306,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-            any_country = {
-                OR = {
-                    original_tag = ZSR
-                    original_tag = ZCS
-                }
-                exists = yes
-            }
+            ZKR_can_intervene_in_syria = yes
 		}
 		
 		bypass = {
@@ -323,7 +317,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			custom_effect_tooltip = ZKR_syrian_intervention_tt
 		}
 	}
 
@@ -336,7 +330,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_strengthen_the_judiciary
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -367,7 +361,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_reorganise_the_police
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -401,7 +395,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_strengthen_the_judiciary
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -432,7 +426,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_open_the_first_kurdistan_university
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -465,7 +459,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_reorganise_the_police
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -498,7 +492,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_devolution
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -531,7 +525,7 @@ focus_tree = {
                 limit = {
                     NOT = { has_completed_focus = ZKR_form_gendarmerie }
                 }
-                custom_effect_tooltip = ZKR_pluralist_constitution_tt
+                custom_effect_tooltip = ZKR_xoybun_coup_tt
                 hidden_effect = { country_event = { id = ZKR_politics_events.2 days = 6 } }
             }
             else = {
@@ -550,7 +544,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_disband_the_volunteer_militia
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -581,7 +575,7 @@ focus_tree = {
                 limit = {
                     NOT = { has_completed_focus = ZKR_form_gendarmerie }
                 }
-                custom_effect_tooltip = ZKR_kurdish_supremacy_tt
+                custom_effect_tooltip = ZKR_xoybun_coup_tt
                 hidden_effect = { country_event = { id = ZKR_politics_events.2 days = 6 } }
             }
             else = {
@@ -599,7 +593,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_integrate_the_volunteer_militia
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -661,7 +655,13 @@ focus_tree = {
                 }
             }
 
-			custom_effect_tooltip = ZKR_form_gendarmerie_tt
+			if = {
+                limit = {
+                    NOT = { has_completed_focus = ZKR_devolution }
+                    NOT = { has_completed_focus = ZKR_disband_the_volunteer_militia }
+                }
+                custom_effect_tooltip = ZKR_monarchist_coup_tt
+            }
             if = { # separated for clarity
                 limit = {
                     has_completed_focus = ZKR_centralise_the_administration
@@ -672,6 +672,87 @@ focus_tree = {
 		}
 	}
 
+# BROAD DIPLOMACY BRANCH
+
+	focus = {
+		id = ZKR_form_anti_imperialist_faction
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		mutually_exclusive = { focus = ZKR_the_kurdish_destiny }
+		x = -7
+		y = 2
+		relative_position_id = ZKR_pluralist_constitution
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+			NOT = { has_completed_focus = ZKR_kurdish_supremacy }
+			has_country_flag = ZKR_first_branch_completed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_regional
+				name = ZKR_anti_imperialist_front
+				icon = GFX_faction_logo_generic_15
+				color = { 234 179 30 }
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_the_kurdish_destiny
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		mutually_exclusive = { focus = ZKR_form_anti_imperialist_faction }
+		x = 2
+		y = 0
+		relative_position_id = ZKR_form_anti_imperialist_faction
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+			has_completed_focus = ZKR_kurdish_supremacy
+			has_country_flag = ZKR_first_branch_completed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			create_faction_from_template = {
+				template = faction_template_middle_east_dominance
+				name = ZKR_kurdish_league
+				icon = GFX_faction_logo_generic_15
+				color = { 234 179 30 }
+			}
+		}
+	}
+
+
 # ECONOMY BRANCH
 
 	focus = {
@@ -679,11 +760,11 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_2
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 22
+		x = 25
 		y = 0
 		#relative_position_id = 
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -735,7 +816,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_industrial_revolution
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -789,14 +870,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_industrial_revolution
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
 		}
 
 		available = {
-			
+			controls_state = 800
 		}
 		
 		bypass = {
@@ -816,14 +897,14 @@ focus_tree = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
-            random_owned_controlled_state = {
+            800 = {
                 add_resource = {
                     type = steel
                     amount = 12
                 }
                 add_resource = {
                     type = coal
-                    amount = 3
+                    amount = 9
                 }
             }
 		}
@@ -838,7 +919,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_industrial_revolution
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -877,13 +958,8 @@ focus_tree = {
             every_owned_state = {
                 random_select_amount = 3
 				limit = {
-                    is_fully_controlled = yes
+                    is_fully_controlled_by = ROOT
 					infrastructure < 5
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
 				}
                 add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -904,7 +980,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_industrial_revolution
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -963,7 +1039,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_kurdish_industrial_revolution
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -982,13 +1058,6 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
             capital_scope = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1006,6 +1075,666 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = ZKR_electrification
+		icon = GFX_focus_generic_electrification
+		prerequisite = { focus = ZKR_capital_city_industrial_park }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = ZKR_capital_city_industrial_park
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_electrification
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = ZKR_industrialising_society_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society_3
+					add_idea = ZKR_industrialising_society_4
+				}
+			}
+            else = {
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society
+					add_idea = ZKR_industrialising_society_2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_careful_resource_extraction
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = ZKR_electrification }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = ZKR_electrification
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            add_tech_bonus = {
+				name = ZKR_careful_resource_extraction
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = ZKR_industrialising_society_4
+				}
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society_4
+					add_idea = ZKR_industrialising_society_6
+				}
+			}
+            else = {
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society_2
+					add_idea = ZKR_industrialising_society_5
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_expand_arms_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ZKR_electrification }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_electrification
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_cartridge_factories
+		icon = GFX_focus_CONGO_copper_cartridges
+		prerequisite = { focus = ZKR_careful_resource_extraction }
+		prerequisite = { focus = ZKR_expand_arms_industry }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_expand_arms_industry
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            add_ideas = ZKR_ammunition_production
+		}
+	}
+
+	focus = {
+		id = ZKR_aviation_industry
+		icon = GFX_focus_generic_copy_plane_designs
+		prerequisite = { focus = ZKR_expand_arms_industry }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_expand_arms_industry
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            
+		}
+	}
+
+	focus = {
+		id = ZKR_modern_arms_industry
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = ZKR_cartridge_factories }
+		prerequisite = { focus = ZKR_aviation_industry }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_cartridge_factories
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_modern_arms_industry
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_invite_industrial_advisors
+		icon = GFX_focus_generic_industrial_experts
+		prerequisite = { focus = ZKR_capital_city_industrial_park }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_capital_city_industrial_park
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = available_political_advisor
+
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = available_political_advisor
+
+		}
+	}
+
+	focus = {
+		id = ZKR_build_dam
+		icon = GFX_focus_focus_generic_build_dam
+		prerequisite = { focus = ZKR_invite_industrial_advisors }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_invite_industrial_advisors
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			controls_state = 800
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            800 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 7470
+					}
+				}
+			}
+			custom_effect_tooltip = {
+				localization_key = building_state_modifier|dam
+				INDENT = "    "
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdish_national_rail
+		icon = GFX_focus_generic_railroad
+		prerequisite = { focus = ZKR_capital_city_industrial_park }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_capital_city_industrial_park
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            if = {
+				limit = {
+					has_idea = ZKR_industrialising_society_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society_2
+					add_idea = ZKR_industrialising_society_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_industrialising_society_5
+				}
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society_5
+					add_idea = ZKR_industrialising_society_6
+				}
+			}
+            else = {
+				swap_ideas = {
+					remove_idea = ZKR_industrialising_society
+					add_idea = ZKR_industrialising_society_3
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_oil_extraction
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = ZKR_kurdish_national_rail }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_kurdish_national_rail
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			controls_state = 350
+			has_tech = excavation2
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            add_resource = {
+				type = oil
+				amount = 16
+				state = 350
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_oil_extraction_2
+		icon = GFX_focus_generic_resource_extraction
+		prerequisite = { focus = ZKR_oil_extraction }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_oil_extraction
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			controls_state = 350
+			has_tech = excavation4
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            add_resource = {
+				type = oil
+				amount = 32
+				state = 350
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_batman_technical_university
+		icon = GFX_focus_research
+		prerequisite = { focus = ZKR_invite_industrial_advisors }
+		prerequisite = { focus = ZKR_kurdish_national_rail }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_invite_industrial_advisors
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ZKR_embrace_central_planning
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = ZKR_batman_technical_university }
+		mutually_exclusive = { focus = ZKR_embrace_capitalism }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_batman_technical_university
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            every_owned_state = {
+                random_select_amount = 2
+				limit = {
+                    is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+                add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_embrace_capitalism
+		icon = GFX_focus_generic_industrialists
+		prerequisite = { focus = ZKR_batman_technical_university }
+		mutually_exclusive = { focus = ZKR_embrace_central_planning }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_batman_technical_university
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_government = communism }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			every_owned_state = {
+                random_select_amount = 3
+				limit = {
+                    is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+                add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_modern_industry
+		icon = GFX_focus_generic_modernize_industry
+		prerequisite = { focus = ZKR_modern_arms_industry }
+		prerequisite = { focus = ZKR_embrace_central_planning focus = ZKR_embrace_capitalism }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_modern_arms_industry
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            swap_ideas = {
+				remove_idea = ZKR_industrialising_society_6
+				add_idea = ZKR_industrialised_society
+			}
+		}
+	}
+
 # MILITARY BRANCH
 
     focus = {
@@ -1013,11 +1742,11 @@ focus_tree = {
 		icon = GFX_focus_PLACEHOLDER
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 30
+		x = 35
 		y = 0
 		#relative_position_id = 
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20

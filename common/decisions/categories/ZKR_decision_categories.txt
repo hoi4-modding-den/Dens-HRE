@@ -1,0 +1,17 @@
+ZKR_syrian_intervention_cat = {
+	icon = border_conflicts
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_syrian_intervention
+        is_subject = no
+        ZKR_can_intervene_in_syria = yes
+	}
+
+	visible_when_empty = no
+
+	priority = 99
+}

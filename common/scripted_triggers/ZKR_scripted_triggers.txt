@@ -1,0 +1,23 @@
+ZKR_is_syrian_nation = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_syrian_nation_tt
+        OR = {
+            original_tag = ZSR
+            original_tag = ZCS
+            original_tag = ZBS
+            original_tag = ZRS
+        }
+    }
+}
+
+ZKR_can_intervene_in_syria = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_can_intervene_in_syria_tt
+        any_country = {
+            ZKR_is_syrian_nation = yes
+            exists = yes
+            has_capitulated = no
+            #has_civil_war = yes
+        }
+    }
+}

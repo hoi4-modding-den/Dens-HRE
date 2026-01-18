@@ -1,6 +1,6 @@
 capital = 350
 
-#oob = "ZKR_1936"
+oob = "ZKR_1936"
 
 set_research_slots = 3
 set_stability = 0.7
@@ -27,6 +27,11 @@ add_ideas = {
 
 set_rule = {
 	can_create_collaboration_government = no
+}
+
+add_opinion_modifier = {
+	target = ZOT
+	modifier = ZKR_ottoman_bastards
 }
 
 # Leaders

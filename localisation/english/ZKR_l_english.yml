@@ -21,6 +21,9 @@
  ZKR_greater_kurdistan_communism: "Socialist Union of Kurdistan"
  ZKR_greater_kurdistan_communism_DEF: "the Socialist Union of Kurdistan"
  ZKR_greater_kurdistan_communism_ADJ: "Kurdish"
+ ZKR_greater_kurdistan_neutrality: "Kingdom of Greater Kurdistan"
+ ZKR_greater_kurdistan_neutrality_DEF: "the Kingdom of Greater Kurdistan"
+ ZKR_greater_kurdistan_neutrality_ADJ: "Kurdish"
 
  ZKR_greater_kurdistan_subject: "Autonomy of Greater Kurdistan"
  ZKR_greater_kurdistan_subject_DEF: "the Autonomy of Greater Kurdistan"
@@ -34,6 +37,15 @@
  ZKR_confederation_subject_DEF: "the Autonomy of Mesopotamia"
  ZKR_confederation_subject_ADJ: "Mesopotamian"
 
+ ZKR_palestine: "Protectorate of Palestine"
+ ZKR_palestine_DEF: "the Protectorate of Palestine"
+ ZKR_palestine_ADJ: "Palestinian"
+
+
+# FACTION NAMES
+
+ ZKR_anti_imperialist_front: "Anti-Imperialist Front"
+ ZKR_kurdish_league: "Kurdish League"
 
 # PARTIES
 
@@ -79,6 +91,7 @@
 
  ZKR_an_independent_kurdistan: "Kurdish Fervour"
  ZKR_an_independent_kurdistan_desc: "The Republic of Kurdistan was officially proclaimed following the successful 1930 Kurdish rebellion ending with the Xoybûn-led Republic of Ararat declaring victory against Ottoman forces. Since then, the Xoybûn military junta has stepped down and allowed the formation of a Kurdish parliament and a democratic republic."
+ ZKR_a_greater_kurdistan: "$ZKR_an_independent_kurdistan$"
  ZKR_a_greater_kurdistan_desc: "The Kurdish people have been freed from oppression and the Kurdish homelands are finally fully under Kurdish control!"
  ZKR_liberal_versus_communist: "Alliance for Kurdistan"
  ZKR_liberal_versus_communist_desc: "The Kurdish Parliament is split among those that want to achieve Greater Kurdistan and those that seek to maintain Kurdish self-determination and help other ethnicities in the Middle East do the same. The Xoybûn maintains neutrality in this internal conflict, though some members are advocating for the restoration of the military government to achieve Kurdish unification."
@@ -91,6 +104,14 @@
  ZKR_codified_kurdish_language: "Kurdish Academy"
  ZKR_agrarian_society: "Agrarian Society"
  ZKR_industrialising_society: "Industrialising Society"
+ ZKR_industrialised_society: "Industrialised Society"
+ ZKR_ammunition_production: "Efficient Ammunition Production"
+
+
+# OPINION MODIFIERS
+
+ ZKR_ottoman_bastards: "Former Oppressors"
+ ZKR_refused_protection: "Refused Protection"
 
 
 # FOCI
@@ -111,6 +132,7 @@
  ZKR_strengthen_the_judiciary_desc: ""
  ZKR_syrian_intervention: "Syrian Intervention"
  ZKR_syrian_intervention_desc: "The situation in Syria is difficult right now. However, part of our nation is still in their hands. We must decide on a strategy to reclaim Kurdish territory from Syria with as little bloodshed as possible."
+ ZKR_syrian_intervention_tt: "Unlocks Decision Category: £GFX_decision_icon_small §Y$ZKR_syrian_intervention_cat$§!"
  ZKR_reorganise_the_police: "Reorganise the Police"
  ZKR_reorganise_the_police_desc: ""
  ZKR_centralise_the_administration: "Centralise Government Administration"
@@ -121,18 +143,24 @@
  ZKR_kurdish_academy_desc: ""
  ZKR_disband_the_volunteer_militia: "Disband the Volunteer Militias"
  ZKR_disband_the_volunteer_militia_desc: ""
- ZKR_pluralist_constitution: "Enforce Pluralism"
+ ZKR_pluralist_constitution: "Embrace Pluralism"
  ZKR_pluralist_constitution_desc: ""
- ZKR_pluralist_constitution_tt: "If §Y$ZKR_form_gendarmerie$§! has not been completed, the §YXoybûn§! will launch a §RCoup d'état§! against the current government."
  ZKR_lose_kurdish_claims_tt: "§Y[ROOT.GetNameWithFlag]§! will lose §Yclaims§! on all states without §YKurdish majority§!:"
  ZKR_kurdish_supremacy: "Kurdish Irridentism"
  ZKR_kurdish_supremacy_desc: ""
- ZKR_kurdish_supremacy_tt: "If §Y$ZKR_form_gendarmerie$§! has not been completed, the §YXoybûn§! will launch a §RCoup d'état§! against the current government."
+ ZKR_xoybun_coup_tt: "If §Y$ZKR_form_gendarmerie$§! has not been completed, the §FXoybûn§! will launch a §RCoup d'état§! against the current government."
  ZKR_greater_kurdistan_decision_unlock_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_form_greater_kurdistan$§!"
  ZKR_form_gendarmerie: "Form a Kurdish Gendarmerie"
  ZKR_form_gendarmerie_desc: ""
  ZKR_gendarmerie_merge_tt: "Merge §Y$ZKR_empowered_local_authorities$§! and §Y$ZKR_police_force$§! into"
- ZKR_form_gendarmerie_tt: "If §Y$ZKR_disband_the_volunteer_militia$§! or §Y$ZKR_devolution$§! have not been completed, §YMahmud Barzanji§! will launch a §RCoup d'état§! against the current government."
+ ZKR_monarchist_coup_tt: "If §Y$ZKR_disband_the_volunteer_militia$§! or §Y$ZKR_devolution$§! have not been completed, §gMahmud Barzanji§! will launch a §RCoup d'état§! against the current government."
+
+ ZKR_first_branch_completed: "The §YPolitical Situation§! has been sorted out"
+
+ ZKR_form_anti_imperialist_faction: "The Anti-Imperialist Front"
+ ZKR_form_anti_imperialist_faction_desc: ""
+ ZKR_the_kurdish_destiny: "The Kurdish Destiny"
+ ZKR_the_kurdish_destiny_desc: ""
 
  ZKR_kurdish_industrial_revolution: "The Kurdish Industrial Revolution"
  ZKR_kurdish_industrial_revolution_desc: ""
@@ -146,6 +174,36 @@
  ZKR_open_up_kurdistan_desc: ""
  ZKR_capital_city_industrial_park: "[ROOT.Capital.GetCapitalVictoryPointName] Industrial Park"
  ZKR_capital_city_industrial_park_desc: ""
+ ZKR_electrification: "Full Electrification"
+ ZKR_electrification_desc: ""
+ ZKR_careful_resource_extraction: "Careful Resource Extraction"
+ ZKR_careful_resource_extraction_desc: ""
+ ZKR_expand_arms_industry: "Expand Arms Production"
+ ZKR_expand_arms_industry_desc: ""
+ ZKR_cartridge_factories: "Cartridge Factories"
+ ZKR_cartridge_factories_desc: ""
+ ZKR_aviation_industry: "Kickstart Aviation Industry"
+ ZKR_aviation_industry_desc: ""
+ ZKR_modern_arms_industry: "Modern Production Methods"
+ ZKR_modern_arms_industry_desc: ""
+ ZKR_invite_industrial_advisors: "Invite Industrial Advisors"
+ ZKR_invite_industrial_advisors_desc: ""
+ ZKR_build_dam: "Build the Van Dam"
+ ZKR_build_dam_desc: ""
+ ZKR_kurdish_national_rail: "Kurdish National Rail"
+ ZKR_kurdish_national_rail_desc: ""
+ ZKR_oil_extraction: "Oil Extraction"
+ ZKR_oil_extraction_desc: ""
+ ZKR_oil_extraction_2: "Oil Extraction II"
+ ZKR_oil_extraction_2_desc: ""
+ ZKR_batman_technical_university: "Batman Technical University"
+ ZKR_batman_technical_university_desc: ""
+ ZKR_embrace_central_planning: "Embrace Central Planning"
+ ZKR_embrace_central_planning_desc: ""
+ ZKR_embrace_capitalism: "Privatise State-Owned Industries"
+ ZKR_embrace_capitalism_desc: ""
+ ZKR_modern_industry: "A Modernised Industry"
+ ZKR_modern_industry_desc: ""
 
  ZKR_enforce_military_neutrality: "Enforce Military Neutrality"
  ZKR_enforce_military_neutrality_desc: ""
@@ -155,6 +213,20 @@
 
  ZKR_form_greater_kurdistan: "Form Greater Kurdistan"
 
+ ZKR_syrian_intervention_cat: "Intervention in the Syrian Civil War"
+ ZKR_assist_syrian_socialists: "Assist @ZCSSyrian Socialists"
+ ZKR_assist_syrian_liberals: "Assist @ZSRSyrian Liberals"
+ ZKR_expand_intervention: "Expand our Intervention"
+ ZKR_demand_syrian_kurdistan: "Protect Syrian Kurds"
+ ZKR_demand_syrian_kurdistan_tt: "They will be §Gmore likely to accept§! if we have §Ysend aid§! to their side in the §YCivil War§! and current have sent §YVolunteers§!."
+
+
+# TRIGGER TOOLTIPS
+
+ ZKR_can_intervene_in_syria_tt: "The §YSyrian Civil War§! is ongoing"
+ ZKR_can_intervene_in_syria_tt_NOT: "The §YSyrian Civil War§! is not ongoing"
+ ZKR_is_syrian_nation_tt: "Is a §YSyrian Government§!"
+ ZKR_is_syrian_nation_tt_NOT: "Is not a §YSyrian Government§!"
 
 # EVENTS
 
@@ -171,6 +243,23 @@
  ZKR_politics_events.3.a: "Seyid Riza is reelected."
  ZKR_politics_events.3.b: "Ahmed Barzani is nominated for PAR leadership."
  ZKR_politics_events.3.c: "The PŞK and Qazi Muhamad win!"
+
+ ZKR_diplo_events.1.t: "[FROM.GetNameDefCap] sends Aid"
+ ZKR_diplo_events.1.desc: "Following correspondence between [ROOT.GetLeader] and the [FROM.GetAdjective] embassy, [FROM.GetNameDef] has decided to assist us in the civil war with arms shipments directly from [FROM.Capital.GetCapitalVictoryPointName]."
+ ZKR_diplo_events.1.a: "We thank our [FROM.GetAdjective] brothers!"
+
+ ZKR_diplo_events.2.t: "[FROM.GetNameDefCap] offers 'Protection' for [1103.GetCapitalVictoryPointName]!"
+ ZKR_diplo_events.2.desc: "WIP"
+ ZKR_diplo_events.2.a: "We can't hold it anyways, accept."
+ ZKR_diplo_events.2.b: "It is rightful Syrian land!"
+
+ ZKR_diplo_events.3.t: "[ROOT.GetAdjective] Troops enter [1103.GetCapitalVictoryPointName]"
+ ZKR_diplo_events.3.desc: "WIP"
+ ZKR_diplo_events.3.a: "Welcome home!"
+
+ ZKR_diplo_events.4.t: "[FROM.GetNameDef] holds onto [1103.GetCapitalVictoryPointName]"
+ ZKR_diplo_events.4.desc: "WIP"
+ ZKR_diplo_events.4.a: "They'll pay for this!"
 
  ZKR_technical_events.1.t: "Another Victory for [ROOT.GetLeader]"
  ZKR_technical_events.1.desc: "The last British bastion in the middle east, the colonial administration in Palestine, has finally been vanquished. The last British boots on our part of the sub-continent have been driven out and our people shall finally be free from their tyranny."

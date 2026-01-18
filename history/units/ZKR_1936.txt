@@ -1,0 +1,225 @@
+division_template = {
+	name = "Cavalry Brigade"
+
+	division_names_group = ZKR_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+
+	}
+}
+division_template = {
+	name = "Xoybûn Militia"
+
+    priority = 0
+	division_names_group = ZKR_MIL_01
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+        militia = { x = 0 y = 1 }
+        militia = { x = 0 y = 2 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Infantry Division"
+
+	division_names_group = ZKR_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+	}
+	support = {
+        artillery = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Mountain Infantry Division"
+
+	division_names_group = ZKR_MTN_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+        mountaineers = { x = 0 y = 1 }
+        mountaineers = { x = 0 y = 2 }
+        mountaineers = { x = 1 y = 0 }
+        mountaineers = { x = 1 y = 1 }
+        mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+}
+
+units = {
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 6935 # Van
+		division_template = "Cavalry Brigade"
+		start_experience_factor = 0.2
+        start_equipment_factor = 0.9
+	}
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 10497 # Sert
+		division_template = "Cavalry Brigade"
+		start_experience_factor = 0.2
+        start_equipment_factor = 0.9
+	}
+
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12387 # Batman
+		division_template = "Xoybûn Militia"
+		start_experience_factor = 0.3
+        start_equipment_factor = 1
+	}
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 4512 # Diyarbakir
+		division_template = "Xoybûn Militia"
+		start_experience_factor = 0.3
+        start_equipment_factor = 1
+	}
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 10497 # Sert
+		division_template = "Xoybûn Militia"
+		start_experience_factor = 0.3
+        start_equipment_factor = 1
+	}
+
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12376 # Qerekose
+		division_template = "Mountain Infantry Division"
+		start_experience_factor = 0.35
+        start_equipment_factor = 0.8
+	}
+    division = {	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 6935 # Van
+		division_template = "Mountain Infantry Division"
+		start_experience_factor = 0.35
+        start_equipment_factor = 0.8
+	}
+
+    division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 4512 # Diyarbakir
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+    division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 12476 # Hakkari
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+        start_equipment_factor = 0.8
+	}
+    division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 9823 # Urfa
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+        start_equipment_factor = 0.8
+	}
+    division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 12387 # Batman
+		division_template = "Infantry Division"
+		start_experience_factor = 0.25
+        start_equipment_factor = 0.42
+	}
+    division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 12416 # Desert below Diyarbakir
+		division_template = "Infantry Division"
+		start_experience_factor = 0.2
+        start_equipment_factor = 0.6
+	}
+}
+
+instant_effect = {
+
+    add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = ZKR
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 50
+		#industrial_manufacturer = mio:
+	}
+    add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = ZKR
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+		#industrial_manufacturer = mio:
+	}
+    add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = ZKR
+		}
+		requested_factories = 1
+		progress = 0.1
+		efficiency = 50
+		#industrial_manufacturer = mio:
+	}
+	
+}

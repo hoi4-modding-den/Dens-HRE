@@ -1,8 +1,8 @@
 add_namespace = ZKR_politics_events
+add_namespace = ZKR_diplo_events
 add_namespace = ZKR_technical_events
 
-# Monarchist Coup
-country_event = {
+country_event = { # Monarchist Coup
 	id = ZKR_politics_events.1
 	title = ZKR_politics_events.1.t
 	desc = ZKR_politics_events.1.desc
@@ -14,15 +14,26 @@ country_event = {
 	
 	option = {
         name = ZKR_politics_events.1.a
+        add_popularity = { ideology = neutrality popularity = 0.15 }
 		set_politics = {
             ruling_party = neutrality
             elections_allowed = no
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        if = {
+            limit = {
+                has_idea = ZKR_liberal_versus_communist
+            }
+            remove_ideas = ZKR_liberal_versus_communist
+        }
+
+        set_country_flag = ZKR_first_branch_completed
     }
 }
 
-# Fascist Coup
-country_event = {
+country_event = { # Fascist Coup
 	id = ZKR_politics_events.2
 	title = ZKR_politics_events.2.t
 	desc = ZKR_politics_events.2.desc
@@ -34,6 +45,7 @@ country_event = {
 	
 	option = {
         name = ZKR_politics_events.2.a
+        add_popularity = { ideology = fascism popularity = 0.15 }
 		set_politics = {
             ruling_party = fascism
             elections_allowed = no
@@ -62,7 +74,7 @@ country_event = {
 
         if = {
             limit = {
-                has_idea = ZKR_kurdish_unitarianism_idea
+                has_idea = ZKR_kurdish_federalism_idea
             }
             remove_ideas = ZKR_kurdish_federalism_idea
         }
@@ -72,11 +84,12 @@ country_event = {
             }
             remove_ideas = ZKR_kurdish_unitarianism_idea
         }
+
+        set_country_flag = ZKR_first_branch_completed
     }
 }
 
-# Elections
-country_event = {
+country_event = { # Elections
 	id = ZKR_politics_events.3
 	title = ZKR_politics_events.3.t
 	desc = ZKR_politics_events.3.desc
@@ -88,6 +101,7 @@ country_event = {
 	
 	option = {
         name = ZKR_politics_events.3.a
+        add_popularity = { ideology = democratic popularity = 0.05 }
 		set_politics = {
             ruling_party = democratic
             elections_allowed = yes
@@ -96,10 +110,13 @@ country_event = {
         custom_effect_tooltip = generic_skip_one_line_tt
 
         promote_character = ZKR_seyid_riza
+
+        set_country_flag = ZKR_first_branch_completed
     }
 
     option = {
         name = ZKR_politics_events.3.b
+        add_popularity = { ideology = democratic popularity = 0.05 }
 		set_politics = {
             ruling_party = democratic
             elections_allowed = yes
@@ -108,10 +125,13 @@ country_event = {
         custom_effect_tooltip = generic_skip_one_line_tt
 
         promote_character = ZKR_ahmed_barzani
+
+        set_country_flag = ZKR_first_branch_completed
     }
 
     option = {
         name = ZKR_politics_events.3.c
+        add_popularity = { ideology = communism popularity = 0.05 }
 		set_politics = {
             ruling_party = communism
             elections_allowed = yes
@@ -120,10 +140,140 @@ country_event = {
         custom_effect_tooltip = generic_skip_one_line_tt
 
         promote_character = ZKR_qazi_muhamad
+
+        set_country_flag = ZKR_first_branch_completed
     }
 }
 
-country_event = {
+country_event = { # Assistance in Syrian CW
+	id = ZKR_diplo_events.1
+	title = ZKR_diplo_events.1.t
+	desc = ZKR_diplo_events.1.desc
+	
+	picture = GFX_report_event_china_ledo_road
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.1.a
+        add_popularity = { ideology = FROM popularity = 0.05 }
+		effect_tooltip = {
+            add_offsite_building = { type = arms_factory level = 1 }
+        }
+    }
+}
+
+country_event = { # Demanded Syrian Kurdistan
+	id = ZKR_diplo_events.2
+	title = ZKR_diplo_events.2.t
+	desc = ZKR_diplo_events.2.desc
+	
+	picture = GFX_report_event_spr_civil_war_equipment
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.2.a
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+                surrender_progress > 0.5
+            }
+            modifier = {
+                factor = 1.5
+                has_government = FROM
+            }
+        }
+        effect_tooltip = {
+            1103 = {
+                remove_core_of = FROM
+                transfer_state_to = ROOT
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+            country_event = { id = ZKR_diplo_events.3 days = 2 }
+        }
+    }
+
+    option = {
+        name = ZKR_diplo_events.2.b
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0.5
+                has_country_flag = ZKR_got_assistance_in_cw
+            }
+            modifier = {
+                factor = 0.5
+                has_volunteers_amount_from = {
+                    tag = FROM
+                    count > 0
+                }
+            }
+        }
+        add_political_power = -50
+        add_manpower = -3000
+        effect_tooltip = {
+            reverse_add_opinion_modifier = {
+                target = FROM
+                modifier = ZKR_refused_protection
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+            country_event = { id = ZKR_diplo_events.4 days = 2 }
+        }
+    }
+}
+
+country_event = { # Demanded Syrian Kurdistan - Accepted
+	id = ZKR_diplo_events.3
+	title = ZKR_diplo_events.3.t
+	desc = ZKR_diplo_events.3.desc
+	
+	picture = GFX_report_event_generic_peaceful_annexation
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.3.a
+		1103 = {
+            remove_core_of = FROM
+            transfer_state_to = ROOT
+        }
+    }
+}
+
+country_event = { # Demanded Syrian Kurdistan - Refused
+	id = ZKR_diplo_events.4
+	title = ZKR_diplo_events.4.t
+	desc = ZKR_diplo_events.4.desc
+	
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.4.a
+		add_opinion_modifier = {
+            target = FROM
+            modifier = ZKR_refused_protection
+        }
+    }
+
+}
+
+country_event = { # Last British Bastion gone
 	id = ZKR_technical_events.1
 	title = ZKR_technical_events.1.t
 	desc = ZKR_technical_events.1.desc
@@ -134,10 +284,7 @@ country_event = {
         tag = ZKR
         has_country_leader_with_trait = ZKR_hates_the_british
         DN1 = {
-            OR = {
-                NOT = { has_government = neutrality }
-                is_subject_of = ROOT
-            }
+            is_subject_of = ROOT
         }
     }
 	
@@ -146,5 +293,35 @@ country_event = {
 	option = {
         name = ZKR_technical_events.1.a
 		remove_country_leader_trait = ZKR_hates_the_british
+
+        if = {
+            limit = {
+                DN1 = { has_idea = DN1_the_empires_last_bastion }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            DN1 = { remove_ideas = DN1_the_empires_last_bastion }
+        }
+
+        if = {
+            limit = {
+                DN1 = { has_country_leader = { character = DN1_arthur_wauchope ruling_only = yes } }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            DN1 = { retire_character = DN1_arthur_wauchope }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        DN1 = {
+            set_party_name = {
+                ideology = neutrality
+                name = "Jerusalem Council"
+                long_name = "Jerusalem Council"
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        DN1 = { set_cosmetic_tag = ZKR_palestine }
     }
 }
