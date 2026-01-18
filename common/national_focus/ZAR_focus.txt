@@ -10,7 +10,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_The_Orthodox_Problem_Rears_Its_Head_Yet_Again
-		icon = GFX_fish
+		icon = GFX_ZAR_Orthodox_Returns
 		x = 17
 		y = 1
 		cost = 0
@@ -268,6 +268,7 @@ focus_tree = {
 			}
 			
 			}
+			country_event = { id = ZAR.3 }
 		}
 		
 		
@@ -304,10 +305,108 @@ focus_tree = {
 				
 		}
 		completion_reward = {
-			
+			add_research_slot = 1
+			country_event = { id = ZAR.4 }
 		}
 		
 	}
+	focus = {
+		id = ZAR_Invest_In_Research
+		icon = GFX_fish
+		x = 17
+		y = 5
+		cost = 4
+		prerequisite = { focus = ZAR_Progress_At_All_Costs }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			add_ideas = ZAR_Research_Investments
+		}
+		
+	}
+	focus = {
+		id = ZAR_Technocratic_Industrial_Plans
+		icon = GFX_fish
+		x = 16
+		y = 6
+		cost = 5
+		prerequisite = { focus = ZAR_Invest_In_Research }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+		ZAR_Radical_Increase_Small = yes
+			1114 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+			}
+			}
+		}
+		
+	}
+	focus = {
+		id = ZAR_Work_For_The_Better_Tomorrow
+		icon = GFX_fish
+		x = 18
+		y = 6
+		cost = 5
+		prerequisite = { focus = ZAR_Invest_In_Research }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+		ZAR_Pragmatic_Increase_Large = yes
+			add_ideas = ZAR_Joy_In_Work
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Art_In_The_Industrial_City
+		icon = GFX_fish
+		x = 17
+		y = 7
+		cost = 5
+		prerequisite = { focus = ZAR_Work_For_The_Better_Tomorrow }
+		prerequisite = { focus = ZAR_Technocratic_Industrial_Plans }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			country_event = { id = ZAR.5 }
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Be_Faster_Than_The_Clocks_Tick
+		icon = GFX_fish
+		x = 17
+		y = 8
+		cost = 5
+		prerequisite = { focus = ZAR_The_Art_In_The_Industrial_City }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			country_event = { id = ZAR.6 }
+			swap_ideas = {
+				remove_idea = ZAR_Research_Investments
+				add_idea = ZAR_Faster_Than_The_Clock_Ticks
+			}
+		}
+		
+	}
+
 
 	focus = {
 		id = ZAR_Dealing_With_The_Trabzon_Zone
