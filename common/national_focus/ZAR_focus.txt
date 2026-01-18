@@ -1,0 +1,167 @@
+focus_tree = {
+	id = ZAR_focus
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 150
+			tag = ZAR
+		}
+	}
+	focus = {
+		id = ZAR_The_Orthodox_Problem_Rears_Its_Head_Yet_Again
+		icon = GFX_fish
+		x = 17
+		y = 1
+		cost = 0
+		available = {
+			always = no
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			custom_effect_tooltip = ZAR_Need_Deal_Religion_TT
+			
+		}
+	}
+
+	focus = {
+		id = ZAR_Support_Religious_Leniancy 
+		icon = GFX_fish
+		x = 14
+		y = 2
+		cost = 2
+		prerequisite = { focus = ZAR_The_Orthodox_Problem_Rears_Its_Head_Yet_Again }
+		mutually_exclusive = { focus = ZAR_No_Compromise_No_Pragmatism }
+		ai_will_do = { factor = 1 }
+		available = {
+			has_country_flag = ZAR_Chose_Leniancy_Against_The_Orthodox_Church
+				
+		}
+		completion_reward = {
+			ZAR_Pragmatic_Increase_Large = yes
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_No_Compromise_No_Pragmatism
+		icon = GFX_fish
+		x = 20
+		y = 2
+		cost = 2
+		prerequisite = { focus = ZAR_The_Orthodox_Problem_Rears_Its_Head_Yet_Again }
+		mutually_exclusive = { focus = ZAR_Support_Religious_Leniancy }
+		ai_will_do = { factor = 1 }
+		available = {
+			has_country_flag = ZAR_Chose_Violence_Against_The_Orthodox_Church
+				
+		}
+		completion_reward = {
+			ZAR_Radical_Increase_Large = yes
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Charents_Speech
+		icon = GFX_fish
+		x = 17
+		y = 3
+		cost = 5
+		prerequisite = { focus = ZAR_No_Compromise_No_Pragmatism focus = ZAR_Support_Religious_Leniancy  }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_To_Get_The_Nation_Ready_For_War
+		icon = GFX_fish
+		x = 12
+		y = 4
+		cost = 5
+		prerequisite = { focus = ZAR_Charents_Speech }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Distribute_Arms_To_The_People
+		icon = GFX_fish
+		x = 11
+		y = 5
+		cost = 7
+		prerequisite = { focus = ZAR_To_Get_The_Nation_Ready_For_War }
+		mutually_exclusive = { focus = ZAR_Expand_The_Special_Forces }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			ZAR_Pragmatic_Increase_Small = yes
+		}
+		
+	}
+	focus = {
+		id = ZAR_Expand_The_Special_Forces
+		icon = GFX_fish
+		x = 13
+		y = 5
+		cost = 10
+		prerequisite = { focus = ZAR_To_Get_The_Nation_Ready_For_War }
+		mutually_exclusive = { focus = ZAR_Distribute_Arms_To_The_People }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			ZAR_Radical_Increase_Small = yes
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Progress_At_All_Costs
+		icon = GFX_fish
+		x = 17
+		y = 4
+		cost = 5
+		prerequisite = { focus = ZAR_Charents_Speech }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Dealing_With_The_Trabzon_Zone
+		icon = GFX_fish
+		x = 22
+		y = 4
+		cost = 5
+		prerequisite = { focus = ZAR_Charents_Speech }
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	

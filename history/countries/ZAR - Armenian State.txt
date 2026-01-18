@@ -37,5 +37,16 @@ set_autonomy = {
 	autonomy_state = autonomy_integrated_puppet
 }
 
-
+set_variable = { ZAR_Pragmatic_Power = 20 }
+set_variable = { ZAR_Radical_Power = 30 }
+clamp_variable = {
+    var = ZAR_Pragmatic_Power
+    min = 0
+    max = 50
+}
+clamp_variable = {
+    var = ZAR_Radical_Power
+    min = 0
+    max = 50
+}
 
