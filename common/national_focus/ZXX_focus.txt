@@ -19,7 +19,7 @@ focus_tree={
 	focus = { 
 		id = ZXX_construction_of_central_complex
 		icon = GFX_focus_AFG_parliamentary_democracy
-		x = 10
+		x = 7
 		y = 0
 		#relative_position_id = 
 		
@@ -30,7 +30,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = {}
 		mutually_exclusive = {}
@@ -81,7 +81,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_construction_of_central_complex }
 		mutually_exclusive = {}
@@ -109,7 +109,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = { has_country_flag = ZXX_assemble_the_first_council }
+		#allow_branch = { has_country_flag = ZXX_assemble_the_first_council }
 		
 		prerequisite = { focus = ZXX_assemble_the_first_council }
 		mutually_exclusive = {}
@@ -131,7 +131,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_stonewalls_investment_campaign }
 		mutually_exclusive = {}
@@ -153,7 +153,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_stonewalls_investment_campaign }
 		mutually_exclusive = {}
@@ -175,7 +175,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_stonewalls_investment_campaign }
 		mutually_exclusive = {}
@@ -197,7 +197,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_secure_investment_from_the_UK }
 		prerequisite = { focus = ZXX_secure_investment_from_the_US }
@@ -220,7 +220,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_secure_investment_from_the_US }
 		prerequisite = { focus = ZXX_secure_investment_from_france }
@@ -243,7 +243,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_ensure_stability_of_income }
 		prerequisite = { focus = ZXX_currency_exchange_reform }
@@ -266,7 +266,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = { has_country_flag = ZXX_assemble_the_first_council }
+		#allow_branch = { has_country_flag = ZXX_assemble_the_first_council }
 		
 		prerequisite = { focus = ZXX_assemble_the_first_council }
 		mutually_exclusive = {}
@@ -288,13 +288,17 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_claytons_secure_management_campaign }
 		mutually_exclusive = {}
 		
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = var:ZXX_corporate_struggle_ideas^0
+				add_idea = var:ZXX_corporate_struggle_ideas^1
+			}
+			remove_from_array = { ZXX_corporate_struggle_ideas = ZXX_corporate_struggle_ideas^0 }
 		}
 	}
 	
@@ -310,13 +314,17 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_claytons_secure_management_campaign }
 		mutually_exclusive = {}
 		
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = var:ZXX_corporate_struggle_ideas^0
+				add_idea = var:ZXX_corporate_struggle_ideas^1
+			}
+			remove_from_array = { ZXX_corporate_struggle_ideas = ZXX_corporate_struggle_ideas^0 }
 		}
 	}
 	
@@ -332,13 +340,17 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_claytons_secure_management_campaign }
 		mutually_exclusive = {}
 		
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = var:ZXX_corporate_struggle_ideas^0
+				add_idea = var:ZXX_corporate_struggle_ideas^1
+			}
+			remove_from_array = { ZXX_corporate_struggle_ideas = ZXX_corporate_struggle_ideas^0 }
 		}
 	}
 	
@@ -354,7 +366,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_work_with_the_opposition }
 		prerequisite = { focus = ZXX_address_internal_uncertainty }
@@ -377,7 +389,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_work_with_the_opposition }
 		prerequisite = { focus = ZXX_put_money_in_the_right_hands }
@@ -400,7 +412,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_invite_external_experts }
 		prerequisite = { focus = ZXX_expand_the_authority_militia }
@@ -423,7 +435,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = { has_country_flag = ZXX_assemble_the_first_council }
+		#allow_branch = { has_country_flag = ZXX_assemble_the_first_council }
 		
 		prerequisite = { focus = ZXX_assemble_the_first_council }
 		mutually_exclusive = {}
@@ -445,7 +457,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_donnellys_local_outreach_campaign }
 		mutually_exclusive = { focus = ZXX_encourage_immigration }
@@ -467,7 +479,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_donnellys_local_outreach_campaign }
 		mutually_exclusive = { focus = ZXX_encourage_local_efforts }
@@ -489,7 +501,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { 
 			focus = ZXX_encourage_local_efforts
@@ -514,7 +526,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { 
 			focus = ZXX_encourage_local_efforts
@@ -539,7 +551,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_expand_agricultural_subsidies }
 		prerequisite = { focus = ZXX_create_new_jobs }
@@ -564,7 +576,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
 		prerequisite = { focus = ZXX_establish_the_black_lion_commission }
 		prerequisite = { focus = ZXX_establish_the_investment_currency_commission }
@@ -589,7 +601,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = { has_variable = ZXX_the_saharan_authority_report_year }
+		#allow_branch = { has_variable = ZXX_the_saharan_authority_report_year }
 		
 		prerequisite = { focus = ZXX_the_1936_saharan_authority_report }
 		mutually_exclusive = { focus = ZXX_dismiss_the_reports_concerns }
@@ -611,7 +623,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = { has_variable = ZXX_the_saharan_authority_report_year }
+		#allow_branch = { has_variable = ZXX_the_saharan_authority_report_year }
 		
 		prerequisite = { focus = ZXX_the_1936_saharan_authority_report }
 		mutually_exclusive = { focus = ZXX_dismiss_the_reports_concerns }
@@ -633,7 +645,7 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = { has_variable = ZXX_the_saharan_authority_report_year }
+		#allow_branch = { has_variable = ZXX_the_saharan_authority_report_year }
 		
 		prerequisite = { focus = ZXX_the_1936_saharan_authority_report }
 		mutually_exclusive = { focus = ZXX_address_nepotism_within_the_ICC }
@@ -656,9 +668,9 @@ focus_tree={
 		
 		available = {}
 		bypass = {}
-		allow_branch = {}
+		#allow_branch = {}
 		
-		prerequisite = { 
+		prerequisite = {
 			focus = ZXX_dismiss_the_reports_concerns
 			focus = ZXX_address_nepotism_within_the_ICC
 		}
@@ -671,6 +683,1279 @@ focus_tree={
 		completion_reward = {
 			set_country_flag = ZXX_assemble_the_second_council
 			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	focus = {
+		id = ZXX_statistical_planning_office
+		icon = GFX_focus_CHI_planned_economy
+		x = 1
+		y = 1
+		relative_position_id = ZXX_assemble_the_second_council
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {
+			focus = ZXX_assemble_the_second_council
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_set_up_the_bahariya_physics_research_complex
+		icon = GFX_focus_generic_navy_research_bonus
+		x = -1
+		y = 1
+		relative_position_id = ZXX_assemble_the_second_council
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {
+			focus = ZXX_assemble_the_second_council
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_found_power_research_directorate
+		icon = GFX_focus_GER_afrikakorps
+		x = 24
+		y = 0
+		relative_position_id = ZXX_construction_of_central_complex
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_desert_energy_surveys
+		icon = GFX_focus_GER_afrikakorps
+		x = -2
+		y = 1
+		relative_position_id = ZXX_found_power_research_directorate
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_found_power_research_directorate }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_high_temperature_materials
+		icon = GFX_focus_GER_afrikakorps
+		x = 2
+		y = 1
+		relative_position_id = ZXX_found_power_research_directorate
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_found_power_research_directorate }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_solar_thermal_array_program
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_desert_energy_surveys
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_desert_energy_surveys }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_expand_solar_thermal_capacity
+		icon = GFX_focus_GER_afrikakorps
+		x = 2
+		y = 1
+		relative_position_id = ZXX_solar_thermal_array_program
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_solar_thermal_array_program }
+		prerequisite = { focus = ZXX_high_temperature_materials }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_energy_storage_experiments
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_high_temperature_materials
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_high_temperature_materials }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_nighttime_power_utilization
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 2
+		relative_position_id = ZXX_energy_storage_experiments
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_energy_storage_experiments }
+		prerequisite = { focus = ZXX_expand_solar_thermal_capacity }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_customs_and_logistics_authority
+		icon = GFX_focus_GER_afrikakorps
+		x = 17
+		y = 1
+		relative_position_id = ZXX_construction_of_central_complex
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_desert_transport_hubs
+		icon = GFX_focus_GER_afrikakorps
+		x = 2
+		y = 1
+		relative_position_id = ZXX_customs_and_logistics_authority
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { 
+			focus = ZXX_customs_and_logistics_authority
+			focus = ZXX_desert_energy_surveys
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_expand_bureaucratic_capacity
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_desert_transport_hubs
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_desert_transport_hubs }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_airfields_for_logistics
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_customs_and_logistics_authority
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_customs_and_logistics_authority }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_expand_water_transport
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_airfields_for_logistics
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_airfields_for_logistics }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_civilian_supply_reserves
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_airfields_for_logistics
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_airfields_for_logistics }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_integrated_settlement_policy
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_civilian_supply_reserves
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_civilian_supply_reserves }
+		prerequisite = { focus = ZXX_expand_bureaucratic_capacity }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_establish_desert_security_forces
+		icon = GFX_focus_GER_afrikakorps
+		x = 10
+		y = 0
+		relative_position_id = ZXX_construction_of_central_complex
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_infrastructure_protection_doctrine
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_establish_desert_security_forces
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_establish_desert_security_forces }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_mobile_patrol_units
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_infrastructure_protection_doctrine
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_infrastructure_protection_doctrine }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_desert_garrison_program
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_establish_desert_security_forces
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_establish_desert_security_forces }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_logistical_security_commands
+		icon = GFX_focus_GER_afrikakorps
+		x = 2
+		y = 1
+		relative_position_id = ZXX_desert_garrison_program
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_desert_garrison_program }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_heat_and_sand_training
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_desert_garrison_program
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_desert_garrison_program }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_secure_airfields_program
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_logistical_security_commands
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_logistical_security_commands }
+		prerequisite = { focus = ZXX_airfields_for_logistics }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_desert_air_reconnaissance
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_secure_airfields_program
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_secure_airfields_program }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_armored_transport_trials
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_mobile_patrol_units
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_mobile_patrol_units }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_desert_defensive_positions
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_armored_transport_trials
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {
+			focus = ZXX_armored_transport_trials
+			focus = ZXX_heat_and_sand_training
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_auxiliary_labor_units
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 2
+		relative_position_id = ZXX_mobile_patrol_units
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_mobile_patrol_units }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_internal_policing_framework
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_desert_defensive_positions
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_desert_air_reconnaissance }
+		prerequisite = { focus = ZXX_desert_defensive_positions }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_industrial_zone_militia
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 2
+		relative_position_id = ZXX_auxiliary_labor_units
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = {
+			focus = ZXX_auxiliary_labor_units
+			focus = ZXX_internal_policing_framework
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_radio_relay_stations
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 2
+		relative_position_id = ZXX_expand_water_transport
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_water_transport }
+		prerequisite = { focus = ZXX_desert_air_reconnaissance }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_expand_administrative_centers
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_radio_relay_stations
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_radio_relay_stations }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_emergency_infrastructure_defense
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_industrial_zone_militia
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_industrial_zone_militia }
+		prerequisite = { focus = ZXX_expand_administrative_centers }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_command_and_control_reforms
+		icon = GFX_focus_GER_afrikakorps
+		x = 4
+		y = 1
+		relative_position_id = ZXX_industrial_zone_militia
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_industrial_zone_militia }
+		prerequisite = { focus = ZXX_expand_administrative_centers }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_central_security_bureau
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_command_and_control_reforms
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_command_and_control_reforms }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_counter_sabotage_measures
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_emergency_infrastructure_defense
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_emergency_infrastructure_defense }
+		prerequisite = { focus = ZXX_command_and_control_reforms }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZXX_limited_conscription_policy
+		icon = GFX_focus_GER_afrikakorps
+		x = -2
+		y = 1
+		relative_position_id = ZXX_emergency_infrastructure_defense
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_auxiliary_labor_units }
+		prerequisite = { focus = ZXX_emergency_infrastructure_defense }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_emergency_response_units
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 2
+		relative_position_id = ZXX_integrated_settlement_policy
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_internal_policing_framework }
+		prerequisite = { focus = ZXX_integrated_settlement_policy }
+		prerequisite = { focus = ZXX_radio_relay_stations }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_corporate_governance_framework
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 2
+		relative_position_id = ZXX_expand_bureaucratic_capacity
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_bureaucratic_capacity }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_expand_civil_service
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 2
+		relative_position_id = ZXX_corporate_governance_framework
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_corporate_governance_framework }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_amend_the_relocation_policy
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_expand_administrative_centers
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_administrative_centers }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_establish_a_civil_government
+		icon = GFX_focus_GER_afrikakorps
+		x = 2
+		y = 2
+		relative_position_id = ZXX_amend_the_relocation_policy
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_amend_the_relocation_policy }
+		prerequisite = { focus = ZXX_expand_civil_service }
+		prerequisite = { focus = ZXX_emergency_response_units }
+		mutually_exclusive = { focus = ZXX_new_corporate_security_act }
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_new_corporate_security_act
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_central_security_bureau
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_central_security_bureau }
+		prerequisite = { focus = ZXX_counter_sabotage_measures }
+		mutually_exclusive = { focus = ZXX_establish_a_civil_government }
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_desert_power_grid_integration
+		icon = GFX_focus_GER_afrikakorps
+		x = -2
+		y = 1
+		relative_position_id = ZXX_expand_solar_thermal_capacity
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_solar_thermal_capacity }
+		prerequisite = { focus = ZXX_expand_bureaucratic_capacity }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_central_power_complexes
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_desert_power_grid_integration
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_desert_power_grid_integration }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_waste_heat_recovery
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 2
+		relative_position_id = ZXX_expand_solar_thermal_capacity
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_solar_thermal_capacity }
+		prerequisite = { focus = ZXX_nighttime_power_utilization }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_powered_desalination_projects
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_waste_heat_recovery
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_waste_heat_recovery }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_hydrogen_production_trials
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 2
+		relative_position_id = ZXX_nighttime_power_utilization
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_nighttime_power_utilization }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_energy_intensive_industries
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_central_power_complexes
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_central_power_complexes }
+		prerequisite = { focus = ZXX_corporate_governance_framework }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_automation_and_power_control
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_central_power_complexes
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_central_power_complexes }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_expand_research_power_synergy
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_automation_and_power_control
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_automation_and_power_control }
+		prerequisite = { focus = ZXX_energy_intensive_industries }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_exporting_energy_expertise
+		icon = GFX_focus_GER_afrikakorps
+		x = 2
+		y = 1
+		relative_position_id = ZXX_automation_and_power_control
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_automation_and_power_control }
+		prerequisite = { 
+			focus = ZXX_powered_desalination_projects
+			focus = ZXX_hydrogen_production_trials
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_next_generation_power_theory
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 2
+		relative_position_id = ZXX_hydrogen_production_trials
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_hydrogen_production_trials }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_electrify_the_western_territories
+		icon = GFX_focus_GER_afrikakorps
+		x = -1
+		y = 1
+		relative_position_id = ZXX_expand_research_power_synergy
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_research_power_synergy }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_electrify_the_eastern_territories
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_expand_research_power_synergy
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_expand_research_power_synergy }
+		prerequisite = { focus = ZXX_exporting_energy_expertise }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_power_the_nile_territories
+		icon = GFX_focus_GER_afrikakorps
+		x = 0
+		y = 1
+		relative_position_id = ZXX_exporting_energy_expertise
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_exporting_energy_expertise }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZXX_the_atom_is_split_in_the_sahara
+		icon = GFX_focus_GER_afrikakorps
+		x = 1
+		y = 1
+		relative_position_id = ZXX_electrify_the_eastern_territories
+		
+		cost = 6
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		#allow_branch = {}
+		
+		prerequisite = { focus = ZXX_next_generation_power_theory }
+		prerequisite = { 
+			focus = ZXX_electrify_the_eastern_territories
+			focus = ZXX_electrify_the_western_territories
+		}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			
 		}
 	}
 

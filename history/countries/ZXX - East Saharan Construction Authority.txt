@@ -24,11 +24,17 @@ add_ideas = {
 }
 
 set_convoys = 50
+set_stability = 0.25
+set_war_support = 0.05
 
 recruit_character = ZXX_samuel_insull
 recruit_character = ZXX_richard_clayton
 recruit_character = ZXX_gordon_stonewall
 recruit_character = ZXX_brian_donnelly
+
+add_ideas = ZXX_nile_sahara_logistics_accord
+add_ideas = ZXX_strong_local_resistance
+add_ideas = ZXX_corporate_struggle
 
 set_politics = {
 	ruling_party = neutrality
@@ -46,21 +52,20 @@ set_popularities = {
 
 set_country_flag = no_generic_characters
 
-generate_character = { token_base = generic_army_chief_off advisor = { slot = army_chief traits = { army_chief_offensive_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_off } } }
-generate_character = { token_base = generic_army_chief_def advisor = { slot = army_chief traits = { army_chief_defensive_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_def } } }
+add_to_array = { ZXX_corporate_struggle_ideas = token:ZXX_corporate_struggle }
+add_to_array = { ZXX_corporate_struggle_ideas = token:ZXX_corporate_struggle2 }
+add_to_array = { ZXX_corporate_struggle_ideas = token:ZXX_corporate_struggle3 }
+add_to_array = { ZXX_corporate_struggle_ideas = token:ZXX_corporate_struggle4 }
+add_to_array = { ZXX_corporate_struggle_ideas = token:ZXX_no_idea }
+add_to_array = { ZXX_corporate_struggle_ideas = token:ZXX_no_idea }
+
 generate_character = { token_base = generic_army_chief_drill advisor = { slot = army_chief traits = { army_chief_drill_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_drill } } }
 generate_character = { token_base = generic_army_chief_org advisor = { slot = army_chief traits = { army_chief_organizational_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_org } } }
 generate_character = { token_base = generic_army_chief_plan advisor = { slot = army_chief traits = { army_chief_planning_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_plan } } }
 generate_character = { token_base = generic_army_chief_morale advisor = { slot = army_chief traits = { army_chief_morale_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_morale } } }
-generate_character = { token_base = generic_army_chief_maneuver advisor = { slot = army_chief traits = { army_chief_maneuver_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_army_chief_maneuver } } }
-generate_character = { token_base = generic_navy_chief_decisive_bat advisor = { slot = navy_chief traits = { navy_chief_decisive_battle_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_navy_chief_decisive_bat } } }
-generate_character = { token_base = generic_navy_chief_aviation advisor = { slot = navy_chief traits = { navy_chief_naval_aviation_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_navy_chief_aviation } } }
-generate_character = { token_base = generic_navy_chief_rading advisor = { slot = navy_chief traits = { navy_chief_commerce_raiding_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_navy_chief_rading } } }
 generate_character = { token_base = generic_navy_chief_maneuver advisor = { slot = navy_chief traits = { navy_chief_maneuver_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_navy_chief_maneuver } } }
 generate_character = { token_base = generic_air_chief_all_weather advisor = { slot = air_chief traits = { air_chief_all_weather_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_air_chief_all_weather } } }
 generate_character = { token_base = generic_air_chief_safety advisor = { slot = air_chief traits = { air_chief_safety_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_air_chief_safety } } }
-generate_character = { token_base = generic_air_chief_night advisor = { slot = air_chief traits = { air_chief_night_operations_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_air_chief_night } } }
-generate_character = { token_base = generic_air_chief_ground_support advisor = { slot = air_chief traits = { air_chief_ground_support_1 } cost = 50 } portraits = { army = { small = GFX_idea_generic_air_chief_ground_support } } }
 generate_character = { token_base = generic_army_art advisor = { slot = high_command traits = { army_artillery_1 } ledger = army cost = 50 } portraits = { army = { small = GFX_idea_generic_army_art } } }
 generate_character = { token_base = generic_army_log advisor = { slot = high_command traits = { army_logistics_1 } ledger = army cost = 50 } portraits = { army = { small = GFX_idea_generic_army_log } } }
 generate_character = { token_base = generic_army_entrenchtment advisor = { slot = high_command traits = { army_entrenchment_1 } ledger = army cost = 50 } portraits = { army = { small = GFX_idea_generic_army_entrenchtment } } }
@@ -81,14 +86,6 @@ generate_character = { token_base = generic_navy_carrier advisor = { slot = high
 generate_character = { token_base = generic_air_air_combat_trainer advisor = { slot = high_command traits = { air_air_combat_training_1 } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_air_air_combat_trainer } } }
 generate_character = { token_base = generic_air_air_superiority advisor = { slot = high_command traits = { air_air_superiority_1 } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_air_air_superiority } } }
 generate_character = { token_base = generic_air_air_tac_bomb advisor = { slot = high_command traits = { air_tactical_bombing_1 } ledger = air cost = 50 } portraits = { army = { small = GFX_idea_generic_air_air_tac_bomb } } }
-# generate_character = { token_base = generic_quartermaster_general_advisor advisor = { slot = political_advisor traits = { quartermaster_general } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_hjalmar_mae } } }
-# generate_character = { token_base = generic_smooth_talking_charmer_advisor advisor = { slot = political_advisor traits = { smooth_talking_charmer } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_BEL_hubert_pierlot } } }
-# generate_character = { token_base = generic_ideological_crusader_advisor advisor = { slot = political_advisor traits = { ideological_crusader } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_bernard_montgomery } } }# generate_character = { token_base = generic_propaganda_expert_advisor advisor = { slot = political_advisor traits = { propaganda_expert } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_hendrik_allik } } }
-# generate_character = { token_base = generic_popular_figurehead_advisor advisor = { slot = political_advisor traits = { popular_figurehead } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_boris_kumm } } }
-# generate_character = { token_base = generic_technocrat_advisor advisor = { slot = political_advisor traits = { technocrat } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_august_rei } } }
-# generate_character = { token_base = generic_prince_of_terror_advisor advisor = { slot = political_advisor traits = { prince_of_terror } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_juri_uluots } } }
-# generate_character = { token_base = generic_backroom_backstabber_advisor advisor = { slot = political_advisor traits = { backroom_backstabber } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_EST_konstantin_pats } } }
-# generate_character = { token_base = generic_compassionate_gentleman_advisor advisor = { slot = political_advisor traits = { compassionate_gentleman } available = { } ai_will_do = { factor = 1 } } portraits = { army = { small = GFX_idea_BRA_getulio_vargas } } }
 
 add_to_array = { national_focus_array = token:ZXX_construction_of_central_complex }
 add_to_array = { national_focus_array = token:ZXX_assemble_the_first_council }
@@ -117,3 +114,59 @@ add_to_array = { national_focus_array = token:ZXX_address_nepotism_within_the_IC
 add_to_array = { national_focus_array = token:ZXX_address_corruption_within_the_DSC }
 add_to_array = { national_focus_array = token:ZXX_dismiss_the_reports_concerns }
 add_to_array = { national_focus_array = token:ZXX_assemble_the_second_council }
+add_to_array = { national_focus_array = token:ZXX_statistical_planning_office }
+add_to_array = { national_focus_array = token:ZXX_set_up_the_bahariya_physics_research_complex }
+add_to_array = { national_focus_array = token:ZXX_found_power_research_directorate }
+add_to_array = { national_focus_array = token:ZXX_desert_energy_surveys }
+add_to_array = { national_focus_array = token:ZXX_high_temperature_materials }
+add_to_array = { national_focus_array = token:ZXX_solar_thermal_array_program }
+add_to_array = { national_focus_array = token:ZXX_expand_solar_thermal_capacity }
+add_to_array = { national_focus_array = token:ZXX_energy_storage_experiments }
+add_to_array = { national_focus_array = token:ZXX_nighttime_power_utilization }
+add_to_array = { national_focus_array = token:ZXX_customs_and_logistics_authority }
+add_to_array = { national_focus_array = token:ZXX_desert_transport_hubs }
+add_to_array = { national_focus_array = token:ZXX_expand_bureaucratic_capacity }
+add_to_array = { national_focus_array = token:ZXX_airfields_for_logistics }
+add_to_array = { national_focus_array = token:ZXX_expand_water_transport }
+add_to_array = { national_focus_array = token:ZXX_civilian_supply_reserves }
+add_to_array = { national_focus_array = token:ZXX_integrated_settlement_policy }
+add_to_array = { national_focus_array = token:ZXX_establish_desert_security_forces }
+add_to_array = { national_focus_array = token:ZXX_infrastructure_protection_doctrine }
+add_to_array = { national_focus_array = token:ZXX_mobile_patrol_units }
+add_to_array = { national_focus_array = token:ZXX_desert_garrison_program }
+add_to_array = { national_focus_array = token:ZXX_logistical_security_commands }
+add_to_array = { national_focus_array = token:ZXX_heat_and_sand_training }
+add_to_array = { national_focus_array = token:ZXX_secure_airfields_program }
+add_to_array = { national_focus_array = token:ZXX_desert_air_reconnaissance }
+add_to_array = { national_focus_array = token:ZXX_armored_transport_trials }
+add_to_array = { national_focus_array = token:ZXX_desert_defensive_positions }
+add_to_array = { national_focus_array = token:ZXX_auxiliary_labor_units }
+add_to_array = { national_focus_array = token:ZXX_internal_policing_framework }
+add_to_array = { national_focus_array = token:ZXX_industrial_zone_militia }
+add_to_array = { national_focus_array = token:ZXX_radio_relay_stations }
+add_to_array = { national_focus_array = token:ZXX_expand_administrative_centers }
+add_to_array = { national_focus_array = token:ZXX_emergency_infrastructure_defense }
+add_to_array = { national_focus_array = token:ZXX_command_and_control_reforms }
+add_to_array = { national_focus_array = token:ZXX_central_security_bureau }
+add_to_array = { national_focus_array = token:ZXX_counter_sabotage_measures }
+add_to_array = { national_focus_array = token:ZXX_limited_conscription_policy }
+add_to_array = { national_focus_array = token:ZXX_emergency_response_units }
+add_to_array = { national_focus_array = token:ZXX_corporate_governance_framework }
+add_to_array = { national_focus_array = token:ZXX_expand_civil_service }
+add_to_array = { national_focus_array = token:ZXX_amend_the_relocation_policy }
+add_to_array = { national_focus_array = token:ZXX_establish_a_civil_government }
+add_to_array = { national_focus_array = token:ZXX_new_corporate_security_act }
+add_to_array = { national_focus_array = token:ZXX_desert_power_grid_integration }
+add_to_array = { national_focus_array = token:ZXX_central_power_complexes }
+add_to_array = { national_focus_array = token:ZXX_waste_heat_recovery }
+add_to_array = { national_focus_array = token:ZXX_powered_desalination_projects }
+add_to_array = { national_focus_array = token:ZXX_hydrogen_production_trials }
+add_to_array = { national_focus_array = token:ZXX_energy_intensive_industries }
+add_to_array = { national_focus_array = token:ZXX_automation_and_power_control }
+add_to_array = { national_focus_array = token:ZXX_expand_research_power_synergy }
+add_to_array = { national_focus_array = token:ZXX_exporting_energy_expertise }
+add_to_array = { national_focus_array = token:ZXX_next_generation_power_theory }
+add_to_array = { national_focus_array = token:ZXX_electrify_the_western_territories }
+add_to_array = { national_focus_array = token:ZXX_electrify_the_eastern_territories }
+add_to_array = { national_focus_array = token:ZXX_power_the_nile_territories }
+add_to_array = { national_focus_array = token:ZXX_the_atom_is_split_in_the_sahara }

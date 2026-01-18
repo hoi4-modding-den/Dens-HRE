@@ -1,4 +1,129 @@
 ideas = {
 	country = {
+		ZXX_nile_sahara_logistics_accord = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_nile_sahara_logistics_accord" }
+			
+			picture = can_wartime_prices_and_trade_board
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			on_remove = {
+				add_ideas = ZXX_nile_sahara_logistics_crisis
+			}
+			
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.1
+			}
+		}
+		ZXX_nile_sahara_logistics_crisis = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_nile_sahara_logistics_crisis" }
+			
+			picture = tfv_can_conscription_crisis
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			on_remove = {
+				add_ideas = ZXX_nile_sahara_logistics_accord
+				clr_country_flag = ZXX_nile_sahara_logistics_crisis_severe
+				clr_country_flag = ZXX_nile_sahara_logistics_crisis_war
+			}
+			
+			modifier = {
+				political_power_factor = -0.5
+				stability_factor = -0.25
+			}
+		}
+		ZXX_strong_local_resistance = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_strong_local_resistance" }
+			
+			picture = chi_war_of_resistance3
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				stability_factor = -0.05
+				recruitable_population = -0.8
+				resistance_activity = 0.25
+				communism_drift = 0.02
+				fascism_drift = 0.02
+			}
+		}
+		ZXX_corporate_struggle = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_corporate_struggle" }
+			
+			picture = generic_industrial_concern_3
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				political_power_cost = 0.3
+				democratic_drift = 0.06
+				neutrality_drift = 0.05
+			}
+		}
+		ZXX_corporate_struggle2 = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_corporate_struggle2" }
+			
+			name = ZXX_corporate_struggle
+			picture = generic_industrial_concern_3
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				political_power_cost = 0.2
+				democratic_drift = 0.04
+				neutrality_drift = 0.05
+			}
+		}
+		ZXX_corporate_struggle3 = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_corporate_struggle3" }
+			
+			name = ZXX_corporate_struggle
+			picture = generic_industrial_concern_3
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				political_power_cost = 0.1
+				democratic_drift = 0.02
+				neutrality_drift = 0.04
+			}
+		}
+		ZXX_corporate_struggle4 = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_corporate_struggle4" }
+			
+			name = ZXX_corporate_struggle
+			picture = generic_industrial_concern_3
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				political_power_cost = 0.05
+				neutrality_drift = 0.03
+			}
+		}
+		ZXX_no_idea = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_no_idea" }
+			
+			picture = generic_industrial_concern_3
+			
+			on_add = {
+				remove_ideas = ZXX_no_idea
+			}
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+			}
+		}
 	}
 }

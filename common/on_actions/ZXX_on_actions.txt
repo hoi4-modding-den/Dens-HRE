@@ -1,2 +1,44 @@
 on_actions = {
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					tag = ZEG
+				}
+				if = {
+					limit = {
+						NOT = { 
+							check_variable = { old_ideology_token = current_party_ideology_group }
+						}
+					}
+					ZXX = { set_country_flag = ZXX_nile_sahara_logistics_crisis_severe }
+				}
+				ZXX = { 
+					remove_ideas = ZXX_nile_sahara_logistics_accord
+					#country_event = ZXX.1 #event explaining this
+				}
+			}
+		}
+	}
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+						tag = ZEG
+						FROM = { tag = ZXX }
+					}
+					AND = {
+						tag = ZXX
+						FROM = { tag = ZEG }
+					}
+				}
+				ZXX = {
+					set_country_flag = ZXX_nile_sahara_logistics_crisis_war
+					remove_ideas = ZXX_nile_sahara_logistics_accord
+					#country_event = ZXX.2 #event explaining this
+				}
+			}
+		}
+	}
 }
