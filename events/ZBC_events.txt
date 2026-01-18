@@ -1,0 +1,17 @@
+add_namespace = ZBC_story_events
+
+# Commissariat Rising
+country_event = {
+	id = ZBC_story_events.1
+	title = ZBC_story_events.1.t
+	desc = ZBC_story_events.1.desc
+	
+    # picture =
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZBC_story_events.1.a
+    }
+}

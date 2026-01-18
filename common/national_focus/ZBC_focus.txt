@@ -1,0 +1,45 @@
+focus_tree={
+
+	id = ZBC_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZBC
+		}
+	}
+
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 11000 y = 11000 }
+	initial_show_position = { focus = ZXX_construction_of_central_complex }
+
+	focus = { 
+		id = ZBC_morning_in_the_palace
+		icon = GFX_ZBC_a_new_revolution
+		x = 10
+		y = 0
+		#relative_position_id = 
+		
+		cancelable = no
+		
+		cost = 1
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = {}
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			country_event = {
+				id = ZBC_story_events.1
+			}
+		}
+	}
+
+}

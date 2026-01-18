@@ -13,5 +13,44 @@ spriteTypes = {
 		name = "GFX_portrait_ZBC_stepan_shaumian"
 		texturefile = "gfx/leaders/ZBC/portrait_ZBC_stepan_shaumian.dds"
 	}
+	spriteType = {
+		name = "GFX_portrait_ZBC_grigory_korganov"
+		texturefile = "gfx/leaders/ZBC/portrait_ZBC_grigory_korganov.dds"
+	}
 
+	# Focus
+	SpriteType = { 
+		name = "GFX_ZBC_a_new_revolution"
+		texturefile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+	}
+	SpriteType = { 
+		name = "GFX_ZBC_a_new_revolution_shine"
+		texturefile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
 }
