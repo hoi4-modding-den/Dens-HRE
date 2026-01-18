@@ -1,0 +1,29 @@
+ideas = {
+	country = {
+		ZEG_khedivate_idea = {
+			picture = tur_kemalist_army_officers_limited_power_disloyal
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.25
+				custom_modifier_tooltip = ZEG_communism_drift
+				custom_modifier_tooltip = ZEG_fascism_drift
+				custom_modifier_tooltip = ZEG_democratic_drift
+				hidden_modifier = {
+					communism_drift = 0.01
+					fascism_drift = 0.01
+					democratic_drift = 0.01
+				}
+			}
+			
+		}
+		ZEG_disorganized_military = {
+			picture = tur_disorganised_armed_forces
+			modifier = {
+				army_org_factor = -0.1
+				planning_speed = -0.2
+				command_power_gain_mult = -0.5
+				unit_upkeep_attrition_factor = 0.1
+			}
+		}
+	}
+}

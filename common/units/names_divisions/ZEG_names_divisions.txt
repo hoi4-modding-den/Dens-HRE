@@ -1,0 +1,353 @@
+﻿ ZEG_INF_01 = 
+{
+	name = "Infantry Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ZEG_GAR_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian al-Mushati al-%di" }
+		2 = { "Egyptian al-Mushati al-%di" }
+		3 = { "Egyptian al-Mushati al-%di" }
+		4 = { "Egyptian al-Mushati al-%di" }
+		5 = { "Egyptian al-Mushati al-%di" }
+		6 = { "Egyptian al-Mushati al-%di" }
+		7 = { "Egyptian al-Mushati al-%di" }
+		8 = { "Egyptian al-Mushati al-%di" }
+		9 = { "Egyptian al-Mushati al-%di" }
+		10 = { "Egyptian al-Mushati al-%di" }
+		12 = { "Egyptian al-Mushati al-%dr" }
+		13 = { "Egyptian al-Mushati al-%dr" }
+		14 = { "Egyptian al-Mushati al-%dr" }
+		15 = { "Egyptian al-Mushati al-%dr" }
+		16 = { "Egyptian al-Mushati al-%dr" }
+		17 = { "Egyptian al-Mushati al-%dr" }
+		18 = { "Egyptian al-Mushati al-%dr" }
+		19 = { "Egyptian al-Mushati al-%dr" }
+		20 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}
+
+ZEG_CAV_01 = 
+{
+	name = "Cavalry Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
+
+	fallback_name = "Egyptian Sipahis al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian Sipahis al-%di" }
+		2 = { "Egyptian Sipahis al-%di" }
+		3 = { "Egyptian Sipahis al-%di" }
+		4 = { "Egyptian Sipahis al-%di" }
+		5 = { "Egyptian Sipahis al-%di" }
+		6 = { "Egyptian Sipahis al-%di" }
+		7 = { "Egyptian Sipahis al-%di" }
+		8 = { "Egyptian Sipahis al-%di" }
+		9 = { "Egyptian Sipahis al-%di" }
+		10 = { "Egyptian Sipahis al-%di" }
+		11 = { "Egyptian Sipahis al-%dr" }
+		12 = { "Egyptian Sipahis al-%dr" }
+		13 = { "Egyptian Sipahis al-%dr" }
+		14 = { "Egyptian Sipahis al-%dr" }
+		15 = { "Egyptian Sipahis al-%dr" }
+
+	}
+}
+
+ZEG_MOT_01 = 
+{
+	name = "Motorised Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_INF_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian al-Mushati al-%di" }
+		2 = { "Egyptian al-Mushati al-%di" }
+		3 = { "Egyptian al-Mushati al-%di" }
+		4 = { "Egyptian al-Mushati al-%di" }
+		5 = { "Egyptian al-Mushati al-%di" }
+		6 = { "Egyptian al-Mushati al-%di" }
+		7 = { "Egyptian al-Mushati al-%di" }
+		8 = { "Egyptian al-Mushati al-%di" }
+		9 = { "Egyptian al-Mushati al-%di" }
+		10 = { "Egyptian al-Mushati al-%di" }
+		12 = { "Egyptian al-Mushati al-%dr" }
+		13 = { "Egyptian al-Mushati al-%dr" }
+		14 = { "Egyptian al-Mushati al-%dr" }
+		15 = { "Egyptian al-Mushati al-%dr" }
+		16 = { "Egyptian al-Mushati al-%dr" }
+		17 = { "Egyptian al-Mushati al-%dr" }
+		18 = { "Egyptian al-Mushati al-%dr" }
+		19 = { "Egyptian al-Mushati al-%dr" }
+		20 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}
+
+ZEG_ARM_01 = 
+{
+	name = "Armoured Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_CAV_01 }
+
+	fallback_name = "Egyptian Sipahis al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian Sipahis al-%di" }
+		2 = { "Egyptian Sipahis al-%di" }
+		3 = { "Egyptian Sipahis al-%di" }
+		4 = { "Egyptian Sipahis al-%di" }
+		5 = { "Egyptian Sipahis al-%di" }
+		6 = { "Egyptian Sipahis al-%di" }
+		7 = { "Egyptian Sipahis al-%di" }
+		8 = { "Egyptian Sipahis al-%di" }
+		9 = { "Egyptian Sipahis al-%di" }
+		10 = { "Egyptian Sipahis al-%di" }
+		11 = { "Egyptian Sipahis al-%dr" }
+		12 = { "Egyptian Sipahis al-%dr" }
+		13 = { "Egyptian Sipahis al-%dr" }
+		14 = { "Egyptian Sipahis al-%dr" }
+		15 = { "Egyptian Sipahis al-%dr" }
+
+	}
+}
+
+ZEG_MEC_01 = 
+{
+	name = "Mechanised Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized"  }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_INF_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian al-Mushati al-%di" }
+		2 = { "Egyptian al-Mushati al-%di" }
+		3 = { "Egyptian al-Mushati al-%di" }
+		4 = { "Egyptian al-Mushati al-%di" }
+		5 = { "Egyptian al-Mushati al-%di" }
+		6 = { "Egyptian al-Mushati al-%di" }
+		7 = { "Egyptian al-Mushati al-%di" }
+		8 = { "Egyptian al-Mushati al-%di" }
+		9 = { "Egyptian al-Mushati al-%di" }
+		10 = { "Egyptian al-Mushati al-%di" }
+		12 = { "Egyptian al-Mushati al-%dr" }
+		13 = { "Egyptian al-Mushati al-%dr" }
+		14 = { "Egyptian al-Mushati al-%dr" }
+		15 = { "Egyptian al-Mushati al-%dr" }
+		16 = { "Egyptian al-Mushati al-%dr" }
+		17 = { "Egyptian al-Mushati al-%dr" }
+		18 = { "Egyptian al-Mushati al-%dr" }
+		19 = { "Egyptian al-Mushati al-%dr" }
+		20 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}
+
+ZEG_GAR_01 = 
+{
+	name = "Garrison Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_INF_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian al-Mushati al-%di" }
+		2 = { "Egyptian al-Mushati al-%di" }
+		3 = { "Egyptian al-Mushati al-%di" }
+		4 = { "Egyptian al-Mushati al-%di" }
+		5 = { "Egyptian al-Mushati al-%di" }
+		6 = { "Egyptian al-Mushati al-%di" }
+		7 = { "Egyptian al-Mushati al-%di" }
+		8 = { "Egyptian al-Mushati al-%di" }
+		9 = { "Egyptian al-Mushati al-%di" }
+		10 = { "Egyptian al-Mushati al-%di" }
+		12 = { "Egyptian al-Mushati al-%dr" }
+		13 = { "Egyptian al-Mushati al-%dr" }
+		14 = { "Egyptian al-Mushati al-%dr" }
+		15 = { "Egyptian al-Mushati al-%dr" }
+		16 = { "Egyptian al-Mushati al-%dr" }
+		17 = { "Egyptian al-Mushati al-%dr" }
+		18 = { "Egyptian al-Mushati al-%dr" }
+		19 = { "Egyptian al-Mushati al-%dr" }
+		20 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}
+
+ZEG_MAR_01 = 
+{
+	name = "Marine Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "marine" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_INF_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		20 = { "Egyptian al-Mushati al-%dr" }
+		21 = { "Egyptian al-Mushati al-%dr" }
+		22 = { "Egyptian al-Mushati al-%dr" }
+		23 = { "Egyptian al-Mushati al-%dr" }
+		24 = { "Egyptian al-Mushati al-%dr" }
+		25 = { "Egyptian al-Mushati al-%dr" }
+		26 = { "Egyptian al-Mushati al-%dr" }
+		27 = { "Egyptian al-Mushati al-%dr" }
+		28 = { "Egyptian al-Mushati al-%dr" }
+		29 = { "Egyptian al-Mushati al-%dr" }
+		30 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}
+
+ZEG_MTN_01 = 
+{
+	name = "Mountain Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_INF_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Egyptian al-Mushati al-%di" }
+		2 = { "Egyptian al-Mushati al-%di" }
+		3 = { "Egyptian al-Mushati al-%di" }
+		4 = { "Egyptian al-Mushati al-%di" }
+		5 = { "Egyptian al-Mushati al-%di" }
+		6 = { "Egyptian al-Mushati al-%di" }
+		7 = { "Egyptian al-Mushati al-%di" }
+		8 = { "Egyptian al-Mushati al-%di" }
+		9 = { "Egyptian al-Mushati al-%di" }
+		10 = { "Egyptian al-Mushati al-%di" }
+		12 = { "Egyptian al-Mushati al-%dr" }
+		13 = { "Egyptian al-Mushati al-%dr" }
+		14 = { "Egyptian al-Mushati al-%dr" }
+		15 = { "Egyptian al-Mushati al-%dr" }
+		16 = { "Egyptian al-Mushati al-%dr" }
+		17 = { "Egyptian al-Mushati al-%dr" }
+		18 = { "Egyptian al-Mushati al-%dr" }
+		19 = { "Egyptian al-Mushati al-%dr" }
+		20 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}
+
+ZEG_PAR_01 = 
+{
+	name = "Paratrooper Divisions"
+
+	for_countries = { ZEG }
+
+	can_use = { always = yes }
+
+	division_types = { "paratrooper" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { ZEG_INF_01 }
+
+	fallback_name = "Egyptian al-Mushati al-%dr"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		20 = { "Egyptian al-Mushati al-%dr" }
+		21 = { "Egyptian al-Mushati al-%dr" }
+		22 = { "Egyptian al-Mushati al-%dr" }
+		23 = { "Egyptian al-Mushati al-%dr" }
+		24 = { "Egyptian al-Mushati al-%dr" }
+		25 = { "Egyptian al-Mushati al-%dr" }
+		26 = { "Egyptian al-Mushati al-%dr" }
+		27 = { "Egyptian al-Mushati al-%dr" }
+		28 = { "Egyptian al-Mushati al-%dr" }
+		29 = { "Egyptian al-Mushati al-%dr" }
+		30 = { "Egyptian al-Mushati al-%dr" }
+
+	}
+}

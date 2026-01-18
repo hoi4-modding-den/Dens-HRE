@@ -1,8 +1,47 @@
 ﻿capital = 1106
 
 # Starting tech
+
+oob = "ZEG_1936"
+set_stability = 0.3
+set_war_support = 0.3
+set_research_slots = 3
 set_technology = {
 	infantry_weapons = 1
+	tech_trucks = 1
+	tech_support = 1
+	tech_recon = 1
+	gw_artillery = 1
+	basic_train = 1
+	
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		mtg_transport = 1
+		basic_torpedo = 1
+		basic_battery = 1
+		basic_light_battery = 1
+	}
+}
+add_ideas = {
+	limited_conscription
+	ZEG_khedivate_idea
+	ZEG_disorganized_military
 }
 
 IF = {
@@ -82,15 +121,15 @@ set_grand_doctrine = new_strategic_destruction
 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
+	last_election = "1931.6.1"
+	election_frequency = 60
+	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 20
-	fascism = 23
-	communism = 12
-	neutrality = 45
+	democratic = 31
+	fascism = 16
+	communism = 18
+	neutrality = 35
 }
 
 create_country_leader = {
@@ -114,12 +153,13 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Farouk Muhammad Ali"
+	name = "Farouk I"
 	desc = ""
 	picture = "GFX_portrait_egy_faud_i"
 	ideology = despotism
 	traits = {
-		#
+		hedonist
+		XHH_absolute_monarch
 	}
 }
 
