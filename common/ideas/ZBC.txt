@@ -1,0 +1,22 @@
+ideas={
+	country = {
+		# Starting
+		ZBC_stronghold_of_the_revolution = {
+			picture = generic_communist_army
+			allowed = {
+				original_tag = ZBC
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				conscription_factor = 0.25
+				communism_drift = 0.05
+			}
+		}			
+	}
+}			

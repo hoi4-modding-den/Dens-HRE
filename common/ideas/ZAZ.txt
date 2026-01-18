@@ -1,0 +1,21 @@
+ideas={
+	country = {
+		# Starting
+		ZAZ_nation_sans_capital = {
+			picture = usa_great_depression
+			allowed = {
+				original_tag = ZAZ
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.1
+			}
+		}			
+	}
+}			
