@@ -4,16 +4,23 @@ state=
 	name="STATE_457" # Arabian Desert
 	manpower = 9239
 	
-	state_category = wasteland
+	state_category = pastoral
 	
 	history = {
-		owner = ZAA #will make ZEG owner if nobody claims this
+		owner = ZAA
 		buildings = {
 			infrastructure = 1
+			dockyard = 1
+			12889 = {
+				naval_base = 1
+			}
 		}
 
 		victory_points = {
 			12002 1
+		}
+		victory_points = {
+			12889 2
 		}
 		add_core_of = ZAA
 		add_core_of = ZEG
