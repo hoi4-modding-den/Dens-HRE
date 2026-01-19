@@ -1,7 +1,7 @@
-oob = "ZPA"
+oob = "ZPL"
 capital = 584
-set_stability = 0.02
-set_war_support = 0.43
+set_stability = 0.05
+set_war_support = 0.47
 set_research_slots = 2
 starting_train_buffer = 1
 
@@ -22,16 +22,16 @@ set_technology = {
 	
 }
 
-recruit_character = ZPA_sobir_rakhimov
+recruit_character = ZPL_Alim_Almat
 
 set_politics = {
-	ruling_party = communism
+	ruling_party = neutrality
 	last_election = "1933.1.1"
 	elections_allowed = no
 }
 set_popularities = {
-	democratic = 0
-	communism = 100	
-	fascism = 0
-	neutrality = 0
+	democratic = 35
+	communism = 0	
+	fascism = 24
+	neutrality = 41
 }

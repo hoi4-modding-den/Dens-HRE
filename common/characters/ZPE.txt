@@ -61,4 +61,74 @@ characters = {
 		legacy_id = -1
 		}
 	}
+
+	ZPB_Khan_Tevfik_Aras = {
+		name = "Khan Tevfik Aras"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPB_Khan_Tevfik_Aras.png"
+			}
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = despotism
+			traits = {  }
+		}
+		field_marshal = {
+		traits = { old_guard }
+		skill = 1
+		attack_skill = 1
+		defense_skill = 2
+		planning_skill = 1
+		logistics_skill = 1
+		legacy_id = -1
+		}
+	}
+
+	ZPL_Alim_Almat = {
+		name = "Galymzhan Absalamov"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPL_Alim_Almat.png"
+			}
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = conservatism
+			traits = {  }
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = despotism
+			traits = {  }
+		}
+	}	
+
+	ZPT_Weli_Kajum_Chan = {
+		name = "Weli Kajum-Chan"
+		portraits = {
+			civilian = {
+				large = "/gfx/leaders/ZPE/Portrait_ZPT_Weli_Kajum_Chan.png"
+			}
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = fascism_ideology
+			traits = {  }
+		}
+		country_leader = {
+			expire = "2028.1.1"
+			ideology = despotism
+			traits = {  }
+		}
+		field_marshal = {
+		traits = { harsh_leader infantry_leader }
+		skill = 2
+		attack_skill = 1
+		defense_skill = 1
+		planning_skill = 2
+		logistics_skill = 1
+		legacy_id = -1
+		}
+	}
 }
