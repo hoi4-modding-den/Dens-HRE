@@ -27,7 +27,7 @@ spriteTypes = {
 	}
 
 #Focus
-SpriteType = { 
+	SpriteType = { 
 		name = "GFX_ZAR_Orthodox_Returns"
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Orthodox_Issue.png"
 	}
@@ -49,6 +49,111 @@ SpriteType = {
 		}
 		animation = {
 			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Orthodox_Issue.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Peoples_Victory"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Peoples_Victory.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_congress_of_1936_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Peoples_Victory.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Peoples_Victory.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Peoples_Victory.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Special_Forces"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Special_Forces.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_congress_of_1936_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Special_Forces.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Special_Forces.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Special_Forces.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Gun"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
+	}
+	SpriteType = { 
+		name = "GFX_YZA_congress_of_1936_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

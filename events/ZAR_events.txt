@@ -42,6 +42,17 @@ country_event = {
 	option = {
 		name = ZAR.2.a
 		ai_chance = { factor = 1 }
+		ZOT = {
+		add_opinion_modifier = { target = ZAR modifier = ZAR_existential_threat }
+		}
+		ZCT = {
+		add_opinion_modifier = { target = ZAR modifier = ZAR_existential_threat }
+		}
+		ZKR = {
+		add_opinion_modifier = { target = ZAR modifier = ZAR_existential_threat }
+		}
+
+
 		hidden_effect = {
 		}
 	}
@@ -107,7 +118,55 @@ country_event = {
 	option = {
 		name = ZAR.6.a
 		ai_chance = { factor = 1 }
-		ZAR_Radical_Increase_Small = yes
+		
+		hidden_effect = {
+		}
+	}
+
+}
+country_event = {
+	id = ZAR.7
+	title = ZAR.7.t
+	desc = ZAR.7.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.7.a
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		}
+	}
+
+}
+country_event = {
+	id = ZAR.8
+	title = ZAR.8.t
+	desc = ZAR.8.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.8.a
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+		}
+	}
+
+}
+country_event = {
+	id = ZAR.9
+	title = ZAR.9.t
+	desc = ZAR.9.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.9.a
+		ai_chance = { factor = 1 }
+		
 		hidden_effect = {
 		}
 	}
