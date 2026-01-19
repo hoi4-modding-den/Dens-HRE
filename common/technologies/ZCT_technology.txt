@@ -1,0 +1,13 @@
+technologies = {
+    elite_infantry_tech = {
+        research_cost = 1
+
+        allow = { always = no }
+
+        show_effect_as_desc = yes
+
+        enable_subunits = {
+			elite_infantry
+		}
+    }
+}
