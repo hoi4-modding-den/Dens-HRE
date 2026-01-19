@@ -15,7 +15,7 @@ state = {
 		add_core_of = ZBA
 
 		victory_points = {
-			2097 10 # Baghdad
+			2097 20 # Baghdad
 		}
 		victory_points = {
 			7994 1 # Karbala 
@@ -23,7 +23,9 @@ state = {
 		victory_points = {
 			3795 2 # Tikrit 
 		}
-
+		victory_points = {
+			12413 1 # Rumadiyah
+		}
 		buildings = {
 			infrastructure = 3 #was: 5
 			arms_factory = 1
@@ -34,7 +36,7 @@ state = {
 	}
 
 	provinces = {
-		2097 3795 7994 10876 12046 12839 12855 
+		2097 3795 7994 10876 12046 12839 12855 12413
 	}
 
 	local_supplies = 6.0 
