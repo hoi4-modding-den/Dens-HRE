@@ -1,0 +1,24 @@
+
+units= {
+
+	##### NAVAL UNITS #####
+	### Türk Donanmasi ###
+	fleet = {
+		name = "Türk Donanmasi"			
+		naval_base = 9833
+		task_force = {				
+			name = "Türk Donanmasi"			
+			location = 9833
+			ship = { name = "TCG Yavuz" pride_of_the_fleet = yes definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = ZCT } } }			
+			ship = { name = "TCG Mecidiye" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ZCT } } }
+			ship = { name = "TCG Hamidiye" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ZCT } } }
+			ship = { name = "TCG Peyk" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZCT } } }
+			ship = { name = "TCG Berk" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZCT } } }
+			ship = { name = "TCG Kocatepe" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZCT version_name = "Kocatepe Class" } } }
+			ship = { name = "TCG Adatepe" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZCT version_name = "Kocatepe Class" } } }
+			ship = { name = "TCG Zafer" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZCT version_name = "Tinaztepe Class" } } }
+			ship = { name = "TCG Tinaztepe" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZCT version_name = "Tinaztepe Class" } } }
+		}							
+	}
+} 
+
