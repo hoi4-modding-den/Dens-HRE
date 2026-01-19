@@ -1,0 +1,93 @@
+capital = 347
+
+set_research_slots = 3
+
+add_equipment_to_stockpile = {
+    type = convoy
+    amount = 210
+    producer = ZCT
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+    marines = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		mtg_transport = 1
+	}
+}
+
+set_party_name = {
+    ideology = neutrality
+    long_name = ZCT_neutrality_party_long
+    name = ZCT_neutrality_party
+}
+
+set_party_name = {
+    ideology = democratic
+    long_name = ZCT_democratic_party_long
+    name = ZCT_democratic_party
+}
+
+set_party_name = {
+    ideology = fascism
+    long_name = ZCT_fascism_party_long
+    name = ZCT_fascism_party
+}
+
+set_party_name = {
+    ideology = communism
+    long_name = ZCT_communism_party_long
+    name = ZCT_communism_party
+}
+
+recruit_character = ZCT_mustafa_kemal_ataturk
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.6.12"
+	election_frequency = 24
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 55
+	democratic = 36
+	fascism = 4
+	communism = 5
+}
+
+set_rule = {
+    desc = ZCT_basic_rules
+    can_create_factions = no
+	can_join_factions = no
+	can_not_declare_war = yes
+}
