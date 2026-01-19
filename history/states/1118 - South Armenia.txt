@@ -1,25 +1,30 @@
 
 state={
-	id=354
-	name="STATE_354"
-	manpower = 223821
+	id=1118
+	name="STATE_1118"
+	manpower = 349833
+	resources={
+		coal = 2
+		steel = 3
+	}
 	
 	state_category = rural
-	history={
-		owner = ZAR 
 
+	history={
+		owner = ZAR
 		victory_points = {
-			10472 5
+			4660 1
 		}
 
 		buildings = {
 			infrastructure = 2
 		}
+		
 		add_core_of = ZAR
 	}
 
 	provinces={
-		789 6976 6991 7454 10403 10472 11853
+		12450 6642 4660
 	}
 
 	local_supplies=0.0 

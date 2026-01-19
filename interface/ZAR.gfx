@@ -32,7 +32,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Orthodox_Issue.png"
 	}
 	SpriteType = { 
-		name = "GFX_YZA_congress_of_1936_shine"
+		name = "GFX_ZAR_Orthodox_Returns_shine"
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Orthodox_Issue.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -67,7 +67,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Peoples_Victory.png"
 	}
 	SpriteType = { 
-		name = "GFX_YZA_congress_of_1936_shine"
+		name = "GFX_ZAR_Armenia_Peoples_Victory_shine"
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Peoples_Victory.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -102,7 +102,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Special_Forces.png"
 	}
 	SpriteType = { 
-		name = "GFX_YZA_congress_of_1936_shine"
+		name = "GFX_ZAR_Armenia_Special_Forces_shine"
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Special_Forces.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -137,7 +137,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
 	}
 	SpriteType = { 
-		name = "GFX_YZA_congress_of_1936_shine"
+		name = "GFX_ZAR_Armenia_Gun_shine"
 		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -154,6 +154,76 @@ spriteTypes = {
 		}
 		animation = {
 			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Gun.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Technocratic_Industry"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Technocracy_Industry.png"
+	}
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Technocratic_Industry_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Technocracy_Industry.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Technocracy_Industry.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Technocracy_Industry.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Car_Industry"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Car_Industry.png"
+	}
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Car_Industry_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Car_Industry.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Car_Industry.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Car_Industry.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

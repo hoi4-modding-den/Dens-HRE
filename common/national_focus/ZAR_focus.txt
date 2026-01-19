@@ -200,7 +200,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_Efficent_Industry_For_Thunderous_Battle
-		icon = GFX_fish
+		icon = GFX_focus_GER_factories_for_resources
 		x = 12
 		y = 7
 		cost = 6
@@ -233,7 +233,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_Exemplify_Industrial_Society
-		icon = GFX_fish
+		icon = GFX_ZAR_Armenia_Car_Industry
 		x = 14
 		y = 7
 		cost = 4
@@ -243,7 +243,7 @@ focus_tree = {
 				
 		}
 		completion_reward = {
-			320 = {
+			230 = {
 			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
     				type = industrial_complex
@@ -251,7 +251,7 @@ focus_tree = {
     				instant_build = yes
 			}
 			}
-			354 = {
+			1118 = {
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
     				type = industrial_complex
@@ -275,7 +275,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_A_Fearful_Hatred
-		icon = GFX_fish
+		icon = GFX_goal_generic_propaganda
 		x = 14
 		y = 8
 		cost = 4
@@ -328,7 +328,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_Technocratic_Industrial_Plans
-		icon = GFX_fish
+		icon = GFX_ZAR_Armenia_Technocratic_Industry
 		x = 16
 		y = 6
 		cost = 5
@@ -427,7 +427,7 @@ focus_tree = {
 
 	focus = {
 		id = ZAR_Eliminate_The_Turkish_Problem
-		icon = GFX_fish
+		icon = GFX_focus_generic_attack_turkey
 		x = 21
 		y = 5
 		cost = 7
@@ -552,7 +552,23 @@ focus_tree = {
     				instant_build = yes
 			}
 			}
-			320 = {
+			230 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+			}
+			}
+			1119 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+			}
+			}
+			1118 = {
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
     				type = infrastructure
