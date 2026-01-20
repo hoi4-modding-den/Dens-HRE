@@ -29,6 +29,12 @@
  ZCT_communism_party:0 "Worker's Collective"
  ZCT_communism_party_long:0 "Worker's Collective"
 
+ # LEADERS #
+
+ ZCT_mustafa_kemal_ataturk:0 "Mustafa Kemal"
+ ZCT_mustafa_kemal_ataturk_desc:0 "Mustafa Kemal has watched the empire he called home collapse around him. He has watched as incompetent leadership and corrupt legislature have torn at the seems holding the Turkish people together. As revolt and mutiny plagued the frontiers of the empire, Mustafa Kemal resolved to abandon his military post in favor of becoming a politician. He sought to change the empire from the inside and secure a future for the Turkish people. Yet corruption and instability prevented him from having a widespread impact. He was left with one option: the unthinkable.\n\nMustafa Kemal began garnering support from the Republican elements of the general assembly. His popularity amongst the people surged, especially in the urban cities of Istanbul, Bursa, and Ankara. Seizing the opportunity, Mustafa called upon all of his supporters to mount a coup against the Ottoman government. The Republican forces secured Istanbul and Bursa without heavy resistance but failed to take Ankara where the Ottoman government was seated.\n\nNow, Mustafa is growing tired in the face of rising threats to the fragile Republic he has founded. Yet, he does not waiver. A better future for the Turkish people is on the horizon and he can almost taste it."
+ ZCT_mustafa_kemal_ataturk_traits:0 "§8Founder of the Republic§!\n - Daily political Power Gain: §G+0.25§!\n - Stability: §G+5.00%§!"
+
  # IDEAS #
 
  ZCT_backed_into_a_corner_idea:0 "Backed Into a Corner"
@@ -53,3 +59,6 @@
  elite_infantry_desc:0 "Infantry trained to higher standards."
 
  ZCT_founder_of_the_republic:0 "§8Founder of the Republic§!"
+
+ ZCT_mustafa_kemal_ataturk_override_instant:0 "§Y$ZCT_mustafa_kemal_ataturk$§!\n$ZCT_mustafa_kemal_ataturk_traits$"
+ ZCT_mustafa_kemal_ataturk_override_delayed:0 "§L$ZCT_mustafa_kemal_ataturk_desc$§!"

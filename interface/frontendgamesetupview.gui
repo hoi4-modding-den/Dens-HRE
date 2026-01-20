@@ -731,12 +731,6 @@ guiTypes = {
 			rotation=-0.04
 		}
 
-		iconType = {
-			name ="minor_portrait_overlay"
-			spriteType = "GFX_minor_portrait_overlay"
-			position = { x= 280 y = 485 }
-		}
-
 
 		instantTextBoxType = {
 			name = "info_title"
@@ -851,6 +845,12 @@ guiTypes = {
 				maxWidth = 340
 				format = left
 			}
+		}
+
+		iconType = {
+			name ="minor_portrait_overlay"
+			spriteType = "GFX_minor_portrait_overlay"
+			position = { x= 280 y = 485 }
 		}
 
 		instantTextBoxType = {
