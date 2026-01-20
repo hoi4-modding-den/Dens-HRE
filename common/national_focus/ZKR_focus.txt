@@ -143,6 +143,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_qazi_muhamad_token
 		}
 	}
 
@@ -395,7 +400,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_strengthen_the_judiciary
 
-		cost = 2.9
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -515,11 +520,18 @@ focus_tree = {
                 add_idea = ZKR_kurdish_federalism_idea
             }
 
-            custom_effect_tooltip = ZKR_lose_kurdish_claims_tt
-            remove_state_claim = 344
-            remove_state_claim = 354
+			custom_effect_tooltip = ZKR_lose_kurdish_claims_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_claimed_by = ROOT
+					}
+					remove_claim_by = ROOT
+					set_state_flag = ZKR_former_claimed_state
+				}
+			}
 
-            custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 
             if = {
                 limit = {
@@ -676,14 +688,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_form_anti_imperialist_faction
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		#prerequisite = { focus =  }
 		mutually_exclusive = { focus = ZKR_the_kurdish_destiny }
-		x = -7
+		x = -5
 		y = 2
 		relative_position_id = ZKR_pluralist_constitution
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -710,19 +722,221 @@ focus_tree = {
 				icon = GFX_faction_logo_generic_15
 				color = { 234 179 30 }
 			}
+
+			add_ai_strategy = {
+				type = force_build_armies
+				value = 50
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_alliance_of_liberation
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ZKR_form_anti_imperialist_faction }
+		#mutually_exclusive = { focus =  }
+		x = 4
+		y = 1
+		relative_position_id = ZKR_form_anti_imperialist_faction
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_alliance_of_liberation_tt
+			# decisions to invite non-imperialist nations in the middle east
+		}
+	}
+
+	focus = {
+		id = ZKR_secure_peace
+		icon = GFX_focus_SWE_refuge_from_war
+		prerequisite = { focus = ZKR_form_anti_imperialist_faction }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_form_anti_imperialist_faction
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_named_threat = {
+				threat = -10
+				name = ZKR_secure_peace
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = ZKR_peacekeepers
+			# allows guaranteeing at low threat
+			# pp gain
+		}
+	}
+
+	focus = {
+		id = ZKR_common_organisations
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = ZKR_alliance_of_liberation focus = ZKR_secure_peace }
+		mutually_exclusive = { focus = ZKR_kurdish_hegemony }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_alliance_of_liberation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+			num_faction_members > 2
+			if = {
+				limit = {
+					has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes }
+				}
+				NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_common_organisations_tt
+			# allows building up common organisations to eventually integrate all Middle-East Nations into the Mesopotamian Commonwealth
+
+			# Steps to integration:
+			# 1. Faction
+			# 2. Research Sharing
+			# 3. Free Trade
+			# 4. Economic Union (unlocked later)
+			# 5. Puppet (referred to as "Federalisation" a la Pacific Federation)
+			# 6. Annex and Core
+
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_faction_initiative = 1 # idk, I don't have the DLC
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_the_middle_eastern_peacekeepers
+		icon = GFX_focus_ETH_peacekeeping_forces
+		prerequisite = { focus = ZKR_common_organisations }
+		prerequisite = { focus = ZKR_secure_peace }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_common_organisations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = ZKR_peacekeepers
+				add_idea = ZKR_peacekeepers_2
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_middle_eastern_economic_union
+		icon = GFX_focus_generic_monetary_union
+		prerequisite = { focus = ZKR_common_organisations }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_common_organisations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
 		}
 	}
 
 	focus = {
 		id = ZKR_the_kurdish_destiny
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_swooping_falcon
 		#prerequisite = { focus =  }
 		mutually_exclusive = { focus = ZKR_form_anti_imperialist_faction }
-		x = 2
+		x = -2
 		y = 0
 		relative_position_id = ZKR_form_anti_imperialist_faction
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -749,15 +963,624 @@ focus_tree = {
 				icon = GFX_faction_logo_generic_15
 				color = { 234 179 30 }
 			}
+
+			add_ai_strategy = {
+				type = force_build_armies
+				value = 100
+			}
 		}
 	}
 
+	focus = {
+		id = ZKR_march_against_our_oppressors
+		icon = GFX_focus_generic_limited_social_mobilization
+		prerequisite = { focus = ZKR_form_anti_imperialist_faction focus = ZKR_the_kurdish_destiny }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 2
+		relative_position_id = ZKR_the_kurdish_destiny
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 100000
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			set_rule = {
+				can_only_justify_war_on_threat_country = no
+			}
+			hidden_effect = {
+				set_rule = { can_declare_war_on_same_ideology = yes }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = ZKR_road_to_war
+				}
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war
+					add_idea = ZKR_road_to_war_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_road_to_war_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war_3
+					add_idea = ZKR_road_to_war_6
+				}
+			}
+			else = {
+				add_ideas = ZKR_road_to_war_2
+			}
+
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						NOT = { tag = ZZZ }
+						any_owned_state = {
+							OR = {
+								is_core_of = ZKR
+								is_claimed_by = ZKr
+							}
+						}
+					}
+					ROOT = {
+						add_ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 500
+						}
+						add_ai_strategy = {
+							type = declare_war 
+							id = PREV
+							value = 500
+						}
+						add_ai_strategy = {
+							type = consider_weak 
+							id = PREV
+							value = 500
+						}
+						add_ai_strategy = {
+							type = antagonize 
+							id = PREV
+							value = 10000
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_desert_battle
+		icon = GFX_focus_generic_camel_corps
+		prerequisite = { focus = ZKR_march_against_our_oppressors focus = ZKR_expel_the_british }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_march_against_our_oppressors
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			set_technology = { camelry = 1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = ZKR_road_to_war
+				}
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war
+					add_idea = ZKR_road_to_war_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_road_to_war_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war_2
+					add_idea = ZKR_road_to_war_4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war_5
+					add_idea = ZKR_road_to_war_6
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_consolidate_kurdistan
+		icon = GFX_focus_IRQ_kurdistan_united
+		prerequisite = { focus = ZKR_desert_battle }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_desert_battle
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			all_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					NOT = { is_owned_by = ROOT }
+					OWNER = {
+						any_owned_state = {
+							NOT = { is_core_of = ROOT }
+						}
+					}
+				}
+				transfer_state_to = ROOT
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			if = {
+				limit = {
+					has_idea = ZKR_a_greater_kurdistan
+				}
+				swap_ideas = {
+					remove_idea = ZKR_a_greater_kurdistan
+					add_idea = ZKR_a_greater_kurdistan_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_an_independent_kurdistan
+					add_idea = ZKR_a_greater_kurdistan
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_coalition_of_willing
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = ZKR_the_kurdish_destiny }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = ZKR_the_kurdish_destiny
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_coalition_of_willing_tt
+			# allow inviting of nations not owning any kurdish cores or claims
+		}
+	}
+
+	focus = {
+		id = ZKR_instrument_of_vengeance
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = ZKR_coalition_of_willing }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_coalition_of_willing
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = ZKR_vengeance
+			# military buffs, political debuffs
+		}
+	}
+
+	focus = {
+		id = ZKR_national_salvation
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = ZKR_instrument_of_vengeance }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_instrument_of_vengeance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = ZKR_has_formed_greater_kurdistan_tt
+				has_cosmetic_tag = ZKR_greater_kurdistan
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZKR_vengeance
+				add_idea = ZKR_vengeance_achieved
+			}
+
+			custom_effect_tooltip = ZKR_dissolve_turkey_tt
+			# unlock decisions to establish puppet states in turkish lands or annex and "secure" them
+		}
+	}
+
+	focus = {
+		id = ZKR_expel_the_british
+		icon = GFX_focus_eng_decolonization
+		prerequisite = { focus = ZKR_form_anti_imperialist_faction focus = ZKR_the_kurdish_destiny }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_the_kurdish_destiny
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 100000
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_road_to_war_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war_2
+					add_idea = ZKR_road_to_war_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_road_to_war_4
+				}
+				swap_ideas = {
+					remove_idea = ZKR_road_to_war_4
+					add_idea = ZKR_road_to_war_6
+				}
+			}
+			else = {
+				add_ideas = ZKR_road_to_war
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			custom_effect_tooltip = ZKR_expel_the_british_tt
+		}
+	}
+
+
+# SECOND POLITICS BRANCH - DEMOCRATIC / COMMUNISM
+
+	focus = {
+		id = ZKR_elections_wow
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_form_gendarmerie
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			has_country_flag = ZKR_first_branch_completed
+		}
+
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			has_country_flag = ZKR_first_branch_completed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = { ideology = ROOT popularity = 0.1 }
+		}
+	}
+
+# SECOND POLITICS BRANCH - MONARCHIST
+
+	focus = {
+		id = ZKR_the_kingdom_restored
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_form_gendarmerie
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes }
+			has_country_flag = ZKR_first_branch_completed
+		}
+
+		allow_branch = {
+			has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes }
+			has_country_flag = ZKR_first_branch_completed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = neutrality popularity = 0.15 }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = ZKR_liberal_versus_communist
+				}
+				remove_ideas = ZKR_liberal_versus_communist
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdish_hegemony
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = ZKR_the_kingdom_restored }
+		mutually_exclusive = { focus = ZKR_common_organisations }
+		x = -4
+		y = 2
+		relative_position_id = ZKR_the_kingdom_restored
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_form_kurdish_hegemony_tt
+		}
+	}
+
+# SECOND POLITICS BRANCH - SECRET BRITISH PUPPET
+
+	focus = {
+		id = ZKR_expedition_government
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_form_gendarmerie
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = neutrality
+			NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+			has_country_flag = ZKR_first_branch_completed
+
+			# to trigger: hire Arthur Frayn, lose against Palestine -> Mandate of Mesopotamia
+		}
+
+		allow_branch = {
+			has_government = neutrality
+			NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+			has_country_flag = ZKR_first_branch_completed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+# SECOND POLITICS BRANCH - FASCIST
+
+	focus = {
+		id = ZKR_undo_republican_reforms
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_form_gendarmerie
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+			has_country_flag = ZKR_first_branch_completed
+		}
+
+		allow_branch = {
+			has_government = fascism
+			has_country_flag = ZKR_first_branch_completed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = democratic popularity = -0.15 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					has_idea = ZKR_kurdish_federalism_idea
+				}
+				remove_ideas = ZKR_kurdish_federalism_idea
+			}
+			if = {
+				limit = {
+					has_idea = ZKR_kurdish_unitarianism_idea
+				}
+				remove_ideas = ZKR_kurdish_unitarianism_idea
+			}
+		}
+	}
 
 # ECONOMY BRANCH
 
 	focus = {
 		id = ZKR_kurdish_industrial_revolution
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_focus_XHH_industrial_revolution
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
 		x = 25
@@ -863,7 +1686,7 @@ focus_tree = {
 
     focus = {
 		id = ZKR_mining_programs
-		icon = GFX_focus_generic_mineral_prospecting
+		icon = GFX_focus_IRQ_found_the_state_company_for_iron_and_steel_alt
 		prerequisite = { focus = ZKR_kurdish_industrial_revolution }
 		#mutually_exclusive = { focus =  }
 		x = -1
@@ -1039,7 +1862,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_kurdish_industrial_revolution
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1084,7 +1907,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_capital_city_industrial_park
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1138,7 +1961,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_electrification
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1192,7 +2015,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_electrification
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1253,7 +2076,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_expand_arms_industry
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1284,7 +2107,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_expand_arms_industry
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1302,7 +2125,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-            
+            # plane designs
 		}
 	}
 
@@ -1316,7 +2139,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_cartridge_factories
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1398,8 +2221,13 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            custom_effect_tooltip = available_political_advisor
-
+            if = {
+				limit = {
+					NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+				}
+				custom_effect_tooltip = available_political_advisor
+				show_ideas_tooltip = ZKR_arthur_frayn_token
+			}
 		}
 	}
 
@@ -1412,7 +2240,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_invite_industrial_advisors
 
-		cost = 2.9
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -1450,14 +2278,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_kurdish_national_rail
-		icon = GFX_focus_generic_railroad
+		icon = GFX_focus_YBS_railway_network
 		prerequisite = { focus = ZKR_capital_city_industrial_park }
 		#mutually_exclusive = { focus =  }
 		x = 2
 		y = 1
 		relative_position_id = ZKR_capital_city_industrial_park
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1511,7 +2339,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_national_rail
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1547,7 +2375,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_oil_extraction
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1584,7 +2412,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_invite_industrial_advisors
 
-		cost = 2.9
+		cost = 10
 
 		ai_will_do = {
 			factor = 20
@@ -1615,7 +2443,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_batman_technical_university
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1655,14 +2483,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_embrace_capitalism
-		icon = GFX_focus_generic_industrialists
+		icon = GFX_focus_YBS_liberal_victory
 		prerequisite = { focus = ZKR_batman_technical_university }
 		mutually_exclusive = { focus = ZKR_embrace_central_planning }
 		x = 1
 		y = 1
 		relative_position_id = ZKR_batman_technical_university
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -1710,7 +2538,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_modern_arms_industry
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20

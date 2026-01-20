@@ -17,7 +17,11 @@ ZKR_can_intervene_in_syria = {
             ZKR_is_syrian_nation = yes
             exists = yes
             has_capitulated = no
-            #has_civil_war = yes
+            any_other_country = {
+                ZKR_is_syrian_nation = yes
+                exists = yes
+                has_capitulated = no
+            }
         }
     }
 }

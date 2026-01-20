@@ -3,13 +3,46 @@ on_actions = {
     on_startup = {
         effect = {
             ZKR = {
-                add_state_claim = 344
                 add_state_core = 353
-                add_state_claim = 354
                 add_state_core = 419
-                add_state_core = 676
                 add_state_core = 1001
                 add_state_core = 1103
+                add_state_core = 1115
+                add_state_core = 1117
+                add_state_core = 676
+                add_state_core = 1116
+
+                add_state_claim = 1113
+                add_state_claim = 355
+                add_state_claim = 349
+                add_state_claim = 798
+                add_state_claim = 348
+                add_state_claim = 680
+                add_state_claim = 354
+                add_state_claim = 344
+            }
+        }
+    }
+
+    on_ruling_party_change = {
+        effect = {
+            if = {
+                limit = {
+                    tag = ZKR
+                }
+                mark_focus_tree_layout_dirty = yes
+            }
+        }
+    }
+
+    on_send_volunteers = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = { tag = ZKR }
+                    FROM = { ZKR_is_syrian_nation = yes }
+                }
+                FROM = { set_country_flag = ZKR_sent_us_volunteers }
             }
         }
     }

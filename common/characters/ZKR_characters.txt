@@ -14,6 +14,23 @@ characters = {
 			desc = ZKR_seyid_riza_desc
 			expire = "1950.1.1.1"
 		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_seyid_riza_desc
+			idea_token = ZKR_seyid_riza_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				NOT = { has_country_leader = { character = ZKR_seyid_riza ruling_only = yes } }
+			}
+			traits = {
+				ZKR_respected_leader_advisor
+			}
+
+			cost = 150
+		}
 	}
 
     ZKR_ahmed_barzani = {
@@ -32,7 +49,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { desert_fox politically_connected }
+			traits = { desert_fox politically_connected war_hero }
 			desc = ZKR_ahmed_barzani_desc
 			skill=3
 			attack_skill=3
@@ -73,6 +90,23 @@ characters = {
 			desc = ZKR_qazi_muhamad_desc
 			expire = "1950.1.1.1"
 		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_qazi_muhamad_desc
+			idea_token = ZKR_qazi_muhamad_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_support_cooperatives
+			}
+			traits = {
+				ZKR_trotskyist_internationalist
+			}
+
+			cost = 150
+		}
 	}
 
     ZKR_ihsan_nuri = {
@@ -84,7 +118,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { ZKR_liberator_of_kurds }
+			traits = { ZKR_liberator_of_kurds ZKR_dislikes_turkish_people }
 			ideology = ZKR_kurdish_ultranationalism
 			desc = ZKR_ihsan_nuri_desc
 			expire = "1950.1.1.1"
@@ -114,7 +148,7 @@ characters = {
 				ZKR_revolutionary_intellectual
 			}
 
-			cost = 100
+			cost = 150
 		}
 	}
 
@@ -134,13 +168,30 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { desert_fox militias_officer politically_connected }
+			traits = { desert_fox militias_officer politically_connected war_hero }
 			desc = ZKR_mahmud_barzanji_desc
 			skill=4
 			attack_skill=5
 			defense_skill=2
 			planning_skill=4
 			logistics_skill=2
+		}
+
+		advisor = {
+			slot = high_command
+			desc = ZKR_mahmud_barzanji_desc
+			idea_token = ZKR_mahmud_barzanji_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				
+			}
+			traits = {
+				ZKR_memories_of_the_iraq_uprisings
+			}
+
+			cost = 100
 		}
 	}
 
@@ -159,7 +210,7 @@ characters = {
 			skill=3
 			attack_skill=2
 			defense_skill=1
-			planning_skill=3
+			planning_skill=4
 			logistics_skill=3
 		}
 
@@ -175,6 +226,34 @@ characters = {
 			}
 			traits = {
 				IRQ_minister_of_education
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_arthur_frayn = {
+		name = ZKR_arthur_frayn
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZKR_arthur_frayn
+                small = GFX_portrait_ZKR_arthur_frayn_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_arthur_frayn_desc
+			idea_token = ZKR_arthur_frayn_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_invite_industrial_advisors
+				NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+			}
+			traits = {
+				ZKR_british_inventor
 			}
 
 			cost = 150

@@ -83,6 +83,15 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	if = {
+		limit = {
+			ROOT = { is_ai = yes }
+			ZKR = {
+				is_justifying_wargoal_against = FROM
+			}
+		}
+		always = no
+	}
 }
 
 DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
@@ -2049,6 +2058,25 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
 }
 DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 	if = { 
@@ -2106,6 +2134,25 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
+			always = no
+		}
+	}
 }
 DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 	if = { 
@@ -2118,6 +2165,25 @@ DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = DENMARK_IS_A_PUPPET_FACTION
+			always = no
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
 			always = no
 		}
 	}
@@ -2134,6 +2200,25 @@ DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = DENMARK_IS_A_PUPPET_FACTION
+			always = no
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = yes }
+					FROM = { YBS_is_iberian_cw_contender = no }
+				}
+				AND = {
+					ROOT = { YBS_is_iberian_cw_contender = no }
+					FROM = { YBS_is_iberian_cw_contender = yes }
+				}
+			}
+			YBS_civil_war_over = no
+		}
+		custom_trigger_tooltip = {
+			tooltip = YBS_limited_diplo_from_cw_tt
 			always = no
 		}
 	}

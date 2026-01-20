@@ -34,8 +34,23 @@ leader_traits = {
 		
 		army_core_attack_factor = 0.05
         conscription_factor = 0.05
-        equipment_capture = 0.1
+        equipment_capture = 0.05
+        fascism_drift = 0.02
 
+	}
+
+    ZKR_dislikes_turkish_people = {
+		random = no
+		ai_strategy = {
+			type = antagonize
+			id = "ZOT"
+			value = 200
+		}
+        ai_strategy = {
+			type = antagonize
+			id = "ZCT"
+			value = 200
+		}
 	}
 
     ZKR_determined_king = {
@@ -43,7 +58,7 @@ leader_traits = {
 		
 		war_support_factor = 0.1
         resistance_growth_on_our_occupied_states = 0.3
-        terrain_penalty_reduction = -0.25
+        terrain_penalty_reduction = 0.25
         surrender_limit = 0.5
 
 	}
@@ -60,6 +75,38 @@ leader_traits = {
 	}
 
 # Advisors
+
+    # SPRITES
+    # 1 = PLANE
+    # 2 = BOMB
+    # 3 = ANCOR
+    # 4 = SUBMARINE
+    # 5 = HELMET
+    # 6 = JERRY CAN
+    # 7 = SWORD
+    # 8 = TANK
+    # 9 = SHIELD
+    # 10 = FACTORY
+    # 11 = EMPTY
+    # 12 = STAR
+    # 13 = POLITICAL
+    # 14 = GEARS
+    # 15 = EYE
+    # 16 = ARTILLERY
+    # 17 = HORSE
+    # 18 = SALUTE
+
+    ZKR_respected_leader_advisor = {
+        random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+        supply_node_range = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
 
     ZKR_federalist_advisor = {
         random = no
@@ -80,6 +127,44 @@ leader_traits = {
 		army_attack_factor = 0.05
         war_support_factor = 0.05
         resistance_damage_to_garrison_on_our_occupied_states = 0.2
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+    ZKR_trotskyist_internationalist = {
+        random = no
+		sprite = 12
+		
+		communism_drift = 0.02
+        industrial_capacity_factory = 0.1
+        army_morale_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+    ZKR_british_inventor = {
+        random = no
+		sprite = 10
+		
+		research_speed_factor = 0.1
+        production_factory_efficiency_gain_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+    ZKR_memories_of_the_iraq_uprisings = {
+        random = no
+		sprite = 7
+		
+		resistance_target_on_our_occupied_states = 0.1
+        equipment_capture = 0.1
+        experience_gain_army_factor = 0.05
 
 		ai_will_do = {
 			factor = 1

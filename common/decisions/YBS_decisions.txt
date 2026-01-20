@@ -1027,7 +1027,7 @@ YBS_seeds_of_discord_cat = {
 		icon = eng_trade_unions_support
 
 		ai_will_do = {
-			base = 20
+			base = 250
 		}
 
 		available = {
@@ -1083,7 +1083,7 @@ YBS_seeds_of_discord_cat = {
 		icon = generic_prepare_civil_war
 
 		ai_will_do = {
-			base = 25
+			base = 250
 			modifier = {
 				factor = 0.5
 				FROM = {
@@ -1175,7 +1175,7 @@ YBS_seeds_of_discord_cat = {
 		icon = generic_ignite_civil_war
 
 		ai_will_do = {
-			base = 20
+			base = 100
 		}
 
 		available = {
@@ -1236,7 +1236,7 @@ YBS_seeds_of_discord_cat = {
 		icon = SWI_expand_covert_operations
 
 		ai_will_do = {
-			base = 20
+			base = 100
 		}
 
 		available = {
@@ -1356,7 +1356,7 @@ YBS_spanish_civil_war_cat = {
 		icon = generic_prepare_civil_war
 
 		ai_will_do = {
-			base = 25
+			base = 250
 			modifier = {
 				factor = 0.5
 				FROM = {
@@ -1451,7 +1451,7 @@ YBS_spanish_civil_war_cat = {
 		icon = generic_prepare_civil_war
 
 		ai_will_do = {
-			base = 25
+			base = 250
 			modifier = {
 				factor = 0.5
 				FROM = {
@@ -1552,7 +1552,7 @@ YBS_spanish_civil_war_cat = {
 		cost = 25
 
         ai_will_do = {
-            base = 10
+            base = 1000
             modifier = {
                 factor = 0.5
                 has_war = yes

@@ -1,3 +1,21 @@
+ZKR_kurdistan_formables_cat = {
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_picture_neo_assyrian_empire
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		
+	}
+
+	visible_when_empty = no
+
+	priority = 99
+}
+
 ZKR_syrian_intervention_cat = {
 	icon = border_conflicts
 
@@ -8,7 +26,6 @@ ZKR_syrian_intervention_cat = {
 	visible = {
 		has_completed_focus = ZKR_syrian_intervention
         is_subject = no
-        ZKR_can_intervene_in_syria = yes
 	}
 
 	visible_when_empty = no

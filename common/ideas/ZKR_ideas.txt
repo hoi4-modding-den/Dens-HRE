@@ -50,6 +50,32 @@ ideas = {
 			}
 		}
 
+		ZKR_a_greater_kurdistan_2 = {
+
+			name = ZKR_a_greater_kurdistan
+			picture = KUR_united_idea
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+            cancel = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				army_core_attack_factor = 0.2
+                army_core_defence_factor = 0.2
+				conscription = 0.02
+			}
+		}
+
         ZKR_liberal_versus_communist = {
 
 			picture = generic_deal_with_the_devil2
@@ -252,6 +278,203 @@ ideas = {
 			modifier = {
 				research_speed_factor = 0.05
 				political_power_gain = 0.1
+			}
+		}
+
+		ZKR_road_to_war = { # ZKR_expel_the_british
+
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				generate_wargoal_tension = -1
+			}
+		}
+
+		ZKR_road_to_war_2 = { # ZKR_march_against_our_oppressors
+
+			name = ZKR_road_to_war
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				justify_war_goal_time = -0.5
+			}
+		}
+
+		ZKR_road_to_war_3 = { # ZKR_expel_the_british + ZKR_desert_battle
+
+			name = ZKR_road_to_war
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				generate_wargoal_tension = -1
+				heat_attrition_factor = -0.15
+				terrain_penalty_reduction = 0.1
+			}
+		}
+
+		ZKR_road_to_war_4 = { # ZKR_march_against_our_oppressors + ZKR_desert_battle
+
+			name = ZKR_road_to_war
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				justify_war_goal_time = -0.5
+				heat_attrition_factor = -0.15
+				terrain_penalty_reduction = 0.1
+			}
+		}
+
+		ZKR_road_to_war_5 = { # ZKR_march_against_our_oppressors + ZKR_expel_the_british
+
+			name = ZKR_road_to_war
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.5
+			}
+		}
+
+		ZKR_road_to_war_6 = { # ZKR_march_against_our_oppressors + ZKR_expel_the_british + ZKR_desert_battle
+
+			name = ZKR_road_to_war
+			picture = FRA_scw_intervention_nationalists_focus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.5
+				heat_attrition_factor = -0.15
+				terrain_penalty_reduction = 0.1
+			}
+		}
+
+		ZKR_vengeance = {
+
+			picture = chi_war_of_resistance3
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = 0.15
+				army_attack_factor = 0.1
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				conscription = 0.01
+				enemy_justify_war_goal_time = -0.15
+				political_power_factor = -0.4
+			}
+		}
+
+		ZKR_vengeance_achieved = {
+
+			picture = saf_history_of_segregation_2
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				conscription = 0.005
+				enemy_justify_war_goal_time = -0.15
+				political_power_factor = -0.2
+			}
+		}
+
+		ZKR_peacekeepers = {
+
+			picture = ETH_peacekeeping_forces
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				guarantee_tension = -1
+				guarantee_cost = -0.25
+			}
+		}
+
+		ZKR_peacekeepers_2 = {
+
+			picture = ETH_peacekeeping_forces
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.1
+				guarantee_tension = -1
+				guarantee_cost = -0.25
+				send_volunteers_tension = -1
+				send_volunteer_factor = 0.15
+				special_forces_cap_flat = 12
 			}
 		}
 

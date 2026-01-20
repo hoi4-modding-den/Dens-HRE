@@ -20,16 +20,10 @@ country_event = { # Monarchist Coup
             elections_allowed = no
         }
 
-        custom_effect_tooltip = generic_skip_one_line_tt
-
-        if = {
-            limit = {
-                has_idea = ZKR_liberal_versus_communist
-            }
-            remove_ideas = ZKR_liberal_versus_communist
-        }
-
         set_country_flag = ZKR_first_branch_completed
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
     }
 }
 
@@ -64,28 +58,24 @@ country_event = { # Fascist Coup
             }
             unlock_national_focus = ZKR_kurdish_supremacy
 
-            hidden_effect = {
-                add_state_claim = 344
-                add_state_claim = 354
-            }
-
             custom_effect_tooltip = generic_skip_one_line_tt
-        }
 
-        if = {
-            limit = {
-                has_idea = ZKR_kurdish_federalism_idea
+            custom_effect_tooltip = ZKR_regain_claims_tt
+            hidden_effect = {
+                every_state = {
+                    limit = {
+                        has_state_flag = ZKR_former_claimed_state
+                    }
+                    add_claim_by = ROOT
+                    clr_state_flag = ZKR_former_claimed_state
+                }
             }
-            remove_ideas = ZKR_kurdish_federalism_idea
-        }
-        if = {
-            limit = {
-                has_idea = ZKR_kurdish_unitarianism_idea
-            }
-            remove_ideas = ZKR_kurdish_unitarianism_idea
         }
 
         set_country_flag = ZKR_first_branch_completed
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
     }
 }
 
@@ -112,6 +102,9 @@ country_event = { # Elections
         promote_character = ZKR_seyid_riza
 
         set_country_flag = ZKR_first_branch_completed
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
     }
 
     option = {
@@ -127,6 +120,9 @@ country_event = { # Elections
         promote_character = ZKR_ahmed_barzani
 
         set_country_flag = ZKR_first_branch_completed
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
     }
 
     option = {
@@ -142,6 +138,9 @@ country_event = { # Elections
         promote_character = ZKR_qazi_muhamad
 
         set_country_flag = ZKR_first_branch_completed
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
     }
 }
 
@@ -179,16 +178,16 @@ country_event = { # Demanded Syrian Kurdistan
         ai_chance = {
             base = 10
             modifier = {
-                factor = 0
-                surrender_progress > 0.5
-            }
-            modifier = {
                 factor = 1.5
                 has_government = FROM
             }
         }
         effect_tooltip = {
             1103 = {
+                remove_core_of = FROM
+                transfer_state_to = ROOT
+            }
+            1115 = {
                 remove_core_of = FROM
                 transfer_state_to = ROOT
             }
@@ -211,10 +210,7 @@ country_event = { # Demanded Syrian Kurdistan
             }
             modifier = {
                 factor = 0.5
-                has_volunteers_amount_from = {
-                    tag = FROM
-                    count > 0
-                }
+                has_country_flag = ZKR_sent_us_volunteers
             }
         }
         add_political_power = -50
@@ -223,6 +219,23 @@ country_event = { # Demanded Syrian Kurdistan
             reverse_add_opinion_modifier = {
                 target = FROM
                 modifier = ZKR_refused_protection
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            1103 = {
+                add_dynamic_modifier = {
+                    modifier = ZKR_upset_kurdish_people
+                    days = 365
+                }
+            }
+            1115 = {
+                add_dynamic_modifier = {
+                    modifier = ZKR_upset_kurdish_people
+                    days = 365
+                }
             }
         }
 
@@ -250,6 +263,10 @@ country_event = { # Demanded Syrian Kurdistan - Accepted
             remove_core_of = FROM
             transfer_state_to = ROOT
         }
+        1115 = {
+            remove_core_of = FROM
+            transfer_state_to = ROOT
+        }
     }
 }
 
@@ -269,6 +286,23 @@ country_event = { # Demanded Syrian Kurdistan - Refused
             target = FROM
             modifier = ZKR_refused_protection
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        1103 = {
+            add_dynamic_modifier = {
+                modifier = ZKR_upset_kurdish_people
+                scope = FROM
+                days = 365
+            }
+        }
+        1115 = {
+            add_dynamic_modifier = {
+                modifier = ZKR_upset_kurdish_people
+                scope = FROM
+                days = 365
+            }
+        }
     }
 
 }
@@ -280,19 +314,16 @@ country_event = { # Last British Bastion gone
 	
 	picture = GFX_report_event_ENG_middle_eastern_conflict
 
-    trigger = {
-        tag = ZKR
-        has_country_leader_with_trait = ZKR_hates_the_british
-        DN1 = {
-            is_subject_of = ROOT
-        }
-    }
-	
+    is_triggered_only = yes
     fire_only_once = yes
 	
 	option = {
         name = ZKR_technical_events.1.a
-		remove_country_leader_trait = ZKR_hates_the_british
+        remove_trait = {
+            character = ZKR_mahmud_barzanji
+            ideology = despotism
+            trait = ZKR_hates_the_british
+        }
 
         if = {
             limit = {

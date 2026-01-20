@@ -1,26 +1,24 @@
-political_actions = {
+ZKR_kurdistan_formables_cat = {
 
     ZKR_form_greater_kurdistan = {
 
-        icon = generic_nationalism
+        icon = generic_form_nation
 
         fire_only_once = yes
 
         available = {
             has_completed_focus = ZKR_kurdish_supremacy
             custom_trigger_tooltip = {
-                tooltip = YBS_owns_controls_highlighted_states_tt
-                344 = { is_owned_and_controlled_by = ROOT }
-                350 = { is_owned_and_controlled_by = ROOT }
-                352 = { is_owned_and_controlled_by = ROOT }
-                353 = { is_owned_and_controlled_by = ROOT }
-                354 = { is_owned_and_controlled_by = ROOT }
-                419 = { is_owned_and_controlled_by = ROOT }
-                676 = { is_owned_and_controlled_by = ROOT }
-                680 = { is_owned_and_controlled_by = ROOT }
-                800 = { is_owned_and_controlled_by = ROOT }
-                1001 = { is_owned_and_controlled_by = ROOT }
-                1103 = { is_owned_and_controlled_by = ROOT }
+                tooltip = YBS_controls_highlighted_states_tt
+                all_core_state = {
+                    is_controlled_by = ROOT
+                }
+                all_state = {
+                    OR = {
+                        NOT = { is_claimed_by = ROOT }
+                        is_controlled_by = ROOT
+                    }
+                }
             }
         }
 
@@ -31,19 +29,14 @@ political_actions = {
         highlight_states = {
 			highlight_states_trigger = {
 				OR = {
-                    state = 344
-                    state = 350
-                    state = 352
-                    state = 353
-                    state = 354
-                    state = 419
-                    state = 676
-                    state = 680
-                    state = 800
-                    state = 1001
-                    state = 1103
+                    is_core_of = ZKR
+                    is_claimed_by = ZKR
                 }
 			}
+		}
+
+        ai_will_do = {
+			base = 1000
 		}
 
         allowed = {
@@ -55,24 +48,57 @@ political_actions = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
-            add_state_core = 344
-            add_state_core = 354
-            add_state_core = 680
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            add_state_claim = 1113
-            add_state_claim = 355
-            add_state_claim = 349
-            add_state_claim = 798
-            add_state_claim = 348
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            swap_ideas = {
-                remove_idea = ZKR_an_independent_kurdistan
-                add_idea = ZKR_a_greater_kurdistan
+            every_state = {
+                limit = {
+                    is_claimed_by = ROOT
+                }
+                remove_claim_by = ROOT
+                add_core_of = ROOT
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            if = {
+				limit = {
+					has_idea = ZKR_a_greater_kurdistan
+				}
+				swap_ideas = {
+					remove_idea = ZKR_a_greater_kurdistan
+					add_idea = ZKR_a_greater_kurdistan_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_an_independent_kurdistan
+					add_idea = ZKR_a_greater_kurdistan
+				}
+			}
+        }
+    }
+
+}
+
+political_actions = {
+
+    ZKR_remove_british_government_in_palestine = {
+
+        icon = generic_police_action
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        visible = {
+            has_completed_focus = ZKR_expel_the_british
+        }
+
+        available = {
+            has_completed_focus = ZKR_expel_the_british
+            DN1 = { is_subject_of = ROOT }
+        }
+
+        complete_effect = {
+            country_event = ZKR_technical_events.1
         }
     }
 }
@@ -81,7 +107,7 @@ ZKR_syrian_intervention_cat = {
 
     ZKR_assist_syrian_socialists = {
 
-        icon = generic_civil_support
+        icon = ger_military_buildup
 
         cost = 50
 
@@ -100,6 +126,22 @@ ZKR_syrian_intervention_cat = {
                 has_government = communism
             }
         }
+
+        visible = {
+            ZKR_can_intervene_in_syria = yes
+        }
+
+        ai_will_do = {
+			base = 100
+            modifier = {
+                factor = 0
+                NOT = { has_government = communism }
+            }
+            modifier = {
+                factor = 0.5
+                ZCS = { surrender_progress > 0.5 }
+            }
+		}
 
         allowed = {
             original_tag = ZKR
@@ -142,7 +184,7 @@ ZKR_syrian_intervention_cat = {
 
     ZKR_assist_syrian_liberals = {
 
-        icon = generic_civil_support
+        icon = ger_military_buildup
 
         cost = 50
 
@@ -161,6 +203,22 @@ ZKR_syrian_intervention_cat = {
                 has_government = democratic
             }
         }
+
+        visible = {
+            ZKR_can_intervene_in_syria = yes
+        }
+
+        ai_will_do = {
+			base = 100
+            modifier = {
+                factor = 0
+                NOT = { has_government = communism }
+            }
+            modifier = {
+                factor = 0.5
+                ZSR = { surrender_progress > 0.5 }
+            }
+		}
 
         allowed = {
             original_tag = ZKR
@@ -217,6 +275,14 @@ ZKR_syrian_intervention_cat = {
                 has_decision = ZKR_assist_syrian_liberals
             }
         }
+
+        visible = {
+            ZKR_can_intervene_in_syria = yes
+        }
+
+        ai_will_do = {
+			base = 100
+		}
 
         allowed = {
             original_tag = ZKR
@@ -297,16 +363,18 @@ ZKR_syrian_intervention_cat = {
 
     ZKR_demand_syrian_kurdistan = {
 
-        icon = generic_protection
+        icon = generic_nationalism
 
         cost = 100
 
         available = {
             is_subject = no
-            ZKR_can_intervene_in_syria = yes
+            ZKR_can_intervene_in_syria = no
             1103 = {
                 controller = {
                     ZKR_is_syrian_nation = yes
+                    controls_state = 1115
+                    NOT = { has_war_with = ROOT }
                 }
             }
         }
@@ -319,17 +387,24 @@ ZKR_syrian_intervention_cat = {
             }
         }
 
+        ai_will_do = {
+			base = 100
+		}
+
         allowed = {
             original_tag = ZKR
         }
 
         highlight_states = {
 			highlight_states_trigger = {
-				state = 1103
+				OR = {
+                    state = 1103
+                    state = 1115
+                }
 			}
 		}
 
-        days_re_enable = 30
+        fire_only_once = yes
 
         complete_effect = {
             1103 = {
@@ -366,14 +441,36 @@ debug_decisions = {
         }
 
 		complete_effect = {
-            transfer_state = 344
-            transfer_state = 353
-            transfer_state = 354
-            transfer_state = 419
-            transfer_state = 676
-            transfer_state = 680
-            transfer_state = 1001
-            transfer_state = 1103
+            every_core_state = {
+                transfer_state_to = ROOT
+            }
+		}
+
+	}
+
+    ZKR_debug_greater_kurdistan_2 = {
+
+        fire_only_once = yes
+
+		visible = {
+			is_debug = yes
+		}
+
+        available = {
+            is_ai = no
+        }
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+		complete_effect = {
+            every_state = {
+                limit = {
+                    is_claimed_by = ROOT
+                }
+                transfer_state_to = ROOT
+            }
 		}
 
 	}

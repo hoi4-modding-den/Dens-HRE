@@ -1,0 +1,25 @@
+ZKR_upset_kurdish_people = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_tur_kurdish_separatism
+	
+	local_factories = -0.25
+    local_resources = -0.25
+    local_manpower = -0.75
+    local_factory_sabotage = 0.2
+    local_intel_to_enemies = 0.2
+	
+}
+
+ZKR_turkish_resistance = { 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_tur_traditionalist_insurgency
+	
+    local_factories = -0.25
+    local_resources = -0.25
+	resistance_growth = 0.15
+    non_core_manpower = -0.9
+    compliance_gain = -0.1
+	
+}
