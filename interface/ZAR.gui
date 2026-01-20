@@ -1,0 +1,48 @@
+guiTypes = {
+	
+
+	containerWindowType = {
+		name = "ZAR_Prag_Rad_Window"
+		size = { width = 0 height = 465 }
+		position = { x = 0 y = 0 }
+
+		iconType = {
+				name = "ZAR_Armenia_Image"
+				spriteType = "GFX_ZAR_Armenia_Image"
+				position = { x = 5 y = -225 }
+				scale = 1.00
+				Orientation = "CENTER"
+		}
+		instantTextBoxType = {
+				name = "ZAR_prag_category_description"
+				position = { x = 15 y = 340 }
+				maxWidth = 482
+				maxHeight = 2000
+				format = left
+				font = "hoi4_18_outline"
+				text = ZAR_desc_prag_tt
+				alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = "ZAR_power_bar"
+			position = { x = 100 y = 10 }
+
+			iconType = {
+				name = "ZAR_Prag_Rad_Bar"
+				spriteType = "GFX_ZAR_Power_Bar"
+				position = { x = -35 y = 300 }
+				frame = 25
+			}
+			iconType = {
+				name = "ZAR_Prag_Frame"
+				spriteType = "GFX_ZAR_Frame"
+				position = { x = -35 y = 295 }
+				scale = 1.00
+				Orientation = "CENTER"
+			}
+
+
+		}
+
+	}
+}

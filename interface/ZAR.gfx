@@ -33,6 +33,23 @@ spriteTypes = {
 	    name = "GFX_ideology_futurism_radical"
 	    texturefile = "gfx/interface/ideologies/ZAR/ZAR_futurism.png"		
 	}
+#GUI
+	progressbartype = {
+		name = "GFX_ZAR_Power_Bar"
+		textureFile1 = "gfx/interface/goals/ZAR/ZAR_full_bar.png"
+		textureFile2 = "gfx/interface/goals/ZAR/ZAR_empty_bar.png"
+		size = { x = 360 y = 16 } 
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = GFX_ZAR_Frame
+		texturefile = "gfx/interface/goals/ZAR/ZAR_frame.dds"
+	}
+	spriteType = {
+		name = GFX_ZAR_Armenia_Image
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Dec_Image.png"
+	}
 
 #Focus
 	SpriteType = { 
