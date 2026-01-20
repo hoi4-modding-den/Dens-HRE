@@ -129,6 +129,296 @@ ideas = {
 			}
 		}
 
+		ZKR_elected_government = {
+
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				line_change_production_efficiency_factor = 0.05
+				political_power_factor = 0.1
+			}
+		}
+
+		ZKR_elected_government_fed = {
+
+			name = ZKR_elected_government
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_advisor_cost_factor = 0.2
+                communism_drift = 0.01
+                democratic_drift = 0.02
+
+				line_change_production_efficiency_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		ZKR_elected_government_unit = {
+
+			name = ZKR_elected_government
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+                communism_drift = 0.02
+                democratic_drift = 0.01
+
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+
+		ZKR_elected_government_2 = {
+
+			name = ZKR_elected_government
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				line_change_production_efficiency_factor = 0.05
+				political_power_factor = 0.15
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.1
+			}
+		}
+
+		ZKR_elected_government_fed_2 = {
+
+			name = ZKR_elected_government
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_advisor_cost_factor = 0.2
+                communism_drift = 0.01
+                democratic_drift = 0.02
+				
+				line_change_production_efficiency_factor = 0.05
+				political_power_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.1
+			}
+		}
+
+		ZKR_elected_government_unit_2 = {
+
+			name = ZKR_elected_government
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+                communism_drift = 0.02
+                democratic_drift = 0.01
+
+				line_change_production_efficiency_factor = 0.05
+				political_power_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.1
+			}
+		}
+
+		ZKR_workers_government = {
+
+			picture = por_iberian_workers_united
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		ZKR_workers_government_fed = {
+
+			name = ZKR_workers_government
+			picture = por_iberian_workers_united
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.05
+				political_advisor_cost_factor = 0.2
+                communism_drift = 0.01
+                democratic_drift = 0.02
+				
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		ZKR_workers_government_unit = {
+
+			name = ZKR_workers_government
+			picture = por_iberian_workers_united
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.1
+                communism_drift = 0.02
+                democratic_drift = 0.01
+
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		ZKR_workers_government_2 = {
+
+			name = ZKR_workers_government
+			picture = por_iberian_workers_united
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.15
+				compliance_gain = 0.02
+			}
+		}
+
+		ZKR_workers_government_fed_2 = {
+
+			name = ZKR_workers_government
+			picture = por_iberian_workers_united
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.05
+				political_advisor_cost_factor = 0.2
+                communism_drift = 0.01
+                democratic_drift = 0.02
+				
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.15
+				compliance_gain = 0.02
+			}
+		}
+
+		ZKR_workers_government_unit_2 = {
+
+			name = ZKR_workers_government
+			picture = por_iberian_workers_united
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.1
+                communism_drift = 0.02
+                democratic_drift = 0.01
+
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.15
+				compliance_gain = 0.02
+			}
+		}
+
 		ZKR_empowered_local_authorities = {
 
 			picture = POL_ideology_drift_defence
@@ -260,6 +550,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				stability_factor = 0.05
 				research_speed_factor = 0.05
 				drift_defence_factor = 0.2
 			}
@@ -309,6 +600,7 @@ ideas = {
 
 			modifier = {
 				justify_war_goal_time = -0.5
+				subversive_activites_upkeep = -0.2
 			}
 		}
 
@@ -343,6 +635,7 @@ ideas = {
 
 			modifier = {
 				justify_war_goal_time = -0.5
+				subversive_activites_upkeep = -0.2
 				heat_attrition_factor = -0.15
 				terrain_penalty_reduction = 0.1
 			}
@@ -362,6 +655,7 @@ ideas = {
 			modifier = {
 				generate_wargoal_tension = -1
 				justify_war_goal_time = -0.5
+				subversive_activites_upkeep = -0.2
 			}
 		}
 
@@ -379,6 +673,7 @@ ideas = {
 			modifier = {
 				generate_wargoal_tension = -1
 				justify_war_goal_time = -0.5
+				subversive_activites_upkeep = -0.2
 				heat_attrition_factor = -0.15
 				terrain_penalty_reduction = 0.1
 			}
@@ -405,7 +700,8 @@ ideas = {
 				army_morale_factor = 0.05
 				conscription = 0.01
 				enemy_justify_war_goal_time = -0.15
-				political_power_factor = -0.4
+				political_power_factor = -0.2
+				stability_factor = -0.25
 			}
 		}
 
@@ -429,7 +725,8 @@ ideas = {
 				army_morale_factor = 0.05
 				conscription = 0.005
 				enemy_justify_war_goal_time = -0.15
-				political_power_factor = -0.2
+				political_power_factor = -0.1
+				stability_factor = -0.1
 			}
 		}
 
@@ -475,6 +772,171 @@ ideas = {
 				send_volunteers_tension = -1
 				send_volunteer_factor = 0.15
 				special_forces_cap_flat = 12
+			}
+		}
+
+		ZKR_amendment_1 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_environmental_protection_trait
+			}
+		}
+
+		ZKR_amendment_2 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_religious_freedoms_trait
+			}
+		}
+
+		ZKR_amendment_3 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_minority_rights_trait
+			}
+		}
+
+		ZKR_amendment_1_2 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_environmental_protection_trait
+				ZKR_religious_freedoms_trait
+			}
+		}
+
+		ZKR_amendment_1_3 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_environmental_protection_trait
+				ZKR_minority_rights_trait
+			}
+		}
+
+		ZKR_amendment_2_3 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_religious_freedoms_trait
+				ZKR_minority_rights_trait
+			}
+		}
+
+		ZKR_amendment_1_2_3 = {
+
+			name = ZKR_amendments
+			picture = generic_constitutional_guarantees
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = democratic
+			}
+			
+			removal_cost = -1
+
+			traits = {
+				ZKR_environmental_protection_trait
+				ZKR_religious_freedoms_trait
+				ZKR_minority_rights_trait
+			}
+		}
+
+		ZKR_internationale_aid = {
+
+			picture = fourth_international
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				communism_drift = 0.02
 			}
 		}
 

@@ -23,7 +23,7 @@ focus_tree = {
 
     focus = {
 		id = ZKR_kurdish_federalism
-		icon = GFX_goal_support_democracy
+		icon = GFX_focus_BRA_reach_out_to_military_dem
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
 		x = 8
@@ -89,11 +89,6 @@ focus_tree = {
             custom_effect_tooltip = generic_skip_one_line_tt
 
             add_ideas = ZKR_government_news
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            custom_effect_tooltip = available_political_advisor
-            show_ideas_tooltip = ZKR_mustafa_yamulki_token
 		}
 	}
 
@@ -452,6 +447,11 @@ focus_tree = {
 			add_ideas = ZKR_codified_kurdish_language
 
             # idea can later be replaced through national bilinguality if Esperanto is adopted (part of the hidden path which requires the Republic of Hope to exist)
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_mustafa_yamulki_token
 		}
 	}
 
@@ -691,14 +691,14 @@ focus_tree = {
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		#prerequisite = { focus =  }
 		mutually_exclusive = { focus = ZKR_the_kurdish_destiny }
-		x = -5
+		x = -6
 		y = 2
 		relative_position_id = ZKR_pluralist_constitution
 
 		cost = 5
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
@@ -725,7 +725,7 @@ focus_tree = {
 
 			add_ai_strategy = {
 				type = force_build_armies
-				value = 50
+				value = 1000
 			}
 		}
 	}
@@ -939,7 +939,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
@@ -966,7 +966,7 @@ focus_tree = {
 
 			add_ai_strategy = {
 				type = force_build_armies
-				value = 100
+				value = 1000
 			}
 		}
 	}
@@ -989,7 +989,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 			has_army_manpower = {
-				size > 100000
+				size > 80000
 			}
 		}
 		
@@ -1030,7 +1030,11 @@ focus_tree = {
 			}
 			else = {
 				add_ideas = ZKR_road_to_war_2
+
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+
+			custom_effect_tooltip = ZKR_march_against_our_oppressors_tt
 
 			hidden_effect = {
 				every_other_country = {
@@ -1312,7 +1316,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 			has_army_manpower = {
-				size > 100000
+				size > 80000
 			}
 		}
 		
@@ -1348,6 +1352,29 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = ZKR_expel_the_british_tt
+
+			hidden_effect = {
+				add_ai_strategy = {
+					type = conquer
+					id = DN1
+					value = 500
+				}
+				add_ai_strategy = {
+					type = declare_war 
+					id = DN1
+					value = 500
+				}
+				add_ai_strategy = {
+					type = consider_weak 
+					id = DN1
+					value = 500
+				}
+				add_ai_strategy = {
+					type = antagonize 
+					id = DN1
+					value = 10000
+				}
+			}
 		}
 	}
 
@@ -1356,14 +1383,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_elections_wow
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_ETH_re-convene_the_parliament
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1398,6 +1425,503 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = ZKR_the_democratic_republic
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = ZKR_elections_wow }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = ZKR_elections_wow
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_kurdish_federalism_idea
+				}
+				swap_ideas = {
+					remove_idea = ZKR_kurdish_federalism_idea
+					add_idea = ZKR_elected_government_fed
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_kurdish_unitarianism_idea
+				}
+				swap_ideas = {
+					remove_idea = ZKR_kurdish_unitarianism_idea
+					add_idea = ZKR_elected_government_unit
+				}
+			}
+			else = {
+				add_ideas = ZKR_elected_government
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_environmental_protection_laws
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = { focus = ZKR_the_democratic_republic }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+			OR = {
+				has_country_leader = { character = ZKR_ahmed_barzani ruling_only = yes }
+				AND = {
+					has_completed_focus = ZKR_careful_resource_extraction
+					ZKR_ahmed_barzani = { is_hired_as_advisor = yes }
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_amendment_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_2
+					add_idea = ZKR_amendment_1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_3
+					add_idea = ZKR_amendment_1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_2_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_2_3
+					add_idea = ZKR_amendment_1_2_3
+				}
+			}
+			else = {
+				add_ideas = ZKR_amendment_1
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_religious_freedoms
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = ZKR_the_democratic_republic }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+			OR = {
+				has_country_leader = { character = ZKR_seyid_riza ruling_only = yes }
+				communism > 0.3
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_amendment_1
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1
+					add_idea = ZKR_amendment_1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_3
+					add_idea = ZKR_amendment_2_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_1_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1_3
+					add_idea = ZKR_amendment_1_2_3
+				}
+			}
+			else = {
+				add_ideas = ZKR_amendment_2
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_guarantee_minority_rights
+		icon = GFX_focus_ETH_sway_the_warlords
+		prerequisite = { focus = ZKR_the_democratic_republic }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_amendment_1
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1
+					add_idea = ZKR_amendment_1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_2
+					add_idea = ZKR_amendment_2_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_1_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1_2
+					add_idea = ZKR_amendment_1_2_3
+				}
+			}
+			else = {
+				add_ideas = ZKR_amendment_3
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_reform_the_constitution
+		icon = GFX_focus_ARG_defense_and_democracy
+		prerequisite = { focus = ZKR_environmental_protection_laws focus = ZKR_religious_freedoms focus = ZKR_guarantee_minority_rights }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_elected_government_fed
+				}
+				swap_ideas = {
+					remove_idea = ZKR_elected_government_fed
+					add_idea = ZKR_elected_government_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_elected_government_unit
+				}
+				swap_ideas = {
+					remove_idea = ZKR_elected_government_unit
+					add_idea = ZKR_elected_government_unit_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_elected_government
+					add_idea = ZKR_elected_government_2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_the_revolutionary_state
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		prerequisite = { focus = ZKR_elections_wow }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_elections_wow
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_kurdish_federalism_idea
+				}
+				swap_ideas = {
+					remove_idea = ZKR_kurdish_federalism_idea
+					add_idea = ZKR_workers_government_fed
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_kurdish_unitarianism_idea
+				}
+				swap_ideas = {
+					remove_idea = ZKR_kurdish_unitarianism_idea
+					add_idea = ZKR_workers_government_unit
+				}
+			}
+			else = {
+				add_ideas = ZKR_workers_government
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_maintain_secularism
+		icon = GFX_focus_PER_forced_secularization
+		prerequisite = { focus = ZKR_the_revolutionary_state }
+		mutually_exclusive = { focus = ZKR_islamic_socialism }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.05 }
+		}
+	}
+
+	focus = {
+		id = ZKR_islamic_socialism
+		icon = GFX_focus_PER_islamic_solidarity
+		prerequisite = { focus = ZKR_the_revolutionary_state }
+		mutually_exclusive = { focus = ZKR_maintain_secularism }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.05 }
+		}
+	}
+
+	focus = {
+		id = ZKR_pragmatic_trotskyism
+		icon = GFX_focus_NOR_a_new_norway_Trotsky_communism
+		prerequisite = { focus = ZKR_maintain_secularism focus = ZKR_islamic_socialism }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_workers_government_fed
+				}
+				swap_ideas = {
+					remove_idea = ZKR_workers_government_fed
+					add_idea = ZKR_workers_government_fed_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_workers_government_unit
+				}
+				swap_ideas = {
+					remove_idea = ZKR_workers_government_unit
+					add_idea = ZKR_workers_government_unit_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_workers_government
+					add_idea = ZKR_workers_government_2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_internationale_support
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = ZKR_the_revolutionary_state }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 2
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZKR_internationale_aid
+				days = 365
+			}
+		}
+	}
+
 # SECOND POLITICS BRANCH - MONARCHIST
 
 	focus = {
@@ -1409,7 +1933,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1452,7 +1976,7 @@ focus_tree = {
 		icon = GFX_focus_PLACEHOLDER
 		prerequisite = { focus = ZKR_the_kingdom_restored }
 		mutually_exclusive = { focus = ZKR_common_organisations }
-		x = -4
+		x = -5
 		y = 2
 		relative_position_id = ZKR_the_kingdom_restored
 
@@ -1489,7 +2013,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1525,14 +2049,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_undo_republican_reforms
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_strike_at_democracy2
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20

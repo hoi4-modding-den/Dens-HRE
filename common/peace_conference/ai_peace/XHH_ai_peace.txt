@@ -24,9 +24,9 @@ peace_ai_desires = {
                 NOT = { is_claimed_by = ROOT }
                 NOT = { is_core_of = ROOT }
             }
-			ROOT.FROM = { tag = ROOT }
+			#ROOT.FROM = { tag = ROOT }
         }
-        ai_desire = 50000
+        ai_desire = 5000
     }
 
     XHH_balkanise_hamburg = {
