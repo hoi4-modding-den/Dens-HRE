@@ -9,7 +9,11 @@ country_event = {
 	option = {
 		name = slot.1.a
 		random_list = {
-			20 = { add_civilian_factory = 1 }
+			6 = { random_state = {add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+} }}
 
 			15 = {
 				add_equipment_to_stockpile = {
@@ -27,7 +31,7 @@ country_event = {
 
 			15 = { }
 
-			15 = {
+			10 = {
 				add_stability = -0.05
 			}
 
