@@ -106,10 +106,17 @@ set_party_name = {
 }
 
 recruit_character = ZCT_mustafa_kemal_ataturk
+recruit_character = ZCT_ismet_inonu
+
+promote_character = ZCT_mustafa_kemal_ataturk
 
 add_ideas = {
 	low_economic_mobilisation
 	limited_conscription
+
+	ZCT_backed_into_a_corner
+	ZCT_martial_law
+	ZCT_economic_crisis
 }
 
 set_politics = {

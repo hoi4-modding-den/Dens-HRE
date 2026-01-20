@@ -1,0 +1,37 @@
+add_namespace = ZCT
+add_namespace = ZCT_news
+
+### COUNTRY EVENTS ###
+
+country_event = {
+    id = ZCT.1
+    title = ZCT.1.t
+    desc = ZCT.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZCT.1.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_stability = -0.1
+
+		custom_effect_tooltip = ZCT_mustafa_kemal_ataturk_dies_tt
+
+		hidden_effect = {
+			ZCT_mustafa_kemal_ataturk = {
+				retire = yes
+			}
+
+			set_country_flag = ZCT_mustafa_kemal_ataturk_dead
+		}
+		
+		promote_character = ZCT_ismet_inonu
+    }
+}
