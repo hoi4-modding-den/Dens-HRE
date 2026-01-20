@@ -25,6 +25,14 @@ spriteTypes = {
 	    texturefile = "gfx/interface/ideas/ZAR/Radical_Text.png"		
 		legacy_lazy_load = no	
 	}
+	SpriteType = {
+	    name = "GFX_ideology_futurism"
+	    texturefile = "gfx/interface/ideologies/ZAR/ZAR_futurism.png"		
+	}
+	SpriteType = {
+	    name = "GFX_ideology_futurism_radical"
+	    texturefile = "gfx/interface/ideologies/ZAR/ZAR_futurism.png"		
+	}
 
 #Focus
 	SpriteType = { 
@@ -224,6 +232,76 @@ spriteTypes = {
 		}
 		animation = {
 			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Car_Industry.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Trabzon_Annex"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Annex_Trabzon.png"
+	}
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Trabzon_Annex_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_Annex_Trabzon.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Annex_Trabzon.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_Annex_Trabzon.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Ottoman_Fuck_You"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_No_Ottoman.png"
+	}
+	SpriteType = { 
+		name = "GFX_ZAR_Armenia_Ottoman_Fuck_You_shine"
+		texturefile = "gfx/interface/goals/ZAR/ZAR_Armenia_No_Ottoman.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_No_Ottoman.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ZAR/ZAR_Armenia_No_Ottoman.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
