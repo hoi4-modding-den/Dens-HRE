@@ -1,0 +1,45 @@
+﻿capital = 450
+oob = "ZJS_1936"
+puppet = ZJE
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	fuel_silos = 1
+}
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+
+set_convoys = 5
+
+
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	fascism = 100
+}
+
+recruit_character = ISR_david_ben_gurion
+
+create_country_leader = {
+	name = "Itzhak Gaster"
+	desc = ""
+	picture = GFX_portrait_Itzhak_Gaster
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}

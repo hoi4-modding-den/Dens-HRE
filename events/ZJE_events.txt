@@ -1,0 +1,57 @@
+add_namespace = slot
+
+country_event = {
+	id = slot.1
+	title = slot.1.t
+	desc = slot.1.d
+	is_triggered_only = yes
+
+	option = {
+		name = slot.1.a
+		random_list = {
+			20 = { add_civilian_factory = 1 }
+
+			15 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 300
+				}
+			}
+
+			10 = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 60
+				}
+			}
+
+			15 = { }
+
+			15 = {
+				add_stability = -0.05
+			}
+
+			10 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -200
+				}
+			}
+
+			10 = {
+				add_political_power = -50
+			}
+
+			4 = {
+				add_stability = -0.15
+				add_war_support = -0.1
+			}
+
+			1 = {
+				add_stability = -0.3
+				add_war_support = -0.3
+				add_political_power = -150
+			}
+		}
+	}
+}
