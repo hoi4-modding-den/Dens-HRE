@@ -1,0 +1,22 @@
+units= {
+
+	##### Naval OOB #####
+	fleet = {
+		name = "Red Sea Task Force"			
+		naval_base = 12889
+		task_force = {
+			name = "Destroyer Flotilla" #RNF = Red Sea Naval Force
+			location = 12889
+			ship = { name = "RNF Safaga" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ZAA version_name = "Al-Misr Class" } } }
+			ship = { name = "RNF al-Misr" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ZAA version_name = "Al-Misr Class" } } }
+			ship = { name = "RNF Umluj" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ZAA version_name = "Al-Misr Class" } } }
+			ship = { name = "RNF Moslem" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ZAA version_name = "Al-Misr Class" } } }
+		}	
+		task_force = {
+			name = "Submarine Flotilla" #RNF = Red Sea Naval Force
+			location = 8092
+			ship = { name = "RNF al-Khidr" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ZAA version_name = "Al-Khidr Class" } } }
+			ship = { name = "RNF Musa" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ZAA version_name = "Al-Khidr Class" } } }
+		}
+	}
+} 

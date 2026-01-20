@@ -1,0 +1,18 @@
+﻿###### NEW NAMES #######
+
+ZAA_ship_names = {
+	name = ZAA_ship_names_loc
+
+	for_countries = { ZAA }
+
+	type = ship
+	#ship_types = { battleship battle_cruiser }
+	
+	fallback_name = "RNF %d"
+	
+	ordered = {
+		1 = {"RNF Suleiman"}
+		2 = {"RNF Pharaoh"}
+		3 = {"RNF al-Nabi"}
+	}
+}

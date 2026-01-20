@@ -4,12 +4,94 @@ characters = {
 		portraits = {
 			civilian = {
 				large = gfx/leaders/ZAA/suleimanezzat.png
+				small = gfx/leaders/ZAA/small/suleimanezzat_small.png
 			}
 		}
 		country_leader = {
 			ideology = despotism
 			expire = "2000.1.1.1"
 			id = -1
+		}
+		navy_leader={
+			traits={ media_personality }
+			skill=5
+			attack_skill=5
+			defense_skill=3
+			maneuvering_skill=4
+			coordination_skill=5
+			legacy_id=-1
+		}
+	}
+	ZAA_mahmoud_hamza_pasha = {
+		name = ZAA_mahmoud_hamza_pasha
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/MahmoudHamzaPasha.png
+				small = gfx/leaders/ZAA/small/MahmoudHamzaPasha_small.png
+			}
+		}
+		navy_leader={
+			traits={ gentlemanly naval_lineage }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=4
+			legacy_id=-1
+		}
+	}
+	ZAA_mohamed_nasid = {
+		name = ZAA_mohamed_nasid
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/MohamedNasid.png
+				small = gfx/leaders/ZAA/small/MohamedNasid_small.png
+			}
+		}
+		navy_leader={
+			traits={ career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=3
+			legacy_id=-1
+		}
+	}
+	ZAA_jalal_allouba = {
+		name = ZAA_jalal_allouba
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/JalalAllouba.png
+				small = gfx/leaders/ZAA/small/JalalAllouba_small.png
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=-1
+		}
+	}
+	ZAA_abdel_magid_fahim = {
+		name = ZAA_abdel_magid_fahim
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/AbdelMagidFahim.png
+				small = gfx/leaders/ZAA/small/AbdelMagidFahim_small.png
+			}
+		}
+		navy_leader={
+			traits={ bold }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=2
+			legacy_id=-1
 		}
 	}
 }

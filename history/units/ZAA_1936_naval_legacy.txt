@@ -1,0 +1,22 @@
+units= {
+
+	##### Naval OOB #####
+	fleet = {
+		name = "Red Sea Task Force"			
+		naval_base = 12889
+		task_force = {
+			name = "Destroyer Flotilla" #RNF = Red Sea Naval Force
+			location = 12889
+			ship = { name = "RNF Safaga" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZAA } } }
+			ship = { name = "RNF al-Misr" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZAA } } }
+			ship = { name = "RNF Umluj" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZAA } } }
+			ship = { name = "RNF Moslem" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ZAA } } }
+		}	
+		task_force = {
+			name = "Submarine Flotilla" #RNF = Red Sea Naval Force
+			location = 8092
+			ship = { name = "RNF al-Khidr" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ZAA } } }
+			ship = { name = "RNF Musa" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ZAA } } }
+		}
+	}
+} 
