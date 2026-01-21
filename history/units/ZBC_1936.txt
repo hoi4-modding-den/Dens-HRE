@@ -1,7 +1,7 @@
 #Create units
 division_template = {
-	name = "Artilleriya ve Piyada Diviziyası"
-	division_names_group = "ZBC_DIV_0_0"
+	name = "Artilleriya va Piyada Diviziyası"
+	division_names_group = "ZAZ_INF_00"
 	regiments = {
 		infantry = { x = 0 y = 0}
 		infantry = { x = 0 y = 1}
@@ -23,7 +23,7 @@ units = {
 	division= {
 		name = "Baku Qarnizonu"
 		location = 7661
-		division_template = "Artilleriya ve Piyada Diviziyası"
+		division_template = "Artilleriya va Piyada Diviziyası"
 		start_experience_factor = 0.5
 		start_equipment_factor = 0.9
 	}
