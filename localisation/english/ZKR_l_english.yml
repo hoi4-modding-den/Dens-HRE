@@ -89,6 +89,9 @@
  ZKR_dislikes_turkish_people: "Dislikes Turks"
  ZKR_determined_king: "The Determined King of Kurdistan"
  ZKR_hates_the_british: "Enemy of the British"
+ ZKR_hates_the_british_1: "$ZKR_hates_the_british$"
+ ZKR_hates_the_british_2: "$ZKR_hates_the_british$"
+ ZKR_hates_the_british_3: "$ZKR_hates_the_british$"
  ZKR_respected_leader_advisor: "$ZKR_respected_leader$"
  ZKR_federalist_advisor: "Federalist Advocate"
  ZKR_revolutionary_intellectual: "Ultranationalist Intellectual"
@@ -128,6 +131,7 @@
  ZKR_industrialising_society: "Industrialising Society"
  ZKR_industrialised_society: "Industrialised Society"
  ZKR_ammunition_production: "Efficient Ammunition Production"
+ ZKR_army_reform: "Reorganisation of the [ROOT.GetAdjective] Ground Forces"
 
 
 # DYNAMIC MODIFIERS
@@ -135,12 +139,26 @@
  ZKR_upset_kurdish_people: "Upset Kurdish Population"
  ZKR_turkish_resistance: "Turkish Resistance"
 
+ ZKR_land_forces: "[ROOT.GetAdjective] Ground Forces"
+ ZKR_modify_land_forces_tt: "Modify §Y$ZKR_land_forces$§! by:"
+
 
 # OPINION MODIFIERS
 
  ZKR_ottoman_bastards: "Former Oppressors"
  ZKR_refused_protection: "Refused Protection"
 
+
+# MODIFIER TOOLTIPS
+
+ terrain_penalty_reduction_tt: " $MODIFIER_TERRAIN_PENALTY_REDUCTION$: $RIGHT|-=%2$"
+ mountaineers_special_forces_contribution_factor_tt: " $MODIFIER_MOUNTAINEERS_SPECIAL_FORCES_CONTRIBUTION_FACTOR$: $RIGHT|-=%2$"
+ rangers_special_forces_contribution_factor_tt: " $MODIFIER_RANGERS_SPECIAL_FORCES_CONTRIBUTION_FACTOR_tt$: $RIGHT|-=%2$"
+
+
+# MIOS
+
+ ZKR_plane_manufacturer: "Hilberînerê Balafirên Kurdistanê"
 
 # FOCI
 
@@ -219,7 +237,7 @@
  ZKR_dissolve_turkey_tt: "Unlocks Decision Category: £GFX_decision_icon_small §Y$ZKR_dissolve_turkey_cat$§!"
  ZKR_expel_the_british: "Expel the British"
  ZKR_expel_the_british_desc: ""
- ZKR_expel_the_british_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_remove_british_government_in_palestine$§!"
+ ZKR_expel_the_british_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_remove_british_government_in_palestine$§!\n Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_remove_british_government_in_cyprus$§!"
 
  ZKR_elections_wow: "The Republic Stabilised"
  ZKR_elections_wow_desc: ""
@@ -282,15 +300,15 @@
  ZKR_modern_arms_industry_desc: ""
  ZKR_invite_industrial_advisors: "Invite Industrial Advisors"
  ZKR_invite_industrial_advisors_desc: ""
- ZKR_build_dam: "Build the Van Dam"
+ ZKR_build_dam: "Build the Wan Dam"
  ZKR_build_dam_desc: ""
- ZKR_kurdish_national_rail: "Kurdish National Rail"
+ ZKR_kurdish_national_rail: "Kurdish State Railways"
  ZKR_kurdish_national_rail_desc: ""
  ZKR_oil_extraction: "Oil Extraction"
  ZKR_oil_extraction_desc: ""
  ZKR_oil_extraction_2: "Oil Extraction II"
  ZKR_oil_extraction_2_desc: ""
- ZKR_batman_technical_university: "Batman Technical University"
+ ZKR_batman_technical_university: "Êlih Technical University" # Batman is funnier, but I've committed to renaming every city into Kurdish
  ZKR_batman_technical_university_desc: ""
  ZKR_embrace_central_planning: "Embrace Central Planning"
  ZKR_embrace_central_planning_desc: ""
@@ -301,6 +319,62 @@
 
  ZKR_enforce_military_neutrality: "Enforce Military Neutrality"
  ZKR_enforce_military_neutrality_desc: ""
+ ZKR_kurdish_land_forces: "Reorganise the [ROOT.GetAdjective] Ground Forces"
+ ZKR_kurdish_land_forces_desc: ""
+ ZKR_kurdish_land_forces_tt: "§YUpon Focus Selection:§!"
+ ZKR_kurdish_land_forces_tt_2: "§YUpon Focus Completion:§!"
+ ZKR_officer_training: "Officer Training"
+ ZKR_officer_training_desc: ""
+ ZKR_officer_training_tt: "Every §YArmy Leader§!:"
+ ZKR_artillery_spotters: "Artillery Support"
+ ZKR_artillery_spotters_desc: ""
+ ZKR_peshmerga_modernisation: "Modernise the Peshmerga"
+ ZKR_peshmerga_modernisation_desc: "The Peshmerga already allows women to serve as part of their militia. Perhaps it is time to let them soar through the skies aswell?" # for context
+ ZKR_ranger_corps: "[ROOT.GetAdjective] Mountaineer and Ranger Corps"
+ ZKR_ranger_corps_desc: ""
+ ZKR_equipment_modernisation: "Equipment Modernisation"
+ ZKR_equipment_modernisation_desc: ""
+ ZKR_learn_from_the_ararat_military: "Learn from the Ararat Military"
+ ZKR_learn_from_the_ararat_military_desc: ""
+ ZKR_learn_from_the_ararat_military_tt: "Every §YArmy Leader§! with the §Y$war_hero$§! Trait:"
+ ZKR_scavenging_tactics: "Scavenging Tactics"
+ ZKR_scavenging_tactics_desc: ""
+ ZKR_scavenging_tactics_tt: "§YTwo§! random §YArmy Leaders§!:"
+ ZKR_guerilla_warfare: "Guerilla Warfare"
+ ZKR_guerilla_warfare_desc: ""
+ ZKR_mountain_terrain_training: "Mountain Terrain Training"
+ ZKR_mountain_terrain_training_desc: ""
+ ZKR_motorisation_drive: "Motorisation Drive"
+ ZKR_motorisation_drive_desc: ""
+ ZKR_purchase_western_tanks: "Western Armour Designs"
+ ZKR_purchase_western_tanks_desc: ""
+ ZKR_doctrine_advancement: "Advancement of Military Doctrine"
+ ZKR_doctrine_advancement_desc: ""
+ ZKR_joint_chiefs_of_staff: "Joint Chiefs of Staff"
+ ZKR_joint_chiefs_of_staff_desc: ""
+ ZKR_military_logistics_department: "Military Logistics Department"
+ ZKR_military_logistics_department_desc: ""
+ ZKR_planning_plans: "Strategy in Depth"
+ ZKR_planning_plans_desc: ""
+ ZKR_concentrated_firepower: "Concentrated Firepower"
+ ZKR_concentrated_firepower_desc: ""
+ ZKR_fortify_armenian_border: "Fortify the Armenian Border"
+ ZKR_fortify_armenian_border_desc: ""
+ ZKR_fortify_armenian_border_tt: "Build §G2§! §YLand Forts§! on every province bordering §Y@ZAR[ZAR.GetNameDef]§!."
+ ZKR_kurdish_aeronautic_corps: "Form the [ROOT.GetAdjective] Aeronautic Corps"
+ ZKR_kurdish_aeronautic_corps_desc: ""
+ ZKR_expanded_pilot_training: "Expanded Pilot Training"
+ ZKR_expanded_pilot_training_desc: ""
+ ZKR_domestic_aircraft_production: "Domestic Aircraft Industry"
+ ZKR_domestic_aircraft_production_desc: ""
+ ZKR_import_foreign_aircraft: "Import Foreign Designs"
+ ZKR_import_foreign_aircraft_desc: ""
+ ZKR_aeronautic_doctrine: "Aeronautic Doctrine"
+ ZKR_aeronautic_doctrine_desc: ""
+ ZKR_fighter_bonus: "Air Superiority"
+ ZKR_fighter_bonus_desc: ""
+ ZKR_cas_bonus: "Close Air Support"
+ ZKR_cas_bonus_desc: ""
 
 
 # DECISIONS
@@ -312,6 +386,7 @@
  ZKR_form_kurdish_hegemony: "Declare Kurdish Hegemony over the Middle East"
 
  ZKR_remove_british_government_in_palestine: "Expel the British Colonial Administration in Palestine"
+ ZKR_remove_british_government_in_cyprus: "Expel the British Colonial Administration in Cyprus"
 
  ZKR_commonwealth_cat: "Middle-Eastern Cooperation"
  ZKR_invite_to_research_sharing: "Invite [FROM.GetName] to Research Cooperation" # have to also be renamed in tooltip
@@ -371,11 +446,44 @@
  ZKR_diplo_events.4.desc: "WIP"
  ZKR_diplo_events.4.a: "They'll pay for this!"
 
- ZKR_technical_events.1.t: "Another Victory for [ROOT.GetLeader]"
- ZKR_technical_events.1.desc: "The last British bastion in the middle east, the colonial administration in Palestine, has finally been vanquished. The last British boots on our part of the sub-continent have been driven out and our people shall finally be free from their tyranny."
+ ZKR_technical_events.1.t: "The Liberation of Palestine"
+ ZKR_technical_events.1.desc: "The British bastion in the Levant, the colonial administration in Palestine, has finally been vanquished. The last British boots on our part of the sub-continent have been driven out and our people shall finally be free from their tyranny."
  ZKR_technical_events.1.a: "Forever free! Forevermore!"
+ ZKR_hates_the_british_modified_tt: "§Y$ZKR_mahmud_barzanji$§!'s Trait §Y$ZKR_hates_the_british$§! is modified."
 
+ ZKR_technical_events.2.t: "The Liberation of Cyprus"
+ ZKR_technical_events.2.desc: "The British bastion on the island of Cyprus has been expelled. With their ports captured and their boats burned, it will take a long time until the Empire can reach into our lands again."
+ ZKR_technical_events.2.a: "Another Victory for [ROOT.GetLeader]!"
+
+
+# STATE NAMES
+
+ ZKR_STATE_350: "Amed"
+ ZKR_STATE_352: "Hekarî"
+ ZKR_STATE_353: "Kalan"
+ ZKR_STATE_419: " Azerbaycana Rojava"
+ ZKR_STATE_676: "Mûsil"
+ ZKR_STATE_800: "Wan"
+ ZKR_STATE_1001: "Kirmaşan"
+ ZKR_STATE_1103: "Qamişlo"
+ ZKR_STATE_1115: "Reqa"
+ ZKR_STATE_1116: "Şingal"
+ ZKR_VICTORY_POINTS_1606: "Reqa"
+ ZKR_VICTORY_POINTS_3916: "Hewlêr"
+ ZKR_VICTORY_POINTS_4512: "Amed"
+ ZKR_VICTORY_POINTS_4943: "Sine"
+ ZKR_VICTORY_POINTS_5098: "Kirmaşan"
+ ZKR_VICTORY_POINTS_6935: "Wan"
+ ZKR_VICTORY_POINTS_7604: "Ûrmiye"
+ ZKR_VICTORY_POINTS_9823: "Riha"
+ ZKR_VICTORY_POINTS_9860: "Kalan"
+ ZKR_VICTORY_POINTS_10106: "Mûsil"
+ ZKR_VICTORY_POINTS_10804: "Şingal"
+ ZKR_VICTORY_POINTS_12476: "Colemêrg"
+ ZKR_VICTORY_POINTS_12387: "Êlih"
 
 # OTHER STUFF
+
+ ZKR_annexed_before_conference_tt: "The §YKurdish People§! are one step closer to §YUnification§!."
 
  custom_diff_strong_zkr: "Strengthen @ZKR Republic of Kurdistan"

@@ -34,7 +34,7 @@ leader_traits = {
 		
 		army_core_attack_factor = 0.05
         conscription_factor = 0.05
-        equipment_capture = 0.05
+        equipment_capture_factor = 0.05
         fascism_drift = 0.02
 
 	}
@@ -63,11 +63,38 @@ leader_traits = {
 
 	}
 
-    ZKR_hates_the_british = {
+    ZKR_hates_the_british_1 = {
 		random = no
 		
 		targeted_modifier = {
             tag = DN1
+            attack_bonus_against = 0.15
+            defense_bonus_against = 0.15
+        }
+        targeted_modifier = {
+            tag = ZCY
+            attack_bonus_against = 0.15
+            defense_bonus_against = 0.15
+        }
+
+	}
+
+    ZKR_hates_the_british_2 = {
+		random = no
+		
+		targeted_modifier = {
+            tag = DN1
+            attack_bonus_against = 0.15
+            defense_bonus_against = 0.15
+        }
+
+	}
+
+    ZKR_hates_the_british_3 = {
+		random = no
+
+        targeted_modifier = {
+            tag = ZCY
             attack_bonus_against = 0.15
             defense_bonus_against = 0.15
         }
@@ -163,7 +190,7 @@ leader_traits = {
 		sprite = 7
 		
 		resistance_target_on_our_occupied_states = 0.1
-        equipment_capture = 0.1
+        equipment_capture_factor = 0.1
         experience_gain_army_factor = 0.05
 
 		ai_will_do = {

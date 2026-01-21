@@ -47,4 +47,66 @@ on_actions = {
         }
     }
 
+    on_capitulation = {
+        effect = {
+            if = {
+                limit = {
+                    FROM = { tag = ZKR }
+                    ROOT = { original_tag = ZNW }
+                }
+                ROOT = {
+                    every_core_state = {
+                        remove_core_of = ROOT
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    FROM = { tag = ZKR }
+                    NOT = {
+                        any_country = {
+                            NOT = { tag = FROM }
+                            has_war_with = ROOT
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        ROOT = {
+                            all_owned_state = {
+                                OR = {
+                                    is_core_of = FROM
+                                    is_claimed_by = FROM
+                                }
+                            }
+                        }
+                    }
+                    FROM = {
+                        white_peace = {
+                            tag = ROOT
+                            message = ZKR_annexed_before_conference_tt
+                        }
+                        annex_country = {
+                            target = ROOT
+                            transfer_troops = no
+                        }
+                    }
+                }
+                else = {
+                    ROOT = {
+                        every_owned_state = {
+                            limit = {
+                                OR = {
+                                    is_core_of = FROM
+                                    is_claimed_by = FROM
+                                }
+                            }
+                            transfer_state_to = FROM
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

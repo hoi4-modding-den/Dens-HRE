@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 4000 y = 500 }
+	continuous_focus_position = { x = 5000 y = 500 }
 
 	initial_show_position = {
 		x = 11
@@ -23,10 +23,10 @@ focus_tree = {
 
     focus = {
 		id = ZKR_kurdish_federalism
-		icon = GFX_focus_BRA_reach_out_to_military_dem
+		icon = GFX_goal_support_democracy
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 8
+		x = 9
 		y = 0
 		#relative_position_id = 
 
@@ -258,9 +258,9 @@ focus_tree = {
 		icon = GFX_focus_generic_court
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 14
+		x = 6
 		y = 0
-		#relative_position_id = 
+		relative_position_id = ZKR_kurdish_federalism
 
 		cost = 5.8
 
@@ -298,7 +298,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_federalism
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -388,7 +388,7 @@ focus_tree = {
 
     focus = {
 		id = ZKR_open_the_first_kurdistan_university
-		icon = GFX_focus_research
+		icon = GFX_focus_IRQ_baghdad_colleges_of_engineering_and_education_alt
 		prerequisite = { focus = ZKR_strengthen_the_judiciary }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -489,7 +489,7 @@ focus_tree = {
 
     focus = {
 		id = ZKR_pluralist_constitution
-		icon = GFX_focus_generic_the_giant_wakes
+		icon = GFX_focus_generic_befriend_kurdistan
         prerequisite = { focus = ZKR_support_cooperatives }
 		prerequisite = { focus = ZKR_devolution }
 		#mutually_exclusive = { focus =  }
@@ -1427,7 +1427,7 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_the_democratic_republic
-		icon = GFX_goal_support_democracy
+		icon = GFX_focus_generic_the_giant_wakes
 		prerequisite = { focus = ZKR_elections_wow }
 		#mutually_exclusive = { focus =  }
 		x = -3
@@ -2107,7 +2107,7 @@ focus_tree = {
 		icon = GFX_focus_XHH_industrial_revolution
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 25
+		x = 22
 		y = 0
 		#relative_position_id = 
 
@@ -2802,7 +2802,7 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_kurdish_national_rail
-		icon = GFX_focus_YBS_railway_network
+		icon = GFX_focus_IRQ_found_the_iraqi_state_railways_alt
 		prerequisite = { focus = ZKR_capital_city_industrial_park }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -3091,10 +3091,10 @@ focus_tree = {
 
     focus = {
 		id = ZKR_enforce_military_neutrality
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_goal_generic_neutrality_focus
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 35
+		x = 36
 		y = 0
 		#relative_position_id = 
 
@@ -3116,12 +3116,1183 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			army_experience = 50
 			add_popularity = { ideology = fascism popularity = -0.1 }
-            add_doctrine_cost_reduction = {
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdish_land_forces
+		icon = GFX_focus_IRQ_royal_iraqi_army_alt
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = -5
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		select_effect = {
+			add_timed_idea = {
+				idea = ZKR_army_reform
+				days = 70
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZKR_kurdish_land_forces_tt
+
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = ZKR_army_reform
+					days = 70
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_kurdish_land_forces_tt_2
+
+			add_dynamic_modifier = { modifier = ZKR_land_forces }
+		}
+	}
+
+	focus = {
+		id = ZKR_officer_training
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_officer_training_tt
+			every_unit_leader = {
+				add_attack = 1
+				add_defense = 1
+				add_planning = 1
+				add_logistics = 1
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_artillery_spotters
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ZKR_officer_training }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_officer_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_artillery_spotters
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_army_artillery_attack_factor = 0.1
+				tooltip = army_artillery_attack_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_army_artillery_defence_factor = 0.1
+				tooltip = army_artillery_defence_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_peshmerga_modernisation
+		icon = GFX_focus_IRQ_kurdish_form_the_peshmerga
+		prerequisite = { focus = ZKR_officer_training }
+		prerequisite = { focus = ZKR_equipment_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_officer_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_peshmerga_modernisation
+				bonus = 0.5
+				uses = 3
+				category = support_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = { can_generate_female_aces = yes }
+		}
+	}
+
+	focus = {
+		id = ZKR_ranger_corps
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = ZKR_artillery_spotters }
+		prerequisite = { focus = ZKR_peshmerga_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_artillery_spotters
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_tech_bonus = {
+					name = ZKR_ranger_corps
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+					category = rangers_tech_cat
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = ZKR_ranger_corps
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_mountaineers_special_forces_contribution_factor = -0.15
+				tooltip = mountaineers_special_forces_contribution_factor_tt
+			}
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_to_variable = {
+					ZKR_lf_rangers_special_forces_contribution_factor = -0.15
+					tooltip = rangers_special_forces_contribution_factor_tt
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_equipment_modernisation
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_equipment_modernisation
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_learn_from_the_ararat_military
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = ZKR_equipment_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_equipment_modernisation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_learn_from_the_ararat_military_tt
+			every_army_leader = {
+				limit = {
+					has_trait = war_hero
+				}
+				add_planning = 1
+				add_logistics = 1
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_scavenging_tactics
+		icon = GFX_focus_ETH_scavenging_tactics
+		prerequisite = { focus = ZKR_learn_from_the_ararat_military }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_learn_from_the_ararat_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_scavenging_tactics_tt
+			every_army_leader = {
+				limit = {
+					NOT = { has_trait = scavenger }
+				}
+				random_select_amount = 2
+				add_trait = { trait = scavenger }
+			}
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_equipment_capture_factor = 0.15
+				tooltip = equipment_capture_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_guerilla_warfare
+		icon = GFX_focus_generic_army_attack
+		prerequisite = { focus = ZKR_learn_from_the_ararat_military }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_learn_from_the_ararat_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_dig_in_speed_factor = 0.15
+				tooltip = dig_in_speed_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_recon_factor_while_entrenched = 0.1
+				tooltip = recon_factor_while_entrenched_tt
+			}
+			add_to_variable = {
+				ZKR_lf_cas_damage_reduction = 0.2
+				tooltip = cas_damage_reduction_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_mountain_terrain_training
+		icon = GFX_focus_generic_mountain_troops
+		prerequisite = { focus = ZKR_scavenging_tactics focus = ZKR_guerilla_warfare }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_learn_from_the_ararat_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+                cost_reduction = 1
+                uses = 1
+                category = cat_mountaineers_doctrine
+            }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_terrain_penalty_reduction = -0.2
+				tooltip = terrain_penalty_reduction_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_motorisation_drive
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = ZKR_equipment_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_equipment_modernisation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_motorisation_drive
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_supply_node_range = 0.05
+				tooltip = supply_node_range_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_purchase_western_tanks
+		icon = GFX_focus_PER_czech_tanks
+		prerequisite = { focus = ZKR_motorisation_drive }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_motorisation_drive
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					# has no tanks
+				}
+				# gives template and one unit of "Experimental Armoured Brigade"
+			}
+
+			# makes Skoda available (both MIO and concern)
+		}
+	}
+
+	focus = {
+		id = ZKR_doctrine_advancement
+		icon = GFX_focus_generic_army_doctrines_2
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = 4
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
                 cost_reduction = 0.5
                 uses = 2
                 category = land_doctrine
             }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_experience_gain_army_factor = 0.05
+				tooltip = experience_gain_army_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_joint_chiefs_of_staff
+		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
+		prerequisite = { focus = ZKR_doctrine_advancement }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_doctrine_advancement
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_coordination_bonus = 0.05
+				tooltip = coordination_bonus_tt
+			}
+			add_to_variable = {
+				ZKR_lf_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_max_command_power = 20
+				tooltip = max_command_power_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_military_logistics_department
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		prerequisite = { focus = ZKR_motorisation_drive }
+		prerequisite = { focus = ZKR_doctrine_advancement }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = ZKR_doctrine_advancement
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_supply_node_range = 0.1
+				tooltip = supply_node_range_tt
+			}
+			add_to_variable = {
+				ZKR_lf_attrition = -0.05
+				tooltip = attrition_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_planning_plans
+		icon = GFX_focus_generic_advanced_military_studies
+		prerequisite = { focus = ZKR_doctrine_advancement }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_doctrine_advancement
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_max_planning_factor = 0.1
+				tooltip = max_planning_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_planning_speed = 0.15
+				tooltip = planning_speed_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_coordination_bonus = 0.05
+				tooltip = coordination_bonus_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_concentrated_firepower
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = ZKR_military_logistics_department focus = ZKR_planning_plans }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_military_logistics_department
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_army_artillery_attack_factor = 0.1
+				tooltip = army_artillery_attack_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_army_artillery_defence_factor = 0.1
+				tooltip = army_artillery_defence_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_fortify_armenian_border
+		icon = GFX_goal_fortify_the_westwall
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			country_exists = ZAR
+			is_owner_neighbor_of = ZAR
+			NOT = { is_ally_with = ZAR }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_fortify_armenian_border_tt
+			hidden_effect = {
+				every_controlled_state = {
+					limit = {
+						num_owned_neighbour_states = {
+							owner = ZAR
+							count > 0
+						}					
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdish_aeronautic_corps
+		dynamic = yes
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe_1
+					amount = 50
+					variant_name = "Bf 109 E"
+					producer = XHH
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_1
+					amount = 50
+					producer = XHH
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_expanded_pilot_training
+		icon = GFX_focus_generic_pilot_training
+		prerequisite = { focus = ZKR_kurdish_aeronautic_corps }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_kurdish_aeronautic_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ace = {
+				name = "Keskesor"
+				surname = "Daş"
+				callsign = "Pêvgirêdayî"
+				type = fighter_genius
+			}
+			add_ace = {
+				name = "Şewqa"
+				surname = "Tariyê"
+				callsign = "Sihr"
+				type = support_unique
+				is_female = yes
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_domestic_aircraft_production
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = ZKR_kurdish_aeronautic_corps }
+		mutually_exclusive = { focus = ZKR_import_foreign_aircraft }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_kurdish_aeronautic_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:ZKR_plane_manufacturer = {
+					add_mio_size = 2
+					add_mio_design_team_assign_cost = -0.5
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_import_foreign_aircraft
+		icon = GFX_focus_generic_air_partners
+		prerequisite = { focus = ZKR_kurdish_aeronautic_corps }
+		mutually_exclusive = { focus = ZKR_domestic_aircraft_production }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_kurdish_aeronautic_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				XHH = {
+					create_production_license = {
+						target = ROOT
+						equipment = {
+							type = small_plane_airframe_1
+						}
+						cost_factor = 0
+					}
+				}
+			}
+			else = {
+				XHH = {
+					create_production_license = {
+						target = ROOT
+						equipment = {
+							type = fighter_equipment_1
+						}
+						cost_factor = 0
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = small_plane_airframe
+					seller_tags = { XHH XVE XBH }
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 200
+						variant_name = "Bf 109 E"
+						producer = XHH
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_1
+						amount = 200
+						producer = XHH
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				unlock_military_industrial_organization_tooltip = mio:XHH_arado_flugzeugwerke_organization
+				unlock_military_industrial_organization_tooltip = mio:XHH_focke_wulf_organization
+				
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				mio:XHH_arado_flugzeugwerke_organization = {
+					add_mio_size = 1
+				}
+				mio:XHH_focke_wulf_organization = {
+					add_mio_size = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_aeronautic_doctrine
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = ZKR_expanded_pilot_training }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_expanded_pilot_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = ZKR_aeronautic_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_fighter_bonus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = ZKR_expanded_pilot_training }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_expanded_pilot_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_fighter_bonus
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_cas_bonus
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = ZKR_expanded_pilot_training }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_expanded_pilot_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_cas_bonus
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+			}
 		}
 	}
 

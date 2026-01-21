@@ -1117,11 +1117,27 @@ XHH_focke_wulf_organization = {
 			original_tag = XHH
 			original_tag = XH1
 			original_tag = XH2
+			original_tag = ZKR
 		}
 	}
 
 	available = {
-		FROM = { owns_state = 1017 }
+		if = {
+			limit = {
+				FROM = { NOT = { original_tag = ZKR } }
+			}
+			FROM = {
+				owns_state = 1017
+			}
+		}
+		else = {
+			FROM = { has_completed_focus = ZKR_import_foreign_aircraft }
+			1017 = { 
+				owner = {
+					NOT = { has_war_with = FROM }
+				}
+			}
+		}
 	}
 
 	override_trait = {
@@ -1384,12 +1400,26 @@ XHH_arado_flugzeugwerke_organization = {
 			original_tag = XHH
 			original_tag = XH1
 			original_tag = XH2
+			original_tag = ZKR
 		}
 	}
 
 	available = {
-		FROM = {
-			owns_state = 61
+		if = {
+			limit = {
+				FROM = { NOT = { original_tag = ZKR } }
+			}
+			FROM = {
+				owns_state = 61
+			}
+		}
+		else = {
+			FROM = { has_completed_focus = ZKR_import_foreign_aircraft }
+			61 = { 
+				owner = {
+					NOT = { has_war_with = FROM }
+				}
+			}
 		}
 	}
 

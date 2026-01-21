@@ -307,7 +307,7 @@ country_event = { # Demanded Syrian Kurdistan - Refused
 
 }
 
-country_event = { # Last British Bastion gone
+country_event = { # Palestinian British Bastion gone
 	id = ZKR_technical_events.1
 	title = ZKR_technical_events.1.t
 	desc = ZKR_technical_events.1.desc
@@ -319,10 +319,27 @@ country_event = { # Last British Bastion gone
 	
 	option = {
         name = ZKR_technical_events.1.a
-        remove_trait = {
-            character = ZKR_mahmud_barzanji
-            ideology = despotism
-            trait = ZKR_hates_the_british
+        custom_effect_tooltip = ZKR_hates_the_british_modified_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ZKR_mahmud_barzanji = { has_trait = ZKR_hates_the_british_1 }
+                }
+                ZKR_mahmud_barzanji = {
+                    swap_country_leader_traits = { 
+                        remove = ZKR_hates_the_british_1
+                        add = ZKR_hates_the_british_3
+                        ideology = despotism
+                    }
+                }
+            }
+            else = {
+                remove_trait = {
+                    character = ZKR_mahmud_barzanji
+                    ideology = despotism
+                    trait = ZKR_hates_the_british_2
+                }
+            }
         }
 
         if = {
@@ -356,3 +373,48 @@ country_event = { # Last British Bastion gone
         DN1 = { set_cosmetic_tag = ZKR_palestine }
     }
 }
+
+country_event = { # Cypriot British Bastion gone
+	id = ZKR_technical_events.2
+	title = ZKR_technical_events.2.t
+	desc = ZKR_technical_events.2.desc
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.2.a
+        custom_effect_tooltip = ZKR_hates_the_british_modified_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ZKR_mahmud_barzanji = { has_trait = ZKR_hates_the_british_1 }
+                }
+                ZKR_mahmud_barzanji = {
+                    swap_country_leader_traits = { 
+                        remove = ZKR_hates_the_british_1
+                        add = ZKR_hates_the_british_2
+                        ideology = despotism
+                    }
+                }
+            }
+            else = {
+                remove_trait = {
+                    character = ZKR_mahmud_barzanji
+                    ideology = despotism
+                    trait = ZKR_hates_the_british_3
+                }
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        ZCY = { drop_cosmetic_tag = yes }
+        effect_tooltip = {
+            ZCY = { set_cosmetic_tag = ZCY }
+        }
+    }
+}
+
