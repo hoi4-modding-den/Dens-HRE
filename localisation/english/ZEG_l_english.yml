@@ -8,13 +8,13 @@
  ZEG_democratic:0 "Republic of Egypt"
  ZEG_democratic_DEF:0 "Jumhuriat Misr"
  ZEG_democratic_ADJ:0 "Egyptian"
- ZEG_democratic_party: "Wafd Party"
+ ZEG_democratic_party: "Delegation Party"
  ZEG_democratic_party_long: "Hizb al-Wafd"
  ZEG_neutrality:0 "Kingdom of Egypt"
  ZEG_neutrality_DEF:0 "Al-Mamlaka Al-Misriyya"
  ZEG_neutrality_ADJ:0 "Egyptian"
- ZEG_neutrality_party: "Alawiyya Dynasty"
- ZEG_neutrality_party_long: "House of Muhammad Ali"
+ ZEG_neutrality_party: "Union Party"
+ ZEG_neutrality_party_long: "Hizb al-Ittihad"
  ZEG_communism:0 "Egyptian People's Republic"
  ZEG_communism_DEF:0 "al-Jumhūriyya al-'Arabīyya al-Misr al-Sha'bīyya al-Ishtirākīyya"
  ZEG_communism_ADJ:0 "Egyptian"
@@ -45,5 +45,32 @@
  ZEG_disorganized_military:0 "Military Chaos"
  ZEG_disorganized_military_desc:0 "The Anglo-Turkish wars has left our armed forces completely reliant on outside military assistance. With such assistance no longer available, we are barely capable of projecting authority within our own borders, let alone outside them."
  
- #misc.
+ #Misc.#
+ ZEG_SUEZ_SNAKE_DESC:0 "The Khedivate of Egypt has been occupied by foreign powers for centuries, whether it be Turkish, English, or French. However, the gradual collapse of the Ottoman Empire in 1930 has left Egypt alone in a state of disarray. Without Turkish or British military support, the Egyptian army has struggled to maintain our territorial integrity. Protests have broken out in Cairo, demanding a return to constitutional governance. Will Egypt shake off the yoke of stagnation, or will it fall under the weight of its own contradictions?"
  ZEG_artillery_corps:0 "Egyptian Artillery Corps"
+ ZEG_monarchist_advisor:0 "Aristocratic Jurist"
+ 
+ #Characters#
+ #for some reason base-game egypt just has the characters pre-made in the country history file, so I guess I don't have to worry about that, but I still have to figure out the advisors which yes I am actually adding them for this country jam.
+ ZEG_aly_maher_pasha_name:0 "Aly Maher Pasha" 
+ 
+ #Focuses#
+ ZEG_vestigial_khedivate:0 "The Last Days of the Khedivate"
+ ZEG_vestigial_khedivate_desc:0 "The Ottoman Empire, once The ''Eternal State'', has been reduced to a shadow of its former self. Our government has sought to weather the storm, waiting for the day that stability returns to the Empire. But that day has not come, and it increasingly seems that it never will. It seems that Egypt's fate lies in its own hands now, even if its ruling class is reluctant to recognize this."
+ ZEG_election_rigging:0 "Correct the Numbers"
+ ZEG_election_rigging_desc:0 ""
+ ZEG_honest_election:0 "Adhere to the Results"
+ ZEG_honest_election_desc:0 ""
+ ZEG_party_funding:0 "Secure Party Funds"
+ ZEG_party_funding_desc:0 ""
+ ZEG_welfare_promises:0 "Promises of a Welfare System"
+ ZEG_welfare_promises_desc:0 ""
+ ZEG_protect_royal_perogatives:0 "Assert Royal Perogatives"
+ ZEG_protect_royal_perogatives_desc:0 ""
+ 
+ #Events#
+ ZEG.FE_1.t:0 "The Demands of the Protests"
+ ZEG.FE_1.d:0 "[WIP]\nWhen I was writing this I kept accidentally just making sumaries of the lore, which I then made into the country select screen description, so I have nothing to show for this event rn... I'll get something more fitting for this when I can.\n\n - Carrera"
+ ZEG.FE_1.a:0 "idk what you expected"
+ 
+ 

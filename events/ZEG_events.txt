@@ -1,0 +1,37 @@
+add_namespace = ZEG_natural_event
+add_namespace = ZEG_focus_event
+add_namespace = ZEG_news_event
+add_namespace = ZEG_diplo_event
+
+#Natural Events# (they just show up on their own)
+
+
+#Focus Events# (events from focuses)
+country_event = { #intro event
+    id = ZEG_focus_event.1
+    title = ZEG.FE_1.t
+    picture = GFX_report_event_tur_sultan_and_pashas
+    desc = ZEG.FE_1.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.FE_1.a
+		ai_chance = {
+			base = 100
+		}
+		#add_power_balance_value = {
+		#	id = ZEG_fascist_balance
+		#	value = -0.1
+		#	tooltip_side = ZEG_fascist_side
+		#}
+	hidden_effect = {
+			
+		}
+    }
+}
+
+#News Events# (the big news pop-ups)
+
+
+#Diplomatic Events# (events from interactions with other countries)
+

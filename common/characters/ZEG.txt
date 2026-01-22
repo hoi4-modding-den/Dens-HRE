@@ -1,0 +1,15 @@
+characters = {
+	ZEG_aly_maher_pasha = {
+		name = ZEG_aly_maher_pasha_name
+		portraits = {
+			civilian = {
+				#large = GFX_portrait_XWB_josef_schlaffer
+			}
+			
+		}
+		advisor = {
+			slot = political_advisor
+			traits = { ZEG_monarchist_advisor }
+		}
+	}
+}
