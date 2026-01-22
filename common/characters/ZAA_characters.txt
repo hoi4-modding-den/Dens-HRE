@@ -21,6 +21,16 @@ characters = {
 			coordination_skill=5
 			legacy_id=-1
 		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = ZAA_suleiman_ezzat_idea
+			ledger = navy
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = { naval_theorist }
+		}
 	}
 	ZAA_mahmoud_hamza_pasha = {
 		name = ZAA_mahmoud_hamza_pasha
@@ -92,6 +102,98 @@ characters = {
 			maneuvering_skill=3
 			coordination_skill=2
 			legacy_id=-1
+		}
+	}
+	ZAA_mohamed_naguib = {
+		name = ZAA_mohamed_naguib
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/mohamednaguib.png
+				small = gfx/leaders/ZAA/small/mohamednaguib_small.png
+			}
+		}
+		field_marshal = {
+			traits = { brilliant_strategist }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	ZAA_youssef_seddik = {
+		name = ZAA_youssef_seddik
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/youssefseddik.png
+				small = gfx/leaders/ZAA/small/youssefseddik_small.png
+			}
+		}
+		corps_commander = {
+			traits = { career_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+	ZAA_muhsen_alhusayn = {
+		name = ZAA_muhsen_alhusayn
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/muhsenalhusayn.png
+				small = gfx/leaders/ZAA/small/muhsenalhusayn_small.png
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+	ZAA_abdulaziz_altuwajiri = {
+		name = ZAA_abdulaziz_altuwajiri
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/abdulazizaltuwajiri.png
+				small = gfx/leaders/ZAA/small/abdulazizaltuwajiri_small.png
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+	ZAA_ibrahim_altassan = {
+		name = ZAA_ibrahim_altassan
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/ibrahimaltassan.png
+				small = gfx/leaders/ZAA/small/ibrahimaltassan_small.png
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = ZAA_ibrahim_altassan
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
 		}
 	}
 }

@@ -1,6 +1,9 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			1108 = {
+				force_disable_resistance = ZZZ
+			}
 			XRO = { set_country_flag = HRE_is_republic }
 			every_country = {
 				limit = {

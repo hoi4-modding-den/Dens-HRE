@@ -1,6 +1,9 @@
 capital = 457
 
 set_research_slots = 3
+add_manpower = 25000
+
+oob = "ZAA_1936"
 
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -11,7 +14,7 @@ if = {
 }
 
 add_ideas = {
-	
+	limited_conscription
 }
 
 set_technology = {
@@ -19,6 +22,7 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	gw_artillery = 1
+	marines = 1
 }
 
 IF = {
@@ -118,6 +122,15 @@ recruit_character = ZAA_mahmoud_hamza_pasha
 recruit_character = ZAA_mohamed_nasid
 recruit_character = ZAA_jalal_allouba
 recruit_character = ZAA_abdel_magid_fahim
+
+#generals#
+recruit_character = ZAA_mohamed_naguib
+recruit_character = ZAA_youssef_seddik
+recruit_character = ZAA_muhsen_alhusayn
+recruit_character = ZAA_abdulaziz_altuwajiri
+
+#other#
+recruit_character = ZAA_ibrahim_altassan
 
 
 set_politics = {
