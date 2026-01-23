@@ -8,6 +8,7 @@ characters = {
 			}
 		}
 		country_leader = {
+			traits = { ZAA_the_fatimid_spirit }
 			ideology = despotism
 			expire = "2000.1.1.1"
 			id = -1
@@ -49,6 +50,29 @@ characters = {
 			coordination_skill=4
 			legacy_id=-1
 		}
+		advisor = {
+			slot = navy_chief
+			idea_token = ZAA_mahmoud_hamza_pasha_idea
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				navy_chief_decisive_battle_3
+			}
+			cost = 150
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_mahmoud_hamza_pasha_token
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				naval_architect
+			}
+
+			cost = 150
+		}
 	}
 	ZAA_mohamed_nasid = {
 		name = ZAA_mohamed_nasid
@@ -67,6 +91,29 @@ characters = {
 			coordination_skill=3
 			legacy_id=-1
 		}
+		advisor = {
+			slot = navy_chief
+			idea_token = ZAA_mohamed_nasid_idea
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			cost = 150
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_mohamed_nasid_token
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				silent_workhorse
+			}
+
+			cost = 150
+		}
 	}
 	ZAA_jalal_allouba = {
 		name = ZAA_jalal_allouba
@@ -76,7 +123,7 @@ characters = {
 				small = gfx/leaders/ZAA/small/JalalAllouba_small.png
 			}
 		}
-		navy_leader={
+		navy_leader = {
 			traits={ }
 			skill=2
 			attack_skill=2
@@ -84,6 +131,17 @@ characters = {
 			maneuvering_skill=2
 			coordination_skill=2
 			legacy_id=-1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ZAA_jalal_allouba_idea
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				navy_fleet_logistics_2
+			}
+			cost = 100
 		}
 	}
 	ZAA_abdel_magid_fahim = {
@@ -121,6 +179,29 @@ characters = {
 			logistics_skill = 4
 			legacy_id = -1
 		}
+		advisor = {
+			slot = army_chief
+			idea_token = ZAA_mohamed_naguib_idea
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			cost = 100
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_mohamed_naguib_token
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				popular_figurehead
+			}
+
+			cost = 150
+		}
 	}
 	ZAA_youssef_seddik = {
 		name = ZAA_youssef_seddik
@@ -138,6 +219,17 @@ characters = {
 			planning_skill = 3
 			logistics_skill = 3
 			legacy_id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ZAA_youssef_seddik_idea
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				army_logistics_1
+			}
+			cost = 50
 		}
 	}
 	ZAA_muhsen_alhusayn = {
@@ -175,6 +267,29 @@ characters = {
 			logistics_skill = 2
 			legacy_id = -1
 		}
+		advisor = {
+			slot = high_command
+			idea_token = ZAA_abdulaziz_altuwajiri_idea
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				army_regrouping_3
+			}
+			cost = 150
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_abdulaziz_altuwajiri_token
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+
+			cost = 150
+		}
 	}
 	ZAA_ibrahim_altassan = {
 		name = ZAA_ibrahim_altassan
@@ -186,7 +301,7 @@ characters = {
 		}
 		advisor = {
 			slot = air_chief
-			idea_token = ZAA_ibrahim_altassan
+			idea_token = ZAA_ibrahim_altassan_idea
 			allowed = {
 				original_tag = ZAA
 			}
@@ -194,6 +309,42 @@ characters = {
 				air_chief_reform_2
 			}
 			cost = 100
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_ibrahim_altassan_token
+			allowed = {
+				original_tag = ZAA
+			}
+			traits = {
+				quartermaster_general
+			}
+
+			cost = 150
+		}
+	}
+	ZAA_hekmet_fahmy = {
+		name = ZAA_hekmet_fahmy
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/hekmetfahmy.png
+				small = gfx/leaders/ZAA/small/hekmetfahmy_small.png
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_hekmet_fahmy_token
+			allowed = {
+				original_tag = ZAA
+			}
+			available = {
+				has_intelligence_agency = yes
+			}
+			traits = {
+				ZAA_femme_fatale
+			}
+
+			cost = 150
 		}
 	}
 }

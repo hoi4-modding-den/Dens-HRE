@@ -4,7 +4,7 @@
 # Political advisors
 every_possible_country = {
 	limit = {
-		NOT = { OR = { tag = YGB tag = YBS tag = YPR tag = XBR tag = XEX tag = XAS tag = XHH tag = YCA tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = ROM tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = YZA original_tag = POL tag = FIN  } } 
+		NOT = { OR = { tag = ZAA tag = YGB tag = YBS tag = YPR tag = XBR tag = XEX tag = XAS tag = XHH tag = YCA tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = ROM tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = YZA original_tag = POL tag = FIN  } } 
 		# avoid generic advisors in temporary countries
 		is_dynamic_country = no
 		NOT = {
@@ -67,7 +67,7 @@ every_possible_country = {
 
 every_possible_country = {
 	limit = {
-		NOT = { OR = { tag = YGB tag = YBS tag = YPR tag = XBR tag = XEX tag = XAS tag = XHH tag = YCA tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = PRC tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POL tag = FIN original_tag = YZA } }
+		NOT = { OR = { tag = ZAA tag = YGB tag = YBS tag = YPR tag = XBR tag = XEX tag = XAS tag = XHH tag = YCA tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = PRC tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POL tag = FIN original_tag = YZA } }
 		is_dynamic_country = no
 		NOT = {
 			has_allowed_idea_with_traits = { idea = democratic_reformer characters = yes }
@@ -133,7 +133,7 @@ every_possible_country = {
 
 every_possible_country = {
 	limit = {
-		NOT = { OR = { tag = YGB tag = YBS tag = YPR tag = XBR tag = XEX tag = XAS tag = XHH tag = YCA tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = ROM tag = CZE tag = PRC tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POR original_tag = POL original_tag = LAT tag = FIN tag = BEL original_tag = YZA } }
+		NOT = { OR = { tag = ZAA tag = YGB tag = YBS tag = YPR tag = XBR tag = XEX tag = XAS tag = XHH tag = YCA tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = ROM tag = CZE tag = PRC tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POR original_tag = POL original_tag = LAT tag = FIN tag = BEL original_tag = YZA } }
 		is_dynamic_country = no
 		NOT = {
 			has_allowed_idea_with_traits = { idea = fascist_demagogue characters = yes }
@@ -203,6 +203,7 @@ every_possible_country = {
 		NOT = { is_chinese_warlord = yes }
 		NOT = { original_tag = XEX }
 		NOT = { original_tag = YPR }
+		NOT = { original_tag = ZAA }
 		NOT = { original_tag = YCA }		
 		IF = {
 			limit = {
