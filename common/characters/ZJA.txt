@@ -14,4 +14,55 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 	}
+	ZJA_abdulaziz_bin_saud_al_rashid = {
+		name = "Abdulaziz bin Saud Al Rashid"
+		portraits = {
+			army = {
+				large = GFX_portrait_ZJA_abdulaziz_bin_saud_al_rashid
+			}
+		}
+		corps_commander = { 
+			traits = {  }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id = 1
+		}
+	}
+	ZJA_abdullah_bin_mutaib_al_rashid = {
+		name = "Abdullah bin Mutaib Al Rashid"
+		portraits = {
+			army = {
+				large = GFX_portrait_ZJA_abdullah_bin_mutaib_al_rashid
+			}
+		}
+		corps_commander = { 
+			traits = {  }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			legacy_id = 1
+		}
+	}
+	ZJA_daham_el_hadi = {
+		name = "Daham el-Hadi"
+		portraits = {
+			army = {
+				large = GFX_portrait_ZJA_daham_el_hadi
+			}
+		}
+		corps_commander = { 
+			traits = { cavalry_leader }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = 1
+		}
+	}	
 }
