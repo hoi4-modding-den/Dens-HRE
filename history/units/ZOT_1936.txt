@@ -1,0 +1,201 @@
+﻿division_template = {
+	name = "Nizamiye Fırkası"
+
+	division_names_group = ZOT_INF_01
+
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }		
+	}
+	support = { 
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+
+	priority = 1
+}
+
+division_template = {
+	name = "Redif Fırkası"
+
+	division_names_group = ZOT_INF_02
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	
+	support = {
+        recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Umum Jandarma"
+
+	division_names_group = ZOT_INF_03
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+	
+	priority = 0
+	division_cap = 24
+	template_counter = 68
+}
+
+division_template = {
+	name = "Hücum Taburu" 
+
+	division_names_group = ZOT_MNT_01 
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+        mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	
+	support = {
+        engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
+	}
+
+	priority = 2
+}
+
+
+units = {
+	division = {	
+		location = 11747
+		division_template = "Nizamiye Fırkası"
+		start_experience_factor = 0.75
+		start_equipment_factor = 1
+	}	
+	division = {	
+		location = 11747
+		division_template = "Nizamiye Fırkası"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}		
+	division = {	
+		location = 6908
+		division_template = "Nizamiye Fırkası"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}	
+	division = {	
+		location = 3951
+		division_template = "Nizamiye Fırkası"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}	
+	division = {	
+		location = 6807
+		division_template = "Nizamiye Fırkası"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}	
+	division = {	
+		location = 804
+		division_template = "Nizamiye Fırkası"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}			
+
+	division = {	
+		location = 9755
+		division_template = "Hücum Taburu"
+		start_experience_factor = 0.75
+		start_equipment_factor = 1
+	}	
+	division = {	
+		location = 856
+		division_template = "Hücum Taburu"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}		
+	
+	division = {	
+		location = 940
+		division_template = "Redif Fırkası"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}	
+	division = {	
+		location = 9878
+		division_template = "Redif Fırkası"
+		start_experience_factor = 0
+		start_equipment_factor = 0.4
+	}	
+	division = {	
+		location = 9806
+		division_template = "Redif Fırkası"
+		start_experience_factor = 0
+		start_equipment_factor = 0.4
+	}
+	
+	division = {	
+		location = 11747
+		division_template = "Umum Jandarma"
+		start_experience_factor = 0
+		start_equipment_factor = 0.3
+	}
+	division = {	
+		location = 3856
+		division_template = "Umum Jandarma"
+		start_experience_factor = 0
+		start_equipment_factor = 0.3
+	}
+	division = {	
+		location = 10041
+		division_template = "Umum Jandarma"
+		start_experience_factor = 0
+		start_equipment_factor = 0.3
+	}		
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = ZOT
+		}
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = ZOT
+		}
+		requested_factories = 1
+		progress = 0.4
+		efficiency = 50
+	}	
+}
+
+#####################
