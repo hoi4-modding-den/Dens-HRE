@@ -42,5 +42,22 @@ ideas = {
 				factory_energy_consumption = 0.1
 			}
 		}
+		ZTS_legacy_of_the_al_ru_b = {
+
+			picture = chi_war_of_resistance3
+
+			allowed = {
+				original_tag = ZTS
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+
+			modifier = {
+				political_power_gain = -0.01
+				stability_factor = -0.13
+			}
+		}
 }
 }
