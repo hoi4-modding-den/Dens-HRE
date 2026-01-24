@@ -20,6 +20,64 @@ on_actions = {
                 add_state_claim = 680
                 add_state_claim = 354
                 add_state_claim = 344
+
+                # Army Stuff
+
+                every_army_leader = {
+                    set_character_flag = ZKR_not_generate_character
+                }
+
+                every_owned_state = {
+                    every_state_division = {
+                        limit = {
+                            NOT = { division_has_majority_template = infantry }
+                        }
+                        add_history_entry = {
+                            key = ZKR_independence_war_history_entry
+                            subject = "ZKR_independence_war_history_entry"
+                            allow = no
+                        }
+                        random_list = {
+                            75 = {
+                                add_divisional_commander_xp = 150
+                            }
+                            25 = {
+                                add_divisional_commander_xp = 300
+                            }
+                        }
+                    }
+                    random_state_division = {
+                        limit = {
+                            NOT = { division_has_majority_template = infantry }
+                        }
+                        random_list = {
+                            10 = {
+                                add_divisional_commander_xp = 750
+                            }
+                            50 = {
+                                add_divisional_commander_xp = 500
+                            }
+                            40 = {
+                                add_divisional_commander_xp = 250
+                            }
+                        }
+                        promote_officer_to_general = yes
+                    }
+                }
+
+                every_army_leader = {
+                    limit = {
+                        NOT = { has_character_flag = ZKR_not_generate_character }
+                    }
+                    add_unit_leader_trait = war_hero
+                }
+
+                every_army_leader = {
+                    limit = {
+                        has_character_flag = ZKR_not_generate_character
+                    }
+                    clr_character_flag = ZKR_not_generate_character
+                }
             }
         }
     }

@@ -99,7 +99,7 @@ characters = {
 		}
 		corps_commander = {
 			traits = { 
-			 mountineer
+			 mountaineer
 			}
 			skill = 4
 			attack_skill = 3
@@ -111,7 +111,12 @@ characters = {
 			slot = army_chief
 			idea_token = ZAR_Garegin_Nzhdeh_idea
 			cost = 150
-			traits = { army_chief_defensive_2 }
+			traits = { ZAR_An_Expert_In_The_Mountains }
+		}
+		country_leader = {
+			ideology = futurism
+			traits = { }
+			expire = "1947.07.10"
 		}
 
 
@@ -231,6 +236,11 @@ characters = {
 			}
 
 			cost = 100
+		}
+		country_leader = {
+			ideology = futurism_radical
+			traits = { }
+			expire = "1947.07.10"
 		}
 
 	}
@@ -367,6 +377,176 @@ characters = {
 			idea_token = ZAR_Armenak_Artemi_Khanferiants_idea
 			cost = 150
 			traits = { air_chief_all_weather_2 }
+		}
+		
+
+	}
+
+	ZAR_Aghasi_Khanjian = { 
+		name = ZAR_Aghasi_Khanjian
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Aghasi_Khanjian_idea
+			cost = 150
+			traits = { ZAR_Proponant_Of_Economic_Centralisation }
+		}
+		
+
+	}
+
+	ZAR_Sebastian_Shaumyan = { 
+		name = ZAR_Sebastian_Shaumyan
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Sebastian_Shaumyan_idea
+			cost = 150
+			traits = { ZAR_Linguistic_Expert }
+		}
+		
+
+	}
+
+	ZAR_Hovhannes_Abelian = { 
+		name = ZAR_Hovhannes_Abelian
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Hovhannes_Abelian_idea
+			cost = 150
+			traits = { ZAR_Famous_Actor }
+		}
+		
+
+	}
+
+	ZAR_Karo_Halabyan = { 
+		name = ZAR_Karo_Halabyan
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Karo_Halabyan_idea
+			cost = 150
+			traits = { ZAR_President_Of_The_Academy_Of_Architecture }
+		}
+		
+
+	}
+
+	ZAR_Abram_Alikhanov = { 
+		name = ZAR_Abram_Alikhanov
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Abram_Alikhanov_idea
+			cost = 150
+			traits = { ZAR_Nuclear_Physicist }
+		}
+		
+
+	}
+
+	ZAR_Ivan_Knunyants = { 
+		name = ZAR_Ivan_Knunyants
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Ivan_Knunyants_idea
+			cost = 150
+			traits = { ZAR_Extrodinary_Chemist }
+		}
+		
+
+	}
+
+	ZAR_Anastas_Mikoyan = { 
+		name = ZAR_Anastas_Mikoyan
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Anastas_Mikoyan_idea
+			cost = 150
+			traits = { ZAR_Diplomat }
+		}
+		
+
+	}
+
+	ZAR_Gaik_Ovakimian = { 
+		name = ZAR_Gaik_Ovakimian
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				small = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+				small = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Gaik_Ovakimian_idea
+			cost = 150
+			traits = { ZAR_The_Puppetmaster }
 		}
 		
 

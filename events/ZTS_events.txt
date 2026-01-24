@@ -1,0 +1,14 @@
+add_namespace = ZTS_events
+news_event = {
+	id = ZTS_events.1
+	title = ZTS_events.1.t
+	desc = ZTS_events.1.d
+	
+	picture = GFX_ZTS_events_elections_news_image
+	
+	major = yes
+	is_triggered_only = yes
+	option = {
+        name = ZTS_events.1.a
+    }
+}

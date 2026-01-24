@@ -13,6 +13,40 @@ ZKR_kurdistan_formables_cat = {
 
 	visible_when_empty = no
 
+	priority = 10
+}
+
+ZKR_liberation_allies_cat = {
+	icon = saf_anti_colonialist_crusade
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		is_faction_leader = yes
+		has_completed_focus = ZKR_alliance_of_liberation
+	}
+
+	visible_when_empty = no
+
+	priority = 99
+}
+
+ZKR_coalition_allies_cat = {
+	icon = saf_anti_colonialist_crusade
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		is_faction_leader = yes
+		has_completed_focus = ZKR_coalition_of_willing
+	}
+
+	visible_when_empty = no
+
 	priority = 99
 }
 
@@ -30,5 +64,5 @@ ZKR_syrian_intervention_cat = {
 
 	visible_when_empty = no
 
-	priority = 99
+	priority = 20
 }

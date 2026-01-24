@@ -1,0 +1,30 @@
+peace_ai_desires = {
+
+    ZKR_annex_suez = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM = {
+                original_tag = DN2
+            }
+            ROOT = { original_tag = ZKR }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 10000
+    }
+
+    ZKR_annex_asia_minor_states = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM.FROM = {
+                region = 129
+            }
+            ROOT = {
+                original_tag = ZKR
+                has_completed_focus = ZKR_the_kurdish_destiny 
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 10000
+    }
+
+}

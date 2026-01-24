@@ -125,7 +125,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { guerilla_fighter politically_connected war_hero }
+			traits = { politically_connected war_hero militias_officer }
 			desc = ZKR_ihsan_nuri_desc
 			skill=4
 			attack_skill=5
@@ -161,14 +161,14 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { ZKR_determined_king ZKR_hates_the_british_1 }
+			traits = { ZKR_determined_king ZKR_hates_the_british }
 			ideology = despotism
 			desc = ZKR_mahmud_barzanji_desc
 			expire = "1950.1.1.1"
 		}
 
 		corps_commander = {
-			traits = { desert_fox militias_officer politically_connected war_hero }
+			traits = { desert_fox politically_connected war_hero guerilla_fighter }
 			desc = ZKR_mahmud_barzanji_desc
 			skill=4
 			attack_skill=5
@@ -225,7 +225,112 @@ characters = {
 				has_completed_focus = ZKR_kurdish_academy
 			}
 			traits = {
-				IRQ_minister_of_education
+				ZKR_education_minister
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_random_kurdish_industrialist = {
+		name = ZKR_random_kurdish_industrialist
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_random_kurdish_industrialist_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_random_kurdish_industrialist_desc
+			idea_token = ZKR_random_kurdish_industrialist_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_kurdish_industrial_revolution
+			}
+			traits = {
+				captain_of_industry
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_random_kurdish_mil_industrialist = {
+		name = ZKR_random_kurdish_mil_industrialist
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_random_kurdish_mil_industrialist_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_random_kurdish_mil_industrialist_desc
+			idea_token = ZKR_random_kurdish_mil_industrialist_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_expand_arms_industry
+			}
+			traits = {
+				war_industrialist
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_dean_wesley = {
+		name = ZKR_dean_wesley
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_dean_wesley_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_dean_wesley_desc
+			idea_token = ZKR_dean_wesley_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_invite_industrial_advisors
+			}
+			traits = {
+				ZKR_american_businessman
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_martin_maria_schwengler = {
+		name = ZKR_martin_maria_schwengler
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_martin_maria_schwengler_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_martin_maria_schwengler_desc
+			idea_token = ZKR_martin_maria_schwengler_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_invite_industrial_advisors
+				NOT = { has_war_with = XHH }
+			}
+			traits = {
+				ZKR_hanse_investor
 			}
 
 			cost = 150
@@ -239,6 +344,13 @@ characters = {
 				large = GFX_portrait_ZKR_arthur_frayn
                 small = GFX_portrait_ZKR_arthur_frayn_small
 			}
+		}
+
+		country_leader = {
+			traits = { ZKR_british_puppet_leader }
+			ideology = oligarchism
+			desc = ZKR_arthur_frayn_desc
+			expire = "1950.1.1.1"
 		}
 		
 		advisor = {

@@ -1,0 +1,122 @@
+every_possible_country = {
+    limit = {
+        original_tag = ZAR
+    }
+    generate_character = { 
+        token_base = generic_army_chief_plan 
+        advisor = { 
+            slot = army_chief 
+            traits = { army_chief_planning_1 } 
+            cost = 100
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_chief_plan } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_army_chief_org 
+        advisor = { 
+            slot = army_chief 
+            traits = { army_chief_organizational_2 } 
+            cost = 50 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_chief_org } 
+        } 
+    }
+
+    generate_character = {
+		token_base = generic_navy_chief_rading
+		advisor = {
+			slot = navy_chief
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 100
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_navy_chief_rading }
+		}
+	}
+
+    generate_character = { 
+        token_base = generic_air_chief_all_weather 
+        advisor = { 
+            slot = air_chief 
+            traits = { air_chief_all_weather_1 } 
+            cost = 50 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_air_chief_all_weather } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_air_chief_night 
+        advisor = { 
+            slot = air_chief 
+            traits = { air_chief_night_operations_1 } 
+            cost = 50 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_air_chief_night } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_army_infantry 
+        advisor = { 
+            slot = high_command 
+            traits = { army_infantry_1 } 
+            ledger = army 
+            cost = 50 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_infantry } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_army_commando 
+        advisor = { 
+            slot = high_command 
+            traits = { army_commando_2 } 
+            ledger = army 
+            cost = 100 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_commando } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_army_cavalry 
+        advisor = { 
+            slot = high_command 
+            traits = { army_cavalry_1 } 
+            ledger = army 
+            cost = 50 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_cavalry } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_army_concealment 
+        advisor = { 
+            slot = high_command 
+            traits = { army_concealment_2 } 
+            ledger = army 
+            cost = 100 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_concealment } 
+        } 
+    }
+    generate_character = { 
+        token_base = generic_air_air_combat_trainer 
+        advisor = { 
+            slot = high_command 
+            traits = { air_air_combat_training_1 } 
+            ledger = air 
+            cost = 50 
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_air_air_combat_trainer } 
+        } 
+    }
+}
