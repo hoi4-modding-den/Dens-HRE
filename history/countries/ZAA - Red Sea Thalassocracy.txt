@@ -1,6 +1,5 @@
 capital = 457
 
-
 set_research_slots = 3
 add_manpower = 25000
 
@@ -16,6 +15,9 @@ if = {
 
 add_ideas = {
 	limited_conscription
+	ZAA_nation_of_piranhas_dummy
+	ZAA_thalassocratic_tendencies_dummy
+	ZAA_chest_of_treasures
 }
 
 add_dynamic_modifier = { modifier = ZAA_nation_of_piranhas }
