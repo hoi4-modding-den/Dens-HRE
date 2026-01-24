@@ -655,7 +655,18 @@ focus_tree = {
 				}
 		}
 		completion_reward = {
+			add_state_claim = 49
+			add_state_claim = 1123 
+			add_state_claim = 343
+			add_state_claim = 346
+			add_state_claim = 1122
 			
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZOT
+    				generator = { 49 1123 343 346 1122 }
+    				expire = 280
+			}
 		}
 		
 	}
@@ -676,7 +687,24 @@ focus_tree = {
 				
 		}
 		completion_reward = {
-			
+			add_state_claim = 347
+			add_state_claim = 340 
+			add_state_claim = 797
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZCT
+    				generator = { 347 340 797 }
+    				expire = 280
+			}
+			add_state_claim = 342
+			add_state_claim = 339
+			add_state_claim = 164
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZGR
+    				generator = { 342 339 }
+    				expire = 280
+			}
 		}
 		
 	}
@@ -696,7 +724,7 @@ focus_tree = {
 				}
 		}
 		completion_reward = {
-			
+			country_event = { id = ZAR.10 }
 		}
 		
 	}
@@ -710,6 +738,9 @@ focus_tree = {
 				exists = yes
 				}
 				ZCT = {
+				exists = yes
+				}
+				ZGR = {
 				exists = yes
 				}
 			}
