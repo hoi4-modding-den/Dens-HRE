@@ -7,6 +7,7 @@ characters = {
 			}
 		}
 		country_leader = {
+		desc = ZGR_Parliament_leader_desc			
 			expire = "2004.1.1"
 			ideology = populism
 			traits = {  }
@@ -20,6 +21,7 @@ characters = {
 			}
 		}
 		field_marshal = {
+		desc = ZGR_Georgios_Bakos_leader_desc			
 			traits = { offensive_doctrine inspirational_leader trait_ruthless }
 			skill = 5
 			attack_skill = 5
@@ -29,9 +31,24 @@ characters = {
 			visible = { always = yes }
 		}
 		country_leader = {
+		desc = ZGR_Georgios_Bakos_leader_desc			
 			expire = "2004.1.1"
 			ideology = falangism
 			traits = {  }
 		}
 	}
+	ZGR_Avraam_Benaroya = {
+		name = "ZGR_Avraam_Benaroya"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Avraam_Benaroya"
+			}
+		}
+		country_leader = {
+			desc = ZGR_Avraam_Benaroya_leader_desc				
+			expire = "2004.1.1"
+			ideology = synthesis_anarchism
+			traits = {  }
+		}
+	}	
 }
