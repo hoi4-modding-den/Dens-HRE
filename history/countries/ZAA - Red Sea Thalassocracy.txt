@@ -15,7 +15,13 @@ if = {
 
 add_ideas = {
 	limited_conscription
+	ZAA_nation_of_piranhas_dummy
+	ZAA_thalassocratic_tendencies_dummy
+	ZAA_chest_of_treasures
 }
+
+add_dynamic_modifier = { modifier = ZAA_nation_of_piranhas }
+add_dynamic_modifier = { modifier = ZAA_thalassocratic_tendencies }
 
 set_technology = {
 	infantry_weapons = 1

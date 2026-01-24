@@ -1,33 +1,29 @@
 
 state={
-	id=343
-	name="STATE_343" # Afyon
-	manpower = 1098543
+	id=1123
+	name="STATE_1123" # Kütahya
+	manpower = 413932
 	resources={
-		chromium=24
-		steel=11
+		chromium=9
+		steel=5
 	}
 	
-	state_category = town
+	state_category = rural
 
 	history={
 		owner = ZOT
 		victory_points = {
-			10041 1 
-		}
-		victory_points = {
-			9878 5
+			3856 3
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
-			arms_factory = 1
 		}
 		add_core_of = ZOT
 	}
 
 	provinces={
-		3983 6877 6945 9878 10041 11907 
+		3856 11796 981 856 11831
 	}
 
 	local_supplies=0.0 
