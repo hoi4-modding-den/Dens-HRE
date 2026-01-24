@@ -98,6 +98,10 @@ political_actions = {
             DN1 = { is_subject_of = ROOT }
         }
 
+        ai_will_do = {
+			base = 1000
+		}
+
         complete_effect = {
             add_political_power = 100
 
@@ -125,6 +129,10 @@ political_actions = {
             ZCY = { is_subject_of = ROOT }
         }
 
+        ai_will_do = {
+			base = 1000
+		}
+
         complete_effect = {
             add_political_power = 100
 
@@ -133,6 +141,260 @@ political_actions = {
             country_event = ZKR_technical_events.2
         }
     }
+
+    ZKR_remove_british_government_in_persia = {
+
+        icon = generic_police_action
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        visible = {
+            has_completed_focus = ZKR_expel_the_british
+            ZIR = { has_country_leader = { character = ZIR_board_of_directors ruling_only = no } }
+        }
+
+        available = {
+            has_completed_focus = ZKR_expel_the_british
+            ZIR = { is_subject_of = ROOT }
+        }
+
+        ai_will_do = {
+			base = 1000
+		}
+
+        complete_effect = {
+            add_political_power = 100
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            country_event = ZKR_technical_events.3
+        }
+    }
+}
+
+foreign_politics = {
+
+    ZKR_demand_kurdish_land_from_ally = {
+
+        icon = infiltrate_state
+
+        cost = 50
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                is_ally_with = ROOT
+                has_war = no
+            }
+            NOT = { has_country_flag = ZKR_negotiating_land_from_ally }
+        }
+
+        visible = {
+            OR = {
+                has_completed_focus = ZKR_instrument_of_vengeance
+                has_completed_focus = ZKR_secure_peace
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                is_ally_with = ROOT 
+                is_ai = yes
+                any_owned_state = {
+                    OR = {
+                        is_core_of = ROOT
+                        is_claimed_by = ROOT
+                    }
+                }
+            }
+		}
+
+		targets_dynamic = yes
+
+        complete_effect = {
+            if = {
+                limit = {
+                    FROM = {
+                        any_owned_state = {
+                            NOT = {
+                                OR = {
+                                    is_core_of = ROOT
+                                    is_claimed_by = ROOT
+                                }
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        FROM = { is_subject_of = ROOT }
+                    }
+                    FROM = {
+                        every_owned_state = {
+                            limit = {
+                                OR = {
+                                    is_core_of = ROOT
+                                    is_claimed_by = ROOT
+                                }
+                            }
+                            transfer_state_to = ROOT
+                        }
+                        add_autonomy_score = {
+                            value = 500
+                            localization = ZKR_negotiating_land_from_ally
+                        }
+                    }
+                }
+                else = {
+                    FROM = { country_event = { id = ZKR_technical_events.4 days = 3 } }
+                    set_country_flag = ZKR_negotiating_land_from_ally
+                }
+            }
+            else = {
+                if = {
+                    limit = {
+                        FROM = { is_subject_of = ROOT }
+                    }
+                    annex_country = {
+                        target = FROM
+                        transfer_troops = no
+                    }
+                }
+                else = {
+                    FROM = { country_event = { id = ZKR_technical_events.7 days = 3 } }
+                    set_country_flag = ZKR_negotiating_land_from_ally
+                }
+            }
+        }
+    }
+
+}
+
+ZKR_liberation_allies_cat = {
+
+    ZKR_invite_nation_into_front = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                ZKR_is_viable_front_partner = yes
+                if = {
+                    limit = {
+                        ZKR_is_syrian_nation = yes
+                    }
+                    ZKR_can_intervene_in_syria = no
+                }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                OR = {
+                    capital_scope = { is_on_continent = middle_east }
+                    original_tag = ZCY
+                }
+                ZKR_is_viable_front_partner = yes
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = generic.5 days = 3 }
+            }
+        }
+    }
+
+}
+
+ZKR_coalition_allies_cat = {
+
+    ZKR_invite_nation_into_coalition = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                NOT = {
+                    any_owned_state = {
+                        OR = {
+                            is_core_of = ROOT
+                            is_claimed_by = ROOT
+                        }
+                    }
+                }
+                ZKR_is_viable_coalition_partner = yes
+                if = {
+                    limit = {
+                        ZKR_is_syrian_nation = yes
+                    }
+                    ZKR_can_intervene_in_syria = no
+                }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                OR = {
+                    capital_scope = { is_on_continent = middle_east }
+                    original_tag = ZCY
+                }
+                NOT = {
+                    any_owned_state = {
+                        OR = {
+                            is_core_of = ROOT
+                            is_claimed_by = ROOT
+                        }
+                    }
+                }
+                ZKR_is_viable_coalition_partner = yes
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = generic.5 days = 3 }
+            }
+        }
+    }
+
 }
 
 ZKR_syrian_intervention_cat = {

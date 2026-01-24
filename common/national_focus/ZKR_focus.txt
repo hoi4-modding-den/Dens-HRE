@@ -533,16 +533,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            if = {
-                limit = {
-                    NOT = { has_completed_focus = ZKR_form_gendarmerie }
-                }
-                custom_effect_tooltip = ZKR_xoybun_coup_tt
-                hidden_effect = { country_event = { id = ZKR_politics_events.2 days = 6 } }
-            }
-            else = {
-                country_event = { id = ZKR_politics_events.3 }
-            }
+			custom_effect_tooltip = ZKR_elections_now_tt
+            country_event = ZKR_politics_events.3
 		}
 	}
 
@@ -583,16 +575,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            if = {
-                limit = {
-                    NOT = { has_completed_focus = ZKR_form_gendarmerie }
-                }
-                custom_effect_tooltip = ZKR_xoybun_coup_tt
-                hidden_effect = { country_event = { id = ZKR_politics_events.2 days = 6 } }
-            }
-            else = {
-                country_event = { id = ZKR_politics_events.3 }
-            }
+			custom_effect_tooltip = ZKR_xoybun_coup_tt
+            country_event = ZKR_politics_events.2 
 		}
 	}
 
@@ -673,13 +657,7 @@ focus_tree = {
                     NOT = { has_completed_focus = ZKR_disband_the_volunteer_militia }
                 }
                 custom_effect_tooltip = ZKR_monarchist_coup_tt
-            }
-            if = { # separated for clarity
-                limit = {
-                    has_completed_focus = ZKR_centralise_the_administration
-                    has_completed_focus = ZKR_integrate_the_volunteer_militia
-                }
-                hidden_effect = { country_event = { id = ZKR_politics_events.1 days = 6 } }
+				country_event = ZKR_politics_events.1
             }
 		}
 	}
@@ -757,6 +735,10 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = ZKR_alliance_of_liberation_tt
 			# decisions to invite non-imperialist nations in the middle east
 		}
@@ -771,7 +753,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_form_anti_imperialist_faction
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -799,6 +781,10 @@ focus_tree = {
 			add_ideas = ZKR_peacekeepers
 			# allows guaranteeing at low threat
 			# pp gain
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_land_demands_from_allies_tt
 		}
 	}
 
@@ -893,6 +879,53 @@ focus_tree = {
 				remove_idea = ZKR_peacekeepers
 				add_idea = ZKR_peacekeepers_2
 			}
+		}
+	}
+
+	focus = {
+		id = ZKR_deal_with_the_lon
+		icon = GFX_focus_generic_league_of_nations
+		prerequisite = { focus = ZKR_common_organisations }
+		prerequisite = { focus = ZKR_alliance_of_liberation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_common_organisations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+			DN1 = {
+				exists = yes
+				has_war = no
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = DN2
+				modifier = ZKR_lon_deal_opinion
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = ZKR_lon_kurdistan_deal
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			DN2 = { country_event = ZKR_diplo_events.5 }
 		}
 	}
 
@@ -1070,6 +1103,8 @@ focus_tree = {
 						}
 					}
 				}
+
+				news_event = ZKR_news_events.1
 			}
 		}
 	}
@@ -1220,6 +1255,10 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			custom_effect_tooltip = ZKR_coalition_of_willing_tt
 			# allow inviting of nations not owning any kurdish cores or claims
 		}
@@ -1241,7 +1280,7 @@ focus_tree = {
 		}
 
 		available = {
-			is_subject = no
+			is_faction_leader = yes
 		}
 		
 		bypass = {
@@ -1252,8 +1291,16 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			set_rule = { can_use_kamikaze_pilots = yes }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = ZKR_vengeance
 			# military buffs, political debuffs
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_land_demands_from_allies_tt
 		}
 	}
 
@@ -1352,29 +1399,6 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = ZKR_expel_the_british_tt
-
-			hidden_effect = {
-				add_ai_strategy = {
-					type = conquer
-					id = DN1
-					value = 500
-				}
-				add_ai_strategy = {
-					type = declare_war 
-					id = DN1
-					value = 500
-				}
-				add_ai_strategy = {
-					type = consider_weak 
-					id = DN1
-					value = 500
-				}
-				add_ai_strategy = {
-					type = antagonize 
-					id = DN1
-					value = 10000
-				}
-			}
 		}
 	}
 
@@ -2151,6 +2175,9 @@ focus_tree = {
                 remove_idea = ZKR_agrarian_society
                 add_idea = ZKR_agrarian_society_2
             }
+
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_random_kurdish_industrialist_token
 		}
 	}
 
@@ -2254,6 +2281,11 @@ focus_tree = {
                     amount = 9
                 }
             }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ZKR_steel_mill_concern
 		}
 	}
 
@@ -2531,6 +2563,37 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ZKR_agricultural_subsidies
+		icon = GFX_focus_generic_agricultural_subsidies
+		prerequisite = { focus = ZKR_careful_resource_extraction }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_careful_resource_extraction
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+            add_ideas = ZKR_subsidised_agriculture
+		}
+	}
+
+	focus = {
 		id = ZKR_expand_arms_industry
 		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = ZKR_electrification }
@@ -2587,6 +2650,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_random_kurdish_mil_industrialist_token
 		}
 	}
 
@@ -2649,7 +2717,33 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-            # plane designs
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment_1
+				amount = 150
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_tech_bonus = {
+				name = ZKR_aviation_industry
+				bonus = 0.5
+				uses = 2
+				category = air_equipment
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				prioritize = { 350 }
+				limit = {
+					air_base < 7
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -2736,22 +2830,17 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
-
+			show_ideas_tooltip = ZKR_dean_wesley_token
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
             custom_effect_tooltip = available_political_advisor
-
+			show_ideas_tooltip = ZKR_martin_maria_schwengler_token
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            if = {
-				limit = {
-					NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
-				}
-				custom_effect_tooltip = available_political_advisor
-				show_ideas_tooltip = ZKR_arthur_frayn_token
-			}
+            custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ZKR_arthur_frayn_token
 		}
 	}
 
@@ -2827,6 +2916,14 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 10
+				producer = XHH
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
             if = {
 				limit = {
 					has_idea = ZKR_industrialising_society_2
@@ -2974,7 +3071,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_country_flag = ZKR_first_branch_completed
 		}
 		
 		bypass = {
@@ -3022,6 +3119,7 @@ focus_tree = {
 
 		available = {
 			NOT = { has_government = communism }
+			has_country_flag = ZKR_first_branch_completed
 		}
 		
 		bypass = {
@@ -3576,7 +3674,7 @@ focus_tree = {
 
 			custom_effect_tooltip = ZKR_modify_land_forces_tt
 			add_to_variable = {
-				ZKR_lf_terrain_penalty_reduction = -0.2
+				ZKR_lf_terrain_penalty_reduction = 0.2
 				tooltip = terrain_penalty_reduction_tt
 			}
 		}
@@ -3655,12 +3753,51 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					# has no tanks
+					NOT = { 
+						OR = {
+							has_tech = gwtank
+							has_tech = gwtank_chassis
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "No Step Back"
+					}
+					set_technology = { gwtank_chassis = 1 }
+				}
+				else = {
+					set_technology = { gwtank = 1 }
 				}
 				# gives template and one unit of "Experimental Armoured Brigade"
 			}
+			else = {
+				add_tech_bonus = {
+					name = ZKR_purchase_western_tanks
+					bonus = 1
+					uses = 1
+					category = armor
+				}
+			}
 
-			# makes Skoda available (both MIO and concern)
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				unlock_military_industrial_organization_tooltip = mio:ZKR_skoda_armour
+				
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				mio:ZKR_skoda_armour = {
+					add_mio_size = 2
+				}
+			}
+			else = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = ZKR_skoda_armour
+			}
 		}
 	}
 
@@ -3993,7 +4130,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_rule = can_generate_female_aces
 		}
 		
 		bypass = {

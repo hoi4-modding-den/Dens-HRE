@@ -1,4 +1,33 @@
 ideas = {
+	hidden_ideas = {
+
+		ZKR_women_are_real = {
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.01
+				stability_factor = -0.01
+				conscription_factor = 0.2
+
+				# low only because I don't have a lot of generic portraits (in fact, it's only two)
+				female_random_army_leader_chance = 0.1
+				female_random_admiral_chance = 0.1
+				female_divisional_commander_chance = 0.1
+				female_random_country_leader_chance = 0.1
+			}
+		}
+
+	}
+
 	country = {
 		
 		ZKR_an_independent_kurdistan = {
@@ -775,6 +804,59 @@ ideas = {
 			}
 		}
 
+		ZKR_lon_kurdistan_deal = {
+
+			picture = ZKR_lon_deal
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			available = {
+				NOT = { has_war_with = DN2 }
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.05
+				starting_compliance = 0.15
+			}
+
+			targeted_modifier = {
+				tag = DN2
+				generate_wargoal_tension_against = 2
+			}
+		}
+
+		ZKR_kurdistan_lon_deal = {
+
+			picture = ZKR_lon_deal
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+			available = {
+				NOT = { has_war_with = ZKR }
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				guarantee_cost = 1
+				stability_factor = 0.1
+			}
+		}
+
 		ZKR_amendment_1 = {
 
 			name = ZKR_amendments
@@ -1174,6 +1256,23 @@ ideas = {
 			}
 		}
 
+		ZKR_subsidised_agriculture = {
+
+			picture = LIT_invested_in_farms
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = 0.05
+				monthly_population = 0.2
+			}
+		}
+
 		ZKR_ammunition_production = {
 
 			picture = SWE_hodgepodge_of_equipment
@@ -1217,9 +1316,88 @@ ideas = {
 
 	}
 
+	tank_manufacturer = {
+
+		ZKR_skoda_armour = {
+
+			picture = generic_tank_manufacturer_3
+
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_completed_focus = ZKR_purchase_western_tanks
+				NOT = { has_war_with = XBH }
+			}
+
+			research_bonus = {
+				armor = 0.15
+			}
+
+			traits = { heavy_tank_manufacturer }
+
+			equipment_bonus = {
+			}
+		}
+
+	}
+
+	aircraft_manufacturer = {
+
+		ZKR_plane_manufacturer = {
+
+			picture = generic_air_manufacturer_1
+
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+
+			traits = { light_aircraft_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
 	industrial_concern = {
 
-		
+		ZKR_steel_mill_concern = {
+
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_completed_focus = ZKR_mining_programs
+			}
+
+			cost = 150
+			
+			modifier = {
+				#country_resource_steel = 24
+			}
+
+			research_bonus = {
+				industry = 0.05
+			}
+			
+			traits = { industrial_steel_mills_trait }
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
 
 	}
 }

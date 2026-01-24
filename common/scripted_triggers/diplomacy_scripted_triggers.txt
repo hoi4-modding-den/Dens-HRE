@@ -86,9 +86,6 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 	if = {
 		limit = {
 			ROOT = { is_ai = yes }
-			ZKR = {
-				is_justifying_wargoal_against = FROM
-			}
 		}
 		always = no
 	}
