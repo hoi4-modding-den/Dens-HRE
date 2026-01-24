@@ -12,4 +12,26 @@ characters = {
 			traits = {  }
 		}
 	}
+	ZGR_Georgios_Bakos = {
+		name = "ZGR_Georgios_Bakos"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Georgios_Bakos"
+			}
+		}
+		field_marshal = {
+			traits = { offensive_doctrine inspirational_leader trait_ruthless }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+			visible = { always = yes }
+		}
+		country_leader = {
+			expire = "2004.1.1"
+			ideology = falangism
+			traits = {  }
+		}
+	}
 }
