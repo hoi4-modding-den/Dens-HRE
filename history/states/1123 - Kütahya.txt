@@ -1,0 +1,30 @@
+
+state={
+	id=1123
+	name="STATE_1123" # Kütahya
+	manpower = 413932
+	resources={
+		chromium=9
+		steel=5
+	}
+	
+	state_category = rural
+
+	history={
+		owner = ZOT
+		victory_points = {
+			3856 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = ZOT
+	}
+
+	provinces={
+		3856 11796 981 856 11831
+	}
+
+	local_supplies=0.0 
+}

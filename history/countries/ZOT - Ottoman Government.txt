@@ -1,12 +1,15 @@
 capital = 49
 
-#oob = "ZOT_1936"
+oob = "ZOT_1936"
 
 set_war_support = 0.4
 set_stability = 0.5
 set_research_slots = 3
 
 recruit_character = ZOT_abdulmecid_ii
+recruit_character = ZOT_huseyin_cahit_yalcin
+recruit_character = ZOT_husrev_gerede
+recruit_character = ZOT_sevket_sureyya_aydemir
 
 add_ideas = {
 	ZOT_wreckage_of_the_empire
@@ -14,6 +17,8 @@ add_ideas = {
 	ZOT_steel_will
 	ZOT_the_imperial_gendarmerie
 	ZOT_muhacir_refugee_crisis
+	limited_conscription
+	low_economic_mobilisation
 }
 
 add_timed_idea = {
