@@ -13,7 +13,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 2100 y = 0 }
+	continuous_focus_position = { x = 2500 y = 0 }
 
 	focus = {
 		id = ZTS_begin_the_next_industrial_revolution
@@ -29,8 +29,209 @@ add_offsite_building = { type = industrial_complex level = 1 }
 ZTS = { country_event = ZTS_events.1 }
 		}
 	}
-}
 
+	focus = {
+		id = ZTS_a_shining_example_of_tolerance
+		icon = GFX_focus_ARG_defense_and_democracy
+		x = 15
+		y = 1
+		cost = 3
+		available = {
+
+		}
+		prerequisite = { focus = ZTS_begin_the_next_industrial_revolution }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ZTS_violently_crush_the_protesters
+		icon = GFX_focus_BRA_end_the_state_of_emergency
+		x = 15
+		y = 2
+		cost = 3
+	
+		prerequisite = { focus = ZTS_a_shining_example_of_tolerance }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ZTS_expand_RabaatOil
+		icon = GFX_focus_PER_increase_oil_sales
+		x = 19
+		y = 1
+		cost = 3
+	
+		prerequisite = { focus = ZTS_begin_the_next_industrial_revolution }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = ZTS_root_out_Shakhbut_supporters
+		icon = GFX_focus_CHI_arrest_the_seven_gentlemen
+		x = 17
+		y = 1
+		cost = 3
+	
+		prerequisite = { focus = ZTS_begin_the_next_industrial_revolution }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = ZTS_international_exploitation
+		icon = GFX_focus_PER_invite_oil_nations
+		x = 18
+		y = 2
+		cost = 3
+	
+		prerequisite = { focus = ZTS_expand_RabaatOil }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = ZTS_subsidize_local_companies
+		icon = GFX_focus_CHI_promote_national_currency
+		x = 20
+		y = 2
+		cost = 3
+	
+		prerequisite = { focus = ZTS_expand_RabaatOil }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+	
+		focus = {
+		id = ZTS_right_into_our_pockets
+		icon = GFX_focus_generic_immigration
+		x = 18
+		y = 3
+		cost = 3
+	
+		prerequisite = { focus = ZTS_international_exploitation }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+	
+		focus = {
+		id = ZTS_encourage_domestic_monopolies
+		icon = GFX_focus_AFG_a_modern_economy
+		x = 20
+		y = 3
+		cost = 3
+	
+		prerequisite = { focus = ZTS_subsidize_local_companies }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+			focus = {
+		id = ZTS_economical_miracle_on_the_arabian_gulf
+		icon = GFX_focus_RAJ_special_economic_zones
+		x = 19
+		y = 4
+		cost = 3
+	
+		prerequisite = { focus = ZTS_encourage_domestic_monopolies }
+		prerequisite = { focus = ZTS_right_into_our_pockets }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+				focus = {
+		id = ZTS_Ahmed_is_happy
+		icon = GFX_focus_RAJ_special_economic_zones
+		x = 15
+		y = 5
+		cost = 13
+	
+		prerequisite = { focus = ZTS_funding_of_war_projects }
+		prerequisite = { focus = ZTS_economical_miracle_on_the_arabian_gulf }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+
+		focus = {
+		id = ZTS_seizing_of_the_Mahatta_Fort
+		icon = GFX_focus_BEL_national_redoubt_at_antwerp
+		x = 11
+		y = 1
+		cost = 3
+	
+		prerequisite = { focus = ZTS_begin_the_next_industrial_revolution }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+		focus = {
+		id = ZTS_hire_mercenaries
+		icon = GFX_focus_generic_money_for_equipment
+		x = 12
+		y = 2
+		cost = 3
+		mutually_exclusive = { focus = ZTS_nationalize_the_defence_sector }
+	
+		prerequisite = { focus = ZTS_seizing_of_the_Mahatta_Fort }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+			focus = {
+		id = ZTS_funding_of_war_projects
+		icon = GFX_focus_CHI_protracted_warfare
+		x = 11
+		y = 3
+		cost = 3
+	
+		prerequisite = { focus = ZTS_hire_mercenaries focus = ZTS_nationalize_the_defence_sector }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}	
+		focus = {
+		id = ZTS_nationalize_the_defence_sector
+		icon = GFX_focus_CHI_meritocratic_principles
+		x = 10
+		y = 2
+		cost = 3
+		mutually_exclusive = { focus = ZTS_hire_mercenaries }
+		prerequisite = { focus = ZTS_seizing_of_the_Mahatta_Fort }
+		available = {
+
+		}
+		completion_reward = {
+		}
+	}
+}
 ############################################################################################################################################################
 #      :3         :3                     																												   #
 ############################################################################################################################################################
