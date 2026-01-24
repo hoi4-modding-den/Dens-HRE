@@ -1,0 +1,35 @@
+spriteTypes = {
+	SpriteType = { 
+		name = "ZGR_soldiers"
+		texturefile = "gfx/interface/ZGR/soldiers.dds"
+	}
+	SpriteType = { 
+		name = "ZGR_soldiers2"
+		texturefile = "gfx/interface/ZGR/soldiers2.dds"
+	}
+
+	SpriteType = { 
+		name = "ZGR_Star"
+		texturefile = "gfx/interface/ZGR/star.dds"
+	}
+	SpriteType = { 
+		name = "ZGR_BrokenStar"
+		texturefile = "gfx/interface/ZGR/star_broken.dds"
+	}
+
+	SpriteType = { 
+		name = "ZGR_Rifle"
+		texturefile = "gfx/interface/ZGR/rifle.dds"
+	}
+
+progressbartype = {
+    name = "GFX_ZGR_cw"
+    color = { 0 0 0 }
+    colortwo = { 0 255 0 }
+    textureFile1 = "gfx/interface/ZGR/GFX_ZGR_cw_progress_bar.dds"
+    textureFile2 = "gfx/interface/ZGR/progress_bar_background.dds"
+    size = { x = 482 y = 28 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  }
+}
