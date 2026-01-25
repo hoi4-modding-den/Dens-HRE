@@ -17,6 +17,14 @@
  ZCT_fascism_DEF:0 "the Turkish State"
  ZCT_fascism_ADJ:0 "Turkish"
 
+ ZCT_IZMIT_GOVERNMENT:0 "İzmit Government"
+ ZCT_IZMIT_GOVERNMENT_DEF:0 "the İzmit Government"
+ ZCT_IZMIT_GOVERNMENT_ADJ:0 "Turkish"
+
+ ZCT_TURKISH_REPUBLIC:0 "Turkish Republic"
+ ZCT_TURKISH_REPUBLIC_DEF:0 "the Turkish Republic"
+ ZCT_TURKISH_REPUBLIC_ADJ:0 "Turkish"
+
  ZCT_neutrality_party:0 "National Salvation Movement"
  ZCT_neutrality_party_long:0 "National Salvation Movement"
 
@@ -40,12 +48,36 @@
  ZCT_backed_into_a_corner_idea:0 "Backed Into a Corner"
  ZCT_martial_law_idea:0 "Martial Law"
  ZCT_economic_crisis_idea:0 "Economic Crisis"
+ ZCT_low_legitimacy_idea:0 "Low Legitimacy"
 
  # EVENTS #
 
  ZCT.1.t:0 "Mustafa Kemal has passed away"
  ZCT.1.desc:0 ""
  ZCT.1.a:0 "..."
+
+ ZCT_political.1.t:0 "Establishing the Republic's new Capital"
+ ZCT_political.1.desc:0 "PLACEHOLDER"
+ ZCT_political.1.a:0 "Ankara already has the infrastructure."
+ ZCT_political.1.b:0 "Istanbul is the obvious choice."
+ ZCT_political.1.c:0 "Izmir's access to the sea would be beneficial."
+ ZCT_political.1.d:0 "Keeping the current capital would be better."
+
+ # DECISIONS #
+
+ ZCT_government_decisions:0 "Government Decisions"
+ ZCT_turkish_anarchy:0 "§RTurkish Anarchy§!"
+ ZCT_turkish_anarchy_desc:0 "The collapse of the §7Ottoman Empire§! has been categorised by §Rtragedy after tragedy§!. For our people, the hardships introduced by this crisis have become merely a part of life. Despite this, we continue to fight for a brighter future for the §RTurkish§! people. §3Achieving our goal requires sacrifice, it requires courage and the resolve to continue despite facing failure again and again§!. As such, we have been forced to take drastic measures such as §Yemergency conscription§! and §Ywar time taxes§!."
+ ZCT_economic_depression:0 "Economic Depression"
+ ZCT_economic_depression_desc:0 "The economic pressure from the collapse of the empire has forced our economy into a depression. Though Istanbul still stands as a the vibrant economic hub that stands at the gates of the Black Sea, our people suffer as uncertainty prevents new investment in our country. We must take action to illeviate the affects of this depression on our people, and ideally work towards rebuilding our economy."
+
+ ZCT_proclaim_the_republic:0 "Establish the §RTurkish Republic§!"
+ ZCT_establish_a_new_capital:0 "Establish a new capital"
+
+ ZCT_raise_soldiers_in_izmit:0 "Raise conscripts in §Yİzmit§!"
+ ZCT_raise_soldiers_in_istanbul:0 "Raise conscripts in §YIstanbul§!"
+ ZCT_raise_soldiers_in_bursa:0 "Raise conscripts in §YBursa§!"
+ ZCT_raise_soldiers_in_mitilini:0 "Raise conscripts in §YMitilini§!"
 
  # TOOLTIPS #
 
@@ -62,3 +94,13 @@
 
  ZCT_mustafa_kemal_ataturk_override_instant:0 "§Y$ZCT_mustafa_kemal_ataturk$§!\n$ZCT_mustafa_kemal_ataturk_traits$"
  ZCT_mustafa_kemal_ataturk_override_delayed:0 "§L$ZCT_mustafa_kemal_ataturk_desc$§!"
+
+ STATE_1124:0 "North Aegean Islands"
+
+ ZCT_betrayed_our_people:0 "Betrayed our people!"
+ ZCT_foreign_invaders:0 "Foreign invaders"
+ ZCT_separatist_dogs:0 "Separatist dogs!"
+
+ ZCT_turkish_republic_founded:0 "The §YTurkish Republic§! has been established."
+ ZCT_emergency_conscription_act_signed:0 "The §YEmergency Conscription Act§! has been signed."
+ ZCT_currently_raising_soldiers:0 "Currently raising §Yconscripts§!."

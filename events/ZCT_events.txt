@@ -1,5 +1,6 @@
 add_namespace = ZCT
 add_namespace = ZCT_news
+add_namespace = ZCT_political
 
 ### COUNTRY EVENTS ###
 
@@ -33,5 +34,99 @@ country_event = {
 		}
 		
 		promote_character = ZCT_ismet_inonu
+    }
+}
+
+country_event = {
+    id = ZCT_political.1
+    title = ZCT_political.1.t
+    desc = ZCT_political.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZCT_political.1.a
+
+		trigger = {
+			owns_state = 49
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_war_support = 0.05
+		set_capital = {
+			state = 49
+		}
+		add_victory_points = {
+			province = 11747
+			value = 5
+		}
+    }
+
+	option = {
+        name = ZCT_political.1.b
+
+		trigger = {
+			owns_state = 797
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_stability = 0.05
+		set_capital = {
+			state = 797
+		}
+		add_victory_points = {
+			province = 9833
+			value = 5
+		}
+    }
+
+	option = {
+        name = ZCT_political.1.c
+
+		trigger = {
+			owns_state = 339
+		}
+		
+		ai_chance = {
+			base = 20
+		}
+
+		set_capital = {
+			state = 339
+		}
+		add_victory_points = {
+			province = 4112
+			value = 5
+		}
+    }
+
+	option = {
+        name = ZCT_political.1.d
+
+		trigger = {
+			owns_state = 347
+		}
+		
+		ai_chance = {
+			base = 0
+		}
+
+		add_political_power = 50
+		set_capital = {
+			state = 347
+		}
+		add_victory_points = {
+			province = 11811
+			value = 10
+		}
     }
 }

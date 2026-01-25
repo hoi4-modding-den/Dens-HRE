@@ -13,9 +13,9 @@ ideas = {
 
 		ZCT_martial_law = {
 			name = ZCT_martial_law_idea
-			picture = tur_kemalist_army_officers_limited_power_disloyal
+			picture = SOV_desperate_measures_ns_nsb_ccp_sov_compatibility
 			modifier = {
-				political_power_factor = -0.5
+				political_power_factor = -0.1
 				consumer_goods_factor = 0.1
 				resistance_target = -0.25
 			}
@@ -27,6 +27,21 @@ ideas = {
 			modifier = {
 				industrial_capacity_dockyard = -0.25
 				industrial_capacity_factory = -0.25
+			}
+		}
+
+		ZCT_low_legitimacy = {
+			name = ZCT_low_legitimacy_idea
+			picture = tur_kemalist_army_officers_limited_power_disloyal
+			rule = {
+				can_create_factions = no
+				can_join_factions = no
+				can_not_declare_war = yes
+				can_send_volunteers = no
+			}
+			modifier = {
+				political_power_factor = -0.3
+				stability_factor = -0.1
 			}
 		}
 	}

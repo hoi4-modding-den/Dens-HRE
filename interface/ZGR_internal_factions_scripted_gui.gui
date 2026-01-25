@@ -1,0 +1,114 @@
+@PARTY_TEXT_X = 55
+@MONEY_TEXT_X = 240
+@POPULARITY_TEXT_X = 380
+@PARTY_ICONS_X = 10
+@PARTY_NAMES_X = 55
+@HEADERS_Y = 0
+guiTypes = {
+
+	containerWindowType = {
+		name = "ZGR_internal_PARTY_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 110 }
+
+		#ICONS
+		iconType = {
+			name ="c_icon"
+			spriteType = "GFX_decision_faction_bul_bs"
+			position = { x = @PARTY_ICONS_X y = 30 }
+		}
+
+		instantTextBoxType = {
+			name ="bs_name_text"
+			position = { x = @PARTY_NAMES_X y = 40 }
+			font = "hoi_26mbs"
+			text = "BUL_bs_name_text"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="c_desc_camp"
+			position = { x = 270 y = -80 }
+			font = "hoi_26mbs"
+			text = "You need to gain support for The communist cause before the 1937 Election!"
+			format = right
+			maxHeight = 24
+			
+		}		
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="c_tooltip_fake"
+			position = { x = @PARTY_ICONS_X y = 40 }
+			maxwidth = 230
+			maxHeight = 38
+			pdx_tooltip = ZGR_c_TOOLTIP
+		}
+
+
+		#MONEY
+		instantTextBoxType = {
+			name ="MONEY_header"
+			position = { x = @MONEY_TEXT_X y = @HEADERS_Y }
+			font = "hoi_26mbs"
+			text = "ZGR_ui_MONEY_header"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+
+		instantTextBoxType = {
+			name ="ZGR_c_MONEY_status"
+			position = { x = @MONEY_TEXT_X y = 40 }
+			font = "hoi_26mbs"
+			text = "ZGR_c_MONEY_status"
+			format = center
+			maxwidth = 110
+		}
+
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="MONEY_tooltip_fake"
+			position = { x = @MONEY_TEXT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 205
+			pdx_tooltip = ZGR_MONEY_TOOLTIP
+		}
+
+		#POPULARITY
+		instantTextBoxType = {
+			name ="popularity_header"
+			position = { x = @POPULARITY_TEXT_X y = @HEADERS_Y }
+			font = "hoi_26mbs"
+			text = "ZGR_ui_popularity_header"
+			format = center
+			maxHeight = 24
+			maxwidth = 120
+		}
+
+
+		instantTextBoxType = {
+			name ="ZGR_c_popularity_status"
+			position = { x = @POPULARITY_TEXT_X y = 40 }
+			font = "hoi_26mbs"
+			text = "ZGR_c_popularity_status"
+			format = center
+			maxwidth = 120
+		}
+
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="popularity_tooltip_fake"
+			position = { x = @POPULARITY_TEXT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 205
+			pdx_tooltip = ZGR_POPULARITY_TOOLTIP
+		}
+	}
+}

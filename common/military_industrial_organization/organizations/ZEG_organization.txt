@@ -5,3 +5,16 @@ ZEG_artillery_corps  = {
 		    tag = ZEG
 	}
 }
+ZEG_naval_organization = {
+	include = generic_escort_ship_organization
+	#icon = GFX_idea_BRA_arsenal_de_marinha
+	allowed = {
+		tag = ZEG
+	}
+	
+	available = {
+		ZEG = {
+			has_completed_focus = ZEG_navy_harbors
+		}
+	}
+}

@@ -1,0 +1,22 @@
+focus_tree = {
+    id = ZIR_focus
+
+    country = {
+        base = 0
+        modifier = {
+            add = 10
+            tag = ZIR
+        }
+    }
+
+    focus = {
+        id = ZIR_focus_Assessing_the_situation
+        icon = GFX_focus_renounce_the_treaty_of_trianon
+        x = 1
+        y = 0
+        cost = 2
+        completion_reward = {
+            country_event = ZIR_event.1
+        }
+    }
+}

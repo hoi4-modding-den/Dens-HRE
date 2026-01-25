@@ -2,8 +2,18 @@ leader_traits = {
 	ZEG_monarchist_advisor = {
 		random = no
 
+		political_power_factor = 0.1
+		neutrality_drift = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ZEG_anti-radical_monarchist = {
+		random = no
+
+		drift_defence_factor = 0.5
 		stability_factor = 0.05
-		political_power_gain = 0.1
 
 		ai_will_do = {
 			factor = 1
