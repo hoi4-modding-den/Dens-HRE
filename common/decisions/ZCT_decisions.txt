@@ -262,3 +262,20 @@ ZCT_turkish_anarchy = {
         }
     }
 }
+
+ZCT_economic_depression = {
+    ZCT_establish_soup_kitchens = {
+        priority = 400
+        icon = GFX_decision_generic_speech
+        cost = 25
+
+        fire_only_once = yes
+
+        available = {
+
+        }
+
+        complete_effect = {
+        }
+    }
+}
