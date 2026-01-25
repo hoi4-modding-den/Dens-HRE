@@ -3,13 +3,26 @@ characters = {
 		name = ZEG_aly_maher_pasha_name
 		portraits = {
 			civilian = {
-				#large = GFX_portrait_XWB_josef_schlaffer
+				small = GFX_portrait_tur_said_i_nursi
 			}
-			
 		}
 		advisor = {
 			slot = political_advisor
 			traits = { ZEG_monarchist_advisor }
+			idea_token = ZEG_aly_maher_pasha_token
+		}
+	}
+	ZEG_ismail_sidky = {
+		name = ZEG_ismail_sidky_name
+		portraits = {
+			civilian = {
+				small = GFX_portrait_ETH_wehib_pasha_small
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			traits = { ZEG_anti-radical_monarchist }
+			idea_token = ZEG_ismail_sidky_token
 		}
 	}
 }

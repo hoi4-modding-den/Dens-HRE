@@ -1,5 +1,5 @@
 division_template = {
-	name = "Mizraim Line Infantry"
+	name = "Al-Mushati Infantry"
 	division_names_group = EGY_INF_01
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -13,9 +13,8 @@ division_template = {
 		infantry = { x = 2 y = 2 }
 	}
 }
-
 division_template = {
-	name = "Desert Cavalry"
+	name = "Sipahis"
 	division_names_group = EGY_CAV_01
 	regiments = {
 		cavalry = { x = 0 y = 0 }
@@ -26,9 +25,8 @@ division_template = {
 		cavalry = { x = 1 y = 2 }
 	}
 }
-
 division_template = {
-	name = "Camel Guard"
+	name = "Camel Corps"
 	division_names_group = EGY_CAV_01
 	regiments = {
 		camelry = { x = 0 y = 0 }
@@ -39,9 +37,8 @@ division_template = {
 		camelry = { x = 1 y = 2 }
 	}
 }
-
 division_template = {
-	name = "Mizraim Garrison"
+	name = "Al-Mushati Garrison"
 	division_names_group = EGY_GAR_01
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -57,45 +54,45 @@ division_template = {
 units = {
 	division = {
 		location = 10005
-		division_template = "Mizraim Line Infantry"
+		division_template = "Al-Mushati Infantry"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 	division = {
 		location = 7011
-		division_template = "Mizraim Line Infantry"
+		division_template = "Al-Mushati Infantry"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 	division = {
 		location = 7011
-		division_template = "Mizraim Line Infantry"
+		division_template = "Al-Mushati Infantry"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 	division = {
 		location = 12071
-		division_template = "Mizraim Line Infantry"
+		division_template = "Al-Mushati Infantry"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		location = 1068
+		division_template = "Al-Mushati Infantry"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 	division = {
 		location = 4076
-		division_template = "Mizraim Garrison"
+		division_template = "Al-Mushati Garrison"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
 	}
 	division = {
 		location = 10844
-		division_template = "Desert Cavalry"
+		division_template = "Sipahis"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.8
-	}
-	division = {
-		location = 10844
-		division_template = "Camel Guard"
-		start_experience_factor = 0.15
-		start_equipment_factor = 0.7
 	}
 }
 
@@ -104,21 +101,20 @@ instant_effect = {
 		equipment = {
 			type = infantry_equipment_0
 		}
-		progress = 0.75
-		efficiency = 45
+		progress = 0.82
+		efficiency = 50
 	}
 	add_equipment_production = {
 		equipment = {
 			type = support_equipment_1
 		}
-		progress = 0.4
-		efficiency = 45
+		progress = 0.44
+		efficiency = 50
 	}
 	add_equipment_production = {
 		equipment = {
 			type = artillery_equipment_1
 		}
-		progress = 0.6
-		efficiency = 45
+		progress = 0.83
+		efficiency = 50
 	}
-}
