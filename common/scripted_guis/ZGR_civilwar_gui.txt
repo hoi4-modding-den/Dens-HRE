@@ -1,0 +1,21 @@
+scripted_gui = {
+  civilwar_gui = {
+    window_name = "civilwar_gui_container"
+    context_type = decision_category
+
+    visible = {
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+properties = {  
+  GFX_ZGR_cw_progress_bar = {
+  frame = civil_war
+}
+  }
+}
+}

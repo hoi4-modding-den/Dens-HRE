@@ -1,0 +1,41 @@
+on_actions = {
+
+
+on_startup = {
+		effect = {
+			ZGR = {
+                set_variable = {
+                    var = civil_war
+                    value = 85
+                }
+			}
+		}
+}
+
+
+on_daily_ZGR = {
+        effect = {
+            # If stability < 0.5, decrease variable but not below 0
+            if = {
+                limit = {
+                    democratic < 0.5
+                    check_variable = { civil_war > 0 }   # only if above 0
+                }
+                add_to_variable = { var = civil_war value = -0.1 }
+            }
+
+            # If stability > 0.5, increase variable but not above 100
+            if = {
+                limit = {
+                    democratic > 0.5
+                    check_variable = { civil_war < 100 }  # only if below 100
+                }
+                add_to_variable = { var = civil_war value = 0.1 }
+            }
+        }
+}
+
+
+
+
+}

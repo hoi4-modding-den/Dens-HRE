@@ -1,0 +1,55 @@
+guiTypes = {
+
+	containerWindowType = {
+        name = "civilwar_gui_container"
+        position = { x = 0 y = 0 }
+		size = { width = 490 height = 200 }
+
+	iconType = {
+ 		name = "GFX_ZGR_cw_progress_bar"
+  		spriteType = "GFX_ZGR_cw"
+  		position = { x = 8 y = 160 }
+		}
+
+	instantTextBoxType = {
+            name = "cw_stability"
+            position = { x = 150 y = 65 }
+            font = "soviet_72"
+            text = "cw_stability"
+            maxWidth = 200
+            maxHeight = 24
+            format = center
+        }
+  	iconType = {
+ 		name = "Isk_Soldiers"
+  		spriteType = "ZGR_soldiers"
+  		position = { x = 400 y = 135 }
+	}      
+
+  	iconType = {
+ 		name = "Isk_Soldiers2"
+  		spriteType = "ZGR_soldiers2"
+  		position = { x = 5 y = 135 }
+	}
+  	iconType = {
+ 		name = "Isk_Star"
+  		spriteType = "ZGR_Star"
+  		position = { x = 400 y = -10 }
+		}  
+
+    iconType = {
+ 		name = "Isk_BrokenStar"
+  		spriteType = "ZGR_BrokenStar"
+  		position = { x = -5 y = -10 }
+		}  
+
+    buttonType = {
+ 		name = "ZGR_Rifle"
+  		spriteType = "ZGR_Rifle"
+  		position = { x = 200 y = -5 }
+		pdx_tooltip = ZGR_ETHNIC_TENSE
+		}
+    }
+
+	
+}
