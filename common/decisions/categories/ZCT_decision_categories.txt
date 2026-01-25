@@ -1,0 +1,33 @@
+ZCT_government_decisions = {
+	icon = GFX_decision_category_generic_political_actions
+
+	allowed = {
+		original_tag = ZCT
+	}
+
+	priority = 5
+}
+
+ZCT_turkish_anarchy = {
+	icon = GFX_decision_category_tur_unifying_the_country
+
+	picture = GFX_decision_cat_picture_integrate_anatolia
+
+	allowed = {
+		original_tag = ZCT
+	}
+
+	priority = 4
+}
+
+ZCT_economic_depression = {
+	icon = GFX_decision_category_generic_crisis
+
+	picture = GFX_decision_cat_picture_seize_gold_reserves
+
+	allowed = {
+		original_tag = ZCT
+	}
+
+	priority = 3
+}

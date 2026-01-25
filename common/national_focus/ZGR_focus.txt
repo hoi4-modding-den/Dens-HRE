@@ -1,0 +1,492 @@
+focus_tree = {
+	id = zgr-main
+	continuous_focus_position = { x = -40 y = 2870 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZGR
+		}
+	}
+	#Infiltrate the Radicals
+	focus = {
+		id = ZGR_infiltrate_the_radicals
+		icon = GFX_focus_prc_infiltration
+		x = 2
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_get_funds_from_greece_communists  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#NO! to new Mosqes
+	focus = {
+		id = ZGR_notonewmosqes
+		icon = GFX_focus_BRA_the_polaca
+		x = 9
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_greek_language  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#First Turkish General
+	focus = {
+		id = ZGR_first_turkish_general
+		icon = GFX_focus_mex_support_general_cedillo
+		x = 6
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_religous_tolerance  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Greek Megali Idea
+	focus = {
+		id = ZGR_the_greek_megali_idea
+		icon = GFX_focus_NGR_megali_idea
+		x = 7
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+	#Build the University
+	focus = {
+		id = ZGR_build_the_university
+		icon = GFX_focus_generic_university_3
+		x = 7
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ZGR_the_greek_megali_idea  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Police force
+	focus = {
+		id = ZGR_the_police_force
+		icon = GFX_focus_AST_never_gallipoli
+		x = 7
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_build_the_university  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Turk Represation
+	focus = {
+		id = ZGR_the_turk_represation
+		icon = GFX_focus_TUR_loosen_the_laws_on_secularism
+		x = 6
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_police_force  }
+		mutually_exclusive = { focus = ZGR_less_turk_representation  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Less Turk representation
+	focus = {
+		id = ZGR_less_turk_representation
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		x = 8
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_police_force  }
+		mutually_exclusive = { focus = ZGR_the_turk_represation  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Greek Language
+	focus = {
+		id = ZGR_the_greek_language
+		icon = GFX_focus_TUR_the_sun_language_theory
+		x = 9
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_less_turk_representation  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Autonomus Communities
+	focus = {
+		id = ZGR_autonomus_communities
+		icon = GFX_focus_SWE_form_rfsu
+		x = 5
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_turk_represation  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Religous Tolerance
+	focus = {
+		id = ZGR_religous_tolerance
+		icon = GFX_focus_TUR_turanist_ambition
+		x = 5
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_autonomus_communities  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Lessen the power of the Turkish corp
+	focus = {
+		id = ZGR_lessen_the_power_of_the_turkish_corp
+		icon = GFX_focus_TUR_reconfigure_turkish_foreign_policy
+		x = 8
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_notonewmosqes  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Pre Election Campain
+	focus = {
+		id = ZGR_pre_election_campain
+		icon = GFX_focus_TUR_reform_the_balkan_pact
+		x = 7
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_lessen_the_power_of_the_turkish_corp  focus = ZGR_first_turkish_general  }
+
+		completion_reward = {
+			country_event = ZGR_Political_Camp_Choice.1
+		}
+	}
+
+	#Upgrade the Railways
+	focus = {
+		id = ZGR_upgrade_the_railways
+		icon = GFX_focus_generic_railroad
+		x = 7
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ZGR_less_turk_representation  focus = ZGR_the_turk_represation  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Devalue the drachma
+	focus = {
+		id = ZGR_devalue_the_drachma
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 7
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ZGR_upgrade_the_railways  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Communist mission
+	focus = {
+		id = ZGR_the_communist_mission
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
+		x = 3
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_c_Elect}
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Kings Party
+	focus = {
+		id = ZGR_the_kings_party
+		icon = GFX_focus_NOR_for_the_king_and_prince
+		x = 11
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_n_Elect}		
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Keep The Democratic Stability
+	focus = {
+		id = ZGR_keep_the_democratic_stability
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		x = 7
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_d_Elect}		
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Byzantine Revival
+	focus = {
+		id = ZGR_byzantine_revival
+		icon = GFX_focus_GRE_byzantine_themata
+		x = 15
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_f_Elect}		
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Get Funds from Greece Communists
+	focus = {
+		id = ZGR_get_funds_from_greece_communists
+		icon = GFX_focus_generic_aegean_sea_focus
+		x = 2
+		y = 9
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_communist_mission  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Rob a bank
+	focus = {
+		id = ZGR_rob_a_bank
+		icon = GFX_focus_CHL_strengthen_the_central_bank
+		x = 4
+		y = 9
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_communist_mission  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Adress the Turkish workers
+	focus = {
+		id = ZGR_adress_the_turkish_workers
+		icon = GFX_focus_generic_public_works
+		x = 4
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_rob_a_bank  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Massive Rally in Smyrna
+	focus = {
+		id = ZGR_massive_rally_in_smyrna
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		x = 3
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_adress_the_turkish_workers  } prerequisite = { focus = ZGR_infiltrate_the_radicals  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Communist Party Congress
+	focus = {
+		id = ZGR_the_communist_party_congress
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 3
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_massive_rally_in_smyrna  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Avoid a Goverment CrackDown
+	focus = {
+		id = ZGR_avoid_a_goverment_crackdown
+		icon = GFX_focus_NOR_continue_nygaardsvold_government
+		x = 3
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_communist_party_congress  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Adress the Workers Isuues directly
+	focus = {
+		id = ZGR_adress_the_workers_isuues_directly
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		x = 5
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_adress_the_turkish_workers  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Bring Democratic Politicans to our cause
+	focus = {
+		id = ZGR_bring_democratic_politicans_to_our_cause
+		icon = GFX_focus_NOR_lurk_in_the_shadows
+		x = 1
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_infiltrate_the_radicals  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The [?] Victory!
+	focus = {
+		id = ZGR_thevictory
+		icon = GFX_focus_NOR_the_stumbling_storting
+		x = 11
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_avoid_a_goverment_crackdown  }
+
+		completion_reward = {
+
+		}
+	}
+
+}

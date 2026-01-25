@@ -1,0 +1,252 @@
+ZGR_election_category = {
+
+	ZGR_commie_elect = {
+
+		allowed = { tag = ZGR }
+
+		icon = GFX_decision_revolt
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 365
+		is_good = no
+		fire_only_once = yes
+
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+		}
+
+		activation = {
+			has_country_flag = ZGR_c_Elect
+			NOT = {
+				has_country_flag = ZGR_d_Elect
+				has_country_flag = ZGR_f_Elect
+				has_country_flag = ZGR_n_Elect
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = ZGR_d_Elect
+				has_country_flag = ZGR_f_Elect
+				has_country_flag = ZGR_n_Elect
+			}
+		}
+
+		cancel_effect = {
+
+		}
+
+		timeout_effect = {
+			country_event = denmark_political_events.1 #ZGR_Election.1
+			set_country_flag = ZGR_Elect_End
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	ZGR_commie_posters = {
+		days_remove = 7		
+		custom_cost_trigger = {
+			check_variable = {
+				c_money > 9
+			}
+		}
+		custom_cost_text = MONEY_POL_10
+
+			available = {			
+			}
+
+			activation = {
+				has_country_flag = ZGR_c_Elect
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			complete_effect = {
+				add_to_variable = {
+					var = c_money
+					value = -10
+				}
+				add_to_variable = {
+					var = c_pop
+					value = 10
+				}				
+			}
+	}
+
+
+	ZGR_commie_rally = {
+		custom_cost_trigger = {
+			check_variable = {
+				c_money > 9
+				c_pop > 5
+			}
+		}
+		days_remove = 45		
+		custom_cost_text = MONEY_POL_10_POP_5
+
+			available = {			
+			}
+
+			activation = {
+				has_country_flag = ZGR_c_Elect
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			complete_effect = {
+				add_to_variable = {
+					var = c_money
+					value = -10
+				}
+				add_to_variable = {
+					var = c_pop
+					value = 5 #Bc it adds 10, but -5 bc others hate u for doing a big rally
+				}	
+				clamp_variable = {
+					var = c_pop
+					min = 0
+				}
+
+				clamp_variable = {
+					var = c_money
+					min = 0
+				}			
+			}
+	}	
+
+
+	ZGR_commie_bribe = {
+		custom_cost_trigger = {
+			check_variable = {
+				c_pop > 10
+			}
+		}
+		days_remove = 14		
+		custom_cost_text = POP_10
+
+			available = {			
+			}
+
+			activation = {
+				has_country_flag = ZGR_c_Elect
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			complete_effect = {
+				add_to_variable = {
+					var = c_money
+					value = 15
+				}
+				add_to_variable = {
+					var = c_pop
+					value = -10
+				}
+				clamp_variable = {
+					var = c_pop
+					min = 0
+				}
+
+				clamp_variable = {
+					var = c_money
+					min = 0
+				}							
+			}
+	}		
+
+	ZGR_commie_bribe_others = {
+		custom_cost_trigger = {
+			check_variable = {
+				c_money > 30
+			}
+		}
+		days_remove = 120
+		custom_cost_text = POP_10
+
+			available = {			
+			}
+
+			activation = {
+				has_country_flag = ZGR_c_Elect
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = ZGR_d_Elect
+					has_country_flag = ZGR_f_Elect
+					has_country_flag = ZGR_n_Elect
+				}
+			}
+
+			complete_effect = {
+				add_to_variable = {
+					var = c_money
+					value = -30
+				}
+				add_to_variable = {
+					var = c_pop
+					value = 40
+				}	
+				clamp_variable = {
+					var = c_pop
+					min = 0
+				}
+
+				clamp_variable = {
+					var = c_money
+					min = 0
+				}								
+			}
+	}		
+
+}

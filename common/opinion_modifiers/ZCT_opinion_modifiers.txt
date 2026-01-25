@@ -1,0 +1,23 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+	ZCT_betrayed_our_people = {
+		value = -100
+	}
+	
+	ZCT_foreign_invaders = {
+		value = -100
+	}
+
+	ZCT_separatist_dogs = {
+		value = -100
+	}
+}
