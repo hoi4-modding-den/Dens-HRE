@@ -25,5 +25,13 @@ ideas = {
 				unit_upkeep_attrition_factor = 0.1
 			}
 		}
+		ZEG_great_depression_effects = {
+			picture = great_depression
+			modifier = {
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.2
+				production_speed_buildings_factor = -0.5 
+			}
+		}
 	}
 }
