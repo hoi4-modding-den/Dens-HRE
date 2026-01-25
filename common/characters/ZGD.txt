@@ -1,18 +1,17 @@
-
-	characters = {
-		ZGD_Noe_Zhordania = {
-			name = "Noe Zhordania"
-			portraits = {
-				civilian = {
-					large = GFX_portrait_Noe_Zhordania
-				}
-			}
-			country_leader = {
-				ideology = socialism
-				expire = "1950.1.1.1"
-				id = -1
+characters = {
+	ZGD_Noe_Zhordania = {
+		name = "Noe Zhordania"
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZGD/ZGD_Noe_Zhordania.tga
 			}
 		}
-	}	
+		country_leader = {
+			ideology = socialism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+}	
 
 	
