@@ -1,0 +1,34 @@
+focus_tree = {
+	id = ZCT_focus
+
+	country = {
+		factor = 0
+		modifier = { add = 10 tag = ZCT }
+	}
+
+	continuous_focus_position = { x = 4100 y = 1000 }
+
+    reset_on_civilwar = no
+
+
+	### ARMY PATH ###
+
+	focus = {
+		id = ZCT_republic_in_peril
+		icon = GFX_focus_por_estado_novo
+		x = 15
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			
+		}
+	}
+}

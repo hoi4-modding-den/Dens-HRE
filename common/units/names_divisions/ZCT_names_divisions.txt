@@ -73,6 +73,24 @@ ZCT_INF_02 = {
 	}
 }
 
+ZCT_INF_03 = {
+	name = "Militia Division"
+
+	for_countries = { ZCT }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	link_numbering_with = {  }
+
+	fallback_name = "%s Militia Division"
+
+	ordered = {
+		1 = { "%s 'Cesur' Militia Division" }
+	}
+}
+
 ZCT_MOT_01 = {
 	name = "Motorised Infantry Division"
 

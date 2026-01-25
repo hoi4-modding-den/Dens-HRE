@@ -1,0 +1,260 @@
+ZCT_government_decisions = {
+    ZCT_proclaim_the_republic = {
+        priority = 500
+        icon = GFX_decision_generic_nationalism
+        cost = 50
+
+        available = {
+            ZOT = { exists = no }
+            ZGR = { exists = no }
+            owns_state = 49
+            owns_state = 339
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_turkish_republic_founded
+            set_cosmetic_tag = ZCT_TURKISH_REPUBLIC
+            remove_ideas = {
+                ZCT_low_legitimacy
+            }
+            # news event for the founding of the turkish republic
+        }
+    }
+
+    ZCT_establish_a_new_capital = {
+        priority = 400
+        icon = GFX_decision_generic_speech
+        cost = 25
+
+        available = {
+            has_country_flag = ZCT_turkish_republic_founded
+        }
+
+        complete_effect = {
+            add_stability = 0.03
+            country_event = ZCT_political.1
+        }
+    }
+}
+
+ZCT_turkish_anarchy = {
+    ZCT_raise_soldiers_in_izmit = {
+        priority = 500
+        icon = GFX_decision_generic_protection
+        cost = 25
+
+        fire_only_once = yes
+        days_remove = 30
+
+        available = {
+            has_country_flag = ZCT_emergency_conscription_act_signed
+            controls_state = 347
+            NOT = {
+                has_country_flag = ZCT_currently_raising_soldiers
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_currently_raising_soldiers
+        }
+
+        remove_effect = {
+            if = {
+                limit = {
+                    NOT = { has_template = "Milis Tümeni" }
+                }
+
+                division_template = {
+                    name = "Milis Tümeni"
+                    is_locked = yes
+                    division_names_group = ZCT_INF_03
+                    priority = 0
+                    regiments = {
+                        militia = { x = 0 y = 0 }
+                        militia = { x = 0 y = 1 }
+                        militia = { x = 0 y = 2 }
+                        militia = { x = 0 y = 3 }
+                    }
+                    support = {
+                    }
+                }
+            }
+
+            347 = {
+                create_unit = {
+                    division = "name = \"Militia Division\" division_template = \"Milis Tümeni\" start_experience_factor = 0.2"
+                    owner = ZCT
+                    count = 2
+                    allow_spawning_on_enemy_provs = no
+                }
+            }
+
+            clr_country_flag = ZCT_currently_raising_soldiers
+        }
+    }
+
+    ZCT_raise_soldiers_in_istanbul = {
+        priority = 450
+        icon = GFX_decision_generic_protection
+        cost = 25
+
+        fire_only_once = yes
+        days_remove = 30
+
+        available = {
+            has_country_flag = ZCT_emergency_conscription_act_signed
+            controls_state = 797
+            NOT = {
+                has_country_flag = ZCT_currently_raising_soldiers
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_currently_raising_soldiers
+        }
+
+        remove_effect = {
+            if = {
+                limit = {
+                    NOT = { has_template = "Milis Tümeni" }
+                }
+
+                division_template = {
+                    name = "Milis Tümeni"
+                    is_locked = yes
+                    division_names_group = ZCT_INF_03
+                    priority = 0
+                    regiments = {
+                        militia = { x = 0 y = 0 }
+                        militia = { x = 0 y = 1 }
+                        militia = { x = 0 y = 2 }
+                        militia = { x = 0 y = 3 }
+                    }
+                    support = {
+                    }
+                }
+            }
+
+            797 = {
+                create_unit = {
+                    division = "name = \"Militia Division\" division_template = \"Milis Tümeni\" start_experience_factor = 0.2"
+                    owner = ZCT
+                    count = 3
+                    allow_spawning_on_enemy_provs = no
+                }
+            }
+
+            clr_country_flag = ZCT_currently_raising_soldiers
+        }
+    }
+
+    ZCT_raise_soldiers_in_bursa = {
+        priority = 400
+        icon = GFX_decision_generic_protection
+        cost = 25
+
+        fire_only_once = yes
+        days_remove = 30
+
+        available = {
+            has_country_flag = ZCT_emergency_conscription_act_signed
+            controls_state = 340
+            NOT = {
+                has_country_flag = ZCT_currently_raising_soldiers
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_currently_raising_soldiers
+        }
+
+        remove_effect = {
+            if = {
+                limit = {
+                    NOT = { has_template = "Milis Tümeni" }
+                }
+
+                division_template = {
+                    name = "Milis Tümeni"
+                    is_locked = yes
+                    division_names_group = ZCT_INF_03
+                    priority = 0
+                    regiments = {
+                        militia = { x = 0 y = 0 }
+                        militia = { x = 0 y = 1 }
+                        militia = { x = 0 y = 2 }
+                        militia = { x = 0 y = 3 }
+                    }
+                    support = {
+                    }
+                }
+            }
+
+            340 = {
+                create_unit = {
+                    division = "name = \"Militia Division\" division_template = \"Milis Tümeni\" start_experience_factor = 0.2"
+                    owner = ZCT
+                    count = 2
+                    allow_spawning_on_enemy_provs = no
+                }
+            }
+
+            clr_country_flag = ZCT_currently_raising_soldiers
+        }
+    }
+
+    ZCT_raise_soldiers_in_mitilini = {
+        priority = 350
+        icon = GFX_decision_generic_protection
+        cost = 25
+
+        fire_only_once = yes
+        days_remove = 30
+
+        available = {
+            has_country_flag = ZCT_emergency_conscription_act_signed
+            controls_state = 1124
+            NOT = {
+                has_country_flag = ZCT_currently_raising_soldiers
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_currently_raising_soldiers
+        }
+
+        remove_effect = {
+            if = {
+                limit = {
+                    NOT = { has_template = "Milis Tümeni" }
+                }
+
+                division_template = {
+                    name = "Milis Tümeni"
+                    is_locked = yes
+                    division_names_group = ZCT_INF_03
+                    priority = 0
+                    regiments = {
+                        militia = { x = 0 y = 0 }
+                        militia = { x = 0 y = 1 }
+                        militia = { x = 0 y = 2 }
+                        militia = { x = 0 y = 3 }
+                    }
+                    support = {
+                    }
+                }
+            }
+
+            1124 = {
+                create_unit = {
+                    division = "name = \"Militia Division\" division_template = \"Milis Tümeni\" start_experience_factor = 0.2"
+                    owner = ZCT
+                    count = 1
+                    allow_spawning_on_enemy_provs = no
+                }
+            }
+
+            clr_country_flag = ZCT_currently_raising_soldiers
+        }
+    }
+}
