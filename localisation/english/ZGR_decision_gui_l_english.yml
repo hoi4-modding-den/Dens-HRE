@@ -1,20 +1,24 @@
 ﻿l_english:
  ZGR_c_TOOLTIP:0 "The Communists"
- ZGR_ui_MONEY_header:0 "Money"
+ ZGR_ui_MONEY_header:0 "Funds"
  ZGR_c_MONEY_status:0 "[?c_money]"
  ZGR_MONEY_TOOLTIP:0 "Money we can get"
  ZGR_ui_popularity_header:0 "Popularity"
- ZGR_c_popularity_status:0 "[?c_pop]"
- ZGR_POPULARITY_TOOLTIP:0 "Rv populr?"
+ ZGR_c_popularity_status:0 "[?c_pop]k"
+ ZGR_POPULARITY_TOOLTIP:0 "How many thousands support the message?"
 
- MONEY_POL_10:0 "It costs 10 big ones!!!"
- MONEY_POL_10_blocked:0 "It costs 10 big ones to do this sh*t"
+ MONEY_POL_10:0 "10 $"
+ MONEY_POL_10_blocked:0 "10 $"
 
- MONEY_POL_10_POP_5:0 "It costs 10 $"
- MONEY_POL_10_POP_5_blocked:0 "It costs 10 $"
+ ZGR_ADD_MONEY: "§G+Funds§!"
+ ZGR_MINUS_POP: "§R-Popularity§!"
+ ZGR_MORE_POP: "§G+Popularity§!"
 
- POP_10:0 "Might be unpopular..."
- POP_10_blocked:0 "Might be unpopular..."
+ MONEY_POL_10_POP_5:0 "10 $"
+ MONEY_POL_10_POP_5_blocked:0 "10 $"
+
+ POP_10:0 "§RMight be unpopular...§!"
+ POP_10_blocked:0 "§RMight be unpopular...§!"
 
  c_money:0 "Money"
  c_pop:0 "Communist Popularity"
@@ -28,3 +32,4 @@
  ZGR_commie_elect:0 "The Election Campaign"
  ZGR_commie_bribe:0 "Recive money from Special Interests"
  ZGR_commie_bribe_others:0 "Bribe Officals"
+ ZGR_commie_rally: "A rally in the city"

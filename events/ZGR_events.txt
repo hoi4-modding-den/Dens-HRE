@@ -1,6 +1,8 @@
 add_namespace = ZGR_Political_Camp_Choice
 add_namespace = ZGR_Political_Result
 add_namespace = ZGR_Flavor
+add_namespace = ZGR_Commie_st_Election
+
 
 ### COUNTRY EVENTS ###
 
@@ -25,7 +27,8 @@ country_event = {
 		add_popularity = {
 			ideology = communism
 			popularity = 0.01
-		}			
+		}
+		complete_national_focus = ZGR_the_communist_mission
 	}
 
 	option = {
@@ -61,7 +64,7 @@ country_event = {
 country_event = {
     id = ZGR_Political_Result.1
     title = ZGR_Political_Result.1.t
-    desc = ZGR_Political_Result.1.desc
+    desc = ZGR_Political_Result.1.d
 
 	picture = GFX_report_event_YKP_lisbon
 
@@ -95,7 +98,7 @@ country_event = {
 country_event = {
     id = ZGR_Flavor.1
     title = ZGR_Flavor.1.t
-    desc = ZGR_Flavor.1.desc
+    desc = ZGR_Flavor.1.d
 
 	picture = GFX_report_event_YKP_lisbon
 
@@ -112,4 +115,255 @@ country_event = {
     	custom_effect_tooltip = ZGR_The_Ethnic_Radical	
 	}
 	
+}
+
+country_event = {
+    id = ZGR_Flavor.2
+    title = ZGR_Flavor.2.t
+    desc = ZGR_Flavor.2.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_Flavor.2.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.1
+	title = ZGR_Commie_st_Election.1.t
+	desc = ZGR_Commie_st_Election.1.desc
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	trigger = {
+	}
+	option = {
+		name = ZGR_Commie_st_Election.1.a
+		ai_chance = { base = 1 }
+				add_to_variable = {
+					var = c_money
+					value = 10
+					tooltip = ZGR_ADD_MONEY
+				}
+	}
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.2 #The robbery
+	title = ZGR_Commie_st_Election.2.t
+	desc = ZGR_Commie_st_Election.2.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Front Door
+		name = ZGR_Commie_st_Election.2.a
+		ai_chance = { base = 1 }
+		hidden_effect = {
+			country_event = ZGR_Commie_st_Election.2 #Fail
+		}
+	}
+	option = { #Sunlight on Roof
+		name = ZGR_Commie_st_Election.2.b
+		ai_chance = { base = 1 }
+					hidden_effect = { 
+						country_event = ZGR_Commie_st_Election.3 #Main Floor (Meh)
+					}
+	}	
+	option = { #BackDoor
+		name = ZGR_Commie_st_Election.2.c
+		ai_chance = { base = 1 }
+		hidden_effect = { 
+			country_event = ZGR_Commie_st_Election.4 #The Safe (Yuuu!)	
+		}	
+	}		
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.5 #The robbery - Failure
+	title = ZGR_Commie_st_Election.5.t
+	desc = ZGR_Commie_st_Election.5.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #nooo!
+		name = ZGR_Commie_st_Election.5.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = -10
+				tooltip = ZGR_MINUS_POP
+			}		
+	}
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.3 #The robbery - Grab what you can from the main workers there
+	title = ZGR_Commie_st_Election.3.t
+	desc = ZGR_Commie_st_Election.3.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Bearly made it out, one caught, - popularity
+		name = ZGR_Commie_st_Election.3.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = -5
+				tooltip = ZGR_MINUS_POP
+			}
+			add_to_variable = {
+				var = c_money
+				value = 5
+				tooltip = ZGR_ADD_MONEY
+			}			
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.4 #The robbery - You walk in the safe quitley, and leave
+	title = ZGR_Commie_st_Election.4.t
+	desc = ZGR_Commie_st_Election.4.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic win
+		name = ZGR_Commie_st_Election.4.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 2
+				tooltip = ZGR_MORE_POP
+			}
+			add_to_variable = {
+				var = c_money
+				value = 25
+				tooltip = ZGR_ADD_MONEY
+			}			
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.6 #Infiltrate
+	title = ZGR_Commie_st_Election.6.t
+	desc = ZGR_Commie_st_Election.6.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.6.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 10
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.7 #Epic Turkish workers
+	title = ZGR_Commie_st_Election.7.t
+	desc = ZGR_Commie_st_Election.7.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.7.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 5
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.8 #All workers
+	title = ZGR_Commie_st_Election.8.t
+	desc = ZGR_Commie_st_Election.8.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.8.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 25
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.9 #Rally
+	title = ZGR_Commie_st_Election.9.t
+	desc = ZGR_Commie_st_Election.9.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.9.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 30
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.10 #Rally
+	title = ZGR_Commie_st_Election.10.t
+	desc = ZGR_Commie_st_Election.10.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.10.a
+		ai_chance = { base = 1 }
+
+	}	
 }

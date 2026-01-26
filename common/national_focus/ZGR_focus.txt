@@ -21,7 +21,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_get_funds_from_greece_communists  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.6
 		}
 	}
 
@@ -60,12 +60,16 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = ZGR_Democ
+			add_popularity = {
+				ideology = communism
+				popularity = 0.02
+			}
 			hidden_effect = {
 				add_to_variable = {
 					var = civil_war
 					value = 5
 				}			
-			}			
+			}		
 		}
 	}
 
@@ -81,7 +85,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-
+			custom_effect_tooltip = ZGR_EPIC_IDEA
 		}
 	}
 
@@ -98,7 +102,15 @@ focus_tree = {
 		prerequisite = { focus = ZGR_the_greek_megali_idea  }
 
 		completion_reward = {
-
+			342 = {
+					add_building_construction = {
+					type = land_facility
+					level = 1
+					instant_build = yes
+					province = 1005
+				}
+			}
+			country_event = ZGR_Flavor.2
 		}
 	}
 
@@ -115,7 +127,16 @@ focus_tree = {
 		prerequisite = { focus = ZGR_build_the_university  }
 
 		completion_reward = {
-
+			add_stability = 0.05
+			add_tech_bonus = {
+				name = ZGR_Bonus_Police
+				bonus = 0.5
+				uses = 2
+				category = military_police_tech
+			}		
+			set_technology = {
+				tech_military_police2 = 1
+			}	
 		}
 	}
 
@@ -239,6 +260,14 @@ focus_tree = {
 		prerequisite = { focus = ZGR_notonewmosqes  }
 
 		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}			
 			add_ideas = ZGR_Democ_angry
 				add_to_variable = {
 					var = civil_war
@@ -284,7 +313,21 @@ focus_tree = {
 		prerequisite = { focus = ZGR_less_turk_representation  focus = ZGR_the_turk_represation  }
 
 		completion_reward = {
-
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				controller_priority = {
+					base = 3
+					modifier = {
+						tag = ZGR
+						add = 2
+					}
+				}
+				fallback = yes
+				path = { 4112 7130 10038 9941 10122 12096 1119 1005 }
+				start_state = 339
+				target_state = 342
+			}
 		}
 	}
 
@@ -301,7 +344,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_upgrade_the_railways  }
 
 		completion_reward = {
-
+			add_ideas = ZGR_devalued_the_money
 		}
 	}
 
@@ -390,7 +433,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_the_communist_mission  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.1
 		}
 	}
 
@@ -407,7 +450,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_the_communist_mission  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.2
 		}
 	}
 
@@ -424,7 +467,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_rob_a_bank  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.7
 		}
 	}
 
@@ -438,10 +481,13 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
+		available = {
+			check_variable = {c_pop > 50}
+		}			
 		prerequisite = { focus = ZGR_adress_the_turkish_workers  } prerequisite = { focus = ZGR_infiltrate_the_radicals  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.9
 		}
 	}
 
@@ -458,7 +504,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_massive_rally_in_smyrna  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.10
 		}
 	}
 
@@ -492,7 +538,7 @@ focus_tree = {
 		prerequisite = { focus = ZGR_adress_the_turkish_workers  }
 
 		completion_reward = {
-
+			country_event = ZGR_Commie_st_Election.8
 		}
 	}
 
@@ -506,10 +552,17 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
+		available = {
+			check_variable = {c_pop > 25}
+		}		
 		prerequisite = { focus = ZGR_infiltrate_the_radicals  }
 
 		completion_reward = {
-
+			add_to_variable = {
+				var = c_pop
+				value = 10
+				tooltip = ZGR_MORE_POP
+			}			
 		}
 	}
 
