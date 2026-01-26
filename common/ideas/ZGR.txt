@@ -18,5 +18,29 @@ ideas = {
 			}
 		}
 
+		ZGR_Democ = {
+			name = ZGR_Democ
+			picture = CHL_liberal_party_in_power
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+		ZGR_Democ_angry = {
+			name = ZGR_Democ_angry
+			picture = SWE_all_cards_on_deck
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+		ZGR_Radicalisation = {
+			name = ZGR_Radicalisation
+			picture = ITA_hardened_irregular_bands
+			modifier = {
+				stability_weekly = -0.01
+				fascism_drift = 0.1
+				communism_drift = 0.1
+				neutrality_drift = 0.1
+			}
+		}
 	}
 }

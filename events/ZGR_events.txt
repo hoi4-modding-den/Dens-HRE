@@ -1,5 +1,6 @@
 add_namespace = ZGR_Political_Camp_Choice
-
+add_namespace = ZGR_Political_Result
+add_namespace = ZGR_Flavor
 
 ### COUNTRY EVENTS ###
 
@@ -20,7 +21,11 @@ country_event = {
 			base = 100
 		}
 
-			set_country_flag = ZGR_c_Elect
+		set_country_flag = ZGR_c_Elect
+		add_popularity = {
+			ideology = communism
+			popularity = 0.01
+		}			
 	}
 
 	option = {
@@ -53,3 +58,58 @@ country_event = {
 	}	
 }
 
+country_event = {
+    id = ZGR_Political_Result.1
+    title = ZGR_Political_Result.1.t
+    desc = ZGR_Political_Result.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_Political_Result.1.a #Minor communist vicotry
+		
+		ai_chance = {
+			base = 100
+		}
+		set_country_leader_ideology = ZGR_Socialism
+		set_country_leader_portrait = {
+			ideology = democratic
+			portrait = GFX_portrait_ZGR_Parliament_soc
+		}
+		set_country_leader_name = {
+			ideology = democratic
+			name = ZGR_Parliament_soc
+		}	
+		set_country_leader_description = {
+			ideology = democratic
+			desc = ZGR_Parliament_leader_soc_desc
+		}	
+		set_country_flag = ZGR_Elect_End			
+	}
+	
+}
+
+country_event = {
+    id = ZGR_Flavor.1
+    title = ZGR_Flavor.1.t
+    desc = ZGR_Flavor.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_Flavor.1.a
+		
+		ai_chance = {
+			base = 100
+		}
+		add_ideas = ZGR_Radicalisation
+    	custom_effect_tooltip = ZGR_The_Ethnic_Radical	
+	}
+	
+}

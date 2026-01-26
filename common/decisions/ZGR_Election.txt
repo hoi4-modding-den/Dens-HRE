@@ -46,7 +46,7 @@ ZGR_election_category = {
 		}
 
 		timeout_effect = {
-			country_event = denmark_political_events.1 #ZGR_Election.1
+			country_event = ZGR_Political_Result.1
 			set_country_flag = ZGR_Elect_End
 		}
 
@@ -94,6 +94,10 @@ ZGR_election_category = {
 					value = 10
 				}				
 			}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.01
+		}			
 	}
 
 
@@ -146,6 +150,10 @@ ZGR_election_category = {
 					min = 0
 				}			
 			}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.02
+		}					
 	}	
 
 
