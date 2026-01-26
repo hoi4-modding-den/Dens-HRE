@@ -72,5 +72,27 @@ characters = {
 		}
 	}		
 	
-	# Political Advisors				
+	# Political Advisors
+	ZOT_fevzi_cakmak={
+		name="Fevzi Çakmak"
+		portraits={
+			army={
+				small="GFX_idea_tur_fevzi_cakmak"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_fevzi_cakmak
+			visible = {
+			}
+			available = {
+			}
+			traits = { 
+				#old_guard
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}					
 }
