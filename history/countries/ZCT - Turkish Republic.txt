@@ -139,6 +139,11 @@ set_popularities = {
 set_variable = { emergency_powers = 25 }
 set_variable = { economic_crisis_modifier = -0.25 }
 
+country_event = {
+    id = ZCT.1
+    days = 1044
+}
+
 add_opinion_modifier = {
     target = ZOT
     modifier = ZCT_betrayed_our_people
