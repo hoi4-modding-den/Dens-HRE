@@ -92,12 +92,12 @@ ZGR_election_category = {
 				add_to_variable = {
 					var = c_pop
 					value = 10
-				}				
-			}
-		add_popularity = {
-			ideology = communism
-			popularity = 0.01
-		}			
+				}	
+				add_popularity = {
+					ideology = communism
+					popularity = 0.01
+				}								
+			}		
 	}
 
 
@@ -148,12 +148,12 @@ ZGR_election_category = {
 				clamp_variable = {
 					var = c_money
 					min = 0
-				}			
-			}
-		add_popularity = {
-			ideology = communism
-			popularity = 0.02
-		}					
+				}	
+				add_popularity = {
+					ideology = communism
+					popularity = 0.02
+				}							
+			}				
 	}	
 
 
