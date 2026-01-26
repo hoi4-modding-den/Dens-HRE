@@ -1,5 +1,8 @@
 capital = 457
 
+set_stability = 0.45
+set_war_support = 0.45
+
 set_research_slots = 3
 add_manpower = 25000
 
@@ -16,12 +19,18 @@ if = {
 add_ideas = {
 	limited_conscription
 	ZAA_nation_of_piranhas_dummy
-	ZAA_thalassocratic_tendencies_dummy
+	ZAA_thalassocratic_tendencies
 	ZAA_chest_of_treasures
+	ZAA_no_political_power_allowed
 }
 
 add_dynamic_modifier = { modifier = ZAA_nation_of_piranhas }
-add_dynamic_modifier = { modifier = ZAA_thalassocratic_tendencies }
+#add_dynamic_modifier = { modifier = ZAA_thalassocratic_tendencies }
+
+set_variable = { ZAA_piranhas_stability_factor_variable = -0.1 }
+set_variable = { ZAA_piranhas_conscription_factor_variable = 0.1 }
+set_variable = { ZAA_command_power_variable = 0.25 }
+set_variable = { ZAA_convoy_raiding_variable = 0.15 }
 
 set_technology = {
 	infantry_weapons = 1
