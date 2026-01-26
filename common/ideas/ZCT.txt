@@ -11,6 +11,18 @@ ideas = {
 			}
 		}
 
+		ZCT_backed_into_a_corner_again = {
+			name = ZCT_backed_into_a_corner_idea
+			picture = tur_disorganised_armed_forces
+			modifier = {
+				stability_factor = -0.2
+				war_support_factor = 0.2
+				surrender_limit = 0.5
+				army_core_defence_factor = 0.2
+				army_speed_factor = 0.25
+			}
+		}
+
 		ZCT_martial_law = {
 			name = ZCT_martial_law_idea
 			picture = SOV_desperate_measures_ns_nsb_ccp_sov_compatibility
@@ -97,6 +109,25 @@ ideas = {
 			picture = ARG_construction_guilds
 			modifier = {
 				conscription  = 0.03
+			}
+		}
+
+		ZCT_emergency_plans = {
+			name = ZCT_emergency_plans_idea
+			picture = chi_wargaming_division
+			modifier = {
+				max_planning_factor = 0.5
+				army_org_factor = 0.3
+				army_morale_factor = 0.2
+			}
+		}
+
+		ZCT_excess_supplies = {
+			name = ZCT_excess_supplies_idea
+			picture = generic_supply_lines
+			modifier = {
+				supply_factor = 0.3
+				no_supply_grace = 120
 			}
 		}
 	}
