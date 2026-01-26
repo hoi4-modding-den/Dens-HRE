@@ -24,9 +24,14 @@ ideas = {
 		ZCT_economic_crisis = {
 			name = ZCT_economic_crisis_idea
 			picture = ARG_economic_reactivation
+			on_add = {
+				add_dynamic_modifier = { modifier = ZCT_economic_crisis_modifier }
+			}
+			on_remove = {
+				remove_dynamic_modifier = { modifier = ZCT_economic_crisis_modifier }
+			}
 			modifier = {
-				industrial_capacity_dockyard = -0.25
-				industrial_capacity_factory = -0.25
+				custom_modifier_tooltip = ZCT_economic_crisis_modifier_tt
 			}
 		}
 
@@ -42,6 +47,56 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.3
 				stability_factor = -0.1
+			}
+		}
+
+		ZCT_general_war_tax = {
+			name = ZCT_general_war_tax_idea
+			picture = NOR_printing_money
+			modifier = {
+				consumer_goods_factor = -0.2
+			}
+		}
+
+		ZCT_war_research_tax = {
+			name = ZCT_war_research_tax_idea
+			picture = NOR_printing_money
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		
+		ZCT_war_production_tax = {
+			name = ZCT_war_production_tax_idea
+			picture = NOR_printing_money
+			modifier = {
+				industrial_capacity_factory = 0.3
+			}
+		}
+
+		ZCT_construction_incentives = {
+			name = ZCT_construction_incentives_idea
+			picture = ARG_construction_guilds
+			modifier = {
+				production_speed_buildings_factor = 0.25
+				political_power_gain = -0.1
+			}
+		}
+
+		ZCT_a_new_future_for_our_people = {
+			name = ZCT_a_new_future_for_our_people_idea
+			picture = ARG_construction_guilds
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.25
+			}
+		}
+
+		ZCT_expanded_military_service_programs = {
+			name = ZCT_expanded_military_service_programs_idea
+			picture = ARG_construction_guilds
+			modifier = {
+				conscription  = 0.03
 			}
 		}
 	}

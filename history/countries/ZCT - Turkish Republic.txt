@@ -1,6 +1,6 @@
 capital = 347
 
-set_research_slots = 3
+set_research_slots = 2
 
 set_convoys = 155
 
@@ -107,6 +107,8 @@ set_party_name = {
 
 recruit_character = ZCT_mustafa_kemal_ataturk
 recruit_character = ZCT_ismet_inonu
+recruit_character = ZCT_riza_nur
+recruit_character = ZCT_sukru_saracoglu
 
 promote_character = ZCT_mustafa_kemal_ataturk
 
@@ -133,6 +135,9 @@ set_popularities = {
 	fascism = 4
 	communism = 5
 }
+
+set_variable = { emergency_powers = 25 }
+set_variable = { economic_crisis_modifier = -0.25 }
 
 add_opinion_modifier = {
     target = ZOT

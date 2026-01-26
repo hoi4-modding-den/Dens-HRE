@@ -1,7 +1,7 @@
 ZCT_government_decisions = {
     ZCT_proclaim_the_republic = {
         priority = 500
-        icon = GFX_decision_generic_nationalism
+        icon = GFX_decision_tur_unifying_the_country
         cost = 50
 
         fire_only_once = yes
@@ -39,13 +39,236 @@ ZCT_government_decisions = {
             country_event = ZCT_political.1
         }
     }
+
+    ZCT_preemptive_strike_on_ZOT = {
+        priority = 350
+        icon = GFX_decision_hol_draw_up_staff_plans
+        cost = 25
+
+        fire_only_once = yes
+        days_remove = 30
+
+        war_with_on_remove = ZOT
+
+        available = {
+            has_completed_focus = ZCT_casting_the_die
+            has_war_support > 0.5
+        }
+
+        remove_effect = {
+            declare_war_on = {
+                target = ZOT
+                type = annex_everything
+            }
+        }
+    }
+
+    ZCT_preemptive_strike_on_ZGR = {
+        priority = 350
+        icon = GFX_decision_hol_draw_up_staff_plans
+        cost = 25
+
+        fire_only_once = yes
+        days_remove = 30
+
+        war_with_on_remove = ZGR
+
+        available = {
+            has_completed_focus = ZCT_casting_the_die
+            has_war_support > 0.5
+            ZOT = {
+                exists = no
+            }
+        }
+
+        remove_effect = {
+            declare_war_on = {
+                target = ZGR
+                type = annex_everything
+            }
+        }
+    }
+
+    ZCT_reintegrate_interior_lands = {
+        priority = 300
+        icon = GFX_decision_generic_nationalism
+        cost = 50
+
+        fire_only_once = yes
+        days_remove = 120
+
+        available = {
+            ZOT = {
+                exists = no
+            }
+            owns_state = 49
+        }
+
+        remove_effect = {
+            1123 = {
+                add_core_of = ROOT
+            }
+            343 = {
+                add_core_of = ROOT
+            }
+            1122 = {
+                add_core_of = ROOT
+            }
+            346 = {
+                add_core_of = ROOT
+            }
+            49 = {
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZCT_reintegrate_coastal_lands = {
+        priority = 250
+        icon = GFX_decision_generic_nationalism
+        cost = 50
+
+        fire_only_once = yes
+        days_remove = 120
+
+        available = {
+            ZGR = {
+                exists = no
+            }
+            owns_state = 339
+        }
+
+        remove_effect = {
+            339 = {
+                add_core_of = ROOT
+            }
+            342 = {
+                add_core_of = ROOT
+            }
+            187 = {
+                add_core_of = ROOT
+            }
+        }
+    }
 }
 
 ZCT_turkish_anarchy = {
+    ZCT_speak_to_the_people = {
+        priority = 700
+        icon = GFX_decision_generic_political_discourse
+
+        cost = 25
+
+        complete_effect = {
+            custom_effect_tooltip = ZCT_add_emergency_powers_10_tt
+            add_to_variable = { emergency_powers = 10 }
+            add_stability = 0.01
+        }
+    }
+
+    ZCT_recruitment_drives = {
+        priority = 650
+        icon = GFX_decision_generic_military
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 9 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_10
+
+        days_remove = 30
+
+        available = {
+            NOT = {
+                has_country_flag = ZCT_collecting_equipment
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_collecting_equipment
+            subtract_from_variable = { emergency_powers = 10 }
+        }
+
+        remove_effect = {
+            add_manpower = 2500
+
+            clr_country_flag = ZCT_collecting_equipment
+        }
+    }
+
+    ZCT_collect_civilian_arms = {
+        priority = 600
+        icon = GFX_decision_generic_industry
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 9 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_10
+
+        days_remove = 30
+
+        available = {
+            NOT = {
+                has_country_flag = ZCT_collecting_equipment
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_collecting_equipment
+            subtract_from_variable = { emergency_powers = 10 }
+        }
+
+        remove_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = 500
+                producer = ZCT
+            }
+
+            clr_country_flag = ZCT_collecting_equipment
+        }
+    }
+
+    ZCT_convert_civilian_automobiles = {
+        priority = 550
+        icon = GFX_decision_generic_motorized
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 9 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_10
+
+        days_remove = 30
+
+        available = {
+            NOT = {
+                has_country_flag = ZCT_collecting_equipment
+            }
+        }
+
+        complete_effect = {
+            set_country_flag = ZCT_collecting_equipment
+            subtract_from_variable = { emergency_powers = 10 }
+        }
+
+        remove_effect = {           
+            add_equipment_to_stockpile = {
+                type = motorized_equipment
+                amount = 100
+                producer = ZCT
+            }
+
+            clr_country_flag = ZCT_collecting_equipment
+        }
+    }
+
     ZCT_raise_soldiers_in_izmit = {
         priority = 500
         icon = GFX_decision_generic_protection
-        cost = 25
+        
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 24 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_25
 
         fire_only_once = yes
         days_remove = 30
@@ -60,6 +283,7 @@ ZCT_turkish_anarchy = {
 
         complete_effect = {
             set_country_flag = ZCT_currently_raising_soldiers
+            subtract_from_variable = { emergency_powers = 25 }
         }
 
         remove_effect = {
@@ -100,7 +324,11 @@ ZCT_turkish_anarchy = {
     ZCT_raise_soldiers_in_istanbul = {
         priority = 450
         icon = GFX_decision_generic_protection
-        cost = 25
+        
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 24 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_25
 
         fire_only_once = yes
         days_remove = 30
@@ -115,6 +343,7 @@ ZCT_turkish_anarchy = {
 
         complete_effect = {
             set_country_flag = ZCT_currently_raising_soldiers
+            subtract_from_variable = { emergency_powers = 25 }
         }
 
         remove_effect = {
@@ -155,7 +384,11 @@ ZCT_turkish_anarchy = {
     ZCT_raise_soldiers_in_bursa = {
         priority = 400
         icon = GFX_decision_generic_protection
-        cost = 25
+        
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 24 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_25
 
         fire_only_once = yes
         days_remove = 30
@@ -170,6 +403,7 @@ ZCT_turkish_anarchy = {
 
         complete_effect = {
             set_country_flag = ZCT_currently_raising_soldiers
+            subtract_from_variable = { emergency_powers = 25 }
         }
 
         remove_effect = {
@@ -210,7 +444,11 @@ ZCT_turkish_anarchy = {
     ZCT_raise_soldiers_in_mitilini = {
         priority = 350
         icon = GFX_decision_generic_protection
-        cost = 25
+        
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 24 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_25
 
         fire_only_once = yes
         days_remove = 30
@@ -225,6 +463,7 @@ ZCT_turkish_anarchy = {
 
         complete_effect = {
             set_country_flag = ZCT_currently_raising_soldiers
+            subtract_from_variable = { emergency_powers = 25 }
         }
 
         remove_effect = {
@@ -261,21 +500,351 @@ ZCT_turkish_anarchy = {
             clr_country_flag = ZCT_currently_raising_soldiers
         }
     }
-}
 
-ZCT_economic_depression = {
-    ZCT_establish_soup_kitchens = {
-        priority = 400
-        icon = GFX_decision_generic_speech
-        cost = 25
+    ZCT_levy_a_general_war_tax = {
+        priority = 300
+        icon = GFX_decision_generic_consumer_goods
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 49 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_50
+
+        days_remove = 180
+
+        available = {
+            has_country_flag = ZCT_war_time_taxes_act_signed
+
+            custom_trigger_tooltip = {
+                tooltip = ZCT_levying_a_war_tax_tt		
+                NOT = {
+                    OR = {
+                        has_idea = ZCT_war_research_tax
+                        has_idea = ZCT_war_production_tax
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            subtract_from_variable = { emergency_powers = 50 }
+
+            add_timed_idea = {
+                idea = ZCT_general_war_tax
+                days = 180
+            }
+        }
+    }
+
+    ZCT_levy_a_war_research_tax = {
+        priority = 250
+        icon = GFX_decision_generic_research
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 49 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_50
+
+        days_remove = 180
+
+        available = {
+            has_country_flag = ZCT_war_time_taxes_act_signed
+
+            custom_trigger_tooltip = {
+                tooltip = ZCT_levying_a_war_tax_tt		
+                NOT = {
+                    OR = {
+                        has_idea = ZCT_general_war_tax
+                        has_idea = ZCT_war_production_tax
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            subtract_from_variable = { emergency_powers = 50 }
+            add_timed_idea = {
+                idea = ZCT_war_research_tax
+                days = 180
+            }
+        }
+    }
+
+    ZCT_levy_a_war_production_tax = {
+        priority = 200
+        icon = GFX_decision_ger_military_buildup
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 49 }
+        }
+        custom_cost_text = decision_cost_emergency_powers_50
+
+        days_remove = 180
+
+        available = {
+            has_country_flag = ZCT_war_time_taxes_act_signed
+
+            custom_trigger_tooltip = {
+                tooltip = ZCT_levying_a_war_tax_tt		
+                NOT = {
+                    OR = {
+                        has_idea = ZCT_war_research_tax
+                        has_idea = ZCT_general_war_tax
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            subtract_from_variable = { emergency_powers = 50 }
+
+            add_timed_idea = {
+                idea = ZCT_war_production_tax
+                days = 180
+            }
+        }
+    }
+
+    ZCT_lend_lease_from_the_united_kingdom = {
+        priority = 150
+        icon = GFX_decision_generic_prepare_civil_war
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 9 }
+            has_political_power > 9
+        }
+        custom_cost_text = decision_cost_emergency_powers_10_political_power_10
+
+        days_remove = 90
+
+        available = {
+            has_country_flag = ZCT_united_kingdom_contacted_for_support
+
+            NOT = {
+                has_country_flag = ZCT_currently_receiving_support_from_united_kingdom
+            }
+        }
+
+        complete_effect = {
+            hidden_effect = {
+                subtract_from_variable = { emergency_powers = 10 }
+                add_political_power = -10
+            }
+
+            set_country_flag = ZCT_currently_receiving_support_from_united_kingdom
+        }
+
+        remove_effect = {
+            clr_country_flag = ZCT_currently_receiving_support_from_united_kingdom
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = 500
+                producer = ENG
+            }
+            add_equipment_to_stockpile = {
+                type = support_equipment
+                amount = 100
+                producer = ENG
+            }
+        }
+    }
+
+    ZCT_professional_expeditionaries_from_the_united_kingdom = {
+        priority = 100
+        icon = GFX_decision_SWE_set_army_budget
+
+        custom_cost_trigger = {
+            check_variable = { emergency_powers > 9 }
+            has_political_power > 9
+        }
+        custom_cost_text = decision_cost_emergency_powers_10_political_power_25
+
+        days_remove = 90
 
         fire_only_once = yes
 
         available = {
+            has_country_flag = ZCT_united_kingdom_contacted_for_support
 
+            NOT = {
+                has_country_flag = ZCT_currently_receiving_support_from_united_kingdom
+            }
         }
 
         complete_effect = {
+            hidden_effect = {
+                subtract_from_variable = { emergency_powers = 10 }
+                add_political_power = -25
+            }
+
+            set_country_flag = ZCT_currently_receiving_support_from_united_kingdom
+        }
+
+        remove_effect = {
+            clr_country_flag = ZCT_currently_receiving_support_from_united_kingdom
+
+            division_template = {
+                name = "British Expeditionaries"
+                is_locked = yes
+                division_names_group = ZCT_INF_01
+                priority = 1
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 0 y = 3 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                    infantry = { x = 1 y = 3 }
+                    artillery_brigade = { x = 2 y = 0 }
+                    artillery_brigade = { x = 2 y = 1 }
+                }
+                support = {
+                    recon = { x = 0 y = 0 }
+                }
+            }
+
+            custom_effect_tooltip = ZCT_british_expeditionaries_tt
+            
+            hidden_effect = {
+                capital_scope = {
+                    create_unit = {
+                        division = "name = \"British Expeditionaries\" division_template = \"British Expeditionaries\" start_experience_factor = 0.8"
+                        owner = ZCT
+                        count = 1
+                        allow_spawning_on_enemy_provs = no
+                    }
+                }
+            }
+        }
+    }
+
+    ZCT_docking_rights_for_non_aggression_pacts = {
+        priority = 50
+        icon = GFX_decision_SWE_set_navy_budget
+
+        cost = 10
+
+        fire_only_once = yes
+
+        available = {
+            has_country_flag = ZCT_united_kingdom_contacted_for_support
+        }
+
+        complete_effect = {
+            diplomatic_relation = {
+                country = ZCY
+                relation = non_aggression_pact
+                active = yes
+            }
+            diplomatic_relation = {
+                country = DN1
+                relation = non_aggression_pact
+                active = yes
+            }
+            diplomatic_relation = {
+                country = ZCY
+                relation = docking_rights
+                active = yes
+            }
+            diplomatic_relation = {
+                country = DN1
+                relation = docking_rights
+                active = yes
+            }
+        }
+    }
+}
+
+ZCT_economic_depression = {
+    ZCT_expansionary_economic_policies = {
+        priority = 500
+        icon = GFX_decision_gre_paying_ifc_debt
+        cost = 50
+
+        fire_only_once = yes
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ZCT_has_enacted_recovery_measures_tt
+
+                check_variable = { economic_crisis_modifier > -0.15 }
+            }
+        }
+
+        complete_effect = {
+            add_stability = 0.1
+            remove_ideas = {
+                ZCT_economic_crisis
+            }
+        }
+    }
+    
+    ZCT_provide_investment_incentives = {
+        priority = 450
+        icon = GFX_decision_gre_investment_decisions
+        cost = 25
+
+        fire_only_once = yes
+
+        days_remove = 90
+
+        modifier = {
+            consumer_goods_factor = 0.1
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = ZCT_add_to_economic_crisis_modifier_small_tt
+            add_to_variable = { economic_crisis_modifier = 0.05 }
+        }
+    }
+
+    ZCT_establish_soup_kitchens = {
+        priority = 400
+        icon = GFX_decision_generic_decision
+        cost = 25
+
+        fire_only_once = yes
+
+        days_remove = 90
+
+        modifier = {
+            civilian_factory_use = 2
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = ZCT_add_to_economic_crisis_modifier_small_tt
+            add_to_variable = { economic_crisis_modifier = 0.05 }
+            add_stability = 0.03
+        }
+    }
+
+    ZCT_civilian_work_programs = {
+        priority = 350
+        icon = GFX_decision_generic_construction
+        cost = 25
+
+        fire_only_once = yes
+
+        days_remove = 90
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            civilian_factory_use = 1
+            political_power_factor = -0.25
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = ZCT_add_to_economic_crisis_modifier_small_tt
+            add_to_variable = { economic_crisis_modifier = 0.05 }
+            random_core_state = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
     }
 }

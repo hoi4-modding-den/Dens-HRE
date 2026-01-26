@@ -8,15 +8,12 @@ focus_tree = {
 
 	continuous_focus_position = { x = 4100 y = 1000 }
 
-    reset_on_civilwar = no
-
-
-	### ARMY PATH ###
+	### PRE-WAR CRISIS TREE ###
 
 	focus = {
-		id = ZCT_republic_in_peril
+		id = ZCT_dousing_the_fires
 		icon = GFX_focus_por_estado_novo
-		x = 15
+		x = 5
 		y = 0
 		cost = 5
 
@@ -28,7 +25,521 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			custom_effect_tooltip = ZCT_add_emergency_powers_25_tt
+			add_political_power = 50
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+
+			hidden_effect = {
+				add_to_variable = { emergency_powers = 25 }
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_rebuild_our_economy
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_dousing_the_fires
+		x = -1
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_dousing_the_fires }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = ZCT_economic_recovery_act_signed_tt
+			set_country_flag = ZCT_economic_recovery_act_signed
+		}
+	}
+
+	focus = {
+		id = ZCT_construction_incentives
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_rebuild_our_economy
+		x = -3
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_rebuild_our_economy }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZCT_add_emergency_powers_25_tt
+
+			hidden_effect = {
+				add_to_variable = { emergency_powers = 25 }
+			}
+
+			add_timed_idea = {
+				idea = ZCT_construction_incentives
+				days = 720
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_new_universities
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_rebuild_our_economy
+		x = -1
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_rebuild_our_economy }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ZCT_riza_nur_idea
+		}
+	}
+
+	focus = {
+		id = ZCT_expand_civilian_production
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_rebuild_our_economy
+		x = -2
+		y = 2
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_construction_incentives }
+		prerequisite = { focus = ZCT_new_universities }
+
+		available = {
+			NOT = {
+				has_idea = ZCT_economic_crisis
+			}
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+			custom_effect_tooltip = ZCT_add_emergency_powers_100_tt
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			hidden_effect = {
+				add_to_variable = { emergency_powers = 100 }
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_emergency_conscription_act
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_dousing_the_fires
+		x = 1
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_dousing_the_fires }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			add_war_support = 0.03
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+			custom_effect_tooltip = ZCT_emergency_conscription_act_signed_tt
+			set_country_flag = ZCT_emergency_conscription_act_signed
+		}
+	}
+
+	focus = {
+		id = ZCT_war_time_taxes_act
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_emergency_conscription_act
+		x = 1
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_emergency_conscription_act }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ZCT_sukru_saracoglu_idea
+			custom_effect_tooltip = ZCT_war_time_taxes_act_signed_tt
+			set_country_flag = ZCT_war_time_taxes_act_signed
+		}
+	}
+
+	focus = {
+		id = ZCT_construct_makeshift_workshops
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_emergency_conscription_act
+		x = -1
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_emergency_conscription_act }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_new_military_service_programs
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_emergency_conscription_act
+		x = 3
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_emergency_conscription_act }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			add_ideas = {
+				ZCT_expanded_military_service_programs
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_construct_border_defenses
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_emergency_conscription_act
+		x = 5
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_emergency_conscription_act }
+
+		available = {
+			controls_state = 340
+			controls_state = 347
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			340 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9799
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11778
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 785
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11867
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 947
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3786
+				}
+			}
+			347 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6871
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 890
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3905
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3919
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_form_a_military_council
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_emergency_conscription_act
+		x = 0
+		y = 2
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_war_time_taxes_act }
+		prerequisite = { focus = ZCT_construct_makeshift_workshops }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			army_experience = 50
+			custom_effect_tooltip = ZCT_add_emergency_powers_100_tt
+
+			hidden_effect = {
+				add_to_variable = { emergency_powers = 50 }
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_raise_the_martial_law_order
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_dousing_the_fires
+		x = 0
+		y = 4
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = { focus = ZCT_expand_civilian_production }
+		prerequisite = { focus = ZCT_form_a_military_council }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZCT_add_emergency_powers_50_tt
+			remove_ideas = {
+				ZCT_martial_law
+			}
+
+			hidden_effect = {
+				add_to_variable = { emergency_powers = 50 }
+			}
+		}
+	}
+
+	focus = {
+		id = ZCT_seek_support_from_the_british
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_dousing_the_fires
+		x = 5
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
+			NOT = {
+				OR = {
+					has_war_with = DN1
+					has_war_with = ZCY
+				}
+			}
+		}
+
+		prerequisite = { focus = ZCT_dousing_the_fires }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZCT_contact_united_kingdom_for_support_tt
+			set_country_flag = ZCT_united_kingdom_contacted_for_support
+		}
+	}
+
+	focus = {
+		id = ZCT_address_the_crowds
+		icon = GFX_focus_por_estado_novo
+		cost = 5
+
+		relative_position_id = ZCT_dousing_the_fires
+		x = -5
+		y = 1
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		available = {
 			
+		}
+
+		prerequisite = { focus = ZCT_dousing_the_fires }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZCT_add_emergency_powers_100_tt
+			
+			hidden_effect = {
+				add_to_variable = { emergency_powers = 100 }
+			}
+		}
+	}
+
+	### POLITICAL TREE ###
+
+	focus = {
+		id = ZCT_casting_the_die
+		icon = GFX_focus_por_estado_novo
+		x = 16
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		available = {
+			
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZCT_unlocks_war_decisions_tt
+		}
+	}
+
+	### POST-WAR TREE ###
+
+	focus = {
+		id = ZCT_birth_of_the_republic
+		icon = GFX_focus_por_estado_novo
+		x = 8
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		ai_will_do = {
+			factor = 1000
+		}
+
+		available = {
+			has_country_flag = ZCT_turkish_republic_founded
+		}
+
+		completion_reward = {
+			add_ideas = {
+				ZCT_a_new_future_for_our_people
+			}
+			remove_ideas = {
+				ZCT_backed_into_a_corner
+			}
 		}
 	}
 }
