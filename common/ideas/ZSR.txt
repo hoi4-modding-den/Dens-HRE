@@ -1,0 +1,236 @@
+ideas = {
+	country = {
+		# General
+		SYRIA_disorganized_government = {
+			name = SYRIA_disorganized_government
+			picture = RAJ_partition_india_united
+            modifier = {
+				political_power_factor = -0.15
+				stability_factor = -0.25
+				war_support_factor = -0.2
+				supply_consumption_factor = 0.15
+				production_speed_buildings_factor = -0.3
+				conscription_factor = -0.45
+				planning_speed = -0.2
+			}
+		}
+		SYRIA_disorganized_army = {
+			name = SYRIA_disorganized_army
+			picture = chi_army_corruption
+            modifier = {
+				war_support_factor = -0.1
+				army_morale_factor = -0.15
+				experience_gain_army_unit_factor = -0.15				
+				planning_speed = -0.15
+			}
+		}
+
+		SYRIA_cw_government = {
+			name = SYRIA_cw_government
+			picture = syriacw1
+            modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				supply_consumption_factor = 0.1
+				production_speed_buildings_factor = -0.1
+				conscription_factor = -0.35
+				planning_speed = -0.15
+			}
+		}
+		SYRIA_cw_government_supplied = {
+			name = SYRIA_cw_government
+			picture = syriacw2
+            modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				conscription_factor = -0.35
+				planning_speed = -0.15
+			}
+		}
+		SYRIA_cw_government_mobilized = {
+			name = SYRIA_cw_government
+			picture = syriacw2
+            modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				supply_consumption_factor = 0.1
+				production_speed_buildings_factor = -0.1
+				conscription_factor = 0.1
+				planning_speed = -0.15
+			}
+		}		
+		SYRIA_cw_government_rallied = {
+			name = SYRIA_cw_government
+			picture = syriacw2
+            modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				supply_consumption_factor = 0.1
+				production_speed_buildings_factor = -0.1
+				conscription_factor = -0.3
+				planning_speed = -0.15
+			}
+		}
+		SYRIA_cw_government_mob_rally = {
+			name = SYRIA_cw_government
+			picture = syriacw3
+            modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				supply_consumption_factor = 0.1
+				production_speed_buildings_factor = -0.1
+				conscription_factor = 0.15
+			}
+		}
+		SYRIA_cw_government_mobilized_supplied = {
+			name = SYRIA_cw_government
+			picture = syriacw3
+            modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				conscription_factor = 0.1
+				planning_speed = -0.05
+			}
+		}		
+		SYRIA_cw_government_rallied_supplied = {
+			name = SYRIA_cw_government
+			picture = syriacw3
+            modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				conscription_factor = -0.3
+				planning_speed = -0.1
+			}
+		}
+		SYRIA_cw_government_mob_rally_supplied = {
+			name = SYRIA_cw_government
+			picture = syriacw4
+            modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				conscription_factor = 0.15
+			}
+		}
+
+		SYRIA_united_government = {
+			name = SYRIA_united_government
+			picture = syriacw5
+            modifier = {
+				political_power_factor = 0.15
+				stability_factor = 0.25
+				war_support_factor = 0.15
+				conscription_factor = 0.15
+			}
+		}
+
+		SYRIA_religious_army = {
+			name = SYRIA_religious_army
+			picture = holy_army
+            modifier = {
+				conscription_factor = 0.15
+			}
+		}
+		SYRIA_tribal_support = {
+			name = SYRIA_tribal_support
+			picture = SOV_consolidate_power_ccp_sov_compatibility
+            modifier = {
+				conscription_factor = 0.05
+				stability_factor = 0.05
+				army_core_defence_factor = 0.1
+			}
+		}
+		SYRIA_guerilla_warfare = {
+			name = SYRIA_guerilla_warfare
+			picture = ast_volunteer_defence_corps
+            modifier = {
+				army_core_defence_factor = 0.2
+				surrender_limit = 0.9
+				max_dig_in_factor = 0.25
+			}
+		}
+		SYRIA_united_command = {
+			name = SYRIA_united_command
+			picture = ETH_conservative_high_command
+            modifier = {
+				war_support_factor = 0.15
+				army_morale_factor = 0.1
+				experience_gain_army_unit_factor = 0.15				
+				planning_speed = 0.15
+			}
+		}
+
+		SYRIA_nationalist_propaganda_campaign = {
+			name = SYRIA_nationalist_propaganda_campaign
+			picture = generic_fascist_workers
+            modifier = {
+				stability_weekly = 0.02
+				fascism_drift = 0.02
+			}
+		}
+		SYRIA_communist_propaganda_campaign = {
+			name = SYRIA_communist_propaganda_campaign
+			picture = generic_communism_drift_bonus
+            modifier = {
+				stability_weekly = 0.02
+				communism_drift = 0.02
+			}
+		}
+
+		# ZAD
+		ZAD_mountain_army = {
+			name = ZAD_mountain_army
+			picture = generic_fortify_the_borders
+            modifier = {
+				special_forces_attack_factor = 0.15
+				special_forces_defence_factor = 0.15
+				local_supplies = 0.2
+				local_manpower = 0.3
+			}
+		}
+		# ZRS
+		ZRS_tribal_army = {
+			name = ZRS_tribal_army
+			picture = MEX_politicised_army
+            modifier = {
+				supply_consumption_factor = -0.15
+				army_attack_speed_factor = -0.1
+				army_attack_factor = -0.1
+				max_dig_in_factor = 0.25
+				planning_speed = -0.25
+			}
+		}
+		# ZSR
+		ZBS_unification_push = {
+			name = ZBS_unification_push
+			picture = MEX_politicised_army
+			targeted_modifier = {
+				tag = ZSR
+				attack_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = ZRS
+				attack_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = ZCS
+				attack_bonus_against = 0.1
+			}
+		}
+		ZBS_prop_campaign = {
+			name = ZBS_prop_campaign
+			picture = MEX_politicised_army
+			targeted_modifier = {
+				tag = ZBS
+				defense_bonus_against = -0.05
+			}
+		}
+	}
+}

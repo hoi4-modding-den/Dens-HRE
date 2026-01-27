@@ -1,6 +1,26 @@
 capital = 680
 
-#recruit_character = ZRS_izz_al_qassam
+load_oob = "ZRS"
+
+recruit_character = ZRS_izz_al_qassam
+
+add_ideas = {
+	SYRIA_disorganized_government
+	SYRIA_disorganized_army
+	ZRS_tribal_army
+	extensive_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	gw_artillery = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
 
 set_politics = {
 	ruling_party = neutrality

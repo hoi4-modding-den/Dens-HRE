@@ -1,0 +1,28 @@
+SYR_unpacified_state = { 
+	enable = { always = yes }
+	remove_trigger = {
+		NOT = {
+			ROOT = {
+				OWNER = {
+					OR = {
+						tag = ZSR
+						tag = ZCS
+						tag = ZRS
+						tag = ZBS
+					}
+				}
+			}
+		}
+	}
+
+	icon = GFX_idea_AFG_quami
+	
+	local_manpower = -0.75
+	local_resources = -0.5
+	
+}
+
+
+
+
+

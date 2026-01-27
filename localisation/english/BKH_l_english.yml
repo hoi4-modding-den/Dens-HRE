@@ -31,15 +31,14 @@
  STATE_1101: "Jabal al-Druze"
  STATE_1102: "Efrin"
  STATE_1103: "Qamishli"
- STATE_1115: "Qamishli"
+ STATE_1115: "Raqqa"
 
  VICTORY_POINTS_13512: "Efrin"
  VICTORY_POINTS_4486: "Daraa"
  VICTORY_POINTS_1606: "Raqqa"
 
  # FOCUSES #
-
- # Syria Shared #
+ # Syria Shared
  SYRIA_the_civil_war: "The Civil War"
  SYRIA_rally_public: "Gain Public Support"
  SYRIA_mobilize_people: "Mobilize the People"
@@ -60,6 +59,63 @@
  SYRIA_united: "A Syria United"
  SYRIA_invade_druze: "Invade the Druze"
  SYRIA_pacify_state: "Pacify the State"
+ # ZBS
+ ZBS_the_arab_state: "The Arab State"
+ ZBS_unify_the_nation: "Unify the Nation"
+ ZBS_national_propaganda: "National Porpaganda"
+ ZBS_supress_factions: "Supress Local Factions"
+ ZBS_arrest_of_salman_murshid: "The Arrest of Salman al-Murshid"
+ ZBS_purge_party: "Purge the Party"
+ ZBS_fundamentalist_party: "Staff the Party with Fundamentalists"
+ ZBS_internal_security: "Internal Security"
+ ZBS_murshidi: "Recognize the Murshidi"
+ ZBS_cw_victory: "Victors of the Civil War"
+ ZBS_army_modernization: "Army Modernization"
+ ZBS_army_purge: "Purge the Army"
+ ZBS_empower_leaders: "Empower Young Leaders"
+ ZBS_motorization: "Motorization"
+ ZBS_emergency_powers: "Emergency Powers"
+ ZBS_modernize_industry: "Modernize the Industry"
+ ZBS_infrastructure_development: "Infrastructure Development"
+ ZBS_invest_in_factories: "Invest in Factories"
+ ZBS_expand_steel: "Expand the Steel Industry"
+ ZBS_mil_industry: "Fund the Military Industry"
+ ZBS_tank_investment: "Invest in Tank Research"
+ ZBS_oil_drilling: "Oil Development"
+ ZBS_cultural_revival: "Cultural Revival"
+ ZBS_subjugate_lebanon: "Demand Lebanese Subjugation"
+ ZBS_pan_arab_alignment: "Align with Pan-Arabists"
+ ZBS_arab_expansion: "Pursue Arab Expansion"
+ ZBS_further_integration: "Propose Further Integration"
+ ZBS_invade_the_levant: "Move into the Levant"
+ ZBS_secure_iraq: "Secure Iraq"
+ ZBS_regional_hegemony: "Regional Hegemony"
+ ZBS_form_arabia: "From Arabia"
+ ZBS_neutrality: "Political Neutrality"
+ ZBS_military_police: "Military Police"
+ ZBS_gain_legitimacy: "Gain Legitimacy"
+ ZBS_civil_defense: "Civil Defense"
+ ZBS_open_trade: "Open Trade"
+ ZBS_sustaining_industry: "Self-Sustaining Industry"
+ # ZRS
+ ZRS_arrange_a_ceasefire: "Arrange a Ceasefire"
+ # ZSR
+ ZSR_arab_democracy: "Bastion of Arab Democracy"
+ ZSR_syrian_gov: "Syrian Dominated Govenrment"
+ ZSR_ally_kurds: "Allow Kurds in the Government"
+ ZSR_contact_kurd_resistance: "Contact Kurdish Resistance"
+
+ # DECISIONS #
+ # Syria
+ SYR_army_reform_cat: "Army Reform"
+ SYR_state_pacification: "Pacify the States"
+ SYR_pacify_state: "Integrate [FROM.GetName]"
+
+ # EVENTS #
+ ZBS_event.1.t: "Salman al-Murshid Arrested"
+ ZBS_event.1.d: "Popular local political figure Salman al-Murshid was arrested in Damascus last night for leading a religious movement that encouraged resistance against the Syrian government. The Alawites believe he has supernatural powers."
+ ZBS_event.1.a: "Let's arrest all his supporters too"
+ ZBS_event.1.b: "Supernatual powers? Maybe let him stay in government"
 
  # IDEAS #
  SYRIA_disorganized_government: "Disorganized Government"
@@ -67,11 +123,24 @@
  SYRIA_cw_government: "Civil War Government"
  SYRIA_united_government: "United Syrian Government"
  SYRIA_religious_army: "[GetSyrReligion] Army"
+ SYRIA_nationalist_propaganda_campaign: "Nationalist Propaganda"
+ SYRIA_communist_propaganda_campaign: "Communist Propaganda"
  ZAD_mountain_army: "Mountain Army"
+ ZRS_tribal_army: "Tribal Army"
+ ZBS_unification_push: "Unify the Nation"
+ ZBS_prop_campaign: "Pressure from the Arab Republic"
 
- # Other #
+ # CHARACTERS #
+ ZSR_lutfi_al_haffar: "Lutfi al-Haffar"
+ ZAD_sultan_al_atrash: "Sultan al-Atrash"
+ ZCS_khalid_bakdash: "Khalid Bakdash"
+ ZBS_michel_alfaq: "Michel Aflaq"
+ ZBS_salman_al_murshid: "Salman al-Murshid"
+ ZRS_izz_al_qassam: "Izz al-Qassam"
 
+ # OTHER #
  # Syria
+ syr_operation: "Amaliyat"
  SYR_Kurd: "Kurdish"
  SYR_Muslim: "Muslim"
  SYR_Christian: "Christian"
@@ -79,3 +148,23 @@
  SYR_Nationalist: "Nationalist"
  SYR_Urban: "Urban"
  SYR_Rural: "Rural"
+ SYRIA_unlock_army_decisions: "Unlocks Decisions to Reform the Army"
+ SYRIA_airplane_construction_bonus: "Airplane Construction Bonus"
+ SYRIA_pacification_decisions: "Unlocks decisions to pacify the states"
+ SYR_won_civil_war: "Has won the Syrian Civil War"
+ SYR_reformed_army: "Has completed army reform decisions"
+ SYR_unpacified_state: "Unpacified State"
+ ZBS_decs_to_core_arab_states: "Unlocks decisions to core owned Arab states"
+ ZBS_controls_all_arabia: "Controls all of Arabia"
+ ZBS_fascism_party: "BAAS"
+ ZBS_fascism_party_long: "Arab Socialist Ba'ath Party"
+ ZBS_neutrality_party: "SSNP"
+ ZBS_neutrality_party_long: "Syrian Social Nationalist Party"
+ ZSR_democratic_party: "NP"
+ ZSR_democratic_party_long: "National Party"
+ ZRS_neutrality_party: "ISF"
+ ZRS_neutrality_party_long: "Syrian Muslim Brotherhood"
+ ZCS_communism_party: "SCP"
+ ZCS_communism_party_long: "Syrian Communist Party"
+ ZBS_murshid_government: "Salman al-Murshid in the Government"
+ ZBS_murshid_arrested: "Salman al-Murshid and his followers arrested"

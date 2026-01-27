@@ -1,0 +1,10 @@
+SYRIA_DIV_0_0 = {
+	name = "Infantry Divisions"
+	for_countries = { ZRS ZSR ZCS ZAD ZSR }
+	can_use = { always = yes }
+	division_types = { 
+		"infantry" 
+	}
+	fallback_name = "Firqat %d"
+}
+
