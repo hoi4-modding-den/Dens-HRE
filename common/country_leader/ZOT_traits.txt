@@ -21,5 +21,33 @@ leader_traits = {
 
     # Advisors
 
+    ZOT_hardline_intellectual = {
+		random = no
+		sprite = 13
+		research_speed_factor = 0.05
+        political_power_factor = 0.02
+        fascism_drift = 0.05
+        stability_factor = -0.05
+    }
+
+    ZOT_ultranationalist_advocator = {
+		random = no
+		sprite = 13
+		fascism_drift = 0.10
+		army_core_attack_factor = 0.075
+		army_core_defence_factor = 0.075
+        fascism_acceptance = 85
+    } 
+    
+    ZOT_imperalist_traditionalist = {
+		random = no
+		sprite = 13
+		political_power_factor = 0.10
+		neutrality_drift = 0.05        
+		drift_defence_factor = 0.15
+    }     
+
+    # Advisors
+
     # Concerns  
 }

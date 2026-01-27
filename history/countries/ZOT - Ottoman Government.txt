@@ -10,6 +10,15 @@ recruit_character = ZOT_abdulmecid_ii
 recruit_character = ZOT_huseyin_cahit_yalcin
 recruit_character = ZOT_husrev_gerede
 recruit_character = ZOT_sevket_sureyya_aydemir
+recruit_character = ZOT_fevzi_cakmak
+recruit_character = ZOT_sukru_saracoglu
+recruit_character = ZOT_riza_nur
+recruit_character = ZOT_hilmi_uran
+recruit_character = ZOT_elyesa_bazna
+recruit_character = ZOT_recep_peker
+recruit_character = ZOT_celal_bayar
+recruit_character = ZOT_zeki_velidi_togan
+recruit_character = ZOT_nejdet_sancar
 
 add_ideas = {
 	ZOT_wreckage_of_the_empire
@@ -171,3 +180,7 @@ IF = {
 		icon = "GFX_TUR_fighter1_medium"
 	}		
 }
+
+set_country_flag = dont_use_default_political_advisors
+set_country_flag = dont_use_default_military_advisors
+#set_country_flag = ZOT_welcome_message_flag
