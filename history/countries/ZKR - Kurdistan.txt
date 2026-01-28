@@ -65,6 +65,14 @@ add_opinion_modifier = {
 	target = ZBA
 	modifier = ZKR_geopolitical_rivals
 }
+add_opinion_modifier = {
+	target = ZRM
+	modifier = ZKR_false_kurdistan
+}
+reverse_add_opinion_modifier = {
+	target = ZRM
+	modifier = ZKR_false_kurdistan
+}
 
 set_variable = { ZKR_lf_experience_gain_army_factor = 0.05 }
 set_variable = { ZKR_lf_army_org_regain = 0.1 }

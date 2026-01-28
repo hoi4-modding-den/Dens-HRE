@@ -759,6 +759,26 @@ ideas = {
 			}
 		}
 
+		ZKR_pax_kurdistan_stays = {
+
+			picture = saf_history_of_segregation
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				army_morale_factor = 0.05
+				conscription = 0.005
+			}
+		}
+
 		ZKR_peacekeepers = {
 
 			picture = ETH_peacekeeping_forces
@@ -1314,6 +1334,24 @@ ideas = {
 			}
 		}
 
+		ZKR_mahabad_mobilising = {
+
+			picture = generic_war_preparation
+
+			allowed = {
+				original_tag = ZRM
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.02
+				mobilization_speed = 0.15
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+			}
+		}
+
 	}
 
 	tank_manufacturer = {
@@ -1389,7 +1427,7 @@ ideas = {
 			}
 
 			research_bonus = {
-				industry = 0.05
+				industry = 0.15
 			}
 			
 			traits = { industrial_steel_mills_trait }
