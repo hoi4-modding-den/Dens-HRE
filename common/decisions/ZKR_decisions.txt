@@ -174,6 +174,80 @@ political_actions = {
     }
 }
 
+economy_decisions = {
+
+    ZKR_electrify_state = {
+
+        icon = generic_electricity
+
+        cost = 30
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+			base = 100
+		}
+
+        available = {
+            num_of_civilian_factories_available_for_projects > 0
+            FROM = { is_owned_and_controlled_by = ROOT }
+        }
+
+        visible = {
+            has_completed_focus = ZKR_electrification
+        }
+
+        target_trigger = {
+            FROM = {
+                OR = {
+                    is_claimed_by = ROOT
+                    is_core_of = ROOT
+                }
+                OR = {
+                    has_state_category = tiny_island
+                    has_state_category = small_island
+                    has_state_category = wasteland
+                    has_state_category = enclave
+                    has_state_category = pastoral
+                    has_state_category = rural
+                    has_state_category = town
+                }
+                OR = {
+                    NOT = { has_state_flag = ZKR_electrified }
+                    NOT = { has_state_category = town } # can only electrify states that start as town
+                }
+            }
+        }
+
+		cancel_trigger = {
+			FROM = { NOT = { is_owned_and_controlled_by = ROOT } }
+		}
+
+        targets_dynamic = yes
+
+        state_target = yes
+
+        on_map_mode = map_only
+
+        days_remove = 200
+
+        modifier = {
+            civilian_factory_use = 1
+        }
+
+        remove_effect = {
+            FROM = {
+                increase_state_category = yes
+                set_state_flag = ZKR_electrified
+            }
+        }
+
+    }
+
+}
+
 foreign_politics = {
 
     ZKR_tensions_with_mahabad_increasing = {
@@ -193,6 +267,7 @@ foreign_politics = {
                 has_war = yes
                 is_subject = yes
                 has_capitulated = yes
+                NOT = { country_exists = ZRM }
             }
         }
 
@@ -504,51 +579,18 @@ ZKR_dissolve_turkey_cat = {
                     ZKR_anatolian_protectorate_states = yes
                 }
                 transfer_state_to = ZCT # Placeholder tag, make a custom one only for this (one that won't have any cores and resistance from ZCT in all states)
-            }
-        }
-    }
-
-    ZKR_fate_of_the_aegean_islands = {
-
-        icon = generic_form_nation
-
-        cost = 25
-
-        allowed = {
-            original_tag = ZKR
-        }
-
-        available = {
-            is_subject = no
-            custom_trigger_tooltip = {
-                tooltip = YBS_owns_controls_highlighted_states_tt
-                187 = { is_owned_and_controlled_by = ROOT }
-                164 = { is_owned_and_controlled_by = ROOT }
-            }
-        }
-
-        highlight_states = {
-			highlight_states_trigger = {
-				OR = {
-                    state = 164
-                    state = 187
+                hidden_effect = {
+                    set_resistance = 50
+                    set_compliance = 0
                 }
-			}
-		}
-
-        complete_effect = {
-            add_to_variable = { ZKR_turkey_control = 5 tooltip = ZKR_turkey_control_effect_tt }
-            add_to_variable = { ZKR_turkey_control = -5 tooltip = ZKR_turkey_resistance_effect_tt }
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            # event to decide
-            # either hand it to the protectorate
-            # or release ZGR with cosmetic tag there
-            # if actual Greece is ever added, option to hand it to them
-            # do this by checking the owner of 47 (Athens), if not ZZZ -> option to hand over
-
-            # maybe similar decision for Edirne?
+            }
+            set_autonomy = {
+                target = ZCT
+                autonomous_state = autonomy_ZKR_governate
+                end_wars = yes
+                end_civil_wars = yes
+            }
+            ZCT = { set_capital = { state = 49 } } # set capital to 49 in history
         }
     }
 

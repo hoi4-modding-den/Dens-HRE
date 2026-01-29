@@ -95,12 +95,15 @@
 
 # CHARACTERS
 
- ZKR_seyid_riza: "Seyid Riza" # federalist advisor, dem leader
- ZKR_ahmed_barzani: "Ahmed Barzani" # environmentalist advisor, possible dem leader
- ZKR_qazi_muhamad: "Qazi Muhamad" # communist advisor, com leader
- ZKR_ihsan_nuri: "Ihsan Nuri" # political advisor, fas leader
- ZKR_mahmud_barzanji: "Mahmud Barzanji" # military advisor, neu leader
+ ZKR_seyid_riza: "Seyid Riza"
+ ZKR_ahmed_barzani: "Ahmed Barzani"
+ ZKR_qazi_muhamad: "Qazi Muhamad"
+ ZKR_ihsan_nuri: "Ihsan Nuri"
+ ZKR_mahmud_barzanji: "Mahmud Barzanji"
  ZKR_mustafa_yamulki: "Mustafa Yamulki"
+ ZKR_celadet_ali_bedirxan: "Celadet Alî Bedirxan"
+ ZKR_celadet_ali_bedirxan_unlocked: "appointed §Y$ZKR_celadet_ali_bedirxan$§! as §gPresident-Curator§! of the Academy"
+ ZKR_kamuran_ali_bedirxan: "Kamuran Alî Bedirxan"
  ZKR_random_kurdish_industrialist: "Yekbon Berhem"
  ZKR_random_kurdish_mil_industrialist: "Metîn Evîndar"
  ZKR_dean_wesley: "Dean Wesley"
@@ -124,6 +127,8 @@
  ZKR_revolutionary_intellectual: "Ultranationalist Intellectual"
  ZKR_trotskyist_internationalist: "Trotskyist Internationalist"
  ZKR_education_minister: "Minister of Education, Family and Youth"
+ ZKR_kurdish_academy_leader: "Calling of Kurmanji"
+ ZKR_writer_and_lawyer: "Writer and Lawyer"
  ZKR_american_businessman: "@USA American Businessman"
  ZKR_hanse_investor: "@XHH Stellvertreter der Hanse GmbH"
  ZKR_british_inventor: "@ENG British Inventor"
@@ -163,7 +168,7 @@
  ZKR_kurdistan_lon_deal_desc: "As part of the [ZKR.GetAdjective] Peace and Security Agreement signed between [ZKR.GetNameDef] and the League of Nations, [ROOT.GetNameDef] will be recognised by the [ZKR.GetAdjective] state and in turn leave the role of the Middle-Eastern security guarantor to [ZKR.GetNameDef]."
  ZKR_amendments: "Constitutional Amendments"
  ZKR_internationale_aid: "Support from the International"
- ZKR_agrarian_society: "Agrarian Society"
+ ZKR_agrarian_society: "Pre-Industrial Society"
  ZKR_industrialising_society: "Industrialising Society"
  ZKR_industrialised_society: "Industrialised Society"
  ZKR_subsidised_agriculture: "Agricultural Subsidies"
@@ -282,7 +287,7 @@
  ZKR_land_demands_from_allies_tt: "Unlocks Decision: £GFX_decision_icon_small §YDemand Kurdish Lands from Allied Nation§!" # ZKR_demand_kurdish_land_from_ally
  ZKR_national_salvation: "Salvation"
  ZKR_national_salvation_desc: ""
- ZKR_controls_anatolian_states_tt: "owns and controls all states on §YAnatolia§!"
+ ZKR_controls_protectorate_states_tt: "owns and controls all original core states of §Y[ZGR.GetNameWithFlag]§!, §Y[ZOT.GetNameWithFlag]§! and §Y[ZCT.GetNameWithFlag]§!"
  ZKR_dissolve_turkey_tt: "Unlocks Decision Category: £GFX_decision_icon_small §Y$ZKR_dissolve_turkey_cat$§!"
  ZKR_expel_the_british: "Expel the British"
  ZKR_expel_the_british_desc: ""
@@ -341,6 +346,7 @@
  ZKR_capital_city_industrial_park_desc: ""
  ZKR_electrification: "Full Electrification"
  ZKR_electrification_desc: ""
+ ZKR_electrification_tt: "Unlocks Decisions: £GFX_decision_icon_small §Y$ZKR_electrify_state$§!"
  ZKR_careful_resource_extraction: "Careful Resource Extraction"
  ZKR_careful_resource_extraction_desc: ""
  ZKR_agricultural_subsidies: "Agricultural Subsidies"
@@ -443,6 +449,8 @@
  ZKR_remove_british_government_in_palestine: "Expel the British Colonial Administration in Palestine"
  ZKR_remove_british_government_in_cyprus: "Expel the British Colonial Administration in Cyprus"
  ZKR_remove_british_government_in_persia: "Expel the British Corporate Administration in Persia"
+
+ ZKR_electrify_state: "Industrial Electrification"
 
  ZKR_tensions_with_mahabad_increasing: "Secure Mahabad"
  ZKR_tensions_with_mahabad_increasing_desc: "The Government in Mahabad was established shortly after the original Kurdish independence war in Ararat was won. However, instead of joining us, those traitors struck a deal with the Persians and instead formed their own miserable state."
@@ -617,6 +625,10 @@
  ZKR_technical_events.10.a: "Hang the Traitors."
  ZKR_technical_events.10.b: "We cannot simply execute them all."
 
+ ZKR_lore_events.1.t: "The Calling"
+ ZKR_lore_events.1.desc: "While not a very popular move, the establishment of the Kurdish Academy will assist in formulating and preserving the Kurdish language. The simple fact that the Kurdish language is so divided between dialects to the point of mutual unintelligibility is point enough to warrant the establishment of a unified language authority. The people may continue to speak with dialect, but at least in writing the Kurdish language shall be unified. Kurdish linguist and creator of the Hawar Alphabet - which is already in use by most government offices - $ZKR_celadet_ali_bedirxan$ will be appointed president-curator of the academy and has already held a debate with other Kurdish intellectuals about the effectiveness of possible edicts."
+ ZKR_lore_events.1.a: "Soon, every Kurd will be able to understand Kurdish."
+
  ZKR_news_events.1.t: "Kurdistan begins Unification Initiative"
  ZKR_news_events.1.desc: "In a great ceremony in [ZKR.Capital.GetCapitalVictoryPointName], the religious and political leaders of [ZKR.GetNameDef] gathered to reaffirm part of the Kurdish constitution that guarantees liberty for all Kurds, a passage that has multiple times been used to justify aggressive actions against neighbouring nations controlling Kurdish tribal lands. Many observers have already taken action on what is seen as a justification for possible wars to unite the Kurdish population in the Middle East and while Kurdish leaders have yet to release an official press statement, the recent troop movements within the nation seem to show nothing but affirmation for any assumptions."
  ZKR_news_events.1.a: "Freedom for all Kurds!"
@@ -674,6 +686,8 @@
 
 
 # OTHER STUFF
+
+ autonomy_ZKR_governate: "Governate"
 
  ZKR_militia: "Peshmerga"
  ZKR_recon: "Scouting Party"

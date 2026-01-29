@@ -348,6 +348,15 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_reorganise_the_police
+				bonus = 2
+				uses = 1
+				category = military_police_tech
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = ZKR_police_force
 		}
 	}
@@ -450,8 +459,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            custom_effect_tooltip = available_political_advisor
-            show_ideas_tooltip = ZKR_mustafa_yamulki_token
+			country_event = ZKR_lore_events.1
 		}
 	}
 
@@ -1373,7 +1381,7 @@ focus_tree = {
 				tooltip = ZKR_controls_protectorate_states_tt
 				all_state = {
 					OR = {
-						region = 129
+						ZKR_anatolian_protectorate_states = no
 						is_owned_and_controlled_by = ROOT
 					}
 				}
@@ -2217,10 +2225,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				factor = 20
+				add = 20
 				OR = {
 					has_completed_focus = ZKR_the_kurdish_destiny
-					has_completed_focus = ZKR_anti_imperialist_front
+					has_completed_focus = ZKR_form_anti_imperialist_faction
 				}
 			}
 		}
@@ -2296,7 +2304,7 @@ focus_tree = {
 				name = ZKR_expand_first_factories
 				bonus = 1
 				uses = 2
-				category = industry
+				category = construction_tech
 			}
 
             custom_effect_tooltip = generic_skip_one_line_tt
@@ -2336,6 +2344,7 @@ focus_tree = {
 
 		available = {
 			controls_state = 800
+			controls_state = 353
 		}
 		
 		bypass = {
@@ -2358,11 +2367,13 @@ focus_tree = {
             800 = {
                 add_resource = {
                     type = steel
-                    amount = 12
+                    amount = 20
                 }
+			}
+			353 = {
                 add_resource = {
                     type = coal
-                    amount = 9
+                    amount = 12
                 }
             }
 
@@ -2509,7 +2520,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_country_flag = ZKR_first_branch_completed
 		}
 		
 		bypass = {
@@ -2589,6 +2600,8 @@ focus_tree = {
 					add_idea = ZKR_industrialising_society_2
 				}
 			}
+
+			custom_effect_tooltip = ZKR_electrification_tt
 		}
 	}
 
@@ -2956,7 +2969,6 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
             800 = {
-				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dam
 					level = 1
@@ -2969,6 +2981,9 @@ focus_tree = {
 			custom_effect_tooltip = {
 				localization_key = building_state_modifier|dam
 				INDENT = "    "
+			}
+			800 = {
+				increase_state_category = yes
 			}
 		}
 	}
@@ -3320,7 +3335,7 @@ focus_tree = {
 				add = 20
 				OR = {
 					has_completed_focus = ZKR_the_kurdish_destiny
-					has_completed_focus = ZKR_anti_imperialist_front
+					has_completed_focus = ZKR_form_anti_imperialist_faction
 				}
 			}
 			modifier = {
@@ -4167,10 +4182,10 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				factor = 20
+				add = 20
 				OR = {
 					has_completed_focus = ZKR_the_kurdish_destiny
-					has_completed_focus = ZKR_anti_imperialist_front
+					has_completed_focus = ZKR_form_anti_imperialist_faction
 				}
 			}
 		}

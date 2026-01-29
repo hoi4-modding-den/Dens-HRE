@@ -224,6 +224,18 @@ ZKR_is_viable_coalition_partner = {
         }
         if = {
             limit = {
+                original_tag = ZPE
+            }
+            ROOT = { NOT = { is_ally_with = ZPR } }
+        }
+        if = {
+            limit = {
+                original_tag = ZPR
+            }
+            ROOT = { NOT = { is_ally_with = ZPE } }
+        }
+        if = {
+            limit = {
                 original_tag = ZJO
             }
             has_government = fascism
@@ -243,7 +255,8 @@ ZKR_is_viable_coalition_partner = {
 ZKR_anatolian_protectorate_states = {
     OR = {
         state = 49
-        #state = 187
+        state = 164
+        state = 187
         state = 339
         state = 340
         state = 342
@@ -255,6 +268,7 @@ ZKR_anatolian_protectorate_states = {
         state = 797
         state = 1122
         state = 1123
+        state = 1124
     }
 }
 

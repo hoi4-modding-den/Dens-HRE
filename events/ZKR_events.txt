@@ -1,6 +1,7 @@
 add_namespace = ZKR_politics_events
 add_namespace = ZKR_diplo_events
 add_namespace = ZKR_technical_events
+add_namespace = ZKR_lore_events
 add_namespace = ZKR_news_events
 
 country_event = { # Monarchist Coup
@@ -350,7 +351,7 @@ country_event = { # Demanded Syrian Kurdistan - Refused
 	title = ZKR_diplo_events.4.t
 	desc = ZKR_diplo_events.4.desc
 	
-	picture = GFX_report_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 	
 	
 	is_triggered_only = yes
@@ -567,7 +568,7 @@ country_event = { # FROM requests kurdish lands from ally
 	title = ZKR_technical_events.4.t
 	desc = ZKR_technical_events.4.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -619,7 +620,7 @@ country_event = { # FROM requests kurdish lands from ally - accepted
 	title = ZKR_technical_events.5.t
 	desc = ZKR_technical_events.5.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -647,7 +648,7 @@ country_event = { # FROM requests kurdish lands from ally - rejected
 	title = ZKR_technical_events.6.t
 	desc = ZKR_technical_events.6.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty1
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -680,7 +681,7 @@ country_event = { # FROM requests ally annexation
 	title = ZKR_technical_events.7.t
 	desc = ZKR_technical_events.7.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -729,7 +730,7 @@ country_event = { # FROM requests ally annexation - accepted
 	title = ZKR_technical_events.8.t
 	desc = ZKR_technical_events.8.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -750,7 +751,7 @@ country_event = { # FROM requests ally annexation - rejected
 	title = ZKR_technical_events.9.t
 	desc = ZKR_technical_events.9.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty1
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -783,7 +784,7 @@ country_event = {
 	title = ZKR_technical_events.10.t
 	desc = ZKR_technical_events.10.desc
 	
-	picture = GFX_report_event_generic_ruins
+	picture = GFX_report_event_tur_kurds_traditionalists_thwarted
 
     trigger = {
         original_tag = ZKR
@@ -841,6 +842,26 @@ country_event = {
                 }
             }
         }
+    }
+
+}
+
+country_event = {
+	id = ZKR_lore_events.1
+	title = ZKR_lore_events.1.t
+	desc = ZKR_lore_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_lore_events.1.a
+        custom_effect_tooltip = available_political_advisor
+        show_ideas_tooltip = ZKR_celadet_ali_bedirxan_token
+
+        set_country_flag = ZKR_celadet_ali_bedirxan_unlocked
     }
 
 }
