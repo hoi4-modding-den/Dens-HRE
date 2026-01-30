@@ -222,10 +222,62 @@ characters = {
 				original_tag = ZKR
 			}
 			available = {
-				has_completed_focus = ZKR_kurdish_academy
+				
 			}
 			traits = {
 				ZKR_education_minister
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_celadet_ali_bedirxan = {
+		name = ZKR_celadet_ali_bedirxan
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_celadet_ali_bedirxan_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_celadet_ali_bedirxan_desc
+			idea_token = ZKR_celadet_ali_bedirxan_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_country_flag = ZKR_celadet_ali_bedirxan_unlocked
+			}
+			traits = {
+				ZKR_kurdish_academy_leader
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_kamuran_ali_bedirxan = {
+		name = ZKR_kamuran_ali_bedirxan
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_kamuran_ali_bedirxan_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_celadet_ali_bedirxan_desc
+			idea_token = ZKR_celadet_ali_bedirxan_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				
+			}
+			traits = {
+				ZKR_writer_and_lawyer
 			}
 
 			cost = 150

@@ -1,0 +1,28 @@
+SYR_army_reform_cat = {
+
+}
+SYR_state_pacification = {
+	SYR_pacify_state = {
+		state_target = yes
+		targets = {
+			799 1102 677 1115 1103 680 554 1101
+		}
+		available = {
+			FROM = {
+				is_owned_by = ROOT
+			}
+		}
+		visible = {
+			FROM = {
+				has_dynamic_modifier = SYR_unpacified_state
+			}
+		}
+		complete_effect = {
+			FROM = {
+				remove_dynamic_modifier = {
+					modifier = SYR_unpacified_state
+				}
+			}
+		}
+	}
+}

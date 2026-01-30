@@ -1,0 +1,52 @@
+defined_text = {
+    name = GetSyrReligion
+    text = {
+        trigger = {
+            tag = ZCS
+        }
+        localization_key = SYR_Kurd
+    }
+    text = {
+        trigger = {
+            tag = ZRS
+        }
+        localization_key = SYR_Muslim
+    }
+    text = {
+        trigger = {
+            tag = ZSR
+        }
+        localization_key = SYR_Christian
+    }
+}
+defined_text = {
+    name = GetSyrIdeology
+    text = {
+        trigger = {
+            tag = ZCS
+        }
+        localization_key = SYR_Communist
+    }
+    text = {
+        trigger = {
+            tag = ZBS
+        }
+        localization_key = SYR_Nationalist
+    }
+}
+defined_text = {
+    name = GetSyrRuralUrban
+    text = {
+        trigger = {
+            OR = {
+                controls_state = 554
+                controls_state = 677
+            }
+        }
+        localization_key = SYR_Urban
+    }
+    text = {
+        localization_key = SYR_Rural
+    }
+}
+

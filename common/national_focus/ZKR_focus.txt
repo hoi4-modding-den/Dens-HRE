@@ -348,6 +348,15 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_reorganise_the_police
+				bonus = 2
+				uses = 1
+				category = military_police_tech
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = ZKR_police_force
 		}
 	}
@@ -450,8 +459,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            custom_effect_tooltip = available_political_advisor
-            show_ideas_tooltip = ZKR_mustafa_yamulki_token
+			country_event = ZKR_lore_events.1
 		}
 	}
 
@@ -705,6 +713,22 @@ focus_tree = {
 				type = force_build_armies
 				value = 1000
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						capital_scope = { is_on_continent = middle_east }
+						original_tag = ZCY
+					}
+					ZKR_is_viable_front_partner = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = anti_imperialist
+				}
+			}
 		}
 	}
 
@@ -741,6 +765,22 @@ focus_tree = {
 
 			custom_effect_tooltip = ZKR_alliance_of_liberation_tt
 			# decisions to invite non-imperialist nations in the middle east
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						capital_scope = { is_on_continent = middle_east }
+						original_tag = ZCY
+					}
+					ZKR_is_viable_front_partner = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SWI_diplomatic_visit
+				}
+			}
 		}
 	}
 
@@ -1261,6 +1301,22 @@ focus_tree = {
 			
 			custom_effect_tooltip = ZKR_coalition_of_willing_tt
 			# allow inviting of nations not owning any kurdish cores or claims
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						capital_scope = { is_on_continent = middle_east }
+						original_tag = ZCY
+					}
+					ZKR_is_viable_coalition_partner = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SWI_diplomatic_visit
+				}
+			}
 		}
 	}
 
@@ -1322,8 +1378,13 @@ focus_tree = {
 		available = {
 			is_subject = no
 			custom_trigger_tooltip = {
-				tooltip = ZKR_has_formed_greater_kurdistan_tt
-				has_cosmetic_tag = ZKR_greater_kurdistan
+				tooltip = ZKR_controls_protectorate_states_tt
+				all_state = {
+					OR = {
+						ZKR_anatolian_protectorate_states = no
+						is_owned_and_controlled_by = ROOT
+					}
+				}
 			}
 		}
 		
@@ -1341,6 +1402,8 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = ZKR_dissolve_turkey_tt
+			set_variable = { ZKR_turkey_control = 0 }
+			set_variable = { ZKR_turkey_resistance = 100 }
 			# unlock decisions to establish puppet states in turkish lands or annex and "secure" them
 		}
 	}
@@ -1517,13 +1580,6 @@ focus_tree = {
 
 		available = {
 			has_government = democratic
-			OR = {
-				has_country_leader = { character = ZKR_ahmed_barzani ruling_only = yes }
-				AND = {
-					has_completed_focus = ZKR_careful_resource_extraction
-					ZKR_ahmed_barzani = { is_hired_as_advisor = yes }
-				}
-			}
 		}
 		
 		bypass = {
@@ -1584,10 +1640,6 @@ focus_tree = {
 
 		available = {
 			has_government = democratic
-			OR = {
-				has_country_leader = { character = ZKR_seyid_riza ruling_only = yes }
-				communism > 0.3
-			}
 		}
 		
 		bypass = {
@@ -1692,6 +1744,46 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ZKR_cultural_exchange
+		icon = GFX_focus_AFG_contact_rural_loyalists
+		prerequisite = { focus = ZKR_guarantee_minority_rights }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_guarantee_minority_rights
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			has_country_flag = ZKR_first_branch_completed
+			has_country_leader = { character = ZRM_haji_baba_sheikh ruling_only = yes }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
 		id = ZKR_reform_the_constitution
 		icon = GFX_focus_ARG_defense_and_democracy
 		prerequisite = { focus = ZKR_environmental_protection_laws focus = ZKR_religious_freedoms focus = ZKR_guarantee_minority_rights }
@@ -1742,6 +1834,8 @@ focus_tree = {
 					add_idea = ZKR_elected_government_2
 				}
 			}
+
+			custom_effect_tooltip = ZKR_reform_the_constitution_tt
 		}
 	}
 
@@ -1909,6 +2003,8 @@ focus_tree = {
 					add_idea = ZKR_workers_government_2
 				}
 			}
+
+			custom_effect_tooltip = ZKR_pragmatic_trotskyism_tt
 		}
 	}
 
@@ -2109,18 +2205,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
-			if = {
-				limit = {
-					has_idea = ZKR_kurdish_federalism_idea
-				}
-				remove_ideas = ZKR_kurdish_federalism_idea
-			}
-			if = {
-				limit = {
-					has_idea = ZKR_kurdish_unitarianism_idea
-				}
-				remove_ideas = ZKR_kurdish_unitarianism_idea
-			}
+			remove_ideas = ZKR_kurdish_unitarianism_idea # actually swap later
 		}
 	}
 
@@ -2138,7 +2223,14 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 20
+			factor = 0
+			modifier = {
+				add = 20
+				OR = {
+					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_form_anti_imperialist_faction
+				}
+			}
 		}
 
 		available = {
@@ -2212,7 +2304,7 @@ focus_tree = {
 				name = ZKR_expand_first_factories
 				bonus = 1
 				uses = 2
-				category = industry
+				category = construction_tech
 			}
 
             custom_effect_tooltip = generic_skip_one_line_tt
@@ -2252,6 +2344,7 @@ focus_tree = {
 
 		available = {
 			controls_state = 800
+			controls_state = 353
 		}
 		
 		bypass = {
@@ -2274,11 +2367,13 @@ focus_tree = {
             800 = {
                 add_resource = {
                     type = steel
-                    amount = 12
+                    amount = 20
                 }
+			}
+			353 = {
                 add_resource = {
                     type = coal
-                    amount = 9
+                    amount = 12
                 }
             }
 
@@ -2425,7 +2520,7 @@ focus_tree = {
 		}
 
 		available = {
-			
+			has_country_flag = ZKR_first_branch_completed
 		}
 		
 		bypass = {
@@ -2505,6 +2600,8 @@ focus_tree = {
 					add_idea = ZKR_industrialising_society_2
 				}
 			}
+
+			custom_effect_tooltip = ZKR_electrification_tt
 		}
 	}
 
@@ -2872,7 +2969,6 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
             800 = {
-				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dam
 					level = 1
@@ -2885,6 +2981,9 @@ focus_tree = {
 			custom_effect_tooltip = {
 				localization_key = building_state_modifier|dam
 				INDENT = "    "
+			}
+			800 = {
+				increase_state_category = yes
 			}
 		}
 	}
@@ -3231,7 +3330,14 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 20
+			factor = 0
+			modifier = {
+				add = 20
+				OR = {
+					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_form_anti_imperialist_faction
+				}
+			}
 			modifier = {
 				factor = 0
 				has_war = yes
@@ -4074,7 +4180,14 @@ focus_tree = {
 		cost = 5.8
 
 		ai_will_do = {
-			factor = 20
+			factor = 0
+			modifier = {
+				add = 20
+				OR = {
+					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_form_anti_imperialist_faction
+				}
+			}
 		}
 
 		available = {

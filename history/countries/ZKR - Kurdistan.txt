@@ -65,6 +65,14 @@ add_opinion_modifier = {
 	target = ZBA
 	modifier = ZKR_geopolitical_rivals
 }
+add_opinion_modifier = {
+	target = ZRM
+	modifier = ZKR_false_kurdistan
+}
+reverse_add_opinion_modifier = {
+	target = ZRM
+	modifier = ZKR_false_kurdistan
+}
 
 set_variable = { ZKR_lf_experience_gain_army_factor = 0.05 }
 set_variable = { ZKR_lf_army_org_regain = 0.1 }
@@ -79,6 +87,8 @@ recruit_character = ZKR_mahmud_barzanji
 
 # Advisors / Generals
 recruit_character = ZKR_mustafa_yamulki
+recruit_character = ZKR_celadet_ali_bedirxan
+recruit_character = ZKR_kamuran_ali_bedirxan
 recruit_character = ZKR_random_kurdish_industrialist
 recruit_character = ZKR_random_kurdish_mil_industrialist
 recruit_character = ZKR_dean_wesley

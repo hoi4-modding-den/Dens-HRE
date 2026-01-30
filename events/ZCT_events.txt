@@ -31,6 +31,8 @@ country_event = {
 			}
 
 			set_country_flag = ZCT_mustafa_kemal_ataturk_dead
+
+			news_event = ZCT_news.1
 		}
 		
 		promote_character = ZCT_ismet_inonu
@@ -128,5 +130,32 @@ country_event = {
 			province = 11811
 			value = 10
 		}
+    }
+}
+
+### NEWS EVENTS ###
+
+# Mustafa Kemal dies
+news_event = {
+	id = ZCT_news.1
+	title = ZCT_news.1.t
+	desc = ZCT_news.1.desc
+    picture = GFX_news_event_YKP_manuel_ii_death
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZCT_news.1.a
+        trigger = {
+            NOT = { original_tag = ZCT }
+        }
+    }
+
+    option = {
+        name = ZCT_news.1.b
+        trigger = {
+            original_tag = ZCT
+        }
     }
 }

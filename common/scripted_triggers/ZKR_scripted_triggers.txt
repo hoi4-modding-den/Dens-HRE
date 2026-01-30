@@ -224,6 +224,18 @@ ZKR_is_viable_coalition_partner = {
         }
         if = {
             limit = {
+                original_tag = ZPE
+            }
+            ROOT = { NOT = { is_ally_with = ZPR } }
+        }
+        if = {
+            limit = {
+                original_tag = ZPR
+            }
+            ROOT = { NOT = { is_ally_with = ZPE } }
+        }
+        if = {
+            limit = {
                 original_tag = ZJO
             }
             has_government = fascism
@@ -237,5 +249,37 @@ ZKR_is_viable_coalition_partner = {
             }
             has_government = fascism
         }
+    }
+}
+
+ZKR_anatolian_protectorate_states = {
+    OR = {
+        state = 49
+        state = 164
+        state = 187
+        state = 339
+        state = 340
+        state = 342
+        state = 343
+        state = 345
+        state = 346
+        state = 347
+        state = 356
+        state = 797
+        state = 1122
+        state = 1123
+        state = 1124
+    }
+}
+
+ZKR_is_anti_stalinist_communist = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_anti_stalinist_communist_tt
+        has_government = communism
+        NOT = { has_country_leader_ideology = stalinism }
+        NOT = { has_country_leader_ideology = capitalist_menace }
+        NOT = { has_country_leader_ideology = totalism }
+        NOT = { FROM = { original_tag = ZZZ } }
+        NOT = { FROM = { original_tag = ZNW } }
     }
 }

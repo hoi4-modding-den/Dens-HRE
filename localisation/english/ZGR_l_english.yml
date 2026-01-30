@@ -17,11 +17,14 @@
   ZGR_Parliament: "The Parliament of Greeks"
   ZGR_Parliament_leader_desc: "The Parliament of Greeks is the parliment of the new Greek territories. The Parliament is based on the Megali constitution, that proclaims the validity of Greek claims in Anatolia"
 
+  ZGR_Parliament_soc: "The Socialist Parliament"
+  ZGR_Parliament_leader_soc_desc: "After the strong showing of socialist parties in the recent election, a socialist leaning parliment has been formed"
+
   ZGR_Georgios_Bakos: "Georgios Bakos"
   ZGR_Georgios_Bakos_leader_desc: "An Ortodox Christian Greek general who is has a much more radical interpretation of The Megali Idea. Compromises with no-one, and is ready to do anything to expand the Greek claims..."
 
   ZGR_Avraam_Benaroya: "Avraam Benaroya"
-  ZGR_Avraam_Benaroya_leader_desc: "A Blugarian/Jewish anarchist who moved to New Greece to spread anarchist ideas. He dreams of an anarchist territory, where all individuals and communes live together in harmony, weather Greek, Trukish or any other race/religion/ethnicity."
+  ZGR_Avraam_Benaroya_leader_desc: "A Blugarian/Jewish anarchist who moved to New Greece to spread anarchist ideas. He dreams of an anarchist territory, where all individuals and communes live together in harmony, weather Greek, Trukish or any other race/religion/ethnicity"
 
   #Ideas
   ZGR_The_Megali_Idea: "The Mengali Idea"
@@ -29,6 +32,20 @@
 
   ZGR_The_Turk_Problem: "The Turk Problem"
   ZGR_The_Turk_Problem_desc: "The democratic parliament works constantly to maintain stability in Anatolia, pursuing policies meant to integrate the Turkish population rather than reduce it to second-class status. While discrimination and resentment persist beneath the surface, any major political shift risks reigniting ethnic tensions on a massive scale."
+
+  ZGR_Radicalisation: "Radicalisation"
+  ZGR_Radicalisation_desc: "§RRadicalisation§R is spreading among the populace..."
+
+  ZGR_devalued_the_money: "Devaluation"
+  ZGR_devalued_the_money_desc: "We are fixing our economy"
+
+
+  ZGR_Democ_angry:0 "Democratic Nation"
+  ZGR_Democ_angry_desc:0 "We might not pay much attention to Turkish Rights, but we still provide democratic freedoms to our Greek populace"
+  ZGR_Democ:0 "Free and Democratic Nation"
+  ZGR_Democ_desc:0 "We are working twoards a free nation where everyone, no matter their race or religion has a place..."
+
+  RADICALS_NEED_130k:0 "§RYou need 130k\n radicals to win\n the election§R"
 
   #City Name
   ZGR_VICTORY_POINTS_4112:0 "Smyrna"
@@ -43,17 +60,18 @@
   ZCT_VICTORY_POINTS_1005:0 "Antalya"
   ZOT_VICTORY_POINTS_1005:0 "Antalya"
 
+  #Ideology
+  ZGR_Socialism:0 "Socialism"
+  ZGR_Socialism_desc:0 "Avraam Benaroya has made anarchism very popular, but is ready to compromise with socialist parties, to gain real power, to help others."
 
   #Warning
   ZGR_ETHNIC_TENSE: "If §GPopularity§! of The §CParliament§! falls below 50%, §REthnic TENSIONS§! might escalate into §gunknown territories...§!"
-
+  ZGR_The_Ethnic_Radical: "The §GElection§! has §Rripped open§! old wounds of §Rradicalism§! and §Rethnic tension...§!"
+  ZGR_EPIC_IDEA: "We shall countinue the Legacy of The Megali Idea forever!"
+  ZGR_ADD_5_ETHNICITY:0 "Ethnic Tensions §GDecrease§!"
+  ZGR_REM_5_ETHNICITY:0 "Ethnic Tensions §RIncrease§!"
+  ZGR_Elect_End:0 "The Elections Have concluded"
   #Event
-  ZGR_Political_Camp_Choice.1.t:0 "Who will you fight for?"
-  ZGR_Political_Camp_Choice.1.desc:0 "Its election season..."
-  ZGR_Political_Camp_Choice.1.a:0 "The Communist"
-  ZGR_Political_Camp_Choice.1.b:0 "The Status Qou"
-  ZGR_Political_Camp_Choice.1.c:0 "The King"
-  ZGR_Political_Camp_Choice.1.d:0 "The Byzantine Ideals"
 
   #Focuses
   ZGR_infiltrate_the_radicals:0 "Infiltrate the Radicals"
@@ -63,9 +81,9 @@
   ZGR_first_turkish_general:0 "First Turkish General"
   ZGR_first_turkish_general_desc:0 "We get the First Turkish General"
   ZGR_the_greek_megali_idea:0 "The Greek Megali Idea"
-  ZGR_the_greek_megali_idea_desc:0 "The Megali Idea is the Greek vision to unite all ethnic Greeks into one Greek state. Some are happy with the lands gained after 1933, and want to keep the lands stable, while some dream of resurrecting Byzantine glory, by conquering all of Anatolia"
+  ZGR_the_greek_megali_idea_desc:0 "The Megali Idea is the Greek vision to unite all ethnic Greeks into one Greek state. Some are happy with the lands gained after 1933, and want to keep them stable, while some dream of resurrecting Byzantine glory, by conquering all of Anatolia"
   ZGR_build_the_university:0 "Build the University"
-  ZGR_build_the_university_desc:0 "We have the Smyrna University, but should add another in Magnesia."
+  ZGR_build_the_university_desc:0 "We have the Smyrna University, but should add another in Attaleia."
   ZGR_the_police_force:0 "The Police force"
   ZGR_the_police_force_desc:0 "Upgrade the police force"
   ZGR_the_turk_represation:0 "The Turk Represation"

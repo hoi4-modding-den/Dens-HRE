@@ -1,4 +1,11 @@
 spriteTypes = {	
 	spriteType = { name = "GFX_unit_elite_infantry_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_elite_infantry_icon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_elite_infantry_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_unit_elite_infantry_icon.dds" noOfFrames = 2 }
+
+	spriteType = {
+		name = "GFX_emergency_powers_icon"
+		texturefile = "gfx/interface/ZCT/emergency_powers_icon.dds"
+
+		legacy_lazy_load = no
+	}
 }

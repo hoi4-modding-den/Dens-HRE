@@ -1,6 +1,7 @@
 add_namespace = ZKR_politics_events
 add_namespace = ZKR_diplo_events
 add_namespace = ZKR_technical_events
+add_namespace = ZKR_lore_events
 add_namespace = ZKR_news_events
 
 country_event = { # Monarchist Coup
@@ -26,6 +27,8 @@ country_event = { # Monarchist Coup
             mark_focus_tree_layout_dirty = yes
 
             news_event = ZKR_news_events.2
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 }
@@ -80,6 +83,8 @@ country_event = { # Fascist Coup
             mark_focus_tree_layout_dirty = yes
 
             news_event = ZKR_news_events.3
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 }
@@ -109,6 +114,8 @@ country_event = { # Elections
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 
@@ -127,6 +134,8 @@ country_event = { # Elections
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 
@@ -145,8 +154,70 @@ country_event = { # Elections
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
+}
+
+country_event = { # Elections (repeatable)
+	id = ZKR_politics_events.4
+	title = ZKR_politics_events.4.t
+	desc = ZKR_politics_events.4.desc
+	
+	picture = GFX_report_event_election_vote
+	
+	trigger = {
+		tag = ZKR
+		has_government = democratic
+	}
+    
+    is_triggered_only = yes
+    fire_only_once = no
+	
+	option = {
+        name = ZKR_politics_events.4.a
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party
+            long_name = ZKR_democratic_party_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_seyid_riza
+    }
+
+    option = {
+        name = ZKR_politics_events.4.b
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party
+            long_name = ZKR_democratic_party_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_ahmed_barzani
+    }
+
+    option = {
+        name = ZKR_politics_events.4.c
+        trigger = {
+            has_character = ZRM_haji_baba_sheikh
+        }
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party_ZRM
+            long_name = ZKR_democratic_party_ZRM_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZRM_haji_baba_sheikh
+    }
+
+    # add more options from other countries after Mesopotamian Commonwealth is formed
 }
 
 country_event = { # Assistance in Syrian CW
@@ -280,7 +351,7 @@ country_event = { # Demanded Syrian Kurdistan - Refused
 	title = ZKR_diplo_events.4.t
 	desc = ZKR_diplo_events.4.desc
 	
-	picture = GFX_report_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 	
 	
 	is_triggered_only = yes
@@ -332,6 +403,47 @@ country_event = { # LoN Appeal
         custom_effect_tooltip = generic_skip_one_line_tt
 
         add_ideas = ZKR_kurdistan_lon_deal
+    }
+}
+
+country_event = { # Attack Mahabad
+	id = ZKR_diplo_events.6
+	title = ZKR_diplo_events.6.t
+	desc = ZKR_diplo_events.6.desc
+	
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.6.a
+        activate_mission = ZKR_tensions_with_mahabad_increasing
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        ZRM = { country_event = ZKR_diplo_events.7 }
+    }
+}
+
+country_event = { # Attack Mahabad Warning
+	id = ZKR_diplo_events.7
+	title = ZKR_diplo_events.7.t
+	desc = ZKR_diplo_events.7.desc
+	
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.7.a
+        custom_effect_tooltip = ZKR_diplo_events.7.tt
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_timed_idea = {
+            idea = ZKR_mahabad_mobilising
+            days = 200
+        }
     }
 }
 
@@ -456,7 +568,7 @@ country_event = { # FROM requests kurdish lands from ally
 	title = ZKR_technical_events.4.t
 	desc = ZKR_technical_events.4.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -508,7 +620,7 @@ country_event = { # FROM requests kurdish lands from ally - accepted
 	title = ZKR_technical_events.5.t
 	desc = ZKR_technical_events.5.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -536,7 +648,7 @@ country_event = { # FROM requests kurdish lands from ally - rejected
 	title = ZKR_technical_events.6.t
 	desc = ZKR_technical_events.6.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty1
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -569,7 +681,7 @@ country_event = { # FROM requests ally annexation
 	title = ZKR_technical_events.7.t
 	desc = ZKR_technical_events.7.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -618,7 +730,7 @@ country_event = { # FROM requests ally annexation - accepted
 	title = ZKR_technical_events.8.t
 	desc = ZKR_technical_events.8.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -639,7 +751,7 @@ country_event = { # FROM requests ally annexation - rejected
 	title = ZKR_technical_events.9.t
 	desc = ZKR_technical_events.9.desc
 	
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_report_event_generic_sign_treaty1
 
     is_triggered_only = yes
     fire_only_once = yes
@@ -663,6 +775,93 @@ country_event = { # FROM requests ally annexation - rejected
             NOT = { has_completed_focus = ZKR_instrument_of_vengeance }
         }
         clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+}
+
+country_event = {
+	id = ZKR_technical_events.10
+	title = ZKR_technical_events.10.t
+	desc = ZKR_technical_events.10.desc
+	
+	picture = GFX_report_event_tur_kurds_traditionalists_thwarted
+
+    trigger = {
+        original_tag = ZKR
+        owns_state = 419
+        NOT = { country_exists = ZRM }
+    }
+
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.10.a
+        add_political_power = -50
+        add_stability = 0.1
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        419 = { add_manpower = -5000 }
+        if = {
+            limit = {
+                ZRM = { has_character = ZRM_haji_baba_sheikh }
+            }
+            ZRM = { retire_character = ZRM_haji_baba_sheikh }
+        }
+    }
+
+    option = {
+        name = ZKR_technical_events.10.b
+        trigger = {
+            NOT = { has_government = fascism }
+        }
+        add_political_power = 100
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+        
+        every_possible_country = {
+            limit = { has_character = ZRM_haji_baba_sheikh }
+            random_character = {
+                limit = { is_character = ZRM_haji_baba_sheikh }
+                set_nationality = ROOT
+
+                remove_country_leader_role = {
+                    character = ZRM_haji_baba_sheikh
+                    ideology = moderatism
+                }
+                hidden_effect = {
+                    add_country_leader_role = {
+                        character = ZRM_haji_baba_sheikh
+                        promote_leader = no
+                        country_leader = {
+                            ideology = conservatism
+                            expire = "1965.1.1.1"
+                            traits = { ZKR_religious_figure }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+country_event = {
+	id = ZKR_lore_events.1
+	title = ZKR_lore_events.1.t
+	desc = ZKR_lore_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_lore_events.1.a
+        custom_effect_tooltip = available_political_advisor
+        show_ideas_tooltip = ZKR_celadet_ali_bedirxan_token
+
+        set_country_flag = ZKR_celadet_ali_bedirxan_unlocked
     }
 
 }

@@ -1,6 +1,38 @@
 capital = 677
 
-#recruit_character = ZSR_lutfi_al_haffar
+load_oob = "ZSR"
+
+recruit_character = ZSR_lutfi_al_haffar
+
+declare_war_on = {
+	target = ZCS
+	type = civil_war
+}
+declare_war_on = {
+	target = ZRS
+	type = civil_war
+}
+declare_war_on = {
+	target = ZBS
+	type = civil_war
+}
+
+add_ideas = {
+	SYRIA_disorganized_government
+	SYRIA_disorganized_army
+	extensive_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	gw_artillery = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
 
 set_politics = {
 	ruling_party = democratic

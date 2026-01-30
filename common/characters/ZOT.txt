@@ -1,5 +1,6 @@
 characters = {
 	# Leaders
+
 	ZOT_abdulmecid_ii = {
 		name = "Abdülmecid II"
 		portraits = {
@@ -72,5 +73,204 @@ characters = {
 		}
 	}		
 	
-	# Political Advisors				
+	# Political Advisors
+
+	ZOT_fevzi_cakmak={
+		name="Fevzi Çakmak"
+		portraits={
+			army={
+				small="GFX_idea_ZOT_fevzi_cakmak"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_fevzi_cakmak
+			visible = {
+			}
+			available = {
+			}
+			traits = { 
+				ZOT_imperalist_traditionalist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ZOT_sukru_saracoglu={
+		name="Şükrü Saracoğlu"
+		portraits={
+			army={
+				small="GFX_idea_tur_sukru_saracoglu"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_sukru_saracoglu
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				PRC_minister_of_finance 
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}	
+	ZOT_riza_nur={
+		name="Riza Nur"
+		portraits={
+			army={
+				small="GFX_idea_tur_riza_nur"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_riza_nur
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				ZOT_hardline_intellectual
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}	
+	ZOT_hilmi_uran={
+		name="Hilmi Uran"
+		portraits={
+			army={
+				small="GFX_idea_tur_hilmi_uran"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_hilmi_uran
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}	
+	ZOT_elyesa_bazna={
+		name="Elyesa Bazna"
+		portraits={
+			army={
+				small="GFX_idea_tur_elyesa_bazna"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_elyesa_bazna
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				BEL_illusive_mastermind
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}	
+	ZOT_recep_peker={
+		name="Recep Peker"
+		portraits={
+			army={
+				small="GFX_idea_tur_recep_peker"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_recep_peker
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				ZOT_ultranationalist_advocator
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}	
+	ZOT_celal_bayar={
+		name="Celâl Bayar"
+		portraits={
+			army={
+				small="GFX_idea_tur_celal_bayar"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_celal_bayar
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				economic_reformer
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}
+	ZOT_zeki_velidi_togan={
+		name="Zeki Velidi Togan"
+		portraits={
+			army={
+				small="GFX_idea_tur_zeki_velidi_togan"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_zeki_velidi_togan
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				pan_turkic_doyen
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}
+	ZOT_nejdet_sancar={
+		name="Nejdet Sançar"
+		portraits={
+			army={
+				small="GFX_idea_tur_nejdet_sancar"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZOT_nejdet_sancar
+			visible = {
+			}
+			available = {
+			}			
+			traits = {
+				avid_turanist
+			}
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+	}												
 }

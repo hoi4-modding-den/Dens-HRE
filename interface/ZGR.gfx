@@ -18,19 +18,10 @@ spriteTypes = {
 		name = "GFX_idea_ZGR_The_Megali_Idea"
 		texturefile = "gfx/interface/ideas/ZGR/The_Megali_Idea.dds"
 	}	
-
-
-
-
-
-
-
-
-
-
-
-
-
+	spriteType = {
+		name = "GFX_portrait_ZGR_Parliament_soc"
+		texturefile = "gfx/leaders/ZGR/ZGR_Parliament_soc.dds"
+	}
 
 	SpriteType = {
 	name = "GFX_focus_NGR_megali_idea"
@@ -38,7 +29,7 @@ spriteTypes = {
 	}	
 
 	SpriteType = {
-		name = "GFX__shine"
+		name = "GFX_focus_NGR_megali_idea_shine"
 		texturefile = "gfx/interface/ZGR/focus_NGR_megali_idea.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -69,6 +60,18 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
+	spriteType = {
+		name = "GFX_coins_icon"
+		texturefile = "gfx/interface/ZGR/coins_texticon.dds"
 
+		legacy_lazy_load = no
+	}
+
+		spriteType = {
+		name = "GFX_pop_icon"
+		texturefile = "gfx/interface/ZGR/pop_texticon.dds"
+
+		legacy_lazy_load = no
+	}
 
 }

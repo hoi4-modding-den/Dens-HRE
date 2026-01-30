@@ -4,14 +4,32 @@ ideas = {
 			picture = gre_political_instability_republican
 
 			modifier = {
-			
+				stability_factor = -0.1
+				conscription_factor = 0.1
+				command_power_gain_mult = 0.25
+				convoy_raiding_efficiency_factor = 0.15
 			}
 		}
-		ZAA_thalassocratic_tendencies_dummy = {
+		ZAA_thalassocratic_tendencies = {
 			picture = generic_the_london_naval_treaty
 
 			modifier = {
-			
+				industrial_capacity_dockyard = 0.15
+				production_speed_naval_base_factor = 0.15
+			}
+			equipment_bonus = {
+				convoy = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				ship_hull_submarine = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				ship_hull_light = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
 			}
 		}
 		ZAA_chest_of_treasures = {
@@ -19,6 +37,13 @@ ideas = {
 
 			modifier = {
 				custom_modifier_tooltip = ZAA_chest_of_treasures_idea_tt
+			}
+		}
+	}
+	hidden_ideas = {
+		ZAA_no_political_power_allowed = {
+			modifier = {
+				political_power_factor = -2
 			}
 		}
 	}

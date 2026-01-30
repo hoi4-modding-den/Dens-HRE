@@ -1,6 +1,34 @@
 capital = 1103
 
-#recruit_character = ZCS_khalid_bakdash
+load_oob = "ZCS"
+
+recruit_character = ZCS_khalid_bakdash
+
+add_ideas = {
+	SYRIA_disorganized_government
+	SYRIA_disorganized_army
+	extensive_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	gw_artillery = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+declare_war_on = {
+	target = ZRS
+	type = civil_war
+}
+declare_war_on = {
+	target = ZBS
+	type = civil_war
+}
 
 set_politics = {
 	ruling_party = communism

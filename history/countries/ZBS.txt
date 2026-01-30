@@ -1,16 +1,41 @@
 capital = 554
 
-#recruit_character = ZBS_michel_alfaq
+load_oob = "ZBS"
+
+recruit_character = ZBS_michel_alfaq
+recruit_character = ZBS_salman_al_murshid
+
+add_ideas = {
+	SYRIA_disorganized_government
+	SYRIA_disorganized_army
+	extensive_conscription
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	gw_artillery = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+declare_war_on = {
+	target = ZRS
+	type = civil_war
+}
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = fascism
 	last_election = "1931.11.8"
 	election_frequency = 72
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 52
-	democratic = 15
-	communism = 22
-	fascism = 11
+	neutrality = 43
+	democratic = 7
+	communism = 3
+	fascism = 47
 }

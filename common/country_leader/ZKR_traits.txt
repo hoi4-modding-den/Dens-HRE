@@ -78,6 +78,14 @@ leader_traits = {
 
     }
 
+    ZKR_religious_figure = {
+        random = no
+
+        stability_factor = 0.2
+        political_advisor_cost_factor = -0.1
+
+    }
+
 # Advisors
 
     # SPRITES
@@ -162,6 +170,30 @@ leader_traits = {
 		research_speed_factor = 0.05
         stability_factor = 0.1
         monthly_population = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+    ZKR_kurdish_academy_leader = {
+        random = no
+		sprite = 13
+		
+		research_speed_factor = 0.1
+        drift_defence_factor = 0.5
+        stability_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+    ZKR_writer_and_lawyer = {
+        random = no
+		sprite = 13
+		
+		political_power_factor = 0.15
 
 		ai_will_do = {
 			factor = 1

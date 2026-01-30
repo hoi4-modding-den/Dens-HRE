@@ -1,0 +1,44 @@
+focus_tree = {
+	id = ZOT_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ZOT
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2200 }
+
+	initial_show_position = {
+		x = 9
+		y = 0
+	}
+
+	# POLITICAL BRANCH
+	focus = {
+		id = ZOT_
+		icon = GFX_focus_TUR_pivot_to_the_past
+		x = 7
+		y = 0
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+		completion_reward = {
+		}
+	}																				
+}

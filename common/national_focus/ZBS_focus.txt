@@ -1,0 +1,756 @@
+focus_tree = {
+	id = ZBS_focus
+	continuous_focus_position = { x = 850 y = 1250 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZBS
+		}
+	}
+	shared_focus = SYRIA_the_civil_war
+	focus = {
+		id = ZBS_the_arab_state
+		x = 0
+		y = 0
+		cost = 2
+		icon = GFX_focus_IRQ_unite_mashriq
+		#prerequisite = { focus = ZBS_ }
+		#relative_position_id = ZBS_
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = ZBS_unify_the_nation
+		x = -2
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ZBS_the_arab_state }
+		relative_position_id = ZBS_the_arab_state
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZBS_unification_push
+				days = 70
+			}
+		}
+	}
+	focus = {
+		id = ZBS_national_propaganda
+		x = -1
+		y = 1
+		cost = 5
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = ZBS_unify_the_nation }
+		relative_position_id = ZBS_unify_the_nation
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			add_war_support = 0.1
+			ZSR = {
+				add_timed_idea = {
+					idea = ZBS_prop_campaign
+					days = 35
+				}
+			}
+			ZRS = {
+				add_timed_idea = {
+					idea = ZBS_prop_campaign
+					days = 35
+				}
+			}
+			ZCS = {
+				add_timed_idea = {
+					idea = ZBS_prop_campaign
+					days = 35
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_supress_factions
+		x = 0
+		y = 2
+		cost = 5
+		icon = GFX_focus_RAJ_union_busting
+		prerequisite = { focus = ZBS_unify_the_nation }
+		relative_position_id = ZBS_unify_the_nation
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			set_temp_variable = {
+				com_pop = party_popularity@communism
+			}
+			multiply_temp_variable = {
+				com_pop = -1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = com_pop
+			}
+			set_temp_variable = {
+				dem_pop = party_popularity@democratic
+			}
+			multiply_temp_variable = {
+				dem_pop = -1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = dem_pop
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = ZBS_arrest_of_salman_murshid
+		x = 0
+		y = 2
+		cost = 1
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = { focus = ZBS_the_arab_state }
+		relative_position_id = ZBS_the_arab_state
+		#mutually_exclusive = { focus = ZBS_ }
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_purge_party
+		x = -1
+		y = 2
+		cost = 5
+		icon = GFX_focus_PER_state_atheism
+		prerequisite = { focus = ZBS_arrest_of_salman_murshid }
+		relative_position_id = ZBS_arrest_of_salman_murshid
+		mutually_exclusive = { focus = ZBS_fundamentalist_party }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ZBS_murshid_arrested
+				has_country_flag = ZBS_murshid_arrested
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_fundamentalist_party
+		x = 1
+		y = 2
+		cost = 5
+		icon = GFX_focus_SYR_muslim_government
+		prerequisite = { focus = ZBS_arrest_of_salman_murshid }
+		relative_position_id = ZBS_arrest_of_salman_murshid
+		mutually_exclusive = { focus = ZBS_purge_party }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ZBS_murshid_government
+				has_country_flag = ZBS_murshid_government
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_internal_security
+		x = -1
+		y = 1
+		cost = 5
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = { focus = ZBS_purge_party }
+		relative_position_id = ZBS_purge_party
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			create_intelligence_agency = {
+				name = "ISFC"
+				icon = GFX_intelligence_agency_logo_generic_5
+			}
+		}
+	}
+	focus = {
+		id = ZBS_murshidi
+		x = 1
+		y = 1
+		cost = 5
+		icon = GFX_focus_PER_islamic_solidarity
+		prerequisite = { focus = ZBS_fundamentalist_party }
+		relative_position_id = ZBS_fundamentalist_party
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_cw_victory
+		x = 2
+		y = 1
+		cost = 1
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = ZBS_internal_security focus = ZBS_murshidi }
+		relative_position_id = ZBS_internal_security
+		#mutually_exclusive = { focus = ZBS_ }
+		available = {
+			has_completed_focus = SYRIA_united
+		}
+		completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	focus = {
+		id = ZBS_army_modernization
+		x = -2
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = ZBS_cw_victory }
+		relative_position_id = ZBS_cw_victory
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			army_experience = 150
+			air_experience = 150
+		}
+	}
+	focus = {
+		id = ZBS_army_purge
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = { focus = ZBS_army_modernization }
+		relative_position_id = ZBS_army_modernization
+		mutually_exclusive = { focus = ZBS_empower_leaders }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_empower_leaders
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = ZBS_army_modernization }
+		relative_position_id = ZBS_army_modernization
+		mutually_exclusive = { focus = ZBS_army_purge }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_motorization
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = ZBS_army_purge focus = ZBS_empower_leaders }
+		relative_position_id = ZBS_army_purge
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+	focus = {
+		id = ZBS_emergency_powers
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = ZBS_cw_victory }
+		relative_position_id = ZBS_cw_victory
+		allow_branch = {
+			has_completed_focus = ZBS_murshidi
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = ZBS_modernize_industry
+		x = 2
+		y = 1
+		cost = 10
+		icon = GFX_focus_AFG_a_modern_economy
+		prerequisite = { focus = ZBS_cw_victory	 }
+		relative_position_id = ZBS_cw_victory
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_infrastructure_development
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ZBS_modernize_industry }
+		relative_position_id = ZBS_modernize_industry
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ZBS
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_invest_in_factories
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ZBS_modernize_industry }
+		relative_position_id = ZBS_modernize_industry
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_expand_steel
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = ZBS_invest_in_factories }
+		prerequisite = { focus = ZBS_infrastructure_development }
+		relative_position_id = ZBS_invest_in_factories
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			677 = {
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+			554 = {
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_mil_industry
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = ZBS_empower_leaders focus = ZBS_army_purge }
+		prerequisite = {
+			focus = ZBS_invest_in_factories
+		}
+		relative_position_id = ZBS_empower_leaders
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_tank_investment
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = ZBS_mil_industry }
+		prerequisite = { focus = ZBS_motorization }
+		relative_position_id = ZBS_motorization
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = ZBS_oil_drilling
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = ZBS_expand_steel }
+		relative_position_id = ZBS_expand_steel
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			680 = {
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+			554 = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+			1103 = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_cultural_revival
+		x = 0
+		y = 2
+		cost = 10
+		icon = GFX_focus_TUR_support_the_golden_square
+		prerequisite = { focus = ZBS_mil_industry }
+		relative_position_id = ZBS_mil_industry
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_subjugate_lebanon
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_attack_lebanon
+		prerequisite = { focus = ZBS_cultural_revival }
+		relative_position_id = ZBS_cultural_revival
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_pan_arab_alignment
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_focus_IRQ_rally_the_arab_world
+		prerequisite = { focus = ZBS_subjugate_lebanon }
+		relative_position_id = ZBS_subjugate_lebanon
+		mutually_exclusive = { focus = ZBS_neutrality }
+		available = {
+			has_completed_focus = ZBS_purge_party
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_arab_expansion
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_focus_ETH_an_arabic_base
+		prerequisite = { focus = ZBS_pan_arab_alignment }
+		relative_position_id = ZBS_pan_arab_alignment
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_further_integration
+		x = -2
+		y = 1
+		cost = 10
+		icon = GFX_focus_SYR_arabia
+		prerequisite = { focus = ZBS_arab_expansion }
+		relative_position_id = ZBS_arab_expansion
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			custom_effect_tooltip = ZBS_decs_to_core_arab_states
+		}
+	}
+	focus = {
+		id = ZBS_invade_the_levant
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_focus_SYR_invade_levant
+		prerequisite = { focus = ZBS_arab_expansion }
+		relative_position_id = ZBS_arab_expansion
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 453
+						owns_state = 446
+						owns_state = 454
+						owns_state = 1111
+						owns_state = 1110
+						owns_state = 455
+						owns_state = 183
+						owns_state = 1121
+						owns_state = 1120
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_secure_iraq
+		x = 2
+		y = 1
+		cost = 10
+		icon = GFX_focus_PER_secure_iraq
+		prerequisite = { focus = ZBS_arab_expansion }
+		relative_position_id = ZBS_arab_expansion
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 676
+						owns_state = 1010
+						owns_state = 291
+						owns_state = 1011
+						owns_state = 1116
+						owns_state = 1117
+						owns_state = 675
+					}
+					NOT = {
+						tag = ZJA
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_regional_hegemony
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_focus_SYR_invade_arabia
+		prerequisite = { focus = ZBS_invade_the_levant }
+		prerequisite = { focus = ZBS_secure_iraq }
+		prerequisite = { focus = ZBS_further_integration }
+		relative_position_id = ZBS_invade_the_levant
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 855
+						owns_state = 854
+						owns_state = 857
+						owns_state = 1109
+						owns_state = 656
+						owns_state = 859
+						owns_state = 679
+						owns_state = 292
+						owns_state = 856
+						owns_state = 1014
+						owns_state = 678
+						owns_state = 765
+						owns_state = 1014
+						owns_state = 858
+						owns_state = 293
+						owns_state = 992
+						owns_state = 659
+						owns_state = 1015
+						owns_state = 1016
+						owns_state = 658
+						owns_state = 294
+						owns_state = 1013
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZBS_form_arabia
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_focus_SYR_form_arabia
+		prerequisite = { focus = ZBS_regional_hegemony }
+		relative_position_id = ZBS_regional_hegemony
+		#mutually_exclusive = { focus = ZBS_ }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ZBS_controls_all_arabia
+				owns_state = 855
+				owns_state = 854
+				owns_state = 857
+				owns_state = 1109
+				owns_state = 656
+				owns_state = 859
+				owns_state = 679
+				owns_state = 292
+				owns_state = 856
+				owns_state = 1014
+				owns_state = 678
+				owns_state = 765
+				owns_state = 1014
+				owns_state = 858
+				owns_state = 293
+				owns_state = 992
+				owns_state = 659
+				owns_state = 1015
+				owns_state = 1016
+				owns_state = 658
+				owns_state = 294
+				owns_state = 1013
+				owns_state = 453
+				owns_state = 446
+				owns_state = 454
+				owns_state = 1111
+				owns_state = 1110
+				owns_state = 455
+				owns_state = 183
+				owns_state = 1121
+				owns_state = 1120
+				owns_state = 676
+				owns_state = 1010
+				owns_state = 291
+				owns_state = 1011
+				owns_state = 1116
+				owns_state = 1117
+				owns_state = 675
+			}
+		}
+		completion_reward = {
+			set_cosmetic_tag = ZBS_arabia
+		}
+	}
+	focus = {
+		id = ZBS_neutrality
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = ZBS_subjugate_lebanon }
+		relative_position_id = ZBS_subjugate_lebanon
+		mutually_exclusive = { focus = ZBS_pan_arab_alignment }
+		available = {
+			has_completed_focus = ZBS_emergency_powers
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_military_police
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		prerequisite = { focus = ZBS_neutrality }
+		relative_position_id = ZBS_neutrality
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_gain_legitimacy
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_advanced_military_studies
+		prerequisite = { focus = ZBS_military_police }
+		relative_position_id = ZBS_military_police
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_civil_defense
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = ZBS_gain_legitimacy }
+		relative_position_id = ZBS_gain_legitimacy
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_open_trade
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = ZBS_gain_legitimacy }
+		relative_position_id = ZBS_gain_legitimacy
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZBS_sustaining_industry
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = ZBS_civil_defense }
+		prerequisite = { focus = ZBS_open_trade }
+		relative_position_id = ZBS_civil_defense
+		#mutually_exclusive = { focus = ZBS_ }
+		completion_reward = {
+			
+		}
+	}
+}

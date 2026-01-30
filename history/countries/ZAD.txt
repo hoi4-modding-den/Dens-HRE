@@ -1,6 +1,12 @@
 capital = 1101
 
-#recruit_character = ZAD_sultan_al_atrash
+load_oob = "ZAD"
+
+recruit_character = ZAD_sultan_al_atrash
+
+add_ideas = {
+	ZAD_mountain_army
+}
 
 set_politics = {
 	ruling_party = neutrality

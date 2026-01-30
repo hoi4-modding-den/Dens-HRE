@@ -1,5 +1,4 @@
-state=
-{
+state= {
 	id=164
 	name="STATE_164"
 	manpower = 120000
@@ -7,7 +6,7 @@ state=
 	state_category = small_island
 	
 	history = {
-		owner = ZZZ #owner = ITA
+		owner = ZOT #owner = ITA
 		victory_points = {
 			10007 1 
 		}
@@ -21,7 +20,7 @@ state=
 				naval_base = 1
 			}
 		}
-		#add_core_of = GRE
+		add_core_of = ZOT
 
 		### CHANGED TO A MROE ROBUST SYSTEM
 		##CONTROLLED BY ITALY AT GAME START -> ITALIAN NAMES
