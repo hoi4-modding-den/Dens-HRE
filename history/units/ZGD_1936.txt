@@ -10,7 +10,6 @@ division_template = {
 		artillery = { x = 0 y = 1}
 	}
 }
-
 division_template = {
     name = "Sakhalkho Gvardiis Saart’ilerio Brigada"
 	regiments = {
@@ -18,7 +17,6 @@ division_template = {
 	   heavy_sp_artillery_brigade = { x = 0 y = 1 }
 	}
 }
-
 division_template = {
     name = "Sakhalkho Gvardiis K’avaleriis Brigada"
 
@@ -28,7 +26,6 @@ division_template = {
 	   cavalry = { x = 0 y = 2}
 	}
 }
-
 division_template = {
     name = "Sainzhinro-T’eknik’uri Dzalebi"
 
@@ -47,17 +44,20 @@ units = {
 		location = 1599
 		division_template = "Sakhalkho Gvardiis Divizia"
 		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
 	}
 	division = {
 		name = "Engineering and Technical Forces"
 		location = 672
 		division_template = "Sainzhinro-T’eknik’uri Dzalebi"
 		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
 	}
 	division = {
 		name = "Artillery Brigade"
 		location = 1599
 		division_template = "Sakhalkho Gvardiis K’avaleriis B
 		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
 	}
 }
