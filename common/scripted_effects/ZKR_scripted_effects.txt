@@ -1,0 +1,11 @@
+ZKR_transfer_FROM_subjects_to_ROOT = {
+    custom_effect_tooltip = ZKR_transfer_FROM_subjects_to_ROOT_tt
+    hidden_effect = {
+        every_country = {
+            limit = {
+                is_subject_of = FROM
+            }
+            ROOT = { puppet = PREV }
+        }
+    }
+}

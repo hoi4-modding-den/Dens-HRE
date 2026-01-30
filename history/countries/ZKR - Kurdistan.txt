@@ -3,7 +3,7 @@ capital = 350
 oob = "ZKR_1936"
 
 set_research_slots = 3
-set_stability = 0.7
+set_stability = 0.5
 set_war_support = 0.5
 
 set_technology = {
@@ -58,6 +58,14 @@ add_opinion_modifier = {
 	modifier = ZKR_ottoman_bastards
 }
 add_opinion_modifier = {
+	target = ZTM
+	modifier = ZKR_ottoman_bastards
+}
+add_opinion_modifier = {
+	target = ZTC
+	modifier = ZKR_ottoman_bastards
+}
+add_opinion_modifier = {
 	target = ZAR
 	modifier = ZKR_geopolitical_rivals
 }
@@ -101,7 +109,7 @@ set_country_flag = no_generic_characters
 set_politics = {
 	ruling_party = democratic
 	last_election = "1935.6.12"
-	election_frequency = 12
+	election_frequency = 24
 	elections_allowed = no
 }
 set_popularities = {

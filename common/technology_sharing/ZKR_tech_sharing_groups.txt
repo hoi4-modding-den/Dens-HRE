@@ -1,0 +1,20 @@
+technology_sharing_group = {
+
+	id = ZKR_west_asia_tech_sharing_group
+	name = ZKR_west_asia_tech_sharing_group_name
+	desc = ZKR_west_asia_tech_sharing_group_desc
+	picture = GFX_technology_sharing_default
+	research_sharing_per_country_bonus = 0.1
+
+	#categories = {  }
+
+	available = {
+		OR = {
+            AND = {
+                original_tag = ZKR
+                is_faction_leader = yes
+            }
+            is_ally_with = ZKR
+        }
+	}
+}

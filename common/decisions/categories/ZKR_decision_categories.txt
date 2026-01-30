@@ -16,6 +16,23 @@ ZKR_kurdistan_formables_cat = {
 	priority = 10
 }
 
+ZKR_commonwealth_cat = {
+	icon = usa_congress
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		is_faction_leader = yes
+		has_completed_focus = ZKR_common_organisations
+	}
+
+	visible_when_empty = no
+
+	priority = 100
+}
+
 ZKR_liberation_allies_cat = {
 	icon = saf_anti_colonialist_crusade
 
@@ -116,5 +133,5 @@ ZKR_syrian_intervention_cat = {
 
 	visible_when_empty = no
 
-	priority = 1
+	priority = 2
 }

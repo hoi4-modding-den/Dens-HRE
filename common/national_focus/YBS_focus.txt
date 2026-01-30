@@ -5950,6 +5950,15 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			promote_character = YBS_handelskommission
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
+			}
 		}
 	}
 
@@ -6562,17 +6571,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = YBS_lobby_for_intervention_tt
 			set_country_flag = YBS_civil_war_decisions_unlocked
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_state = {
-				limit = {
-					YBS_is_iberian_state = yes
-					NOT = { is_core_of = ROOT }
-					NOT = { is_claimed_by = ROOT }
-				}
-				add_claim_by = ROOT
-			}
 		}
 	}
 
@@ -6964,6 +6962,17 @@ focus_tree = {
 			country_event = {
 				id = YBS_esperanto_events.1
 				days = 7
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
 			}
 
 			hidden_effect = {
@@ -7473,16 +7482,6 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = YBS_lobby_for_intervention_tt
 			set_country_flag = YBS_civil_war_decisions_unlocked
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_state = {
-				limit = {
-					NOT = { is_core_of = ROOT }
-					NOT = { is_claimed_by = ROOT }
-				}
-				add_claim_by = ROOT
-			}
 		}
 	}
 
@@ -7595,6 +7594,17 @@ focus_tree = {
 
 			custom_effect_tooltip = YBS_reclaim_the_colonies_tt
 			set_country_flag = YBS_colonial_affairs_restarted
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_spanish_africa_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
+			}
 		}
 	}
 
