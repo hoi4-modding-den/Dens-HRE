@@ -5,7 +5,8 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.1
-				conscription_factor = 0.1
+				#conscription_factor = 0.1
+				custom_modifier_tooltip = ZAA_nation_of_piranhas_rec_tt
 				command_power_gain_mult = 0.25
 				convoy_raiding_efficiency_factor = 0.15
 			}
@@ -43,7 +44,7 @@ ideas = {
 	hidden_ideas = {
 		ZAA_no_political_power_allowed = {
 			modifier = {
-				political_power_factor = -2
+				political_power_factor = -1
 			}
 		}
 	}

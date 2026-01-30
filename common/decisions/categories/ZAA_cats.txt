@@ -1,0 +1,19 @@
+ZAA_piracy_category = {
+
+	icon = GFX_decision_category_GER_seize_gold_reserves
+	#picture = GFX_decision_cat_picture_generic_south_american_naval_race
+	
+	scripted_gui = ZAA_decisions_scripted_gui
+	
+	allowed = {
+		original_tag = ZAA
+	}
+	
+	visible = {
+		always = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 10
+}

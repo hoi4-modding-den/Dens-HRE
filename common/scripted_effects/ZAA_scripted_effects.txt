@@ -1,0 +1,192 @@
+ZAA_calculate_red_sea_coastal_states_amount = {
+	set_variable = { ZAA_red_sea_controlled_states = 0 }
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 446 
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		446 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 453
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		453 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 1111
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		1111 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 1110
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		1110 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 457
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		457 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 855
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		855 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 1108
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		1108 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 679
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		679 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 883
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		883 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 856
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		856 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 550
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		550 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 293
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		293 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 268
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		268 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 992
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		992 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 269
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		269 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 659
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		659 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 559
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		559 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	add_to_variable = { ZAA_decisions_dirty = 0.01 }
+}
+	
