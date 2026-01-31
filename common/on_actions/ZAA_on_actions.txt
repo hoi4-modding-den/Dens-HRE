@@ -5,12 +5,14 @@ on_actions = {
 				remove_ideas = ZAA_nation_of_piranhas_dummy
 				#remove_ideas = ZAA_thalassocratic_tendencies_dummy
 				ZAA_calculate_red_sea_coastal_states_amount = yes
+				ZAA_calculate_naval_strength = yes
 			}
         }
     }
 	on_daily_ZAA = {
 		effect = {
 			ZAA_calculate_red_sea_coastal_states_amount = yes
+			ZAA_calculate_naval_strength = yes
 		}
 	}
 }

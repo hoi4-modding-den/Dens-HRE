@@ -189,4 +189,31 @@ ZAA_calculate_red_sea_coastal_states_amount = {
 	}
 	add_to_variable = { ZAA_decisions_dirty = 0.01 }
 }
+
+ZAA_calculate_naval_strength = {
+
+	set_variable = { ZAA_submarine_score = num_ships_with_type@submarine }
+	set_variable = { ZAA_destroyer_score = num_ships_with_type@destroyer }
+	set_variable = { ZAA_light_cruiser_count = num_ships_with_type@screen_ship }
+	set_variable = { ZAA_battleship_count = num_ships_with_type@capital_ship }
+	set_variable = { ZAA_carrier_count = num_ships_with_type@carrier }
+	
+	#score calculations
+	set_variable = { ZAA_light_cruiser_score = ZAA_light_cruiser_count }
+	multiply_variable = { ZAA_light_cruiser_score = 3 }
+	
+	set_variable = { ZAA_battleship_score = ZAA_battleship_count }
+	multiply_variable = { ZAA_battleship_score = 5 }
+	
+	set_variable = { ZAA_carrier_score = ZAA_carrier_count }
+	multiply_variable = { ZAA_carrier_score = 5 }
+	
+	set_variable = { ZAA_naval_total_score = 0 }
+	add_to_variable = { ZAA_naval_total_score = ZAA_submarine_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_destroyer_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_light_cruiser_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_battleship_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_carrier_score }
+
+}
 	

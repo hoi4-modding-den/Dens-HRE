@@ -17,7 +17,9 @@ propaganda_efforts = {
 	icon = generic_propaganda
 
 	visible = {
-
+		NOT = {
+			has_country_flag = DEN_hide_propaganda_decisions
+		}
 	}
 }
 MTG_naval_treaties = {
@@ -111,6 +113,11 @@ political_actions = {
 				}
 			}
 		}
+		
+		NOT = {
+			has_country_flag = DEN_hide_political_decisions
+		}
+
 	}
 }
 
@@ -343,7 +350,11 @@ demobilization = {
 
 economy_decisions = {
 	icon = generic_economy
-
+	visible = {
+		NOT = {
+			has_country_flag = DEN_hide_economic_decisions
+		}
+	}
 }
 
 prospect_for_resources = {
