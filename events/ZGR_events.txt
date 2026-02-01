@@ -90,7 +90,8 @@ country_event = {
 			ideology = democratic
 			desc = ZGR_Parliament_leader_soc_desc
 		}	
-		set_country_flag = ZGR_Elect_End			
+		set_country_flag = ZGR_Elect_End
+		mark_focus_tree_layout_dirty = yes		
 	}
 	
 }

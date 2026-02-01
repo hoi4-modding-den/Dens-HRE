@@ -1,0 +1,31 @@
+ZGR_INF_01 = {
+	name = "Hoplite Taxis"
+
+	for_countries = { ZGR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Taxis Hopliton"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+		ordered = {
+			1  = { "Athenaion Taxis" }
+			2  = { "Spartiatai Lochos" }
+			3  = { "Korinthion Taxis" }
+			4  = { "Smyrnaios Taxis" }
+			5  = { "Magnesion Taxis" }
+			6  = { "Ephesion Lochos" }
+			7  = { "Pergamenon Taxis" }
+			8  = { "Ionikon Taxis" }
+			9  = { "Aigaiou Taxis" }
+			10 = { "Lydion Taxis" }
+			11 = { "Miletou Lochos" }
+			12 = { "Phokaian Taxis" }
+			13 = { "Kyzikenon Taxis" }
+			14 = { "Halicarnassou Lochos" }
+			15 = { "Herakleion Taxis" }
+		}
+}

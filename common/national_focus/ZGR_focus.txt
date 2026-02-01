@@ -584,4 +584,55 @@ focus_tree = {
 		}
 	}
 
+	#The [c] Victory!
+	focus = {
+		id = ZGR_the_c_victory
+		icon = GFX_focus_NOR_the_stumbling_storting
+		x = 11
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+			has_country_flag = { flag = c_victory }
+		}
+		available = {
+			has_country_flag = {
+				flag = c_victory
+			}
+			has_country_flag = { 
+				flag = ZGR_Elect_End
+			}			
+		}
+		available = {has_country_flag = ZGR_Elect_End}		
+		prerequisite = { focus = ZGR_avoid_a_goverment_crackdown  }
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZGR_post_election_restabilize
+				days = 56
+			}
+		}
+	}
+
+	focus = { #We will do the new buget
+		id = ZGR_the_economic_course
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		x = 11
+		y = 16
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_the_c_victory  }
+
+		completion_reward = {
+		}
+	}
+
 }
