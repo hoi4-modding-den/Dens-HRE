@@ -52,5 +52,61 @@ characters = {
 		}
 	}	
 
+	ZGR_Alexandros_Kallergis = {
+		name = "ZGR_Alexandros_Kallergis"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Alexandros_Kallergis"
+			}
+		}
+		corps_commander = {
+		desc = ZGR_Alexandros_Kallergis_leader_desc			
+			traits = {}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+			visible = { always = yes }
+		}
+	}
+
+	ZGR_Dimitrios_Anagnostou = {
+		name = "ZGR_Dimitrios_Anagnostou"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Dimitrios_Anagnostou"
+			}
+		}
+		corps_commander = {
+		desc = ZGR_Dimitrios_Anagnostou_leader_desc	
+			traits = { YBS_young_officer_trait } #make new soon
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 5
+			visible = { always = yes }
+		}
+	}
+
+	ZGR_Nikolaos_Drakopoulos = {
+		name = "ZGR_Nikolaos_Drakopoulos"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Nikolaos_Drakopoulos"
+			}
+		}
+		corps_commander = {
+		desc = ZGR_Nikolaos_Drakopoulos_leader_desc	
+			traits = { artillery_expert }
+			skill = 2
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 5
+			visible = { always = yes }
+		}
+	}
 
 }
