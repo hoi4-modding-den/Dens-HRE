@@ -1,0 +1,139 @@
+integration_ZAG = {
+	integrate_the_ottomans = {
+		icon = generic_civil_support
+		fire_only_once = yes
+		allowed = {
+        	original_tag = ZAG
+    	}
+		highlight_states = {
+    		highlight_state_targets = {
+        		state = 346
+    			state = 1122
+				state = 343
+				state = 49
+				state = 1123
+				state = 342
+				state = 339
+				state = 164
+				state = 187
+				state = 340
+				state = 347
+				state = 797
+				state = 356
+				state = 398
+				state = 349
+				state = 355
+				state = 798
+    		}
+    		highlight_color_while_active = 3
+    		highlight_color_before_active = 2
+		}
+		available = {
+			346 = { is_owned_by = ROOT }
+    		1122 = { is_owned_by = ROOT }
+			343 = { is_owned_by = ROOT }
+			49 = { is_owned_by = ROOT }
+			1123 = { is_owned_by = ROOT }
+			342 = { is_owned_by = ROOT }
+			339 = { is_owned_by = ROOT }
+			164 = { is_owned_by = ROOT }
+			187 = { is_owned_by = ROOT }
+			340 = { is_owned_by = ROOT }
+			347 = { is_owned_by = ROOT }
+			797 = { is_owned_by = ROOT }
+			356 = { is_owned_by = ROOT }
+			398 = { is_owned_by = ROOT }
+			349 = { is_owned_by = ROOT }
+			355 = { is_owned_by = ROOT }
+			798 = { is_owned_by = ROOT }
+		}
+		visible = {
+			original_tag = ZAG
+			OR = {
+				has_completed_focus = ZAG_proclaim_the_umesr
+				has_completed_focus = ZAG_proclaim_the_meffc
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = ZAG_integrate_ottomans_tooltip
+			hidden_effect = {
+			346 = { add_core_of = ROOT}
+    		1122 = { add_core_of = ROOT}
+			343 = { add_core_of = ROOT}
+			49 = { add_core_of = ROOT}
+			1123 = { add_core_of = ROOT}
+			342 = { add_core_of = ROOT}
+			339 = { add_core_of = ROOT}
+			164 = { add_core_of = ROOT}
+			187 = { add_core_of = ROOT}
+			340 = { add_core_of = ROOT}
+			347 = { add_core_of = ROOT}
+			797 = { add_core_of = ROOT}
+			356 = { add_core_of = ROOT}
+			398 = { add_core_of = ROOT}
+			349 = { add_core_of = ROOT}
+			355 = { add_core_of = ROOT}
+			798 = { add_core_of = ROOT}
+			}
+		}
+		timeout_effect = {
+		}
+	}
+
+	integrate_syria = {
+		icon = generic_civil_support
+		fire_only_once = yes
+		allowed = {
+        	original_tag = ZAG
+    	}
+		highlight_states = {
+    		highlight_state_targets = {
+        		state = 799
+    			state = 1102
+				state = 677
+				state = 1115
+				state = 1103
+				state = 680
+				state = 1116
+				state = 554
+				state = 1101
+    		}
+    		highlight_color_while_active = 3
+    		highlight_color_before_active = 2
+		}
+		available = {
+			799 = { is_owned_by = ROOT }
+    		1102 = { is_owned_by = ROOT }
+			677 = { is_owned_by = ROOT }
+			1115 = { is_owned_by = ROOT }
+			1103 = { is_owned_by = ROOT }
+			680 = { is_owned_by = ROOT }
+			1116 = { is_owned_by = ROOT }
+			554 = { is_owned_by = ROOT }
+			1101 = { is_owned_by = ROOT }
+		}
+		visible = {
+			original_tag = ZAG
+			OR = {
+				has_completed_focus = ZAG_proclaim_the_umesr
+				has_completed_focus = ZAG_proclaim_the_meffc
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = ZAG_integrate_ottomans_tooltip
+			hidden_effect = {
+			799 = { add_core_of = ROOT}
+    		1102 = { add_core_of = ROOT}
+			677 = { add_core_of = ROOT}
+			1115 = { add_core_of = ROOT}
+			1103 = { add_core_of = ROOT}
+			680 = { add_core_of = ROOT}
+			1116 = { add_core_of = ROOT}
+			554 = { add_core_of = ROOT}
+			1101 = { add_core_of = ROOT}
+			}
+		}
+		timeout_effect = {
+		}
+	}
+}

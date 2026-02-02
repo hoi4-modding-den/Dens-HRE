@@ -1,36 +1,2033 @@
 focus_tree = {
-	id = ZAG
-	continuous_focus_position = { x = -40 y = 2550 } 
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = ZAG
-		}
-	}
+    id = ZAG
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = ZAG
+        }
+    }
+    continuous_focus_position = { x = -40 y = 3550 }
 
+    focus = {
+        id = ZAG_the_front_rises
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 15
+        y = 2
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        completion_reward = {
+            add_political_power = 40
+            drop_cosmetic_tag = yes
+        }
+    }
 
-	#The Front Rises
-	focus = {
-		id = ZAG_the_front_rises
-		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
-		x = 12
-		y = 2
-		cost = 2
-		available = {}
-		search_filters = {  FOCUS_FILTER_RESEARCH }
-		
-		prerequisite = {}
-		completion_reward = {
-			add_political_power = 40
-			drop_cosmetic_tag = yes
-		}
-	}
+    focus = {
+        id = ZAG_a_state_for_the_people
+        icon = GFX_SOV_bring_old_trotskyists_back_ccp_2d_sov_compatibility
+        x = 9
+        y = 3
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_front_rises }
+        mutually_exclusive = { focus = ZAG_our_armenia }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_state_for_the_people completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_democracy_in_the_middle_east
+        icon = GFX_focus_ARG_defense_and_democracy
+        x = 13
+        y = 4
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_a_state_for_the_people }
+        mutually_exclusive = { focus = ZAG_raise_the_red_banner }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_democracy_in_the_middle_east completed"
+            add_popularity = {
+            ideology = democratic
+            popularity = 0.1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_against_extremism
+        icon = GFX_focus_eng_crush_the_dream
+        x = 11
+        y = 5
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_democracy_in_the_middle_east }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_against_extremism completed"
+            add_popularity = {
+            ideology = communism
+            popularity = -0.1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_we_shall_win
+        icon = GFX_focus_spr_crush_the_revolution
+        x = 15
+        y = 5
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_democracy_in_the_middle_east }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_we_shall_win completed"
+            add_popularity = {
+            ideology = fascism
+            popularity = -0.1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_establish_the_national_assembly
+        icon = GFX_focus_AFG_parliamentary_democracy
+        x = 13
+        y = 6
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_against_extremism }
+        prerequisite = { focus = ZAG_we_shall_win }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_establish_the_national_assembly completed"
+            swap_ideas = {
+            remove_idea = ZAG_liberation_front_of_cilicia
+            add_idea = ZAG_democratisation
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_the_state_religion
+        icon = GFX_focus_BRA_socialist_theologians
+        x = 11
+        y = 7
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_establish_the_national_assembly }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_state_religion completed"
+            country_event = {
+            id = ZAG_event.3
+            days = 5
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_prevent_electoral_fraud
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 13
+        y = 7
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_establish_the_national_assembly }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_prevent_electoral_fraud completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_voting_rights_issue
+        icon = GFX_focus_AFG_pashtunistan_referendum
+        x = 15
+        y = 7
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_establish_the_national_assembly }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_voting_rights_issue completed"
+            country_event = {
+            id = ZAG_event.4
+            days = 5
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_the_first_election
+        icon = GFX_focus_generic_election
+        x = 13
+        y = 8
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_prevent_electoral_fraud }
+        prerequisite = { focus = ZAG_voting_rights_issue }
+        prerequisite = { focus = ZAG_the_state_religion }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_first_election completed"
+            country_event = {
+            id = ZAG_event.5
+            days = 5
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_social_democracy_wins_again
+        icon = GFX_focus_BEL_v_for_victory
+        x = 12
+        y = 9
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_first_election }
+        mutually_exclusive = { focus = ZAG_a_turn_to_the_right }
+        available = {
+            always = no
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_social_democracy_wins_again completed"
+            add_ideas = ZAG_social_democracy
+        }
+    }
+
+    focus = {
+        id = ZAG_a_turn_to_the_right
+        icon = GFX_SOV_return_democracy_to_the_party_ccp_2d_sov_compatibility
+        x = 14
+        y = 9
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_first_election }
+        mutually_exclusive = { focus = ZAG_social_democracy_wins_again }
+        available = {
+            always = no
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_turn_to_the_right completed"
+            add_ideas = ZAG_liberal_government
+        }
+    }
+
+    focus = {
+        id = ZAG_every_family_a_job
+        icon = GFX_SOV_national_specialists_ccp_2d_sov_compatibility
+        x = 11
+        y = 10
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_social_democracy_wins_again }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_every_family_a_job completed"
+            add_political_power = 100
+            add_stability = 0.05
+        }
+    }
+
+    focus = {
+        id = ZAG_nationalisation
+        icon = GFX_goal_generic_national_unity
+        x = 10
+        y = 11
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_every_family_a_job }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_nationalisation completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 2
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_public_infrastructure
+        icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+        x = 12
+        y = 11
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_every_family_a_job }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_public_infrastructure completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_republican_nationalism
+        icon = GFX_SOV_the_southern_thrust_ccp_2d_sov_compatibility
+        x = 13
+        y = 10
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_social_democracy_wins_again focus = ZAG_a_turn_to_the_right }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_republican_nationalism completed"
+            add_stability = 0.05
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_armenian_roots
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 13
+        y = 12
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_republican_nationalism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_armenian_roots completed"
+            add_opinion_modifier = {
+                target = ZAR
+                modifier = offered_support
+            }
+            ZAR = {
+                add_opinion_modifier = {
+                target = ZAG
+                modifier = offered_support
+            }
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_reduce_government_spending
+        icon = GFX_SOV_japanese_overtures_ccp_2d_sov_compatibility
+        x = 15
+        y = 10
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_a_turn_to_the_right }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_reduce_government_spending completed"
+            add_political_power = 100
+            add_war_support = 0.05
+        }
+    }
+
+    focus = {
+        id = ZAG_privatise_industries
+        icon = GFX_focus_generic_industry_1
+        x = 16
+        y = 11
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_reduce_government_spending }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_privatise_industries completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_individual_housing
+        icon = GFX_focus_SWE_hygienic_housing
+        x = 14
+        y = 11
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_reduce_government_spending }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_individual_housing completed"
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_collective_housing
+        icon = GFX_focus_generic_low_cost_housing
+        x = 11
+        y = 12
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_public_infrastructure }
+        prerequisite = { focus = ZAG_nationalisation }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_collective_housing completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_subcontracting
+        icon = GFX_focus_generic_farmland
+        x = 15
+        y = 12
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_individual_housing }
+        prerequisite = { focus = ZAG_privatise_industries }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_subcontracting completed"
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_celebrate_our_independence
+        icon = GFX_focus_FIN_socialist_welfare
+        x = 13
+        y = 13
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_subcontracting focus = ZAG_collective_housing }
+        prerequisite = { focus = ZAG_armenian_roots }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_celebrate_our_independence completed"
+            swap_ideas = {
+            remove_idea = ZAG_volonteer_legions
+            add_idea = ZAG_reformed_army_of_cilicia
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_a_call_to_big_armenia
+        icon = GFX_focus_SWE_refuge_from_war
+        x = 13
+        y = 14
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_celebrate_our_independence }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_call_to_big_armenia completed"
+            ZAR = {
+            country_event = {
+            id = ZAG_event.6
+            days = 5
+            }
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_a_shining_example_of_democracy
+        icon = GFX_focus_generic_democratic_europe
+        x = 13
+        y = 15
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_a_call_to_big_armenia }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_shining_example_of_democracy completed"
+            swap_ideas = {
+            remove_idea = ZAG_democratisation
+            add_idea = ZAG_bastion_of_democracy
+            }
+            any_country = {
+                if = {
+                    limit = {
+                        has_ideology_group = democratic
+                    }
+                    add_opinion_modifier = {
+                        target = PREV
+                        modifier = offered_support
+                    }
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_deportation_of_the_turks
+        icon = GFX_focus_generic_attack_turkey
+        x = 11
+        y = 16
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_a_shining_example_of_democracy }
+        mutually_exclusive = { focus = ZAG_a_state_for_everyone }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_deportation_of_the_turks completed"
+            add_manpower = -129600
+        }
+    }
+
+    focus = {
+        id = ZAG_a_state_for_everyone
+        icon = GFX_goal_generic_major_alliance
+        x = 15
+        y = 16
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_a_shining_example_of_democracy }
+        mutually_exclusive = { focus = ZAG_deportation_of_the_turks }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_state_for_everyone completed"
+            add_manpower = 49600
+        }
+    }
+
+    focus = {
+        id = ZAG_open_the_schools
+        icon = GFX_focus_research
+        x = 13
+        y = 17
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_deportation_of_the_turks focus = ZAG_a_state_for_everyone }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_open_the_schools completed"
+            add_research_slot = 1
+        }
+    }
+
+    focus = {
+        id = ZAG_prepare_the_youth_for_war
+        icon = GFX_goal_generic_allies_build_infantry
+        x = 11
+        y = 18
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_open_the_schools }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_prepare_the_youth_for_war completed"
+            348 = {
+                create_unit = {
+                    division = "name = \"Kanonavor banak\" division_template = \"Kanonavor banak\" start_experience_factor = 0.7"
+                    owner = ZAG
+                    count = 2
+                }
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_revanchism_against_the_oppressors
+        icon = GFX_focus_AUS_womens_education_initiative
+        x = 13
+        y = 18
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_open_the_schools }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_revanchism_against_the_oppressors completed"
+            add_war_support = 0.1
+            add_political_power = 50
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_establish_military_service
+        icon = GFX_SOV_military_engineering_university_ccp_2d_sov_compatibility
+        x = 15
+        y = 18
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_open_the_schools }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_establish_military_service completed"
+            344 = {
+            create_unit = {
+            division = "name = \"Kanonavor banak\" division_template = \"Kanonavor banak\" start_experience_factor = 0.7"
+            owner = ZAG
+            count = 2
+            }
+            }
+            add_manpower = 25800
+        }
+    }
+
+    focus = {
+        id = ZAG_gendarmerie_of_the_middle_east
+        icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+        x = 13
+        y = 19
+        cost = 10
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_prepare_the_youth_for_war }
+        prerequisite = { focus = ZAG_revanchism_against_the_oppressors }
+        prerequisite = { focus = ZAG_establish_military_service }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_gendarmerie_of_the_middle_east completed"
+            add_ideas = ZAG_gendarmerie_of_the_middle_east
+            set_rule = {
+                desc = ZAG_faction_creation_enabled_desc
+                can_create_factions = yes
+            }
+            set_rule = {
+                can_only_justify_war_on_threat_country = no
+            }
+            set_rule = {
+                can_declare_war_on_same_ideology = yes
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_democratise_the_syrians
+        icon = GFX_focus_generic_attack_syria
+        x = 13
+        y = 20
+        cost = 10
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_gendarmerie_of_the_middle_east }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_democratise_the_syrians completed"
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZSR
+            }
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZRS
+            }
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZBS
+            }
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZCS
+            }
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZLE
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_bring_the_empire_to_an_end
+        icon = GFX_focus_generic_attack_turkey
+        x = 11
+        y = 20
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_gendarmerie_of_the_middle_east }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_bring_the_empire_to_an_end completed"
+            create_wargoal = {
+                type = puppet_wargoal_focus
+                target = ZOT
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_liberate_the_kurds_from_themselves
+        icon = GFX_focus_PER_clamp_kurdish_dissidence
+        x = 15
+        y = 20
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_gendarmerie_of_the_middle_east }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_liberate_the_kurds_from_themselves completed"
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZKR
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_free_the_holy_lands
+        icon = GFX_focus_attack_britain
+        x = 12
+        y = 21
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_bring_the_empire_to_an_end }
+        prerequisite = { focus = ZAG_democratise_the_syrians }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_free_the_holy_lands completed"
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = DN1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_gift_democracy_to_egypt
+        icon = GFX_focus_SWE_refuge_from_war
+        x = 14
+        y = 21
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_liberate_the_kurds_from_themselves }
+        prerequisite = { focus = ZAG_democratise_the_syrians }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_gift_democracy_to_egypt completed"
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = ZEG
+            }
+            create_wargoal = {
+            type = puppet_wargoal_focus
+            target = DN2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_protectors_of_the_middle_east
+        icon = GFX_focus_hol_united_netherlands
+        x = 13
+        y = 22
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_gift_democracy_to_egypt }
+        prerequisite = { focus = ZAG_free_the_holy_lands }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_protectors_of_the_middle_east completed"
+            set_cosmetic_tag = ZAG_united_states_of_the_east
+        }
+    }
+
+    focus = {
+        id = ZAG_raise_the_red_banner
+        icon = GFX_SOV_a_new_theory_of_revolution_ccp_2d_sov_compatibility
+        x = 5
+        y = 4
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_a_state_for_the_people }
+        mutually_exclusive = { focus = ZAG_democracy_in_the_middle_east }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_raise_the_red_banner completed"
+            add_political_power = 50
+            add_popularity = {
+            ideology = communism
+            popularity = 0.1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_collaborate_with_the_turks
+        icon = GFX_focus_generic_befriend_turkey
+        x = 4
+        y = 5
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_raise_the_red_banner }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_collaborate_with_the_turks completed"
+            add_manpower = 49000
+        }
+    }
+
+    focus = {
+        id = ZAG_appeal_the_masses
+        icon = GFX_focus_ITA_peasants_rise
+        x = 6
+        y = 5
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_raise_the_red_banner }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_appeal_the_masses completed"
+            add_manpower = 18300
+            add_political_power = 50
+            add_popularity = {
+            ideology = communism
+            popularity = 0.05
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_allied_by_ideology
+        icon = GFX_goal_support_communism
+        x = 5
+        y = 6
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_collaborate_with_the_turks }
+        prerequisite = { focus = ZAG_appeal_the_masses }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_allied_by_ideology completed"
+            add_popularity = {
+            ideology = communism
+            popularity = 0.1
+            }
+            add_political_power = 100
+        }
+    }
+
+    focus = {
+        id = ZAG_all_hail_syndicalism
+        icon = GFX_focus_focus_fra_revolution_utmost
+        x = 6
+        y = 7
+        cost = 10
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_allied_by_ideology }
+        mutually_exclusive = { focus = ZAG_the_workers_revolution }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_all_hail_syndicalism completed"
+            set_politics = {
+            ruling_party = communism
+            elections_allowed = yes
+            election_frequency = 24
+            long_name = ZAG_syndicalist_party_long
+            name = ZAG_syndicalist_party
+            }
+            remove_ideas = ZAG_liberation_front_of_cilicia
+            add_ideas = ZAG_syndicalist_revolution
+        }
+    }
+
+    focus = {
+        id = ZAG_the_workers_revolution
+        icon = GFX_focus_ICE_embrace_the_workers_revolution
+        x = 4
+        y = 7
+        cost = 10
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_allied_by_ideology }
+        mutually_exclusive = { focus = ZAG_all_hail_syndicalism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_workers_revolution completed"
+            set_politics = {
+            ruling_party = communism
+            elections_allowed = no
+            election_frequency = 48
+            }
+            promote_character = {
+            character = ZAG_burak_diran
+            ideology = vanguardism
+            }
+            remove_ideas = ZAG_liberation_front_of_cilicia
+            add_ideas = ZAG_communist_revolution
+        }
+    }
+
+    focus = {
+        id = ZAG_empower_the_party
+        icon = GFX_SOV_carry_revolution_east_ccp_2d_sov_compatibility
+        x = 2
+        y = 8
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_workers_revolution }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_empower_the_party completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_create_local_soviets
+        icon = GFX_SOV_committee_in_exile_ccp_2d_sov_compatibility
+        x = 1
+        y = 9
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_empower_the_party }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_create_local_soviets completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_purge_democrats
+        icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
+        x = 3
+        y = 9
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_empower_the_party }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_purge_democrats completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_hora_for_burak
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 2
+        y = 10
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_purge_democrats }
+        prerequisite = { focus = ZAG_create_local_soviets }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_hora_for_burak completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_the_central_committee
+        icon = GFX_focus_SWE_socialist_reforms
+        x = 1
+        y = 12
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_hora_for_burak }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_central_committee completed"
+            add_ideas = ZAG_the_central_committee
+        }
+    }
+
+    focus = {
+        id = ZAG_womens_rights
+        icon = GFX_focus_PER_women_vote
+        x = 1
+        y = 13
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_central_committee }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_womens_rights completed"
+            add_ideas = ZAG_universal_equality
+        }
+    }
+
+    focus = {
+        id = ZAG_enforced_state_atheism
+        icon = GFX_focus_ARG_state_atheism
+        x = -1
+        y = 13
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_central_committee }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_enforced_state_atheism completed"
+            add_ideas = ZAG_state_atheism
+        }
+    }
+
+    focus = {
+        id = ZAG_open_new_schools
+        icon = GFX_focus_research2
+        x = 3
+        y = 14
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_central_committee }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_open_new_schools completed"
+            add_research_slot = 1
+        }
+    }
+
+    focus = {
+        id = ZAG_establish_the_police
+        icon = GFX_SOV_socialist_realism_ccp_2d_sov_compatibility
+        x = 0
+        y = 14
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_womens_rights }
+        prerequisite = { focus = ZAG_enforced_state_atheism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_establish_the_police completed"
+            add_stability = 0.1
+            add_political_power = 50
+        }
+    }
+
+    focus = {
+        id = ZAG_the_revolution_must_prevail
+        icon = GFX_focus_FIN_socialist_welfare
+        x = -2
+        y = 15
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_establish_the_police }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_revolution_must_prevail completed"
+            add_manpower = 25000
+        }
+    }
+
+    focus = {
+        id = ZAG_open_reeducation_camps
+        icon = GFX_focus_NOR_moscows_education_centers
+        x = 2
+        y = 15
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_open_new_schools }
+        prerequisite = { focus = ZAG_establish_the_police }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_open_reeducation_camps completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_brothers_to_arms
+        icon = GFX_focus_generic_limited_social_mobilization
+        x = 0
+        y = 16
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_revolution_must_prevail }
+        prerequisite = { focus = ZAG_open_reeducation_camps }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_brothers_to_arms completed"
+            swap_ideas = {
+            remove_idea = ZAG_volonteer_legions
+            add_idea = ZAG_reformed_army_of_cilicia
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_establish_new_barracks
+        icon = GFX_SOV_the_glory_of_the_red_army_ccp_2d_sov_compatibility
+        x = -2
+        y = 17
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_brothers_to_arms }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_establish_new_barracks completed"
+            348 = {
+                create_unit = {
+                    division = "name = \"Kanonavor banak\" division_template = \"Kanonavor banak\" start_experience_factor = 0.7"
+                    owner = ZAG
+                    count = 2
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_prepare_for_war
+        icon = GFX_goal_generic_army_artillery2
+        x = 0
+        y = 17
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_brothers_to_arms }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_prepare_for_war completed"
+            upgrade_economy_law = yes
+        }
+    }
+
+    focus = {
+        id = ZAG_revolutionaries_against_imperialism
+        icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
+        x = 2
+        y = 17
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_brothers_to_arms }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_revolutionaries_against_imperialism completed"
+
+        }
+    }
+
+    focus = {
+        id = ZAG_union_against_all_odds
+        icon = GFX_focus_generic_communist
+        x = 3
+        y = 18
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_revolutionaries_against_imperialism }
+        prerequisite = { focus = ZAG_prepare_for_war }
+        prerequisite = { focus = ZAG_establish_new_barracks }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_union_against_all_odds completed"
+            add_war_support = 0.1
+        }
+    }
+
+    focus = {
+        id = ZAG_crusade_against_imperialism
+        icon = GFX_focus_generic_communism_anti_fascism
+        x = 6
+        y = 19
+        cost = 10
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_union_against_all_odds focus = ZAG_local_defense_councils }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_crusade_against_imperialism completed"
+            add_ideas = ZAG_crusade_against_imperialism
+            set_rule = {
+            desc = ZAG_faction_creation_enabled_desc
+            can_create_factions = yes
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_north_the_ottomans
+        icon = GFX_focus_generic_attack_turkey
+        x = 4
+        y = 20
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_crusade_against_imperialism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_north_the_ottomans completed"
+            create_wargoal = {
+                type = annex_everything
+                target = ZOT
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZCT
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZTC
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZTM
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_south_the_syrians
+        icon = GFX_focus_generic_attack_syria
+        x = 6
+        y = 20
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_crusade_against_imperialism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_south_the_syrians completed"
+            create_wargoal = {
+                type = annex_everything
+                target = ZSR
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZRS
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZBS
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZCS
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = ZLE
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_east_the_homeland
+        icon = GFX_focus_generic_attack_kurdistan
+        x = 8
+        y = 20
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_crusade_against_imperialism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_east_the_homeland completed"
+            create_wargoal = {
+                type = annex_everything
+                target = ZKR
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_crush_the_british
+        icon = GFX_focus_attack_britain
+        x = 5
+        y = 21
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_south_the_syrians focus = ZAG_north_the_ottomans }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_crush_the_british completed"
+            create_wargoal = {
+                type = annex_everything
+                target = DN1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_seize_the_canal
+        icon = GFX_SOV_protect_the_white_sea_baltic_canal_ccp_2d_sov_compatibility
+        x = 7
+        y = 21
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_south_the_syrians focus = ZAG_east_the_homeland }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_seize_the_canal completed"
+            create_wargoal = {
+                type = annex_everything
+                target = DN2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_the_end_of_the_crusade
+        icon = GFX_focus_SOV_international_union_of_soviet_republics
+        x = 6
+        y = 22
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_crush_the_british }
+        prerequisite = { focus = ZAG_seize_the_canal }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_end_of_the_crusade completed"
+            swap_ideas = {
+                remove_idea = ZAG_crusade_against_imperialism
+                add_idea = ZAG_victorious_crusade
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_proclaim_the_umesr
+        icon = GFX_focus_GER_alliance_with_the_ussr
+        x = 4
+        y = 23
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_end_of_the_crusade }
+        mutually_exclusive = { focus = ZAG_proclaim_the_meffc }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_proclaim_the_umesr completed"
+            set_cosmetic_tag = ZAG_umesr
+            custom_effect_tooltip = ZAG_integrate_states_union
+        }
+    }
+
+    focus = {
+        id = ZAG_proclaim_the_meffc
+        icon = GFX_focus_CHL_union_of_hispanic_republics
+        x = 8
+        y = 23
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_end_of_the_crusade }
+        mutually_exclusive = { focus = ZAG_proclaim_the_umesr }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_proclaim_the_meffc completed"
+            set_cosmetic_tag = ZAG_meffc
+            custom_effect_tooltip = ZAG_integrate_states_union
+        }
+    }
+
+    focus = {
+        id = ZAG_seize_the_means_of_production
+        icon = GFX_focus_generic_communist_industry
+        x = 5
+        y = 8
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_workers_revolution focus = ZAG_all_hail_syndicalism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_seize_the_means_of_production completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_the_french_public_offices
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 5
+        y = 9
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_seize_the_means_of_production }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_french_public_offices completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_lessons_from_spain
+        icon = GFX_focus_ARG_women_in_industry
+        x = 5
+        y = 10
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_french_public_offices }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_lessons_from_spain completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_empower_the_trade_unions
+        icon = GFX_focus_generic_spur_communist_revolutions
+        x = 8
+        y = 8
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_all_hail_syndicalism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_empower_the_trade_unions completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_write_a_new_constitution
+        icon = GFX_focus_POL_complete_april_constitution
+        x = 7
+        y = 9
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_empower_the_trade_unions }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_write_a_new_constitution completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_the_people_parliament
+        icon = GFX_focus_ETH_re
+        x = 9
+        y = 9
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_empower_the_trade_unions }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_people_parliament completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_decentralisation_of_governance
+        icon = GFX_focus_BRA_reach_out_to_military_dem
+        x = 8
+        y = 10
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_people_parliament }
+        prerequisite = { focus = ZAG_write_a_new_constitution }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_decentralisation_of_governance completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_middle_eastern_syndicalism
+        icon = GFX_focus_GER_align_middle_east
+        x = 8
+        y = 11
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_people_parliament }
+        prerequisite = { focus = ZAG_write_a_new_constitution }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_middle_eastern_syndicalism completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_allow_private_religion
+        icon = GFX_focus_ARG_liberation_theology
+        x = 7
+        y = 12
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_middle_eastern_syndicalism }
+        mutually_exclusive = { focus = ZAG_state_atheism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_allow_private_religion completed"
+            add_ideas = ZAG_allowed_private_religion
+        }
+    }
+
+    focus = {
+        id = ZAG_state_atheism
+        icon = GFX_focus_BRA_state_atheism
+        x = 9
+        y = 12
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_middle_eastern_syndicalism }
+        mutually_exclusive = { focus = ZAG_allow_private_religion }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_state_atheism completed"
+            add_ideas = ZAG_state_atheism
+        }
+    }
+
+    focus = {
+        id = ZAG_to_each_citizen_a_gov_centre
+        icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
+        x = 8
+        y = 13
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_state_atheism focus = ZAG_allow_private_religion }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_to_each_citizen_a_gov_centre completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = infrastructure
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_to_each_citizen_a_job
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 10
+        y = 13
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_state_atheism focus = ZAG_allow_private_religion }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_to_each_citizen_a_job completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+                add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_the_state_duty
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 9
+        y = 14
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_to_each_citizen_a_gov_centre }
+        prerequisite = { focus = ZAG_to_each_citizen_a_job }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_state_duty completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_beacon_of_syndicalism
+        icon = GFX_focus_generic_strike_at_democracy1
+        x = 8
+        y = 15
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_state_duty }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_beacon_of_syndicalism completed"
+
+        }
+    }
+
+    focus = {
+        id = ZAG_prepare_citizen_for_war
+        icon = GFX_SOV_the_last_break_southward_ccp_2d_sov_compatibility
+        x = 7
+        y = 16
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_beacon_of_syndicalism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_prepare_citizen_for_war completed"
+            swap_ideas = {
+            remove_idea = ZAG_volonteer_legions
+            add_idea = ZAG_reformed_army_of_cilicia
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_for_the_greater_good
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 9
+        y = 16
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_beacon_of_syndicalism }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_for_the_greater_good completed"
+            upgrade_economy_law = yes
+        }
+    }
+
+    focus = {
+        id = ZAG_local_defense_councils
+        icon = GFX_focus_hol_the_foundations_of_defense
+        x = 8
+        y = 17
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_prepare_citizen_for_war }
+        prerequisite = { focus = ZAG_for_the_greater_good }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_local_defense_councils completed"
+            add_political_power = 150
+        }
+    }
+
+    focus = {
+        id = ZAG_establish_a_national_commission
+        icon = GFX_focus_generic_communist_industry
+        x = 4
+        y = 11
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_lessons_from_spain }
+        prerequisite = { focus = ZAG_hora_for_burak }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_establish_a_national_commission completed"
+            add_political_power = 50
+        }
+    }
+
+    focus = {
+        id = ZAG_establish_local_commissions
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 6
+        y = 11
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_lessons_from_spain }
+        prerequisite = { focus = ZAG_decentralisation_of_governance }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_establish_local_commissions completed"
+            add_political_power = 50
+            add_stability = 0.05
+        }
+    }
+
+    focus = {
+        id = ZAG_the_five_year_plan
+        icon = GFX_SOV_architect_of_communism_ccp_2d_sov_compatibility
+        x = 5
+        y = 12
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_establish_local_commissions }
+        prerequisite = { focus = ZAG_establish_a_national_commission }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_five_year_plan completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = arms_factory
+            level = 1
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_focus_on_heavy_industry
+        icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+        x = 4
+        y = 13
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_five_year_plan }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_focus_on_heavy_industry completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = arms_factory
+            level = 2
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_our_civilians_matter
+        icon = GFX_SOV_reorganize_the_pc_of_heavy_industry_ccp_2d_sov_compatibility
+        x = 6
+        y = 13
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_five_year_plan }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_our_civilians_matter completed"
+            random_owned_controlled_state = {
+            add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+            }
+            add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_the_academie_of_adana
+        icon = GFX_focus_research
+        x = 5
+        y = 14
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_focus_on_heavy_industry }
+        prerequisite = { focus = ZAG_our_civilians_matter }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_academie_of_adana completed"
+            add_research_slot = 1
+        }
+    }
+
+    focus = {
+        id = ZAG_our_armenia
+        icon = GFX_SOV_consolidate_power_ccp_2d_sov_compatibility
+        x = 21
+        y = 3
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_front_rises }
+        mutually_exclusive = { focus = ZAG_a_state_for_the_people }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_our_armenia completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_recall_sahak_ii
+        icon = GFX_SOV_great_commander_ccp_2d_sov_compatibility
+        x = 21
+        y = 4
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_our_armenia }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_recall_sahak_ii completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_loyalty_within_the_army
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 19
+        y = 5
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_recall_sahak_ii }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_loyalty_within_the_army completed"
+            country_event = {
+            id = ZAG_event.1
+            days = 10
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_negociate_with_monarchists
+        icon = GFX_focus_CHL_a_french_alliance
+        x = 23
+        y = 5
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_recall_sahak_ii }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_negociate_with_monarchists completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_march_on_the_city_hall
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 21
+        y = 6
+        cost = 8
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_loyalty_within_the_army }
+        prerequisite = { focus = ZAG_negociate_with_monarchists }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_march_on_the_city_hall completed"
+            country_event = {
+            id = ZAG_event.2
+            days = 3
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_reestablish_the_kingdom
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 21
+        y = 7
+        cost = 6
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_march_on_the_city_hall }
+        available = {
+            has_civil_war = no
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_reestablish_the_kingdom completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_purge_communists_opposants
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 19
+        y = 8
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_reestablish_the_kingdom }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_purge_communists_opposants completed"
+            add_popularity = {
+            ideology = communism
+            popularity = -0.1
+            }
+        }
+    }
+
+    focus = {
+        id = ZAG_a_grand_coronation
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 21
+        y = 8
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_reestablish_the_kingdom }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_grand_coronation completed"
+            add_ideas = ZAG_authoritarianism_is_back_in_fashion
+            add_ideas = ZAG_fascists_in_the_government
+        }
+    }
+
+    focus = {
+        id = ZAG_exterminate_democrats
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 23
+        y = 8
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_reestablish_the_kingdom }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_exterminate_democrats completed"
+            remove_ideas = ZAG_democratic_opposition
+        }
+    }
+
+    focus = {
+        id = ZAG_the_armenian_kingdom
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 21
+        y = 9
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_purge_communists_opposants }
+        prerequisite = { focus = ZAG_a_grand_coronation }
+        prerequisite = { focus = ZAG_exterminate_democrats }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_the_armenian_kingdom completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_reconcile_with_the_turks
+        icon = GFX_focus_generic_befriend_turkey
+        x = 20
+        y = 10
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_armenian_kingdom }
+        mutually_exclusive = { focus = ZAG_proclaim_a_full_armenian_state }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_reconcile_with_the_turks completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_proclaim_a_full_armenian_state
+        icon = GFX_focus_generic_attack_turkey
+        x = 22
+        y = 10
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_the_armenian_kingdom }
+        mutually_exclusive = { focus = ZAG_reconcile_with_the_turks }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_proclaim_a_full_armenian_state completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_his_majesty_industrial_plan
+        icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+        x = 21
+        y = 11
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_reconcile_with_the_turks focus = ZAG_proclaim_a_full_armenian_state }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_his_majesty_industrial_plan completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_purge_the_hittite_larpers
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 21
+        y = 12
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_his_majesty_industrial_plan }
+        mutually_exclusive = { focus = ZAG_a_conspiracy_from_within }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_purge_the_hittite_larpers completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_a_conspiracy_from_within
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 18
+        y = 12
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_his_majesty_industrial_plan }
+        mutually_exclusive = { focus = ZAG_purge_the_hittite_larpers }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_conspiracy_from_within completed"
+        }
+    }
+
+    focus = {
+        id = ZAG_a_modern_kingdom
+        icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
+        x = 24
+        y = 12
+        cost = 2
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        prerequisite = { focus = ZAG_his_majesty_industrial_plan }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ZAG_a_modern_kingdom completed"
+            swap_ideas = {
+            remove_idea = ZAG_volonteer_legions
+            add_idea = ZAG_reformed_army_of_cilicia
+            }
+        }
+    }
 
 }
-
-
-
-
-
-

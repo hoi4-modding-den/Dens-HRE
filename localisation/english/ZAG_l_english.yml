@@ -26,6 +26,11 @@
   ZAG_communism_DEF: "the Cilician Socialist Republic"
   ZAG_communism_ADJ: "Cilician"
 
+  ZAG_meffc: "Middle Eastern Federation of Free Councils"
+  ZAG_meffc_DEF: "the Middle Eastern Federation of Free Councils"
+  ZAG_umesr: "Union of Middle Eastern Socialist States"
+  ZAG_umesr_DEF: "the Union of Middle Eastern Socialist States"
+
     ## COUNTRY'S PARTIES ##
 
   ZAG_neutrality_party: "Armenian Apostolic Church"
@@ -36,6 +41,9 @@
   ZAG_fascism_party_long: "Hittite Restoration Order"
   ZAG_communism_party: "Armenian Communist Party"
   ZAG_communism_party_long: "Hayastani Komunistakan Kusaktsutyun - HKK"
+
+  ZAG_syndicalist_party: "Armenian Syndicalist Union"
+  ZAG_syndicalist_party_long: "Cilician Syndicalist Union of Free Workers - CSUFW"
 
   #######################
   ## COUNTRY'S LEADERS ##
@@ -49,6 +57,10 @@
   ZAG_arek_haroutioun_desc: ""
   ZAG_zadig_azad: "Zadig Azad"
   ZAG_zadig_azad_desc: ""
+  ZAG_burak_diran: "Burak Diran"
+  ZAG_burak_diran_desc: ""
+  ZAG_avedis_levon: "Avédis Levon"
+  ZAG_avedis_levon_desc: ""
 
   ###################
   ## SUBIDEOLOGIES ##
@@ -62,6 +74,9 @@
   ######################
 
   ZAG_catholicos_of_cilicia: "Catholicos of Cilicia"
+  ZAG_believer_in_democracy: "Believer in Democracy"
+  ZAG_syndicalist_leader: "Faith in Syndicalism"
+  ZAG_revolution_lover: "Revolution Lover"
 
   ###################
   ## COSMETIC TAGS ##
@@ -70,45 +85,175 @@
   ZAGfront: "Cilicia Liberation Front"
   ZAGfront_DEF: "the Cilicia Liberation Front"
   ZAGfront_ADJ: "Cilician"
-
-
-  ################
-  ## FOCUS TREE ##
-  ################
-
-  
-
-
-  ## POLITICAL LOCS ##
-
-  
-
-
-  ## MILITARY LOCS ##
-
-  
-
-
-  ## INDUSTRY LOCS ##
-
-  
-
+  ZAG_united_states_of_the_east: "United States of the Middle East"
+  ZAG_united_states_of_the_east_DEF: "the United States of the Middle East"
 
   ###############
   ## DECISIONS ##
   ###############
 
-  
-
-    ## COUNTRY FLAGS ##
-
+  ZAG_faction_creation_enabled_desc: "You will be able to create factions!"
+  ZAG_integrate_states_union: "§GWe will be able to integrate new states within the union!§!"
+  ZAG_integrate_ottomans_tooltip: "§GThe remnants of the Ottomans will be integrated within the Union!§!"
+  integration_ZAG: "Integration of States"
+  integrate_the_ottomans: "Integrate the Ottomans"
     
 
   ################
   ## EVENTS LOC ##
   ################
 
-  ZAG_event.1.t: ""
-  ZAG_event.1.d: ""
-  ZAG_event.1.a: ""
-  ZAG_event.1.b: ""
+  ZAG_event.1.t: "Monarchists Raiding of the City Hall!"
+  ZAG_event.1.d: "News are in: recent events led to an increase in monarchist and fascist movements across the country, making some people unsecure about leaving city centres. Government officials said however that these threats were 'nothing more than populists agitators', dismissing any allegations that some military officials would be involved in shady affairs."
+  ZAG_event.1.a: "Oh, the humanity!"
+  ZAG_event.1.b: "Against tyranny, rising up is the only solution!"
+
+  ZAG_event.2.t: "Coup d'Etat!"
+  ZAG_event.2.d: "Worrying news are coming from the National Assembly in Adana: in the night, military leaders and political commissars raided the houses of numerous political leaders, especially communist and democrats, arresting them under the reason of 'conspirating against the State'.\n\nSome leaders already went into exile in the countryside or neighbouring states but a good part of them was detained and shortly executed afterward. The new government officially asked other nations to recognise it as the sole legitimate leader of Cilicia, promising elections within a few months."
+  ZAG_event.2.a: "Onwards!"
+  ZAG_event.2.b: "Crush the democrats!"
+
+  ZAG_event.3.t: "On the Matter of State Religion"
+  ZAG_event.3.d: "Idk man"
+  ZAG_event.3.a: "Yes! We should have christianism!"
+  ZAG_event.3.b: "No! The State is secular!"
+  ZAG_event.3.c: "Why not jewish?"
+  ZAG_event.3.d: "Allah, the good path."
+
+  ZAG_event.4.t: "On the Matter of Voting"
+  ZAG_event.4.d: "Don't be an asshole"
+  ZAG_event.4.a: "Allow women to vote!"
+  ZAG_event.4.b: "Let's no go too fast. Allow women limited rights."
+  ZAG_event.4.c: "No rights for women!"
+
+  ZAG_event.5.t: "The First Election!"
+  ZAG_event.5.d: "Elections."
+  ZAG_event.5.a: "The Liberal Avédis Levon wins!"
+  ZAG_event.5.b: "The Social-Democrat wins!"
+
+  ZAG_event.6.t: "Alliance with Armenia - Proposal"
+  ZAG_event.6.d: "An envoyé from 'Little Armenia', a rump state centered around the city of Adana, has arrived at our doors. They are asking for an alliance between our two countries, arguing that it would be beneficial for both or our nations due to being both 'Armenias'.\n\nWe should try to keep good relations with them but our advisors aren't sure if this is a good idea, their government being more.. democratic than ours."
+  ZAG_event.6.a: "Our Armenian brothers!"
+  ZAG_event.6.b: "Let's just.. keep it cool alright?"
+
+  ZAG_event.7.t: "Alliance with Armenia - Yes"
+  ZAG_event.7.d: "We have received the answer to our alliance proposal with 'Big Armenia'. They accepted a limited alliance, guaranteeing our independence and giving us military access to assist them in case of a war.\n\nWe are one step closer to being reunited with our people!"
+  ZAG_event.7.a: "Our brothers!"
+
+  ZAG_event.8.t: "Alliance with Armenia - No"
+  ZAG_event.8.d: "Our diplomat is back in Adana, with bad news. The current government of Armenia in the east has refused our proposal about an alliance, stating that we were too 'ideologically unaligned' with them for such an alliance to be viable.\n\nEven if this is a blow to our efforts of being a good neighbour with our brothers, we cannot let this be the final nail in the coffin of our ambitions!\n\nAs a gift, they sent us a bit of typical armenian food."
+  ZAG_event.8.a: "We're still friends, right?"
+
+
+
+
+  ## FOCUS TREE ##
+
+ ZAG_a_state_for_the_people: "A State for the People"
+ ZAG_the_front_rises: "The Front Rises"
+ ZAG_our_armenia: "Our Armenia"
+ ZAG_raise_the_red_banner: "Raise the Red Banner"
+ ZAG_collaborate_with_the_turks: "Collaboration with the Turks"
+ ZAG_appeal_the_masses: "Appeal the Masses"
+ ZAG_allied_by_ideology: "Allied by Ideology"
+ ZAG_the_workers_revolution: "The Workers' Revolution"
+ ZAG_all_hail_syndicalism: "All Hail Syndicalism"
+ ZAG_empower_the_party: "Empower the Party"
+ ZAG_seize_the_means_of_production: "Seize the Means of Production"
+ ZAG_empower_the_trade_unions: "Empower the Trade Unions"
+ ZAG_create_local_soviets: "Create Local Soviets"
+ ZAG_purge_democrats: "Purge Democrats"
+ ZAG_hora_for_burak: "Hora for Burak"
+ ZAG_the_french_public_offices: "The French Public Offices"
+ ZAG_lessons_from_spain: "Lessons from Spain"
+ ZAG_write_a_new_constitution: "Write a New Constitution"
+ ZAG_the_people_parliament: "The People's Parliament"
+ ZAG_decentralisation_of_governance: "Decentralisation of Governance"
+ ZAG_middle_eastern_syndicalism: "Middle Eastern Syndicalism"
+ ZAG_establish_local_commissions: "Establish Local Commissions"
+ ZAG_establish_a_national_commission: "Establish a National Commission"
+ ZAG_the_central_committee: "The Central Committee"
+ ZAG_the_five_year_plan: "The Five Year Plan"
+ ZAG_allow_private_religion: "Allow Private Religion"
+ ZAG_state_atheism: "State Atheism"
+ ZAG_to_each_citizen_a_gov_centre: "To Each Citizen a Government Centre"
+ ZAG_to_each_citizen_a_job: "To Each Citizen a Job"
+ ZAG_the_state_duty: "The State's Duty"
+ ZAG_focus_on_heavy_industry: "Focus on Heavy Industry"
+ ZAG_our_civilians_matter: "Our Civilians' Matters"
+ ZAG_the_academie_of_adana: "The Academie of Adana"
+ ZAG_open_new_schools: "Open New Schools"
+ ZAG_womens_rights: "Womens' Rights"
+ ZAG_enforced_state_atheism: "Enforced State Atheism"
+ ZAG_establish_the_police: "Establish the Police for the Wellbeing"
+ ZAG_open_reeducation_camps: "Open Reeducation Camps"
+ ZAG_the_revolution_must_prevail: "The Revolution Must Prevail"
+ ZAG_brothers_to_arms: "Brothers, to Arms!"
+ ZAG_establish_new_barracks: "Establish New Barracks"
+ ZAG_prepare_for_war: "Prepare for War"
+ ZAG_revolutionaries_against_imperialism: "Revolutionaries Against Capitalism"
+ ZAG_union_against_all_odds: "Union Against All Odds"
+ ZAG_crusade_against_imperialism: "Crusade Against Imperialism"
+ ZAG_beacon_of_syndicalism: "Beacon of Syndicalism"
+ ZAG_prepare_citizen_for_war: "Prepare Citizens for War"
+ ZAG_for_the_greater_good: "For the Greater Good"
+ ZAG_local_defense_councils: "Local Defense Councils"
+ ZAG_democracy_in_the_middle_east: "Democracy in the Middle East"
+ ZAG_against_extremism: "Against Extremism..."
+ ZAG_we_shall_win: "...We Shall Win!"
+ ZAG_establish_the_national_assembly: "Establish the National Assembly"
+ ZAG_the_state_religion: "The State's Religion"
+ ZAG_prevent_electoral_fraud: "Prevent Electoral Fraud"
+ ZAG_voting_rights_issue: "Voting Rights' Issue"
+ ZAG_the_first_election: "The First Election"
+ ZAG_social_democracy_wins_again: "Social Democracy Wins Again!"
+ ZAG_a_turn_to_the_right: "A Turn to the Right"
+ ZAG_every_family_a_job: "Every Family a Job"
+ ZAG_nationalisation: "Nationalisation"
+ ZAG_public_infrastructure: "Public Infrastructure"
+ ZAG_collective_housing: "Collective Housing"
+ ZAG_republican_nationalism: "Republican Nationalism"
+ ZAG_armenian_roots: "Armenian Roots"
+ ZAG_reduce_government_spending: "Reduce Government Spending"
+ ZAG_individual_housing: "Individual Housing"
+ ZAG_privatise_industries: "Privatisation of Industries"
+ ZAG_subcontracting: "Subcontracting"
+ ZAG_celebrate_our_independence: "Celebrate our Independence"
+ ZAG_a_call_to_big_armenia: "A Call to Big Armenia"
+ ZAG_a_shining_example_of_democracy: "A Shining Example of Democracy"
+ ZAG_deportation_of_the_turks: "Deportation of the Turks"
+ ZAG_a_state_for_everyone: "A State for Everyone"
+ ZAG_open_the_schools: "Open the Schools"
+ ZAG_prepare_the_youth_for_war: "Prepare the Youth for War"
+ ZAG_establish_military_service: "Establish Military Service"
+ ZAG_revanchism_against_the_oppressors: "Revanchism Against the Oppressors"
+ ZAG_gendarmerie_of_the_middle_east: "Gendarmerie of the East"
+ ZAG_bring_the_empire_to_an_end: "Bring the Empire to an End"
+ ZAG_democratise_the_syrians: "Democratise the Syrians"
+ ZAG_liberate_the_kurds_from_themselves: "Liberate the Kurds from Themselves"
+ ZAG_gift_democracy_to_egypt: "Gift Democracy to Egypt"
+ ZAG_free_the_holy_lands: "Free the Holy Lands"
+ ZAG_protectors_of_the_middle_east: "United States of the Middle East"
+ ZAG_recall_sahak_ii: "Recall Sahak II"
+ ZAG_loyalty_within_the_army: "Loyalty Within the Army"
+ ZAG_negociate_with_monarchists: "Negociate with Monarchists"
+ ZAG_march_on_the_city_hall: "March on the City Hall"
+ ZAG_reestablish_the_kingdom: "Reestablish the Kingdom"
+ ZAG_purge_communists_opposants: "Purge Communist Opposants"
+ ZAG_a_grand_coronation: "A Grand Coronation"
+ ZAG_exterminate_democrats: "Exterminate Democrats"
+ ZAG_the_armenian_kingdom: "The Armenian Kingdom"
+ ZAG_reconcile_with_the_turks: "Reconcile with the Turks"
+ ZAG_proclaim_a_full_armenian_state: "Proclaim a Full Armenian State"
+ ZAG_his_majesty_industrial_plan: "His Majesty's Industrial Plan"
+ ZAG_a_conspiracy_from_within: "A Conspiracy from Within"
+ ZAG_purge_the_hittite_larpers: "Purge the Hittite Larpers"
+ ZAG_a_modern_kingdom: "A Modern Kingdom"
+ ZAG_north_the_ottomans: "North, the Ottomans!"
+ ZAG_south_the_syrians: "South, the Syrians!"
+ ZAG_east_the_homeland: "East, the Homeland!"
+ ZAG_crush_the_british: "Crush the British!"
+ ZAG_seize_the_canal: "Seize the Canal"
+ ZAG_the_end_of_the_crusade: "The End of the Crusade"
+ ZAG_proclaim_the_umesr: "Proclaim the UMESR"
+ ZAG_proclaim_the_meffc: "Proclaim the MEFFC"

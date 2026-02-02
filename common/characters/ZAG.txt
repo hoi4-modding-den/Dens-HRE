@@ -7,12 +7,30 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = liberalism
+			ideology = socialism
 			traits = {
+				ZAG_believer_in_democracy
 			}
 			expire = "1969.1.1"
 			id = -1
 			desc = ZAG_mihran_damadian_desc
+		}
+	}
+
+	ZAG_avedis_levon = {
+		name = ZAG_avedis_levon
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAG_avedis_levon
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {
+			}
+			expire = "1969.1.1"
+			id = -1
+			desc = ZAG_avedis_levon_desc
 		}
 	}
 
@@ -62,11 +80,29 @@ characters = {
 		country_leader = {
 			ideology = syndicalism
 			traits = {
-				
+				ZAG_syndicalist_leader
 			}
 			expire = "1960.1.1"
 			id = -1
 			desc = ZAG_zadig_azad_desc
+		}
+	}
+
+	ZAG_burak_diran = {
+		name = ZAG_burak_diran
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZAG_burak_diran
+			}
+		}
+		country_leader = {
+			ideology = vanguardism
+			traits = {
+				ZAG_revolution_lover
+			}
+			expire = "1960.1.1"
+			id = -1
+			desc = ZAG_burak_diran_desc
 		}
 	}
 

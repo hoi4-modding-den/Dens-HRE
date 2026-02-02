@@ -22,6 +22,19 @@ propaganda_efforts = {
 		}
 	}
 }
+integration_ZAG = {
+	icon = generic_research
+	allowed = {
+		original_tag = ZAG
+	}
+	visible = {
+		OR = {
+			has_completed_focus = ZAG_proclaim_the_umesr
+			has_completed_focus = ZAG_proclaim_the_meffc
+		}
+	}
+	priority = 10
+}
 MTG_naval_treaties = {
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = {
