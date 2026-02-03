@@ -47,7 +47,7 @@ characters = {
 		country_leader = {
 			desc = ZGR_Avraam_Benaroya_leader_desc				
 			expire = "2004.1.1"
-			ideology = synthesis_anarchism
+			ideology = ZGR_theoretical_Anarchism
 			traits = {  }
 		}
 	}	
@@ -116,5 +116,14 @@ characters = {
 			}
 		}
 	}
+
+	ZGR_Fallen_Goverment = {
+		name = "ZGR_Fallen_Goverment"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_SWE_fallen_riksdag"
+			}
+		}
+	}	
 
 }

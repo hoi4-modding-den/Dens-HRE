@@ -625,7 +625,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { #We will do the new buget
+	focus = { #We will do the new budget
 		id = ZGR_the_economic_course
 		icon = GFX_focus_SWE_beneath_sticks_and_stone
 		x = 11
@@ -641,7 +641,264 @@ focus_tree = {
 		prerequisite = { focus = ZGR_the_c_victory  }
 
 		completion_reward = {
+			country_event = ZGR_Buget.1		
 		}
 	}
 
+	focus = { #Prepere for warrr
+		id = ZGR_on_the_warpath
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 10
+		y = 17
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_the_economic_course }
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory 
+					level = 2
+					instant_build = yes 
+				}
+			}			
+		}
+	}
+	focus = { #Prepere for warrr 2
+		id = ZGR_on_the_warpath_factories
+		icon = GFX_focus_RAJ_war_taxes
+		x = 10
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_warpath }
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT
+					infrastructure < 4 
+				}
+				random_select_amount = 2
+				add_building_construction = {
+					type = infrastructure 
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = industrial_complex 
+						size > 1
+					}
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}		
+		}
+	}
+	focus = { #Prepere for warrr 3
+		id = ZGR_on_the_warpath_militias
+		icon = GFX_focus_generic_advanced_military_studies
+		x = 10
+		y = 19
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_warpath_factories }
+
+		completion_reward = {
+			add_ideas = NGR_War_Prepare
+
+			add_tech_bonus = {
+				name = ZGR_artillery_bombardment
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = ZGR_artillery_bombardment
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}			
+		}
+	}			
+	focus = { #Prepere the economy
+		id = ZGR_on_the_economy
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		x = 12
+		y = 17
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_the_economic_course }
+
+		completion_reward = {
+			add_ideas = ZGR_Farmers_Councils
+		}
+	}	
+	focus = { #Prepere the economy 2
+		id = ZGR_on_the_economy_factories
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 12
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_economy }
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT
+					infrastructure < 4 
+				}
+				random_select_amount = 2
+				add_building_construction = {
+					type = infrastructure 
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = industrial_complex 
+						size > 1
+					}
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}						
+		}
+	}
+	focus = { #Find Oil and others invest
+		id = ZGR_on_the_economy_production
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 12
+		y = 19
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_economy_factories }
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+			add_fuel = 1200
+			add_resource = {
+				type = oil
+				amount = 72
+				state = 342
+			}
+		}
+	}
+	focus = { #Political Turmoioiul
+		id = ZGR_political_turmoil_c
+		icon = GFX_focus_ARG_keep_it_in_the_party
+		x = 11
+		y = 20
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_warpath_militias focus = ZGR_on_the_economy_production }
+
+		completion_reward = {
+			country_event = ZGR_c_Govermental_Collapse.1
+		}
+	}
+	focus = {
+		id = ZGR_Sided_with_the_people
+		icon = GFX_focus_NOR_the_stumbling_storting
+		x = 11
+		y = 21
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+			has_country_flag = { flag = c_Sided_with_the_people }
+		}
+		available = {
+			has_country_flag = {
+				flag = c_Sided_with_the_people
+			}			
+		}	
+		
+		prerequisite = { focus = ZGR_political_turmoil_c  }
+
+		completion_reward = {
+
+		}
+	}		
 }

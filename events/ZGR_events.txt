@@ -2,6 +2,8 @@ add_namespace = ZGR_Political_Camp_Choice
 add_namespace = ZGR_Political_Result
 add_namespace = ZGR_Flavor
 add_namespace = ZGR_Commie_st_Election
+add_namespace = ZGR_Buget
+add_namespace = ZGR_c_Govermental_Collapse
 
 
 ### COUNTRY EVENTS ###
@@ -367,4 +369,128 @@ country_event = {
 		ai_chance = { base = 1 }
 
 	}	
+}
+
+country_event = {
+    id = ZGR_Buget.1
+    title = ZGR_Buget.1.t
+    desc = ZGR_Buget.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZGR_Buget.1.a #Major Wellfare
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_ideas = ZGR_Major_Well
+		add_political_power = -200
+	}
+
+	option = {
+        name = ZGR_Buget.1.b #Minor wellfare
+		
+		ai_chance = {
+			base = 0
+		}
+		add_ideas = ZGR_Minor_Well
+		custom_effect_tooltip = ZGR_BREAK_C_PROMISES
+		add_political_power = 250
+	}
+
+}
+
+country_event = {
+    id = ZGR_c_Govermental_Collapse.1
+    title = ZGR_c_Govermental_Collapse.1.t
+    desc = ZGR_c_Govermental_Collapse.1.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_c_Govermental_Collapse.1.a #Side with People
+		
+		ai_chance = {
+			base = 100
+		}
+
+		country_event = {
+			id = ZGR_c_Govermental_Collapse.2
+			days = 14
+			random_hours = 12
+			random_days = 1
+		}
+		add_stability = -0.15
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.3
+		}		
+		add_country_leader_role = {
+			character = ZGR_Fallen_Goverment
+			promote_leader = yes
+			country_leader = {
+				ideology = ZGR_Socialism
+				expire = "1965.1.1.1"
+				traits = {}
+			}
+		}		
+	}
+	
+}
+
+country_event = {
+    id = ZGR_c_Govermental_Collapse.2
+    title = ZGR_c_Govermental_Collapse.2.t
+    desc = ZGR_c_Govermental_Collapse.2.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_c_Govermental_Collapse.2.a #Side with People, revolution
+		
+		ai_chance = {
+			base = 100
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -1
+		}
+		swap_ideas = {
+			remove_idea = ZGR_Farmers_Councils
+			add_idea = ZGR_Farmers_Councils_War
+		}
+		add_stability = -0.50
+		set_country_flag = c_Sided_with_the_people
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			start_civil_war = {
+				ruling_party = communism
+				# Original country's ideology changes to communism
+				ideology = fascism
+				size = 0.4
+				keep_unit_leaders = {
+					#later
+				}
+				keep_political_leader = yes
+				keep_political_party_members = yes
+			}
+			ZGR = {
+				add_ideas = NGR_War_Prepare
+				add_ideas = ZGR_Farmers_Councils
+				add_ideas = ZGR_The_Megali_Idea
+			}
+		}
+	}
+	
 }

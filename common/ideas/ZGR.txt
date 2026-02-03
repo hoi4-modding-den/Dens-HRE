@@ -57,5 +57,55 @@ ideas = {
 				stability_weekly = 0.01
 			}
 		}
+
+		ZGR_Major_Well = {
+			name = ZGR_Major_Well
+			picture = HUN_revaluing_the_pengo
+			modifier = {
+				political_power_gain = 0.3
+				stability_factor = 0.2
+				consumer_goods_factor = 0.2
+				monthly_population = 0.5
+			}
+		}		
+		ZGR_Minor_Well = {
+			name = ZGR_Minor_Well
+			picture = HUN_revaluing_the_pengo
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.3
+				consumer_goods_factor = -0.1
+			}
+		}
+		NGR_War_Prepare = {
+			name = NGR_War_Prepare
+			picture = SWE_hodgepodge_of_equipment
+			modifier = {
+				army_speed_factor = 0.1
+				army_armor_speed_factor = 0.1
+				experience_gain_army = 0.2
+				army_core_defence_factor = 0.1
+			}
+		}
+		ZGR_Farmers_Councils = {
+			name = ZGR_Farmers_Councils
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.1
+				army_core_defence_factor = 0.1
+				communism_drift = 0.02
+				democratic_drift = 0.01
+			}
+		}
+		ZGR_Farmers_Councils_War = {
+			name = ZGR_Farmers_Councils
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.1
+				army_core_defence_factor = 0.1
+				communism_drift = 0.02
+				neutrality_drift = 0.01
+			}
+		}						
 	}
 }

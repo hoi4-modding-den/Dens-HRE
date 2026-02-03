@@ -4,6 +4,7 @@ scripted_gui = {
     context_type = decision_category
 
     visible = {
+	NOT = {has_country_flag = ZGR_end_of_etn_tensions}
     }
 
     triggers = {
