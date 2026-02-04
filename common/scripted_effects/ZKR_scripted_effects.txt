@@ -9,3 +9,10 @@ ZKR_transfer_FROM_subjects_to_ROOT = {
         }
     }
 }
+
+ZKR_political_power_based_on_fas_support = {
+    set_temp_variable = { fas_pop = party_popularity@fascism }
+    divide_temp_variable = { fas_pop = 10 }
+    custom_effect_tooltip = ZKR_political_power_based_on_fas_support_tt
+    add_political_power = fas_pop
+}

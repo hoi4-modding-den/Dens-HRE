@@ -2,7 +2,7 @@ capital = 350
 
 oob = "ZKR_1936"
 
-set_research_slots = 3
+set_research_slots = 2
 set_stability = 0.5
 set_war_support = 0.5
 
@@ -64,6 +64,10 @@ add_opinion_modifier = {
 add_opinion_modifier = {
 	target = ZTC
 	modifier = ZKR_ottoman_bastards
+}
+add_opinion_modifier = {
+	target = ZSH
+	modifier = ZKR_ottoman_bastards_minor
 }
 add_opinion_modifier = {
 	target = ZAR

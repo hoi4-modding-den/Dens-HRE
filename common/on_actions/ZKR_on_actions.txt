@@ -150,19 +150,21 @@ on_actions = {
                         }
                     }
                 }
-                else = {
-                    ROOT = {
-                        every_owned_state = {
-                            limit = {
-                                OR = {
-                                    is_core_of = FROM
-                                    is_claimed_by = FROM
-                                }
-                            }
-                            transfer_state_to = FROM
-                        }
+            }
+        }
+    }
+
+    on_subject_autonomy_level_change = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = { 
+                        has_country_flag = ZKR_federal_state_puppet 
+                        NOT = { has_autonomy_state = autonomy_ZKR_commonwealth_associate }
                     }
+                    FROM = { original_tag = ZKR }
                 }
+                FROM = { end_puppet = ROOT }
             }
         }
     }

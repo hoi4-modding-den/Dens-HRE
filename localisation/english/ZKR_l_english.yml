@@ -4,7 +4,7 @@
 
  ZKR_GATHERING_STORM_DESC: "The Republic of Kurdistan was officially proclaimed following the successful 1930 Kurdish rebellion ending with the Xoybûn-led Republic of Ararat declaring victory against Ottoman forces. Since then, the Xoybûn military junta has stepped down and allowed the formation of a Kurdish parliament and a democratic republic. But fragile peace rarely lasts and Kurdish democracy is at a breaking point."
 
- ZKR_intro_loc: "§LThe Republic of Kurdistan was officially proclaimed following the successful §Y1930 Kurdish rebellion§! ending with the Xoybûn-led Republic of Ararat declaring victory against Ottoman forces. Since then, the §FXoybûn§! military junta has stepped down and allowed the formation of a Kurdish parliament and a §2democratic republic§!. But fragile peace rarely lasts and Kurdish democracy is at a breaking point.\n \nWhile the §2Alliance fo§!§rr Kurdistan§! holds the majority in parliament, the coalition itself is divided between the §YIrridentists§! who wish to unite the Kurdish homelands and the so-called §YInternationalists§! who want to preserve the republic and foster multilateral cooperation within the region.\n \nAll the while, the armed forces face a similar struggle between the §FXoybûn Military Committee§! and the §gBarzani Clique§!, a group of officers that want to restore the short-lived §YKingdom of Kurdistan§! under King Barzani.§!\n \n§YPossible Paths for Kurdistan:§!\n§g  - Unite West Asia\n  - Salvation for Kurdistan\n  - Restoration of the Kingdom§!\n \n§YAchievements:§!§g\n[ZKR_achievements_intro_gui_1]\n [ZKR_achievements_intro_gui_2]\n [ZKR_achievements_intro_gui_3]\n "
+ ZKR_intro_loc: "§LThe Republic of Kurdistan was officially proclaimed following the successful §Y1930 Kurdish rebellion§! ending with the Xoybûn-led Republic of Ararat declaring victory against Ottoman forces. Since then, the §FXoybûn§! military junta has stepped down and allowed the formation of a Kurdish parliament and a §2democratic republic§!. But fragile peace rarely lasts and Kurdish democracy is at a breaking point.\n \nWhile the §2Alliance fo§!§rr Kurdistan§! holds the majority in parliament, the coalition itself is divided between the §YIrridentists§! who wish to unite the Kurdish homelands and the so-called §YInternationalists§! who want to preserve the republic and foster multilateral cooperation within the region.\n \nAll the while, the armed forces face a similar struggle between the §FXoybûn Military Committee§! and the §gBarzani Clique§!, a group of officers that want to restore the short-lived §YKingdom of Kurdistan§! under King Barzani.§!\n \n§YPossible Paths for Kurdistan:§!\n§g  - Unite the Middle East\n  - Salvation for Kurdistan\n  - Restoration of the Kingdom§!\n \n§YAchievements:§!§g\n[ZKR_achievements_intro_gui_1]\n [ZKR_achievements_intro_gui_2]\n [ZKR_achievements_intro_gui_3]\n "
  ZKR_credits: "Kurdistan Content: §H0rland0§!\nIntro GUI: §HKåsastul§!\nEverything else: §HHoi4 Modding Den Discord§!"
  ZKR_open_welcome_tooltip: "Open §YWelcome Screen§!"
  ZKR_continue_tooltip: "§CInto an uncertain future...§!"
@@ -20,8 +20,14 @@
 # COUNTRY NAMES
 
  ZKR: "Kurdistan"
- ZKR_DEF: "the Republic of Kurdistan"
+ ZKR_DEF: "Kurdistan"
  ZKR_ADJ: "Kurdish"
+ ZKR_democratic: "Kurdistan"
+ ZKR_democratic_DEF: "the Republic of Kurdistan"
+ ZKR_democratic_ADJ: "Kurdish"
+ ZKR_communism: "Kurdistan"
+ ZKR_communism_DEF: "the Republic of Kurdistan"
+ ZKR_communism_ADJ: "Kurdish"
  ZKR_neutrality: "Keyaniya Kurdistanê"
  ZKR_neutrality_DEF: "the Kingdom of Kurdistan"
  ZKR_neutrality_ADJ: "Kurdish"
@@ -50,20 +56,28 @@
  ZKR_greater_kurdistan_subject_DEF: "the Autonomy of Greater Kurdistan"
  ZKR_greater_kurdistan_subject_ADJ: "Kurdish"
 
- ZKR_commonwealth: "Commonwealth of West Asia"
- ZKR_commonwealth_DEF: "the Commonwealth of West Asia"
- ZKR_commonwealth_ADJ: "West Asian"
- ZKR_commonwealth_communism: "West Asian Union"
- ZKR_commonwealth_communism_DEF: "the Socialist Union of West Asia"
- ZKR_commonwealth_communism_ADJ: "West Asian"
+ ZKR_commonwealth: "Commonwealth of the Middle East"
+ ZKR_commonwealth_DEF: "the Commonwealth of the Middle East"
+ ZKR_commonwealth_ADJ: "Middle Eastern"
+ ZKR_commonwealth_communism: "Commonwealth of the Middle East"
+ ZKR_commonwealth_communism_DEF: "the People's Commonwealth of the Middle East"
+ ZKR_commonwealth_communism_ADJ: "Middle Eastern"
 
- ZKR_commonwealth_subject: "Autonomy of West Asia"
- ZKR_commonwealth_subject_DEF: "the Autonomy of West Asia"
- ZKR_commonwealth_subject_ADJ: "West Asian"
+ ZKR_commonwealth_subject: "Autonomy of the Middle East"
+ ZKR_commonwealth_subject_DEF: "the Autonomy of the Middle East"
+ ZKR_commonwealth_subject_ADJ: "Middle Eastern"
+
+ ZKR_hegemony_neutrality: "Barzanji's Empire"
+ ZKR_hegemony_neutrality_DEF: "Barzanji's Empire of Kurdistan"
+ ZKR_hegemony_neutrality_ADJ: "Kurdish"
 
  ZKR_british_puppet: "Mandate of Kurdistan"
  ZKR_british_puppet_DEF: "the British Mandate of Kurdistan"
  ZKR_british_puppet_ADJ: "Kurdish"
+
+ ZKR_british_puppet_mesopatamia: "Mandate of Mesopotamia"
+ ZKR_british_puppet_mesopatamia_DEF: "the British Mandate of Mesopotamia"
+ ZKR_british_puppet_mesopatamia_ADJ: "Mesopotamian"
 
  ZKR_palestine: "Free Palestine"
  ZKR_palestine_DEF: "the Republic of Palestine"
@@ -73,12 +87,39 @@
  ZKR_persia_DEF: "the Republic of Iran"
  ZKR_persia_ADJ: "Iranian"
 
+ ZBA_ZKR_subject: "Iraq Rehabilitation Zone"
+ ZBA_ZKR_subject_DEF: "the Rehabilitation Zone of Iraq"
+ ZBA_ZKR_subject_ADJ: "Iraqi"
+ ZAR_ZKR_subject: "$OVERLORDADJ$-Occupied Armenia"
+ ZAR_ZKR_subject_DEF: "the $OVERLORDADJ$ Occupation Zone of Armenia"
+ ZAR_ZKR_subject_ADJ: "Armenian"
+ ZAG_ZKR_subject: "$OVERLORDADJ$-Occupied Cilicia"
+ ZAG_ZKR_subject_DEF: "the $OVERLORDADJ$ Occupation Zone of Cilicia"
+ ZAG_ZKR_subject_ADJ: "Cilician"
+ ZAGfront_ZKR_subject: "$OVERLORDADJ$-Occupied Cilicia"
+ ZAGfront_ZKR_subject_DEF: "the $OVERLORDADJ$ Occupation Zone of Cilicia"
+ ZAGfront_ZKR_subject_ADJ: "Cilician"
 
-# FACTION NAMES
+ COUNTRY_autonomy_ZKR_commonwealth_associate: "Commonwealth-Associated $NONIDEOLOGY$"
+ COUNTRY_autonomy_ZKR_commonwealth_associate_DEF: "the $NONIDEOLOGYADJ$ Commonwealth-Associated Government"
+ COUNTRY_autonomy_ZKR_commonwealth_associate_ADJ: "$NONIDEOLOGYADJ$"
+
+ ZBA_autonomy_ZKR_commonwealth_associate: "Commonwealth-Associated Iraq"
+ ZBA_autonomy_ZKR_commonwealth_associate_DEF: "the Iraqi Commonwealth-Associated Government"
+ ZBA_autonomy_ZKR_commonwealth_associate_ADJ: "Iraqi"
+ ZAG_autonomy_ZKR_commonwealth_associate: "Commonwealth-Associated Cilicia"
+ ZAG_autonomy_ZKR_commonwealth_associate_DEF: "the Cilician Commonwealth-Associated Government"
+ ZAG_autonomy_ZKR_commonwealth_associate_ADJ: "Cilician"
+
+
+# FACTIONS
 
  ZKR_anti_imperialist_front: "Anti-Imperialist Front"
- ZKR_mesopotamian_league: "West Asian Free League"
- ZKR_kurdish_league: "Salvation Coalition"
+ ZKR_anti_imperialist_league: "League of Anti-Imperialist States"
+ ZKR_democratic_faction: "Democratic Defence Shield"
+ ZKR_kurdish_fourth_international: "West Asian Section of the Fourth International"
+ ZKR_salvation_coalition: "Salvation Coalition"
+
 
 # PARTIES
 
@@ -174,10 +215,15 @@
  ZKR_lon_kurdistan_deal_desc: "In return for recognising [DN2.GetNameDef], our nation now is the primary security guarantor of the Middle East, as affirmed by the League of Nations."
  ZKR_kurdistan_lon_deal: "[ZKR.GetAdjective] LoN Peace and Security Agreement"
  ZKR_kurdistan_lon_deal_desc: "As part of the [ZKR.GetAdjective] Peace and Security Agreement signed between [ZKR.GetNameDef] and the League of Nations, [ROOT.GetNameDef] will be recognised by the [ZKR.GetAdjective] state and in turn leave the role of the Middle-Eastern security guarantor to [ZKR.GetNameDef]."
- ZKR_pre_commonwealth_1: "West Asia Free Trade Zone"
- ZKR_pre_commonwealth_3: "West Asia Economic Pact"
+ ZKR_pre_commonwealth_1: "Middle East Free Trade Zone"
+ ZKR_pre_commonwealth_3: "Middle Eastern Economic Pact"
  ZKR_amendments: "Constitutional Amendments"
+ ZKR_enforcing_secularism: "Secularisation"
+ ZKR_islamic_socialism_idea: "Islamic Socialist Syncretism"
+ ZKR_leftist_cooperation: "Popular Cooperation"
  ZKR_internationale_aid: "Support from the International"
+ ZKR_traditionalist_resistance: "Traditionalist Resistance"
+ ZKR_cultural_apathy: "Cultural Apathy"
  ZKR_agrarian_society: "Pre-Industrial Society"
  ZKR_industrialising_society: "Industrialising Society"
  ZKR_industrialised_society: "Industrialised Society"
@@ -186,6 +232,7 @@
  ZKR_regional_initiative: "Regional Initiative"
  ZKR_defence_investments: "Defence Industry Investments"
  ZKR_ammunition_production: "Efficient Ammunition Production"
+ ZKR_intellectualism: "Haven of Intellectualism"
  ZKR_army_reform: "Reorganisation of the [ROOT.GetAdjective] Ground Forces"
  ZKR_mahabad_mobilising: "Mahabad Defence Mobilisation"
 
@@ -202,6 +249,7 @@
 # OPINION MODIFIERS
 
  ZKR_ottoman_bastards: "Former Oppressors"
+ ZKR_ottoman_bastards_minor: "$ZKR_ottoman_bastards$"
  ZKR_geopolitical_rivals: "Geopolitical Rivals"
  ZKR_false_kurdistan: "Illigitimate Kurdish State"
  ZKR_refused_protection: "Refused to Liberate Syrian Kurds"
@@ -274,18 +322,19 @@
  ZKR_alliance_of_liberation_tt: "Unlocks Decision Category: £GFX_decision_icon_small §Y$ZKR_liberation_allies_cat$§!"
  ZKR_secure_peace: "Secure Peace in the Middle East"
  ZKR_secure_peace_desc: ""
+ ZKR_secure_peace_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_establish_turkish_puppet_state$§!"
  ZKR_common_organisations: "Inter-Allied Common Organisations"
  ZKR_common_organisations_desc: ""
- ZKR_common_organisations_tt: "Unlocks Decision Category: £GFX_decision_icon_small §Y$ZKR_commonwealth_cat$§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Research Cooperation to Allied Nation§!\nUnlocks Decision: £GFX_decision_icon_small §YInvite Allied Nation to the Free-Trade Agreement§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Free Travel Zone to Allied Nation§!\n \n§GOther countries are blocked from assuming Faction Leadership.§!" # ZKR_invite_to_research_sharing, ZKR_invite_to_trade_zone, ZKR_form_free_travel_zone
+ ZKR_common_organisations_tt: "Unlocks Decision Category: £GFX_decision_icon_small §Y$ZKR_commonwealth_cat$§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Research Cooperation to Allied Nation§!\nUnlocks Decision: £GFX_decision_icon_small §YInvite Allied Nation to the Free Trade Zone§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Free Travel Zone to Allied Nation§!\n \n§GOther countries are blocked from assuming Faction Leadership.§!" # ZKR_invite_to_research_sharing, ZKR_invite_to_trade_zone, ZKR_form_free_travel_zone
  ZKR_common_organisation_faction_leadership_blocker_tt: "§RCompletion of §Y$ZKR_common_organisations$§! prevents assuming Faction Leadership.§!"
  ZKR_the_middle_eastern_peacekeepers: "Middle-Eastern Peacekeepers"
  ZKR_the_middle_eastern_peacekeepers_desc: ""
  ZKR_deal_with_the_lon: "Appeal to the League of Nations"
  ZKR_deal_with_the_lon_desc: ""
- ZKR_middle_eastern_economic_union: "Form the West Asia Economic Pact"
+ ZKR_middle_eastern_economic_union: "Form the Middle Eastern Economic Pact"
  ZKR_middle_eastern_economic_union_desc: ""
  ZKR_waep_unlocked: "Has formed a §YFree Travel Zone§! with an Allied Nation"
- ZKR_middle_eastern_economic_union_tt: "Unlocks Decision: £GFX_decision_icon_small §YInvite Allied Nation to the Economic Pact§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Federalisation to Allied Nation§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Full Integration to Allied Nation§!" # ZKR_invite_to_waep, ZKR_propose_federalisation, ZKR_propose_full_integration
+ ZKR_middle_eastern_economic_union_tt: "Unlocks Decision: £GFX_decision_icon_small §YInvite Allied Nation to the Economic Pact§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Association to Allied Nation§!\nUnlocks Decision: £GFX_decision_icon_small §YPropose Commonwealth Membership to Allied Nation§!" # ZKR_invite_to_economic_pact, ZKR_propose_federalisation, ZKR_propose_full_integration
  ZKR_the_kurdish_destiny: "The Kurdish Destiny"
  ZKR_the_kurdish_destiny_desc: ""
  ZKR_march_against_our_oppressors: "March Against Our Oppressors"
@@ -309,7 +358,7 @@
  ZKR_expel_the_british_desc: ""
  ZKR_expel_the_british_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_remove_british_government_in_palestine$§!\n Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_remove_british_government_in_cyprus$§!\n Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_remove_british_government_in_persia$§!"
 
- ZKR_elections_wow: "The Republic Stabilised"
+ ZKR_elections_wow: "Out of Gridlock"
  ZKR_elections_wow_desc: ""
  ZKR_the_democratic_republic: "The Parliamentary Republic"
  ZKR_the_democratic_republic_desc: ""
@@ -350,8 +399,10 @@
  ZKR_kurdish_hegemony_desc: ""
  ZKR_form_kurdish_hegemony_tt: "Unlocks Decision: £GFX_decision_icon_small §Y$ZKR_form_kurdish_hegemony$§!"
 
- ZKR_expedition_government: "Revive the Mesopotamian Mandate Plan"
+ ZKR_expedition_government: "Rule Britannia"
  ZKR_expedition_government_desc: ""
+ ZKR_mesopotamian_mandate_plan: "Revive the Mesopotamian Mandate Plan"
+ ZKR_mesopotamian_mandate_plan_desc: ""
 
  ZKR_undo_republican_reforms: "Undo Democratic Reforms"
  ZKR_undo_republican_reforms_desc: ""
@@ -366,8 +417,31 @@
  ZKR_rise_of_kurdistan_desc: ""
  ZKR_crush_the_turkish_spirit: "Crush Turkish Nationalism"
  ZKR_crush_the_turkish_spirit_desc: ""
- ZKR_kurdistan_over_all: "Kurdish Spirit, All-Enduring, All-Victorious"
+ ZKR_kurdistan_over_all: "Spirit of Kurdistan, All-Enduring"
  ZKR_kurdistan_over_all_desc: ""
+
+ ZKR_our_commonwealth: "Our Commonwealth"
+ ZKR_our_commonwealth_desc: ""
+ ZKR_fight_traditionalist_resistance: "Fight Traditionalist Sentiments"
+ ZKR_fight_traditionalist_resistance_desc: ""
+ ZKR_provide_education: "Educate the People"
+ ZKR_provide_education_desc: ""
+ ZKR_commonwealth_security_bureau: "People's Secretariat for Security"
+ ZKR_commonwealth_security_bureau_desc: ""
+ ZKR_middle_east_in_the_modern_age: "Modernity Waits for No One"
+ ZKR_middle_east_in_the_modern_age_desc: ""
+ ZKR_traditionalist_resistance_over: "§Y$ZKR_traditionalist_resistance$§! has been defeated."
+ ZKR_cultural_cooperation_initiative: "Cultural Cooperation Initative"
+ ZKR_cultural_cooperation_initiative_desc: ""
+ ZKR_regional_bilingualism: "Adopt Regional Multilingualism"
+ ZKR_regional_bilingualism_desc: ""
+ ZKR_adopt_esperanto: "Adopt Esperanto"
+ ZKR_adopt_esperanto_desc: ""
+ ZKR_in_varietate_concordia: "United in Diversity"
+ ZKR_in_varietate_concordia_desc: ""
+ ZKR_cultural_apathy_over: "§Y$ZKR_cultural_apathy$§! has been defeated."
+ ZKR_middle_east_is_free: "Land of the Free"
+ ZKR_middle_east_is_free_desc: ""
 
  ZKR_kurdish_industrial_revolution: "The Kurdish Industrial Revolution"
  ZKR_kurdish_industrial_revolution_desc: ""
@@ -377,6 +451,7 @@
  ZKR_mining_programs_desc: ""
  ZKR_road_works_ahead: "Road Works Ahead"
  ZKR_road_works_ahead_desc: "I sure hope it does!"
+ ZKR_road_works_ahead_tt: "Build §GFour§! §YRailway Lines§! connecting our §YAmed§! to other important cities."
  ZKR_open_up_kurdistan: "Open Up Kurdistan"
  ZKR_open_up_kurdistan_desc: ""
  ZKR_capital_city_industrial_park: "[ROOT.Capital.GetCapitalVictoryPointName] Industrial Park"
@@ -414,6 +489,18 @@
  ZKR_embrace_capitalism_desc: ""
  ZKR_modern_industry: "Kurdistan in the Modern Age"
  ZKR_modern_industry_desc: ""
+ ZKR_kurdistan_central_bank: "Middle Eastern Central Bank"
+ ZKR_kurdistan_central_bank_desc: ""
+ ZKR_prevent_inflation: "Inflation Prevention"
+ ZKR_prevent_inflation_desc: ""
+ ZKR_levy_land_value_tax: "Embrace Georgism"
+ ZKR_levy_land_value_tax_desc: ""
+ ZKR_expand_physics_institute: "Expand the Experimental Physics Department"
+ ZKR_expand_physics_institute_desc: ""
+ ZKR_free_arrested_intellectuals: "Haven of Intellectualism"
+ ZKR_free_arrested_intellectuals_desc: ""
+ ZKR_atomic_research_project: "To Defy God"
+ ZKR_atomic_research_project_desc: ""
 
  ZKR_enforce_military_neutrality: "De-Politicise the Military"
  ZKR_enforce_military_neutrality_desc: ""
@@ -432,6 +519,7 @@
  ZKR_ranger_corps_desc: ""
  ZKR_equipment_modernisation: "Equipment Modernisation"
  ZKR_equipment_modernisation_desc: ""
+ ZKR_not_pre_industrial_society_tt: "Does not have national spirit §Y$ZKR_agrarian_society$§!"
  ZKR_learn_from_the_ararat_military: "Learn from the Ararat Military"
  ZKR_learn_from_the_ararat_military_desc: ""
  ZKR_learn_from_the_ararat_military_tt: "Every §YArmy Leader§! with the §Y$war_hero$§! Trait:"
@@ -477,15 +565,11 @@
 
 # DECISIONS
 
- ZKR_kurdistan_formables_cat: "Beyond our Borders"
+ ZKR_kurdistan_formables_cat: "Our True Borders"
  ZKR_kurdistan_formables_cat_desc: "The current borders of [ROOT.GetNameDef] are unsatisfactory! We must expand beyond our borders and liberate those people that should be rightfully within our domain."
  ZKR_form_greater_kurdistan: "Form Greater Kurdistan"
  ZKR_has_formed_greater_kurdistan_tt: "Has formed §YGreater Kurdistan§!"
  ZKR_form_kurdish_hegemony: "Declare Kurdish Hegemony over the Middle East"
-
- ZKR_remove_british_government_in_palestine: "Expel the British Colonial Administration in Palestine"
- ZKR_remove_british_government_in_cyprus: "Expel the British Colonial Administration in Cyprus"
- ZKR_remove_british_government_in_persia: "Expel the British Corporate Administration in Persia"
 
  ZKR_electrify_state: "Industrial Electrification"
 
@@ -494,14 +578,19 @@
  ZKR_demand_kurdish_land_from_ally: "Demand Kurdish Lands from [FROM.GetName]" # has to also be renamed in tooltip
  ZKR_negotiating_land_from_ally: "currently negotiating with ally"
  ZKR_restore_faction: "Restore our Alliance"
+ ZKR_remove_british_government_in_palestine: "Expel the British Colonial Administration in Palestine"
+ ZKR_remove_british_government_in_cyprus: "Expel the British Colonial Administration in Cyprus"
+ ZKR_remove_british_government_in_persia: "Expel the British Corporate Administration in Persia"
+ ZKR_establish_turkish_puppet_state: "Establish a Turkish Satellite State"
+ ZKR_transfer_state_to_turkish_puppet: "Transfer [FROM.GetName] to [ZCT.GetName]"
 
  ZKR_commonwealth_cat: "Middle-Eastern Cooperation"
  ZKR_invite_to_research_sharing: "Propose Research Cooperation to [FROM.GetName]" # has to also be renamed in tooltip
- ZKR_invite_to_trade_zone: "Invite [FROM.GetName] to the Free-Trade Agreement" # has to also be renamed in tooltip
+ ZKR_invite_to_trade_zone: "Invite [FROM.GetName] to the Free Trade Zone" # has to also be renamed in tooltip
  ZKR_form_free_travel_zone: "Propose Free Travel Zone to [FROM.GetName]" # has to also be renamed in tooltip
- ZKR_invite_to_waep: "Invite [FROM.GetName] to the Economic Pact" # has to also be renamed in tooltip
- ZKR_propose_federalisation: "Propose Federalisation to [FROM.GetName]" # has to also be renamed in tooltip
- ZKR_propose_full_integration: "Propose Full Integration to [FROM.GetName]" # has to also be renamed in tooltip
+ ZKR_invite_to_economic_pact: "Invite [FROM.GetName] to the Economic Pact" # has to also be renamed in tooltip
+ ZKR_propose_federalisation: "Propose Association to [FROM.GetName]" # has to also be renamed in tooltip
+ ZKR_propose_full_integration: "Propose Commonwealth Membership to [FROM.GetName]" # has to also be renamed in tooltip
 
  ZKR_liberation_allies_cat: "Expand the Front"
  ZKR_invite_nation_into_front: "Extend Membership to [FROM.GetName]"
@@ -537,14 +626,14 @@
  ZKR_pax_kurdistan_survives: "§YPax Kurdistan§! has been realised"
 
  ZKR_global_democracy_cat: "Democracy on the Offensive"
- ZKR_assist_democrats_in_undemocratic_nation: "Support Democratic Opposition in [FROM.GetName]"
- ZKR_assist_democrats_in_democratic_nation: "Support the Democratic [FROM.GetAdjective] Government"
+ ZKR_assist_democrats_in_undemocratic_nation: "Support Democratic Opposition in [FROM.owner.GetName]"
+ ZKR_assist_democrats_in_democratic_nation: "Support the Democratic [FROM.owner.GetAdjective] Government"
  ZKR_middle_east_democracy_secured: "Democracy in the Middle East Secured" # required for next decisions, trigger: only democratic nations in the middle east
  ZKR_middle_east_democracy_secured_tt: "Unlocks £GFX_decision_icon_small §Y$ZKR_global_democracy_cat$§! Decisions outside the §gMiddle East§!."
 
  ZKR_support_the_international_revolution_cat: "Support the International Revolution"
- ZKR_assist_communists_in_uncommunist_nation: "Support Socialist Opposition in [FROM.GetName]"
- ZKR_assist_communists_in_communist_nation: "Support the Socialist [FROM.GetAdjective] Government"
+ ZKR_assist_communists_in_uncommunist_nation: "Support Socialist Opposition in [FROM.owner.GetName]"
+ ZKR_assist_communists_in_communist_nation: "Support the Socialist [FROM.owner.GetAdjective] Government"
  ZKR_middle_east_communism_secured: "Revolution in the Middle East Secured" # required for next decisions, trigger: only communist nations in the middle east
  ZKR_middle_east_communism_secured_tt: "Unlocks £GFX_decision_icon_small §Y$ZKR_support_the_international_revolution_cat$§! Decisions outside the §gMiddle East§!."
 
@@ -570,19 +659,21 @@
  ZKR_is_anti_stalinist_communist_tt_NOT: "Is not an §YAnti-Stalinist Communist Government§!"
 
 
-# SCRIPTED EFFECTS
+# GENERIC CUSTOM TOOLTIPS
 
  ZKR_transfer_FROM_subjects_to_ROOT_tt: "Every §Ypuppet§! of §Y[FROM.GetNameWithFlag]§! will be transferred to §Y[ROOT.GetNameWithFlag]§!."
+ ZKR_political_power_based_on_fas_support_tt: "Gain §YPolitical Power§! based on §FFascism Popularity§!:"
+ ZKR_load_new_focus_branch_tt: "§gLoad§! a new §YBranch§! of the §CFocus Tree§!."
 
 
 # EVENTS
 
- ZKR_politics_events.1.t: "Barzanji makes his Move!"
- ZKR_politics_events.1.desc: "WIP"
+ ZKR_politics_events.1.t: "Mahmud Barzanji disbands Parliament"
+ ZKR_politics_events.1.desc: "With Parliament falling out of favour with the common Kurds, Mahmud Barzanji has rallied his volunteer militia and his contacts in the military to orchestrate a coup against the elected government. With him only recently appointed Commander of the People's Gendarmerie of Kurdistan, he has managed to force Premier Riza to step down and hand over power to him."
  ZKR_politics_events.1.a: "Long live King Mahmud Barzanji!"
 
- ZKR_politics_events.2.t: "Xoybûn step in!"
- ZKR_politics_events.2.desc: "WIP"
+ ZKR_politics_events.2.t: "Restoration of the Military Directorate"
+ ZKR_politics_events.2.desc: "With Parliament becoming rapidly more unpopular with the Ultranationalists, the Xoybûn Military Committee has rallied around Ihsan Nuri to disband the Parliament and restore the military directorate of the Ararat Republic."
  ZKR_politics_events.2.a: "We shall lead Kurdistan to Greatness!"
 
  ZKR_politics_events.3.t: "Elections!"
@@ -596,6 +687,26 @@
  ZKR_politics_events.4.a: "Seyid Riza has the mandate."
  ZKR_politics_events.4.b: "Ahmed Barzani is victorious!"
  ZKR_politics_events.4.c: "Haji Baba Sheikh and the PIKI win!"
+
+ ZKR_politics_events.5.t: "Cracks in the Alliance"
+ ZKR_politics_events.5.desc: "The ruling coalition Alliance for Kurdistan has begun to show disharmony with the recent passing of the controversial 'Decree for the Centralisation of Government Bureaucracy'. Especially the left-wing PŞK under leadership of the Trotskyist Qazi Muhamad have started to question the words of the leaders of the democratic establishment, reducing the already low public trust of the coalition. If the situation deterioates even further, Kurdistan may face a constitutional crisis or possibly a coup from the anti-democratic or ultranationalist elements in the nation."
+ ZKR_politics_events.5.a: "Democracy must endure..."
+
+ ZKR_politics_events.6.t: "Resistance against the Commonwealth"
+ ZKR_politics_events.6.desc: "Rural elements across our nation have begun to resist our advancements, both out of xenophobia and out of traditionalist sentiment. While the Commonwealth Parliament is hard at work to bring peace and progress to the Middle East, the people within it are more concerned what will happen to them."
+ ZKR_politics_events.6.a: "They won't be able to live in the past forever."
+
+ ZKR_politics_events.7.t: "Reformation of the Front"
+ ZKR_politics_events.7.desc: "WIP"
+ ZKR_politics_events.7.a: "We shall evolve the Front!"
+ ZKR_politics_events.7.b: "Peace and Democracy must be protected!"
+ ZKR_politics_events.7.c: "Call up Trotsky, we're doing more Communism!"
+ ZKR_politics_events.7.tt: "We will lose all §Ynon-[ROOT.GetRulingIdeology]§! allies."
+
+ ZKR_politics_events.8.t: "[FROM.GetNameDefCap] reforms the Front"
+ ZKR_politics_events.8.desc: "The [FROM.GetRulingIdeology] [FROM.GetAdjective] Government has decided to reform the Anti-Imperialist Front and remove us due to our now incompatible government form."
+ ZKR_politics_events.8.a: "Pah. Those 'revolutionaries' will be the death of the all."
+ ZKR_politics_events.8.b: "We will find other allies."
 
  ZKR_diplo_events.1.t: "[FROM.GetNameDefCap] sends Aid"
  ZKR_diplo_events.1.desc: "Following correspondence between [ROOT.GetLeader] and the [FROM.GetAdjective] embassy, [FROM.GetNameDef] has decided to assist us in the civil war with arms shipments directly from [FROM.Capital.GetCapitalVictoryPointName]."
@@ -659,37 +770,96 @@
  ZKR_technical_events.3.a: "The British Fiends shall cower before our might!"
 
  ZKR_technical_events.4.t: "[FROM.GetNameDefCap] requests Kurdish Territories"
- ZKR_technical_events.4.desc: "WIP"
+ ZKR_technical_events.4.desc: "As part of the Kurdish Unification Initiative, the [FROM.GetAdjective] government has approached us with the request to hand over all of our territories inhabited by Kurdish tribes. Our diplomats are not certain if they might abandon our alliance should we refuse."
  ZKR_technical_events.4.a: "We cannot risk our alliance over this."
  ZKR_technical_events.4.b: "These lands are [ROOT.GetAdjective], not Kurdish!"
 
- ZKR_technical_events.5.t: "[FROM.GetNameDefCap] surrenders Kurdish Lands"
- ZKR_technical_events.5.desc: "WIP"
+ ZKR_technical_events.5.t: "[FROM.GetNameDefCap] transfers Kurdish Lands"
+ ZKR_technical_events.5.desc: "The [FROM.GetAdjective] government has acquiesced to our demands and handed over all Kurdish territories under their control."
  ZKR_technical_events.5.a: "Long live Diplomacy!"
 
  ZKR_technical_events.6.t: "[FROM.GetNameDefCap] rejects our Demands!"
- ZKR_technical_events.6.desc: "WIP"
+ ZKR_technical_events.6.desc: "Despite our ernest request, the [FROM.GetAdjective] government has refused to hand over their Kurdish lands."
  ZKR_technical_events.6.a: "We must liberate the oppressed masses!"
  ZKR_technical_events.6.b: "Nothing we can do, they are our allies after all."
 
- ZKR_technical_events.7.t: "[FROM.GetNameDefCap] requests we integrate"
- ZKR_technical_events.7.desc: "WIP"
+ ZKR_technical_events.7.t: "Integration into [FROM.GetNameDef]?"
+ ZKR_technical_events.7.desc: "The [FROM.GetAdjective] diplomatic envoy has handed over a proposal that if accepted would see us fully integrated into [FROM.GetNameDef]. Their government cites the fact that most of our lands are inhabited by Kurds as the reason this proposal was sent."
  ZKR_technical_events.7.a: "We are Kurds too!"
  ZKR_technical_events.7.b: "Pah, we're better than them."
 
- ZKR_technical_events.8.t: "[FROM.GetNameDefCap] accepts Integratio into [ROOT.GetNameDef]"
- ZKR_technical_events.8.desc: "WIP"
+ ZKR_technical_events.8.t: "[FROM.GetNameDefCap] accepts Integration into [ROOT.GetNameDef]"
+ ZKR_technical_events.8.desc: "Our efforts have been fruitful and the [FROM.GetAdjective] government has accepted our proposal to be integrated into Kurdistan."
  ZKR_technical_events.8.a: "Long live Diplomacy!"
 
- ZKR_technical_events.9.t: "[FROM.GetNameDefCap] rejects our Demands!"
- ZKR_technical_events.9.desc: "WIP"
+ ZKR_technical_events.9.t: "[FROM.GetNameDefCap] rejects Integration!"
+ ZKR_technical_events.9.desc: "Despite our best efforts, the [FROM.GetAdjective] government remains stubborn and refuses to allow itself to be integrated into Kurdistan."
  ZKR_technical_events.9.a: "We shall save them. From themselves!"
- ZKR_technical_events.9.b: "Nothing we can do, they are our allies after all."
+ ZKR_technical_events.9.b: "They have the right to self-determination. For now."
 
  ZKR_technical_events.10.t: "Fate of the Mahabad Government"
  ZKR_technical_events.10.desc: "With the defeat of [ZRM.GetNameDef] and the capture of their leadership, we must make a decision on how to move forwards with the situation. While most nationalist elements have called for the execution of the Mahabad leadership, there have been even more voices demanding mercy for Haji Baba Sheikh, especially because of his religious position."
  ZKR_technical_events.10.a: "Hang the Traitors."
  ZKR_technical_events.10.b: "We cannot simply execute them all."
+
+ ZKR_technical_events.11.t: "[FROM.GetNameDefCap] proposes Membership in the $ZKR_west_asia_tech_sharing_group_name$"
+ ZKR_technical_events.11.desc: "WIP"
+ ZKR_technical_events.11.a: "Scientific progress is best achieved together."
+ ZKR_technical_events.11.b: "We can't risk the enemy getting hands on our stuff!"
+
+ ZKR_technical_events.12.t: "[FROM.GetNameDefCap] joins the $ZKR_west_asia_tech_sharing_group_name$"
+ ZKR_technical_events.12.desc: "WIP"
+ ZKR_technical_events.12.a: "Wonderful."
+
+ ZKR_technical_events.13.t: "[FROM.GetNameDefCap] invites us to the $ZKR_pre_commonwealth_1$"
+ ZKR_technical_events.13.desc: "WIP"
+ ZKR_technical_events.13.a: "This will benefit the economy."
+ ZKR_technical_events.13.b: "We need to protect our business interests."
+
+ ZKR_technical_events.14.t: "[FROM.GetNameDefCap] joins the $ZKR_pre_commonwealth_1$"
+ ZKR_technical_events.14.desc: "WIP"
+ ZKR_technical_events.14.a: "Wonderful."
+
+ ZKR_technical_events.15.t: "[FROM.GetNameDefCap] offers Free Travel Zone"
+ ZKR_technical_events.15.desc: "WIP"
+ ZKR_technical_events.15.a: "How nice."
+ ZKR_technical_events.15.b: "They just want to undermine us!"
+
+ ZKR_technical_events.16.t: "[FROM.GetNameDefCap] enters our Free Travel Zone"
+ ZKR_technical_events.16.desc: "WIP"
+ ZKR_technical_events.16.a: "Wonderful."
+
+ ZKR_technical_events.17.t: "[FROM.GetNameDefCap] invites us to the $ZKR_pre_commonwealth_3$"
+ ZKR_technical_events.17.desc: "WIP"
+ ZKR_technical_events.17.a: "The more cooperation, the better."
+ ZKR_technical_events.17.b: "Nope."
+
+ ZKR_technical_events.18.t: "[FROM.GetNameDefCap] joins the $ZKR_pre_commonwealth_3$"
+ ZKR_technical_events.18.desc: "WIP"
+ ZKR_technical_events.18.a: "Wonderful."
+
+ ZKR_technical_events.19.t: "[FROM.GetNameDefCap] proposes Association"
+ ZKR_technical_events.19.desc: "WIP"
+ ZKR_technical_events.19.a: "For the common good." # get it? Because its a commonwealth?
+ ZKR_technical_events.19.b: "We cannot give up our diplomatic powers!"
+
+ ZKR_technical_events.20.t: "[FROM.GetNameDefCap] accepts Association"
+ ZKR_technical_events.20.desc: "WIP"
+ ZKR_technical_events.20.a: "United we stand!"
+
+ ZKR_technical_events.21.t: "Offer of Full Membership in the Commonwealth"
+ ZKR_technical_events.21.desc: "WIP"
+ ZKR_technical_events.21.a: "Towards a better future for the Middle East!"
+ ZKR_technical_events.21.b: "But our sovereignty!"
+
+ ZKR_technical_events.22.t: "[FROM.GetNameDefCap] becomes Commonwealth Member"
+ ZKR_technical_events.22.desc: "WIP"
+ ZKR_technical_events.22.a: "Welcome, Brothers and Sisters!"
+
+ ZKR_technical_events.23.t: "[FROM.GetNameDefCap] rejects our proposal"
+ ZKR_technical_events.23.desc: "WIP"
+ ZKR_technical_events.23.a: "Don't they see it would benefit both of us?"
+ ZKR_technical_events.23.tt: "We will be able to try again in §Y140 days§!."
 
  ZKR_lore_events.1.t: "The Calling"
  ZKR_lore_events.1.desc: "While not a very popular move, the establishment of the Kurdish Academy will assist in formulating and preserving the Kurdish language. The simple fact that the Kurdish language is so divided between dialects to the point of mutual unintelligibility is point enough to warrant the establishment of a unified language authority. The people may continue to speak with dialect, but at least in writing the Kurdish language shall be unified. Kurdish linguist and creator of the Hawar Alphabet - which is already in use by most government offices - $ZKR_celadet_ali_bedirxan$ will be appointed president-curator of the academy and has already held a debate with other Kurdish intellectuals about the effectiveness of possible edicts."
@@ -700,19 +870,28 @@
  ZKR_news_events.1.a: "Freedom for all Kurds!"
  ZKR_news_events.1.b: "It is their good right."
  ZKR_news_events.1.c: "Ha! We won't go down without a fight!"
- ZKR_news_events.1.d: "Interesting."
+ ZKR_news_events.1.d: "Is this the prelude to more fighting?"
 
  ZKR_news_events.2.t: "Sheikh Mahmud Barzanji crowned King of Kurdistan"
  ZKR_news_events.2.desc: "Following continued instability and infighting among the politicians of the Kurdish Republic, Mahmud Barzanji and his clique of military officers have overthrown the Parliament of Kurdistan, disbanding the republic and restoring the Kingdom of Kurdistan as it existed during the tumultuous period in 1921.\n \nWhile most Kurds have accepted the transition of power, many neighbouring onlookers fear that the new royal government may be more proactive in pursuing Kurdish reunification and threaten the fragile balance of power in the middle east."
  ZKR_news_events.2.a: "Long may he reign!"
  ZKR_news_events.2.b: "He is dangerous..."
  ZKR_news_events.2.c: "We will continue to observe."
+ ZKR_news_events.2.d: "Interesting."
 
  ZKR_news_events.3.t: "Xoybûn establish Kurdish Military Government"
  ZKR_news_events.3.desc: "Following continued instability and infighting among the politicians of the Kurdish Republic, the military committee of the Xoybûn have taken it into their hands to rule the Kurdish state and bring stability, disbanding the republic and instituting a military regime, similar to the provisional government during the Ararat Republic.\n \nWhile most Kurds have accepted the transition of power, many neighbouring onlookers fear that the new ultranationalist government may be more proactive in pursuing Kurdish reunification and threaten the fragile balance of power in the middle east."
  ZKR_news_events.3.a: "Death to the Enemies of Kurdistan!"
  ZKR_news_events.3.b: "Nuri cannot be trusted."
  ZKR_news_events.3.c: "Even more Instability in the Middle East."
+ ZKR_news_events.3.d: "Interesting."
+
+ ZKR_news_events.4.t: "Charter of the Commonwealth of the Middle East"
+ ZKR_news_events.4.desc: "Today, the Government of Kurdistan in cooperation with their allies has announced the formation of the Commonwealth of the Middle East and the signing of its charter.\n \nAmong other things, the charter claims to guarantee peace and freedom in the Middle East, as well as detailing how the Commonwealth's government will work.\n \nCritics cite the fact that the Commonwealth Parliament is based on the Kurdish Parliament as hint that the organisation will be to Kurd-centric to actually facilitate cooperation, especially among Turks and Arabs, who already feel distrustful towards the Kurds."
+ ZKR_news_events.4.a: "Hurray for International Cooperation!"
+ ZKR_news_events.4.b: "Let's see how this develops."
+ ZKR_news_events.4.c: "A chance for peace in the Middle East."
+ ZKR_news_events.4.d: "Hopefully everything works out in our favour."
 
 
 # STATE NAMES
@@ -754,15 +933,17 @@
 # OTHER STUFF
 
  autonomy_ZKR_governate: "Governate"
+ autonomy_ZKR_commonwealth_associate: "Commonwealth Associate"
+ ZKR_associates_not_puppets_tt: "§YAssociated Allies§! §Rmay not be annexed.§!"
 
  ZKR_west_asia_tech_sharing_group_name: "West Asia Scientific Union"
- ZKR_west_asia_tech_sharing_group_desc: ""
+ ZKR_west_asia_tech_sharing_group_desc: "A Research Sharing Group for nations in West Asia, also known as the Middle East."
 
  ZKR_militia: "Peshmerga"
  ZKR_recon: "Scouting Party"
 
  ZKR_independence_war_history_entry: "Was commended for Actions during the Kurdish Independence War"
 
- ZKR_annexed_before_conference_tt: "The §YKurdish People§! are one step closer to §YUnification§!."
+ ZKR_annexed_before_conference_tt: "The §YMiddle East§! is one step closer to §YUnification§!."
 
  custom_diff_strong_zkr: "Strengthen @ZKR Republic of Kurdistan"

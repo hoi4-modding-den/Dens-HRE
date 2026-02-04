@@ -874,6 +874,16 @@ ideas = {
 				always = yes
 			}
 
+			allowed_civil_war = {
+				OR = {
+					AND = {
+						original_tag = ZKR
+						is_faction_leader = yes
+					}
+					is_ally_with = ZKR
+				}
+			}
+
 			available = {
 				OR = {
 					AND = {
@@ -903,6 +913,16 @@ ideas = {
 				always = yes
 			}
 
+			allowed_civil_war = {
+				OR = {
+					AND = {
+						original_tag = ZKR
+						is_faction_leader = yes
+					}
+					is_ally_with = ZKR
+				}
+			}
+
 			available = {
 				OR = {
 					AND = {
@@ -930,6 +950,16 @@ ideas = {
 
 			allowed = {
 				always = yes
+			}
+
+			allowed_civil_war = {
+				OR = {
+					AND = {
+						original_tag = ZKR
+						is_faction_leader = yes
+					}
+					is_ally_with = ZKR
+				}
 			}
 
 			available = {
@@ -1099,6 +1129,66 @@ ideas = {
 			}
 		}
 
+		ZKR_enforcing_secularism = {
+
+			picture = PER_forced_secularization
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.25
+				research_speed_factor = -0.08
+			}
+		}
+
+		ZKR_islamic_socialism_idea = {
+
+			picture = PER_islamic_traditions_ns
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				political_power_cost = 0.15
+			}
+		}
+
+		ZKR_leftist_cooperation = {
+
+			picture = hol_haven_of_tolerance
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				communism_acceptance = 60
+				weekly_manpower = 500
+			}
+		}
+
 		ZKR_internationale_aid = {
 
 			picture = fourth_international
@@ -1116,6 +1206,169 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.15
 				communism_drift = 0.02
+			}
+		}
+
+		ZKR_traditionalist_resistance = {
+
+			picture = SPR_political_violence
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.25
+				research_speed_factor = 0.15
+				local_resources_factor = -0.4
+				resistance_target = 0.25
+			}
+		}
+
+		ZKR_traditionalist_resistance_1 = {
+
+			name = ZKR_traditionalist_resistance
+			picture = SPR_political_violence
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				research_speed_factor = 0.15
+				local_resources_factor = -0.25
+				resistance_target = 0.25
+			}
+		}
+
+		ZKR_traditionalist_resistance_2 = {
+
+			name = ZKR_traditionalist_resistance
+			picture = SPR_political_violence
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				local_resources_factor = -0.2
+				resistance_target = 0.25
+			}
+		}
+
+		ZKR_traditionalist_resistance_3 = {
+
+			name = ZKR_traditionalist_resistance
+			picture = SPR_political_violence
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				research_speed_factor = 0.15
+				local_resources_factor = -0.1
+			}
+		}
+
+		ZKR_traditionalist_resistance_4 = {
+
+			name = ZKR_traditionalist_resistance
+			picture = SPR_political_violence
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				research_speed_factor = 0.15
+				local_resources_factor = -0.1
+			}
+		}
+
+		ZKR_cultural_apathy = {
+
+			picture = DEN_occupation_laws
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.25
+				stability_weekly = -0.05
+				no_compliance_gain = 1
+				consumer_goods_factor = 0.25
+			}
+		}
+
+		ZKR_cultural_apathy_1 = {
+
+			picture = DEN_occupation_laws
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				stability_weekly = -0.02
+				no_compliance_gain = 1
+				consumer_goods_factor = 0.25
+			}
+		}
+
+		ZKR_cultural_apathy_2 = {
+
+			name = ZKR_cultural_apathy
+			picture = DEN_occupation_laws
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				stability_weekly = -0.02
+				no_compliance_gain = 1
+			}
+		}
+
+		ZKR_cultural_apathy_3 = {
+
+			name = ZKR_cultural_apathy
+			picture = DEN_occupation_laws
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				stability_weekly = -0.01
+				consumer_goods_factor = 0.25
 			}
 		}
 
@@ -1440,6 +1693,23 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.2
 				}
+			}
+		}
+
+		ZKR_intellectualism = {
+
+			picture = generic_research_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.1
+				research_sharing_per_country_bonus = 0.02
+				scientist_xp_gain_factor = 0.15
 			}
 		}
 

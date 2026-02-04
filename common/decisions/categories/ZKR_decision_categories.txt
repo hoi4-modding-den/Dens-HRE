@@ -43,6 +43,8 @@ ZKR_liberation_allies_cat = {
 	visible = {
 		is_faction_leader = yes
 		has_completed_focus = ZKR_alliance_of_liberation
+		NOT = { has_country_flag = ZKR_democratic_shield_formed }
+		NOT = { has_country_flag = ZKR_fourth_international_section_formed }
 	}
 
 	visible_when_empty = no

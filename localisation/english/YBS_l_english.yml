@@ -163,8 +163,8 @@
 
  YBS_market_liberalism: "Market Liberalism"
  YBS_market_liberalism_desc: "An uncompromising devotion to free markets and private wealth, Market Liberalism seeks to ensure that democracy serves the interests of commerce. The state intervenes only to safeguard property and contracts, while industry, trade, and finance shape the course of the nation. Politics is defined less by ideology than by the pursuit of prosperity." # copied _desc from hyper_capitalism in YBL_l_english.yml
- YBS_international_esperantism: "International Esperantism"
- YBS_international_esperantism_desc: "Covering a wide range of ideological positions, from Anarchism and Socialism to Social Liberalism, International Esperantism seeks to unite people and nations using the Esperanto auxiliary language. Its most prominent representative organisation is the Universala Esperanto-Asocio."
+ YBS_international_esperantism: "Esperantist Internationalism"
+ YBS_international_esperantism_desc: "Covering a wide range of ideological positions, from Anarchism and Socialism to Social Liberalism, Esperantist Internationalism seeks to unite people and nations using the Esperanto auxiliary language. Its most prominent representative organisation is the Universala Esperanto-Asocio."
 
 
 # CHARACTERS
@@ -437,8 +437,9 @@
 
  YBS_controls_highlighted_states_tt: "Controls all §Yhighlighted§! states"
  YBS_owns_controls_highlighted_states_tt: "Owns and controls all §Yhighlighted§! states"
+ YBS_owns_controls_highlighted_any_state_tt: "Owns and controls any §Yhighlighted§! state"
  YBS_owns_controls_or_zzz_highlighted_states_tt: "Owns and controls all §Yhighlighted§! states, ignores states controlled by §Y[ZZZ.GetName]§!"
- YBS_facility_construction_tt: "If there are no other §YExperimental Facilities§! in §Y[$temp_facility_state_loc$.GetName]§!, we will gain a §Y$temp_facility_type_loc$§! in §Y[$temp_facility_province_loc$.GetCapitalVictoryPointName]§!.\n\n"
+ YBS_facility_construction_tt: "If there are no other §YExperimental Facilities§! in §Y[$temp_facility_state_loc$.GetName]§!, we will gain a §Y$temp_facility_type_loc$§! in §Y[$temp_facility_state_loc$.GetCapitalVictoryPointName]§!.\n\n"
 
  YBS_colonial_garrison_unlocked: "Unlocks a unique Garrison Law in §YAfrican States§!:"
 
