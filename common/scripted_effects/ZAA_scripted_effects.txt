@@ -216,4 +216,33 @@ ZAA_calculate_naval_strength = {
 	add_to_variable = { ZAA_naval_total_score = ZAA_carrier_score }
 
 }
+
+ZAA_calculate_loot_chance = {
+	set_variable = { ZAA_loot_gain_chance = 20 }
+	add_to_variable = { ZAA_loot_gain_chance = ZAA_naval_total_score }
+	clamp_variable = {
+		var = ZAA_loot_gain_chance
+		min = 20
+		max = 100
+	}
+	set_variable = { ZAA_nothing_ever_happens = 100 }
+	subtract_from_variable = { ZAA_nothing_ever_happens = ZAA_loot_gain_chance }
+	
+	set_variable = { ZAA_political_power_loot_amount = ZAA_red_sea_controlled_states }
+	multiply_variable = { ZAA_political_power_loot_amount = 10 }
+}
+
+ZAA_add_one_treasure = {
+	random_list = {
+		10 = {
+			add_to_variable = { ZAA_construction_equipment_amount = 1 }
+		}
+		10 = {
+			add_to_variable = { ZAA_industrial_equipment_amount = 1 }
+		}
+		10 = {
+			add_to_variable = { ZAA_electronic_appliances_amount = 1 }
+		}
+	}
+}
 	

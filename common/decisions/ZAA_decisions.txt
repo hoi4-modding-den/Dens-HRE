@@ -1,0 +1,60 @@
+ZAA_piracy_category = {
+	ZAA_raid_fishing_boats = {
+		allowed = {
+			original_tag = ZAA
+		}
+		fixed_random_seed = no
+		icon = GFX_decision_generic_prepare_civil_war
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		custom_cost_text = ZAA_decision_cost_command_power_15
+		days_remove = 15
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+			}
+		}
+		remove_effect = {
+			random = {
+				chance = ZAA_loot_gain_chance
+				add_political_power = ZAA_political_power_loot_amount
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
+		}
+	}
+	ZAA_raid_merchant_ships = {
+		allowed = {
+			original_tag = ZAA
+		}
+		fixed_random_seed = no
+		icon = GFX_decision_generic_prepare_civil_war
+		custom_cost_trigger = {
+			command_power > 14
+			has_political_power > 14
+		}
+		custom_cost_text = ZAA_decision_cost_command_power_political_power_15
+		days_remove = 15
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+				add_political_power = -15
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states < 5 }
+					}
+				}
+				random = {
+					chance = ZAA_loot_gain_chance
+					custom_effect_tooltip = ZAA_gain_one_treasure
+					ZAA_add_one_treasure = yes
+				}
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
+		}
+	}
+}

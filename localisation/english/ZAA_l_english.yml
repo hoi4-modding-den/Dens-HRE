@@ -26,13 +26,26 @@
  
  ZAA_no_political_power_allowed:0 "Kleptocratic Governance"
  
- ZAA_chest_of_treasures_idea_tt:0 "Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\nIndustrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\nElectric Appliances: §H[?ZAA_electric_appliances_amount]§!"
+ ZAA_chest_of_treasures_idea_tt:0 "£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!"
  ZAA_nation_of_piranhas_rec_tt:0 "Recruitable Population Factor: §G10%§!"
  
  
  #decisions
  ZAA_piracy_category:0 "The Naval Toll System"
  ZAA_piracy_category_desc:0 " "
+ 
+ ZAA_decision_cost_command_power_15: "£command_power  §Y15§!"
+ ZAA_decision_cost_command_power_15_blocked: "£command_power  §R15§!"
+ ZAA_decision_cost_command_power_15_tooltip: "It costs £command_power  §Y15§! to take the decision"
+ 
+ ZAA_decision_cost_command_power_political_power_15: "£pol_power §Y15§! £command_power  §Y15§!"
+ ZAA_decision_cost_command_power_political_power_15_blocked: "£pol_power §R15§! £command_power  §R15§!"
+ ZAA_decision_cost_command_power_political_power_15_tooltip: "It costs £pol_power §Y15§! and £command_power  §Y15§! to take the decision"
+ 
+ ZAA_nothing_ever_happens_tt:0 "§H[?ZAA_nothing_ever_happens]%§! chance that the §Roperation fails...§!"
+ 
+ ZAA_raid_fishing_boats:0 "Raid Fishing Vessels"
+ ZAA_raid_merchant_ships:0 "Raid Merchant Ships"
  
  ZAA_invasion_plans:0 "Invasion Plans"
  ZAA_invasion_plans_desc:0 "I was working on a joke about a mummy, but I wasn't sure how to wrap it up."
