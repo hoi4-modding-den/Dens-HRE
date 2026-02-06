@@ -245,4 +245,32 @@ ZAA_add_one_treasure = {
 		}
 	}
 }
+
+ZAA_add_two_treasures = {
+	random_list = {
+		10 = {
+			add_to_variable = { ZAA_construction_equipment_amount = 2 }
+		}
+		10 = {
+			add_to_variable = { ZAA_industrial_equipment_amount = 2 }
+		}
+		10 = {
+			add_to_variable = { ZAA_electronic_appliances_amount = 2 }
+		}
+	}
+}
+
+ZAA_add_three_treasures = {
+	random_list = {
+		10 = {
+			add_to_variable = { ZAA_construction_equipment_amount = 3 }
+		}
+		10 = {
+			add_to_variable = { ZAA_industrial_equipment_amount = 3 }
+		}
+		10 = {
+			add_to_variable = { ZAA_electronic_appliances_amount = 3 }
+		}
+	}
+}
 	

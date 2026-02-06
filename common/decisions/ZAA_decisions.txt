@@ -48,11 +48,51 @@ ZAA_piracy_category = {
 						check_variable = { ZAA_red_sea_controlled_states < 5 }
 					}
 				}
-				random = {
-					chance = ZAA_loot_gain_chance
-					custom_effect_tooltip = ZAA_gain_one_treasure
-					ZAA_add_one_treasure = yes
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						#custom_effect_tooltip = ZAA_gain_one_treasure
+						#hidden_effect = {
+							ZAA_add_one_treasure = yes
+						#}
+					}
 				}
+				custom_effect_tooltip = ZAA_gain_one_treasure
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 4.99 }
+						check_variable = { ZAA_red_sea_controlled_states < 10 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						#custom_effect_tooltip = ZAA_gain_one_treasure
+						#hidden_effect = {
+							ZAA_add_two_treasures = yes
+						#}
+					}
+				}
+				custom_effect_tooltip = ZAA_gain_two_treasures
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 9.99 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						#custom_effect_tooltip = ZAA_gain_one_treasure
+						#hidden_effect = {
+							ZAA_add_three_treasures = yes
+						#}
+					}
+				}
+				custom_effect_tooltip = ZAA_gain_three_treasures
 			}
 			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
 		}
