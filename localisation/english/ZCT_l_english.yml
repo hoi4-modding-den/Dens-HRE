@@ -25,6 +25,10 @@
  ZCT_TURKISH_REPUBLIC_DEF:0 "the Turkish Republic"
  ZCT_TURKISH_REPUBLIC_ADJ:0 "Turkish"
 
+ ZCT_TURKISH_REPUBLIC_ALTERNATE:0 "Turkish Republic"
+ ZCT_TURKISH_REPUBLIC_ALTERNATE_DEF:0 "the Turkish Republic"
+ ZCT_TURKISH_REPUBLIC_ALTERNATE_ADJ:0 "Turkish"
+
  ZCT_neutrality_party:0 "National Salvation Movement"
  ZCT_neutrality_party_long:0 "National Salvation Movement"
 
@@ -76,10 +80,28 @@
  ZCT_political.1.c:0 "Izmir's access to the sea would be beneficial."
  ZCT_political.1.d:0 "Keeping the current capital would be better."
 
+ ZCT_political.2.t:0 "A new flag for the Republic"
+ ZCT_political.2.desc:0 "PLACEHOLDER"
+ ZCT_political.2.a:0 "We should distance ourselves from the previous Ottoman regimes."
+ ZCT_political.2.b:0 "Our current flag will suffice."
+
  ZCT_news.1.t:0 "Mustafa Kemal passes away"
  ZCT_news.1.desc:0 "PLACEHOLDER"
  ZCT_news.1.a:0 "..."
  ZCT_news.1.b:0 "Farewell founder of the Republic"
+
+ ZCT_news.2.t:0 "[49.controller.GetAdjectiveCap] forces take Ankara"
+ ZCT_news.2.desc:0 "PLACEHOLDER"
+ ZCT_news.2.a:0 "..."
+
+ ZCT_news.3.t:0 "[797.controller.GetAdjectiveCap] forces take Istanbul"
+ ZCT_news.3.desc:0 "PLACEHOLDER"
+ ZCT_news.3.a:0 "..."
+
+ ZCT_news.4.t:0 "Birth of the Turkish Republic"
+ ZCT_news.4.desc:0 "PLACEHOLDER"
+ ZCT_news.4.a:0 "..."
+ ZCT_news.4.b:0 "Long live the Republic!"
 
  # DECISIONS #
 
@@ -237,6 +259,9 @@
  ZCT_contact_united_kingdom_for_support_tt:0 "We will contact the [?ENG.GetFlag] §YUnited Kingdom§! for support and £decision_icon_small §Gunlock decisions§! to receive aid."
 
  ZCT_unlocks_war_decisions_tt:0 "Will £decision_icon_small §Gunlock decisions§! that allow us to launch preemptive strikes against the [ZOT.GetFlag] §Y[ZOT.GetName]§! and [ZGR.GetFlag] §Y[ZGR.GetName]§!."
+
+ ZCT_country_flag_will_change_tt:0 "§YOur country's flag will change to distance us from the previous Ottoman government.§!"
+ ZCT_country_flag_will_stay_the_same_tt:0 "§YWe will keep our country's flag.§!"
 
  # MISC
 

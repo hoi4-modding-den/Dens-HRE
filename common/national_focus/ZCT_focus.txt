@@ -756,27 +756,27 @@ focus_tree = {
 					NOT = {
 						has_template = "British Expeditionaries"
 					}
+				}
 
-					division_template = {
-						name = "British Expeditionaries"
-						is_locked = yes
-						division_names_group = ZCT_INF_01
-						priority = 1
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-							infantry = { x = 0 y = 3 }
-							infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-							infantry = { x = 1 y = 3 }
-							artillery_brigade = { x = 2 y = 0 }
-							artillery_brigade = { x = 2 y = 1 }
-						}
-						support = {
-							recon = { x = 0 y = 0 }
-						}
+				division_template = {
+					name = "British Expeditionaries"
+					is_locked = yes
+					division_names_group = ZCT_INF_01
+					priority = 1
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
 					}
 				}
 			}
