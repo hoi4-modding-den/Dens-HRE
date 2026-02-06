@@ -1,6 +1,6 @@
 focus_tree = {
 	id = zgr-main
-	continuous_focus_position = { x = -40 y = 2870 } 
+	continuous_focus_position = { x = -40 y = 4000 } 
 	country = {
 		factor = 0
 		modifier = {
@@ -575,29 +575,12 @@ focus_tree = {
 		}
 	}
 
-	#The [?] Victory!
-	focus = {
-		id = ZGR_thevictory
-		icon = GFX_focus_NOR_the_stumbling_storting
-		x = 11
-		y = 15
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		available = {has_country_flag = ZGR_Elect_End}		
-		prerequisite = { focus = ZGR_avoid_a_goverment_crackdown  }
-
-		completion_reward = {
-
-		}
-	}
 
 	#The [c] Victory!
 	focus = {
 		id = ZGR_the_c_victory
 		icon = GFX_focus_NOR_the_stumbling_storting
-		x = 11
+		x = 3
 		y = 15
 		cost = 5
 		search_filters = {
@@ -628,7 +611,7 @@ focus_tree = {
 	focus = { #We will do the new budget
 		id = ZGR_the_economic_course
 		icon = GFX_focus_SWE_beneath_sticks_and_stone
-		x = 11
+		x = 3
 		y = 16
 		cost = 5
 		search_filters = {
@@ -648,7 +631,7 @@ focus_tree = {
 	focus = { #Prepere for warrr
 		id = ZGR_on_the_warpath
 		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
-		x = 10
+		x = 2
 		y = 17
 		cost = 5
 		search_filters = {
@@ -684,7 +667,7 @@ focus_tree = {
 	focus = { #Prepere for warrr 2
 		id = ZGR_on_the_warpath_factories
 		icon = GFX_focus_RAJ_war_taxes
-		x = 10
+		x = 2
 		y = 18
 		cost = 5
 		search_filters = {
@@ -732,7 +715,7 @@ focus_tree = {
 	focus = { #Prepere for warrr 3
 		id = ZGR_on_the_warpath_militias
 		icon = GFX_focus_generic_advanced_military_studies
-		x = 10
+		x = 2
 		y = 19
 		cost = 10
 		search_filters = {
@@ -769,7 +752,7 @@ focus_tree = {
 	focus = { #Prepere the economy
 		id = ZGR_on_the_economy
 		icon = GFX_focus_generic_workers_and_farmers_rise
-		x = 12
+		x = 4
 		y = 17
 		cost = 5
 		search_filters = {
@@ -788,7 +771,7 @@ focus_tree = {
 	focus = { #Prepere the economy 2
 		id = ZGR_on_the_economy_factories
 		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
-		x = 12
+		x = 4
 		y = 18
 		cost = 5
 		search_filters = {
@@ -836,7 +819,7 @@ focus_tree = {
 	focus = { #Find Oil and others invest
 		id = ZGR_on_the_economy_production
 		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
-		x = 12
+		x = 4
 		y = 19
 		cost = 5
 		search_filters = {
@@ -861,7 +844,7 @@ focus_tree = {
 	focus = { #Political Turmoioiul
 		id = ZGR_political_turmoil_c
 		icon = GFX_focus_ARG_keep_it_in_the_party
-		x = 11
+		x = 3
 		y = 20
 		cost = 5
 		search_filters = {
@@ -879,7 +862,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZGR_Sided_with_the_people
-		icon = GFX_focus_NOR_the_stumbling_storting
+		icon = GFX_focus_ARG_establish_the_free_association
 		x = 11
 		y = 21
 		cost = 5
@@ -898,6 +881,75 @@ focus_tree = {
 		prerequisite = { focus = ZGR_political_turmoil_c  }
 
 		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZGR_Win_The_civil
+		icon = GFX_focus_SOV_support_spanish_poum
+		x = 10
+		y = 22
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}	
+		
+		prerequisite = { focus = ZGR_Sided_with_the_people  }
+
+		completion_reward = {
+			add_timed_idea = { idea = ZGR_volunteers_c  days = 120 }
+		}
+	}	
+	focus = {
+		id = ZGR_Win_The_civil_equipment
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		x = 12
+		y = 22
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}	
+		
+		prerequisite = { focus = ZGR_Sided_with_the_people  }
+
+		completion_reward = {
+			add_timed_idea = { idea = ZGR_guns_c days = 85 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 670
+				producer = ZGR
+			}
+		}
+	}	
+	focus = {
+		id = ZGR_Declare_the_Anarchist_state
+		icon = GFX_focus_ARG_no_gods_no_masters
+		x = 11
+		y = 23
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {
+			has_war = no
+		}	
+		
+		prerequisite = { focus = ZGR_Win_The_civil focus = ZGR_Win_The_civil_equipment }
+
+		completion_reward = {
+			custom_effect_tooltip = ZGR_FOCUS_TREE_WILL_CHANGE
+			#load_focus_tree = zgr-c-anarchy
+			mark_focus_tree_layout_dirty = yes
 
 		}
 	}		

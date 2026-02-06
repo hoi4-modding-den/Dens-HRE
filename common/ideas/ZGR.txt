@@ -9,7 +9,24 @@ ideas = {
 				attack_bonus_against_cores = 0.05
 			}
 		}
-
+		ZGR_volunteers_c = {
+			name = ZGR_volunteers_c
+			picture = NOR_sivog
+			modifier = {
+				weekly_manpower = 1000
+				attack_bonus_against_cores = 0.15
+				equipment_capture = 0.5
+			}
+		}
+		ZGR_guns_c = {
+			name = ZGR_guns_c
+			picture = POL_the_peasants_strike
+			modifier = {
+				weekly_manpower = 100
+				attack_bonus_against_cores = 0.05
+				production_factory_efficiency_gain_factor = 0.5
+			}
+		}		
 		ZGR_The_Turk_Problem = {
 			name = ZGR_The_Turk_Problem
 			picture = tur_coordinated_balkan_armed_forces
