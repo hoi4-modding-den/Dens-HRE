@@ -1,0 +1,323 @@
+focus_tree = {
+	id = zgr-c-anarchy
+	continuous_focus_position = { x = 80 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = ZGR
+		}
+	}
+
+	# The Anarchist cities
+	focus = {
+		id = ZGR_the_anarchist_cities
+		icon = GFX_focus_DEN_civilian_preparations
+		x = 13
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_anarchist_congress }
+	}
+
+	# More Rural Mechanisation
+	focus = {
+		id = ZGR_more_rural_mechanisation
+		icon = GFX_focus_SOV_organize_wreckers
+		x = 6
+		y = 2
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = ZGR_the_anarchist_congress }
+	}
+
+	# The Anarchist Congress
+	focus = {
+		id = ZGR_the_anarchist_congress
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		x = 9
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_party_name = { 
+				ideology = communism
+				long_name = ZGR_Anarchy_Congress_Name_long
+				name = ZGR_Anarchy_Congress_Name
+			}
+		}
+	}
+
+	# Free the old Government
+	focus = {
+		id = ZGR_free_the_old_goverment
+		icon = GFX_focus_ARG_strengthening_the_concordancia
+		x = 13
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_anarchist_cities }
+	}
+
+	# The Turkish Issue
+	focus = {
+		id = ZGR_the_turkish_issue
+		icon = GFX_focus_TUR_turanist_ambition
+		x = 5
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_more_rural_mechanisation }
+		completion_reward = { 
+			set_country_flag = et_tense_ended
+			custom_effect_tooltip = ZGR_FOCUS_ANARCHY_NO_TENSION
+		}
+	}
+
+	# Fortify the Cities
+	focus = {
+		id = ZGR_fortify_the_cities
+		icon = GFX_goal_generic_fortify_city
+		x = 11
+		y = 4
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_free_generals }
+	}
+
+	# Free Speech
+	focus = {
+		id = ZGR_free_speech
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 5
+		y = 4
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_turkish_issue }
+	}
+
+	# Burn down the Central Bank
+	focus = {
+		id = ZGR_burn_down_the_central_bank
+		icon = GFX_focus_BRA_utilize_security_law
+		x = 15
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_free_the_old_goverment }
+		mutually_exclusive = { focus = ZGR_take_things_slow }
+	}
+
+	# Take things slow
+	focus = {
+		id = ZGR_take_things_slow
+		icon = GFX_focus_FIN_pragmatic_socialism
+		x = 11
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_free_the_old_goverment }
+		prerequisite = { focus = ZGR_fortify_the_cities }
+		mutually_exclusive = { focus = ZGR_burn_down_the_central_bank }
+	}
+
+	# Control the Fallout
+	focus = {
+		id = ZGR_controll_the_fallout
+		icon = GFX_focus_AST_squander_bug
+		x = 15
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_burn_down_the_central_bank }
+	}
+
+	# Redistribute the Money
+	focus = {
+		id = ZGR_redistribute_the_money
+		icon = GFX_focus_CHL_strengthen_the_central_bank
+		x = 10
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_take_things_slow }
+	}
+
+	# For Freedom!
+	focus = {
+		id = ZGR_forfreedom
+		icon = GFX_focus_generic_total_war
+		x = 15
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_controll_the_fallout }
+	}
+
+	# The Anarchist Air Force
+	focus = {
+		id = ZGR_the_anarchist_air_force
+		icon = GFX_goal_continuous_air_production
+		x = 12
+		y = 6
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_take_things_slow }
+	}
+
+	# The Disbanding of the Army
+	focus = {
+		id = ZGR_the_disbanding_of_the_army
+		icon = GFX_focus_smiling_buddha
+		x = 9
+		y = 2
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_anarchist_congress }
+	}
+
+	# The Rural Corp
+	focus = {
+		id = ZGR_the_rural_corp
+		icon = GFX_focus_FIN_the_cold_front
+		x = 7
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_more_rural_mechanisation }
+		prerequisite = { focus = ZGR_the_disbanding_of_the_army }
+	}
+
+	# The Free Generals
+	focus = {
+		id = ZGR_the_free_generals
+		icon = GFX_focus_generic_women_in_military
+		x = 11
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_disbanding_of_the_army }
+	}
+
+	# Rural Terrain Specialists
+	focus = {
+		id = ZGR_rural_terrain_specialists
+		icon = GFX_focus_FIN_weapon_caches
+		x = 7
+		y = 4
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_rural_corp }
+	}
+
+	# Mechanize the Supply
+	focus = {
+		id = ZGR_mechanize_the_supply
+		icon = GFX_focus_generic_armored_air_support
+		x = 7
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_rural_terrain_specialists }
+	}
+
+	# Communal Universities
+	focus = {
+		id = ZGR_communal_universities
+		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
+		x = 10
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_redistribute_the_money }
+	}
+
+	# The Urban Specialists
+	focus = {
+		id = ZGR_the_urban_specialists
+		icon = GFX_focus_generic_reorient_production
+		x = 12
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_anarchist_air_force }
+	}
+
+	# Free Farms
+	focus = {
+		id = ZGR_free_farms
+		icon = GFX_focus_generic_farmland
+		x = 5
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_free_speech }
+	}
+
+	# Night Patrols
+	focus = {
+		id = ZGR_night_patrols
+		icon = GFX_focus_URG_colorados
+		x = 12
+		y = 8
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_urban_specialists }
+	}
+
+	# The Great Revival
+	focus = {
+		id = ZGR_the_great_revival
+		icon = GFX_focus_SWE_urbanization
+		x = 10
+		y = 8
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_communal_universities }
+	}
+
+	# The Rural Freedom
+	focus = {
+		id = ZGR_the_rural_freedom
+		icon = GFX_focus_SWE_form_rfsu
+		x = 6
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_mechanize_the_supply }
+		prerequisite = { focus = ZGR_free_farms }
+	}
+
+	# Propagate the Cause
+	focus = {
+		id = ZGR_propagate_the_cause
+		icon = GFX_focus_por_workers_of_iberia
+		x = 10
+		y = 9
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_great_revival }
+	}
+
+	# Full Equality
+	focus = {
+		id = ZGR_full_equality
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		x = 12
+		y = 9
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_night_patrols }
+	}
+
+	# Anarchy Cities
+	focus = {
+		id = ZGR_anarchy_cities
+		icon = GFX_focus_SWE_hygienic_housing
+		x = 11
+		y = 10
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_propagate_the_cause }
+		prerequisite = { focus = ZGR_full_equality }
+	}
+}

@@ -948,9 +948,9 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = ZGR_FOCUS_TREE_WILL_CHANGE
-			#load_focus_tree = zgr-c-anarchy
+			load_focus_tree = zgr-c-anarchy
 			mark_focus_tree_layout_dirty = yes
-
+			set_cosmetic_tag = ZGR_Start_Anarchism
 		}
 	}		
 }

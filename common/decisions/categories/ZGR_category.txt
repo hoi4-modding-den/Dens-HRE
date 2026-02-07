@@ -5,6 +5,13 @@ ZGR_my_category = {
 
 	allowed = { original_tag = ZGR }
 
+	visible = {
+				original_tag = ZGR
+			NOT = {
+				has_country_flag = et_tense_ended
+			}
+	}
+
 	priority = 1000
 
 	scripted_gui = civilwar_gui
