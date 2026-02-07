@@ -32,12 +32,16 @@ set_variable = { ZAA_piranhas_conscription_factor_variable = 0.1 }
 set_variable = { ZAA_command_power_variable = 0.50 }
 set_variable = { ZAA_convoy_raiding_variable = 0.15 }
 
+set_variable = { ZAA_inf_equipment_level = 1 }
+set_variable = { ZAA_art_equipment_level = 1 }
+
 set_country_flag = DEN_hide_economic_decisions
 set_country_flag = DEN_hide_propaganda_decisions
 set_country_flag = DEN_hide_political_decisions
 
 set_technology = {
 	infantry_weapons = 1
+	infantry_weapons1 = 1
 	tech_support = 1		
 	tech_engineers = 1
 	gw_artillery = 1

@@ -7,6 +7,9 @@ on_actions = {
 				ZAA_calculate_red_sea_coastal_states_amount = yes
 				ZAA_calculate_naval_strength = yes
 				ZAA_calculate_loot_chance = yes
+				ZAA_randomize_support_equipment_origin = yes
+				ZAA_randomize_artillery_equipment_origin = yes
+				ZAA_randomize_infantry_equipment_origin = yes
 			}
         }
     }
@@ -15,6 +18,55 @@ on_actions = {
 			ZAA_calculate_red_sea_coastal_states_amount = yes
 			ZAA_calculate_naval_strength = yes
 			ZAA_calculate_loot_chance = yes
+			
+			#tech variable nonsense
+			if = {
+				limit = {
+					has_tech = improved_infantry_weapons
+					NOT = {
+						has_country_flag = ZAA_set_inf_var_to_2
+					}
+				}
+				set_country_flag = ZAA_set_inf_var_to_2
+				set_variable = { ZAA_inf_equipment_level = 2 }
+			}
+			if = {
+				limit = {
+					has_tech = advanced_infantry_weapons
+					NOT = {
+						has_country_flag = ZAA_set_inf_var_to_3
+					}
+				}
+				set_country_flag = ZAA_set_inf_var_to_3
+				set_variable = { ZAA_inf_equipment_level = 3 }
+			}
+			if = {
+				limit = {
+					has_tech = artillery1
+					NOT = {
+						has_country_flag = ZAA_set_art_var_to_2
+					}
+				}
+				set_country_flag = ZAA_set_art_var_to_2
+				set_variable = { ZAA_art_equipment_level = 2 }
+			}
+			if = {
+				limit = {
+					has_tech = artillery4
+					NOT = {
+						has_country_flag = ZAA_set_art_var_to_3
+					}
+				}
+				set_country_flag = ZAA_set_art_var_to_3
+				set_variable = { ZAA_art_equipment_level = 3 }
+			}
+		}
+	}
+	on_weekly_ZAA = {
+		effect = {
+			ZAA_randomize_support_equipment_origin = yes
+			ZAA_randomize_artillery_equipment_origin = yes
+			ZAA_randomize_infantry_equipment_origin = yes
 		}
 	}
 }

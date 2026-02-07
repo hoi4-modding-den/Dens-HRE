@@ -6,8 +6,8 @@
  ZAA_neutrality_party:0 "The Naval Clique"
  ZAA_fascism_party_long:0 "Movement for the Restoration of the Abbasid Caliphate"
  ZAA_fascism_party:0 "MRAC"
- ZAA_democratic_party_long:0 "Progressive Movement of Egypt and Arabia"
- ZAA_democratic_party:0 "PMEA"
+ ZAA_democratic_party_long:0 "Liberal Party of the Middle East"
+ ZAA_democratic_party:0 "LPME"
  ZAA_communism_party_long:0 "Communist Liberation Rally of the Red Sea"
  ZAA_communism_party:0 "CLRRS"
  
@@ -34,21 +34,31 @@
  ZAA_piracy_category:0 "The Naval Toll System"
  ZAA_piracy_category_desc:0 " "
  
- ZAA_decision_cost_command_power_15: "£command_power  §Y15§!"
- ZAA_decision_cost_command_power_15_blocked: "£command_power  §R15§!"
- ZAA_decision_cost_command_power_15_tooltip: "It costs £command_power  §Y15§! to take the decision"
+ ZAA_decision_cost_command_power_15: "£command_power §Y15§!"
+ ZAA_decision_cost_command_power_15_blocked: "£command_power §R15§!"
+ ZAA_decision_cost_command_power_15_tooltip: "It costs £command_power §Y15§! to take the decision"
  
- ZAA_decision_cost_command_power_political_power_15: "£pol_power §Y15§! £command_power  §Y15§!"
+ ZAA_decision_cost_command_power_political_power_15: "£pol_power §Y15§! £command_power §Y15§!"
  ZAA_decision_cost_command_power_political_power_15_blocked: "£pol_power §R15§! £command_power  §R15§!"
- ZAA_decision_cost_command_power_political_power_15_tooltip: "It costs £pol_power §Y15§! and £command_power  §Y15§! to take the decision"
+ ZAA_decision_cost_command_power_political_power_15_tooltip: "It costs £pol_power §Y15§! and £command_power §Y15§! to take the decision"
+ 
+ ZAA_decision_cost_command_power_political_power_15_30: "£pol_power §Y50§! £command_power §Y15§!"
+ ZAA_decision_cost_command_power_political_power_15_30_blocked: "£pol_power §R50§! £command_power §R15§!"
+ ZAA_decision_cost_command_power_political_power_15_30_tooltip: "It costs £pol_power §Y50§! and £command_power §Y15§! to take the decision"
  
  ZAA_nothing_ever_happens_tt:0 "§H[?ZAA_nothing_ever_happens]%§! chance that the §Roperation fails...§!"
+ 
  ZAA_gain_one_treasure:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+1§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+1§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+1§! £ZAA_electronic_appliances_texticon Electronic Appliances"
  ZAA_gain_two_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+2§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+2§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+2§! £ZAA_electronic_appliances_texticon Electronic Appliances"
  ZAA_gain_three_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+3§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+3§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+3§! £ZAA_electronic_appliances_texticon Electronic Appliances"
  
+ ZAA_add_weapons_tier_1_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+300§! Infantry Equipment \n§G+30§! Support Equipment \n§G+12§! Artillery Equipment"
+ ZAA_add_weapons_tier_2_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+600§! Infantry Equipment \n§G+60§! Support Equipment \n§G+24§! Artillery Equipment"
+ ZAA_add_weapons_tier_3_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+900§! Infantry Equipment \n§G+90§! Support Equipment \n§G+36§! Artillery Equipment"
+ 
  ZAA_raid_fishing_boats:0 "Raid Fishing Vessels"
  ZAA_raid_merchant_ships:0 "Raid Merchant Ships"
+ ZAA_raid_military_convoys:0 "Raid Military Convoys"
  
  ZAA_invasion_plans:0 "Invasion Plans"
  ZAA_invasion_plans_desc:0 "I was working on a joke about a mummy, but I wasn't sure how to wrap it up."
@@ -58,7 +68,7 @@
  
  #decision gui
  ZAA_controlled_states_tt:0 "We currently control §C[?ZAA_red_sea_controlled_states]§! of the §H17§! states necessary for establishing naval dominance over the Red Sea"
- ZAA_ships_info_tt:0 "Submarines: §H[?ZAA_submarine_score]§!\nDestroyers: §H[?ZAA_destroyer_score]§!\nLight Cruisers: §H[?ZAA_light_cruiser_count]§!\nHeavy Ships: §H[?ZAA_battleship_count]§!\nCarriers: §H[?ZAA_cruiser_count]§!\nAdditional Bonues: §H[?ZAA_naval_score_additional_bonuses]§!\n\nTotal Strength: §C[?ZAA_naval_total_score]§!"
+ ZAA_ships_info_tt:0 "Submarines: §H[?ZAA_submarine_score]§!\nDestroyers: §H[?ZAA_destroyer_score]§!\nLight Cruisers: §H[?ZAA_light_cruiser_count]§!\nHeavy Ships: §H[?ZAA_battleship_count]§!\nCarriers: §H[?ZAA_cruiser_count]§!\nAdditional Bonuses: §H[?ZAA_naval_score_additional_bonuses]§!\n\nTotal Strength: §C[?ZAA_naval_total_score]§!"
 
  
  #leader(s)

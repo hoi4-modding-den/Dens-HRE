@@ -273,4 +273,314 @@ ZAA_add_three_treasures = {
 		}
 	}
 }
+
+ZAA_add_weapons_tier_1 = {
+	meta_effect = {
+		text = {
+			random_list = {
+				10 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_[INF_LEVEL]
+						amount = 300
+						producer = global.ZAA_random_infantry_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 30
+						producer = global.ZAA_random_support_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_[ART_LEVEL]
+						amount = 12
+						producer = global.ZAA_random_artillery_origin_country
+					}
+				}
+			}
+		}
+		INF_LEVEL = "[?ZAA_inf_equipment_level]"
+		ART_LEVEL = "[?ZAA_art_equipment_level]"
+	}
+}
+
+ZAA_add_weapons_tier_2 = {
+	meta_effect = {
+		text = {
+			random_list = {
+				10 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_[INF_LEVEL]
+						amount = 600
+						producer = global.ZAA_random_infantry_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 60
+						producer = global.ZAA_random_support_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_[ART_LEVEL]
+						amount = 24
+						producer = global.ZAA_random_artillery_origin_country
+					}
+				}
+			}
+		}
+		INF_LEVEL = "[?ZAA_inf_equipment_level]"
+		ART_LEVEL = "[?ZAA_art_equipment_level]"
+	}
+}
+
+ZAA_add_weapons_tier_3 = {
+	meta_effect = {
+		text = {
+			random_list = {
+				10 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_[INF_LEVEL]
+						amount = 900
+						producer = global.ZAA_random_infantry_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 90
+						producer = global.ZAA_random_support_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_[ART_LEVEL]
+						amount = 36
+						producer = global.ZAA_random_artillery_origin_country
+					}
+				}
+			}
+		}
+		INF_LEVEL = "[?ZAA_inf_equipment_level]"
+		ART_LEVEL = "[?ZAA_art_equipment_level]"
+	}
+}
+
+ZAA_randomize_support_equipment_origin = {
+	ZAA = {
+		random_country = {
+			limit = {
+				exists = yes
+				has_tech = tech_support
+				NOT = {
+					original_tag = ZZZ
+					original_tag = ZZY
+					original_tag = ZAA
+				}
+			}
+			ROOT = { 
+				set_variable = { global.ZAA_random_support_origin_country = PREV } 
+			}
+		}
+	}
+}
+ZAA_randomize_infantry_equipment_origin = {
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 1 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = infantry_weapons1
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_infantry_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 2 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = improved_infantry_weapons
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_infantry_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 2 }
+				any_other_country = {
+					NOT = {
+						has_tech = improved_infantry_weapons
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_infantry_origin_country = ZAA }
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 3 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = advanced_infantry_weapons
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_infantry_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 3 }
+				any_other_country = {
+					NOT = {
+						has_tech = advanced_infantry_weapons
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_infantry_origin_country = ZAA }
+	}
+}
+
+ZAA_randomize_artillery_equipment_origin = {
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 1 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = gw_artillery
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_artillery_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 2 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = artillery1
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_artillery_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 2 }
+				any_other_country = {
+					NOT = {
+						has_tech = artillery1
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_artillery_origin_country = ZAA }
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 3 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = artillery4
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_artillery_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 3 }
+				any_other_country = {
+					NOT = {
+						has_tech = artillery4
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_artillery_origin_country = ZAA }
+	}
+}
 	

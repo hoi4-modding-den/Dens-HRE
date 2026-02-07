@@ -97,4 +97,89 @@ ZAA_piracy_category = {
 			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
 		}
 	}
+	ZAA_raid_military_convoys = {
+		allowed = {
+			original_tag = ZAA
+		}
+		fixed_random_seed = no
+		icon = GFX_decision_generic_prepare_civil_war
+		custom_cost_trigger = {
+			command_power > 14
+			has_political_power > 49
+		}
+		custom_cost_text = ZAA_decision_cost_command_power_political_power_15_30
+		days_remove = 15
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+				add_political_power = -50
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states < 5 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						ZAA_add_weapons_tier_1 = yes
+					}
+				}
+				custom_effect_tooltip = ZAA_add_weapons_tier_1_tt
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 4.99 }
+						check_variable = { ZAA_red_sea_controlled_states < 10 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						ZAA_add_weapons_tier_2 = yes
+					}
+				}
+				custom_effect_tooltip = ZAA_add_weapons_tier_2_tt
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 9.99 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						ZAA_add_weapons_tier_3 = yes
+					}
+				}
+				custom_effect_tooltip = ZAA_add_weapons_tier_3_tt
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
+		}
+	}
+}
+
+debug_decisions = {
+	ZAA_random_equipment_debug = {
+		available = {
+			is_ai = no
+			is_debug = yes
+		}
+		allowed = {
+			original_tag = ZAA
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 24
+				producer = global.ZAA_random_support_origin_country
+			}
+		}
+	}
 }
