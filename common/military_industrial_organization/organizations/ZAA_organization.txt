@@ -1,0 +1,29 @@
+ZAA_safaga_shipyard = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_BRA_arsenal_de_marinha
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+
+}
+
+ZAA_special_research_division = {
+	include = generic_submarine_organization
+	icon = GFX_idea_gre_astilleros_onassis
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+
+}
+
+ZAA_tabuk_arsenal = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_raj_rifle_factory_ishapore
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+
+}

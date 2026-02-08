@@ -39,7 +39,7 @@
  ZAA_decision_cost_command_power_15_tooltip: "It costs £command_power §Y15§! to take the decision"
  
  ZAA_decision_cost_command_power_political_power_15: "£pol_power §Y15§! £command_power §Y15§!"
- ZAA_decision_cost_command_power_political_power_15_blocked: "£pol_power §R15§! £command_power  §R15§!"
+ ZAA_decision_cost_command_power_political_power_15_blocked: "£pol_power §R15§! £command_power §R15§!"
  ZAA_decision_cost_command_power_political_power_15_tooltip: "It costs £pol_power §Y15§! and £command_power §Y15§! to take the decision"
  
  ZAA_decision_cost_command_power_political_power_15_30: "£pol_power §Y50§! £command_power §Y15§!"
@@ -52,9 +52,9 @@
  ZAA_gain_two_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+2§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+2§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+2§! £ZAA_electronic_appliances_texticon Electronic Appliances"
  ZAA_gain_three_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+3§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+3§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+3§! £ZAA_electronic_appliances_texticon Electronic Appliances"
  
- ZAA_add_weapons_tier_1_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+300§! Infantry Equipment \n§G+30§! Support Equipment \n§G+12§! Artillery Equipment"
- ZAA_add_weapons_tier_2_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+600§! Infantry Equipment \n§G+60§! Support Equipment \n§G+24§! Artillery Equipment"
- ZAA_add_weapons_tier_3_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+900§! Infantry Equipment \n§G+90§! Support Equipment \n§G+36§! Artillery Equipment"
+ ZAA_add_weapons_tier_1_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+300§! Foreign Infantry Equipment \n§G+30§! Foreign Support Equipment \n§G+12§! Foreign Artillery Pieces"
+ ZAA_add_weapons_tier_2_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+600§! Foreign Infantry Equipment \n§G+60§! Foreign Support Equipment \n§G+24§! Foreign Artillery Pieces"
+ ZAA_add_weapons_tier_3_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+900§! Foreign Infantry Equipment \n§G+90§! Foreign Support Equipment \n§G+36§! Foreign Artillery Pieces"
  
  ZAA_raid_fishing_boats:0 "Raid Fishing Vessels"
  ZAA_raid_merchant_ships:0 "Raid Merchant Ships"
@@ -89,3 +89,9 @@
  #other characters
  ZAA_ibrahim_altassan:0 "Ibrahim al-Tassan"
  ZAA_hekmet_fahmy:0 "Hekmet Fahmy"
+ 
+ #mios
+ ZAA_safaga_shipyard:0 "Safaga Shipyard"
+ ZAA_special_research_division:0 "Special Research Division for Submersibles"
+ 
+ ZAA_tabuk_arsenal:0 "Tabuk Armoury"
