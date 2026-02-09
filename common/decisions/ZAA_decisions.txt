@@ -165,7 +165,117 @@ ZAA_piracy_category = {
 }
 
 ZAA_utilizing_our_spoils = {
-	
+	ZAA_build_dockyard = {
+		allowed = { 
+			original_tag = ZAA
+		}
+		icon = GFX_decision_generic_merge_plant_ship
+		custom_cost_trigger = {
+			check_variable = {
+				ZAA_construction_equipment_amount > 0.99
+			}
+			check_variable = {
+				ZAA_industrial_equipment_amount > 0.99
+			}
+		}
+		custom_cost_text = ZAA_treasure_cost_dockyard
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { ZAA_construction_equipment_amount = 1 }
+				subtract_from_variable = { ZAA_industrial_equipment_amount = 1 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ZAA_build_military_factory = {
+		allowed = { 
+			original_tag = ZAA
+		}
+		icon = GFX_decision_generic_industry
+		custom_cost_trigger = {
+			check_variable = {
+				ZAA_construction_equipment_amount > 0.99
+			}
+			check_variable = {
+				ZAA_industrial_equipment_amount > 1.99
+			}
+		}
+		custom_cost_text = ZAA_treasure_cost_mil_factory
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { ZAA_construction_equipment_amount = 1 }
+				subtract_from_variable = { ZAA_industrial_equipment_amount = 2 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ZAA_build_civilian_factory = {
+		allowed = { 
+			original_tag = ZAA
+		}
+		icon = GFX_decision_generic_factory
+		custom_cost_trigger = {
+			check_variable = {
+				ZAA_construction_equipment_amount > 1.99
+			}
+			check_variable = {
+				ZAA_industrial_equipment_amount > 1.99
+			}
+		}
+		custom_cost_text = ZAA_treasure_cost_civ_factory
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { ZAA_construction_equipment_amount = 2 }
+				subtract_from_variable = { ZAA_industrial_equipment_amount = 2 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
 }
 
 debug_decisions = {

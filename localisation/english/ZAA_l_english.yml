@@ -46,6 +46,18 @@
  ZAA_decision_cost_command_power_political_power_15_30_blocked: "£pol_power §R50§! £command_power §R15§!"
  ZAA_decision_cost_command_power_political_power_15_30_tooltip: "It costs £pol_power §Y50§! and £command_power §Y15§! to take the decision"
  
+ ZAA_treasure_cost_dockyard:0 "£ZAA_construction_equipment_texticon §Y1§! £ZAA_industrial_machinery_texticon §Y1§!"
+ ZAA_treasure_cost_dockyard_blocked:0 "£ZAA_construction_equipment_texticon §R1§! £ZAA_industrial_machinery_texticon §R1§!"
+ ZAA_treasure_cost_dockyard_tooltip:0 "It costs §Y1§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y1§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
+ 
+ ZAA_treasure_cost_mil_factory:0 "£ZAA_construction_equipment_texticon §Y1§! £ZAA_industrial_machinery_texticon §Y2§!"
+ ZAA_treasure_cost_mil_factory_blocked:0 "£ZAA_construction_equipment_texticon §R1§! £ZAA_industrial_machinery_texticon §R2§!"
+ ZAA_treasure_cost_mil_factory_tooltip:0 "It costs §Y1§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y2§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
+ 
+ ZAA_treasure_cost_civ_factory:0 "£ZAA_construction_equipment_texticon §Y2§! £ZAA_industrial_machinery_texticon §Y2§!"
+ ZAA_treasure_cost_civ_factory_blocked:0 "£ZAA_construction_equipment_texticon §R2§! £ZAA_industrial_machinery_texticon §R2§!"
+ ZAA_treasure_cost_civ_factory_tooltip:0 "It costs §Y2§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y2§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
+ 
  ZAA_nothing_ever_happens_tt:0 "§H[?ZAA_nothing_ever_happens]%§! chance that the §Roperation fails...§!"
  
  ZAA_gain_one_treasure:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+1§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+1§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+1§! £ZAA_electronic_appliances_texticon Electronic Appliances"
@@ -60,11 +72,15 @@
  ZAA_raid_merchant_ships:0 "Raid Merchant Ships"
  ZAA_raid_military_convoys:0 "Raid Military Convoys"
  
+ ZAA_build_dockyard:0 "Construct a Dockyard"
+ ZAA_build_military_factory:0 "Open an Additional Armoury"
+ ZAA_build_civilian_factory:0 "Fund the Civilian Economy"
+ 
  ZAA_invasion_plans:0 "Invasion Plans"
  ZAA_invasion_plans_desc:0 "I was working on a joke about a mummy, but I wasn't sure how to wrap it up."
  
  ZAA_utilizing_our_spoils:0 "Utilizing Our Spoils"
- ZAA_utilizing_our_spoils_desc:0 "Sounds like a *pyramid* scheme to me..."
+ ZAA_utilizing_our_spoils_desc:0 "It would be counterproductive to merely let our... 'captured' spoils collect dust in the corner of some derelict warehouse. If anything, we should put this equipment to good use, and utilize them in a way which would improve our economy and industry.\n\nWe currently own:\n\n£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!\n"
  
  #decision gui
  ZAA_controlled_states_tt:0 "We currently control §C[?ZAA_red_sea_controlled_states]§! of the §H17§! states necessary for establishing naval dominance over the Red Sea"
