@@ -1,0 +1,17 @@
+scripted_gui = {
+
+	ZGR_anarchy_factions_gui = {
+		context_type = decision_category
+		window_name = "ZGR_anarchy_factions_gui_decision_ui_window"
+		properties = {
+  			ZGR_ProgressBar_Anarchy = {
+  			frame = anarchy_progress_var
+			}
+  			ZGR_ProgressBar_Anarchy_urban = {
+  			frame = anarchy_progress_urban_var
+			}
+		}
+	
+}
+
+}

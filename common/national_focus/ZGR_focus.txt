@@ -951,6 +951,17 @@ focus_tree = {
 			load_focus_tree = zgr-c-anarchy
 			mark_focus_tree_layout_dirty = yes
 			set_cosmetic_tag = ZGR_Start_Anarchism
+			set_country_flag = ZGR_Start_Anarchism
+			hidden_effect = {
+				add_to_variable = {
+					var = anarchy_progress_var
+					value = 5
+				}
+				add_to_variable = {
+					var = anarchy_progress_urban_var
+					value = 3
+				}				
+			}
 		}
 	}		
 }

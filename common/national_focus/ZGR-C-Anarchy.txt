@@ -45,6 +45,12 @@ focus_tree = {
 				long_name = ZGR_Anarchy_Congress_Name_long
 				name = ZGR_Anarchy_Congress_Name
 			}
+			set_country_flag = ZGR_anarchy_preparations
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 2
+				tooltip = add_2_anarchy_progress_urban_var
+			}			
 		}
 	}
 
@@ -173,6 +179,10 @@ focus_tree = {
 		cost = 5
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = ZGR_the_anarchist_congress }
+		completion_reward = {
+    	custom_effect_tooltip = ZGR_ANARCHY_DEL_ARMY
+			#create_units
+		}
 	}
 
 	# The Rural Corp

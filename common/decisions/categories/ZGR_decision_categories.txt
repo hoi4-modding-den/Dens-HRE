@@ -1,0 +1,21 @@
+
+ZGR_anarchy_factions = {
+	priority = 1000
+
+	icon = anarchy_ZGR
+
+	#picture = GFX_decision_cat_picture_faction_management_bulgaria
+
+	scripted_gui = ZGR_anarchy_factions_gui
+
+	visible = {
+		has_country_flag = ZGR_Start_Anarchism
+	}
+
+	allowed = {
+		tag = ZGR
+	}
+	
+	visible_when_empty = yes
+	
+}

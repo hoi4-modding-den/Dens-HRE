@@ -1,0 +1,22 @@
+spriteTypes = {
+  progressbartype = {
+    name = "GFX_ZGR_anarchy_bar"
+    color = { 0.0 0.0 0.0 }
+    colortwo = { 0.0 0.0 0.0 }
+    textureFile1 = "gfx/interface/ZGR/faction_manifest_progress_bar.dds"
+    textureFile2 = "gfx/interface/ZGR/faction_manifest_progress_bar_frame.dds"
+    size = { x = 128 y = 28 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  }
+  progressbartype = {
+    name = "GFX_ZGR_anarchy_bar_urban"
+    color = { 0.0 0.0 0.0 }
+    colortwo = { 0.0 0.0 0.0 }
+    textureFile1 = "gfx/interface/ZGR/faction_manifest_progress_bar.dds"
+    textureFile2 = "gfx/interface/ZGR/faction_manifest_progress_bar_frame.dds"
+    size = { x = 128 y = 28 }
+    effectFile = "gfx/FX/progress.lua"
+    steps = 100
+  } 
+}
