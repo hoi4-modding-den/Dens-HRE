@@ -87,6 +87,25 @@ ZKR_dissolve_turkey_cat = {
 	priority = 100
 }
 
+ZKR_stabilise_the_commonwealth_cat = {
+	icon = SWI_federal_council
+
+	picture = faction_management_bulgaria
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_our_commonwealth
+		NOT = { has_completed_focus = ZKR_middle_east_is_free }
+	}
+
+	visible_when_empty = yes
+
+	priority = 100
+}
+
 ZKR_global_democracy_cat = {
 	icon = generic_democracy
 
@@ -136,4 +155,20 @@ ZKR_syrian_intervention_cat = {
 	visible_when_empty = no
 
 	priority = 2
+}
+
+ZKR_military_readiness_cat = {
+	icon = GER_war_planning
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_enforce_military_neutrality
+	}
+
+	visible_when_empty = no
+
+	priority = 3
 }

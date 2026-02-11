@@ -827,13 +827,15 @@ ideas = {
 
 			available = {
 				NOT = { has_war_with = DN2 }
+				country_exists = DN2
 			}
 			
 			removal_cost = -1
 
 			modifier = {
-				political_power_gain = 0.05
-				starting_compliance = 0.15
+				political_power_gain = 0.1
+				justify_war_goal_time = 0.15
+				compliance_growth = 0.05
 			}
 
 			targeted_modifier = {
@@ -856,6 +858,7 @@ ideas = {
 
 			available = {
 				NOT = { has_war_with = ZKR }
+				country_exists = ZKR
 			}
 			
 			removal_cost = -1
@@ -1221,7 +1224,7 @@ ideas = {
 
 			modifier = {
 				political_power_cost = 0.25
-				research_speed_factor = 0.15
+				research_speed_factor = -0.15
 				local_resources_factor = -0.4
 				resistance_target = 0.25
 			}
@@ -1240,7 +1243,7 @@ ideas = {
 
 			modifier = {
 				political_power_cost = 0.15
-				research_speed_factor = 0.15
+				research_speed_factor = -0.15
 				local_resources_factor = -0.25
 				resistance_target = 0.25
 			}
@@ -1277,7 +1280,7 @@ ideas = {
 
 			modifier = {
 				political_power_cost = 0.15
-				research_speed_factor = 0.15
+				research_speed_factor = -0.15
 				local_resources_factor = -0.1
 			}
 		}
@@ -1295,7 +1298,7 @@ ideas = {
 
 			modifier = {
 				political_power_cost = 0.15
-				research_speed_factor = 0.15
+				research_speed_factor = -0.15
 				local_resources_factor = -0.1
 			}
 		}
@@ -1320,6 +1323,7 @@ ideas = {
 
 		ZKR_cultural_apathy_1 = {
 
+			name = ZKR_cultural_apathy
 			picture = DEN_occupation_laws
 
 			allowed = {
@@ -1606,6 +1610,59 @@ ideas = {
 			}
 		}
 
+		ZKR_common_central_bank = {
+
+			picture = tur_balkan_central_bank_wealthy_greece
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = -0.05
+			}
+		}
+
+		ZKR_common_central_bank_2 = {
+
+			name = ZKR_common_central_bank
+			picture = tur_balkan_central_bank_wealthy_greece
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = -0.1
+				stability_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+
+		ZKR_georgism_implemented = {
+
+			name = ZKR_common_central_bank
+			picture = tur_balkan_central_bank_wealthy_greece
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = -0.15
+				stability_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				global_building_slots_factor = 0.2
+				industry_free_repair_factor = 0.15
+			}
+		}
+
 		ZKR_regional_development = {
 
 			picture = generic_local_self_management
@@ -1693,6 +1750,28 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.2
 				}
+			}
+		}
+
+		ZKR_ammunition_production_ea_nasir = {
+
+			picture = SWE_severe_lack_of_ammunition
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+
+			on_remove = {
+				add_ideas = ZKR_ammunition_production
 			}
 		}
 

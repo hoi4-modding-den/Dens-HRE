@@ -15,12 +15,19 @@ peace_ai_desires = {
     ZKR_annex_asia_minor_states = {
         peace_action_type = take_states
         enable = {
+            NOT = {
+                any_country = {
+                    is_ally_with = ROOT
+                    FROM.FROM.FROM = {
+                        is_core_of = PREV
+                    }
+                }
+            }
             FROM.FROM.FROM = {
-                region = 129
+                ZKR_turkish_republic_states = yes
             }
             ROOT = {
-                original_tag = ZKR
-                has_completed_focus = ZKR_the_kurdish_destiny 
+                original_tag = ZKR 
             }
 			ROOT.FROM = { tag = ROOT }
         }

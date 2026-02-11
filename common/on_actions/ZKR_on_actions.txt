@@ -21,6 +21,10 @@ on_actions = {
                 add_state_claim = 354
                 add_state_claim = 344
 
+                every_core_state = {
+                    add_to_array = { ZKR_starting_cores = THIS }
+                }
+
                 # Army Stuff
 
                 every_army_leader = {
@@ -151,6 +155,13 @@ on_actions = {
                     }
                 }
             }
+            if = {
+                limit = {
+                    FROM = { tag = ZKR }
+                    ROOT = { has_character = ZCC_Josef_Dzhugashvili }
+                }
+                FROM = { country_event = { id = ZKR_lore_events.4 days = 3 } }
+            }
         }
     }
 
@@ -174,5 +185,25 @@ on_actions = {
 			100 = ZKR_politics_events.4
 		}
 	}
+
+    on_justifying_wargoal_pulse = {
+		random_events = {
+			100 = ZKR_technical_events.24
+		}
+	}
+
+    on_declare_war = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = { 
+                        has_completed_focus = ZKR_secure_peace
+                        NOT = { has_country_flag = ZKR_peace_lore_event_triggered }
+                    }
+                }
+                country_event = { id = ZKR_politics_events.9 days = 10 }
+            }
+        }
+    }
 
 }

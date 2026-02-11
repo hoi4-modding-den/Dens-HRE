@@ -43,3 +43,18 @@ defined_text = {
 		localization_key = ZKR_achievements_intro_gui_3_n
 	}
 }
+defined_text = {
+	name = ZKR_achievements_intro_gui_4
+    text = {
+		trigger = {
+            has_completed_custom_achievement = {
+				mod = ZKR_achievements
+				achievement = ZKR_trotskys_revenge
+			}
+		}
+		localization_key = ZKR_achievements_intro_gui_4_y
+	}
+	text = {
+		localization_key = ZKR_achievements_intro_gui_4_n
+	}
+}
