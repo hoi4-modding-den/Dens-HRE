@@ -23,7 +23,7 @@ guiTypes = {
 				maxWidth = 180
 				maxHeight = 70
 				format = center
-				#alwaystransparent = yes
+				alwaystransparent = yes
 			}
 			instantTextboxType = {
 				name = "ZAA_controlled_states_info"
@@ -35,7 +35,7 @@ guiTypes = {
 				maxWidth = 180
 				maxHeight = 160
 				format = center
-				#alwaystransparent = yes
+				alwaystransparent = yes
 			}
 		}
 		containerWindowType = {
@@ -69,6 +69,7 @@ guiTypes = {
 				maxWidth = 180
 				maxHeight = 160
 				format = center
+				pdx_tooltip = ZAA_ships_info_tooltip
 				#alwaystransparent = yes
 			}
 		}

@@ -278,6 +278,41 @@ ZAA_utilizing_our_spoils = {
 	}
 }
 
+ZAA_foreign_affairs = {
+	ZAA_proclaim_the_red_sea_empire = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ZAA
+		}
+		available = {
+			ZAA = {
+				controls_state = 457
+				controls_state = 855
+				controls_state = 446
+				controls_state = 453
+				controls_state = 1111
+				controls_state = 1110
+				controls_state = 1108
+				controls_state = 679
+				controls_state = 883
+				controls_state = 856
+				controls_state = 550
+				controls_state = 293
+				controls_state = 268
+				controls_state = 992
+				controls_state = 269
+				controls_state = 659
+				controls_state = 559
+			}
+		}
+		complete_effect = {
+			ZAA = {
+				set_cosmetic_tag = ZAA_red_sea_empire
+			}
+		}
+	}
+}
+
 debug_decisions = {
 	ZAA_random_equipment_debug = {
 		available = {

@@ -29,8 +29,21 @@
  ZAA_chest_of_treasures_idea_tt:0 "£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!"
  ZAA_nation_of_piranhas_rec_tt:0 "Recruitable Population Factor: §G10%§!"
  
+ ZAA_red_sea_empire:0 "Thalassocratic Empire of the Red Sea"
+ ZAA_red_sea_empire_DEF:0 "the Thalassocratic Empire of the Red Sea"
+ ZAA_red_sea_empire_ADJ:0 "Arabian"
+ 
+ ZAA_achievements:0 "Thalassocracy of Al-Bahr Al-Ahmar Achievements"
+ ZAA_pirates_of_the_erythraean_NAME:0 "Pirates of the Erythraean"
+ ZAA_pirates_of_the_erythraean_DESC:0 "As the Thalassocracy of Al-Bahr Al-Ahmar, form the Red Sea Empire."
+ 
  
  #decisions
+ ZAA_foreign_affairs:0 "Foreign Affairs"
+ ZAA_foreign_affairs_desc:0 "Even if our Thalassocracy doesn't have a Ministry of Foreign Affairs in the traditional sense, it doesn't mean that our state is unable to partake in her own fair share of diplomacy."
+ 
+ ZAA_proclaim_the_red_sea_empire:0 "Proclaim the Red Sea Empire"
+ 
  ZAA_piracy_category:0 "The Naval Toll System"
  ZAA_piracy_category_desc:0 " "
  
@@ -77,7 +90,7 @@
  ZAA_build_civilian_factory:0 "Fund the Civilian Economy"
  
  ZAA_invasion_plans:0 "Invasion Plans"
- ZAA_invasion_plans_desc:0 "I was working on a joke about a mummy, but I wasn't sure how to wrap it up."
+ ZAA_invasion_plans_desc:0 "No matter how you put it, in a political climate such as this, war is an inevitability and not a mere possibility. This is why we must have the courage to fire the first shot if the situation calls for it."
  
  ZAA_utilizing_our_spoils:0 "Utilizing Our Spoils"
  ZAA_utilizing_our_spoils_desc:0 "It would be counterproductive to merely let our... 'captured' spoils collect dust in the corner of some derelict warehouse. If anything, we should put this equipment to good use, and utilize them in a way which would improve our economy and industry.\n\nWe currently own:\n\n£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!\n"
@@ -86,6 +99,7 @@
  ZAA_controlled_states_tt:0 "We currently control §C[?ZAA_red_sea_controlled_states]§! of the §H17§! states necessary for establishing naval dominance over the Red Sea"
  ZAA_ships_info_tt:0 "Submarines: §H[?ZAA_submarine_score]§!\nDestroyers: §H[?ZAA_destroyer_score]§!\nLight Cruisers: §H[?ZAA_light_cruiser_count]§!\nHeavy Ships: §H[?ZAA_battleship_count]§!\nCarriers: §H[?ZAA_cruiser_count]§!\nAdditional Bonuses: §H[?ZAA_naval_score_additional_bonuses]§!\n\nTotal Strength: §C[?ZAA_naval_total_score]§!"
 
+ ZAA_ships_info_tooltip:0 "The amount of §CStrength§! that each ship type awards:\n\nSubmarine: §Y1 Strength§!\nDestroyer: §Y1 Strength§!\nLight Cruiser: §Y3 Strength§!\nHeavy Ship: §Y5 Strength§!\nCarrier: §Y5 Strength§!"
  
  #leader(s)
  ZAA_suleiman_ezzat:0 "Suleiman Ezzat"
@@ -111,3 +125,23 @@
  ZAA_special_research_division:0 "Special Research Division for Submersibles"
  
  ZAA_tabuk_arsenal:0 "Tabuk Armoury"
+ 
+ #equipment
+ 
+ ZAA_infantry_equipment_0:0 "Mauser M1893"
+ ZAA_infantry_equipment_1:0 "Model 33/38 Osmanlı Mavzeri"
+ ZAA_infantry_equipment_2:0 "Hakim Rifle"
+ ZAA_infantry_equipment_3:0 "Akaba SMG"
+ 
+ ZAA_infantry_equipment_0_short:0 "Mauser M1893"
+ ZAA_infantry_equipment_1_short:0 "Osmanlı Mavzeri"
+ ZAA_infantry_equipment_2_short:0 "Hakim Rifle"
+ ZAA_infantry_equipment_3_short:0 "Akaba SMG"
+ 
+ ZAA_artillery_equipment_1_short:0 "12 cm Krupp M1905"
+ ZAA_artillery_equipment_1:0 "120 mm Krupp Howitzer M1905"
+ 
+ #ZAA_infantry_weapons:0 "Mauser M1893"
+ #ZAA_infantry_weapons1:0 "Model 33/38 Osmanlı Mavzeri"
+ #ZAA_improved_infantry_weapons:0 "Hakim Rifle"
+ #ZAA_advanced_infantry_weapons:0 "Akaba SMG"

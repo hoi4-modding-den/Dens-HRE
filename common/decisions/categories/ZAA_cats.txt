@@ -1,3 +1,22 @@
+ZAA_foreign_affairs = {
+
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_decision_cat_picture_government_in_exile
+	
+	allowed = {
+		original_tag = ZAA
+	}
+	
+	visible = {
+		always = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 10
+}
+
+
 ZAA_piracy_category = {
 
 	icon = GFX_decision_category_GER_seize_gold_reserves
@@ -15,7 +34,7 @@ ZAA_piracy_category = {
 	
 	visible_when_empty = yes
 	
-	priority = 10
+	priority = 9
 }
 
 ZAA_invasion_plans = {
@@ -34,7 +53,7 @@ ZAA_invasion_plans = {
 	
 	visible_when_empty = yes
 	
-	priority = 9
+	priority = 8
 }
 
 ZAA_utilizing_our_spoils = {
@@ -53,5 +72,5 @@ ZAA_utilizing_our_spoils = {
 	
 	visible_when_empty = yes
 	
-	priority = 8
+	priority = 7
 }

@@ -1,0 +1,17 @@
+unique_id = ZAA_achievements
+
+ZAA_pirates_of_the_erythraean = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = ZAA
+    }
+
+    happened = {
+		ROOT = {
+			has_cosmetic_tag = ZAA_red_sea_empire
+		}
+    }
+}
+
