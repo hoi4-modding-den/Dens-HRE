@@ -123,6 +123,46 @@ ideas = {
 				communism_drift = 0.02
 				neutrality_drift = 0.01
 			}
-		}						
+		}
+		ZGR_Farmers_Councils_Anarchy = {
+			name = ZGR_Farmers_Councils
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.2
+				army_core_defence_factor = 0.2
+				communism_drift = 0.03
+			}
+		}
+		ZGR_Local_Governance = {
+			name = ZGR_Local_Governance
+			picture = SOV_the_local_soviets_idea_nsb_ccp_sov_compatibility
+			modifier = {
+				army_core_defence_factor = 0.2
+			}
+		}
+		ZGR_Comm_Univers = {
+			name = ZGR_Comm_Univers
+			picture = SOV_atomic_bomb_project
+			modifier = {
+				research_speed_factor = 0.25
+				production_speed_facility_factor = 0.15
+			}
+		}
+		ZGR_Anarchist_Propoganda = {
+			name = ZGR_Anarchist_Propoganda
+			picture = SPR_anarchist_society
+			modifier = {
+				communism_drift = 0.03				
+			}
+		}	
+		ZGR_Farmers_Councils_Anarchy_Free = {
+			name = ZGR_Farmers_Councils_Anarchy_Free
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.4
+				army_core_defence_factor = 0.3
+				communism_drift = 0.05
+			}
+		}					
 	}
 }
