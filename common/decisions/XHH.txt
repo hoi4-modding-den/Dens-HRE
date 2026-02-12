@@ -1185,6 +1185,74 @@ foreign_politics = {
 
 	}
 
+	XHH_unify_silesian_territories = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		visible = {
+			has_subject = XSI
+			has_subject = XPL
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+		available = {
+			has_subject = XSI
+			has_subject = XPL
+			any_state = {
+				OR = {
+					state = 66
+					state = 86
+					state = 67
+					state = 762
+				}
+				owns_or_subject_of = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			XSI = {
+				annex_country = {
+					target = XPL
+					transfer_troops = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					OR = {
+						state = 66
+						state = 86
+						state = 67
+						state = 762
+					}
+					owns_or_subject_of = yes
+				}
+				transfer_state_to = XSI
+				add_core_of = XSI
+			}
+
+			hidden_effect = {
+				XSI = { add_state_core = 68 }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			XSI = { set_cosmetic_tag = XHH_silesian_puppet }
+		}
+
+	}
+
 	XH1_integrate_bremen = {
 
 		priority = 100
@@ -1382,7 +1450,7 @@ foreign_politics = {
 			}
 			release_puppet_on_controlled = XHH
 			hidden_effect = {
-				XHH = { add_State_core = 1017 add_State_core = 1043 }
+				XHH = { add_state_core = 1017 add_state_core = 1043 }
 			}
 			XHH = { 
 				set_cosmetic_tag = XHH_schleswig_holstein
