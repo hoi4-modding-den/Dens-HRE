@@ -323,6 +323,30 @@ characters = {
 			cost = 150
 		}
 	}
+	ZAA_mustafa_almaraghi = {
+		name = ZAA_mustafa_almaraghi
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAA/mustafa_al_maraghi.png
+				small = gfx/leaders/ZAA/small/mustafa_al_maraghi_idea.png
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAA_mustafa_almaraghi_token
+			allowed = {
+				original_tag = ZAA
+			}
+			available = {
+				has_completed_focus = ZAA_collaborate_with_the_imams
+			}
+			traits = {
+				ZAA_islamic_scholar
+			}
+
+			cost = 150
+		}
+	}
 	ZAA_hekmet_fahmy = {
 		name = ZAA_hekmet_fahmy
 		portraits = {

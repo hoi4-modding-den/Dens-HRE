@@ -40,6 +40,14 @@ ideas = {
 				custom_modifier_tooltip = ZAA_chest_of_treasures_idea_tt
 			}
 		}
+		ZAA_labour_service_corps = {
+			picture = COG_the_invisible_roof
+
+			modifier = {
+				production_speed_buildings_factor = 0.025
+				industry_repair_factor = 0.1
+			}
+		}
 	}
 	hidden_ideas = {
 		ZAA_no_political_power_allowed = {
