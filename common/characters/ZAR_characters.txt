@@ -26,11 +26,11 @@ characters = {
 			media_personality 
 			infantry_officer 
 			}
-			skill = 4
-			attack_skill = 4
-			defense_skill = 3
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
 			planning_skill = 1
-			logistics_skill = 3
+			logistics_skill = 2
 		}
 	}
 
@@ -38,11 +38,11 @@ characters = {
 		name = ZAR_Sargis_Srapionyan
 		portraits = {
 			civilian = {
-				large = GFX_d
+				large = gfx/leaders/ZAR/ZAR_Sargis_Srapionyan.png
 				
 			}
 			army = {
-				large = GFX_d
+				large = gfx/leaders/ZAR/ZAR_Sargis_Srapionyan.png
 			}
 		}
 		country_leader = {
@@ -65,6 +65,491 @@ characters = {
 			planning_skill = 3
 			logistics_skill = 1
 		}
+	}
+
+	ZAR_Hovhannes_Kajaznuni = {
+		name = ZAR_Hovhannes_Kajaznuni
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Hovhannes_Kajaznuni.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Hovhannes_Kajaznuni.png
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			traits = { }
+			expire = "1947.07.10"
+		}
+
+	}
+
+	ZAR_Garegin_Nzhdeh = {
+		name = ZAR_Garegin_Nzhdeh
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Garegin_Nzhdeh.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Garegin_Nzhdeh.png
+			}
+		}
+		corps_commander = {
+			traits = { 
+			 mountaineer
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = ZAR_Garegin_Nzhdeh_idea
+			cost = 150
+			traits = { ZAR_An_Expert_In_The_Mountains }
+		}
+		country_leader = {
+			ideology = futurism
+			traits = { }
+			expire = "1947.07.10"
+		}
+
+
+
+	}
+	ZAR_Ruben_Ter_Minasian = {
+		name = ZAR_Ruben_Ter_Minasian
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Ruben_Ter_Minasian.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Ruben_Ter_Minasian.png
+			}
+		}
+		corps_commander = {
+			traits = { 
+			 
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = ZAR_Ruben_Ter_Minasian_idea
+			allowed = {
+				original_tag = ZAR
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8.000
+			}
+		}
+
+
+	}
+
+
+	ZAR_Makhluto = {
+		name = ZAR_Makhluto
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Makhluto.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Makhluto.png
+			}
+		}
+		corps_commander = {
+			traits = { 
+			 old_guard
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = theorist
+			idea_token = ZAR_Makhluto_idea
+			allowed = {
+				original_tag = ZAR
+			}
+			available = {
+				
+			}
+			traits = {
+				military_theorist
+			}
+			cost = 100
+		}
+
+	}
+
+
+	ZAR_Drastamat_Kanayan = {
+		name = ZAR_Drastamat_Kanayan
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Drastamat_Kanayan.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Drastamat_Kanayan.png
+			}
+		}
+		corps_commander = {
+			traits = { 
+			 old_guard
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ZAR_Drastamat_Kanayan_idea
+			allowed = {
+				original_tag = ZAR
+			}
+			available = {
+				
+			}
+			traits = {
+				infantry_expert
+			}
+
+			cost = 100
+		}
+		country_leader = {
+			ideology = futurism_radical
+			traits = { }
+			expire = "1947.07.10"
+		}
+
+	}
+
+	ZAR_Hamazasp_Babadzhanian = {
+		name = ZAR_Hamazasp_Babadzhanian
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Hamazasp_Babadzhanian.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Hamazasp_Babadzhanian.png
+			}
+		}
+		corps_commander = {
+			traits = { 
+			 armour_officer 
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ZAR_Hamazasp_Babadzhanian_idea
+		allowed = {
+				original_tag = ZAR
+			}
+			available = {
+				
+			}
+			traits = {
+				armour_expert
+			}
+
+			cost = 100
+		}
+
+	}
+
+
+	ZAR_Hovhannes_Baghramyan = {
+		name = ZAR_Hovhannes_Baghramyan
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Hovhannes_Baghramyan.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Hovhannes_Baghramyan.png
+			}
+		}
+		corps_commander = {
+			traits = { 
+			
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = ZAR_Hovhannes_Baghramyan_idea
+			allowed = {
+				original_tag = ZAR
+			}
+			available = {
+				
+			}
+			traits = {
+				
+			}
+
+			cost = 100
+		}
+
+	}
+
+	ZAR_Hovhannes_Ter_Isahakyan = {
+		name = ZAR_Hovhannes_Ter_Isahakyan
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Hovhannes_Ter_Isahakyan.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Hovhannes_Ter_Isahakyan.png
+			}
+		}
+		navy_leader={
+			traits={ 
+			 
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = ZAR_Hovhannes_Ter_Isahakyan_idea
+			allowed = {
+				original_tag = ZAR
+			}
+			traits = {
+				
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 8.000
+			}
+		}
+
+	}
+	ZAR_Armenak_Artemi_Khanferiants = { #Air Guy
+		name = ZAR_Armenak_Artemi_Khanferiants
+		portraits = {
+			civilian = {
+				large = gfx/leaders/ZAR/ZAR_Armenak_Artemi_Khanferinats.png
+				
+			}
+			army = {
+				large = gfx/leaders/ZAR/ZAR_Armenak_Artemi_Khanferinats.png
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = ZAR_Armenak_Artemi_Khanferiants_idea
+			cost = 150
+			traits = { air_chief_all_weather_2 }
+		}
+		
+
+	}
+
+	ZAR_Aghasi_Khanjian = { 
+		name = ZAR_Aghasi_Khanjian
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Aghasi_Khanjian_idea
+			cost = 150
+			traits = { ZAR_Proponant_Of_Economic_Centralisation }
+		}
+		
+
+	}
+
+	ZAR_Sebastian_Shaumyan = { 
+		name = ZAR_Sebastian_Shaumyan
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Sebastian_Shaumyan_idea
+			cost = 150
+			traits = { ZAR_Linguistic_Expert }
+		}
+		
+
+	}
+
+	ZAR_Hovhannes_Abelian = { 
+		name = ZAR_Hovhannes_Abelian
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Hovhannes_Abelian_idea
+			cost = 150
+			traits = { ZAR_Famous_Actor }
+		}
+		
+
+	}
+
+	ZAR_Karo_Halabyan = { 
+		name = ZAR_Karo_Halabyan
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Karo_Halabyan_idea
+			cost = 150
+			traits = { ZAR_President_Of_The_Academy_Of_Architecture }
+		}
+		
+
+	}
+
+	ZAR_Abram_Alikhanov = { 
+		name = ZAR_Abram_Alikhanov
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Abram_Alikhanov_idea
+			cost = 150
+			traits = { ZAR_Nuclear_Physicist }
+		}
+		
+
+	}
+
+	ZAR_Ivan_Knunyants = { 
+		name = ZAR_Ivan_Knunyants
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Ivan_Knunyants_idea
+			cost = 150
+			traits = { ZAR_Extrodinary_Chemist }
+		}
+		
+
+	}
+
+	ZAR_Anastas_Mikoyan = { 
+		name = ZAR_Anastas_Mikoyan
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Anastas_Mikoyan_idea
+			cost = 150
+			traits = { ZAR_Diplomat }
+		}
+		
+
+	}
+
+	ZAR_Gaik_Ovakimian = { 
+		name = ZAR_Gaik_Ovakimian
+		portraits = {
+			civilian = {
+				large = GFX_fish
+				small = GFX_fish
+				
+			}
+			army = {
+				large = GFX_fish
+				small = GFX_fish
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ZAR_Gaik_Ovakimian_idea
+			cost = 150
+			traits = { ZAR_The_Puppetmaster }
+		}
+		
+
 	}
 
 }

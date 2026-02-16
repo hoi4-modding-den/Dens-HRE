@@ -1,0 +1,85 @@
+add_namespace = ZEG_natural_event
+add_namespace = ZEG_focus_event
+add_namespace = ZEG_news_event
+add_namespace = ZEG_diplo_event
+
+#Natural Events# (they just show up on their own)
+country_event = { #intro event
+    id = ZEG_natural_event.1
+    title = ZEG.NE_1.t
+    picture = GFX_report_event_tur_sultan_and_pashas
+    desc = ZEG.NE_1.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.NE_1.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 10 #it's nice to have I guess
+	hidden_effect = {
+			
+		}
+    }
+}
+
+#Focus Events# (events from focuses)
+country_event = { #protests reach a zenith
+    id = ZEG_focus_event.1
+    title = ZEG.FE_1.t
+    picture = GFX_report_event_worker_protests
+    desc = ZEG.FE_1.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.FE_1.a
+		ai_chance = {
+			base = 50
+		}
+		custom_effect_tooltip = ZEG_event_tooltip_1
+		deactivate_advisor = ZEG_ismail_sidky_token
+		activate_advisor = ZEG_aly_maher_pasha_token
+		add_stability = 0.05
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+			last_election = "1932.5.7"
+			election_frequency = 48
+		}
+		complete_national_focus = ZEG_restore_constitution
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = ZEG.FE_1.b
+		ai_chance = {
+			base = 50
+		}
+    	custom_effect_tooltip = ZEG_event_tooltip_2
+		add_stability = -0.05
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.05
+		}
+		set_power_balance = {
+			id = ZEG_collapse_balance
+			left_side = ZEG_communist_side
+    		right_side = ZEG_fascist_side
+		}
+		complete_national_focus = ZEG_destroy_democracy
+	hidden_effect = {
+			
+		}
+    }
+}
+
+#News Events# (the big news pop-ups)
+
+
+#Diplomatic Events# (events from interactions with other countries)
+

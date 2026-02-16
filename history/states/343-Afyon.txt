@@ -2,12 +2,13 @@
 state={
 	id=343
 	name="STATE_343" # Afyon
-	manpower = 1298543
+	manpower = 1098543
 	resources={
-		chromium=32
+		chromium=24
+		steel=11
 	}
 	
-	state_category = rural
+	state_category = town
 
 	history={
 		owner = ZOT
@@ -17,18 +18,16 @@ state={
 		victory_points = {
 			9878 5
 		}
-		victory_points = {
-			3856 3
-		}
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
 			industrial_complex = 1
+			arms_factory = 1
 		}
 		add_core_of = ZOT
 	}
 
 	provinces={
-		856 981 3856 3983 6877 6945 9878 10041 11796 11831 11907 
+		3983 6877 6945 9878 10041 11907 
 	}
 
 	local_supplies=0.0 

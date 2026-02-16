@@ -16,7 +16,7 @@
  XHH_fascism_DEF: "the North German National State"
  XHH_fascism_ADJ: "North German"
  XHH_communism: "Hamburger Kommune"
- XHH_communism_DEF: "the Hamburger Commune"
+ XHH_communism_DEF: "the Hamburgian Commune"
  XHH_communism_ADJ: "Hamburgian"
 
  XHH_republic_neutrality: "Republik Hamburg"
@@ -181,6 +181,13 @@
  XHH_XVD_neutrality_subject: "Kirchenprotektorat Hamburg"
  XHH_XVD_neutrality_subject_DEF: "the Church Protectorate of Hamburg"
  XHH_XVD_neutrality_subject_ADJ: "Hamburgian"
+
+ XHH_silesian_puppet: "Greater Silesia"
+ XHH_silesian_puppet_DEF: "Greater Silesia"
+ XHH_silesian_puppet_ADJ: "Silesian"
+ XHH_silesian_puppet_XHH_subject: "Großschlesischer Bundesstaat"
+ XHH_silesian_puppet_XHH_subject_DEF: "the Fedederation of Greater Silesia"
+ XHH_silesian_puppet_XHH_subject_ADJ: "Silesian"
 
 
 # LEADER NAMES
@@ -349,7 +356,7 @@
 
  # OTHER LOC STUFF
  XHH_fascists_are_angry_tt: "§RThe Protestant Nationalists will not be happy with this decision!§!"
- XHH_fascist_coup_happened: "The §YNational Union§! has overthrown the Hamburger Government"
+ XHH_fascist_coup_happened: "The §YNational Union§! has overthrown the Hamburgian Government"
  XHH_modify_colonial_wealth_tt: "Modify §Y$XHH_colonial_wealth$§! by:"
  XHH_modify_venice_modifier_tt: "Modify §Y$XHH_venice_modifier$§! by:"
  XHH_modify_sea_empire_tt: "Modify §Y$XHH_sea_empire_modifier$§! by:"
@@ -488,11 +495,22 @@
  XHH_mio_trait_improved_reliability_2: "Unsinkable Designs"
 
 
+# TECHNOLOGIES
+
+ XHH_train_equipment_1: "Class 18.4-5"
+ XHH_train_equipment_2: "DRB 52 Class"
+ XHH_train_equipment_3: "BR57 Class"
+
 # TECH SHARING
  XVD_monastery_tech_sharing_group_name: "Evangelical Knowledge Exchange Program"
  XVD_monastery_tech_sharing_group_desc: "To preserve old knowledge and gain new knowledge, [XVD.GetNameDef] cooperates with [XHH.GetNameDef] in different fields of science, such as industrial and electronic development."
  XHH_imperial_tech_sharing_group_name: "Imperial Scientific Association"
  XHH_imperial_tech_sharing_group_desc: "The WGdHRR (Wissenschaftliche Gesellschaft des Heiligen Römischen Reiches) is an association of researchers from across the HRE, promoting joint research programmes and scientific exchanges. They are funded by [XHH.GetNameDef], which grants them significant influence over members of the association."
+
+# CUSTOM BATTALION NAMES
+
+ XHH_recon: "Jäger-Kompanie"
+ XHH_artillery: "Haubitzen-Kompanie"
 
 # OPINION MODIFIERS
  XHH_recognised_holy_see: "Recognised the Holy See"
@@ -529,6 +547,7 @@
  XHH_retake_prussia: "Seize occupied [XPK.GetAdjective] Lands"
  XHH_form_prussian_protectorate: "Form a Protectorate of the Eastern Regions"
  XHH_form_prussian_protectorate_tt: "Releases @XPK §Y$XHH_prussian_puppet$§! in the highlighted states."
+ XHH_unify_silesian_territories: "Unify Silesian Holdings"
  XHH_unite_hessen: "Seek Hessian Unification under [XLH.GetNameDef]"
  XH1_integrate_bremen: "Integrate Bremen"
  XH1_integrate_schwerin: "Annex the Grafschaft Schwerin"
@@ -1054,7 +1073,7 @@
  XHH_internal_events.5.desc: "While the majority of our population is Protestant, there is a vocal Catholic majority that demands of us that we recognise the Holy See and [XRO.GetNameDef]."
  XHH_internal_events.5.a: "We must recognise the Holy See."
  XHH_internal_events.5.b: "Who cares about an old man in Rome?"
- XHH_internal_events.6.t: "[GetYear] Hamburger Elections!"
+ XHH_internal_events.6.t: "[GetYear] Hamburgian Elections!"
  XHH_internal_events.6.desc: "It is once again election time in [ROOT.GetNameDef]!"
  XHH_internal_events.6.a: "Victory for Lüdemann and the SPD!"
  XHH_internal_events.6.b: "Klinghoffer's USPD wins!"
@@ -1202,7 +1221,7 @@
  XHH_news_events.5.t: "[FROM.GetAdjectiveCap] Domination of the Baltic Sea"
  XHH_news_events.5.desc: "[FROM.GetNameDefCap] has all but defeated [XFT.GetNameDef] in the war and now controls the three important cities of Danzig, Stettin and Köslin, cutting off [XFT.GetNameDef] from the Baltic sea and restoring [FROM.GetAdjective] hegemony in the Baltics.\n \nWhile riots have broken out after Danzig was declared a hanseatic city once more, which upset the Polish ethnicities in the city, the [XHH.GetAdjective] civilian administration of the region promises to reach out to them and restore law and order in Pommerania and Danzig."
  XHH_news_events.5.a: "The coast is ours!"
- XHH_news_events.5.b: "The Hamburger Navy seems unbeatable."
+ XHH_news_events.5.b: "The Hamburgian Navy seems unbeatable."
  XHH_news_events.5.c: "They will fall in the end!"
  XHH_news_events.6.t: "Hamburg unites North Germany"
  XHH_news_events.6.desc: "In a grand ceremony, [FROM.GetLeader] has announced the unification of North Germany under [FROM.GetNameDef].\n \nTheir stated goals are to protect the North German people and ensure their existence within the Holy Roman Empire is not threatened, and that their mission has not yet come to an end."

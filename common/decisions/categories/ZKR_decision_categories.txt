@@ -13,7 +13,131 @@ ZKR_kurdistan_formables_cat = {
 
 	visible_when_empty = no
 
+	priority = 10
+}
+
+ZKR_commonwealth_cat = {
+	icon = usa_congress
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		is_faction_leader = yes
+		has_completed_focus = ZKR_common_organisations
+	}
+
+	visible_when_empty = no
+
+	priority = 100
+}
+
+ZKR_liberation_allies_cat = {
+	icon = saf_anti_colonialist_crusade
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		is_faction_leader = yes
+		has_completed_focus = ZKR_alliance_of_liberation
+		NOT = { has_country_flag = ZKR_democratic_shield_formed }
+		NOT = { has_country_flag = ZKR_fourth_international_section_formed }
+	}
+
+	visible_when_empty = no
+
 	priority = 99
+}
+
+ZKR_coalition_allies_cat = {
+	icon = saf_anti_colonialist_crusade
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		is_faction_leader = yes
+		has_completed_focus = ZKR_coalition_of_willing
+	}
+
+	visible_when_empty = no
+
+	priority = 99
+}
+
+ZKR_dissolve_turkey_cat = {
+	icon = tur_unifying_the_country
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_national_salvation
+	}
+
+	scripted_gui = ZKR_control_in_anatolia_gui
+
+	visible_when_empty = yes
+
+	priority = 100
+}
+
+ZKR_stabilise_the_commonwealth_cat = {
+	icon = SWI_federal_council
+
+	picture = faction_management_bulgaria
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_our_commonwealth
+		NOT = { has_completed_focus = ZKR_middle_east_is_free }
+	}
+
+	visible_when_empty = yes
+
+	priority = 100
+}
+
+ZKR_global_democracy_cat = {
+	icon = generic_democracy
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_government = democratic
+		has_completed_focus = ZKR_reform_the_constitution
+	}
+
+	visible_when_empty = yes
+
+	priority = 80
+}
+
+ZKR_support_the_international_revolution_cat = {
+	icon = generic_communism
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_government = communism
+		has_completed_focus = ZKR_pragmatic_trotskyism
+	}
+
+	visible_when_empty = yes
+
+	priority = 80
 }
 
 ZKR_syrian_intervention_cat = {
@@ -30,5 +154,21 @@ ZKR_syrian_intervention_cat = {
 
 	visible_when_empty = no
 
-	priority = 99
+	priority = 2
+}
+
+ZKR_military_readiness_cat = {
+	icon = GER_war_planning
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_enforce_military_neutrality
+	}
+
+	visible_when_empty = no
+
+	priority = 3
 }

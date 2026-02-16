@@ -10,7 +10,7 @@ characters = {
 		}
 		country_leader = {
 			traits = { ZKR_respected_leader }
-			ideology = liberalism
+			ideology = conservatism
 			desc = ZKR_seyid_riza_desc
 			expire = "1950.1.1.1"
 		}
@@ -43,7 +43,7 @@ characters = {
 		}
 		country_leader = {
 			traits = { ZKR_evironmentalist }
-			ideology = socialism
+			ideology = ZKR_die_gruenen
 			desc = ZKR_ahmed_barzani_desc
 			expire = "1950.1.1.1"
 		}
@@ -91,6 +91,16 @@ characters = {
 			expire = "1950.1.1.1"
 		}
 
+		corps_commander = {
+			traits = { politically_connected trait_SOV_trotskyist }
+			desc = ZKR_qazi_muhamad_desc
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=1
+		}
+
 		advisor = {
 			slot = political_advisor
 			desc = ZKR_qazi_muhamad_desc
@@ -125,7 +135,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { guerilla_fighter politically_connected war_hero }
+			traits = { politically_connected war_hero irregulars_officer }
 			desc = ZKR_ihsan_nuri_desc
 			skill=4
 			attack_skill=5
@@ -168,7 +178,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { desert_fox militias_officer politically_connected war_hero }
+			traits = { desert_fox politically_connected war_hero guerilla_fighter }
 			desc = ZKR_mahmud_barzanji_desc
 			skill=4
 			attack_skill=5
@@ -192,6 +202,43 @@ characters = {
 			}
 
 			cost = 100
+		}
+	}
+
+	ZKR_bozan_shaheen_bey = {
+		name = ZKR_bozan_shaheen_bey
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZKR_bozan_shaheen_bey
+                small = GFX_portrait_ZKR_bozan_shaheen_bey_small
+			}
+		}
+
+		corps_commander = {
+			traits = { politically_connected war_hero irregulars_officer }
+			desc = ZKR_bozan_shaheen_bey_desc
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_bozan_shaheen_bey_desc
+			idea_token = ZKR_bozan_shaheen_bey_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_elections_wow
+			}
+			traits = {
+				ZKR_nationalist_parliamentarian
+			}
+
+			cost = 150
 		}
 	}
 
@@ -222,10 +269,167 @@ characters = {
 				original_tag = ZKR
 			}
 			available = {
-				has_completed_focus = ZKR_inform_the_people
+				
 			}
 			traits = {
-				IRQ_minister_of_education
+				ZKR_education_minister
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_celadet_ali_bedirxan = {
+		name = ZKR_celadet_ali_bedirxan
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_celadet_ali_bedirxan_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_celadet_ali_bedirxan_desc
+			idea_token = ZKR_celadet_ali_bedirxan_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_country_flag = ZKR_celadet_ali_bedirxan_unlocked
+			}
+			traits = {
+				ZKR_kurdish_academy_leader
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_kamuran_ali_bedirxan = {
+		name = ZKR_kamuran_ali_bedirxan
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_kamuran_ali_bedirxan_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_celadet_ali_bedirxan_desc
+			idea_token = ZKR_celadet_ali_bedirxan_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				
+			}
+			traits = {
+				ZKR_writer_and_lawyer
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_random_kurdish_industrialist = {
+		name = ZKR_random_kurdish_industrialist
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_random_kurdish_industrialist_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_random_kurdish_industrialist_desc
+			idea_token = ZKR_random_kurdish_industrialist_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_kurdish_industrial_revolution
+			}
+			traits = {
+				captain_of_industry
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_random_kurdish_mil_industrialist = {
+		name = ZKR_random_kurdish_mil_industrialist
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_random_kurdish_mil_industrialist_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_random_kurdish_mil_industrialist_desc
+			idea_token = ZKR_random_kurdish_mil_industrialist_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_expand_arms_industry
+			}
+			traits = {
+				war_industrialist
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_dean_wesley = {
+		name = ZKR_dean_wesley
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_dean_wesley_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_dean_wesley_desc
+			idea_token = ZKR_dean_wesley_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_invite_industrial_advisors
+			}
+			traits = {
+				ZKR_american_businessman
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_martin_maria_schwengler = {
+		name = ZKR_martin_maria_schwengler
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_martin_maria_schwengler_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_martin_maria_schwengler_desc
+			idea_token = ZKR_martin_maria_schwengler_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_invite_industrial_advisors
+				NOT = { has_war_with = XHH }
+			}
+			traits = {
+				ZKR_hanse_investor
 			}
 
 			cost = 150
@@ -239,6 +443,13 @@ characters = {
 				large = GFX_portrait_ZKR_arthur_frayn
                 small = GFX_portrait_ZKR_arthur_frayn_small
 			}
+		}
+
+		country_leader = {
+			traits = { ZKR_british_puppet_leader }
+			ideology = oligarchism
+			desc = ZKR_arthur_frayn_desc
+			expire = "1950.1.1.1"
 		}
 		
 		advisor = {
@@ -257,6 +468,28 @@ characters = {
 			}
 
 			cost = 150
+		}
+	}
+
+	ZKR_artem_alikhanian = {
+		name = ZKR_artem_alikhanian
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ZKR_artem_alikhanian
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_brilliant_theorist scientist_trait_nuclear_power_expert }
+			skills = {
+				specialization_nuclear = 3
+			}
+
+			visible = {
+				owner = {
+					has_completed_focus = ZKR_free_arrested_intellectuals
+				}
+			}
 		}
 	}
 

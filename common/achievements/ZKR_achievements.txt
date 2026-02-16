@@ -1,0 +1,57 @@
+unique_id = ZKR_achievements
+
+ZKR_greater_kurdistan_achievement = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = ZKR
+    }
+
+    happened = {
+        all_core_state = {
+            is_fully_controlled_by = ROOT
+        }
+    }
+}
+ZKR_woman_in_the_military = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = ZKR
+    }
+
+    happened = {
+        any_character = {
+            is_field_marshal = yes
+            is_female = yes
+        }
+    }
+}
+ZKR_anger_the_turks = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = ZKR
+    }
+
+    happened = {
+        has_idea = ZKR_pax_kurdistan_stays
+    }
+}
+ZKR_trotskys_revenge = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = ZKR
+    }
+
+    happened = {
+        has_country_leader = { character = ZKR_qazi_muhamad ruling_only = yes }
+        has_country_flag = ZKR_trotsky_visited
+        has_country_flag = ZKR_stalin_arrested_after_trotskys_visit
+    }
+}

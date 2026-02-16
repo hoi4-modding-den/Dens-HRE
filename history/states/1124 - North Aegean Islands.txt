@@ -1,0 +1,32 @@
+
+state={
+	id=1124
+	name="STATE_1124" # North Aegean Islands
+	manpower = 110300
+	resources={
+		chromium=3
+	}
+	
+	state_category = small_island
+
+	history={
+		owner = ZCT
+		victory_points = {
+			8435 1
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			8435 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = ZCT
+	}
+
+	provinces={
+		8435
+	}
+
+	local_supplies=6.0 
+}

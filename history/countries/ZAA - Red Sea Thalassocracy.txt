@@ -1,6 +1,12 @@
 capital = 457
 
+set_stability = 0.45
+set_war_support = 0.45
+
 set_research_slots = 3
+add_manpower = 25000
+
+oob = "ZAA_1936"
 
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -11,14 +17,37 @@ if = {
 }
 
 add_ideas = {
-	
+	limited_conscription
+	ZAA_nation_of_piranhas_dummy
+	ZAA_thalassocratic_tendencies
+	ZAA_chest_of_treasures
+	ZAA_no_political_power_allowed
 }
+
+add_dynamic_modifier = { modifier = ZAA_nation_of_piranhas }
+#add_dynamic_modifier = { modifier = ZAA_thalassocratic_tendencies }
+
+set_variable = { ZAA_piranhas_stability_factor_variable = -0.1 }
+set_variable = { ZAA_piranhas_conscription_factor_variable = 0.1 }
+set_variable = { ZAA_command_power_variable = 0.75 }
+set_variable = { ZAA_convoy_raiding_variable = 0.15 }
+
+set_variable = { ZAA_inf_equipment_level = 1 }
+set_variable = { ZAA_art_equipment_level = 1 }
+
+set_country_flag = DEN_hide_economic_decisions
+set_country_flag = DEN_hide_propaganda_decisions
+set_country_flag = DEN_hide_political_decisions
+set_country_flag = DEN_disable_generic_industrial_concern
+set_country_flag = DEN_disable_generic_electronics_concern
 
 set_technology = {
 	infantry_weapons = 1
+	infantry_weapons1 = 1
 	tech_support = 1		
 	tech_engineers = 1
 	gw_artillery = 1
+	marines = 1
 }
 
 IF = {
@@ -118,6 +147,17 @@ recruit_character = ZAA_mahmoud_hamza_pasha
 recruit_character = ZAA_mohamed_nasid
 recruit_character = ZAA_jalal_allouba
 recruit_character = ZAA_abdel_magid_fahim
+
+#generals#
+recruit_character = ZAA_mohamed_naguib
+recruit_character = ZAA_youssef_seddik
+recruit_character = ZAA_muhsen_alhusayn
+recruit_character = ZAA_abdulaziz_altuwajiri
+
+#other#
+recruit_character = ZAA_ibrahim_altassan
+recruit_character = ZAA_mustafa_almaraghi
+recruit_character = ZAA_hekmet_fahmy
 
 
 set_politics = {

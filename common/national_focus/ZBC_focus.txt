@@ -14,32 +14,377 @@ focus_tree={
 	reset_on_civilwar = no
 
 	continuous_focus_position = { x = 11000 y = 11000 }
-	initial_show_position = { focus = ZXX_construction_of_central_complex }
+	initial_show_position = { focus = ZBC_an_extraordinary_meeting }
 
 	focus = { 
-		id = ZBC_morning_in_the_palace
-		icon = GFX_ZBC_a_new_revolution
+		id = ZBC_an_extraordinary_meeting
+		icon = GFX_SOV_call_for_aid_ccp_2d_sov_compatibility
 		x = 10
 		y = 0
-		#relative_position_id = 
-		
-		cancelable = no
-		
-		cost = 1
+
+		cost = 5
 		ai_will_do = { base = 10 }
 		
 		available = {}
 		bypass = {}
 		allow_branch = {}
 		
-		prerequisite = {}
+		prerequisite = { }
 		mutually_exclusive = {}
 		
 		completion_reward = {
-			country_event = {
-				id = ZBC_story_events.1
+			country_event = ZBC_events.1
+		}
+	}
+	focus = { 
+		id = ZBC_fioletovs_proposition
+		icon = GFX_SOV_fourth_five_year_plan_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		relative_position_id = ZBC_an_extraordinary_meeting
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_an_extraordinary_meeting }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZBC_commissariat_plan_vazirov
+				}
+				swap_ideas = {
+					remove_idea = ZBC_commissariat_plan_vazirov
+					add_idea = ZBC_commissariat_plan_combined
+				}
+			}
+			else = {
+				add_ideas = ZBC_commissariat_plan_fioletov
 			}
 		}
 	}
+	focus = { 
+		id = ZBC_vazirovs_agenda
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 1
+		y = 1
+		relative_position_id = ZBC_an_extraordinary_meeting
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_an_extraordinary_meeting }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZBC_commissariat_plan_fioletov
+				}
+				swap_ideas = {
+					remove_idea = ZBC_commissariat_plan_fioletov
+					add_idea = ZBC_commissariat_plan_combined
+				}
+			}
+			else = {
+				add_ideas = ZBC_commissariat_plan_vazirov
+			}
+		}
+	}
+	focus = { 
+		id = ZBC_much_ado
+		icon = GFX_focus_IRQ_attempted_assasination_of_sidqi
+		x = 1
+		y = 1
+		relative_position_id = ZBC_fioletovs_proposition
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_fioletovs_proposition }
+		prerequisite = { focus = ZBC_vazirovs_agenda }
+		mutually_exclusive = {}
+		
+		completion_reward = {
+			country_event = ZBC_events.2
+		}
+	}
+	focus = { 
+		id = ZBC_korganov_ascendant
+		icon = GFX_SOV_left_opposition_coup_ccp_2d_sov_compatibility
+		x = -1
+		y = 1
+		relative_position_id = ZBC_much_ado
+		
+		
+		
+		cost = 0
+		ai_will_do = { base = 10 }
+		
+		available = { always = no }
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_much_ado }
+		mutually_exclusive = { focus = ZBC_korganovs_downfall }
+		
+		completion_reward = {
+			kill_country_leader = yes
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = ZBC_the_peoples_duty
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		x = -2
+		y = 1
+		relative_position_id = ZBC_korganov_ascendant
+		
+		
+		
+		cost = 10
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_korganov_ascendant }
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			add_ideas = ZBC_peoples_duty
+			1112 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = { 
+		id = ZBC_fortify_bastion
+		icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 1
+		relative_position_id = ZBC_korganov_ascendant
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_korganov_ascendant }
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			1112 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 7661
+				}
+			}
+		}
+	}
+	focus = { 
+		id = ZBC_united_under_one
+		icon = GFX_focus_GER_proletarian_dictatorship
+		x = -1
+		y = 1
+		relative_position_id = ZBC_fortify_bastion
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = { }
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_fortify_bastion }
+		prerequisite = { focus = ZBC_the_peoples_duty }
+		mutually_exclusive = { }
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = ZBC_korganovs_downfall
+		icon = GFX_focus_generic_social_democracy
+		x = 1
+		y = 1
+		relative_position_id = ZBC_much_ado
+		
+		
+		
+		cost = 0
+		ai_will_do = { base = 10 }
+		
+		available = { always = no }
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_much_ado }
+		mutually_exclusive = { focus = ZBC_korganov_ascendant }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = { 
+		id = ZBC_reorganize_the_commissars
+		icon = GFX_focus_SWE_socialist_reforms
+		x = 0
+		y = 1
+		relative_position_id = ZBC_korganovs_downfall
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_korganovs_downfall }
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = { 
+		id = ZBC_speak_to_the_workers
+		icon = GFX_focus_GER_proletarian_solidarity
+		x = 2
+		y = 1
+		relative_position_id = ZBC_korganovs_downfall
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_korganovs_downfall }
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = { 
+		id = ZBC_the_new_supreme_soviet
+		icon = GFX_focus_SOV_the_supreme_soviet
+		x = -1
+		y = 1
+		relative_position_id = ZBC_speak_to_the_workers
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_speak_to_the_workers }
+		prerequisite = { focus = ZBC_reorganize_the_commissars }
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = { 
+		id = ZBC_proclaim_the_ssr
+		icon = GFX_ZBC_proclaim_the_ssr
+		x = -2
+		y = 1
+		relative_position_id = ZBC_the_new_supreme_soviet
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = {}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_the_new_supreme_soviet focus = ZBC_united_under_one }
 
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+  				target = ZAZ
+			}
+			set_cosmetic_tag = ZBC_azerbaijan
+		}
+	}
+	focus = { 
+		id = ZBC_begin_reconstruction
+		icon = GFX_SOV_architect_of_communism_ccp_2d_sov_compatibility
+		x = 0
+		y = 1
+		relative_position_id = ZBC_proclaim_the_ssr
+		
+		
+		
+		cost = 5
+		ai_will_do = { base = 10 }
+		
+		available = { 
+			OR = {
+				ZAZ = {
+					exists = no
+				}
+				ZAZ = {
+					has_government = communism
+				}
+			}
+		}
+		bypass = {}
+		allow_branch = {}
+		
+		prerequisite = { focus = ZBC_proclaim_the_ssr }
+
+		mutually_exclusive = { }
+		
+		completion_reward = {
+			
+		}
+	}
 }

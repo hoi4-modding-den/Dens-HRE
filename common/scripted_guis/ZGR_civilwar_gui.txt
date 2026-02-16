@@ -1,0 +1,22 @@
+scripted_gui = {
+  civilwar_gui = {
+    window_name = "civilwar_gui_container"
+    context_type = decision_category
+
+    visible = {
+	NOT = {has_country_flag = ZGR_end_of_etn_tensions}
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+	}
+
+properties = {  
+  GFX_ZGR_cw_progress_bar = {
+  frame = civil_war
+}
+  }
+}
+}

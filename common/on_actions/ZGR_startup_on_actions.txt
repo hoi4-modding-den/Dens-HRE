@@ -1,0 +1,12 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			ZGR = {
+				add_to_variable = {
+    					var = c_money
+   					value = 5
+				}
+			}
+		}
+	}
+}

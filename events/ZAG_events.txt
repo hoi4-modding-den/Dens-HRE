@@ -1,0 +1,316 @@
+add_namespace = ZAG_event
+## Worrying Reports
+country_event = {
+	id = ZAG_event.1
+	title = ZAG_event.1.t
+	desc = ZAG_event.1.d
+	trigger = {
+    }
+	picture = GFX_report_event_BEL_leopold
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.1.a
+		ai_chance = { 
+            factor = 1
+        }
+		trigger = { }
+		add_political_power = 50
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		hidden_effect = {
+			set_country_flag = ZAG_for_tyranny
+		}
+	}
+	option = {
+		name = ZAG_event.1.b
+		ai_chance = { 
+            factor = 1
+        }
+		trigger = { }
+		add_political_power = -50
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		hidden_effect = {
+			set_country_flag = ZAG_against_tyranny
+		}
+	}
+}
+
+
+## Coup d'Etat!
+country_event = {
+	id = ZAG_event.2
+	title = ZAG_event.2.t
+	desc = ZAG_event.2.d
+	trigger = {
+    }
+	picture = GFX_report_event_DEN_fascist_troops
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.2.a
+		ai_chance = { 
+            factor = 1
+        }
+		trigger = { has_country_flag = ZAG_for_tyranny }
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.15
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+			election_frequency = 48
+		}
+	}
+	option = {
+		name = ZAG_event.2.b
+		ai_chance = { 
+            factor = 1
+        }
+		trigger = { has_country_flag = ZAG_against_tyranny }
+		start_civil_war = {
+    		ruling_party = neutrality
+    		# Original country's ideology changes to communism
+    		ideology = ROOT
+    		# Breakaway gets old ideology of ROOT
+    		size = 0.3
+    		keep_unit_leaders = {
+    		}
+    		keep_political_party_members = yes
+			remove_ideas = {
+				ZAG_monarchic_reestablishment
+				ZAG_democratic_opposition
+			}
+			add_ideas = {
+				ZAG_liberation_front_of_cilicia
+				ZAG_armenian_state
+				ZAG_volonteer_legions
+			}
+			PREV = {
+				add_ideas = {
+					ZAG_monarchic_reestablishment
+					ZAG_democratic_opposition
+					ZAG_armenian_state
+					ZAG_volonteer_legions
+				}
+			}
+		}
+	}
+}
+
+
+
+## State Religion
+country_event = {
+	id = ZAG_event.3
+	title = ZAG_event.3.t
+	desc = ZAG_event.3.d
+	trigger = {
+    }
+	picture = GFX_report_event_generic_sign_treaty2
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.3.a
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_christian_state
+	}
+	option = {
+		name = ZAG_event.3.b
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_secular_nation
+	}
+	option = {
+		name = ZAG_event.3.c
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_jewish_state
+	}
+	option = {
+		name = ZAG_event.3.d
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_muslim_state
+	}
+}
+
+## Voting Rights Issue
+country_event = {
+	id = ZAG_event.4
+	title = ZAG_event.4.t
+	desc = ZAG_event.4.d
+	trigger = {
+    }
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.4.a
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_universal_equality
+	}
+	option = {
+		name = ZAG_event.4.b
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_limited_womens_rights
+	}
+	option = {
+		name = ZAG_event.4.c
+		ai_chance = { 
+            factor = 1
+        }
+		add_ideas = ZAG_no_rights_for_women
+	}
+}
+
+## First Election
+country_event = {
+	id = ZAG_event.5
+	title = ZAG_event.5.t
+	desc = ZAG_event.5.d
+	trigger = {
+    }
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.5.a
+		ai_chance = { 
+            factor = 1
+        }
+		promote_character = {
+			character = ZAG_avedis_levon
+			ideology = conservatism
+		}
+		complete_national_focus = ZAG_a_turn_to_the_right
+	}
+	option = {
+		name = ZAG_event.5.b
+		ai_chance = { 
+            factor = 1
+        }
+		complete_national_focus = ZAG_social_democracy_wins_again
+	}
+}
+
+
+## Alliance with Armenia - Proposal
+country_event = {
+	id = ZAG_event.6
+	title = ZAG_event.6.t
+	desc = ZAG_event.6.d
+	trigger = {
+    }
+	picture = GFX_report_event_gre_diplomacy
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = { ## YES!
+		name = ZAG_event.6.a
+		ai_chance = { 
+            factor = 1
+        }
+		ZAG = { 
+            country_event = {
+                id = ZAG_event.7
+                days = 5
+            }
+        }
+	}
+	option = { ## NO!
+		name = ZAG_event.6.b
+		ai_chance = { 
+            factor = 1
+        }
+		ZAG = { 
+            country_event = {
+                id = ZAG_event.8
+                days = 5
+            }
+        }
+	}
+}
+
+## Alliance with Armenia - Yes
+country_event = {
+	id = ZAG_event.7
+	title = ZAG_event.7.t
+	desc = ZAG_event.7.d
+	trigger = {
+    }
+	picture = GFX_report_event_gre_allied_diplomacy
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.7.a
+		ai_chance = { 
+            factor = 1
+        }
+		ZAR = {
+			give_guarantee = ZAG
+			give_military_access = ZAG
+		}
+		ZAG = {
+			give_guarantee = ZAR
+			give_military_access = ZAR
+		}
+	}
+}
+
+## Alliance with Armenia - No
+country_event = {
+	id = ZAG_event.8
+	title = ZAG_event.8.t
+	desc = ZAG_event.8.d
+	trigger = {
+    }
+	picture = GFX_report_event_tur_inonu_diplomacy
+	fire_only_once = no
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 1 }
+	major = no
+	option = {
+		name = ZAG_event.8.a
+		ai_chance = { 
+            factor = 1
+        }
+		add_political_power = 150
+	}
+}

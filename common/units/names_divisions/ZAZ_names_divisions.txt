@@ -1,0 +1,11 @@
+ZAZ_INF_00 = {
+	name = "Infantry Division"
+
+	for_countries = { ZCT ZBC }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%s Piyada Diviziyası"
+}

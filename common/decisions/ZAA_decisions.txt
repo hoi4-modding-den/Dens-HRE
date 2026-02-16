@@ -1,0 +1,334 @@
+ZAA_piracy_category = {
+	ZAA_raid_fishing_boats = {
+		allowed = {
+			original_tag = ZAA
+		}
+		fixed_random_seed = no
+		icon = GFX_decision_generic_prepare_civil_war
+		custom_cost_trigger = {
+			command_power > 14
+		}
+		custom_cost_text = ZAA_decision_cost_command_power_15
+		days_remove = 15
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+			}
+		}
+		remove_effect = {
+			random = {
+				chance = ZAA_loot_gain_chance
+				add_political_power = ZAA_political_power_loot_amount
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
+		}
+	}
+	ZAA_raid_merchant_ships = {
+		allowed = {
+			original_tag = ZAA
+		}
+		fixed_random_seed = no
+		icon = GFX_decision_generic_prepare_civil_war
+		custom_cost_trigger = {
+			command_power > 14
+			has_political_power > 14
+		}
+		custom_cost_text = ZAA_decision_cost_command_power_political_power_15
+		days_remove = 15
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+				add_political_power = -15
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states < 5 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						#custom_effect_tooltip = ZAA_gain_one_treasure
+						#hidden_effect = {
+							ZAA_add_one_treasure = yes
+						#}
+					}
+				}
+				custom_effect_tooltip = ZAA_gain_one_treasure
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 4.99 }
+						check_variable = { ZAA_red_sea_controlled_states < 10 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						#custom_effect_tooltip = ZAA_gain_one_treasure
+						#hidden_effect = {
+							ZAA_add_two_treasures = yes
+						#}
+					}
+				}
+				custom_effect_tooltip = ZAA_gain_two_treasures
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 9.99 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						#custom_effect_tooltip = ZAA_gain_one_treasure
+						#hidden_effect = {
+							ZAA_add_three_treasures = yes
+						#}
+					}
+				}
+				custom_effect_tooltip = ZAA_gain_three_treasures
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
+		}
+	}
+	ZAA_raid_military_convoys = {
+		allowed = {
+			original_tag = ZAA
+		}
+		fixed_random_seed = no
+		icon = GFX_decision_generic_prepare_civil_war
+		custom_cost_trigger = {
+			command_power > 14
+			has_political_power > 49
+		}
+		custom_cost_text = ZAA_decision_cost_command_power_political_power_15_30
+		days_remove = 15
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+				add_political_power = -50
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states < 5 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						ZAA_add_weapons_tier_1 = yes
+					}
+				}
+				custom_effect_tooltip = ZAA_add_weapons_tier_1_tt
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 4.99 }
+						check_variable = { ZAA_red_sea_controlled_states < 10 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						ZAA_add_weapons_tier_2 = yes
+					}
+				}
+				custom_effect_tooltip = ZAA_add_weapons_tier_2_tt
+			}
+			if = {
+				limit = {
+					ZAA = {
+						check_variable = { ZAA_red_sea_controlled_states > 9.99 }
+					}
+				}
+				hidden_effect = {
+					random = {
+						chance = ZAA_loot_gain_chance
+						ZAA_add_weapons_tier_3 = yes
+					}
+				}
+				custom_effect_tooltip = ZAA_add_weapons_tier_3_tt
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_tt
+		}
+	}
+}
+
+ZAA_utilizing_our_spoils = {
+	ZAA_build_dockyard = {
+		allowed = { 
+			original_tag = ZAA
+		}
+		icon = GFX_decision_generic_merge_plant_ship
+		custom_cost_trigger = {
+			check_variable = {
+				ZAA_construction_equipment_amount > 0.99
+			}
+			check_variable = {
+				ZAA_industrial_equipment_amount > 0.99
+			}
+		}
+		custom_cost_text = ZAA_treasure_cost_dockyard
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { ZAA_construction_equipment_amount = 1 }
+				subtract_from_variable = { ZAA_industrial_equipment_amount = 1 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ZAA_build_military_factory = {
+		allowed = { 
+			original_tag = ZAA
+		}
+		icon = GFX_decision_generic_industry
+		custom_cost_trigger = {
+			check_variable = {
+				ZAA_construction_equipment_amount > 0.99
+			}
+			check_variable = {
+				ZAA_industrial_equipment_amount > 1.99
+			}
+		}
+		custom_cost_text = ZAA_treasure_cost_mil_factory
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { ZAA_construction_equipment_amount = 1 }
+				subtract_from_variable = { ZAA_industrial_equipment_amount = 2 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ZAA_build_civilian_factory = {
+		allowed = { 
+			original_tag = ZAA
+		}
+		icon = GFX_decision_generic_factory
+		custom_cost_trigger = {
+			check_variable = {
+				ZAA_construction_equipment_amount > 1.99
+			}
+			check_variable = {
+				ZAA_industrial_equipment_amount > 1.99
+			}
+		}
+		custom_cost_text = ZAA_treasure_cost_civ_factory
+		complete_effect = {
+			hidden_effect = {
+				subtract_from_variable = { ZAA_construction_equipment_amount = 2 }
+				subtract_from_variable = { ZAA_industrial_equipment_amount = 2 }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+ZAA_foreign_affairs = {
+	ZAA_proclaim_the_red_sea_empire = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ZAA
+		}
+		available = {
+			ZAA = {
+				controls_state = 457
+				controls_state = 855
+				controls_state = 446
+				controls_state = 453
+				controls_state = 1111
+				controls_state = 1110
+				controls_state = 1108
+				controls_state = 679
+				controls_state = 883
+				controls_state = 856
+				controls_state = 550
+				controls_state = 293
+				controls_state = 268
+				controls_state = 992
+				controls_state = 269
+				controls_state = 659
+				controls_state = 559
+			}
+		}
+		complete_effect = {
+			ZAA = {
+				set_cosmetic_tag = ZAA_red_sea_empire
+			}
+		}
+	}
+}
+
+debug_decisions = {
+	ZAA_random_equipment_debug = {
+		available = {
+			is_ai = no
+			is_debug = yes
+		}
+		allowed = {
+			original_tag = ZAA
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 24
+				producer = global.ZAA_random_support_origin_country
+			}
+		}
+	}
+}

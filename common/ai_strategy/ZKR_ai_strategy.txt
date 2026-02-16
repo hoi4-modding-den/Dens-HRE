@@ -1,20 +1,20 @@
-ZKR_justify_war_goals = { # doesnt seem to work?
+ZKR_justify_war_goals = {
     allowed = {
         NOT = { original_tag = ZKR }
         NOT = { original_tag = ZZZ }
     }
     enable = {
+        ZKR = { 
+            has_completed_focus = ZKR_march_against_our_oppressors
+            is_subject = no
+        }
+    }
+    enable_reverse = {
         any_owned_state = {
             OR = {
                 is_claimed_by = ZKR
                 is_core_of = ZKR
             }
-        }
-    }
-    enable_reverse = {
-        ZKR = { 
-            has_completed_focus = ZKR_march_against_our_oppressors
-            is_subject = no
         }
     }
     reversed = yes
@@ -75,25 +75,20 @@ ZKR_ignore_oppressors_of_kurds = {
     }
 }
 
-ZKR_dont_mind_kurdish_expansion = {
-    allowed = {
-        NOT = { original_tag = ZKR }
-        NOT = { original_tag = ZZZ }
+ZKR_ignore_anarchy = {
+	allowed = {
+        original_tag = ZKR
     }
-    enable = {
-        always = yes
-    }
-    enable_reverse = {
-        ZKR = { 
-            is_subject = no
-        }
-    }
-    #reversed = no
-    abort_when_not_enabled = yes
 
-    ai_strategy = {
-        type = contain
-        id = ZKR
-        value = -1000
-    }
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = operative_mission
+		mission = build_intel_network
+		mission_target = ZZZ
+		value = -1000
+	}
 }

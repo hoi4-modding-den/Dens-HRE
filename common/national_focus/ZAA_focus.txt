@@ -1,0 +1,192 @@
+focus_tree = {
+	id = ZAA_focus
+	
+	country = {
+		factor = 0
+		modifier = { add = 10 tag = ZAA }
+	}
+
+	reset_on_civilwar = no
+	
+	initial_show_position = { x = 5 y = 0 }
+	
+	continuous_focus_position = { x = 2500 y = 1000 }
+
+	focus = {
+		id = ZAA_sailor_state
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 2
+		x = 15
+		y = 0
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_military_first_policy
+		icon = GFX_focus_generic_military_dictatorship
+		cost = 5
+		prerequisite = { focus = ZAA_sailor_state }
+		relative_position_id = ZAA_sailor_state
+		mutually_exclusive = { focus = ZAA_strengthen_the_administration }
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_conscript_the_bedouins
+		icon = GFX_focus_ETH_expand_the_levy
+		cost = 5
+		prerequisite = { focus = ZAA_military_first_policy }
+		relative_position_id = ZAA_military_first_policy
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_rule_by_decree
+		icon = GFX_goal_generic_political_pressure
+		cost = 5
+		prerequisite = { focus = ZAA_military_first_policy }
+		relative_position_id = ZAA_military_first_policy
+		x = 0
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_fuel_the_war_machine
+		icon = GFX_goal_generic_secret_weapon
+		cost = 5
+		prerequisite = { focus = ZAA_rule_by_decree }
+		prerequisite = { focus = ZAA_conscript_the_bedouins }
+		relative_position_id = ZAA_rule_by_decree
+		x = -1
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_strengthen_the_administration
+		icon = GFX_focus_generic_naval_discipline
+		cost = 5
+		prerequisite = { focus = ZAA_sailor_state }
+		relative_position_id = ZAA_sailor_state
+		mutually_exclusive = { focus = ZAA_military_first_policy }
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_invest_into_the_public
+		icon = GFX_focus_generic_welfare
+		cost = 5
+		prerequisite = { focus = ZAA_strengthen_the_administration }
+		relative_position_id = ZAA_strengthen_the_administration
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_every_soldier_a_constructor
+		icon = GFX_focus_CHI_commemorate_labour_corp
+		cost = 5
+		prerequisite = { focus = ZAA_strengthen_the_administration }
+		relative_position_id = ZAA_strengthen_the_administration
+		x = 0
+		y = 1
+		
+		completion_reward = {
+			add_ideas = { ZAA_labour_service_corps }
+		}
+	}
+	
+	focus = {
+		id = ZAA_bread_and_circuses
+		icon = GFX_focus_PRC_land_revolution_expedited
+		cost = 5
+		prerequisite = { focus = ZAA_invest_into_the_public }
+		prerequisite = { focus = ZAA_every_soldier_a_constructor }
+		relative_position_id = ZAA_invest_into_the_public
+		x = -1
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_collaborate_with_the_imams
+		icon = GFX_focus_PER_islamic_solidarity
+		cost = 5
+		prerequisite = { 
+			focus = ZAA_military_first_policy
+			focus = ZAA_strengthen_the_administration
+		}
+		relative_position_id = ZAA_strengthen_the_administration
+		x = -2
+		y = 2
+		
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ZAA_mustafa_almaraghi_token
+		}
+	}
+	
+	focus = {
+		id = ZAA_first_test_of_strength
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		cost = 5
+		prerequisite = { 
+			focus = ZAA_bread_and_circuses 
+			focus = ZAA_fuel_the_war_machine 
+		}
+		relative_position_id = ZAA_bread_and_circuses
+		x = -3
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_develop_the_shipbuilding_industry
+		icon = GFX_focus_POL_develop_polish_shipbuilding #GFX_focus_generic_refit_civilian_ships
+		cost = 2
+		x = 3
+		y = 0
+
+		completion_reward = { 
+			
+		}
+	}
+
+}

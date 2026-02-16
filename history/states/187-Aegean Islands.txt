@@ -2,7 +2,7 @@
 state={
 	id=187
 	name="STATE_187"
-	manpower = 322600
+	manpower = 212300
 	
 	state_category = small_island
 	
@@ -11,13 +11,10 @@ state={
 	}
 
 	history={
-		owner = ZZZ #owner = GRE
+		owner = ZGR #owner = GRE
 		buildings = {
 			infrastructure = 1
 			dockyard = 1
-			8435 = {
-				naval_base = 1
-			}
 			6550 = {
 				naval_base = 1
 			}
@@ -25,14 +22,11 @@ state={
 		victory_points = {
 			6550 1
 		}
-		victory_points = {
-			8435 1
-		}
-		#add_core_of = GRE
+		add_core_of = ZGR
 	}
 
 	provinces={
-		3401 6550 8435 
+		3401 6550 
 	}
 
 	local_supplies=9.0 

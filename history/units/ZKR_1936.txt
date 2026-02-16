@@ -1,6 +1,7 @@
 division_template = {
 	name = "Cavalry Brigade"
 
+	priority = 0
 	division_names_group = ZKR_CAV_01
 
 	regiments = {
@@ -14,15 +15,17 @@ division_template = {
 	}
 }
 division_template = {
-	name = "Xoybûn Militia"
+	name = "Peshmerga Brigade"
 
-    priority = 0
+	template_counter = 116
 	division_names_group = ZKR_MIL_01
 
 	regiments = {
-		militia = { x = 0 y = 0 }
-        militia = { x = 0 y = 1 }
-        militia = { x = 0 y = 2 }
+		irregular_infantry = { x = 0 y = 0 }
+        irregular_infantry = { x = 0 y = 1 }
+        irregular_infantry = { x = 0 y = 2 }
+		irregular_infantry = { x = 1 y = 0 }
+        irregular_infantry = { x = 1 y = 1 }
 	}
 	support = {
 	    recon = { x = 0 y = 0 }
@@ -41,12 +44,14 @@ division_template = {
         infantry = { x = 1 y = 2 }
 	}
 	support = {
-        artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 0 }
+        artillery = { x = 0 y = 1 }
 	}
 }
 division_template = {
 	name = "Mountain Infantry Division"
 
+	priority = 2
 	division_names_group = ZKR_MTN_01
 
 	regiments = {
@@ -91,7 +96,7 @@ units = {
 			name_order = 1
 		}
 		location = 12387 # Batman
-		division_template = "Xoybûn Militia"
+		division_template = "Peshmerga Brigade"
 		start_experience_factor = 0.3
         start_equipment_factor = 1
 	}
@@ -101,7 +106,7 @@ units = {
 			name_order = 2
 		}
 		location = 4512 # Diyarbakir
-		division_template = "Xoybûn Militia"
+		division_template = "Peshmerga Brigade"
 		start_experience_factor = 0.3
         start_equipment_factor = 1
 	}
@@ -111,7 +116,7 @@ units = {
 			name_order = 3
 		}
 		location = 10497 # Sert
-		division_template = "Xoybûn Militia"
+		division_template = "Peshmerga Brigade"
 		start_experience_factor = 0.3
         start_equipment_factor = 1
 	}

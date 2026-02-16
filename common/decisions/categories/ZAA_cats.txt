@@ -1,0 +1,76 @@
+ZAA_foreign_affairs = {
+
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_decision_cat_picture_government_in_exile
+	
+	allowed = {
+		original_tag = ZAA
+	}
+	
+	visible = {
+		always = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 10
+}
+
+
+ZAA_piracy_category = {
+
+	icon = GFX_decision_category_GER_seize_gold_reserves
+	#picture = GFX_decision_cat_picture_generic_south_american_naval_race
+	
+	scripted_gui = ZAA_decisions_scripted_gui
+	
+	allowed = {
+		original_tag = ZAA
+	}
+	
+	visible = {
+		always = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 9
+}
+
+ZAA_invasion_plans = {
+
+	icon = GFX_decision_category_border_conflicts
+	picture = GFX_decision_cat_picture_generic_border_conflicts
+	
+	
+	allowed = {
+		original_tag = ZAA
+	}
+	
+	visible = {
+		always = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 8
+}
+
+ZAA_utilizing_our_spoils = {
+
+	icon = GFX_decision_category_generic_economy
+	picture = GFX_decision_cat_picture_generic_shipbuilding
+	
+	
+	allowed = {
+		original_tag = ZAA
+	}
+	
+	visible = {
+		always = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 7
+}

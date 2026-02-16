@@ -370,7 +370,7 @@ focus_tree = {
 
 	focus = {
 		id = ZAR_The_Art_In_The_Industrial_City
-		icon = GFX_fish
+		icon = GFX_focus_generic_military_industry
 		x = 17
 		y = 7
 		cost = 5
@@ -388,7 +388,7 @@ focus_tree = {
 
 	focus = {
 		id = ZAR_Be_Faster_Than_The_Clocks_Tick
-		icon = GFX_fish
+		icon = GFX_focus_GER_kriegslokomotive
 		x = 17
 		y = 8
 		cost = 5
@@ -410,7 +410,7 @@ focus_tree = {
 
 	focus = {
 		id = ZAR_Dealing_With_The_Trabzon_Zone
-		icon = GFX_fish
+		icon = GFX_goal_generic_dangerous_deal
 		x = 22
 		y = 4
 		cost = 1
@@ -458,7 +458,7 @@ focus_tree = {
 
 	focus = {
 		id = ZAR_Seek_Integration
-		icon = GFX_fish
+		icon = GFX_focus_GER_integrated_economies
 		x = 23
 		y = 5
 		cost = 7
@@ -481,7 +481,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_Annex_The_Zone
-		icon = GFX_fish
+		icon = GFX_ZAR_Armenia_Trabzon_Annex
 		x = 22
 		y = 6
 		cost = 3
@@ -526,7 +526,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_Expand_Infrastructure_Across_The_Nation
-		icon = GFX_fish
+		icon = GFX_focus_generic_road_investment
 		x = 20
 		y = 7
 		cost = 5
@@ -589,7 +589,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ZAR_A_Homogenous_Nation_Ready_In_Unison
-		icon = GFX_fish
+		icon = GFX_focus_FIN_national_fanatism
 		x = 20
 		y = 8
 		cost = 5
@@ -622,6 +622,794 @@ focus_tree = {
 		}
 		
 	}
+#Economy Tree
+	focus = {
+		id = ZAR_Restart_The_Modernisation_Of_Yerevan
+		available = {
+		
+		}
+		icon = GFX_fish
+		x = 29
+		y = 1
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Connect_The_Nation
+		prerequisite = { focus = ZAR_Restart_The_Modernisation_Of_Yerevan }
+		icon = GFX_fish
+		x = 27
+		y = 2
+		cost = 4
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Electrify_Rural_Villages
+		prerequisite = { focus = ZAR_Connect_The_Nation }
+		icon = GFX_fish
+		x = 25
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Industrialise_Peasant_Agriculture
+		prerequisite = { focus = ZAR_Connect_The_Nation }
+		icon = GFX_fish
+		x = 27
+		y = 3
+		cost = 7
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_A_New_Capital_Building
+		prerequisite = { focus = ZAR_Connect_The_Nation }
+		icon = GFX_fish
+		x = 29
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Complete_The_Yerevan_Project
+		prerequisite = { focus = ZAR_A_New_Capital_Building }
+		prerequisite = { focus = ZAR_Industrialise_Peasant_Agriculture }
+		prerequisite = { focus = ZAR_Electrify_Rural_Villages }
+		icon = GFX_fish
+		x = 27
+		y = 4
+		cost = 6
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Mining_In_Nakhchivan
+		prerequisite = { focus = ZAR_Restart_The_Modernisation_Of_Yerevan }
+		icon = GFX_fish
+		x = 32
+		y = 2
+		cost = 7
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Acquire_Turkish_Industry
+		prerequisite = { focus = ZAR_Mining_In_Nakhchivan }
+		icon = GFX_fish
+		x = 31
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_An_Independent_Economy
+		prerequisite = { focus = ZAR_Mining_In_Nakhchivan }
+		icon = GFX_fish
+		x = 33
+		y = 3
+		cost = 3
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Bread_And_Land
+		prerequisite = { focus = ZAR_An_Independent_Economy }
+		icon = GFX_fish
+		x = 33
+		y = 4
+		cost = 3
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Arms_Industry
+		prerequisite = { focus = ZAR_Acquire_Turkish_Industry }
+		icon = GFX_fish
+		x = 31
+		y = 4
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Nationalise_All_Industry
+		prerequisite = { focus = ZAR_Arms_Industry }
+		prerequisite = { focus = ZAR_Bread_And_Land }
+		icon = GFX_fish
+		x = 32
+		y = 5
+		cost = 7
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Expand_The_North_Armenian_Mines
+		prerequisite = { focus = ZAR_Nationalise_All_Industry }
+		icon = GFX_fish
+		x = 29
+		y = 6
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Mechanised_Mining
+		prerequisite = { focus = ZAR_Expand_The_North_Armenian_Mines }
+		icon = GFX_fish
+		x = 29
+		y = 7
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Modernise_The_Port_Of_Trabzon
+		prerequisite = { focus = ZAR_Nationalise_All_Industry }
+		icon = GFX_fish
+		x = 31
+		y = 6
+		cost = 7
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Fish
+		prerequisite = { focus = ZAR_Modernise_The_Port_Of_Trabzon }
+		icon = GFX_fish
+		x = 31
+		y = 7
+		cost = 2
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Erzerum_Industral_Expansiom
+		prerequisite = { focus = ZAR_Nationalise_All_Industry }
+		icon = GFX_fish
+		x = 33
+		y = 6
+		cost = 7
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Kars_Gyurmi_Economic_Specialisation
+		prerequisite = { focus = ZAR_Erzerum_Industral_Expansiom }
+		icon = GFX_fish
+		x = 33
+		y = 7
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Start_An_Air_Industry
+		prerequisite = { focus = ZAR_Nationalise_All_Industry }
+		icon = GFX_fish
+		x = 35
+		y = 6
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Fighter_Primacy
+		prerequisite = { focus = ZAR_Start_An_Air_Industry }
+		icon = GFX_fish
+		x = 35
+		y = 7
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_Second_Industrial_Revolution
+		prerequisite = { focus = ZAR_Fighter_Primacy }
+		prerequisite = { focus = ZAR_Kars_Gyurmi_Economic_Specialisation }
+		prerequisite = { focus = ZAR_Fish }
+		prerequisite = { focus = ZAR_Mechanised_Mining }
+		icon = GFX_fish
+		x = 32
+		y = 8
+		cost = 10
+		ai_will_do = { factor = 1 }
+		available = {
+				
+		}
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_The_Final_Strike
+		available = {
+			always = no
+		}
+		icon = GFX_fish
+		x = 17
+		y = 11
+		cost = 0
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+	focus = {
+		id = ZAR_End_The_Ottoman_Threat
+		icon = GFX_ZAR_Armenia_Ottoman_Fuck_You
+		x = 15
+		y = 12
+		cost = 3
+		prerequisite = { focus = ZAR_The_Final_Strike }
+		
+		ai_will_do = { factor = 1 }
+		available = {
+				ZCT = {
+				exists = yes
+				}
+		}
+		completion_reward = {
+			add_state_claim = 49
+			add_state_claim = 1123 
+			add_state_claim = 343
+			add_state_claim = 346
+			add_state_claim = 1122
+			
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZOT
+    				generator = { 49 1123 343 346 1122 }
+    				expire = 280
+			}
+		}
+		
+	}
+	focus = {
+		id = ZAR_March_Into_Istanbul
+		icon = GFX_focus_TUR_purge_the_kemalists
+		x = 17
+		y = 12
+		cost = 3
+		prerequisite = { focus = ZAR_The_Final_Strike }
+		available = {
+				ZCT = {
+				exists = yes
+				}
+		}
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			add_state_claim = 347
+			add_state_claim = 340 
+			add_state_claim = 797
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZCT
+    				generator = { 347 340 797 }
+    				expire = 280
+			}
+			add_state_claim = 342
+			add_state_claim = 339
+			add_state_claim = 164
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZGR
+    				generator = { 342 339 }
+    				expire = 280
+			}
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Kurdish_Problem
+		icon = GFX_focus_generic_befriend_kurdistan
+		x = 19
+		y = 12
+		cost = 3
+		prerequisite = { focus = ZAR_The_Final_Strike }
+		
+		ai_will_do = { factor = 1 }
+		available = {
+				ZKR = {
+				exists = yes
+				}
+		}
+		completion_reward = {
+			country_event = { id = ZAR.10 }
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_A_Sigh_Of_Relief
+		icon = GFX_fish
+		available = {
+			NOT = {
+				ZOT = {
+				exists = yes
+				}
+				ZCT = {
+				exists = yes
+				}
+				ZGR = {
+				exists = yes
+				}
+			}
+		}
+		x = 17
+		y = 13
+		cost = 5
+		prerequisite = { focus = ZAR_The_Kurdish_Problem focus = ZAR_End_The_Ottoman_Threat focus = ZAR_March_Into_Istanbul }
+		
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Charents_Death
+		icon = GFX_fish
+		available = {
+			
+			
+		}
+		x = 17
+		y = 14
+		cost = 5
+		prerequisite = { focus = ZAR_A_Sigh_Of_Relief }
+		
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+		}
+		
+	}
 
 
-	
+	focus = {
+		id = ZAR_The_Futurist_Question
+		icon = GFX_fish
+		available = {
+			
+			
+		}
+		x = 17
+		y = 15
+		cost = 5
+		prerequisite = { focus = ZAR_Charents_Death }
+		
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_A_Pragmatic_Future
+		icon = GFX_fish
+		available = {
+			always = no
+			
+		}
+		x = 14
+		y = 16
+		cost = 0
+		prerequisite = { focus = ZAR_The_Futurist_Question }
+		mutually_exclusive = { focus = ZAR_The_Future_Demands_Totality }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Turko_Armenian_Culture
+		icon = GFX_fish
+		available = {
+			
+		}
+		x = 13
+		y = 17
+		cost = 5
+		prerequisite = { focus = ZAR_A_Pragmatic_Future }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Meritocratic_Governance
+		icon = GFX_fish
+		available = {
+			
+		}
+		x = 15
+		y = 17
+		cost = 5
+		prerequisite = { focus = ZAR_A_Pragmatic_Future }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Automobile_Exemplifies_Industrial_Culture
+		icon = GFX_fish
+		available = {
+			
+		}
+		x = 14
+		y = 18
+		cost = 3
+		prerequisite = { focus = ZAR_Meritocratic_Governance }
+		prerequisite = { focus = ZAR_Turko_Armenian_Culture }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Nationalise_Turkish_Factories
+		icon = GFX_fish
+		available = {
+			
+		}
+		x = 14
+		y = 19
+		cost = 7
+		prerequisite = { focus = ZAR_The_Automobile_Exemplifies_Industrial_Culture }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_A_Nation_Of_Turks_A_Nation_Of_Armenians
+		icon = GFX_fish
+		available = {
+			
+		}
+		x = 14
+		y = 20
+		cost = 10
+		prerequisite = { focus = ZAR_Nationalise_Turkish_Factories }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+
+	focus = {
+		id = ZAR_The_Future_Demands_Totality
+		icon = GFX_fish
+		available = {
+			always = no
+			
+		}
+		x = 20
+		y = 16
+		cost = 0
+		prerequisite = { focus = ZAR_The_Futurist_Question }
+		mutually_exclusive = { focus = ZAR_A_Pragmatic_Future }
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Will_Of_The_Collective_First
+		icon = GFX_fish
+		x = 18
+		y = 17
+		cost = 5
+		prerequisite = { focus = ZAR_The_Future_Demands_Totality }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Future_Now_And_Always
+		icon = GFX_fish
+		available = {
+			
+		}
+		x = 22
+		y = 17
+		cost = 5
+		prerequisite = { focus = ZAR_The_Future_Demands_Totality }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_For_The_Perpetuity_Of_The_Armenian_Race
+		icon = GFX_fish
+		available = {
+			
+			
+		}
+		x = 20
+		y = 17
+		cost = 7
+		prerequisite = { focus = ZAR_The_Future_Demands_Totality }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Disintegration_Of_Individualism
+		icon = GFX_fish
+		available = {
+			
+			
+		}
+		x = 20
+		y = 18
+		cost = 7
+		prerequisite = { focus = ZAR_The_Will_Of_The_Collective_First }
+		prerequisite = { focus = ZAR_For_The_Future_Of_The_Armenian_Race }
+		prerequisite = { focus = ZAR_The_Future_Now_And_Always }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_Our_Minds_One_And_Whole
+		icon = GFX_ZAR_Crazy_Armenia_Brain
+		available = {
+			
+			
+		}
+		x = 20
+		y = 19
+		cost = 10
+		prerequisite = { focus = ZAR_The_Will_Of_The_Collective_First }
+		prerequisite = { focus = ZAR_For_The_Future_Of_The_Armenian_Race }
+		prerequisite = { focus = ZAR_The_Future_Now_And_Always }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Hivemind_Of_Progress
+		icon = GFX_fish
+		available = {
+			
+			
+		}
+		x = 20
+		y = 20
+		cost = 5
+		prerequisite = { focus = ZAR_Our_Minds_One_And_Whole }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+	focus = {
+		id = ZAR_The_Time_For_The_Greater_Middle_Eastern_Armenian_Collective
+		icon = GFX_ZAR_Crazy_Armenia_Middle_East
+		available = {
+			
+			
+		}
+		x = 20
+		y = 21
+		cost = 4
+		prerequisite = { focus = ZAR_The_Hivemind_Of_Progress }
+		ai_will_do = { factor = 1 }
+		
+		completion_reward = {
+			
+		}
+		
+	}
+
+
+}

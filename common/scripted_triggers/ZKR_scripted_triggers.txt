@@ -25,3 +25,304 @@ ZKR_can_intervene_in_syria = {
         }
     }
 }
+
+ZKR_is_viable_front_partner = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_viable_front_partner_tt
+        ZKR_is_middle_east_country = yes
+        NOT = { has_government = fascism }
+        if = {
+            limit = {
+                has_government = communism
+            }
+            ZKR_is_anti_stalinist_communist = yes
+        }
+        NOT = { original_tag = ZOT }
+        NOT = { original_tag = ZCT }
+        NOT = { original_tag = ZTC }
+        NOT = { original_tag = ZTM }
+        NOT = { original_tag = ZBA }
+        NOT = { original_tag = ZNW }
+        NOT = { original_tag = ZAS }
+        if = {
+            limit = {
+                original_tag = DN1
+            }
+            has_cosmetic_tag = ZKR_palestine
+        }
+        if = {
+            limit = {
+                original_tag = ZIR
+            }
+            has_cosmetic_tag = ZKR_persia
+        }
+        if = {
+            limit = {
+                original_tag = ZCY
+            }
+            NOT = { has_cosmetic_tag = ZCY_ENG }
+        }
+        NOT = { original_tag = DN2 }
+        if = {
+            limit = {
+                original_tag = ZAG
+            }
+            OR = { # to prevent from inviting them before they get coup'd
+                has_completed_focus = ZAG_march_on_the_city_hall
+                has_completed_focus = ZAG_a_state_for_the_people
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                original_tag = ZAR
+            }
+            has_government = democratic
+        }
+        if = {
+            limit = {
+                original_tag = ZA1
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                original_tag = ZHU
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                original_tag = ZJA
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                original_tag = ZJO
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                original_tag = ZLE
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                ZKR_is_syrian_nation = yes
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        if = {
+            limit = {
+                original_tag = ZBC
+            }
+            OR = {
+                has_government = democratic
+                AND = {
+                    has_government = communism
+                    has_completed_focus = ZBC_korganovs_downfall
+                }
+            }
+            ROOT = { NOT = { is_ally_with = ZAZ } }
+        }
+        if = {
+            limit = {
+                original_tag = ZAZ
+            }
+            ROOT = { NOT = { is_ally_with = ZBC } }
+        }
+        if = {
+            limit = {
+                original_tag = ZTS
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+        NOT = { original_tag = ZRM }
+        if = {
+            limit = {
+                original_tag = ZSH
+            }
+            OR = {
+                has_government = democratic
+                has_government = communism
+            }
+        }
+    }
+}
+
+ZKR_is_viable_coalition_partner = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_viable_coalition_partner_tt
+        ZKR_is_middle_east_country = yes
+        OR = {
+            has_government = neutrality
+            has_government = fascism
+        }
+        NOT = { original_tag = ZOT }
+        NOT = { original_tag = ZCT }
+        NOT = { original_tag = ZTC }
+        NOT = { original_tag = ZTM }
+        NOT = { original_tag = ZBA }
+        NOT = { original_tag = ZNW }
+        if = {
+            limit = {
+                original_tag = DN1
+            }
+            has_cosmetic_tag = ZKR_palestine
+        }
+        if = {
+            limit = {
+                original_tag = ZIR
+            }
+            has_cosmetic_tag = ZKR_persia
+        }
+        if = {
+            limit = {
+                original_tag = ZCY
+            }
+            NOT = { has_cosmetic_tag = ZCY_ENG }
+        }
+        NOT = { original_tag = DN2 }
+        NOT = { original_tag = ZAG }
+        NOT = { original_tag = ZAR }
+        NOT = { original_tag = ZA1 }
+        if = {
+            limit = {
+                original_tag = ZHU
+            }
+            has_government = fascism
+        }
+        if = {
+            limit = {
+                original_tag = ZJA
+            }
+            has_government = fascism
+        }
+        if = {
+            limit = {
+                original_tag = ZPE
+            }
+            ROOT = { NOT = { is_ally_with = ZPR } }
+        }
+        if = {
+            limit = {
+                original_tag = ZPR
+            }
+            ROOT = { NOT = { is_ally_with = ZPE } }
+        }
+        if = {
+            limit = {
+                original_tag = ZJO
+            }
+            has_government = fascism
+        }
+        NOT = { original_tag = ZTS }
+        NOT = { original_tag = ZBC }
+        if = {
+            limit = {
+                original_tag = ZAZ
+            }
+            ROOT = { NOT = { is_ally_with = ZBC } }
+        }
+        NOT = { original_tag = ZAS }
+        if = {
+            limit = {
+                original_tag = ZGR
+            }
+            has_government = fascism
+        }
+        NOT = { original_tag = ZRM }
+        NOT = { original_tag = ZSH }
+    }
+}
+
+ZKR_anatolian_protectorate_states = {
+    OR = {
+        state = 49
+        state = 164
+        state = 187
+        state = 339
+        state = 340
+        state = 342
+        state = 343
+        state = 345
+        state = 346
+        state = 347
+        state = 356
+        state = 797
+        state = 1122
+        state = 1123
+        state = 1124
+    }
+}
+
+ZKR_turkish_republic_states = {
+    OR = {
+        AND = {
+            region = 129
+            NOT = {
+                OR = {
+                    state = 350
+                    state = 352
+                    state = 353
+                    state = 354
+                    state = 800
+                    state = 1113
+                }
+            }
+        }
+        state = 797
+        state = 164
+        state = 187
+        state = 1124
+    }
+}
+
+ZKR_is_middle_east_country = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_middle_east_country_tt
+        OR = {
+            capital_scope = { is_on_continent = middle_east }
+            original_tag = ZCY
+        }
+    }
+}
+
+ZKR_is_anti_stalinist_communist = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_anti_stalinist_communist_tt
+        has_government = communism
+        NOT = { has_country_leader_ideology = stalinism }
+        NOT = { has_country_leader_ideology = capitalist_menace }
+        NOT = { has_country_leader_ideology = totalism }
+        NOT = { FROM = { original_tag = ZZZ } }
+        NOT = { FROM = { original_tag = ZNW } }
+    }
+}

@@ -21,7 +21,7 @@ ZKR_INF_01 = {
 }
 
 ZKR_MIL_01 = {
-	name = "Xoybûn Militias"
+	name = "Peshmerga Brigades"
 
 	for_countries = { ZKR }
 
@@ -29,15 +29,15 @@ ZKR_MIL_01 = {
 
 	division_types = { "infantry" }
 
-	fallback_name = "%d. Milîsên Xoybûnê"
+	fallback_name = "%d. Lîwaya Pêşmerge"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%d. Milîsên Xoybûnê" }
-		2 = { "%d. Milîsên Xoybûnê" }
-		3 = { "%d. Milîsên Xoybûnê" }
+		1 = { "%d. Lîwaya Pêşmerge" }
+		2 = { "%d. Lîwaya Pêşmerge" }
+		3 = { "%d. Lîwaya Pêşmerge" }
 
 	}
 }

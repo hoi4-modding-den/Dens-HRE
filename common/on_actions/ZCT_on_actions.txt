@@ -1,0 +1,18 @@
+on_actions = {
+    on_state_control_changed = {
+        effect = {
+            if = {
+                limit = {
+                    FROM.FROM = { state = 49 }
+                }
+                news_event = ZCT_news.2
+            }
+            if = {
+                limit = {
+                    FROM.FROM = { state = 797 }
+                }
+                news_event = ZCT_news.3
+            }
+        }
+    }
+}

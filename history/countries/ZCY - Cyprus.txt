@@ -1,0 +1,221 @@
+capital = 183
+
+oob = "ZCY_1936"
+# if = {
+# 	limit = { has_dlc = "Man the Guns" }
+# 		set_naval_oob = "XHO_1936_naval_mtg"
+# 	else = {
+# 		set_naval_oob = "XHO_1936_naval_legacy"
+# 	}
+# }
+
+set_research_slots = 3
+set_convoys = 45
+set_stability = 0.4
+set_war_support = 0.28
+
+set_technology = {
+	electronic_mechanical_engineering = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	basic_train = 1
+	basic_fortification_tech = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		transport = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		mtg_transport = 1
+		basic_dp_light_battery = 1
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+
+add_ideas = {
+	limited_conscription
+}
+
+complete_special_project = {
+	project = sp:sp_air_radar
+}
+
+set_cosmetic_tag = ZCY_ENG
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.1.1"
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 47
+	democratic = 44
+	fascism = 0
+	communism = 9
+}
+
+# if = {
+# 	limit = { has_dlc = "Man the Guns" }
+# 	# Submarines #
+# 	create_equipment_variant = {			# represents K II-X, O8 subs
+# 		name = "K-III Class"
+# 		type = ship_hull_submarine_1
+# 		name_group = HOL_SS_KCLASS
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+# 			fixed_ship_engine_slot = sub_ship_engine_1
+# 			rear_1_custom_slot = empty
+# 		}
+# 		obsolete = yes
+# 	}
+# 	create_equipment_variant = {
+# 		name = "O9 Class"					# represents O9-15, K XI-XIII subs
+# 		type = ship_hull_submarine_1
+# 		name_group = HOL_SS_OCLASS
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+# 			fixed_ship_engine_slot = sub_ship_engine_2
+# 			rear_1_custom_slot = empty
+# 		}
+# 		obsolete = yes
+# 	}
+# 	# Destroyers #
+# 	create_equipment_variant = {
+# 		name = "Van Ghent Class"			
+# 		type = ship_hull_light_1
+# 		name_group = HOL_DD_HISTORICAL
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_battery_slot = ship_light_battery_1
+# 			fixed_ship_anti_air_slot = ship_anti_air_1
+# 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+# 			fixed_ship_radar_slot = empty
+# 			fixed_ship_engine_slot = light_ship_engine_1
+# 			fixed_ship_torpedo_slot = ship_torpedo_1
+# 			mid_1_custom_slot = ship_mine_layer_1
+# 			rear_1_custom_slot = ship_depth_charge_1
+# 		}
+# 		obsolete = yes
+# 	}
+# 	create_equipment_variant = {
+# 		name = "Van Galen Class"				
+# 		type = ship_hull_light_1
+# 		name_group = HOL_DD_HISTORICAL
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_battery_slot = ship_light_battery_1
+# 			fixed_ship_anti_air_slot = ship_anti_air_1
+# 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+# 			fixed_ship_radar_slot = empty
+# 			fixed_ship_engine_slot = light_ship_engine_1
+# 			fixed_ship_torpedo_slot = ship_torpedo_1
+# 			mid_1_custom_slot = empty
+# 			rear_1_custom_slot = ship_depth_charge_1
+# 		}
+# 	}
+# 	# Light Cruisers #
+# 	create_equipment_variant = {
+# 		name = "Java Class"
+# 		type = ship_hull_cruiser_1
+# 		name_group = HOL_CL_HISTORICAL
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_battery_slot = ship_light_medium_battery_1
+# 			fixed_ship_anti_air_slot = ship_anti_air_1
+# 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+# 			fixed_ship_radar_slot = empty
+# 			fixed_ship_engine_slot = cruiser_ship_engine_1
+# 			mid_1_custom_slot = empty
+# 			mid_2_custom_slot = ship_light_medium_battery_1
+# 			rear_1_custom_slot = ship_airplane_launcher_1
+# 		}
+# 		obsolete = yes
+# 	}
+# 	create_equipment_variant = {
+# 		name = "De Ruyter Class"
+# 		type = ship_hull_cruiser_1
+# 		name_group = HOL_CL_HISTORICAL
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_battery_slot = ship_light_medium_battery_1
+# 			fixed_ship_anti_air_slot = ship_anti_air_1
+# 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+# 			fixed_ship_radar_slot = empty
+# 			fixed_ship_engine_slot = cruiser_ship_engine_2
+# 			mid_1_custom_slot = empty
+# 			mid_2_custom_slot = empty
+# 			rear_1_custom_slot = ship_airplane_launcher_1
+# 		}
+# 	}
+# 	# Heavy Cruisers #
+# 	create_equipment_variant = {
+# 		name = "Hertog Hendrik Class"			
+# 		type = ship_hull_cruiser_coastal_defense_ship
+# 		name_group = HOL_CA_HISTORICAL
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_battery_slot = ship_light_medium_battery_1
+# 			fixed_ship_anti_air_slot = empty
+# 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+# 			fixed_ship_radar_slot = empty
+# 			fixed_ship_engine_slot = cruiser_ship_engine_1
+# 			fixed_ship_armor_slot = ship_armor_cruiser_2
+# 			mid_1_custom_slot = ship_airplane_launcher_1
+# 			mid_2_custom_slot = empty
+# 			rear_1_custom_slot = empty
+# 		}
+# 		obsolete = yes
+# 	}
+# 	create_equipment_variant = {
+# 		name = "Holland Class"
+# 		type = ship_hull_cruiser_coastal_defense_ship
+# 		name_group = HOL_CA_HISTORICAL
+# 		parent_version = 0
+# 		modules = {
+# 			fixed_ship_battery_slot = ship_heavy_battery_1
+# 			fixed_ship_anti_air_slot = ship_anti_air_1
+# 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+# 			fixed_ship_radar_slot = empty
+# 			fixed_ship_engine_slot = cruiser_ship_engine_1
+# 			fixed_ship_armor_slot = ship_armor_cruiser_2
+# 			fixed_ship_secondaries_slot = ship_secondaries_1
+# 			mid_1_custom_slot = empty
+# 			mid_2_custom_slot = empty
+# 			rear_1_custom_slot = ship_torpedo_1
+# 		}
+# 	}
+# }

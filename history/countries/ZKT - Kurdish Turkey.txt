@@ -1,0 +1,32 @@
+capital = 49
+
+set_research_slots = 1
+set_stability = 0.1
+set_war_support = 0
+
+set_rule = {
+	can_create_collaboration_government = no
+}
+
+# Leaders
+#recruit_character = 
+
+# Advisors / Generals
+
+
+set_country_flag = no_generic_characters
+set_country_flag = DEN_hide_political_decisions
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.6.12"
+	election_frequency = 24
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 25
+	democratic = 25
+	fascism = 25
+	communism = 25
+}

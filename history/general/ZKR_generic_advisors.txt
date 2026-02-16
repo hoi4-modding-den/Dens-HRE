@@ -25,7 +25,7 @@ every_possible_country = {
         } 
     }
     generate_character = { 
-        token_base = generic_army_chief_plan 
+        token_base = generic_army_chief_planning_guy
         advisor = { 
             slot = army_chief 
             traits = { army_chief_planning_2 } 
@@ -48,7 +48,7 @@ every_possible_country = {
     }
 
     generate_character = {
-		token_base = generic_navy_chief_rading
+		token_base = generic_navy_chief_raiding_guy
 		advisor = {
 			slot = navy_chief
 			traits = { navy_chief_commerce_raiding_2 }
@@ -68,17 +68,6 @@ every_possible_country = {
         } 
         portraits = { 
             army = { small = GFX_idea_generic_air_chief_all_weather } 
-        } 
-    }
-    generate_character = { 
-        token_base = generic_air_chief_safety 
-        advisor = { 
-            slot = air_chief 
-            traits = { air_chief_safety_1 } 
-            cost = 50 
-        } 
-        portraits = { 
-            army = { small = GFX_idea_generic_air_chief_safety } 
         } 
     }
     generate_character = { 
@@ -107,7 +96,7 @@ every_possible_country = {
         } 
     }
     generate_character = { 
-        token_base = generic_army_entrenchtment 
+        token_base = generic_army_entrenchment_girl
         advisor = { 
             slot = high_command 
             traits = { army_entrenchment_1 } 
@@ -115,7 +104,7 @@ every_possible_country = {
             cost = 50 
         } 
         portraits = { 
-            army = { small = GFX_idea_generic_army_entrenchtment } 
+            army = { small = GFX_portrait_ZKR_generic_entrenchment_girl } 
         } 
     }
     generate_character = { 
@@ -131,7 +120,7 @@ every_possible_country = {
         } 
     }
     generate_character = { 
-        token_base = generic_army_commando 
+        token_base = generic_army_commando_guy
         advisor = { 
             slot = high_command 
             traits = { army_commando_2 } 
@@ -155,19 +144,7 @@ every_possible_country = {
         } 
     }
     generate_character = { 
-        token_base = generic_army_regrouping 
-        advisor = { 
-            slot = high_command 
-            traits = { army_regrouping_1 } 
-            ledger = army 
-            cost = 50 
-        } 
-        portraits = { 
-            army = { small = GFX_idea_generic_army_regrouping } 
-        } 
-    }
-    generate_character = { 
-        token_base = generic_army_concealment 
+        token_base = generic_army_concealment_guy
         advisor = { 
             slot = high_command 
             traits = { army_concealment_2 } 
@@ -188,6 +165,18 @@ every_possible_country = {
         } 
         portraits = { 
             army = { small = GFX_idea_generic_air_air_combat_trainer } 
+        } 
+    }
+
+    generate_character = { 
+        token_base = generic_military_theorist_guy
+        advisor = { 
+            slot = theorist
+            traits = { military_theorist } 
+            cost = 75
+        } 
+        portraits = { 
+            army = { small = GFX_idea_generic_army_log } 
         } 
     }
 }

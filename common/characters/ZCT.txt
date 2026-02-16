@@ -27,4 +27,48 @@ characters = {
 			traits = {  }
 		}
 	}
+
+	ZCT_riza_nur={
+		name=ZCT_riza_nur
+		portraits={
+			army={
+				small="/gfx/leaders/ZCT/Advisors/ZCT_Advisor_Riza_Nur.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZCT_riza_nur_idea
+			allowed = {
+				original_tag = ZCT
+			}
+			available = {
+				has_completed_focus = ZCT_new_universities
+			}
+			traits = {
+				ZCT_cabinet_academic 
+			}
+		}
+	}
+
+	ZCT_sukru_saracoglu={
+		name = ZCT_sukru_saracoglu
+		portraits={
+			army={
+				small="/gfx/leaders/ZCT/Advisors/ZCT_Advisor_Sukru_Saracoglu.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ZCT_sukru_saracoglu_idea
+			allowed = {
+				original_tag = ZCT
+			}
+			available = {
+				has_completed_focus = ZCT_war_time_taxes_act
+			}
+			traits = {
+				financial_expert 
+			}
+		}
+	}
 }

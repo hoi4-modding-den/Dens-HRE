@@ -5,11 +5,19 @@ state={
 		4968 5058 10892 10923 12749 
 	}
 	history = {
-		owner = ZZZ #owner = SAU
-		#add_core_of = SAU
+		owner = ZJA
+		add_core_of = ZJA
+		
+		victory_points = {
+			4968 5 # Samawah
+		}
+		
+		buildings = {
+			industrial_complex = 1
+		}
 	}
-	manpower=5000
-	state_category = pastoral
+	manpower=23000
+	state_category = rural
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

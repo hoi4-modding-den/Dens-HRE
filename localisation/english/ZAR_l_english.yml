@@ -1,8 +1,8 @@
 ﻿l_english:
 
 #Country Names
-  ZAR: "Armenian State"
-  ZAR_DEF: "Armenian State"
+  ZAR: "Armenian People's State"
+  ZAR_DEF: "Armenian People's State"
   ZAR_ADJ: "Armenian"
   ZAR_democratic: "Republic of Armenia"
   ZAR_democratic_DEF: "Republic of Armenia"
@@ -70,6 +70,12 @@
 #Characters
   ZAR_Yeghishe_Charents: "Yeghishe Charents"
   ZAR_Sargis_Srapionyan: "Sargis Srapionyan"
+  ZAR_Garegin_Nzhdeh: "Garegin Nzhdeh"
+  ZAR_Drastamat_Kanayan: "Drastamat Kanayan"
+  ZAR_Ruben_Ter_Minasian: "Ruben Ter Minasian"
+  ZAR_Makhluto: "Makhluto"
+  ZAR_Hamazasp_Badadzhanian: "Hamazasp Badadzhanian"
+  ZAR_Hovhannes_Baghramyan: "Hovhannes Baghramyan"
 #Opinion Modifiers
   ZAR_existential_threat: "Existential Threat"
 #Focus
@@ -81,6 +87,14 @@
   ZAR_No_Compromise_No_Pragmatism_desc: "We cannot allow these rioters to change our policy, in fact this rabble has given us just the excuse to crackdown on religion, and getting the nation ready for the war to come. Religion is the opium of the people and an undue inefficency in our society."
   ZAR_Charents_Speech: "Charents' Speech"
   ZAR_Charents_Speech: "Our glorious Leader, Yeghishe Charents, is making a speech, for what the nation will head to next..."
+  ZAR_To_Get_The_Nation_Ready_For_War: "To Get The Nation Ready For War"
+  ZAR_To_Get_The_Nation_Ready_For_War_desc: "The nation will be soon at war, and if we do not ready ourselves enough for it, we will fail. Preperations must be made, we shall not fall!"
+  ZAR_Distribute_Arms_To_The_People: "Distribute Arms To The People"
+  ZAR_Distribute_Arms_To_The_People_desc: "We should give arms to the people, so that any Turkish troops who enter our nation will not be safe, less they kill us all."
+  ZAR_Expand_The_Special_Forces: "Expand The Special Forces"
+  ZAR_Expand_The_Special_Forces_desc: "Our forces should be more specialised, allowing for mountain and desert combat. This will help us in our destruction of the Turkish state. They will command dicipline, and are the best example of Futurist emmulance."
+  ZAR_Hunker_Down: "Hunker Down"
+  ZAR_Hunker_Down_desc: "We will create bunkers and other protections along our borders, to make sure that we are protected from any conflict that may arise on our borders."
 #Events
   ZAR.1.t: "Massacre in Yerevan"
   ZAR.1.d: "In the past few days, Futurist Militias entered the Katoghike Church in The Capital. They ordered the Congregation to leave, and when they didn't comply the Militiamen fired upon the Congregation, wounding 9 and killing 7, including the Priest. This has sparked massive protests across the nation by Orthodox Christians, horrified and furious with the actions with the Milita force which our government supports. Unless we deal with it now, we will have problems to deal with. We can either support the actions of the Militias and use it as an excuse to crackdown on Religious activity, or we could stand with the protesters, and be more pragmatic in our policy."
@@ -121,4 +135,11 @@
   STATE_1119: "Nakhchivan"
   VICTORY_POINTS_6997: "Nakhchivan"
   VICTORY_POINTS_4660: "Kapan"
+#Decision Shit
+  ZAR_desc_prag_tt: "The Futurist Movement is split between two poles, pragmatism, and radicalism. Each vye for control and only one can come out on top and define the legacy of Armenia, of its verdant mountains and shining lakes, of its rural villages and sprawling cities. Only one will control...\n\nCurrent $ZAR_Pragmatic_Texticon$ Pragmatism: §6[?ZAR_Pragmatic_Power]§!\nCurrent $ZAR_Radical_Texticon$ Radicalism: §0[?ZAR_Radical_Power]§!"
+  ZAR_pragmatism_radicalism_category: "Nayirian Dreams"
+  ZAR_pragmatism_radicalism_category_desc: ""
+  ZAR_Pragmatism_Increase: "Show Support For $ZAR_Pragmatic_Texticon$ §6Pragmatism§!"
+  ZAR_Radical_Increase: "Show Support For $ZAR_Radical_Texticon$ §0Radicalism§!"
+
   

@@ -6,12 +6,104 @@
  ZAA_neutrality_party:0 "The Naval Clique"
  ZAA_fascism_party_long:0 "Movement for the Restoration of the Abbasid Caliphate"
  ZAA_fascism_party:0 "MRAC"
- ZAA_democratic_party_long:0 "Progressive Movement of Egypt and Arabia"
- ZAA_democratic_party:0 "PMEA"
+ ZAA_democratic_party_long:0 "Liberal Party of the Middle East"
+ ZAA_democratic_party:0 "LPME"
  ZAA_communism_party_long:0 "Communist Liberation Rally of the Red Sea"
  ZAA_communism_party:0 "CLRRS"
  
+ ZAA_despotism_desc:0 "Stratocracy refers to a form of government that is headed by the members of the military high command."
+ 
  ZAA_ship_names_loc:0 "Ship Names"
+ 
+ ZAA_the_fatimid_spirit:0 "The Fatimid Spirit"
+ ZAA_femme_fatale:0 "Femme Fatale"
+ ZAA_smooth_talking_charmer_no_pp_gain:0 "Smooth-Talking Charmer"
+ ZAA_islamic_scholar:0 "Islamic Scholar"
+ 
+ ZAA_nation_of_piranhas:0 "Nation of Piranhas"
+ ZAA_thalassocratic_tendencies:0 "Thalassocratic Tendencies"
+ ZAA_labour_service_corps:0 "Labour Service Corps"
+ 
+ ZAA_nation_of_piranhas_dummy:0 "Nation of Piranhas"
+ ZAA_thalassocratic_tendencies_dummy:0 "Thalassocratic Tendencies"
+ ZAA_chest_of_treasures:0 "Vault of Treasures"
+ 
+ ZAA_no_political_power_allowed:0 "Kleptocratic Governance"
+ 
+ ZAA_chest_of_treasures_idea_tt:0 "£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!"
+ ZAA_nation_of_piranhas_rec_tt:0 "Recruitable Population Factor: §G10%§!"
+ 
+ ZAA_red_sea_empire:0 "Thalassocratic Empire of the Red Sea"
+ ZAA_red_sea_empire_DEF:0 "the Thalassocratic Empire of the Red Sea"
+ ZAA_red_sea_empire_ADJ:0 "Arabian"
+ 
+ ZAA_achievements:0 "Thalassocracy of Al-Bahr Al-Ahmar Achievements"
+ ZAA_pirates_of_the_erythraean_NAME:0 "Pirates of the Erythraean"
+ ZAA_pirates_of_the_erythraean_DESC:0 "As the Thalassocracy of Al-Bahr Al-Ahmar, form the Red Sea Empire."
+ 
+ 
+ #decisions
+ ZAA_foreign_affairs:0 "Foreign Affairs"
+ ZAA_foreign_affairs_desc:0 "Even if our Thalassocracy doesn't have a Ministry of Foreign Affairs in the traditional sense, it doesn't mean that our state is unable to partake in her own fair share of diplomacy."
+ 
+ ZAA_proclaim_the_red_sea_empire:0 "Proclaim the Red Sea Empire"
+ 
+ ZAA_piracy_category:0 "The Naval Toll System"
+ ZAA_piracy_category_desc:0 " "
+ 
+ ZAA_decision_cost_command_power_15: "£command_power §Y15§!"
+ ZAA_decision_cost_command_power_15_blocked: "£command_power §R15§!"
+ ZAA_decision_cost_command_power_15_tooltip: "It costs £command_power §Y15§! to take the decision"
+ 
+ ZAA_decision_cost_command_power_political_power_15: "£pol_power §Y15§! £command_power §Y15§!"
+ ZAA_decision_cost_command_power_political_power_15_blocked: "£pol_power §R15§! £command_power §R15§!"
+ ZAA_decision_cost_command_power_political_power_15_tooltip: "It costs £pol_power §Y15§! and £command_power §Y15§! to take the decision"
+ 
+ ZAA_decision_cost_command_power_political_power_15_30: "£pol_power §Y50§! £command_power §Y15§!"
+ ZAA_decision_cost_command_power_political_power_15_30_blocked: "£pol_power §R50§! £command_power §R15§!"
+ ZAA_decision_cost_command_power_political_power_15_30_tooltip: "It costs £pol_power §Y50§! and £command_power §Y15§! to take the decision"
+ 
+ ZAA_treasure_cost_dockyard:0 "£ZAA_construction_equipment_texticon §Y1§! £ZAA_industrial_machinery_texticon §Y1§!"
+ ZAA_treasure_cost_dockyard_blocked:0 "£ZAA_construction_equipment_texticon §R1§! £ZAA_industrial_machinery_texticon §R1§!"
+ ZAA_treasure_cost_dockyard_tooltip:0 "It costs §Y1§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y1§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
+ 
+ ZAA_treasure_cost_mil_factory:0 "£ZAA_construction_equipment_texticon §Y1§! £ZAA_industrial_machinery_texticon §Y2§!"
+ ZAA_treasure_cost_mil_factory_blocked:0 "£ZAA_construction_equipment_texticon §R1§! £ZAA_industrial_machinery_texticon §R2§!"
+ ZAA_treasure_cost_mil_factory_tooltip:0 "It costs §Y1§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y2§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
+ 
+ ZAA_treasure_cost_civ_factory:0 "£ZAA_construction_equipment_texticon §Y2§! £ZAA_industrial_machinery_texticon §Y2§!"
+ ZAA_treasure_cost_civ_factory_blocked:0 "£ZAA_construction_equipment_texticon §R2§! £ZAA_industrial_machinery_texticon §R2§!"
+ ZAA_treasure_cost_civ_factory_tooltip:0 "It costs §Y2§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y2§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
+ 
+ ZAA_nothing_ever_happens_tt:0 "§H[?ZAA_nothing_ever_happens]%§! chance that the §Roperation fails...§!"
+ 
+ ZAA_gain_one_treasure:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+1§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+1§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+1§! £ZAA_electronic_appliances_texticon Electronic Appliances"
+ ZAA_gain_two_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+2§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+2§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+2§! £ZAA_electronic_appliances_texticon Electronic Appliances"
+ ZAA_gain_three_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+3§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+3§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+3§! £ZAA_electronic_appliances_texticon Electronic Appliances"
+ 
+ ZAA_add_weapons_tier_1_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+300§! Foreign Infantry Equipment \n§G+30§! Foreign Support Equipment \n§G+12§! Foreign Artillery Pieces"
+ ZAA_add_weapons_tier_2_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+600§! Foreign Infantry Equipment \n§G+60§! Foreign Support Equipment \n§G+24§! Foreign Artillery Pieces"
+ ZAA_add_weapons_tier_3_tt:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+900§! Foreign Infantry Equipment \n§G+90§! Foreign Support Equipment \n§G+36§! Foreign Artillery Pieces"
+ 
+ ZAA_raid_fishing_boats:0 "Raid Fishing Vessels"
+ ZAA_raid_merchant_ships:0 "Raid Merchant Ships"
+ ZAA_raid_military_convoys:0 "Raid Military Convoys"
+ 
+ ZAA_build_dockyard:0 "Construct a Dockyard"
+ ZAA_build_military_factory:0 "Open an Additional Armoury"
+ ZAA_build_civilian_factory:0 "Fund the Civilian Economy"
+ 
+ ZAA_invasion_plans:0 "Invasion Plans"
+ ZAA_invasion_plans_desc:0 "No matter how you put it, in a political climate such as this, war is an inevitability and not a mere possibility. This is why we must have the courage to fire the first shot if the situation calls for it."
+ 
+ ZAA_utilizing_our_spoils:0 "Utilizing Our Spoils"
+ ZAA_utilizing_our_spoils_desc:0 "It would be counterproductive to merely let our... 'captured' spoils collect dust in the corner of some derelict warehouse. If anything, we should put this equipment to good use, and utilize them in a way which would improve our economy and industry.\n\nWe currently own:\n\n£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!\n"
+ 
+ #decision gui
+ ZAA_controlled_states_tt:0 "We currently control §C[?ZAA_red_sea_controlled_states]§! of the §H17§! states necessary for establishing naval dominance over the Red Sea"
+ ZAA_ships_info_tt:0 "Submarines: §H[?ZAA_submarine_score]§!\nDestroyers: §H[?ZAA_destroyer_score]§!\nLight Cruisers: §H[?ZAA_light_cruiser_count]§!\nHeavy Ships: §H[?ZAA_battleship_count]§!\nCarriers: §H[?ZAA_cruiser_count]§!\nAdditional Bonuses: §H[?ZAA_naval_score_additional_bonuses]§!\n\nTotal Strength: §C[?ZAA_naval_total_score]§!"
+
+ ZAA_ships_info_tooltip:0 "The amount of §CStrength§! that each ship type awards:\n\nSubmarine: §Y1 Strength§!\nDestroyer: §Y1 Strength§!\nLight Cruiser: §Y3 Strength§!\nHeavy Ship: §Y5 Strength§!\nCarrier: §Y5 Strength§!"
  
  #leader(s)
  ZAA_suleiman_ezzat:0 "Suleiman Ezzat"
@@ -21,3 +113,56 @@
  ZAA_mohamed_nasid:0 "Mohamed Nasid"
  ZAA_jalal_allouba:0 "Jalal Allouba"
  ZAA_abdel_magid_fahim:0 "Abdel Magid Fahim"
+ 
+ #generals
+ ZAA_mohamed_naguib:0 "Mohamed Naguib"
+ ZAA_youssef_seddik:0 "Youssef Seddik"
+ ZAA_muhsen_alhusayn:0 "Muhsen al-Husayn"
+ ZAA_abdulaziz_altuwajiri:0 "Abdulaziz al-Tuwajiri"
+ 
+ #other characters
+ ZAA_ibrahim_altassan:0 "Ibrahim al-Tassan"
+ ZAA_hekmet_fahmy:0 "Hekmet Fahmy"
+ ZAA_mustafa_almaraghi:0 "Mustafa al-Maraghi"
+ 
+ #mios
+ ZAA_safaga_shipyard:0 "Safaga Shipyard"
+ ZAA_special_research_division:0 "Special Research Division for Submersibles"
+ 
+ ZAA_tabuk_arsenal:0 "Tabuk Armoury"
+ 
+ #equipment
+ 
+ ZAA_infantry_equipment_0:0 "Mauser M1893"
+ ZAA_infantry_equipment_1:0 "Model 33/38 Osmanlı Mavzeri"
+ ZAA_infantry_equipment_2:0 "Hakim Rifle"
+ ZAA_infantry_equipment_3:0 "Akaba SMG"
+ 
+ ZAA_infantry_equipment_0_short:0 "Mauser M1893"
+ ZAA_infantry_equipment_1_short:0 "Osmanlı Mavzeri"
+ ZAA_infantry_equipment_2_short:0 "Hakim Rifle"
+ ZAA_infantry_equipment_3_short:0 "Akaba SMG"
+ 
+ ZAA_artillery_equipment_1_short:0 "12 cm Krupp M1905"
+ ZAA_artillery_equipment_1:0 "120 mm Krupp Howitzer M1905"
+ 
+ #ZAA_infantry_weapons:0 "Mauser M1893"
+ #ZAA_infantry_weapons1:0 "Model 33/38 Osmanlı Mavzeri"
+ #ZAA_improved_infantry_weapons:0 "Hakim Rifle"
+ #ZAA_advanced_infantry_weapons:0 "Akaba SMG"
+ 
+ #foci
+ ZAA_sailor_state:0 "Our Sailor State"
+ ZAA_military_first_policy:0 "Enact a Military-First Policy"
+ ZAA_strengthen_the_administration:0 "Stratocracy With a Human Face"
+ ZAA_invest_into_the_public:0 "Long-Term Public Investments"
+ ZAA_conscript_the_bedouins:0 "Conscript the Bedouins"
+ ZAA_rule_by_decree:0 "Rule by Decree"
+ ZAA_every_soldier_a_constructor:0 "Every Soldier a Labourer"
+ ZAA_collaborate_with_the_imams:0 "Collaborate with the Imams"
+ ZAA_fuel_the_war_machine:0 "Fuel the War Machine"
+ ZAA_bread_and_circuses:0 "Bread and Circuses"
+ ZAA_first_test_of_strength:0 "First Test of Strength"
+ 
+ ZAA_develop_the_shipbuilding_industry:0 "Develop the Shipbuilding Industry"
+ 

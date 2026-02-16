@@ -346,10 +346,20 @@ YBS_ai_can_have_fun_unlocked = {
 		value = 100
 	}
 
+    ai_strategy = {
+        type = antagonize 
+        id = XEX
+        value = 10000
+    }
 	ai_strategy = {
         type = conquer
         id = XEX
         value = 1000
+    }
+    ai_strategy = {
+        type = antagonize 
+        id = XHH
+        value = 10000
     }
     ai_strategy = {
         type = conquer
@@ -357,9 +367,19 @@ YBS_ai_can_have_fun_unlocked = {
         value = 1000
     }
     ai_strategy = {
+        type = antagonize 
+        id = XWB
+        value = 10000
+    }
+    ai_strategy = {
         type = conquer
         id = XWB
         value = 1000
+    }
+    ai_strategy = {
+        type = antagonize 
+        id = XAS
+        value = 10000
     }
     ai_strategy = {
         type = conquer

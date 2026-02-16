@@ -1,0 +1,74 @@
+division_template = {
+    name = "Infantry Brigade"
+	division_names_group = ENG_INF_01
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+    }
+    support = {
+        artillery = { x = 0 y = 0 }
+    }
+}
+division_template = {
+    name = "Cavalry Brigade"
+	division_names_group = ENG_CAV_01
+
+    regiments = {
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 0 y = 2 }
+    }
+    support = {
+        
+    }
+}
+division_template = {
+    name = "Motorised Brigade"
+	division_names_group = ENG_MOT_01
+    
+    regiments = {
+        motorized = { x = 0 y = 0 }
+        motorized = { x = 0 y = 1 }
+        motorized = { x = 1 y = 0 }
+        motorized = { x = 1 y = 1 }
+    }
+    support = {
+        recon = { x = 0 y = 0 }
+        engineer = { x = 0 y = 1 }
+    }
+}
+units = {
+    division = {
+		name = "Cyprus Regiment"
+		location = 13532
+		division_template = "Motorised Brigade"
+		start_experience_factor = 0.05
+		start_equipment_factor = 0.9
+		start_manpower_factor = 1.0
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 11984
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+		start_manpower_factor = 1.0
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 13530
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.6
+		start_manpower_factor = 1.0
+	}
+}

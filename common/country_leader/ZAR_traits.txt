@@ -15,5 +15,99 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	ZAR_An_Expert_In_The_Mountains = {
+		random = no
+		experience_gain_army = 0.35
+		recon_factor = 0.1
+		terrain_penalty_reduction = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_Proponant_Of_Economic_Centralisation = {
+		random = no
+		consumer_goods_factor = -0.15
+		production_speed_buildings_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_Linguistic_Expert = {
+		random = no
+		political_power_factor = 0.15
+		stability_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_Famous_Actor = {
+		random = no
+		monthly_population = 0.2
+		weekly_bombing_war_support = 0.006
+		offensive_war_stability_factor = -0.05
+		defensive_war_stability_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
+	ZAR_President_Of_The_Academy_Of_Architecture = {
+		random = no
+		industrial_capacity_factory = 0.1
+		consumer_goods_factor = 0.05
+		industry_free_repair_factor = 0.09
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_Nuclear_Physicist = {
+		random = no
+		nuclear_production_factor = 0.15
+		research_speed_factor = 0.09
+		military_industrial_organization_research_bonus = 0.05
+		factory_energy_consumption = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_Extrodinary_Chemist = {
+		random = no
+		research_speed_factor = 0.07
+		military_industrial_organization_research_bonus = 0.05
+		army_attack_factor = 0.1
+		army_attack_speed_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_Diplomat = {
+		random = no
+		send_volunteer_size = 3
+		opinion_gain_monthly_factor = 0.15
+		opinion_gain_monthly = 10
+		faction_trade_opinion_factor = 0.2
+		guarantee_cost = -0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ZAR_The_Puppetmaster = {
+		random = no
+		agency_upgrade_time = 0.15
+		civilian_intel_factor = 0.15
+		operative_slot = 2
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

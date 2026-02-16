@@ -1,5 +1,6 @@
 add_namespace = ZCT
 add_namespace = ZCT_news
+add_namespace = ZCT_political
 
 ### COUNTRY EVENTS ###
 
@@ -30,8 +31,224 @@ country_event = {
 			}
 
 			set_country_flag = ZCT_mustafa_kemal_ataturk_dead
+
+			news_event = ZCT_news.1
 		}
 		
 		promote_character = ZCT_ismet_inonu
+    }
+}
+
+country_event = {
+    id = ZCT_political.1
+    title = ZCT_political.1.t
+    desc = ZCT_political.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZCT_political.1.a
+
+		trigger = {
+			owns_state = 49
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_war_support = 0.05
+		set_capital = {
+			state = 49
+		}
+		add_victory_points = {
+			province = 11747
+			value = 5
+		}
+    }
+
+	option = {
+        name = ZCT_political.1.b
+
+		trigger = {
+			owns_state = 797
+		}
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_stability = 0.05
+		set_capital = {
+			state = 797
+		}
+		add_victory_points = {
+			province = 9833
+			value = 5
+		}
+    }
+
+	option = {
+        name = ZCT_political.1.c
+
+		trigger = {
+			owns_state = 339
+		}
+		
+		ai_chance = {
+			base = 20
+		}
+
+		set_capital = {
+			state = 339
+		}
+		add_victory_points = {
+			province = 4112
+			value = 5
+		}
+    }
+
+	option = {
+        name = ZCT_political.1.d
+
+		trigger = {
+			owns_state = 347
+		}
+		
+		ai_chance = {
+			base = 0
+		}
+
+		add_political_power = 50
+		set_capital = {
+			state = 347
+		}
+		add_victory_points = {
+			province = 11811
+			value = 10
+		}
+    }
+}
+
+country_event = {
+    id = ZCT_political.2
+    title = ZCT_political.2.t
+    desc = ZCT_political.2.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZCT_political.2.a
+		
+		ai_chance = {
+			base = 100
+		}
+
+		custom_effect_tooltip = ZCT_country_flag_will_change_tt
+
+		hidden_effect = {
+			set_cosmetic_tag = ZCT_TURKISH_REPUBLIC_ALTERNATE
+		}
+    }
+
+	option = {
+        name = ZCT_political.2.b
+		
+		ai_chance = {
+			base = 0
+		}
+
+		custom_effect_tooltip = ZCT_country_flag_will_stay_the_same_tt
+    }
+}
+
+### NEWS EVENTS ###
+
+# Mustafa Kemal dies
+news_event = {
+	id = ZCT_news.1
+	title = ZCT_news.1.t
+	desc = ZCT_news.1.desc
+    picture = GFX_news_event_YKP_manuel_ii_death
+	
+	is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZCT_news.1.a
+        trigger = {
+            NOT = { original_tag = ZCT }
+        }
+    }
+
+    option = {
+        name = ZCT_news.1.b
+        trigger = {
+            original_tag = ZCT
+        }
+    }
+}
+
+# Ankara falls
+news_event = {
+	id = ZCT_news.2
+	title = ZCT_news.2.t
+	desc = ZCT_news.2.desc
+    picture = GFX_news_event_ZCT_fall_of_ankara
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+    major = yes
+	
+	option = {
+        name = ZCT_news.2.a
+    }
+}
+
+# Istanbul falls
+news_event = {
+	id = ZCT_news.3
+	title = ZCT_news.3.t
+	desc = ZCT_news.3.desc
+    picture = GFX_news_event_ZCT_fall_of_istanbul
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+    major = yes
+	
+	option = {
+        name = ZCT_news.3.a
+    }
+}
+
+# Birth of the Turkish Republic
+news_event = {
+	id = ZCT_news.4
+	title = ZCT_news.4.t
+	desc = ZCT_news.4.desc
+    picture = GFX_news_event_ZCT_birth_of_turkish_republic
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+    major = yes
+	
+	option = {
+        name = ZCT_news.4.a
+        trigger = {
+            NOT = { original_tag = ZCT }
+        }
+    }
+
+    option = {
+        name = ZCT_news.4.b
+        trigger = {
+            original_tag = ZCT
+        }
     }
 }

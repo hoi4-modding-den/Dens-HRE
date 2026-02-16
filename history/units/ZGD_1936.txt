@@ -1,0 +1,63 @@
+division_template = {
+    name = "Sakhalkho Gvardiis Divizia"
+	regiments = {
+       infantry = { x = 0 y = 0 }
+	   infantry = { x = 0 y = 1 }
+	   infantry = { x = 0 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }  
+		artillery = { x = 0 y = 1}
+	}
+}
+division_template = {
+    name = "Sakhalkho Gvardiis Saart’ilerio Brigada"
+	regiments = {
+       artillery_brigade = { x = 0 y = 0 }
+	   heavy_sp_artillery_brigade = { x = 0 y = 1 }
+	}
+}
+division_template = {
+    name = "Sakhalkho Gvardiis K’avaleriis Brigada"
+
+	regiments = {
+       cavalry = { x = 0 y = 0 }
+	   cavalry = { x = 0 y = 1 }
+	   cavalry = { x = 0 y = 2}
+	}
+}
+division_template = {
+    name = "Sainzhinro-T’eknik’uri Dzalebi"
+
+	regiments = {
+		armored_car = { x = 0 y = 0 }
+	    mechanized = { x = 0 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0
+	}
+}
+
+units = {
+	division = {
+		name = "People's Guard"
+		location = 1599
+		division_template = "Sakhalkho Gvardiis Divizia"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "Engineering and Technical Forces"
+		location = 672
+		division_template = "Sainzhinro-T’eknik’uri Dzalebi"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "Artillery Brigade"
+		location = 1599
+		division_template = "Sakhalkho Gvardiis K’avaleriis B
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
+	}
+}

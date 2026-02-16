@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 4000 y = 500 }
+	continuous_focus_position = { x = 5000 y = 500 }
 
 	initial_show_position = {
 		x = 11
@@ -26,7 +26,7 @@ focus_tree = {
 		icon = GFX_goal_support_democracy
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 8
+		x = 9
 		y = 0
 		#relative_position_id = 
 
@@ -46,7 +46,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_stability = 0.1
 
@@ -82,18 +82,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_popularity = { ideology = ROOT popularity = 0.1 }
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
             add_ideas = ZKR_government_news
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            custom_effect_tooltip = available_political_advisor
-            show_ideas_tooltip = ZKR_mustafa_yamulki_token
 		}
 	}
 
@@ -122,7 +117,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_popularity = { ideology = communism popularity = 0.05 }
 
@@ -176,9 +171,29 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = ZKR_empowered_local_authorities
+			if = {
+				limit = {
+					has_idea = ZKR_gendarmerie_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_gendarmerie_2
+					add_idea = ZKR_gendarmerie_2_and_a_half
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_gendarmerie_2_fas
+				}
+				swap_ideas = {
+					remove_idea = ZKR_gendarmerie_2_fas
+					add_idea = ZKR_gendarmerie_2_fas_and_a_half
+				}
+			}
+			else = {
+				add_ideas = ZKR_empowered_local_authorities
+			}
 		}
 	}
 
@@ -207,8 +222,12 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			every_owned_state = {
                 limit = {
                     is_core_of = ROOT
@@ -243,7 +262,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_popularity = { ideology = neutrality popularity = 0.1 }
 
@@ -263,9 +282,9 @@ focus_tree = {
 		icon = GFX_focus_generic_court
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
-		x = 14
+		x = 6
 		y = 0
-		#relative_position_id = 
+		relative_position_id = ZKR_kurdish_federalism
 
 		cost = 5.8
 
@@ -283,7 +302,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
 
@@ -303,7 +322,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_federalism
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -320,7 +339,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = ZKR_syrian_intervention_tt
 		}
@@ -351,9 +370,29 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = ZKR_police_force
+			add_tech_bonus = {
+				name = ZKR_reorganise_the_police
+				bonus = 2
+				uses = 1
+				category = military_police_tech
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_idea = ZKR_gendarmerie_1
+				}
+				swap_ideas = {
+					remove_idea = ZKR_gendarmerie_1
+					add_idea = ZKR_gendarmerie_1_and_a_half
+				}
+			}
+			else = {
+				add_ideas = ZKR_police_force
+			}
 		}
 	}
 
@@ -382,18 +421,25 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			swap_ideas = {
                 remove_idea = ZKR_police_force
                 add_idea = ZKR_police_force_2
             }
+
+			if = {
+				limit = {
+					has_idea = ZKR_liberal_versus_communist
+				}
+				hidden_effect = { country_event = { id = ZKR_politics_events.5 days = 5 } }
+			}
 		}
 	}
 
     focus = {
 		id = ZKR_open_the_first_kurdistan_university
-		icon = GFX_focus_research
+		icon = GFX_focus_IRQ_baghdad_colleges_of_engineering_and_education_alt
 		prerequisite = { focus = ZKR_strengthen_the_judiciary }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -416,7 +462,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -447,11 +493,15 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_ideas = ZKR_codified_kurdish_language
 
             # idea can later be replaced through national bilinguality if Esperanto is adopted (part of the hidden path which requires the Republic of Hope to exist)
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = ZKR_lore_events.1
 		}
 	}
 
@@ -480,16 +530,16 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_popularity = { ideology = neutrality popularity = -0.05 }
+			add_popularity = { ideology = neutrality popularity = -0.15 }
             add_manpower = 10000
 		}
 	}
 
     focus = {
 		id = ZKR_pluralist_constitution
-		icon = GFX_focus_generic_the_giant_wakes
+		icon = GFX_focus_generic_befriend_kurdistan
         prerequisite = { focus = ZKR_support_cooperatives }
 		prerequisite = { focus = ZKR_devolution }
 		#mutually_exclusive = { focus =  }
@@ -513,7 +563,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
             swap_ideas = {
                 remove_idea = ZKR_liberal_versus_communist
@@ -533,16 +583,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            if = {
-                limit = {
-                    NOT = { has_completed_focus = ZKR_form_gendarmerie }
-                }
-                custom_effect_tooltip = ZKR_xoybun_coup_tt
-                hidden_effect = { country_event = { id = ZKR_politics_events.2 days = 6 } }
-            }
-            else = {
-                country_event = { id = ZKR_politics_events.3 }
-            }
+			custom_effect_tooltip = ZKR_elections_now_tt
+            country_event = ZKR_politics_events.3
 		}
 	}
 
@@ -572,7 +614,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
             swap_ideas = {
                 remove_idea = ZKR_liberal_versus_communist
@@ -583,16 +625,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            if = {
-                limit = {
-                    NOT = { has_completed_focus = ZKR_form_gendarmerie }
-                }
-                custom_effect_tooltip = ZKR_xoybun_coup_tt
-                hidden_effect = { country_event = { id = ZKR_politics_events.2 days = 6 } }
-            }
-            else = {
-                country_event = { id = ZKR_politics_events.3 }
-            }
+			custom_effect_tooltip = ZKR_xoybun_coup_tt
+            country_event = ZKR_politics_events.2 
 		}
 	}
 
@@ -628,7 +662,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
             if = {
                 limit = {
@@ -654,13 +688,41 @@ focus_tree = {
             else_if = {
                 limit = {
                     has_completed_focus = ZKR_centralise_the_administration
+					has_completed_focus = ZKR_empower_local_authorities
+                }
+				remove_ideas = ZKR_empowered_local_authorities
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+                swap_ideas = {
+                    remove_idea = ZKR_police_force_2
+                    add_idea = ZKR_gendarmerie_2_and_a_half
+                }
+            }
+			else_if = {
+                limit = {
+                    has_completed_focus = ZKR_centralise_the_administration
                 }
                 swap_ideas = {
                     remove_idea = ZKR_police_force_2
                     add_idea = ZKR_gendarmerie_2
                 }
             }
-            else = {
+			else_if = {
+                limit = {
+                    has_completed_focus = ZKR_integrate_the_volunteer_militia
+					has_completed_focus = ZKR_reorganise_the_police
+                }
+				remove_ideas = ZKR_police_force
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+                swap_ideas = {
+                    remove_idea = ZKR_empowered_local_authorities_2
+                    add_idea = ZKR_gendarmerie_1_and_a_half
+                }
+            }
+            else_if = {
                 swap_ideas = {
                     remove_idea = ZKR_empowered_local_authorities_2
                     add_idea = ZKR_gendarmerie_1
@@ -673,13 +735,7 @@ focus_tree = {
                     NOT = { has_completed_focus = ZKR_disband_the_volunteer_militia }
                 }
                 custom_effect_tooltip = ZKR_monarchist_coup_tt
-            }
-            if = { # separated for clarity
-                limit = {
-                    has_completed_focus = ZKR_centralise_the_administration
-                    has_completed_focus = ZKR_integrate_the_volunteer_militia
-                }
-                hidden_effect = { country_event = { id = ZKR_politics_events.1 days = 6 } }
+				country_event = ZKR_politics_events.1
             }
 		}
 	}
@@ -691,14 +747,14 @@ focus_tree = {
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		#prerequisite = { focus =  }
 		mutually_exclusive = { focus = ZKR_the_kurdish_destiny }
-		x = -5
+		x = -6
 		y = 2
 		relative_position_id = ZKR_pluralist_constitution
 
 		cost = 5
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
@@ -713,19 +769,27 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
-			create_faction_from_template = {
-				template = faction_template_regional
-				name = ZKR_anti_imperialist_front
-				icon = GFX_faction_logo_generic_15
-				color = { 234 179 30 }
-			}
+			create_faction_from_template = ZKR_faction_template_anti_imperialist_front
 
 			add_ai_strategy = {
 				type = force_build_armies
-				value = 50
+				value = 1000
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					ZKR_is_middle_east_country = yes
+					ZKR_is_viable_front_partner = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = anti_imperialist
+				}
 			}
 		}
 	}
@@ -755,10 +819,27 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = ZKR_alliance_of_liberation_tt
 			# decisions to invite non-imperialist nations in the middle east
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					ZKR_is_middle_east_country = yes
+					ZKR_is_viable_front_partner = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SWI_diplomatic_visit
+				}
+			}
 		}
 	}
 
@@ -771,7 +852,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_form_anti_imperialist_faction
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -787,7 +868,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_named_threat = {
 				threat = -10
@@ -797,8 +878,19 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = ZKR_peacekeepers
-			# allows guaranteeing at low threat
-			# pp gain
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_secure_peace_tt
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_offensive_war = yes
+					}
+					country_event = { id = ZKR_politics_events.9 days = 4 }
+				}
+			}
 		}
 	}
 
@@ -815,16 +907,23 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 20
+			modifier = {
+				factor = 0
+				ZAR = { NOT = { has_completed_focus = ZAR_The_Kurdish_Problem } } # my own little sanity check because ZAR doesn't have one
+			}
 		}
 
 		available = {
-			is_faction_leader = yes
-			num_faction_members > 2
 			if = {
 				limit = {
 					has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes }
 				}
 				NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+			}
+			else = {
+				is_faction_leader = yes
+				num_faction_members > 2
+				has_completed_focus = ZKR_consolidate_kurdistan
 			}
 		}
 		
@@ -834,18 +933,23 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_ideas = ZKR_pre_commonwealth_1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = ZKR_common_organisations_tt
 			# allows building up common organisations to eventually integrate all Middle-East Nations into the Mesopotamian Commonwealth
 
 			# Steps to integration:
 			# 1. Faction
-			# 2. Research Sharing
+			# 2. Research Sharing (also use set_faction_research_unlocked)
 			# 3. Free Trade
-			# 4. Economic Union (unlocked later)
-			# 5. Puppet (referred to as "Federalisation" a la Pacific Federation)
-			# 6. Annex and Core
+			# 4. Free Travel Zone
+			# 5. Economic Union (unlocked later)
+			# 6. Puppet (referred to as "Federalisation" a la Pacific Federation)
+			# 7. Annex and Core
 
 			if = {
 				limit = {
@@ -853,6 +957,12 @@ focus_tree = {
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				add_faction_initiative = 1 # idk, I don't have the DLC
+
+				set_faction_rule = change_leader_rule_never
+			}
+
+			hidden_effect = {
+				add_to_tech_sharing_group = ZKR_west_asia_tech_sharing_group
 			}
 		}
 	}
@@ -875,6 +985,7 @@ focus_tree = {
 
 		available = {
 			is_faction_leader = yes
+			ZKR_can_intervene_in_syria = no
 		}
 		
 		bypass = {
@@ -883,7 +994,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_rule = { can_send_volunteers = yes }
 
@@ -897,8 +1008,63 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ZKR_deal_with_the_lon
+		icon = GFX_focus_generic_league_of_nations
+		prerequisite = { focus = ZKR_common_organisations }
+		prerequisite = { focus = ZKR_alliance_of_liberation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_common_organisations
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+			DN2 = {
+				exists = yes
+				NOT = { has_war_with = ROOT }
+			}
+			has_added_tension_amount < 30
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = {
+				target = DN2
+				modifier = ZKR_lon_deal_opinion
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = ZKR_lon_kurdistan_deal
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			DN2 = { country_event = ZKR_diplo_events.5 }
+		}
+	}
+
+	focus = {
 		id = ZKR_middle_eastern_economic_union
-		icon = GFX_focus_generic_monetary_union
+		dynamic = yes
+		icon = {
+			trigger = { has_government = communism }
+			value = GFX_focus_SOV_the_comecon
+		}
+		icon = {
+			value = GFX_focus_generic_monetary_union
+		}
 		prerequisite = { focus = ZKR_common_organisations }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -913,6 +1079,13 @@ focus_tree = {
 
 		available = {
 			is_faction_leader = yes
+			custom_trigger_tooltip = {
+				tooltip = ZKR_waep_unlocked
+				has_idea = ZKR_pre_commonwealth_2
+				any_other_country = {
+					has_idea = ZKR_pre_commonwealth_2
+				}
+			}
 		}
 		
 		bypass = {
@@ -921,9 +1094,25 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZKR_pre_commonwealth_2
+				add_idea = ZKR_pre_commonwealth_3
+			}
 			
+			custom_effect_tooltip = ZKR_middle_eastern_economic_union_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = ZKR_commonwealth
+			set_country_flag = ZKR_commonwealth_formed
+			
+			hidden_effect = { 
+				news_event = ZKR_news_events.4
+
+				country_event = { id = ZKR_politics_events.7 days = 12 }
+			}
 		}
 	}
 
@@ -939,7 +1128,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
@@ -954,19 +1143,14 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
-			create_faction_from_template = {
-				template = faction_template_middle_east_dominance
-				name = ZKR_kurdish_league
-				icon = GFX_faction_logo_generic_15
-				color = { 234 179 30 }
-			}
+			create_faction_from_template = ZKR_faction_template_salvation_coalition
 
 			add_ai_strategy = {
 				type = force_build_armies
-				value = 100
+				value = 1000
 			}
 		}
 	}
@@ -983,13 +1167,13 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
 			is_subject = no
 			has_army_manpower = {
-				size > 100000
+				size > 80000
 			}
 		}
 		
@@ -999,7 +1183,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			set_rule = {
 				can_only_justify_war_on_threat_country = no
@@ -1030,42 +1214,14 @@ focus_tree = {
 			}
 			else = {
 				add_ideas = ZKR_road_to_war_2
+
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
+			custom_effect_tooltip = ZKR_march_against_our_oppressors_tt
+
 			hidden_effect = {
-				every_other_country = {
-					limit = {
-						NOT = { tag = ZZZ }
-						any_owned_state = {
-							OR = {
-								is_core_of = ZKR
-								is_claimed_by = ZKr
-							}
-						}
-					}
-					ROOT = {
-						add_ai_strategy = {
-							type = conquer
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = declare_war 
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = consider_weak 
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = antagonize 
-							id = PREV
-							value = 10000
-						}
-					}
-				}
+				news_event = ZKR_news_events.1
 			}
 		}
 	}
@@ -1095,7 +1251,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_technology = { camelry = 1 }
 
@@ -1125,6 +1281,8 @@ focus_tree = {
 					add_idea = ZKR_road_to_war_6
 				}
 			}
+
+			custom_effect_tooltip = ZKR_land_demands_from_allies_tt
 		}
 	}
 
@@ -1155,7 +1313,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			every_core_state = {
 				limit = {
@@ -1190,11 +1348,234 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ZKR_secure_anatolia
+		icon = GFX_focus_generic_attack_turkey
+		prerequisite = { focus = ZKR_consolidate_kurdistan }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = ZKR_consolidate_kurdistan
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+		
+		bypass = {
+			NOT = {
+				any_state = {
+					ZKR_turkish_republic_states = yes
+					NOT = { owner = { is_ally_with = ROOT } }
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = ZOT
+		will_lead_to_war_with = ZCT
+		will_lead_to_war_with = ZTC
+		will_lead_to_war_with = ZTM
+		will_lead_to_war_with = ZGR
+		will_lead_to_war_with = ZAG
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					any_owned_state = {
+						ZKR_turkish_republic_states = yes
+					}
+					NOT = { is_ally_with = ROOT }
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_secure_the_suez
+		icon = GFX_focus_generic_the_suez
+		prerequisite = { focus = ZKR_consolidate_kurdistan }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_consolidate_kurdistan
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					446 = {
+						owner = {
+							is_neighbor_of = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		available = {
+			is_subject = no
+			NOT = { has_idea = ZKR_lon_kurdistan_deal }
+		}
+		
+		bypass = {
+			446 = { 
+				OR = {
+					is_owned_by = ROOT
+					owner = { is_ally_with = ROOT }
+				}
+			}
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = DN2
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			446 = {
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = take_state_focus
+            				generator = { 446 }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_strike_british_colonies
+		icon = GFX_focus_attack_britain
+		prerequisite = { focus = ZKR_consolidate_kurdistan }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_consolidate_kurdistan
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+			NOT = { has_idea = ZKR_lon_kurdistan_deal }
+			custom_trigger_tooltip = {
+				tooltip = ZKR_any_british_colony_exists_tt
+				OR = {
+					DN1 = {
+						has_government = neutrality
+						NOT = { has_cosmetic_tag = ZKR_palestine } 
+					}
+					ZCY = { 
+						has_cosmetic_tag = ZCY_ENG 
+					}
+					ZIR = { 
+						has_country_leader = { character = ZIR_board_of_directors ruling_only = yes } 
+					}
+				}
+			}
+		}
+
+		allow_branch = {
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes }
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		will_lead_to_war_with = DN1
+		will_lead_to_war_with = ZCY
+		will_lead_to_war_with = ZIR
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					DN1 = {
+						has_government = neutrality
+						NOT = { has_cosmetic_tag = ZKR_palestine }
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				create_wargoal = {
+					target = DN1
+					type = puppet_wargoal_focus
+				}
+			}
+			if = {
+				limit = {
+					ZCY = { 
+						has_cosmetic_tag = ZCY_ENG
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				create_wargoal = {
+					target = ZCY
+					type = puppet_wargoal_focus
+				}
+			}
+			if = {
+				limit = {
+					ZIR = { 
+						has_country_leader = { character = ZIR_board_of_directors ruling_only = yes }
+						NOT = { is_subject_of = ROOT }
+					}
+				}
+				create_wargoal = {
+					target = ZIR
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = ZKR_coalition_of_willing
 		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = ZKR_the_kurdish_destiny }
 		#mutually_exclusive = { focus =  }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = ZKR_the_kurdish_destiny
 
@@ -1214,10 +1595,27 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			custom_effect_tooltip = ZKR_coalition_of_willing_tt
 			# allow inviting of nations not owning any kurdish cores or claims
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					ZKR_is_middle_east_country = yes
+					ZKR_is_viable_coalition_partner = yes
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = SWI_diplomatic_visit
+				}
+			}
 		}
 	}
 
@@ -1246,19 +1644,22 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			set_rule = { can_use_kamikaze_pilots = yes }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = ZKR_vengeance
-			# military buffs, political debuffs
 		}
 	}
 
 	focus = {
-		id = ZKR_national_salvation
-		icon = GFX_goal_generic_political_pressure
+		id = ZKR_riders_of_doom
+		icon = GFX_focus_ITA_comandante_diavolo
 		prerequisite = { focus = ZKR_instrument_of_vengeance }
 		#mutually_exclusive = { focus =  }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = ZKR_instrument_of_vengeance
 
@@ -1270,9 +1671,105 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_riders_of_doom_tt
+			hidden_effect = {
+				division_template = {
+					name = "Ararat Cavalry Division"
+					template_counter = 66
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 2 y = 0 }
+						cavalry = { x = 2 y = 1 }
+						cavalry = { x = 2 y = 2 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Lîwaya Siwarî ya Araratê\" division_template = \"Ararat Cavalry Division\" start_experience_factor = 0.5"
+						owner = ROOT
+						count = 5
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_international_fascist_volunteers
+		icon = GFX_focus_ITA_generic_fascist_workers
+		prerequisite = { focus = ZKR_instrument_of_vengeance }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_instrument_of_vengeance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_manpower = 8000
+		}
+	}
+
+	focus = {
+		id = ZKR_national_salvation
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = ZKR_instrument_of_vengeance }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_instrument_of_vengeance
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_subject = no
 			custom_trigger_tooltip = {
-				tooltip = ZKR_has_formed_greater_kurdistan_tt
-				has_cosmetic_tag = ZKR_greater_kurdistan
+				tooltip = ZKR_controls_protectorate_states_tt
+				all_state = {
+					OR = {
+						ZKR_anatolian_protectorate_states = no
+						is_owned_and_controlled_by = ROOT
+					}
+				}
 			}
 		}
 		
@@ -1282,7 +1779,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = ZKR_vengeance
@@ -1290,7 +1787,8 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = ZKR_dissolve_turkey_tt
-			# unlock decisions to establish puppet states in turkish lands or annex and "secure" them
+			set_variable = { ZKR_turkey_control = 0 }
+			set_variable = { ZKR_turkey_resistance = 100 }
 		}
 	}
 
@@ -1306,13 +1804,13 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 20
+			factor = 50
 		}
 
 		available = {
 			is_subject = no
 			has_army_manpower = {
-				size > 100000
+				size > 80000
 			}
 		}
 		
@@ -1322,7 +1820,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			if = {
 				limit = {
@@ -1356,14 +1854,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_elections_wow
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_ETH_re-convene_the_parliament
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1391,10 +1889,705 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_stability = 0.1
 			add_popularity = { ideology = ROOT popularity = 0.1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_bozan_shaheen_bey_token
+		}
+	}
+
+	focus = {
+		id = ZKR_the_democratic_republic
+		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
+		prerequisite = { focus = ZKR_elections_wow }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = ZKR_elections_wow
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_kurdish_federalism_idea
+				}
+				swap_ideas = {
+					remove_idea = ZKR_kurdish_federalism_idea
+					add_idea = ZKR_elected_government_fed
+				}
+			}
+			else = {
+				add_ideas = ZKR_elected_government
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_environmental_protection_laws
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = { focus = ZKR_the_democratic_republic }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_amendment_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_2
+					add_idea = ZKR_amendment_1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_3
+					add_idea = ZKR_amendment_1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_2_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_2_3
+					add_idea = ZKR_amendment_1_2_3
+				}
+			}
+			else = {
+				add_ideas = ZKR_amendment_1
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_religious_freedoms
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = ZKR_the_democratic_republic }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_amendment_1
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1
+					add_idea = ZKR_amendment_1_2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_3
+					add_idea = ZKR_amendment_2_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_1_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1_3
+					add_idea = ZKR_amendment_1_2_3
+				}
+			}
+			else = {
+				add_ideas = ZKR_amendment_2
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_guarantee_minority_rights
+		icon = GFX_focus_ETH_sway_the_warlords
+		prerequisite = { focus = ZKR_the_democratic_republic }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_amendment_1
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1
+					add_idea = ZKR_amendment_1_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_2
+					add_idea = ZKR_amendment_2_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ZKR_amendment_1_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_amendment_1_2
+					add_idea = ZKR_amendment_1_2_3
+				}
+			}
+			else = {
+				add_ideas = ZKR_amendment_3
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_cultural_exchange
+		icon = GFX_focus_AFG_contact_rural_loyalists
+		prerequisite = { focus = ZKR_guarantee_minority_rights }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_guarantee_minority_rights
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+			has_country_leader = { character = ZRM_haji_baba_sheikh ruling_only = yes }
+		}
+
+		allow_branch = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			has_country_flag = ZKR_first_branch_completed
+			has_country_leader = { character = ZRM_haji_baba_sheikh ruling_only = yes }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = ZPE
+						original_tag = ZPR
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = medium_increase
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_reform_the_constitution
+		icon = GFX_focus_ARG_defense_and_democracy
+		prerequisite = { focus = ZKR_environmental_protection_laws focus = ZKR_religious_freedoms focus = ZKR_guarantee_minority_rights }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 3
+		relative_position_id = ZKR_the_democratic_republic
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = democratic
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_elected_government_fed
+				}
+				swap_ideas = {
+					remove_idea = ZKR_elected_government_fed
+					add_idea = ZKR_elected_government_fed_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_elected_government
+					add_idea = ZKR_elected_government_2
+				}
+			}
+
+			custom_effect_tooltip = ZKR_reform_the_constitution_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_support_regional_development
+		icon = GFX_focus_PRC_rural_region_development_two
+		prerequisite = { focus = ZKR_elections_wow }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_elections_wow
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_subsidised_agriculture
+				}
+				swap_ideas = {
+					remove_idea = ZKR_subsidised_agriculture
+					add_idea = ZKR_regional_initiative
+				}
+			}
+			else = {
+				add_ideas = ZKR_regional_development
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_strengthen_the_defence_sector
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = ZKR_support_regional_development }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_support_regional_development
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZKR_defence_investments
+				days = 365
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_owned_state = {
+                random_select_amount = 2
+				limit = {
+                    is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+                add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_chamber_of_science
+		icon = GFX_focus_generic_university_3
+		prerequisite = { focus = ZKR_strengthen_the_defence_sector }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_strengthen_the_defence_sector
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			291 = { owns_or_subject_of = yes }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ZKR_the_revolutionary_state
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		prerequisite = { focus = ZKR_elections_wow }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_elections_wow
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_kurdish_federalism_idea
+				}
+				swap_ideas = {
+					remove_idea = ZKR_kurdish_federalism_idea
+					add_idea = ZKR_workers_government_fed
+				}
+			}
+			else = {
+				add_ideas = ZKR_workers_government
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_maintain_secularism
+		icon = GFX_focus_PER_forced_secularization
+		prerequisite = { focus = ZKR_the_revolutionary_state }
+		mutually_exclusive = { focus = ZKR_islamic_socialism }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = ZKR_enforcing_secularism
+				days = 120
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_islamic_socialism
+		icon = GFX_focus_PER_islamic_solidarity
+		prerequisite = { focus = ZKR_the_revolutionary_state }
+		mutually_exclusive = { focus = ZKR_maintain_secularism }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.1 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = {
+				idea = ZKR_islamic_socialism_idea
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_cooperate_with_other_leftists
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		prerequisite = { focus = ZKR_maintain_secularism focus = ZKR_islamic_socialism }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = ZKR_leftist_cooperation
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# look for an anarchist in the region
+		}
+	}
+
+	focus = {
+		id = ZKR_pragmatic_trotskyism
+		icon = GFX_focus_NOR_a_new_norway_Trotsky_communism
+		prerequisite = { focus = ZKR_cooperate_with_other_leftists }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 3
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_workers_government_fed
+				}
+				swap_ideas = {
+					remove_idea = ZKR_workers_government_fed
+					add_idea = ZKR_workers_government_fed_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_workers_government
+					add_idea = ZKR_workers_government_2
+				}
+			}
+
+			custom_effect_tooltip = ZKR_pragmatic_trotskyism_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_internationale_support
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = ZKR_the_revolutionary_state }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 2
+		relative_position_id = ZKR_the_revolutionary_state
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZKR_internationale_aid
+				days = 365
+			}
 		}
 	}
 
@@ -1409,7 +2602,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1431,7 +2624,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
 			add_popularity = { ideology = neutrality popularity = 0.15 }
@@ -1472,7 +2665,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = ZKR_form_kurdish_hegemony_tt
 		}
@@ -1489,7 +2682,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1515,7 +2708,38 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZKR_mesopotamian_mandate_plan
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = ZKR_expedition_government }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_expedition_government
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = neutrality
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			
 		}
@@ -1525,14 +2749,14 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_undo_republican_reforms
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_strike_at_democracy2
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 2
 		relative_position_id = ZKR_form_gendarmerie
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
@@ -1554,43 +2778,737 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
 			add_popularity = { ideology = democratic popularity = -0.15 }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
-			if = {
-				limit = {
-					has_idea = ZKR_kurdish_federalism_idea
-				}
-				remove_ideas = ZKR_kurdish_federalism_idea
-			}
-			if = {
-				limit = {
-					has_idea = ZKR_kurdish_unitarianism_idea
-				}
-				remove_ideas = ZKR_kurdish_unitarianism_idea
+			swap_ideas = {
+				remove_idea = ZKR_kurdish_unitarianism_idea
+				add_idea = ZKR_military_government
 			}
 		}
 	}
 
-# ECONOMY BRANCH
+	focus = {
+		id = ZKR_move_towards_fascism
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = ZKR_undo_republican_reforms }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 2
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = fascism popularity = 0.25 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					has_government = fascism
+					NOT = {
+						any_owned_state = {
+							OR = {
+								is_core_of = ROOT
+								is_claimed_by = ROOT
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = fascism_leanings_good
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+			# fascist guy
+		}
+	}
 
 	focus = {
-		id = ZKR_kurdish_industrial_revolution
-		icon = GFX_focus_XHH_industrial_revolution
-		#prerequisite = { focus = }
+		id = ZKR_national_industries
+		icon = GFX_focus_ICE_state_corporatism
+		prerequisite = { focus = ZKR_undo_republican_reforms }
 		#mutually_exclusive = { focus =  }
-		x = 25
-		y = 0
-		#relative_position_id = 
+		x = -1
+		y = 2
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_arrest_opposition
+		icon = GFX_focus_ARG_crackdown_on_corruption
+		prerequisite = { focus = ZKR_undo_republican_reforms }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = { ideology = democratic popularity = -0.1 }
+			add_popularity = { ideology = communism popularity = -0.1 }
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+		}
+	}
+
+	focus = {
+		id = ZKR_militarise_the_police
+		icon = GFX_focus_generic_advanced_military_studies
+		prerequisite = { focus = ZKR_undo_republican_reforms }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 2
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+			has_completed_focus = ZKR_form_gendarmerie
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_gendarmerie_2_and_a_half
+				}
+				swap_ideas = {
+					remove_idea = ZKR_gendarmerie_2_and_a_half
+					add_idea = ZKR_gendarmerie_2_fas_and_a_half
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_gendarmerie_2
+					add_idea = ZKR_gendarmerie_2_fas
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { has_tech = motorised_infantry }
+				}
+				set_technology = { motorised_infantry = 1 }
+				hidden_effect = {
+					delete_unit_template_and_units = {
+						division_template = "Motorized-Division"
+						disband = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = tech_military_police }
+				}
+				set_technology = { tech_military_police = 1 }
+			}
+
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_tech = motorised_infantry }
+						NOT = { has_tech = tech_military_police }
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			custom_effect_tooltip = ZKR_militarise_the_police_tt
+			hidden_effect = {
+				division_template = {
+					name = "Militarised Police Brigade"
+					template_counter = 68
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+					}
+					support = {
+						mot_recon = { x = 0 y = 0 }
+						military_police = { x = 0 y = 1 }
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Lîwaya Polîsên Leşkerîkirî «Amed»\" division_template = \"Militarised Police Brigade\" start_experience_factor = 0.3"
+						owner = ROOT
+						count = 1
+					}
+					create_unit = {
+						division = "name = \"Lîwaya Polîsên Leşkerîkirî «Hekarî»\" division_template = \"Militarised Police Brigade\" start_experience_factor = 0.3"
+						owner = ROOT
+						count = 1
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_council_of_kurdish_intellectuals
+		icon = GFX_focus_ARG_fascist_researchers
+		prerequisite = { focus = ZKR_move_towards_fascism focus = ZKR_national_industries }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 4
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = {  FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ZKR_rise_of_kurdistan
+		icon = GFX_focus_generic_fascist_propaganda
+		prerequisite = { focus = ZKR_move_towards_fascism focus = ZKR_national_industries focus = ZKR_arrest_opposition focus = ZKR_militarise_the_police }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 3
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZKR_crush_the_turkish_spirit
+		icon = GFX_focus_TUR_purge_the_kemalists
+		prerequisite = { focus = ZKR_arrest_opposition focus = ZKR_militarise_the_police }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 4
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdistan_over_all
+		icon = GFX_focus_IRQ_promote_kurdish_culture
+		prerequisite = { focus = ZKR_council_of_kurdish_intellectuals }
+		prerequisite = { focus = ZKR_rise_of_kurdistan }
+		prerequisite = { focus = ZKR_crush_the_turkish_spirit }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 5
+		relative_position_id = ZKR_undo_republican_reforms
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_government = fascism
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			# event to turn the military government back into a civilian one
+			# fascist party becomes an actual party, gets a new cosmetic tag and elections will be held (still fascist tho)
+		}
+	}
+
+# LAST POLITICS BRANCH - COMMONWEALTH
+
+	focus = {
+		id = ZKR_our_commonwealth
+		icon = GFX_focus_AFG_parliamentary_democracy
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 2
+		relative_position_id = ZKR_middle_eastern_economic_union
 
 		cost = 2.9
 
 		ai_will_do = {
 			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+
+		allow_branch = {
+			has_country_flag = ZKR_commonwealth_foci_unlocked # unlocked via event after the commonwealth is founded and the first member is annexed
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_our_commonwealth_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_fight_traditionalist_resistance
+		icon = GFX_focus_ITA_topple_amhara_rulers
+		prerequisite = { focus = ZKR_our_commonwealth }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = ZKR_our_commonwealth
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZKR_traditionalist_resistance
+				add_idea = ZKR_traditionalist_resistance_1
+			}
+
+			custom_effect_tooltip = ZKR_fight_traditionalist_resistance_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_provide_education
+		icon = GFX_focus_generic_education
+		prerequisite = { focus = ZKR_fight_traditionalist_resistance }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_fight_traditionalist_resistance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_traditionalist_resistance_3
+				}
+				swap_ideas = {
+					remove_idea = ZKR_traditionalist_resistance_3
+					add_idea = ZKR_traditionalist_resistance_4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_traditionalist_resistance_1
+					add_idea = ZKR_traditionalist_resistance_2
+				}
+			}
+
+			custom_effect_tooltip = ZKR_provide_education_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_commonwealth_security_bureau
+		icon = GFX_focus_generic_national_security
+		prerequisite = { focus = ZKR_fight_traditionalist_resistance }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_fight_traditionalist_resistance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					OR = {
+						has_intelligence_agency = no
+						is_ai = yes
+					}
+				}
+				create_intelligence_agency = {
+					name = "People's Secretariat for Security"
+					icon = GFX_intelligence_agency_logo_generic_2
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			if = {
+				limit = {
+					has_idea = ZKR_traditionalist_resistance_2
+				}
+				swap_ideas = {
+					remove_idea = ZKR_traditionalist_resistance_2
+					add_idea = ZKR_traditionalist_resistance_4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_traditionalist_resistance_1
+					add_idea = ZKR_traditionalist_resistance_3
+				}
+			}
+
+			custom_effect_tooltip = ZKR_commonwealth_security_bureau_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_middle_east_in_the_modern_age
+		icon = GFX_focus_PRC_bolshevik_urbanization_completed
+		prerequisite = { focus = ZKR_provide_education }
+		prerequisite = { focus = ZKR_commonwealth_security_bureau }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_fight_traditionalist_resistance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			custom_trigger_tooltip = {
+				tooltip = ZKR_all_states_accepted_tt
+				all_owned_state = {
+					OR = {
+						NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+						check_variable = { FROM.ZKR_state_acceptance > 2 }
+					}
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			remove_ideas = ZKR_traditionalist_resistance_4
+		}
+	}
+
+	focus = {
+		id = ZKR_cultural_cooperation_initiative
+		icon = GFX_focus_generic_conference
+		prerequisite = { focus = ZKR_our_commonwealth }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_our_commonwealth
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZKR_cultural_apathy
+				add_idea = ZKR_cultural_apathy_1
+			}
+
+			custom_effect_tooltip = ZKR_cultural_cooperation_initiative_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_regional_bilingualism
+		icon = GFX_focus_PRC_petition_for_freedom
+		prerequisite = { focus = ZKR_cultural_cooperation_initiative }
+		mutually_exclusive = { focus = ZKR_adopt_esperanto }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_cultural_cooperation_initiative
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			NOT = { has_country_leader_ideology = YBS_international_esperantism }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZKR_cultural_apathy_1
+				add_idea = ZKR_cultural_apathy_2
+			}
+
+			custom_effect_tooltip = ZKR_regional_bilingualism_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_adopt_esperanto
+		icon = GFX_focus_YBS_esperanto_education
+		prerequisite = { focus = ZKR_cultural_cooperation_initiative }
+		mutually_exclusive = { focus = ZKR_regional_bilingualism }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_cultural_cooperation_initiative
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 20
+				has_government = communism
+			}
 		}
 
 		available = {
@@ -1603,7 +3521,160 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ZKR_cultural_apathy_1
+				add_idea = ZKR_cultural_apathy_3
+			}
+
+			custom_effect_tooltip = ZKR_adopt_esperanto_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_in_varietate_concordia
+		dynamic = yes
+		icon = {
+			trigger = { has_government = communism }
+			value = GFX_focus_GER_the_peoples_victory
+		}
+		icon = {
+			value = GFX_goal_generic_national_unity
+		}
+		prerequisite = { focus = ZKR_regional_bilingualism focus = ZKR_adopt_esperanto }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_cultural_cooperation_initiative
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			custom_trigger_tooltip = {
+				tooltip = ZKR_all_states_accepted_tt
+				all_owned_state = {
+					OR = {
+						NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+						check_variable = { FROM.ZKR_state_acceptance > 2 }
+					}
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_cultural_apathy_2
+				}
+				remove_ideas = ZKR_cultural_apathy_2
+			}
+			else = {
+				remove_ideas = ZKR_cultural_apathy_3
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_middle_east_is_free
+		dynamic = yes
+		icon = {
+			trigger = { has_government = communism }
+			value = GFX_focus_SOV_international_union_of_soviet_republics
+		}
+		icon = {
+			value = GFX_focus_generic_the_giant_wakes
+		}
+		prerequisite = { focus = ZKR_middle_east_in_the_modern_age }
+		prerequisite = { focus = ZKR_in_varietate_concordia }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 4
+		relative_position_id = ZKR_our_commonwealth
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			custom_trigger_tooltip = {
+				tooltip = ZKR_middle_east_is_free_tt
+				all_state = {
+					OR = {
+						NOT = { is_on_continent = middle_east }
+						is_controlled_by = ROOT
+						is_owned_by = ZZZ
+					}
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = ZKR_politics_events.10
+		}
+	}
+
+
+# ECONOMY BRANCH
+
+	focus = {
+		id = ZKR_kurdish_industrial_revolution
+		icon = GFX_focus_XHH_industrial_revolution
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 22
+		y = 0
+		#relative_position_id = 
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 40
+				is_faction_leader = yes
+			}
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             random_owned_controlled_state = {
 				limit = {
@@ -1627,6 +3698,9 @@ focus_tree = {
                 remove_idea = ZKR_agrarian_society
                 add_idea = ZKR_agrarian_society_2
             }
+
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_random_kurdish_industrialist_token
 		}
 	}
 
@@ -1642,7 +3716,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 20
+			factor = 30
 		}
 
 		available = {
@@ -1655,13 +3729,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             add_tech_bonus = {
 				name = ZKR_expand_first_factories
 				bonus = 1
 				uses = 2
-				category = industry
+				category = construction_tech
 			}
 
             custom_effect_tooltip = generic_skip_one_line_tt
@@ -1696,11 +3770,12 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 20
+			factor = 30
 		}
 
 		available = {
 			controls_state = 800
+			controls_state = 353
 		}
 		
 		bypass = {
@@ -1709,7 +3784,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             add_tech_bonus = {
 				name = ZKR_mining_programs
@@ -1723,13 +3798,20 @@ focus_tree = {
             800 = {
                 add_resource = {
                     type = steel
-                    amount = 12
+                    amount = 20
                 }
+			}
+			353 = {
                 add_resource = {
                     type = coal
-                    amount = 9
+                    amount = 12
                 }
             }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ZKR_steel_mill_concern
 		}
 	}
 
@@ -1745,7 +3827,7 @@ focus_tree = {
 		cost = 2.9
 
 		ai_will_do = {
-			factor = 20
+			factor = 30
 		}
 
 		available = {
@@ -1758,68 +3840,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
-		completion_reward = {
-            random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            every_owned_state = {
-                random_select_amount = 3
-				limit = {
-                    is_fully_controlled_by = ROOT
-					infrastructure < 5
-				}
-                add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-    focus = {
-		id = ZKR_open_up_kurdistan
-		icon = GFX_goal_generic_positive_trade_relations
-		prerequisite = { focus = ZKR_kurdish_industrial_revolution }
-		#mutually_exclusive = { focus =  }
-		x = 3
-		y = 1
-		relative_position_id = ZKR_kurdish_industrial_revolution
-
-		cost = 2.9
-
-		ai_will_do = {
-			factor = 20
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-			
-		}
-
-		available_if_capitulated = no
-
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             if = {
                 limit = {
@@ -1837,6 +3858,103 @@ focus_tree = {
                 }
             }
 
+            every_owned_state = {
+                random_select_amount = 3
+				limit = {
+                    is_fully_controlled_by = ROOT
+					infrastructure < 5
+				}
+                add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_road_works_ahead_tt
+			hidden_effect = {
+				350 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = 4512
+					}
+				}
+				800 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = 6935
+					}
+				}
+				build_railway = { # Amed to Malatya
+					level = 2
+					build_only_on_allied = no
+					path = { 4512 11759 7620 }
+					start_province = 4512
+					target_province = 7620
+				}
+				build_railway = { # Amed to Mahabad
+					level = 2
+					build_only_on_allied = no
+					path = { 4512 12387 7530 12476 1463 1822 }
+					start_province = 4512
+					target_province = 1822
+				}
+				build_railway = { # Amed to Erzurum
+					level = 1
+					build_only_on_allied = no
+					path = { 4512 11739 876 9954 11853 }
+					start_province = 4512
+					target_province = 11853
+				}
+				build_railway = { # Amed to Kars
+					level = 2
+					build_only_on_allied = no
+					path = { 4512 12387 7530 12476 864 6935 7470 12376 10472 }
+					start_province = 4512
+					target_province = 10472
+				}
+			}
+		}
+	}
+
+    focus = {
+		id = ZKR_open_up_kurdistan
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = ZKR_kurdish_industrial_revolution }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_kurdish_industrial_revolution
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 30
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_cic = 11000 # slightly more than the cost of a civ
+            
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			if = {
                 limit = {
                     OR = {
@@ -1846,6 +3964,21 @@ focus_tree = {
                 }
                 add_ideas = limited_exports
             }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = ZCT
+						original_tag = ZTC
+						original_tag = ZOT
+						original_tag = ZTM
+						original_tag = ZSH
+					}
+				}
+				ROOT = { send_embargo = PREV }
+			}
 		}
 	}
 
@@ -1878,7 +4011,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             capital_scope = {
 				add_extra_state_shared_building_slots = 2
@@ -1900,7 +4033,7 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_electrification
-		icon = GFX_focus_generic_electrification
+		icon = GFX_focus_generic_energy
 		prerequisite = { focus = ZKR_capital_city_industrial_park }
 		#mutually_exclusive = { focus =  }
 		x = -2
@@ -1923,7 +4056,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_tech_bonus = {
 				name = ZKR_electrification
@@ -1949,6 +4082,8 @@ focus_tree = {
 					add_idea = ZKR_industrialising_society_2
 				}
 			}
+
+			custom_effect_tooltip = ZKR_electrification_tt
 		}
 	}
 
@@ -1977,7 +4112,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             add_tech_bonus = {
 				name = ZKR_careful_resource_extraction
@@ -2007,13 +4142,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ZKR_expand_arms_industry
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = ZKR_electrification }
+		id = ZKR_agricultural_subsidies
+		icon = GFX_focus_generic_agricultural_subsidies
+		prerequisite = { focus = ZKR_careful_resource_extraction }
 		#mutually_exclusive = { focus =  }
 		x = 0
-		y = 1
-		relative_position_id = ZKR_electrification
+		y = 2
+		relative_position_id = ZKR_careful_resource_extraction
 
 		cost = 5
 
@@ -2031,7 +4166,49 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ZKR_regional_development
+				}
+				swap_ideas = {
+					remove_idea = ZKR_regional_development
+					add_idea = ZKR_regional_initiative
+				}
+			}
+			else = {
+				add_ideas = ZKR_subsidised_agriculture
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_expand_arms_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ZKR_electrification }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_electrification
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             random_owned_controlled_state = {
 				limit = {
@@ -2063,6 +4240,11 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_random_kurdish_mil_industrialist_token
 		}
 	}
 
@@ -2092,9 +4274,13 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             add_ideas = ZKR_ammunition_production
+
+			hidden_effect = {
+				country_event = { id = ZKR_lore_events.2 days = 90 }
+			}
 		}
 	}
 
@@ -2123,9 +4309,35 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-            # plane designs
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment_1
+				amount = 150
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_tech_bonus = {
+				name = ZKR_aviation_industry
+				bonus = 0.5
+				uses = 2
+				category = air_equipment
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				prioritize = { 350 }
+				limit = {
+					air_base < 7
+				}
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -2139,7 +4351,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_cartridge_factories
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -2155,7 +4367,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_tech_bonus = {
 				name = ZKR_modern_arms_industry
@@ -2209,25 +4421,20 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
-
+			show_ideas_tooltip = ZKR_dean_wesley_token
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
             custom_effect_tooltip = available_political_advisor
-
+			show_ideas_tooltip = ZKR_martin_maria_schwengler_token
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-            if = {
-				limit = {
-					NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
-				}
-				custom_effect_tooltip = available_political_advisor
-				show_ideas_tooltip = ZKR_arthur_frayn_token
-			}
+            custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ZKR_arthur_frayn_token
 		}
 	}
 
@@ -2256,10 +4463,9 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             800 = {
-				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dam
 					level = 1
@@ -2273,12 +4479,15 @@ focus_tree = {
 				localization_key = building_state_modifier|dam
 				INDENT = "    "
 			}
+			800 = {
+				increase_state_category = yes
+			}
 		}
 	}
 
 	focus = {
 		id = ZKR_kurdish_national_rail
-		icon = GFX_focus_YBS_railway_network
+		icon = GFX_focus_IRQ_found_the_iraqi_state_railways_alt
 		prerequisite = { focus = ZKR_capital_city_industrial_park }
 		#mutually_exclusive = { focus =  }
 		x = 2
@@ -2301,8 +4510,16 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 10
+				producer = XHH
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
             if = {
 				limit = {
 					has_idea = ZKR_industrialising_society_2
@@ -2339,7 +4556,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_kurdish_national_rail
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -2356,7 +4573,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             add_resource = {
 				type = oil
@@ -2375,7 +4592,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_oil_extraction
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			factor = 20
@@ -2392,7 +4609,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             add_resource = {
 				type = oil
@@ -2428,7 +4645,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
             add_research_slot = 1
 		}
@@ -2450,7 +4667,8 @@ focus_tree = {
 		}
 
 		available = {
-			
+			NOT = { has_government = democratic }
+			has_country_flag = ZKR_first_branch_completed
 		}
 		
 		bypass = {
@@ -2459,7 +4677,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
             every_owned_state = {
                 random_select_amount = 2
@@ -2498,6 +4716,7 @@ focus_tree = {
 
 		available = {
 			NOT = { has_government = communism }
+			has_country_flag = ZKR_first_branch_completed
 		}
 		
 		bypass = {
@@ -2506,7 +4725,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			every_owned_state = {
                 random_select_amount = 3
@@ -2538,6 +4757,374 @@ focus_tree = {
 		y = 1
 		relative_position_id = ZKR_modern_arms_industry
 
+		cost = 10
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			num_of_factories > 50
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+            swap_ideas = {
+				remove_idea = ZKR_industrialising_society_6
+				add_idea = ZKR_industrialised_society
+			}
+
+        	custom_effect_tooltip = ZKR_load_new_focus_branch_tt
+			hidden_effect = { mark_focus_tree_layout_dirty = yes }
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdistan_central_bank
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_modern_industry
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+
+		allow_branch = {
+			has_completed_focus = ZKR_modern_industry
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ZKR_common_central_bank
+		}
+	}
+
+	focus = {
+		id = ZKR_prevent_inflation
+		icon = GFX_focus_generic_reduce_unneccessary_expenditure
+		prerequisite = { focus = ZKR_kurdistan_central_bank }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_kurdistan_central_bank
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+            swap_ideas = {
+				remove_idea = ZKR_common_central_bank
+				add_idea = ZKR_common_central_bank_2
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_levy_land_value_tax
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = { focus = ZKR_prevent_inflation }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_prevent_inflation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			is_faction_leader = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+            swap_ideas = {
+				remove_idea = ZKR_common_central_bank_2
+				add_idea = ZKR_georgism_implemented
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_expand_physics_institute
+		icon = GFX_focus_research2
+		prerequisite = { focus = ZKR_kurdistan_central_bank }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_kurdistan_central_bank
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_full_control_of_state = 352
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+            custom_effect_tooltip = {
+				localization_key = YBS_facility_construction_tt
+				temp_facility_state_loc = 352
+				temp_facility_type_loc = nuclear_facility
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						352 = {
+							is_fully_controlled_by = ROOT
+							can_construct_building = nuclear_facility
+						}
+					}
+					352 = {
+						add_building_construction = {
+							type = nuclear_facility
+							level = 1
+							instant_build = yes
+							province = 12476 # must be biggest victory point
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_free_arrested_intellectuals
+		icon = GFX_focus_generic_industrialists
+		prerequisite = { focus = ZKR_expand_physics_institute }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_expand_physics_institute
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+            add_timed_idea = {
+				idea = ZKR_intellectualism
+				days = 365
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = ZKR_available_scientist_tt
+				CHARACTER = ZKR_artem_alikhanian
+				SPECIALIZATION = specialization_nuclear
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_atomic_research_project
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = ZKR_expand_physics_institute }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_expand_physics_institute
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+            add_breakthrough_progress = {
+				specialization = specialization_nuclear
+				value = 1
+			}
+		}
+	}
+
+# MILITARY BRANCH
+
+    focus = {
+		id = ZKR_enforce_military_neutrality
+		icon = GFX_goal_generic_neutrality_focus
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 36
+		y = 0
+		#relative_position_id = 
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			has_government = fascism
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 50
+			add_popularity = { ideology = fascism popularity = -0.1 }
+			add_popularity = { ideology = neutrality popularity = -0.05 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_enforce_military_neutrality_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdish_land_forces
+		dynamic = yes
+		icon = GFX_focus_IRQ_royal_iraqi_army_alt
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = -5
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 20
+				OR = {
+					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_form_anti_imperialist_faction
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		select_effect = {
+			add_ideas = ZKR_army_reform
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZKR_kurdish_land_forces_tt
+
+			effect_tooltip = {
+				add_ideas = ZKR_army_reform
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_kurdish_land_forces_tt_2
+			remove_ideas = ZKR_army_reform
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_dynamic_modifier = { modifier = ZKR_land_forces }
+		}
+	}
+
+	focus = {
+		id = ZKR_officer_training
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
 		cost = 5
 
 		ai_will_do = {
@@ -2554,50 +5141,1233 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-            swap_ideas = {
-				remove_idea = ZKR_industrialising_society_6
-				add_idea = ZKR_industrialised_society
+			custom_effect_tooltip = ZKR_officer_training_tt
+			every_unit_leader = {
+				add_attack = 1
+				add_defense = 1
+				add_planning = 1
+				add_logistics = 1
 			}
 		}
 	}
 
-# MILITARY BRANCH
-
-    focus = {
-		id = ZKR_enforce_military_neutrality
-		icon = GFX_focus_PLACEHOLDER
-		#prerequisite = { focus = }
+	focus = {
+		id = ZKR_artillery_spotters
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ZKR_officer_training }
 		#mutually_exclusive = { focus =  }
-		x = 35
-		y = 0
-		#relative_position_id = 
+		x = 0
+		y = 2
+		relative_position_id = ZKR_officer_training
 
-		cost = 2.9
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
 		}
 
 		available = {
-			NOT = { has_government = fascism }
+			
 		}
 		
 		bypass = {
-			has_government = fascism
+			
 		}
 
 		available_if_capitulated = no
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			add_popularity = { ideology = fascism popularity = -0.1 }
-            add_doctrine_cost_reduction = {
+			add_tech_bonus = {
+				name = ZKR_artillery_spotters
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_army_artillery_attack_factor = 0.1
+				tooltip = army_artillery_attack_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_army_artillery_defence_factor = 0.1
+				tooltip = army_artillery_defence_factor_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_peshmerga_modernisation
+		icon = GFX_focus_IRQ_kurdish_form_the_peshmerga
+		prerequisite = { focus = ZKR_officer_training }
+		prerequisite = { focus = ZKR_equipment_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_officer_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_peshmerga_modernisation
+				bonus = 0.5
+				uses = 3
+				category = support_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_irregular_infantry_attack_factor = 0.1
+				tooltip = modifier_army_sub_unit_irregular_infantry_attack_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_irregular_infantry_defence_factor = 0.1
+				tooltip = modifier_army_sub_unit_irregular_infantry_defence_factor_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = { can_generate_female_aces = yes }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_ranger_corps
+		dynamic = yes
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = ZKR_artillery_spotters }
+		prerequisite = { focus = ZKR_peshmerga_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_artillery_spotters
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_tech_bonus = {
+					name = ZKR_ranger_corps
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+					category = rangers_tech_cat
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = ZKR_ranger_corps
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_mountaineers_special_forces_contribution_factor = -0.15
+				tooltip = mountaineers_special_forces_contribution_factor_tt
+			}
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_to_variable = {
+					ZKR_lf_rangers_special_forces_contribution_factor = -0.15
+					tooltip = rangers_special_forces_contribution_factor_tt
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_equipment_modernisation
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ZKR_not_pre_industrial_society_tt
+				has_completed_focus = ZKR_capital_city_industrial_park
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_equipment_modernisation
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_learn_from_the_ararat_military
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = ZKR_equipment_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_equipment_modernisation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_learn_from_the_ararat_military_tt
+			every_army_leader = {
+				limit = {
+					has_trait = war_hero
+				}
+				add_planning = 1
+				add_logistics = 1
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_scavenging_tactics
+		icon = GFX_focus_ETH_scavenging_tactics
+		prerequisite = { focus = ZKR_learn_from_the_ararat_military }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_learn_from_the_ararat_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_scavenging_tactics_tt
+			every_army_leader = {
+				limit = {
+					NOT = { has_trait = scavenger }
+				}
+				random_select_amount = 2
+				add_trait = { trait = scavenger }
+			}
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_equipment_capture_factor = 0.15
+				tooltip = equipment_capture_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_guerilla_warfare
+		icon = GFX_focus_generic_army_attack
+		prerequisite = { focus = ZKR_learn_from_the_ararat_military }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_learn_from_the_ararat_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			has_tech = tech_engineers
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_dig_in_speed_factor = 0.15
+				tooltip = dig_in_speed_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_recon_factor_while_entrenched = 0.1
+				tooltip = recon_factor_while_entrenched_tt
+			}
+			add_to_variable = {
+				ZKR_lf_cas_damage_reduction = 0.2
+				tooltip = cas_damage_reduction_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_mountain_terrain_training
+		icon = GFX_focus_generic_mountain_troops
+		prerequisite = { focus = ZKR_scavenging_tactics focus = ZKR_guerilla_warfare }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_learn_from_the_ararat_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+                cost_reduction = 1
+                uses = 1
+                category = cat_mountaineers_doctrine
+            }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_terrain_penalty_reduction = 0.2
+				tooltip = terrain_penalty_reduction_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_motorisation_drive
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = ZKR_equipment_modernisation }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_equipment_modernisation
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_motorisation_drive
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_supply_node_range = 0.05
+				tooltip = supply_node_range_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_purchase_western_tanks
+		icon = GFX_focus_PER_czech_tanks
+		prerequisite = { focus = ZKR_motorisation_drive }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = ZKR_motorisation_drive
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { 
+						OR = {
+							has_tech = gwtank
+							has_tech = gwtank_chassis
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "No Step Back"
+					}
+					set_technology = { gwtank_chassis = 1 }
+				}
+				else = {
+					set_technology = { gwtank = 1 }
+				}
+				# gives template and one unit of "Experimental Armoured Brigade"
+			}
+			else = {
+				add_tech_bonus = {
+					name = ZKR_purchase_western_tanks
+					bonus = 1
+					uses = 1
+					category = armor
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				unlock_military_industrial_organization_tooltip = mio:ZKR_skoda_armour
+				
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				mio:ZKR_skoda_armour = {
+					add_mio_size = 2
+				}
+			}
+			else = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = ZKR_skoda_armour
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_doctrine_advancement
+		icon = GFX_focus_generic_army_doctrines_2
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = 4
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
                 cost_reduction = 0.5
                 uses = 2
                 category = land_doctrine
             }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_experience_gain_army_factor = 0.05
+				tooltip = experience_gain_army_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_joint_chiefs_of_staff
+		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
+		prerequisite = { focus = ZKR_doctrine_advancement }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_doctrine_advancement
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_coordination_bonus = 0.05
+				tooltip = coordination_bonus_tt
+			}
+			add_to_variable = {
+				ZKR_lf_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_max_command_power = 20
+				tooltip = max_command_power_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_military_logistics_department
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		prerequisite = { focus = ZKR_motorisation_drive }
+		prerequisite = { focus = ZKR_doctrine_advancement }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = ZKR_doctrine_advancement
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_supply_node_range = 0.1
+				tooltip = supply_node_range_tt
+			}
+			add_to_variable = {
+				ZKR_lf_attrition = -0.05
+				tooltip = attrition_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_planning_plans
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ZKR_doctrine_advancement }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_doctrine_advancement
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0.1
+				NOT = { has_subdoctrine_in_track = operations}
+			}
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_daily_mastery = {
+				amount = 0.5
+				days = 200
+				name = ZKR_planning_plans
+				track = operations
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_max_planning_factor = 0.1
+				tooltip = max_planning_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_planning_speed = 0.15
+				tooltip = planning_speed_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_coordination_bonus = 0.05
+				tooltip = coordination_bonus_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_concentrated_firepower
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = ZKR_military_logistics_department focus = ZKR_planning_plans }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_military_logistics_department
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0.1
+				NOT = { has_subdoctrine_in_track = combat_support }
+			}
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_daily_mastery = {
+				amount = 0.5
+				days = 200
+				name = ZKR_concentrated_firepower
+				track = combat_support
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_modify_land_forces_tt
+			add_to_variable = {
+				ZKR_lf_army_artillery_attack_factor = 0.1
+				tooltip = army_artillery_attack_factor_tt
+			}
+			add_to_variable = {
+				ZKR_lf_army_artillery_defence_factor = 0.1
+				tooltip = army_artillery_defence_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_fortify_armenian_border
+		icon = GFX_goal_fortify_the_westwall
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 2.9
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+			is_owner_neighbor_of = ZAR
+		}
+		
+		bypass = {
+			OR = {
+				NOT = { country_exists = ZAR }
+				ZAR = { is_subject_of = ROOT }
+			}
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = ZKR_fortify_armenian_border_tt
+			hidden_effect = {
+				every_controlled_state = {
+					limit = {
+						num_owned_neighbour_states = {
+							owner = ZAR
+							count > 0
+						}					
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+							limit_to_border_country = ZAR
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_kurdish_aeronautic_corps
+		dynamic = yes
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				OR = {
+					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_form_anti_imperialist_faction
+				}
+			}
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe_1
+					amount = 50
+					variant_name = "Bf 109 E"
+					producer = XHH
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_1
+					amount = 50
+					producer = XHH
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_expanded_pilot_training
+		icon = GFX_focus_generic_pilot_training
+		prerequisite = { focus = ZKR_kurdish_aeronautic_corps }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_kurdish_aeronautic_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_rule = can_generate_female_aces
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ace = { # based on a real Kurdish pilot
+				name = "Hasti"
+				surname = "Yousufi"
+				callsign = "Sanandaj"
+				type = fighter_unique
+				is_female = yes
+			}
+			add_ace = { # reference
+				name = "Şewqa"
+				surname = "Tariyê"
+				callsign = "Sihr"
+				type = support_unique
+				is_female = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_domestic_aircraft_production
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = ZKR_kurdish_aeronautic_corps }
+		mutually_exclusive = { focus = ZKR_import_foreign_aircraft }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_kurdish_aeronautic_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:ZKR_plane_manufacturer = {
+					add_mio_size = 2
+					add_mio_design_team_assign_cost = -0.5
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_import_foreign_aircraft
+		icon = GFX_focus_generic_air_partners
+		prerequisite = { focus = ZKR_kurdish_aeronautic_corps }
+		mutually_exclusive = { focus = ZKR_domestic_aircraft_production }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_kurdish_aeronautic_corps
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			NOT = { has_war_with = XHH }
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				XHH = {
+					create_production_license = {
+						target = ROOT
+						equipment = {
+							type = small_plane_airframe_1
+						}
+						cost_factor = 0
+					}
+				}
+			}
+			else = {
+				XHH = {
+					create_production_license = {
+						target = ROOT
+						equipment = {
+							type = fighter_equipment_1
+						}
+						cost_factor = 0
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = small_plane_airframe
+					seller_tags = { XHH XVE XBH }
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_dlc = "By Blood Alone"
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 200
+						variant_name = "Bf 109 E"
+						producer = XHH
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_1
+						amount = 200
+						producer = XHH
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				unlock_military_industrial_organization_tooltip = mio:XHH_arado_flugzeugwerke_organization
+				unlock_military_industrial_organization_tooltip = mio:XHH_focke_wulf_organization
+				
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				mio:XHH_arado_flugzeugwerke_organization = {
+					add_mio_size = 1
+				}
+				mio:XHH_focke_wulf_organization = {
+					add_mio_size = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_aeronautic_doctrine
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = ZKR_expanded_pilot_training }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_expanded_pilot_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = ZKR_aeronautic_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_fighter_bonus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = ZKR_expanded_pilot_training }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = ZKR_expanded_pilot_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_fighter_bonus
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_cas_bonus
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = ZKR_expanded_pilot_training }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = ZKR_expanded_pilot_training
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ZKR_cas_bonus
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
 		}
 	}
 

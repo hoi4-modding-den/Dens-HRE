@@ -359,7 +359,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 40
+			factor = 50
 		}
 
 		available = {
@@ -556,7 +556,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 40
+			factor = 50
 		}
 
 		available = {
@@ -601,7 +601,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 40
+			factor = 50
 		}
 
 		available = {
@@ -634,7 +634,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 40
+			factor = 50
 		}
 
 		available = {
@@ -730,7 +730,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 		}
 
 		available = {
@@ -760,6 +760,12 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 30
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YCA_ai_path_socialist
+                }
+            }			
 		}
 
 		available = {
@@ -811,6 +817,7 @@ focus_tree = {
 		prerequisite = {
 			focus = YCA_class_rights
 		}	
+
 		mutually_exclusive = {
 			focus = YCA_outlaw_republicans
 		}		
@@ -820,6 +827,13 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 30
+            modifier = {
+                factor = 0
+                OR = {
+                    has_country_flag = YCA_ai_path_anarchist
+					has_country_flag = YCA_ai_path_vanguardist
+                }
+            }			
 		}
 
 		available = {
@@ -955,6 +969,7 @@ focus_tree = {
 		prerequisite = {
 			focus = YCA_first_party_congress
 		}	
+		
 		relative_position_id = YCA_first_party_congress
 		x = -12
 		y = 1
@@ -977,7 +992,13 @@ focus_tree = {
 					var = YCA_vanguardist_faction_progress_bar
 					value = 50
 				}			
-			}						
+			}
+			hidden_trigger = {
+				if = {
+					limit = { is_ai = yes }
+					has_country_flag = YCA_ai_path_vanguardist
+				}					
+			}												
 		}
 
 		available_if_capitulated = no
@@ -1016,7 +1037,14 @@ focus_tree = {
 					var = YCA_socialist_faction_progress_bar
 					value = 50
 				}			
-			}				
+			}
+			hidden_trigger = {
+				if = {
+					limit = { is_ai = yes }
+					has_country_flag = YCA_ai_path_socialist
+				}					
+			}
+
 		}
 
 		available_if_capitulated = no
@@ -1180,7 +1208,7 @@ focus_tree = {
 		y = 3
 
 		ai_will_do = {
-			factor = 35
+			factor = 50
 		}
 
 		available = {						
@@ -1216,7 +1244,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 35
+			factor = 60
 		}
 
 		available = {						
@@ -1291,7 +1319,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 35
+			factor = 40
 		}
 
 		available = {						
@@ -1787,7 +1815,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 20
 		}
 
 		available = {						
@@ -1829,7 +1857,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 5
 		}
 
 		available = {						
@@ -1857,7 +1885,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 5
 		}
 
 		available = {						
@@ -2008,7 +2036,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 5
 		}
 
 		available = {						
@@ -2260,7 +2288,13 @@ focus_tree = {
 					var = YCA_anarchist_faction_progress_bar
 					value = 50
 				}			
-			}				
+			}		
+			hidden_trigger = {
+				if = {
+					limit = { is_ai = yes }
+					has_country_flag = YCA_ai_path_anarchist
+				}				
+			}					
 		}
 
 		available_if_capitulated = no
@@ -2283,7 +2317,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 30
+			factor = 50
 		}
 
 		available = {
@@ -2321,7 +2355,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
 			modifier = {
 				factor = 0
 				OR = {
@@ -2704,7 +2738,7 @@ focus_tree = {
 		y = 1
 
 		ai_will_do = {
-			factor = 30
+			factor = 40
             modifier = {
                 factor = 0
                 OR = {
@@ -2827,7 +2861,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INTERNAL_AFFAIRS }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = YCA_catalan_complan
@@ -3172,7 +3206,7 @@ focus_tree = {
 		cost = 4
 		cancelable = no
 		ai_will_do = {
-			factor = 20
+			factor = 25
 		}
 
 		select_effect = {
@@ -3210,7 +3244,7 @@ focus_tree = {
 		cost = 6
 
 		ai_will_do = {
-			factor = 20
+			factor = 15
 		}
 
 		available = {
@@ -4225,6 +4259,13 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = YCA_ai_path_socialist
+					has_country_flag = YCA_ai_path_vanguardist
+				}
+			}					
 		}
 
 		available = {

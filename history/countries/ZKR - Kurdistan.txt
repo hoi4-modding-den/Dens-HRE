@@ -2,8 +2,8 @@ capital = 350
 
 oob = "ZKR_1936"
 
-set_research_slots = 3
-set_stability = 0.7
+set_research_slots = 2
+set_stability = 0.5
 set_war_support = 0.5
 
 set_technology = {
@@ -12,13 +12,33 @@ set_technology = {
 	tech_mountaineers = 1
 	tech_trucks = 1
 	tech_support = 1
+	tech_engineers = 1
 	tech_recon = 1
 	gw_artillery = 1
 	basic_train = 1
+
+	ZKR_irregular_unlocker = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	set_technology = { bba_early_transport_plane = 1 }
+	set_technology = { engines_1 = 1 }
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = { early_transport_plane = 1 }
 }
 
 add_ideas = {
 	closed_economy
+	limited_conscription
+
+	ZKR_women_are_real
 
 	ZKR_an_independent_kurdistan
 	ZKR_liberal_versus_communist
@@ -27,6 +47,8 @@ add_ideas = {
 
 set_rule = {
 	can_create_collaboration_government = no
+	can_generate_female_unit_leaders = yes
+	can_puppet = yes
 }
 
 add_opinion_modifier = {
@@ -37,6 +59,38 @@ add_opinion_modifier = {
 	target = ZCT
 	modifier = ZKR_ottoman_bastards
 }
+add_opinion_modifier = {
+	target = ZTM
+	modifier = ZKR_ottoman_bastards
+}
+add_opinion_modifier = {
+	target = ZTC
+	modifier = ZKR_ottoman_bastards
+}
+add_opinion_modifier = {
+	target = ZSH
+	modifier = ZKR_ottoman_bastards_minor
+}
+add_opinion_modifier = {
+	target = ZAR
+	modifier = ZKR_geopolitical_rivals
+}
+add_opinion_modifier = {
+	target = ZBA
+	modifier = ZKR_geopolitical_rivals
+}
+add_opinion_modifier = {
+	target = ZRM
+	modifier = ZKR_false_kurdistan
+}
+reverse_add_opinion_modifier = {
+	target = ZRM
+	modifier = ZKR_false_kurdistan
+}
+
+set_variable = { ZKR_lf_experience_gain_army_factor = 0.05 }
+set_variable = { ZKR_lf_army_org_regain = 0.1 }
+set_variable = { ZKR_lf_conscription_factor = 0.15 }
 
 # Leaders
 recruit_character = ZKR_seyid_riza
@@ -46,8 +100,16 @@ recruit_character = ZKR_ihsan_nuri
 recruit_character = ZKR_mahmud_barzanji
 
 # Advisors / Generals
+recruit_character = ZKR_bozan_shaheen_bey
 recruit_character = ZKR_mustafa_yamulki
+recruit_character = ZKR_celadet_ali_bedirxan
+recruit_character = ZKR_kamuran_ali_bedirxan
+recruit_character = ZKR_random_kurdish_industrialist
+recruit_character = ZKR_random_kurdish_mil_industrialist
+recruit_character = ZKR_dean_wesley
+recruit_character = ZKR_martin_maria_schwengler
 recruit_character = ZKR_arthur_frayn
+recruit_character = ZKR_artem_alikhanian
 
 set_country_flag = no_generic_characters
 
@@ -55,7 +117,7 @@ set_country_flag = no_generic_characters
 set_politics = {
 	ruling_party = democratic
 	last_election = "1935.6.12"
-	election_frequency = 12
+	election_frequency = 24
 	elections_allowed = no
 }
 set_popularities = {

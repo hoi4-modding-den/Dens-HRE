@@ -86,9 +86,6 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 	if = {
 		limit = {
 			ROOT = { is_ai = yes }
-			ZKR = {
-				is_justifying_wargoal_against = FROM
-			}
 		}
 		always = no
 	}
@@ -1482,6 +1479,18 @@ DIPLOMACY_LEAVE_FACTION_ENABLE_TRIGGER = {
 	}
 }
  DIPLOMACY_ASSUME_FACTION_LEADERSHIP_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			FROM = {
+				original_tag = ZKR
+				has_completed_focus = ZKR_common_organisations
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = ZKR_common_organisation_faction_leadership_blocker_tt
+			always = no
+		}
+	}
 	if = {
 		limit = {
 			has_game_rule = {

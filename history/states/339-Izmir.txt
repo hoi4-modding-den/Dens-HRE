@@ -4,13 +4,13 @@ state={
 	name="STATE_339"
 	manpower = 1401889
 	resources={
-		chromium=50 # was: 86
+		chromium = 72
 	}
 	
-	state_category = large_town
+	state_category = large_city
 
 	history={
-		owner = ZZZ #owner = TUR
+		owner = ZGR #owner = TUR
 		
 		victory_points = {
 			4112 15
@@ -19,14 +19,15 @@ state={
 			928 5
 		}
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			air_base = 2
+			infrastructure = 4
+			industrial_complex = 5
+ 			arms_factory = 2
+			air_base = 3
 			4112 = {
 				naval_base = 5
 			}
 		}
-		#add_core_of = TUR
+		add_core_of = ZGR
 	}
 
 	provinces={

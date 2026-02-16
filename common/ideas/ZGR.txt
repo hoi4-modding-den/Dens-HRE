@@ -1,0 +1,168 @@
+ideas = {
+	country = {
+		ZGR_The_Megali_Idea = {
+			name = ZGR_The_Megali_Idea
+			picture = GFX_idea_ZGR_The_Megali_Idea
+			modifier = {
+				army_core_defence_factor = 0.1
+				justify_war_goal_time = -0.2
+				attack_bonus_against_cores = 0.05
+			}
+		}
+		ZGR_volunteers_c = {
+			name = ZGR_volunteers_c
+			picture = NOR_sivog
+			modifier = {
+				weekly_manpower = 1000
+				attack_bonus_against_cores = 0.15
+				equipment_capture = 0.5
+			}
+		}
+		ZGR_guns_c = {
+			name = ZGR_guns_c
+			picture = POL_the_peasants_strike
+			modifier = {
+				weekly_manpower = 100
+				attack_bonus_against_cores = 0.05
+				production_factory_efficiency_gain_factor = 0.5
+			}
+		}		
+		ZGR_The_Turk_Problem = {
+			name = ZGR_The_Turk_Problem
+			picture = tur_coordinated_balkan_armed_forces
+			modifier = {
+				stability_factor = -0.25
+			}
+		}
+
+		ZGR_devalued_the_money = {
+			name = ZGR_devalued_the_money
+			picture = POL_succesful_four_year_plan
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		ZGR_Democ = {
+			name = ZGR_Democ
+			picture = CHL_liberal_party_in_power
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+		ZGR_Democ_angry = {
+			name = ZGR_Democ_angry
+			picture = SWE_all_cards_on_deck
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+		ZGR_Radicalisation = {
+			name = ZGR_Radicalisation
+			picture = ITA_hardened_irregular_bands
+			modifier = {
+				stability_weekly = -0.01
+				fascism_drift = 0.1
+				communism_drift = 0.1
+				neutrality_drift = 0.1
+			}
+		}
+		ZGR_post_election_restabilize = {
+			name = ZGR_post_election_restabilize
+			picture = HABSBURG_economy
+			modifier = {
+				stability_weekly = 0.01
+			}
+		}
+
+		ZGR_Major_Well = {
+			name = ZGR_Major_Well
+			picture = HUN_revaluing_the_pengo
+			modifier = {
+				political_power_gain = 0.3
+				stability_factor = 0.2
+				consumer_goods_factor = 0.2
+				monthly_population = 0.5
+			}
+		}		
+		ZGR_Minor_Well = {
+			name = ZGR_Minor_Well
+			picture = HUN_revaluing_the_pengo
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.3
+				consumer_goods_factor = -0.1
+			}
+		}
+		NGR_War_Prepare = {
+			name = NGR_War_Prepare
+			picture = SWE_hodgepodge_of_equipment
+			modifier = {
+				army_speed_factor = 0.1
+				army_armor_speed_factor = 0.1
+				experience_gain_army = 0.2
+				army_core_defence_factor = 0.1
+			}
+		}
+		ZGR_Farmers_Councils = {
+			name = ZGR_Farmers_Councils
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.1
+				army_core_defence_factor = 0.1
+				communism_drift = 0.02
+				democratic_drift = 0.01
+			}
+		}
+		ZGR_Farmers_Councils_War = {
+			name = ZGR_Farmers_Councils
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.1
+				army_core_defence_factor = 0.1
+				communism_drift = 0.02
+				neutrality_drift = 0.01
+			}
+		}
+		ZGR_Farmers_Councils_Anarchy = {
+			name = ZGR_Farmers_Councils
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.2
+				army_core_defence_factor = 0.2
+				communism_drift = 0.03
+			}
+		}
+		ZGR_Local_Governance = {
+			name = ZGR_Local_Governance
+			picture = SOV_the_local_soviets_idea_nsb_ccp_sov_compatibility
+			modifier = {
+				army_core_defence_factor = 0.2
+			}
+		}
+		ZGR_Comm_Univers = {
+			name = ZGR_Comm_Univers
+			picture = SOV_atomic_bomb_project
+			modifier = {
+				research_speed_factor = 0.25
+				production_speed_facility_factor = 0.15
+			}
+		}
+		ZGR_Anarchist_Propoganda = {
+			name = ZGR_Anarchist_Propoganda
+			picture = SPR_anarchist_society
+			modifier = {
+				communism_drift = 0.03				
+			}
+		}	
+		ZGR_Farmers_Councils_Anarchy_Free = {
+			name = ZGR_Farmers_Councils_Anarchy_Free
+			picture = LIT_invested_in_farms
+			modifier = {
+				consumer_goods_factor = -0.4
+				army_core_defence_factor = 0.3
+				communism_drift = 0.05
+			}
+		}					
+	}
+}

@@ -1,0 +1,719 @@
+focus_tree = {
+	id = zgr-c-anarchy
+	continuous_focus_position = { x = 80 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = ZGR
+		}
+	}
+
+	# The Anarchist cities
+	focus = {
+		id = ZGR_the_anarchist_cities
+		icon = GFX_focus_DEN_civilian_preparations
+		x = 13
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_anarchist_congress }
+		completion_reward = {
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 25
+				tooltip = add_25_anarchy_progress_urban_var
+			}
+			add_victory_points = {
+				province = 4112
+				value = -3
+			}
+			add_victory_points = {
+				province = 7130
+				value = 3
+			}			
+			add_victory_points = {
+				province = 1005
+				value = -2
+			}
+			add_victory_points = {
+				province = 1005
+				value = 10
+			}			
+			add_victory_points = {
+				province = 1119
+				value = 2
+			}
+			add_victory_points = {
+				province = 928
+				value = 5
+			}						
+		}		
+	}
+
+	# More Rural Mechanisation
+	focus = {
+		id = ZGR_more_rural_mechanisation
+		icon = GFX_focus_SOV_organize_wreckers
+		x = 6
+		y = 2
+		cost = 5
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = ZGR_the_anarchist_congress }
+		completion_reward = {
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 5
+				tooltip = add_5_anarchy_progress_var
+			}
+			swap_ideas = { 
+			remove_idea = ZGR_Farmers_Councils
+			add_idea = ZGR_Farmers_Councils_Anarchy
+			}			
+		}		
+	}
+
+	# The Anarchist Congress
+	focus = {
+		id = ZGR_the_anarchist_congress
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		x = 9
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_party_name = { 
+				ideology = communism
+				long_name = ZGR_Anarchy_Congress_Name_long
+				name = ZGR_Anarchy_Congress_Name
+			}
+			set_country_flag = ZGR_anarchy_preparations
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 2
+				tooltip = add_2_anarchy_progress_urban_var
+			}
+		}
+	}
+
+	# Free the old Government
+	focus = {
+		id = ZGR_free_the_old_goverment
+		icon = GFX_focus_ARG_strengthening_the_concordancia
+		x = 13
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_anarchist_cities }
+		completion_reward = {
+		    add_stability = -0.25
+			add_ideas = ZGR_Local_Governance
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}
+		}			
+	}
+
+	# The Turkish Issue
+	focus = {
+		id = ZGR_the_turkish_issue
+		icon = GFX_focus_TUR_turanist_ambition
+		x = 5
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_more_rural_mechanisation }
+		completion_reward = { 
+			set_country_flag = et_tense_ended
+			custom_effect_tooltip = ZGR_FOCUS_ANARCHY_NO_TENSION
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 25
+				tooltip = add_25_anarchy_progress_var
+			}			
+		}
+	}
+
+	# Fortify the Cities
+	focus = {
+		id = ZGR_fortify_the_cities
+		icon = GFX_goal_generic_fortify_city
+		x = 11
+		y = 4
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_free_generals }
+		available = {
+			342 = { is_owned_by = ZGR }
+			339 = { is_owned_by = ZGR }		
+		}		
+		bypass_if_unavailable = yes		
+		completion_reward = {
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}			
+			342 = {
+				add_building_construction = {
+					type = bunker
+					province = 1005
+					level = 6
+				}
+				add_building_construction = {
+					type = bunker
+					province = 1119
+					level = 3
+				}
+				add_building_construction = {
+					type = bunker
+					province = 12016
+					level = 4
+				}
+				add_building_construction = {
+					type = bunker
+					province = 12013
+					level = 3
+				}
+			}
+			339 = {
+				add_building_construction = {
+					type = bunker
+					province = 4112
+					level = 6
+				}
+				add_building_construction = {
+					type = bunker
+					province = 928
+					level = 4
+				}
+				add_building_construction = {
+					type = bunker
+					province = 7130
+					level = 2
+				}				
+			}			
+		}			
+	}
+
+	# Free Speech
+	focus = {
+		id = ZGR_free_speech
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 5
+		y = 4
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_turkish_issue }
+		completion_reward = { 
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 25
+				tooltip = add_25_anarchy_progress_var
+			}
+		add_stability = -15
+		}				
+	}
+
+	# Burn down the Central Bank
+	focus = {
+		id = ZGR_burn_down_the_central_bank
+		icon = GFX_focus_BRA_utilize_security_law
+		x = 15
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_free_the_old_goverment }
+		mutually_exclusive = { focus = ZGR_take_things_slow }
+		completion_reward = {
+			add_stability = -1	
+		}			
+	}
+
+	# Take things slow
+	focus = {
+		id = ZGR_take_things_slow
+		icon = GFX_focus_FIN_pragmatic_socialism
+		x = 11
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_free_the_old_goverment }
+		prerequisite = { focus = ZGR_fortify_the_cities }
+		mutually_exclusive = { focus = ZGR_burn_down_the_central_bank }
+		completion_reward = {
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}
+		}			
+	}
+
+	# Control the Fallout
+	focus = {
+		id = ZGR_controll_the_fallout
+		icon = GFX_focus_AST_squander_bug
+		x = 15
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_burn_down_the_central_bank }
+		completion_reward = {
+			
+		}			
+	}
+
+	# Redistribute the Money
+	focus = {
+		id = ZGR_redistribute_the_money
+		icon = GFX_focus_CHL_strengthen_the_central_bank
+		x = 10
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_take_things_slow }
+		completion_reward = {
+			342 = {set_state_category = large_city}
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}
+		}			
+	}
+
+	# For Freedom!
+	focus = {
+		id = ZGR_forfreedom
+		icon = GFX_focus_generic_total_war
+		x = 15
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_controll_the_fallout }
+		completion_reward = {
+			
+		}			
+	}
+
+	# The Anarchist Air Force
+	focus = {
+		id = ZGR_the_anarchist_air_force
+		icon = GFX_goal_continuous_air_production
+		x = 12
+		y = 6
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_take_things_slow } 
+		completion_reward = {	
+				set_technology = {
+					improved_small_airframe = 1
+				}
+
+				set_technology = {
+					improved_medium_airframe = 1
+				}
+			hidden_effect = {
+				set_technology = {
+					iw_medium_airframe = 1
+					popup = no
+				}
+
+				set_technology = {
+					basic_medium_airframe = 1
+					popup = no
+				}
+
+				set_technology = {
+					iw_small_airframe = 1
+					popup = no
+				}
+
+				set_technology = {
+					basic_small_airframe = 1
+					popup = no
+				}
+			}
+		}			
+	}
+
+	# The Disbanding of the Army
+	focus = {
+		id = ZGR_the_disbanding_of_the_army
+		icon = GFX_focus_smiling_buddha
+		x = 9
+		y = 2
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_anarchist_congress }
+		completion_reward = {
+    	custom_effect_tooltip = ZGR_ANARCHY_DEL_ARMY
+		division_template = {
+			name = "Provincial Militia Division"
+			is_locked = no
+			division_names_group = ZGR_INF_01
+			priority = 0
+			template_counter = 0
+
+			regiments = {
+				militia = { x = 0 y = 0 }
+				militia = { x = 0 y = 1 }
+				militia = { x = 0 y = 2 }
+
+				militia = { x = 1 y = 0 }
+				militia = { x = 1 y = 1 }
+				militia = { x = 1 y = 2 }
+
+				militia = { x = 2 y = 0 }
+				militia = { x = 2 y = 1 }
+				militia = { x = 2 y = 2 }
+
+				militia = { x = 3 y = 0 }
+				militia = { x = 3 y = 1 }
+				militia = { x = 3 y = 2 }
+			}
+
+			support = {
+			}
+		}
+		339 = {
+			create_unit = {
+				division = "name = \"Provincial Militias\" division_template = \"Provincial Militia Division\" start_manpower_factor = 1.0"
+				owner = ZGR
+				count = 3
+				allow_spawning_on_enemy_provs = yes
+				id = 3001
+			}
+		}
+		}
+	}
+
+	# The Rural Corp
+	focus = {
+		id = ZGR_the_rural_corp
+		icon = GFX_focus_FIN_the_cold_front
+		x = 7
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_more_rural_mechanisation }
+		prerequisite = { focus = ZGR_the_disbanding_of_the_army }
+		completion_reward = { 
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 10
+				tooltip = add_10_anarchy_progress_var
+			}
+
+			division_template = {
+				name = "Hoplite Taxis"
+				is_locked = no
+				division_names_group = ZGR_INF_01
+				priority = 0
+				template_counter = 0
+
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+
+					mountaineers = { x = 3 y = 0 }
+					mountaineers = { x = 3 y = 1 }
+					mountaineers = { x = 3 y = 2 }
+				}
+
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+
+		342 = {
+			create_unit = {
+				division = "name = \"MT. Hopliton\" division_template = \"Hoplite Taxis\" start_manpower_factor = 1.0"
+				owner = ZGR
+				count = 1
+				allow_spawning_on_enemy_provs = yes
+				id = 2001
+			}
+		}
+
+		}		
+	}
+
+	# The Free Generals
+	focus = {
+		id = ZGR_the_free_generals
+		icon = GFX_focus_generic_women_in_military
+		x = 11
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_disbanding_of_the_army }
+		completion_reward = {
+
+		}		
+	}
+
+	# Rural Terrain Specialists
+	focus = {
+		id = ZGR_rural_terrain_specialists
+		icon = GFX_focus_FIN_weapon_caches
+		x = 7
+		y = 4
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_rural_corp }
+		completion_reward = { 
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 10
+				tooltip = add_10_anarchy_progress_var
+			}			
+		}				
+	}
+
+	# Mechanize the Supply
+	focus = {
+		id = ZGR_mechanize_the_supply
+		icon = GFX_focus_generic_armored_air_support
+		x = 7
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_rural_terrain_specialists }
+		completion_reward = { 
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 5
+				tooltip = add_5_anarchy_progress_var
+			}			
+		}			
+	}
+
+	# Communal Universities
+	focus = {
+		id = ZGR_communal_universities
+		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
+		x = 10
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_redistribute_the_money }
+		completion_reward = {
+			add_ideas = ZGR_Comm_Univers
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}			
+		}			
+	}
+
+	# The Urban Specialists
+	focus = {
+		id = ZGR_the_urban_specialists
+		icon = GFX_focus_generic_reorient_production
+		x = 12
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		prerequisite = { focus = ZGR_the_anarchist_air_force }
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 3 }
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 10
+				tooltip = add_10_anarchy_progress_urban_var
+			}
+		}			
+	}
+
+	# Free Farms
+	focus = {
+		id = ZGR_free_farms
+		icon = GFX_focus_generic_farmland
+		x = 5
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_free_speech }
+		completion_reward = { 
+			add_to_variable = {
+				var = anarchy_progress_var
+				value = 25
+				tooltip = add_25_anarchy_progress_var
+			}
+			add_political_power = 150
+			swap_ideas = { 
+			remove_idea = ZGR_Farmers_Councils_Anarchy
+			add_idea = ZGR_Farmers_Councils_Anarchy_Free
+			}					
+		}		
+	}
+
+	# Night Patrols
+	focus = {
+		id = ZGR_night_patrols
+		icon = GFX_focus_URG_colorados
+		x = 12
+		y = 8
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_urban_specialists }
+		completion_reward = {
+			add_stability = 0.25
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 15
+				tooltip = add_15_anarchy_progress_urban_var 
+			}			
+		}			
+	}
+
+	# The Great Revival
+	focus = {
+		id = ZGR_the_great_revival
+		icon = GFX_focus_SWE_urbanization
+		x = 10
+		y = 8
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_communal_universities }
+		completion_reward = {
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}					
+			add_victory_points = {
+				province = 1005
+				value = 5
+			}
+			add_victory_points = {
+				province = 4112
+				value = 3
+			}
+		}			
+	}
+
+	# The Rural Freedom
+	focus = {
+		id = ZGR_the_rural_freedom
+		icon = GFX_focus_SWE_form_rfsu
+		x = 6
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_mechanize_the_supply }
+		prerequisite = { focus = ZGR_free_farms }
+		available = {
+			check_variable = { anarchy_progress_var > 99 } 
+			custom_trigger_tooltip = {
+				tooltip = ZGR_ANARCHY_HAS_ENOUGH_RURAL_TOOL
+				check_variable = { anarchy_progress_var > 99 } 			
+			}			
+		}		
+		completion_reward = {
+			custom_effect_tooltip = ZGR_ANARCHY_HAS_ENOUGH_RURAL 
+		}		
+
+	}
+
+	# Propagate the Cause
+	focus = {
+		id = ZGR_propagate_the_cause
+		icon = GFX_focus_por_workers_of_iberia
+		x = 10
+		y = 9
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_the_great_revival }
+		completion_reward = {
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 5
+				tooltip = add_5_anarchy_progress_urban_var
+			}					
+			add_timed_idea = {
+				idea = ZGR_Anarchist_Propoganda
+				days = 140
+			}			
+			ZCY = {
+				add_timed_idea = {
+				idea = ZGR_Anarchist_Propoganda
+				days = 180
+			}
+		  }
+		ZOT = {
+				add_timed_idea = {
+				idea = ZGR_Anarchist_Propoganda
+				days = 35
+			}
+		  }		
+			ZCT = {
+				add_timed_idea = {
+				idea = ZGR_Anarchist_Propoganda
+				days = 35
+			}
+		  }
+			ZAG = {
+				add_timed_idea = {
+				idea = ZGR_Anarchist_Propoganda
+				days = 35
+			}
+		  }			      
+		}			
+	}
+
+	# Full Equality
+	focus = {
+		id = ZGR_full_equality
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		x = 12
+		y = 9
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_night_patrols }
+		completion_reward = {
+			add_stability = 0.25
+			add_political_power = 100	
+			add_to_variable = {
+				var = anarchy_progress_urban_var
+				value = 10
+				tooltip = add_10_anarchy_progress_urban_var
+			}					
+		}			
+	}
+
+	# Anarchy Cities
+	focus = {
+		id = ZGR_anarchy_cities
+		icon = GFX_focus_SWE_hygienic_housing
+		x = 11
+		y = 10
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ZGR_propagate_the_cause }
+		prerequisite = { focus = ZGR_full_equality }
+		available = {
+			check_variable = { anarchy_progress_urban_var > 99 } 
+			custom_trigger_tooltip = {
+				tooltip = ZGR_ANARCHY_HAS_ENOUGH_RURAL_TOOL
+				check_variable = { anarchy_progress_urban_var > 99 }	
+			}			
+		}			
+		completion_reward = {
+			
+		}			
+	}
+}

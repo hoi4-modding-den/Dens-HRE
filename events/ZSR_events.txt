@@ -1,0 +1,21 @@
+add_namespace = ZBS_event
+
+country_event = {
+	id = ZBS_event.1
+	title = ZBS_event.1.t
+	desc = ZBS_event.1.d
+	is_triggered_only = yes
+	option = {
+		name = ZBS_event.1.a
+		ai_chance = {
+			base = 10
+		}
+		set_country_flag = ZBS_murshid_arrested
+		complete_national_focus = ZBS_arrest_of_salman_murshid
+	}
+	option = {
+		name = ZBS_event.1.b
+		set_country_flag = ZBS_murshid_government
+		complete_national_focus = ZBS_arrest_of_salman_murshid
+	}
+}

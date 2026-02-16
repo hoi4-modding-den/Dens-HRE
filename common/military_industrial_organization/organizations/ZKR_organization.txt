@@ -1,0 +1,29 @@
+ZKR_plane_manufacturer = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+	name = ZKR_plane_manufacturer
+	
+	allowed = {	
+		original_tag = ZKR
+	}
+
+	available = {
+		
+	}
+
+}
+
+ZKR_skoda_armour = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_CZE_skoda_armor
+	
+	allowed = {	
+		original_tag = ZKR
+	}
+
+	available = {
+		FROM = { has_completed_focus = ZKR_purchase_western_tanks }
+		FROM = { NOT = { has_war_with = XBH } }
+	}
+
+}

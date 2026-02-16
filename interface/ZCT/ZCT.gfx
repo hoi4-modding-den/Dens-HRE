@@ -1,4 +1,28 @@
 spriteTypes = {	
 	spriteType = { name = "GFX_unit_elite_infantry_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_elite_infantry_icon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_elite_infantry_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_unit_elite_infantry_icon.dds" noOfFrames = 2 }
+
+	spriteType = {
+		name = "GFX_emergency_powers_icon"
+		texturefile = "gfx/interface/ZCT/emergency_powers_icon.dds"
+
+		legacy_lazy_load = no
+	}
+
+	### EVENTS ###
+
+	spriteType = {
+        name = "GFX_news_event_ZCT_fall_of_istanbul"
+        texturefile = "gfx/event_pictures/ZCT_news_event_fall_of_istanbul.dds"
+    }
+
+	spriteType = {
+        name = "GFX_news_event_ZCT_fall_of_ankara"
+        texturefile = "gfx/event_pictures/ZCT_news_event_fall_of_ankara.dds"
+    }
+
+	spriteType = {
+        name = "GFX_news_event_ZCT_birth_of_turkish_republic"
+        texturefile = "gfx/event_pictures/ZCT_news_event_birth_of_turkish_republic.dds"
+    }
 }

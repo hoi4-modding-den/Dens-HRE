@@ -1,0 +1,80 @@
+ZBS_path = {
+	name = "Syrian Arab Republic Path"
+
+	allowed = {
+		original_tag = ZBS
+	}
+	enable = {
+		always = yes
+	}
+
+	ai_national_focuses = {
+		SYRIA_the_civil_war
+		SYRIA_rally_public
+		SYRIA_wartime_economy
+		SYRIA_mobilize_people
+		ZBS_the_arab_state
+		SYRIA_local_defenses
+		SYRIA_recruit_partisans
+		ZBS_purge_party
+		ZBS_unify_the_nation
+		ZBS_national_propaganda
+		SYRIA_airplane_construction
+		SYRIA_army_reform
+		SYRIA_student_support
+		SYRIA_supply
+	}
+
+	research = {
+		
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+ZRS_path = {
+	name = "Islamic Syrian Path"
+
+	allowed = {
+		original_tag = ZRS
+	}
+	enable = {
+		always = yes
+	}
+
+	ai_national_focuses = {
+		SYRIA_the_civil_war
+		SYRIA_rally_public
+		SYRIA_mobilize_people
+		SYRIA_tribal_support
+		SYRIA_religious_conscripts
+		SYRIA_local_defenses
+		SYRIA_recruit_partisans
+		SYRIA_guerilla_warfare
+	}
+
+	research = {
+		
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}

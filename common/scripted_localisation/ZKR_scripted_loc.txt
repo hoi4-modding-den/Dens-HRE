@@ -1,0 +1,60 @@
+defined_text = {
+	name = ZKR_achievements_intro_gui_1
+    text = {
+		trigger = {
+            has_completed_custom_achievement = {
+				mod = ZKR_achievements
+				achievement = ZKR_greater_kurdistan_achievement
+			}
+		}
+		localization_key = ZKR_achievements_intro_gui_1_y
+	}
+	text = {
+		localization_key = ZKR_achievements_intro_gui_1_n
+	}
+}
+defined_text = {
+	name = ZKR_achievements_intro_gui_2
+    text = {
+		trigger = {
+            has_completed_custom_achievement = {
+				mod = ZKR_achievements
+				achievement = ZKR_woman_in_the_military
+			}
+		}
+		localization_key = ZKR_achievements_intro_gui_2_y
+	}
+	text = {
+		localization_key = ZKR_achievements_intro_gui_2_n
+	}
+}
+defined_text = {
+	name = ZKR_achievements_intro_gui_3
+    text = {
+		trigger = {
+            has_completed_custom_achievement = {
+				mod = ZKR_achievements
+				achievement = ZKR_anger_the_turks
+			}
+		}
+		localization_key = ZKR_achievements_intro_gui_3_y
+	}
+	text = {
+		localization_key = ZKR_achievements_intro_gui_3_n
+	}
+}
+defined_text = {
+	name = ZKR_achievements_intro_gui_4
+    text = {
+		trigger = {
+            has_completed_custom_achievement = {
+				mod = ZKR_achievements
+				achievement = ZKR_trotskys_revenge
+			}
+		}
+		localization_key = ZKR_achievements_intro_gui_4_y
+	}
+	text = {
+		localization_key = ZKR_achievements_intro_gui_4_n
+	}
+}

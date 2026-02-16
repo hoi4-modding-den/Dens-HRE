@@ -13,15 +13,48 @@ ideas = {
 			}
 		}
 
+		ZAG_communist_revolution = {
+			name = "Communist Revolution in Cilicia"
+			picture = trotskyite_plot_purged_nsb_ccp_sov_compatibility
+			modifier = {
+				political_power_factor = 0.2
+				conscription_factor = 0.1
+				war_support_factor = 0.15
+				communism_drift = 0.02
+			}
+		}
+
+		ZAG_syndicalist_revolution = {
+			name = "Syndicalist Revolution in Cilicia"
+			picture = FIN_socialist_welfare
+			modifier = {
+				political_power_factor = 0.15
+				conscription_factor = 0.15
+				war_support_factor = 0.05
+				democratic_drift = 0.01
+				communism_drift = 0.01
+			}
+		}
+
 		ZAG_armenian_state = {
 			name = "An Armenian State"
-			picture = GFX
+			picture = MEX_revolutionary_army
 			modifier = {
 				political_power_factor = 0.1
 				stability_factor = 0.1
 				war_support_factor = 0.05
 			}
 		}
+
+		ZAG_monarchic_reestablishment = {
+			name = "Monarchic Reestablishment"
+			picture = AUS_habsburg_monarchy_restored
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.05
+			}
+		}
+
 
 		ZAG_volonteer_legions = {
 			name = "Volonteer Legions"
@@ -35,20 +68,165 @@ ideas = {
 			}
 		}
 
+		ZAG_reformed_army_of_cilicia = {
+			name = "Reformed Army of Cilicia"
+			picture = chi_army_corruption3
+			modifier = {
+				army_attack_factor = 0.2
+				army_speed_factor = 0.2
+				army_org_factor = 0.1
+			}
+		}
+
+		
+		ZAG_christian_state = {
+			name = "A Christian Armenia"
+			picture = MEX_church_power_4
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = -0.2
+			}
+		}
+
+		ZAG_secular_nation = {
+			name = "The State of Armenia"
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.2
+			}
+		}
+
+		ZAG_allowed_private_religion = {
+			name = "Allowed Religion in Private Life"
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = 0.4
+			}
+		}
+
+		ZAG_state_atheism = {
+			name = "Enforced State Atheism"
+			picture = generic_democracy_banned
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = 0.1
+				political_power_factor = 0.2
+			}
+		}
+
+		ZAG_jewish_state = {
+			name = "The First Jewish State"
+			picture = SOV_crowning_jewel_of_russia
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = 0.2
+				war_support_factor = 0.05
+			}
+		}
+
+		ZAG_muslim_state = {
+			name = "A Muslim Armenia"
+			picture = raj_marginalized_muslim_community_happy
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = -0.2
+				war_support_factor = 0.2
+			}
+		}
 
 
+		ZAG_universal_equality = {
+			name = "Universal Equality"
+			picture = generic_women_in_the_army
+			modifier = {
+				stability_factor = 0.1
+				conscription_factor = 0.2
+				war_support_factor = -0.1
+			}
+		}
+
+		ZAG_limited_womens_rights = {
+			name = "Limited Women's Rights"
+			picture = AUS_women_in_academia
+			modifier = {
+				stability_factor = -0.1
+				conscription_factor = 0.1
+			}
+		}
+
+		ZAG_no_rights_for_women = {
+			name = "No Rights for Women"
+			picture = EST_democratic_opposition
+			modifier = {
+				stability_factor = -0.15
+				conscription_factor = 0.2
+				war_support_factor = 0.15
+			}
+		}
 
 
+		ZAG_the_central_committee = {
+			name = "The Central Committee"
+			picture = generic_communist_army
+			modifier = {
+				political_power_cost = 0.4
+				war_support_factor = 0.1
+			}
+		}
+
+		ZAG_crusade_against_imperialism = {
+			name = "Crusade Against Imperialism"
+			picture = SPR_anti_fascist_crusade
+			modifier = {
+				war_support_factor = 0.1
+				generate_wargoal_tension = -0.5
+				justify_war_goal_time = -0.8
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		ZAG_victorious_crusade = {
+			name = "Successful Crusade"
+			picture = SPR_anti_fascist_crusade
+			modifier = {
+				war_support_factor = 0.15
+				stability_factor = 0.15
+				consumer_goods_factor = -0.2
+			}
+		}
+
+		ZAG_gendarmerie_of_the_middle_east = {
+			name = "Gendarmerie of the Middle East"
+			picture = SPR_international_brigades
+			modifier = {
+				war_support_factor = 0.15
+				generate_wargoal_tension = -1
+				justify_war_goal_time = -0.8
+			}
+		}
 
 
-		ZAG_the_second_republic = {
-			name = "The Second Republic"
+		ZAG_social_democracy = {
+			name = "Social-Democrat Government"
 			picture = AFG_republic_idea
 			modifier = {
 				political_power_factor = 0.2
 				stability_factor = 0.1
+				war_support_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		ZAG_liberal_government = {
+			name = "Liberal Government"
+			picture = AFG_republic_idea
+			modifier = {
+				political_power_factor = 0.2
+				stability_factor = 0.05
 				war_support_factor = 0.15
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.1
 			}
 		}
 
@@ -57,7 +235,7 @@ ideas = {
 			picture = RAJ_independence_movement
 			modifier = {
 				political_power_factor = 0.2
-				stability_weekly_factor = -0.002
+				stability_weekly_factor = -0.001
 				war_support_weekly = -0.01
 				democratic_drift = 0.05
 				fascism_drift = -0.03
@@ -67,10 +245,10 @@ ideas = {
 
 		ZAG_bastion_of_democracy = {
 			name = "Bastion of Democracy"
-			picture = RAJ_independence_movement
+			picture = generic_democratic_drift_bonus
 			modifier = {
 				political_power_factor = 0.2
-				stability_weekly_factor = 0.002
+				stability_factor = 0.2
 				democratic_drift = 0.05
 				conscription = 0.02
 			}

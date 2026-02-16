@@ -1,6 +1,6 @@
 capital = 347
 
-set_research_slots = 3
+set_research_slots = 2
 
 set_convoys = 155
 
@@ -107,6 +107,8 @@ set_party_name = {
 
 recruit_character = ZCT_mustafa_kemal_ataturk
 recruit_character = ZCT_ismet_inonu
+recruit_character = ZCT_riza_nur
+recruit_character = ZCT_sukru_saracoglu
 
 promote_character = ZCT_mustafa_kemal_ataturk
 
@@ -117,6 +119,7 @@ add_ideas = {
 	ZCT_backed_into_a_corner
 	ZCT_martial_law
 	ZCT_economic_crisis
+	ZCT_low_legitimacy
 }
 
 set_politics = {
@@ -133,12 +136,91 @@ set_popularities = {
 	communism = 5
 }
 
-set_rule = {
-    desc = ZCT_basic_rules
-    can_create_factions = no
-	can_join_factions = no
-	can_not_declare_war = yes
+set_variable = { emergency_powers = 25 }
+set_variable = { economic_crisis_modifier = -0.25 }
+
+country_event = {
+    id = ZCT.1
+    days = 1044
 }
+
+add_opinion_modifier = {
+    target = ZOT
+    modifier = ZCT_betrayed_our_people
+}
+
+add_opinion_modifier = {
+    target = ZTC
+    modifier = ZCT_betrayed_our_people
+}
+
+add_opinion_modifier = {
+    target = ZTM
+    modifier = ZCT_betrayed_our_people
+}
+
+add_opinion_modifier = {
+    target = ZGR
+    modifier = ZCT_foreign_invaders
+}
+
+add_opinion_modifier = {
+    target = ZAR
+    modifier = ZCT_foreign_invaders
+}
+
+add_opinion_modifier = {
+    target = ZA1
+    modifier = ZCT_foreign_invaders
+}
+
+add_opinion_modifier = {
+    target = ZAG
+    modifier = ZCT_separatist_dogs
+}
+
+add_opinion_modifier = {
+    target = ZKR
+    modifier = ZCT_separatist_dogs
+}
+
+diplomatic_relation = {
+    country = ZOT
+    relation = embargo
+    active = yes
+}
+
+diplomatic_relation = {
+    country = ZGR
+    relation = embargo
+    active = yes
+}
+
+diplomatic_relation = {
+    country = ZAR
+    relation = embargo
+    active = yes
+}
+
+diplomatic_relation = {
+    country = ZA1
+    relation = embargo
+    active = yes
+}
+
+diplomatic_relation = {
+    country = ZAG
+    relation = embargo
+    active = yes
+}
+
+diplomatic_relation = {
+    country = ZKR
+    relation = embargo
+    active = yes
+}
+
+set_cosmetic_tag = ZCT_IZMIT_GOVERNMENT
 
 if = {
 	limit = {

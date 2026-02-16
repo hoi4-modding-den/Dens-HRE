@@ -1,0 +1,58 @@
+ZAR_pragmatism_radicalism_category = {
+	ZAR_Pragmatism_Increase = {
+
+		icon = GFX_decision_generic_voting
+
+
+		visible = {
+			has_country_flag = ZAR_Prag_Rad_Active
+		}
+
+		days_remove = 28
+
+		days_re_enable = 14
+
+		cost = 15
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			ZAR_Pragmatic_Increase_Large = yes
+		}
+	}
+	ZAR_Radical_Increase = {
+
+		icon = GFX_decision_generic_voting
+
+
+		visible = {
+			has_country_flag = ZAR_Prag_Rad_Active
+		}
+
+		days_remove = 28
+
+		days_re_enable = 14
+
+		cost = 15
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			ZAR_Radical_Increase_Large = yes
+		}
+	}
+}

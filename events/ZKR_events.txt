@@ -1,6 +1,8 @@
 add_namespace = ZKR_politics_events
 add_namespace = ZKR_diplo_events
 add_namespace = ZKR_technical_events
+add_namespace = ZKR_lore_events
+add_namespace = ZKR_news_events
 
 country_event = { # Monarchist Coup
 	id = ZKR_politics_events.1
@@ -20,9 +22,16 @@ country_event = { # Monarchist Coup
             elections_allowed = no
         }
 
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = ZKR_load_new_focus_branch_tt
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            news_event = ZKR_news_events.2
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 }
@@ -47,34 +56,14 @@ country_event = { # Fascist Coup
 
         custom_effect_tooltip = generic_skip_one_line_tt
 
-        if = {
-            limit = {
-                has_completed_focus = ZKR_pluralist_constitution
-            }
-            uncomplete_national_focus = {
-                focus = ZKR_pluralist_constitution
-                uncomplete_children = yes
-                refund_political_power = no
-            }
-            unlock_national_focus = ZKR_kurdish_supremacy
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            custom_effect_tooltip = ZKR_regain_claims_tt
-            hidden_effect = {
-                every_state = {
-                    limit = {
-                        has_state_flag = ZKR_former_claimed_state
-                    }
-                    add_claim_by = ROOT
-                    clr_state_flag = ZKR_former_claimed_state
-                }
-            }
-        }
-
+        custom_effect_tooltip = ZKR_load_new_focus_branch_tt
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            news_event = ZKR_news_events.3
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 }
@@ -101,9 +90,12 @@ country_event = { # Elections
 
         promote_character = ZKR_seyid_riza
 
+        custom_effect_tooltip = ZKR_load_new_focus_branch_tt
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 
@@ -119,9 +111,12 @@ country_event = { # Elections
 
         promote_character = ZKR_ahmed_barzani
 
+        custom_effect_tooltip = ZKR_load_new_focus_branch_tt
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
         }
     }
 
@@ -137,9 +132,304 @@ country_event = { # Elections
 
         promote_character = ZKR_qazi_muhamad
 
+        custom_effect_tooltip = ZKR_load_new_focus_branch_tt
         set_country_flag = ZKR_first_branch_completed
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
+
+            country_event = { id = ZKR_diplo_events.6 days = 40 }
+        }
+    }
+}
+
+country_event = { # Elections (repeatable)
+	id = ZKR_politics_events.4
+	title = ZKR_politics_events.4.t
+	desc = ZKR_politics_events.4.desc
+	
+	picture = GFX_report_event_election_vote
+	
+	trigger = {
+		tag = ZKR
+		has_government = democratic
+	}
+    
+    is_triggered_only = yes
+    fire_only_once = no
+	
+	option = {
+        name = ZKR_politics_events.4.a
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party
+            long_name = ZKR_democratic_party_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_seyid_riza
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+
+    option = {
+        name = ZKR_politics_events.4.b
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party
+            long_name = ZKR_democratic_party_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_ahmed_barzani
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+
+    option = {
+        name = ZKR_politics_events.4.c
+        trigger = {
+            has_character = ZRM_haji_baba_sheikh
+        }
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party_ZRM
+            long_name = ZKR_democratic_party_ZRM_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZRM_haji_baba_sheikh
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+
+    # add more options from other countries after Mesopotamian Commonwealth is formed
+}
+
+country_event = { # Cracks in the Alliance
+	id = ZKR_politics_events.5
+	title = ZKR_politics_events.5.t
+	desc = ZKR_politics_events.5.desc
+	
+	picture = GFX_report_event_generic_conference
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.5.a
+        add_popularity = { ideology = democratic popularity = -0.1 }
+		add_popularity = { ideology = communism popularity = -0.1 }
+    }
+}
+
+country_event = { # Commonwealth focus tree unlocked
+	id = ZKR_politics_events.6
+	title = ZKR_politics_events.6.t
+	desc = ZKR_politics_events.6.desc
+	
+	picture = GFX_report_event_generic_destroyed_vehicles
+
+    fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.6.a
+        add_ideas = ZKR_traditionalist_resistance
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_ideas = ZKR_cultural_apathy
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = ZKR_load_new_focus_branch_tt
+        set_country_flag = ZKR_commonwealth_foci_unlocked
+        hidden_effect = { mark_focus_tree_layout_dirty = yes }
+    }
+}
+
+country_event = { # reform the anti-imperialist front
+	id = ZKR_politics_events.7
+	title = ZKR_politics_events.7.t
+	desc = ZKR_politics_events.7.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.7.a
+        set_faction_name = ZKR_anti_imperialist_league
+    }
+
+    option = {
+        name = ZKR_politics_events.7.b
+        trigger = { has_government = democratic }
+        custom_effect_tooltip = ZKR_politics_events.7.tt
+        every_other_country = {
+            limit = {
+                is_in_faction_with = ROOT
+                is_subject = no
+                NOT = { has_government = democratic }
+            }
+            country_event = ZKR_politics_events.8
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_country_flag = ZKR_democratic_shield_formed
+        hidden_effect = {
+            every_other_country = {
+                limit = {
+                    is_in_faction_with = ROOT
+                    is_subject = no
+                    has_government = democratic
+                }
+                set_country_flag = ZKR_temp_ally_marker
+            }
+        }
+        ZKR_save_current_commonwealth_status = yes
+        create_faction_from_template = ZKR_faction_template_democratic_peacekeepers
+        hidden_effect = {
+            every_other_country = {
+                limit = {
+                    has_country_flag = ZKR_temp_ally_marker
+                }
+                ROOT = { 
+                    add_to_faction = PREV
+                    remove_opinion_modifier = {
+                        target = PREV
+                        modifier = faction_traitor
+                    }
+                }
+                clr_country_flag = ZKR_temp_ally_marker
+            }
+        }
+        ZKR_load_current_commonwealth_status = yes
+    }
+
+    option = {
+        name = ZKR_politics_events.7.c
+        trigger = { has_government = communism }
+        custom_effect_tooltip = ZKR_politics_events.7.tt
+        every_other_country = {
+            limit = {
+                is_in_faction_with = ROOT
+                is_subject = no
+                NOT = { has_government = communism }
+            }
+            country_event = ZKR_politics_events.8
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        set_country_flag = ZKR_fourth_international_section_formed
+        hidden_effect = {
+            every_other_country = {
+                limit = {
+                    is_in_faction_with = ROOT
+                    is_subject = no
+                    has_government = communism
+                }
+                set_country_flag = ZKR_temp_ally_marker
+            }
+        }
+        ZKR_save_current_commonwealth_status = yes
+        create_faction_from_template = ZKR_faction_template_fourth_international
+        hidden_effect = {
+            every_other_country = {
+                limit = {
+                    has_country_flag = ZKR_temp_ally_marker
+                }
+                ROOT = { 
+                    add_to_faction = PREV
+                    remove_opinion_modifier = {
+                        target = PREV
+                        modifier = faction_traitor
+                    }
+                }
+                clr_country_flag = ZKR_temp_ally_marker
+            }
+        }
+        ZKR_load_current_commonwealth_status = yes
+    }
+}
+
+country_event = { # FROM kicks us out
+	id = ZKR_politics_events.8
+	title = ZKR_politics_events.8.t
+	desc = ZKR_politics_events.8.desc
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_politics_events.8.a
+        trigger = { FROM = { has_government = communism } }
+    }
+
+    option = {
+        name = ZKR_politics_events.8.b
+        
+    }
+}
+
+country_event = { # Preaching Peace and Waging War
+	id = ZKR_politics_events.9
+	title = ZKR_politics_events.9.t
+	desc = ZKR_politics_events.9.desc
+	
+	picture = GFX_report_event_gathering_protest
+	
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_politics_events.9.a
+        add_political_power = -50
+        add_war_support = -0.15
+        set_country_flag = ZKR_peace_lore_event_triggered
+    }
+}
+
+country_event = { # We are One
+	id = ZKR_politics_events.10
+	title = ZKR_politics_events.10.t
+	desc = ZKR_politics_events.10.desc
+	
+	picture = GFX_report_event_SWI_assembly_hall
+	
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_politics_events.10.a
+        custom_effect_tooltip = ZKR_core_the_entire_middle_east_tt
+        hidden_effect = {
+            every_state = {
+                limit = {
+                    is_on_continent = middle_east
+                    NOT = { is_core_of = ROOT }
+                }
+                add_core_of = ROOT
+            }
+            add_state_core = 797
+            add_state_core = 164
+            add_state_core = 187
+            add_state_core = 1124
+            add_state_core = 183
+            add_state_core = 1121
         }
     }
 }
@@ -158,8 +448,13 @@ country_event = { # Assistance in Syrian CW
         name = ZKR_diplo_events.1.a
         add_popularity = { ideology = FROM popularity = 0.05 }
 		effect_tooltip = {
+            add_manpower = 8000
             add_offsite_building = { type = arms_factory level = 1 }
         }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = ZKR_diplo_events.1.tt
     }
 }
 
@@ -275,7 +570,7 @@ country_event = { # Demanded Syrian Kurdistan - Refused
 	title = ZKR_diplo_events.4.t
 	desc = ZKR_diplo_events.4.desc
 	
-	picture = GFX_report_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
 	
 	
 	is_triggered_only = yes
@@ -307,7 +602,225 @@ country_event = { # Demanded Syrian Kurdistan - Refused
 
 }
 
-country_event = { # Last British Bastion gone
+country_event = { # LoN Appeal
+	id = ZKR_diplo_events.5
+	title = ZKR_diplo_events.5.t
+	desc = ZKR_diplo_events.5.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.5.a
+        add_opinion_modifier = {
+            target = FROM
+            modifier = ZKR_lon_deal_opinion
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_ideas = ZKR_kurdistan_lon_deal
+    }
+}
+
+country_event = { # Attack Mahabad
+	id = ZKR_diplo_events.6
+	title = ZKR_diplo_events.6.t
+	desc = ZKR_diplo_events.6.desc
+	
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.6.a
+        activate_mission = ZKR_tensions_with_mahabad_increasing
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        ZRM = { country_event = ZKR_diplo_events.7 }
+    }
+}
+
+country_event = { # Attack Mahabad Warning
+	id = ZKR_diplo_events.7
+	title = ZKR_diplo_events.7.t
+	desc = ZKR_diplo_events.7.desc
+	
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.7.a
+        custom_effect_tooltip = ZKR_diplo_events.7.tt
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_timed_idea = {
+            idea = ZKR_mahabad_mobilising
+            days = 200
+        }
+    }
+}
+
+country_event = { # Faction Invite Event
+	id = ZKR_diplo_events.8
+	title = ZKR_diplo_events.8.t
+	desc = ZKR_diplo_events.8.desc
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.8.a
+        trigger = {
+            FROM = { has_completed_focus = ZKR_coalition_of_willing }
+        }
+        ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.25
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+        set_country_flag = ZKR_joined_faction
+        FROM = { country_event = ZKR_diplo_events.9 }
+    }
+
+    option = {
+        name = ZKR_diplo_events.8.b
+        trigger = {
+            NOT = { FROM = { has_completed_focus = ZKR_coalition_of_willing } }
+        }
+        ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.5
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+        set_country_flag = ZKR_joined_faction
+        FROM = { country_event = ZKR_diplo_events.10 }
+    }
+
+    option = {
+        name = ZKR_diplo_events.8.c
+        trigger = {
+            NOT = { FROM = { has_completed_focus = ZKR_coalition_of_willing } }
+        }
+        FROM = { country_event = ZKR_diplo_events.11 }
+    }
+
+    option = {
+        name = ZKR_diplo_events.8.d
+        trigger = {
+            FROM = { has_completed_focus = ZKR_coalition_of_willing }
+        }
+        FROM = { country_event = ZKR_diplo_events.11 }
+    }
+}
+
+country_event = { # Faction Invite Event - accepted (anti-imperialist front)
+	id = ZKR_diplo_events.9
+	title = ZKR_diplo_events.9.t
+	desc = ZKR_diplo_events.9.desc
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.9.a
+        if = {
+            limit = {
+                FROM = { is_faction_leader = yes }
+            }
+            every_other_country = {
+                limit = {
+                    is_in_faction_with = FROM
+                    is_subject = no
+                }
+                ROOT = { add_to_faction = PREV }
+            }
+        }
+        add_to_faction = FROM
+    }
+
+}
+
+country_event = { # Faction Invite Event - accepted (salvation coalition)
+	id = ZKR_diplo_events.10
+	title = ZKR_diplo_events.10.t
+	desc = ZKR_diplo_events.10.desc
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.10.a
+        if = {
+            limit = {
+                FROM = { is_faction_leader = yes }
+            }
+            every_other_country = {
+                limit = {
+                    is_in_faction_with = FROM
+                    is_subject = no
+                }
+                ROOT = { add_to_faction = PREV }
+            }
+        }
+        add_to_faction = FROM
+    }
+
+}
+
+country_event = { # Faction Invite Event - refusal
+	id = ZKR_diplo_events.11
+	title = ZKR_diplo_events.11.t
+	desc = ZKR_diplo_events.11.desc
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.11.a
+        add_political_power = -20
+    }
+
+}
+
+country_event = { # Palestinian British Bastion gone
 	id = ZKR_technical_events.1
 	title = ZKR_technical_events.1.t
 	desc = ZKR_technical_events.1.desc
@@ -319,29 +832,28 @@ country_event = { # Last British Bastion gone
 	
 	option = {
         name = ZKR_technical_events.1.a
-        remove_trait = {
-            character = ZKR_mahmud_barzanji
-            ideology = despotism
-            trait = ZKR_hates_the_british
-        }
-
         if = {
             limit = {
                 DN1 = { has_idea = DN1_the_empires_last_bastion }
             }
-            custom_effect_tooltip = generic_skip_one_line_tt
             DN1 = { remove_ideas = DN1_the_empires_last_bastion }
+            custom_effect_tooltip = generic_skip_one_line_tt
+        }
+        if = {
+            limit = {
+                DN1 = { has_idea = DN1_rising_hostilities }
+            }
+            DN1 = { remove_ideas = DN1_rising_hostilities }
+            custom_effect_tooltip = generic_skip_one_line_tt
         }
 
         if = {
             limit = {
-                DN1 = { has_country_leader = { character = DN1_arthur_wauchope ruling_only = yes } }
+                DN1 = { has_country_leader = { character = DN1_arthur_wauchope ruling_only = no } }
             }
-            custom_effect_tooltip = generic_skip_one_line_tt
             DN1 = { retire_character = DN1_arthur_wauchope }
+            custom_effect_tooltip = generic_skip_one_line_tt
         }
-
-        custom_effect_tooltip = generic_skip_one_line_tt
 
         DN1 = {
             set_party_name = {
@@ -355,4 +867,1239 @@ country_event = { # Last British Bastion gone
 
         DN1 = { set_cosmetic_tag = ZKR_palestine }
     }
+}
+
+country_event = { # Cypriot British Bastion gone
+	id = ZKR_technical_events.2
+	title = ZKR_technical_events.2.t
+	desc = ZKR_technical_events.2.desc
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.2.a
+        ZCY = { drop_cosmetic_tag = yes }
+        effect_tooltip = {
+            ZCY = { set_cosmetic_tag = ZCY }
+        }
+    }
+}
+
+country_event = { # Persian British Bastion gone
+	id = ZKR_technical_events.3
+	title = ZKR_technical_events.3.t
+	desc = ZKR_technical_events.3.desc
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.3.a
+        ZIR = {
+            retire_character = ZIR_board_of_directors
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        if = {
+            limit = {
+                any_other_country = {
+                    OR = {
+                        original_tag = ZPE
+                        original_tag = ZPR
+                    }
+                    is_ally_with = ROOT
+                }
+            }
+            random_other_country = {
+                limit = {
+                    OR = {
+                        original_tag = ZPE
+                        original_tag = ZPR
+                    }
+                    is_ally_with = ROOT
+                }
+                annex_country = {
+                    target = ZIR
+                    transfer_troops = no
+                }
+            }
+        }
+        else = {
+            ZIR = { set_cosmetic_tag = ZKR_persia }
+        }
+    }
+}
+
+country_event = { # FROM requests kurdish lands from ally
+	id = ZKR_technical_events.4
+	title = ZKR_technical_events.4.t
+	desc = ZKR_technical_events.4.desc
+	
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.4.a
+        effect_tooltip = {
+            every_owned_state = {
+                limit = {
+                    OR = {
+                        is_core_of = FROM
+                        is_claimed_by = FROM
+                    }
+                }
+                transfer_state_to = FROM
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+            country_event = { id = ZKR_technical_events.5 days = 2 }
+        }
+    }
+
+    option = {
+        name = ZKR_technical_events.4.b
+        effect_tooltip = {
+            FROM = {
+                remove_from_faction = ROOT
+                create_wargoal = {
+                    target = ROOT
+                    type = take_state_focus
+                }
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+            country_event = { id = ZKR_technical_events.6 days = 2 }
+        }
+    }
+
+}
+
+country_event = { # FROM requests kurdish lands from ally - accepted
+	id = ZKR_technical_events.5
+	title = ZKR_technical_events.5.t
+	desc = ZKR_technical_events.5.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.5.a
+        FROM = {
+            every_owned_state = {
+                limit = {
+                    OR = {
+                        is_core_of = ROOT
+                        is_claimed_by = ROOT
+                    }
+                }
+                transfer_state_to = ROOT
+            }
+        }
+        clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+}
+
+country_event = { # FROM requests kurdish lands from ally - rejected
+	id = ZKR_technical_events.6
+	title = ZKR_technical_events.6.t
+	desc = ZKR_technical_events.6.desc
+	
+	picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.6.a
+        trigger = {
+            has_completed_focus = ZKR_instrument_of_vengeance
+        }
+        remove_from_faction = FROM
+        create_wargoal = {
+            target = FROM
+            type = take_state_focus
+        }
+        clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+    option = {
+        name = ZKR_technical_events.6.b
+        trigger = {
+            NOT = { has_completed_focus = ZKR_instrument_of_vengeance }
+        }
+        clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+}
+
+country_event = { # FROM requests ally annexation
+	id = ZKR_technical_events.7
+	title = ZKR_technical_events.7.t
+	desc = ZKR_technical_events.7.desc
+	
+	picture = GFX_report_event_generic_troops_at_rivier_in_iraq
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.7.a
+        effect_tooltip = {
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+            country_event = { id = ZKR_technical_events.8 days = 2 }
+        }
+    }
+
+    option = {
+        name = ZKR_technical_events.7.b
+        effect_tooltip = {
+            FROM = {
+                remove_from_faction = ROOT
+                create_wargoal = {
+                    target = ROOT
+                    type = take_state_focus
+                }
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+            country_event = { id = ZKR_technical_events.9 days = 2 }
+        }
+    }
+
+}
+
+country_event = { # FROM requests ally annexation - accepted
+	id = ZKR_technical_events.8
+	title = ZKR_technical_events.8.t
+	desc = ZKR_technical_events.8.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.8.a
+        ZKR_transfer_FROM_subjects_to_ROOT = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        annex_country = {
+            target = FROM
+            transfer_troops = no
+        }
+        clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+}
+
+country_event = { # FROM requests ally annexation - rejected
+	id = ZKR_technical_events.9
+	title = ZKR_technical_events.9.t
+	desc = ZKR_technical_events.9.desc
+	
+	picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.9.a
+        trigger = {
+            has_completed_focus = ZKR_instrument_of_vengeance
+        }
+        remove_from_faction = FROM
+        create_wargoal = {
+            target = FROM
+            type = take_state_focus
+        }
+        clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+    option = {
+        name = ZKR_technical_events.9.b
+        trigger = {
+            NOT = { has_completed_focus = ZKR_instrument_of_vengeance }
+        }
+        clr_country_flag = ZKR_negotiating_land_from_ally
+    }
+
+}
+
+country_event = { # Mahabad defeated
+	id = ZKR_technical_events.10
+	title = ZKR_technical_events.10.t
+	desc = ZKR_technical_events.10.desc
+	
+	picture = GFX_report_event_tur_kurds_traditionalists_thwarted
+
+    trigger = {
+        original_tag = ZKR
+        owns_state = 419
+        NOT = { country_exists = ZRM }
+    }
+
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_technical_events.10.a
+        add_political_power = -50
+        add_stability = 0.1
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        419 = { add_manpower = -5000 }
+        if = {
+            limit = {
+                ZRM = { has_character = ZRM_haji_baba_sheikh }
+            }
+            ZRM = { retire_character = ZRM_haji_baba_sheikh }
+        }
+    }
+
+    option = {
+        name = ZKR_technical_events.10.b
+        trigger = {
+            NOT = { has_government = fascism }
+        }
+        add_political_power = 100
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+        
+        every_possible_country = {
+            limit = { has_character = ZRM_haji_baba_sheikh }
+            random_character = {
+                limit = { is_character = ZRM_haji_baba_sheikh }
+                set_nationality = ROOT
+
+                remove_country_leader_role = {
+                    character = ZRM_haji_baba_sheikh
+                    ideology = moderatism
+                }
+                hidden_effect = {
+                    add_country_leader_role = {
+                        character = ZRM_haji_baba_sheikh
+                        promote_leader = no
+                        country_leader = {
+                            ideology = conservatism
+                            expire = "1965.1.1.1"
+                            traits = { ZKR_religious_figure }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+country_event = { # invited to tech sharing
+	id = ZKR_technical_events.11
+	title = ZKR_technical_events.11.t
+	desc = ZKR_technical_events.11.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.11.a
+        ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+                has_government = FROM
+			}
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        effect_tooltip = {
+            add_to_tech_sharing_group = ZKR_west_asia_tech_sharing_group
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.12 days = 5 } }
+    }
+
+    option = {
+        name = ZKR_technical_events.11.b
+        trigger = {
+            OR = {
+                is_ai = no
+                is_subject = no
+            }
+        }
+        ZKR_political_power_based_on_fas_support = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.23 days = 5 } }
+    }
+
+}
+
+country_event = { # invited to tech sharing - accepted
+	id = ZKR_technical_events.12
+	title = ZKR_technical_events.12.t
+	desc = ZKR_technical_events.12.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.12.a
+        FROM = { add_to_tech_sharing_group = ZKR_west_asia_tech_sharing_group }
+    }
+
+}
+
+country_event = { # invited to free trade zone
+	id = ZKR_technical_events.13
+	title = ZKR_technical_events.13.t
+	desc = ZKR_technical_events.13.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.13.a
+        ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.25
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        effect_tooltip = {
+            add_ideas = ZKR_pre_commonwealth_1
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.14 days = 5 } }
+    }
+
+    option = {
+        name = ZKR_technical_events.13.b
+        trigger = {
+            OR = {
+                is_ai = no
+                is_subject = no
+            }
+        }
+        ZKR_political_power_based_on_fas_support = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.23 days = 5 } }
+    }
+
+}
+
+country_event = { # invited to free trade zone - accepted
+	id = ZKR_technical_events.14
+	title = ZKR_technical_events.14.t
+	desc = ZKR_technical_events.14.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.14.a
+        FROM = { add_ideas = ZKR_pre_commonwealth_1 }
+    }
+
+}
+
+country_event = { # invited to free travel zone
+	id = ZKR_technical_events.15
+	title = ZKR_technical_events.15.t
+	desc = ZKR_technical_events.15.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.15.a
+        ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.25
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        effect_tooltip = {
+            swap_ideas = {
+                remove_idea = ZKR_pre_commonwealth_1
+                add_idea = ZKR_pre_commonwealth_2
+            }
+        }
+
+        FROM = { country_event = { id = ZKR_technical_events.16 days = 5 } }
+    }
+
+    option = {
+        name = ZKR_technical_events.15.b
+        trigger = {
+            OR = {
+                is_ai = no
+                is_subject = no
+            }
+        }
+        ZKR_political_power_based_on_fas_support = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.23 days = 5 } }
+    }
+
+}
+
+country_event = { # invited to free travel zone - accepted
+	id = ZKR_technical_events.16
+	title = ZKR_technical_events.16.t
+	desc = ZKR_technical_events.16.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.16.a
+        FROM = { 
+            swap_ideas = {
+                remove_idea = ZKR_pre_commonwealth_1
+                add_idea = ZKR_pre_commonwealth_2
+            }
+        }
+        if = {
+            limit = {
+                has_idea = ZKR_pre_commonwealth_1
+            }
+            swap_ideas = {
+                remove_idea = ZKR_pre_commonwealth_1
+                add_idea = ZKR_pre_commonwealth_2
+            }
+        }
+    }
+
+}
+
+country_event = { # invited to economic pact
+	id = ZKR_technical_events.17
+	title = ZKR_technical_events.17.t
+	desc = ZKR_technical_events.17.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.17.a
+        ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0.25
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        effect_tooltip = {
+            swap_ideas = {
+                remove_idea = ZKR_pre_commonwealth_2
+                add_idea = ZKR_pre_commonwealth_3
+            }
+        }
+
+        FROM = { country_event = { id = ZKR_technical_events.18 days = 5 } }
+    }
+
+    option = {
+        name = ZKR_technical_events.17.b
+        trigger = {
+            OR = {
+                is_ai = no
+                is_subject = no
+            }
+        }
+        ZKR_political_power_based_on_fas_support = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.23 days = 5 } }
+    }
+
+}
+
+country_event = { # invited to economic pact - accepted
+	id = ZKR_technical_events.18
+	title = ZKR_technical_events.18.t
+	desc = ZKR_technical_events.18.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.18.a
+        FROM = { 
+            swap_ideas = {
+                remove_idea = ZKR_pre_commonwealth_2
+                add_idea = ZKR_pre_commonwealth_3
+            }
+        }
+    }
+
+}
+
+country_event = { # proposed federalisation
+	id = ZKR_technical_events.19
+	title = ZKR_technical_events.19.t
+	desc = ZKR_technical_events.19.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.19.a
+        ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0.25
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        effect_tooltip = {
+            FROM = {
+                set_autonomy = {
+                    target = ROOT
+                    autonomous_state = autonomy_ZKR_commonwealth_associate
+                    end_wars = no
+                    end_civil_wars = no
+                }
+            }
+        }
+
+        FROM = { country_event = { id = ZKR_technical_events.20 days = 5 } }
+    }
+
+    option = {
+        name = ZKR_technical_events.19.b
+        trigger = {
+            OR = {
+                is_ai = no
+                is_subject = no
+            }
+        }
+        ZKR_political_power_based_on_fas_support = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.23 days = 5 } }
+    }
+
+}
+
+country_event = { # proposed federalisation - accepted
+	id = ZKR_technical_events.20
+	title = ZKR_technical_events.20.t
+	desc = ZKR_technical_events.20.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.20.a
+        ZKR_transfer_FROM_subjects_to_ROOT = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { set_country_flag = ZKR_federal_state_puppet }
+        set_autonomy = {
+            target = FROM
+            autonomous_state = autonomy_ZKR_commonwealth_associate
+            end_wars = no
+            end_civil_wars = no
+        }
+        hidden_effect = {
+            FROM = { add_ideas = ZKR_pre_commonwealth_3 }
+        }
+    }
+
+}
+
+country_event = { # proposed integration
+	id = ZKR_technical_events.21
+	title = ZKR_technical_events.21.t
+	desc = ZKR_technical_events.21.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.21.a
+        ai_chance = {
+			base = 25
+			modifier = {
+				factor = 0.25
+                NOT = { has_government = FROM }
+			}
+            modifier = {
+                factor = 1.2
+                has_opinion = {
+                    target = FROM
+                    value > 50
+                }
+            }
+		}
+        effect_tooltip = {
+            every_core_state = {
+                add_core_of = FROM
+            }
+            FROM = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = yes
+                }
+            }
+        }
+
+        custom_effect_tooltip = GAME_OVER_TT
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.22 days = 5 } }
+    }
+
+    option = {
+        name = ZKR_technical_events.21.b
+        trigger = {
+            OR = {
+                is_ai = no
+                is_subject = no
+            }
+        }
+        ZKR_political_power_based_on_fas_support = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = { id = ZKR_technical_events.23 days = 5 } }
+    }
+
+}
+
+country_event = { # proposed integration - accepted
+	id = ZKR_technical_events.22
+	title = ZKR_technical_events.22.t
+	desc = ZKR_technical_events.22.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.22.a
+        FROM = {
+            every_core_state = {
+                add_core_of = ROOT
+            }
+        }
+        annex_country = {
+            target = FROM
+            transfer_troops = yes
+        }
+
+        hidden_effect = {
+            country_event = { id = ZKR_politics_events.6 days = 35 }
+        }
+    }
+
+}
+
+country_event = { # commonwealth progression rejected
+	id = ZKR_technical_events.23
+	title = ZKR_technical_events.23.t
+	desc = ZKR_technical_events.23.desc
+	
+	picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.23.a
+        add_political_power = -10
+        custom_effect_tooltip = ZKR_technical_events.23.tt
+    }
+
+}
+
+country_event = { # Justification Event - Reclaim Kurdistan
+	id = ZKR_technical_events.24
+	title = ZKR_technical_events.24.t
+	desc = ZKR_technical_events.24.desc
+	
+	picture = GFX_report_event_german_speech
+
+    is_triggered_only = yes
+
+	trigger = {
+		original_tag = ZKR
+		FROM = {
+            any_owned_state = {
+                OR = {
+                    is_core_of = ROOT
+                    is_claimed_by = ROOT
+                }
+            }
+        }
+		NOT = { has_cosmetic_tag = ZKR_commonwealth }
+	}
+	
+	option = {
+        name = ZKR_technical_events.24.a
+        FROM = { country_event = ZKR_technical_events.25 }
+        clr_country_flag = war_justification_last_event_generic
+		clr_country_flag = war_justification_last_event_borderthreat
+		clr_country_flag = war_justification_last_event_political
+		clr_country_flag = war_justification_last_event_neighbor
+		clr_country_flag = war_justification_last_event_mobilized
+    }
+
+}
+
+country_event = { # Justification Event - Reclaim Kurdistan
+	id = ZKR_technical_events.25
+	title = ZKR_technical_events.25.t
+	desc = ZKR_technical_events.25.desc
+	
+	picture = GFX_report_event_german_speech
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_technical_events.25.a
+        
+    }
+
+}
+
+country_event = { # Academy Event
+	id = ZKR_lore_events.1
+	title = ZKR_lore_events.1.t
+	desc = ZKR_lore_events.1.desc
+	
+	picture = GFX_report_event_generic_conference
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_lore_events.1.a
+        custom_effect_tooltip = available_political_advisor
+        show_ideas_tooltip = ZKR_celadet_ali_bedirxan_token
+
+        set_country_flag = ZKR_celadet_ali_bedirxan_unlocked
+    }
+
+}
+
+country_event = { # Ea-Nasir
+	id = ZKR_lore_events.2
+	title = ZKR_lore_events.2.t
+	desc = ZKR_lore_events.2.desc
+	
+	picture = GFX_report_event_FIN_petsamo_mine
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_lore_events.2.a
+        remove_ideas = ZKR_ammunition_production
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_timed_idea = {
+            idea = ZKR_ammunition_production_ea_nasir
+            days = 200
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = ZKR_upon_removal_tt
+        effect_tooltip = {
+            add_ideas = ZKR_ammunition_production
+        }
+    }
+
+}
+
+country_event = { # Trotsky's Visit
+	id = ZKR_lore_events.3
+	title = ZKR_lore_events.3.t
+	desc = ZKR_lore_events.3.desc
+	
+	picture = GFX_report_event_NOR_trotsky_speech
+
+    trigger = { # ZKR is trotskyist, owns Instanbul directly or through a puppet and is faction leader of the Fourth International Section
+        tag = ZKR
+        has_country_leader = { character = ZKR_qazi_muhamad ruling_only = yes }
+        OR = {
+            AND = {
+                owns_state = 797
+                controls_state = 797
+            }
+            797 = {
+                owner = {
+                    controls_state = 797
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        is_faction_leader = yes
+        has_country_flag = ZKR_fourth_international_section_formed
+    }
+
+    is_triggered_only = no
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_lore_events.3.a
+        add_political_power = 100
+        set_country_flag = ZKR_trotsky_visited
+    }
+
+}
+
+country_event = { # Stalin arrested
+	id = ZKR_lore_events.4
+	title = ZKR_lore_events.4.t
+	desc = ZKR_lore_events.4.desc
+	
+	picture = GFX_report_event_stalin_01
+
+    is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_lore_events.4.a
+        random_other_country = {
+            limit = {
+                has_character = ZCC_Josef_Dzhugashvili
+            }
+            retire_character = ZCC_Josef_Dzhugashvili
+        }
+        if = {
+            limit = {
+                has_country_flag = ZKR_trotsky_visited
+            }
+            set_country_flag = ZKR_stalin_arrested_after_trotskys_visit
+        }
+    }
+
+}
+
+news_event = { # Kurdistan begins Unification
+	id = ZKR_news_events.1
+	title = ZKR_news_events.1.t
+	desc = ZKR_news_events.1.desc
+	
+	picture = GFX_news_event_civil_war_turkey
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.1.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.1.b
+        trigger = {
+            NOT = { tag = ZKR }
+            OR = {
+                is_ally_with = ZKR
+                AND = {
+                    NOT = { capital_scope = { is_on_continent = middle_east } }
+                    NOT = { has_war_with = ZKR }
+                }
+            }
+        }
+
+    }
+
+    option = {
+        name = ZKR_news_events.1.c
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            any_owned_state = {
+                OR = {
+                    is_core_of = ZKR
+                    is_claimed_by = ZKR
+                }
+            }
+            OR = {
+                capital_scope = { is_on_continent = middle_east }
+                has_war_with = ZKR
+            }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.1.d
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            NOT = {
+                any_owned_state = {
+                    OR = {
+                        is_core_of = ZKR
+                        is_claimed_by = ZKR
+                    }
+                }
+            }
+            OR = {
+                capital_scope = { is_on_continent = middle_east }
+                has_war_with = ZKR
+            }
+        }
+    }
+
+}
+
+news_event = { # Monarchist Coup in Kurdistan
+	id = ZKR_news_events.2
+	title = ZKR_news_events.2.t
+	desc = ZKR_news_events.2.desc
+	
+	picture = GFX_news_event_secure_the_wayward_ally
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.2.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.2.b
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            any_owned_state = {
+                OR = {
+                    is_core_of = ZKR
+                    is_claimed_by = ZKR
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.2.c
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            NOT = {
+                any_owned_state = {
+                    OR = {
+                        is_core_of = ZKR
+                        is_claimed_by = ZKR
+                    }
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.2.d
+        trigger = {
+            NOT = { tag = ZKR }
+            is_ally_with = ZKR
+        }
+    }
+
+}
+
+news_event = { # Xoybun Coup in Kurdistan
+	id = ZKR_news_events.3
+	title = ZKR_news_events.3.t
+	desc = ZKR_news_events.3.desc
+	
+	picture = GFX_news_event_turanist_ambition
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.3.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.3.b
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            any_owned_state = {
+                OR = {
+                    is_core_of = ZKR
+                    is_claimed_by = ZKR
+                }
+            }
+        }
+        add_opinion_modifier = {
+            target = FROM
+            modifier = ZKR_dangerous_regime
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.3.c
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            NOT = {
+                any_owned_state = {
+                    OR = {
+                        is_core_of = ZKR
+                        is_claimed_by = ZKR
+                    }
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.3.d
+        trigger = {
+            NOT = { tag = ZKR }
+            is_ally_with = ZKR
+        }
+    }
+
+}
+
+news_event = { # Commonwealth Formed
+	id = ZKR_news_events.4
+	title = ZKR_news_events.4.t
+	desc = ZKR_news_events.4.desc
+	
+	picture = GFX_news_event_the_mediterranean_alliance
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.4.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.4.b
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            capital_scope = { is_on_continent = middle_east }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.4.c
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            NOT = { capital_scope = { is_on_continent = middle_east } }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.4.d
+        trigger = {
+            NOT = { tag = ZKR }
+            is_ally_with = ZKR
+        }
+    }
+
 }

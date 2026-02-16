@@ -11,11 +11,23 @@ ideas = {
 			}
 		}
 
+		ZCT_backed_into_a_corner_again = {
+			name = ZCT_backed_into_a_corner_idea
+			picture = tur_disorganised_armed_forces
+			modifier = {
+				stability_factor = -0.2
+				war_support_factor = 0.2
+				surrender_limit = 0.5
+				army_core_defence_factor = 0.2
+				army_speed_factor = 0.25
+			}
+		}
+
 		ZCT_martial_law = {
 			name = ZCT_martial_law_idea
-			picture = tur_kemalist_army_officers_limited_power_disloyal
+			picture = SOV_desperate_measures_ns_nsb_ccp_sov_compatibility
 			modifier = {
-				political_power_factor = -0.5
+				political_power_factor = -0.1
 				consumer_goods_factor = 0.1
 				resistance_target = -0.25
 			}
@@ -24,9 +36,98 @@ ideas = {
 		ZCT_economic_crisis = {
 			name = ZCT_economic_crisis_idea
 			picture = ARG_economic_reactivation
+			on_add = {
+				add_dynamic_modifier = { modifier = ZCT_economic_crisis_modifier }
+			}
+			on_remove = {
+				remove_dynamic_modifier = { modifier = ZCT_economic_crisis_modifier }
+			}
 			modifier = {
-				industrial_capacity_dockyard = -0.25
-				industrial_capacity_factory = -0.25
+				custom_modifier_tooltip = ZCT_economic_crisis_modifier_tt
+			}
+		}
+
+		ZCT_low_legitimacy = {
+			name = ZCT_low_legitimacy_idea
+			picture = tur_kemalist_army_officers_limited_power_disloyal
+			rule = {
+				can_create_factions = no
+				can_join_factions = no
+				can_not_declare_war = yes
+				can_send_volunteers = no
+			}
+			modifier = {
+				political_power_factor = -0.3
+				stability_factor = -0.1
+			}
+		}
+
+		ZCT_general_war_tax = {
+			name = ZCT_general_war_tax_idea
+			picture = NOR_printing_money
+			modifier = {
+				consumer_goods_factor = -0.2
+			}
+		}
+
+		ZCT_war_research_tax = {
+			name = ZCT_war_research_tax_idea
+			picture = NOR_printing_money
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+		
+		ZCT_war_production_tax = {
+			name = ZCT_war_production_tax_idea
+			picture = NOR_printing_money
+			modifier = {
+				industrial_capacity_factory = 0.3
+			}
+		}
+
+		ZCT_construction_incentives = {
+			name = ZCT_construction_incentives_idea
+			picture = ARG_construction_guilds
+			modifier = {
+				production_speed_buildings_factor = 0.25
+				political_power_gain = -0.1
+			}
+		}
+
+		ZCT_a_new_future_for_our_people = {
+			name = ZCT_a_new_future_for_our_people_idea
+			picture = ARG_construction_guilds
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.25
+			}
+		}
+
+		ZCT_expanded_military_service_programs = {
+			name = ZCT_expanded_military_service_programs_idea
+			picture = ARG_construction_guilds
+			modifier = {
+				conscription  = 0.03
+			}
+		}
+
+		ZCT_emergency_plans = {
+			name = ZCT_emergency_plans_idea
+			picture = chi_wargaming_division
+			modifier = {
+				max_planning_factor = 0.5
+				army_org_factor = 0.3
+				army_morale_factor = 0.2
+			}
+		}
+
+		ZCT_excess_supplies = {
+			name = ZCT_excess_supplies_idea
+			picture = generic_supply_lines
+			modifier = {
+				supply_factor = 0.3
+				no_supply_grace = 120
 			}
 		}
 	}

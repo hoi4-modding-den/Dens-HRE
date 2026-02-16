@@ -1,12 +1,24 @@
 capital = 49
 
-#oob = "ZOT_1936"
+oob = "ZOT_1936"
 
 set_war_support = 0.4
 set_stability = 0.5
 set_research_slots = 3
 
 recruit_character = ZOT_abdulmecid_ii
+recruit_character = ZOT_huseyin_cahit_yalcin
+recruit_character = ZOT_husrev_gerede
+recruit_character = ZOT_sevket_sureyya_aydemir
+recruit_character = ZOT_fevzi_cakmak
+recruit_character = ZOT_sukru_saracoglu
+recruit_character = ZOT_riza_nur
+recruit_character = ZOT_hilmi_uran
+recruit_character = ZOT_elyesa_bazna
+recruit_character = ZOT_recep_peker
+recruit_character = ZOT_celal_bayar
+recruit_character = ZOT_zeki_velidi_togan
+recruit_character = ZOT_nejdet_sancar
 
 add_ideas = {
 	ZOT_wreckage_of_the_empire
@@ -14,6 +26,8 @@ add_ideas = {
 	ZOT_steel_will
 	ZOT_the_imperial_gendarmerie
 	ZOT_muhacir_refugee_crisis
+	limited_conscription
+	low_economic_mobilisation
 }
 
 add_timed_idea = {
@@ -101,7 +115,7 @@ if = {
 
 if = {
 	limit = { has_dlc = "By Blood Alone" }
-		#set_air_oob = "YCA_1936_air_bba"
+		set_air_oob = "ZOT_1936_air_bba"
 		set_technology = {
 			aa_lmg = 1
 			early_bombs = 1
@@ -116,9 +130,10 @@ if = {
 			bba_early_transport_plane = 1
 		}
 	else = {
-		#set_air_oob = "YCA_1936_air_legacy"
+		set_air_oob = "ZOT_1936_air_legacy"
 		set_technology = {
 			early_fighter = 1
+			fighter1 = 1
 			early_bomber = 1
 			naval_bomber1 = 1
 			CAS1 = 1
@@ -126,3 +141,46 @@ if = {
 		}
 	}
 }
+
+IF = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "Atmaca" 
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+		icon = "GFX_TUR_early_fighter_medium"		
+		#obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hücum" 
+		type = small_plane_cas_airframe_0
+		modules = {
+			fixed_main_weapon_slot = bomb_locks
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = lmg_defense_turret
+		}
+		icon = "GFX_TUR_CAS1_medium"
+		#obsolete = yes
+	}	
+	create_equipment_variant = {
+		name = "Şahin" 
+		type = small_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = light_mg_4x
+			engine_type_slot = engine_2_1x
+			fixed_auxiliary_weapon_slot_1 = light_mg_4x
+			special_type_slot_1 = empty
+		}
+		icon = "GFX_TUR_fighter1_medium"
+	}		
+}
+
+set_country_flag = dont_use_default_political_advisors
+set_country_flag = dont_use_default_military_advisors
+#set_country_flag = ZOT_welcome_message_flag

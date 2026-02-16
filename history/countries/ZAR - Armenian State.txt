@@ -7,6 +7,23 @@ set_war_support = 0.2
 oob = "ZAR_1936"
 
 recruit_character = ZAR_Yeghishe_Charents
+recruit_character = ZAR_Hovhannes_Kajaznuni
+recruit_character = ZAR_Garegin_Nzhdeh
+recruit_character = ZAR_Ruben_Ter_Minasian
+recruit_character = ZAR_Makhluto
+recruit_character = ZAR_Drastamat_Kanayan
+recruit_character = ZAR_Hamazasp_Babadzhanian
+recruit_character = ZAR_Hovhannes_Baghramyan
+recruit_character = ZAR_Hovhannes_Ter_Isahakyan
+recruit_character = ZAR_Armenak_Artemi_Khanferiants
+recruit_character = ZAR_Aghasi_Khanjian
+recruit_character = ZAR_Sebastian_Shaumyan
+recruit_character = ZAR_Hovhannes_Abelian
+recruit_character = ZAR_Karo_Halabyan
+recruit_character = ZAR_Abram_Alikhanov
+recruit_character = ZAR_Ivan_Knunyants
+recruit_character = ZAR_Anastas_Mikoyan
+recruit_character = ZAR_Gaik_Ovakimian
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -36,7 +53,7 @@ set_autonomy = {
 	target = ZA1
 	autonomy_state = autonomy_integrated_puppet
 }
-
+set_country_flag = ZAR_Prag_Rad_Active
 set_variable = { ZAR_Pragmatic_Power = 20 }
 set_variable = { ZAR_Radical_Power = 30 }
 clamp_variable = {
@@ -49,4 +66,17 @@ clamp_variable = {
     min = 0
     max = 50
 }
+add_opinion_modifier = {
+	target = ZKR
+	modifier = ZAR_Cautious_Rivalry
+}
+add_opinion_modifier = {
+	target = ZOT
+	modifier = ZAR_Turkish_Barbarians
+}
+add_opinion_modifier = {
+	target = ZCT
+	modifier = ZAR_Turkish_Barbarians
+}
+
 

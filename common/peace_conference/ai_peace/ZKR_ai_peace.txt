@@ -1,0 +1,37 @@
+peace_ai_desires = {
+
+    ZKR_annex_suez = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM = {
+                original_tag = DN2
+            }
+            ROOT = { original_tag = ZKR }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 10000
+    }
+
+    ZKR_annex_asia_minor_states = {
+        peace_action_type = take_states
+        enable = {
+            NOT = {
+                any_country = {
+                    is_ally_with = ROOT
+                    FROM.FROM.FROM = {
+                        is_core_of = PREV
+                    }
+                }
+            }
+            FROM.FROM.FROM = {
+                ZKR_turkish_republic_states = yes
+            }
+            ROOT = {
+                original_tag = ZKR 
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+        ai_desire = 10000
+    }
+
+}

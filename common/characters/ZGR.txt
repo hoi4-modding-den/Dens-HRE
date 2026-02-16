@@ -1,0 +1,129 @@
+characters = {
+	ZGR_Parliament = {
+		name = "ZGR_Parliament"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Parliament"
+			}
+		}
+		country_leader = {
+		desc = ZGR_Parliament_leader_desc			
+			expire = "2004.1.1"
+			ideology = populism
+			traits = {  }
+		}
+	}
+	ZGR_Georgios_Bakos = {
+		name = "ZGR_Georgios_Bakos"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Georgios_Bakos"
+			}
+		}
+		field_marshal = {
+		desc = ZGR_Georgios_Bakos_leader_desc			
+			traits = { offensive_doctrine inspirational_leader trait_ruthless }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+			visible = { always = yes }
+		}
+		country_leader = {
+		desc = ZGR_Georgios_Bakos_leader_desc			
+			expire = "2004.1.1"
+			ideology = falangism
+			traits = {  }
+		}
+	}
+	ZGR_Avraam_Benaroya = {
+		name = "ZGR_Avraam_Benaroya"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Avraam_Benaroya"
+			}
+		}
+		country_leader = {
+			desc = ZGR_Avraam_Benaroya_leader_desc				
+			expire = "2004.1.1"
+			ideology = ZGR_theoretical_Anarchism
+			traits = {  }
+		}
+	}	
+
+	ZGR_Alexandros_Kallergis = {
+		name = "ZGR_Alexandros_Kallergis"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Alexandros_Kallergis"
+			}
+		}
+		corps_commander = {
+		desc = ZGR_Alexandros_Kallergis_leader_desc			
+			traits = {}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+			visible = { always = yes }
+		}
+	}
+
+	ZGR_Dimitrios_Anagnostou = {
+		name = "ZGR_Dimitrios_Anagnostou"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Dimitrios_Anagnostou"
+			}
+		}
+		corps_commander = {
+		desc = ZGR_Dimitrios_Anagnostou_leader_desc	
+			traits = { YBS_young_officer_trait } #make new soon
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 5
+			visible = { always = yes }
+		}
+	}
+
+	ZGR_Nikolaos_Drakopoulos = {
+		name = "ZGR_Nikolaos_Drakopoulos"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Nikolaos_Drakopoulos"
+			}
+		}
+		corps_commander = {
+		desc = ZGR_Nikolaos_Drakopoulos_leader_desc	
+			traits = { artillery_expert }
+			skill = 2
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 5
+			visible = { always = yes }
+		}
+	}
+	ZGR_Hasan_Riza_Demirtas = {
+		name = "ZGR_Hasan_Riza_Demirtas"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_ZGR_Hasan_Riza_Demirtas"
+			}
+		}
+	}
+
+	ZGR_Fallen_Goverment = {
+		name = "ZGR_Fallen_Goverment"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_SWE_fallen_riksdag"
+			}
+		}
+	}	
+
+}

@@ -1,0 +1,18 @@
+leader_traits = {
+
+	artillery_expert = {
+		type = corps_commander
+		
+		trait_type = personality_trait
+		
+		modifier = {
+			army_artillery_attack_factor = 0.10
+		}
+		
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	
+
+}

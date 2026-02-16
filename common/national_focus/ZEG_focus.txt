@@ -1,0 +1,235 @@
+focus_tree = {
+    
+###Carrera was here###
+# @carrera075
+# https://en.wikipedia.org/wiki/Porsche_Carrera_GT
+
+
+#		mutually_exclusive = { focus = ZEG_ }
+#		mutually_exclusive = { focus = ZEG_ }
+
+	id = ZEG_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ZEG
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 1 y = 1 }
+
+	focus = {
+		id = ZEG_vestigial_khedivate
+		icon = GFX_focus_SWE_attack_landsorganisationen
+		x = 17
+		y = 0
+		cost = 4.40
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		available = {
+
+		}
+		completion_reward = {
+			add_political_power = 50
+			country_event = ZEG_focus_event.1
+		}
+	}
+	focus = {
+		id = ZEG_restore_constitution
+		icon = GFX_focus_AFG_revive_the_1923_constitution
+		x = 12
+		y = 1
+		cost = 1
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_restore_constitution }
+		mutually_exclusive = { focus = ZEG_destroy_democracy }
+		prerequisite = { focus = ZEG_vestigial_khedivate }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = ZEG_election_rigging
+		icon = GFX_focus_usa_voter_registration_act
+		x = 8
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = ZEG_restore_constitution }
+		available = {
+
+		}
+		mutually_exclusive = { focus = ZEG_election_rigging }
+		mutually_exclusive = { focus = ZEG_honest_election }
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZEG_honest_election
+		icon = GFX_focus_generic_election
+		x = 10
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		prerequisite = { focus = ZEG_restore_constitution }
+		available = {
+
+		}
+		mutually_exclusive = { focus = ZEG_election_rigging }
+		mutually_exclusive = { focus = ZEG_honest_election }
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZEG_party_funding
+		icon = GFX_focus_generic_treaty
+		x = 12
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+		prerequisite = { focus = ZEG_restore_constitution }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZEG_welfare_promises
+		icon = GFX_focus_generic_welfare
+		x = 14
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_welfare_promises }
+		mutually_exclusive = { focus = ZEG_protect_royal_perogatives }
+		prerequisite = { focus = ZEG_restore_constitution }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZEG_protect_royal_perogatives
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 16
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_welfare_promises }
+		mutually_exclusive = { focus = ZEG_protect_royal_perogatives }
+		prerequisite = { focus = ZEG_restore_constitution }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZEG_1936_election
+		icon = GFX_focus_AFG_parliamentary_democracy
+		x = 12
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_protect_royal_perogatives focus = ZEG_welfare_promises }
+		prerequisite = { focus = ZEG_election_rigging focus = ZEG_honest_election }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZEG_destroy_democracy
+		icon = GFX_focus_BRA_repeale_national_security_law
+		x = 21
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_restore_constitution }
+		mutually_exclusive = { focus = ZEG_destroy_democracy }
+		prerequisite = { focus = ZEG_vestigial_khedivate }
+		available = {
+
+		}
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = ZEG_navy_start
+		icon = GFX_focus_generic_africa_naval
+		x = 30
+		y = 0
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		available = {
+			ZAA = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			navy_experience = 50
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = ZEG_navy_harbors
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 30
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = {
+			focus = ZEG_navy_start
+		}
+		available = {
+			ZEG = {
+					owns_state = 447
+			}
+		}
+		complete_tooltip = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = ZEG_naval_organization_tooltip
+			mio:ZEG_naval_organization = {
+				add_mio_size = 1
+			}
+			447 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+}

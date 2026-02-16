@@ -1,0 +1,586 @@
+ZAA_calculate_red_sea_coastal_states_amount = {
+	set_variable = { ZAA_red_sea_controlled_states = 0 }
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 446 
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		446 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 453
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		453 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 1111
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		1111 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 1110
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		1110 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 457
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		457 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 855
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		855 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 1108
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		1108 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 679
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		679 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 883
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		883 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 856
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		856 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 550
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		550 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 293
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		293 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 268
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		268 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 992
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		992 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 269
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		269 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 659
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		659 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				controls_state = 559
+			}
+		}
+		add_to_variable = { ZAA_red_sea_controlled_states = 1 }
+		559 = {
+			set_state_flag = ZAA_controlled_state_flag
+		}
+	}
+	add_to_variable = { ZAA_decisions_dirty = 0.01 }
+}
+
+ZAA_calculate_naval_strength = {
+
+	set_variable = { ZAA_submarine_score = num_ships_with_type@submarine }
+	set_variable = { ZAA_destroyer_score = num_ships_with_type@destroyer }
+	set_variable = { ZAA_light_cruiser_count = num_ships_with_type@screen_ship }
+	set_variable = { ZAA_battleship_count = num_ships_with_type@capital_ship }
+	set_variable = { ZAA_carrier_count = num_ships_with_type@carrier }
+	
+	#score calculations
+	set_variable = { ZAA_light_cruiser_score = ZAA_light_cruiser_count }
+	multiply_variable = { ZAA_light_cruiser_score = 3 }
+	
+	set_variable = { ZAA_battleship_score = ZAA_battleship_count }
+	multiply_variable = { ZAA_battleship_score = 5 }
+	
+	set_variable = { ZAA_carrier_score = ZAA_carrier_count }
+	multiply_variable = { ZAA_carrier_score = 5 }
+	
+	set_variable = { ZAA_naval_total_score = 0 }
+	add_to_variable = { ZAA_naval_total_score = ZAA_submarine_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_destroyer_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_light_cruiser_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_battleship_score }
+	add_to_variable = { ZAA_naval_total_score = ZAA_carrier_score }
+
+}
+
+ZAA_calculate_loot_chance = {
+	set_variable = { ZAA_loot_gain_chance = 20 }
+	add_to_variable = { ZAA_loot_gain_chance = ZAA_naval_total_score }
+	clamp_variable = {
+		var = ZAA_loot_gain_chance
+		min = 20
+		max = 100
+	}
+	set_variable = { ZAA_nothing_ever_happens = 100 }
+	subtract_from_variable = { ZAA_nothing_ever_happens = ZAA_loot_gain_chance }
+	
+	set_variable = { ZAA_political_power_loot_amount = ZAA_red_sea_controlled_states }
+	multiply_variable = { ZAA_political_power_loot_amount = 10 }
+}
+
+ZAA_add_one_treasure = {
+	random_list = {
+		10 = {
+			add_to_variable = { ZAA_construction_equipment_amount = 1 }
+		}
+		10 = {
+			add_to_variable = { ZAA_industrial_equipment_amount = 1 }
+		}
+		10 = {
+			add_to_variable = { ZAA_electronic_appliances_amount = 1 }
+		}
+	}
+}
+
+ZAA_add_two_treasures = {
+	random_list = {
+		10 = {
+			add_to_variable = { ZAA_construction_equipment_amount = 2 }
+		}
+		10 = {
+			add_to_variable = { ZAA_industrial_equipment_amount = 2 }
+		}
+		10 = {
+			add_to_variable = { ZAA_electronic_appliances_amount = 2 }
+		}
+	}
+}
+
+ZAA_add_three_treasures = {
+	random_list = {
+		10 = {
+			add_to_variable = { ZAA_construction_equipment_amount = 3 }
+		}
+		10 = {
+			add_to_variable = { ZAA_industrial_equipment_amount = 3 }
+		}
+		10 = {
+			add_to_variable = { ZAA_electronic_appliances_amount = 3 }
+		}
+	}
+}
+
+ZAA_add_weapons_tier_1 = {
+	meta_effect = {
+		text = {
+			random_list = {
+				10 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_[INF_LEVEL]
+						amount = 300
+						producer = global.ZAA_random_infantry_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 30
+						producer = global.ZAA_random_support_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_[ART_LEVEL]
+						amount = 12
+						producer = global.ZAA_random_artillery_origin_country
+					}
+				}
+			}
+		}
+		INF_LEVEL = "[?ZAA_inf_equipment_level]"
+		ART_LEVEL = "[?ZAA_art_equipment_level]"
+	}
+}
+
+ZAA_add_weapons_tier_2 = {
+	meta_effect = {
+		text = {
+			random_list = {
+				10 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_[INF_LEVEL]
+						amount = 600
+						producer = global.ZAA_random_infantry_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 60
+						producer = global.ZAA_random_support_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_[ART_LEVEL]
+						amount = 24
+						producer = global.ZAA_random_artillery_origin_country
+					}
+				}
+			}
+		}
+		INF_LEVEL = "[?ZAA_inf_equipment_level]"
+		ART_LEVEL = "[?ZAA_art_equipment_level]"
+	}
+}
+
+ZAA_add_weapons_tier_3 = {
+	meta_effect = {
+		text = {
+			random_list = {
+				10 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_[INF_LEVEL]
+						amount = 900
+						producer = global.ZAA_random_infantry_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 90
+						producer = global.ZAA_random_support_origin_country
+					}
+				}
+				10 = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_[ART_LEVEL]
+						amount = 36
+						producer = global.ZAA_random_artillery_origin_country
+					}
+				}
+			}
+		}
+		INF_LEVEL = "[?ZAA_inf_equipment_level]"
+		ART_LEVEL = "[?ZAA_art_equipment_level]"
+	}
+}
+
+ZAA_randomize_support_equipment_origin = {
+	ZAA = {
+		random_country = {
+			limit = {
+				exists = yes
+				has_tech = tech_support
+				NOT = {
+					original_tag = ZZZ
+					original_tag = ZZY
+					original_tag = ZAA
+				}
+			}
+			ROOT = { 
+				set_variable = { global.ZAA_random_support_origin_country = PREV } 
+			}
+		}
+	}
+}
+ZAA_randomize_infantry_equipment_origin = {
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 1 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = infantry_weapons1
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_infantry_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 2 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = improved_infantry_weapons
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_infantry_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 2 }
+				any_other_country = {
+					NOT = {
+						has_tech = improved_infantry_weapons
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_infantry_origin_country = ZAA }
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 3 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = advanced_infantry_weapons
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_infantry_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_inf_equipment_level = 3 }
+				any_other_country = {
+					NOT = {
+						has_tech = advanced_infantry_weapons
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_infantry_origin_country = ZAA }
+	}
+}
+
+ZAA_randomize_artillery_equipment_origin = {
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 1 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = gw_artillery
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_artillery_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 2 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = artillery1
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_artillery_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 2 }
+				any_other_country = {
+					NOT = {
+						has_tech = artillery1
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_artillery_origin_country = ZAA }
+	}
+	if = {	
+		limit = { 
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 3 }
+			}
+		}
+		ZAA = {
+			random_country = {
+				limit = {
+					exists = yes
+					has_tech = artillery4
+					NOT = {
+						original_tag = ZZZ
+						original_tag = ZZY
+						original_tag = ZAA
+					}
+				}
+				ROOT = { 
+					set_variable = { global.ZAA_random_artillery_origin_country = PREV } 
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			ZAA = {
+				check_variable = { ZAA_art_equipment_level = 3 }
+				any_other_country = {
+					NOT = {
+						has_tech = artillery4
+					}
+				}
+			}
+		}
+		set_variable = { global.ZAA_random_artillery_origin_country = ZAA }
+	}
+}
+	

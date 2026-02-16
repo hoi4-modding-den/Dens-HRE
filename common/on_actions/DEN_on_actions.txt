@@ -1,6 +1,9 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			1108 = {
+				cancel_resistance = yes
+			}
 			XRO = { set_country_flag = HRE_is_republic }
 			every_country = {
 				limit = {
@@ -50,6 +53,7 @@ on_actions = {
 							tag = ZAD
 							tag = ZRS
 							tag = ZCS
+							tag = ZCY
 						}
 					}
 				}

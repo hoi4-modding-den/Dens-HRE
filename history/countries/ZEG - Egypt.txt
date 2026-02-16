@@ -42,6 +42,7 @@ add_ideas = {
 	limited_conscription
 	ZEG_khedivate_idea
 	ZEG_disorganized_military
+	ZEG_great_depression_effects
 }
 
 IF = {
@@ -121,9 +122,9 @@ set_grand_doctrine = new_strategic_destruction
 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "1931.6.1"
+	last_election = "1931.4.6"
 	election_frequency = 60
-	elections_allowed = yes
+	elections_allowed = no #enabled by event later
 }
 set_popularities = {
 	democratic = 31
@@ -133,22 +134,22 @@ set_popularities = {
 }
 
 create_country_leader = {
-	name = "Muhammad Naguib"
+	name = "Mostafa el-Nahas Pasha"
 	desc = ""
 	picture = GFX_portrait_Muhammad_Naguib
 	ideology = liberalism
 	traits = {
-		#
+		modernizer_and_diplomat
 	}
 }
 
 create_country_leader = {
-	name = "Ahmed Husayn"
+	name = "Ahmed Hussein"
 	desc = ""
 	picture = GFX_portrait_Ahmed_Husayn
 	ideology = fascism_ideology
 	traits = {
-		#
+		agrarian_nationalist 
 	}
 }
 
@@ -172,3 +173,7 @@ create_country_leader = {
 		#
 	}
 }
+recruit_character = ZEG_aly_maher_pasha
+recruit_character = ZEG_ismail_sidky
+activate_advisor = ZEG_ismail_sidky_token
+

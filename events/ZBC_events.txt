@@ -1,17 +1,37 @@
-add_namespace = ZBC_story_events
+add_namespace = ZBC_events
 
-# Commissariat Rising
+# An Extraordinary Meeting
 country_event = {
-	id = ZBC_story_events.1
-	title = ZBC_story_events.1.t
-	desc = ZBC_story_events.1.desc
+	id = ZBC_events.1
+	title = ZBC_events.1.t
+	desc = ZBC_events.1.desc
 	
-    # picture =
-	
+	picture = GFX_report_event_SWE_summer_government
 	
 	is_triggered_only = yes
 	
 	option = {
-        name = ZBC_story_events.1.a
+        name = ZBC_events.1.a
+
+        add_political_power = 50
+    }
+}
+# Shaumian Assassination Attempt
+country_event = {
+	id = ZBC_events.2
+	title = ZBC_events.2.t
+	desc = ZBC_events.2.desc
+	
+	picture = GFX_report_event_SWE_summer_government
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZBC_events.2.a
+        complete_national_focus = ZBC_korganovs_downfall
+    }
+    option = {
+        name = ZBC_events.2.b
+        complete_national_focus = ZBC_korganov_ascendant
     }
 }

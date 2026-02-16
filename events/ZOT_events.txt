@@ -1,0 +1,34 @@
+add_namespace = ZOT_domestic_events
+add_namespace = ZOT_diplo_events
+add_namespace = ZOT_news_events
+
+country_event = { # 
+	id = ZOT_domestic_events.1
+	title = ZOT_domestic_events.1.t
+	desc = ZOT_domestic_events.1.desc
+	
+	picture = GFX_report_event_por_salazar_military
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZOT_domestic_events.1.a
+		#custom_effect_tooltip = generic_skip_one_line_tt
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+				has_country_flag = ZOT_ai_path_ottoman
+            }
+        }		
+    }
+	option = {
+        name = ZOT_domestic_events.1.b
+		custom_effect_tooltip = generic_skip_one_line_tt
+        ai_chance = {
+            base = 10
+            modifier = {
+            }
+        }		
+    }	
+}

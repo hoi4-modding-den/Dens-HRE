@@ -1,0 +1,64 @@
+focus_tree = {
+	id = ZSR_focus
+	continuous_focus_position = { x = -40 y = 2050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZSR
+		}
+	}
+	shared_focus = SYRIA_the_civil_war
+	focus = {
+		id = ZSR_arab_democracy
+		x = 0
+		y = 0
+		cost = 10
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		#prerequisite = { focus = ZSR_ }
+		#relative_position_id = ZSR_
+		#mutually_exclusive = { focus = ZSR_ }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZSR_syrian_gov
+		x = 1
+		y = 1
+		cost = 10
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = { focus = ZSR_arab_democracy }
+		relative_position_id = ZSR_arab_democracy
+		mutually_exclusive = { focus = ZSR_ally_kurds }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZSR_ally_kurds
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = { focus = ZSR_arab_democracy }
+		relative_position_id = ZSR_arab_democracy
+		mutually_exclusive = { focus = ZSR_syrian_gov }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = ZSR_contact_kurd_resistance
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+		prerequisite = { focus = ZSR_ally_kurds }
+		relative_position_id = ZSR_ally_kurds
+		#mutually_exclusive = { focus = ZSR_ }
+		completion_reward = {
+			
+		}
+	}
+}

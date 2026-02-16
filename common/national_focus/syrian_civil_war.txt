@@ -1,0 +1,807 @@
+shared_focus = {
+	id = SYRIA_the_civil_war
+	x = 0
+	y = 0
+	cost = 4
+	icon = GFX_focus_generic_attack_syria
+	#prerequisite = { focus = SYRIA_ }
+	#relative_position_id = SYRIA_
+	#mutually_exclusive = { focus = SYRIA_ }
+	offset = {
+		x = 7
+		trigger = {
+			tag = ZBS
+		}
+	}
+	offset = {
+		x = 4
+		trigger = {
+			tag = ZRS
+		}
+	}
+	offset = {
+		x = 5
+		trigger = {
+			tag = ZSR
+		}
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = SYRIA_disorganized_government
+			add_idea = SYRIA_cw_government
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_rally_public
+	x = 0
+	y = 1
+	cost = 5
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_SOV_leader_of_the_party_and_the_people_ccp_2d_sov_compatibility
+	}
+	icon = GFX_focus_generic_military_academy
+	prerequisite = { focus = SYRIA_the_civil_war }
+	relative_position_id = SYRIA_the_civil_war
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		if = {
+			limit = {
+				has_idea = SYRIA_cw_government
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government
+				add_idea = SYRIA_cw_government_rallied
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_supplied
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_supplied
+				add_idea = SYRIA_cw_government_rallied_supplied
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_mobilized
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_mobilized
+				add_idea = SYRIA_cw_government_mob_rally
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_mobilized_supplied
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_mobilized_supplied
+				add_idea = SYRIA_cw_government_mob_rally_supplied
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_mobilize_people
+	x = -2
+	y = 1
+	cost = 10
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_focus_generic_workers_and_farmers_rise
+	}
+	icon = GFX_focus_generic_limited_social_mobilization
+	prerequisite = { focus = SYRIA_the_civil_war }
+	relative_position_id = SYRIA_the_civil_war
+	#mutually_exclusive = { focus = SYRIA_ }
+	offset = {
+		x = -1
+		trigger = {
+			tag = ZBS
+		}
+	}
+	completion_reward = {
+		if = {
+			limit = {
+				has_idea = SYRIA_cw_government
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government
+				add_idea = SYRIA_cw_government_mobilized
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_supplied
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_supplied
+				add_idea = SYRIA_cw_government_mobilized_supplied
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_rallied
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_rallied
+				add_idea = SYRIA_cw_government_mob_rally
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_rallied_supplied
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_rallied_supplied
+				add_idea = SYRIA_cw_government_mob_rally_supplied
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_wartime_economy
+	x = 2
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_modernize_industry
+	prerequisite = { focus = SYRIA_the_civil_war }
+	relative_position_id = SYRIA_the_civil_war
+	#mutually_exclusive = { focus = SYRIA_ }
+	offset = {
+		x = 1
+		trigger = {
+			tag = ZCS
+		}
+	}
+	completion_reward = {
+		add_ideas = war_economy
+		random_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_religious_conscripts
+	x = -1
+	y = 1
+	cost = 10
+	icon = {
+		trigger = {
+			tag = ZRS
+		}
+		value = GFX_focus_PER_islamic_solidarity
+	}
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_focus_generic_befriend_kurdistan
+	}
+	icon = GFX_goal_generic_improve_relations
+	prerequisite = { focus = SYRIA_mobilize_people }
+	relative_position_id = SYRIA_mobilize_people
+	#mutually_exclusive = { focus = SYRIA_ }
+	allow_branch = {
+		OR = {
+			tag = ZRS
+			tag = ZCS
+			tag = ZSR
+		}
+	}
+	offset = {
+		x = 2
+		trigger = {
+			tag = ZSR
+		}
+	}
+	completion_reward = {
+		add_ideas = SYRIA_religious_army
+	}
+}
+shared_focus = {
+	id = SYRIA_local_defenses
+	x = 0
+	y = 2
+	cost = 5
+	icon = GFX_goal_generic_fortify_city
+	prerequisite = { focus = SYRIA_mobilize_people }
+	relative_position_id = SYRIA_mobilize_people
+	#mutually_exclusive = { focus = SYRIA_ }
+	offset = {
+		y = -1
+		trigger = {
+			tag = ZBS
+		}
+	}
+	completion_reward = {
+		random_owned_state = {
+			add_building_construction = {
+				type = bunker
+				level = 2
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_victory_point > 0
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_recruit_partisans
+	x = -1
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_manpower
+	prerequisite = { focus = SYRIA_local_defenses }
+	relative_position_id = SYRIA_local_defenses
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		capital_scope = {
+			create_unit = {
+				division = "name = \"Civillian Unit\" division_template = \"Local Militia\" start_experience_factor = 0"
+				owner = ROOT
+				id = 23
+				count = 2
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_airplane_construction
+	x = 1
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_aircraft_production
+	prerequisite = { focus = SYRIA_local_defenses }
+	relative_position_id = SYRIA_local_defenses
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		add_tech_bonus = {
+			name = SYRIA_airplane_construction_bonus
+			category = air_equipment
+			bonus = 0.5
+			uses = 2
+		}
+		if = {
+			limit = {
+				controls_state = 677
+			}
+			677 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				controls_state = 554
+			}
+			554 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else = {
+			random_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_guerilla_warfare
+	x = -1
+	y = 1
+	cost = 10
+	icon = GFX_focus_ETH_freedom_at_gunpoint
+	prerequisite = { focus = SYRIA_recruit_partisans }
+	relative_position_id = SYRIA_recruit_partisans
+	#mutually_exclusive = { focus = SYRIA_ }
+	allow_branch = {
+		tag = ZRS
+	}
+	completion_reward = {
+		add_ideas = SYRIA_guerilla_warfare
+	}
+}
+shared_focus = {
+	id = SYRIA_army_reform
+	x = 1
+	y = 1
+	cost = 10
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_focus_SOV_builder_of_the_red_army
+	}
+	icon = GFX_focus_generic_military_mission
+	prerequisite = { focus = SYRIA_recruit_partisans }
+	prerequisite = { focus = SYRIA_airplane_construction }
+	relative_position_id = SYRIA_recruit_partisans
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		custom_effect_tooltip = SYRIA_unlock_army_decisions
+		set_country_flag = SYRIA_army_decisions
+	}
+}
+shared_focus = {
+	id = SYRIA_united_command
+	x = 0
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_army_doctrines_2
+	prerequisite = { focus = SYRIA_army_reform }
+	relative_position_id = SYRIA_army_reform
+	#mutually_exclusive = { focus = SYRIA_ }
+	available = {
+		has_country_flag = SYR_reformed_army
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = SYRIA_disorganized_army
+			add_idea = SYRIA_united_command
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_tribal_support
+	x = -1
+	y = 1
+	cost = 10
+	icon = GFX_focus_AFG_contact_rural_loyalists
+	prerequisite = { focus = SYRIA_rally_public }
+	relative_position_id = SYRIA_rally_public
+	allow_branch = {
+		OR = {
+			tag = ZRS
+			tag = ZCS
+		}
+	}
+	#mutually_exclusive = { focus = SYRIA_ }
+	offset = {
+		x = 1
+		trigger = {
+			tag = ZRS
+		}
+	}
+	completion_reward = {
+		add_ideas = SYRIA_tribal_support
+	}
+}
+shared_focus = {
+	id = SYRIA_student_support
+	x = 1
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_advanced_military_studies
+	prerequisite = { focus = SYRIA_rally_public }
+	relative_position_id = SYRIA_rally_public
+	#mutually_exclusive = { focus = SYRIA_ }
+	allow_branch = {
+		OR = {
+			tag = ZBS
+			tag = ZCS
+		}
+	}
+	offset = {
+		x = -1
+		trigger = {
+			tag = ZBS
+		}
+	}
+	completion_reward = {
+		add_research_slot = 1
+	}
+}
+shared_focus = {
+	id = SYRIA_propaganda
+	x = 0
+	y = 1
+	cost = 5
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_focus_GER_proletarian_dictatorship
+	}
+	icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
+	prerequisite = { focus = SYRIA_student_support }
+	relative_position_id = SYRIA_student_support
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		if = {
+			limit = {
+				tag = ZBS
+			}
+			add_timed_idea = {
+				idea = SYRIA_nationalist_propaganda_campaign
+				days = 45
+			}
+		}
+		else = {
+			add_timed_idea = {
+				idea = SYRIA_communist_propaganda_campaign
+				days = 45
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_foreign_shipments
+	x = 1
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_combined_arms
+	prerequisite = { focus = SYRIA_wartime_economy }
+	relative_position_id = SYRIA_wartime_economy
+	#mutually_exclusive = { focus = SYRIA_ }
+	allow_branch = {
+		tag = ZSR
+	}
+	offset = {
+		x = -2
+		trigger = {
+			tag = ZSR
+		}
+	}
+	completion_reward = {
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 350
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 150
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_investment
+	x = 0
+	y = 2
+	cost = 10
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_focus_generic_communist_industry
+	}
+	icon = GFX_focus_generic_industry_2
+	prerequisite = { focus = SYRIA_wartime_economy }
+	relative_position_id = SYRIA_wartime_economy
+	#mutually_exclusive = { focus = SYRIA_ }
+	offset = {
+		y = -1
+		trigger = {
+			OR = {
+				tag = ZRS
+				tag = ZCS
+				tag = ZBS
+			}
+		}
+	}
+	completion_reward = {
+		random_owned_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_supply
+	x = 0
+	y = 1
+	cost = 5
+	icon = GFX_focus_generic_supply_line
+	prerequisite = { focus = SYRIA_investment }
+	relative_position_id = SYRIA_investment
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		if = {
+			limit = {
+				has_idea = SYRIA_cw_government
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government
+				add_idea = SYRIA_cw_government_supplied
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_mobilized
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_mobilized
+				add_idea = SYRIA_cw_government_mobilized_supplied
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_rallied
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_rallied
+				add_idea = SYRIA_cw_government_rallied_supplied
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = SYRIA_cw_government_mob_rally
+			}
+			swap_ideas = {
+				remove_idea = SYRIA_cw_government_mob_rally
+				add_idea = SYRIA_cw_government_mob_rally_supplied
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_united
+	x = 0
+	y = 7
+	cost = 10
+	icon = {
+		trigger = {
+			tag = ZBS
+		}
+		value = GFX_focus_IRQ_proclaim_united_arab_republic
+	}
+	icon = {
+		trigger = {
+			tag = ZCS
+		}
+		value = GFX_focus_SYR_communist_syria
+	}
+	icon = {
+		trigger = {
+			tag = ZRS
+		}
+		value = GFX_focus_SYR_islamic_syria
+	}
+	icon = {
+		trigger = {
+			tag = ZSR
+		}
+		value = GFX_focus_SYR_republican_syria
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = SYR_won_civil_war
+		hidden_trigger = {
+				if = {
+					limit = {
+						tag = ZCS
+					}
+					NOT = {
+						OR = {
+							country_exists = ZSR
+							country_exists = ZBS
+						}
+						has_war_with = ZRS
+					}
+				}
+				else_if = {
+					limit = {
+						tag = ZSR
+					}
+					NOT = {
+						OR = {
+							country_exists = ZCS
+							country_exists = ZBS
+						}
+						has_war_with = ZRS
+					}
+				}
+				else_if = {
+					limit = {
+						tag = ZBS
+					}
+					NOT = {
+						OR = {
+							country_exists = ZCS
+							country_exists = ZSR
+						}
+						has_war_with = ZRS
+					}
+				}
+				else_if = {
+					limit = {
+						tag = ZRS
+					}
+					NOT = {
+						OR = {
+							country_exists = ZCS
+							country_exists = ZSR
+							country_exists = ZBS
+						}
+					}
+				}
+			}
+		}
+	}
+	prerequisite = { focus = SYRIA_united_command }
+	prerequisite = { focus = SYRIA_supply }
+	prerequisite = { focus = SYRIA_rally_public }
+	relative_position_id = SYRIA_the_civil_war
+	#mutually_exclusive = { focus = SYRIA_ }
+	available = {
+		
+	}
+	offset = {
+		y = -1
+		trigger = {
+			tag = ZBS
+		}
+	}
+	select_effect = {
+		set_global_flag = SYR_civil_war_done
+	}
+	completion_reward = {
+		swap_ideas = {
+			remove_idea = SYRIA_cw_government_mob_rally_supplied
+			add_idea = SYRIA_united_government
+		}
+		hidden_effect = {
+			remove_ideas = {
+				SYRIA_tribal_support
+				SYRIA_guerilla_warfare
+				SYRIA_religious_army
+			}
+			add_ideas = {
+				civilian_economy
+				volunteer_only
+			}
+			delete_unit = {
+				id = 23
+			}
+			if = {
+				limit = {
+					tag = ZRS
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							state = 1115
+							state = 680
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = SYR_unpacified_state
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = ZSR
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							state = 799
+							state = 677
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = SYR_unpacified_state
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = ZBS
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							state = 554
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = SYR_unpacified_state
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = ZCS
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							state = 1102
+							state = 1103
+						}
+					}
+					add_dynamic_modifier = {
+						modifier = SYR_unpacified_state
+					}
+				}
+			}
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_invade_druze
+	x = 0
+	y = 1
+	cost = 10
+	icon = GFX_focus_generic_annex_country_2
+	prerequisite = { focus = SYRIA_united }
+	relative_position_id = SYRIA_united
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		create_wargoal = {
+			target = ZAD
+			type = annex_everything
+		}
+	}
+}
+shared_focus = {
+	id = SYRIA_pacify_state
+	x = 0
+	y = 1
+	cost = 10
+	icon = GFX_SOV_pacify_the_rim_ccp_2d_sov_compatibility
+	prerequisite = { focus = SYRIA_invade_druze }
+	relative_position_id = SYRIA_invade_druze
+	#mutually_exclusive = { focus = SYRIA_ }
+	completion_reward = {
+		custom_effect_tooltip = SYRIA_pacification_decisions
+		set_country_flag = SYRIA_pacify_states_decisions
+	}
+}

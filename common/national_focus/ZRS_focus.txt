@@ -1,0 +1,79 @@
+focus_tree = {
+	id = ZRS_focus
+	continuous_focus_position = { x = -40 y = 2050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZRS
+		}
+	}
+	shared_focus = SYRIA_the_civil_war
+	focus = {
+		id = ZRS_arrange_a_ceasefire
+		icon = GFX_idea_traits_strip_mod
+		cost = 10
+		x = 0
+		y = 0
+		available = {
+			hidden_trigger = {
+				if = {
+					limit = {
+						country_exists = ZCS
+					}
+					NOT = {
+						OR = {
+							country_exists = ZSR
+							country_exists = ZBS
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						country_exists = ZSR
+					}
+					NOT = {
+						OR = {
+							country_exists = ZCS
+							country_exists = ZBS
+						}
+					}
+				}
+				else = {
+					NOT = {
+						OR = {
+							country_exists = ZCS
+							country_exists = ZSR
+						}
+					}
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = ZCS
+				}
+				white_peace = ZCS
+				ZCS = {
+					transfer_state = 1115
+				}
+			}
+			else_if = {
+				limit = {
+					country_exists = ZSR
+				}
+				white_peace = ZSR
+				ZSR = {
+					transfer_state = 1115
+				}
+			}
+			else = {
+				white_peace = ZBS
+				ZBS = {
+					transfer_state = 1115
+				}
+			}
+		}
+	}
+}

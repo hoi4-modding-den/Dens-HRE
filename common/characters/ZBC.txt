@@ -22,6 +22,9 @@ characters = {
 			army = {
 				large = GFX_portrait_ZBC_grigory_korganov
 			}
+			civilian = {
+				large = GFX_portrait_ZBC_grigory_korganov
+			}
 		}
 		field_marshal = {
 			traits = { 
@@ -33,6 +36,14 @@ characters = {
 			defense_skill = 4
 			planning_skill = 2
 			logistics_skill =3
+		}
+		country_leader = {		
+			ideology = leninism
+			expire = "1950.1.1.1"
+			id = -1
+			traits = {
+				ZBC_socialist_bulldog
+			}
 		}
 	}					
 }

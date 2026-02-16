@@ -1,0 +1,496 @@
+add_namespace = ZGR_Political_Camp_Choice
+add_namespace = ZGR_Political_Result
+add_namespace = ZGR_Flavor
+add_namespace = ZGR_Commie_st_Election
+add_namespace = ZGR_Buget
+add_namespace = ZGR_c_Govermental_Collapse
+
+
+### COUNTRY EVENTS ###
+
+country_event = {
+    id = ZGR_Political_Camp_Choice.1
+    title = ZGR_Political_Camp_Choice.1.t
+    desc = ZGR_Political_Camp_Choice.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZGR_Political_Camp_Choice.1.a #Communist
+		
+		ai_chance = {
+			base = 100
+		}
+
+		set_country_flag = ZGR_c_Elect
+		add_popularity = {
+			ideology = communism
+			popularity = 0.01
+		}
+		complete_national_focus = ZGR_the_communist_mission
+	}
+
+	option = {
+        name = ZGR_Political_Camp_Choice.1.b #Status Qou
+		
+		ai_chance = {
+			base = 0
+		}
+
+			set_country_flag = ZGR_d_Elect
+	}	
+	option = {
+        name = ZGR_Political_Camp_Choice.1.c #king
+		
+		ai_chance = {
+			base = 0
+		}
+
+			set_country_flag = ZGR_n_Elect
+	}	
+	
+	option = {
+        name = ZGR_Political_Camp_Choice.1.d #Byznatine Revival
+		
+		ai_chance = {
+			base = 0
+		}
+
+			set_country_flag = ZGR_f_Elect
+	}	
+}
+
+country_event = {
+    id = ZGR_Political_Result.1
+    title = ZGR_Political_Result.1.t
+    desc = ZGR_Political_Result.1.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_Political_Result.1.a #Minor communist vicotry
+		
+		ai_chance = {
+			base = 100
+		}
+		set_country_leader_ideology = ZGR_Socialism
+		set_country_leader_portrait = {
+			ideology = democratic
+			portrait = GFX_portrait_ZGR_Parliament_soc
+		}
+		set_country_leader_name = {
+			ideology = democratic
+			name = ZGR_Parliament_soc
+		}	
+		set_country_leader_description = {
+			ideology = democratic
+			desc = ZGR_Parliament_leader_soc_desc
+		}	
+		set_country_flag = ZGR_Elect_End
+		mark_focus_tree_layout_dirty = yes		
+	}
+	
+}
+
+country_event = {
+    id = ZGR_Flavor.1
+    title = ZGR_Flavor.1.t
+    desc = ZGR_Flavor.1.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_Flavor.1.a
+		
+		ai_chance = {
+			base = 100
+		}
+		add_ideas = ZGR_Radicalisation
+    	custom_effect_tooltip = ZGR_The_Ethnic_Radical	
+	}
+	
+}
+
+country_event = {
+    id = ZGR_Flavor.2
+    title = ZGR_Flavor.2.t
+    desc = ZGR_Flavor.2.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_Flavor.2.a
+		
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.1
+	title = ZGR_Commie_st_Election.1.t
+	desc = ZGR_Commie_st_Election.1.desc
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	trigger = {
+	}
+	option = {
+		name = ZGR_Commie_st_Election.1.a
+		ai_chance = { base = 1 }
+				add_to_variable = {
+					var = c_money
+					value = 10
+					tooltip = ZGR_ADD_MONEY
+				}
+	}
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.2 #The robbery
+	title = ZGR_Commie_st_Election.2.t
+	desc = ZGR_Commie_st_Election.2.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Front Door
+		name = ZGR_Commie_st_Election.2.a
+		ai_chance = { base = 1 }
+		hidden_effect = {
+			country_event = ZGR_Commie_st_Election.2 #Fail
+		}
+	}
+	option = { #Sunlight on Roof
+		name = ZGR_Commie_st_Election.2.b
+		ai_chance = { base = 1 }
+					hidden_effect = { 
+						country_event = ZGR_Commie_st_Election.3 #Main Floor (Meh)
+					}
+	}	
+	option = { #BackDoor
+		name = ZGR_Commie_st_Election.2.c
+		ai_chance = { base = 1 }
+		hidden_effect = { 
+			country_event = ZGR_Commie_st_Election.4 #The Safe (Yuuu!)	
+		}	
+	}		
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.5 #The robbery - Failure
+	title = ZGR_Commie_st_Election.5.t
+	desc = ZGR_Commie_st_Election.5.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #nooo!
+		name = ZGR_Commie_st_Election.5.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = -10
+				tooltip = ZGR_MINUS_POP
+			}		
+	}
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.3 #The robbery - Grab what you can from the main workers there
+	title = ZGR_Commie_st_Election.3.t
+	desc = ZGR_Commie_st_Election.3.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Bearly made it out, one caught, - popularity
+		name = ZGR_Commie_st_Election.3.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = -5
+				tooltip = ZGR_MINUS_POP
+			}
+			add_to_variable = {
+				var = c_money
+				value = 5
+				tooltip = ZGR_ADD_MONEY
+			}			
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.4 #The robbery - You walk in the safe quitley, and leave
+	title = ZGR_Commie_st_Election.4.t
+	desc = ZGR_Commie_st_Election.4.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic win
+		name = ZGR_Commie_st_Election.4.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 2
+				tooltip = ZGR_MORE_POP
+			}
+			add_to_variable = {
+				var = c_money
+				value = 25
+				tooltip = ZGR_ADD_MONEY
+			}			
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.6 #Infiltrate
+	title = ZGR_Commie_st_Election.6.t
+	desc = ZGR_Commie_st_Election.6.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.6.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 10
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.7 #Epic Turkish workers
+	title = ZGR_Commie_st_Election.7.t
+	desc = ZGR_Commie_st_Election.7.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.7.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 5
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.8 #All workers
+	title = ZGR_Commie_st_Election.8.t
+	desc = ZGR_Commie_st_Election.8.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.8.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 25
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.9 #Rally
+	title = ZGR_Commie_st_Election.9.t
+	desc = ZGR_Commie_st_Election.9.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.9.a
+		ai_chance = { base = 1 }
+			add_to_variable = {
+				var = c_pop
+				value = 30
+				tooltip = ZGR_MORE_POP
+			}		
+	}	
+}
+
+country_event = {
+	id = ZGR_Commie_st_Election.10 #Rally
+	title = ZGR_Commie_st_Election.10.t
+	desc = ZGR_Commie_st_Election.10.d
+
+	picture = GFX_report_event_tur_upheaval_celebration
+
+	is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { #Epic Gainzzz
+		name = ZGR_Commie_st_Election.10.a
+		ai_chance = { base = 1 }
+
+	}	
+}
+
+country_event = {
+    id = ZGR_Buget.1
+    title = ZGR_Buget.1.t
+    desc = ZGR_Buget.1.desc
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+        name = ZGR_Buget.1.a #Major Wellfare
+		
+		ai_chance = {
+			base = 100
+		}
+
+		add_ideas = ZGR_Major_Well
+		add_political_power = -200
+	}
+
+	option = {
+        name = ZGR_Buget.1.b #Minor wellfare
+		
+		ai_chance = {
+			base = 0
+		}
+		add_ideas = ZGR_Minor_Well
+		custom_effect_tooltip = ZGR_BREAK_C_PROMISES
+		add_political_power = 250
+	}
+
+}
+
+country_event = {
+    id = ZGR_c_Govermental_Collapse.1
+    title = ZGR_c_Govermental_Collapse.1.t
+    desc = ZGR_c_Govermental_Collapse.1.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_c_Govermental_Collapse.1.a #Side with People
+		
+		ai_chance = {
+			base = 100
+		}
+
+		country_event = {
+			id = ZGR_c_Govermental_Collapse.2
+			days = 14
+			random_hours = 12
+			random_days = 1
+		}
+		add_stability = -0.15
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.3
+		}		
+		add_country_leader_role = {
+			character = ZGR_Fallen_Goverment
+			promote_leader = yes
+			country_leader = {
+				ideology = ZGR_Socialism
+				expire = "1965.1.1.1"
+				traits = {}
+			}
+		}		
+	}
+	
+}
+
+country_event = {
+    id = ZGR_c_Govermental_Collapse.2
+    title = ZGR_c_Govermental_Collapse.2.t
+    desc = ZGR_c_Govermental_Collapse.2.d
+
+	picture = GFX_report_event_YKP_lisbon
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = {
+        name = ZGR_c_Govermental_Collapse.2.a #Side with People, revolution
+		
+		ai_chance = {
+			base = 100
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -1
+		}
+		swap_ideas = {
+			remove_idea = ZGR_Farmers_Councils
+			add_idea = ZGR_Farmers_Councils_War
+		}
+		add_stability = -0.50
+		set_country_flag = c_Sided_with_the_people
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			start_civil_war = {
+				ruling_party = communism
+				# Original country's ideology changes to communism
+				ideology = fascism
+				size = 0.4
+				keep_unit_leaders = {
+					#later
+				}
+				keep_political_leader = yes
+				keep_political_party_members = yes
+			}
+			ZGR = {
+				add_ideas = NGR_War_Prepare
+				add_ideas = ZGR_Farmers_Councils
+				add_ideas = ZGR_The_Megali_Idea
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,27 @@
+leader_traits = {
+	ZAA_the_fatimid_spirit = {
+		random = no
+		war_support_factor = 0.05
+		naval_morale_factor = 0.05
+	}
+	ZAA_femme_fatale = {
+		random = no
+		sprite = 15
+		operative_slot = 1
+		agency_upgrade_time = -0.15
+		operation_infiltrate_outcome = 0.15
+	}
+	ZAA_smooth_talking_charmer_no_pp_gain = {
+		random = no
+		sprite = 13
+		improve_relations_maintain_cost_factor = -0.5
+		trade_opinion_factor = 0.10
+	}
+	ZAA_islamic_scholar = {
+		random = no
+		sprite = 13
+		stability_factor = 0.05
+		war_support_factor = 0.05
+		drift_defence_factor = 0.15
+	}
+}

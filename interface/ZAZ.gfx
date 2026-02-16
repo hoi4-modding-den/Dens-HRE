@@ -20,15 +20,15 @@ spriteTypes = {
 
 	# Focus
 	SpriteType = { 
-		name = "GFX_ZBC_a_new_revolution"
-		texturefile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+		name = "GFX_ZBC_proclaim_the_ssr"
+		texturefile = "gfx/interface/goals/ZAZ/ZBC_proclaim_the_ssr.png"
 	}
 	SpriteType = { 
-		name = "GFX_ZBC_a_new_revolution_shine"
-		texturefile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+		name = "GFX_ZBC_proclaim_the_ssr_shine"
+		texturefile = "gfx/interface/goals/ZAZ/ZBC_proclaim_the_ssr.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+			animationmaskfile = "gfx/interface/goals/ZAZ/ZBC_proclaim_the_ssr.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -40,7 +40,7 @@ spriteTypes = {
 			animationtexturescale = { x = 1.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/ZAZ/ZBC_a_new_revolution.png"
+			animationmaskfile = "gfx/interface/goals/ZAZ/ZBC_proclaim_the_ssr.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

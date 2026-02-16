@@ -1,0 +1,35 @@
+state= {
+	id=1121
+	name="STATE_1121"
+	manpower = 121000
+	
+	state_category = rural
+	resources={
+		chromium = 3
+		steel = 1
+		coal = 4
+	}
+
+	history=
+	{
+		owner = ZCY
+		add_core_of = ZCY
+		victory_points = {
+			13530 5
+		}
+		victory_points = {
+			7193 1
+		}
+		buildings = {
+			infrastructure = 2
+			radar_station = 1
+			13530 = {
+				naval_base = 3
+			}
+		}
+
+	}
+	provinces= { 7193 13530 }
+
+	local_supplies=0.0 
+}

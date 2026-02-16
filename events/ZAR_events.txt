@@ -166,10 +166,145 @@ country_event = {
 	option = {
 		name = ZAR.9.a
 		ai_chance = { factor = 1 }
-		
+		complete_national_focus = ZAR_The_Final_Strike
 		hidden_effect = {
 		}
 	}
 
 }
+country_event = {
+	id = ZAR.10
+	title = ZAR.10.t
+	desc = ZAR.10.d
 
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.10.a
+		ai_chance = { factor = 1 }
+			add_state_claim = 800
+			add_state_claim = 352
+			add_state_claim = 350
+			
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZKR
+    				generator = { 800 352 350 }
+    				expire = 280
+			}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = ZAR.10.b
+		ai_chance = { factor = 1 }
+		ZKR = {
+			country_event = { id = ZAR.11 }
+		}
+		hidden_effect = {
+		}
+	}
+
+
+}
+country_event = {
+	id = ZAR.11
+	title = ZAR.11.t
+	desc = ZAR.11.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.11.a#NO
+		ai_chance = { factor = 1 }
+		ZAR = {
+		country_event = { id = ZAR.12 }
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = ZAR.11.b#Yes
+		ai_chance = { factor = 1 }
+		ZAR = {
+		country_event = { id = ZAR.13 }
+		}
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = ZAR.11.c#Non Aggression
+		ai_chance = { factor = 1 }
+		ZAR = {
+		country_event = { id = ZAR.14 }
+		}
+		hidden_effect = {
+		}
+	}
+
+}
+country_event = {
+	id = ZAR.12
+	title = ZAR.12.t
+	desc = ZAR.12.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.12.a
+		ai_chance = { factor = 1 }
+			add_state_claim = 800
+			add_state_claim = 352
+			add_state_claim = 350
+			
+			create_wargoal = {
+    				type = take_state_focus
+    				target = ZKR
+    				generator = { 800 352 350 }
+    				expire = 280
+			}
+		hidden_effect = {
+		}
+	}
+
+}
+country_event = {
+	id = ZAR.13
+	title = ZAR.13.t
+	desc = ZAR.13.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.13.a
+		ai_chance = { factor = 1 }
+		create_faction = "Kurdish-Armenian United Front"
+		add_to_faction = ZKR
+		hidden_effect = {
+		}
+	}
+
+}
+country_event = {
+	id = ZAR.14
+	title = ZAR.14.t
+	desc = ZAR.9.d
+
+	picture = GFX_fish
+	is_triggered_only = yes
+	option = {
+		name = ZAR.14.a
+		ai_chance = { factor = 1 }
+		give_guarantee = ZKR
+		ZKR = {
+		give_guarantee = ZAR
+		}
+		diplomatic_relation = { 
+			country = ZKR
+			relation = non_aggression_pact 
+		}
+		hidden_effect = {
+		}
+	}
+
+}

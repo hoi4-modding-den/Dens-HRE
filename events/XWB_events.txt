@@ -730,6 +730,7 @@ country_event = { #formation of the Ständesfront
 		every_country = {
 			limit = {
 				has_government = fascism
+				is_HRE_jam = yes
 				NOT = {
 					tag = XWB
 				}

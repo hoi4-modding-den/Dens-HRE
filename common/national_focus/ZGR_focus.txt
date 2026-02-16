@@ -1,0 +1,967 @@
+focus_tree = {
+	id = zgr-main
+	continuous_focus_position = { x = -40 y = 4000 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ZGR
+		}
+	}
+	#Infiltrate the Radicals
+	focus = {
+		id = ZGR_infiltrate_the_radicals
+		icon = GFX_focus_prc_infiltration
+		x = 2
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_get_funds_from_greece_communists  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.6
+		}
+	}
+
+	#NO! to new Mosqes
+	focus = {
+		id = ZGR_notonewmosqes
+		icon = GFX_focus_BRA_the_polaca
+		x = 9
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_greek_language  }
+
+		completion_reward = {
+				add_to_variable = {
+					var = civil_war
+					value = -20
+					tooltip = ZGR_REM_5_ETHNICITY
+				}	
+		}
+	}
+
+	#First Turkish General
+	focus = {
+		id = ZGR_first_turkish_general
+		icon = GFX_focus_mex_support_general_cedillo
+		x = 6
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_religous_tolerance  }
+
+		completion_reward = {
+			add_ideas = ZGR_Democ
+			add_popularity = {
+				ideology = communism
+				popularity = 0.02
+			}
+			add_corps_commander_role = {
+				desc = ZGR_Hasan_Riza_Demirtas_leader_desc					
+				Character = ZGR_Hasan_Riza_Demirtas
+				skill = 4
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 5
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = civil_war
+					value = 5
+				}			
+			}		
+		}
+	}
+
+	#The Greek Megali Idea
+	focus = {
+		id = ZGR_the_greek_megali_idea
+		icon = GFX_focus_NGR_megali_idea
+		x = 7
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ZGR_EPIC_IDEA
+		}
+	}
+
+	#Build the University
+	focus = {
+		id = ZGR_build_the_university
+		icon = GFX_focus_generic_university_3
+		x = 7
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ZGR_the_greek_megali_idea  }
+
+		completion_reward = {
+			342 = {
+					add_building_construction = {
+					type = land_facility
+					level = 1
+					instant_build = yes
+					province = 1005
+				}
+			}
+			country_event = ZGR_Flavor.2
+		}
+	}
+
+	#The Police force
+	focus = {
+		id = ZGR_the_police_force
+		icon = GFX_focus_AST_never_gallipoli
+		x = 7
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_build_the_university  }
+
+		completion_reward = {
+			add_stability = 0.05
+			add_tech_bonus = {
+				name = ZGR_Bonus_Police
+				bonus = 0.5
+				uses = 2
+				category = military_police_tech
+			}		
+			set_technology = {
+				tech_military_police2 = 1
+			}	
+		}
+	}
+
+	#The Turk Represation
+	focus = {
+		id = ZGR_the_turk_represation
+		icon = GFX_focus_TUR_loosen_the_laws_on_secularism
+		x = 6
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_police_force  }
+		mutually_exclusive = { focus = ZGR_less_turk_representation  }
+
+		completion_reward = {
+				add_to_variable = {
+					var = civil_war
+					value = 5
+					tooltip = ZGR_ADD_5_ETHNICITY
+				}	
+		}
+	}
+
+	#Less Turk representation
+	focus = {
+		id = ZGR_less_turk_representation
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		x = 8
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_police_force  }
+		mutually_exclusive = { focus = ZGR_the_turk_represation  }
+
+		completion_reward = {
+				add_to_variable = {
+					var = civil_war
+					value = -5
+					tooltip = ZGR_REM_5_ETHNICITY
+				}	
+		}
+	}
+
+	#The Greek Language
+	focus = {
+		id = ZGR_the_greek_language
+		icon = GFX_focus_TUR_the_sun_language_theory
+		x = 9
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_less_turk_representation  }
+
+		completion_reward = {
+				add_to_variable = {
+					var = civil_war
+					value = -2
+					tooltip = ZGR_REM_5_ETHNICITY
+				}	
+		}
+	}
+
+	#Autonomus Communities
+	focus = {
+		id = ZGR_autonomus_communities
+		icon = GFX_focus_SWE_form_rfsu
+		x = 5
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_turk_represation  }
+
+		completion_reward = {
+				add_to_variable = {
+					var = civil_war
+					value = 5
+					tooltip = ZGR_ADD_5_ETHNICITY
+				}	
+		}
+	}
+
+	#Religous Tolerance
+	focus = {
+		id = ZGR_religous_tolerance
+		icon = GFX_focus_TUR_turanist_ambition
+		x = 5
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_autonomus_communities  }
+
+		completion_reward = {
+				add_to_variable = {
+					var = civil_war
+					value = 10
+					tooltip = ZGR_ADD_5_ETHNICITY
+				}
+		}
+	}
+
+	#Lessen the power of the Turkish corp
+	focus = {
+		id = ZGR_lessen_the_power_of_the_turkish_corp
+		icon = GFX_focus_TUR_reconfigure_turkish_foreign_policy
+		x = 8
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_notonewmosqes  }
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}			
+			add_ideas = ZGR_Democ_angry
+				add_to_variable = {
+					var = civil_war
+					value = -15
+					tooltip = ZGR_REM_5_ETHNICITY				
+				}
+		}
+	}
+
+	#Pre Election Campain
+	focus = {
+		id = ZGR_pre_election_campain
+		icon = GFX_focus_TUR_reform_the_balkan_pact
+		x = 7
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_lessen_the_power_of_the_turkish_corp  focus = ZGR_first_turkish_general  }
+
+		completion_reward = {
+			country_event = ZGR_Political_Camp_Choice.1
+			hidden_effect = {
+				country_event = {
+					id = ZGR_Flavor.1
+					days = 7
+				}
+			}				
+		}
+	}
+
+	#Upgrade the Railways
+	focus = {
+		id = ZGR_upgrade_the_railways
+		icon = GFX_focus_generic_railroad
+		x = 7
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ZGR_less_turk_representation  focus = ZGR_the_turk_represation  }
+
+		completion_reward = {
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				controller_priority = {
+					base = 3
+					modifier = {
+						tag = ZGR
+						add = 2
+					}
+				}
+				fallback = yes
+				path = { 4112 7130 10038 9941 10122 12096 1119 1005 }
+				start_state = 339
+				target_state = 342
+			}
+		}
+	}
+
+	#Devalue the drachma
+	focus = {
+		id = ZGR_devalue_the_drachma
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 7
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ZGR_upgrade_the_railways  }
+
+		completion_reward = {
+			add_ideas = ZGR_devalued_the_money
+		}
+	}
+
+	#The Communist mission
+	focus = {
+		id = ZGR_the_communist_mission
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
+		x = 3
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_c_Elect}
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#The Kings Party
+	focus = {
+		id = ZGR_the_kings_party
+		icon = GFX_focus_NOR_for_the_king_and_prince
+		x = 11
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_n_Elect}		
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Keep The Democratic Stability
+	focus = {
+		id = ZGR_keep_the_democratic_stability
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		x = 7
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_d_Elect}		
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Byzantine Revival
+	focus = {
+		id = ZGR_byzantine_revival
+		icon = GFX_focus_GRE_byzantine_themata
+		x = 15
+		y = 8
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {has_country_flag = ZGR_f_Elect}		
+		prerequisite = { focus = ZGR_pre_election_campain  }
+
+		completion_reward = {
+
+		}
+	}
+
+	#Get Funds from Greece Communists
+	focus = {
+		id = ZGR_get_funds_from_greece_communists
+		icon = GFX_focus_generic_aegean_sea_focus
+		x = 2
+		y = 9
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_communist_mission  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.1
+		}
+	}
+
+	#Rob a bank
+	focus = {
+		id = ZGR_rob_a_bank
+		icon = GFX_focus_CHL_strengthen_the_central_bank
+		x = 4
+		y = 9
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_communist_mission  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.2
+		}
+	}
+
+	#Adress the Turkish workers
+	focus = {
+		id = ZGR_adress_the_turkish_workers
+		icon = GFX_focus_generic_public_works
+		x = 4
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_rob_a_bank  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.7
+		}
+	}
+
+	#Massive Rally in Smyrna
+	focus = {
+		id = ZGR_massive_rally_in_smyrna
+		icon = GFX_focus_CHL_union_of_hispanic_republics
+		x = 3
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			check_variable = {c_pop > 50}
+		}			
+		prerequisite = { focus = ZGR_adress_the_turkish_workers  } prerequisite = { focus = ZGR_infiltrate_the_radicals  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.9
+		}
+	}
+
+	#The Communist Party Congress
+	focus = {
+		id = ZGR_the_communist_party_congress
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 3
+		y = 12
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_massive_rally_in_smyrna  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.10
+		}
+	}
+
+	#Avoid a Goverment CrackDown
+	focus = {
+		id = ZGR_avoid_a_goverment_crackdown
+		icon = GFX_focus_NOR_continue_nygaardsvold_government
+		x = 3
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_the_communist_party_congress  }
+
+		completion_reward = {
+			remove_ideas = ZGR_Radicalisation
+		}
+	}
+
+	#Adress the Workers Isuues directly
+	focus = {
+		id = ZGR_adress_the_workers_isuues_directly
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		x = 5
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = ZGR_adress_the_turkish_workers  }
+
+		completion_reward = {
+			country_event = ZGR_Commie_st_Election.8
+		}
+	}
+
+	#Bring Democratic Politicans to our cause
+	focus = {
+		id = ZGR_bring_democratic_politicans_to_our_cause
+		icon = GFX_focus_NOR_lurk_in_the_shadows
+		x = 1
+		y = 11
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available = {
+			check_variable = {c_pop > 25}
+		}		
+		prerequisite = { focus = ZGR_infiltrate_the_radicals  }
+
+		completion_reward = {
+			add_to_variable = {
+				var = c_pop
+				value = 10
+				tooltip = ZGR_MORE_POP
+			}			
+		}
+	}
+
+
+	#The [c] Victory!
+	focus = {
+		id = ZGR_the_c_victory
+		icon = GFX_focus_NOR_the_stumbling_storting
+		x = 3
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+			has_country_flag = { flag = c_victory }
+		}
+		available = {
+			has_country_flag = {
+				flag = c_victory
+			}
+			has_country_flag = { 
+				flag = ZGR_Elect_End
+			}			
+		}
+		available = {has_country_flag = ZGR_Elect_End}		
+		prerequisite = { focus = ZGR_avoid_a_goverment_crackdown  }
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = ZGR_post_election_restabilize
+				days = 56
+			}
+		}
+	}
+
+	focus = { #We will do the new budget
+		id = ZGR_the_economic_course
+		icon = GFX_focus_SWE_beneath_sticks_and_stone
+		x = 3
+		y = 16
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_the_c_victory  }
+
+		completion_reward = {
+			country_event = ZGR_Buget.1		
+		}
+	}
+
+	focus = { #Prepere for warrr
+		id = ZGR_on_the_warpath
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 2
+		y = 17
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_the_economic_course }
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory 
+					level = 2
+					instant_build = yes 
+				}
+			}			
+		}
+	}
+	focus = { #Prepere for warrr 2
+		id = ZGR_on_the_warpath_factories
+		icon = GFX_focus_RAJ_war_taxes
+		x = 2
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_warpath }
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT
+					infrastructure < 4 
+				}
+				random_select_amount = 2
+				add_building_construction = {
+					type = infrastructure 
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = industrial_complex 
+						size > 1
+					}
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}		
+		}
+	}
+	focus = { #Prepere for warrr 3
+		id = ZGR_on_the_warpath_militias
+		icon = GFX_focus_generic_advanced_military_studies
+		x = 2
+		y = 19
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_warpath_factories }
+
+		completion_reward = {
+			add_ideas = NGR_War_Prepare
+
+			add_tech_bonus = {
+				name = ZGR_artillery_bombardment
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = ZGR_artillery_bombardment
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}			
+		}
+	}			
+	focus = { #Prepere the economy
+		id = ZGR_on_the_economy
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		x = 4
+		y = 17
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_the_economic_course }
+
+		completion_reward = {
+			add_ideas = ZGR_Farmers_Councils
+		}
+	}	
+	focus = { #Prepere the economy 2
+		id = ZGR_on_the_economy_factories
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 4
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_economy }
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT
+					infrastructure < 4 
+				}
+				random_select_amount = 2
+				add_building_construction = {
+					type = infrastructure 
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = industrial_complex 
+						size > 1
+					}
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}						
+		}
+	}
+	focus = { #Find Oil and others invest
+		id = ZGR_on_the_economy_production
+		icon = GFX_SOV_superior_war_machines_ccp_2d_sov_compatibility
+		x = 4
+		y = 19
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_economy_factories }
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+			add_fuel = 1200
+			add_resource = {
+				type = oil
+				amount = 72
+				state = 342
+			}
+		}
+	}
+	focus = { #Political Turmoioiul
+		id = ZGR_political_turmoil_c
+		icon = GFX_focus_ARG_keep_it_in_the_party
+		x = 3
+		y = 20
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}
+		prerequisite = { focus = ZGR_on_the_warpath_militias focus = ZGR_on_the_economy_production }
+
+		completion_reward = {
+			country_event = ZGR_c_Govermental_Collapse.1
+		}
+	}
+	focus = {
+		id = ZGR_Sided_with_the_people
+		icon = GFX_focus_ARG_establish_the_free_association
+		x = 11
+		y = 21
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+			has_country_flag = { flag = c_Sided_with_the_people }
+		}
+		available = {
+			has_country_flag = {
+				flag = c_Sided_with_the_people
+			}			
+		}	
+		
+		prerequisite = { focus = ZGR_political_turmoil_c  }
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ZGR_Win_The_civil
+		icon = GFX_focus_SOV_support_spanish_poum
+		x = 10
+		y = 22
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}	
+		
+		prerequisite = { focus = ZGR_Sided_with_the_people  }
+
+		completion_reward = {
+			add_timed_idea = { idea = ZGR_volunteers_c  days = 120 }
+		}
+	}	
+	focus = {
+		id = ZGR_Win_The_civil_equipment
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		x = 12
+		y = 22
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {		
+		}	
+		
+		prerequisite = { focus = ZGR_Sided_with_the_people  }
+
+		completion_reward = {
+			add_timed_idea = { idea = ZGR_guns_c days = 85 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 670
+				producer = ZGR
+			}
+		}
+	}	
+	focus = {
+		id = ZGR_Declare_the_Anarchist_state
+		icon = GFX_focus_ARG_no_gods_no_masters
+		x = 11
+		y = 23
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		allow_branch = {
+		}
+		available = {
+			has_war = no
+		}	
+		
+		prerequisite = { focus = ZGR_Win_The_civil focus = ZGR_Win_The_civil_equipment }
+
+		completion_reward = {
+			custom_effect_tooltip = ZGR_FOCUS_TREE_WILL_CHANGE
+			load_focus_tree = zgr-c-anarchy
+			mark_focus_tree_layout_dirty = yes
+			set_cosmetic_tag = ZGR_Start_Anarchism
+			set_country_flag = ZGR_Start_Anarchism
+			hidden_effect = {
+				add_to_variable = {
+					var = anarchy_progress_var
+					value = 5
+				}
+				add_to_variable = {
+					var = anarchy_progress_urban_var
+					value = 3
+				}				
+			}
+		}
+	}		
+}
