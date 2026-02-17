@@ -1,0 +1,93 @@
+ZKR_authority_coercion_bop = {
+    initial_value = 0
+    right_side = ZKR_authority_bop_side
+    left_side = ZKR_coercion_bop_side
+    decision_category = ZKR_bop_decision_cat
+
+    range = {
+        id = ZKR_authority_coercion_equilibrium
+        max = 0.1
+        min = -0.1
+        modifier = {
+            political_advisor_cost_factor = -0.1
+            army_morale_factor = 0.02
+        }
+        
+    }
+
+    side = {
+		id = ZKR_authority_bop_side	
+		icon = GFX_bop_SWI_centralization_canton_side
+
+		range = {
+			id = ZKR_authority_low_control_range
+			max = 0.3
+			min = 0.1
+			modifier = {
+				political_power_factor = 0.02
+                stability_factor = 0.05
+			}
+			
+		}
+
+		range = {
+			id = ZKR_authority_medium_control_range
+			max = 0.7
+			min = 0.3
+			modifier = {
+				political_power_factor = 0.05
+                stability_factor = 0.05
+				compliance_growth = 0.02
+			}
+		}
+
+		range = {
+			id = ZKR_authority_total_control_range
+			max = 1
+			min = 0.7
+			modifier = {
+				political_power_factor = 0.1
+                neutrality_drift = 0.03
+				compliance_growth = 0.05
+			}
+		}
+	}
+
+    side = {
+		id = ZKR_coercion_bop_side	
+		icon = GFX_bop_ETH_anarchist_side
+
+		range = {
+			id = ZKR_coercion_low_control_range
+            max = -0.1
+			min = -0.3
+			modifier = {
+                political_power_factor = -0.01
+				war_support_factor = 0.05
+			}
+			
+		}
+
+		range = {
+			id = ZKR_coercion_medium_control_range
+            max = -0.3
+			min = -0.7
+			modifier = {
+                political_power_factor = -0.02
+				war_support_factor = 0.05
+				resistance_target = -0.05
+			}
+		}
+
+		range = {
+			id = ZKR_coercion_total_control_range
+            max = -0.7
+			min = -1
+			modifier = {
+				army_org_factor = 0.05
+                neutrality_drift = -0.03
+				resistance_target = -0.08
+			}
+		}
+	}
+}

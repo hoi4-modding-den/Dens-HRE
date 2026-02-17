@@ -27,6 +27,12 @@ leader_traits = {
         initiative_factor = 0.05
         production_factory_max_efficiency_factor = 0.1
 
+        ai_strategy = { # hates Stalin
+			type = antagonize
+			id = "ZCC"
+			value = 200
+		}
+
 	}
 
     ZKR_liberator_of_kurds = {
@@ -49,6 +55,16 @@ leader_traits = {
         ai_strategy = {
 			type = antagonize
 			id = "ZCT"
+			value = 200
+		}
+        ai_strategy = {
+			type = antagonize
+			id = "ZTC"
+			value = 200
+		}
+        ai_strategy = {
+			type = antagonize
+			id = "ZTM"
 			value = 200
 		}
 	}
@@ -83,6 +99,18 @@ leader_traits = {
 
         stability_factor = 0.2
         political_advisor_cost_factor = -0.1
+
+    }
+
+    ZKR_hegemon_of_the_middle_east = {
+        random = no
+
+        war_support_factor = 0.1
+        stability_factor = 0.1
+        resistance_growth_on_our_occupied_states = 0.3
+        terrain_penalty_reduction = 0.25
+        surrender_limit = 0.25
+        compliance_gain = 0.05
 
     }
 

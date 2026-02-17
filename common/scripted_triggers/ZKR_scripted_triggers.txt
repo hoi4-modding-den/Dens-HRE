@@ -309,9 +309,49 @@ ZKR_is_middle_east_country = {
     custom_trigger_tooltip = {
         tooltip = ZKR_is_middle_east_country_tt
         OR = {
-            capital_scope = { is_on_continent = middle_east }
+            capital_scope = { ZKR_is_middle_eastern_state = yes }
             original_tag = ZCY
         }
+    }
+}
+
+ZKR_is_middle_eastern_state = {
+    custom_trigger_tooltip = {
+        tooltip = ZKR_is_middle_eastern_state_tt
+        OR = {
+            is_on_continent = middle_east
+
+            # Istanbul
+            state = 797
+
+            # Cyprus
+            state = 183
+            state = 1121
+
+            # Rest of Afghanistan
+            state = 415
+            state = 1007
+            state = 267
+            state = 1005
+            state = 1006
+
+            AND = {
+                has_global_flag = ZKR_egypt_is_middle_east
+                ZKR_is_egyptian_state = yes
+            }
+        }
+    }
+}
+
+ZKR_is_egyptian_state = {
+    OR = {
+        region = 128
+        state = 552
+        state = 767
+        state = 551
+        state = 883
+        state = 886
+        state = 549
     }
 }
 

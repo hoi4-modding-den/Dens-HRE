@@ -4918,6 +4918,17 @@ focus_tree = {
 				color = { 229 138 47 }
 			}
 			set_country_flag = YBS_iberian_federation_formed
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					YBS_is_iberian_state = yes
+					NOT = { is_core_of = ROOT }
+					NOT = { is_claimed_by = ROOT }
+				}
+				add_claim_by = ROOT
+			}
 		}
 	}
 

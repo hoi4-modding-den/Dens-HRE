@@ -11,8 +11,8 @@ ZKR_upset_kurdish_people = {
 	
 }
 
-ZKR_turkish_resistance = { 
-	enable = { always = yes }
+ZKR_turkish_resistance = {
+	enable = { owner = { OR = { tag = ZKR is_subject_of = ZKR } } }
 
 	icon = GFX_modifiers_tur_traditionalist_insurgency
 	

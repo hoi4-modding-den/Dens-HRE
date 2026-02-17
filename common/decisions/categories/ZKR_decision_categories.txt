@@ -78,6 +78,8 @@ ZKR_dissolve_turkey_cat = {
 
 	visible = {
 		has_completed_focus = ZKR_national_salvation
+		NOT = { has_country_flag = ZKR_failed_pax_kurdistan }
+		NOT = { has_country_flag = ZKR_pax_kurdistan_survives }
 	}
 
 	scripted_gui = ZKR_control_in_anatolia_gui
@@ -150,6 +152,10 @@ ZKR_syrian_intervention_cat = {
 	visible = {
 		has_completed_focus = ZKR_syrian_intervention
         is_subject = no
+		OR = {
+			has_government = democratic
+			has_government = communism
+		}
 	}
 
 	visible_when_empty = no
@@ -172,3 +178,28 @@ ZKR_military_readiness_cat = {
 
 	priority = 3
 }
+
+ZKR_ZZZ_expeditions = {
+	icon = border_conflicts
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_completed_focus = ZKR_ranger_corps
+	}
+
+	visible_when_empty = no
+
+	priority = 3
+}
+
+ZKR_bop_decision_cat = {
+
+	allowed = {
+		original_tag = ZKR
+	}
+	
+}
+

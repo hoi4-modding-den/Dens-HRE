@@ -2,6 +2,7 @@ add_namespace = ZKR_politics_events
 add_namespace = ZKR_diplo_events
 add_namespace = ZKR_technical_events
 add_namespace = ZKR_lore_events
+add_namespace = ZKR_pax_events
 add_namespace = ZKR_news_events
 
 country_event = { # Monarchist Coup
@@ -266,6 +267,10 @@ country_event = { # reform the anti-imperialist front
 	
 	option = {
         name = ZKR_politics_events.7.a
+        add_political_power = -100
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
         set_faction_name = ZKR_anti_imperialist_league
     }
 
@@ -419,7 +424,7 @@ country_event = { # We are One
         hidden_effect = {
             every_state = {
                 limit = {
-                    is_on_continent = middle_east
+                    ZKR_is_middle_eastern_state = yes
                     NOT = { is_core_of = ROOT }
                 }
                 add_core_of = ROOT
@@ -431,6 +436,50 @@ country_event = { # We are One
             add_state_core = 183
             add_state_core = 1121
         }
+
+        set_country_flag = ZKR_unlock_egypt_middle_east_decision
+    }
+}
+
+country_event = { # Restore Civilian Governance?
+	id = ZKR_politics_events.11
+	title = ZKR_politics_events.11.t
+	desc = ZKR_politics_events.11.desc
+	
+	picture = GFX_report_event_fascist_gathering
+	
+	
+	is_triggered_only = yes
+    fire_only_once = yes
+	
+	option = {
+        name = ZKR_politics_events.11.a
+        if = {
+            limit = {
+                has_idea = ZKR_military_government_2
+            }
+            swap_ideas = {
+				remove_idea = ZKR_military_government_2
+				add_idea = ZKR_military_government_no_more
+			}
+        }
+        else = {
+            swap_ideas = {
+				remove_idea = ZKR_military_government
+				add_idea = ZKR_military_government_no_more
+			}
+        }
+
+        set_politics = {
+            ruling_party = fascism
+            elections_allowed = yes
+        }
+    }
+
+    option = {
+        name = ZKR_politics_events.11.b
+        add_political_power = -50
+        add_stability = 0.1
     }
 }
 
@@ -555,12 +604,24 @@ country_event = { # Demanded Syrian Kurdistan - Accepted
 	option = {
         name = ZKR_diplo_events.3.a
 		1103 = {
+            set_demilitarized_zone = yes
             remove_core_of = FROM
             transfer_state_to = ROOT
+            add_manpower = -5000
         }
         1115 = {
+            set_demilitarized_zone = yes
             remove_core_of = FROM
             transfer_state_to = ROOT
+            add_manpower = -5000
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = {
+            random_core_state = {
+                add_manpower = 10000
+            }
         }
     }
 }
@@ -1869,6 +1930,181 @@ country_event = { # Stalin arrested
 
 }
 
+country_event = { # Collapse of Anatolian Occupation
+	id = ZKR_pax_events.1
+	title = ZKR_pax_events.1.t
+	desc = ZKR_pax_events.1.desc
+	
+	picture = GFX_report_event_soviet_purge_speech
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_pax_events.1.a
+        custom_effect_tooltip = ZKR_pax_events.1.tt
+        hidden_effect = {
+            country_event = { id = ZKR_pax_events.2 days = 5 }
+            country_event = { id = ZKR_pax_events.3 days = 20 }
+
+            mark_focus_tree_layout_dirty = yes
+            complete_national_focus = ZKR_the_collapse_of_turkish_occupation
+        }
+    }
+
+}
+
+country_event = { # Collapse of Anatolian Occupation - Demilitarised
+	id = ZKR_pax_events.2
+	title = ZKR_pax_events.2.t
+	desc = ZKR_pax_events.2.desc
+	
+	picture = GFX_report_event_GER_grenzshutz_forces
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_pax_events.2.a
+        every_state = {
+            limit = {
+                is_controlled_by = ZKT
+                is_capital = no
+            }
+            set_demilitarized_zone = yes
+        }
+        hidden_effect = {
+            every_state = {
+                limit = {
+                    has_dynamic_modifier = { modifier = ZKR_turkish_resistance }
+                }
+                remove_dynamic_modifier = { modifier = ZKR_turkish_resistance }
+            }
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        swap_ideas = {
+            remove_idea = ZKR_vengeance_achieved
+            add_idea = ZKR_failed_peace
+        }
+    }
+
+}
+
+country_event = { # Collapse of Anatolian Occupation - Turkish Uprising
+	id = ZKR_pax_events.3
+	title = ZKR_pax_events.3.t
+	desc = ZKR_pax_events.3.desc
+	
+	picture = GFX_report_event_spr_civil_war_equipment
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_pax_events.3.a
+        end_puppet = ZKT
+        ZKT = {
+            hidden_effect = { add_ruling_to_com = yes }
+            set_politics = {
+                ruling_party = communism
+                elections_allowed = yes
+            }
+            ZKR_collapse_war_spawn_units_for_THIS = yes
+            declare_war_on = {
+                target = ROOT
+                type = independence_wargoal
+            }
+        }
+
+        hidden_effect = {
+            every_state = {
+                limit = {
+                    ZKR_turkish_republic_states = yes
+                }
+                add_core_of = ZKT
+            }
+
+            every_state = {
+                limit = {
+                    is_controlled_by = ROOT
+                    any_neighbor_state = {
+                        is_controlled_by = ZKT
+                    }
+                }
+                every_state_division = {
+                    set_unit_organization = 0.1
+                }
+            }
+
+            news_event = ZKR_news_events.5
+            country_event = { id = ZKR_pax_events.4 days = 3 }
+        }
+    }
+
+}
+
+country_event = { # Collapse of Anatolian Occupation - Greater Kurdistan Collapse
+	id = ZKR_pax_events.4
+	title = ZKR_pax_events.4.t
+	desc = ZKR_pax_events.4.desc
+	
+	picture = GFX_report_event_tur_kurdish_guerillas
+
+    is_triggered_only = yes
+	
+	option = {
+        name = ZKR_pax_events.4.a
+        if = {
+            limit = {
+                has_subject = ZAS
+            }
+            end_puppet = ZAS
+        }
+        else = {
+            release_on_controlled = ZAS
+        }
+        ZAS = {
+            ZKR_collapse_war_spawn_units_for_THIS = yes
+            declare_war_on = {
+                target = ROOT
+                type = independence_wargoal
+            }
+        }
+        if = {
+            limit = {
+                has_subject = ZRM
+            }
+            end_puppet = ZRM
+        }
+        else = {
+            release_on_controlled = ZRM
+        }
+        ZRM = {
+            ZKR_collapse_war_spawn_units_for_THIS = yes
+            declare_war_on = {
+                target = ROOT
+                type = independence_wargoal
+            }
+        }
+        if = {
+            limit = {
+                has_subject = ZAR
+            }
+            end_puppet = ZAR
+        }
+        else = {
+            release_on_controlled = ZAR
+        }
+        ZAR = {
+            ZKR_collapse_war_spawn_units_for_THIS = yes
+            declare_war_on = {
+                target = ROOT
+                type = independence_wargoal
+            }
+        }
+    }
+
+}
+
 news_event = { # Kurdistan begins Unification
 	id = ZKR_news_events.1
 	title = ZKR_news_events.1.t
@@ -1893,7 +2129,7 @@ news_event = { # Kurdistan begins Unification
             OR = {
                 is_ally_with = ZKR
                 AND = {
-                    NOT = { capital_scope = { is_on_continent = middle_east } }
+                    NOT = { capital_scope = { ZKR_is_middle_eastern_state = yes } }
                     NOT = { has_war_with = ZKR }
                 }
             }
@@ -1913,7 +2149,7 @@ news_event = { # Kurdistan begins Unification
                 }
             }
             OR = {
-                capital_scope = { is_on_continent = middle_east }
+                capital_scope = { ZKR_is_middle_eastern_state = yes }
                 has_war_with = ZKR
             }
         }
@@ -1933,7 +2169,7 @@ news_event = { # Kurdistan begins Unification
                 }
             }
             OR = {
-                capital_scope = { is_on_continent = middle_east }
+                capital_scope = { ZKR_is_middle_eastern_state = yes }
                 has_war_with = ZKR
             }
         }
@@ -2024,8 +2260,10 @@ news_event = { # Xoybun Coup in Kurdistan
                 OR = {
                     is_core_of = ZKR
                     is_claimed_by = ZKR
+                    ZKR_anatolian_protectorate_states = yes
                 }
             }
+            capital_scope = { ZKR_is_middle_eastern_state = yes }
         }
         add_opinion_modifier = {
             target = FROM
@@ -2043,9 +2281,11 @@ news_event = { # Xoybun Coup in Kurdistan
                     OR = {
                         is_core_of = ZKR
                         is_claimed_by = ZKR
+                        ZKR_anatolian_protectorate_states = yes
                     }
                 }
             }
+            capital_scope = { ZKR_is_middle_eastern_state = yes }
         }
     }
 
@@ -2054,6 +2294,15 @@ news_event = { # Xoybun Coup in Kurdistan
         trigger = {
             NOT = { tag = ZKR }
             is_ally_with = ZKR
+            capital_scope = { ZKR_is_middle_eastern_state = yes }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.3.e
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { capital_scope = { ZKR_is_middle_eastern_state = yes } }
         }
     }
 
@@ -2081,7 +2330,7 @@ news_event = { # Commonwealth Formed
         trigger = {
             NOT = { tag = ZKR }
             NOT = { is_ally_with = ZKR }
-            capital_scope = { is_on_continent = middle_east }
+            capital_scope = { ZKR_is_middle_eastern_state = yes }
         }
     }
 
@@ -2090,7 +2339,7 @@ news_event = { # Commonwealth Formed
         trigger = {
             NOT = { tag = ZKR }
             NOT = { is_ally_with = ZKR }
-            NOT = { capital_scope = { is_on_continent = middle_east } }
+            NOT = { capital_scope = { ZKR_is_middle_eastern_state = yes } }
         }
     }
 
@@ -2099,6 +2348,62 @@ news_event = { # Commonwealth Formed
         trigger = {
             NOT = { tag = ZKR }
             is_ally_with = ZKR
+        }
+    }
+
+}
+
+news_event = { # Pax Kurdistan has failed
+	id = ZKR_news_events.5
+	title = ZKR_news_events.5.t
+	desc = ZKR_news_events.5.desc
+	
+	picture = GFX_news_event_generic_arab_revolt
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.5.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.5.b
+        trigger = {
+            NOT = { tag = ZKR }
+            is_ally_with = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.5.c
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            has_war_with = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.5.d
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            NOT = { has_war_with = ZKR }
+            NOT = { capital_scope = { ZKR_is_middle_eastern_state = yes } }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.5.e
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
+            NOT = { has_war_with = ZKR }
+            capital_scope = { ZKR_is_middle_eastern_state = yes }
         }
     }
 

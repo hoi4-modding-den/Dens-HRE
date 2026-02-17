@@ -125,6 +125,21 @@ on_actions = {
                         drop_cosmetic_tag = yes
                     }
                 }
+                if = {
+                    limit = {
+                        NOT = { has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes } }
+                        has_cosmetic_tag = ZKR_hegemony_of_kurdistan
+                    }
+                    drop_cosmetic_tag = yes
+                }
+                else_if = {
+                    limit = {
+                        has_country_leader = { character = ZKR_mahmud_barzanji ruling_only = yes }
+                        has_country_flag = ZKR_hegemony_of_kurdistan_formed
+                        NOT = { has_cosmetic_tag = ZKR_hegemony_of_kurdistan }
+                    }
+                    set_cosmetic_tag = ZKR_hegemony_of_kurdistan
+                }
             }
         }
     }

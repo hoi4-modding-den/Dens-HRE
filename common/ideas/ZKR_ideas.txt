@@ -14,14 +14,12 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				political_power_gain = 0.01
-				stability_factor = -0.01
 				conscription_factor = 0.2
 
-				# low only because I don't have a lot of generic portraits (in fact, it's only two)
-				female_random_army_leader_chance = 0.1
+				# low only because I don't have a lot of generic portraits
+				female_random_army_leader_chance = 0.2
 				female_random_admiral_chance = 0.1
-				female_divisional_commander_chance = 0.1
+				female_divisional_commander_chance = 0.2
 				female_random_country_leader_chance = 0.1
 			}
 		}
@@ -143,7 +141,7 @@ ideas = {
 
 		ZKR_kurdish_unitarianism_idea = {
 
-			picture = generic_fascism_drift_bonus
+			picture = AFG_parliament_building_damaged
 
 			allowed = {
 				original_tag = ZKR
@@ -345,6 +343,23 @@ ideas = {
 			}
 		}
 
+		ZKR_royal_court = {
+
+			picture = generic_monarchist_uprising
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.05
+                political_advisor_cost_factor = 0.2
+				neutrality_drift = 0.02
+			}
+		}
+
 		ZKR_military_government = {
 
 			picture = generic_fascism_drift_bonus
@@ -358,6 +373,42 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.1
                 fascism_drift = 0.02
+				industrial_capacity_factory = 0.1
+				army_org_factor = 0.05
+			}
+		}
+
+		ZKR_military_government_2 = {
+
+			name = ZKR_military_government
+			picture = generic_fascism_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+                fascism_drift = 0.02
+				industrial_capacity_factory = 0.1
+				army_org_factor = 0.05
+			}
+		}
+
+		ZKR_military_government_no_more = {
+
+			picture = generic_fascism_drift_bonus
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.25
 				industrial_capacity_factory = 0.1
 				army_org_factor = 0.05
 			}
@@ -718,7 +769,7 @@ ideas = {
 				army_morale_factor = 0.05
 				conscription = 0.01
 				enemy_justify_war_goal_time = -0.15
-				political_power_factor = -0.2
+				political_power_gain = -0.2
 				stability_factor = -0.25
 			}
 		}
@@ -743,8 +794,29 @@ ideas = {
 				army_morale_factor = 0.05
 				conscription = 0.005
 				enemy_justify_war_goal_time = -0.15
-				political_power_factor = -0.1
+				political_power_gain = -0.1
 				stability_factor = -0.1
+			}
+		}
+
+		ZKR_failed_peace = {
+
+			picture = saf_history_of_segregation_2
+
+			allowed = {
+				original_tag = ZKR
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.01
+				political_power_gain = -0.1
+				stability_factor = -0.25
 			}
 		}
 
@@ -763,8 +835,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				army_org_factor = 0.05
 				army_morale_factor = 0.05
 				conscription = 0.005
+				stability_factor = 0.15
 			}
 		}
 
@@ -1376,6 +1450,23 @@ ideas = {
 			}
 		}
 
+		ZKR_anti_turkish_nationalism = {
+
+			picture = tur_legacy_of_ataturk_cracked
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = 0.1
+				breakthrough_factor = 0.02
+			}
+
+		}
+
         ZKR_agrarian_society = {
 
 			picture = generic_agrarian_society
@@ -1887,7 +1978,7 @@ ideas = {
 
 		ZKR_steel_mill_concern = {
 
-			picture = generic_industrial_concern_2
+			picture = PRC_jianguo_ironwork_cooperative
 			
 			allowed = {
 				original_tag = ZKR

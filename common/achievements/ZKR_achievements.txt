@@ -24,8 +24,9 @@ ZKR_woman_in_the_military = {
 
     happened = {
         any_character = {
-            is_field_marshal = yes
             is_female = yes
+            is_field_marshal = yes
+            is_hired_as_advisor = yes
         }
     }
 }

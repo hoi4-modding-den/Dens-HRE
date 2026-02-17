@@ -1,0 +1,166 @@
+ideas = {
+
+	country = {
+		
+		ZKT_unpopular_government = {
+
+			picture = generic_disjointed_gov
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.5
+                stability_factor = -0.25
+			}
+		}
+
+        ZKT_nationalist_unrest = {
+
+			picture = saf_ossewabrandwag_fascism
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				drift_defence_factor = -1
+                war_support_factor = -0.25
+			}
+
+            on_remove = {
+                set_party_name = { ideology = fascism long_name = ZKT_fascism_party_free_long name = ZKT_fascism_party_free }
+				# retire_character = 
+                set_party_name = { ideology = neutrality long_name = ZKT_neutrality_party_free_long name = ZKT_neutrality_party_free }
+				# retire_character = 	
+            }
+		}
+
+        ZKT_kurdish_puppet_government = {
+
+			picture = ETH_corrupt_bureaucracy
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.5
+				consumer_goods_factor = 0.2
+				political_advisor_cost_factor = 1
+			}
+		}
+
+		ZKT_governate_idea = {
+		
+			picture = tur_kemalist_officers_disloyalty_effect
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.05
+				political_power_cost = 1
+				resistance_target = 0.25
+				no_compliance_gain = 1
+			}
+
+		}
+
+		ZKT_governate_idea_2 = {
+		
+			name = ZKT_governate_idea
+			picture = tur_kemalist_officers_disloyalty_effect
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.05
+				political_power_cost = 0.75
+				resistance_target = 0.15
+				no_compliance_gain = 1
+			}
+
+		}
+
+		ZKT_governate_idea_3 = {
+		
+			name = ZKT_governate_idea
+			picture = tur_kemalist_officers_disloyalty_effect
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = -0.05
+				political_power_cost = 0.5
+				resistance_target = 0.05
+				no_compliance_gain = 1
+			}
+
+		}
+
+    }
+
+}

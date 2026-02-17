@@ -1,15 +1,25 @@
 capital = 49
 
 set_research_slots = 1
-set_stability = 0.1
-set_war_support = 0
+set_stability = 0.35
+set_war_support = 0.25
 
 set_rule = {
 	can_create_collaboration_government = no
 }
 
+add_timed_idea = {
+	idea = ZKT_unpopular_government
+	days = 730
+}
+
+add_ideas = {
+	ZKT_nationalist_unrest
+	ZKT_kurdish_puppet_government
+}
+
 # Leaders
-#recruit_character = 
+recruit_character = ZKT_nazim_hikmet
 
 # Advisors / Generals
 

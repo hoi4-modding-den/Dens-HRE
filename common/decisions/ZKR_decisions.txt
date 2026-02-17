@@ -24,6 +24,7 @@ ZKR_kurdistan_formables_cat = {
 
         visible = {
             NOT = { has_completed_focus = ZKR_pluralist_constitution }
+            NOT = { has_completed_focus = ZKR_kurdish_hegemony }
         }
 
         highlight_states = {
@@ -76,6 +77,82 @@ ZKR_kurdistan_formables_cat = {
         }
     }
 
+    
+    ZKR_proclaim_kurdish_hegemony = {
+
+        icon = generic_form_nation
+
+        fire_only_once = yes
+
+        available = {
+            has_completed_focus = ZKR_kurdish_hegemony
+            custom_trigger_tooltip = {
+                tooltip = ZKR_hegemony_required_cities_tt
+                count_triggers = {
+                    amount = 3
+                    797 = { is_owned_and_controlled_by = ROOT }
+                    454 = { is_owned_and_controlled_by = ROOT }
+                    291 = { is_owned_and_controlled_by = ROOT }
+                    856 = { is_owned_and_controlled_by = ROOT }
+                    266 = { is_owned_and_controlled_by = ROOT }
+                }
+            }
+        }
+
+        visible = {
+            has_completed_focus = ZKR_kurdish_hegemony
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+                    state = 797
+                    state = 454
+                    state = 291
+                    state = 856
+                    state = 266
+                }
+			}
+		}
+
+        ai_will_do = {
+			base = 1000
+		}
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        complete_effect = {
+            set_cosmetic_tag = ZKR_hegemony_of_kurdistan
+            set_country_flag = ZKR_hegemony_of_kurdistan_formed
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            ZKR_mahmud_barzanji = {
+                swap_country_leader_traits = { remove = ZKR_determined_king add = ZKR_hegemon_of_the_middle_east ideology = despotism }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            if = {
+				limit = {
+					has_idea = ZKR_a_greater_kurdistan
+				}
+				swap_ideas = {
+					remove_idea = ZKR_a_greater_kurdistan
+					add_idea = ZKR_a_greater_kurdistan_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ZKR_an_independent_kurdistan
+					add_idea = ZKR_a_greater_kurdistan
+				}
+			}
+        }
+    }
+
 }
 
 political_actions = {
@@ -99,6 +176,7 @@ political_actions = {
         }
 
         available = {
+            has_war = no
             OR = {
                 any_state = {
                     has_state_flag = ZKR_war_goal_target
@@ -149,6 +227,14 @@ political_actions = {
             modifier = {
                 factor = 0
                 FROM = { owner = { NOT = { is_neighbor_of = ROOT } } }
+            }
+            modifier = {
+                factor = 0.01
+                FROM = { NOT = { is_core_of = ROOT } }
+                any_state = {
+                    is_core_of = ROOT
+                    NOT = { is_controlled_by = ROOT }
+                }
             }
         }
 
@@ -216,6 +302,7 @@ political_actions = {
         }
 
         available = {
+            has_war = no
             NOT = {
                 any_state = {
                     has_state_flag = ZKR_war_goal_target
@@ -291,6 +378,39 @@ political_actions = {
                     is_owned_by = ROOT
                 }
                 clr_state_flag = ZKR_war_goal_target
+            }
+        }
+    }
+
+    ZKR_expand_definition_of_middle_east = {
+        
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+            has_completed_focus = ZKR_middle_east_is_free
+        }
+
+        visible = {
+            has_country_flag = ZKR_unlock_egypt_middle_east_decision
+        }
+
+        complete_effect = {
+            custom_effect_tooltip = ZKR_egypt_is_middle_east_tt
+            set_global_flag = ZKR_egypt_is_middle_east
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            every_state = {
+                limit = {
+                    ZKR_is_egyptian_state = yes
+                }
+                add_core_of = ROOT
             }
         }
     }
@@ -1428,6 +1548,39 @@ ZKR_coalition_allies_cat = {
         }
     }
 
+    ZKR_ai_kick_ally = {
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 10
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+        }
+
+        target_trigger = {
+            FROM = {
+                is_in_faction_with = ROOT
+                is_subject = no
+                any_owned_state = {
+                    OR = {
+                        is_core_of = ROOT
+                        is_claimed_by = ROOT
+                    }
+                }
+            }
+        }
+
+        complete_effect = {
+            remove_from_faction = FROM
+        }
+    }
+
 }
 
 ZKR_dissolve_turkey_cat = {
@@ -1472,6 +1625,11 @@ ZKR_dissolve_turkey_cat = {
         available = {
             is_subject = no
             NOT = { country_exists = ZKT }
+            NOT = { country_exists = ZGR }
+            NOT = { country_exists = ZOT }
+            NOT = { country_exists = ZCT }
+            NOT = { country_exists = ZTC }
+            NOT = { country_exists = ZTM }
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
@@ -1489,11 +1647,30 @@ ZKR_dissolve_turkey_cat = {
 			}
 		}
 
+        fire_only_once = yes
+
         complete_effect = {
             add_to_variable = { ZKR_turkey_control = 10 tooltip = ZKR_turkey_control_effect_tt }
             add_to_variable = { ZKR_turkey_control = -5 tooltip = ZKR_turkey_resistance_effect_tt }
 
             custom_effect_tooltip = generic_skip_one_line_tt
+
+            hidden_effect = {
+                ZGR = {
+                    every_core_state = {
+                        remove_core_of = ZGR
+                    }
+                }
+                every_state = {
+                    limit = {
+                        ZKR_turkish_republic_states = yes
+                    }
+                    add_core_of = ZTM
+                    add_core_of = ZTC
+                    add_core_of = ZCT
+                    add_core_of = ZOT
+                }
+            }
 
             every_state = {
                 limit = {
@@ -1503,6 +1680,7 @@ ZKR_dissolve_turkey_cat = {
                 hidden_effect = {
                     set_resistance = 50
                     set_compliance = 0
+                    add_dynamic_modifier = { modifier = ZKR_turkish_resistance }
                 }
             }
             set_autonomy = {
@@ -1511,7 +1689,18 @@ ZKR_dissolve_turkey_cat = {
                 end_wars = yes
                 end_civil_wars = yes
             }
-            hidden_effect = { ZKT = { inherit_technology = ROOT } }
+            hidden_effect = { 
+                ZKT = { 
+                    inherit_technology = ROOT
+                    add_ideas = ZKT_governate_idea
+                } 
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            set_country_flag = ZKR_salvation_branch_unlocked
+            custom_effect_tooltip = ZKR_load_new_focus_branch_tt
+			hidden_effect = { mark_focus_tree_layout_dirty = yes }
         }
     }
 
@@ -1540,9 +1729,28 @@ ZKR_dissolve_turkey_cat = {
 			}
 		}
 
+        visible = {
+            OR = {
+                check_variable = { ZKR_turkey_control < 96 }
+                check_variable = { ZKR_turkey_resistance > 4 }
+            }
+        }
+
+        fire_only_once = yes
+
         complete_effect = {
-            add_to_variable = { ZKR_turkey_control = 5 tooltip = ZKR_turkey_control_effect_tt }
-            add_to_variable = { ZKR_turkey_control = -5 tooltip = ZKR_turkey_resistance_effect_tt }
+            if = {
+                limit = {
+                    check_variable = { ZKR_turkey_control < 96 }
+                }
+                add_to_variable = { ZKR_turkey_control = 5 tooltip = ZKR_turkey_control_effect_tt }
+            }
+            if = {
+                limit = {
+                    check_variable = { ZKR_turkey_resistance > 4 }
+                }
+                add_to_variable = { ZKR_turkey_resistance = -5 tooltip = ZKR_turkey_resistance_effect_tt }
+            }
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1569,7 +1777,10 @@ ZKR_dissolve_turkey_cat = {
         visible = {
             # has_country_flag = ZKR_accepted_lon_oversight
             # given via event, can not initally be rejected unless threat is 100% or situation with DN2 is war or non-existence
+            check_variable = { ZKR_turkey_control < 91  }
         }
+
+        fire_only_once = yes
 
         complete_effect = {
             add_to_variable = { ZKR_turkey_control = 10 tooltip = ZKR_turkey_control_effect_tt }
@@ -1589,17 +1800,23 @@ ZKR_dissolve_turkey_cat = {
         available = {
             is_subject = no
             check_variable = {
-                ZKR_turkey_control = 100
+                ZKR_turkey_control > 99
                 tooltip = ZKR_turkey_control_trigger_tt
             }
             check_variable = {
-                ZKR_turkey_resistance = 0
+                ZKR_turkey_resistance < 1
                 tooltip = ZKR_turkey_resistance_trigger_tt
             }
+            has_completed_focus = ZKR_secure_the_governate
         }
 
+        fire_only_once = yes
+
         complete_effect = {
-            # swap_ideas improve Pax Kurdistan
+            swap_ideas = {
+                remove_idea = ZKR_vengeance_achieved
+                add_idea = ZKR_pax_kurdistan_stays
+            }
 
             set_country_flag = ZKR_pax_kurdistan_survives
         }
@@ -1610,25 +1827,30 @@ ZKR_dissolve_turkey_cat = {
         icon = SWI_consolidate_council_power
 
         activation = {
-            always = no
+            has_idea = ZKR_vengeance_achieved
+            NOT = { has_country_flag = ZKR_failed_pax_kurdistan }
         }
 
         available = {
-            NOT = { has_country_flag = ZKR_pax_kurdistan_survives }
+            has_country_flag = ZKR_pax_kurdistan_survives
         }
 
-        is_good = yes
+        is_good = no
 
-        days_mission_timeout = 730
+        days_mission_timeout = 365
 
         timeout_effect = {
-            
+            add_political_power = -125
+            add_stability = -0.15
+            add_war_support = -0.15
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            country_event = ZKR_pax_events.1
+            custom_effect_tooltip = ZKR_turkish_rebellion_mission_tt
+            set_country_flag = ZKR_failed_pax_kurdistan
         }
     }
-
-    # mission thingy that increases resistance and can trigger the "bad end" where Turkey breaks free and either starts another war against Kurdistan or just exists independently
-    # to avoid, finish pax kurdistan
-    # you get like 2 years to do it
 
     # PLAY PAX CRYSALIS
 
@@ -2828,13 +3050,13 @@ ZKR_syrian_intervention_cat = {
         cost = 25
 
         available = {
+            has_war = no
             is_subject = no
             ZKR_can_intervene_in_syria = no
             1103 = {
                 controller = {
                     ZKR_is_syrian_nation = yes
                     controls_state = 1115
-                    NOT = { has_war_with = ROOT }
                 }
             }
         }
@@ -3174,7 +3396,11 @@ ZKR_military_readiness_cat = {
         }
 
         ai_will_do = {
-            base = 5
+            base = 50
+        }
+
+        visible = {
+            is_ai = yes
         }
 
         available = {
@@ -3200,10 +3426,8 @@ ZKR_military_readiness_cat = {
 					regiments = {
 						irregular_infantry = { x = 0 y = 0 }
 						irregular_infantry = { x = 0 y = 1 }
-						irregular_infantry = { x = 0 y = 2 }
 						irregular_infantry = { x = 1 y = 0 }
 						irregular_infantry = { x = 1 y = 1 }
-						irregular_infantry = { x = 1 y = 2 }
 					}
 					support = {
 						recon = { x = 0 y = 0 }
@@ -3218,7 +3442,7 @@ ZKR_military_readiness_cat = {
                 create_unit = {
                     division = "name = \"Guerilla Brigade\" division_template = \"Guerilla Brigade\" start_experience_factor = 0.2"
                     owner = ROOT
-                    count = 2
+                    count = 3
                 }
             }
         }
@@ -3465,6 +3689,407 @@ ZKR_military_readiness_cat = {
 
         modifier = {
             air_cas_efficiency = 0.15
+        }
+    }
+
+}
+
+ZKR_ZZZ_expeditions = {
+
+    ZKR_launch_expedition = {
+
+        icon = generic_reorganize_irregulars
+
+		cost = 25
+
+        ai_will_do = {
+            base = 1000
+            modifier = {
+                factor = 0.01
+                has_war = yes
+            }
+        }
+
+		highlight_states = { 
+			highlight_state_targets = {
+				state = FROM
+			}
+		}
+
+		available = {
+			FROM = {
+				is_owned_by = ZZZ
+                any_neighbor_state = {
+                    is_owned_and_controlled_by = ROOT
+                }
+			}
+		}
+
+        visible = {
+            FROM = {
+                any_neighbor_state = {
+                    is_owned_and_controlled_by = ROOT
+                }
+            }
+        }
+
+		ai_will_do = {
+			base = 100
+		}
+
+		cancel_trigger = {
+			FROM = { NOT = { is_owned_by = ZZZ } }
+		}
+
+
+		targets_dynamic = yes
+
+		state_target = yes
+
+		#on_map_mode = map_only  
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = ZZZ
+                ZKR_is_middle_eastern_state = yes
+			}
+		}
+
+		days_remove = 35
+
+        modifier = {
+            army_org_regain = -0.05
+        }
+
+        complete_effect = {
+            FROM = { set_demilitarized_zone = yes }
+        }
+
+		remove_effect = {
+			FROM = {
+                set_demilitarized_zone = no
+                transfer_state_to = ROOT
+            }
+		}
+
+        cancel_effect = {
+            FROM = {
+                set_demilitarized_zone = no
+            }
+        }
+
+    }
+
+}
+
+ZKR_bop_decision_cat = {
+
+    ZKR_keep_opposition_in_line = {
+
+        icon = SWI_dismiss_council
+
+        cost = 25
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range < ZKR_authority_low_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 50
+
+        complete_effect = {
+            add_power_balance_value = {
+                id = ZKR_authority_coercion_bop
+                value = -0.05
+                tooltip_side = ZKR_coercion_bop_side
+            }
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        remove_effect = {
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_backroom_deals_with_industrialists = {
+
+        icon = generic_factory
+
+        cost = 80
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range < ZKR_coercion_medium_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 90
+        
+        complete_effect = {
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            industrial_capacity_factory = 0.1
+            industrial_capacity_dockyard = 0.1
+        }
+
+        remove_effect = {
+            add_stability = -0.05
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_subvert_constitutional_checks = {
+
+        icon = generic_break_treaty
+
+        cost = 80
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range < ZKR_coercion_medium_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 90
+
+        complete_effect = {
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        modifier = {
+            political_power_gain = 0.2
+        }
+
+        remove_effect = {
+            add_stability = -0.05
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_utilise_gendarmerie = {
+
+        icon = eng_support_imperialist_coup
+
+        cost = 50
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range < ZKR_coercion_medium_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 70
+
+        complete_effect = {
+            add_power_balance_value = {
+                id = ZKR_authority_coercion_bop
+                value = 0.15
+                tooltip_side = ZKR_authority_bop_side
+            }
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        modifier = {
+            army_org_factor = -0.08
+            required_garrison_factor = 0.1
+        }
+
+        remove_effect = {
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_appeal_to_common_law = {
+
+        icon = eng_trade_unions_demand
+
+        cost = 25
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range > ZKR_coercion_low_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 50
+
+        complete_effect = {
+            add_power_balance_value = {
+                id = ZKR_authority_coercion_bop
+                value = 0.05
+                tooltip_side = ZKR_authority_bop_side
+            }
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        remove_effect = {
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_increase_public_spending = {
+
+        icon = generic_construction
+
+        cost = 80
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range > ZKR_authority_medium_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 90
+
+        complete_effect = {
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            production_speed_buildings_factor = 0.15
+        }
+
+        remove_effect = {
+            add_popularity = { ideology = neutrality popularity = -0.05 }
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_assure_the_people = {
+
+        icon = generic_political_address
+
+        cost = 80
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range > ZKR_authority_medium_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 90
+
+        complete_effect = {
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        modifier = {
+            political_power_gain = 0.2
+        }
+
+        remove_effect = {
+            add_popularity = { ideology = neutrality popularity = -0.05 }
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_utilise_royal_prerogative = {
+
+        icon = generic_monarchy
+
+        cost = 50
+
+        available = {
+            is_power_balance_in_range = {
+                id = ZKR_authority_coercion_bop
+                range > ZKR_authority_medium_control_range
+            }
+            NOT = { has_country_flag = ZKR_bop_decision_active }
+        }
+
+        days_remove = 70
+
+        complete_effect = {
+            add_power_balance_value = {
+                id = ZKR_authority_coercion_bop
+                value = -0.15
+                tooltip_side = ZKR_coercion_bop_side
+            }
+            set_country_flag = ZKR_bop_decision_active
+        }
+
+        modifier = {
+            consumer_goods_factor = 0.1
+        }
+
+        remove_effect = {
+            clr_country_flag = ZKR_bop_decision_active
+        }
+
+    }
+
+    ZKR_royal_court_debates = {
+
+        icon = generic_political_discourse
+
+        activation = {
+            has_power_balance = {
+                id = ZKR_authority_coercion_bop
+            }
+        }
+
+        available = {
+            NOT = {
+                has_power_balance = {
+                    id = ZKR_authority_coercion_bop
+                }
+            }
+        }
+
+        is_good = yes
+
+        days_mission_timeout = 50
+
+        timeout_effect = {
+            random_list = {
+                33 = {
+                    add_political_power = -25
+                }
+                33 = {
+                    add_power_balance_value = {
+                        id = ZKR_authority_coercion_bop
+                        value = -0.05
+                        tooltip_side = ZKR_coercion_bop_side
+                    }
+                }
+                33 = {
+                    add_power_balance_value = {
+                        id = ZKR_authority_coercion_bop
+                        value = 0.05
+                        tooltip_side = ZKR_authority_bop_side
+                    }
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            activate_mission = ZKR_royal_court_debates
         }
     }
 
