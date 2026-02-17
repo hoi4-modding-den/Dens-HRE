@@ -8,15 +8,15 @@ focus_tree = {
 
 	reset_on_civilwar = no
 	
-	initial_show_position = { x = 5 y = 0 }
+	initial_show_position = { x = 3 y = 0 }
 	
-	continuous_focus_position = { x = 2500 y = 1000 }
+	continuous_focus_position = { x = 100 y = 1000 }
 
 	focus = {
 		id = ZAA_sailor_state
-		icon = GFX_goal_generic_amphibious_assault
+		icon = GFX_goal_generic_build_navy
 		cost = 2
-		x = 15
+		x = 14
 		y = 0
 
 		completion_reward = { 
@@ -31,7 +31,43 @@ focus_tree = {
 		prerequisite = { focus = ZAA_sailor_state }
 		relative_position_id = ZAA_sailor_state
 		mutually_exclusive = { focus = ZAA_strengthen_the_administration }
-		x = -2
+		x = -3
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_greed_is_good
+		icon = GFX_focus_PER_embrace_opulence
+		cost = 5
+		prerequisite = { 
+			focus = ZAA_military_first_policy
+			focus = ZAA_strengthen_the_administration
+		}
+		relative_position_id = ZAA_military_first_policy
+		mutually_exclusive = { focus = ZAA_clamp_down_on_corruption }
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_clamp_down_on_corruption
+		icon = GFX_focus_ARG_anti_corruption_policies
+		cost = 5
+		prerequisite = { 
+			focus = ZAA_military_first_policy
+			focus = ZAA_strengthen_the_administration
+		}
+		relative_position_id = ZAA_military_first_policy
+		mutually_exclusive = { focus = ZAA_greed_is_good }
+		x = 4
 		y = 1
 		
 		completion_reward = {
@@ -89,7 +125,7 @@ focus_tree = {
 		prerequisite = { focus = ZAA_sailor_state }
 		relative_position_id = ZAA_sailor_state
 		mutually_exclusive = { focus = ZAA_military_first_policy }
-		x = 2
+		x = 3
 		y = 1
 		
 		completion_reward = {
@@ -149,7 +185,7 @@ focus_tree = {
 			focus = ZAA_strengthen_the_administration
 		}
 		relative_position_id = ZAA_strengthen_the_administration
-		x = -2
+		x = -3
 		y = 2
 		
 		completion_reward = {
@@ -169,7 +205,154 @@ focus_tree = {
 			focus = ZAA_fuel_the_war_machine 
 		}
 		relative_position_id = ZAA_bread_and_circuses
-		x = -3
+		x = -4
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_demand_aqaba
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 5
+		prerequisite = { focus = ZAA_first_test_of_strength }
+		relative_position_id = ZAA_first_test_of_strength
+		mutually_exclusive = { focus = ZAA_a_brotherly_deal }
+		x = -1
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_a_brotherly_deal
+		icon = GFX_focus_ZAA_jordan_deal
+		cost = 5
+		prerequisite = { focus = ZAA_first_test_of_strength }
+		relative_position_id = ZAA_first_test_of_strength
+		mutually_exclusive = { focus = ZAA_demand_aqaba }
+		x = 1
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_march_southwards
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		prerequisite = { 
+			focus = ZAA_a_brotherly_deal 
+			focus = ZAA_demand_aqaba
+		}
+		relative_position_id = ZAA_a_brotherly_deal
+		x = -1
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_united_by_faith
+		icon = GFX_focus_TUR_loosen_the_laws_on_secularism
+		cost = 5
+		prerequisite = { focus = ZAA_march_southwards }
+		relative_position_id = ZAA_march_southwards
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			#enable decisions to integrate conquered lands
+		}
+	}
+	
+	focus = {
+		id = ZAA_lessons_of_war
+		icon = GFX_goal_generic_army_doctrines
+		cost = 5
+		prerequisite = { focus = ZAA_march_southwards }
+		#prerequisite = { focus = ZAA_reorganize_the_armed_forces }
+		relative_position_id = ZAA_march_southwards
+		x = -2
+		y = 1
+		
+		completion_reward = {
+			#enable decisions to integrate conquered lands
+		}
+	}
+	
+	focus = {
+		id = ZAA_secure_the_palestinian_coastline
+		icon = GFX_goal_generic_more_territorial_claims
+		cost = 5
+		prerequisite = { focus = ZAA_march_southwards }
+		relative_position_id = ZAA_march_southwards
+		x = 1
+		y = 2
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_invade_the_suez
+		icon = GFX_focus_generic_the_suez
+		cost = 5
+		prerequisite = { focus = ZAA_march_southwards }
+		relative_position_id = ZAA_march_southwards
+		x = -1
+		y = 2
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_masters_of_the_waves
+		icon = GFX_focus_SMB_blue_water_fleet
+		cost = 5
+		prerequisite = { focus = ZAA_invade_the_suez }
+		prerequisite = { focus = ZAA_secure_the_palestinian_coastline }
+		relative_position_id = ZAA_invade_the_suez
+		x = 1
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_conquer_the_holy_land
+		icon = GFX_focus_IRQ_demand_palestine
+		cost = 5
+		prerequisite = { focus = ZAA_masters_of_the_waves }
+		relative_position_id = ZAA_masters_of_the_waves
+		x = 2
+		y = 1
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_subjugate_cyprus
+		icon = GFX_focus_generic_attack_cyprus
+		cost = 5
+		prerequisite = { focus = ZAA_masters_of_the_waves }
+		relative_position_id = ZAA_masters_of_the_waves
+		x = -2
 		y = 1
 		
 		completion_reward = {
@@ -179,10 +362,452 @@ focus_tree = {
 	
 	focus = {
 		id = ZAA_develop_the_shipbuilding_industry
-		icon = GFX_focus_POL_develop_polish_shipbuilding #GFX_focus_generic_refit_civilian_ships
-		cost = 2
-		x = 3
+		icon = GFX_focus_POL_develop_polish_shipbuilding #GFX_focus_generic_refit_civilian_ships GFX_goal_generic_construct_naval_dockyard GFX_goal_sea_navy
+		cost = 5
+		x = 0
 		y = 0
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_expand_the_safaga_shipyard
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 5
+		relative_position_id = ZAA_develop_the_shipbuilding_industry
+		prerequisite = { focus = ZAA_develop_the_shipbuilding_industry }
+		mutually_exclusive = { focus = ZAA_the_two_shore_strategy }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_the_two_shore_strategy
+		icon = GFX_goal_generic_occupy_states_coastal
+		cost = 5
+		relative_position_id = ZAA_develop_the_shipbuilding_industry
+		prerequisite = { focus = ZAA_develop_the_shipbuilding_industry }
+		mutually_exclusive = { focus = ZAA_expand_the_safaga_shipyard }
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_doctrinal_developments
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 5
+		relative_position_id = ZAA_the_two_shore_strategy
+		prerequisite = { 
+			focus = ZAA_expand_the_safaga_shipyard 
+			focus = ZAA_the_two_shore_strategy
+		}
+		x = 2
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_all_guns_blazing
+		icon = GFX_focus_generic_battleship_guns
+		cost = 5
+		relative_position_id = ZAA_doctrinal_developments
+		prerequisite = { focus = ZAA_doctrinal_developments }
+		mutually_exclusive = { focus = ZAA_piranhas_of_the_red_sea }
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_piranhas_of_the_red_sea
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 5
+		relative_position_id = ZAA_doctrinal_developments
+		prerequisite = { focus = ZAA_doctrinal_developments }
+		mutually_exclusive = { focus = ZAA_all_guns_blazing }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_flying_torpedoes #hook this up to an aircraft-related focus from the industry tree
+		icon = GFX_goal_generic_air_naval_bomber
+		cost = 5
+		relative_position_id = ZAA_piranhas_of_the_red_sea
+		prerequisite = { focus = ZAA_piranhas_of_the_red_sea }
+		prerequisite = { focus = ZAA_kickstart_the_aircraft_industry }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_honour_the_legacy_of_the_donanmasi
+		icon = GFX_focus_TUR_turanist_ambition
+		cost = 5
+		relative_position_id = ZAA_all_guns_blazing
+		prerequisite = { focus = ZAA_all_guns_blazing }
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			#fleet in being bonuses
+		}
+	}
+	
+	focus = {
+		id = ZAA_modernize_the_marine_force
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 5
+		relative_position_id = ZAA_piranhas_of_the_red_sea
+		prerequisite = { 
+			focus = ZAA_piranhas_of_the_red_sea 
+			focus = ZAA_all_guns_blazing
+		}
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_dominate_the_red_sea
+		icon = GFX_focus_generic_trade_interdiction
+		cost = 5
+		relative_position_id = ZAA_modernize_the_marine_force
+		prerequisite = { focus = ZAA_modernize_the_marine_force }
+		x = 0
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_naval_engineering
+		icon = GFX_focus_generic_navy_research_bonus
+		cost = 5
+		relative_position_id = ZAA_dominate_the_red_sea
+		prerequisite = { focus = ZAA_dominate_the_red_sea }
+		x = 0
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_fortify_aden
+		icon = GFX_goal_generic_fortify_city
+		cost = 5
+		relative_position_id = ZAA_dominate_the_red_sea
+		prerequisite = { focus = ZAA_dominate_the_red_sea }
+		x = 2
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_defend_the_canal
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		relative_position_id = ZAA_dominate_the_red_sea
+		prerequisite = { focus = ZAA_dominate_the_red_sea }
+		x = -2
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_reorganize_the_armed_forces
+		icon = GFX_focus_generic_military_mission
+		cost = 5
+		relative_position_id = ZAA_modernize_the_marine_force
+		prerequisite = { focus = ZAA_modernize_the_marine_force }
+		prerequisite = { focus = ZAA_first_test_of_strength }
+		x = 5
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_modernize_the_ottoman_mauser
+		icon = GFX_goal_generic_small_arms
+		cost = 5
+		relative_position_id = ZAA_reorganize_the_armed_forces
+		prerequisite = { focus = ZAA_reorganize_the_armed_forces }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_artillery_effort
+		icon = GFX_goal_generic_army_artillery2
+		cost = 5
+		relative_position_id = ZAA_reorganize_the_armed_forces
+		prerequisite = { focus = ZAA_reorganize_the_armed_forces }
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_utilize_supprot_companies
+		icon = GFX_focus_GER_afrikakorps
+		cost = 5
+		relative_position_id = ZAA_modernize_the_ottoman_mauser
+		prerequisite = { focus = ZAA_modernize_the_ottoman_mauser }
+		prerequisite = { focus = ZAA_artillery_effort }
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_invest_into_domestic_military_development
+		icon = GFX_focus_PER_construct_air_defenses
+		cost = 5
+		relative_position_id = ZAA_utilize_supprot_companies
+		prerequisite = { focus = ZAA_utilize_supprot_companies }
+		x = 2
+		y = 1
+
+		completion_reward = { 
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = ZAA_tank_experiments
+		icon = GFX_focus_generic_tank_assembly
+		cost = 5
+		relative_position_id = ZAA_utilize_supprot_companies
+		prerequisite = { focus = ZAA_utilize_supprot_companies }
+		x = -2
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_kickstart_the_heavy_industry
+		icon = GFX_focus_generic_industrial_experts
+		cost = 5
+		relative_position_id = ZAA_expand_the_safaga_shipyard
+		prerequisite = { 
+			focus = ZAA_expand_the_safaga_shipyard 
+			focus = ZAA_the_two_shore_strategy
+		}
+		x = -3
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_modern_production_lines
+		icon = GFX_goal_generic_production2
+		cost = 5
+		relative_position_id = ZAA_kickstart_the_heavy_industry
+		prerequisite = { focus = ZAA_kickstart_the_heavy_industry }
+		x = 0
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_national_railways
+		icon = GFX_focus_generic_railroad
+		cost = 5
+		relative_position_id = ZAA_modern_production_lines
+		prerequisite = { focus = ZAA_modern_production_lines }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_the_gold_mines_of_nubia
+		icon = GFX_focus_generic_expand_gold_mining
+		cost = 5
+		relative_position_id = ZAA_modern_production_lines
+		prerequisite = { focus = ZAA_modern_production_lines }
+		x = 1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_long_term_industrial_planning
+		icon = GFX_focus_CHI_planned_economy
+		cost = 5
+		relative_position_id = ZAA_the_gold_mines_of_nubia
+		prerequisite = { focus = ZAA_the_gold_mines_of_nubia }
+		prerequisite = { focus = ZAA_national_railways }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_hurghada_industrial_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		relative_position_id = ZAA_long_term_industrial_planning
+		prerequisite = { focus = ZAA_long_term_industrial_planning }
+		prerequisite = { focus = ZAA_modernize_the_tabuk_armoury }
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_establish_the_defense_industry
+		icon = GFX_focus_generic_military_industry
+		cost = 5
+		relative_position_id = ZAA_kickstart_the_heavy_industry
+		prerequisite = { focus = ZAA_kickstart_the_heavy_industry }
+		x = -3
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_munitions_factories
+		icon = GFX_focus_CONGO_copper_cartridges
+		cost = 5
+		relative_position_id = ZAA_establish_the_defense_industry
+		prerequisite = { focus = ZAA_establish_the_defense_industry }
+		x = -1
+		y = 2
+		
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_modernize_the_tabuk_armoury
+		icon = GFX_focus_generic_reorient_production
+		cost = 5
+		relative_position_id = ZAA_establish_the_defense_industry
+		prerequisite = { focus = ZAA_establish_the_defense_industry }
+		x = 1
+		y = 2
+		
+		completion_reward = { 
+			
+		}
+	}
+	
+	
+	focus = {
+		id = ZAA_kickstart_the_aircraft_industry
+		icon = GFX_goal_generic_build_airforce
+		cost = 5
+		relative_position_id = ZAA_kickstart_the_heavy_industry
+		prerequisite = { focus = ZAA_kickstart_the_heavy_industry }
+		x = 3
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_copy_foreign_fighter_designs
+		icon = GFX_focus_generic_copy_plane_designs
+		cost = 5
+		relative_position_id = ZAA_kickstart_the_aircraft_industry
+		prerequisite = { focus = ZAA_kickstart_the_aircraft_industry }
+		x = 0
+		y = 1
+
+		completion_reward = { 
+			
+		}
+	}
+	
+	focus = {
+		id = ZAA_death_from_above
+		icon = GFX_focus_generic_cas_aircraft
+		cost = 5
+		relative_position_id = ZAA_copy_foreign_fighter_designs
+		prerequisite = { 
+			focus = ZAA_copy_foreign_fighter_designs
+			focus = ZAA_flying_torpedoes 
+		}
+		x = 1
+		y = 1
 
 		completion_reward = { 
 			

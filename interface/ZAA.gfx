@@ -84,5 +84,42 @@ spriteTypes = {
 		name = "GFX_ZAA_gw_artillery_medium"
 		texturefile = "gfx/ZAA/equipment/KruppHowitzer.dds"
 	}
+	
+	SpriteType = {
+		name = "GFX_focus_ZAA_jordan_deal_shine"
+		texturefile = "gfx/ZAA/ZAA_jordan_al_bahr_deal.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/ZAA/ZAA_jordan_al_bahr_deal.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/ZAA/ZAA_jordan_al_bahr_deal.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_ZAA_jordan_deal"
+		texturefile = "gfx/ZAA/ZAA_jordan_al_bahr_deal.dds"
+	}
 
 }
