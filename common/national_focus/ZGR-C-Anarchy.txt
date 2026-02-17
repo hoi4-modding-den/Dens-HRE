@@ -403,8 +403,8 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = {
 				var = anarchy_progress_var
-				value = 10
-				tooltip = add_10_anarchy_progress_var
+				value = 5
+				tooltip = add_5_anarchy_progress_var
 			}
 
 			division_template = {
@@ -476,8 +476,8 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = {
 				var = anarchy_progress_var
-				value = 10
-				tooltip = add_10_anarchy_progress_var
+				value = 5
+				tooltip = add_5_anarchy_progress_var
 			}			
 		}				
 	}
@@ -713,7 +713,247 @@ focus_tree = {
 			}			
 		}			
 		completion_reward = {
-			
+			set_cosmetic_tag = ZGR_Finish_Anarchism
+			set_country_leader_ideology = ZGR_real_Anarchism
+			set_party_name = {
+				ideology = communism
+				long_name = ZGR_REAL_ANARCHY_NAME_LONG
+				name = ZGR_REAL_ANARCHY_NAME
+			}
 		}			
 	}
+
+
+	#Finaly soemthing Fun
+	focus = {
+		id = ZGR_anarchy_warpath
+		icon = GFX_focus_generic_red_flags
+		x = 20
+		y = 1
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		available = {
+			check_variable = { anarchy_progress_urban_var > 99 } 
+			custom_trigger_tooltip = {
+				tooltip = ZGR_ANARCHY_HAS_ENOUGH_RURAL_TOOL
+				check_variable = { anarchy_progress_urban_var > 99 }	
+			}
+			check_variable = { anarchy_progress_var > 99 } 
+			custom_trigger_tooltip = {
+				tooltip = ZGR_ANARCHY_HAS_ENOUGH_RURAL_TOOL
+				check_variable = { anarchy_progress_var > 99 } 			
+			}				
+		}			
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ZGR
+					is_fully_controlled_by = ZGR
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}			
+		}			
+	}
+	focus = {
+		id = ZGR_anarchy_warpath_spy
+		icon = GFX_focus_RAJ_red_in_the_shadows
+		x = 21
+		y = 2
+		cost = 5
+		prerequisite = { focus = ZGR_anarchy_warpath }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		available = {			
+		}			
+		completion_reward = {
+		
+		}			
+	}
+	focus = {
+		id = ZGR_anarchy_warpath_support
+		icon = GFX_goal_generic_propaganda
+		x = 19
+		y = 2
+		cost = 5
+		prerequisite = { focus = ZGR_anarchy_warpath }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		available = {			
+		}			
+		completion_reward = {
+		
+		}
+	}
+	focus = {
+		id = ZGR_anarchy_warpath_liberation_CYP
+		icon = GFX_focus_ITA_liberation_or_death
+		x = 20
+		y = 3
+		cost = 5
+		prerequisite = { focus = ZGR_anarchy_warpath_spy }
+		prerequisite = { focus = ZGR_anarchy_warpath_support }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass_if_unavailable = yes
+		will_lead_to_war_with = ZCY
+		available = {
+
+		}			
+		completion_reward = {
+			1121 = {
+				controller = { 
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = take_state_focus
+							generator = { 1121 183 }
+						}
+					}
+				}				
+			}
+		}
+
+	}
+	focus = {
+		id = ZGR_anarchy_warpath_liberation_Bomb_CYP
+		icon = GFX_focus_ITA_liberation_or_death
+		x = 20
+		y = 4
+		cost = 4
+		prerequisite = { focus = ZGR_anarchy_warpath_liberation_CYP }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass_if_unavailable = yes
+		available = {
+			has_equipment = {
+				infantry_equipment > 15
+			}
+		}			
+		completion_reward = {
+			ZCY = {
+				add_timed_idea = {
+					idea = ZGR_we_bob_cyprus
+					days = 70
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZGR_anarchy_pan_anarchist_state
+		icon = GFX_SOV_demand_balkan_submission_ccp_2d_sov_compatibility
+		x = 20
+		y = 5
+		cost = 4
+		prerequisite = { focus = ZGR_anarchy_warpath_liberation_Bomb_CYP }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass_if_unavailable = yes
+		available = {
+
+		}			
+		completion_reward = {
+			custom_effect_tooltip = ZGR_ANARCHY_CORE_ALL
+			hidden_effect = {
+				set_cosmetic_tag = ZGR_Big_Anarchy
+				add_state_core = 345
+				add_state_core = 348
+				add_state_core = 344
+				add_state_core = 349
+				add_state_core = 355
+				add_state_core = 356
+				add_state_core = 347
+				add_state_core = 797
+				add_state_core = 340
+				add_state_core = 798
+				add_state_core = 49
+				add_state_core = 346
+				add_state_core = 1122
+				add_state_core = 343
+				add_state_core = 1123
+				add_state_core = 1102
+				add_state_core = 677
+				add_state_core = 799
+				add_state_core = 680
+				add_state_core = 1115
+				add_state_core = 1103
+				add_state_core = 553
+				add_state_core = 1116
+				add_state_core = 350
+				add_state_core = 352
+				add_state_core = 800
+				add_state_core = 353
+				add_state_core = 1113
+				add_state_core = 354
+				add_state_core = 230
+				add_state_core = 1118
+				add_state_core = 1119
+				add_state_core = 1114
+				add_state_core = 229
+				add_state_core = 1112
+				add_state_core = 420
+				add_state_core = 1000
+				add_state_core = 419
+				add_state_core = 1001
+				add_state_core = 1117
+				add_state_core = 231
+				add_state_core = 1120
+				add_state_core = 183
+				add_state_core = 1121
+				add_state_core = 826
+				add_state_core = 233				
+			}
+		}
+	}
+	focus = {
+		id = ZGR_anarchy_pan_anarchist_state_get_cores
+		icon = GFX_focus_up_joan_of_arc
+		x = 19
+		y = 6
+		cost = 15
+		prerequisite = { focus = ZGR_anarchy_pan_anarchist_state }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass_if_unavailable = yes
+		available = {
+
+		}			
+		completion_reward = {
+				add_threat = 12
+				ZGR = {
+					every_other_country = {
+						limit = {
+							any_owned_state = {
+								is_core_of = ZGR
+							}
+						}
+						PREV = {
+							create_wargoal = {
+								type = take_core_state
+								target = PREV
+							}
+						}
+					}
+				}
+		}
+	}
+	focus = {
+		id = ZGR_anarchy_pan_anarchist_state_get_cores_more
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 21
+		y = 6
+		cost = 5
+		prerequisite = { focus = ZGR_anarchy_pan_anarchist_state }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass_if_unavailable = yes
+		available = {
+
+		}			
+		completion_reward = {
+			add_ideas = ZGR_Liberation_All
+		}
+	}		
 }
