@@ -32,6 +32,17 @@ on_daily_ZGR = {
                 }
                 add_to_variable = { var = civil_war value = 0.1 }
             }
+
+            if = {
+                limit = {
+                    check_variable = { civil_war > 100 }
+                }
+                clamp_variable = {
+    			var = civil_war
+    			min = 0
+    			max = 100
+		}
+            }
         }
 }
 
