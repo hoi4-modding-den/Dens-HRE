@@ -3,7 +3,66 @@ on_actions = {
 		effect = {
 			ZEG = {
 				country_event = ZEG_natural_event.1
-				
+			}
+		}
+	}
+	on_new_term_election = {
+		effect = {
+			if = {
+				limit = { tag = ZEG date < 1937.01.01 }
+				country_event = ZEG_natural_event.6
+			}
+		}
+	}
+	on_ruling_party_change_immediate = {
+		effect = {
+			if = {
+				limit = { 
+					tag = ZEG 
+						ZEG = {
+							has_government = neutrality
+							has_country_leader =  { character = ZEG_hassan_al_banna}
+						}
+				}
+				ZEG = { set_cosmetic_tag = ZEG_islamic_state }
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					tag = ZEG 
+						ZEG = {
+							has_cosmetic_tag = ZEG_islamic_state
+							NOT = {
+								has_government = neutrality
+							}
+						}
+				}
+				ZEG = { drop_cosmetic_tag = yes }
+			}
+		}
+	}
+	on_puppet = {
+		effect = {
+			if = {
+				limit = { 
+					tag = ZEG
+				}
+				ZEG = {
+					drop_cosmetic_tag = yes
+				}
+			}
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			if = {
+				limit = { 
+					tag = ZEG
+				}
+				ZEG = {
+					drop_cosmetic_tag = yes
+				}
 			}
 		}
 	}

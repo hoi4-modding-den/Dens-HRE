@@ -1,7 +1,7 @@
 ﻿l_english:
  #Country/Party Names#
- ZEG_fascism:0 "State of Egypt"
- ZEG_fascism_DEF:0 "Dawlat Misr"
+ ZEG_fascism:0 "Sultanate of Egypt"
+ ZEG_fascism_DEF:0 "Al-Saltana Al-Misrīyya"
  ZEG_fascism_ADJ:0 "Egyptian"
  ZEG_fascism_party: "Young Egypt Party"
  ZEG_fascism_party_long: "Masr el-Fatah"
@@ -15,6 +15,8 @@
  ZEG_neutrality_ADJ:0 "Egyptian"
  ZEG_neutrality_party: "Union Party"
  ZEG_neutrality_party_long: "Hizb al-Ittihad"
+ ZEG_muslim_brotherhood:0 "Muslim Brotherhood"
+ ZEG_muslim_brotherhood_long:0 "Jama'at al-Ikhwan al-Muslimīn"
  ZEG_communism:0 "Egyptian People's Republic"
  ZEG_communism_DEF:0 "al-Jumhūriyya al-'Arabīyya al-Misr al-Sha'bīyya al-Ishtirākīyya"
  ZEG_communism_ADJ:0 "Egyptian"
@@ -35,6 +37,10 @@
  ZEG_arab_republic_communism_DEF:0 "al-Jumhūriyya al-'Arabīyya al-Sha'bīyya al-Ishtirākīyya al-'Uzmá"
  ZEG_arab_republic_ADJ:0 "Arab"
  ZEG_arab_republic_communism_ADJ:0 "Arab" 
+ ZEG_fascist_state:0 "State of Egypt"
+ ZEG_fascist_state_DEF:0 "Dawlat Misr"
+ ZEG_islamic_state:0 "Brotherhood of Egypt"
+ ZEG_islamic_state_DEF:0 "al-Ikhwan al-Muslimin al-Misr" 
  
  #Ideas#
  ZEG_khedivate_idea:0 "Post-Ottoman Turmoil"
@@ -46,14 +52,22 @@
  ZEG_disorganized_military_desc:0 "The Anglo-Turkish wars has left our armed forces completely reliant on outside military assistance. With such assistance no longer available, we are barely capable of projecting authority within our own borders, let alone outside them."
  ZEG_great_depression_effects:0 "Economic Depression"
  ZEG_great_depression_effects_desc:0 "Our ties to foreign industry has backfired on us. People struggle to find work while our government continues to subsidize foreign buisnesses that have more interest in extracting profits from us instead of developing our economy. If the situation does not improve, we may find our government removed by force, either from the militias in the streets, or the army themselves."
+ ZEG_victory_over_the_masses_idea:0 "Victory over the Masses"
+ ZXX_intense_local_resistance:0 "Intense Local Resistance"
  
- #Misc.#
+ #Tooltips/Misc.#
  ZEG_SUEZ_SNAKE_DESC:0 "The Khedivate of Egypt has been occupied by foreign powers for centuries, whether it be Turkish, English, or French. However, the gradual collapse of the Ottoman Empire in 1930 has left Egypt alone in a state of disarray. Without Turkish or British military support, the Egyptian army has struggled to maintain our territorial integrity. Protests have broken out in Cairo, demanding a return to constitutional governance. Will Egypt shake off the yoke of stagnation, or will it fall under the weight of its own contradictions?"
  ZEG_artillery_corps:0 "Egyptian Artillery Corps"
  ZEG_naval_organization:0 "Alexandria Shipyard"
  ZEG_naval_organization_tooltip:0 "Unlocks Military Industrial Organization §YAlexandria Shipyard§!"
  ZEG_monarchist_advisor:0 "Aristocratic Jurist"
  ZEG_anti-radical_monarchist:0 "Paternalistic Conservative"
+ ZEG_end_khedivate:0 "We will no longer be known as the §YKhedivate of Egypt§!."
+ ZEG_election_control_neutrality_tooltip:0 "The §gMonarchists §!gain more influence in the §YElection§!."
+ ZEG_election_control_democratic_tooltip:0 "The §BLiberals §!gain more influence in the §YElection§!."
+ ZEG_election_control_double_neutrality_tooltip:0 "The §gMonarchists §!gain §YSignificantly §!more influence in the §YElection§!."
+ ZEG_election_control_double_democratic_tooltip:0 "The §BLiberals §!gain §YSignificantly §!more influence in the §YElection§!."
+ ZEG_election_tooltip:0 "The §YElection §!of 1936 has been held."
  
  #Decisions#
  #Balance of Power#
@@ -69,15 +83,17 @@
  ZEG_fascist_high:0 "Extreme Green Shirt Influence"
  ZEG_fascist_total:0 "Total Green Shirt Control"
  ZEG_fascist_side:0 "Green Shirt Influence"
+ ZEG_communist_boost:0 "Covert Communist Funding"
+ ZEG_fascist_boost:0 "Covert Fascist Funding"
  
  #Characters#
  #for some reason base-game egypt just has the characters pre-made in the country history file, so I guess I don't have to worry about that, but I still have to figure out the advisors which yes I am actually adding them for this country jam.
  ZEG_aly_maher_pasha_name:0 "Aly Maher Pasha" 
  ZEG_ismail_sidky_name:0 "Ismail Sidky Pasha"
+ ZEG_hassan_al_banna_name:0 "Hassan al-Banna"
  
  
- 
- #Focuses#
+ ###Focuses###
  ZEG_vestigial_khedivate:0 "The Last Days of the Khedivate"
  ZEG_vestigial_khedivate_desc:0 "The Ottoman Empire, once the ''Eternal State'', has been reduced to a shadow of its former self. Our government has sought to weather the storm, waiting for the day that stability returns to the Empire. But that day has not come, and it increasingly seems that it never will. It seems that Egypt's fate lies in its own hands now, even if its ruling class is reluctant to recognize this."
  
@@ -88,7 +104,7 @@
  ZEG_election_rigging_desc:0 ""
  ZEG_honest_election:0 "Adhere to the Results"
  ZEG_honest_election_desc:0 ""
- ZEG_party_funding:0 "Secure Party Funds"
+ ZEG_party_funding:0 "The Question of Suffrage" #changed this kinda late tbh
  ZEG_party_funding_desc:0 ""
  ZEG_welfare_promises:0 "Promises of a Welfare System"
  ZEG_welfare_promises_desc:0 ""
@@ -100,6 +116,14 @@
  #alt-history path
  ZEG_destroy_democracy:0 "The End of Egyptian Democracy"
  ZEG_destroy_democracy_desc:0 ""
+ ZEG_target_socialists:0 "Target the Left"
+ ZEG_target_fascists:0 "Target the Right"
+ ZEG_agitate_the_blueshirts:0 "Agitate the Blueshirts"
+ ZEG_utilize_greenshirts:0 "Utilize the Greenshirts"
+ ZEG_street_clashes:0 "Foster Inter-Militia Conflict"
+ ZEG_army_connections:0 "Control the Army"
+ ZEG_victory_over_the_masses:0 "Victory of the Khedive"
+ ZEG_rise_of_the_radicals:0 "Destroy the Khedivate"
  
  #navy focuses
  ZEG_navy_start:0 "Restoration of the Egyptian Navy"
@@ -107,15 +131,54 @@
  ZEG_navy_harbors:0 "Construct Alexandria Shipyards"
  ZEG_navy_harbors_desc:0 ""
  
- 
+ ###End of Focuses###
  
  #Events#
  ZEG.NE_1.t:0 "Egypt at a Crossroads"
  ZEG.NE_1.d:0 "Following the 1919 revolution and the subsequent re-establishment of Ottoman overlordship over Egypt (with the exception of the Suez Canal), concessions were granted by the Turkish to appease the demands of the liberal-nationalist Delegation Party (Hizb al-Wafd). The most important of these demands was the establishment of a formal constitution for the Khedivate, which was implemented in 1923. This constitution greatly increased the powers of parliament, much to the annoyance of the previous Khedive, Fuad I, who would create and fund the Union Party (Hizb al-Ittihad) in 1925 to oppose the growth of the liberal and leftist parties. Despite this, the Delegation Party saw landslide victories in all elections in the 1920s, forcing the Khedive to dismiss parliament on multiple occasions in an effort to prevent liberal reforms. The collapse of the Ottoman Empire in 1930 would grant Fuad I the excuse he needed to suspend the constitution. \n\nLed primarily by the Delegation Party and its Blue Shirt militias, mass protests began to break out throughout Egypt. Fuad I, refusing to give in to ‘‘the wrath of the peasantry’’, declared martial law, and attempted to crack down on the protests. However, the armed forces grew opposed to both the Khedive and parliament, due to the failure of the government to handle the economic depression. The armed forces have since refused to obey the direct orders of the Khedive and, in the case of the navy, have outright rebelled against the Khedivate in the eastern deserts. The chaos would only worsen as an anarchist associated with the Egyptian Communist Party assassinated Faud I, with the inexperienced Farouk I being forced into an early and uneasy coronation. While many had expected the young Khedive would put an end to the protests, Farouk surprised the public by announcing in a public radio address that he would refuse to give in to ‘‘the unruly mob that has killed my father’’, and that order will be restored by any means necessary.\n\nDespite the aggressive posturing from the government, extremist militias continue to grow as they march through the streets unimpeded. In particular, the ultranationalist Young Egypt Party has seen explosive growth as a result of their anti-imperialist and pro-islamist views. Other movements, such as the Community Party and the Muslim Brotherhood, have also seen rapid growth from those disillusioned with parliament for its perceived support of foreign monopolies, in particular the Bechtel Corporation, which has sought to establish an American settler project in the western deserts. With tensions at an all time high, and militias clashing in the streets, the stalemate needs to be broken, before the Khedive loses what little control he has left."
  ZEG.NE_1.a:0 "Long live the Motherland!"
+ ZEG.NE_2.t:0 "Communists Orchestrate Coup"
+ ZEG.NE_2.d:0 "Our armed forces, seemingly fed up with the inability of our government to contain the protests, and at least partially as a result of our recruitment of lower-class officers, have staged a coup in Cairo. Soldiers have marched into the parliament building, and have declared the current government illegitimate. While many in our armed forces are still loyal to the Khedive, resisting the coup would certainly lead to civil war within our nation." 
+ ZEG.NE_2.a:0 "Welp, time to flee the country."
+ ZEG.NE_2.b:0 "We'd rather be dead than red."
+ ZEG.NE_3.t:0 "The March on Cairo"
+ ZEG.NE_3.d:0 "Fury within the capital has reached a boiling point. Led primarily by the Young Egypt Party and their Greenshirts, the protests have grown significantly as our police forces have begun to abandon their posts to join the protests. Sensing the moment of weakness, the Party has called on protestors to march on the capital. Tens of thousands gathered outside the parliament building, demanding an end to ‘‘foreign influence’’, with some calling for the abolition of the monarchy itself. Fearing for his safety, the Khedive has fled the capital to a more secure location. With Cairo seemingly falling out of our control, it seems we have no other choice but to accept their demands. "
+ ZEG.NE_3.a:0 "We have no other choice."
+ ZEG.NE_4.t:0 "The End of the Khedivate"
+ ZEG.NE_4.d:0 "The Young Egypt Party, now the official ruling party of Egypt, has been working overtime to consolidate their rule. Having set up a ruling coalition with the liberal nationalist Delegation Party, the Greenshirts have swiftly moved to place loyalists in charge of the branches of government. Several treaties with foreign powers have been annulled and voided, in particular the Nile–Sahara Logistics Accord with the [ZXX.GetName], which has been a sore spot for the nationalists. Most importantly, prime minister [ZEG.GetLeader] has declared that the era of Ottoman submission is over, and that Egypt is now a fully independent nation as the Sultanate of Egypt. While many expect that the declaration of a Sultanate is only a stop-gap measure until the Party has fully consolidated power, it does mean that the monarchists have been placated for the time being."
+ ZEG.NE_4.a:0 "We are a new Egypt, a Young Egypt!"
+ ZEG.NE_5.t:0 "The End of the Khedivate"
+ ZEG.NE_5.d:0 "In what is being called the Revolution of [GetYear], the Communists have risen from a minor party of only a thousand members in the 1920s, to the most dominant force in the nation. The Khedivate has been abolished, with Khedive Farouk having fled the country from Alexandria, to the Ottoman rump state in Anatolia. Without the monarchy, and with the backing of the military, the protests in the capital have mostly dissipated. The Young Egypt Party has moved underground, promising to end the ‘‘Judeo-Imperialist regime’’ by force, while the Delegation Party has demanded that we reinstate the old constitution and hold ‘‘fair’’ elections. While the Communist Party has made promises in the past to ‘‘put Egypt above socialism’’, only time will tell how Egyptian Socialism will develop."
+ ZEG.NE_5.a:0 "Death to Imperialism!"
+ ZEG.NE_6.t:0 "The Election of 1936"
+ ZEG.NE_6.d:0 "[ZEG.NE_6.d_scripted_loc]"
+ ZEG_event_1:0 "Due to the constraints imposed on the election, the Union Party has firmly won in the results. A combination of gerrymandering, political intimidation, and arrests for participating in protests, have resulted in the Delegation Party falling significantly in the results. While the other minor parties with the Delegation Party have enough seats in the parliament to prevent us from having a complete majority, we have enough of a majority to enforce our prerogative in the legislation. "
+ ZEG_event_2:0 "Following the liberal reforms that we have taken, the Delegation party has won a complete majority in the election, having won over 2/3rds of the seats in the Chamber of Deputies and the Senate. While the nobility still retains some level of control over the political landscape, this could mark a new path for Egypt as the paragon of democracy in the Arab world."
+ ZEG_event_3:0 "Despite the best efforts of the parties to secure the election, the results are indecisive at best. No party has come out with a majority, leaving the results of the election in the hands of the minor parties, like the Saadist Institutional Party, the Liberal Constitutional Party, and the National Party, which we will have to form a coalition government with if we want to govern. "
+ ZEG_event_4:0 "Bro just entering in events for no reason, smh. This doesn't even work if you haven't done any election focuses. \n\n- Carrera"
+ ZEG.NE_6.a:0 "I love democracy."
+ ZEG.NE_6.b:0 "We shall bring modernity to the east!"
+ ZEG.NE_6.c:0 "The Union Party forms the new government."
+ ZEG.NE_6.e:0 "The Delegation Party forms the new government."
+ ZEG.NE_6.f:0 "I don't car"
+ ZEG.NE_3.b:0 "We're not accepting demands from a bunch of college students in green coats."
  ZEG.FE_1.t:0 "The Demands of the Protests"
  ZEG.FE_1.d:0 "A new wave of protests has broken out in the major cities this January, primarily as result of prime minister Ismail Sidky Pasha’s recent statements justifying the Khedive’s continued suspension of constitutional rule. A rally of tens of thousands has erupted in Cairo, chanting ‘‘Down with Premier Sidky! We want the 1923 Constitution!’’ Already, ‘Green Shirt’ militias have capitalized on the anger, organizing a march in the streets and clashing with police forces, while the Delegation Party has made demands for the formation of a ‘‘National Front’’ against the monarchy.\n\nMost of our advisors admit that, unless we reinstate the 1923 constitution, the political violence within our country may very well spiral out of our control. While Farouk I has expressed displeasure at returning to constitutional governance, we still retain the ability to dissolve parliament should the powerful Delegation Party exceed our tolerance for democracy. The alternative may not work as well as the Khedive would hope..."
  ZEG.FE_1.a:0 "Restore the constitution and call for new elections."
  ZEG.FE_1.b:0 "Outlaw the militias, dismantle the protests."
+ ZEG.FE_2.t:0 "Full Suffrage for Egypt?"
+ ZEG.FE_2.d:0 "While both parties get their funding from their wealthy backers, the Delegation Party completely outnumbers the Union Party in terms of popular support. However, the constitution is unclear on the specifics on suffrage, with the Union Party having pushed for the continuation of a restricted suffrage, where only men who pass a threshold of literacy and tax payment can vote. Meanwhile, the Delegation Party has pushed for full male suffrage, with the implicit threat of restarting the protests if the people of Egypt are not able to vote. Without an Ottoman suzerain, the choice is ultimately up to us."
+ ZEG.FE_2.a:0 "It would be unfair to change the rules."
+ ZEG.FE_2.b:0 "We are a modern nation, expand male suffrage."
  ZEG_event_tooltip_1:0 "We will be led by the §BDelegation Party §!for a least a year after the election."
  ZEG_event_tooltip_2:0 "§RYou're only adding fuel to the flames...§!"
+ ZEG.DE_1.t:0 "Hostile Government in Control of Egypt"
+ ZEG.DE_1.d:0 "Our worst fears have come true, the government of Egypt has collapsed. Unable to subdue the anti-imperialist protests, the Khedive has been removed from power, and Egypt is now in the hands of the [ZEG.GetRulingParty]. The new government in Cairo has promised an end to the ‘‘foreign occupation of our lands’’, and is currently preparing for an aggressive expansion of their armed forces. It seems that unless the government of Egypt changes again, we are trapped in the Sahara."
+ ZEG.DE_1.a:0 "Cairo must be destroyed."
+ ZEG.DE_2.t:0 "Restoration of Relations with Egypt"
+ ZEG.DE_2.d:0 "It seems that a new government has taken over in Cairo, as the Egyptian government has taken on a reconciliatory approach to us. With a bit of pressure, Egypt has agreed to recognize the Nile–Sahara Logistics Accord with us once more."
+ ZEG.DE_2.a:0 "We're finally back on the world stage."
+ ZEG.DE_3.t:0 "Egypt Under Our Thumb"
+ ZEG.DE_3.d:0 "With some struggle, Egypt has come under our control. While we no longer have to worry about the Nile–Sahara Logistics Accord anymore, occupying the whole country might be a far greater logistics challenge than we could be reasonably expected to handle."
+ ZEG.DE_3.a:0 "Set up a puppet government in Egypt"
+ ZEG.DE_3.b:0 "Who cares what the Egyptians think?"

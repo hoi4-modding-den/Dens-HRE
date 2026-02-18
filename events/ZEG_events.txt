@@ -22,6 +22,360 @@ country_event = { #intro event
 		}
     }
 }
+country_event = { #communists take over
+    id = ZEG_natural_event.2
+    title = ZEG.NE_2.t
+    picture = GFX_report_event_ARG_coup_detat
+    desc = ZEG.NE_2.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.NE_2.a
+		ai_chance = {
+			base = 100
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		remove_power_balance = {
+			id = ZEG_collapse_balance
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+	hidden_effect = {
+			country_event = {
+				id = ZEG_natural_event.5
+				days = 7
+				random_hours = 12
+			}
+		}
+    }
+    
+	option = {
+        name = ZEG.NE_2.b
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.1
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = communism
+			capital = 1106
+			states = {
+				447 1105 1106 
+			}
+			army_ratio = 0.5
+			keep_all_characters = yes
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #fascists take over
+    id = ZEG_natural_event.3
+    title = ZEG.NE_3.t
+    picture = GFX_report_event_vaps_march
+    desc = ZEG.NE_3.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.NE_3.a
+		ai_chance = {
+			base = 100
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		remove_power_balance = {
+			id = ZEG_collapse_balance
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+	hidden_effect = {
+			country_event = {
+				id = ZEG_natural_event.4
+				days = 7
+				random_hours = 12
+			}
+		}
+    }
+	option = {
+        name = ZEG.NE_3.b
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.1
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = fascism
+			capital = 1106
+			states = {
+				447 1105 1106 
+			}
+			army_ratio = 0.5
+			keep_all_characters = yes
+		}
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #end of the khedivate (fascist)
+    id = ZEG_natural_event.4
+    title = ZEG.NE_4.t
+    picture = GFX_report_event_tur_politician_march
+    desc = ZEG.NE_4.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.NE_4.a
+		ai_chance = {
+			base = 100
+		}
+		remove_ideas = ZEG_khedivate_idea
+		complete_national_focus = ZEG_rise_of_the_radicals
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		ZEG = {
+			drop_cosmetic_tag = yes
+		}
+		custom_effect_tooltip = ZEG_end_khedivate
+		set_party_name = {
+			ideology = neutrality
+			long_name = ZEG_muslim_brotherhood_long
+			name = ZEG_muslim_brotherhood
+		}
+		retire_ideology_leader = neutrality
+		promote_character = {
+			character = ZEG_hassan_al_banna 
+			ideology = theocracy 
+		}
+		deactivate_advisor = ZEG_ismail_sidky_token
+	hidden_effect = {
+			ZXX = {
+				country_event = {
+					id = ZEG_diplo_event.1
+				}
+			}
+		}
+    }
+}
+country_event = { #end of the khedivate (communist)
+    id = ZEG_natural_event.5
+    title = ZEG.NE_5.t
+    picture = GFX_report_event_communists_in_riga
+    desc = ZEG.NE_5.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.NE_5.a
+		ai_chance = {
+			base = 100
+		}
+		remove_ideas = ZEG_khedivate_idea
+		complete_national_focus = ZEG_rise_of_the_radicals
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.1
+		}
+		ZEG = {
+			drop_cosmetic_tag = yes
+		}
+		custom_effect_tooltip = ZEG_end_khedivate
+		set_party_name = {
+			ideology = neutrality
+			long_name = ZEG_muslim_brotherhood_long
+			name = ZEG_muslim_brotherhood
+		}
+		retire_ideology_leader = neutrality
+		promote_character = {
+			character = ZEG_hassan_al_banna 
+			ideology = theocracy 
+		}
+		deactivate_advisor = ZEG_ismail_sidky_token
+	hidden_effect = {
+			ZXX = {
+				country_event = {
+					id = ZEG_diplo_event.1
+				}
+			}
+		}
+    }
+}
+country_event = { #election event
+    id = ZEG_natural_event.6
+    title = ZEG.NE_6.t
+    picture = GFX_report_event_election_vote
+    desc = {
+		text = ZEG_event_1
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control > 0
+                }
+			}
+		}
+	}
+	desc = {
+		text = ZEG_event_2
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control < 0
+                }
+			}
+		}
+	}
+	desc = {
+		text = ZEG_event_3
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control = 0
+                }
+			}
+		}
+	}
+	desc = {
+		text = ZEG_event_4
+		trigger = {
+			ZEG = {
+                NOT = {
+                    has_variable = ZEG_election_control
+                }
+			}
+		}
+	}
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.NE_6.a
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control > 0
+                }
+			}
+		}
+		complete_national_focus = ZEG_1936_election
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		remove_ideas = ZEG_khedivate_idea
+		hidden_effect = {
+			set_country_flag = ZEG_election_held
+		}
+    }
+	option = {
+        name = ZEG.NE_6.b
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control < 0
+                }
+			}
+		}
+		complete_national_focus = ZEG_1936_election
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		remove_ideas = ZEG_khedivate_idea
+		hidden_effect = {
+			set_country_flag = ZEG_election_held
+		}
+    }
+	option = {
+        name = ZEG.NE_6.c
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control = 0
+                }
+			}
+		}
+		complete_national_focus = ZEG_1936_election
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		remove_ideas = ZEG_khedivate_idea
+		hidden_effect = {
+			set_country_flag = ZEG_election_held
+		}
+    }
+	option = {
+        name = ZEG.NE_6.e
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			ZEG = {
+				check_variable = {
+                    ZEG_election_control = 0
+                }
+			}
+		}
+		complete_national_focus = ZEG_1936_election
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+		remove_ideas = ZEG_khedivate_idea
+		hidden_effect = {
+			set_country_flag = ZEG_election_held
+		}
+    }
+	option = {
+        name = ZEG.NE_6.f
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			ZEG = {
+                NOT = {
+                    has_variable = ZEG_election_control
+                }
+			}
+		}
+		add_political_power = -10 #nerd, stop playing my events in the console
+    }
+}
 
 #Focus Events# (events from focuses)
 country_event = { #protests reach a zenith
@@ -70,8 +424,47 @@ country_event = { #protests reach a zenith
 			id = ZEG_collapse_balance
 			left_side = ZEG_communist_side
     		right_side = ZEG_fascist_side
+			set_value = 0.25
 		}
 		complete_national_focus = ZEG_destroy_democracy
+	hidden_effect = {
+			
+		}
+    }
+}
+country_event = { #suffrage event
+    id = ZEG_focus_event.2
+    title = ZEG.FE_2.t
+    picture = GFX_report_event_worker_protests
+    desc = ZEG.FE_2.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.FE_2.a
+		ai_chance = {
+			base = 50
+		}
+			add_stability = -0.1
+			add_to_variable = {
+				var = ZEG_election_control
+				value = 2
+				tooltip = ZEG_election_control_double_neutrality_tooltip
+			}
+	hidden_effect = {
+			
+		}
+    }
+	option = {
+        name = ZEG.FE_2.b
+		ai_chance = {
+			base = 50
+		}
+			add_stability = 0.1
+			add_to_variable = {
+				var = ZEG_election_control
+				value = -2
+				tooltip = ZEG_election_control_double_democratic_tooltip
+			}
 	hidden_effect = {
 			
 		}
@@ -82,4 +475,118 @@ country_event = { #protests reach a zenith
 
 
 #Diplomatic Events# (events from interactions with other countries)
+country_event = { #end of the khedavate follow up
+    id = ZEG_diplo_event.1
+    title = ZEG.DE_1.t
+    picture = GFX_report_event_tur_machine_gunners
+    desc = ZEG.DE_1.d
 
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_1.a
+		ai_chance = {
+			base = 100
+		}
+		swap_ideas = {
+			remove_idea = ZXX_nile_sahara_logistics_accord
+			add_idea = ZXX_nile_sahara_logistics_crisis
+		}
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #restoration of the trade deal
+    id = ZEG_diplo_event.2
+    title = ZEG.DE_2.t
+    picture = GFX_report_event_tur_sultan_in_istanbul
+    desc = ZEG.DE_2.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_2.a
+		ai_chance = {
+			base = 100
+		}
+		swap_ideas = {
+			remove_idea = ZXX_nile_sahara_logistics_crisis
+			add_idea = ZXX_nile_sahara_logistics_accord
+		}
+		ZXX = {
+			clr_country_flag = ZXX_nile_sahara_logistics_crisis_severe 
+			clr_country_flag = ZXX_nile_sahara_logistics_crisis_war
+		}
+		add_stability = 0.05
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #occupation of Egypt for ZXX
+    id = ZEG_diplo_event.3
+    title = ZEG.DE_3.t
+    picture = GFX_report_event_tur_sultan_in_istanbul
+    desc = ZEG.DE_3.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_3.a
+		ai_chance = {
+			base = 90
+		}
+		swap_ideas = {
+			remove_idea = ZXX_nile_sahara_logistics_crisis
+			add_idea = ZXX_nile_sahara_logistics_accord
+		}
+		ZXX = {
+			clr_country_flag = ZXX_nile_sahara_logistics_crisis_severe 
+			clr_country_flag = ZXX_nile_sahara_logistics_crisis_war
+		}
+		add_stability = 0.05
+		if = {
+			limit = { any_owned_state = {
+				is_core_of = ZEG
+			} }
+			release_autonomy = {
+				target = ZEG
+				autonomy_state = autonomy_puppet
+				freedom_level = 0.5
+			}		
+			ZEG = {
+				set_politics = {
+					ruling_party = neutrality
+    				elections_allowed = no
+				}
+				set_cosmetic_tag = ZEG_otto_remnant
+			}
+		}
+	hidden_effect = {
+			552 = {
+				transfer_state_to = ZXX
+				add_core_of = ZXX
+			}
+			swap_ideas = {
+			remove_idea = ZXX_nile_sahara_logistics_crisis
+			add_idea = ZXX_nile_sahara_logistics_accord
+			}
+		}
+    }
+	option = {
+        name = ZEG.DE_3.b
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.05
+		swap_ideas = {
+			remove_idea = ZXX_nile_sahara_logistics_crisis
+			add_idea = ZXX_nile_sahara_logistics_accord
+		}
+		swap_ideas = {
+			remove_idea = ZXX_strong_local_resistance
+			add_idea = ZXX_intense_local_resistance
+		}
+	hidden_effect = {
+
+		}
+    }
+}

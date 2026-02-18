@@ -61,7 +61,7 @@ focus_tree = {
 		icon = GFX_focus_usa_voter_registration_act
 		x = 8
 		y = 2
-		cost = 5
+		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = ZEG_restore_constitution }
 		available = {
@@ -70,7 +70,12 @@ focus_tree = {
 		mutually_exclusive = { focus = ZEG_election_rigging }
 		mutually_exclusive = { focus = ZEG_honest_election }
 		completion_reward = {
-
+			add_political_power = 50
+			add_to_variable = {
+				var = ZEG_election_control
+				value = 1
+				tooltip = ZEG_election_control_neutrality_tooltip
+			}
 		}
 	}
 	focus = {
@@ -78,7 +83,7 @@ focus_tree = {
 		icon = GFX_focus_generic_election
 		x = 10
 		y = 2
-		cost = 5
+		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		prerequisite = { focus = ZEG_restore_constitution }
@@ -88,7 +93,12 @@ focus_tree = {
 		mutually_exclusive = { focus = ZEG_election_rigging }
 		mutually_exclusive = { focus = ZEG_honest_election }
 		completion_reward = {
-
+			add_stability = 0.05
+			add_to_variable = {
+				var = ZEG_election_control
+				value = -1
+				tooltip = ZEG_election_control_democratic_tooltip
+			}
 		}
 	}
 	focus = {
@@ -96,7 +106,7 @@ focus_tree = {
 		icon = GFX_focus_generic_treaty
 		x = 12
 		y = 2
-		cost = 5
+		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		
 		prerequisite = { focus = ZEG_restore_constitution }
@@ -104,7 +114,7 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			country_event = ZEG_focus_event.2
 		}
 	}
 	focus = {
@@ -112,7 +122,7 @@ focus_tree = {
 		icon = GFX_focus_generic_welfare
 		x = 14
 		y = 2
-		cost = 5
+		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_welfare_promises }
 		mutually_exclusive = { focus = ZEG_protect_royal_perogatives }
@@ -121,7 +131,15 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_to_variable = {
+				var = ZEG_election_control
+				value = -1
+				tooltip = ZEG_election_control_democratic_tooltip
+			}
 		}
 	}
 	focus = {
@@ -129,7 +147,7 @@ focus_tree = {
 		icon = GFX_focus_rom_royal_dictatorship
 		x = 16
 		y = 2
-		cost = 5
+		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_welfare_promises }
 		mutually_exclusive = { focus = ZEG_protect_royal_perogatives }
@@ -138,7 +156,15 @@ focus_tree = {
 
 		}
 		completion_reward = {
-
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_to_variable = {
+				var = ZEG_election_control
+				value = 1
+				tooltip = ZEG_election_control_neutrality_tooltip
+			}
 		}
 	}
 	focus = {
@@ -152,7 +178,14 @@ focus_tree = {
 		prerequisite = { focus = ZEG_protect_royal_perogatives focus = ZEG_welfare_promises }
 		prerequisite = { focus = ZEG_election_rigging focus = ZEG_honest_election }
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = ZEG_election_tooltip
+				ZEG = {
+					has_country_flag = ZEG_election_held
+				}
+				
+			}
+			
 		}
 		completion_reward = {
 
@@ -175,7 +208,246 @@ focus_tree = {
 
 		}
 	}
+	focus = {
+		id = ZEG_target_socialists
+		icon = GFX_focus_SOV_military_purge
+		x = 20
+		y = 2
+		cost = 2
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_target_socialists }
+		mutually_exclusive = { focus = ZEG_target_fascists }
+		prerequisite = { focus = ZEG_destroy_democracy }
+		available = {
 
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+			add_power_balance_value = {
+				id = ZEG_collapse_balance
+				value = 0.25
+			}
+		}
+	}
+	focus = {
+		id = ZEG_target_fascists
+		icon = GFX_focus_focus_fra_fascist_threat
+		x = 22
+		y = 2
+		cost = 2
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_target_socialists }
+		mutually_exclusive = { focus = ZEG_target_fascists }
+		prerequisite = { focus = ZEG_destroy_democracy }
+		available = {
+
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+			add_power_balance_value = {
+				id = ZEG_collapse_balance
+				value = -0.25
+			}
+		}
+	}
+	focus = {
+		id = ZEG_agitate_the_blueshirts
+		icon = GFX_focus_prc_infiltration
+		x = 18
+		y = 3
+		cost = 2
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_agitate_the_blueshirts }
+		mutually_exclusive = { focus = ZEG_utilize_greenshirts }
+		prerequisite = { focus = ZEG_target_socialists }
+		available = {
+
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					power_balance_value = {
+						id = ZEG_collapse_balance
+						value < -0.25
+					}
+				}
+				add_power_balance_value = {
+					id = ZEG_collapse_balance
+					value = 0.25
+				}
+			}
+			if = {
+				limit = {
+					power_balance_value = {
+						id = ZEG_collapse_balance
+						value > 0.25
+					}
+				}
+				add_power_balance_value = {
+					id = ZEG_collapse_balance
+					value = -0.25
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZEG_utilize_greenshirts
+		icon = GFX_focus_generic_fascist_troops
+		x = 20
+		y = 3
+		cost = 2
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_agitate_the_blueshirts }
+		mutually_exclusive = { focus = ZEG_utilize_greenshirts }
+		prerequisite = { focus = ZEG_target_socialists }
+		available = {
+
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_power_balance_value = {
+				id = ZEG_collapse_balance
+				value = 0.25
+			}
+		}
+	}
+		focus = {
+		id = ZEG_street_clashes
+		icon = GFX_focus_POL_riot_of_37
+		x = 22
+		y = 3
+		cost = 2
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_street_clashes }
+		mutually_exclusive = { focus = ZEG_army_connections }
+		prerequisite = { focus = ZEG_target_fascists }
+		available = {
+
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+			if = {
+				limit = {
+					power_balance_value = {
+						id = ZEG_collapse_balance
+						value < -0.25
+					}
+				}
+				add_power_balance_value = {
+					id = ZEG_collapse_balance
+					value = 0.25
+				}
+			}
+			if = {
+				limit = {
+					power_balance_value = {
+						id = ZEG_collapse_balance
+						value > 0.25
+					}
+				}
+				add_power_balance_value = {
+					id = ZEG_collapse_balance
+					value = -0.25
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZEG_army_connections
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		x = 24
+		y = 3
+		cost = 2
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_street_clashes }
+		mutually_exclusive = { focus = ZEG_army_connections }
+		prerequisite = { focus = ZEG_target_fascists }
+		available = {
+
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_power_balance_value = {
+				id = ZEG_collapse_balance
+				value = -0.25
+			}
+		}
+	}
+	focus = {
+		id = ZEG_victory_over_the_masses
+		icon = GFX_focus_TUR_pivot_to_the_past
+		x = 21
+		y = 4
+		cost = 4
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = ZEG_street_clashes focus = ZEG_army_connections focus = ZEG_utilize_greenshirts focus = ZEG_agitate_the_blueshirts }
+		available = {
+			ZEG = {
+				has_government = neutrality
+			}
+		}
+		completion_reward = {
+			remove_power_balance = {
+				id = ZEG_collapse_balance
+			}
+			add_ideas = ZEG_victory_over_the_masses_idea
+			remove_ideas = ZEG_khedivate_idea
+		}
+	}
+	focus = {
+		id = ZEG_rise_of_the_radicals
+		icon = GFX_focus_ITA_peasants_rise
+		x = 27
+		y = 4
+		cost = 4
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = ZEG_street_clashes focus = ZEG_army_connections focus = ZEG_utilize_greenshirts focus = ZEG_agitate_the_blueshirts }
+		allow_branch = {
+			ZEG = {
+				has_completed_focus = ZEG_rise_of_the_radicals
+			}
+		}
+		available = {
+			ZEG = {
+				has_government = neutrality
+			}
+		}
+		completion_reward = {
+			remove_power_balance = {
+				id = ZEG_collapse_balance
+			}
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+#Army Focuses#
+
+#Airforce Focuses#
+
+#Navy Focuses#
 	focus = {
 		id = ZEG_navy_start
 		icon = GFX_focus_generic_africa_naval

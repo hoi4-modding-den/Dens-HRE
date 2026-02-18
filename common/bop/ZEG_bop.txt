@@ -1,5 +1,5 @@
 ZEG_collapse_balance = {
-    initial_value = 0.0
+    initial_value = 0.25
     left_side = ZEG_communist_side
     right_side = ZEG_fascist_side
     decision_category = ZEG_bop_category
@@ -94,8 +94,8 @@ ZEG_collapse_balance = {
                 power_balance_daily = -0.1
                 
             }
-	    on_activate = {
-		#country_event = ZEG_natural_event.1
+	        on_activate = {
+		        country_event = ZEG_natural_event.2
             }
         }
     }
@@ -114,8 +114,8 @@ ZEG_collapse_balance = {
                 power_balance_daily = 0.1
                 
             }
-	    on_activate = {
-		#country_event = ZEG_natural_event.2
+	        on_activate = {
+		        country_event = ZEG_natural_event.3
             }
         }
     }

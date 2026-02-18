@@ -33,5 +33,32 @@ ideas = {
 				production_speed_buildings_factor = -0.5 
 			}
 		}
+		ZEG_victory_over_the_masses_idea = {
+			picture = generic_monarchist_uprising
+			modifier = {
+				stability_factor = 0.001
+				communism_drift = -0.03
+				fascism_drift = -0.03
+				democratic_drift = -0.03
+			}
+		}
+
+		ZXX_intense_local_resistance = {
+			on_add = { log = "[GetLogIdeaInfo] ZXX_strong_local_resistance" }
+			
+			picture = RAJ_partition_chaos_bad
+			
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				stability_factor = -0.05
+				recruitable_population = -0.8
+				resistance_activity = 0.30
+				communism_drift = 0.04
+				fascism_drift = 0.04
+				resistance_target = 0.1
+			}
+		}
 	}
 }

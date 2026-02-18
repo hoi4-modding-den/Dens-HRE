@@ -1,0 +1,67 @@
+ZEG_bop_category = {
+	ZEG_fascist_boost = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = ZEG_collapse_balance
+							range < ZEG_fascist_total
+						}
+					}
+				}
+			}
+		}
+		days_remove = 100
+		allowed = {
+			original_tag = ZEG
+		}
+		cost = 50
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = ZEG_collapse_balance
+				} }
+				add_power_balance_value = {
+				id = ZEG_collapse_balance
+				value = 0.15
+				tooltip_side = ZEG_fascist_side
+				}
+			}
+			add_war_support = -0.025
+		}
+	}
+	ZEG_communist_boost = {
+		available = {
+			if = {
+				limit = {
+					NOT = {
+						is_power_balance_in_range = {
+							id = ZEG_collapse_balance
+							range > ZEG_fascist_total
+						}
+					}
+				}
+			}
+		}
+		cost = 50
+		allowed = {
+			original_tag = ZEG
+		}
+		days_remove = 100
+		complete_effect = {
+			if = {
+				limit = { has_power_balance = {
+					id = ZEG_collapse_balance
+				} }
+				add_power_balance_value = {
+				id = ZEG_collapse_balance
+				value = -0.15
+				tooltip_side = ZEG_communist_side
+				}
+			}
+			
+			add_stability = -0.025
+		}
+	}
+}
