@@ -129,3 +129,36 @@ ZKR_faction_template_anti_imperialist_front = {
 		joining_rule_same_continent_only
 	}
 }
+
+ZKR_faction_template_middle_east_alliance = {
+	name = ZKR_middle_east_alliance
+	manifest = faction_manifest_strength_in_unity
+	can_leader_join_other_factions = yes
+	# color = { 179 183 235 }
+	icon = GFX_faction_logo_generic_15
+	visible = {
+		tag = ZKR
+		NOT = { has_government = communism }
+	}
+	available = {
+		NOT = { has_government = communism }
+	}
+
+	goals = {
+		# Short term goals
+		faction_goal_military_infrastructure
+
+		# Medium term goals
+		faction_goal_mountaineer_corps
+		faction_goal_a_large_faction
+
+		# Long terms
+		faction_goal_liberate_territory
+	}
+
+	default_rules = {
+		government_in_exile_allowed
+		joining_rule_has_no_offensive_war
+		joining_rule_same_continent_only
+	}
+}

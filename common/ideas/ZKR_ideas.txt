@@ -360,6 +360,62 @@ ideas = {
 			}
 		}
 
+		ZKR_royal_court_2 = {
+
+			name = ZKR_royal_court
+			picture = generic_monarchist_uprising
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+				neutrality_drift = 0.03
+			}
+		}
+
+		ZKR_royal_court_3 = {
+
+			name = ZKR_royal_court
+			picture = generic_monarchist_uprising
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.05
+                political_advisor_cost_factor = 0.2
+				neutrality_drift = 0.03
+				compliance_gain = 0.02
+				subjects_autonomy_gain = -0.15
+			}
+		}
+
+		ZKR_royal_court_4 = {
+
+			name = ZKR_royal_court
+			picture = generic_monarchist_uprising
+
+			allowed = {
+				original_tag = ZKR
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = 0.05
+				neutrality_drift = 0.04
+				compliance_gain = 0.02
+				subjects_autonomy_gain = -0.15
+			}
+		}
+
 		ZKR_military_government = {
 
 			picture = generic_fascism_drift_bonus

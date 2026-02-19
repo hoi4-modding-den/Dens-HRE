@@ -30,7 +30,7 @@ leader_traits = {
         ai_strategy = { # hates Stalin
 			type = antagonize
 			id = "ZCC"
-			value = 200
+			value = 50
 		}
 
 	}
@@ -50,22 +50,22 @@ leader_traits = {
 		ai_strategy = {
 			type = antagonize
 			id = "ZOT"
-			value = 200
+			value = 50
 		}
         ai_strategy = {
 			type = antagonize
 			id = "ZCT"
-			value = 200
+			value = 50
 		}
         ai_strategy = {
 			type = antagonize
 			id = "ZTC"
-			value = 200
+			value = 50
 		}
         ai_strategy = {
 			type = antagonize
 			id = "ZTM"
-			value = 200
+			value = 50
 		}
 	}
 
@@ -165,6 +165,18 @@ leader_traits = {
 		}
     }
 
+    ZKR_evironmentalist_advisor = {
+        random = no
+		sprite = 13
+		
+		supply_consumption_factor = -0.05
+        factory_energy_consumption = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
     ZKR_revolutionary_intellectual = {
         random = no
 		sprite = 13
@@ -221,7 +233,7 @@ leader_traits = {
         random = no
 		sprite = 13
 		
-		research_speed_factor = 0.1
+		research_speed_factor = 0.05
         drift_defence_factor = 0.5
         stability_factor = -0.05
 

@@ -364,6 +364,10 @@ country_event = { # reform the anti-imperialist front
             }
         }
         ZKR_load_current_commonwealth_status = yes
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = ZKR_trotsky_achievement_tip_tt
     }
 }
 
@@ -877,6 +881,79 @@ country_event = { # Faction Invite Event - refusal
 	option = {
         name = ZKR_diplo_events.11.a
         add_political_power = -20
+    }
+
+}
+
+country_event = { # Kurdish Envoy to HRE
+	id = ZKR_diplo_events.12
+	title = ZKR_diplo_events.12.t
+	desc = ZKR_diplo_events.12.desc
+	
+	picture = GFX_report_event_royal_visit
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.12.a
+        ai_chance = {
+            base = 10
+        }
+        FROM = { country_event = { id = ZKR_diplo_events.13 days = 20 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        effect_tooltip = {
+            FROM = {
+                add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory level = 2 }
+            }
+        }
+    }
+
+    option = {
+        name = ZKR_diplo_events.12.b
+        ai_chance = {
+            base = 0
+        }
+        FROM = { country_event = { id = ZKR_diplo_events.14 days = 20 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_stability = 0.01
+    }
+
+}
+
+country_event = { # Kurdish Envoy to HRE - positive reaction
+	id = ZKR_diplo_events.13
+	title = ZKR_diplo_events.13.t
+	desc = ZKR_diplo_events.13.desc
+	
+	picture = GFX_report_event_royal_visit
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.13.a
+        add_offsite_building = { type = industrial_complex level = 2 }
+		add_offsite_building = { type = arms_factory level = 2 }
+    }
+
+}
+
+country_event = { # Kurdish Envoy to HRE - meh
+	id = ZKR_diplo_events.14
+	title = ZKR_diplo_events.14.t
+	desc = ZKR_diplo_events.14.desc
+	
+	picture = GFX_report_event_royal_visit
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.14.a
+        add_political_power = -25
     }
 
 }
@@ -1911,6 +1988,16 @@ country_event = { # Stalin arrested
 
     is_triggered_only = yes
     fire_only_once = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_country_flag = ZKR_trotsky_visited
+            }
+            set_country_flag = ZKR_stalin_arrested_after_trotskys_visit # gives achievement
+            hidden_effect = { scoped_sound_effect = "ZKR_trotsky_denounces_stalin" }
+        }
+    }
 	
 	option = {
         name = ZKR_lore_events.4.a
@@ -1919,12 +2006,6 @@ country_event = { # Stalin arrested
                 has_character = ZCC_Josef_Dzhugashvili
             }
             retire_character = ZCC_Josef_Dzhugashvili
-        }
-        if = {
-            limit = {
-                has_country_flag = ZKR_trotsky_visited
-            }
-            set_country_flag = ZKR_stalin_arrested_after_trotskys_visit
         }
     }
 
@@ -1964,19 +2045,32 @@ country_event = { # Collapse of Anatolian Occupation - Demilitarised
 	
 	option = {
         name = ZKR_pax_events.2.a
-        every_state = {
+        if = {
             limit = {
-                is_controlled_by = ZKT
-                is_capital = no
+                is_ally_with = ZKT # if they are independent from you (which should never be the case but whatever) there's no need to demilitarise because your troops won't be there anyways
             }
-            set_demilitarized_zone = yes
+            every_state = {
+                limit = {
+                    is_controlled_by = ZKT
+                    is_capital = no
+                }
+                set_demilitarized_zone = yes
+            }
+        }
+        else = {
+            every_owned_state = {
+                limit = {
+                    ZKR_anatolian_protectorate_states = yes
+                }
+                set_demilitarized_zone = yes
+            }
         }
         hidden_effect = {
             every_state = {
                 limit = {
-                    has_dynamic_modifier = { modifier = ZKR_turkish_resistance }
+                    has_dynamic_modifier = { modifier = ZKR_turkish_resistance scope = ZKT }
                 }
-                remove_dynamic_modifier = { modifier = ZKR_turkish_resistance }
+                remove_dynamic_modifier = { modifier = ZKR_turkish_resistance scope = ZKT }
             }
         }
 
@@ -2001,9 +2095,42 @@ country_event = { # Collapse of Anatolian Occupation - Turkish Uprising
 	
 	option = {
         name = ZKR_pax_events.3.a
-        end_puppet = ZKT
+        if = {
+            limit = {
+                has_subject = ZKT
+            }
+            end_puppet = ZKT
+        }
+        else_if = {
+            limit = {
+                NOT = { country_exists = ZKT }
+            }
+            every_owned_state = {
+                limit = {
+                    ZKR_anatolian_protectorate_states = yes
+                }
+                transfer_state_to = ZKT
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    is_in_faction_with = ZKT
+                }
+                faction_leader = { remove_from_faction = ZKT }
+            }
+        }
         ZKT = {
-            hidden_effect = { add_ruling_to_com = yes }
+            hidden_effect = { 
+                add_ruling_to_com = yes
+
+                if = {
+                    limit = {
+                        has_idea = ZKT_unpopular_government
+                    }
+                    remove_ideas = ZKT_unpopular_government
+                }
+            }
             set_politics = {
                 ruling_party = communism
                 elections_allowed = yes
@@ -2060,7 +2187,28 @@ country_event = { # Collapse of Anatolian Occupation - Greater Kurdistan Collaps
             end_puppet = ZAS
         }
         else = {
+            every_core_state = {
+                limit = {
+                    is_core_of = ZAS
+                }
+                set_state_flag = ZKR_temp_core
+            }
             release_on_controlled = ZAS
+            every_state = {
+                limit = {
+                    has_state_flag = ZKR_temp_core
+                }
+                clr_state_flag = ZKR_temp_core
+                add_core_of = ROOT
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    is_in_faction_with = ZAS
+                }
+                faction_leader = { remove_from_faction = ZAS }
+            }
         }
         ZAS = {
             ZKR_collapse_war_spawn_units_for_THIS = yes
@@ -2076,7 +2224,28 @@ country_event = { # Collapse of Anatolian Occupation - Greater Kurdistan Collaps
             end_puppet = ZRM
         }
         else = {
+            every_core_state = {
+                limit = {
+                    is_core_of = ZRM
+                }
+                set_state_flag = ZKR_temp_core
+            }
             release_on_controlled = ZRM
+            every_state = {
+                limit = {
+                    has_state_flag = ZKR_temp_core
+                }
+                clr_state_flag = ZKR_temp_core
+                add_core_of = ROOT
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    is_in_faction_with = ZAS
+                }
+                faction_leader = { remove_from_faction = ZAS }
+            }
         }
         ZRM = {
             ZKR_collapse_war_spawn_units_for_THIS = yes
@@ -2092,7 +2261,28 @@ country_event = { # Collapse of Anatolian Occupation - Greater Kurdistan Collaps
             end_puppet = ZAR
         }
         else = {
+            every_core_state = {
+                limit = {
+                    is_core_of = ZAR
+                }
+                set_state_flag = ZKR_temp_core
+            }
             release_on_controlled = ZAR
+            every_state = {
+                limit = {
+                    has_state_flag = ZKR_temp_core
+                }
+                clr_state_flag = ZKR_temp_core
+                add_core_of = ROOT
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    is_in_faction_with = ZAR
+                }
+                faction_leader = { remove_from_faction = ZAR }
+            }
         }
         ZAR = {
             ZKR_collapse_war_spawn_units_for_THIS = yes

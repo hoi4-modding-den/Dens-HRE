@@ -355,6 +355,64 @@ ZKR_is_egyptian_state = {
     }
 }
 
+ZKR_is_caucasus_state = {
+    OR = {
+        state = 232
+        state = 354
+        region = 134
+    }
+}
+
+ZKR_is_levant_state = {
+    OR = {
+        region = 232
+    }
+}
+
+ZKR_is_gulf_state = {
+    OR = {
+        state = 413
+        region = 28
+        region = 196
+        region = 238
+        region = 116
+        region = 291
+        region = 297
+        region = 298
+    }
+    is_coastal = yes
+}
+
+ZKR_is_arabian_peninsula_state = {
+    OR = {
+        state = 656
+        state = 675
+        state = 1010
+        region = 196
+        region = 236
+        region = 237
+        region = 238
+    }
+}
+
+ZKR_is_persian_state = {
+    OR = {
+        region = 240
+        region = 241
+        region = 239
+        region = 116
+        region = 297
+        region = 298
+    }
+}
+
+ZKR_is_afghan_state = {
+    OR = {
+        region = 162
+        region = 289
+    }
+}
+
 ZKR_is_anti_stalinist_communist = {
     custom_trigger_tooltip = {
         tooltip = ZKR_is_anti_stalinist_communist_tt

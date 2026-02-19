@@ -24,6 +24,15 @@ on_actions = {
                 every_core_state = {
                     add_to_array = { ZKR_starting_cores = THIS }
                 }
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_core_of = ZKR
+                            is_claimed_by = ZKR
+                        }
+                    }
+                    set_state_flag = ZKR_greater_kurdistan_state
+                }
 
                 # Army Stuff
 
@@ -168,6 +177,12 @@ on_actions = {
                         remove_core_of = ROOT
                     }
                 }
+            }
+            if = {
+                limit = {
+                    ROOT = { has_country_flag = ZKR_conquest_target }
+                }
+                ROOT = { clr_country_flag = ZKR_conquest_target }
             }
             if = {
                 limit = {

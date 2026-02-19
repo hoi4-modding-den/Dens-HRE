@@ -142,6 +142,23 @@ ZKR_support_the_international_revolution_cat = {
 	priority = 80
 }
 
+ZKR_integrate_the_hegemony_cat = {
+	icon = generic_monarchism
+
+	allowed = {
+		original_tag = ZKR
+	}
+
+	visible = {
+		has_government = neutrality
+		has_completed_focus = ZKR_royal_subjects
+	}
+
+	visible_when_empty = no
+
+	priority = 80
+}
+
 ZKR_syrian_intervention_cat = {
 	icon = border_conflicts
 
@@ -150,12 +167,11 @@ ZKR_syrian_intervention_cat = {
 	}
 
 	visible = {
-		has_completed_focus = ZKR_syrian_intervention
-        is_subject = no
 		OR = {
-			has_government = democratic
-			has_government = communism
+			has_completed_focus = ZKR_syrian_intervention
+			has_completed_focus = ZKR_agitate_for_syrian_kurdistan
 		}
+        is_subject = no
 	}
 
 	visible_when_empty = no

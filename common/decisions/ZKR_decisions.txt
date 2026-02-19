@@ -10,12 +10,9 @@ ZKR_kurdistan_formables_cat = {
             has_completed_focus = ZKR_kurdish_supremacy
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
-                all_core_state = {
-                    is_owned_and_controlled_by = ROOT
-                }
                 all_state = {
                     OR = {
-                        NOT = { is_claimed_by = ROOT }
+                        NOT = { has_state_flag = ZKR_greater_kurdistan_state }
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -29,10 +26,7 @@ ZKR_kurdistan_formables_cat = {
 
         highlight_states = {
 			highlight_states_trigger = {
-				OR = {
-                    is_core_of = ZKR
-                    is_claimed_by = ZKR
-                }
+				has_state_flag = ZKR_greater_kurdistan_state
 			}
 		}
 
@@ -129,12 +123,6 @@ ZKR_kurdistan_formables_cat = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
-            ZKR_mahmud_barzanji = {
-                swap_country_leader_traits = { remove = ZKR_determined_king add = ZKR_hegemon_of_the_middle_east ideology = despotism }
-            }
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
             if = {
 				limit = {
 					has_idea = ZKR_a_greater_kurdistan
@@ -157,7 +145,7 @@ ZKR_kurdistan_formables_cat = {
 
 political_actions = {
 
-    ZKR_ai_attack_for_cores_and_claims = {
+    ZKR_ai_do_justifications = {
 
         allowed = {
             original_tag = ZKR
@@ -166,25 +154,28 @@ political_actions = {
         visible = {
             is_ai = yes
             has_completed_focus = ZKR_march_against_our_oppressors
-            FROM = {
-                NOT = { is_owned_by = ROOT }
-                owner = { 
-                    NOT = { has_war_with = ROOT }
-                    NOT = { is_ally_with = ROOT }
-                }
-            }
         }
 
         available = {
             has_war = no
-            OR = {
-                any_state = {
-                    has_state_flag = ZKR_war_goal_target
-                    NOT = { is_owned_by = ROOT }
+            all_country = {
+                ROOT = {
+                    NOT = {
+                        OR = {
+                            has_wargoal_against = PREV
+                            is_justifying_wargoal_against = PREV
+                        }
+                    }
                 }
-                NOT = {
-                    any_state = {
-                        has_state_flag = ZKR_war_goal_target
+                NOT = { has_country_flag = ZKR_conquest_target }
+            }
+            FROM = {
+                is_neighbor_of = ROOT
+                any_owned_state = {
+                    is_controlled_by = FROM
+                    OR = {
+                        is_claimed_by = ROOT
+                        is_core_of = ROOT
                     }
                 }
             }
@@ -192,11 +183,14 @@ political_actions = {
 
         target_trigger = {
             FROM = {
-                OR = {
-                    is_core_of = ROOT
-                    is_claimed_by = ROOT
+                NOT = { tag = ZZZ }
+                any_owned_state = {
+                    is_controlled_by = FROM
+                    OR = {
+                        is_claimed_by = ROOT
+                        is_core_of = ROOT
+                    }
                 }
-                owner = { NOT = { original_tag = ZZZ } }
             }
         }
 
@@ -204,7 +198,7 @@ political_actions = {
             base = 1000
             modifier = {
                 factor = 0
-                FROM = { owner = { ZKR_is_syrian_nation = yes } }
+                FROM = { ZKR_is_syrian_nation = yes }
                 ZKR_can_intervene_in_syria = yes
                 OR = {
                     NOT = { has_country_flag = ZKR_demanded_syrian_kurdistan }
@@ -216,21 +210,21 @@ political_actions = {
             modifier = {
                 factor = 10
                 FROM = {
-                    owner = {
-                        OR = {
-                            original_tag = ZNW
-                            original_tag = ZAS
-                        }
+                    OR = {
+                        original_tag = ZNW
+                        original_tag = ZAS
                     }
                 }
             }
             modifier = {
-                factor = 0
-                FROM = { owner = { NOT = { is_neighbor_of = ROOT } } }
-            }
-            modifier = {
                 factor = 0.01
-                FROM = { NOT = { is_core_of = ROOT } }
+                FROM = {
+                    NOT = {
+                        any_owned_state = {
+                            is_core_of = ROOT
+                        }
+                    }
+                }
                 any_state = {
                     is_core_of = ROOT
                     NOT = { is_controlled_by = ROOT }
@@ -240,145 +234,114 @@ political_actions = {
 
         targets_dynamic = yes
 
-        state_target = yes
-
-        on_map_mode = map_only
-
         complete_effect = {
             FROM = {
-                owner = {
-                    custom_effect_tooltip = "AI will justify against if possible"
-                    ROOT = {
-						add_ai_strategy = {
-							type = conquer
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = declare_war 
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = consider_weak 
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = antagonize 
-							id = PREV
-							value = 10000
-						}
-					}
+                custom_effect_tooltip = "AI will justify against if possible"
+                ROOT = {
+                    add_ai_strategy = {
+                        type = conquer
+                        id = PREV
+                        value = 500
+                    }
+                    add_ai_strategy = {
+                        type = declare_war 
+                        id = PREV
+                        value = 500
+                    }
+                    add_ai_strategy = {
+                        type = consider_weak 
+                        id = PREV
+                        value = 500
+                    }
+                    add_ai_strategy = {
+                        type = antagonize 
+                        id = PREV
+                        value = 10000
+                    }
                 }
-                set_state_flag = ZKR_war_goal_target
-            }
-            every_state = {
-                limit = {
-                    has_state_flag = ZKR_war_goal_target
-                    is_owned_by = ROOT
-                }
-                clr_state_flag = ZKR_war_goal_target
+                set_country_flag = ZKR_conquest_target
             }
         }
     }
 
-    ZKR_ai_attack_for_turkey = {
+    ZKR_ai_kick_or_annex_ally = {
 
         allowed = {
             original_tag = ZKR
         }
 
-        visible = {
-            is_ai = yes
-            has_completed_focus = ZKR_secure_anatolia
-            FROM = {
-                NOT = { is_owned_by = ROOT }
-                owner = { 
-                    NOT = { has_war_with = ROOT }
-                    NOT = { is_ally_with = ROOT }
-                }
-            }
+        ai_will_do = {
+            base = 10
         }
 
         available = {
             has_war = no
-            NOT = {
-                any_state = {
-                    has_state_flag = ZKR_war_goal_target
-                    NOT = { is_owned_by = ROOT }
-                }
-            }
+            is_faction_leader = yes
+            NOT = { has_country_flag = ZKR_ai_ally_management_timer }
         }
 
         target_trigger = {
             FROM = {
-                ZKR_anatolian_protectorate_states = yes
-                owner = { NOT = { original_tag = ZZZ } }
-            }
-        }
-
-        ai_will_do = {
-            base = 100
-            modifier = {
-                factor = 10
-                FROM = {
-                    owner = {
-                        OR = {
-                            original_tag = ZNW
-                            original_tag = ZAS
-                        }
+                NOT = { tag = ZKT } # exception
+                is_in_faction_with = ROOT
+                OR = {
+                    is_ai = yes
+                    is_subject_of = ROOT
+                }
+                any_owned_state = {
+                    OR = {
+                        is_core_of = ROOT
+                        is_claimed_by = ROOT
                     }
                 }
-            }
-            modifier = {
-                factor = 0
-                FROM = { owner = { NOT = { is_neighbor_of = ROOT } } }
             }
         }
 
         targets_dynamic = yes
 
-        state_target = yes
-
-        on_map_mode = map_only
-
         complete_effect = {
-            FROM = {
-                owner = {
-                    custom_effect_tooltip = "AI will justify against if possible"
-                    ROOT = {
-						add_ai_strategy = {
-							type = conquer
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = declare_war 
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = consider_weak 
-							id = PREV
-							value = 500
-						}
-						add_ai_strategy = {
-							type = antagonize 
-							id = PREV
-							value = 10000
-						}
-					}
-                }
-                set_state_flag = ZKR_war_goal_target
-            }
-            every_state = {
+            set_country_flag = ZKR_ai_ally_management_timer
+            if = {
                 limit = {
-                    has_state_flag = ZKR_war_goal_target
-                    is_owned_by = ROOT
+                    has_subject = FROM
+                    FROM = {
+                        all_owned_state = {
+                            OR = {
+                                is_core_of = ROOT
+                                is_claimed_by = ROOT
+                            }
+                        }
+                    }
                 }
-                clr_state_flag = ZKR_war_goal_target
+                annex_country = {
+                    target = FROM
+                    transfer_troops = yes
+                }
             }
+            else_if = {
+                limit = {
+                    has_subject = FROM
+                }
+                every_state = {
+                    limit = {
+                        is_owned_by = FROM
+                        OR = {
+                            is_core_of = ROOT
+                            is_claimed_by = ROOT
+                        }
+                    }
+                    transfer_state_to = ROOT
+                }
+            }
+            else = {
+                remove_from_faction = FROM
+            }
+        }
+
+        days_remove = 20
+
+        remove_effect = {
+            clr_country_flag = ZKR_ai_ally_management_timer
         }
     }
 
@@ -508,7 +471,7 @@ foreign_politics = {
 
     ZKR_tensions_with_mahabad_increasing = {
 
-        icon = generic_ignite_civil_war
+        icon = generic_intelligence_operation
 
         activation = {
             always = no
@@ -1388,7 +1351,7 @@ ZKR_liberation_allies_cat = {
         cost = 25
 
         allowed = {
-            original_tag = ZKR
+            always = no
         }
 
         ai_will_do = {
@@ -1460,6 +1423,357 @@ ZKR_liberation_allies_cat = {
         }
     }
 
+    ZKR_invite_syria = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = {
+                        any_neighbor_country = {
+                            OR = {
+                                tag = ROOT
+                                is_ally_with = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                OR = {
+                    has_government = democratic
+                    has_government = communism
+                }
+            }
+            ZKR_can_intervene_in_syria = no
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                ZKR_is_syrian_nation = yes
+            }
+            OR = {
+                has_government = FROM
+                ZKR_can_intervene_in_syria = no
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
+    ZKR_invite_luristan = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = {
+                        any_neighbor_country = {
+                            OR = {
+                                tag = ROOT
+                                is_ally_with = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                OR = {
+                    has_government = democratic
+                    has_government = communism
+                }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZLU
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
+    ZKR_invite_azerbaijan = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = {
+                        any_neighbor_country = {
+                            OR = {
+                                tag = ROOT
+                                is_ally_with = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                OR = {
+                    has_government = democratic
+                    has_government = communism
+                }
+                if = {
+                    limit = {
+                        original_tag = ZBC
+                        has_government = communism
+                    }
+                    has_completed_focus = ZBC_korganovs_downfall
+                }
+            }
+            if = {
+                limit = {
+                    FROM = { original_tag = ZAZ }
+                }
+                NOT = { is_ally_with = ZBC }
+            }
+            if = {
+                limit = {
+                    FROM = { original_tag = ZBC }
+                }
+                NOT = { is_ally_with = ZAZ }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                OR = {
+                    original_tag = ZAZ
+                    original_tag = ZBC
+                }
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
+    ZKR_invite_cicilia = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = {
+                        any_neighbor_country = {
+                            OR = {
+                                tag = ROOT
+                                is_ally_with = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                OR = {
+                    has_government = democratic
+                    has_government = communism
+                }
+                OR = {
+                    has_completed_focus = ZAG_a_state_for_the_people
+                    has_completed_focus = ZAG_reestablish_the_kingdom
+                }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZAG
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
+    ZKR_invite_georgia = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = {
+                        any_neighbor_country = {
+                            OR = {
+                                tag = ROOT
+                                is_ally_with = ROOT
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                OR = {
+                    has_government = democratic
+                    has_government = communism
+                }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZGD
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
 }
 
 ZKR_coalition_allies_cat = {
@@ -1471,7 +1785,7 @@ ZKR_coalition_allies_cat = {
         cost = 25
 
         allowed = {
-            original_tag = ZKR
+            always = no
         }
 
         ai_will_do = {
@@ -1548,69 +1862,169 @@ ZKR_coalition_allies_cat = {
         }
     }
 
-    ZKR_ai_kick_ally = {
+    ZKR_invite_tehran = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
 
         allowed = {
             original_tag = ZKR
         }
 
         ai_will_do = {
-            base = 10
-        }
-
-        available = {
-            has_war = no
-            is_faction_leader = yes
-        }
-
-        target_trigger = {
-            FROM = {
-                is_in_faction_with = ROOT
-                is_subject = no
-                any_owned_state = {
-                    OR = {
-                        is_core_of = ROOT
-                        is_claimed_by = ROOT
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+            modifier = {
+                factor = 0
+                FROM = {
+                    NOT = {
+                        any_neighbor_country = {
+                            OR = {
+                                tag = ROOT
+                                is_ally_with = ROOT
+                            }
+                        }
                     }
                 }
             }
         }
 
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                has_government = fascism
+            }
+            NOT = { is_ally_with = ZPR }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZPE
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
         complete_effect = {
-            remove_from_faction = FROM
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
+    ZKR_invite_the_thalassocracy = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0
+                all_owned_state = {
+                    is_coastal = no
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                has_government = neutrality
+            }
+            NOT = { is_ally_with = ZEG }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZAA
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+        }
+    }
+
+    ZKR_invite_egypt = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0
+                all_owned_state = {
+                    is_coastal = no
+                }
+            }
+        }
+
+        available = {
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_war = no
+                has_government = fascism
+            }
+            NOT = { is_ally_with = ZAA }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZEG
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
         }
     }
 
 }
 
 ZKR_dissolve_turkey_cat = {
-
-    ZKR_show_map_decision_turkey = {
-
-        icon = GFX_locator_item_icon
-
-        allowed = {
-            original_tag = ZKR
-        }
-
-        visible = {
-            # has_country_flag = ZKR_turkish_resistance_started
-        }
-
-        available = {
-            hidden_trigger = { always = no }
-        }
-        
-        on_map_mode = decision_view_only
-
-        highlight_states = {
-			highlight_states_trigger = {
-				is_owned_by = ZKT
-                # should actually highlight all states with a state modifier given via an event
-                
-			}
-		}
-    }
 
     ZKR_establish_anatolian_governate = {
 
@@ -1680,7 +2094,7 @@ ZKR_dissolve_turkey_cat = {
                 hidden_effect = {
                     set_resistance = 50
                     set_compliance = 0
-                    add_dynamic_modifier = { modifier = ZKR_turkish_resistance }
+                    add_dynamic_modifier = { modifier = ZKR_turkish_resistance scope = ZKT }
                 }
             }
             set_autonomy = {
@@ -1757,6 +2171,60 @@ ZKR_dissolve_turkey_cat = {
             # lore event
 
             # add national spirit for the puppet that reduces resistance
+        }
+    }
+
+    ZKR_occupy_the_dodecanese = {
+
+        icon = generic_confiscation
+
+        cost = 30
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            is_subject = no
+            164 = {
+                owner = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				state = 164
+			}
+		}
+
+        visible = {
+            164 = {
+                owner = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            if = {
+                limit = {
+                    check_variable = { ZKR_turkey_control < 96 }
+                }
+                add_to_variable = { ZKR_turkey_control = 5 tooltip = ZKR_turkey_control_effect_tt }
+            }
+            add_to_variable = { ZKR_turkey_resistance = 5 tooltip = ZKR_turkey_resistance_effect_tt }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            154 = {
+                transfer_state_to = ROOT
+                set_resistance = 10
+                set_compliance = 10
+            }
         }
     }
 
@@ -2775,7 +3243,370 @@ ZKR_support_the_international_revolution_cat = {
 
 }
 
+ZKR_integrate_the_hegemony_cat = {
+
+    ZKR_crown_of_anatolia = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_turkish_republic_states = yes
+                        state = 1113
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+                    ZKR_turkish_republic_states = yes
+                    state = 1113
+                }
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    OR = {
+                        ZKR_turkish_republic_states = yes
+                        state = 1113
+                    }
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_crown_of_caucasia = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_is_caucasus_state = yes
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				ZKR_is_caucasus_state = yes
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    ZKR_is_caucasus_state = yes
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_levantine_confederation = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_is_levant_state = yes
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				ZKR_is_levant_state = yes
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    ZKR_is_levant_state = yes
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_crown_of_egypt = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_is_egyptian_state = yes
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				ZKR_is_egyptian_state = yes
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    ZKR_is_egyptian_state = yes
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_arabian_pensula_protectorate = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_is_arabian_peninsula_state = yes
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				ZKR_is_arabian_peninsula_state = yes
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    ZKR_is_arabian_peninsula_state = yes
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_crown_of_persia = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_is_persian_state = yes
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				ZKR_is_persian_state = yes
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    ZKR_is_persian_state = yes
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_baluchistan_protectorate = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        region = 291
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				region = 291
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    region = 291
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+    ZKR_crown_of_afghanistan = {
+
+        icon = generic_monarchy
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = YBS_owns_controls_highlighted_states_tt
+                all_state = {
+                    OR = {
+                        ZKR_is_afghan_state = yes
+                        is_owned_and_controlled_by = ROOT
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+			highlight_states_trigger = {
+				ZKR_is_afghan_state = yes
+			}
+		}
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    ZKR_is_afghan_state = yes
+                }
+                add_core_of = ROOT
+            }
+        }
+    }
+
+}
+
 ZKR_syrian_intervention_cat = {
+
+    ZKR_syrian_intervention_mission = {
+
+        icon = generic_intelligence_operation
+
+        activation = {
+            always = no
+        }
+
+        available = {
+            controls_state = 1115
+            controls_state = 1103
+        }
+
+        ai_will_do = {
+            base = 100
+        }
+
+        is_good = no
+
+        selectable_mission = yes
+
+        days_mission_timeout = 70
+
+        complete_effect = {
+            1115 = { transfer_state_to = ROOT }
+            1103 = { transfer_state_to = ROOT }
+            if = {
+                limit = {
+                    controls_state = 680
+                }
+                680 = { transfer_state_to = ROOT }
+            }
+            else = {
+                custom_effect_tooltip = ZKR_syrian_intervention_mission_bonus_tt
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            every_other_country = {
+                limit = {
+                    has_war_with = ROOT
+                    ZKR_is_syrian_nation = yes
+                }
+                white_peace = ROOT
+            }
+        }
+
+        timeout_effect = {
+            every_other_country = {
+                limit = {
+                    has_war_with = ROOT
+                    ZKR_is_syrian_nation = yes
+                }
+                white_peace = ROOT
+            }
+            
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_war_support = -0.1
+            add_stability = -0.1
+        }
+
+    }
 
     ZKR_assist_syrian_socialists = {
 
@@ -2801,6 +3632,7 @@ ZKR_syrian_intervention_cat = {
 
         visible = {
             ZKR_can_intervene_in_syria = yes
+            has_completed_focus = ZKR_syrian_intervention
         }
 
         ai_will_do = {
@@ -2905,6 +3737,7 @@ ZKR_syrian_intervention_cat = {
 
         visible = {
             ZKR_can_intervene_in_syria = yes
+            has_completed_focus = ZKR_syrian_intervention
         }
 
         ai_will_do = {
@@ -3004,6 +3837,7 @@ ZKR_syrian_intervention_cat = {
 
         visible = {
             ZKR_can_intervene_in_syria = yes
+            has_completed_focus = ZKR_syrian_intervention
         }
 
         ai_will_do = {
@@ -3067,6 +3901,7 @@ ZKR_syrian_intervention_cat = {
                     ZKR_is_syrian_nation = yes
                 }
             }
+            has_completed_focus = ZKR_syrian_intervention
         }
 
         ai_will_do = {
@@ -3751,7 +4586,13 @@ ZKR_ZZZ_expeditions = {
 		target_trigger = {
 			FROM = {
 				is_owned_by = ZZZ
-                ZKR_is_middle_eastern_state = yes
+                OR = {
+                    ZKR_is_middle_eastern_state = yes
+                    AND = {
+                        ZKR_is_caucasus_state = yes
+                        has_completed_focus = ZKR_royal_subjects
+                    }
+                }
 			}
 		}
 
