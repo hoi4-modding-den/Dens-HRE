@@ -1,6 +1,6 @@
 capital = 457
 
-set_stability = 0.45
+set_stability = 0.22
 set_war_support = 0.45
 
 set_research_slots = 3
@@ -31,6 +31,7 @@ set_variable = { ZAA_piranhas_stability_factor_variable = -0.1 }
 set_variable = { ZAA_piranhas_conscription_factor_variable = 0.1 }
 set_variable = { ZAA_command_power_variable = 0.75 }
 set_variable = { ZAA_convoy_raiding_variable = 0.15 }
+set_variable = { ZAA_law_cost_factor = 0.25 }
 
 set_variable = { ZAA_inf_equipment_level = 1 }
 set_variable = { ZAA_art_equipment_level = 1 }
@@ -38,8 +39,9 @@ set_variable = { ZAA_art_equipment_level = 1 }
 set_country_flag = DEN_hide_economic_decisions
 set_country_flag = DEN_hide_propaganda_decisions
 set_country_flag = DEN_hide_political_decisions
-set_country_flag = DEN_disable_generic_industrial_concern
-set_country_flag = DEN_disable_generic_electronics_concern
+set_country_flag = ZAA_welcome_message_flag
+#set_country_flag = DEN_disable_generic_industrial_concern
+#set_country_flag = DEN_disable_generic_electronics_concern
 
 set_technology = {
 	infantry_weapons = 1

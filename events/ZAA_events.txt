@@ -1,0 +1,184 @@
+add_namespace = ZAA
+
+country_event = {  #demand aqaba, jordan receives this
+	id = ZAA.1
+	title = ZAA.1.t
+	desc = ZAA.1.d
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict_2
+	
+	
+	is_triggered_only = yes
+	
+	option = { #no
+        name = ZAA.1.a
+		ai_chance = { 
+			factor = 1
+		}
+		ZAA = { 
+			country_event = {
+				id = ZAA.2
+				days = 1
+			}
+		}
+    }
+	option = { #yes
+        name = ZAA.1.b
+		ai_chance = { 
+			factor = 0.1
+		}
+		1110 = {
+			transfer_state_to = ZAA
+		}
+		ZAA = { 
+			country_event = {
+				id = ZAA.3
+			}
+		}
+    }
+}
+
+country_event = {  #response if jordan doesn't give aqaba
+	id = ZAA.2
+	title = ZAA.2.t
+	desc = ZAA.2.d
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict_2
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZAA.2.a
+		ai_chance = { 
+			factor = 1
+		}
+		ZAA = { 
+			create_wargoal = {
+				type = take_state_focus
+				target = ZJO
+				generator = { 1110 }
+			}
+		}
+    }
+}
+
+country_event = {  #response if jordan gives aqaba
+	id = ZAA.3
+	title = ZAA.3.t
+	desc = ZAA.3.d
+	
+	picture = GFX_report_event_ENG_middle_eastern_conflict_2
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZAA.3.a
+		ai_chance = { 
+			factor = 1
+		}
+    }
+}
+
+country_event = {  #aqaba deal, jordan receives this
+	id = ZAA.4
+	title = ZAA.4.t
+	desc = ZAA.4.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = { #yes
+        name = ZAA.4.a
+		ai_chance = { 
+			factor = 0.1
+		}
+		1110 = {
+			transfer_state_to = ZAA
+		}
+		add_timed_idea = {
+			idea = ZJO_aqaba_payment
+			days = 100
+		}
+		ZAA = {
+			give_military_access = ZJO
+		}
+		ZAA = { 
+			add_timed_idea = {
+				idea = ZAA_aqaba_payment
+				days = 100
+			}
+			country_event = {
+				id = ZAA.5
+			}
+		}
+    }
+	option = { #no
+        name = ZAA.4.b
+		ai_chance = { 
+			factor = 1
+		}
+		ZAA = { 
+			country_event = {
+				id = ZAA.6
+				days = 1
+			}
+		}
+    }
+}
+
+country_event = {
+	id = ZAA.5
+	title = ZAA.5.t
+	desc = ZAA.5.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZAA.5.a
+		ai_chance = { 
+			factor = 1
+		}
+		effect_tooltip = {
+			ZAA = {
+				give_military_access = ZJO
+				add_timed_idea = {
+					idea = ZAA_aqaba_payment
+					days = 100
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = ZAA.6
+	title = ZAA.6.t
+	desc = ZAA.6.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZAA.6.a
+		ai_chance = { 
+			factor = 1
+		}
+		ZAA = { 
+			create_wargoal = {
+				type = take_state_focus
+				target = ZJO
+				generator = { 1110 }
+			}
+		}
+    }
+}

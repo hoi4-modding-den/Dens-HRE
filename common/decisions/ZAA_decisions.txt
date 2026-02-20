@@ -311,6 +311,942 @@ ZAA_foreign_affairs = {
 			}
 		}
 	}
+	ZAA_invite_italian_civil_engineers = {
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = { original_tag = ZAA }
+		visible = { has_completed_focus = ZAA_kickstart_the_heavy_industry }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			set_country_flag = ZAA_invited_astaldi
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ZAA_astaldi
+		}
+	}
+	ZAA_invite_spanish_automotive_experts = {
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = { original_tag = ZAA }
+		visible = { has_completed_focus = ZAA_kickstart_the_heavy_industry }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			set_country_flag = ZAA_invited_hispano_suiza
+			unlock_military_industrial_organization_tooltip = mio:ZAA_hispano_suiza
+		}
+	}
+	ZAA_invite_dutch_aviation_experts = {
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = { original_tag = ZAA }
+		visible = { has_completed_focus = ZAA_kickstart_the_heavy_industry }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			set_country_flag = ZAA_invited_fokker
+			unlock_military_industrial_organization_tooltip = mio:ZAA_fokker
+		}
+	}
+	ZAA_invite_german_aviation_experts = {
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = { original_tag = ZAA }
+		visible = { has_completed_focus = ZAA_kickstart_the_heavy_industry }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			set_country_flag = ZAA_invited_junkers
+			unlock_military_industrial_organization_tooltip = mio:ZAA_junkers
+		}
+	}
+	ZAA_invite_german_artillery_engineers = {
+		icon = GFX_decision_eng_trade_unions_support
+		allowed = { original_tag = ZAA }
+		visible = { has_completed_focus = ZAA_kickstart_the_heavy_industry }
+		fire_only_once = yes
+		cost = 50
+		complete_effect = {
+			set_country_flag = ZAA_invited_krupp
+			unlock_military_industrial_organization_tooltip = mio:ZAA_krupp
+		}
+	}
+}
+
+ZAA_invasion_plans = {
+	ZAA_raid_the_hutaym = {
+		icon = GFX_decision_generic_ignite_civil_war
+		allowed = { 
+			original_tag = ZAA
+		}
+		visible = { has_completed_focus = ZAA_fuel_the_war_machine }
+		available = {
+			ZHU = {
+				exists = yes
+				capital_scope = {
+					state_population > 8000
+				}
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		days_remove = 15
+		custom_cost_text = ZAA_decision_cost_command_power_30
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -30
+			}
+		}
+		remove_effect = {
+			random = {
+				chance = 60
+				add_manpower = 4000
+				add_to_variable = { ZAA_succesful_hutaym_raids = 1 }
+			}
+			custom_effect_tooltip = ZAA_nothing_ever_happens_40_tt
+		}
+	}
+	ZAA_finish_the_job = {
+		icon = GFX_decision_infiltrate_state
+		allowed = { 
+			original_tag = ZAA
+		}
+		visible = { 
+			check_variable = {
+				ZAA_succesful_hutaym_raids > 0.99
+			}
+		}
+		available = {
+			ZHU = {
+				exists = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = ZAA_invade_hutaym_trigger_tt
+				check_variable = {
+					ZAA_succesful_hutaym_raids > 2.99
+				}
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 29
+		}
+		days_remove = 15
+		custom_cost_text = ZAA_decision_cost_command_power_30
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -30
+			}
+		}
+		remove_effect = {
+			declare_war_on = {
+				target = ZHU
+				type = annex_everything
+			}
+			1108 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_march_to_halaib = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_first_test_of_strength
+			NOT = {
+				ZAA = {
+					controls_state = 1108
+				}
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					1108 = {
+						is_owned_by = ZZZ
+					}
+				}
+				1108 = { transfer_state_to = ZAA }
+			}
+			else = {
+				start_border_war = {
+					change_state_after_war = yes
+					attacker = {
+						state = 457
+						num_provinces = 2
+					}	
+					defender = {
+						state = 1108
+						num_provinces = 1
+					}
+				}
+			}
+		}
+	}
+	
+	ZAA_secure_umm_al_rashrash = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_secure_the_palestinian_coastline
+			NOT = {
+				ZAA = {
+					controls_state = 1111
+				}
+			}
+			ZAA = {
+				controls_state = 1110
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					1111 = {
+						is_owned_by = ZZZ
+					}
+				}
+				1111 = { transfer_state_to = ZAA }
+			}
+			else = {
+				start_border_war = {
+					change_state_after_war = yes
+					attacker = {
+						state = 1110
+						num_provinces = 2
+					}	
+					defender = {
+						state = 1111
+						num_provinces = 1
+					}
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_madinah = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 679
+				}
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					679 = {
+						is_owned_by = ZZZ
+					}
+				}
+				679 = { transfer_state_to = ZAA }
+			}
+			else = {
+				679 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 679 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_kassala = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 883
+				}
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					883 = {
+						is_owned_by = ZZZ
+					}
+				}
+				883 = { transfer_state_to = ZAA }
+			}
+			else = {
+				883 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 883 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_asir_makkah = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 856
+				}
+			}
+			ZAA = {
+				controls_state = 679
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					856 = {
+						is_owned_by = ZZZ
+					}
+				}
+				856 = { transfer_state_to = ZAA }
+			}
+			else = {
+				856 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 856 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_eritrea = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 550
+				}
+			}
+			ZAA = {
+				controls_state = 883
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					550 = {
+						is_owned_by = ZZZ
+					}
+				}
+				550 = { transfer_state_to = ZAA }
+			}
+			else = {
+				550 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 550 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_north_yemen = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 293
+				}
+			}
+			ZAA = {
+				controls_state = 856
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					293 = {
+						is_owned_by = ZZZ
+					}
+				}
+				293 = { transfer_state_to = ZAA }
+			}
+			else = {
+				293 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 293 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_djibouti = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 268
+				}
+			}
+			ZAA = {
+				controls_state = 550
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					268 = {
+						is_owned_by = ZZZ
+					}
+				}
+				268 = { transfer_state_to = ZAA }
+			}
+			else = {
+				268 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 268 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_aden = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 992
+				}
+			}
+			ZAA = {
+				controls_state = 293
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					992 = {
+						is_owned_by = ZZZ
+					}
+				}
+				992 = { transfer_state_to = ZAA }
+			}
+			else = {
+				992 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 992 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_somaliland = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 269
+				}
+			}
+			ZAA = {
+				controls_state = 268
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					269 = {
+						is_owned_by = ZZZ
+					}
+				}
+				269 = { transfer_state_to = ZAA }
+			}
+			else = {
+				269 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 269 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_south_yemen = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 659
+				}
+			}
+			ZAA = {
+				OR = {
+					controls_state = 992
+					controls_state = 293
+				}
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					659 = {
+						is_owned_by = ZZZ
+					}
+				}
+				659 = { transfer_state_to = ZAA }
+			}
+			else = {
+				659 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 659 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	ZAA_claim_somalia = {
+		icon = GFX_decision_generic_operation
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_march_southwards
+			NOT = {
+				ZAA = {
+					controls_state = 559
+				}
+			}
+			ZAA = {
+				controls_state = 269
+			}
+		}
+		cost = 50
+		days_remove = 15
+		remove_effect = {
+			if = {
+				limit = {
+					559 = {
+						is_owned_by = ZZZ
+					}
+				}
+				559 = { transfer_state_to = ZAA }
+			}
+			else = {
+				559 = {
+					controller = { 
+						ZAA = {
+							create_wargoal = {
+								target = PREV
+								type = take_state_focus
+								generator = { 559 }
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	
+	
+	#coring decisions
+	ZAA_core_halaib = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 1108
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			1108 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_madinah = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 679
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			679 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_kassala = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 883
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			883 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_asir_makkah = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 856
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			856 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_eritrea = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 550
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			550 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_north_yemen = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 293
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			293 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_djibouti = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 268
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			268 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_aden = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 992
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			992 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_somaliland = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 269
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			269 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_south_yemen = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 659
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			659 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_somalia = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 559
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			559 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_aqaba = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 1110
+			}
+			NOT = {
+				1110 = {
+					is_core_of = ZAA
+				}
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			1110 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_umm_al_rashrash = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 1111
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			1111 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_sinai = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 453
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			453 = {
+				add_core_of = ZAA
+			}
+		}
+	}
+	ZAA_core_suez = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = ZAA
+		}
+		visible = {
+			has_completed_focus = ZAA_united_by_faith
+			ZAA = {
+				owns_state = 446
+			}
+		}
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			446 = {
+				add_core_of = ZAA
+			}
+		}
+	}
 }
 
 debug_decisions = {

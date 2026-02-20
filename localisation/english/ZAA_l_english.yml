@@ -20,16 +20,26 @@
  ZAA_smooth_talking_charmer_no_pp_gain:0 "Smooth-Talking Charmer"
  ZAA_islamic_scholar:0 "Islamic Scholar"
  ZAA_naval_theorist_mastery_gain:0 "Naval Theorist"
+ ZAA_sahir_al_bahr:0 "Sahir al-Bahr"
  
  ZAA_nation_of_piranhas:0 "Nation of Piranhas"
  ZAA_thalassocratic_tendencies:0 "Thalassocratic Tendencies"
  ZAA_labour_service_corps:0 "Labour Service Corps"
+ ZAA_ottoman_legacy:0 "Ottoman Legacy"
+ ZAA_thalassocratic_tendencies_sub:0 "Thalassocratic Tendencies"
+ ZAA_thalassocratic_tendencies_gun:0 "Thalassocratic Tendencies"
+ ZAA_defense_industry_idea:0 "Standardized Arms Production"
  
  ZAA_nation_of_piranhas_dummy:0 "Nation of Piranhas"
  ZAA_thalassocratic_tendencies_dummy:0 "Thalassocratic Tendencies"
  ZAA_chest_of_treasures:0 "Vault of Treasures"
  
+ ZAA_aqaba_payment:0 "Payment for Aqaba"
+ ZJO_aqaba_payment:0 "Payment for Aqaba"
+ 
  ZAA_no_political_power_allowed:0 "Kleptocratic Governance"
+ 
+ ZAA_artillery_tt:0 "§H64§! units of Arabian §H122 mm Corps Gun M1931/37 (A-19)§! is added to the national stockpile"
  
  ZAA_chest_of_treasures_idea_tt:0 "£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!"
  ZAA_nation_of_piranhas_rec_tt:0 "Recruitable Population Factor: §G10%§!"
@@ -41,6 +51,29 @@
  ZAA_achievements:0 "Thalassocracy of Al-Bahr Al-Ahmar Achievements"
  ZAA_pirates_of_the_erythraean_NAME:0 "Pirates of the Erythraean"
  ZAA_pirates_of_the_erythraean_DESC:0 "As the Thalassocracy of Al-Bahr Al-Ahmar, form the Red Sea Empire."
+ ZAA_67_strength_NAME:0 "Funny How?"
+ ZAA_67_strength_DESC:0 "As the Thalassocracy of Al-Bahr Al-Ahmar, have exactly 67 naval strength."
+ 
+ ZAA_pirates_tt:0 "Has formed §Hthe Red Sea Empire§!"
+ ZAA_67_strength_tt:0 "Has exactly §H67§! naval strength"
+ 
+ ZAA_mio_trigger_bindable_tt:0 "Has invited $NATIONALITY|Y$ $EXPERTISE_TYPE$"
+ 
+ ZAA_change_economy_law_cost_tt:0 "Modify §HNation of Piranhas§! by\nEconomy Laws Cost: §G-25%§!"
+ ZAA_military_first_policy_tt:0 "Modify §HNation of Piranhas§! by\nDaily Command Power Gain Multiplier: §G+15%§!\n\n"
+ ZAA_masters_of_the_waves_tt:0 "Modify §HNation of Piranhas§! by\nStability Factor: §G+20%§!\n\n"
+ ZAA_human_face_tt:0 "Modify §HNation of Piranhas§! by\nStability Factor: §G+1.5%§!\n\n"
+ ZAA_this_will_upset_bedouins:0 "§RThis will upset the Bedouin population!§!"
+ ZAA_hutaym_raid_tt:0 "Unlocks £GFX_decision_icon_small §YDecisions§! to raid the §YHutaym Tribe§!."
+ ZAA_united_by_faith_tt:0 "Unlocks £GFX_decision_icon_small §YDecisions§! to §Gcore§! states that we have conquered."
+ ZAA_invade_halaib_tt:0 "Unlocks £GFX_decision_icon_small §YDecision§! to invade §YHalaib§!."
+ ZAA_march_southwards_tt:0 "Unlocks £GFX_decision_icon_small §YDecisions§! to §Hinvade§! coastal states that are south of us."
+ ZAA_secure_coastline_tt:0 "Unlocks £GFX_decision_icon_small §YDecision§! to invade §YUmm Al-Rashrash§!."
+ ZAA_invite_experts_tt:0 "Unlocks £GFX_decision_icon_small §YDecisions§! to invite §Yforeign experts§!."
+ 
+ ZAA_astaldi:0 "Astaldi S.p.A."
+ ZAA_general_inspectorate_of_power_lines_and_energy:0 "General Inspectorate of Power Lines and Energy"
+ ZAA_general_inspectorate_of_railways:0 "General Inspectorate of Railways"
  
  
  #decisions
@@ -55,6 +88,10 @@
  ZAA_decision_cost_command_power_15: "£command_power §Y15§!"
  ZAA_decision_cost_command_power_15_blocked: "£command_power §R15§!"
  ZAA_decision_cost_command_power_15_tooltip: "It costs £command_power §Y15§! to take the decision"
+ 
+ ZAA_decision_cost_command_power_30: "£command_power §Y30§!"
+ ZAA_decision_cost_command_power_30_blocked: "£command_power §R30§!"
+ ZAA_decision_cost_command_power_30_tooltip: "It costs £command_power §Y30§! to take the decision"
  
  ZAA_decision_cost_command_power_political_power_15: "£pol_power §Y15§! £command_power §Y15§!"
  ZAA_decision_cost_command_power_political_power_15_blocked: "£pol_power §R15§! £command_power §R15§!"
@@ -77,6 +114,10 @@
  ZAA_treasure_cost_civ_factory_tooltip:0 "It costs §Y2§! £ZAA_construction_equipment_texticon Construction Equipment and\n§Y2§! £ZAA_industrial_machinery_texticon Industrial Machinery to take this decision"
  
  ZAA_nothing_ever_happens_tt:0 "§H[?ZAA_nothing_ever_happens]%§! chance that the §Roperation fails...§!"
+ ZAA_nothing_ever_happens_40_tt:0 "§H40%§! chance that the §Rraid fails...§!"
+ 
+ ZAA_invade_hutaym_trigger_tt:0 "Has completed at least §H3§! succesful raids against the §HHutaym§!"
+ ZAA_finish_the_job:0 "Finish the Job"
  
  ZAA_gain_one_treasure:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+1§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+1§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+1§! £ZAA_electronic_appliances_texticon Electronic Appliances"
  ZAA_gain_two_treasures:0 "§H[?ZAA_loot_gain_chance]%§! chance of one of the following:\n§G+2§! £ZAA_construction_equipment_texticon Construction Equipment \n§G+2§! £ZAA_industrial_machinery_texticon Industrial Machinery \n§G+2§! £ZAA_electronic_appliances_texticon Electronic Appliances"
@@ -97,14 +138,53 @@
  ZAA_invasion_plans:0 "Invasion Plans"
  ZAA_invasion_plans_desc:0 "No matter how you put it, in a political climate such as this, war is an inevitability and not a mere possibility. This is why we must have the courage to fire the first shot if the situation calls for it."
  
+ ZAA_march_to_halaib:0 "March to Halaib"
+ 
+ ZAA_claim_kassala:0 "Claim Kassala"
+ ZAA_claim_madinah:0 "Claim Madinah"
+ ZAA_claim_asir_makkah:0 "Claim Asir-Makkah"
+ ZAA_claim_eritrea:0 "Claim Eritrea"
+ ZAA_claim_north_yemen:0 "Claim North Yemen"
+ ZAA_claim_djibouti:0 "Claim Djibouti"
+ ZAA_claim_aden:0 "Claim Aden"
+ ZAA_claim_somaliland:0 "Claim Somaliland"
+ ZAA_claim_south_yemen:0 "Claim South Yemen"
+ ZAA_claim_somalia:0 "Claim Somalia"
+ 
+ ZAA_core_halaib:0 "Core Halaib"
+ ZAA_core_madinah:0 "Core Madinah"
+ ZAA_core_kassala:0 "Core Kassala"
+ ZAA_core_asir_makkah:0 "Core Asir-Makkah"
+ ZAA_core_eritrea:0 "Core Eritrea"
+ ZAA_core_north_yemen:0 "Core North Yemen"
+ ZAA_core_djibouti:0 "Core Djibouti"
+ ZAA_core_aden:0 "Core Aden"
+ ZAA_core_somaliland:0 "Core Somaliland"
+ ZAA_core_south_yemen:0 "Core South Yemen"
+ ZAA_core_somalia:0 "Core Somalia"
+ ZAA_core_aqaba:0 "Core Aqaba"
+ ZAA_core_umm_al_rashrash:0 "Core Umm al-Rashrash"
+ ZAA_core_sinai:0 "Core Sinai"
+ ZAA_core_suez:0 "Core Suez"
+ 
+ ZAA_invite_italian_civil_engineers:0 "Invite Italian Civil Engineers"
+ ZAA_invite_spanish_automotive_experts:0 "Invite Spanish Automotive Experts"
+ 
  ZAA_utilizing_our_spoils:0 "Utilizing Our Spoils"
  ZAA_utilizing_our_spoils_desc:0 "It would be counterproductive to merely let our... 'captured' spoils collect dust in the corner of some derelict warehouse. If anything, we should put this equipment to good use, and utilize them in a way which would improve our economy and industry.\n\nWe currently own:\n\n£ZAA_construction_equipment_texticon Construction Equipment: §H[?ZAA_construction_equipment_amount]§!\n£ZAA_industrial_machinery_texticon Industrial Machinery: §H[?ZAA_industrial_equipment_amount]§!\n£ZAA_electronic_appliances_texticon Electronic Appliances: §H[?ZAA_electronic_appliances_amount]§!\n"
+ 
+ ZAA_raid_the_hutaym:0 "Raid the Hutaym"
+ ZAA_raid_the_hutaym_desc:0 "The War Machine demands more manpower, and the Hutaym Tribe is right there... Would capturing and conscripting them be the worst thing in the world...?"
  
  #decision gui
  ZAA_controlled_states_tt:0 "We currently control §C[?ZAA_red_sea_controlled_states]§! of the §H17§! states necessary for establishing naval dominance over the Red Sea"
  ZAA_ships_info_tt:0 "Submarines: §H[?ZAA_submarine_score]§!\nDestroyers: §H[?ZAA_destroyer_score]§!\nLight Cruisers: §H[?ZAA_light_cruiser_count]§!\nHeavy Ships: §H[?ZAA_battleship_count]§!\nCarriers: §H[?ZAA_cruiser_count]§!\nAdditional Bonuses: §H[?ZAA_naval_score_additional_bonuses]§!\n\nTotal Strength: §C[?ZAA_naval_total_score]§!"
 
  ZAA_ships_info_tooltip:0 "The amount of §CStrength§! that each ship type awards:\n\nSubmarine: §Y1 Strength§!\nDestroyer: §Y1 Strength§!\nLight Cruiser: §Y3 Strength§!\nHeavy Ship: §Y5 Strength§!\nCarrier: §Y5 Strength§!"
+ 
+ #intro gui
+ ZAA_intro_loc:0 "After the collapse of the Ottoman Empire, the large, Egyptian section of the imperial navy was left more or less to their own devices. They no longer had a Sultan to protect, or an empire to protect. This meant that salaries were also no longer paid, meaning that both the crews and the commanders had to find alternative methods of creating cashflow for themselves. This economic condition led to the establishment of the Thalassocracy of al-Bahr al-Ahmar, headed by the Egyptian Admiral Suleiman Ezzat, a pariah state that currently claims all of Red Sea as her internal waters, and due to that, claims to have the legal right to collect a naval toll from all passing ships. Our survival is based on the amount of wealth and goods that we are able to extract from the passing ships; the strength of our navy defines how strong our entire state is, which is why we must invest as much as possible into our ships, as the future that we are sailing towards is anything but calm.\n\n§HCurrent Content:§! \n\n §G-Build an undefeatable navy, following the footsteps of the Pharaos and the Fatimids.\n-Seize control of the full coastline of our internal waters and form the Red Sea Empire.\n-Become an industrial and naval powerhouse of the Middle East\n\n§HAvailable Achievements:§!\n\n-§gPirates of the Erythraean\n-Funny How?§!"
+ ZAA_credits:0 "Credits for the Thalassocratic Content: §Hkasastul/Kåsastul§!, \nCredits for the rest of the content: \n§HThe HOI4 Modding Den Discord Server§!"
  
  #leader(s)
  ZAA_suleiman_ezzat:0 "Suleiman Ezzat"
@@ -131,6 +211,12 @@
  ZAA_special_research_division:0 "Special Research Division for Submersibles"
  
  ZAA_tabuk_arsenal:0 "Tabuk Armoury"
+ ZAA_special_research_divison_tanks:0 "Special Research Division for Armoured Vehicles"
+ 
+ ZAA_hispano_suiza:0 "Hispano-Suiza"
+ ZAA_junkers:0 "Junkers"
+ ZAA_fokker:0 "Fokker"
+ ZAA_krupp:0 "Krupp"
  
  #equipment
  
@@ -205,6 +291,7 @@
  ZAA_fortify_aden:0 "Fortify Aden"
  ZAA_defend_the_canal:0 "Defend the Canal"
  ZAA_naval_engineering:0 "Advanced Naval Engineering Facilities"
+ ZAA_invite_settlers:0 "Invite Settlers"
  
  ZAA_reorganize_the_armed_forces:0 "Reorganize the Ground Regiments"
  ZAA_modernize_the_ottoman_mauser:0 "Renovate the Ottoman Mauser"
@@ -225,4 +312,31 @@
  ZAA_hurghada_industrial_complex:0 "Hurghada Industrial Complex"
  ZAA_modernize_the_tabuk_armoury:0 "Modernize the Tabouk Armoury"
  ZAA_munitions_factories:0 "Munition Factories"
+ 
+ #events
+ ZAA.1.t:0 "Ultimatum from the Thalassocracy!"
+ ZAA.1.d:0 "The Thalassocracy of Al-Bahr Al-Ahmar has offered us an ultimatum; either surrender Aqaba or face an invasion!"
+ ZAA.1.a:0 "Let them come if they dare!"
+ ZAA.1.b:0 "Concede to their demands"
+ 
+ ZAA.2.t:0 "Jordan stands defiant!"
+ ZAA.2.d:0 "[JOR.GetNameDefCap] has refused our ultimatum, and insists on clinging on to the Port of Aqaba."
+ ZAA.2.a:0 "How foolish of them."
+ 
+ ZAA.3.t:0 "Jordan backs down"
+ ZAA.3.d:0 "Jordan has surrendered the City of Aqaba to us, meaning that our ultimatum worked."
+ ZAA.3.a:0 "Perfect!"
+ 
+ ZAA.4.t:0 "An Offer from the Thalassocracy"
+ ZAA.4.d:0 "The Thalassocracy of Al-Bahr Al-Ahmar has offered us a deal; give them the Port of Aqaba, and they'll grant us military access alongside a hefty payment."
+ ZAA.4.a:0 "That sounds fair..."
+ ZAA.4.b:0 "Refuse this faustian bargain."
+ 
+ ZAA.5.t:0 "Jordan accepts our offer!"
+ ZAA.5.d:0 "The negotiations were a success, and Jordan are willing to hand the Port of Aqaba to us."
+ ZAA.5.a:0 "The Art of the Deal."
+ 
+ ZAA.6.t:0 "Jordan has refused our offer!"
+ ZAA.6.d:0 "The negotiations have fallen apart, and Jordan has seemingly ruled out all possibilites of handing Aqaba over to us."
+ ZAA.6.a:0 "That can only mean one thing..."
  

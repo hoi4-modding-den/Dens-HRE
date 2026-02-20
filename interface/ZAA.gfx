@@ -121,5 +121,50 @@ spriteTypes = {
 		name = "GFX_focus_ZAA_jordan_deal"
 		texturefile = "gfx/ZAA/ZAA_jordan_al_bahr_deal.dds"
 	}
+	
+	SpriteType = {
+		name = "GFX_ZAA_continue_button_bloom"
+		texturefile = "gfx/interface/button_359x34.dds"			
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/button_359x34.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 1.75			# in seconds
+			animationdelay = 0.35			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/button_359x34.dds"			
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = yes			# yes or no ;)
+			animationtime = 1.75				# in seconds
+			animationdelay = 0.35			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_ZAA_welcome_window_animation_loop"
+		texturefile = "gfx/ZAA/welcome_window_animation.dds"
+		noOfFrames = 1
+		animation_rate_fps = 0.2
+		transparencecheck = no
+		looping = yes
+		play_on_show = yes
+		#pause_on_loop = 0.2
+		#alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
 
 }

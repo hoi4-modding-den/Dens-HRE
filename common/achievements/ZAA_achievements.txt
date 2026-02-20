@@ -9,8 +9,30 @@ ZAA_pirates_of_the_erythraean = {
     }
 
     happened = {
-		ROOT = {
-			has_cosmetic_tag = ZAA_red_sea_empire
+		custom_trigger_tooltip = {
+			tooltip = ZAA_pirates_tt
+			ROOT = {
+				has_cosmetic_tag = ZAA_red_sea_empire
+			}
+		}
+    }
+}
+
+ZAA_67_strength = {
+    possible = {
+        difficulty > 1
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+        tag = ZAA
+    }
+
+    happened = {
+		custom_trigger_tooltip = {
+			tooltip = ZAA_67_strength_tt
+			ROOT = {
+				check_variable = { ZAA_naval_total_score > 66.9 }
+				check_variable = { ZAA_naval_total_score < 67.1 }
+			}
 		}
     }
 }

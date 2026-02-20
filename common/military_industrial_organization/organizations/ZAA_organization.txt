@@ -27,3 +27,101 @@ ZAA_tabuk_arsenal = {
 	}
 
 }
+
+ZAA_special_research_divison_tanks = {
+	include = generic_tank_organization
+	icon = GFX_idea_usa_tank_destroyer_board
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+	
+	available = {
+		owner = { has_completed_focus = ZAA_tank_experiments }
+	}
+
+}
+
+ZAA_hispano_suiza = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_SPR_hispano_suiza
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = {
+				localization_key = ZAA_mio_trigger_bindable_tt
+				NATIONALITY = "Spanish"
+				EXPERTISE_TYPE = "automotive experts"
+			}
+			owner = {
+				has_country_flag = ZAA_invited_hispano_suiza
+			}
+		}
+	}
+}
+
+ZAA_fokker = {
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_fokker
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = {
+				localization_key = ZAA_mio_trigger_bindable_tt
+				NATIONALITY = "Dutch"
+				EXPERTISE_TYPE = "aviation experts"
+			}
+			owner = {
+				has_country_flag = ZAA_invited_fokker
+			}
+		}
+	}
+}
+
+ZAA_junkers = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_junkers
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = {
+				localization_key = ZAA_mio_trigger_bindable_tt
+				NATIONALITY = "German"
+				EXPERTISE_TYPE = "aviation experts"
+			}
+			owner = {
+				has_country_flag = ZAA_invited_junkers
+			}
+		}
+	}
+}
+
+ZAA_krupp = {
+	include = generic_artillery_organization
+	icon = GFX_idea_krupp
+	
+	allowed = {	
+		original_tag = ZAA
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = {
+				localization_key = ZAA_mio_trigger_bindable_tt
+				NATIONALITY = "German"
+				EXPERTISE_TYPE = "arms manufacturers"
+			}
+			owner = {
+				has_country_flag = ZAA_invited_krupp
+			}
+		}
+	}
+}

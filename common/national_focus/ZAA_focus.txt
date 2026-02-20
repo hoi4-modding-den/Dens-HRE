@@ -20,7 +20,7 @@ focus_tree = {
 		y = 0
 
 		completion_reward = { 
-			
+			add_command_power = 25
 		}
 	}
 	
@@ -35,7 +35,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_to_variable = { ZAA_command_power_variable = 0.15 }
+			custom_effect_tooltip = ZAA_military_first_policy_tt
+			navy_experience = 30
 		}
 	}
 	
@@ -53,7 +55,8 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_stability = -0.05
+			add_political_power = 150
 		}
 	}
 	
@@ -71,7 +74,12 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			hidden_effect = {
+				subtract_from_variable = { ZAA_law_cost_factor = 0.25 }
+			}
+			custom_effect_tooltip = ZAA_change_economy_law_cost_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.025
 		}
 	}
 	
@@ -85,7 +93,8 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_manpower = 5691
+			custom_effect_tooltip = ZAA_this_will_upset_bedouins
 		}
 	}
 	
@@ -99,7 +108,8 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_political_power = 25
+			add_war_support = 0.075
 		}
 	}
 	
@@ -114,7 +124,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			custom_effect_tooltip = ZAA_hutaym_raid_tt
 		}
 	}
 	
@@ -129,7 +139,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_to_variable = { ZAA_piranhas_stability_factor_variable = 0.015 }
+			custom_effect_tooltip = ZAA_human_face_tt
+			add_political_power = 15
 		}
 	}
 	
@@ -143,7 +155,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_stability = 0.025
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ZAA_general_inspectorate_of_power_lines_and_energy
 		}
 	}
 	
@@ -158,6 +173,10 @@ focus_tree = {
 		
 		completion_reward = {
 			add_ideas = { ZAA_labour_service_corps }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	
@@ -172,7 +191,8 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			add_political_power = 75
+			add_stability = 0.05
 		}
 	}
 	
@@ -209,7 +229,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			custom_effect_tooltip = ZAA_invade_halaib_tt
 		}
 	}
 	
@@ -224,7 +244,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			ZJO = { country_event = ZAA.1 }
 		}
 	}
 	
@@ -239,7 +259,22 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			ZJO = { country_event = ZAA.4 }
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				1110 = {
+					transfer_state_to = ZAA
+				}
+				ZAA = {
+					give_military_access = ZJO
+				}
+				ZAA = {
+					add_timed_idea = {
+						idea = ZAA_aqaba_payment
+						days = 100
+					}
+				}
+			}
 		}
 	}
 	
@@ -256,7 +291,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			custom_effect_tooltip = ZAA_march_southwards_tt
 		}
 	}
 	
@@ -270,7 +305,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			#enable decisions to integrate conquered lands
+			custom_effect_tooltip = ZAA_united_by_faith_tt
 		}
 	}
 	
@@ -285,7 +320,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			#enable decisions to integrate conquered lands
+			add_mastery = {
+				amount = 150
+				folder = land
+			}
 		}
 	}
 	
@@ -299,7 +337,7 @@ focus_tree = {
 		y = 2
 		
 		completion_reward = {
-			
+			custom_effect_tooltip = ZAA_secure_coastline_tt
 		}
 	}
 	
@@ -313,7 +351,17 @@ focus_tree = {
 		y = 2
 		
 		completion_reward = {
-			
+			446 = {
+				controller = { 
+					ZAA = {
+						create_wargoal = {
+							target = PREV
+							type = take_state_focus
+							generator = { 446 }
+						}
+					}
+				}	
+			}
 		}
 	}
 	
@@ -324,11 +372,22 @@ focus_tree = {
 		prerequisite = { focus = ZAA_invade_the_suez }
 		prerequisite = { focus = ZAA_secure_the_palestinian_coastline }
 		relative_position_id = ZAA_invade_the_suez
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ZAA_pirates_tt
+				has_cosmetic_tag = ZAA_red_sea_empire
+			}
+		}
 		x = 1
 		y = 1
 		
 		completion_reward = {
-			
+			add_mastery = {
+				amount = 300
+				folder = naval
+			}
+			add_to_variable = { ZAA_piranhas_stability_factor_variable = 0.2 }
+			custom_effect_tooltip = ZAA_masters_of_the_waves_tt
 		}
 	}
 	
@@ -342,7 +401,17 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			454 = {
+				controller = { 
+					ZAA = {
+						create_wargoal = {
+							target = PREV
+							type = take_state_focus
+							generator = { 454 }
+						}
+					}
+				}	
+			}
 		}
 	}
 	
@@ -356,7 +425,17 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			183 = {
+				controller = { 
+					ZAA = {
+						create_wargoal = {
+							target = PREV
+							type = take_state_focus
+							generator = { 183 }
+						}
+					}
+				}	
+			}
 		}
 	}
 	
@@ -368,7 +447,22 @@ focus_tree = {
 		y = 0
 
 		completion_reward = { 
-			
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -379,10 +473,29 @@ focus_tree = {
 		relative_position_id = ZAA_develop_the_shipbuilding_industry
 		prerequisite = { focus = ZAA_develop_the_shipbuilding_industry }
 		mutually_exclusive = { focus = ZAA_the_two_shore_strategy }
+		available = { controls_state = 457 }
 		x = -1
 		y = 1
 
 		completion_reward = { 
+			457 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 12889
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			mio:ZAA_safaga_shipyard = {
+				add_mio_size = 2
+			}
 			
 		}
 	}
@@ -394,11 +507,65 @@ focus_tree = {
 		relative_position_id = ZAA_develop_the_shipbuilding_industry
 		prerequisite = { focus = ZAA_develop_the_shipbuilding_industry }
 		mutually_exclusive = { focus = ZAA_expand_the_safaga_shipyard }
+		available = {
+			controls_state = 457
+			controls_state = 855
+		}
 		x = 1
 		y = 1
 
 		completion_reward = { 
-			
+			457 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 12889
+				}
+			}
+			855 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 8092
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ZAA_invite_settlers
+		icon = GFX_focus_generic_population_growth
+		cost = 5
+		relative_position_id = ZAA_the_two_shore_strategy
+		prerequisite = { 
+			focus = ZAA_expand_the_safaga_shipyard 
+			focus = ZAA_the_two_shore_strategy
+		}
+		x = -1
+		y = 1
+
+		completion_reward = { 
+			add_manpower = 6271
+			457 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			855 = {
+				add_extra_state_shared_building_slots = 1
+			}
 		}
 	}
 	
@@ -415,7 +582,13 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			navy_experience = 30
+			add_doctrine_cost_reduction = {
+				name = ZAA_doctrinal_developments
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
 		}
 	}
 	
@@ -430,7 +603,24 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.75
+				uses = 2
+				category = ca_tech
+			}
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+			swap_ideas = {
+				remove_idea = ZAA_thalassocratic_tendencies
+				add_idea = ZAA_thalassocratic_tendencies_gun
+			}
 		}
 	}
 	
@@ -445,7 +635,26 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.75
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.75
+				uses = 1
+				category = dd_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			mio:ZAA_special_research_division = {
+				add_mio_size = 1
+			}
+			swap_ideas = {
+				remove_idea = ZAA_thalassocratic_tendencies
+				add_idea = ZAA_thalassocratic_tendencies_sub
+			}
 		}
 	}
 	
@@ -460,7 +669,13 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.75
+				uses = 2
+				category = naval_bomber
+				category = cat_maritime_patrol
+			}
 		}
 	}
 	
@@ -474,7 +689,13 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			#fleet in being bonuses
+			add_mastery_bonus = {
+				name = large_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_fleet_in_being
+			}
+			add_ideas = { ZAA_ottoman_legacy }
 		}
 	}
 	
@@ -491,7 +712,17 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				#name = ZAA_marine_bonus
+				bonus = 1.0
+				uses = 1
+				category = marine_tech
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 3
+				category = cat_marines_doctrine
+			}
 		}
 	}
 	
@@ -505,7 +736,27 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_trait = {
+				character = ZAA_suleiman_ezzat
+				ideology = despotism
+				trait = ZAA_sahir_al_bahr
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -515,11 +766,19 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_dominate_the_red_sea
 		prerequisite = { focus = ZAA_dominate_the_red_sea }
+		available = { controls_state = 457 }
 		x = 0
 		y = 1
 
 		completion_reward = { 
-			
+			457 = {
+				add_building_construction = {
+					type = naval_facility
+					level = 1
+					instant_build = yes
+					province = 12889
+				}
+			}
 		}
 	}
 	
@@ -529,11 +788,25 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_dominate_the_red_sea
 		prerequisite = { focus = ZAA_dominate_the_red_sea }
+		available = { controls_state = 992 }
 		x = 2
 		y = 1
 
 		completion_reward = { 
-			
+			992 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+					province = 5074
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5074
+				}
+			}
 		}
 	}
 	
@@ -543,11 +816,25 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_dominate_the_red_sea
 		prerequisite = { focus = ZAA_dominate_the_red_sea }
+		available = { controls_state = 446 }
 		x = -2
 		y = 1
 
 		completion_reward = { 
-			
+			446 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 12049
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4073
+				}
+			}
 		}
 	}
 	
@@ -562,7 +849,7 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			army_experience = 50
 		}
 	}
 	
@@ -576,7 +863,11 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
 		}
 	}
 	
@@ -590,7 +881,18 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			set_technology = {
+				interwar_artillery = 1
+				artillery1 = 1
+			}
+			custom_effect_tooltip = ZAA_artillery_tt
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_2
+					amount = 64
+					producer = ZAA
+				}
+			}
 		}
 	}
 	
@@ -605,7 +907,11 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = support_tech
+			}
 		}
 	}
 	
@@ -633,7 +939,12 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			unlock_military_industrial_organization_tooltip = mio:ZAA_special_research_divison_tanks
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = armor
+			}
 		}
 	}
 	
@@ -650,7 +961,22 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			custom_effect_tooltip = ZAA_invite_experts_tt
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -660,11 +986,26 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_kickstart_the_heavy_industry
 		prerequisite = { focus = ZAA_kickstart_the_heavy_industry }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = {
+					localization_key = ZAA_mio_trigger_bindable_tt
+					NATIONALITY = "Italian"
+					EXPERTISE_TYPE = "civil engineers"
+				}
+				has_country_flag = ZAA_invited_astaldi
+			}
+		}
 		x = 0
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
 		}
 	}
 	
@@ -678,7 +1019,15 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = ZAA_general_inspectorate_of_railways
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = ZAA_train_bonus
+				bonus = 0.5
+				uses = 1
+				category = train_tech
+			}
 		}
 	}
 	
@@ -688,11 +1037,23 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_modern_production_lines
 		prerequisite = { focus = ZAA_modern_production_lines }
+		available = { controls_state = 457 }
 		x = 1
 		y = 1
 
 		completion_reward = { 
-			
+			457 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = excavation_tech
+			}
 		}
 	}
 	
@@ -707,7 +1068,27 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -718,11 +1099,24 @@ focus_tree = {
 		relative_position_id = ZAA_long_term_industrial_planning
 		prerequisite = { focus = ZAA_long_term_industrial_planning }
 		prerequisite = { focus = ZAA_modernize_the_tabuk_armoury }
+		available = { controls_state = 457 }
 		x = -1
 		y = 1
 
 		completion_reward = { 
-			
+			457 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -732,11 +1126,22 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_kickstart_the_heavy_industry
 		prerequisite = { focus = ZAA_kickstart_the_heavy_industry }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = {
+					localization_key = ZAA_mio_trigger_bindable_tt
+					NATIONALITY = "German"
+					EXPERTISE_TYPE = "arms manufacturers"
+				}
+				has_country_flag = ZAA_invited_krupp
+			}
+		}
+		
 		x = -3
 		y = 1
 
 		completion_reward = { 
-			
+			add_ideas = { ZAA_defense_industry_idea }
 		}
 	}
 	
@@ -750,7 +1155,21 @@ focus_tree = {
 		y = 2
 		
 		completion_reward = { 
-			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -760,11 +1179,22 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_establish_the_defense_industry
 		prerequisite = { focus = ZAA_establish_the_defense_industry }
+		available = { controls_state = 855 }
 		x = 1
 		y = 2
 		
 		completion_reward = { 
-			
+			855 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			mio:ZAA_tabuk_arsenal = {
+				add_mio_size = 2
+			}
 		}
 	}
 	
@@ -775,11 +1205,45 @@ focus_tree = {
 		cost = 5
 		relative_position_id = ZAA_kickstart_the_heavy_industry
 		prerequisite = { focus = ZAA_kickstart_the_heavy_industry }
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = {
+						localization_key = ZAA_mio_trigger_bindable_tt
+						NATIONALITY = "Dutch"
+						EXPERTISE_TYPE = "aviation experts"
+					}
+					has_country_flag = ZAA_invited_fokker
+				}
+				custom_trigger_tooltip = {
+					tooltip = {
+						localization_key = ZAA_mio_trigger_bindable_tt
+						NATIONALITY = "German"
+						EXPERTISE_TYPE = "aviation experts"
+					}
+					has_country_flag = ZAA_invited_junker
+				}
+			}
+		}
 		x = 3
 		y = 1
 
 		completion_reward = { 
-			
+			air_experience = 30
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 2
+						#include_locked = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -793,7 +1257,12 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
 		}
 	}
 	
@@ -810,7 +1279,13 @@ focus_tree = {
 		y = 1
 
 		completion_reward = { 
-			
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.75
+				uses = 2
+				category = cat_air_bombs
+				category = cas_bomber
+			}
 		}
 	}
 

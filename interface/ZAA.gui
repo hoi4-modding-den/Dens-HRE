@@ -74,4 +74,144 @@ guiTypes = {
 			}
 		}
 	}
+	containerWindowType = {
+		name = "ZAA_welcome_window"
+		#clipping = no
+		moveable = no
+		position = { x = 800 y = 400 }
+		#show_position = { x = 538 y = 220 }
+		#show_animation_type = decelerated
+		#hide_animation_type = accelerated
+		#animation_time = 300
+		#orientation = center
+		size = { width = 800 height = 600 }
+		fade_time = 20000
+		fade_type = accelerated
+		
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x= 5 y = 07 }
+			Orientation = "UPPER_LEFT"
+		}	
+		instantTextboxType = {
+			name = "ZAA_welcome_Desc"
+			position = { x = 3 y = 7 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "A Contemporary Thalassocracy"
+			maxWidth = 500
+			maxHeight = 20
+			format = center
+		}
+		
+		containerWindowType = {
+			name = "ZAA_welcome_image_window"
+			position = { x=500 y=0 }
+			size = { width = 300 height = 600 }
+			#moveable = yes
+			
+			background = {
+				name = "ZAA_welcome_Image_Border"
+				quadTextureSprite ="GFX_tiled_window_thin_border2"
+			}
+			iconType ={
+				name ="ZAA_welcome_window_animation"
+				spriteType = "GFX_ZAA_welcome_window_animation_loop"
+				position = { x= 9 y = 12 }
+				Orientation = "UPPER_LEFT"
+				#clipping = no
+				scale = 0.97
+			}	
+		}
+		buttonType = {
+			name = "ZAA_welcome_message_close"
+			spriteType = "GFX_closebutton"
+			position = { x = 764 y = 4 }
+			
+		}
+		buttonType = {
+			name ="ZAA_welcome_message_continue"
+			quadTextureSprite ="GFX_button_359x34"
+			position = { x=20 y=553 }
+			buttonText = "Continue"
+			buttonFont = "hoi_16mbs"
+			shortcut = "ESCAPE"
+		}
+		iconType = {
+			name = "ZAA_continue_button_bloom"
+			spriteType = "GFX_ZAA_continue_button_bloom"
+			position = { x=20 y=553 }
+			#pdx_tooltip = ZAA_bloom_hint_loc
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "ZAA_continue_button_text" 
+			position = { x=50 y=563 }
+			font = "hoi_16mbs"
+			text = "Continue"
+			maxWidth = 300
+			maxHeight = 375
+			#multiline = yes
+			format = center
+			
+			
+			#pdx_tooltip = "ZAA_intelligence_control_tt"
+		}
+		instantTextboxType = {
+			name = "ZAA_introduction_text" 
+			position = { x=10 y=52 }
+			font = "hoi_18mbs"
+			text = ZAA_intro_loc
+			maxWidth = 493
+			maxHeight = 375
+			multiline = yes
+			format = left
+			
+			
+			#pdx_tooltip = "ZAA_intelligence_control_tt"
+		}
+		buttonType = {
+			name ="ZAA_welcome_message_credits"
+			quadTextureSprite ="GFX_button_94x31"
+			position = { x=400 y=555 }
+			buttonText = "Credits?"
+			buttonFont = "hoi_16mbs"
+			#shortcut = "ESCAPE"
+		}
+		
+	}
+	containerWindowType = {
+		name = "ZAA_credits_main_window"
+		clipping = no
+		#moveable = yes
+		position = { x = 1190 y = 1010 }
+		#show_position = { x = 1145 y = 1010 }
+		#show_animation_type = linear
+		#hide_animation_type = linear
+		#animation_time = 500
+		fade_time = 20000
+		fade_type = accelerated
+		size = { width = 410 height = 50 }
+		
+		background = {
+			name = "background"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+		instantTextboxType = {
+			name = "credits_desc"
+			position = { x = 7 y = -9 }
+			font = "hoi_18mbs"
+			text = ZAA_credits
+			maxWidth = 400
+			maxHeight = 375
+			multiline = yes
+			format = left
+		}
+	}
 }
