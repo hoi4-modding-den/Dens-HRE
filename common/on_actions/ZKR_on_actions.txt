@@ -198,10 +198,7 @@ on_actions = {
                     limit = {
                         ROOT = {
                             all_owned_state = {
-                                OR = {
-                                    is_core_of = FROM
-                                    is_claimed_by = FROM
-                                }
+                                has_state_flag = ZKR_greater_kurdistan_state
                             }
                         }
                     }

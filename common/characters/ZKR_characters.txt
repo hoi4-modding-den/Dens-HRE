@@ -67,6 +67,7 @@ characters = {
 			}
 			available = {
 				has_completed_focus = ZKR_kurdish_federalism
+				NOT = { has_country_leader = { character = ZKR_ahmed_barzani ruling_only = yes } }
 			}
 			traits = {
 				ZKR_federalist_advisor
@@ -110,6 +111,7 @@ characters = {
 			}
 			available = {
 				has_completed_focus = ZKR_support_cooperatives
+				NOT = { has_country_leader = { character = ZKR_qazi_muhamad ruling_only = yes } }
 			}
 			traits = {
 				ZKR_trotskyist_internationalist
@@ -153,6 +155,7 @@ characters = {
 			}
 			available = {
 				has_completed_focus = ZKR_strengthen_the_judiciary
+				NOT = { has_country_leader = { character = ZKR_ihsan_nuri ruling_only = yes } }
 			}
 			traits = {
 				ZKR_revolutionary_intellectual
@@ -315,8 +318,8 @@ characters = {
 
 		advisor = {
 			slot = political_advisor
-			desc = ZKR_celadet_ali_bedirxan_desc
-			idea_token = ZKR_celadet_ali_bedirxan_token
+			desc = ZKR_kamuran_ali_bedirxan_desc
+			idea_token = ZKR_kamuran_ali_bedirxan_token
 			allowed = {
 				original_tag = ZKR
 			}
@@ -325,6 +328,144 @@ characters = {
 			}
 			traits = {
 				ZKR_writer_and_lawyer
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_leyla_bedir_khan = {
+		name = ZKR_leyla_bedir_khan
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_leyla_bedir_khan_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_leyla_bedir_khan_desc
+			idea_token = ZKR_leyla_bedir_khan_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				
+			}
+			traits = {
+				ZKR_princess_on_the_stage
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_hapsa_khan = {
+		name = ZKR_hapsa_khan
+		portraits = {
+			civilian = {
+                large = GFX_portrait_ZKR_hapsa_khan
+				small = GFX_portrait_ZKR_hapsa_khan_small
+			}
+		}
+
+		country_leader = {
+			traits = { ZKR_kurdish_womens_association_founder }
+			ideology = liberalism
+			desc = ZKR_hapsa_khan_desc
+			expire = "1950.1.1.1"
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_hapsa_khan_desc
+			idea_token = ZKR_hapsa_khan_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				NOT = { has_country_leader = { character = ZKR_hapsa_khan ruling_only = yes } }
+			}
+			traits = {
+				ZKR_kurdish_womens_association_founder
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_mira_meyan_khatun = {
+		name = ZKR_mira_meyan_khatun
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_mira_meyan_khatun_small
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_mira_meyan_khatun_desc
+			idea_token = ZKR_mira_meyan_khatun_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_promote_traditionalism
+			}
+			traits = {
+				ZKR_yazidi_princess
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_random_kurdish_anarchist = {
+		name = ZKR_random_kurdish_anarchist
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_random_kurdish_anarchist_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_random_kurdish_anarchist_desc
+			idea_token = ZKR_random_kurdish_anarchist_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_cooperate_with_other_leftists
+			}
+			traits = {
+				ZKR_kurdish_anarchist
+			}
+
+			cost = 150
+		}
+	}
+
+	ZKR_random_kurdish_fascist = {
+		name = ZKR_random_kurdish_fascist
+		portraits = {
+			civilian = {
+                small = GFX_portrait_ZKR_random_kurdish_fascist_small
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			desc = ZKR_random_kurdish_fascist_desc
+			idea_token = ZKR_random_kurdish_fascist_token
+			allowed = {
+				original_tag = ZKR
+			}
+			available = {
+				has_completed_focus = ZKR_move_towards_fascism
+			}
+			traits = {
+				ZKR_fascist_advisor
 			}
 
 			cost = 150
@@ -445,12 +586,12 @@ characters = {
 			}
 		}
 
-		country_leader = {
-			traits = { ZKR_british_puppet_leader }
-			ideology = oligarchism
-			desc = ZKR_arthur_frayn_desc
-			expire = "1950.1.1.1"
-		}
+		#country_leader = {
+		#	traits = { ZKR_british_puppet_leader }
+		#	ideology = oligarchism
+		#	desc = ZKR_arthur_frayn_desc
+		#	expire = "1950.1.1.1"
+		#}
 		
 		advisor = {
 			slot = political_advisor

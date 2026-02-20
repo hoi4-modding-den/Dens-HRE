@@ -97,6 +97,8 @@ country_event = { # Elections
             mark_focus_tree_layout_dirty = yes
 
             country_event = { id = ZKR_diplo_events.6 days = 40 }
+
+            news_event = ZKR_news_events.9
         }
     }
 
@@ -118,6 +120,8 @@ country_event = { # Elections
             mark_focus_tree_layout_dirty = yes
 
             country_event = { id = ZKR_diplo_events.6 days = 40 }
+
+            news_event = ZKR_news_events.9
         }
     }
 
@@ -139,6 +143,8 @@ country_event = { # Elections
             mark_focus_tree_layout_dirty = yes
 
             country_event = { id = ZKR_diplo_events.6 days = 40 }
+
+            news_event = ZKR_news_events.8
         }
     }
 }
@@ -204,6 +210,22 @@ country_event = { # Elections (repeatable)
         custom_effect_tooltip = generic_skip_one_line_tt
 
         promote_character = ZRM_haji_baba_sheikh
+        hidden_effect = {
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+
+    option = {
+        name = ZKR_politics_events.4.d
+        set_party_name = {
+            ideology = democratic
+            name = ZKR_democratic_party
+            long_name = ZKR_democratic_party_long
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        promote_character = ZKR_hapsa_khan
         hidden_effect = {
             mark_focus_tree_layout_dirty = yes
         }
@@ -301,7 +323,12 @@ country_event = { # reform the anti-imperialist front
             }
         }
         ZKR_save_current_commonwealth_status = yes
-        create_faction_from_template = ZKR_faction_template_democratic_peacekeepers
+        create_faction_from_template = {
+            template = ZKR_faction_template_democratic_peacekeepers
+            name = ZKR_democratic_faction
+            icon = GFX_faction_logo_generic_2
+            color = { 57 113 228 }
+        }
         hidden_effect = {
             every_other_country = {
                 limit = {
@@ -347,7 +374,12 @@ country_event = { # reform the anti-imperialist front
             }
         }
         ZKR_save_current_commonwealth_status = yes
-        create_faction_from_template = ZKR_faction_template_fourth_international
+        create_faction_from_template = {
+            template = ZKR_faction_template_fourth_international
+            name = ZKR_kurdish_fourth_international
+            icon = GFX_faction_logo_4th_international
+            color = { 224 5 5 }
+        }
         hidden_effect = {
             every_other_country = {
                 limit = {
@@ -837,6 +869,7 @@ country_event = { # Faction Invite Event - accepted (anti-imperialist front)
             }
         }
         add_to_faction = FROM
+        clr_country_flag = ZKR_awaiting_invite_response
     }
 
 }
@@ -865,6 +898,7 @@ country_event = { # Faction Invite Event - accepted (salvation coalition)
             }
         }
         add_to_faction = FROM
+        clr_country_flag = ZKR_awaiting_invite_response
     }
 
 }
@@ -881,6 +915,7 @@ country_event = { # Faction Invite Event - refusal
 	option = {
         name = ZKR_diplo_events.11.a
         add_political_power = -20
+        clr_country_flag = ZKR_awaiting_invite_response
     }
 
 }
@@ -1089,10 +1124,7 @@ country_event = { # FROM requests kurdish lands from ally
         effect_tooltip = {
             every_owned_state = {
                 limit = {
-                    OR = {
-                        is_core_of = FROM
-                        is_claimed_by = FROM
-                    }
+                    is_core_of = FROM
                 }
                 transfer_state_to = FROM
             }
@@ -2052,7 +2084,6 @@ country_event = { # Collapse of Anatolian Occupation - Demilitarised
             every_state = {
                 limit = {
                     is_controlled_by = ZKT
-                    is_capital = no
                 }
                 set_demilitarized_zone = yes
             }
@@ -2121,7 +2152,7 @@ country_event = { # Collapse of Anatolian Occupation - Turkish Uprising
             }
         }
         ZKT = {
-            hidden_effect = { 
+            hidden_effect = {
                 add_ruling_to_com = yes
 
                 if = {
@@ -2130,6 +2161,18 @@ country_event = { # Collapse of Anatolian Occupation - Turkish Uprising
                     }
                     remove_ideas = ZKT_unpopular_government
                 }
+
+                add_ideas = ZKT_revolutionary_liberators
+
+                set_cosmetic_tag = ZKT_but_red
+
+                create_faction_from_template = {
+                    template = ZKR_faction_template_anti_imperialist_front
+                    name = ZKT_revolutionary_front
+                    icon = GFX_faction_logo_generic_9
+                    color = { 128 42 29 }
+                }
+                set_faction_manifest = faction_manifest_suppress_regional_fascism
             }
             set_politics = {
                 ruling_party = communism
@@ -2594,6 +2637,156 @@ news_event = { # Pax Kurdistan has failed
             NOT = { is_ally_with = ZKR }
             NOT = { has_war_with = ZKR }
             capital_scope = { ZKR_is_middle_eastern_state = yes }
+        }
+    }
+
+}
+
+news_event = { # Hegemony proclaimed
+	id = ZKR_news_events.6
+	title = ZKR_news_events.6.t
+	desc = ZKR_news_events.6.desc
+	
+	picture = GFX_news_event_ottoman_sultan_returns
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.6.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.6.b
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { has_government = communism }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.6.c
+        trigger = {
+            NOT = { tag = ZKR }
+            has_government = communism
+        }
+    }
+
+}
+
+news_event = { # Pax Kurdistan successful
+	id = ZKR_news_events.7
+	title = ZKR_news_events.7.t
+	desc = ZKR_news_events.7.desc
+	
+	picture = GFX_news_event_german_speech
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.7.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.7.b
+        trigger = {
+            NOT = { tag = ZKR }
+            NOT = { has_government = fascism }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.7.c
+        trigger = {
+            NOT = { tag = ZKR }
+            has_government = fascism
+        }
+    }
+
+}
+
+news_event = { # Trotskyist electorial victory
+	id = ZKR_news_events.8
+	title = ZKR_news_events.8.t
+	desc = ZKR_news_events.8.desc
+	
+	picture = GFX_news_event_election_vote
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.8.a
+        trigger = {
+            tag = ZKR
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.8.b
+        trigger = {
+            NOT = { tag = ZKR }
+            ZKR_is_anti_stalinist_communist = yes
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.8.c
+        trigger = {
+            NOT = { tag = ZKR }
+            ZKR_is_anti_stalinist_communist = no
+            NOT = { has_government = fascism }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.8.d
+        trigger = {
+            NOT = { tag = ZKR }
+            has_government = fascism
+        }
+    }
+
+}
+
+news_event = { # Democratic electorial victory
+	id = ZKR_news_events.9
+	title = ZKR_news_events.9.t
+	desc = ZKR_news_events.9.desc
+	
+	picture = GFX_news_event_election_vote
+
+    is_triggered_only = yes
+    major = yes
+	
+	option = {
+        name = ZKR_news_events.9.a
+        trigger = {
+            has_government = democratic
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.9.b
+        trigger = {
+            OR = {
+                has_government = neutrality
+                has_government = communism
+            }
+        }
+    }
+
+    option = {
+        name = ZKR_news_events.9.c
+        trigger = {
+            has_government = fascism
         }
     }
 

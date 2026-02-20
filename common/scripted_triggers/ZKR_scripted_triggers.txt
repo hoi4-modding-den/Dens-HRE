@@ -371,14 +371,9 @@ ZKR_is_levant_state = {
 
 ZKR_is_gulf_state = {
     OR = {
-        state = 413
-        region = 28
-        region = 196
-        region = 238
-        region = 116
+        ZKR_is_persian_state = yes
         region = 291
-        region = 297
-        region = 298
+        state = 1013
     }
     is_coastal = yes
 }

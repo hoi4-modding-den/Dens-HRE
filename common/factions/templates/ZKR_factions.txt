@@ -104,7 +104,10 @@ ZKR_faction_template_anti_imperialist_front = {
 	# color = { 179 183 235 }
 	icon = GFX_faction_logo_generic_15
 	visible = {
-		tag = ZKR
+		OR = {
+			tag = ZKR
+			tag = ZKT
+		}
 		NOT = { has_government = fascism }
 	}
 	available = {

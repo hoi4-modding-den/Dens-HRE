@@ -1671,6 +1671,22 @@ country_event = { # XHH seeks trade deal with Venice // refuse
 
 }
 
+country_event = { # XHH denounces XWB's aggression
+	id = XHH_diplo_events.27
+	title = XHH_diplo_events.27.t
+	desc = XHH_diplo_events.27.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_diplo_events.27.a
+		add_political_power = -100
+		add_war_support = -0.05
+	}
+
+}
+
 news_event = {
 	id = XHH_news_events.1
 	title = XHH_news_events.1.t
@@ -2045,6 +2061,53 @@ news_event = { # Nationalist Germany Unification
 		trigger = {
 			NOT = { OR = { original_tag = FROM is_ally_with = FROM } }
 			has_war_with = FROM
+		}
+    }
+}
+
+news_event = { # XHH declares war on XWB
+	id = XHH_news_events.12
+	title = XHH_news_events.12.t
+	desc = XHH_news_events.12.desc
+	
+	picture = GFX_news_event_german_speech
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+        name = XHH_news_events.12.a
+		trigger = {
+			original_tag = FROM
+		}
+    }
+
+	option = {
+        name = XHH_news_events.12.b
+		trigger = {
+			NOT = { original_tag = FROM }
+			has_war_with = XWB
+		}
+    }
+
+	option = {
+        name = XHH_news_events.12.c
+		trigger = {
+			NOT = { original_tag = FROM }
+			OR = {
+				original_tag = XWB
+				is_ally_with = XWB
+			}
+		}
+    }
+
+	option = {
+        name = XHH_news_events.12.d
+		trigger = {
+			NOT = { original_tag = XHH }
+			NOT = { has_war_with = XWB }
+			NOT = { original_tag = XWB }
+			NOT = { is_ally_with = XWB }
 		}
     }
 }

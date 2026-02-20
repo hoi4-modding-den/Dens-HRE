@@ -1513,6 +1513,144 @@ foreign_politics = {
 
 	}
 
+	XHH_speak_out_against_wurttemberg = {
+
+		icon = generic_speech
+
+		ai_will_do = {
+			base = 1000
+		}
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		available = {
+			XWB = {
+				has_added_tension_amount > 20
+			}
+		}
+
+		visible = {
+			NOT = { has_government = fascism }
+			NOT = { is_ally_with = XWB }
+			XWB = {
+				has_added_tension_amount > 5
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			add_war_support = 0.2
+			send_embargo = XWB
+
+			XWB = { country_event = XHH_diplo_events.27 }
+		}
+	}
+
+	XHH_fight_against_wurttemberg = {
+
+		icon = generic_protection
+
+		ai_will_do = {
+			base = 1000
+			modifier = {
+				factor = 0.1
+				has_war = yes
+			}
+		}
+
+		allowed = {
+			original_tag = XHH
+		}
+
+		available = {
+			is_subject = no
+			has_war_support > 0.4
+			XWB = {
+				has_added_tension_amount > 25
+				has_offensive_war = yes
+			}
+			any_neighbor_country = {
+				OR = {
+					tag = XWB
+					is_ally_with = XWB
+				}
+			}
+		}
+
+		visible = {
+			NOT = { is_ally_with = XWB }
+			XWB = {
+				has_added_tension_amount > 20
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 70
+
+		war_with_on_remove = XWB
+
+		complete_effect = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = XWB
+				value = 1000
+			}
+			add_ai_strategy = {
+				type = force_build_armies
+				value = 1000
+			}
+		}
+
+		modifier = {
+			war_support_weekly = 0.01
+			weekly_manpower = 500
+			industrial_capacity_factory = 0.2
+			industrial_capacity_dockyard = 0.2
+		}
+
+		remove_effect = {
+			declare_war_on = {
+				target = XWB
+				type = topple_government
+			}
+
+			if = {
+				limit = { is_ai = yes }
+
+				division_template = {
+					name = "Deutsche Volksmiliz"
+                    priority = 0
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 2 y = 0 }
+						militia = { x = 2 y = 1 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+					}
+				}
+
+				every_core_state = {
+					limit = { is_controlled_by = ROOT }
+					create_unit = {
+						division = "name = \"Deutsche Volksmiliz\" division_template = \"Deutsche Volksmiliz\" start_experience_factor = 0.2"
+						owner = ROOT
+						count = 2
+					}
+				}
+			}
+
+			hidden_effect = { news_event = XHH_news_events.12 }
+		}
+	}
+
 }
 
 XHH_german_confederation_cat = {

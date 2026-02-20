@@ -126,7 +126,7 @@ foreign_politics = {
         cost = 50
 
         ai_will_do = {
-            base = 10
+            base = 100
             modifier = {
                 factor = 0
                 has_war = yes
@@ -183,6 +183,15 @@ foreign_politics = {
                 target = YAS
                 type = civil_war
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            every_state = {
+                limit = {
+                    is_owned_by = YAS
+                }
+                add_claim_by = ROOT
+            }
         }
     }
 
@@ -195,7 +204,7 @@ foreign_politics = {
         cost = 50
 
         ai_will_do = {
-            base = 10
+            base = 100
             modifier = {
                 factor = 0
                 has_war = yes
@@ -240,6 +249,15 @@ foreign_politics = {
             declare_war_on = {
                 target = YBS
                 type = civil_war
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            every_state = {
+                limit = {
+                    is_owned_by = YBS
+                }
+                add_claim_by = ROOT
             }
         }
     }

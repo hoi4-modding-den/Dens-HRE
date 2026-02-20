@@ -96,18 +96,31 @@
  ZKT: "Kurdish Turkey"
  ZKT_DEF: "Kurdish Turkey"
  ZKT_ADJ: "Turkish"
- ZKT_democratic: "Free Turkish Republic"
- ZKT_democratic_DEF: "the Free Republic of Turkey"
+ ZKT_democratic: "Republic of Turkey"
+ ZKT_democratic_DEF: "the Republic of Turkey"
  ZKT_democratic_ADJ: "Turkish"
  ZKT_communism: "Turkish Socialist Republic"
  ZKT_communism_DEF: "the Turkish Socialist Republic"
  ZKT_communism_ADJ: "Turkish"
- ZKT_neutrality: "Kurdish State of Turkey"
- ZKT_neutrality_DEF: "the Kurdish State of Turkey"
+ ZKT_neutrality: "Turkish State"
+ ZKT_neutrality_DEF: "the Turkish State"
  ZKT_neutrality_ADJ: "Turkish"
- ZKT_fascism: "Kurdish State of Turkey"
- ZKT_fascism_DEF: "the Kurdish State of Turkey"
+ ZKT_fascism: "Turkish State"
+ ZKT_fascism_DEF: "the Turkish State"
  ZKT_fascism_ADJ: "Turkish"
+
+ ZKT_but_red_democratic: "Turkish Confederation"
+ ZKT_but_red_democratic_DEF: "the Confederation of the Turkish People"
+ ZKT_but_red_democratic_ADJ: "Turkish"
+ ZKT_but_red_communism: "Turkish Revolutionary Socialist Republic"
+ ZKT_but_red_communism_DEF: "the Turkish Revolutionary Socialist Republic"
+ ZKT_but_red_communism_ADJ: "Turkish"
+ ZKT_but_red_neutrality: "Second Turkish Republic"
+ ZKT_but_red_neutrality_DEF: "the Second Republic of Turkey"
+ ZKT_but_red_neutrality_ADJ: "Turkish"
+ ZKT_but_red_fascism: "Second Turkish Republic"
+ ZKT_but_red_fascism_DEF: "the Second Republic of Turkey"
+ ZKT_but_red_fascismADJ: "Turkish"
 
  ZKT_autonomy_ZKR_governate: "Anatolian Governate"
  ZKT_autonomy_ZKR_governate_DEF: "the Kurdish Governate of Anatolia"
@@ -175,9 +188,10 @@
  ZKR_anti_imperialist_front: "Anti-Imperialist Front"
  ZKR_middle_east_alliance: "Alliance of Sovereign States"
  ZKR_anti_imperialist_league: "League of Anti-Imperialist Nations"
- ZKR_democratic_faction: "Democratic Defence Shield"
+ ZKR_democratic_faction: "Shield of Democracy"
  ZKR_kurdish_fourth_international: "West Asian Section of the Fourth International"
  ZKR_salvation_coalition: "Salvation Coalition"
+ ZKT_revolutionary_front: "Anti-Fascist Revolutionary Front"
 
 
 # PARTIES
@@ -229,6 +243,11 @@
  ZKR_celadet_ali_bedirxan: "Celadet Alî Bedirxan"
  ZKR_celadet_ali_bedirxan_unlocked: "appointed §Y$ZKR_celadet_ali_bedirxan$§! as §gPresident-Curator§! of the Academy"
  ZKR_kamuran_ali_bedirxan: "Kamuran Alî Bedirxan"
+ ZKR_leyla_bedir_khan: "Leyla Bedir Khan"
+ ZKR_hapsa_khan: "Hapsa Khan"
+ ZKR_mira_meyan_khatun: "Mira Meyan Khatun"
+ ZKR_random_kurdish_anarchist: "Hewrê Bazyan"
+ ZKR_random_kurdish_fascist: "Perik Merîwan"
  ZKR_random_kurdish_industrialist: "Yekbon Berhem"
  ZKR_random_kurdish_mil_industrialist: "Metîn Evîndar"
  ZKR_dean_wesley: "Dean Wesley"
@@ -247,19 +266,24 @@
  ZKR_liberator_of_kurds: "Warrior of Kurdish Liberation"
  ZKR_dislikes_turkish_people: "Dislikes Turks"
  ZKR_determined_king: "The Determined King of Kurdistan"
- ZKR_hates_the_british: "Enemy of the British"
+ ZKR_hates_the_british: "Betrayed by the British"
  ZKR_british_puppet_leader: "British Corporatist"
  ZKR_religious_figure: "Religious Figure"
  ZKR_hegemon_of_the_middle_east: "Ordained by Allah, Barzanji the First, Emperor of the Middle East, King of Kurdistan, Royal Hegemon of Mesopotamia, King of Kings, Emperor of Emperors, Ruler of the Four Corners of the Universe"
  ZKR_respected_leader_advisor: "$ZKR_respected_leader$"
  ZKR_federalist_advisor: "Federalist Advocate"
- ZKR_evironmentalist_advisor: "Environmentalist"
- ZKR_revolutionary_intellectual: "Ultranationalist Intellectual"
+ ZKR_evironmentalist_advisor: "$ZKR_evironmentalist$"
+ ZKR_revolutionary_intellectual: "Radicalised Intellectual"
  ZKR_trotskyist_internationalist: "Trotskyist Internationalist"
  ZKR_nationalist_parliamentarian: "Xoybûn Parliamentarian"
  ZKR_education_minister: "Minister of Education, Family and Youth"
  ZKR_kurdish_academy_leader: "Calling of Kurmanji"
  ZKR_writer_and_lawyer: "Silver Tongue"
+ ZKR_princess_on_the_stage: "Viennese-Kurdish Dancer and Diplomat"
+ ZKR_kurdish_womens_association_founder: "Prominent Feminist"
+ ZKR_yazidi_princess: "Princess-Regent of the Yazidi"
+ ZKR_kurdish_anarchist: "Anarcho-Syndicalist Organiser"
+ ZKR_fascist_advisor: "Fascist Ultranationalist"
  ZKR_american_businessman: "@USA American Businessman"
  ZKR_hanse_investor: "@XHH Stellvertreter Hanse-Nahost GmbH"
  ZKR_british_inventor: "@ENG British Inventor and Adventurer"
@@ -330,6 +354,9 @@
  ZKT_nationalist_unrest: "Nationalist Unrest"
  ZKT_kurdish_puppet_government: "Overlord-Influenced Administration"
  ZKT_governate_idea: "National Deconstruction"
+ ZKT_instanbul_commissary: "The Instanbul Commissary"
+ ZKT_police_operations: "Anti-Insurgency Gendarmerie Operations"
+ ZKT_revolutionary_liberators: "Revolutionary Liberation Army"
 
 
 # DYNAMIC MODIFIERS
@@ -437,7 +464,7 @@
  ZKR_agitate_for_syrian_kurdistan: "Agitate for Qamishli"
  ZKR_agitate_for_syrian_kurdistan_desc: ""
  ZKR_not_allied_with_syria_tt: "We are not allied with any §YSyrian Government§!"
- ZKR_agitate_for_syrian_kurdistan_tt: "We have §Y70 Days§! to take our §Ycore states§! in §gSyria§!. If we §Rfail§!, we will sign a §Ywhite peace§!."
+ ZKR_agitate_for_syrian_kurdistan_tt: "We have §Y15 Days§! to take our §Ycore states§! in §gSyria§!. If we §Rfail§!, we will sign a §Ytruce§!."
  ZKR_march_against_our_oppressors: "March Against Our Oppressors"
  ZKR_march_against_our_oppressors_desc: ""
  ZKR_march_against_our_oppressors_tt: "§LTip: Use the §Y'Justify War goal'§! Button!§!"
@@ -465,7 +492,7 @@
  ZKR_land_demands_from_allies_tt: "$ZKR_generic_unlock_decisions_tt$ §YDemand Kurdish Lands from Allied Nation§!" # ZKR_demand_kurdish_land_from_ally
  ZKR_national_salvation: "Salvation"
  ZKR_national_salvation_desc: ""
- ZKR_controls_protectorate_states_tt: "owns and controls all non-core and non-claimed states on the §YAnatolian Peninsula§! and the §YAegean Islands§!"
+ ZKR_controls_protectorate_states_tt: "owns and controls all states not part of Greater Kurdistan on the §YAnatolian Peninsula§! and the §YAegean Islands§!"
  ZKR_dissolve_turkey_tt: "$ZKR_generic_unlock_decision_cat_tt$ §Y$ZKR_dissolve_turkey_cat$§!"
  ZKR_expel_the_british: "The Anti-Colonialist Cause"
  ZKR_expel_the_british_desc: ""
@@ -679,7 +706,7 @@
  ZKR_artillery_spotters: "Artillery Support"
  ZKR_artillery_spotters_desc: ""
  ZKR_peshmerga_modernisation: "Modernise the Peshmerga"
- ZKR_peshmerga_modernisation_desc: "The Peshmerga already allows women to serve as part of their militia. Perhaps it is time to let them soar through the skies aswell?" # for context
+ ZKR_peshmerga_modernisation_desc: "The Peshmerga already allows women to serve as part of their militia. Perhaps it is time to let them soar through the skies aswell?"
  ZKR_ranger_corps: "[ROOT.GetAdjective] Mountaineer and Ranger Corps"
  ZKR_ranger_corps_desc: ""
  ZKR_ranger_corps_tt: "$ZKR_generic_unlock_decision_cat_tt$ §Y$ZKR_ZZZ_expeditions$§!"
@@ -727,6 +754,10 @@
  ZKR_fighter_bonus_desc: ""
  ZKR_cas_bonus: "Close Air Support"
  ZKR_cas_bonus_desc: ""
+ ZKR_build_dockyards: "Beginnings of a Kurdish Navy"
+ ZKR_build_dockyards_desc: ""
+ ZKR_convert_convoys: "Improvised Marine Force"
+ ZKR_convert_convoys_desc: ""
 
 
 # DECISIONS
@@ -753,6 +784,9 @@
  ZKR_remove_british_government_in_persia: "Expel the British Corporate Administration in Persia"
  ZKR_establish_turkish_puppet_state: "Establish a Turkish Satellite State"
  ZKR_transfer_state_to_turkish_puppet: "Transfer [FROM.GetName] to [ZCT.GetName]"
+ ZKR_hit_him_with_a_hammer: "Hit him with a Hammer"
+ ZKR_hit_him_with_a_hammer_desc: "This is for that achievement."
+ ZKR_assist_thalassocracy_allies: "Naval Training Program with [ZAA.capital.GetCapitalVictoryPointName]"
 
  ZKR_commonwealth_cat: "Middle Eastern Cooperation"
  ZKR_invite_to_research_sharing: "Propose Research Cooperation to [FROM.GetName]" # has to also be renamed in tooltip
@@ -762,17 +796,19 @@
  ZKR_propose_federalisation: "Propose Association to [FROM.GetName]" # has to also be renamed in tooltip
  ZKR_propose_full_integration: "Propose Commonwealth Membership to [FROM.GetName]" # has to also be renamed in tooltip
 
- ZKR_liberation_allies_cat: "Expand the Front"
+ ZKR_liberation_allies_cat: "Expand the Anti-Imperialist Alliance"
  ZKR_invite_syria: "Offer Membership to Syria"
  ZKR_invite_luristan: "Offer Membership to [FROM.GetNameDef]"
  ZKR_invite_azerbaijan: "Offer Membership to [FROM.GetNameDef]"
  ZKR_invite_cicilia: "Offer Membership to Cilicia"
  ZKR_invite_georgia: "Offer Membership to Georgia"
 
- ZKR_coalition_allies_cat: "Expand the Coalition"
+ ZKR_coalition_allies_cat: "Seek Willing Allies"
  ZKR_invite_tehran: "Propose Alliance to Tehran"
  ZKR_invite_the_thalassocracy: "Propose Alliance to the Red Sea Pirates"
  ZKR_invite_egypt: "Propose Alliance to Egypt"
+
+ ZKR_awaiting_invite_response: "awaiting response to invitation"
 
  ZKR_dissolve_turkey_cat: "End the Turkish Threat"
 
@@ -791,9 +827,13 @@
  ZKR_turkey_resistance_effect_tt: "$ZKR_turkey_resistance$: $RIGHT|-=1%%$"
  ZKR_turkey_resistance_trigger_tt: "$ZKR_turkey_resistance$ is less than §R$RIGHT|0$%§!"
 
+ ZKR_anti_insurgency_operation: "Anti-Insurgency Operation in [FROM.GetName]"
+ ZKR_secure_state_control: "Secure Collaboration in [FROM.GetName]"
  ZKR_establish_anatolian_governate: "Establish the Anatolian Governate"
  ZKR_fate_of_the_aegean_islands: "Fate of the Greco-Turkish Islands"
  ZKR_the_instanbul_commmissary: "Establish the Istanbul Commissary"
+ ZKR_authorise_gendarmerie_intervention: "Authorise Gendarmerie Deployment"
+ ZKR_authorise_gendarmerie_intervention_tt: "While §Y$ZKT_police_operations$§! is active, §Gdouble§! the effectiveness of §YAnti-Insurgency Operations§!."
  ZKR_occupy_the_dodecanese: "Direct Occupation of the Dodecanese"
  ZKR_end_lon_oversight: "End League of Nations Oversight"
  ZKR_pax_kurdistan_realised: "Realise the Kurdish Peace"
@@ -950,6 +990,7 @@
  ZKR_politics_events.4.a: "Seyid Riza has the mandate."
  ZKR_politics_events.4.b: "Ahmed Barzani is victorious!"
  ZKR_politics_events.4.c: "Haji Baba Sheikh and the PIKI win!"
+ ZKR_politics_events.4.d: "Hapsa Khan is elected!"
 
  ZKR_politics_events.5.t: "Cracks in the Alliance"
  ZKR_politics_events.5.desc: "The ruling coalition Alliance for Kurdistan has begun to show disharmony with the recent passing of the controversial 'Decree for the Centralisation of Government Bureaucracy'. Especially the left-wing PŞK under leadership of the Trotskyist Qazi Muhamad have started to question the words of the leaders of the democratic establishment, reducing the already low public trust of the coalition. If the situation deterioates even further, Kurdistan may face a constitutional crisis or possibly a coup from the anti-democratic or ultranationalist elements in the nation."
@@ -1232,6 +1273,31 @@
  ZKR_news_events.5.d: "The Pax Kurdistan was anything but."
  ZKR_news_events.5.e: "The Kurds thought they were the masters of the world."
 
+ ZKR_news_events.6.t: "The Hegemon of the Middle East"
+ ZKR_news_events.6.desc: "WIP"
+ ZKR_news_events.6.a: "Long live the Emperor!"
+ ZKR_news_events.6.b: "History being written."
+ ZKR_news_events.6.c: "Imperialism remains a threat to the People."
+
+ ZKR_news_events.7.t: "The Pax Kurdistan"
+ ZKR_news_events.7.desc: "WIP"
+ ZKR_news_events.7.a: "Peace has arrived in the Middle East."
+ ZKR_news_events.7.b: "What is peace built on suffering?"
+ ZKR_news_events.7.c: "Inspiring."
+
+ ZKR_news_events.8.t: "Trotskyists win Kurdish Elections!"
+ ZKR_news_events.8.desc: "Despite recent hardship and attempted coups by various military factions, the Republic of Kurdistan has stabilised enough to hold elections.\n \nThe election results are in and the outcome are clear: the Trotskyist Revolutionary Party of Kurdistan under the leadership of Qazi Muhamad has won a majority of seats in the parliament, letting them to rule without needing a coalition and allowing them to change the constitution of the Republic. Despite objections from the centre and right-wing parties, the people have spoken and Kurdistan will very likely experience institutional revolution."
+ ZKR_news_events.8.a: "Revolution can be achieved without bloodshed!"
+ ZKR_news_events.8.b: "Congratulations to our comrades."
+ ZKR_news_events.8.c: "This is what their democracy has fallen to."
+ ZKR_news_events.8.d: "The Trotskyist menace will destroy their country."
+
+ ZKR_news_events.9.t: "The Coalition for Progress wins Kurdish Elections!"
+ ZKR_news_events.9.desc: "Despite recent hardship and attempted coups by various military factions, the Republic of Kurdistan has stabilised enough to hold elections.\n \nThe election results are in and the outcome are clear: The center-left to center-right parties have won enough seats in Parliament to form a coalition against the PŞK and the far-right parties. The results of the elections have also restored some trust in public institutions as the people of Kurdistan see that their vote has been heard and the elections have gone through freely and fairly. Kurdish democracy will not fade away anytime soon."
+ ZKR_news_events.9.a: "Stability and Institutionalism prevails."
+ ZKR_news_events.9.b: "Seems Kurdish Democracy is here to stay."
+ ZKR_news_events.9.c: "Pah."
+
 
 # STATE NAMES
 
@@ -1265,7 +1331,7 @@
 
  ZKR_greater_kurdistan_achievement_NAME: "Yollak Bluderat!"
  ZKR_greater_kurdistan_achievement_DESC: "As Kurdistan, control all of your core states."
- ZKR_woman_in_the_military_NAME: "Legacy of Lady Adela"
+ ZKR_woman_in_the_military_NAME: "Zhini Shakh"
  ZKR_woman_in_the_military_DESC: "As Kurdistan, promote a Woman to the rank of Field Marshal and hire her as Military Advisor."
  ZKR_anger_the_turks_NAME: "Kurdish Sun over Anatolia"
  ZKR_anger_the_turks_DESC: "As Xoybûn-led Kurdistan, conquer Anatolia and achieve the Pax Kurdistan."

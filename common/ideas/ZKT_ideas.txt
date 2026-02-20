@@ -69,6 +69,10 @@ ideas = {
                 is_subject = yes
             }
 
+			on_remove = {
+				set_cosmetic_tag = ZKT_but_red
+			}
+
 			removal_cost = -1
 
 			modifier = {
@@ -80,7 +84,7 @@ ideas = {
 
 		ZKT_governate_idea = {
 		
-			picture = tur_kemalist_officers_disloyalty_effect
+			picture = generic_oppression
 
 			allowed = {
 				original_tag = ZKT
@@ -108,7 +112,7 @@ ideas = {
 		ZKT_governate_idea_2 = {
 		
 			name = ZKT_governate_idea
-			picture = tur_kemalist_officers_disloyalty_effect
+			picture = generic_oppression
 
 			allowed = {
 				original_tag = ZKT
@@ -136,7 +140,7 @@ ideas = {
 		ZKT_governate_idea_3 = {
 		
 			name = ZKT_governate_idea
-			picture = tur_kemalist_officers_disloyalty_effect
+			picture = generic_oppression
 
 			allowed = {
 				original_tag = ZKT
@@ -157,6 +161,83 @@ ideas = {
 				political_power_cost = 0.5
 				resistance_target = 0.05
 				no_compliance_gain = 1
+			}
+
+		}
+
+		ZKT_instanbul_commissary = {
+
+			picture = generic_secret_police
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_activity = -0.2
+				stability_factor = 0.05
+			}
+
+		}
+
+		ZKT_police_operations = {
+
+			picture = ast_classify_aliens
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = yes
+			}
+
+            available = {
+                is_subject = yes
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = -0.05
+				required_garrison_factor = -0.15
+			}
+
+		}
+
+		ZKT_revolutionary_liberators = {
+
+			picture = FRA_scw_intervention_republicans_focus
+
+			allowed = {
+				original_tag = ZKT
+			}
+
+			allowed_civil_war = {
+				is_subject = no
+			}
+
+            available = {
+                is_subject = no
+            }
+
+			removal_cost = -1
+
+			modifier = {
+				starting_compliance = 0.15
+				army_attack_factor = 0.1
+				army_org_regain = 0.02
+				army_speed_factor = 0.08
 			}
 
 		}

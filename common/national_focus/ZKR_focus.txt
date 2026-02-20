@@ -732,7 +732,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_pluralist_constitution
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -1152,7 +1152,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = ZKR_form_anti_imperialist_faction
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -1192,7 +1192,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = ZKR_form_anti_imperialist_faction
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 50
@@ -1235,10 +1235,6 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 40
-			modifier = {
-				factor = 0
-				has_active_mission = ZKR_tensions_with_mahabad_increasing
-			}
 		}
 
 		available = {
@@ -1258,6 +1254,7 @@ focus_tree = {
 				has_government = fascism
 				has_government = neutrality
 			}
+			NOT = { has_active_mission = ZKR_tensions_with_mahabad_increasing }
 		}
 		
 		bypass = {
@@ -1306,7 +1303,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 			modifier = {
 				factor = 0
 				NOT = { has_completed_focus = ZKR_agitate_for_syrian_kurdistan }
@@ -1726,6 +1723,12 @@ focus_tree = {
 				factor = 0
 				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 5
+				}
+			}
 		}
 
 		available = {
@@ -2043,7 +2046,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 50
+			factor = 100
 		}
 
 		available = {
@@ -2093,7 +2096,7 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_elections_wow
-		icon = GFX_focus_ETH_re-convene_the_parliament
+		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -2142,7 +2145,7 @@ focus_tree = {
 
 	focus = {
 		id = ZKR_the_democratic_republic
-		icon = GFX_focus_NOR_restore_public_trust_in_the_storting
+		icon = GFX_focus_ETH_re-convene_the_parliament
 		prerequisite = { focus = ZKR_elections_wow }
 		#mutually_exclusive = { focus =  }
 		x = -3
@@ -2745,7 +2748,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_political_advisor
-			# look for an anarchist in the region
+			show_ideas_tooltip = ZKR_random_kurdish_anarchist_token
 		}
 	}
 
@@ -2951,9 +2954,35 @@ focus_tree = {
 				}
 			}
 
-			custom_effect_tooltip = ZKR_royal_subjects_tt
-
 			set_global_flag = ZKR_egypt_is_middle_east
+			
+			every_state = {
+				limit = {
+					OR = {
+						ZKR_turkish_republic_states = yes
+                    	state = 1113
+
+						ZKR_is_caucasus_state = yes
+
+						ZKR_is_levant_state = yes
+
+						ZKR_is_egyptian_state = yes
+
+						ZKR_is_arabian_peninsula_state = yes
+
+						ZKR_is_persian_state = yes
+
+						region = 291
+
+						ZKR_is_afghan_state = yes
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = ZKR_royal_subjects_tt
 		}
 	}
 
@@ -3007,15 +3036,6 @@ focus_tree = {
                 value = -0.1
                 tooltip_side = ZKR_coercion_bop_side
             }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_state = {
-				limit = {
-					ZKR_is_levant_state = yes
-				}
-				add_claim_by = ROOT
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3100,15 +3120,6 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			every_state = {
-				limit = {
-					ZKR_is_gulf_state = yes
-				}
-				add_claim_by = ROOT
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			every_other_country = {
 				limit = {
 					any_owned_state = {
@@ -3174,15 +3185,6 @@ focus_tree = {
                 value = -0.1
                 tooltip_side = ZKR_coercion_bop_side
             }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_state = {
-				limit = {
-					ZKR_is_arabian_peninsula_state = yes
-				}
-				add_claim_by = ROOT
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3391,6 +3393,11 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ZKR_mira_meyan_khatun_token
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			# swap traits for Brazani from federalist to environmentalist
 
 			ZKR_ahmed_barzani = {
@@ -3435,14 +3442,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = ZKR_kurdish_hegemony_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_state_claim = 797
-			add_state_claim = 454
-			add_state_claim = 291
-			add_state_claim = 856
-			add_state_claim = 266
 		}
 	}
 
@@ -3485,6 +3484,8 @@ focus_tree = {
 
 			add_state_core = 291
 			add_state_core = 1011
+
+			hidden_effect = { news_event = ZKR_news_events.6 }
 		}
 	}
 
@@ -3662,7 +3663,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_political_advisor
-			# fascist guy
+			show_ideas_tooltip = ZKR_random_kurdish_fascist_token
 		}
 	}
 
@@ -4665,19 +4666,28 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ZKT_governate_idea_2
+			ZKT = {
+				if = {
+					limit = {
+						has_idea = ZKT_governate_idea_2
+					}
+					swap_ideas = {
+						remove_idea = ZKT_governate_idea_2
+						add_idea = ZKT_governate_idea_3
+					}
 				}
-				swap_ideas = {
-					remove_idea = ZKT_governate_idea_2
-					add_idea = ZKT_governate_idea_3
+				else = {
+					swap_ideas = {
+						remove_idea = ZKT_governate_idea
+						add_idea = ZKT_governate_idea_2
+					}
 				}
 			}
-			else = {
-				swap_ideas = {
-					remove_idea = ZKT_governate_idea
-					add_idea = ZKT_governate_idea_2
+
+			ZKT = {
+				every_owned_state = {
+					limit = { has_resistance = yes }
+					add_compliance = 10
 				}
 			}
 		}
@@ -4716,24 +4726,26 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ZKT_governate_idea_2
+			ZKT = {
+				if = {
+					limit = {
+						has_idea = ZKT_governate_idea_2
+					}
+					swap_ideas = {
+						remove_idea = ZKT_governate_idea_2
+						add_idea = ZKT_governate_idea_3
+					}
 				}
-				swap_ideas = {
-					remove_idea = ZKT_governate_idea_2
-					add_idea = ZKT_governate_idea_3
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = ZKT_governate_idea
-					add_idea = ZKT_governate_idea_2
+				else = {
+					swap_ideas = {
+						remove_idea = ZKT_governate_idea
+						add_idea = ZKT_governate_idea_2
+					}
 				}
 			}
 
 			ZKT = {
-				every_state = {
+				every_owned_state = {
 					limit = { has_resistance = yes }
 					add_resistance = -15
 				}
@@ -4963,18 +4975,16 @@ focus_tree = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
-            800 = {
-                add_resource = {
-                    type = steel
-                    amount = 20
-                }
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 800
 			}
-			353 = {
-                add_resource = {
-                    type = coal
-                    amount = 12
-                }
-            }
+			add_resource = {
+				type = coal
+				amount = 12
+				state = 353
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -5435,9 +5445,14 @@ focus_tree = {
 		}
 
 		available = {
-			has_built = {
-				type = arms_factory
-				value > 3
+			if = {
+				limit = {
+					OR = {
+						is_ai = no
+						date > 1940.1.1
+					}
+				}
+				arms_factory > 29
 			}
 		}
 		
@@ -5674,14 +5689,18 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				has_built = {
-					type = infrastructure
-					value > 5
+			if = {
+				limit = {
+					OR = {
+						is_ai = no
+						date > 1939.1.1
+					}
 				}
-				has_built = {
-					type = rail_way
-					value > 9
+				all_owned_state = {
+					OR = {
+						NOT = { is_core_of = ROOT }
+						infrastructure > 2
+					}
 				}
 			}
 		}
@@ -5950,7 +5969,7 @@ focus_tree = {
 		}
 
 		available = {
-			num_of_factories > 50
+			num_of_factories > 100
 		}
 		
 		bypass = {
@@ -6075,13 +6094,55 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ZKR_expand_physics_institute
-		icon = GFX_focus_research2
+		id = ZKR_free_arrested_intellectuals
+		icon = GFX_focus_generic_industrialists
 		prerequisite = { focus = ZKR_kurdistan_central_bank }
 		#mutually_exclusive = { focus =  }
 		x = 2
 		y = 1
 		relative_position_id = ZKR_kurdistan_central_bank
+
+		cost = 5.8
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+            add_timed_idea = {
+				idea = ZKR_intellectualism
+				days = 365
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = {
+				localization_key = ZKR_available_scientist_tt
+				CHARACTER = ZKR_artem_alikhanian
+				SPECIALIZATION = specialization_nuclear
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_expand_physics_institute
+		icon = GFX_focus_research2
+		prerequisite = { focus = ZKR_free_arrested_intellectuals }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = ZKR_free_arrested_intellectuals
 
 		cost = 5.8
 
@@ -6128,55 +6189,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ZKR_free_arrested_intellectuals
-		icon = GFX_focus_generic_industrialists
-		prerequisite = { focus = ZKR_expand_physics_institute }
-		#mutually_exclusive = { focus =  }
-		x = -1
-		y = 1
-		relative_position_id = ZKR_expand_physics_institute
-
-		cost = 5.8
-
-		ai_will_do = {
-			factor = 20
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-			
-		}
-
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
-		completion_reward = {
-            add_timed_idea = {
-				idea = ZKR_intellectualism
-				days = 365
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = {
-				localization_key = ZKR_available_scientist_tt
-				CHARACTER = ZKR_artem_alikhanian
-				SPECIALIZATION = specialization_nuclear
-			}
-		}
-	}
-
-	focus = {
 		id = ZKR_atomic_research_project
 		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = ZKR_expand_physics_institute }
+		prerequisite = { focus = ZKR_free_arrested_intellectuals }
 		#mutually_exclusive = { focus =  }
 		x = 1
 		y = 1
-		relative_position_id = ZKR_expand_physics_institute
+		relative_position_id = ZKR_free_arrested_intellectuals
 
 		cost = 5.8
 
@@ -7573,6 +7592,125 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
+		}
+	}
+
+	focus = {
+		id = ZKR_build_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = ZKR_enforce_military_neutrality }
+		#mutually_exclusive = { focus =  }
+		x = 8
+		y = 1
+		relative_position_id = ZKR_enforce_military_neutrality
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 100
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = ZKR_build_dockyards
+				bonus = 1
+				uses = 2
+				category = dd_tech
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 2
+						include_locked = yes
+					}
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_convert_convoys
+		icon = GFX_focus_generic_refit_civilian_ships
+		prerequisite = { focus = ZKR_build_dockyards }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = ZKR_build_dockyards
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			unlock_decision_category_tooltip = generic_refit_civilian_ships_category
+			set_country_flag = refit_convoy_ships_flag
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
