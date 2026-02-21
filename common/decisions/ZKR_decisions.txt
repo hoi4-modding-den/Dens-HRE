@@ -287,6 +287,10 @@ political_actions = {
             base = 10
         }
 
+        visible = {
+            is_ai = yes
+        }
+
         available = {
             has_war = no
             is_faction_leader = yes
@@ -368,6 +372,8 @@ political_actions = {
             base = 10
         }
 
+        fire_only_once = yes
+
         available = {
             has_completed_focus = ZKR_middle_east_is_free
         }
@@ -388,6 +394,72 @@ political_actions = {
                 }
                 add_core_of = ROOT
             }
+        }
+    }
+
+    ZKR_rebuild_akkad = {
+
+        icon = eng_imperial_federation
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 1
+        }
+
+        visible = {
+            has_completed_focus = ZKR_kurdish_hegemony
+        }
+
+        available = {
+            has_completed_focus = ZKR_kurdish_hegemony
+            291 = { is_owned_and_controlled_by = ROOT }
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            add_stability = 0.05
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            291 = {
+                add_extra_state_shared_building_slots = 3
+                set_province_name = {
+                    id = 12046
+                    name = ZKR_VICTORY_POINTS_12046_akkad
+                }
+                hidden_effect = {
+                    set_victory_points = {
+                        province = 2097
+                        value = 10
+                    }
+                    set_victory_points = {
+                        province = 12413
+                        value = 5
+                    }
+                    set_victory_points = {
+                        province = 12839
+                        value = 2
+                    }
+                }
+                set_victory_points = {
+                    province = 12046
+                    value = 30
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            set_capital = { state = 291 }
+        }
+
+        days_remove = 120
+
+        modifier = {
+            consumer_goods_factor = 0.15
         }
     }
 
@@ -2702,7 +2774,7 @@ ZKR_stabilise_the_commonwealth_cat = {
 				is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
                 NOT = { is_in_array = { ZKR_starting_cores = THIS } }
-                check_variable = { FROM.ZKR_state_acceptance < 3 }
+                check_variable = { THIS.ZKR_state_acceptance < 3 }
 			}
 		}
     }
@@ -2731,7 +2803,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 
@@ -2792,7 +2865,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 
@@ -2857,7 +2931,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 
@@ -2923,7 +2998,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 
@@ -2988,7 +3064,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 
@@ -3052,7 +3129,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 
@@ -3116,7 +3194,8 @@ ZKR_stabilise_the_commonwealth_cat = {
             FROM = {
                 is_owned_and_controlled_by = ROOT
                 is_core_of = ROOT
-                NOT = { has_state_flag = ZKR_starting_cores }
+                NOT = { is_in_array = { ZKR_starting_cores = THIS } }
+                check_variable = { FROM.ZKR_state_acceptance < 3 }
             }
 		}
 

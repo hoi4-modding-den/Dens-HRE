@@ -1254,7 +1254,12 @@ focus_tree = {
 				has_government = fascism
 				has_government = neutrality
 			}
-			NOT = { has_active_mission = ZKR_tensions_with_mahabad_increasing }
+			if = {
+				limit = {
+					has_active_mission = ZKR_tensions_with_mahabad_increasing
+				}
+				NOT = { has_active_mission = ZKR_tensions_with_mahabad_increasing }
+			}
 		}
 		
 		bypass = {
@@ -1269,9 +1274,9 @@ focus_tree = {
 		will_lead_to_war_with = ZCS
 		will_lead_to_war_with = ZBS
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			every_country = {
+			every_other_country = {
 				limit = {
 					ZKR_is_syrian_nation = yes
 				}
@@ -3441,6 +3446,32 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			if = {
+				limit = {
+					has_subject = ZBA
+				}
+				annex_country = {
+					target = ZBA
+					transfer_troops = no
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			add_state_core = 291
+			add_state_core = 1011
+
+			hidden_effect = {
+				291 = {
+					add_victory_points = {
+						province = 12046
+						value = 1
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = ZKR_kurdish_hegemony_tt
 		}
 	}
@@ -3479,11 +3510,6 @@ focus_tree = {
 			ZKR_mahmud_barzanji = {
                 swap_country_leader_traits = { remove = ZKR_determined_king add = ZKR_hegemon_of_the_middle_east ideology = despotism }
             }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_state_core = 291
-			add_state_core = 1011
 
 			hidden_effect = { news_event = ZKR_news_events.6 }
 		}
@@ -4248,8 +4274,8 @@ focus_tree = {
 				tooltip = ZKR_all_states_accepted_tt
 				all_owned_state = {
 					OR = {
-						NOT = { is_in_array = { ZKR_starting_cores = THIS } }
-						check_variable = { FROM.ZKR_state_acceptance > 2 }
+						is_in_array = { ZKR_starting_cores = THIS }
+						check_variable = { THIS.ZKR_state_acceptance > 2 }
 					}
 				}
 			}
@@ -4413,8 +4439,8 @@ focus_tree = {
 				tooltip = ZKR_all_states_accepted_tt
 				all_owned_state = {
 					OR = {
-						NOT = { is_in_array = { ZKR_starting_cores = THIS } }
-						check_variable = { FROM.ZKR_state_acceptance > 2 }
+						is_in_array = { ZKR_starting_cores = THIS }
+						check_variable = { THIS.ZKR_state_acceptance > 2 }
 					}
 				}
 			}
