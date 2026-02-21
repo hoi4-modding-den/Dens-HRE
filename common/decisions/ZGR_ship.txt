@@ -1,0 +1,70 @@
+ZGR_ship = {
+
+    develop_ship_infrastructure = {
+		icon = GFX_decision_generic_construction
+        cost = 250
+        available = {
+            has_political_power > 250
+        }
+        days_remove = 365
+        fire_only_once = yes
+        remove_effect = {
+            342 = {
+                 add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+            }
+            342 = {
+                 add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+            }			
+            339 = {
+                 add_building_construction = { type = naval_facility level = 1 instant_build = yes }
+            }
+            342 = {
+                 add_building_construction = { type = dockyard level = 3 instant_build = yes }
+            }
+        }
+    }
+
+    refit_convoys = {
+		icon = GFX_decision_generic_merge_plant_ship
+        cost = 50
+        days_remove = 365
+        fire_only_once = yes
+        available = {
+			has_equipment = {
+				convoy > 6
+			}
+        }
+		custom_cost_trigger = {
+			has_equipment = {
+				convoy > 6
+			}
+		}
+		custom_cost_text = has_10_convoys_ZGR
+        remove_effect = {
+           add_equipment_to_stockpile = {
+			type = convoy_1
+			amount = -7
+			producer = ROOT
+		   }
+			create_equipment_variant = {
+				name = "Vetehinen Class"								
+				type = ship_hull_cruiser_1
+				role_icon_index = 1
+				modules = {
+					mid_1_custom_slot = ship_light_medium_battery_1
+					mid_2_custom_slot = ship_secondaries_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_battery_slot = ship_light_medium_battery_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				}
+			}
+            create_ship = {
+                type = ship_hull_cruiser_1
+                equipment_variant = "Vetehinen Class"
+                creator = ROOT
+                amount = 7
+            }		
+        }
+    }
+	
+}

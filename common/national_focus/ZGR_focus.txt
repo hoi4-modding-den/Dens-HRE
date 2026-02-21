@@ -211,6 +211,8 @@ focus_tree = {
 					value = -2
 					tooltip = ZGR_REM_5_ETHNICITY
 				}	
+				custom_effect_tooltip = ZGR_BUILD_SHIP_GRE
+				set_country_flag = ZGR_Ship_Build				
 		}
 	}
 
@@ -231,7 +233,10 @@ focus_tree = {
 					var = civil_war
 					value = 5
 					tooltip = ZGR_ADD_5_ETHNICITY
-				}	
+				}
+				custom_effect_tooltip = ZGR_BUILD_SHIP_TUR
+				set_country_flag = ZGR_Ship_Build
+
 		}
 	}
 

@@ -19,3 +19,21 @@ ZGR_anarchy_factions = {
 	visible_when_empty = yes
 	
 }
+
+
+ZGR_ship = {
+	priority = 100
+
+	icon = GFX_decision_category_ITA_cooperation_programs
+
+	visible = {
+		has_country_flag = ZGR_Ship_Build
+	}
+
+	allowed = {
+		tag = ZGR
+	}
+	
+	visible_when_empty = no
+	
+}
