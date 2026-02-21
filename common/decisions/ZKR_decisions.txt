@@ -164,7 +164,15 @@ political_actions = {
         }
 
         available = {
-            has_war = no
+            OR = {
+                has_war = no
+                all_country = {
+                    OR = {
+                        NOT = { has_war_with = ROOT }
+                        has_capitulated = yes
+                    }
+                }
+            }
             all_country = {
                 ROOT = {
                     NOT = {
@@ -300,6 +308,8 @@ political_actions = {
         target_trigger = {
             FROM = {
                 NOT = { tag = ZKT } # exception
+                NOT = { has_autonomy_state = autonomy_ZKR_governate }
+                NOT = { has_autonomy_state = autonomy_ZKR_commonwealth_associate }
                 is_in_faction_with = ROOT
                 OR = {
                     is_ai = yes
@@ -449,11 +459,12 @@ political_actions = {
                     province = 12046
                     value = 30
                 }
+                set_state_flag = ZKR_akkad_rebuilt
             }
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
-            set_capital = { state = 291 }
+            set_capital = { state = 291 remember_old_capital = no }
         }
 
         days_remove = 120
@@ -503,10 +514,7 @@ economy_decisions = {
         target_trigger = {
             FROM = {
                 impassable = no
-                OR = {
-                    is_claimed_by = ROOT
-                    is_core_of = ROOT
-                }
+                has_state_flag = ZKR_greater_kurdistan_state
                 OR = {
                     has_state_category = tiny_island
                     has_state_category = small_island
@@ -3685,16 +3693,22 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_turkish_republic_states = yes
-                        state = 1113
+                        AND = {
+                            ZKR_turkish_republic_states = no
+                        }
                         is_owned_and_controlled_by = ROOT
                     }
                 }
+                1113 = { is_owned_and_controlled_by = ROOT }
             }
         }
 
@@ -3706,6 +3720,8 @@ ZKR_integrate_the_hegemony_cat = {
                 }
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -3728,12 +3744,16 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_is_caucasus_state = yes
+                        ZKR_is_caucasus_state = no
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -3745,6 +3765,8 @@ ZKR_integrate_the_hegemony_cat = {
 				ZKR_is_caucasus_state = yes
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -3764,28 +3786,41 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_is_levant_state = yes
+                        ZKR_is_levant_state = no
                         is_owned_and_controlled_by = ROOT
                     }
                 }
+                680 = { is_owned_and_controlled_by = ROOT }
             }
         }
 
         highlight_states = {
 			highlight_states_trigger = {
-				ZKR_is_levant_state = yes
+				OR = {
+                    ZKR_is_levant_state = yes
+                    state = 680
+                }
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
                 limit = {
-                    ZKR_is_levant_state = yes
+                    OR = {
+                        ZKR_is_levant_state = yes
+                        state = 680
+                    }
                 }
                 add_core_of = ROOT
             }
@@ -3800,12 +3835,16 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_is_egyptian_state = yes
+                        ZKR_is_egyptian_state = no
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -3817,6 +3856,8 @@ ZKR_integrate_the_hegemony_cat = {
 				ZKR_is_egyptian_state = yes
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -3836,12 +3877,16 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_is_arabian_peninsula_state = yes
+                        ZKR_is_arabian_peninsula_state = no
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -3853,6 +3898,8 @@ ZKR_integrate_the_hegemony_cat = {
 				ZKR_is_arabian_peninsula_state = yes
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -3872,12 +3919,16 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_is_persian_state = yes
+                        ZKR_is_persian_state = no
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -3889,6 +3940,8 @@ ZKR_integrate_the_hegemony_cat = {
 				ZKR_is_persian_state = yes
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -3908,12 +3961,16 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        region = 291
+                        NOT = { region = 291 }
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -3925,6 +3982,8 @@ ZKR_integrate_the_hegemony_cat = {
 				region = 291
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -3944,12 +4003,16 @@ ZKR_integrate_the_hegemony_cat = {
             original_tag = ZKR
         }
 
+        ai_will_do = {
+            base = 10
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = YBS_owns_controls_highlighted_states_tt
                 all_state = {
                     OR = {
-                        ZKR_is_afghan_state = yes
+                        ZKR_is_afghan_state = no
                         is_owned_and_controlled_by = ROOT
                     }
                 }
@@ -3961,6 +4024,8 @@ ZKR_integrate_the_hegemony_cat = {
 				ZKR_is_afghan_state = yes
 			}
 		}
+
+        fire_only_once = yes
 
         complete_effect = {
             every_state = {
@@ -4976,7 +5041,7 @@ ZKR_ZZZ_expeditions = {
         ai_will_do = {
             base = 1000
             modifier = {
-                factor = 0.01
+                factor = 0.1
                 has_war = yes
             }
         }
@@ -4990,23 +5055,31 @@ ZKR_ZZZ_expeditions = {
 		available = {
 			FROM = {
 				is_owned_by = ZZZ
-                any_neighbor_state = {
-                    is_owned_and_controlled_by = ROOT
+                OR = {
+                    AND = {
+                        ROOT = { any_controlled_state = { is_coastal = yes } }
+                        is_coastal = yes
+                    }
+                    any_neighbor_state = {
+                        is_owned_and_controlled_by = ROOT
+                    }
                 }
 			}
 		}
 
         visible = {
             FROM = {
-                any_neighbor_state = {
-                    is_owned_and_controlled_by = ROOT
+                OR = {
+                    AND = {
+                        ROOT = { any_controlled_state = { is_coastal = yes } }
+                        is_coastal = yes
+                    }
+                    any_neighbor_state = {
+                        is_owned_and_controlled_by = ROOT
+                    }
                 }
             }
         }
-
-		ai_will_do = {
-			base = 100
-		}
 
 		cancel_trigger = {
 			FROM = { NOT = { is_owned_by = ZZZ } }

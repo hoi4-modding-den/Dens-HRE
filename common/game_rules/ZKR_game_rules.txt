@@ -1,0 +1,40 @@
+ZKR_ai_behavior = {
+	name = "ZKR_AI_BEHAVIOR"
+	group = "00_RULE_GROUP_ZKR_AI_BEHAVIOR"
+	option = {
+		name = DEFAULT
+		text = "YBS_RULE_OPTION_DEFAULT"
+		desc = "YBS_RULE_OPTION_DEFAULT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ZKR_DEMOCRATIC_OPTION
+		text = "ZKR_RULE_OPTION_DEMOCRATIC"
+		desc = "ZKR_RULE_OPTION_DEMOCRATIC_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ZKR_COMMUNIST_OPTION
+		text = "ZKR_RULE_OPTION_COMMUNIST"
+		desc = "ZKR_RULE_OPTION_COMMUNIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ZKR_MONARCHIST_OPTION
+		text = "ZKR_RULE_OPTION_MONARCHIST"
+		desc = "ZKR_RULE_OPTION_MONARCHIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ZKR_FASCIST_OPTION
+		text = "ZKR_RULE_OPTION_FASCIST"
+		desc = "ZKR_RULE_OPTION_FASCIST_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+		allow_achievements = yes
+	}
+}

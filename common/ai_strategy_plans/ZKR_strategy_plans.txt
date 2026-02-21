@@ -1,0 +1,376 @@
+ZKR_democratic_path = {
+	name = "Parliamentary Democracy"
+	desc = "Maintain the Republic and unite the Middle East"
+
+	allowed = {
+		original_tag = ZKR
+	}
+	enable = {
+		has_country_flag = ZKR_ai_path_democratic
+	}
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		ZKR_kurdish_federalism
+        ZKR_inform_the_people
+        ZKR_support_cooperatives
+        ZKR_empower_local_authorities
+        ZKR_devolution
+        ZKR_pluralist_constitution
+
+        ZKR_elections_wow
+        ZKR_the_democratic_republic
+
+        ZKR_form_anti_imperialist_faction
+        ZKR_syrian_intervention
+
+        ZKR_kurdish_industrial_revolution
+        ZKR_expand_first_factories
+        ZKR_mining_programs
+        ZKR_road_works_ahead
+        ZKR_open_up_kurdistan
+        ZKR_capital_city_industrial_park
+
+        ZKR_enforce_military_neutrality
+        ZKR_kurdish_land_forces
+        ZKR_equipment_modernisation
+        ZKR_doctrine_advancement
+        ZKR_officer_training
+
+        ZKR_alliance_of_liberation
+
+        ZKR_open_the_first_kurdistan_university
+
+        ZKR_expel_the_british
+        ZKR_march_against_our_oppressors
+
+        ZKR_religious_freedoms
+        ZKR_reform_the_constitution
+        ZKR_guarantee_minority_rights
+        ZKR_environmental_protection_laws
+
+        ZKR_desert_battle
+        ZKR_consolidate_kurdistan
+
+        ZKR_common_organisations
+
+        ZKR_support_regional_development
+        ZKR_strengthen_the_defence_sector
+        ZKR_chamber_of_science
+
+        ZKR_middle_eastern_economic_union
+
+        ZKR_our_commonwealth
+
+        ZKR_cultural_cooperation_initiative
+        ZKR_adopt_esperanto
+        ZKR_regional_bilingualism
+        ZKR_in_varietate_concordia
+
+        ZKR_fight_traditionalist_resistance
+        ZKR_provide_education
+        ZKR_middle_east_in_the_modern_age
+
+        ZKR_middle_east_is_free
+	}
+
+	research = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ZKR_kurdish_supremacy = 0
+        ZKR_centralise_the_administration = 0
+	}
+
+}
+
+ZKR_communist_path = {
+	name = "Trotskyist Communism"
+	desc = "Elect the Trotskyists and unite the Middle East"
+
+	allowed = {
+		original_tag = ZKR
+	}
+	enable = {
+		has_country_flag = ZKR_ai_path_communism
+	}
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		ZKR_kurdish_federalism
+        ZKR_inform_the_people
+        ZKR_support_cooperatives
+        ZKR_empower_local_authorities
+        ZKR_devolution
+        ZKR_pluralist_constitution
+
+        ZKR_elections_wow
+        ZKR_the_revolutionary_state
+
+        ZKR_form_anti_imperialist_faction
+        ZKR_syrian_intervention
+
+        ZKR_kurdish_industrial_revolution
+        ZKR_expand_first_factories
+        ZKR_mining_programs
+        ZKR_road_works_ahead
+        ZKR_open_up_kurdistan
+        ZKR_capital_city_industrial_park
+
+        ZKR_enforce_military_neutrality
+        ZKR_kurdish_land_forces
+        ZKR_equipment_modernisation
+        ZKR_doctrine_advancement
+        ZKR_officer_training
+
+        ZKR_alliance_of_liberation
+
+        ZKR_open_the_first_kurdistan_university
+
+        ZKR_expel_the_british
+        ZKR_march_against_our_oppressors
+
+        ZKR_islamic_socialism
+        ZKR_maintain_secularism
+        ZKR_cooperate_with_other_leftists
+        ZKR_pragmatic_trotskyism
+
+        ZKR_desert_battle
+        ZKR_consolidate_kurdistan
+
+        ZKR_common_organisations
+
+        ZKR_support_regional_development
+        ZKR_strengthen_the_defence_sector
+        ZKR_chamber_of_science
+
+        ZKR_middle_eastern_economic_union
+
+        ZKR_secure_anatolia
+
+        ZKR_our_commonwealth
+
+        ZKR_cultural_cooperation_initiative
+        ZKR_adopt_esperanto
+        ZKR_regional_bilingualism
+        ZKR_in_varietate_concordia
+
+        ZKR_fight_traditionalist_resistance
+        ZKR_provide_education
+        ZKR_middle_east_in_the_modern_age
+
+        ZKR_middle_east_is_free
+	}
+
+	research = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ZKR_kurdish_supremacy = 0
+        ZKR_centralise_the_administration = 0
+	}
+
+}
+
+ZKR_monarchist_path = {
+	name = "Kurdish Monarchy"
+	desc = "Overthrow the Republic and crown Mahmud Barzanji"
+
+	allowed = {
+		original_tag = ZKR
+	}
+	enable = {
+		has_country_flag = ZKR_ai_path_monarchism
+	}
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		ZKR_kurdish_federalism
+        ZKR_strengthen_the_judiciary
+        ZKR_empower_local_authorities
+        ZKR_reorganise_the_police
+        ZKR_centralise_the_administration
+        ZKR_integrate_the_volunteer_militia
+        ZKR_form_gendarmerie
+
+        ZKR_the_kingdom_restored
+        ZKR_the_royal_constitution
+
+        ZKR_league_the_of_middle_east
+        ZKR_agitate_for_syrian_kurdistan
+
+        ZKR_kurdish_industrial_revolution
+        ZKR_expand_first_factories
+        ZKR_mining_programs
+        ZKR_road_works_ahead
+        ZKR_open_up_kurdistan
+        ZKR_capital_city_industrial_park
+
+        ZKR_enforce_military_neutrality
+        ZKR_kurdish_land_forces
+        ZKR_equipment_modernisation
+        ZKR_doctrine_advancement
+        ZKR_officer_training
+
+        ZKR_open_the_first_kurdistan_university
+
+        ZKR_expel_the_british
+        ZKR_march_against_our_oppressors
+
+        ZKR_approach_the_priests
+        ZKR_support_from_overseas
+        ZKR_promote_traditionalism
+
+        ZKR_desert_battle
+        ZKR_consolidate_kurdistan
+
+        ZKR_royal_subjects
+
+        ZKR_kurdish_hegemony
+
+        ZKR_peshmerga_modernisation
+        ZKR_artillery_spotters
+        ZKR_ranger_corps
+
+        ZKR_conquer_the_levant
+        ZKR_secure_anatolia
+        
+        ZKR_crown_imperial
+	}
+
+	research = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ZKR_kurdish_supremacy = 0
+        ZKR_pluralist_constitution = 0
+	}
+
+}
+
+ZKR_fascist_path = {
+	name = "Fascist Ultranationalism"
+	desc = "Overthrow the Republic, form Greater Kurdistan and enact the Kurdish Peace"
+
+	allowed = {
+		original_tag = ZKR
+	}
+	enable = {
+		has_country_flag = ZKR_ai_path_fascism
+	}
+	abort = {
+		is_subject = yes
+	}
+
+	ai_national_focuses = {
+		ZKR_strengthen_the_judiciary
+        ZKR_open_the_first_kurdistan_university
+        ZKR_reorganise_the_police
+        ZKR_disband_the_volunteer_militia
+        ZKR_kurdish_academy
+        ZKR_kurdish_supremacy
+
+        ZKR_undo_republican_reforms
+
+        ZKR_the_kurdish_destiny
+        ZKR_agitate_for_syrian_kurdistan
+
+        ZKR_kurdish_industrial_revolution
+        ZKR_expand_first_factories
+        ZKR_mining_programs
+        ZKR_road_works_ahead
+        ZKR_open_up_kurdistan
+        ZKR_capital_city_industrial_park
+
+        ZKR_kurdish_land_forces
+        ZKR_equipment_modernisation
+        ZKR_doctrine_advancement
+        ZKR_officer_training
+
+        ZKR_coalition_of_willing
+        ZKR_instrument_of_vengeance
+        ZKR_riders_of_doom
+        ZKR_international_fascist_volunteers
+
+        ZKR_expel_the_british
+        ZKR_march_against_our_oppressors
+
+        ZKR_national_industries
+        ZKR_arrest_opposition
+        ZKR_militarise_the_police
+
+        ZKR_desert_battle
+        ZKR_consolidate_kurdistan
+
+        ZKR_council_of_kurdish_intellectuals
+        ZKR_crush_the_turkish_spirit
+        ZKR_rise_of_kurdistan
+
+        ZKR_secure_anatolia
+        ZKR_national_salvation
+
+        ZKR_close_to_salvation
+        ZKR_national_security_bureau
+        ZKR_arrest_nationalists_in_anatolia
+        ZKR_control_cemented
+        ZKR_resistance_destroyed
+        ZKR_secure_the_governate
+
+        ZKR_kurdistan_over_all
+	}
+
+	research = {
+		
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		ZKR_pluralist_constitution = 0
+        ZKR_integrate_the_volunteer_militia = 0
+	}
+
+}

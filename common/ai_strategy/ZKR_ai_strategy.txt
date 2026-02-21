@@ -92,3 +92,42 @@ ZKR_ignore_anarchy = {
 		value = -1000
 	}
 }
+
+ZKR_naval_invade_a_lot = {
+
+	allowed = { original_tag = ZKR }
+
+	enable = {
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 100
+	}
+
+	ai_strategy = {
+		type = invade
+		id = ZCY
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = XPK
+		value = 500
+	}
+
+	ai_strategy = {
+		type = invade
+		id = ZTS
+		value = 500
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = italy # because Europea likes to intervene
+		value = 300
+	}
+}

@@ -4,6 +4,7 @@ add_namespace = ZKR_technical_events
 add_namespace = ZKR_lore_events
 add_namespace = ZKR_pax_events
 add_namespace = ZKR_news_events
+add_namespace = ZKR_city_capture_events
 
 country_event = { # Monarchist Coup
 	id = ZKR_politics_events.1
@@ -81,6 +82,13 @@ country_event = { # Elections
 	
 	option = {
         name = ZKR_politics_events.3.a
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+                has_country_flag = ZKR_ai_path_communism
+            }
+        }
         add_popularity = { ideology = democratic popularity = 0.05 }
 		set_politics = {
             ruling_party = democratic
@@ -104,6 +112,13 @@ country_event = { # Elections
 
     option = {
         name = ZKR_politics_events.3.b
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+                has_country_flag = ZKR_ai_path_communism
+            }
+        }
         add_popularity = { ideology = democratic popularity = 0.05 }
 		set_politics = {
             ruling_party = democratic
@@ -127,6 +142,13 @@ country_event = { # Elections
 
     option = {
         name = ZKR_politics_events.3.c
+        ai_chance = {
+            base = 10
+            modifier = {
+                factor = 0
+                has_country_flag = ZKR_ai_path_democratic
+            }
+        }
         add_popularity = { ideology = communism popularity = 0.05 }
 		set_politics = {
             ruling_party = communism
@@ -1886,10 +1908,7 @@ country_event = { # Justification Event - Reclaim Kurdistan
 		original_tag = ZKR
 		FROM = {
             any_owned_state = {
-                OR = {
-                    is_core_of = ROOT
-                    is_claimed_by = ROOT
-                }
+                has_state_flag = ZKR_greater_kurdistan_state
             }
         }
 		NOT = { has_cosmetic_tag = ZKR_commonwealth }
@@ -2790,4 +2809,106 @@ news_event = { # Democratic electorial victory
         }
     }
 
+}
+
+news_event = { # Fall of Amed
+	id = ZKR_city_capture_events.1
+	title = ZKR_city_capture_events.1.t
+	desc = ZKR_city_capture_events.1.desc
+	picture = GFX_news_event_038
+
+	major = yes
+
+	immediate = {
+		set_global_flag = ZKR_fall_of_amed
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = ZKR_city_capture_events.1.a
+		trigger = {
+			OR = {
+                owns_state = 350
+                350 = { owner = { is_ally_with = ROOT } }
+            }
+		}
+	}
+	option = {
+		name = ZKR_city_capture_events.1.b
+		trigger = { 
+            NOT = { owns_state = 350 }
+            NOT = { 350 = { owner = { is_ally_with = ROOT } } }
+            controls_state = 350
+        }
+	}
+	option = {
+		name = ZKR_city_capture_events.1.c
+		trigger = { 
+            NOT = { owns_state = 350 }
+            NOT = { 350 = { owner = { is_ally_with = ROOT } } }
+            NOT = { controls_state = 350 }
+            350 = { owner = { NOT = { has_war_with = ROOT } } }
+        }
+	}
+    option = {
+		name = ZKR_city_capture_events.1.d
+		trigger = { 
+            NOT = { owns_state = 350 }
+            NOT = { 350 = { owner = { is_ally_with = ROOT } } }
+            NOT = { controls_state = 350 }
+            350 = { owner = { has_war_with = ROOT } }
+        }
+	}
+}
+
+news_event = { # Fall of Akkad
+	id = ZKR_city_capture_events.2
+	title = ZKR_city_capture_events.2.t
+	desc = ZKR_city_capture_events.2.desc
+	picture = GFX_news_event_ZCT_fall_of_ankara
+
+	major = yes
+
+	immediate = {
+		set_global_flag = ZKR_fall_of_akkad
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = ZKR_city_capture_events.2.a
+		trigger = {
+			OR = {
+                owns_state = 291
+                291 = { owner = { is_ally_with = ROOT } }
+            }
+		}
+	}
+	option = {
+		name = ZKR_city_capture_events.2.b
+		trigger = { 
+            NOT = { owns_state = 291 }
+            NOT = { 291 = { owner = { is_ally_with = ROOT } } }
+            controls_state = 291
+        }
+	}
+	option = {
+		name = ZKR_city_capture_events.2.c
+		trigger = { 
+            NOT = { owns_state = 291 }
+            NOT = { 291 = { owner = { is_ally_with = ROOT } } }
+            NOT = { controls_state = 291 }
+            291 = { owner = { NOT = { has_war_with = ROOT } } }
+        }
+	}
+    option = {
+		name = ZKR_city_capture_events.2.d
+		trigger = { 
+            NOT = { owns_state = 291 }
+            NOT = { 291 = { owner = { is_ally_with = ROOT } } }
+            NOT = { controls_state = 291 }
+            291 = { owner = { has_war_with = ROOT } }
+        }
+	}
 }

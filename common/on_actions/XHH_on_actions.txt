@@ -220,6 +220,31 @@ on_actions = {
                     }
                 }
             }
+
+            if = {
+                limit = {
+					has_war_with = FROM
+					FROM = {
+						NOT = { original_tag = ROOT }
+					}
+					FROM.FROM = {
+						is_owned_by = FROM
+					}
+				}
+                if = {
+                    limit = { FROM = { original_tag = XHH } }
+                    
+                    if = { # Hamburg
+                        limit = {
+                            NOT = { has_global_flag = XHH_fall_of_hamburg }
+                            FROM.FROM = { 
+                                state = 1044
+                            }
+                        }
+                        news_event = { id = XHH_city_capture_events.1 }
+                    }
+                }
+            }
         }
     }
 

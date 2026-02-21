@@ -3093,6 +3093,12 @@ focus_tree = {
 				factor = 0
 				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 5
+				}
+			}
 		}
 
 		available = {
@@ -3159,6 +3165,12 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_navy_size = {
+					size < 5
+				}
 			}
 		}
 
@@ -3358,8 +3370,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			add_stability = 0.1
-			add_popularity = { ideology = neutrality popularity = 0.15 }
+			add_research_slot = 1
 		}
 	}
 
@@ -3485,10 +3496,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = ZKR_kurdish_hegemony
 
-		cost = 2.9
+		cost = 1.5
 
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 
 		available = {
@@ -3956,7 +3967,7 @@ focus_tree = {
 				all_state = {
 					OR = {
 						ZKR_anatolian_protectorate_states = no
-						is_owned_and_controlled_by = ROOT
+						is_owned_by = ROOT
 					}
 				}
 			}
@@ -3966,7 +3977,22 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+			every_other_country = {
+				limit = {
+					any_owned_state = {
+						ZKR_anatolian_protectorate_states = yes
+					}
+				}
+				add_war_support = -0.1
+				ROOT = {
+					add_intel = {
+						target = PREV
+						army_intel = 20
+						navy_intel = 10
+						airforce_intel = 10
+					}
+				}
+			}
 		}
 	}
 
@@ -5722,12 +5748,7 @@ focus_tree = {
 						date > 1939.1.1
 					}
 				}
-				all_owned_state = {
-					OR = {
-						NOT = { is_core_of = ROOT }
-						infrastructure > 2
-					}
-				}
+				infrastructure > 19
 			}
 		}
 		
@@ -6305,6 +6326,7 @@ focus_tree = {
 				add = 20
 				OR = {
 					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_league_the_of_middle_east
 					has_completed_focus = ZKR_form_anti_imperialist_faction
 				}
 			}
@@ -7243,6 +7265,7 @@ focus_tree = {
 				add = 10
 				OR = {
 					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_league_the_of_middle_east
 					has_completed_focus = ZKR_form_anti_imperialist_faction
 				}
 			}
@@ -7633,7 +7656,15 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 0
+			modifier = {
+				add = 10
+				OR = {
+					has_completed_focus = ZKR_the_kurdish_destiny
+					has_completed_focus = ZKR_league_the_of_middle_east
+					has_completed_focus = ZKR_form_anti_imperialist_faction
+				}
+			}
 		}
 
 		available = {

@@ -2,6 +2,7 @@ add_namespace = XHH_internal_events
 add_namespace = XHH_diplo_events
 add_namespace = XHH_news_events
 add_namespace = XHH_state_seized_event
+add_namespace = XHH_city_capture_events
 
 country_event = {
 	id = XHH_state_seized_event.1
@@ -1903,7 +1904,7 @@ news_event = {
 	title = XHH_news_events.7.t
 	desc = XHH_news_events.7.desc
 	
-	picture = GFX_news_event_ger_civil_war
+	picture = GFX_news_event_ITA_civil_war
 	
 	major = yes
 	is_triggered_only = yes
@@ -2110,4 +2111,55 @@ news_event = { # XHH declares war on XWB
 			NOT = { is_ally_with = XWB }
 		}
     }
+}
+
+news_event = { # Fall of Hamburg
+	id = XHH_city_capture_events.1
+	title = XHH_city_capture_events.1.t
+	desc = XHH_city_capture_events.1.desc
+	picture = GFX_news_event_ger_civil_war
+
+	major = yes
+
+	immediate = {
+		set_global_flag = XHH_fall_of_hamburg
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = XHH_city_capture_events.1.a
+		trigger = {
+			OR = {
+                owns_state = 1044
+                1044 = { owner = { is_ally_with = ROOT } }
+            }
+		}
+	}
+	option = {
+		name = XHH_city_capture_events.1.b
+		trigger = { 
+            NOT = { owns_state = 1044 }
+            NOT = { 1044 = { owner = { is_ally_with = ROOT } } }
+            controls_state = 1044
+        }
+	}
+	option = {
+		name = XHH_city_capture_events.1.c
+		trigger = { 
+            NOT = { owns_state = 1044 }
+            NOT = { 1044 = { owner = { is_ally_with = ROOT } } }
+            NOT = { controls_state = 1044 }
+            1044 = { owner = { NOT = { has_war_with = ROOT } } }
+        }
+	}
+    option = {
+		name = XHH_city_capture_events.1.d
+		trigger = { 
+            NOT = { owns_state = 1044 }
+            NOT = { 1044 = { owner = { is_ally_with = ROOT } } }
+            NOT = { controls_state = 1044 }
+            1044 = { owner = { has_war_with = ROOT } }
+        }
+	}
 }

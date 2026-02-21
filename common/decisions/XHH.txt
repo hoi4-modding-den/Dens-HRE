@@ -217,6 +217,8 @@ political_actions = {
 		}
 
 		visible = {
+			has_dynamic_modifier = { modifier = HRE_member_state_spirit }
+			NOT = { has_war_with = XHH }
 			NOT = { is_in_tech_sharing_group = XHH_imperial_tech_sharing_group }
 			any_other_country = {
 				is_in_tech_sharing_group = XHH_imperial_tech_sharing_group

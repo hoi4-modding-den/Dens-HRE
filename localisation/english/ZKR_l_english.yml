@@ -1299,6 +1299,20 @@
  ZKR_news_events.9.b: "Seems Kurdish Democracy is here to stay."
  ZKR_news_events.9.c: "Pah."
 
+ ZKR_city_capture_events.1.t: "The Fall of Amed"
+ ZKR_city_capture_events.1.desc: "The city of Amed, once the great capital of the Kurdish nation has just fallen to [350.controller.GetAdjective] troops. Reportedly, [350.owner.GetAdjective] soldiers are still fighting in and around the city, continuing the war in a form of guerilla warfare.\n \nThe building once housing the Parliament of the Republic of Kurdistan has already been demolished by stray artillery fire and many other important sights of the city lay in ruins due to the constant bombardement."
+ ZKR_city_capture_events.1.a: "We will take it back!"
+ ZKR_city_capture_events.1.b: "Amed is ours!"
+ ZKR_city_capture_events.1.c: "The Home of the Kurdish Rebellion has fallen."
+ ZKR_city_capture_events.1.d: "They will surrender soon!"
+
+ ZKR_city_capture_events.2.t: "The Fall of Akkad"
+ ZKR_city_capture_events.2.desc: "[291.controller.GetAdjective] troops have just reached the Heart of the [291.owner.GetAdjective] Empire, the legendary City of Akkad. The city had only recently been rebuilt and already, the grand temples and palaces of the Heart of the Middle East lay in ruins.\n \nAccording to reports, fighting in the city is still ongoing, with [291.owner.GetAdjective] soldiers having barricaded themselves in the Imperial Palace in the hopes that it won't become a target for artillery fire."
+ ZKR_city_capture_events.2.a: "We just rebuilt that!"
+ ZKR_city_capture_events.2.b: "The Heart of their Empire is gone!"
+ ZKR_city_capture_events.2.c: "Will the city be lost again?"
+ ZKR_city_capture_events.2.d: "The Heart of their Empire is gone!"
+
 
 # STATE NAMES
 
@@ -1341,6 +1355,24 @@
  ZKR_trotskys_revenge_DESC: "As Trotskyist Kurdistan, have Trotsky visit your capital and then defeat Circassia and arrest Stalin."
 
 
+# GAME RULES
+
+ custom_diff_strong_zkr: "Strengthen @ZKR Republic of Kurdistan"
+
+ 00_RULE_GROUP_ZKR_AI_BEHAVIOR: "Kurdish AI Behaviour"
+
+ ZKR_AI_BEHAVIOR: "@ZKR Fate of the Republic"
+
+ ZKR_RULE_OPTION_DEMOCRATIC: "Democracy Survives"
+ ZKR_RULE_OPTION_DEMOCRATIC_DESC: "The Republic will survive this period of turmoil and §2elections§! will be held once again."
+ ZKR_RULE_OPTION_COMMUNIST: "Institutional Revolution"
+ ZKR_RULE_OPTION_COMMUNIST_DESC: "The Republic will survive, but in the first elections the §rTrotskyists§! are elected and establish a Socialist Republic." 
+ ZKR_RULE_OPTION_MONARCHIST: "Loyalist Coup"
+ ZKR_RULE_OPTION_MONARCHIST_DESC: "§gBarzanji§! and his loyalists will coup the government and restore the Kingdom of Kurdistan.\n \n£GFX_victory_points  §CThis is the "Historical" choice.§!"
+ ZKR_RULE_OPTION_FASCIST: "Xoybûn Directorate"
+ ZKR_RULE_OPTION_FASCIST_DESC: "The §FXoybûn§! will put an end to the republic and institute a military dictatorship."
+
+
 # OTHER STUFF
 
  ZKR_irregular_unlocker: "Irregular Infantry"
@@ -1359,4 +1391,3 @@
 
  ZKR_annexed_before_conference_tt: "§Y[ZKR.GetNonIdeologyNameDefCap]§! is one step closer to §YUnification§!."
 
- custom_diff_strong_zkr: "Strengthen @ZKR Republic of Kurdistan"

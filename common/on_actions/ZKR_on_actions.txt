@@ -92,6 +92,65 @@ on_actions = {
                     clr_character_flag = ZKR_not_generate_character
                 }
             }
+
+            # path selection
+
+            ZKR = {
+                if = {
+                    limit = {
+                        is_historical_focus_on = yes
+                        has_game_rule = {
+                            rule = ZKR_ai_behavior
+                            option = DEFAULT
+                        }
+                    }
+                    set_country_flag = ZKR_ai_path_monarchism
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = ZKR_ai_behavior
+                            option = ZKR_DEMOCRATIC_OPTION
+                        }
+                    }
+                    set_country_flag = ZKR_ai_path_democratic
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = ZKR_ai_behavior
+                            option = ZKR_COMMUNIST_OPTION
+                        }
+                    }
+                    set_country_flag = ZKR_ai_path_communism
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = ZKR_ai_behavior
+                            option = ZKR_MONARCHIST_OPTION
+                        }
+                    }
+                    set_country_flag = ZKR_ai_path_monarchism
+                }
+                else_if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = ZKR_ai_behavior
+                            option = ZKR_FASCIST_OPTION
+                        }
+                    }
+                    set_country_flag = ZKR_ai_path_fascism
+                }
+                else = {
+                    random_list = {
+                        30 = { set_country_flag = ZKR_ai_path_democratic }
+                        30 = { set_country_flag = ZKR_ai_path_communism }
+                        30 = { set_country_flag = ZKR_ai_path_monarchism }
+                        10 = { set_country_flag = ZKR_ai_path_fascism } # Ai is too stupid for this one
+                    }
+                }
+            }
         }
     }
 
@@ -216,7 +275,10 @@ on_actions = {
             }
             if = {
                 limit = {
-                    FROM = { tag = ZKR }
+                    FROM = { 
+                        tag = ZKR 
+                        has_government = communism 
+                    }
                     ROOT = { has_character = ZCC_Josef_Dzhugashvili }
                 }
                 FROM = { country_event = { id = ZKR_lore_events.4 days = 3 } }
@@ -261,6 +323,44 @@ on_actions = {
                     }
                 }
                 country_event = { id = ZKR_politics_events.9 days = 10 }
+            }
+        }
+    }
+
+    on_state_control_changed = {
+        effect = {
+            if = {
+                limit = {
+					has_war_with = FROM
+					FROM = {
+						NOT = { original_tag = ROOT }
+					}
+					FROM.FROM = {
+						is_owned_by = FROM
+					}
+				}
+                if = {
+                    limit = { FROM = { original_tag = ZKR } }
+                    
+                    if = { # Amed
+                        limit = {
+                            NOT = { has_global_flag = ZKR_fall_of_amed }
+                            FROM.FROM = { 
+                                state = 350
+                            }
+                        }
+                        news_event = { id = ZKR_city_capture_events.1 }
+                    }
+
+                    if = { # Akkad
+                        limit = {
+                            NOT = { has_global_flag = ZKR_fall_of_akkad }
+                            FROM.FROM = { state = 291 }
+                            291 = { has_state_flag = ZKR_akkad_rebuilt }
+                        }
+                        news_event = { id = ZKR_city_capture_events.2 }
+                    }
+                }
             }
         }
     }
