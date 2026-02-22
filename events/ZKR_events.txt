@@ -2825,39 +2825,39 @@ news_event = { # Fall of Amed
 
 	is_triggered_only = yes
 
-	option = {
+    option = {
 		name = ZKR_city_capture_events.1.a
 		trigger = {
 			OR = {
-                owns_state = 350
-                350 = { owner = { is_ally_with = ROOT } }
+                tag = ZKR
+                is_ally_with = ZKR
             }
 		}
 	}
 	option = {
 		name = ZKR_city_capture_events.1.b
 		trigger = { 
-            NOT = { owns_state = 350 }
-            NOT = { 350 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
             controls_state = 350
         }
 	}
 	option = {
 		name = ZKR_city_capture_events.1.c
 		trigger = { 
-            NOT = { owns_state = 350 }
-            NOT = { 350 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
             NOT = { controls_state = 350 }
-            350 = { owner = { NOT = { has_war_with = ROOT } } }
+            NOT = { has_war_with = ZKR }
         }
 	}
     option = {
 		name = ZKR_city_capture_events.1.d
 		trigger = { 
-            NOT = { owns_state = 350 }
-            NOT = { 350 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
             NOT = { controls_state = 350 }
-            350 = { owner = { has_war_with = ROOT } }
+            has_war_with = ZKR
         }
 	}
 }
@@ -2876,39 +2876,39 @@ news_event = { # Fall of Akkad
 
 	is_triggered_only = yes
 
-	option = {
+    option = {
 		name = ZKR_city_capture_events.2.a
 		trigger = {
 			OR = {
-                owns_state = 291
-                291 = { owner = { is_ally_with = ROOT } }
+                tag = ZKR
+                is_ally_with = ZKR
             }
 		}
 	}
 	option = {
 		name = ZKR_city_capture_events.2.b
 		trigger = { 
-            NOT = { owns_state = 291 }
-            NOT = { 291 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
             controls_state = 291
         }
 	}
 	option = {
 		name = ZKR_city_capture_events.2.c
 		trigger = { 
-            NOT = { owns_state = 291 }
-            NOT = { 291 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
             NOT = { controls_state = 291 }
-            291 = { owner = { NOT = { has_war_with = ROOT } } }
+            NOT = { has_war_with = ZKR }
         }
 	}
     option = {
 		name = ZKR_city_capture_events.2.d
 		trigger = { 
-            NOT = { owns_state = 291 }
-            NOT = { 291 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = ZKR }
+            NOT = { is_ally_with = ZKR }
             NOT = { controls_state = 291 }
-            291 = { owner = { has_war_with = ROOT } }
+            has_war_with = ZKR
         }
 	}
 }

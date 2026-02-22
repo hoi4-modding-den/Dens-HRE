@@ -5096,7 +5096,10 @@ ZKR_ZZZ_expeditions = {
 			FROM = {
 				is_owned_by = ZZZ
                 OR = {
-                    ZKR_is_middle_eastern_state = yes
+                    AND = {
+                        ZKR_is_middle_eastern_state = yes
+                        ROOT = { has_cosmetic_tag = ZKR_commonwealth }
+                    }
                     is_claimed_by = ROOT
                     is_core_of = ROOT
                 }

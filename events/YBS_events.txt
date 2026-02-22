@@ -912,7 +912,7 @@ country_event = { # YBS appoints new bishop
     }
 }
 
-country_event = { # YBS approaches YGL
+country_event = { # YBS approaches us
 	id = YBS_diplo_events.2
 	title = YBS_diplo_events.2.t
 	desc = YBS_diplo_events.2.desc
@@ -923,14 +923,7 @@ country_event = { # YBS approaches YGL
 	option = {
         name = YBS_diplo_events.2.a
         ai_chance = {
-            base = 4
-            modifier = {
-                factor = 1.2
-                has_opinion = {
-					target = FROM
-					value > 50
-				}
-            }
+            base = 10
         }
         FROM = { country_event = { id = YBS_diplo_events.3 days = 3 } }
 
@@ -950,17 +943,29 @@ country_event = { # YBS approaches YGL
     option = {
         name = YBS_diplo_events.2.b
         ai_chance = {
-            base = 1
-            modifier = {
-                factor = 0
-                has_war = yes
-            }
+            base = 0.1
         }
         FROM = { country_event = { id = YBS_diplo_events.4 days = 4 } }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        if = {
+            limit = {
+                NOT = { has_government = FROM }
+            }
+            effect_tooltip = {
+                FROM = {
+                    create_wargoal = {
+                        target = ROOT
+                        type = civil_war
+                    }
+                }
+            }
+        }
     }
 }
 
-country_event = { # YBS approaches YGL / Accepted
+country_event = { # YBS approaches us / Accepted
 	id = YBS_diplo_events.3
 	title = YBS_diplo_events.3.t
 	desc = YBS_diplo_events.3.desc
@@ -986,7 +991,7 @@ country_event = { # YBS approaches YGL / Accepted
     }
 }
 
-country_event = { # YBS approaches YGL / Refused
+country_event = { # YBS approaches us / Refused
 	id = YBS_diplo_events.4
 	title = YBS_diplo_events.4.t
 	desc = YBS_diplo_events.4.desc
@@ -996,7 +1001,18 @@ country_event = { # YBS approaches YGL / Refused
 	
 	option = {
         name = YBS_diplo_events.4.a
-        add_political_power = -25
+        if = {
+            limit = {
+                has_government = FROM
+            }
+            add_political_power = -25
+        }
+        else = {
+            create_wargoal = {
+                target = FROM
+                type = civil_war
+            }
+        }
     }
 }
 
@@ -1891,6 +1907,25 @@ country_event = { # Madrid attacks
         add_war_support = 0.1
         add_timed_idea = {
             idea = YBS_defend_from_madrid
+            days = 300
+        }
+    }
+
+}
+
+country_event = { # Catalonia attacks
+	id = YBS_diplo_events.31
+	title = YBS_diplo_events.31.t
+	desc = YBS_diplo_events.31.desc
+    picture = GFX_report_event_spr_spanish_civil_war2
+
+    is_triggered_only = yes
+	
+	option = {
+        name = YBS_diplo_events.31.a
+        add_war_support = 0.1
+        add_timed_idea = {
+            idea = YBS_defend_from_catalonia
             days = 300
         }
     }

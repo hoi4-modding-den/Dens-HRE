@@ -2094,7 +2094,7 @@ YBS_foreign_economic_control_cat = {
         available = {
             NOT = {
                 check_variable = {
-                    tooltip = YBS_foreign_control_trigger_tt
+                    tooltip = YBS_foreign_control_trigger_tt_NOT
                     var = YBS_foreign_control
                     value = 95
                     compare = greater_than_or_equals
@@ -2134,7 +2134,7 @@ YBS_foreign_economic_control_cat = {
         available = {
             NOT = {
                 check_variable = {
-                    tooltip = YBS_foreign_control_trigger_tt
+                    tooltip = YBS_foreign_control_trigger_tt_NOT
                     var = YBS_foreign_control
                     value = 100
                     compare = greater_than_or_equals
@@ -2176,7 +2176,7 @@ YBS_foreign_economic_control_cat = {
         available = {
             NOT = {
                 check_variable = {
-                    tooltip = YBS_foreign_control_trigger_tt
+                    tooltip = YBS_foreign_control_trigger_tt_NOT
                     var = YBS_foreign_control
                     value = 100
                     compare = greater_than_or_equals
@@ -2219,7 +2219,7 @@ YBS_foreign_economic_control_cat = {
         available = {
             NOT = {
                 check_variable = {
-                    tooltip = YBS_foreign_control_trigger_tt
+                    tooltip = YBS_foreign_control_trigger_tt_NOT
                     var = YBS_foreign_control
                     value = 100
                     compare = greater_than_or_equals
@@ -2454,9 +2454,61 @@ economy_decisions = {
 
 foreign_politics = {
 
+    YBS_secretly_invade_YBL = {
+
+        allowed = {
+            original_tag = YBS
+        }
+
+        ai_will_do = {
+			base = 20
+		}
+
+        visible = {
+            is_ai = yes
+            has_war_with = YBL
+        }
+
+        available = {
+            YBL = { is_ai = yes }
+            is_faction_leader = yes
+            war_length_with = {
+                tag = YBL
+                months > 2
+            }
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            division_template = {
+                name = "Invasion Division"
+                priority = 0
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                }
+                support = {
+                }
+            }
+            YBL = {
+                capital_scope = {
+                    create_unit = {
+                        division = "name = \"Invasion Division\" division_template = \"Invasion Division\" start_experience_factor = 0.01"
+                        owner = ROOT
+                        allow_spawning_on_enemy_provs = yes
+                    }
+                }
+            }
+        }
+    }
+
     YBS_invite_defending_democratic_country = {
 
 		icon = generic_protection
+
+        allowed = {
+            original_tag = YBS
+        }
 
 		ai_will_do = {
 			base = 20

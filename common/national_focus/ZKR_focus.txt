@@ -12,7 +12,7 @@ focus_tree = {
 	
 	default = no
 
-	continuous_focus_position = { x = 5000 y = 500 }
+	continuous_focus_position = { x = 4500 y = 700 }
 
 	initial_show_position = {
 		x = 11
@@ -6952,6 +6952,41 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ZKR_red_cross_in_the_middle_east
+		icon = GFX_focus_YBS_red_cross
+		prerequisite = { focus = ZKR_kurdish_land_forces }
+		#mutually_exclusive = { focus =  }
+		x = 2
+		y = 1
+		relative_position_id = ZKR_kurdish_land_forces
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+			NOT = { has_government = fascism }
+			has_offensive_war = no
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			hidden_effect = {
+				set_technology = { YBS_red_cross_tech = 1 }
+			}
+			custom_effect_tooltip = YBS_red_cross_tech_effect_tt
+		}
+	}
+
+	focus = {
 		id = ZKR_doctrine_advancement
 		icon = GFX_focus_generic_army_doctrines_2
 		prerequisite = { focus = ZKR_kurdish_land_forces }
@@ -6978,6 +7013,10 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			army_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_doctrine_cost_reduction = {
                 cost_reduction = 0.5
                 uses = 2
@@ -7099,7 +7138,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 20
 			modifier = {
-				factor = 0.1
+				factor = 0
 				NOT = { has_subdoctrine_in_track = operations}
 			}
 		}
@@ -7155,7 +7194,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 20
 			modifier = {
-				factor = 0.1
+				factor = 0
 				NOT = { has_subdoctrine_in_track = combat_support }
 			}
 		}
@@ -7223,6 +7262,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_subdoctrine_in_track = combat_support }
+				}
+				set_sub_doctrine = field_engineering
+			}
+			add_mastery = {
+				amount = 25
+				sub_doctrine = field_engineering
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = ZKR_fortify_armenian_border_tt
 			hidden_effect = {
 				every_controlled_state = {
@@ -7283,7 +7335,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
-			air_experience = 25
+			air_experience = 50
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -7682,18 +7734,43 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = convoy
-				amount = 100
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_tech = early_ship_hull_light } }
+					set_technology = { early_ship_hull_light = 1 }
+				}
+				if = {
+					limit = { NOT = { has_tech = early_ship_hull_cruiser } }
+					set_technology = { early_ship_hull_cruiser = 1 }
+				}
+				if = {
+					limit = { NOT = { has_tech = coastal_defense_ships } }
+					set_technology = { coastal_defense_ships = 1 }
+				}
+				if = {
+					limit = { NOT = { has_tech = early_ship_hull_heavy } }
+					set_technology = { early_ship_hull_heavy = 1 }
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_battery } }
+					set_technology = { basic_battery = 1 }
+				}
+				if = {
+					limit = { NOT = { has_tech = basic_torpedo } }
+					set_technology = { basic_torpedo = 1 }
+				}
 			}
+			custom_effect_tooltip = ZKR_build_dockyards_tt
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			add_tech_bonus = {
-				name = ZKR_build_dockyards
-				bonus = 1
-				uses = 2
-				category = dd_tech
+			navy_experience = 50
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 100
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -7729,7 +7806,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 10
+			factor = 1
 		}
 
 		available = {
@@ -7766,6 +7843,93 @@ focus_tree = {
 					type = dockyard
 					level = 2
 					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ZKR_seize_turkish_ships
+		icon = GFX_focus_generic_navy_research_bonus
+		prerequisite = { focus = ZKR_build_dockyards }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = ZKR_build_dockyards
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			# copied from ZCT history file
+			create_equipment_variant = {
+				name = "Kocatepe Class"								# represents Kocatepe and Zafer classes
+				type = ship_hull_light_1
+				name_group = TUR_DD_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = light_ship_engine_2
+					fixed_ship_torpedo_slot = ship_torpedo_1
+					mid_1_custom_slot = empty
+					rear_1_custom_slot = empty
+				}
+			}
+			create_equipment_variant = {
+				name = "Mecidiye Class"								# represents Mecidiye and Hamidiye protected cruisers		
+				type = ship_hull_cruiser_coastal_defense_ship
+				name_group = TUR_CL_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_medium_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = cruiser_ship_engine_1
+					fixed_ship_armor_slot = empty
+					fixed_ship_secondaries_slot = ship_secondaries_1
+					mid_1_custom_slot = empty
+					mid_2_custom_slot = empty
+					rear_1_custom_slot = ship_torpedo_1
+				}
+			}
+			create_equipment_variant = {
+				name = "Yavuz Class"	
+				type = ship_hull_heavy_1
+				name_group = TUR_BC_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_heavy_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = heavy_ship_engine_1
+					fixed_ship_secondaries_slot = ship_secondaries_1
+					fixed_ship_armor_slot = ship_armor_bc_1
+					front_1_custom_slot = ship_heavy_battery_1
+					mid_1_custom_slot = ship_secondaries_1
+					mid_2_custom_slot = empty
+					rear_1_custom_slot = empty
 				}
 			}
 		}

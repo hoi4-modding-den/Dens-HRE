@@ -2131,35 +2131,35 @@ news_event = { # Fall of Hamburg
 		name = XHH_city_capture_events.1.a
 		trigger = {
 			OR = {
-                owns_state = 1044
-                1044 = { owner = { is_ally_with = ROOT } }
+                tag = XHH
+                is_ally_with = XHH
             }
 		}
 	}
 	option = {
 		name = XHH_city_capture_events.1.b
 		trigger = { 
-            NOT = { owns_state = 1044 }
-            NOT = { 1044 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = XHH }
+            NOT = { is_ally_with = XHH }
             controls_state = 1044
         }
 	}
 	option = {
 		name = XHH_city_capture_events.1.c
 		trigger = { 
-            NOT = { owns_state = 1044 }
-            NOT = { 1044 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = XHH }
+            NOT = { is_ally_with = XHH }
             NOT = { controls_state = 1044 }
-            1044 = { owner = { NOT = { has_war_with = ROOT } } }
+            NOT = { has_war_with = XHH }
         }
 	}
     option = {
 		name = XHH_city_capture_events.1.d
 		trigger = { 
-            NOT = { owns_state = 1044 }
-            NOT = { 1044 = { owner = { is_ally_with = ROOT } } }
+            NOT = { tag = XHH }
+            NOT = { is_ally_with = XHH }
             NOT = { controls_state = 1044 }
-            1044 = { owner = { has_war_with = ROOT } }
+            has_war_with = XHH
         }
 	}
 }

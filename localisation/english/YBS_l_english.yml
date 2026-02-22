@@ -359,7 +359,9 @@
  YBS_defend_from_zaragoza: "Warplan 'Red Mountains'"
  YBS_defend_from_zaragoza_desc: "An attack from Zaragoza has been expected for a long time. Now the officers can put their plans into motion."
  YBS_defend_from_madrid: "Warplan 'Broken Crown'"
- YBS_defend_from_madrid_desc: "The Iberian Central Government will no longer rule over us!"
+ YBS_defend_from_madrid_desc: "The Spanish will no longer rule over us!"
+ YBS_defend_from_catalonia: "Warplan 'Sagrada Família'"
+ YBS_defend_from_catalonia_desc: "The Catalan Revolutionaries have been a threat to our nation for far too long. Our officers have made preparations for exactly this moment."
  YBS_have_fun_now: "War on the Horizon"
  YBS_thanks_for_playing_tt: " \n§LThis is the end of this branch. Thank you for playing the Basque Country!§!\n "
 
@@ -452,6 +454,7 @@
  YBS_foreign_control: "£GFX_puppet_texticon Foreign Economic Control"
  YBS_foreign_control_effect_tt: "$YBS_foreign_control$: $RIGHT|-=1%%$"
  YBS_foreign_control_trigger_tt: "Has reached §R$RIGHT|0$%§! $YBS_foreign_control$"
+ YBS_foreign_control_trigger_tt_NOT: "Has not reached §R$RIGHT|0$%§! $YBS_foreign_control$"
 
  YBS_no_france_yet_tt: "§YFrance§! has been added to the §CJam§!."
 
@@ -901,7 +904,7 @@
  YBS_ally_hamburg_desc: ""
  YBS_support_hamburg: "Support our Homelands"
  YBS_support_hamburg_desc: ""
- YBS_thanks_for_playing_corp: "There's Profit in Expansion"
+ YBS_thanks_for_playing_corp: "There's Profit to be made"
  YBS_thanks_for_playing_corp_desc: ""
 
  YBS_we_will_always_have_hope: "Espero Mortas Laste"
@@ -1037,7 +1040,7 @@
  YBS_reorganise_high_command_desc: ""
  YBS_basque_military_academy: "Bilbao Military Academy"
  YBS_basque_military_academy_desc: ""
- YBS_basque_military_academy_tt: "Our officers will begin §Gpreparations§! against possible offensive strikes coming from §Y[YZA.GetNameWithFlag]§! or §Y[YAO.GetNameWithFlag]§!"
+ YBS_basque_military_academy_tt: "Our officers will begin §Gpreparations§! against possible offensive strikes coming from §Y[YZA.GetNameWithFlag]§!, §Y[YCA.GetNameWithFlag]§! or §Y[YAO.GetNameWithFlag]§!"
  YBS_officer_meritocracy: "Meritocratic Officer Promotions"
  YBS_officer_meritocracy_desc: ""
  YBS_officer_elections: "Democratic Officer Promotions"
@@ -1046,7 +1049,7 @@
  YBS_standardised_rifles_desc: ""
  YBS_radio_development: "Radio Development"
  YBS_radio_development_desc: ""
- YBS_the_pan_national_army: "The Pan-National Army"
+ YBS_the_pan_national_army: "A Pan-National Army"
  YBS_the_pan_national_army_desc: ""
  YBS_new_leadership: "New Leadership"
  YBS_new_leadership_desc: ""
@@ -1205,31 +1208,31 @@
  YBS_post_election_events.8.a: "Begin reconstruction. We will complete Gaudí's work!"
  YBS_post_election_events.8.b: "Take everything not nailed down! We can repair later!"
 
- YBS_post_election_events.9.t: "Unrest in occupied Territories"
+ YBS_post_election_events.9.t: "Unrest in Occupied Territories"
  YBS_post_election_events.9.desc: "There is unrest in territories occupied by the army due to their oppressive handling of the local people."
- YBS_post_election_events.9.a: "Hand power to local councils to appease them."
+ YBS_post_election_events.9.a: "Hand power to local governments to appease them."
  YBS_post_election_events.9.a.tt: "Unlocks the unique §Y$YBS_iberian_reconciliation$§! occupation law."
 
  YBS_diplo_events.1.t: "[FROM.GetNameDefCap] officially adopts State Catholicism"
  YBS_diplo_events.1.desc: "The [FROM.GetAdjective] government recently passed a new constitutional referendum in which Catholicism was officially adopted as the state religion of [FROM.GetNameDef]."
  YBS_diplo_events.1.a: "May God bless them."
 
- YBS_diplo_events.2.t: "[FROM.GetNameDefCap] wants us to join them"
+ YBS_diplo_events.2.t: "[FROM.GetNameDefCap] offers Integration"
  YBS_diplo_events.2.desc: "WIP"
  YBS_diplo_events.2.a: "Very well, together."
- YBS_diplo_events.2.b: "We cannot surrender our independence!"
+ YBS_diplo_events.2.b: "We cannot surrender our sovereignty!"
 
- YBS_diplo_events.3.t: "Galicia accepts our Protection!"
- YBS_diplo_events.3.desc: "The Galician government has accepted our proposal and has handed over control over their lands to us."
+ YBS_diplo_events.3.t: "[FROM.GetNameDefCap] accepts our Protection!"
+ YBS_diplo_events.3.desc: "The [FROM.GetAdjective] government has accepted our proposal and has handed over control over their lands to us."
  YBS_diplo_events.3.a: "United we stand!"
 
- YBS_diplo_events.4.t: "Galicia refuses!"
- YBS_diplo_events.4.desc: "The Galician government has refused, citing that their own sovereignty is more important than restoring order and democracy in Iberia."
+ YBS_diplo_events.4.t: "[FROM.GetNameDefCap] refuses!"
+ YBS_diplo_events.4.desc: "The [FROM.GetAdjective] government has refused, citing that they wish to protect their sovereignty without our assistance."
  YBS_diplo_events.4.a: "I suppose that's fair."
 
  YBS_diplo_events.5.t: "[FROM.GetNameDefCap] prepares for War!"
  YBS_diplo_events.5.desc: "Recent reports from our border show a buildup of [FROM.GetAdjective] troops. Our officers worry that this indicates a continuation of the Iberian Civil War between us and [FROM.GetNameDef]."
- YBS_diplo_events.5.a: "Ready the Army!"
+ YBS_diplo_events.5.a: "Ready the Troops!"
  YBS_diplo_events.5.a.tt: "[FROM.GetNameWithFlag] will declare §RWar§! in §Y30 Days§!."
 
  YBS_diplo_events.6.t: "[FROM.GetNameDefCap] offers a Merger"
@@ -1237,11 +1240,11 @@
  YBS_diplo_events.6.a: "This will increase our profits!"
  YBS_diplo_events.6.b: "We can't risk this."
 
- YBS_diplo_events.7: "Ordinas accepts the Merger"
+ YBS_diplo_events.7.t: "Ordinas accepts the Merger"
  YBS_diplo_events.7.desc: "The government of the Balearic Islands has accepted our offer for a merger!"
  YBS_diplo_events.7.a: "Record profits!"
 
- YBS_diplo_events.8: "Ordinas refuses the Merger"
+ YBS_diplo_events.8.t: "Ordinas refuses the Merger"
  YBS_diplo_events.8.desc: "The government of the Balearic Islands has refused our offer to combine our enterprises."
  YBS_diplo_events.8.a: "It could have been a great opportunity."
 
@@ -1334,12 +1337,16 @@
  YBS_diplo_events.28.a: "Curses!"
 
  YBS_diplo_events.29.t: "The Threat to our East"
- YBS_diplo_events.29.desc: "[YCA.GetNameDefCap] has attacked! Our border guards have been preparing for such an incursion and are ready to stand their ground."
+ YBS_diplo_events.29.desc: "[YZA.GetNameDefCap] has attacked! Our border guards have been preparing for such an incursion and are ready to stand their ground."
  YBS_diplo_events.29.a: "Euskal Errepublika libre geldituko da!"
 
  YBS_diplo_events.30.t: "Madrid strikes back!"
  YBS_diplo_events.30.desc: "The time has come, the powers in Madrid have made their move and so shall we."
  YBS_diplo_events.30.a: "A revenge hundreds of years in the making."
+
+ YBS_diplo_events.31.t: "The Catalan Attack!"
+ YBS_diplo_events.31.desc: "[YCA.GetNameDefCap] has attacked! Our border guards have been preparing for such an incursion and are ready to stand their ground."
+ YBS_diplo_events.31.a: "We'll push them back to the sea!"
 
  YBS_esperanto_events.1.t: "A Flag for the Republic"
  YBS_esperanto_events.1.desc: "Upon the declaration of the Republic of Hope, many proposals for a national flag were submitted to the government. While during the proclamation the flag of the Esperantists was waved by the revolutionaries, we still need to consider its adaptation.\n \nTwo other main proposals have come forth during that time, the first being a rather ironic one at that. The 'Green Star Tricolour' or 'Verda Stelo Trikoloro' shows a bicolour with one vertical white stripe between two green stripes and the Verda Stelo in the centre of it. While its usage of only two colours would suggest it be named a bicolour, its artist, the Russian exile Alexei Kemersky, insists upon its name as 'Tricolour' in a symbolic sense, as many notable republics in history were represented by them.\n \nThe second proposal, luckily, is less symbolically complex. The 'Banner of Nine Stars' or 'Standardo de Naŭ Stelo' shows nine white stars on a green background with a white stripe on the lower part of the flag. The nine stars represent the people of the world, one star for each region: North and South America, Africa, Oceania, Polynesia, excluded from America or Oceania, Asia, Europe, Eurasia, as a reconciliation between the two systems of depicting the continents and Antarctica. The white stripe stands for unity and reaching out from one side to the other.\n \nNow it is up to parliament to decide to adopt one of the two flags or officially adopt the Esperanto Flag for the new republic."

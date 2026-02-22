@@ -436,7 +436,6 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = YBS_carlist_league
 			create_faction_from_template = {
 				template = faction_template_european_dominance_monarchist
 				name = YBS_carlist_league
@@ -5263,6 +5262,33 @@ focus_tree = {
 			YFR = {
 				country_event = { id = YBS_diplo_events.16 days = 5 }
 			}
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			effect_tooltip = {
+				annex_country = {
+                    target = YFR
+                    transfer_troops = no
+                }
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = YFR
+					}
+					add_core_of = ROOT
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = -1
+				}
+
+				custom_effect_tooltip = YBS_diplo_events.17.a.tt
+			}
 		}
 	}
 
@@ -6704,7 +6730,12 @@ focus_tree = {
 		}
 
 		bypass = {
-			is_ally_with = XHH
+			OR = {
+				NOT = { country_exists = XHH }
+				has_war_with = XHH
+				is_ally_with = XHH
+				XHH = { has_government = communism }
+			}
 		}
 
 		available_if_capitulated = no
@@ -6765,7 +6796,11 @@ focus_tree = {
 		}
 
 		bypass = {
-			
+			OR = {
+				NOT = { country_exists = XHH }
+				has_war_with = XHH
+				XHH = { has_government = communism }
+			}
 		}
 
 		available_if_capitulated = no
@@ -6891,7 +6926,7 @@ focus_tree = {
 					}
 
 					create_country_leader = {
-						name = "Geschäftsrat Hanseatisch-Nordafrika"
+						name = "Geschäftsrat Hanseatisch-Nordafrika GmbH"
 						picture = GFX_portrait_YBS_handelskommission
 						expire = "1965.1.1"
 						ideology = oligarchism
@@ -7123,7 +7158,7 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction_from_template = {
-				template = faction_template_world_revolution
+				template = faction_template_anti_fascist
 				name = YBS_hopeful_internationale
 				icon = GFX_faction_logo_eu
 				color = { 38 154 49 }
@@ -7240,6 +7275,13 @@ focus_tree = {
 				}
 			}
 			if = {
+				limit = {
+					country_exists = YAS
+					YAS = { has_government = democratic }
+				}
+				YAS = { country_event = { id = YBS_diplo_events.2 days = 3 } }
+			}
+			else_if = {
 				limit = {
 					NOT = {
 						OR = {
@@ -7653,11 +7695,24 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			YRI = { country_event = { id = generic.20 days = 3 } }
+			YRI = { country_event = { id = YBS_diplo_events.2 days = 3 } }
 
-			custom_effect_tooltip = if_they_accept_tt
+				custom_effect_tooltip = if_they_accept_tt
+
 			effect_tooltip = {
-				puppet = YRI
+				annex_country = {
+					target = YRI
+					transfer_troops = no
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_state = {
+					limit = {
+						is_core_of = YRI
+					}
+					add_core_of = ROOT
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -8619,7 +8674,7 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					YGL = { has_government = democratic }
+					YGL = { has_government = communism }
 				}
 				YGL = { country_event = { id = YBS_diplo_events.2 days = 3 } }
 			}
@@ -9443,6 +9498,24 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = YBS_generic_captain_of_industry
 		}
@@ -9640,6 +9713,24 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_research_slot = 1
 		}
 	}
@@ -10085,7 +10176,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_basque_military_academy
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -10116,7 +10207,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_basque_military_academy
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -10474,11 +10565,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = YBS_focus_on_defence
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_grand_battle_plan
+			if = {
+				limit = { has_any_grand_doctrine = land }
+				army_experience = 100
+			}
+			else = {
+				set_grand_doctrine = grand_battleplan
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -10523,6 +10615,13 @@ focus_tree = {
 				uses = 2
 				category = support_tech
 			}
+			add_doctrine_cost_reduction = {
+				name = YBS_trench_warfare
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			swap_ideas = {
@@ -10559,6 +10658,19 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_subdoctrine_in_track = infantry }
+				}
+				set_sub_doctrine = defensive_postures
+			}
+			add_mastery = {
+				amount = 50
+				sub_doctrine = defensive_postures
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			1098 = {
 				add_building_construction = {
 					type = bunker
@@ -10773,12 +10885,12 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = YBS_focus_on_offense
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_superior_firepower
-				category = cat_mobile_warfare
+			if = {
+				limit = { has_any_grand_doctrine = land }
+				army_experience = 100
+			}
+			else = {
+				set_grand_doctrine = superior_firepower
 			}
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -10817,17 +10929,17 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = YBS_artillery_development
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_superior_firepower
-			}
 			add_tech_bonus = {
 				name = YBS_artillery_development
 				bonus = 0.5
 				uses = 3
 				category = artillery
+			}
+			add_doctrine_cost_reduction = {
+				name = YBS_artillery_development
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_superior_firepower
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -10862,21 +10974,33 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				has_facility_specialization = specialization_land
-				has_facility_specialization = specialization_air
-			}
+			
 		}
 		
 		bypass = {
-			is_special_project_completed = sp:sp_air_radar
+			
 		}
 
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			complete_special_project = sp:sp_air_radar
+			if = {
+				limit = {
+					NOT = { is_special_project_completed = sp:sp_air_radar }
+				}
+				complete_special_project = sp:sp_air_radar
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			capital_scope = {
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -10889,7 +11013,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = YBS_artillery_development
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			factor = 2
@@ -10907,12 +11031,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
-				name = YBS_more_anti_tank
-				cost_reduction = 0.5
-				uses = 1
-				category = cat_superior_firepower
-			}
 			add_tech_bonus = {
 				name = YBS_more_anti_tank
 				bonus = 2.0
@@ -11292,7 +11410,7 @@ focus_tree = {
 
 		available_if_capitulated = no
 
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			custom_effect_tooltip = {
 				localization_key = YBS_facility_construction_tt

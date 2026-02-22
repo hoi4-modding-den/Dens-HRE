@@ -70,12 +70,12 @@ on_actions = {
                 }
                 else = {
                     random_list = {
-                        20 = { set_country_flag = YBS_ai_path_carlist }
+                        10 = { set_country_flag = YBS_ai_path_carlist }
                         10 = { set_country_flag = YBS_ai_path_nationalist }
                         20 = { set_country_flag = YBS_ai_path_liberals }
                         10 = { set_country_flag = YBS_ai_path_socialist }
                         20 = { set_country_flag = YBS_ai_path_syndicalist }
-                        20 = { set_country_flag = YBS_ai_path_popular_front }
+                        30 = { set_country_flag = YBS_ai_path_popular_front }
                     }
                 }
 
@@ -131,10 +131,10 @@ on_actions = {
                 }
                 else = {
                     random_list = {
-                        30 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals }} set_country_flag = YBS_ai_path_capitalism }
-                        20 = { set_country_flag = YBS_ai_path_federation }
-                        20 = { set_country_flag = YBS_ai_path_republic }
-                        30 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front }} set_country_flag = YBS_ai_path_esperantism }
+                        40 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_liberals } } set_country_flag = YBS_ai_path_capitalism }
+                        10 = { set_country_flag = YBS_ai_path_federation }
+                        10 = { set_country_flag = YBS_ai_path_republic }
+                        40 = { modifier = { factor = 0 NOT = { has_country_flag = YBS_ai_path_popular_front } } set_country_flag = YBS_ai_path_esperantism }
                     }
                 }
 
@@ -160,8 +160,8 @@ on_actions = {
                 }
                 else = {
                     random_list = {
-                        40 = { set_country_flag = YBS_ai_path_honour }
-                        60 = { set_country_flag = YBS_ai_path_trickster }
+                        70 = { set_country_flag = YBS_ai_path_honour }
+                        30 = { set_country_flag = YBS_ai_path_trickster }
                     }
                 }
 
@@ -355,6 +355,13 @@ on_actions = {
                     FROM = { original_tag = YBS has_completed_focus = YBS_basque_military_academy }
                 }
                 FROM = { country_event = YBS_diplo_events.30 }
+            }
+            if = {
+                limit = {
+                    ROOT = { original_tag = YCA }
+                    FROM = { original_tag = YBS has_completed_focus = YBS_basque_military_academy }
+                }
+                FROM = { country_event = YBS_diplo_events.31 }
             }
         }
     }

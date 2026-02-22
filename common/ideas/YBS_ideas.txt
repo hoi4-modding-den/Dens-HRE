@@ -43,9 +43,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				production_speed_buildings_factor = -0.35
-                industrial_capacity_factory = -0.2
-                industrial_capacity_dockyard = -0.2
+				production_speed_buildings_factor = -0.2
+                industrial_capacity_factory = -0.1
+                industrial_capacity_dockyard = -0.1
 				custom_modifier_tooltip = YBS_underdeveloped_economy_tt
 			}
 
@@ -400,6 +400,7 @@ ideas = {
 			modifier = {
 				experience_gain_army_factor = 0.05
 				max_command_power = 15
+				land_mastery_gain_factor = 0.1
 			}
 		}
 
@@ -421,6 +422,7 @@ ideas = {
 			modifier = {
 				experience_gain_army_factor = 0.1
 				max_command_power = 15
+				land_mastery_gain_factor = 0.15
 				training_time_factor = -0.1
 			}
 		}
@@ -1086,6 +1088,7 @@ ideas = {
 
 			modifier = {
 				army_org_factor = 0.05
+				army_defence_factor = 0.05
 				conscription_factor = -0.02
 			}
 		}
@@ -1106,9 +1109,10 @@ ideas = {
 
 			modifier = {
 				army_org_factor = 0.1
-				army_defence_factor = 0.05
+				army_defence_factor = 0.1
 				conscription_factor = -0.02
 				communism_drift = -0.01
+				communism_acceptance = -80
 			}
 		}
 
@@ -1985,6 +1989,34 @@ ideas = {
 			}
 			targeted_modifier = {
 				tag = YAO
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.1
+			}
+		}
+
+		YBS_defend_from_catalonia = {
+
+			picture = generic_shield_against_communism
+
+			allowed = {
+				original_tag = YBS
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				has_war_with = YCA
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				terrain_penalty_reduction = 0.1
+			}
+			targeted_modifier = {
+				tag = YCA
 				attack_bonus_against = 0.05
 				defense_bonus_against = 0.1
 			}
