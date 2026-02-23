@@ -6794,13 +6794,6 @@ focus_tree = {
 				ZKR_lf_cas_damage_reduction = 0.2
 				tooltip = cas_damage_reduction_tt
 			}
-
-			if = {
-				limit = { is_ai = yes }
-				custom_effect_tooltip = generic_skip_one_line_tt
-
-				custom_effect_tooltip = ZKR_military_readiness_cat_decisions_tt
-			}
 		}
 	}
 

@@ -4445,7 +4445,12 @@ ZKR_military_readiness_cat = {
 
         icon = gre_faction_management
 
-        cost = 50
+        custom_cost_trigger = {
+			command_power > 24.9
+		}
+		ai_hint_pp_cost = 50
+
+		custom_cost_text = decision_cost_CP_25_pp_50
 
         allowed = {
             original_tag = ZKR
@@ -4466,6 +4471,13 @@ ZKR_military_readiness_cat = {
         }
 
         days_remove = 50
+
+        complete_effect = {
+            hidden_effect = {
+                add_political_power = -50
+                add_command_power = -25
+            }
+        }
 
         remove_effect = {
             every_army_leader = {
@@ -4690,7 +4702,12 @@ ZKR_military_readiness_cat = {
 
         icon = generic_belgian_colonial_helmet
 
-        cost = 50
+        custom_cost_trigger = {
+			command_power > 14.9
+		}
+		ai_hint_pp_cost = 0
+
+		custom_cost_text = decision_cost_CP_15
 
         allowed = {
             original_tag = ZKR
@@ -4709,71 +4726,14 @@ ZKR_military_readiness_cat = {
 
         days_remove = 100
 
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -15
+			}
+        }
+
         modifier = {
             heat_attrition_factor = -0.1
-        }
-    }
-
-    ZKR_guerilla_strike = {
-
-        icon = GFX_decisions_generic_infiltration # why paradox? why does this one use plural?
-
-        cost = 50
-
-        allowed = {
-            original_tag = ZKR
-        }
-
-        ai_will_do = {
-            base = 50
-        }
-
-        visible = {
-            is_ai = yes
-        }
-
-        available = {
-            has_completed_focus = ZKR_guerilla_warfare
-            has_war = yes
-            any_core_state = {
-                is_controlled_by = ROOT
-            }
-        }
-
-        fire_only_once = no
-
-        days_remove = 20
-
-        days_re_enable = 100
-
-        remove_effect = {
-            hidden_effect = {
-				division_template = {
-					name = "Guerilla Brigade"
-					template_counter = 12
-                    priority = 0
-					regiments = {
-						irregular_infantry = { x = 0 y = 0 }
-						irregular_infantry = { x = 0 y = 1 }
-						irregular_infantry = { x = 1 y = 0 }
-						irregular_infantry = { x = 1 y = 1 }
-					}
-					support = {
-						recon = { x = 0 y = 0 }
-                        engineer = { x = 0 y = 1 }
-					}
-				}
-			}
-            random_core_state = {
-                limit = {
-                    is_controlled_by = ROOT
-                }
-                create_unit = {
-                    division = "name = \"Guerilla Brigade\" division_template = \"Guerilla Brigade\" start_experience_factor = 0.2"
-                    owner = ROOT
-                    count = 3
-                }
-            }
         }
     }
 
@@ -4781,7 +4741,12 @@ ZKR_military_readiness_cat = {
 
         icon = generic_motorized
 
-        cost = 50
+        custom_cost_trigger = {
+			command_power > 14.9
+		}
+		ai_hint_pp_cost = 0
+
+		custom_cost_text = decision_cost_CP_15
 
         allowed = {
             original_tag = ZKR
@@ -4801,6 +4766,12 @@ ZKR_military_readiness_cat = {
         days_remove = 50
 
         days_re_enable = 50
+
+        complete_effect = {
+            hidden_effect = {
+				add_command_power = -15
+			}
+        }
 
         modifier = {
             no_supply_grace = 240

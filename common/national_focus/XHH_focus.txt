@@ -129,8 +129,8 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			add_state_core = 59
 			hidden_effect = { 59 = { cancel_resistance = yes } }
+			add_state_core = 59
 		}
 	}
 
@@ -657,7 +657,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XHH_urban_industrial_democracy
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1915,6 +1915,10 @@ focus_tree = {
 				ideology = fascism
 				popularity = -0.1
 			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2535,7 +2539,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 
 		available = {
@@ -3355,7 +3359,7 @@ focus_tree = {
 		cost = 7.2
 
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 
 		available = {

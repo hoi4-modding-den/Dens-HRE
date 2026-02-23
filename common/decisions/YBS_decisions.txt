@@ -451,6 +451,7 @@ YBS_esperanto_coring_cat = {
 
 		remove_effect = {
 			FROM = {
+                hidden_effect = { cancel_resistance = yes }
                 add_core_of = ROOT
             }
 		}
