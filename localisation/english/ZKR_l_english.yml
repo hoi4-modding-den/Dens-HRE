@@ -377,6 +377,7 @@
  ZKR_refused_protection: "Refused to Liberate Syrian Kurds"
  ZKR_lon_deal_opinion: "LoN Peace and Security Agreement"
  ZKR_dangerous_regime: "Dangerous Regime"
+ ZKR_esperantism_modifier: "Amikoj per Esperantismo"
 
 
 # MODIFIER TOOLTIPS
@@ -784,7 +785,6 @@
  ZKR_tensions_with_mahabad_increasing_desc: "The Government in Mahabad was established shortly after the original Kurdish independence war in Ararat was won. However, instead of joining us, those traitors struck a deal with the Persians and instead formed their own miserable state."
  ZKR_demand_kurdish_land_from_ally: "Demand Kurdish Lands from [FROM.GetName]" # has to also be renamed in tooltip
  ZKR_negotiating_land_from_ally: "currently negotiating with ally"
- ZKR_restore_faction: "Restore our Alliance"
  ZKR_remove_british_government_in_palestine: "Expel the British Colonial Administration in Palestine"
  ZKR_remove_british_government_in_cyprus: "Expel the British Colonial Administration in Cyprus"
  ZKR_remove_british_government_in_persia: "Expel the British Corporate Administration in Persia"
@@ -808,6 +808,7 @@
  ZKR_invite_azerbaijan: "Offer Membership to [FROM.GetNameDef]"
  ZKR_invite_cicilia: "Offer Membership to Cilicia"
  ZKR_invite_georgia: "Offer Membership to Georgia"
+ ZKR_invite_egypt: "Offer Membership to Egypt"
 
  ZKR_coalition_allies_cat: "Seek Willing Allies"
  ZKR_invite_tehran: "Propose Alliance to Tehran"
@@ -1095,6 +1096,15 @@
  ZKR_diplo_events.14.desc: "WIP"
  ZKR_diplo_events.14.a: "A slight incovenience."
 
+ ZKR_diplo_events.15.t: "[FROM.GetNameDefCap] requests Membership in the Hopeful International"
+ ZKR_diplo_events.15.desc: "The [FROM.GetAdjective] parliament has just recently passed a bill that makes Esperanto the official administrative and diplomatic language of their Commonwealth.\n \nIn connection to this, they have also requested membership of the Hopeful International."
+ ZKR_diplo_events.15.a: "Welcome, Amikojn!"
+
+ ZKR_diplo_events.16.t: "[FROM.GetNameDefCap] welcomes us to the Hopeful International"
+ ZKR_diplo_events.16.desc: "The Republic of Hope has entertained our request to join the Hopeful International, even offering to join its military cooperation."
+ ZKR_diplo_events.16.a: "Amikoj inter amikoj."
+ ZKR_diplo_events.16.b: "We would prefer to maintain our own military alliance."
+
  ZKR_technical_events.1.t: "The Liberation of Palestine"
  ZKR_technical_events.1.desc: "The British bastion in the Levant, the colonial administration in Palestine, has finally been vanquished. The last British boots on our part of the sub-continent have been driven out and our people shall finally be free from their tyranny."
  ZKR_technical_events.1.a: "Forever free! Forevermore!"
@@ -1286,7 +1296,7 @@
  ZKR_news_events.6.c: "Imperialism remains a threat to the People."
 
  ZKR_news_events.7.t: "The Pax Kurdistan"
- ZKR_news_events.7.desc: "WIP"
+ ZKR_news_events.7.desc: "Over the last months, the Kurdish occupation of the Anatolian peninsula has become everything the Kurds once were subjected to themselves. But somehow, through the brutal occupation, [ZKR.GetNameDef] has fully secured Anatolia from Turkish insurrectionists and revolutionaries."
  ZKR_news_events.7.a: "Peace has arrived in the Middle East."
  ZKR_news_events.7.b: "What is peace built on suffering?"
  ZKR_news_events.7.c: "Inspiring."

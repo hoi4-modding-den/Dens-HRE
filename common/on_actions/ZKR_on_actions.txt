@@ -258,6 +258,10 @@ on_actions = {
                         ROOT = {
                             all_owned_state = {
                                 has_state_flag = ZKR_greater_kurdistan_state
+                                OR = {
+                                    is_core_of = FROM
+                                    is_claimed_by = FROM
+                                }
                             }
                         }
                     }

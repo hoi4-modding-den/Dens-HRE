@@ -292,6 +292,11 @@ YBS_get_the_balearics = {
 		id = YBL
 		value = 50000
 	}
+    ai_strategy = {
+        type = naval_mission_threshold
+        id = MISSION_CONVOY_PATROL
+        value = -1000
+    }
 }
 
 YBS_do_stupid_naval_invasions_please = {
@@ -323,6 +328,11 @@ YBS_do_stupid_naval_invasions_please = {
 		type = naval_invasion_focus
 		value = 10000
 	}
+    ai_strategy = {
+        type = naval_mission_threshold
+        id = MISSION_CONVOY_PATROL
+        value = -1000
+    }
 
 }
 

@@ -101,4 +101,9 @@ XHH_naval_invade_a_lot = {
 		id = italy
 		value = 300
 	}
+	ai_strategy = {
+        type = naval_mission_threshold
+        id = MISSION_CONVOY_PATROL
+        value = -1000
+    }
 }

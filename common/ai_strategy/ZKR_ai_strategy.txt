@@ -130,4 +130,9 @@ ZKR_naval_invade_a_lot = {
 		id = italy # because Europea likes to intervene
 		value = 300
 	}
+    ai_strategy = {
+        type = naval_mission_threshold
+        id = MISSION_CONVOY_PATROL
+        value = -1000
+    }
 }

@@ -614,7 +614,7 @@ foreign_politics = {
 
         available = {
             has_war = no
-            is_faction_leader = yes
+            is_in_faction = yes
             FROM = {
                 is_ally_with = ROOT
                 has_war = no
@@ -704,84 +704,6 @@ foreign_politics = {
                     FROM = { country_event = { id = ZKR_technical_events.7 days = 10 } }
                     set_country_flag = ZKR_negotiating_land_from_ally
                 }
-            }
-        }
-    }
-
-    ZKR_restore_faction = {
-
-        icon = eng_trade_unions_support
-
-        allowed = {
-            tag = ZKR
-        }
-
-        ai_will_do = {
-            base = 1
-            modifier = {
-                factor = 0
-                has_war = yes
-            }
-        }
-
-        visible = {
-            is_faction_leader = no
-            is_subject = no
-            OR = {
-                has_completed_focus = ZKR_form_anti_imperialist_faction
-                has_completed_focus = ZKR_the_kurdish_destiny
-            }
-        }
-
-        complete_effect = {
-            if = {
-                limit = {
-                    has_completed_focus = ZKR_form_anti_imperialist_faction
-                }
-                create_faction_from_template = ZKR_faction_template_anti_imperialist_front
-                if = {
-                    limit = {
-                        has_completed_focus = ZKR_middle_eastern_economic_union
-                    }
-                    add_ideas = ZKR_pre_commonwealth_3
-                    if = {
-                        limit = {
-                            has_country_flag = ZKR_fourth_international_section_formed
-                        }
-                        create_faction_from_template = ZKR_faction_template_fourth_international
-                    }
-                    else_if = {
-                        limit = {
-                            has_country_flag = ZKR_democratic_shield_formed
-                        }
-                        create_faction_from_template = ZKR_faction_template_democratic_peacekeepers
-                    }
-                    else = {
-                        set_faction_name = ZKR_anti_imperialist_league
-                    }
-                }
-                else_if = {
-                    limit = {
-                        has_completed_focus = ZKR_common_organisations
-                    }
-                    add_ideas = ZKR_pre_commonwealth_1
-                }
-            }
-            if = {
-                limit = {
-                    has_completed_focus = ZKR_the_kurdish_destiny
-                }
-                create_faction_from_template = ZKR_faction_template_salvation_coalition
-            }
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            every_other_country = {
-                limit = {
-                    has_country_flag = ZKR_joined_faction
-                    is_subject = no
-                }
-                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
             }
         }
     }
@@ -1178,7 +1100,7 @@ ZKR_commonwealth_cat = {
         }
 
         available = {
-            is_faction_leader = yes
+            is_in_faction = yes
             FROM = {
                 is_ally_with = ROOT
             }
@@ -1231,7 +1153,7 @@ ZKR_commonwealth_cat = {
         }
 
         available = {
-            is_faction_leader = yes
+            is_in_faction = yes
             FROM = {
                 is_ally_with = ROOT
                 is_in_tech_sharing_group = ZKR_west_asia_tech_sharing_group
@@ -1241,6 +1163,10 @@ ZKR_commonwealth_cat = {
         target_trigger = {
 			FROM = {
                 is_ally_with = ROOT
+                OR = {
+                    is_subject_of = ROOT
+                    is_subject = no
+                }
                 is_in_tech_sharing_group = ZKR_west_asia_tech_sharing_group
                 NOT = { has_idea = ZKR_pre_commonwealth_1 }
                 NOT = { has_idea = ZKR_pre_commonwealth_2 }
@@ -1289,7 +1215,7 @@ ZKR_commonwealth_cat = {
         }
 
         available = {
-            is_faction_leader = yes
+            is_in_faction = yes
             FROM = {
                 is_ally_with = ROOT
                 has_idea = ZKR_pre_commonwealth_1
@@ -1299,6 +1225,10 @@ ZKR_commonwealth_cat = {
         target_trigger = {
 			FROM = {
                 is_ally_with = ROOT
+                OR = {
+                    is_subject_of = ROOT
+                    is_subject = no
+                }
                 has_idea = ZKR_pre_commonwealth_1
                 NOT = { has_idea = ZKR_pre_commonwealth_2 }
                 NOT = { has_idea = ZKR_pre_commonwealth_3 }
@@ -1360,7 +1290,7 @@ ZKR_commonwealth_cat = {
         }
 
         available = {
-            is_faction_leader = yes
+            is_in_faction = yes
             has_completed_focus = ZKR_middle_eastern_economic_union
             FROM = {
                 is_ally_with = ROOT
@@ -1371,6 +1301,10 @@ ZKR_commonwealth_cat = {
         target_trigger = {
 			FROM = {
                 is_ally_with = ROOT
+                OR = {
+                    is_subject_of = ROOT
+                    is_subject = no
+                }
                 has_idea = ZKR_pre_commonwealth_2
                 NOT = { has_idea = ZKR_pre_commonwealth_3 }
             }
@@ -1426,7 +1360,7 @@ ZKR_commonwealth_cat = {
         }
 
         available = {
-            is_faction_leader = yes
+            is_in_faction = yes
             has_completed_focus = ZKR_middle_eastern_economic_union
             FROM = {
                 is_ally_with = ROOT
@@ -1437,6 +1371,10 @@ ZKR_commonwealth_cat = {
         target_trigger = {
 			FROM = {
                 is_ally_with = ROOT
+                OR = {
+                    is_subject_of = ROOT
+                    is_subject = no
+                }
                 has_idea = ZKR_pre_commonwealth_3
                 OR = {
                     is_subject = no
@@ -1501,7 +1439,7 @@ ZKR_commonwealth_cat = {
         }
 
         available = {
-            is_faction_leader = yes
+            is_in_faction = yes
             has_completed_focus = ZKR_middle_eastern_economic_union
             FROM = {
                 is_ally_with = ROOT
@@ -1597,7 +1535,7 @@ ZKR_liberation_allies_cat = {
             has_war = no
             is_faction_leader = yes
             FROM = {
-                has_war = no
+                has_civil_war = no
                 ZKR_is_viable_front_partner = yes
                 if = {
                     limit = {
@@ -1666,7 +1604,7 @@ ZKR_liberation_allies_cat = {
             has_war = no
             is_faction_leader = yes
             FROM = {
-                has_war = no
+                has_civil_war = no
                 OR = {
                     has_government = democratic
                     has_government = communism
@@ -1737,7 +1675,7 @@ ZKR_liberation_allies_cat = {
             has_war = no
             is_faction_leader = yes
             FROM = {
-                has_war = no
+                has_civil_war = no
                 OR = {
                     has_government = democratic
                     has_government = communism
@@ -1803,7 +1741,7 @@ ZKR_liberation_allies_cat = {
             has_war = no
             is_faction_leader = yes
             FROM = {
-                has_war = no
+                has_civil_war = no
                 OR = {
                     has_government = democratic
                     has_government = communism
@@ -1891,7 +1829,7 @@ ZKR_liberation_allies_cat = {
             has_war = no
             is_faction_leader = yes
             FROM = {
-                has_war = no
+                has_civil_war = no
                 OR = {
                     has_government = democratic
                     has_government = communism
@@ -1961,7 +1899,7 @@ ZKR_liberation_allies_cat = {
             has_war = no
             is_faction_leader = yes
             FROM = {
-                has_war = no
+                has_civil_war = no
                 OR = {
                     has_government = democratic
                     has_government = communism
@@ -1974,6 +1912,59 @@ ZKR_liberation_allies_cat = {
                 NOT = { is_ally_with = ROOT  }
                 is_subject = no
                 original_tag = ZGD
+            }
+		}
+
+		targets_dynamic = yes
+
+        days_re_enable = 140
+
+        complete_effect = {
+            FROM = {
+                country_event = { id = ZKR_diplo_events.8 days = 5 random_days = 5 }
+            }
+            set_country_flag = ZKR_awaiting_invite_response
+        }
+    }
+
+    ZKR_invite_egypt = {
+
+        icon = eng_puppet_usa
+
+        cost = 25
+
+        allowed = {
+            original_tag = ZKR
+        }
+
+        ai_will_do = {
+            base = 200
+            modifier = {
+                factor = 0.25
+                FROM = {
+                    NOT = { has_government = ROOT }
+                }
+            }
+        }
+
+        available = {
+            NOT = { has_country_flag = ZKR_awaiting_invite_response }
+            has_war = no
+            is_faction_leader = yes
+            FROM = {
+                has_civil_war = no
+                OR = {
+                    has_government = democratic
+                    has_government = communism
+                }
+            }
+        }
+
+        target_trigger = {
+			FROM = {
+                NOT = { is_ally_with = ROOT  }
+                is_subject = no
+                original_tag = ZEG
             }
 		}
 
@@ -2719,7 +2710,9 @@ ZKR_dissolve_turkey_cat = {
 
             set_country_flag = ZKR_pax_kurdistan_survives
 
-            hidden_effect = { news_event = ZKR_news_events.7 }
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            news_event = ZKR_news_events.7
         }
     }
 
@@ -5055,11 +5048,16 @@ ZKR_ZZZ_expeditions = {
 		available = {
 			FROM = {
 				is_owned_by = ZZZ
-                OR = {
-                    AND = {
-                        ROOT = { any_controlled_state = { is_coastal = yes } }
-                        is_coastal = yes
+                if = {
+                    limit = {
+                        state = 906
                     }
+                    OR = {
+                        ROOT = { controls_state = 1016 }
+                        ROOT = { controls_state = 559 }
+                    }
+                }
+                else = {
                     any_neighbor_state = {
                         is_owned_and_controlled_by = ROOT
                     }
@@ -5070,10 +5068,7 @@ ZKR_ZZZ_expeditions = {
         visible = {
             FROM = {
                 OR = {
-                    AND = {
-                        ROOT = { any_controlled_state = { is_coastal = yes } }
-                        is_coastal = yes
-                    }
+                    state = 906
                     any_neighbor_state = {
                         is_owned_and_controlled_by = ROOT
                     }

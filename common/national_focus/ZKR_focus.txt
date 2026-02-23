@@ -4411,6 +4411,14 @@ focus_tree = {
 				factor = 20
 				has_government = communism
 			}
+			modifier = {
+				factor = 100
+				YBS = {
+					has_country_leader_ideology = YBS_international_esperantism
+					is_faction_leader = yes
+					NOT = { has_war_with = ROOT }
+				}
+			}
 		}
 
 		available = {
@@ -4431,6 +4439,19 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = ZKR_adopt_esperanto_tt
+
+			if = {
+				limit = {
+					YBS = {
+						has_country_leader_ideology = YBS_international_esperantism
+						is_faction_leader = yes
+						NOT = { has_war_with = ROOT }
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				YBS = { country_event = ZKR_diplo_events.15 }
+			}
 		}
 	}
 

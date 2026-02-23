@@ -1015,6 +1015,81 @@ country_event = { # Kurdish Envoy to HRE - meh
 
 }
 
+country_event = { # Commonwealth adopts Esperanto
+	id = ZKR_diplo_events.15
+	title = ZKR_diplo_events.15.t
+	desc = ZKR_diplo_events.15.desc
+	
+	picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.15.a
+        add_opinion_modifier = {
+            modifier = ZKR_esperantism_modifier
+            target = FROM
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        custom_effect_tooltip = if_they_accept_tt
+
+        effect_tooltip = { add_to_faction = FROM }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        FROM = { country_event = ZKR_diplo_events.16 }
+    }
+
+}
+
+country_event = { # Commonwealth adopts Esperanto
+	id = ZKR_diplo_events.16
+	title = ZKR_diplo_events.16.t
+	desc = ZKR_diplo_events.16.desc
+	
+	picture = GFX_report_event_hungary_parliament
+	
+	is_triggered_only = yes
+	
+	option = {
+        name = ZKR_diplo_events.16.a
+        add_opinion_modifier = {
+            modifier = ZKR_esperantism_modifier
+            target = FROM
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_ideas = YBS_esperanto_internationale_idea_lite
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        every_other_country = {
+            limit = {
+                is_in_faction_with = ROOT
+                is_subject = no
+            }
+            FROM = { add_to_faction = PREV }
+        }
+        FROM = { add_to_faction = ROOT }
+    }
+
+    option = {
+        name = ZKR_diplo_events.16.b
+        add_opinion_modifier = {
+            modifier = ZKR_esperantism_modifier
+            target = FROM
+        }
+
+        custom_effect_tooltip = generic_skip_one_line_tt
+
+        add_ideas = YBS_esperanto_internationale_idea_lite
+    }
+
+}
+
 country_event = { # Palestinian British Bastion gone
 	id = ZKR_technical_events.1
 	title = ZKR_technical_events.1.t

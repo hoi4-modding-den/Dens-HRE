@@ -2502,6 +2502,53 @@ foreign_politics = {
         }
     }
 
+    YBS_secretly_invade_YKP = {
+
+        allowed = {
+            original_tag = YBS
+        }
+
+        ai_will_do = {
+			base = 20
+		}
+
+        visible = {
+            is_ai = yes
+            has_war_with = YKP
+        }
+
+        available = {
+            YKP = { is_ai = yes }
+            is_faction_leader = yes
+            war_length_with = {
+                tag = KP
+                months > 2
+            }
+            698 = { is_owned_and_controlled_by = YKP }
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            division_template = {
+                name = "Invasion Division"
+                priority = 0
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                }
+                support = {
+                }
+            }
+            698 = {
+                create_unit = {
+                    division = "name = \"Invasion Division\" division_template = \"Invasion Division\" start_experience_factor = 0.01"
+                    owner = ROOT
+                    allow_spawning_on_enemy_provs = yes
+                }
+            }
+        }
+    }
+
     YBS_invite_defending_democratic_country = {
 
 		icon = generic_protection
