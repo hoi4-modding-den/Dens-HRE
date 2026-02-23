@@ -65,3 +65,359 @@ ZEG_bop_category = {
 		}
 	}
 }
+ZEG_foreign_policy_category = {
+	ZEG_march_into_sudan = {
+		priority = 402
+        icon = GFX_decision_infiltrate_state
+        cost = 0
+
+        fire_only_once = yes
+		visible = {
+			has_completed_focus = ZEG_egypt_is_whole
+		}
+        available = {
+            has_completed_focus = ZEG_egypt_is_whole
+        }
+		allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            551 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			883 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			886 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			549 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			887 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			884 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			885 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+		}
+	}
+	ZEG_demand_halaib = {
+        priority = 401
+        icon = GFX_decision_infiltrate_state
+        cost = 0
+
+        fire_only_once = yes
+visible = {
+			has_completed_focus = ZEG_purchase_lost_territories
+			1108 = {
+				is_owned_by = ZZZ
+			}
+		}
+        available = {
+            has_completed_focus = ZEG_purchase_lost_territories
+        }
+allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            1108 = {
+				if = {
+					limit = { 
+						is_owned_by = ZZZ 
+					} 
+					transfer_state_to = ZEG
+				}
+			}
+			set_variable = {
+				var = ZEG_demanded_halaib
+				value = 1
+			}
+		}
+    }
+    
+    ZEG_demand_western_desert = {
+        priority = 400
+        icon = GFX_decision_infiltrate_state
+        cost = 25
+
+        fire_only_once = yes
+visible = {
+			has_completed_focus = ZEG_purchase_lost_territories
+		}
+        available = {
+            has_completed_focus = ZEG_purchase_lost_territories
+        }
+allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            552 = {
+				owner = {
+					country_event = ZEG_diplo_event.6
+				}
+			}
+			set_variable = {
+				var = ZEG_demanded_western_desert
+				value = 1
+			}
+        }
+    }
+	ZEG_demand_eastern_desert = {
+        priority = 400
+        icon = GFX_decision_infiltrate_state
+        cost = 25
+
+        fire_only_once = yes
+visible = {
+			has_completed_focus = ZEG_purchase_lost_territories
+		}
+        available = {
+            has_completed_focus = ZEG_purchase_lost_territories
+        }
+allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            457 = {
+				owner = {
+					country_event = ZEG_diplo_event.6
+				}
+			}
+			set_variable = {
+				var = ZEG_demanded_eastern_desert
+				value = 1
+			}
+        }
+    }
+	ZEG_demand_matrouh = {
+        priority = 400
+        icon = GFX_decision_infiltrate_state
+        cost = 25
+
+        fire_only_once = yes
+visible = {
+			has_completed_focus = ZEG_purchase_lost_territories
+		}
+        available = {
+            has_completed_focus = ZEG_purchase_lost_territories
+        }
+allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            452 = {
+				if = {
+					limit = {
+						owner = {
+							is_subject = yes
+						}
+					}
+					owner = {
+						overlord = {
+							country_event = ZEG_diplo_event.6
+						}
+					}
+				}
+				else = {
+					owner = {
+						country_event = ZEG_diplo_event.6
+					}
+				}
+				set_variable = {
+					var = ZEG_demanded_matrouh
+					value = 1
+				}
+			}
+        }
+    }
+	ZEG_demand_forcefully_halaib = {
+        priority = 401
+        icon = GFX_decision_infiltrate_state
+        cost = 0
+
+        fire_only_once = yes
+		visible = {
+			OR = {
+				has_completed_focus = ZEG_demand_lost_territories
+				has_completed_focus = ZEG_purchase_lost_territories
+			}
+		}
+        available = {
+			OR = {
+				AND = {
+					has_completed_focus = ZEG_purchase_lost_territories
+					check_variable = {
+						ZEG_demanded_halaib > 0
+					}
+				}
+				has_completed_focus = ZEG_demand_lost_territories
+			}
+        }
+		allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            1108 = {
+					owner = {
+						country_event = ZEG_diplo_event.7
+					}
+			}
+		}
+	}
+	ZEG_demand_forcefully_western_desert = {
+        priority = 400
+        icon = GFX_decision_infiltrate_state
+        cost = 25
+
+        fire_only_once = yes
+		visible = {
+			OR = {
+				has_completed_focus = ZEG_demand_lost_territories
+				has_completed_focus = ZEG_purchase_lost_territories
+			}
+		}
+        available = {
+			OR = {
+				AND = {
+					has_completed_focus = ZEG_purchase_lost_territories
+					check_variable = {
+						ZEG_demanded_western_desert > 0
+					}
+				}
+				has_completed_focus = ZEG_demand_lost_territories
+			}
+        }
+		allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            552 = {
+				owner = {
+					country_event = ZEG_diplo_event.7
+				}
+			}
+        }
+    }
+	ZEG_demand_forcefully_eastern_desert = {
+        priority = 400
+        icon = GFX_decision_infiltrate_state
+        cost = 25
+
+        fire_only_once = yes
+		visible = {
+			OR = {
+				has_completed_focus = ZEG_demand_lost_territories
+				has_completed_focus = ZEG_purchase_lost_territories
+			}
+		}
+        available = {
+			OR = {
+				AND = {
+					has_completed_focus = ZEG_purchase_lost_territories
+					check_variable = {
+						ZEG_demanded_eastern_desert > 0
+					}
+				}
+				has_completed_focus = ZEG_demand_lost_territories
+			}
+        }
+		allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            457 = {
+				owner = {
+					country_event = ZEG_diplo_event.7
+				}
+			}
+        }
+    }
+	ZEG_demand_forcefully_matrouh = {
+        priority = 400
+        icon = GFX_decision_infiltrate_state
+        cost = 25
+
+        fire_only_once = yes
+
+		visible = {
+			OR = {
+				has_completed_focus = ZEG_demand_lost_territories
+				has_completed_focus = ZEG_purchase_lost_territories
+			}
+		}
+        available = {
+			OR = {
+				AND = {
+					has_completed_focus = ZEG_purchase_lost_territories
+					check_variable = {
+						ZEG_demanded_matrouh > 0
+					}
+				}
+				has_completed_focus = ZEG_demand_lost_territories
+			}
+        }
+		allowed = {
+			original_tag = ZEG
+		}
+        complete_effect = {
+            452 = {
+				if = {
+					limit = {
+						owner = {
+							is_subject = yes
+						}
+					}
+					owner = {
+						overlord = {
+							country_event = ZEG_diplo_event.7
+						}
+					}
+				}
+				else = {
+					owner = {
+						country_event = ZEG_diplo_event.7
+					}
+				}
+			}
+        }
+    }
+}

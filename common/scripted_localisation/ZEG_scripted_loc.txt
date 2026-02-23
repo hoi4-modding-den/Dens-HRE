@@ -1,0 +1,72 @@
+defined_text = {
+	name = ZEG_purchase_state_title
+    text = {
+		trigger = {
+            OR = {
+				owns_state = 457
+				any_subject_country = {
+					owns_state = 457
+				}
+			}
+		}
+		localization_key = ZEG.DE_6.eastern
+	}
+	text = {
+		trigger = {
+            OR = {
+				owns_state = 552
+				any_subject_country = {
+					owns_state = 552
+				}
+			}
+		}
+		localization_key = ZEG.DE_6.western
+	}
+	text = {
+		trigger = {
+			OR = {
+				owns_state = 452
+				any_subject_country = {
+					owns_state = 452
+				}
+			}
+		}
+		localization_key = ZEG.DE_6.northern
+	}
+}
+defined_text = {
+	name = ZEG_demand_state_title
+    text = {
+		trigger = {
+            OR = {
+				owns_state = 457
+				any_subject_country = {
+					owns_state = 457
+				}
+			}
+		}
+		localization_key = ZEG.DE_7.eastern
+	}
+	text = {
+		trigger = {
+            OR = {
+				owns_state = 552
+				any_subject_country = {
+					owns_state = 552
+				}
+			}
+		}
+		localization_key = ZEG.DE_7.western
+	}
+	text = {
+		trigger = {
+			OR = {
+				owns_state = 452
+				any_subject_country = {
+					owns_state = 452
+				}
+			}
+		}
+		localization_key = ZEG.DE_7.northern
+	}
+}

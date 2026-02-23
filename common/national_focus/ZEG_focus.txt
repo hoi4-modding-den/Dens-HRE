@@ -41,7 +41,8 @@ focus_tree = {
 	focus = {
 		id = ZEG_restore_constitution
 		icon = GFX_focus_AFG_revive_the_1923_constitution
-		x = 12
+		relative_position_id = ZEG_vestigial_khedivate
+		x = -5
 		y = 1
 		cost = 1
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
@@ -59,8 +60,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_election_rigging
 		icon = GFX_focus_usa_voter_registration_act
-		x = 8
-		y = 2
+		relative_position_id = ZEG_restore_constitution
+		x = -4
+		y = 1
 		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = ZEG_restore_constitution }
@@ -81,8 +83,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_honest_election
 		icon = GFX_focus_generic_election
-		x = 10
-		y = 2
+		relative_position_id = ZEG_restore_constitution
+		x = -2
+		y = 1
 		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -104,8 +107,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_party_funding
 		icon = GFX_focus_generic_treaty
-		x = 12
-		y = 2
+		relative_position_id = ZEG_restore_constitution
+		x = 0
+		y = 1
 		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		
@@ -120,8 +124,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_welfare_promises
 		icon = GFX_focus_generic_welfare
-		x = 14
-		y = 2
+		relative_position_id = ZEG_restore_constitution
+		x = 2
+		y = 1
 		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_welfare_promises }
@@ -145,8 +150,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_protect_royal_perogatives
 		icon = GFX_focus_rom_royal_dictatorship
-		x = 16
-		y = 2
+		relative_position_id = ZEG_restore_constitution
+		x = 4
+		y = 1
 		cost = 4.4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_welfare_promises }
@@ -170,8 +176,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_1936_election
 		icon = GFX_focus_AFG_parliamentary_democracy
-		x = 12
-		y = 3
+		relative_position_id = ZEG_restore_constitution
+		x = 0
+		y = 2
 		cost = 5
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 
@@ -188,13 +195,555 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-
+			add_political_power = 50
 		}
 	}
 	focus = {
+		id = ZEG_democratic_egypt
+		icon = GFX_focus_ARG_defense_and_democracy
+		relative_position_id = ZEG_1936_election
+		x = -2
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_1936_election }
+		available = {
+			has_government = democratic
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_ideas = ZEG_fostering_democracy
+		}
+	}
+	focus = {
+		id = ZEG_khedives_egypt
+		icon = GFX_goal_generic_neutrality_focus
+		relative_position_id = ZEG_1936_election
+		x = 2
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_1936_election }
+		available = {
+			has_government = neutrality
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+		}
+	}
+
+	focus = {
+		id = ZEG_restrict_khedive
+		icon = GFX_focus_generic_treaty
+		relative_position_id = ZEG_democratic_egypt
+		x = -3
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_democratic_egypt }
+		available = {
+			
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = ZEG_economic_liberalization
+		icon = GFX_focus_generic_economic_recovery
+		relative_position_id = ZEG_democratic_egypt
+		x = -1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_democratic_egypt }
+		available = {
+			
+		}
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = ZEG_great_depression_effects
+			add_timed_idea = {
+				idea = ZEG_great_depression_minor
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = ZEG_urban_focus
+		icon = GFX_focus_AFG_a_modern_economy
+		relative_position_id = ZEG_democratic_egypt
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_democratic_egypt focus = ZEG_khedives_egypt }
+		mutually_exclusive = { focus = ZEG_rural_focus }
+		mutually_exclusive = { focus = ZEG_urban_focus }
+		available = {
+
+		}
+		complete_tooltip = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZEG_rural_focus
+		icon = GFX_focus_generic_agricultural_subsidies
+		relative_position_id = ZEG_democratic_egypt
+		x = 3
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_democratic_egypt focus = ZEG_khedives_egypt }
+		mutually_exclusive = { focus = ZEG_rural_focus }
+		mutually_exclusive = { focus = ZEG_urban_focus }
+		available = {
+			ZEG = {
+				owns_state = 456
+				owns_state = 1107
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = ZEG_rural_inf_bonus
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					ZEG = {
+						owns_state = 452
+					}
+				}
+				452 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { 
+					ZEG = {
+						owns_state = 552
+					} 
+				}
+				552 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { 
+					ZEG = {
+						owns_state = 457
+					} 
+				}
+				457 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { 
+					ZEG = {
+						owns_state = 456
+					} 
+				}
+				456 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = { 
+					ZEG = {
+						owns_state = 1107
+					} 
+				}
+				1107 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ZEG_reward_landowners
+		icon = GFX_focus_RAJ_special_economic_zones
+		relative_position_id = ZEG_khedives_egypt
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_khedives_egypt }
+		available = {
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_political_power = 100
+			add_timed_idea = {
+				idea = ZEG_bribery
+				days = 180
+			}
+		}
+	}
+	focus = {
+		id = ZEG_controlled_democracy
+		icon = GFX_focus_ARG_keep_it_in_the_party
+		relative_position_id = ZEG_khedives_egypt
+		x = 3
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_khedives_egypt }
+		available = {
+			ZEG = {
+				has_government = neutrality
+			}
+		}
+		completion_reward = {
+			add_ideas = ZEG_controlled_democracy_idea
+		}
+	}
+	focus = {
+		id = ZEG_ottoman_loyalty
+		icon = GFX_focus_TUR_turanist_ambition
+		relative_position_id = ZEG_khedives_egypt
+		x = 5
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_ottoman_loyalty }
+		mutually_exclusive = { focus = ZEG_ottoman_subversion }
+		prerequisite = { focus = ZEG_khedives_egypt focus = ZEG_victory_over_the_masses }
+		available = {
+			ZEG = {
+				has_government = neutrality
+			}
+			country_exists = ZOT
+		}
+		completion_reward = {
+			custom_effect_tooltip = ZEG_ottoman_loyalty_tooltip
+			ZOT = {
+				country_event = ZEG_diplo_event.4
+			}
+		}
+	}
+	focus = {
+		id = ZEG_status_of_the_ottomans
+		icon = GFX_focus_generic_befriend_turkey
+		relative_position_id = ZEG_restrict_khedive
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_restrict_khedive }
+		available = {
+			ZEG = {
+				NOT = {
+					is_subject_of = ZOT
+				}
+			}
+		}
+		completion_reward = {
+			country_event = ZEG_focus_event.3
+		}
+	}
+	focus = {
+		id = ZEG_international_trade
+		icon = GFX_focus_RAJ_issue_bonds_on_the_stock_market
+		relative_position_id = ZEG_economic_liberalization
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_economic_liberalization }
+		available = {
+			
+		}
+		completion_reward = {
+			add_ideas = ZEG_international_trade_idea
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_opinion_modifier = {
+				target = ZXX
+				modifier = ZEG_friendly_government 
+			}
+		}
+	}
+	focus = {
+		id = ZEG_research_slot
+		icon = GFX_focus_research
+		relative_position_id = ZEG_urban_focus
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_urban_focus focus = ZEG_rural_focus }
+		available = {
+			
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = ZEG_protectionism
+		icon = GFX_focus_generic_industry_1
+		relative_position_id = ZEG_reward_landowners
+		x = -1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_reward_landowners }
+		available = {
+			
+		}
+		completion_reward = {
+			if = {
+				limit = { has_idea = free_trade }
+				swap_ideas = {
+					remove_idea = free_trade
+					add_idea = export_focus
+				}
+			}
+			if = {
+				limit = { has_idea = export_focus }
+				swap_ideas = {
+					remove_idea = export_focus
+					add_idea = limited_exports
+				}
+			}
+			else = {
+				add_political_power = 100
+			}
+			remove_ideas = ZEG_great_depression_effects
+			add_timed_idea = {
+				idea = ZEG_great_depression_minor
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = ZEG_create_the_awqaf
+		icon = GFX_focus_TUR_loosen_the_laws_on_secularism
+		relative_position_id = ZEG_reward_landowners
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_controlled_democracy }
+		available = {
+			
+		}
+		completion_reward = {
+			add_ideas = ZEG_ministry_of_awqaf
+		}
+	}
+	focus = {
+		id = ZEG_purchase_lost_territories
+		icon = GFX_focus_generic_diplomatic_treaty
+		relative_position_id = ZEG_status_of_the_ottomans
+		x = 1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_status_of_the_ottomans }
+		prerequisite = {
+			focus = ZEG_international_trade
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			unlock_decision_tooltip = ZEG_demand_western_desert
+			unlock_decision_tooltip = ZEG_demand_eastern_desert
+			unlock_decision_tooltip = ZEG_demand_matrouh
+			unlock_decision_tooltip = ZEG_demand_halaib
+		}
+	}
+	focus = {
+		id = ZEG_economy_yay
+		icon = GFX_focus_GER_wirtschaftswunder
+		relative_position_id = ZEG_research_slot
+		x = 0
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_international_trade focus = ZEG_protectionism }
+		prerequisite = { focus = ZEG_status_of_the_ottomans focus = ZEG_create_the_awqaf }
+		available = {
+			
+		}
+		completion_reward = {
+			add_ideas = ZEG_economic_miracle
+		}
+	}
+	focus = {
+		id = ZEG_demand_lost_territories
+		icon = GFX_goal_demand_sudetenland
+		relative_position_id = ZEG_create_the_awqaf
+		x = -1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_protectionism }
+		prerequisite = {
+			focus = ZEG_create_the_awqaf
+		}
+		available = {
+			
+		}
+		completion_reward = {
+			unlock_decision_tooltip = ZEG_demand_forcefully_western_desert
+			unlock_decision_tooltip = ZEG_demand_forcefully_eastern_desert
+			unlock_decision_tooltip = ZEG_demand_forcefully_matrouh
+			unlock_decision_tooltip = ZEG_demand_forcefully_halaib
+		}
+	}
+	focus = {
+		id = ZEG_annex_suez
+		icon = GFX_focus_generic_the_suez
+		relative_position_id = ZEG_economy_yay
+		x = 0
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		prerequisite = { focus = ZEG_purchase_lost_territories focus = ZEG_demand_lost_territories }
+
+		available = {
+			
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = DN2
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = ZEG_egypt_is_whole
+		icon = GFX_focus_IRQ_unite_mashriq
+		relative_position_id = ZEG_annex_suez
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = ZEG_annex_suez
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		available = {
+			all_core_state = {
+				is_owned_by = ZEG
+			}
+			NOT = {
+				has_idea = ZEG_great_depression_minor
+			}
+		}
+		completion_reward = {
+			add_ideas = ZEG_democratic_win_idea
+			unlock_decision_tooltip = ZEG_march_into_sudan
+		}
+	}
+
+	###alt history path kinda###
+	focus = {
 		id = ZEG_destroy_democracy
 		icon = GFX_focus_BRA_repeale_national_security_law
-		x = 21
+		relative_position_id = ZEG_vestigial_khedivate
+		x = 5
 		y = 1
 		cost = 5
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
@@ -211,8 +760,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_target_socialists
 		icon = GFX_focus_SOV_military_purge
-		x = 20
-		y = 2
+		relative_position_id = ZEG_destroy_democracy
+		x = -1
+		y = 1
 		cost = 2
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_target_socialists }
@@ -235,8 +785,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_target_fascists
 		icon = GFX_focus_focus_fra_fascist_threat
-		x = 22
-		y = 2
+		relative_position_id = ZEG_destroy_democracy
+		x = 1
+		y = 1
 		cost = 2
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_target_socialists }
@@ -259,8 +810,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_agitate_the_blueshirts
 		icon = GFX_focus_prc_infiltration
-		x = 18
-		y = 3
+		relative_position_id = ZEG_target_socialists
+		x = -2
+		y = 1
 		cost = 2
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_agitate_the_blueshirts }
@@ -303,8 +855,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_utilize_greenshirts
 		icon = GFX_focus_generic_fascist_troops
-		x = 20
-		y = 3
+		relative_position_id = ZEG_target_socialists
+		x = 0
+		y = 1
 		cost = 2
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_agitate_the_blueshirts }
@@ -327,8 +880,9 @@ focus_tree = {
 		focus = {
 		id = ZEG_street_clashes
 		icon = GFX_focus_POL_riot_of_37
-		x = 22
-		y = 3
+		relative_position_id = ZEG_target_fascists
+		x = 0
+		y = 1
 		cost = 2
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_street_clashes }
@@ -375,8 +929,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_army_connections
 		icon = GFX_focus_SOV_builder_of_the_red_army
-		x = 24
-		y = 3
+		relative_position_id = ZEG_target_fascists
+		x = 2
+		y = 1
 		cost = 2
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		mutually_exclusive = { focus = ZEG_street_clashes }
@@ -399,8 +954,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_victory_over_the_masses
 		icon = GFX_focus_TUR_pivot_to_the_past
-		x = 21
-		y = 4
+		relative_position_id = ZEG_destroy_democracy
+		x = 0
+		y = 3
 		cost = 4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = ZEG_street_clashes focus = ZEG_army_connections focus = ZEG_utilize_greenshirts focus = ZEG_agitate_the_blueshirts }
@@ -420,8 +976,9 @@ focus_tree = {
 	focus = {
 		id = ZEG_rise_of_the_radicals
 		icon = GFX_focus_ITA_peasants_rise
-		x = 27
-		y = 4
+		relative_position_id = ZEG_destroy_democracy
+		x = 6
+		y = 3
 		cost = 4
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = ZEG_street_clashes focus = ZEG_army_connections focus = ZEG_utilize_greenshirts focus = ZEG_agitate_the_blueshirts }
@@ -431,9 +988,6 @@ focus_tree = {
 			}
 		}
 		available = {
-			ZEG = {
-				has_government = neutrality
-			}
 		}
 		completion_reward = {
 			remove_power_balance = {
@@ -442,8 +996,159 @@ focus_tree = {
 			mark_focus_tree_layout_dirty = yes
 		}
 	}
+	focus = {
+		id = ZEG_ottoman_subversion
+		icon = GFX_focus_TUR_misak_i_milli
+		relative_position_id = ZEG_victory_over_the_masses
+		x = -1
+		y = 1
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = { focus = ZEG_ottoman_loyalty }
+		mutually_exclusive = { focus = ZEG_ottoman_subversion }
+		prerequisite = { focus = ZEG_khedives_egypt focus = ZEG_victory_over_the_masses }
+		available = {
+			ZEG = {
+				has_government = neutrality
+				is_subject = no
+			}
+			ZOT = {
+				exists = no
+			}
+		}
+		complete_tooltip = {
+			set_cosmetic_tag = ZEG_ottoman_empire
+			custom_effect_tooltip = ZEG_ottoman_tooltip
+			add_stability = -0.075
+		}
+		completion_reward = {
+			add_stability = -0.075
+			set_cosmetic_tag = ZEG_ottoman_empire
+			#reverse_add_opinion_modifier = {
+			#	target = ZOT
+			#	modifier = ZEG_usurper
+			#}
+			custom_effect_tooltip = ZEG_ottoman_tooltip
+			hidden_effect = {
+				ZOT = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZAG = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZGR = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZCT = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZTC = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZTM = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZA1 = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZKR = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZSR = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZLE = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZJO = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				DN1 = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZNW = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZAS = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZBA = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZSH = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				ZJS = {
+					every_core_state = {
+						add_claim_by = ZEG
+					}
+				}
+				add_state_claim = 855
+				add_state_claim = 341
+				add_state_claim = 679
+				add_state_claim = 856
+				add_state_claim = 293
+				add_state_claim = 1014
+				add_state_claim = 765
+				add_state_claim = 354
+				add_state_claim = 662
+				add_state_claim = 449
+				add_state_claim = 661
+				add_state_claim = 448
+			}
+			
+		}
+
+	}
 
 #Army Focuses#
+	focus = {
+		id = ZEG_temp_army
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
+		x = 28
+		y = 0
+		cost = 10
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+
+		available = {
+			
+		}
+		completion_reward = {
+			remove_ideas = ZEG_disorganized_military
+		}
+	}
 
 #Airforce Focuses#
 

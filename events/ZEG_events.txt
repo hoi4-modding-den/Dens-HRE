@@ -70,8 +70,8 @@ country_event = { #communists take over
 			army_ratio = 0.5
 			keep_all_characters = yes
 		}
-	hidden_effect = {
-			
+		hidden_effect = {
+	
 		}
     }
 }
@@ -123,7 +123,7 @@ country_event = { #fascists take over
 			keep_all_characters = yes
 		}
 	hidden_effect = {
-			
+
 		}
     }
 }
@@ -170,6 +170,12 @@ country_event = { #end of the khedivate (fascist)
 					id = ZEG_diplo_event.1
 				}
 			}
+			ZOT = {
+				add_opinion_modifier = {
+					target = ZEG
+					modifier = ZEG_broke_away
+				}
+			}
 		}
     }
 }
@@ -214,6 +220,12 @@ country_event = { #end of the khedivate (communist)
 			ZXX = {
 				country_event = {
 					id = ZEG_diplo_event.1
+				}
+			}
+			ZOT = {
+				add_opinion_modifier = {
+					target = ZEG
+					modifier = ZEG_broke_away
 				}
 			}
 		}
@@ -470,7 +482,36 @@ country_event = { #suffrage event
 		}
     }
 }
+country_event = { #Separating ties with the Ottomans
+    id = ZEG_focus_event.3
+    title = ZEG.FE_3.t
+    picture = GFX_report_event_worker_protests
+    desc = ZEG.FE_3.d
 
+    is_triggered_only = yes
+	option = {
+        name = ZEG.FE_3.a
+		ai_chance = {
+			base = 100
+		}
+			add_stability = 0.05
+			ZEG = {
+				drop_cosmetic_tag = yes
+			}
+			add_victory_points = {
+				province = 7011
+				value = 30
+			}
+	hidden_effect = {
+			ZOT = {
+				add_opinion_modifier = {
+					target = ZEG
+					modifier = ZEG_broke_away
+				}
+			}
+		}
+    }
+}
 #News Events# (the big news pop-ups)
 
 
@@ -585,6 +626,342 @@ country_event = { #occupation of Egypt for ZXX
 			remove_idea = ZXX_strong_local_resistance
 			add_idea = ZXX_intense_local_resistance
 		}
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #ottoman vassal event
+    id = ZEG_diplo_event.4
+    title = ZEG.DE_4.t
+    picture = GFX_report_event_tur_sultan_in_istanbul
+    desc = ZEG.DE_4.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_4.a
+		ai_chance = {
+			base = 100
+		}
+		puppet = {
+			target = ZEG
+			end_wars = no
+		}
+		add_timed_idea = {
+			idea = ZEG_funding_egypt
+			days = 365
+		}
+		if = {
+			limit = {
+				ZEG = {
+					NOT = {
+						has_cosmetic_tag = ZEG_otto_remnant
+					}
+				}
+			}
+			ZEG = {
+				set_cosmetic_tag = ZEG_otto_remnant
+			}
+		}
+		hidden_effect = {
+			ZEG = {
+				country_event = {
+					id = ZEG_diplo_event.5
+					days = 1
+				}
+			}
+		}
+    }
+	option = {
+        name = ZEG.DE_4.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = 50
+		
+		hidden_effect = {
+			ZEG = {
+				country_event = {
+					id = ZEG_diplo_event.5
+					days = 3.5
+				}
+			}
+		}
+    }
+}
+country_event = { #ottoman confirmation
+    id = ZEG_diplo_event.5
+	title = {
+		text = ZEG.DE_5.t_1
+		trigger = {
+			ZEG = {
+				is_subject_of = ZOT
+			}
+		}
+	}
+	title = {
+		text = ZEG.DE_5.t_2
+		trigger = {
+			ZEG = {
+				NOT = {
+					is_subject_of = ZOT
+				}
+			}
+		}
+	}
+	desc = {
+		text = ZEG.DE_5.d_1
+		trigger = {
+			ZEG = {
+				is_subject_of = ZOT
+			}
+		}
+	}
+    desc = {
+		text = ZEG.DE_5.d_2
+		trigger = {
+			ZEG = {
+				NOT = {
+					is_subject_of = ZOT
+				}
+			}
+		}
+	}
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_5.a
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			ZEG = {
+				is_subject_of = ZOT
+			}
+		}
+			add_timed_idea = {
+				idea = ZEG_bribery_friendly
+				days = 365
+			}
+			add_stability = 0.05
+			add_popularity = { #not a popular move
+				ideology = neutrality
+				popularity = -0.05
+			}
+	hidden_effect = {
+
+		}
+    }
+	option = {
+        name = ZEG.DE_5.b
+		ai_chance = {
+			base = 100 #can the AI choose options it cannot see? idk
+		}
+		trigger = {
+			ZEG = {
+				NOT = {
+					is_subject_of = ZOT
+				}
+			}
+		}
+		drop_cosmetic_tag = yes
+		add_stability = -0.15
+		add_political_power = -50
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.25
+		}
+		add_opinion_modifier = {
+			target = ZOT
+			modifier = faction_traitor
+		}
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #purchasing territory
+    id = ZEG_diplo_event.6
+    title = ZEG.DE_6.t
+    picture = GFX_report_event_tur_ataturk_writing_desk
+    desc = ZEG.DE_6.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_6.a
+		ai_chance = {
+			base = 100
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = ZEG
+			}
+			transfer_state_to = ZEG
+		}
+		every_state = {
+			limit = {
+				is_core_of = ZEG
+				owner = {
+					is_subject_of = ROOT
+				}
+			}
+			transfer_state_to = ZEG
+		}
+		add_timed_idea = {
+			idea = ZEG_receiving_pay
+			days = 365
+		}
+	hidden_effect = {
+			ZEG = {
+				add_timed_idea = {
+					idea = ZEG_paying_for_state
+					days = 180
+				}
+				country_event = {
+					id = ZEG_diplo_event.8
+					days = 1
+				}
+			}
+		}
+    }
+	option = {
+        name = ZEG.DE_6.b
+		ai_chance = {
+			base = 100
+		}
+		ZEG = {
+			country_event = {
+				id = ZEG_diplo_event.9
+				days = 1
+			}
+		}
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #demanding territory
+    id = ZEG_diplo_event.7
+    title = ZEG.DE_7.t
+    picture = GFX_report_event_tur_turkish_soldiers
+    desc = ZEG.DE_7.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_7.a
+		ai_chance = {
+			base = 100
+		}
+		every_owned_state = {
+			limit = {
+				is_core_of = ZEG
+			}
+			transfer_state_to = ZEG
+		}
+		every_state = {
+			limit = {
+				is_core_of = ZEG
+				owner = {
+					is_subject_of = ROOT
+				}
+			}
+			transfer_state_to = ZEG
+		}
+	hidden_effect = {
+			ZEG = {
+				country_event = {
+					id = ZEG_diplo_event.8
+					days = 1
+				}
+			}
+		}
+    }
+	option = {
+        name = ZEG.DE_7.b
+		ai_chance = {
+			base = 100
+		}
+		ZEG = {
+			country_event = {
+				id = ZEG_diplo_event.10
+				days = 1
+			}
+		}
+		effect_tooltip = {
+			ZEG = {
+				declare_war_on = {
+					target = PREV
+					type = independence_wargoal
+				}
+			}
+		}
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #response event positive
+    id = ZEG_diplo_event.8
+    title = ZEG.DE_8.t
+    #picture = GFX_report_event_tur_sultan_in_istanbul
+    desc = ZEG.DE_8.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_8.a
+		ai_chance = {
+			base = 100
+		}
+
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #response event negative
+    id = ZEG_diplo_event.9
+    title = ZEG.DE_9.t
+    #picture = GFX_report_event_tur_sultan_in_istanbul
+    desc = ZEG.DE_9.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_9.a
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = ZEG.DE_9.tooltip
+	hidden_effect = {
+
+		}
+    }
+}
+country_event = { #response event war
+    id = ZEG_diplo_event.10
+    title = ZEG.DE_10.t
+    #picture = GFX_report_event_tur_sultan_in_istanbul
+    desc = ZEG.DE_10.d
+
+    is_triggered_only = yes
+	option = {
+        name = ZEG.DE_10.a
+		ai_chance = {
+			base = 100
+		}
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+	hidden_effect = {
+
+		}
+    }
+	option = {
+        name = ZEG.DE_10.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -50
 	hidden_effect = {
 
 		}

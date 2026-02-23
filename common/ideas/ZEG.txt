@@ -33,13 +33,103 @@ ideas = {
 				production_speed_buildings_factor = -0.5 
 			}
 		}
+		ZEG_great_depression_minor = {
+			picture = great_depression
+			modifier = {
+				consumer_goods_factor = 0.075
+				industrial_capacity_factory = -0.1
+				production_speed_buildings_factor = -0.25 
+			}
+		}
+		ZEG_international_trade_idea = {
+			picture = RAJ_issue_bonds_on_the_stock_market
+			modifier = {
+				trade_opinion_factor = 0.25
+				faction_trade_opinion_factor = 0.5
+				opinion_gain_monthly = 2
+				lend_lease_tension = 0
+				license_purchase_cost = -0.5 
+				local_resources_factor = 0.25
+			}
+		}
+		ZEG_bribery = {
+			picture = ger_mefo_bills_payment
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		ZEG_bribery_friendly = {
+			picture = SPR_relocate_the_gold_reserves
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+		ZEG_funding_egypt = {
+			picture = ger_mefo_bills_payment
+			modifier = {
+				consumer_goods_factor = 0.075
+			}
+		}
+		ZEG_paying_for_state = {
+			picture = ger_mefo_bills_payment
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+		ZEG_receiving_pay = {
+			picture = ger_mefo_bills_payment
+			modifier = {
+				consumer_goods_factor = -0.075
+			}
+		}
+		ZEG_controlled_democracy_idea = {
+			picture = generic_democratic_opposition
+			modifier = {
+				neutrality_drift = 0.05
+				political_power_factor = 0.1
+				stability_factor = -0.05
+			}
+		}
+		ZEG_fostering_democracy = {
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				democratic_drift = 0.05
+				political_power_factor = 0.1
+				stability_weekly = 0.001
+			}
+		}
+		ZEG_ministry_of_awqaf = {
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				global_building_slots_factor = 0.2
+				monthly_population = 0.04
+			}
+		}
+		ZEG_economic_miracle = {
+			picture = GER_wirtschaftswunder
+			modifier = {
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.1 
+			}
+		}
 		ZEG_victory_over_the_masses_idea = {
 			picture = generic_monarchist_uprising
 			modifier = {
-				stability_factor = 0.001
+				stability_weekly = 0.001
 				communism_drift = -0.03
 				fascism_drift = -0.03
 				democratic_drift = -0.03
+			}
+		}
+		ZEG_democratic_win_idea = {
+			picture = generic_victors_of_ww1
+			modifier = {
+				stability_weekly = 0.001
+				war_support_weekly = 0.001
+				political_power_factor = 0.25
+				generate_wargoal_tension = -0.5
 			}
 		}
 
