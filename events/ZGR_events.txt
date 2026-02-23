@@ -8,6 +8,33 @@ add_namespace = ZGR_c_Govermental_Collapse
 
 ### COUNTRY EVENTS ###
 
+news_event = {
+	id = ZGR_Flavor.3
+	title = ZGR_Flavor.3.t
+	desc = ZGR_Flavor.3.d
+
+	picture = GFX_news_event_greek_civil_war
+	is_triggered_only = yes
+	trigger = {
+	}
+	mean_time_to_happen = { days = 1 }
+	major = yes
+	option = {
+		name = ZGR_Flavor.3.a
+		trigger = {
+			NOT = {tag = ZGR}
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = ZGR_Flavor.3.b
+		trigger = {
+			tag = ZGR	
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
 country_event = {
     id = ZGR_Political_Camp_Choice.1
     title = ZGR_Political_Camp_Choice.1.t
@@ -474,6 +501,7 @@ country_event = {
 		set_country_flag = c_Sided_with_the_people
 		mark_focus_tree_layout_dirty = yes
 		hidden_effect = {
+			country_event = ZGR_Flavor.3
 			start_civil_war = {
 				ruling_party = communism
 				# Original country's ideology changes to communism
