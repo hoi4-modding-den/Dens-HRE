@@ -505,7 +505,7 @@ focus_tree = {
             remove_idea = ZAG_democratisation
             add_idea = ZAG_bastion_of_democracy
             }
-            any_country = {
+            every_country = {
                 if = {
                     limit = {
                         has_ideology_group = democratic
