@@ -167,8 +167,11 @@ ZTS = { country_event = ZTS_events.1 }
 	
 		prerequisite = { focus = ZTS_funding_of_war_projects }
 		prerequisite = { focus = ZTS_economical_miracle_on_the_arabian_gulf }
-		available = {
-
+available = {
+		NOT = { has_country_flag = ZTS_bad_economy_flag }
+		}
+		allow_branch = {
+		NOT = { has_country_flag = ZTS_bad_economy_flag }
 		}
 		completion_reward = {
 		}
@@ -227,6 +230,24 @@ ZTS = { country_event = ZTS_events.1 }
 		prerequisite = { focus = ZTS_seizing_of_the_Mahatta_Fort }
 		available = {
 
+		}
+		completion_reward = {
+		}
+	}
+					focus = {
+		id = ZTS_troubling_results
+		icon = GFX_focus_RAJ_special_economic_zones
+		x = 15
+		y = 5
+		cost = 3
+	
+		prerequisite = { focus = ZTS_funding_of_war_projects }
+		prerequisite = { focus = ZTS_economical_miracle_on_the_arabian_gulf }
+	available = {
+		has_country_flag = ZTS_bad_economy_flag
+		}
+		allow_branch = {
+		has_country_flag = ZTS_bad_economy_flag
 		}
 		completion_reward = {
 		}
