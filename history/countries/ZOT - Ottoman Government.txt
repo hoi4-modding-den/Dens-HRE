@@ -181,6 +181,14 @@ IF = {
 	}		
 }
 
-set_country_flag = dont_use_default_political_advisors
-set_country_flag = dont_use_default_military_advisors
+# Scripted GUIs
+set_variable = { 
+	ZOT_war_ministry_progress = modifier@ZOT_war_ministry 
+}
+add_to_variable = {
+	var = ZOT_war_ministry_progress
+	value = 31
+}
+
+# Country Flags
 #set_country_flag = ZOT_welcome_message_flag
