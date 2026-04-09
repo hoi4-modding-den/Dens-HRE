@@ -1,0 +1,12 @@
+ZOT_ministries_decisions_category = {
+	icon = GFX_decision_category_generic_propaganda
+	priority = 100
+
+	allowed = {
+		tag = ZOT
+	}
+
+	scripted_gui = ZOT_ministries_decisions_ui
+
+	visible_when_empty = yes
+}
